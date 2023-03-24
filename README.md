@@ -1,4 +1,4 @@
-# C++ FightingGame by Roundbeargames
+# C++ FightingGame 2 by Roundbeargames
 
 Indie game developer from South Korea
 <br>

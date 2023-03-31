@@ -1,4 +1,5 @@
 #include "Updater.h"
+#include "olcPixelGameEngine.h"
 
 namespace RB::Engine
 {
@@ -13,6 +14,8 @@ namespace RB::Engine
 
 	void Updater::OnUpdate()
 	{
-		//std::cout << "updating.." << std::endl;
+		olc::Renderer::ptrPGE->DrawLine(10, 10, 502, 10, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 470, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(502, 10, 502, 470, olc::YELLOW);
 	}
 }

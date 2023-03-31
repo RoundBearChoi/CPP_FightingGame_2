@@ -14,8 +14,9 @@ namespace RB::Engine
 
 	void Updater::OnUpdate()
 	{
-		olc::Renderer::ptrPGE->DrawLine(10, 10, 502, 10, olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 470, olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawLine(502, 10, 502, 470, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(10, 10, 400, 10, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 300, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(400, 10, 400, 300, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(10, 300, 400, 300, olc::YELLOW);
 	}
 }

@@ -4,14 +4,14 @@
 
 namespace RB::Engine
 {
-	class Updaters
+	class Updater
 	{
 	private:
 		iUpdaterObj* _updaterObj = nullptr;
 
 	public:
-		Updaters();
-		~Updaters();
+		Updater();
+		~Updater();
 
 		void Init();
 		void OnUpdate();

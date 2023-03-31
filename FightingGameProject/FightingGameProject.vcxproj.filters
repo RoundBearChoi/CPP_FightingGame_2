@@ -34,7 +34,7 @@
     <ClInclude Include="Updaters.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="iUpdater.h">
+    <ClInclude Include="iUpdaterObj.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="TestUpdater.h">

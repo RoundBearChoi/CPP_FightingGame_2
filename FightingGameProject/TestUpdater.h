@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "iUpdater.h"
+#include "iUpdaterObj.h"
 
 namespace RB::Engine
 {
-	class TestUpdater : public iUpdater
+	class TestUpdater : public iUpdaterObj
 	{
 	public:
 		TestUpdater();

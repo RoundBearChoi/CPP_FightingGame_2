@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="iUpdater.h" />
+    <ClInclude Include="iUpdaterObj.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="TestUpdater.h" />
     <ClInclude Include="Updaters.h" />

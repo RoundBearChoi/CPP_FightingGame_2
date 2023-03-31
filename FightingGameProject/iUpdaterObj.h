@@ -2,10 +2,10 @@
 
 namespace RB::Engine
 {
-	class iUpdater
+	class iUpdaterObj
 	{
 	public:
-		virtual ~iUpdater() {};
+		virtual ~iUpdaterObj() {};
 
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;

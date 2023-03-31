@@ -1,13 +1,13 @@
 #pragma once
 #include <iostream>
-#include "iUpdater.h"
+#include "iUpdaterObj.h"
 
 namespace RB::Engine
 {
 	class Updaters
 	{
 	private:
-		iUpdater* _updaterObj = nullptr;
+		iUpdaterObj* _updaterObj = nullptr;
 
 	public:
 		Updaters();

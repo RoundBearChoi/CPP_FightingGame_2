@@ -6,19 +6,19 @@ namespace RB::Engine
 {
 	Updater::Updater()
 	{
-		std::cout << "creating Updaters" << std::endl;
+		std::cout << "creating Updater" << std::endl;
 	}
 
 	Updater::~Updater()
 	{
-		std::cout << "destroying Updaters" << std::endl;
+		std::cout << "destroying Updater" << std::endl;
 
 		delete _updaterObj;
 	}
 
 	void Updater::Init()
 	{
-		std::cout << "initializing Updaters" << std::endl;
+		std::cout << "initializing Updater" << std::endl;
 
 		_updaterObj = new TestUpdater();
 

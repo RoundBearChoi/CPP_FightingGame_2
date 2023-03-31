@@ -8,21 +8,21 @@ namespace RB::Engine
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		Updater* _updater = nullptr;
+		Updater _updater;
 
 	public:
 		~Game()
 		{
-			delete _updater;
+			//delete _updater;
 		}
 
 		bool OnUserCreate() override
 		{
 			sAppName = "C++FightingGame2";
 		
-			_updater = new Updater();
+			//_updater = new Updater();
 
-			_updater->Init();
+			_updater.Init();
 
 			return true;
 		}
@@ -33,7 +33,7 @@ namespace RB::Engine
 
 			Clear(grayBackground);
 
-			_updater->OnUpdate();
+			_updater.OnUpdate();
 
 			return true;
 		}

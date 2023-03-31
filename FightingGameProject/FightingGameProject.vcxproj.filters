@@ -23,9 +23,6 @@
     <ClCompile Include="TestUpdater.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="iUpdater.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -41,7 +38,7 @@
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="TestUpdater.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

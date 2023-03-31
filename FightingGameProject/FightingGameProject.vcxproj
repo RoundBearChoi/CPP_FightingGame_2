@@ -143,7 +143,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="iUpdater.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
     <ClCompile Include="Updaters.cpp" />

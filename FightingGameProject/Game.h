@@ -28,6 +28,7 @@ namespace RB::Engine
 		bool OnUserUpdate(float fElapsedTime) override
 		{
 			olc::Pixel grayBackground(20, 20, 20);
+
 			Clear(grayBackground);
 
 			_updater->OnUpdate();

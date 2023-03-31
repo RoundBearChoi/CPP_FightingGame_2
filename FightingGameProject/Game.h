@@ -1,26 +1,26 @@
 #pragma once
 #define OLC_PGE_APPLICATION 0
 #include "olcPixelGameEngine.h"
-#include "Updater.h"
+#include "Updaters.h"
 
 namespace RB::Engine
 {
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		Updaters* _updater = nullptr;
+		Updaters* _updaters = nullptr;
 
 	public:
 		~Game()
 		{
-			delete _updater;
+			delete _updaters;
 		}
 
 		bool OnUserCreate() override
 		{
 			sAppName = "C++FightingGame2";
 		
-			_updater = new Updaters();
+			_updaters = new Updaters();
 
 			return true;
 		}
@@ -31,7 +31,7 @@ namespace RB::Engine
 
 			Clear(grayBackground);
 
-			_updater->OnUpdate();
+			_updaters->OnUpdate();
 
 			return true;
 		}

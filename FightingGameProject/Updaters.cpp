@@ -1,18 +1,18 @@
-#include "Updater.h"
+#include "Updaters.h"
 #include "olcPixelGameEngine.h"
 
 namespace RB::Engine
 {
-	UpdaterBase::UpdaterBase()
+	Updaters::Updaters()
 	{
 		std::cout << "creating updater" << std::endl;
 	}
-	UpdaterBase::~UpdaterBase()
+	Updaters::~Updaters()
 	{
 		std::cout << "destroying updater" << std::endl;
 	}
 
-	void UpdaterBase::OnUpdate()
+	void Updaters::OnUpdate()
 	{
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 400, 10, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 300, olc::YELLOW);

@@ -8,7 +8,7 @@ namespace RB::Engine
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		UpdaterBase* _updater = nullptr;
+		Updaters* _updater = nullptr;
 
 	public:
 		~Game()
@@ -20,7 +20,7 @@ namespace RB::Engine
 		{
 			sAppName = "C++FightingGame2";
 		
-			_updater = new UpdaterBase();
+			_updater = new Updaters();
 
 			return true;
 		}

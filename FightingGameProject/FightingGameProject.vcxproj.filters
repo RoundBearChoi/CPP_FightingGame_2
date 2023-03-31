@@ -17,7 +17,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Updater.cpp">
+    <ClCompile Include="Updaters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -28,7 +28,7 @@
     <ClInclude Include="olcPixelGameEngine.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Updater.h">
+    <ClInclude Include="Updaters.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>

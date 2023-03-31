@@ -18,6 +18,8 @@ namespace RB::Engine
 
 	void Updaters::Init()
 	{
+		std::cout << "initializing Updaters" << std::endl;
+
 		_updaterObj = new TestUpdater();
 
 		_updaterObj->Init();

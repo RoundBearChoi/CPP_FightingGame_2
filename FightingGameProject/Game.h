@@ -22,6 +22,8 @@ namespace RB::Engine
 		
 			_updaters = new Updaters();
 
+			_updaters->Init();
+
 			return true;
 		}
 

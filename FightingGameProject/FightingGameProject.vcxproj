@@ -143,12 +143,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="iUpdater.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestUpdater.cpp" />
     <ClCompile Include="Updaters.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="iUpdater.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
+    <ClInclude Include="TestUpdater.h" />
     <ClInclude Include="Updaters.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,15 +1,24 @@
-#include "Updaters.h"
 #include "olcPixelGameEngine.h"
+#include "Updaters.h"
+#include "TestUpdater.h"
 
 namespace RB::Engine
 {
 	Updaters::Updaters()
 	{
-		std::cout << "creating updater" << std::endl;
+		std::cout << "creating Updaters" << std::endl;
 	}
+
 	Updaters::~Updaters()
 	{
-		std::cout << "destroying updater" << std::endl;
+		std::cout << "destroying Updaters" << std::endl;
+
+		delete _updaterObj;
+	}
+
+	void Updaters::Init()
+	{
+		_updaterObj = new TestUpdater();
 	}
 
 	void Updaters::OnUpdate()

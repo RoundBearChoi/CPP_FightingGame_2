@@ -3,16 +3,16 @@
 
 namespace RB::Engine
 {
-	Updater::Updater()
+	UpdaterBase::UpdaterBase()
 	{
 		std::cout << "creating updater" << std::endl;
 	}
-	Updater::~Updater()
+	UpdaterBase::~UpdaterBase()
 	{
 		std::cout << "destroying updater" << std::endl;
 	}
 
-	void Updater::OnUpdate()
+	void UpdaterBase::OnUpdate()
 	{
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 400, 10, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 300, olc::YELLOW);

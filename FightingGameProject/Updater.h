@@ -3,12 +3,12 @@
 
 namespace RB::Engine
 {
-	class Updater
+	class UpdaterBase
 	{
 	public:
-		Updater();
-		~Updater();
+		UpdaterBase();
+		~UpdaterBase();
 
-		void OnUpdate();
+		virtual void OnUpdate();
 	};
 }

@@ -7,6 +7,7 @@ namespace RB::Engine
 	public:
 		virtual ~iUpdater() {};
 
+		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
 	};
 }

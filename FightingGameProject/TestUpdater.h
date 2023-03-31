@@ -10,6 +10,7 @@ namespace RB::Engine
 		TestUpdater();
 		~TestUpdater() override;
 
+		void Init() override;
 		void OnUpdate() override;
 	};
 }

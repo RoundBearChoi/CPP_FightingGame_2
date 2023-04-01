@@ -6,13 +6,13 @@ namespace RB::Engine
 	class Timer
 	{
 	private:
-		float _accumulatedTime = 0.0f;
 		float _targetInterval = 1.0f / 60.0f;
 
 		//debug
+		float _accumulatedTime = 0.0f;
+		float _time = 0.0f;
 		int32_t _updateCount = 0;
 		int32_t _updateCountPerSec = 0;
-		float _time = 0.0f;
 
 	public:
 		bool UpdateTime(float fElapsedTime)

@@ -29,4 +29,9 @@ namespace RB::Engine
 	{
 		_updaterObj->OnUpdate();
 	}
+
+	void Updater::OnFixedUpdate()
+	{
+		_updaterObj->OnFixedUpdate();
+	}
 }

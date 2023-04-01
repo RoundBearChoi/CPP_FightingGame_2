@@ -15,5 +15,6 @@ namespace RB::Engine
 
 		void Init();
 		void OnUpdate();
+		void OnFixedUpdate();
 	};
 }

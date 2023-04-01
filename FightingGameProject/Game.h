@@ -2,6 +2,7 @@
 #define OLC_PGE_APPLICATION 0
 #include "olcPixelGameEngine.h"
 #include "Updater.h"
+#include "Timer.h"
 
 namespace RB::Engine
 {
@@ -9,19 +10,18 @@ namespace RB::Engine
 	{
 	private:
 		Updater _updater;
+		Timer _timer;
 
 	public:
 		~Game()
 		{
-			//delete _updater;
+
 		}
 
 		bool OnUserCreate() override
 		{
 			sAppName = "C++FightingGame2";
 		
-			//_updater = new Updater();
-
 			_updater.Init();
 
 			return true;
@@ -34,6 +34,13 @@ namespace RB::Engine
 			Clear(grayBackground);
 
 			_updater.OnUpdate();
+
+			if (_timer.UpdateTime(fElapsedTime))
+			{
+				_updater.OnFixedUpdate();
+			}
+
+			_timer.ShowFixedUpdateCount();
 
 			return true;
 		}

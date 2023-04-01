@@ -13,5 +13,6 @@ namespace RB::Engine
 
 		void Init() override;
 		void OnUpdate() override;
+		void OnFixedUpdate() override;
 	};
 }

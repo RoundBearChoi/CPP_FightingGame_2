@@ -10,30 +10,30 @@ namespace RB::Engine
 
 		//debug
 		float _accumulatedTime = 0.0f;
-		float _time = 0.0f;
-		int32_t _updateCount = 0;
-		int32_t _updateCountPerSec = 0;
+		float _fullSecondCount = 0.0f;
+		int32_t _fixedUpdateCount = 0;
+		int32_t _fixedUpdateCountPerSec = 0;
 
 	public:
 		bool UpdateTime(float fElapsedTime)
 		{
 			_accumulatedTime += fElapsedTime;
 
-			if (_time >= 1.0f)
+			if (_fullSecondCount >= 1.0f)
 			{
-				_updateCountPerSec = _updateCount;
-				_updateCount = 0;
-				_time = 0.0f;
+				_fixedUpdateCountPerSec = _fixedUpdateCount;
+				_fixedUpdateCount = 0;
+				_fullSecondCount = 0.0f;
 			}
 			else
 			{
-				_time += fElapsedTime;
+				_fullSecondCount += fElapsedTime;
 			}
 
 			if (_accumulatedTime >= _targetInterval)
 			{
 				_accumulatedTime -= _targetInterval;
-				_updateCount++;
+				_fixedUpdateCount++;
 
 				return true;
 			}
@@ -45,7 +45,7 @@ namespace RB::Engine
 
 		void ShowFixedUpdateCount()
 		{
-			olc::Renderer::ptrPGE->DrawString({3, 3}, "FixedUpdate Count: " + std::to_string(_updateCountPerSec), olc::WHITE);
+			olc::Renderer::ptrPGE->DrawString({3, 3}, "FixedUpdate Count: " + std::to_string(_fixedUpdateCountPerSec), olc::WHITE);
 		}
 	};
 }

@@ -15,8 +15,15 @@ namespace RB::Engine
 		int32_t _fixedUpdateCountPerSec = 0;
 
 	public:
+		void FixedUpdate()
+		{
+
+		}
+
 		bool UpdateTime(float fElapsedTime)
 		{
+			ShowFixedUpdateCount();
+
 			_accumulatedTime += fElapsedTime;
 
 			if (_fullSecondCount >= 1.0f)

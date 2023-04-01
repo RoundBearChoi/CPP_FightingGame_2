@@ -40,8 +40,6 @@ namespace RB::Engine
 				_updater.OnFixedUpdate();
 			}
 
-			_timer.ShowFixedUpdateCount();
-
 			return true;
 		}
 

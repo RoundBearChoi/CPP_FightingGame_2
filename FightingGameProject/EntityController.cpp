@@ -4,12 +4,12 @@ namespace RB::Entities
 {
 	EntityController::EntityController()
 	{
-		cout << "constructing TestUpdater" << endl;
+		cout << "constructing EntityController" << endl;
 	}
 
 	EntityController::~EntityController()
 	{
-		cout << "destroying TestUpdater" << endl;
+		cout << "destroying EntityController" << endl;
 	}
 
 	void EntityController::Init()

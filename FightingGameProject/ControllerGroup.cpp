@@ -41,6 +41,7 @@ namespace RB::Controllers
 
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{
+			//each controller should have a name string
 			cout << "    " << typeid(_vecControllers[i]).name() << endl;
 
 			delete _vecControllers[i];

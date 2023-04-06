@@ -4,17 +4,19 @@ namespace RB::Engine
 {
 	TestUpdater::TestUpdater()
 	{
-		std::cout << "creating TestUpdater" << std::endl;
+		cout << "creating TestUpdater" << endl;
 	}
 
 	TestUpdater::~TestUpdater()
 	{
-		std::cout << "destroying TestUpdater" << std::endl;
+		cout << "destroying TestUpdater" << endl;
 	}
 
 	void TestUpdater::Init()
 	{
-		std::cout << "initializing TestUpdater" << std::endl;
+		cout << "initializing TestUpdater" << endl;
+
+
 	}
 
 	void TestUpdater::OnUpdate()

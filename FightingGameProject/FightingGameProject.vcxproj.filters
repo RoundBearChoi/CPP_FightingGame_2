@@ -12,6 +12,9 @@
     <Filter Include="Source Files\Engine">
       <UniqueIdentifier>{5bfb9078-62fb-43c2-ac67-cf0a5a26fd3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Controllers">
+      <UniqueIdentifier>{55132285-0c4a-4d4f-b933-0ad6f4d60413}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -22,6 +25,9 @@
     </ClCompile>
     <ClCompile Include="TestUpdater.cpp">
       <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllerGroup.cpp">
+      <Filter>Source Files\Controllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +48,9 @@
     </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerGroup.h">
+      <Filter>Source Files\Controllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

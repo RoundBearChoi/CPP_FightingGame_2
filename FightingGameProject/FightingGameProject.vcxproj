@@ -143,11 +143,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControllerGroup.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControllerGroup.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="iUpdaterObj.h" />
     <ClInclude Include="olcPixelGameEngine.h" />

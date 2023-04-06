@@ -3,6 +3,8 @@
 #include "olcPixelGameEngine.h"
 #include "iUpdaterObj.h"
 
+using namespace std;
+
 namespace RB::Engine
 {
 	class TestUpdater : public iUpdaterObj

@@ -52,5 +52,8 @@
     <ClInclude Include="ControllerGroup.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
+    <ClInclude Include="iController.h">
+      <Filter>Source Files\Controllers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

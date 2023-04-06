@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="ControllerGroup.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="iController.h" />
     <ClInclude Include="iUpdaterObj.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="TestUpdater.h" />

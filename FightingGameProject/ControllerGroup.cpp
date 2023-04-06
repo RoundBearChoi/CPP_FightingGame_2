@@ -21,5 +21,12 @@ namespace RB::Controllers
 	void ControllerGroup::OnEnd()
 	{
 		cout << "ControllerGroup::OnEnd()" << endl;
+
+		_DestroyAll();
+	}
+
+	void ControllerGroup::_DestroyAll()
+	{
+
 	}
 }

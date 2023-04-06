@@ -14,7 +14,7 @@ namespace RB::Controllers
 		string GetName();
 
 	protected:
-		string _name;
+		string _name = "unnamed controller";
 
 		void _SetName(string name);
 	};

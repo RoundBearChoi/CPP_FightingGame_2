@@ -1,14 +1,14 @@
 #pragma once
 #include <iostream>
 #include "iEntityController.h"
-#include "ControllerBase.h"
+#include "iController.h"
 
 using namespace std;
 using namespace RB::Controllers;
 
 namespace RB::Entities
 {
-	class EntityController : ControllerBase, iEntityController
+	class EntityController : iController, iEntityController
 	{
 	public:
 		EntityController();

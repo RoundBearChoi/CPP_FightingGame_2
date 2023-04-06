@@ -5,7 +5,7 @@ namespace RB::Controllers
 	/// <summary>
 	/// Need to place the definition in the implementation (.cpp) file.
 	/// </summary>
-	std::vector<ControllerBase*> ControllerGroup::_vecControllers;
+	std::vector<iController*> ControllerGroup::_vecControllers;
 
 	void ControllerGroup::Init()
 	{
@@ -19,7 +19,7 @@ namespace RB::Controllers
 		_DestroyAll();
 	}
 
-	void ControllerGroup::AddController(ControllerBase* newController)
+	void ControllerGroup::AddController(iController* newController)
 	{
 		if (newController != nullptr)
 		{

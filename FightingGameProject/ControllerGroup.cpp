@@ -12,8 +12,8 @@ namespace RB::Controllers
 	{
 		cout << "ControllerGroup::Init()" << endl;
 
-		cout << &_vecControllers << endl;
-		cout << &_test << endl;
+		//cout << &_vecControllers << endl;
+		//cout << &_test << endl;
 
 		_test.push_back(1);
 	}
@@ -23,6 +23,14 @@ namespace RB::Controllers
 		cout << "ControllerGroup::OnEnd()" << endl;
 
 		_DestroyAll();
+	}
+
+	void ControllerGroup::AddController(iController* newController)
+	{
+		if (newController != nullptr)
+		{
+
+		}
 	}
 
 	void ControllerGroup::_DestroyAll()

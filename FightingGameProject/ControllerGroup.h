@@ -12,6 +12,7 @@ namespace RB::Controllers
 	public:
 		static void Init();
 		static void OnEnd();
+		static void AddController(iController* newController);
 
 	private:
 		static vector<iController> _vecControllers;

@@ -16,7 +16,7 @@ namespace RB::Engine
 	{
 		//cout << "initializing TestUpdater" << endl;
 
-
+		Controllers::ControllerGroup::AddController(nullptr);
 	}
 
 	void TestUpdater::OnUpdate()

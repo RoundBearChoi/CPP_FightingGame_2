@@ -14,7 +14,7 @@ namespace RB::Entities
 
 	void EntityController::Init()
 	{
-		_SetName("EntityController");
+		//SetName("EntityController");
 	}
 
 	void EntityController::OnUpdate()

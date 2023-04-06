@@ -8,14 +8,16 @@ namespace RB::Controllers
 	class ControllerBase
 	{
 	public:
+		virtual ~ControllerBase() {};
+
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
-		string GetName();
 
-	protected:
-		string _name = "unnamed controller";
+		//void SetName(string name);
+		//string GetName();
 
-		void _SetName(string name);
+	//protected:
+	//	string _name = "unnamed controller";
 	};
 }

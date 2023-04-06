@@ -12,7 +12,7 @@ namespace RB::Entities
 	{
 	public:
 		EntityController();
-		~EntityController();
+		~EntityController() override;
 
 		void Init() override;
 		void OnUpdate() override;

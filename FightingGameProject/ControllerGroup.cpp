@@ -43,7 +43,7 @@ namespace RB::Controllers
 
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{
-			cout << "    " << _vecControllers[i]->GetName() << endl;
+			//cout << "    " << _vecControllers[i]->GetName() << endl;
 
 			delete _vecControllers[i];
 

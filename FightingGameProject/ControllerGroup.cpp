@@ -2,13 +2,15 @@
 
 namespace RB::Controllers
 {
-	//ControllerGroup::ControllerGroup()
-	//{
-	//	std::cout << "creating ControllerGroup" << std::endl;
-	//}
-	//
-	//ControllerGroup::~ControllerGroup()
-	//{
-	//	std::cout << "destroying ControllerGroup" << std::endl;
-	//}
+	void ControllerGroup::Init()
+	{
+		cout << "ControllerGroup::Init()" << endl;
+
+
+	}
+
+	void ControllerGroup::OnEnd()
+	{
+		cout << "ControllerGroup::OnEnd()" << endl;
+	}
 }

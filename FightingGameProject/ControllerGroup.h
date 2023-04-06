@@ -9,8 +9,8 @@ namespace RB::Controllers
 	class ControllerGroup
 	{
 	public:
-		//ControllerGroup();
-		//~ControllerGroup();
+		static void Init();
+		static void OnEnd();
 
 		static vector<int> _test;
 	};

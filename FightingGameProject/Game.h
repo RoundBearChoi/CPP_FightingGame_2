@@ -3,6 +3,9 @@
 #include "olcPixelGameEngine.h"
 #include "Updater.h"
 #include "Timer.h"
+#include "ControllerGroup.h"
+
+using namespace RB::Controllers;
 
 namespace RB::Engine
 {
@@ -13,18 +16,25 @@ namespace RB::Engine
 		Timer _timer;
 
 	public:
-		~Game()
-		{
-
-		}
-
 		bool OnUserCreate() override
 		{
+			cout << "OnUserCreate (Game)" << endl;
+
 			sAppName = "C++FightingGame2";
 		
 			_updater.Init();
 
+			ControllerGroup::Init();
+
 			return true;
+		}
+
+		~Game()
+		{
+			cout << endl;
+			cout << "destroying Game" << endl;
+
+			ControllerGroup::OnEnd();
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override

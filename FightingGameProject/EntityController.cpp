@@ -14,12 +14,14 @@ namespace RB::Entities
 
 	void EntityController::Init()
 	{
-
+		_SetName("EntityController");
 	}
+
 	void EntityController::OnUpdate()
 	{
 
 	}
+
 	void EntityController::OnFixedUpdate()
 	{
 

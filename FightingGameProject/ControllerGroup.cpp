@@ -5,7 +5,7 @@ namespace RB::Controllers
 	/// <summary>
 	/// Need to place the definition in the implementation (.cpp) file.
 	/// </summary>
-	std::vector<iController*> ControllerGroup::_vecControllers;
+	std::vector<ControllerBase*> ControllerGroup::_vecControllers;
 
 	void ControllerGroup::Init()
 	{
@@ -19,10 +19,12 @@ namespace RB::Controllers
 		_DestroyAll();
 	}
 
-	void ControllerGroup::AddController(iController* newController)
+	void ControllerGroup::AddController(ControllerBase* newController)
 	{
 		if (newController != nullptr)
 		{
+			newController->Init();
+
 			_vecControllers.push_back(newController);
 		}
 	}
@@ -41,8 +43,7 @@ namespace RB::Controllers
 
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{
-			//each controller should have a name string
-			cout << "    " << typeid(_vecControllers[i]).name() << endl;
+			cout << "    " << _vecControllers[i]->GetName() << endl;
 
 			delete _vecControllers[i];
 

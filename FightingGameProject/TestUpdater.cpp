@@ -14,8 +14,7 @@ namespace RB::Engine
 
 	void TestUpdater::Init()
 	{
-		//ControllerGroup::AddController(nullptr);
-		ControllerGroup::AddController((iController*)(new EntityController()));
+		ControllerGroup::AddController((ControllerBase*)(new EntityController()));
 	}
 
 	void TestUpdater::OnUpdate()

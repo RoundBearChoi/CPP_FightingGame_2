@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "iController.h"
+#include "ControllerBase.h"
 
 using namespace std;
 
@@ -12,12 +12,12 @@ namespace RB::Controllers
 	public:
 		static void Init();
 		static void OnEnd();
-		static void AddController(iController* newController);
+		static void AddController(ControllerBase* newController);
 		static void UpdateAll();
 		static void FixedUpdateAll();
 
 	private:
-		static vector<iController*> _vecControllers;
+		static vector<ControllerBase*> _vecControllers;
 
 		static void _DestroyAll();
 	};

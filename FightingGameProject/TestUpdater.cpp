@@ -14,13 +14,14 @@ namespace RB::Engine
 
 	void TestUpdater::Init()
 	{
-		//cout << "initializing TestUpdater" << endl;
-
-		Controllers::ControllerGroup::AddController(nullptr);
+		//ControllerGroup::AddController(nullptr);
+		ControllerGroup::AddController((iController*)(new EntityController()));
 	}
 
 	void TestUpdater::OnUpdate()
 	{
+		ControllerGroup::UpdateAll();
+
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 400, 10, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 300, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawLine(400, 10, 400, 300, olc::YELLOW);
@@ -29,6 +30,6 @@ namespace RB::Engine
 
 	void TestUpdater::OnFixedUpdate()
 	{
-
+		ControllerGroup::FixedUpdateAll();
 	}
 }

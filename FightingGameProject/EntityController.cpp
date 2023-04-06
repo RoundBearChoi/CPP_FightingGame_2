@@ -11,4 +11,17 @@ namespace RB::Entities
 	{
 		cout << "destroying TestUpdater" << endl;
 	}
+
+	void EntityController::Init()
+	{
+
+	}
+	void EntityController::OnUpdate()
+	{
+
+	}
+	void EntityController::OnFixedUpdate()
+	{
+
+	}
 }

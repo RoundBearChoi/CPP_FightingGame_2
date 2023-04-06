@@ -3,8 +3,11 @@
 #include "olcPixelGameEngine.h"
 #include "iUpdaterObj.h"
 #include "ControllerGroup.h"
+#include "EntityController.h"
 
 using namespace std;
+using namespace RB::Controllers;
+using namespace RB::Entities;
 
 namespace RB::Engine
 {

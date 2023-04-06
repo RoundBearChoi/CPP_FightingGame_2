@@ -11,5 +11,9 @@ namespace RB::Entities
 	public:
 		EntityController();
 		~EntityController();
+
+		void Init() override;
+		void OnUpdate() override;
+		void OnFixedUpdate() override;
 	};
 }

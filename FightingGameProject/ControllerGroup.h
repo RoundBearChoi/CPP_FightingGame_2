@@ -13,10 +13,11 @@ namespace RB::Controllers
 		static void Init();
 		static void OnEnd();
 		static void AddController(iController* newController);
+		static void UpdateAll();
+		static void FixedUpdateAll();
 
 	private:
-		static vector<iController> _vecControllers;
-		static vector<int> _test;
+		static vector<iController*> _vecControllers;
 
 		static void _DestroyAll();
 	};

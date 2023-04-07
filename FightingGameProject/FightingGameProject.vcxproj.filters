@@ -15,7 +15,7 @@
     <Filter Include="Source Files\Controllers">
       <UniqueIdentifier>{55132285-0c4a-4d4f-b933-0ad6f4d60413}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Entities">
+    <Filter Include="Source Files\Players">
       <UniqueIdentifier>{d6fdfd79-ce43-4788-916d-494aa3a16e67}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -32,8 +32,8 @@
     <ClCompile Include="ControllerGroup.cpp">
       <Filter>Source Files\Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="EntityController.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Source Files\Players</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -58,11 +58,11 @@
     <ClInclude Include="ControllerGroup.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
-    <ClInclude Include="EntityController.h">
-      <Filter>Source Files\Entities</Filter>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Source Files\Players</Filter>
     </ClInclude>
-    <ClInclude Include="iEntityController.h">
-      <Filter>Source Files\Entities</Filter>
+    <ClInclude Include="iPlayerController.h">
+      <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="iController.h">
       <Filter>Source Files\Controllers</Filter>

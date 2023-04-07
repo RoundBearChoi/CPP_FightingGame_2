@@ -1,18 +1,18 @@
 #pragma once
 #include <iostream>
-#include "iEntityController.h"
+#include "iPlayerController.h"
 #include "iController.h"
 
 using namespace std;
 using namespace RB::Controllers;
 
-namespace RB::Entities
+namespace RB::Players
 {
-	class EntityController : iController, iEntityController
+	class PlayerController : iController, iPlayerController
 	{
 	public:
-		EntityController();
-		~EntityController() override;
+		PlayerController();
+		~PlayerController() override;
 
 		void Init() override;
 		void OnUpdate() override;

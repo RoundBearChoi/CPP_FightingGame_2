@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "iPlayerController.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -8,6 +9,10 @@ namespace RB::Players
 {
 	class PlayerController : public iPlayerController
 	{
+	private:
+		Player _player1;
+		Player _player2;
+
 	public:
 		PlayerController();
 		~PlayerController() override;

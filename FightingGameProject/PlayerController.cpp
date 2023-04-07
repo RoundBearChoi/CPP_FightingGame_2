@@ -14,7 +14,8 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-
+		_player1.Init(1);
+		_player2.Init(2);
 	}
 
 	void PlayerController::OnUpdate()

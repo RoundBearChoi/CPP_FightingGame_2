@@ -9,7 +9,7 @@ namespace RB::Players
 
 	Player::~Player()
 	{
-
+		cout << "destroying player: " << _playerIndex << endl;
 	}
 
 	void Player::Init(int playerIndex)

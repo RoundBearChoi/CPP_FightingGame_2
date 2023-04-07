@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 namespace RB::Controllers
 {
 	class iController

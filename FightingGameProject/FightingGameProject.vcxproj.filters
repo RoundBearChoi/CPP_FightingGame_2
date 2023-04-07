@@ -35,6 +35,9 @@
     <ClCompile Include="PlayerController.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -66,6 +69,9 @@
     </ClInclude>
     <ClInclude Include="iController.h">
       <Filter>Source Files\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\Players</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

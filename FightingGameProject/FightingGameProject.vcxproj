@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ControllerGroup.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="iController.h" />
     <ClInclude Include="ControllerGroup.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="iPlayerController.h" />

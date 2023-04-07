@@ -39,12 +39,10 @@ namespace RB::Controllers
 
 	void ControllerGroup::_DestroyAll()
 	{
-		cout << "destroying all controllers" << endl;
+		//cout << "destroying all controllers" << endl;
 
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{
-			//cout << "    " << _vecControllers[i]->GetName() << endl;
-
 			delete _vecControllers[i];
 
 			_vecControllers[i] = nullptr;

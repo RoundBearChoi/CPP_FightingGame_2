@@ -20,11 +20,13 @@ namespace RB::Players
 
 	void PlayerController::OnUpdate()
 	{
-
+		_player1.OnUpdate();
+		_player2.OnUpdate();
 	}
 
 	void PlayerController::OnFixedUpdate()
 	{
-
+		_player1.OnFixedUpdate();
+		_player2.OnFixedUpdate();
 	}
 }

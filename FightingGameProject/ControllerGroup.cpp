@@ -31,10 +31,18 @@ namespace RB::Controllers
 
 	void ControllerGroup::UpdateAll()
 	{
+		for (int i = 0; i < _vecControllers.size(); i++)
+		{
+			_vecControllers[i]->OnUpdate();
+		}
 	}
 
 	void ControllerGroup::FixedUpdateAll()
 	{
+		for (int i = 0; i < _vecControllers.size(); i++)
+		{
+			_vecControllers[i]->OnFixedUpdate();
+		}
 	}
 
 	void ControllerGroup::_DestroyAll()

@@ -1,14 +1,12 @@
 #pragma once
 #include <iostream>
 #include "iPlayerController.h"
-#include "iController.h"
 
 using namespace std;
-using namespace RB::Controllers;
 
 namespace RB::Players
 {
-	class PlayerController : iController, iPlayerController
+	class PlayerController : public iPlayerController
 	{
 	public:
 		PlayerController();

@@ -4,15 +4,16 @@
 
 namespace RB::StateMachine
 {
-	class StateBase : public iState
+	class StateBase
 	{
-	private:
+	protected:
 		iStateMachine* _stateMachine;
 
 	public:
+		virtual void SetStateMachine(iStateMachine* stateMachine);
 		virtual void OnEnter() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
-		virtual void QueueNextState(iState* nextState) override;
+		virtual void QueueNextState(iState* nextState);
 	};
 }

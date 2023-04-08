@@ -50,6 +50,12 @@
     <ClCompile Include="StateBase.cpp">
       <Filter>Source Files\StateMachine</Filter>
     </ClCompile>
+    <ClCompile Include="TestState.cpp">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachineObj.cpp">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -98,6 +104,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StateBase.h">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="TestState.h">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachineObj.h">
       <Filter>Source Files\StateMachine</Filter>
     </ClInclude>
   </ItemGroup>

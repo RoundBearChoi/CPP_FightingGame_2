@@ -13,7 +13,8 @@ namespace RB::StateMachine
 	public:
 		virtual ~StateMachineObj() override;
 
+		virtual void Init(iState* state) override;
+		virtual void QueueNextState(iState* state) override;
 		virtual void DestroyCurrentState();
-		virtual void QueueNextState(iState* state);
 	};
 }

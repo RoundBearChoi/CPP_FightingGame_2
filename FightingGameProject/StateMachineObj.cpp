@@ -7,13 +7,12 @@ namespace RB::StateMachine
 		DestroyCurrentState();
 	}
 
-	void StateMachineObj::DestroyCurrentState()
+	void StateMachineObj::Init(iState* state)
 	{
-		if (_currentState != nullptr)
+		if (state != nullptr)
 		{
-			_currentState->OnExit();
-
-			delete _currentState;
+			_currentState = state;
+			_currentState->OnEnter();
 		}
 	}
 
@@ -26,5 +25,15 @@ namespace RB::StateMachine
 		_currentState->OnEnter();
 
 		_nextState = nullptr;
+	}
+
+	void StateMachineObj::DestroyCurrentState()
+	{
+		if (_currentState != nullptr)
+		{
+			_currentState->OnExit();
+
+			delete _currentState;
+		}
 	}
 }

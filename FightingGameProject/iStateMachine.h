@@ -8,6 +8,7 @@ namespace RB::StateMachine
 	public:
 		virtual ~iStateMachine() {}
 
+		virtual void Init(iState *state) = 0;
 		virtual void QueueNextState(iState* state) = 0;
 	};
 }

@@ -1,20 +1,22 @@
 #pragma once
 #include <iostream>
 #include "iState.h"
+#include "iStateMachine.h"
 
 using namespace std;
+
 
 namespace RB::StateMachine
 {
 	class StateBase : public iState
 	{
 	protected:
-		iStateMachine* _stateMachine = nullptr;
+		//RB::StateMachine::iStateMachine* _stateMachine = nullptr;
 
 	public:
 		virtual ~StateBase() override;
 
-		//virtual void SetStateMachine(iStateMachine* stateMachine) override {};
+		//virtual void SetStateMachine(RB::StateMachine::iStateMachine* stateMachine) override {};
 		virtual void QueueNextState(iState* nextState) override;
 
 		virtual void OnEnter() override {}

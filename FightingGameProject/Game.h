@@ -43,12 +43,12 @@ namespace RB::Engine
 		bool OnUserUpdate(float fElapsedTime) override
 		{
 			Time::SetDeltaTime(fElapsedTime);
+			Time::AddFixedDeltaTime();
+
 			olc::Pixel grayBackground(20, 20, 20);
 			Clear(grayBackground);
 
 			_updater.OnUpdate();
-
-			Time::AddFixedDeltaTime();
 
 			if (_timer.DoFixedUpdate())
 			{

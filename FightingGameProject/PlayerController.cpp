@@ -29,4 +29,9 @@ namespace RB::Players
 		_player1.OnFixedUpdate();
 		_player2.OnFixedUpdate();
 	}
+
+	iPlayer* PlayerController::GetPlayerOnPlayerID(int ID)
+	{
+		return nullptr;
+	}
 }

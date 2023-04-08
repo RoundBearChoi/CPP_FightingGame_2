@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "iPlayerController.h"
+#include "iPlayer.h"
 #include "Player.h"
 
 using namespace std;
@@ -20,5 +21,7 @@ namespace RB::Players
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+		iPlayer* GetPlayerOnPlayerID(int ID) override;
 	};
 }

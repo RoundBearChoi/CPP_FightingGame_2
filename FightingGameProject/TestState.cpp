@@ -9,21 +9,21 @@ namespace RB::States
 
 	void TestState::OnEnter()
 	{
-		//cout << "entering TestState" << endl;
+		cout << "entering TestState" << endl;
 	}
 	
 	void TestState::OnExit()
 	{
-		//cout << "exiting TestState" << endl;
+		cout << "exiting TestState" << endl;
 	}
 	
-	//void TestState::OnUpdate()
-	//{
-	//	//cout << Time::GetDeltaTime() << endl;
-	//}
+	void TestState::OnUpdate()
+	{
+		_stateMachine->QueueNextState(new TestState2());
+	}
 	
-	//void TestState::OnFixedUpdate()
-	//{
-	//
-	//}
+	void TestState::OnFixedUpdate()
+	{
+		cout << "fixed update TestState" << endl;
+	}
 }

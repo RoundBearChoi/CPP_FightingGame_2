@@ -27,23 +27,33 @@ namespace RB::States
 	void StateMachineBase::OnUpdate()
 	{
 		_currentState->OnUpdate();
+
+		MakeTransition();
 	}
 
 	void StateMachineBase::OnFixedUpdate()
 	{
-		_currentState->OnFixedUpdate();
+		if (!_makeTransition)
+		{
+			_currentState->OnFixedUpdate();
+		}
 	}
 
 	void StateMachineBase::QueueNextState(iState* state)
 	{
-		DestroyCurrentState();
-
-		_currentState = _nextState;
-
-		_currentState->SetStateMachine(this);
-		_currentState->OnEnter();
-
-		_nextState = nullptr;
+		if (state != nullptr && _makeTransition == false)
+		{
+			if (_nextState == nullptr)
+			{
+				_nextState = state;
+				_makeTransition = true;
+			}
+			else
+			{
+				delete state;
+				_makeTransition = false;
+			}
+		}
 	}
 
 	void StateMachineBase::DestroyCurrentState()
@@ -53,6 +63,23 @@ namespace RB::States
 			_currentState->OnExit();
 
 			delete _currentState;
+		}
+	}
+
+	void StateMachineBase::MakeTransition()
+	{
+		if (_makeTransition)
+		{
+			DestroyCurrentState();
+
+			_currentState = _nextState;
+
+			_currentState->SetStateMachine(this);
+			_currentState->OnEnter();
+
+			_nextState = nullptr;
+
+			_makeTransition = false;
 		}
 	}
 }

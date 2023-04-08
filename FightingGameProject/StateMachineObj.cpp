@@ -19,6 +19,7 @@ namespace RB::States
 		if (state != nullptr)
 		{
 			_currentState = state;
+			_currentState->SetStateMachine(this);
 			_currentState->OnEnter();
 		}
 	}
@@ -29,6 +30,7 @@ namespace RB::States
 
 		_currentState = _nextState;
 
+		_currentState->SetStateMachine(this);
 		_currentState->OnEnter();
 
 		_nextState = nullptr;

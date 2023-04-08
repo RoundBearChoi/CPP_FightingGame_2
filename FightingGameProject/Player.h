@@ -3,9 +3,9 @@
 #include "olcPixelGameEngine.h"
 #include "Time.h"
 #include "iStateMachine.h"
+#include "iPlayer.h"
 #include "StateMachineBase.h"
 #include "TestState.h"
-#include "iPlayer.h"
 
 using namespace std;
 using namespace olc;

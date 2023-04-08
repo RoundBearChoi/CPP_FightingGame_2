@@ -27,6 +27,7 @@ namespace RB::Engine
 			_updater.Init();
 
 			ControllerGroup::Init();
+			Time::ClearFixedDeltaTime();
 
 			return true;
 		}

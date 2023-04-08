@@ -7,7 +7,7 @@ using namespace std;
 
 namespace RB::StateMachine
 {
-	class StateMachineObj : iStateMachine
+	class StateMachineObj : public iStateMachine
 	{
 	protected:
 		iState* _currentState = nullptr;

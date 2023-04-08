@@ -10,11 +10,16 @@ namespace RB::Players
 	Player::~Player()
 	{
 		cout << "destroying player: " << _playerIndex << endl;
+
+		delete _stateMachine;
 	}
 
 	void Player::Init(int playerIndex)
 	{
 		_playerIndex = playerIndex;
+		
+		_stateMachine = new StateMachine::StateMachineObj();
+		_stateMachine->Init(new StateMachine::StateBase());
 
 		cout << "init player: " << playerIndex << endl;
 	}

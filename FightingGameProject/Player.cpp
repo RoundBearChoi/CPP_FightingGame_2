@@ -34,7 +34,7 @@ namespace RB::Players
 		_playerIndex = playerIndex;
 		
 		_stateMachine = new StateMachineBase();
-		_stateMachine->Init(new TestState());
+		_stateMachine->Init(new PlayerTestState());
 
 		cout << "init player: " << playerIndex << endl;
 	}

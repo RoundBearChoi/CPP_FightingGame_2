@@ -6,6 +6,7 @@
 #include "iPlayer.h"
 #include "StateMachineBase.h"
 #include "TestState.h"
+#include "PlayerTestState.h"
 
 using namespace std;
 using namespace olc;

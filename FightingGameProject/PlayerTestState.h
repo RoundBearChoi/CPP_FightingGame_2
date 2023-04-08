@@ -10,6 +10,6 @@ namespace RB::Players
 	public:
 		~PlayerTestState() override;
 
-
+		void OnFixedUpdate() override;
 	};
 }

@@ -6,4 +6,9 @@ namespace RB::Players
 	{
 
 	}
+
+	void PlayerTestState::OnFixedUpdate()
+	{
+
+	}
 }

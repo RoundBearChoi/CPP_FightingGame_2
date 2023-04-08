@@ -3,7 +3,7 @@
 /// <summary>
 /// forward declare iStateMachine
 /// </summary>
-//class RB::StateMachine::iStateMachine;
+//class iStateMachine;
 
 namespace RB::States
 {
@@ -12,7 +12,7 @@ namespace RB::States
 	public:
 		virtual ~iState() {}
 
-		//virtual void SetStateMachine(RB::StateMachine::iStateMachine* stateMachine) = 0;
+		//virtual void SetStateMachine(iStateMachine* stateMachine) = 0;
 		virtual void QueueNextState(iState* nextState) = 0;
 
 		virtual void OnEnter() = 0;

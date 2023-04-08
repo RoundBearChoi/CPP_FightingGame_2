@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 namespace RB::States
 {
 	class StateBase : public iState

@@ -2,8 +2,6 @@
 #include <iostream>
 #include "iState.h"
 
-//class iStateMachine;
-
 using namespace std;
 
 namespace RB::StateMachine
@@ -11,12 +9,12 @@ namespace RB::StateMachine
 	class StateBase : public iState
 	{
 	protected:
-		iStateMachine* _stateMachine;
+		iStateMachine* _stateMachine = nullptr;
 
 	public:
 		virtual ~StateBase() override;
 
-		//virtual void SetStateMachine(iStateMachine* stateMachine) override;
+		//virtual void SetStateMachine(iStateMachine* stateMachine) override {};
 		virtual void QueueNextState(iState* nextState) override;
 
 		virtual void OnEnter() override {}

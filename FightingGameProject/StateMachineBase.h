@@ -7,15 +7,15 @@ using namespace std;
 
 namespace RB::States
 {
-	class StateMachineObj : public iStateMachine
+	class StateMachineBase : public iStateMachine
 	{
 	protected:
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
 
 	public:
-		StateMachineObj();
-		virtual ~StateMachineObj() override;
+		StateMachineBase();
+		virtual ~StateMachineBase() override;
 
 		virtual void Init(iState* state) override;
 		virtual void OnUpdate() override;

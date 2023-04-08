@@ -148,7 +148,7 @@
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="StateBase.cpp" />
-    <ClCompile Include="StateMachineObj.cpp" />
+    <ClCompile Include="StateMachineBase.cpp" />
     <ClCompile Include="TestState.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
     <ClCompile Include="Time.cpp" />
@@ -167,7 +167,7 @@
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StateBase.h" />
-    <ClInclude Include="StateMachineObj.h" />
+    <ClInclude Include="StateMachineBase.h" />
     <ClInclude Include="TestState.h" />
     <ClInclude Include="TestUpdater.h" />
     <ClInclude Include="Time.h" />

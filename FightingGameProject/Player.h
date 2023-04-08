@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Time.h"
 #include "iStateMachine.h"
-#include "StateMachineObj.h"
+#include "StateMachineBase.h"
 #include "TestState.h"
 
 using namespace std;

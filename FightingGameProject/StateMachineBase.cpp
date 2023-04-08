@@ -1,20 +1,20 @@
-#include "StateMachineObj.h"
+#include "StateMachineBase.h"
 
 namespace RB::States
 {
-	StateMachineObj::StateMachineObj()
+	StateMachineBase::StateMachineBase()
 	{
-		cout << "constructing StateMachineObj" << endl;
+		cout << "constructing StateMachineBase" << endl;
 	}
 
-	StateMachineObj::~StateMachineObj()
+	StateMachineBase::~StateMachineBase()
 	{
-		cout << "destroying StateMachineObj" << endl;
+		cout << "destroying StateMachineBase" << endl;
 
 		DestroyCurrentState();
 	}
 
-	void StateMachineObj::Init(iState* state)
+	void StateMachineBase::Init(iState* state)
 	{
 		if (state != nullptr)
 		{
@@ -24,17 +24,17 @@ namespace RB::States
 		}
 	}
 
-	void StateMachineObj::OnUpdate()
+	void StateMachineBase::OnUpdate()
 	{
 		_currentState->OnUpdate();
 	}
 
-	void StateMachineObj::OnFixedUpdate()
+	void StateMachineBase::OnFixedUpdate()
 	{
 		_currentState->OnFixedUpdate();
 	}
 
-	void StateMachineObj::QueueNextState(iState* state)
+	void StateMachineBase::QueueNextState(iState* state)
 	{
 		DestroyCurrentState();
 
@@ -46,7 +46,7 @@ namespace RB::States
 		_nextState = nullptr;
 	}
 
-	void StateMachineObj::DestroyCurrentState()
+	void StateMachineBase::DestroyCurrentState()
 	{
 		if (_currentState != nullptr)
 		{

@@ -11,7 +11,7 @@ namespace RB::States
 	{
 		cout << "destroying StateMachineBase" << endl;
 
-		DestroyCurrentState();
+		_DestroyCurrentState();
 	}
 
 	void StateMachineBase::Init(iState* state)
@@ -28,7 +28,7 @@ namespace RB::States
 	{
 		_currentState->OnUpdate();
 
-		MakeTransition();
+		_MakeTransition();
 	}
 
 	void StateMachineBase::OnFixedUpdate()
@@ -56,7 +56,7 @@ namespace RB::States
 		}
 	}
 
-	void StateMachineBase::DestroyCurrentState()
+	void StateMachineBase::_DestroyCurrentState()
 	{
 		if (_currentState != nullptr)
 		{
@@ -66,11 +66,11 @@ namespace RB::States
 		}
 	}
 
-	void StateMachineBase::MakeTransition()
+	void StateMachineBase::_MakeTransition()
 	{
 		if (_makeTransition)
 		{
-			DestroyCurrentState();
+			_DestroyCurrentState();
 
 			_currentState = _nextState;
 

@@ -17,12 +17,13 @@ namespace RB::States
 		virtual void OnUpdate() override;
 		virtual void OnFixedUpdate() override;
 		virtual void QueueNextState(iState* state) override;
-		virtual void DestroyCurrentState();
-		virtual void MakeTransition() override;
 
 	protected:
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
 		bool _makeTransition = false;
+
+		virtual void _DestroyCurrentState();
+		virtual void _MakeTransition() override;
 	};
 }

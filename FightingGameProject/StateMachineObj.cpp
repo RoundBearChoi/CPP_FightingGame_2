@@ -24,6 +24,16 @@ namespace RB::States
 		}
 	}
 
+	void StateMachineObj::OnUpdate()
+	{
+		_currentState->OnUpdate();
+	}
+
+	void StateMachineObj::OnFixedUpdate()
+	{
+		_currentState->OnFixedUpdate();
+	}
+
 	void StateMachineObj::QueueNextState(iState* state)
 	{
 		DestroyCurrentState();

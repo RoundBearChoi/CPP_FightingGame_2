@@ -27,10 +27,12 @@ namespace RB::Players
 	void Player::OnUpdate()
 	{
 		//cout << Time::GetDeltaTime() << endl;
+		_stateMachine->OnUpdate();
 	}
 
 	void Player::OnFixedUpdate()
 	{
+		_stateMachine->OnFixedUpdate();
 		//cout << Time::GetFixedDeltaTime() << endl;
 	}
 }

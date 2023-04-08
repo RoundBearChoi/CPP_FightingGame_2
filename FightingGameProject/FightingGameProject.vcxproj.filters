@@ -59,6 +59,9 @@
     <ClCompile Include="TestState2.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerTestState.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -119,6 +122,9 @@
       <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="iPlayer.h">
+      <Filter>Source Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTestState.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>
   </ItemGroup>

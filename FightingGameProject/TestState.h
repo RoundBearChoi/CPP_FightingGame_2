@@ -14,9 +14,9 @@ namespace RB::States
 	public:
 		~TestState() override;
 
-		virtual void OnEnter();
-		virtual void OnExit();
-		virtual void OnUpdate();
-		virtual void OnFixedUpdate();
+		virtual void OnEnter() override;
+		virtual void OnExit() override;
+		virtual void OnUpdate() override;
+		virtual void OnFixedUpdate() override;
 	};
 }

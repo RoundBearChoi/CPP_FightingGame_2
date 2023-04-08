@@ -147,6 +147,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerTestState.cpp" />
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
     <ClCompile Include="TestState.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="iPlayerController.h" />
     <ClInclude Include="iUpdaterObj.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
+    <ClInclude Include="PlayerTestState.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StateBase.h" />
     <ClInclude Include="StateMachineBase.h" />

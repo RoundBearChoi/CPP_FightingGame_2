@@ -7,6 +7,7 @@
 
 using namespace std;
 using namespace RB::Frames;
+using namespace RB::States;
 
 namespace RB::Players
 {
@@ -14,7 +15,7 @@ namespace RB::Players
 	{
 	private:
 		int _playerIndex = 0;
-		StateMachine::iStateMachine* _stateMachine = nullptr;
+		iStateMachine* _stateMachine = nullptr;
 
 	public:
 		Player();

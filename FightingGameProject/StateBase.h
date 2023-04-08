@@ -6,7 +6,7 @@
 using namespace std;
 
 
-namespace RB::StateMachine
+namespace RB::States
 {
 	class StateBase : public iState
 	{

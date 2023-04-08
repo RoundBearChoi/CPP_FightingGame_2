@@ -18,8 +18,8 @@ namespace RB::Players
 	{
 		_playerIndex = playerIndex;
 		
-		_stateMachine = new StateMachine::StateMachineObj();
-		_stateMachine->Init(new StateMachine::StateBase());
+		_stateMachine = new StateMachineObj();
+		_stateMachine->Init(new StateBase());
 
 		cout << "init player: " << playerIndex << endl;
 	}

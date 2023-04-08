@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace RB::StateMachine
+namespace RB::States
 {
 	class TestState : public StateBase
 	{

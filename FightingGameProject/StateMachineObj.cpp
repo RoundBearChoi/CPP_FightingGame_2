@@ -1,6 +1,6 @@
 #include "StateMachineObj.h"
 
-namespace RB::StateMachine
+namespace RB::States
 {
 	StateMachineObj::StateMachineObj()
 	{

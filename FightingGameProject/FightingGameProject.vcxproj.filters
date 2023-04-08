@@ -21,7 +21,7 @@
     <Filter Include="Source Files\Frames">
       <UniqueIdentifier>{d9d96746-3223-4370-9e2d-1dff39490507}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\StateMachine">
+    <Filter Include="Source Files\States">
       <UniqueIdentifier>{24bbd811-49a3-4158-954b-838e04e9748c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -48,13 +48,13 @@
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
     <ClCompile Include="StateBase.cpp">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="TestState.cpp">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="StateMachineObj.cpp">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,22 +95,22 @@
       <Filter>Source Files\Frames</Filter>
     </ClInclude>
     <ClInclude Include="iStateMachine.h">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="iState.h">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StateBase.h">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="TestState.h">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="StateMachineObj.h">
-      <Filter>Source Files\StateMachine</Filter>
+      <Filter>Source Files\States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@
 /// </summary>
 //class RB::StateMachine::iStateMachine;
 
-namespace RB::StateMachine
+namespace RB::States
 {
 	class iState
 	{

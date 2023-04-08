@@ -1,6 +1,6 @@
 #include "StateBase.h"
 
-namespace RB::StateMachine
+namespace RB::States
 {
 	StateBase::~StateBase()
 	{

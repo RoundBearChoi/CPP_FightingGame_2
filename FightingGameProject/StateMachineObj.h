@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace RB::StateMachine
+namespace RB::States
 {
 	class StateMachineObj : public iStateMachine
 	{

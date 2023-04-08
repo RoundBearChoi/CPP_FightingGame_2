@@ -1,6 +1,6 @@
 #include "TestState.h"
 
-namespace RB::StateMachine
+namespace RB::States
 {
 	TestState::~TestState()
 	{

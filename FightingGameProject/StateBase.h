@@ -1,7 +1,10 @@
 #pragma once
+#include <iostream>
 #include "iState.h"
 
 //class iStateMachine;
+
+using namespace std;
 
 namespace RB::StateMachine
 {
@@ -11,7 +14,7 @@ namespace RB::StateMachine
 		iStateMachine* _stateMachine;
 
 	public:
-		virtual ~StateBase() override {}
+		virtual ~StateBase() override;
 
 		//virtual void SetStateMachine(iStateMachine* stateMachine) override;
 		virtual void QueueNextState(iState* nextState) override;

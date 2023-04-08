@@ -13,14 +13,14 @@ namespace RB::States
 		iStateMachine* _stateMachine = nullptr;
 
 	public:
-		virtual ~StateBase() override;
+		virtual ~StateBase() {};
 
-		virtual void SetStateMachine(iStateMachine* stateMachine) override;
-		virtual void QueueNextState(iState* nextState) override;
+		virtual void SetStateMachine(iStateMachine* stateMachine);
+		virtual void QueueNextState(iState* nextState);
 
-		virtual void OnEnter() override {}
-		virtual void OnExit() override {}
-		virtual void OnUpdate() override {}
-		virtual void OnFixedUpdate() override {}
+		virtual void OnEnter() {}
+		virtual void OnExit() {}
+		virtual void OnUpdate() {}
+		virtual void OnFixedUpdate() {}
 	};
 }

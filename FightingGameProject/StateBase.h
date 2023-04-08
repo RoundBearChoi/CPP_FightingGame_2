@@ -9,12 +9,12 @@ namespace RB::States
 	class StateBase : public iState
 	{
 	protected:
-		//RB::StateMachine::iStateMachine* _stateMachine = nullptr;
+		iStateMachine* _stateMachine = nullptr;
 
 	public:
 		virtual ~StateBase() override;
 
-		//virtual void SetStateMachine(RB::StateMachine::iStateMachine* stateMachine) override {};
+		virtual void SetStateMachine(iStateMachine* stateMachine) override;
 		virtual void QueueNextState(iState* nextState) override;
 
 		virtual void OnEnter() override {}

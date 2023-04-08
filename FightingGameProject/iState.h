@@ -9,7 +9,7 @@ namespace RB::States
 	public:
 		virtual ~iState() {}
 
-		virtual void SetStateMachine(iStateMachine* stateMachine) {}
+		virtual void SetStateMachine(iStateMachine* stateMachine) = 0;
 		virtual void QueueNextState(iState* nextState) = 0;
 
 		virtual void OnEnter() = 0;

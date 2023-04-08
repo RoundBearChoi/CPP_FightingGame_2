@@ -79,7 +79,7 @@
     <ClInclude Include="Time.h">
       <Filter>Source Files\Frames</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
+    <ClInclude Include="FixedTimer.h">
       <Filter>Source Files\Frames</Filter>
     </ClInclude>
   </ItemGroup>

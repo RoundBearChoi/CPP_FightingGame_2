@@ -4,7 +4,7 @@
 
 namespace RB::Frames
 {
-	class Timer
+	class FixedTimer
 	{
 	private:
 		float _targetInterval = 1.0f / 60.0f;

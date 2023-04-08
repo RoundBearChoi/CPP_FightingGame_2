@@ -2,8 +2,8 @@
 #define OLC_PGE_APPLICATION 0
 #include "olcPixelGameEngine.h"
 #include "Updater.h"
-#include "Timer.h"
 #include "Time.h"
+#include "FixedTimer.h"
 #include "ControllerGroup.h"
 
 using namespace RB::Controllers;
@@ -15,7 +15,7 @@ namespace RB::Engine
 	{
 	private:
 		Updater _updater;
-		Timer _timer;
+		FixedTimer _timer;
 
 	public:
 		bool OnUserCreate() override

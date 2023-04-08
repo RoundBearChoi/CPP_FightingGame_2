@@ -3,7 +3,7 @@
 #include "olcPixelGameEngine.h"
 #include "Updater.h"
 #include "Timer.h"
-#include "Time.h";
+#include "Time.h"
 #include "ControllerGroup.h"
 
 using namespace RB::Controllers;
@@ -41,15 +41,13 @@ namespace RB::Engine
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			olc::Pixel grayBackground(20, 20, 20);
-
-			Clear(grayBackground);
-
 			Time::SetDeltaTime(fElapsedTime);
+			olc::Pixel grayBackground(20, 20, 20);
+			Clear(grayBackground);
 
 			_updater.OnUpdate();
 
-			if (_timer.UpdateTime(fElapsedTime))
+			if (_timer.DoFixedUpdate())
 			{
 				_updater.OnFixedUpdate();
 			}

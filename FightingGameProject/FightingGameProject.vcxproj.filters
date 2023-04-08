@@ -18,6 +18,9 @@
     <Filter Include="Source Files\Players">
       <UniqueIdentifier>{d6fdfd79-ce43-4788-916d-494aa3a16e67}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Frames">
+      <UniqueIdentifier>{d9d96746-3223-4370-9e2d-1dff39490507}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -58,9 +61,6 @@
     <ClInclude Include="TestUpdater.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
     <ClInclude Include="ControllerGroup.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
@@ -77,7 +77,10 @@
       <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
-      <Filter>Source Files\Engine</Filter>
+      <Filter>Source Files\Frames</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Source Files\Frames</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,8 @@
 #pragma once
 #include <cstdint>
+#include "Time.h"
 
-namespace RB::Engine
+namespace RB::Frames
 {
 	class Timer
 	{
@@ -15,16 +16,13 @@ namespace RB::Engine
 		int32_t _fixedUpdateCountPerSec = 0;
 
 	public:
-		void FixedUpdate()
-		{
-
-		}
-
-		bool UpdateTime(float fElapsedTime)
+		bool DoFixedUpdate()
 		{
 			ShowFixedUpdateCount();
 
-			_accumulatedTime += fElapsedTime;
+			float elapsed = Time::GetDeltaTime();
+
+			_accumulatedTime += elapsed;
 
 			if (_fullSecondCount >= 1.0f)
 			{
@@ -34,7 +32,7 @@ namespace RB::Engine
 			}
 			else
 			{
-				_fullSecondCount += fElapsedTime;
+				_fullSecondCount += elapsed;
 			}
 
 			if (_accumulatedTime >= _targetInterval)

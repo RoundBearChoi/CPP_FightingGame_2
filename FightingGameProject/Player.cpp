@@ -14,6 +14,16 @@ namespace RB::Players
 		delete _stateMachine;
 	}
 
+	vf2d Player::GetPosition()
+	{
+		return _position;
+	}
+
+	void Player::Move(vf2d moveAmount)
+	{
+		_position += moveAmount;
+	}
+
 	void Player::Init(int playerIndex)
 	{
 		_playerIndex = playerIndex;
@@ -32,15 +42,5 @@ namespace RB::Players
 	void Player::OnFixedUpdate()
 	{
 		_stateMachine->OnFixedUpdate();
-	}
-
-	vf2d Player::GetPosition()
-	{
-		return _position;
-	}
-
-	void Player::Move(vf2d moveAmount)
-	{
-		_position += moveAmount;
 	}
 }

@@ -158,6 +158,7 @@
   <ItemGroup>
     <ClInclude Include="iController.h" />
     <ClInclude Include="ControllerGroup.h" />
+    <ClInclude Include="iPlayer.h" />
     <ClInclude Include="iState.h" />
     <ClInclude Include="iStateMachine.h" />
     <ClInclude Include="Player.h" />

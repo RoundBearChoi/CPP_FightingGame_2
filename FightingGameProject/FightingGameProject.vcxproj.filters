@@ -118,6 +118,9 @@
     <ClInclude Include="TestState2.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
+    <ClInclude Include="iPlayer.h">
+      <Filter>Source Files\Players</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FightingGameProject.rc" />

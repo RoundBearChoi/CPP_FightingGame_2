@@ -5,6 +5,7 @@
 #include "iStateMachine.h"
 #include "StateMachineBase.h"
 #include "TestState.h"
+#include "iPlayer.h"
 
 using namespace std;
 using namespace olc;
@@ -13,17 +14,18 @@ using namespace RB::States;
 
 namespace RB::Players
 {
-	class Player
+	class Player : public iPlayer
 	{
 	public:
 		Player();
-		~Player();
+		~Player() override;
+
+		vf2d GetPosition() override;
+		void Move(vf2d moveAmount) override;
 
 		void Init(int playerIndex);
 		void OnUpdate();
 		void OnFixedUpdate();
-		vf2d GetPosition();
-		void Move(vf2d moveAmount);
 
 	private:
 		int _playerIndex = 0;

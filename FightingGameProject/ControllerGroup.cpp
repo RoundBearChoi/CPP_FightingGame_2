@@ -2,10 +2,8 @@
 
 namespace RB::Controllers
 {
-	/// <summary>
-	/// Need to place the definition in the implementation (.cpp) file.
-	/// </summary>
-	std::vector<iController*> ControllerGroup::_vecControllers;
+	// Need to place the definition in the implementation (.cpp) file
+	vector<iController*> ControllerGroup::_vecControllers;
 
 	void ControllerGroup::Init()
 	{

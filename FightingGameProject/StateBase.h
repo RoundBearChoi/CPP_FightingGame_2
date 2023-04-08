@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "iState.h"
+#include "iStateMachine.h"
 
 using namespace std;
 

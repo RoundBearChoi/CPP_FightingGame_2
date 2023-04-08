@@ -14,6 +14,6 @@ namespace RB::States
 	
 	void StateBase::QueueNextState(iState* nextState)
 	{
-		//_stateMachine->QueueNextState(nextState);
+		_stateMachine->QueueNextState(nextState);
 	}
 }

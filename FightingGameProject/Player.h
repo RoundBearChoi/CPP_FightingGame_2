@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
+#include "Time.h"
 
 using namespace std;
+using namespace RB::Frames;
 
 namespace RB::Players
 {

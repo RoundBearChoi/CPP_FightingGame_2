@@ -47,9 +47,13 @@ namespace RB::Engine
 
 			_updater.OnUpdate();
 
+			Time::AddFixedDeltaTime();
+
 			if (_timer.DoFixedUpdate())
 			{
 				_updater.OnFixedUpdate();
+
+				Time::ClearFixedDeltaTime();
 			}
 
 			return true;

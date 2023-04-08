@@ -26,6 +26,6 @@ namespace RB::Players
 
 	void Player::OnFixedUpdate()
 	{
-
+		//cout << Time::GetFixedDeltaTime() << endl;
 	}
 }

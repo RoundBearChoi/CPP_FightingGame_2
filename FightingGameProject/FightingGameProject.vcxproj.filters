@@ -38,6 +38,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -72,6 +75,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Source Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Source Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

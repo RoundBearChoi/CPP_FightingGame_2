@@ -1,4 +1,7 @@
 #include "Player.h"
+#include "Time.h"
+
+using namespace RB::Frames;
 
 namespace RB::Players
 {
@@ -21,7 +24,7 @@ namespace RB::Players
 
 	void Player::OnUpdate()
 	{
-
+		cout << Time::GetDeltaTime() << endl;
 	}
 
 	void Player::OnFixedUpdate()

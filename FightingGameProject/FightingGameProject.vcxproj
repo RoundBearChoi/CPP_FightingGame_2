@@ -148,6 +148,7 @@
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
+    <ClCompile Include="Time.cpp" />
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="iUpdaterObj.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="TestUpdater.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Updater.h" />
   </ItemGroup>

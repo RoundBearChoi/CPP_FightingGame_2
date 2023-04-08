@@ -3,9 +3,11 @@
 #include "olcPixelGameEngine.h"
 #include "Updater.h"
 #include "Timer.h"
+#include "Time.h";
 #include "ControllerGroup.h"
 
 using namespace RB::Controllers;
+using namespace RB::Frames;
 
 namespace RB::Engine
 {
@@ -42,6 +44,8 @@ namespace RB::Engine
 			olc::Pixel grayBackground(20, 20, 20);
 
 			Clear(grayBackground);
+
+			Time::SetDeltaTime(fElapsedTime);
 
 			_updater.OnUpdate();
 

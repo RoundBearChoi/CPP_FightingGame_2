@@ -33,4 +33,14 @@ namespace RB::Players
 	{
 		_stateMachine->OnFixedUpdate();
 	}
+
+	vf2d Player::GetPosition()
+	{
+		return _position;
+	}
+
+	void Player::Move(vf2d moveAmount)
+	{
+		_position += moveAmount;
+	}
 }

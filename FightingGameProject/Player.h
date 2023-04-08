@@ -5,13 +5,11 @@
 #include "iStateMachine.h"
 #include "iPlayer.h"
 #include "StateMachineBase.h"
-#include "TestState.h"
 #include "PlayerTestState.h"
 
 using namespace std;
 using namespace olc;
 using namespace RB::Frames;
-using namespace RB::States;
 
 namespace RB::Players
 {

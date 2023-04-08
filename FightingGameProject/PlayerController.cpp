@@ -30,8 +30,17 @@ namespace RB::Players
 		_player2.OnFixedUpdate();
 	}
 
-	iPlayer* PlayerController::GetPlayerOnPlayerID(int ID)
+	iPlayer* PlayerController::GetPlayerOnPlayerIndex(int index)
 	{
+		if (_player1.GetIndex() == index)
+		{
+			return &_player1;
+		}
+		else if (_player2.GetIndex() == index)
+		{
+			return &_player2;
+		}
+
 		return nullptr;
 	}
 }

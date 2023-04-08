@@ -21,6 +21,7 @@ namespace RB::Players
 		~Player() override;
 
 		vf2d GetPosition() override;
+		int GetIndex() override;
 		void Move(vf2d moveAmount) override;
 
 		void Init(int playerIndex);

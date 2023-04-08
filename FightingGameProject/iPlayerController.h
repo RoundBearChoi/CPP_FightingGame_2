@@ -9,6 +9,6 @@ namespace RB::Players
 	class iPlayerController : public iController
 	{
 	public:
-		virtual iPlayer* GetPlayerOnPlayerID(int ID) = 0;
+		virtual iPlayer* GetPlayerOnPlayerIndex(int index) = 0;
 	};
 }

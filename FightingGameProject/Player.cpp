@@ -19,6 +19,11 @@ namespace RB::Players
 		return _position;
 	}
 
+	int Player::GetIndex()
+	{
+		return _playerIndex;
+	}
+
 	void Player::Move(vf2d moveAmount)
 	{
 		_position += moveAmount;

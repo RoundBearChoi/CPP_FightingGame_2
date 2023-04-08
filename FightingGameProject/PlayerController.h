@@ -22,6 +22,6 @@ namespace RB::Players
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		iPlayer* GetPlayerOnPlayerID(int ID) override;
+		iPlayer* GetPlayerOnPlayerIndex(int index) override;
 	};
 }

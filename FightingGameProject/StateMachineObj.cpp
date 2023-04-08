@@ -2,8 +2,15 @@
 
 namespace RB::StateMachine
 {
+	StateMachineObj::StateMachineObj()
+	{
+		cout << "constructing StateMachineObj" << endl;
+	}
+
 	StateMachineObj::~StateMachineObj()
 	{
+		cout << "destroying StateMachineObj" << endl;
+
 		DestroyCurrentState();
 	}
 

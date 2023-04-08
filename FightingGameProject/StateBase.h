@@ -10,6 +10,8 @@ namespace RB::StateMachine
 		iStateMachine* _stateMachine;
 
 	public:
+		virtual ~StateBase() {}
+
 		virtual void SetStateMachine(iStateMachine* stateMachine);
 		virtual void OnEnter() = 0;
 		virtual void OnUpdate() = 0;

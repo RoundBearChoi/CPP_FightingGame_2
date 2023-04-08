@@ -1,8 +1,10 @@
 #pragma once
 #include <iostream>
 #include "StateBase.h"
+#include "Time.h"
 
 using namespace std;
+using namespace RB::Frames;
 
 namespace RB::States
 {
@@ -11,8 +13,8 @@ namespace RB::States
 	public:
 		~TestState() override;
 
-		//virtual void OnEnter();
-		//virtual void OnExit();
+		virtual void OnEnter();
+		virtual void OnExit();
 		//virtual void OnUpdate();
 		//virtual void OnFixedUpdate();
 	};

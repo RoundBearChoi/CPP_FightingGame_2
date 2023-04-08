@@ -7,21 +7,21 @@ namespace RB::States
 		cout << "destroying TestState" << endl;
 	}
 
-	//void TestState::OnEnter()
-	//{
-	//
-	//}
-	//
-	//void TestState::OnExit()
-	//{
-	//
-	//}
-	//
+	void TestState::OnEnter()
+	{
+		//cout << "entering TestState" << endl;
+	}
+	
+	void TestState::OnExit()
+	{
+		//cout << "exiting TestState" << endl;
+	}
+	
 	//void TestState::OnUpdate()
 	//{
-	//
+	//	//cout << Time::GetDeltaTime() << endl;
 	//}
-	//
+	
 	//void TestState::OnFixedUpdate()
 	//{
 	//

@@ -8,22 +8,22 @@ namespace RB::Updaters
 	public:
 		void SetTargetObj(T* targetObj)
 		{
-			myObject = targetObj;
+			_targetObj = targetObj;
 		}
 
-		void SetTargetFunction(void (T::*func)())
+		void SetTargetFunction(void (T::*targetFunction)())
 		{
-			Func = func;
+			_targetFunction = targetFunction;
 		}
 
 		void CallTargetFunction()
 		{
-			(myObject->*Func)();
+			(_targetObj->*_targetFunction)();
 		}
 
 	private:
 		int _skipFrames = 0;
-		T* myObject = nullptr;
-		void (T::*Func)() = nullptr;
+		T* _targetObj = nullptr;
+		void (T::* _targetFunction)() = nullptr;
 	};
 }

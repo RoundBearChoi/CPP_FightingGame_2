@@ -2,11 +2,9 @@
 #include "iController.h"
 #include "iPlayer.h"
 
-using namespace RB::Controllers;
-
 namespace RB::Players
 {
-	class iPlayerController : public iController
+	class iPlayerController : public RB::Controllers::iController
 	{
 	public:
 		virtual iPlayer* GetPlayerOnPlayerIndex(int index) = 0;

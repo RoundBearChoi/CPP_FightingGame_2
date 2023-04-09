@@ -23,7 +23,7 @@ namespace RB::Engine
 		
 			_updater.Init();
 
-			ControllerGroup::Init();
+			RB::Controllers::ControllerGroup::Init();
 			RB::Frames::Time::ClearFixedDeltaTime();
 
 			return true;
@@ -34,7 +34,7 @@ namespace RB::Engine
 			cout << endl;
 			cout << "destroying Game" << endl;
 
-			ControllerGroup::OnEnd();
+			RB::Controllers::ControllerGroup::OnEnd();
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override

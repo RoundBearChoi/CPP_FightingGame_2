@@ -14,15 +14,15 @@ namespace RB::Updaters
 
 	void TestUpdater::Init()
 	{
-		ControllerGroup::AddController((iController*)(new RB::Players::PlayerController()));
-		ControllerGroup::AddController((iController*)(new RB::PlayerDebug::PlayerDebugController()));
+		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
+		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
 
-		GameplayControllers::FindAll();
+		RB::Controllers::GameplayControllers::FindAll();
 	}
 
 	void TestUpdater::OnUpdate()
 	{
-		ControllerGroup::UpdateAll();
+		RB::Controllers::ControllerGroup::UpdateAll();
 
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 400, 10, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 300, olc::YELLOW);
@@ -32,6 +32,6 @@ namespace RB::Updaters
 
 	void TestUpdater::OnFixedUpdate()
 	{
-		ControllerGroup::FixedUpdateAll();
+		RB::Controllers::ControllerGroup::FixedUpdateAll();
 	}
 }

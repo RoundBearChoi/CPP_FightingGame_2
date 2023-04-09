@@ -6,6 +6,7 @@ namespace RB::Updaters
 	class SkipFrameUpdater
 	{
 	public:
+		void SetTargetObj(T* targetObj);
 		void SetMemberFunction(void (T::*func)());
 
 		void callMemberFunction()
@@ -18,6 +19,12 @@ namespace RB::Updaters
 		T* myObject = nullptr;
 		void (T::* Func)() = nullptr;
 	};
+
+	template<typename T>
+	inline void SkipFrameUpdater<T>::SetTargetObj(T* targetObj)
+	{
+		myObject = targetObj;
+	}
 
 	template<typename T>
 	inline void SkipFrameUpdater<T>::SetMemberFunction(void(T::* func)())

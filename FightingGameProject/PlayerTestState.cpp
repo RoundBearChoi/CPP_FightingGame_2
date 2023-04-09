@@ -4,18 +4,22 @@ namespace RB::Players
 {
 	PlayerTestState::PlayerTestState()
 	{
-		Updaters::SkipFrameUpdater<PlayerTestState>* sssss = new Updaters::SkipFrameUpdater<PlayerTestState>();
-		
-		sssss->SetMemberFunction(&PlayerTestState::SomeFunc);
 
-		sssss->callMemberFunction();
-
-		delete sssss;
 	}
 
 	PlayerTestState::~PlayerTestState()
 	{
 
+	}
+
+	void PlayerTestState::OnEnter()
+	{
+		Updaters::SkipFrameUpdater<PlayerTestState>* testtest = new Updaters::SkipFrameUpdater<PlayerTestState>();
+		testtest->SetTargetObj(this);
+		testtest->SetMemberFunction(&PlayerTestState::SomeFunc);
+		testtest->callMemberFunction();
+
+		delete testtest;
 	}
 
 	void PlayerTestState::OnFixedUpdate()
@@ -28,5 +32,6 @@ namespace RB::Players
 	void PlayerTestState::SomeFunc()
 	{
 		std::cout << "calling some delegated func..." << std::endl;
+		std::cout << "state machine id: " << _stateMachine->GetID() << std::endl;
 	}
 }

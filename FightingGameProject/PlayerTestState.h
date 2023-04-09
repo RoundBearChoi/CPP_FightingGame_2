@@ -13,6 +13,7 @@ namespace RB::Players
 		PlayerTestState();
 		~PlayerTestState() override;
 
+		void OnEnter() override;
 		void OnFixedUpdate() override;
 
 		void SomeFunc();

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace RB::Engine
+namespace RB::Updaters
 {
 	class iUpdaterObj
 	{

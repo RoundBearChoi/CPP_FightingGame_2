@@ -85,9 +85,6 @@
     <ClInclude Include="Updater.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="iUpdaterObj.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
     <ClInclude Include="ControllerGroup.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
@@ -150,6 +147,9 @@
     </ClInclude>
     <ClInclude Include="StateMachineID.h">
       <Filter>Source Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="iUpdaterObj.h">
+      <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

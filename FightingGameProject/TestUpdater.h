@@ -10,7 +10,7 @@
 
 namespace RB::Updaters
 {
-	class TestUpdater : public RB::Engine::iUpdaterObj
+	class TestUpdater : public iUpdaterObj
 	{
 	public:
 		TestUpdater();

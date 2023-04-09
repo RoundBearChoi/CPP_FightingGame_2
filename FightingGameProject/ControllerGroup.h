@@ -17,7 +17,6 @@ namespace RB::Controllers
 		static void AddController(iController* newController);
 		static void UpdateAll();
 		static void FixedUpdateAll();
-
 		template <typename T> static T* FindController();
 
 	private:

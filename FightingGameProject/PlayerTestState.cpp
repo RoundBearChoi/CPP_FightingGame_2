@@ -9,8 +9,8 @@ namespace RB::Players
 
 	void PlayerTestState::OnFixedUpdate()
 	{
-		//iPlayer* player = GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
+		iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
-		//iPlayer* player = nullptr;
+		//std::cout << "player id fixed update: " << player->GetPlayerIndex() << std::endl;
 	}
 }

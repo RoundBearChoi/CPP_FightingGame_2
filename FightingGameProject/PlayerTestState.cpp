@@ -11,6 +11,6 @@ namespace RB::Players
 	{
 		iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
-		//std::cout << "player id fixed update: " << player->GetPlayerIndex() << std::endl;
+		player->Move(olc::vi2d{ 1, 1 });
 	}
 }

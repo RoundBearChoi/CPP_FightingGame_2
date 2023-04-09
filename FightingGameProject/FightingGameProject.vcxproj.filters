@@ -127,6 +127,9 @@
     <ClInclude Include="PlayerTestState.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>
+    <ClInclude Include="GameplayControllers.h">
+      <Filter>Source Files\Controllers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FightingGameProject.rc" />

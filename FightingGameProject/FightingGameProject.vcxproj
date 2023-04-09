@@ -157,6 +157,7 @@
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameplayControllers.h" />
     <ClInclude Include="iController.h" />
     <ClInclude Include="ControllerGroup.h" />
     <ClInclude Include="iPlayer.h" />

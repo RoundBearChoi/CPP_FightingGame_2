@@ -1,5 +1,7 @@
 #include "ControllerGroup.h"
 
+
+
 namespace RB::Controllers
 {
 	// Need to place the definition in the implementation (.cpp) file
@@ -41,6 +43,11 @@ namespace RB::Controllers
 		{
 			_vecControllers[i]->OnFixedUpdate();
 		}
+	}
+
+	template <typename T> static T* ControllerGroup::FindController()
+	{
+		return nullptr;
 	}
 
 	void ControllerGroup::_DestroyAll()

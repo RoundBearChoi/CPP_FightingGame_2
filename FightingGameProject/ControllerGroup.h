@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+
 namespace RB::Controllers
 {
 	class ControllerGroup
@@ -15,6 +17,8 @@ namespace RB::Controllers
 		static void AddController(iController* newController);
 		static void UpdateAll();
 		static void FixedUpdateAll();
+
+		template <typename T> static T* FindController();
 
 	private:
 		static vector<iController*> _vecControllers;

@@ -3,8 +3,6 @@
 #include <vector>
 #include "iController.h"
 
-using namespace std;
-
 namespace RB::Controllers
 {
 	class ControllerGroup
@@ -18,7 +16,7 @@ namespace RB::Controllers
 		template <class T> static T* FindController();
 
 	private:
-		inline static vector<iController*> _vecControllers;
+		inline static std::vector<iController*> _vecControllers;
 
 		static void _DestroyAll();
 	};

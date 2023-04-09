@@ -6,16 +6,13 @@
 #include "FixedTimer.h"
 #include "ControllerGroup.h"
 
-using namespace RB::Controllers;
-using namespace RB::Frames;
-
 namespace RB::Engine
 {
 	class Game : public olc::PixelGameEngine
 	{
 	private:
 		Updater _updater;
-		FixedTimer _timer;
+		RB::Frames::FixedTimer _timer;
 
 	public:
 		bool OnUserCreate() override
@@ -27,7 +24,7 @@ namespace RB::Engine
 			_updater.Init();
 
 			ControllerGroup::Init();
-			Time::ClearFixedDeltaTime();
+			RB::Frames::Time::ClearFixedDeltaTime();
 
 			return true;
 		}
@@ -42,8 +39,8 @@ namespace RB::Engine
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			Time::SetDeltaTime(fElapsedTime);
-			Time::AddFixedDeltaTime();
+			RB::Frames::Time::SetDeltaTime(fElapsedTime);
+			RB::Frames::Time::AddFixedDeltaTime();
 
 			olc::Pixel grayBackground(20, 20, 20);
 			Clear(grayBackground);
@@ -54,7 +51,7 @@ namespace RB::Engine
 			{
 				_updater.OnFixedUpdate();
 
-				Time::ClearFixedDeltaTime();
+				RB::Frames::Time::ClearFixedDeltaTime();
 			}
 
 			return true;

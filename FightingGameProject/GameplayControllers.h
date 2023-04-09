@@ -1,7 +1,10 @@
 #pragma once
+#include "iPlayerController.h"
 #include "iPlayer.h"
+#include "iPlayerDebugController.h"
 
 using namespace RB::Players;
+using namespace RB::PlayerDebug;
 
 namespace RB::Controllers
 {
@@ -9,6 +12,7 @@ namespace RB::Controllers
 	{
 	public:
 		inline static iPlayerController* PLAYER_CONTROLLER = nullptr;
+		inline static iPlayerDebugController* PLAYER_DEBUG_CONTROLLER = nullptr;
 
 		static void FindAll()
 		{

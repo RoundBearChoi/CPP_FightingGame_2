@@ -17,6 +17,7 @@ namespace RB::Controllers
 		static void FindAll()
 		{
 			PLAYER_CONTROLLER = ControllerGroup::FindController<iPlayerController>();
+			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<iPlayerDebugController>();
 
 			iPlayer* p1 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(1);
 			iPlayer* p2 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(2);

@@ -1,6 +1,5 @@
 #pragma once
 #include "iPlayerController.h"
-#include "iPlayer.h"
 #include "iPlayerDebugController.h"
 #include "ControllerGroup.h"
 

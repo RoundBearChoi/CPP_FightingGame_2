@@ -2,9 +2,14 @@
 
 namespace RB::Players
 {
+	PlayerTestState::PlayerTestState()
+	{
+		//_updater = new RB::Updaters::SkipFrameUpdater(1, &SomeFunc);
+	}
+
 	PlayerTestState::~PlayerTestState()
 	{
-
+		delete _updater;
 	}
 
 	void PlayerTestState::OnFixedUpdate()
@@ -14,8 +19,8 @@ namespace RB::Players
 		player->Move(olc::vi2d{ 1, 1 });
 	}
 
-	//void PlayerTestState::_SomeFunc()
-	//{
-	//
-	//}
+	void PlayerTestState::SomeFunc()
+	{
+	
+	}
 }

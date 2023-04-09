@@ -10,12 +10,13 @@ namespace RB::Players
 	class PlayerTestState : public RB::States::StateBase
 	{
 	public:
+		PlayerTestState();
 		~PlayerTestState() override;
 
 		void OnFixedUpdate() override;
+		void SomeFunc();
 
 	private:
-		//RB::Updaters::SkipFrameUpdater _updater;
-		//void _SomeFunc();
+		RB::Updaters::SkipFrameUpdater* _updater = nullptr;
 	};
 }

@@ -12,6 +12,6 @@ namespace RB::Updaters
 
 	private:
 		int _skipFrames = 0;
-		void (*functionPointer)() = nullptr;
+		void (*sdfdsfdsfdsfsdfvv)();
 	};
 }

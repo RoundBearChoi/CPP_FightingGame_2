@@ -5,7 +5,8 @@ namespace RB::Players
 	PlayerTestState::PlayerTestState()
 	{
 		Updaters::SkipFrameUpdater<PlayerTestState>* sssss = new Updaters::SkipFrameUpdater<PlayerTestState>();
-		sssss->Func = &PlayerTestState::SomeFunc;
+		
+		sssss->SetMemberFunction(&PlayerTestState::SomeFunc);
 
 		sssss->callMemberFunction();
 

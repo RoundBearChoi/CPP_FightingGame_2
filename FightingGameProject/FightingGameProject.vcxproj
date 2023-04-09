@@ -149,6 +149,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerDebugController.cpp" />
     <ClCompile Include="PlayerTestState.cpp" />
+    <ClCompile Include="SkipFrameUpdater.cpp" />
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
     <ClCompile Include="StateMachineID.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="PlayerDebugController.h" />
     <ClInclude Include="PlayerTestState.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SkipFrameUpdater.h" />
     <ClInclude Include="StateBase.h" />
     <ClInclude Include="StateMachineBase.h" />
     <ClInclude Include="StateMachineID.h" />

@@ -3,6 +3,7 @@
 #include "StateBase.h"
 #include "GameplayControllers.h"
 #include "iPlayer.h"
+#include "SkipFrameUpdater.h"
 
 namespace RB::Players
 {
@@ -12,5 +13,9 @@ namespace RB::Players
 		~PlayerTestState() override;
 
 		void OnFixedUpdate() override;
+
+	private:
+		//RB::Updaters::SkipFrameUpdater _updater;
+		//void _SomeFunc();
 	};
 }

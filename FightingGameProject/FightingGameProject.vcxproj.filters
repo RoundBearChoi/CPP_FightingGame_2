@@ -74,6 +74,9 @@
     <ClCompile Include="Updater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
+    <ClCompile Include="SkipFrameUpdater.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -149,6 +152,9 @@
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="Updater.h">
+      <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="SkipFrameUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>

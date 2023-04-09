@@ -4,8 +4,7 @@ namespace RB::Players
 {
 	PlayerTestState::PlayerTestState()
 	{
-		void (PlayerTestState:: * dfdfdfdf)() = &PlayerTestState::SomeFunc;
-		//_updater = new RB::Updaters::SkipFrameUpdater(1, &SomeFunc));
+		void (PlayerTestState::*dfdfdfdf)() = &PlayerTestState::SomeFunc;
 	}
 
 	PlayerTestState::~PlayerTestState()
@@ -18,10 +17,5 @@ namespace RB::Players
 		iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
 		player->Move(olc::vi2d{ 1, 1 });
-	}
-
-	void PlayerTestState::SomeFunc()
-	{
-
 	}
 }

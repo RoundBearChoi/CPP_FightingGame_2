@@ -4,7 +4,12 @@ namespace RB::Players
 {
 	PlayerTestState::PlayerTestState()
 	{
+		Updaters::SkipFrameUpdater<PlayerTestState>* sssss = new Updaters::SkipFrameUpdater<PlayerTestState>();
+		sssss->Func = &PlayerTestState::SomeFunc;
 
+		sssss->callMemberFunction();
+
+		delete sssss;
 	}
 
 	PlayerTestState::~PlayerTestState()
@@ -21,6 +26,6 @@ namespace RB::Players
 
 	void PlayerTestState::SomeFunc()
 	{
-
+		std::cout << "calling some delegated func..." << std::endl;
 	}
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include "iPlayerController.h"
 
 using namespace RB::Players;
 
@@ -12,7 +11,7 @@ namespace RB::Controllers
 
 		static void FindAll()
 		{
-			//iPlayerController* pp = ControllerGroup::FindController<iPlayerController>();
+			//PLAYER_CONTROLLER = ControllerGroup::FindController<iPlayerController>();
 		}
 	};
 }

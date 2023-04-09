@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include "iUpdaterObj.h"
+#include "TestUpdater.h"
+
+using namespace RB::Updaters;
 
 namespace RB::Engine
 {

@@ -27,15 +27,15 @@
     <Filter Include="Source Files\PlayerDebug">
       <UniqueIdentifier>{098c133e-1038-4493-8797-bcbeb252a740}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Updaters">
+      <UniqueIdentifier>{168f9cf3-a809-4fa0-9c97-2eae554d7b92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Updater.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="TestUpdater.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
     <ClCompile Include="ControllerGroup.cpp">
@@ -68,6 +68,9 @@
     <ClCompile Include="PlayerDebugController.cpp">
       <Filter>Source Files\PlayerDebug</Filter>
     </ClCompile>
+    <ClCompile Include="TestUpdater.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -80,9 +83,6 @@
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="iUpdaterObj.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="TestUpdater.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="ControllerGroup.h">
@@ -141,6 +141,9 @@
     </ClInclude>
     <ClInclude Include="PlayerDebugController.h">
       <Filter>Source Files\PlayerDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="TestUpdater.h">
+      <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

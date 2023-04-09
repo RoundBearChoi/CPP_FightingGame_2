@@ -1,6 +1,6 @@
 #include "TestUpdater.h"
 
-namespace RB::Engine
+namespace RB::Updaters
 {
 	TestUpdater::TestUpdater()
 	{

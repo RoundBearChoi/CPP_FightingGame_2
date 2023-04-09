@@ -6,7 +6,6 @@
 
 using namespace RB::Players;
 using namespace RB::PlayerDebug;
-using namespace RB::Controllers;
 
 namespace RB::Controllers
 {

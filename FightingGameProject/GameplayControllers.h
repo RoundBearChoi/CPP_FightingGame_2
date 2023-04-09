@@ -8,13 +8,15 @@ namespace RB::Controllers
 	class GameplayControllers
 	{
 	public:
+		inline static iPlayerController* PLAYER_CONTROLLER;
+
 		static void FindAll()
 		{
-			iPlayerController* pp = ControllerGroup::FindController<iPlayerController>();
+			PLAYER_CONTROLLER = ControllerGroup::FindController<iPlayerController>();
 
-			iPlayer* p1 = pp->GetPlayerOnPlayerIndex(1);
-			iPlayer* p2 = pp->GetPlayerOnPlayerIndex(2);
-			iPlayer* p3 = pp->GetPlayerOnPlayerIndex(3);
+			iPlayer* p1 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(1);
+			iPlayer* p2 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(2);
+			iPlayer* p3 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(3);
 		}
 	};
 }

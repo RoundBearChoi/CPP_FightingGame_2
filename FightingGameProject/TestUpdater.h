@@ -4,6 +4,7 @@
 #include "iUpdaterObj.h"
 #include "ControllerGroup.h"
 #include "PlayerController.h"
+#include "GameplayControllers.h"
 
 using namespace std;
 using namespace RB::Controllers;

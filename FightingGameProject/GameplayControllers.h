@@ -2,6 +2,7 @@
 #include "iPlayerController.h"
 
 using namespace RB::Players;
+using namespace RB::Controllers;
 
 namespace RB::Controllers
 {
@@ -12,7 +13,7 @@ namespace RB::Controllers
 
 		static void FindAll()
 		{
-
+			//iPlayerController* pp = ControllerGroup::FindController<iPlayerController>();
 		}
 	};
 }

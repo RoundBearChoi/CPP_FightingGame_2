@@ -1,7 +1,5 @@
 #include "ControllerGroup.h"
 
-
-
 namespace RB::Controllers
 {
 	// Need to place the definition in the implementation (.cpp) file
@@ -47,6 +45,14 @@ namespace RB::Controllers
 
 	template <typename T> static T* ControllerGroup::FindController()
 	{
+		for (int i = 0; i < _vecControllers.size(); i++)
+		{
+			if (is_assignable<T, _vecControllers[i]>::value)
+			{
+				return &_vecControllers[i];
+			}
+		}
+
 		return nullptr;
 	}
 

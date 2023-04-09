@@ -15,6 +15,8 @@ namespace RB::Engine
 	void TestUpdater::Init()
 	{
 		ControllerGroup::AddController((iController*)(new PlayerController()));
+
+		GameplayControllers::FindAll();
 	}
 
 	void TestUpdater::OnUpdate()

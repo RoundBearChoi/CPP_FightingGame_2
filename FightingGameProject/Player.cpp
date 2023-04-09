@@ -41,9 +41,14 @@ namespace RB::Players
 		return _position;
 	}
 
-	int Player::GetIndex()
+	int Player::GetPlayerIndex()
 	{
 		return _playerIndex;
+	}
+
+	int Player::GetStateMachineID()
+	{
+		return _stateMachine->GetID();
 	}
 
 	void Player::Move(vi2d moveAmount)

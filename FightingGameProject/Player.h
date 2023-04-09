@@ -27,7 +27,8 @@ namespace RB::Players
 
 	public:
 		vi2d GetPosition() override;
-		int GetIndex() override;
+		int GetPlayerIndex() override;
+		int GetStateMachineID() override;
 		void Move(vi2d moveAmount) override;
 
 	private:

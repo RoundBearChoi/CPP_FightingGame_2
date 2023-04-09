@@ -10,5 +10,6 @@ namespace RB::Players
 	{
 	public:
 		virtual iPlayer* GetPlayerOnPlayerIndex(int index) = 0;
+		virtual iPlayer* GetPlayerOnStateMachineID(int ID) = 0;
 	};
 }

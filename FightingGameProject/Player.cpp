@@ -9,7 +9,7 @@ namespace RB::Players
 
 	Player::~Player()
 	{
-		std::cout << "destroying player: " << _playerIndex << endl;
+		std::cout << "destroying player: " << _playerIndex << std::endl;
 
 		delete _stateMachine;
 	}
@@ -22,8 +22,8 @@ namespace RB::Players
 		_stateMachine->Init(new PlayerTestState());
 		_stateMachine->SetID(RB::States::StateMachineID::GetID());
 
-		cout << "init player: " << playerIndex << endl;
-		cout << "statemachine ID: " << _stateMachine->GetID() << endl;
+		std::cout << "init player: " << playerIndex << std::endl;
+		std::cout << "statemachine ID: " << _stateMachine->GetID() << std::endl;
 	}
 
 	void Player::OnUpdate()

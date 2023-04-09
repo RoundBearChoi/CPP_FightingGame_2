@@ -4,9 +4,6 @@
 #include "Time.h"
 #include "TestState2.h"
 
-using namespace std;
-using namespace RB::Frames;
-
 namespace RB::States
 {
 	class TestState : public StateBase

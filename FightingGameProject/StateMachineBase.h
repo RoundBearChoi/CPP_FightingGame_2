@@ -3,8 +3,6 @@
 #include "iStateMachine.h"
 #include "iState.h"
 
-using namespace std;
-
 namespace RB::States
 {
 	class StateMachineBase : public iStateMachine

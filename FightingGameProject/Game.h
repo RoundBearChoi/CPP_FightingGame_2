@@ -17,7 +17,7 @@ namespace RB::Engine
 	public:
 		bool OnUserCreate() override
 		{
-			cout << "OnUserCreate (Game)" << endl;
+			std::cout << "OnUserCreate (Game)" << std::endl;
 
 			sAppName = "C++FightingGame2";
 		
@@ -31,8 +31,8 @@ namespace RB::Engine
 
 		~Game()
 		{
-			cout << endl;
-			cout << "destroying Game" << endl;
+			std::cout << std::endl;
+			std::cout << "destroying Game" << std::endl;
 
 			RB::Controllers::ControllerGroup::OnEnd();
 		}

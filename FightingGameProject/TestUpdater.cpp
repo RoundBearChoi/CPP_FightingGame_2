@@ -4,12 +4,12 @@ namespace RB::Updaters
 {
 	TestUpdater::TestUpdater()
 	{
-		cout << "constructing TestUpdater" << endl;
+		std::cout << "constructing TestUpdater" << std::endl;
 	}
 
 	TestUpdater::~TestUpdater()
 	{
-		cout << "destroying TestUpdater" << endl;
+		std::cout << "destroying TestUpdater" << std::endl;
 	}
 
 	void TestUpdater::Init()

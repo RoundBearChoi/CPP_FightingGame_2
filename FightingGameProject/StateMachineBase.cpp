@@ -4,12 +4,12 @@ namespace RB::States
 {
 	StateMachineBase::StateMachineBase()
 	{
-		cout << "constructing StateMachineBase" << endl;
+		std::cout << "constructing StateMachineBase" << std::endl;
 	}
 
 	StateMachineBase::~StateMachineBase()
 	{
-		cout << "destroying StateMachineBase" << endl;
+		std::cout << "destroying StateMachineBase" << std::endl;
 
 		_DestroyCurrentState();
 	}

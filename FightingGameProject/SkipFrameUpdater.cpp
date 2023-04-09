@@ -13,4 +13,10 @@ namespace RB::Updaters
 	{
 
 	}
+
+	template<typename T, void(T::* Func)()>
+	void SkipFrameUpdater<T, Func>::OnUpdate()
+	{
+
+	}
 }

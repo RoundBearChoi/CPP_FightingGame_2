@@ -24,6 +24,14 @@ namespace RB::Controllers
 
 	template<typename T> inline T* ControllerGroup::FindController()
 	{
+		//for (int i = 0; i < _vecControllers.size(); i++)
+		//{
+		//	if (is_assignable<T, _vecControllers[i]>::value)
+		//	{
+		//		return &_vecControllers[i];
+		//	}
+		//}
+
 		return nullptr;
 	}
 }

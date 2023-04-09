@@ -15,6 +15,7 @@ namespace RB::Players
 	void PlayerTestState::OnEnter()
 	{
 		Updaters::SkipFrameUpdater<PlayerTestState>* testtest = new Updaters::SkipFrameUpdater<PlayerTestState>();
+		testtest->SetSkipFrames(1);
 		testtest->SetTargetObj(this);
 		testtest->SetTargetFunction(&PlayerTestState::SomeFunc);
 		testtest->CallTargetFunction();

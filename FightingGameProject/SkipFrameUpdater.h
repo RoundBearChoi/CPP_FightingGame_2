@@ -6,6 +6,11 @@ namespace RB::Updaters
 	class SkipFrameUpdater
 	{
 	public:
+		void SetSkipFrames(int skipFrames)
+		{
+			_skipFrames = skipFrames;
+		}
+
 		void SetTargetObj(T* targetObj)
 		{
 			_targetObj = targetObj;

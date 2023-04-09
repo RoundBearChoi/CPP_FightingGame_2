@@ -4,7 +4,8 @@ namespace RB::Players
 {
 	PlayerTestState::PlayerTestState()
 	{
-		//_updater = new RB::Updaters::SkipFrameUpdater(1, &SomeFunc);
+		void (PlayerTestState:: * dfdfdfdf)() = &PlayerTestState::SomeFunc;
+		//_updater = new RB::Updaters::SkipFrameUpdater(1, &SomeFunc));
 	}
 
 	PlayerTestState::~PlayerTestState()
@@ -21,6 +22,6 @@ namespace RB::Players
 
 	void PlayerTestState::SomeFunc()
 	{
-	
+
 	}
 }

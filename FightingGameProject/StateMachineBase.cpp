@@ -56,6 +56,16 @@ namespace RB::States
 		}
 	}
 
+	void StateMachineBase::SetID(int ID)
+	{
+		_stateMachineID = ID;
+	}
+
+	int StateMachineBase::GetID()
+	{
+		return _stateMachineID;
+	}
+
 	void StateMachineBase::_DestroyCurrentState()
 	{
 		if (_currentState != nullptr)

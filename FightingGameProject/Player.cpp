@@ -20,8 +20,10 @@ namespace RB::Players
 
 		_stateMachine = new StateMachineBase();
 		_stateMachine->Init(new PlayerTestState());
+		_stateMachine->SetID(StateMachineID::GetID());
 
 		cout << "init player: " << playerIndex << endl;
+		cout << "statemachine ID: " << _stateMachine->GetID() << endl;
 	}
 
 	void Player::OnUpdate()

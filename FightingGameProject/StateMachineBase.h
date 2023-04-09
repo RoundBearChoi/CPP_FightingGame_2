@@ -13,12 +13,16 @@ namespace RB::States
 		StateMachineBase();
 		virtual ~StateMachineBase() override;
 
+	public:
 		virtual void Init(iState* state) override;
 		virtual void OnUpdate() override;
 		virtual void OnFixedUpdate() override;
 		virtual void QueueNextState(iState* state) override;
+		virtual void SetID(int ID) override;
+		virtual int GetID() override;
 
 	protected:
+		int _stateMachineID = 0;
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
 		bool _makeTransition = false;

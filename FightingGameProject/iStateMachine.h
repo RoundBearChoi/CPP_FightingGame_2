@@ -12,6 +12,8 @@ namespace RB::States
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 		virtual void QueueNextState(iState* state) = 0;
+		virtual void SetID(int ID) = 0;
+		virtual int GetID() = 0;
 		
 	protected:
 		virtual void _MakeTransition() = 0;

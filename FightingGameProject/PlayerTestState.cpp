@@ -14,13 +14,10 @@ namespace RB::Players
 
 	void PlayerTestState::OnEnter()
 	{
-		Updaters::SkipFrameUpdater<PlayerTestState>* testtest = new Updaters::SkipFrameUpdater<PlayerTestState>();
-		testtest->SetSkipFrames(1);
-		testtest->SetTargetObj(this);
-		testtest->SetTargetFunction(&PlayerTestState::SomeFunc);
-		testtest->CallTargetFunction();
-
-		delete testtest;
+		_customUpdater.SetSkipFrames(1);
+		_customUpdater.SetTargetObj(this);
+		_customUpdater.SetTargetFunction(&PlayerTestState::SomeFunc);
+		_customUpdater.CallTargetFunction();
 	}
 
 	void PlayerTestState::OnFixedUpdate()

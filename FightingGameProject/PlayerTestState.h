@@ -19,6 +19,6 @@ namespace RB::Players
 		void SomeFunc();
 
 	private:
-
+		Updaters::SkipFrameUpdater<PlayerTestState> _customUpdater;
 	};
 }

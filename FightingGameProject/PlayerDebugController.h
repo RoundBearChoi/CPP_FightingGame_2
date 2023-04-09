@@ -5,10 +5,6 @@
 #include "iPlayer.h"
 #include "GameplayControllers.h"
 
-using namespace std;
-using namespace olc;
-using namespace RB::Players;
-
 namespace RB::PlayerDebug
 {
 	class PlayerDebugController : public iPlayerDebugController
@@ -23,9 +19,9 @@ namespace RB::PlayerDebug
 		void OnFixedUpdate() override;
 
 	public:
-		void DrawXOnPlayer(iPlayer* player);
+		void DrawXOnPlayer(RB::Players::iPlayer* player);
 
 	private:
-		vector<iPlayer*> _vecPlayers;
+		std::vector<RB::Players::iPlayer*> _vecPlayers;
 	};
 }

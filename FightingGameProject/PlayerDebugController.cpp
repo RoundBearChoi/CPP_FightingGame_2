@@ -15,7 +15,7 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::Init()
 	{
-		iPlayerController* pc = ControllerGroup::FindController<iPlayerController>();
+		RB::Players::iPlayerController* pc = ControllerGroup::FindController<RB::Players::iPlayerController>();
 
 		if (pc != nullptr)
 		{
@@ -37,7 +37,7 @@ namespace RB::PlayerDebug
 
 	}
 
-	void PlayerDebugController::DrawXOnPlayer(iPlayer* player)
+	void PlayerDebugController::DrawXOnPlayer(RB::Players::iPlayer* player)
 	{
 		vi2d pos = player->GetPosition();
 

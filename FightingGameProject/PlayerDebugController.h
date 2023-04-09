@@ -12,7 +12,7 @@ namespace RB::PlayerDebug
 	class PlayerDebugController : public iPlayerDebugController
 	{
 	private:
-		//vector<iPlayer*> _vecPlayers;
+		vector<iPlayer*> _vecPlayers;
 
 	public:
 		PlayerDebugController();

@@ -15,8 +15,10 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::Init()
 	{
-		//_vecPlayers.push_back(GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(1));
-		//_vecPlayers.push_back(GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(2));
+		iPlayerController* pc = ControllerGroup::FindController<iPlayerController>();
+
+		_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(1));
+		_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(2));
 	}
 
 	void PlayerDebugController::OnUpdate()

@@ -15,13 +15,13 @@ namespace RB::Players
 	void PlayerTestState::OnEnter()
 	{
 		_customUpdater.SetSkipFrames(1);
-		_customUpdater.SetTargetObj(this);
-		_customUpdater.SetTargetFunction(&PlayerTestState::SomeFunc);
+		_customUpdater.SetObj(this);
+		_customUpdater.SetFunction(&PlayerTestState::SomeFunc);
 	}
 
 	void PlayerTestState::OnFixedUpdate()
 	{
-		_customUpdater.CallTargetFunction();
+		_customUpdater.CallFunction();
 	}
 
 	void PlayerTestState::SomeFunc()

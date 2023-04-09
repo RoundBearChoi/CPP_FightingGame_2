@@ -11,24 +11,24 @@ namespace RB::Updaters
 			_skipFrames = skipFrames;
 		}
 
-		void SetTargetObj(T* targetObj)
+		void SetObj(T* targetObj)
 		{
-			_targetObj = targetObj;
+			_obj = targetObj;
 		}
 
-		void SetTargetFunction(void (T::*targetFunction)())
+		void SetFunction(void (T::*function)())
 		{
-			_targetFunction = targetFunction;
+			_function = function;
 		}
 
-		void CallTargetFunction()
+		void CallFunction()
 		{
-			(_targetObj->*_targetFunction)();
+			(_obj->*_function)();
 		}
 
 	private:
 		int _skipFrames = 0;
-		T* _targetObj = nullptr;
-		void (T::* _targetFunction)() = nullptr;
+		T* _obj = nullptr;
+		void (T::* _function)() = nullptr;
 	};
 }

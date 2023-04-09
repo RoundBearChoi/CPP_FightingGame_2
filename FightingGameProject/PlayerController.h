@@ -4,8 +4,6 @@
 #include "iPlayer.h"
 #include "Player.h"
 
-using namespace std;
-
 namespace RB::Players
 {
 	class PlayerController : public iPlayerController

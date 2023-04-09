@@ -4,12 +4,12 @@ namespace RB::Players
 {
 	PlayerController::PlayerController()
 	{
-		cout << "constructing PlayerController" << endl;
+		std::cout << "constructing PlayerController" << endl;
 	}
 
 	PlayerController::~PlayerController()
 	{
-		cout << "destroying PlayerController" << endl;
+		std::cout << "destroying PlayerController" << endl;
 	}
 
 	void PlayerController::Init()

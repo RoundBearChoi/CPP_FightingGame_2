@@ -11,9 +11,6 @@ namespace RB::PlayerDebug
 {
 	class PlayerDebugController : public iPlayerDebugController
 	{
-	private:
-		vector<iPlayer*> _vecPlayers;
-
 	public:
 		PlayerDebugController();
 		~PlayerDebugController() override;
@@ -25,5 +22,8 @@ namespace RB::PlayerDebug
 
 	public:
 		void DrawXOnPlayer(iPlayer* player);
+
+	private:
+		vector<iPlayer*> _vecPlayers;
 	};
 }

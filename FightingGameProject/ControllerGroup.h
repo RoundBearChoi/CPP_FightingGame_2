@@ -16,6 +16,7 @@ namespace RB::Controllers
 		static void UpdateAll();
 		static void FixedUpdateAll();
 		template <class T> static T* FindController();
+
 	private:
 		inline static vector<iController*> _vecControllers;
 

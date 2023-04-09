@@ -16,6 +16,7 @@ namespace RB::Controllers
 		inline static iPlayerController* PLAYER_CONTROLLER = nullptr;
 		inline static iPlayerDebugController* PLAYER_DEBUG_CONTROLLER = nullptr;
 
+	public:
 		static void FindAll()
 		{
 			PLAYER_CONTROLLER = ControllerGroup::FindController<iPlayerController>();

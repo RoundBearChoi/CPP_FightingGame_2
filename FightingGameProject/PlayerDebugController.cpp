@@ -38,8 +38,15 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::DrawXOnPlayer(RB::Players::iPlayer* player)
 	{
+
 		olc::vi2d pos = player->GetPosition();
 
-		olc::Renderer::ptrPGE->DrawLine(pos.x, pos.y, 100, 100, olc::RED);
+		olc::vi2d topLeft = { pos.x - _lineLength, pos.y - _lineLength };
+		olc::vi2d bottomLeft = { pos.x - _lineLength, pos.y + _lineLength };
+		olc::vi2d topRight = { pos.x + _lineLength, pos.y - _lineLength };
+		olc::vi2d bottomRight = { pos.x + _lineLength, pos.y + _lineLength };
+
+		olc::Renderer::ptrPGE->DrawLine(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, olc::RED);
+		olc::Renderer::ptrPGE->DrawLine(bottomLeft.x, bottomLeft.y, topRight.x, topRight.y, olc::RED);
 	}
 }

@@ -22,6 +22,7 @@ namespace RB::PlayerDebug
 		void DrawXOnPlayer(RB::Players::iPlayer* player);
 
 	private:
+		int _lineLength = 6;
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
 	};
 }

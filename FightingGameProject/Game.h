@@ -11,7 +11,7 @@ namespace RB::Engine
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		Updater _updater;
+		RB::Updaters::Updater _updater;
 		RB::Frames::FixedTimer _timer;
 
 	public:

@@ -2,7 +2,7 @@
 #include "Updater.h"
 #include "TestUpdater.h"
 
-namespace RB::Engine
+namespace RB::Updaters
 {
 	Updater::Updater()
 	{

@@ -3,9 +3,7 @@
 #include "iUpdaterObj.h"
 #include "TestUpdater.h"
 
-using namespace RB::Updaters;
-
-namespace RB::Engine
+namespace RB::Updaters
 {
 	class Updater
 	{

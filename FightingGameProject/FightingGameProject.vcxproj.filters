@@ -35,9 +35,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Updater.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
     <ClCompile Include="ControllerGroup.cpp">
       <Filter>Source Files\Controllers</Filter>
     </ClCompile>
@@ -46,9 +43,6 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Players</Filter>
-    </ClCompile>
-    <ClCompile Include="Time.cpp">
-      <Filter>Source Files\Engine</Filter>
     </ClCompile>
     <ClCompile Include="StateBase.cpp">
       <Filter>Source Files\States</Filter>
@@ -74,15 +68,18 @@
     <ClCompile Include="StateMachineID.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files\Frames</Filter>
+    </ClCompile>
+    <ClCompile Include="Updater.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="olcPixelGameEngine.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Updater.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="ControllerGroup.h">
@@ -149,6 +146,9 @@
       <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="iUpdaterObj.h">
+      <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="Updater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>

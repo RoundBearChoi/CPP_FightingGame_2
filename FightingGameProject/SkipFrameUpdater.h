@@ -17,7 +17,7 @@ namespace RB::Updaters
 	private:
 		int _skipFrames = 0;
 		T* myObject = nullptr;
-		void (T::* Func)() = nullptr;
+		void (T::*Func)() = nullptr;
 	};
 
 	template<typename T>
@@ -25,7 +25,7 @@ namespace RB::Updaters
 	{
 		myObject = targetObj;
 	}
-
+	
 	template<typename T>
 	void SkipFrameUpdater<T>::SetMemberFunction(void(T::* func)())
 	{

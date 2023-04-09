@@ -11,12 +11,12 @@ namespace RB::Updaters
 			myObject = targetObj;
 		}
 
-		void SetMemberFunction(void (T::*func)())
+		void SetTargetFunction(void (T::*func)())
 		{
 			Func = func;
 		}
 
-		void callMemberFunction()
+		void CallTargetFunction()
 		{
 			(myObject->*Func)();
 		}

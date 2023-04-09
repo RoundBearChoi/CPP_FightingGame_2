@@ -16,8 +16,8 @@ namespace RB::Players
 	{
 		Updaters::SkipFrameUpdater<PlayerTestState>* testtest = new Updaters::SkipFrameUpdater<PlayerTestState>();
 		testtest->SetTargetObj(this);
-		testtest->SetMemberFunction(&PlayerTestState::SomeFunc);
-		testtest->callMemberFunction();
+		testtest->SetTargetFunction(&PlayerTestState::SomeFunc);
+		testtest->CallTargetFunction();
 
 		delete testtest;
 	}

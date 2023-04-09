@@ -22,14 +22,14 @@ namespace RB::Players
 		void OnFixedUpdate();
 
 	public:
-		vi2d GetPosition() override;
+		olc::vi2d GetPosition() override;
 		int GetPlayerIndex() override;
 		int GetStateMachineID() override;
-		void Move(vi2d moveAmount) override;
+		void Move(olc::vi2d moveAmount) override;
 
 	private:
 		int _playerIndex = 0;
 		RB::States::iStateMachine* _stateMachine = nullptr;
-		vi2d _position = { 0, 0 };
+		olc::vi2d _position = { 0, 0 };
 	};
 }

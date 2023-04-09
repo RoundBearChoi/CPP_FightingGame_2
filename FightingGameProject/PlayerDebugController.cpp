@@ -1,6 +1,5 @@
 #include "PlayerDebugController.h"
 
-
 namespace RB::PlayerDebug
 {
 	PlayerDebugController::PlayerDebugController()
@@ -39,8 +38,8 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::DrawXOnPlayer(RB::Players::iPlayer* player)
 	{
-		vi2d pos = player->GetPosition();
+		olc::vi2d pos = player->GetPosition();
 
-		Renderer::ptrPGE->DrawLine(pos.x, pos.y, 100, 100, olc::RED);
+		olc::Renderer::ptrPGE->DrawLine(pos.x, pos.y, 100, 100, olc::RED);
 	}
 }

@@ -24,10 +24,10 @@ namespace RB::Updaters
 	{
 		ControllerGroup::UpdateAll();
 
-		Renderer::ptrPGE->DrawLine(10, 10, 400, 10, olc::YELLOW);
-		Renderer::ptrPGE->DrawLine(10, 10, 10, 300, olc::YELLOW);
-		Renderer::ptrPGE->DrawLine(400, 10, 400, 300, olc::YELLOW);
-		Renderer::ptrPGE->DrawLine(10, 300, 400, 300, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(10, 10, 400, 10, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(10, 10, 10, 300, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(400, 10, 400, 300, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawLine(10, 300, 400, 300, olc::YELLOW);
 	}
 
 	void TestUpdater::OnFixedUpdate()

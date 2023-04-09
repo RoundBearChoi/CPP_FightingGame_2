@@ -1,8 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 
-using namespace olc;
-
 namespace RB::Players
 {
 	class iPlayer
@@ -11,9 +9,9 @@ namespace RB::Players
 		virtual ~iPlayer() {};
 
 	public:
-		virtual vi2d GetPosition() = 0;
+		virtual olc::vi2d GetPosition() = 0;
 		virtual int GetPlayerIndex() = 0;
 		virtual int GetStateMachineID() = 0;
-		virtual void Move(vi2d moveAmount) = 0;
+		virtual void Move(olc::vi2d moveAmount) = 0;
 	};
 }

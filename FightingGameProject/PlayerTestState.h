@@ -2,6 +2,7 @@
 #include "StateBase.h"
 //#include "GameplayControllers.h"
 //#include "iPlayer.h"
+#include "iController.h"
 
 using namespace RB::States;
 //using namespace RB::Controllers;
@@ -11,6 +12,8 @@ namespace RB::Players
 {
 	//class iPlayer;
 	//class GameplayControllers;
+
+	//class RB::Controllers::GameplayControllers;
 
 	class PlayerTestState : public StateBase
 	{

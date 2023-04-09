@@ -4,7 +4,9 @@ namespace RB::Players
 {
 	PlayerTestState::PlayerTestState()
 	{
-		void (PlayerTestState::*dfdfdfdf)() = &PlayerTestState::SomeFunc;
+		//void (PlayerTestState::*dfdfdfdf)() = &PlayerTestState::SomeFunc;
+
+		//_updater = new Updaters::SkipFrameUpdater(1, &PlayerTestState::SomeFunc);
 	}
 
 	PlayerTestState::~PlayerTestState()

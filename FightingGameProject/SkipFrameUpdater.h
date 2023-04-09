@@ -2,6 +2,8 @@
 
 namespace RB::Updaters
 {
+	//class RB::Players::PlayerTestState;
+
 	class SkipFrameUpdater
 	{
 	public:

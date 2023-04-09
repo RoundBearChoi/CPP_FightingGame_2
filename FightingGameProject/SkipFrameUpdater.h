@@ -21,13 +21,13 @@ namespace RB::Updaters
 	};
 
 	template<typename T>
-	inline void SkipFrameUpdater<T>::SetTargetObj(T* targetObj)
+	void SkipFrameUpdater<T>::SetTargetObj(T* targetObj)
 	{
 		myObject = targetObj;
 	}
 
 	template<typename T>
-	inline void SkipFrameUpdater<T>::SetMemberFunction(void(T::* func)())
+	void SkipFrameUpdater<T>::SetMemberFunction(void(T::* func)())
 	{
 		Func = func;
 	}

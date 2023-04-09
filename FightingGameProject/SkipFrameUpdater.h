@@ -2,17 +2,12 @@
 
 namespace RB::Updaters
 {
-	template <typename T, void (T::*Func)()>
+	template <typename T>
 	class SkipFrameUpdater
 	{
 	public:
-		T* myObject;
-
-		//constructor
-		SkipFrameUpdater(T* obj) : myObject(obj)
-		{
-
-		}
+		T* myObject = nullptr;
+		void (T::* Func)() = nullptr;
 
 		void callMemberFunction()
 		{

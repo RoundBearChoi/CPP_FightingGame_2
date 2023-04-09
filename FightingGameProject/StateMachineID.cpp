@@ -7,7 +7,7 @@ namespace RB::States
 	{
 		_cumulatedID++;
 
-		std::cout << "creating statemachine id: " << _cumulatedID;
+		//std::cout << "creating statemachine id: " << _cumulatedID << std::endl;
 
 		return _cumulatedID;
 	}

@@ -15,8 +15,7 @@ namespace RB::Players
 	void PlayerTestState::OnEnter()
 	{
 		_customUpdater.SetSkipFrames(5);
-		_customUpdater.SetObj(this);
-		_customUpdater.SetFunction(&PlayerTestState::Move);
+		_customUpdater.SetFunction(this, &PlayerTestState::Move);
 	}
 
 	void PlayerTestState::OnFixedUpdate()

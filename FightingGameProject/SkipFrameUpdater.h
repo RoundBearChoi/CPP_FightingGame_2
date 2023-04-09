@@ -11,13 +11,9 @@ namespace RB::Updaters
 			_skipFrames = skipFrames;
 		}
 
-		void SetObj(T* targetObj)
+		void SetFunction(T* obj, void (T::*function)())
 		{
-			_obj = targetObj;
-		}
-
-		void SetFunction(void (T::*function)())
-		{
+			_obj = obj;
 			_function = function;
 		}
 

@@ -19,9 +19,9 @@ namespace RB::Controllers
 			PLAYER_CONTROLLER = ControllerGroup::FindController<iPlayerController>();
 			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<iPlayerDebugController>();
 
-			iPlayer* p1 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(1);
-			iPlayer* p2 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(2);
-			iPlayer* p3 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(3);
+			//iPlayer* p1 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(1);
+			//iPlayer* p2 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(2);
+			//iPlayer* p3 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(3);
 		}
 	};
 }

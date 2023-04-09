@@ -19,5 +19,6 @@ namespace RB::Players
 
 	private:
 		//RB::Updaters::SkipFrameUpdater<PlayerTestState, &PlayerTestState::SomeFunc> uu;
+		Updaters::SkipFrameUpdater<PlayerTestState, &PlayerTestState::SomeFunc>* test = nullptr;
 	};
 }

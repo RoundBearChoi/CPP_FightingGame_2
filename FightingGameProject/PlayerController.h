@@ -18,10 +18,12 @@ namespace RB::Players
 		PlayerController();
 		~PlayerController() override;
 
+	public:
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
+	public:
 		iPlayer* GetPlayerOnPlayerIndex(int index) override;
 	};
 }

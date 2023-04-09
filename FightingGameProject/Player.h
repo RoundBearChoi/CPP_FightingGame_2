@@ -19,13 +19,15 @@ namespace RB::Players
 		Player();
 		~Player() override;
 
-		vf2d GetPosition() override;
-		int GetIndex() override;
-		void Move(vf2d moveAmount) override;
-
+	public:
 		void Init(int playerIndex);
 		void OnUpdate();
 		void OnFixedUpdate();
+
+	public:
+		vf2d GetPosition() override;
+		int GetIndex() override;
+		void Move(vf2d moveAmount) override;
 
 	private:
 		int _playerIndex = 0;

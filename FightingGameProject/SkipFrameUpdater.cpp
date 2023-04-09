@@ -2,18 +2,14 @@
 
 namespace RB::Updaters
 {
-	SkipFrameUpdater::SkipFrameUpdater(int skipFrames, void (*some)())
-	{
-		_skipFrames = skipFrames;
-		sdfdsfdsfdsfsdfvv = some;
-	}
-
-	SkipFrameUpdater::~SkipFrameUpdater()
+	template<typename T, void(T::* Func)()>
+	SkipFrameUpdater<T, Func>::SkipFrameUpdater(int skipFrames, void(*some)())
 	{
 
 	}
 
-	void SkipFrameUpdater::OnUpdate()
+	template<typename T, void(T::* Func)()>
+	SkipFrameUpdater<T, Func>::~SkipFrameUpdater()
 	{
 
 	}

@@ -3,7 +3,7 @@
 namespace RB::Updaters
 {
 	//class RB::Players::PlayerTestState;
-
+	template <typename T, void (T::*Func)()>
 	class SkipFrameUpdater
 	{
 	public:
@@ -16,4 +16,6 @@ namespace RB::Updaters
 		int _skipFrames = 0;
 		void (*sdfdsfdsfdsfsdfvv)();
 	};
+
+
 }

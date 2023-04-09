@@ -15,12 +15,9 @@ namespace RB::Players
 
 		void OnFixedUpdate() override;
 
-		void SomeFunc()
-		{
-
-		}
+		void SomeFunc();
 
 	private:
-		RB::Updaters::SkipFrameUpdater* _updater = nullptr;
+		//RB::Updaters::SkipFrameUpdater<PlayerTestState, &PlayerTestState::SomeFunc> uu;
 	};
 }

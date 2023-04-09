@@ -24,6 +24,9 @@
     <Filter Include="Source Files\States">
       <UniqueIdentifier>{24bbd811-49a3-4158-954b-838e04e9748c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PlayerDebug">
+      <UniqueIdentifier>{098c133e-1038-4493-8797-bcbeb252a740}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -61,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="PlayerTestState.cpp">
       <Filter>Source Files\Players</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDebugController.cpp">
+      <Filter>Source Files\PlayerDebug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +135,12 @@
     </ClInclude>
     <ClInclude Include="GameplayControllers.h">
       <Filter>Source Files\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="iPlayerDebugController.h">
+      <Filter>Source Files\PlayerDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDebugController.h">
+      <Filter>Source Files\PlayerDebug</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

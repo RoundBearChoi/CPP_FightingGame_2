@@ -8,7 +8,7 @@ namespace RB::Controllers
 	class GameplayControllers
 	{
 	public:
-		inline static iPlayerController* PLAYER_CONTROLLER;
+		inline static iPlayerController* PLAYER_CONTROLLER = nullptr;
 
 		static void FindAll()
 		{

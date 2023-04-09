@@ -22,7 +22,7 @@ namespace RB::Controllers
 		static void _DestroyAll();
 	};
 
-	template<class T> inline T* ControllerGroup::FindController()
+	template<class T> T* ControllerGroup::FindController()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{

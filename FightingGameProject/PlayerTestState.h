@@ -16,7 +16,7 @@ namespace RB::Players
 		void OnEnter() override;
 		void OnFixedUpdate() override;
 
-		void SomeFunc();
+		void Move();
 
 	private:
 		Updaters::SkipFrameUpdater<PlayerTestState> _customUpdater;

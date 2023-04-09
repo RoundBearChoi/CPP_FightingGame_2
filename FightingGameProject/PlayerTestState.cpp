@@ -16,7 +16,7 @@ namespace RB::Players
 	{
 		_customUpdater.SetSkipFrames(5);
 		_customUpdater.SetObj(this);
-		_customUpdater.SetFunction(&PlayerTestState::SomeFunc);
+		_customUpdater.SetFunction(&PlayerTestState::Move);
 	}
 
 	void PlayerTestState::OnFixedUpdate()
@@ -24,7 +24,7 @@ namespace RB::Players
 		_customUpdater.CallFunction();
 	}
 
-	void PlayerTestState::SomeFunc()
+	void PlayerTestState::Move()
 	{
 		iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 		

@@ -2,20 +2,24 @@
 
 namespace RB::Updaters
 {
-	//class RB::Players::PlayerTestState;
 	template <typename T, void (T::*Func)()>
 	class SkipFrameUpdater
 	{
 	public:
-		SkipFrameUpdater(int skipFrames, void (*some)());
-		~SkipFrameUpdater();
+		T* myObject;
 
-		void OnUpdate();
+		//constructor
+		SkipFrameUpdater(T* obj) : myObject(obj)
+		{
+
+		}
+
+		void callMemberFunction()
+		{
+			(myObject->*Func)();
+		}
 
 	private:
 		int _skipFrames = 0;
-		void (*sdfdsfdsfdsfsdfvv)();
 	};
-
-
 }

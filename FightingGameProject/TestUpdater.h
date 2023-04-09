@@ -4,7 +4,7 @@
 #include "iUpdaterObj.h"
 #include "ControllerGroup.h"
 #include "PlayerController.h"
-//#include "PlayerDebugController.h"
+#include "PlayerDebugController.h"
 #include "GameplayControllers.h"
 
 using namespace std;

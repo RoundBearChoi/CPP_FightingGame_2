@@ -6,7 +6,6 @@ namespace RB::PlayerDebug
 	class PlayerDebugController : public iPlayerDebugController
 	{
 	public:
-		PlayerDebugController();
 		~PlayerDebugController() override;
 
 		void Init() override;

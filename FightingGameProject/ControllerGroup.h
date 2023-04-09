@@ -24,13 +24,18 @@ namespace RB::Controllers
 
 	template<typename T> inline T* ControllerGroup::FindController()
 	{
-		//for (int i = 0; i < _vecControllers.size(); i++)
-		//{
-		//	if (is_assignable<T, _vecControllers[i]>::value)
-		//	{
-		//		return &_vecControllers[i];
-		//	}
-		//}
+		for (int i = 0; i < _vecControllers.size(); i++)
+		{
+			bool t1 = is_same<int, int>::value;
+			bool t2 = is_assignable<int, double>::value;
+			bool t3 = is_convertible<int, float>::value;
+
+			int j = 0;
+
+			int ff = 0;
+
+			string nn = typeid(_vecControllers).name();
+		}
 
 		return nullptr;
 	}

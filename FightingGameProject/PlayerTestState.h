@@ -9,6 +9,9 @@ using namespace RB::States;
 
 namespace RB::Players
 {
+	//class iPlayer;
+	//class GameplayControllers;
+
 	class PlayerTestState : public StateBase
 	{
 	public:

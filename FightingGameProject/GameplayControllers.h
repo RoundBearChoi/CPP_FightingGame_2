@@ -3,22 +3,19 @@
 #include "iPlayerDebugController.h"
 #include "ControllerGroup.h"
 
-using namespace RB::Players;
-using namespace RB::PlayerDebug;
-
 namespace RB::Controllers
 {
 	class GameplayControllers
 	{
 	public:
-		inline static iPlayerController* PLAYER_CONTROLLER = nullptr;
-		inline static iPlayerDebugController* PLAYER_DEBUG_CONTROLLER = nullptr;
+		inline static RB::Players::iPlayerController* PLAYER_CONTROLLER = nullptr;
+		inline static RB::PlayerDebug::iPlayerDebugController* PLAYER_DEBUG_CONTROLLER = nullptr;
 
 	public:
 		static void FindAll()
 		{
-			PLAYER_CONTROLLER = ControllerGroup::FindController<iPlayerController>();
-			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<iPlayerDebugController>();
+			PLAYER_CONTROLLER = ControllerGroup::FindController<RB::Players::iPlayerController>();
+			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<RB::PlayerDebug::iPlayerDebugController>();
 
 			//iPlayer* p1 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(1);
 			//iPlayer* p2 = PLAYER_CONTROLLER->GetPlayerOnPlayerIndex(2);

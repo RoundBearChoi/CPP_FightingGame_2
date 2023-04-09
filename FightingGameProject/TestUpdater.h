@@ -8,15 +8,9 @@
 #include "PlayerDebugController.h"
 #include "GameplayControllers.h"
 
-using namespace std;
-using namespace olc;
-using namespace RB::Engine;
-using namespace RB::Controllers;
-using namespace RB::Players;
-
 namespace RB::Updaters
 {
-	class TestUpdater : public iUpdaterObj
+	class TestUpdater : public RB::Engine::iUpdaterObj
 	{
 	public:
 		TestUpdater();

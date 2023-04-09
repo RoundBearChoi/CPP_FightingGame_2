@@ -1,5 +1,6 @@
 #include "PlayerTestState.h"
 
+
 namespace RB::Players
 {
 	PlayerTestState::~PlayerTestState()
@@ -9,6 +10,6 @@ namespace RB::Players
 
 	void PlayerTestState::OnFixedUpdate()
 	{
-
+		//iPlayer* player = GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 	}
 }

@@ -2,8 +2,6 @@
 #include <iostream>
 #include "StateBase.h"
 
-using namespace std;
-
 namespace RB::States
 {
 	class TestState2 : public StateBase

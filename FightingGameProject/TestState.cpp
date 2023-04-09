@@ -4,17 +4,17 @@ namespace RB::States
 {
 	TestState::~TestState()
 	{
-		std::cout << "destroying TestState" << endl;
+		std::cout << "destroying TestState" << std::endl;
 	}
 
 	void TestState::OnEnter()
 	{
-		std::cout << "entering TestState" << endl;
+		std::cout << "entering TestState" << std::endl;
 	}
 	
 	void TestState::OnExit()
 	{
-		std::cout << "exiting TestState" << endl;
+		std::cout << "exiting TestState" << std::endl;
 	}
 	
 	void TestState::OnUpdate()
@@ -24,6 +24,6 @@ namespace RB::States
 	
 	void TestState::OnFixedUpdate()
 	{
-		std::cout << "fixed update TestState" << endl;
+		std::cout << "fixed update TestState" << std::endl;
 	}
 }

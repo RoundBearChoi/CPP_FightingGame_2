@@ -21,4 +21,9 @@ namespace RB::Controllers
 
 		static void _DestroyAll();
 	};
+
+	template<typename T> inline T* ControllerGroup::FindController()
+	{
+		return nullptr;
+	}
 }

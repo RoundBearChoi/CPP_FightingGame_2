@@ -2,6 +2,11 @@
 
 namespace RB::PlayerDebug
 {
+	PlayerDebugController::PlayerDebugController()
+	{
+
+	}
+
 	PlayerDebugController::~PlayerDebugController()
 	{
 

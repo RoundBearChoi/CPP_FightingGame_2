@@ -4,7 +4,7 @@
 //#include "iPlayer.h"
 //#include "iController.h"
 
-using namespace RB::States;
+//using namespace RB::States;
 //using namespace RB::Controllers;
 //using namespace RB::Players;
 
@@ -15,7 +15,7 @@ namespace RB::Players
 
 	//class RB::Controllers::GameplayControllers;
 
-	class PlayerTestState : public StateBase
+	class PlayerTestState : public RB::States::StateBase
 	{
 	public:
 		~PlayerTestState() override;

@@ -8,10 +8,6 @@
 #include "iPlayer.h"
 #include "PlayerTestState.h"
 
-using namespace std;
-using namespace olc;
-using namespace RB::Frames;
-
 namespace RB::Players
 {
 	class Player : public iPlayer
@@ -33,7 +29,7 @@ namespace RB::Players
 
 	private:
 		int _playerIndex = 0;
-		iStateMachine* _stateMachine = nullptr;
+		RB::States::iStateMachine* _stateMachine = nullptr;
 		vi2d _position = { 0, 0 };
 	};
 }

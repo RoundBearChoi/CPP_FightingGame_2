@@ -1,10 +1,12 @@
 #pragma once
 #include <vector>
+#include "olcPixelGameEngine.h"
 #include "iPlayerDebugController.h"
 #include "iPlayer.h"
 #include "GameplayControllers.h"
 
 using namespace std;
+using namespace olc;
 using namespace RB::Players;
 
 namespace RB::PlayerDebug

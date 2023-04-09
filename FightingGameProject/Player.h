@@ -25,13 +25,13 @@ namespace RB::Players
 		void OnFixedUpdate();
 
 	public:
-		vf2d GetPosition() override;
+		vi2d GetPosition() override;
 		int GetIndex() override;
-		void Move(vf2d moveAmount) override;
+		void Move(vi2d moveAmount) override;
 
 	private:
 		int _playerIndex = 0;
 		iStateMachine* _stateMachine = nullptr;
-		vf2d _position = { 0.0f, 0.0f };
+		vi2d _position = { 0, 0 };
 	};
 }

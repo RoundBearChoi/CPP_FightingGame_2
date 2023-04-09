@@ -9,6 +9,7 @@
 #include "GameplayControllers.h"
 
 using namespace std;
+using namespace olc;
 using namespace RB::Engine;
 using namespace RB::Controllers;
 using namespace RB::Players;

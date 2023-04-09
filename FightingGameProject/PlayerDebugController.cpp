@@ -39,6 +39,8 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::DrawXOnPlayer(iPlayer* player)
 	{
+		vi2d pos = player->GetPosition();
 
+		Renderer::ptrPGE->DrawLine(pos.x, pos.y, 100, 100, olc::RED);
 	}
 }

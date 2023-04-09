@@ -34,7 +34,7 @@ namespace RB::Players
 		_stateMachine->OnFixedUpdate();
 	}
 
-	vf2d Player::GetPosition()
+	vi2d Player::GetPosition()
 	{
 		return _position;
 	}
@@ -44,7 +44,7 @@ namespace RB::Players
 		return _playerIndex;
 	}
 
-	void Player::Move(vf2d moveAmount)
+	void Player::Move(vi2d moveAmount)
 	{
 		_position += moveAmount;
 	}

@@ -17,8 +17,11 @@ namespace RB::PlayerDebug
 	{
 		iPlayerController* pc = ControllerGroup::FindController<iPlayerController>();
 
-		_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(1));
-		_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(2));
+		if (pc != nullptr)
+		{
+			_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(1));
+			_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(2));
+		}
 	}
 
 	void PlayerDebugController::OnUpdate()

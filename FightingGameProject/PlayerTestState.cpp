@@ -31,7 +31,6 @@ namespace RB::Players
 
 	void PlayerTestState::SomeFunc()
 	{
-		std::cout << "calling some delegated func..." << std::endl;
-		std::cout << "statemachine id: " << _stateMachine->GetID() << std::endl;
+		std::cout << "calling some delegated func.." << " statemachine id: " << _stateMachine->GetID() << std::endl;
 	}
 }

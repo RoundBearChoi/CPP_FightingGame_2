@@ -15,26 +15,23 @@ namespace RB::Controllers
 		static void AddController(iController* newController);
 		static void UpdateAll();
 		static void FixedUpdateAll();
-		template <typename T> static T* FindController();
+		template <class T> static T* FindController();
 	private:
 		static vector<iController*> _vecControllers;
 
 		static void _DestroyAll();
 	};
 
-	template<typename T> inline T* ControllerGroup::FindController()
+	template<class T> inline T* ControllerGroup::FindController()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{
-			bool t1 = is_same<int, int>::value;
-			bool t2 = is_assignable<int, double>::value;
-			bool t3 = is_convertible<int, float>::value;
+			T* d = dynamic_cast<T*>(_vecControllers[i]);
 
-			int j = 0;
-
-			int ff = 0;
-
-			string nn = typeid(_vecControllers).name();
+			if (d != nullptr)
+			{
+				return d;
+			}
 		}
 
 		return nullptr;

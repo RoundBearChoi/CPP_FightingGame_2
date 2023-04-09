@@ -6,7 +6,7 @@ namespace RB::Updaters
 	class SkipFrameUpdater
 	{
 	public:
-		void SetSkipFrames(int skipFrames)
+		void SetSkipFrames(unsigned int skipFrames)
 		{
 			_skipFrames = skipFrames;
 		}
@@ -23,11 +23,24 @@ namespace RB::Updaters
 
 		void CallFunction()
 		{
-			(_obj->*_function)();
+			if (_frameCount < _skipFrames)
+			{
+				_frameCount++;
+
+				//std::cout << "skipping frame" << std::endl;
+			}
+			else
+			{
+				//std::cout << "running func" << std::endl;
+
+				_frameCount = 0;
+				(_obj->*_function)();
+			}
 		}
 
 	private:
-		int _skipFrames = 0;
+		unsigned int _skipFrames = 0;
+		unsigned int _frameCount = 0;
 		T* _obj = nullptr;
 		void (T::* _function)() = nullptr;
 	};

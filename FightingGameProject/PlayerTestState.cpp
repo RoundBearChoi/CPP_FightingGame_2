@@ -14,7 +14,7 @@ namespace RB::Players
 
 	void PlayerTestState::OnEnter()
 	{
-		_customUpdater.SetSkipFrames(1);
+		_customUpdater.SetSkipFrames(5);
 		_customUpdater.SetObj(this);
 		_customUpdater.SetFunction(&PlayerTestState::SomeFunc);
 	}

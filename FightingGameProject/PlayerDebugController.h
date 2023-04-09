@@ -18,8 +18,12 @@ namespace RB::PlayerDebug
 		PlayerDebugController();
 		~PlayerDebugController() override;
 
+	public:
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	public:
+		void DrawXOnPlayer(iPlayer* player);
 	};
 }

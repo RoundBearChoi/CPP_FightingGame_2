@@ -26,10 +26,18 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::OnUpdate()
 	{
-
+		for (int i = 0; i < _vecPlayers.size(); i++)
+		{
+			DrawXOnPlayer(_vecPlayers[i]);
+		}
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
+	{
+
+	}
+
+	void PlayerDebugController::DrawXOnPlayer(iPlayer* player)
 	{
 
 	}

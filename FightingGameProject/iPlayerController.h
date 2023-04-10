@@ -8,7 +8,7 @@ namespace RB::Players
 	class iPlayerController : public RB::Controllers::iController
 	{
 	public:
-		virtual iPlayer* GetPlayerOnPlayerIndex(PlayerID id) = 0;
+		virtual iPlayer* GetPlayerOnID(PlayerID id) = 0;
 		virtual iPlayer* GetPlayerOnStateMachineID(int id) = 0;
 	};
 }

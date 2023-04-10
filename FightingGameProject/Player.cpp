@@ -9,20 +9,20 @@ namespace RB::Players
 
 	Player::~Player()
 	{
-		std::cout << "destroying player: " << _playerIndex << std::endl;
+		//std::cout << "destroying player: " << _playerID << std::endl;
 
 		delete _stateMachine;
 	}
 
-	void Player::Init(int playerIndex)
+	void Player::Init(PlayerID id)
 	{
-		_playerIndex = playerIndex;
+		_playerID = id;
 
 		_stateMachine = new RB::States::StateMachineBase();
 		_stateMachine->SetID(RB::States::StateMachineID::GetID());
 		_stateMachine->Init(new RB::PlayerStates::PlayerTestState());
 
-		std::cout << "init player: " << playerIndex << std::endl;
+		//std::cout << "init player: " << id << std::endl;
 		//std::cout << "statemachine ID: " << _stateMachine->GetID() << std::endl;
 	}
 
@@ -41,9 +41,9 @@ namespace RB::Players
 		return _position;
 	}
 
-	int Player::GetPlayerID()
+	PlayerID Player::GetPlayerID()
 	{
-		return _playerIndex;
+		return _playerID;
 	}
 
 	int Player::GetStateMachineID()

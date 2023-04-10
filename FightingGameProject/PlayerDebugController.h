@@ -4,6 +4,7 @@
 #include "iPlayerDebugController.h"
 #include "iPlayer.h"
 #include "GameplayControllers.h"
+#include "PlayerID.h"
 
 namespace RB::PlayerDebug
 {

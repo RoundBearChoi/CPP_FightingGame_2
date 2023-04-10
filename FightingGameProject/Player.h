@@ -6,6 +6,7 @@
 #include "StateMachineBase.h"
 #include "StateMachineID.h"
 #include "iPlayer.h"
+#include "PlayerID.h"
 #include "PlayerTestState.h"
 
 namespace RB::Players
@@ -17,18 +18,18 @@ namespace RB::Players
 		~Player() override;
 
 	public:
-		void Init(int playerIndex);
+		void Init(PlayerID id);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	public:
 		olc::vi2d GetPosition() override;
-		int GetPlayerID() override;
+		PlayerID GetPlayerID() override;
 		int GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
 
 	private:
-		int _playerIndex = 0;
+		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		olc::vi2d _position = { 0, 0 };
 	};

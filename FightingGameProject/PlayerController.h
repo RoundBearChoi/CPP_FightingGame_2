@@ -3,6 +3,7 @@
 #include "iPlayerController.h"
 #include "iPlayer.h"
 #include "Player.h"
+#include "PlayerID.h"
 
 namespace RB::Players
 {
@@ -22,7 +23,7 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		iPlayer* GetPlayerOnPlayerIndex(int index) override;
-		iPlayer* GetPlayerOnStateMachineID(int ID) override;
+		iPlayer* GetPlayerOnPlayerIndex(PlayerID id) override;
+		iPlayer* GetPlayerOnStateMachineID(int id) override;
 	};
 }

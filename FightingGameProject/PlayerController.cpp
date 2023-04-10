@@ -14,8 +14,8 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-		_player1.Init(1);
-		_player2.Init(2);
+		_player1.Init(PlayerID::PLAYER_1);
+		_player2.Init(PlayerID::PLAYER_2);
 	}
 
 	void PlayerController::OnUpdate()
@@ -30,13 +30,13 @@ namespace RB::Players
 		_player2.OnFixedUpdate();
 	}
 
-	iPlayer* PlayerController::GetPlayerOnPlayerIndex(int index)
+	iPlayer* PlayerController::GetPlayerOnPlayerIndex(PlayerID id)
 	{
-		if (_player1.GetPlayerID() == index)
+		if (_player1.GetPlayerID() == id)
 		{
 			return &_player1;
 		}
-		else if (_player2.GetPlayerID() == index)
+		else if (_player2.GetPlayerID() == id)
 		{
 			return &_player2;
 		}
@@ -44,13 +44,13 @@ namespace RB::Players
 		return nullptr;
 	}
 
-	iPlayer* PlayerController::GetPlayerOnStateMachineID(int ID)
+	iPlayer* PlayerController::GetPlayerOnStateMachineID(int id)
 	{
-		if (_player1.GetStateMachineID() == ID)
+		if (_player1.GetStateMachineID() == id)
 		{
 			return &_player1;
 		}
-		else if (_player2.GetStateMachineID() == ID)
+		else if (_player2.GetStateMachineID() == id)
 		{
 			return &_player2;
 		}

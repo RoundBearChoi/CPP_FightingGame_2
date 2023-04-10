@@ -18,8 +18,8 @@ namespace RB::PlayerDebug
 
 		if (pc != nullptr)
 		{
-			_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(1));
-			_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(2));
+			_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(RB::Players::PlayerID::PLAYER_1));
+			_vecPlayers.push_back(pc->GetPlayerOnPlayerIndex(RB::Players::PlayerID::PLAYER_2));
 		}
 	}
 

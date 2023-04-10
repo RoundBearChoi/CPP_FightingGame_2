@@ -10,21 +10,21 @@ namespace RB::PlayerStates
 
 	PlayerTestState::~PlayerTestState()
 	{
-		//std::cout << "destroying PlayerTestState" << std::endl;
+
 	}
 
 	void PlayerTestState::OnEnter()
 	{
-		_skipFixedUpdates.SetSkipFrames(1);
-		_skipFixedUpdates.SetFunction(this, &PlayerTestState::Move);
+		//_skipFixedUpdates.SetSkipFrames(1);
+		//_skipFixedUpdates.SetFunction(this, &PlayerTestState::Move);
 
-		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(50);
+		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(1);
 		_triggerOnFixedUpdateCount.SetFunction(this, &PlayerTestState::TransitionToIdle);
 	}
 
 	void PlayerTestState::OnFixedUpdate()
 	{
-		_skipFixedUpdates.OnFixedUpdate();
+		//_skipFixedUpdates.OnFixedUpdate();
 
 		_triggerOnFixedUpdateCount.OnFixedUpdate();
 	}
@@ -38,7 +38,6 @@ namespace RB::PlayerStates
 
 	void PlayerTestState::TransitionToIdle()
 	{
-		//std::cout << "running testfunc.." << std::endl;
 		_stateMachine->QueueNextState(new RB::PlayerStates::Idle());
 	}
 }

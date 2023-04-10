@@ -27,6 +27,7 @@ namespace RB::Players
 		PlayerID GetPlayerID() override;
 		int GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
+		void SetPosition(olc::vi2d pos) override;
 
 	private:
 		PlayerID _playerID = PlayerID::NONE;

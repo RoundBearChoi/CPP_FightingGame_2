@@ -14,5 +14,6 @@ namespace RB::Players
 		virtual PlayerID GetPlayerID() = 0;
 		virtual int GetStateMachineID() = 0;
 		virtual void Move(olc::vi2d moveAmount) = 0;
+		virtual void SetPosition(olc::vi2d pos) = 0;
 	};
 }

@@ -55,4 +55,8 @@ namespace RB::Players
 	{
 		_position += moveAmount;
 	}
+	void Player::SetPosition(olc::vi2d pos)
+	{
+		_position = pos;
+	}
 }

@@ -26,4 +26,9 @@ namespace RB::Input
 	{
 
 	}
+
+	olc::HWButton InputController::GetButton(Input::PlayerInput playerInput)
+	{
+		return olc::HWButton();
+	}
 }

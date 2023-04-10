@@ -184,6 +184,9 @@
     <ClInclude Include="iInputController.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerInput.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FightingGameProject.rc" />

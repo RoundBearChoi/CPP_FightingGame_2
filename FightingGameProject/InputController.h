@@ -1,5 +1,6 @@
 #pragma once
 #include "iInputController.h"
+#include "PlayerInput.h"
 
 namespace RB::Input
 {
@@ -13,5 +14,8 @@ namespace RB::Input
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	public:
+		olc::HWButton GetButton(Input::PlayerInput playerInput) override;
 	};
 }

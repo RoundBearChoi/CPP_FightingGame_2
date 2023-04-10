@@ -17,6 +17,11 @@ namespace RB::PlayerStates
 
 	}
 
+	void PlayerIdle::OnUpdate()
+	{
+
+	}
+
 	void PlayerIdle::OnFixedUpdate()
 	{
 

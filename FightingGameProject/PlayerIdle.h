@@ -11,6 +11,7 @@ namespace RB::PlayerStates
 
 	public:
 		void OnEnter() override;
+		void OnUpdate() override;
 		void OnFixedUpdate() override;
 	};
 }

@@ -80,6 +80,9 @@
     <ClCompile Include="PlayerIdle.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMoveForward.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -165,6 +168,9 @@
     </ClInclude>
     <ClInclude Include="TriggerOnFixedUpdateCount.h">
       <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMoveForward.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -159,8 +159,6 @@
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
     <ClCompile Include="StateMachineID.cpp" />
-    <ClCompile Include="TestState.cpp" />
-    <ClCompile Include="TestState2.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Updater.cpp" />
@@ -197,8 +195,6 @@
     <ClInclude Include="StateBase.h" />
     <ClInclude Include="StateMachineBase.h" />
     <ClInclude Include="StateMachineID.h" />
-    <ClInclude Include="TestState.h" />
-    <ClInclude Include="TestState2.h" />
     <ClInclude Include="TestUpdater.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="FixedTimer.h" />

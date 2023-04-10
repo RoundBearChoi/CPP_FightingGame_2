@@ -56,13 +56,7 @@
     <ClCompile Include="StateBase.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="TestState.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
     <ClCompile Include="StateMachineBase.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="TestState2.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="PlayerDebugController.cpp">
@@ -145,13 +139,7 @@
     <ClInclude Include="StateBase.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
-    <ClInclude Include="TestState.h">
-      <Filter>Source Files\States</Filter>
-    </ClInclude>
     <ClInclude Include="StateMachineBase.h">
-      <Filter>Source Files\States</Filter>
-    </ClInclude>
-    <ClInclude Include="TestState2.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="iPlayer.h">

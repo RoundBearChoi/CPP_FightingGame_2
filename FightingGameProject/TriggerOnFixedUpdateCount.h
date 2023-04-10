@@ -1,5 +1,5 @@
 #pragma once
-#include "iState.h"
+#include "StateBase.h"
 
 namespace RB::Updaters
 {
@@ -14,7 +14,7 @@ namespace RB::Updaters
 
 		void SetFunction(T* obj, void (T::* function)())
 		{
-			_state = dynamic_cast<RB::States::iState*>(obj);
+			_state = dynamic_cast<RB::States::StateBase*>(obj);
 
 			if (_state != nullptr)
 			{
@@ -29,9 +29,16 @@ namespace RB::Updaters
 		{
 			if (_stateFound)
 			{
-				if (_targetFixedUpdate >= _state->GetCumulatedFixedUpdates())
+				if (!_functionCalled)
 				{
-					(_obj->*_function)();
+					unsigned int currentFixedUpdates = _state->GetCumulatedFixedUpdates();
+
+					if (currentFixedUpdates >= _targetFixedUpdate)
+					{
+						(_obj->*_function)();
+
+						_functionCalled = true;
+					}
 				}
 			}
 		}
@@ -39,8 +46,9 @@ namespace RB::Updaters
 	private:
 		unsigned int _targetFixedUpdate = 0;
 		T* _obj = nullptr;
-		RB::States::iState _state = nullptr;
+		RB::States::StateBase* _state = nullptr;
 		bool _stateFound = false;
+		bool _functionCalled = false;
 		void (T::* _function)() = nullptr;
 	};
 }

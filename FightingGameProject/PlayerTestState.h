@@ -4,6 +4,7 @@
 #include "GameplayControllers.h"
 #include "iPlayer.h"
 #include "SkipFixedUpdates.h"
+#include "TriggerOnFixedUpdateCount.h"
 
 namespace RB::PlayerStates
 {
@@ -19,8 +20,10 @@ namespace RB::PlayerStates
 
 	public:
 		void Move();
+		void TestFunc();
 
 	private:
 		Updaters::SkipFixedUpdates<PlayerTestState> _skipFixedUpdates;
+		Updaters::TriggerOnFixedUpdateCount<PlayerTestState> _trigger;
 	};
 }

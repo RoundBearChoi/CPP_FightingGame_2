@@ -42,18 +42,20 @@ namespace RB::States
 
 	void StateMachineBase::QueueNextState(iState* state)
 	{
-		if (state != nullptr && _makeTransition == false)
+		if (state == nullptr)
 		{
-			if (_nextState == nullptr)
-			{
-				_nextState = state;
-				_makeTransition = true;
-			}
-			else
-			{
-				delete state;
-				_makeTransition = false;
-			}
+			return;
+		}
+
+		if (_makeTransition == false)
+		{
+			_nextState = state;
+
+			_makeTransition = true;
+		}
+		else
+		{
+			delete state;
 		}
 	}
 

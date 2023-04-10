@@ -16,8 +16,6 @@ namespace RB::Updaters
 		{
 			static_assert(std::is_base_of<RB::States::iState, T>::value, "T must be derived from iState");
 			
-			//std::cout << "T is derived from Parent" << std::endl;
-
 			_state = dynamic_cast<RB::States::iState*>(obj);
 
 			if (_state != nullptr)

@@ -7,5 +7,6 @@ namespace RB::Cam
 	{
 	public:
 		virtual olc::vi2d GetCamPos() = 0;
+		virtual olc::vi2d GetRelativePos(olc::vi2d pos) = 0;
 	};
 }

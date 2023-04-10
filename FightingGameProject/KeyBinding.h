@@ -7,11 +7,12 @@ namespace RB::Input
 	class KeyBinding
 	{
 	public:
-		KeyBinding(PlayerInput playerInput, olc::HWButton button);
+		KeyBinding(int playerID, PlayerInput playerInput, olc::Key key);
 		~KeyBinding();
 
 	private:
+		int _playerID = 0;
 		PlayerInput _playerInput = PlayerInput::NONE;
-		olc::HWButton _button;
+		olc::Key _key = olc::NONE;
 	};
 }

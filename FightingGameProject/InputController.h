@@ -1,6 +1,8 @@
 #pragma once
+#include <iostream>
 #include "iInputController.h"
 #include "PlayerInput.h"
+#include "KeyBinding.h"
 
 namespace RB::Input
 {
@@ -17,5 +19,8 @@ namespace RB::Input
 
 	public:
 		olc::HWButton GetButton(Input::PlayerInput playerInput) override;
+
+	private:
+		std::vector<KeyBinding> _vecKeyBindings;
 	};
 }

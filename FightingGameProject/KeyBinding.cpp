@@ -2,10 +2,11 @@
 
 namespace RB::Input
 {
-	KeyBinding::KeyBinding(PlayerInput playerInput, olc::HWButton button)
+	KeyBinding::KeyBinding(int playerID, PlayerInput playerInput, olc::Key key)
 	{
+		_playerID = playerID;
 		_playerInput = playerInput;
-		_button = button;
+		_key = key;
 	}
 
 	KeyBinding::~KeyBinding()

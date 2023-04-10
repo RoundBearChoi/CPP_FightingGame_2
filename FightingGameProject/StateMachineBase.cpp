@@ -26,7 +26,10 @@ namespace RB::States
 
 	void StateMachineBase::OnUpdate()
 	{
-		_currentState->OnUpdate();
+		if (!_makeTransition)
+		{
+			_currentState->OnUpdate();
+		}
 
 		_MakeTransition();
 	}

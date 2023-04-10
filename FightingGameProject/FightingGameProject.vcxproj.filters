@@ -33,6 +33,9 @@
     <Filter Include="Source Files\PlayerStates">
       <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{79b244d5-9bc6-4530-acf4-aad8f319266a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -82,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="MoveForward.cpp">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
+    <ClCompile Include="InputController.cpp">
+      <Filter>Source Files\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +177,12 @@
     </ClInclude>
     <ClInclude Include="MoveForward.h">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="InputController.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="iInputController.h">
+      <Filter>Source Files\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

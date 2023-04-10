@@ -4,6 +4,7 @@
 #include "iUpdaterObj.h"
 #include "iUpdaterObj.h"
 #include "ControllerGroup.h"
+#include "InputController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
 #include "GameplayControllers.h"

@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ControllerGroup.cpp" />
+    <ClCompile Include="InputController.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="main.cpp" />
@@ -164,6 +165,8 @@
     <ClInclude Include="GameplayControllers.h" />
     <ClInclude Include="iController.h" />
     <ClInclude Include="ControllerGroup.h" />
+    <ClInclude Include="iInputController.h" />
+    <ClInclude Include="InputController.h" />
     <ClInclude Include="iPlayer.h" />
     <ClInclude Include="iPlayerDebugController.h" />
     <ClInclude Include="iState.h" />

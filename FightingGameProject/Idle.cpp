@@ -19,6 +19,8 @@ namespace RB::PlayerStates
 
 	void Idle::OnUpdate()
 	{
+		RB::Players::iPlayer* owner = GetOwnerPlayer();
+
 		olc::HWButton button = olc::Platform::ptrPGE->GetKey(olc::Key::D);
 
 		if (button.bPressed)

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "iState.h"
 #include "iStateMachine.h"
+#include "GameplayControllers.h"
 
 namespace RB::States
 {
@@ -18,6 +19,7 @@ namespace RB::States
 		virtual void QueueNextState(iState* nextState);
 		virtual void AddCumulatedFixedUpdate();
 		virtual unsigned int GetCumulatedFixedUpdates();
+		virtual RB::Players::iPlayer* GetOwnerPlayer();
 
 	public:
 		virtual void OnEnter() {}

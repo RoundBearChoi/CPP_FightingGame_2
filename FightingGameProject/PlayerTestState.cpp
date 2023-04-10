@@ -1,4 +1,5 @@
 #include "PlayerTestState.h"
+#include "PlayerIdle.h"
 
 namespace RB::PlayerStates
 {
@@ -18,7 +19,7 @@ namespace RB::PlayerStates
 		_skipFixedUpdates.SetFunction(this, &PlayerTestState::Move);
 
 		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(100);
-		_triggerOnFixedUpdateCount.SetFunction(this, &PlayerTestState::TestFunc);
+		_triggerOnFixedUpdateCount.SetFunction(this, &PlayerTestState::TransitionToIdle);
 	}
 
 	void PlayerTestState::OnFixedUpdate()
@@ -35,8 +36,9 @@ namespace RB::PlayerStates
 		player->Move(olc::vi2d{ 1, 1 });
 	}
 
-	void PlayerTestState::TestFunc()
+	void PlayerTestState::TransitionToIdle()
 	{
-		std::cout << "running testfunc.." << std::endl;
+		//std::cout << "running testfunc.." << std::endl;
+		_stateMachine->QueueNextState(new RB::PlayerStates::PlayerIdle());
 	}
 }

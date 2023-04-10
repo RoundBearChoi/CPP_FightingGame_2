@@ -20,7 +20,7 @@ namespace RB::PlayerStates
 
 	public:
 		void Move();
-		void TestFunc();
+		void TransitionToIdle();
 
 	private:
 		Updaters::SkipFixedUpdates<PlayerTestState> _skipFixedUpdates;

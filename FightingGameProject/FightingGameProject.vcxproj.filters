@@ -30,6 +30,9 @@
     <Filter Include="Source Files\Updaters">
       <UniqueIdentifier>{168f9cf3-a809-4fa0-9c97-2eae554d7b92}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PlayerStates">
+      <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,9 +59,6 @@
     <ClCompile Include="TestState2.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerTestState.cpp">
-      <Filter>Source Files\Players</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerDebugController.cpp">
       <Filter>Source Files\PlayerDebug</Filter>
     </ClCompile>
@@ -73,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="Updater.cpp">
       <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTestState.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,9 +130,6 @@
     <ClInclude Include="iPlayer.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerTestState.h">
-      <Filter>Source Files\Players</Filter>
-    </ClInclude>
     <ClInclude Include="GameplayControllers.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
@@ -153,6 +153,9 @@
     </ClInclude>
     <ClInclude Include="SkipFrameUpdater.h">
       <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTestState.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

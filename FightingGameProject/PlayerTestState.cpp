@@ -1,6 +1,6 @@
 #include "PlayerTestState.h"
 
-namespace RB::Players
+namespace RB::PlayerStates
 {
 	PlayerTestState::PlayerTestState()
 	{
@@ -25,7 +25,7 @@ namespace RB::Players
 
 	void PlayerTestState::Move()
 	{
-		iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
+		RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 		
 		player->Move(olc::vi2d{ 1, 1 });
 	}

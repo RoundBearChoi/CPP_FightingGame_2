@@ -5,7 +5,7 @@
 #include "iPlayer.h"
 #include "SkipFrameUpdater.h"
 
-namespace RB::Players
+namespace RB::PlayerStates
 {
 	class PlayerTestState : public RB::States::StateBase
 	{

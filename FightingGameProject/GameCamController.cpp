@@ -21,7 +21,7 @@ namespace RB::Cam
 	{
 		olc::vi2d rel = pos - _gameCam.GetPosition();
 
-		return pos;
+		return rel;
 	}
 
 	void GameCamController::Init()

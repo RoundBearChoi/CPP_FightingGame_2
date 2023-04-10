@@ -92,6 +92,9 @@
     <ClCompile Include="KeyBinding.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
+    <ClCompile Include="MoveBack.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -195,6 +198,9 @@
     </ClInclude>
     <ClInclude Include="PlayerID.h">
       <Filter>Source Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveBack.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

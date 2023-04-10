@@ -1,28 +1,28 @@
-#include "MoveForward.h"
+#include "MoveBack.h"
 
 namespace RB::PlayerStates
 {
-	MoveForward::MoveForward()
+	MoveBack::MoveBack()
 	{
 
 	}
 
-	MoveForward::~MoveForward()
+	MoveBack::~MoveBack()
 	{
 
 	}
 
-	void MoveForward::OnEnter()
+	void MoveBack::OnEnter()
 	{
 
 	}
 
-	void MoveForward::OnUpdate()
+	void MoveBack::OnUpdate()
 	{
 
 	}
 
-	void MoveForward::OnFixedUpdate()
+	void MoveBack::OnFixedUpdate()
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 
@@ -41,18 +41,16 @@ namespace RB::PlayerStates
 		}
 		else if (moveLeft.bHeld)
 		{
-			_stateMachine->QueueNextState(new RB::PlayerStates::MoveBack());
+			RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
-			//RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
-			//
-			//player->Move(olc::vi2d{ -1, 0 });
+			player->Move(olc::vi2d{ -1, 0 });
 		}
 		else if (moveRight.bHeld)
 		{
-			RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
-
-			player->Move(olc::vi2d{ 1, 0 });
+			_stateMachine->QueueNextState(new RB::PlayerStates::MoveForward());
+			//RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
+			//
+			//player->Move(olc::vi2d{ 1, 0 });
 		}
-
 	}
 }

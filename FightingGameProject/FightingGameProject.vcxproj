@@ -146,6 +146,7 @@
     <ClCompile Include="ControllerGroup.cpp" />
     <ClCompile Include="InputController.cpp" />
     <ClCompile Include="KeyBinding.cpp" />
+    <ClCompile Include="MoveBack.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="main.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="iState.h" />
     <ClInclude Include="iStateMachine.h" />
     <ClInclude Include="KeyBinding.h" />
+    <ClInclude Include="MoveBack.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Game.h" />

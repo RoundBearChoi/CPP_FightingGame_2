@@ -3,15 +3,15 @@
 #include "iPlayer.h"
 #include "GameplayControllers.h"
 #include "Idle.h"
-#include "MoveBack.h"
+#include "MoveForward.h"
 
 namespace RB::PlayerStates
 {
-	class MoveForward : public RB::States::StateBase
+	class MoveBack : public RB::States::StateBase
 	{
 	public:
-		MoveForward();
-		~MoveForward() override;
+		MoveBack();
+		~MoveBack() override;
 
 	public:
 		void OnEnter() override;

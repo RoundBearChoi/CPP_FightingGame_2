@@ -2,9 +2,11 @@
 
 namespace RB::Input
 {
-	enum PlayerInput
+	enum class PlayerInput
 	{
 		NONE,
 
+		MOVE_LEFT,
+		MOVE_RIGHT,
 	};
 }

@@ -36,6 +36,7 @@ namespace RB::States
 		if (!_makeTransition)
 		{
 			_currentState->OnFixedUpdate();
+			_currentState->AddCumulatedFixedUpdate();
 		}
 	}
 

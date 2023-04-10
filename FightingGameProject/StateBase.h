@@ -9,13 +9,16 @@ namespace RB::States
 	{
 	protected:
 		iStateMachine* _stateMachine = nullptr;
+		unsigned int _cumulatedFixedUpdates = 0;
 
 	public:
 		virtual ~StateBase() {};
 
 		virtual void SetStateMachine(iStateMachine* stateMachine);
 		virtual void QueueNextState(iState* nextState);
+		virtual void AddCumulatedFixedUpdate();
 
+	public:
 		virtual void OnEnter() {}
 		virtual void OnExit() {}
 		virtual void OnUpdate() {}

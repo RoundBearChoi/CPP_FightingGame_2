@@ -11,4 +11,9 @@ namespace RB::States
 	{
 		_stateMachine->QueueNextState(nextState);
 	}
+
+	void StateBase::AddCumulatedFixedUpdate()
+	{
+		_cumulatedFixedUpdates++;
+	}
 }

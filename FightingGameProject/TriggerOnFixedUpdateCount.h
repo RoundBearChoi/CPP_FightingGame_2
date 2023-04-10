@@ -37,6 +37,8 @@ namespace RB::Updaters
 		unsigned int _cumulatedFixedUpdates = 0;
 		unsigned int _targetFixedUpdate = 0;
 		bool _functionCalled = false;
+
+	private:
 		T* _obj = nullptr;
 		void (T::* _function)() = nullptr;
 	};

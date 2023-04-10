@@ -21,9 +21,9 @@ namespace RB::PlayerStates
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 
-		olc::HWButton button = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		olc::HWButton moveRight = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
-		if (button.bPressed)
+		if (moveRight.bPressed)
 		{
 			std::cout << "D pressed.." << " player: " << static_cast<int>(owner->GetPlayerID()) << std::endl;
 

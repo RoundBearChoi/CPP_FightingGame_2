@@ -1,5 +1,6 @@
 #pragma once
 #include "iGameCamController.h"
+#include "GameCam.h"
 
 namespace RB::Cam
 {
@@ -13,5 +14,8 @@ namespace RB::Cam
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		GameCam _gameCam;
 	};
 }

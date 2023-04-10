@@ -101,6 +101,9 @@
     <ClCompile Include="GameCamController.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
+    <ClCompile Include="GameCam.cpp">
+      <Filter>Source Files\Cam</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -212,6 +215,9 @@
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
     <ClInclude Include="iGameCamController.h">
+      <Filter>Source Files\Cam</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCam.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,6 @@
 #pragma once
 #include "StateBase.h"
+#include "olcPixelGameEngine.h"
 
 namespace RB::PlayerStates
 {

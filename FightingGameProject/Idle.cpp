@@ -19,7 +19,12 @@ namespace RB::PlayerStates
 
 	void Idle::OnUpdate()
 	{
+		olc::HWButton button = olc::Platform::ptrPGE->GetKey(olc::Key::D);
 
+		if (button.bPressed)
+		{
+			std::cout << "D pressed.." << std::endl;
+		}
 	}
 
 	void Idle::OnFixedUpdate()

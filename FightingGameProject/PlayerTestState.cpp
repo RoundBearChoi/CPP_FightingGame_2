@@ -15,10 +15,10 @@ namespace RB::PlayerStates
 
 	void PlayerTestState::OnEnter()
 	{
-		_skipFixedUpdates.SetSkipFrames(3);
+		_skipFixedUpdates.SetSkipFrames(1);
 		_skipFixedUpdates.SetFunction(this, &PlayerTestState::Move);
 
-		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(100);
+		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(50);
 		_triggerOnFixedUpdateCount.SetFunction(this, &PlayerTestState::TransitionToIdle);
 	}
 

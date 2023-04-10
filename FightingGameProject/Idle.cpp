@@ -26,7 +26,7 @@ namespace RB::PlayerStates
 
 		if (moveLeft.bPressed && moveRight.bPressed)
 		{
-
+			// do nothing
 		}
 		else if (moveLeft.bPressed)
 		{

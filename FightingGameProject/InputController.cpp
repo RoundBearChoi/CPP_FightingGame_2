@@ -14,8 +14,6 @@ namespace RB::Input
 
 	void InputController::Init()
 	{
-		//std::cout << "initializing InputController.." << std::endl;
-
 		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_LEFT, olc::A });
 		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_RIGHT, olc::D });
 

@@ -12,6 +12,11 @@ namespace RB::Cam
 
 	}
 
+	olc::vi2d GameCam::GetPosition()
+	{
+		return _position;
+	}
+
 	void GameCam::Init()
 	{
 
@@ -25,10 +30,5 @@ namespace RB::Cam
 	void GameCam::OnFixedUpdate()
 	{
 
-	}
-
-	olc::vi2d GameCam::GetPosition()
-	{
-		return _position;
 	}
 }

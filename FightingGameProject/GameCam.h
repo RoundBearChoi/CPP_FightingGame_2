@@ -10,12 +10,12 @@ namespace RB::Cam
 		~GameCam();
 
 	public:
+		olc::vi2d GetPosition();
+
+	public:
 		void Init();
 		void OnUpdate();
 		void OnFixedUpdate();
-
-	public:
-		olc::vi2d GetPosition();
 
 	private:
 		olc::vi2d _position = { 0, 0 };

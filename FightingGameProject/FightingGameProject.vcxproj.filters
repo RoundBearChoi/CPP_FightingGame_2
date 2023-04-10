@@ -163,6 +163,9 @@
     <ClInclude Include="PlayerIdle.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
+    <ClInclude Include="TriggerOnFixedUpdateCount.h">
+      <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FightingGameProject.rc" />

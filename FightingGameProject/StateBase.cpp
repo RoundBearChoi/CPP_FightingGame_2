@@ -16,4 +16,9 @@ namespace RB::States
 	{
 		_cumulatedFixedUpdates++;
 	}
+
+	unsigned int StateBase::GetCumulatedFixedUpdates()
+	{
+		return _cumulatedFixedUpdates;
+	}
 }

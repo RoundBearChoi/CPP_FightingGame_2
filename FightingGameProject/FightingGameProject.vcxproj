@@ -186,6 +186,7 @@
     <ClInclude Include="TestUpdater.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="FixedTimer.h" />
+    <ClInclude Include="TriggerOnFixedUpdateCount.h" />
     <ClInclude Include="Updater.h" />
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "iInputController.h"
 #include "PlayerInput.h"
+#include "PlayerID.h"
 #include "KeyBinding.h"
 
 namespace RB::Input
@@ -18,7 +19,7 @@ namespace RB::Input
 		void OnFixedUpdate() override;
 
 	public:
-		olc::HWButton GetButton(Input::PlayerInput playerInput) override;
+		olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 
 	private:
 		std::vector<KeyBinding> _vecKeyBindings;

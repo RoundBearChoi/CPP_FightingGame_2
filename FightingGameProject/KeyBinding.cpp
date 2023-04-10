@@ -18,4 +18,14 @@ namespace RB::Input
 	{
 		return _playerID;
 	}
+
+	RB::Input::PlayerInput KeyBinding::GetPlayerInput()
+	{
+		return _playerInput;
+	}
+
+	olc::Key KeyBinding::GetKey()
+	{
+		return _key;
+	}
 }

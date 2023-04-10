@@ -13,6 +13,8 @@ namespace RB::Input
 
 	public:
 		RB::Players::PlayerID GetPlayerID();
+		RB::Input::PlayerInput GetPlayerInput();
+		olc::Key GetKey();
 
 	private:
 		RB::Players::PlayerID _playerID = RB::Players::PlayerID::NONE;

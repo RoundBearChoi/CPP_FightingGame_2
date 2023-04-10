@@ -3,7 +3,7 @@
 namespace RB::Updaters
 {
 	template <class T>
-	class SkipFrameUpdater
+	class SkipFixedUpdates
 	{
 	public:
 		void SetSkipFrames(unsigned int skipFrames)

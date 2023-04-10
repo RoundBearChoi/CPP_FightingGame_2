@@ -20,7 +20,7 @@ namespace RB::Cam
 		void OnFixedUpdate();
 
 	private:
-		olc::vi2d _position = { 0, 0 };
+		olc::vi2d _position = { -427, -427 };
 		int _moveSpeed = 2;
 		bool _moveLeft = false;
 		bool _moveRight = false;

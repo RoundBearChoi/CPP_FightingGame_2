@@ -77,6 +77,9 @@
     <ClCompile Include="PlayerTestState.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerIdle.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -155,6 +158,9 @@
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="PlayerTestState.h">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerIdle.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,16 @@
+#pragma once
+#include "StateBase.h"
+
+namespace RB::PlayerStates
+{
+	class PlayerIdle : public RB::States::StateBase
+	{
+	public:
+		PlayerIdle();
+		~PlayerIdle() override;
+
+	public:
+		void OnEnter() override;
+		void OnFixedUpdate() override;
+	};
+}

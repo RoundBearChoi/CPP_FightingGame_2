@@ -89,6 +89,9 @@
     <ClCompile Include="InputController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
+    <ClCompile Include="KeyBinding.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -185,6 +188,9 @@
       <Filter>Source Files\Input</Filter>
     </ClInclude>
     <ClInclude Include="PlayerInput.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyBinding.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
   </ItemGroup>

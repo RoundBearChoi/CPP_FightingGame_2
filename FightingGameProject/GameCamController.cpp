@@ -12,6 +12,11 @@ namespace RB::Cam
 
 	}
 
+	olc::vi2d GameCamController::GetCamPos()
+	{
+		return _gameCam.GetPosition();
+	}
+
 	void GameCamController::Init()
 	{
 		_gameCam.Init();

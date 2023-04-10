@@ -1,6 +1,7 @@
 #pragma once
 #include "iGameCamController.h"
 #include "GameCam.h"
+#include"olcPixelGameEngine.h"
 
 namespace RB::Cam
 {
@@ -9,6 +10,9 @@ namespace RB::Cam
 	public:
 		GameCamController();
 		~GameCamController() override;
+
+	public:
+		olc::vi2d GetCamPos() override;
 
 	public:
 		void Init() override;

@@ -1,17 +1,21 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "PlayerInput.h"
+#include "PlayerID.h"
 
 namespace RB::Input
 {
 	class KeyBinding
 	{
 	public:
-		KeyBinding(int playerID, PlayerInput playerInput, olc::Key key);
+		KeyBinding(RB::Players::PlayerID playerID, PlayerInput playerInput, olc::Key key);
 		~KeyBinding();
 
+	public:
+		RB::Players::PlayerID GetPlayerID();
+
 	private:
-		int _playerID = 0;
+		RB::Players::PlayerID _playerID = RB::Players::PlayerID::NONE;
 		PlayerInput _playerInput = PlayerInput::NONE;
 		olc::Key _key = olc::NONE;
 	};

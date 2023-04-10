@@ -3,7 +3,7 @@
 #include "StateBase.h"
 #include "GameplayControllers.h"
 #include "iPlayer.h"
-#include "SkipFrameUpdater.h"
+#include "SkipFixedUpdates.h"
 
 namespace RB::PlayerStates
 {

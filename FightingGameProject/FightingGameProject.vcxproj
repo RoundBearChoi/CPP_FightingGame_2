@@ -177,7 +177,7 @@
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="PlayerTestState.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="SkipFrameUpdater.h" />
+    <ClInclude Include="SkipFixedUpdates.h" />
     <ClInclude Include="StateBase.h" />
     <ClInclude Include="StateMachineBase.h" />
     <ClInclude Include="StateMachineID.h" />

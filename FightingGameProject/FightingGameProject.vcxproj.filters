@@ -154,7 +154,7 @@
     <ClInclude Include="Updater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
-    <ClInclude Include="SkipFrameUpdater.h">
+    <ClInclude Include="SkipFixedUpdates.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="PlayerTestState.h">

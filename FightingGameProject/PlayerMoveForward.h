@@ -3,11 +3,11 @@
 
 namespace RB::PlayerStates
 {
-	class PlayerMoveForward : public RB::States::StateBase
+	class MoveForward : public RB::States::StateBase
 	{
 	public:
-		PlayerMoveForward();
-		~PlayerMoveForward() override;
+		MoveForward();
+		~MoveForward() override;
 
 	public:
 		void OnEnter() override;

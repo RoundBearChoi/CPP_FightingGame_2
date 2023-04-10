@@ -3,11 +3,11 @@
 
 namespace RB::PlayerStates
 {
-	class PlayerIdle : public RB::States::StateBase
+	class Idle : public RB::States::StateBase
 	{
 	public:
-		PlayerIdle();
-		~PlayerIdle() override;
+		Idle();
+		~Idle() override;
 
 	public:
 		void OnEnter() override;

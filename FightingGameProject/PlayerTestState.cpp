@@ -39,6 +39,6 @@ namespace RB::PlayerStates
 	void PlayerTestState::TransitionToIdle()
 	{
 		//std::cout << "running testfunc.." << std::endl;
-		_stateMachine->QueueNextState(new RB::PlayerStates::PlayerIdle());
+		_stateMachine->QueueNextState(new RB::PlayerStates::Idle());
 	}
 }

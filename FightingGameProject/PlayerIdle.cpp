@@ -2,27 +2,27 @@
 
 namespace RB::PlayerStates
 {
-	PlayerIdle::PlayerIdle()
+	Idle::Idle()
 	{
 
 	}
 
-	PlayerIdle::~PlayerIdle()
+	Idle::~Idle()
 	{
 		//std::cout << "destroying PlayerIdle" << std::endl;
 	}
 
-	void PlayerIdle::OnEnter()
+	void Idle::OnEnter()
 	{
 
 	}
 
-	void PlayerIdle::OnUpdate()
+	void Idle::OnUpdate()
 	{
 
 	}
 
-	void PlayerIdle::OnFixedUpdate()
+	void Idle::OnFixedUpdate()
 	{
 
 	}

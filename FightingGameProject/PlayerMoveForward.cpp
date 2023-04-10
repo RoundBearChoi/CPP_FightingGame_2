@@ -2,27 +2,27 @@
 
 namespace RB::PlayerStates
 {
-	PlayerMoveForward::PlayerMoveForward()
+	MoveForward::MoveForward()
 	{
 
 	}
 
-	PlayerMoveForward::~PlayerMoveForward()
+	MoveForward::~MoveForward()
 	{
 
 	}
 
-	void PlayerMoveForward::OnEnter()
+	void MoveForward::OnEnter()
 	{
 
 	}
 
-	void PlayerMoveForward::OnUpdate()
+	void MoveForward::OnUpdate()
 	{
 
 	}
 
-	void PlayerMoveForward::OnFixedUpdate()
+	void MoveForward::OnFixedUpdate()
 	{
 
 	}

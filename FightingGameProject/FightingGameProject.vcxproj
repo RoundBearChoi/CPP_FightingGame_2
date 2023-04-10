@@ -148,8 +148,8 @@
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerDebugController.cpp" />
-    <ClCompile Include="PlayerIdle.cpp" />
-    <ClCompile Include="PlayerMoveForward.cpp" />
+    <ClCompile Include="Idle.cpp" />
+    <ClCompile Include="MoveForward.cpp" />
     <ClCompile Include="PlayerTestState.cpp" />
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
@@ -175,8 +175,8 @@
     <ClInclude Include="iUpdaterObj.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="PlayerDebugController.h" />
-    <ClInclude Include="PlayerIdle.h" />
-    <ClInclude Include="PlayerMoveForward.h" />
+    <ClInclude Include="Idle.h" />
+    <ClInclude Include="MoveForward.h" />
     <ClInclude Include="PlayerTestState.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SkipFixedUpdates.h" />

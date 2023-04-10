@@ -77,10 +77,10 @@
     <ClCompile Include="PlayerTestState.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerIdle.cpp">
+    <ClCompile Include="Idle.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerMoveForward.cpp">
+    <ClCompile Include="MoveForward.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
   </ItemGroup>
@@ -163,13 +163,13 @@
     <ClInclude Include="PlayerTestState.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerIdle.h">
+    <ClInclude Include="Idle.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="TriggerOnFixedUpdateCount.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerMoveForward.h">
+    <ClInclude Include="MoveForward.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,15 +17,15 @@ namespace RB::PlayerStates
 		_skipFixedUpdates.SetSkipFrames(3);
 		_skipFixedUpdates.SetFunction(this, &PlayerTestState::Move);
 
-		_trigger.SetTargetFixedUpdate(100);
-		_trigger.SetFunction(this, &PlayerTestState::TestFunc);
+		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(100);
+		_triggerOnFixedUpdateCount.SetFunction(this, &PlayerTestState::TestFunc);
 	}
 
 	void PlayerTestState::OnFixedUpdate()
 	{
 		_skipFixedUpdates.OnFixedUpdate();
 
-		_trigger.OnFixedUpdate();
+		_triggerOnFixedUpdateCount.OnFixedUpdate();
 	}
 
 	void PlayerTestState::Move()

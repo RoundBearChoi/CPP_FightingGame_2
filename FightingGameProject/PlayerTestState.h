@@ -24,6 +24,6 @@ namespace RB::PlayerStates
 
 	private:
 		Updaters::SkipFixedUpdates<PlayerTestState> _skipFixedUpdates;
-		Updaters::TriggerOnFixedUpdateCount<PlayerTestState> _trigger;
+		Updaters::TriggerOnFixedUpdateCount<PlayerTestState> _triggerOnFixedUpdateCount;
 	};
 }

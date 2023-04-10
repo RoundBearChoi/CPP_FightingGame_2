@@ -14,7 +14,7 @@ namespace RB::PlayerStates
 
 	void PlayerTestState::OnEnter()
 	{
-		_skipFixedUpdates.SetSkipFrames(5);
+		_skipFixedUpdates.SetSkipFrames(3);
 		_skipFixedUpdates.SetFunction(this, &PlayerTestState::Move);
 
 		_trigger.SetTargetFixedUpdate(100);
@@ -23,7 +23,7 @@ namespace RB::PlayerStates
 
 	void PlayerTestState::OnFixedUpdate()
 	{
-		_skipFixedUpdates.CallFunction();
+		_skipFixedUpdates.OnFixedUpdate();
 
 		_trigger.OnFixedUpdate();
 	}

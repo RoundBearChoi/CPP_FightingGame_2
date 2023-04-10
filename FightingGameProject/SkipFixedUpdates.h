@@ -17,7 +17,7 @@ namespace RB::Updaters
 			_function = function;
 		}
 
-		void CallFunction()
+		void OnFixedUpdate()
 		{
 			if (_frameCount < _skipFrames)
 			{

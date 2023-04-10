@@ -14,43 +14,30 @@ namespace RB::Updaters
 
 		void SetFunction(T* obj, void (T::* function)())
 		{
-			static_assert(std::is_base_of<RB::States::iState, T>::value, "T must be derived from iState");
-			
-			_state = dynamic_cast<RB::States::iState*>(obj);
-
-			if (_state != nullptr)
-			{
-				_obj = obj;
-				_function = function;
-
-				_stateFound = true;
-			}
+			_obj = obj;
+			_function = function;
 		}
 
 		void OnFixedUpdate()
 		{
-			if (_stateFound)
+			if (!_functionCalled)
 			{
-				if (!_functionCalled)
+				if (_cumulatedFixedUpdates >= _targetFixedUpdate)
 				{
-					unsigned int currentFixedUpdates = _state->GetCumulatedFixedUpdates();
+					(_obj->*_function)();
 
-					if (currentFixedUpdates >= _targetFixedUpdate)
-					{
-						(_obj->*_function)();
-
-						_functionCalled = true;
-					}
+					_functionCalled = true;
 				}
 			}
+
+			_cumulatedFixedUpdates++;
 		}
 
 	private:
+		unsigned int _cumulatedFixedUpdates = 0;
 		unsigned int _targetFixedUpdate = 0;
-		T* _obj = nullptr;
-		RB::States::iState* _state = nullptr;
-		bool _stateFound = false;
 		bool _functionCalled = false;
+		T* _obj = nullptr;
 		void (T::* _function)() = nullptr;
 	};
 }

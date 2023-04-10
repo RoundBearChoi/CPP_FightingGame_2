@@ -21,14 +21,10 @@ namespace RB::Updaters
 		{
 			if (_frameCount < _skipFrames)
 			{
-				//std::cout << "skipping frame" << std::endl;
-
 				_frameCount++;
 			}
 			else
 			{
-				//std::cout << "running func" << std::endl;
-
 				_frameCount = 0;
 
 				(_obj->*_function)();

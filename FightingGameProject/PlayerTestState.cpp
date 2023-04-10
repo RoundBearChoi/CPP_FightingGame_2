@@ -14,13 +14,13 @@ namespace RB::PlayerStates
 
 	void PlayerTestState::OnEnter()
 	{
-		_customUpdater.SetSkipFrames(5);
-		_customUpdater.SetFunction(this, &PlayerTestState::Move);
+		_skipFrame.SetSkipFrames(5);
+		_skipFrame.SetFunction(this, &PlayerTestState::Move);
 	}
 
 	void PlayerTestState::OnFixedUpdate()
 	{
-		_customUpdater.CallFunction();
+		_skipFrame.CallFunction();
 	}
 
 	void PlayerTestState::Move()

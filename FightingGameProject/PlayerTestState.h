@@ -21,6 +21,6 @@ namespace RB::PlayerStates
 		void Move();
 
 	private:
-		Updaters::SkipFrameUpdater<PlayerTestState> _customUpdater;
+		Updaters::SkipFrameUpdater<PlayerTestState> _skipFrame;
 	};
 }

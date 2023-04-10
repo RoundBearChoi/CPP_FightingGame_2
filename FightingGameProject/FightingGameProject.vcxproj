@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ControllerGroup.cpp" />
+    <ClCompile Include="GameCamController.cpp" />
     <ClCompile Include="InputController.cpp" />
     <ClCompile Include="KeyBinding.cpp" />
     <ClCompile Include="MoveBack.cpp" />
@@ -164,9 +165,11 @@
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameCamController.h" />
     <ClInclude Include="GameplayControllers.h" />
     <ClInclude Include="iController.h" />
     <ClInclude Include="ControllerGroup.h" />
+    <ClInclude Include="iGameCamController.h" />
     <ClInclude Include="iInputController.h" />
     <ClInclude Include="InputController.h" />
     <ClInclude Include="iPlayer.h" />

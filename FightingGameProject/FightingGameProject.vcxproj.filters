@@ -36,6 +36,9 @@
     <Filter Include="Source Files\Input">
       <UniqueIdentifier>{79b244d5-9bc6-4530-acf4-aad8f319266a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Cam">
+      <UniqueIdentifier>{3631d74e-b18d-4853-b1d5-5c9e428dcd9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -94,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="MoveBack.cpp">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCamController.cpp">
+      <Filter>Source Files\Cam</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +207,12 @@
     </ClInclude>
     <ClInclude Include="MoveBack.h">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCamController.h">
+      <Filter>Source Files\Cam</Filter>
+    </ClInclude>
+    <ClInclude Include="iGameCamController.h">
+      <Filter>Source Files\Cam</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

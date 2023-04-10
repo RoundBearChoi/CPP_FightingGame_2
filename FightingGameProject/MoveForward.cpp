@@ -26,13 +26,31 @@ namespace RB::PlayerStates
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 
-		olc::HWButton button = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		olc::HWButton moveLeft = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		olc::HWButton moveRight = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
-		if (button.bHeld)
+		if (!moveLeft.bHeld && !moveRight.bHeld)
+		{
+			_stateMachine->QueueNextState(new RB::PlayerStates::Idle());
+
+			return;
+		}
+		else if (moveLeft.bHeld && moveRight.bHeld)
+		{
+
+		}
+		else if (moveLeft.bHeld)
+		{
+			RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
+
+			player->Move(olc::vi2d{ -1, 0 });
+		}
+		else if (moveRight.bHeld)
 		{
 			RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
 			player->Move(olc::vi2d{ 1, 0 });
 		}
+
 	}
 }

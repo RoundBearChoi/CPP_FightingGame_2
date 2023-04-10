@@ -2,6 +2,7 @@
 #include "StateBase.h"
 #include "iPlayer.h"
 #include "GameplayControllers.h"
+#include "Idle.h"
 
 namespace RB::PlayerStates
 {

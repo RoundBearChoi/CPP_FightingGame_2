@@ -41,7 +41,7 @@ namespace RB::Players
 		return _position;
 	}
 
-	int Player::GetPlayerIndex()
+	int Player::GetPlayerID()
 	{
 		return _playerIndex;
 	}

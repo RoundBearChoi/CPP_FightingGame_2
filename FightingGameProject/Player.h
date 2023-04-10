@@ -23,7 +23,7 @@ namespace RB::Players
 
 	public:
 		olc::vi2d GetPosition() override;
-		int GetPlayerIndex() override;
+		int GetPlayerID() override;
 		int GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
 

@@ -193,6 +193,9 @@
     <ClInclude Include="KeyBinding.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerID.h">
+      <Filter>Source Files\Players</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FightingGameProject.rc" />

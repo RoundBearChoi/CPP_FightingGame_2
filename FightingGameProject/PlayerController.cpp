@@ -32,11 +32,11 @@ namespace RB::Players
 
 	iPlayer* PlayerController::GetPlayerOnPlayerIndex(int index)
 	{
-		if (_player1.GetPlayerIndex() == index)
+		if (_player1.GetPlayerID() == index)
 		{
 			return &_player1;
 		}
-		else if (_player2.GetPlayerIndex() == index)
+		else if (_player2.GetPlayerID() == index)
 		{
 			return &_player2;
 		}

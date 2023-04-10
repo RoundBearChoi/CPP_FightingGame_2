@@ -182,6 +182,7 @@
     <ClInclude Include="PlayerDebugController.h" />
     <ClInclude Include="Idle.h" />
     <ClInclude Include="MoveForward.h" />
+    <ClInclude Include="PlayerID.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="PlayerTestState.h" />
     <ClInclude Include="resource.h" />

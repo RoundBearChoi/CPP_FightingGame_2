@@ -10,7 +10,7 @@ namespace RB::PlayerStates
 
 	PlayerTestState::~PlayerTestState()
 	{
-
+		//std::cout << "destroying PlayerTestState" << std::endl;
 	}
 
 	void PlayerTestState::OnEnter()

@@ -41,17 +41,11 @@ namespace RB::Cam
 		}
 		else if (moveUp.bHeld)
 		{
-			//_position.y -= 1;
 			_moveUp = true;
-
-			//std::cout << "cam pos: " << _position.x << ", " << _position.y << std::endl;
 		}
 		else if (moveDown.bHeld)
 		{
-			//_position.y += 1;
 			_moveDown = true;
-
-			//std::cout << "cam pos: " << _position.x << ", " << _position.y << std::endl;
 		}
 
 		if (moveLeft.bHeld && moveRight.bHeld)
@@ -60,17 +54,11 @@ namespace RB::Cam
 		}
 		else if (moveLeft.bHeld)
 		{
-			//_position.x -= 1;
 			_moveLeft = true;
-
-			//std::cout << "cam pos: " << _position.x << ", " << _position.y << std::endl;
 		}
 		else if (moveRight.bHeld)
 		{
-			//_position.x += 1;
 			_moveRight = true;
-
-			//std::cout << "cam pos: " << _position.x << ", " << _position.y << std::endl;
 		}
 	}
 

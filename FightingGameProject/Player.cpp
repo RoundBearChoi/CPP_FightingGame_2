@@ -9,7 +9,7 @@ namespace RB::Players
 
 	Player::~Player()
 	{
-		//std::cout << "destroying player: " << _playerID << std::endl;
+		std::cout << "destroying player: " << static_cast<int>(_playerID) << std::endl;
 
 		delete _stateMachine;
 	}
@@ -22,7 +22,7 @@ namespace RB::Players
 		_stateMachine->SetID(RB::States::StateMachineID::GetID());
 		_stateMachine->Init(new RB::PlayerStates::PlayerTestState());
 
-		//std::cout << "init player: " << id << std::endl;
+		std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
 		//std::cout << "statemachine ID: " << _stateMachine->GetID() << std::endl;
 	}
 

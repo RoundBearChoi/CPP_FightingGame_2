@@ -1,5 +1,7 @@
 #pragma once
+#include <iostream>
 #include "olcPixelGameEngine.h"
+#include "GameplayControllers.h"
 
 namespace RB::Cam
 {

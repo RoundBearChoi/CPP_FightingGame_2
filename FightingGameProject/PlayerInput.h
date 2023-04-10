@@ -8,5 +8,10 @@ namespace RB::Input
 
 		MOVE_LEFT,
 		MOVE_RIGHT,
+
+		MOVE_CAM_LEFT,
+		MOVE_CAM_RIGHT,
+		MOVE_CAM_UP,
+		MOVE_CAM_DOWN,
 	};
 }

@@ -14,7 +14,7 @@ namespace RB::Input
 
 	void InputController::Init()
 	{
-
+		//std::cout << "initializing InputController.." << std::endl;
 	}
 
 	void InputController::OnUpdate()

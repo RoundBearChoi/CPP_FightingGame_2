@@ -5,7 +5,6 @@
 #include "iPlayerDebugController.h"
 #include "iPlayer.h"
 #include "PlayerID.h"
-#include "BoxRenderer.h"
 #include "PivotType.h"
 
 namespace RB::PlayerDebug

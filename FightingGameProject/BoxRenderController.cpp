@@ -9,14 +9,14 @@ namespace RB::Render
 
 	BoxRenderController::~BoxRenderController()
 	{
-		delete _boxRenderer;
+		delete _spriteRenderer;
 	}
 
 	void BoxRenderController::Init()
 	{
-		_boxRenderer = new BoxRenderer();
+		_spriteRenderer = new SpriteRenderer();
 
-		_boxRenderer->Init();
+		_spriteRenderer->Init();
 	}
 
 	void BoxRenderController::OnUpdate()
@@ -30,6 +30,6 @@ namespace RB::Render
 	}
 	iBoxRenderer* BoxRenderController::GetBoxRenderer()
 	{
-		return _boxRenderer;
+		return _spriteRenderer;
 	}
 }

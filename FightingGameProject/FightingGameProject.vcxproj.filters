@@ -107,7 +107,7 @@
     <ClCompile Include="SpriteLoader.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="BoxRenderer.cpp">
+    <ClCompile Include="SpriteRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="LoadedSprite.cpp">
@@ -232,7 +232,7 @@
     <ClInclude Include="SpriteLoader.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="BoxRenderer.h">
+    <ClInclude Include="SpriteRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="LoadedSprite.h">

@@ -8,11 +8,11 @@
 
 namespace RB::Render
 {
-	class BoxRenderer : public iBoxRenderer
+	class SpriteRenderer : public iBoxRenderer
 	{
 	public:
-		BoxRenderer();
-		~BoxRenderer() override;
+		SpriteRenderer();
+		~SpriteRenderer() override;
 
 	public:
 		void Init() override;

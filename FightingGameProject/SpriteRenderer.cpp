@@ -1,23 +1,23 @@
-#include "BoxRenderer.h"
+#include "SpriteRenderer.h"
 
 namespace RB::Render
 {
-	BoxRenderer::BoxRenderer()
+	SpriteRenderer::SpriteRenderer()
 	{
 		std::cout << "constructing BoxRenderer" << std::endl;
 	}
 
-	BoxRenderer::~BoxRenderer()
+	SpriteRenderer::~SpriteRenderer()
 	{
 		std::cout << "destroying BoxRenderer" << std::endl;
 	}
 
-	void BoxRenderer::Init()
+	void SpriteRenderer::Init()
 	{
 		_spriteLoader.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
 	}
 
-	void BoxRenderer::RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType)
+	void SpriteRenderer::RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType)
 	{
 		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::x_white);
 

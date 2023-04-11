@@ -1,7 +1,7 @@
 #pragma once
 #include "iBoxRenderController.h"
 #include "iBoxRenderer.h"
-#include "BoxRenderer.h"
+#include "SpriteRenderer.h"
 
 namespace RB::Render
 {
@@ -20,6 +20,6 @@ namespace RB::Render
 		iBoxRenderer* GetBoxRenderer() override;
 
 	private:
-		iBoxRenderer* _boxRenderer = nullptr;
+		iBoxRenderer* _spriteRenderer = nullptr;
 	};
 }

@@ -40,6 +40,11 @@ namespace RB::Players
 		return _position;
 	}
 
+	olc::vi2d Player::GetPlayerBox()
+	{
+		return _playerBox;
+	}
+
 	PlayerID Player::GetPlayerID()
 	{
 		return _playerID;

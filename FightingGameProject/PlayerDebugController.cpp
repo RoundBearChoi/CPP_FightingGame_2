@@ -38,10 +38,11 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::DrawXOnPlayer(RB::Players::iPlayer* player)
 	{
+		olc::vi2d playerBox = player->GetPlayerBox();
 		olc::vi2d playerPos = player->GetPosition();
 
 		RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetSpriteRenderer()->
-			RenderSprite(RB::Sprites::SpriteID::white_sq_tr80, olc::vi2d{ 80, 120 }, playerPos, olc::GREEN, RB::Sprites::PivotType::BOTTOM_CENTER);
+			RenderSprite(RB::Sprites::SpriteID::white_sq_tr80, playerBox, playerPos, olc::GREEN, RB::Sprites::PivotType::BOTTOM_CENTER);
 
 		RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetSpriteRenderer()->
 			RenderSprite(RB::Sprites::SpriteID::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);

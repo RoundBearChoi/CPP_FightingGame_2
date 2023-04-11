@@ -24,6 +24,7 @@ namespace RB::Players
 
 	public:
 		olc::vi2d GetPosition() override;
+		olc::vi2d GetPlayerBox() override;
 		PlayerID GetPlayerID() override;
 		int GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
@@ -32,6 +33,7 @@ namespace RB::Players
 	private:
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
+		olc::vi2d _playerBox = { 80, 120 };
 		olc::vi2d _position = { 0, 0 };
 	};
 }

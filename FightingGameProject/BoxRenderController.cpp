@@ -13,7 +13,7 @@ namespace RB::Render
 	}
 	void BoxRenderController::Init()
 	{
-
+		_boxRenderer.Init();
 	}
 
 	void BoxRenderController::OnUpdate()

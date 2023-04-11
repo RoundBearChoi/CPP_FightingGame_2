@@ -5,11 +5,11 @@
 
 namespace RB::Render
 {
-	class BoxRenderController : public iDebugRenderController
+	class DebugRenderController : public iDebugRenderController
 	{
 	public:
-		BoxRenderController();
-		~BoxRenderController() override;
+		DebugRenderController();
+		~DebugRenderController() override;
 
 	public:
 		void Init() override;

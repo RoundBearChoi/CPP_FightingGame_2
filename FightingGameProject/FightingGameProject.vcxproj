@@ -143,7 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BoxRenderController.cpp" />
+    <ClCompile Include="DebugRenderController.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="ControllerGroup.cpp" />
     <ClCompile Include="GameCam.cpp" />
@@ -169,7 +169,7 @@
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BoxRenderController.h" />
+    <ClInclude Include="DebugRenderController.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="CurrentCam.h" />
     <ClInclude Include="GameCam.h" />

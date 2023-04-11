@@ -113,7 +113,7 @@
     <ClCompile Include="LoadedSprite.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="BoxRenderController.cpp">
+    <ClCompile Include="DebugRenderController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="iGameCamController.cpp">
@@ -244,7 +244,7 @@
     <ClInclude Include="PivotType.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="BoxRenderController.h">
+    <ClInclude Include="DebugRenderController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="iDebugRenderController.h">

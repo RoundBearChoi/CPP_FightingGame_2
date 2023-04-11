@@ -156,6 +156,7 @@
     <ClCompile Include="Idle.cpp" />
     <ClCompile Include="MoveForward.cpp" />
     <ClCompile Include="PlayerTestState.cpp" />
+    <ClCompile Include="SpriteLoader.cpp" />
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
     <ClCompile Include="StateMachineID.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="PlayerTestState.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SkipFixedUpdates.h" />
+    <ClInclude Include="SpriteLoader.h" />
     <ClInclude Include="StateBase.h" />
     <ClInclude Include="StateMachineBase.h" />
     <ClInclude Include="StateMachineID.h" />

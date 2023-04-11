@@ -17,6 +17,11 @@ namespace RB::Render
 		_spriteLoader.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
 	}
 
+	void SpriteRenderer::LoadSprite(std::string path, RB::Sprites::SpriteID spriteID)
+	{
+		_spriteLoader.LoadSprite(path, spriteID);
+	}
+
 	void SpriteRenderer::RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType)
 	{
 		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::x_white);

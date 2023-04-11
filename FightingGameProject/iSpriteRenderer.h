@@ -1,6 +1,8 @@
 #pragma once
+#include <iostream>
 #include "olcPixelGameEngine.h"
 #include "PivotType.h"
+#include "SpriteID.h"
 
 namespace RB::Render
 {
@@ -11,6 +13,7 @@ namespace RB::Render
 
 	public:
 		virtual void Init() = 0;
+		virtual void LoadSprite(std::string path, RB::Sprites::SpriteID spriteID) = 0;
 		virtual void RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType) = 0;
 	};
 }

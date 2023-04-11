@@ -18,11 +18,6 @@ namespace RB::Controllers
 		inline static RB::Cam::iGameCamController* GAME_CAM_CONTROLLER = nullptr;
 
 	public:
-		static bool IsInitialized()
-		{
-			return _initialized;
-		}
-
 		static void FindAll()
 		{
 			INPUT_CONTROLLER = ControllerGroup::FindController<RB::Input::iInputController>();
@@ -30,11 +25,6 @@ namespace RB::Controllers
 			PLAYER_CONTROLLER = ControllerGroup::FindController<RB::Players::iPlayerController>();
 			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<RB::PlayerDebug::iPlayerDebugController>();
 			GAME_CAM_CONTROLLER = ControllerGroup::FindController<RB::Cam::iGameCamController>();
-
-			_initialized = true;
 		}
-
-	private:
-		inline static bool _initialized = false;
 	};
 }

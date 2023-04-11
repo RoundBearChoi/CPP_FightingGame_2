@@ -6,6 +6,6 @@ namespace RB::Sprites
 	{
 		NONE,
 
-		whitesq_tr80,
+		x_white,
 	};
 }

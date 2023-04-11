@@ -14,12 +14,12 @@ namespace RB::Render
 
 	void BoxRenderer::Init()
 	{
-		_spriteLoader.LoadSprite("PNG files/DebugElements/whitesq_tr80.png", RB::Sprites::SpriteID::whitesq_tr80);
+		_spriteLoader.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
 	}
 
 	void BoxRenderer::RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType)
 	{
-		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::whitesq_tr80);
+		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::x_white);
 
 		olc::vf2d half = widthHeight * 0.5f;
 
@@ -52,6 +52,6 @@ namespace RB::Render
 		
 		olc::Decal* decal = loadedSprite->GetDecal();
 
-		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 245, 245 }, { 1, 1 }, color);
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, { 50, 50 }, color);
 	}
 }

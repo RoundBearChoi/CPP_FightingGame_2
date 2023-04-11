@@ -1,4 +1,5 @@
 #pragma once
+#include "SpriteLoader.h"
 
 namespace RB::Render
 {
@@ -13,5 +14,8 @@ namespace RB::Render
 
 	public:
 		void RenderTBox();
+
+	private:
+		RB::Sprites::SpriteLoader _spriteLoader;
 	};
 }

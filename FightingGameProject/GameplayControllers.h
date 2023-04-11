@@ -4,7 +4,6 @@
 #include "iBoxRenderController.h"
 #include "iPlayerController.h"
 #include "iPlayerDebugController.h"
-#include "iGameCamController.h"
 
 namespace RB::Controllers
 {
@@ -15,7 +14,7 @@ namespace RB::Controllers
 		inline static RB::Render::iBoxRenderController* BOX_RENDER_CONTROLLER = nullptr;
 		inline static RB::Players::iPlayerController* PLAYER_CONTROLLER = nullptr;
 		inline static RB::PlayerDebug::iPlayerDebugController* PLAYER_DEBUG_CONTROLLER = nullptr;
-		inline static RB::Cam::iGameCamController* GAME_CAM_CONTROLLER = nullptr;
+		//inline static RB::Cam::iGameCamController* GAME_CAM_CONTROLLER = nullptr;
 
 	public:
 		static void FindAll()
@@ -24,7 +23,7 @@ namespace RB::Controllers
 			BOX_RENDER_CONTROLLER = ControllerGroup::FindController<RB::Render::iBoxRenderController>();
 			PLAYER_CONTROLLER = ControllerGroup::FindController<RB::Players::iPlayerController>();
 			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<RB::PlayerDebug::iPlayerDebugController>();
-			GAME_CAM_CONTROLLER = ControllerGroup::FindController<RB::Cam::iGameCamController>();
+			//GAME_CAM_CONTROLLER = ControllerGroup::FindController<RB::Cam::iGameCamController>();
 		}
 	};
 }

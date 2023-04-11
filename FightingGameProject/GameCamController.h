@@ -13,8 +13,8 @@ namespace RB::Cam
 		~GameCamController() override;
 
 	public:
-		olc::vi2d GetCamPos() override;
-		olc::vi2d GetRelativePos(olc::vi2d pos) override;
+		//olc::vi2d GetCamPos() override;
+		//olc::vi2d GetRelativePos(olc::vi2d pos) override;
 
 	public:
 		void Init() override;

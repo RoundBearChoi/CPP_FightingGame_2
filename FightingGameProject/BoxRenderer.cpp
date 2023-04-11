@@ -44,12 +44,14 @@ namespace RB::Render
 			};
 		}
 
-		for (int i = 0; i < points.size(); i++)
+		if (RB::Cam::CurrentCam::CamExists())
 		{
-			//temp - should look for a cam so you're not dependent on gameplaycontrollers
-			points[i] = RB::Controllers::GameplayControllers::GAME_CAM_CONTROLLER->GetRelativePos(points[i]);
+			for (int i = 0; i < points.size(); i++)
+			{
+				points[i] = RB::Cam::CurrentCam::GetRelativePos(points[i]);
+			}
 		}
-		
+
 		olc::Decal* decal = loadedSprite->GetDecal();
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, { 50, 50 }, color);

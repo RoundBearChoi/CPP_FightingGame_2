@@ -17,20 +17,24 @@ namespace RB::Render
 		_spriteLoader.LoadSprite("PNG files/DebugElements/whitesq_tr80.png", RB::Sprites::SpriteID::whitesq_tr80);
 	}
 
-	void BoxRenderer::RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color)
+	void BoxRenderer::RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType)
 	{
 		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::whitesq_tr80);
 
 		olc::vf2d half = widthHeight * 0.5f;
 
-		std::array<olc::vf2d, 4> points
-		{
-			olc::vf2d{pos.x - half.x, pos.y - half.y},
-			olc::vf2d{pos.x - half.x, pos.y + half.y},
-			olc::vf2d{pos.x + half.x, pos.y + half.y},
-			olc::vf2d{pos.x + half.x, pos.y - half.y},
-		};
+		std::array<olc::vf2d, 4> points;
 
+		if (pivotType == RB::Sprites::PivotType::CENTER)
+		{
+			points = {
+				olc::vf2d{ pos.x - half.x, pos.y - half.y },
+				olc::vf2d{ pos.x - half.x, pos.y + half.y },
+				olc::vf2d{ pos.x + half.x, pos.y + half.y },
+				olc::vf2d{ pos.x + half.x, pos.y - half.y },
+			};
+		}
+		
 		for (int i = 0; i < points.size(); i++)
 		{
 			//temp - should look for a cam so you're not dependent on gameplaycontrollers

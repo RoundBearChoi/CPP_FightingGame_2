@@ -4,6 +4,7 @@
 #include "SpriteLoader.h"
 #include "LoadedSprite.h"
 #include "SpriteID.h"
+#include "PivotType.h"
 
 namespace RB::Render
 {
@@ -17,7 +18,7 @@ namespace RB::Render
 		void Init();
 
 	public:
-		void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color);
+		void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType);
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;

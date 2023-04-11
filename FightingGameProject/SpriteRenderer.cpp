@@ -53,7 +53,8 @@ namespace RB::Render
 		}
 
 		olc::Decal* decal = loadedSprite->GetDecal();
+		olc::Sprite* sprite = loadedSprite->GetSprite();
 
-		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, { 50, 50 }, tint);
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, sprite->Size(), tint);
 	}
 }

@@ -18,7 +18,7 @@ namespace RB::Render
 		void Init() override;
 
 	public:
-		void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType) override;
+		void RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType) override;
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;

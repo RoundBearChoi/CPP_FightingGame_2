@@ -11,6 +11,6 @@ namespace RB::Render
 
 	public:
 		virtual void Init() = 0;
-		virtual void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType) = 0;
+		virtual void RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType) = 0;
 	};
 }

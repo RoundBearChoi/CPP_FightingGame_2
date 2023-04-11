@@ -149,6 +149,7 @@
     <ClCompile Include="GameCamController.cpp" />
     <ClCompile Include="InputController.cpp" />
     <ClCompile Include="KeyBinding.cpp" />
+    <ClCompile Include="LoadedSprite.cpp" />
     <ClCompile Include="MoveBack.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerController.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="iState.h" />
     <ClInclude Include="iStateMachine.h" />
     <ClInclude Include="KeyBinding.h" />
+    <ClInclude Include="LoadedSprite.h" />
     <ClInclude Include="MoveBack.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerController.h" />

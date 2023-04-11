@@ -110,6 +110,9 @@
     <ClCompile Include="BoxRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="LoadedSprite.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -225,6 +228,9 @@
     </ClInclude>
     <ClInclude Include="BoxRenderer.h">
       <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadedSprite.h">
+      <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

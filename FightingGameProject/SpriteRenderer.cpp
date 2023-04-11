@@ -14,7 +14,7 @@ namespace RB::Render
 
 	void SpriteRenderer::Init()
 	{
-		//_spriteLoader.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
+
 	}
 
 	void SpriteRenderer::LoadSprite(std::string path, RB::Sprites::SpriteID spriteID)

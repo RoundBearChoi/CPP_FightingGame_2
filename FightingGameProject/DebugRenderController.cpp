@@ -17,6 +17,7 @@ namespace RB::Render
 		_spriteRenderer = new SpriteRenderer();
 
 		_spriteRenderer->Init();
+
 		_spriteRenderer->LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
 	}
 

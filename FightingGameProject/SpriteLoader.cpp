@@ -9,28 +9,23 @@ namespace RB::Sprites
 
 	SpriteLoader::~SpriteLoader()
 	{
-
+		for (int i = 0; i < _loadedSprites.size(); i++)
+		{
+			//std::cout << "destroying sprite: " << _loadedSprites[i]->GetData()->
+			delete _loadedSprites[i];
+		}
 	}
 
-	void SpriteLoader::LoadSprite(std::string path)
+	olc::Sprite* SpriteLoader::LoadSprite(std::string path)
 	{
 		std::cout << "loading sprite: " << path << std::endl;
 
-		for (const auto& i : std::filesystem::directory_iterator(path))
-		{
-			std::filesystem::path path = i.path();
+		std::replace(path.begin(), path.end(), '\\', '/'); //convert directory separators
+ 
+		olc::Sprite* sprite = new olc::Sprite(path);
 
-			std::cout << "loading sprite (original path): " << path << std::endl;
+		_loadedSprites.push_back(sprite);
 
-			std::string p = path.string();
-			std::replace(p.begin(), p.end(), '\\', '/'); //convert directory separators
-
-			std::cout << "converted path: " << p << std::endl;
-
-			olc::Sprite* sprite = new olc::Sprite(p);
-
-			//temp
-			delete sprite;
-		}
+		return sprite;
 	}
 }

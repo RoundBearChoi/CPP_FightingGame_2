@@ -21,6 +21,8 @@ namespace RB::PlayerDebug
 			_vecPlayers.push_back(pc->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
 			_vecPlayers.push_back(pc->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2));
 		}
+
+		_boxRenderer.Init();
 	}
 
 	void PlayerDebugController::OnUpdate()

@@ -5,6 +5,7 @@
 #include "iPlayer.h"
 #include "GameplayControllers.h"
 #include "PlayerID.h"
+#include "BoxRenderer.h"
 
 namespace RB::PlayerDebug
 {
@@ -25,5 +26,8 @@ namespace RB::PlayerDebug
 	private:
 		int _lineLength = 6;
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
+
+	private:
+		RB::Render::BoxRenderer _boxRenderer;
 	};
 }

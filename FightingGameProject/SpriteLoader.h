@@ -12,6 +12,9 @@ namespace RB::Sprites
 		~SpriteLoader();
 
 	public:
-		void LoadSprite(std::string path);
+		olc::Sprite* LoadSprite(std::string path);
+
+	private:
+		std::vector<olc::Sprite*> _loadedSprites;
 	};
 }

@@ -12,6 +12,6 @@ namespace RB::Render
 		virtual ~iDebugRenderController() {}
 
 	public:
-		virtual iSpriteRenderer* GetBoxRenderer() = 0;
+		virtual iSpriteRenderer* GetSpriteRenderer() = 0;
 	};
 }

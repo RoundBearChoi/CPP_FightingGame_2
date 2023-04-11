@@ -17,7 +17,7 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
-		iSpriteRenderer* GetBoxRenderer() override;
+		iSpriteRenderer* GetSpriteRenderer() override;
 
 	private:
 		iSpriteRenderer* _spriteRenderer = nullptr;

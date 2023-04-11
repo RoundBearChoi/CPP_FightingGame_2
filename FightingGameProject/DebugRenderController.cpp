@@ -28,7 +28,7 @@ namespace RB::Render
 	{
 
 	}
-	iSpriteRenderer* DebugRenderController::GetBoxRenderer()
+	iSpriteRenderer* DebugRenderController::GetSpriteRenderer()
 	{
 		return _spriteRenderer;
 	}

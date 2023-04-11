@@ -42,6 +42,9 @@
     <Filter Include="Source Files\Sprites">
       <UniqueIdentifier>{ab55abe6-515b-4a4e-8225-9d8ef88c5cd3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{b3c35755-a405-481c-9572-98825f240b1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -103,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="SpriteLoader.cpp">
       <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxRenderer.cpp">
+      <Filter>Source Files\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +222,9 @@
     </ClInclude>
     <ClInclude Include="SpriteLoader.h">
       <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxRenderer.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

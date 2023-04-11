@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BoxRenderer.cpp" />
     <ClCompile Include="ControllerGroup.cpp" />
     <ClCompile Include="GameCam.cpp" />
     <ClCompile Include="GameCamController.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BoxRenderer.h" />
     <ClInclude Include="GameCam.h" />
     <ClInclude Include="GameCamController.h" />
     <ClInclude Include="GameplayControllers.h" />

@@ -22,9 +22,9 @@ namespace RB::Render
 		_spriteLoader.LoadSprite(path, spriteID);
 	}
 
-	void SpriteRenderer::RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType)
+	void SpriteRenderer::RenderSprite(RB::Sprites::SpriteID spriteID, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType)
 	{
-		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::x_white);
+		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(spriteID);
 
 		olc::vf2d half = widthHeight * 0.5f;
 

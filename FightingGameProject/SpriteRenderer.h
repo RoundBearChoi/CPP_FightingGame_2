@@ -20,7 +20,7 @@ namespace RB::Render
 
 	public:
 		void LoadSprite(std::string path, RB::Sprites::SpriteID spriteID) override;
-		void RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType) override;
+		void RenderSprite(RB::Sprites::SpriteID spriteID, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType) override;
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;

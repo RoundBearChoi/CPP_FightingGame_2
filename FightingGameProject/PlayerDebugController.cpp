@@ -41,6 +41,9 @@ namespace RB::PlayerDebug
 		olc::vi2d playerPos = player->GetPosition();
 
 		RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetSpriteRenderer()->
-			RenderSprite(olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+			RenderSprite(RB::Sprites::SpriteID::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+
+		//RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetSpriteRenderer()->
+		//	RenderSprite(RB::Sprites::SpriteID::white_sq_tr80, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
 	}
 }

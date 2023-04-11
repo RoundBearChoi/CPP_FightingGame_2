@@ -23,7 +23,6 @@ namespace RB::Players
 		_stateMachine->Init(new RB::PlayerStates::PlayerTestState());
 
 		std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
-		//std::cout << "statemachine ID: " << _stateMachine->GetID() << std::endl;
 	}
 
 	void Player::OnUpdate()

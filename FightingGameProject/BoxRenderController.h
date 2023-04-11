@@ -3,6 +3,7 @@
 #include "olcPixelGameEngine.h"
 #include "PivotType.h"
 #include "iBoxRenderController.h"
+#include "iBoxRenderer.h"
 #include "BoxRenderer.h"
 
 namespace RB::Render
@@ -19,9 +20,10 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
-		void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType);
+		iBoxRenderer* GetBoxRenderer() override;
+		//void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType);
 
 	private:
-		BoxRenderer _boxRenderer;
+		iBoxRenderer* _boxRenderer = nullptr;
 	};
 }

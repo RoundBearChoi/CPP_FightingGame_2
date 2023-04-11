@@ -51,7 +51,7 @@ namespace RB::PlayerDebug
 
 		if (RB::Controllers::GameplayControllers::IsInitialized())
 		{
-			RB::Controllers::GameplayControllers::BOX_RENDER_CONTROLLER->
+			RB::Controllers::GameplayControllers::BOX_RENDER_CONTROLLER->GetBoxRenderer()->
 				RenderBox(olc::vi2d{ 50, 50 }, playerPos, olc::WHITE, RB::Sprites::PivotType::CENTER);
 		}
 	}

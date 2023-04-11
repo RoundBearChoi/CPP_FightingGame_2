@@ -2,18 +2,18 @@
 
 namespace RB::Sprites
 {
-	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite, SpriteType spriteType)
+	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite, SpriteID spriteID)
 	{
 		_path = path;
 		_sprite = sprite;
-		_spriteType = spriteType;
+		_spriteID = spriteID;
 
-		std::cout << "loaded sprite: " << _path << " (sprite type " << static_cast<int>(_spriteType) << ")" << std::endl;
+		std::cout << "loaded sprite: " << _path << " (sprite type " << static_cast<int>(_spriteID) << ")" << std::endl;
 	}
 
 	LoadedSprite::~LoadedSprite()
 	{
-		std::cout << "destroying sprite: " << _path << " (sprite type " << static_cast<int>(_spriteType) << ")" << std::endl;
+		std::cout << "destroying sprite: " << _path << " (sprite type " << static_cast<int>(_spriteID) << ")" << std::endl;
 
 		delete _sprite;
 	}

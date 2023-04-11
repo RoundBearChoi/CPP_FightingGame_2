@@ -232,7 +232,7 @@
     <ClInclude Include="LoadedSprite.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteType.h">
+    <ClInclude Include="SpriteID.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>

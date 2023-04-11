@@ -1,14 +1,14 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "SpriteType.h"
+#include "SpriteID.h"
 
 namespace RB::Sprites
 {
 	class LoadedSprite
 	{
 	public:
-		LoadedSprite(std::string path, olc::Sprite* sprite, SpriteType spriteType);
+		LoadedSprite(std::string path, olc::Sprite* sprite, SpriteID spriteID);
 		~LoadedSprite();
 
 	public:
@@ -18,6 +18,6 @@ namespace RB::Sprites
 	private:
 		std::string _path = "NONE";
 		olc::Sprite* _sprite = nullptr;
-		SpriteType _spriteType = SpriteType::NONE;
+		SpriteID _spriteID = SpriteID::NONE;
 	};
 }

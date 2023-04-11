@@ -1,7 +1,4 @@
 #pragma once
-#include <iostream>
-#include "olcPixelGameEngine.h"
-#include "PivotType.h"
 #include "iBoxRenderController.h"
 #include "iBoxRenderer.h"
 #include "BoxRenderer.h"

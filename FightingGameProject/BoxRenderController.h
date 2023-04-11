@@ -21,7 +21,6 @@ namespace RB::Render
 
 	public:
 		iBoxRenderer* GetBoxRenderer() override;
-		//void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType);
 
 	private:
 		iBoxRenderer* _boxRenderer = nullptr;

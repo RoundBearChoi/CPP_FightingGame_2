@@ -51,6 +51,7 @@ namespace RB::PlayerDebug
 		olc::Renderer::ptrPGE->DrawLine(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, olc::RED);
 		olc::Renderer::ptrPGE->DrawLine(bottomLeft.x, bottomLeft.y, topRight.x, topRight.y, olc::RED);
 
+		RB::Controllers::GameplayControllers::BOX_RENDER_CONTROLLER->RenderBox(olc::vi2d{ 50, 50 }, playerPos, olc::WHITE, RB::Sprites::PivotType::CENTER);
 		//_boxRenderer.RenderBox(olc::vi2d{ 50, 50 }, playerPos, olc::WHITE, RB::Sprites::PivotType::CENTER);
 		//_boxRenderer.RenderBox(olc::vi2d{ 50, 50 }, playerPos, olc::WHITE, RB::Sprites::PivotType::BOTTOM_CENTER);
 	}

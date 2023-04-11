@@ -25,4 +25,8 @@ namespace RB::Render
 	{
 
 	}
+	void BoxRenderController::RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType)
+	{
+		_boxRenderer.RenderBox(widthHeight, pos, color, pivotType);
+	}
 }

@@ -15,6 +15,7 @@ namespace RB::Updaters
 	void TestUpdater::Init()
 	{
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
+		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Render::BoxRenderController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Cam::GameCamController()));

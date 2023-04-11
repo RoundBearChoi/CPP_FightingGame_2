@@ -6,6 +6,7 @@
 #include "ControllerGroup.h"
 #include "GameplayControllers.h"
 #include "InputController.h"
+#include "BoxRenderController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
 #include "GameCamController.h"

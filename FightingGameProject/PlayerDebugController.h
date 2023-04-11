@@ -29,6 +29,6 @@ namespace RB::PlayerDebug
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
 
 	private:
-		RB::Render::BoxRenderer _boxRenderer;
+		//RB::Render::BoxRenderer _boxRenderer;
 	};
 }

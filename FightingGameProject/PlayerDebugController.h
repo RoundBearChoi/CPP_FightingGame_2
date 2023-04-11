@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 #include "olcPixelGameEngine.h"
+#include "GameplayControllers.h"
 #include "iPlayerDebugController.h"
 #include "iPlayer.h"
-#include "GameplayControllers.h"
 #include "PlayerID.h"
 #include "BoxRenderer.h"
 #include "PivotType.h"
@@ -25,7 +25,6 @@ namespace RB::PlayerDebug
 		void DrawXOnPlayer(RB::Players::iPlayer* player);
 
 	private:
-		//int _lineLength = 6;
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
 	};
 }

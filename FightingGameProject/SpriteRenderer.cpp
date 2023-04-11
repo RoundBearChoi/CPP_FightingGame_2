@@ -17,7 +17,7 @@ namespace RB::Render
 		_spriteLoader.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
 	}
 
-	void SpriteRenderer::RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color, RB::Sprites::PivotType pivotType)
+	void SpriteRenderer::RenderSprite(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType)
 	{
 		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::x_white);
 
@@ -54,6 +54,6 @@ namespace RB::Render
 
 		olc::Decal* decal = loadedSprite->GetDecal();
 
-		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, { 50, 50 }, color);
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, { 50, 50 }, tint);
 	}
 }

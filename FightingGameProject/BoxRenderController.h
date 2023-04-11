@@ -1,6 +1,6 @@
 #pragma once
 #include "iBoxRenderController.h"
-#include "iDebugRenderer.h"
+#include "iBoxRenderer.h"
 #include "SpriteRenderer.h"
 
 namespace RB::Render
@@ -17,9 +17,9 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
-		iDebugRenderer* GetBoxRenderer() override;
+		iBoxRenderer* GetBoxRenderer() override;
 
 	private:
-		iDebugRenderer* _spriteRenderer = nullptr;
+		iBoxRenderer* _spriteRenderer = nullptr;
 	};
 }

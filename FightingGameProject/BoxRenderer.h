@@ -16,7 +16,7 @@ namespace RB::Render
 		void Init();
 
 	public:
-		void RenderBox(olc::vf2d widthHeight, olc::vi2d pos, olc::Pixel color);
+		void RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color);
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;

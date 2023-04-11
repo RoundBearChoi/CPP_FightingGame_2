@@ -17,18 +17,26 @@ namespace RB::Render
 		_spriteLoader.LoadSprite("PNG files/DebugElements/whitesq_tr80.png", RB::Sprites::SpriteID::whitesq_tr80);
 	}
 
-	void BoxRenderer::RenderBox(olc::vf2d widthHeight, olc::vi2d pos, olc::Pixel color)
+	void BoxRenderer::RenderBox(olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel color)
 	{
 		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(RB::Sprites::SpriteID::whitesq_tr80);
 
 		olc::vf2d half = widthHeight * 0.5f;
 
+		//std::array<olc::vf2d, 4> points
+		//{
+		//	olc::vf2d{0.0f, 0.0f},
+		//	olc::vf2d{0.0f, 50.0f},
+		//	olc::vf2d{50.0f, 50.0f},
+		//	olc::vf2d{50.0f, 0.0f},
+		//};
+
 		std::array<olc::vf2d, 4> points
 		{
-			olc::vf2d{0.0f, 0.0f},
-			olc::vf2d{0.0f, 50.0f},
-			olc::vf2d{50.0f, 50.0f},
-			olc::vf2d{50.0f, 0.0f},
+			olc::vf2d{pos.x - half.x, pos.y - half.y},
+			olc::vf2d{pos.x - half.x, pos.y + half.y},
+			olc::vf2d{pos.x + half.x, pos.y + half.y},
+			olc::vf2d{pos.x + half.x, pos.y - half.y},
 		};
 
 		olc::Decal* decal = loadedSprite->GetDecal();

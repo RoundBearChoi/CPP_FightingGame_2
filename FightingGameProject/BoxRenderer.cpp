@@ -33,7 +33,7 @@ namespace RB::Render
 
 		for (int i = 0; i < points.size(); i++)
 		{
-			//temp
+			//temp - should look for a cam so you're not dependent on gameplaycontrollers
 			points[i] = RB::Controllers::GameplayControllers::GAME_CAM_CONTROLLER->GetRelativePos(points[i]);
 		}
 		

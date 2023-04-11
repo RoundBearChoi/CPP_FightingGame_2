@@ -15,13 +15,13 @@ namespace RB::Sprites
 		}
 	}
 
-	LoadedSprite* SpriteLoader::LoadSprite(std::string path)
+	LoadedSprite* SpriteLoader::LoadSprite(std::string path, SpriteType spriteType)
 	{
 		std::replace(path.begin(), path.end(), '\\', '/'); //convert directory separators
  
 		olc::Sprite* sprite = new olc::Sprite(path);
 
-		LoadedSprite* loadedSprite = new LoadedSprite(path, sprite);
+		LoadedSprite* loadedSprite = new LoadedSprite(path, sprite, spriteType);
 
 		_vecLoadedSprites.push_back(loadedSprite);
 

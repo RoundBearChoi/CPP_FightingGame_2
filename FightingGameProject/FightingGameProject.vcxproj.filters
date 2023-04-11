@@ -232,6 +232,9 @@
     <ClInclude Include="LoadedSprite.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
+    <ClInclude Include="SpriteType.h">
+      <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FightingGameProject.rc" />

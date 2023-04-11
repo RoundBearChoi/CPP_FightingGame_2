@@ -2,10 +2,11 @@
 
 namespace RB::Sprites
 {
-	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite)
+	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite, SpriteType spriteType)
 	{
 		_path = path;
 		_sprite = sprite;
+		_spriteType = spriteType;
 
 		std::cout << "loaded sprite: " << _path << std::endl;
 	}

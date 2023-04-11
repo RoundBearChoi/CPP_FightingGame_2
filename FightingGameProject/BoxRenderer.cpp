@@ -4,12 +4,12 @@ namespace RB::Render
 {
 	BoxRenderer::BoxRenderer()
 	{
-
+		std::cout << "constructing BoxRenderer" << std::endl;
 	}
 
 	BoxRenderer::~BoxRenderer()
 	{
-
+		std::cout << "destroying BoxRenderer" << std::endl;
 	}
 
 	void BoxRenderer::Init()

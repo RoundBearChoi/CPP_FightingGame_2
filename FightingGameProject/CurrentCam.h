@@ -25,6 +25,18 @@ namespace RB::Cam
 			return _camExists;
 		}
 
+		static olc::vi2d GetRelativePos(olc::vi2d pos)
+		{
+			if (!_camExists)
+			{
+				return olc::vi2d{ 0 , 0 };
+			}
+
+			olc::vi2d rel = pos - _cam->GetPosition();
+
+			return rel;
+		}
+
 	private:
 		static inline iCam* _cam = nullptr;
 		static inline bool _camExists = false;

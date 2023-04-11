@@ -247,7 +247,7 @@
     <ClInclude Include="BoxRenderController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="iBoxRenderController.h">
+    <ClInclude Include="iDebugRenderController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="iSpriteRenderer.h">

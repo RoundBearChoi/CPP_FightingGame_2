@@ -175,7 +175,7 @@
     <ClInclude Include="GameCam.h" />
     <ClInclude Include="GameCamController.h" />
     <ClInclude Include="GameplayControllers.h" />
-    <ClInclude Include="iBoxRenderController.h" />
+    <ClInclude Include="iDebugRenderController.h" />
     <ClInclude Include="iSpriteRenderer.h" />
     <ClInclude Include="iCam.h" />
     <ClInclude Include="PivotType.h" />

@@ -6,10 +6,10 @@
 
 namespace RB::Render
 {
-	class iBoxRenderController : public RB::Controllers::iController
+	class iDebugRenderController : public RB::Controllers::iController
 	{
 	public:
-		virtual ~iBoxRenderController() {}
+		virtual ~iDebugRenderController() {}
 
 	public:
 		virtual iSpriteRenderer* GetBoxRenderer() = 0;

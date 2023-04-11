@@ -1,7 +1,7 @@
 #pragma once
 #include "ControllerGroup.h"
 #include "iInputController.h"
-#include "iBoxRenderController.h"
+#include "iDebugRenderController.h"
 #include "iPlayerController.h"
 #include "iPlayerDebugController.h"
 
@@ -11,7 +11,7 @@ namespace RB::Controllers
 	{
 	public:
 		inline static RB::Input::iInputController* INPUT_CONTROLLER = nullptr;
-		inline static RB::Render::iBoxRenderController* BOX_RENDER_CONTROLLER = nullptr;
+		inline static RB::Render::iDebugRenderController* BOX_RENDER_CONTROLLER = nullptr;
 		inline static RB::Players::iPlayerController* PLAYER_CONTROLLER = nullptr;
 		inline static RB::PlayerDebug::iPlayerDebugController* PLAYER_DEBUG_CONTROLLER = nullptr;
 
@@ -19,7 +19,7 @@ namespace RB::Controllers
 		static void FindAll()
 		{
 			INPUT_CONTROLLER = ControllerGroup::FindController<RB::Input::iInputController>();
-			BOX_RENDER_CONTROLLER = ControllerGroup::FindController<RB::Render::iBoxRenderController>();
+			BOX_RENDER_CONTROLLER = ControllerGroup::FindController<RB::Render::iDebugRenderController>();
 			PLAYER_CONTROLLER = ControllerGroup::FindController<RB::Players::iPlayerController>();
 			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<RB::PlayerDebug::iPlayerDebugController>();
 		}

@@ -1,11 +1,11 @@
 #pragma once
-#include "iBoxRenderController.h"
+#include "iDebugRenderController.h"
 #include "iSpriteRenderer.h"
 #include "SpriteRenderer.h"
 
 namespace RB::Render
 {
-	class BoxRenderController : public iBoxRenderController
+	class BoxRenderController : public iDebugRenderController
 	{
 	public:
 		BoxRenderController();

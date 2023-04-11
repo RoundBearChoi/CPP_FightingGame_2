@@ -27,8 +27,5 @@ namespace RB::PlayerDebug
 	private:
 		int _lineLength = 6;
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
-
-	private:
-		//RB::Render::BoxRenderer _boxRenderer;
 	};
 }

@@ -10,6 +10,12 @@ namespace RB::Cam
 		~CurrentCam() {}
 
 	public:
+		static void Init()
+		{
+			_cam = nullptr;
+			_camExists = false;
+		}
+
 		static void SetCurrentCam(iCam* cam)
 		{
 			_cam = cam;

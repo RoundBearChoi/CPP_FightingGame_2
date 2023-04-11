@@ -9,6 +9,7 @@
 #include "BoxRenderController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
+#include "CurrentCam.h"
 #include "GameCamController.h"
 
 namespace RB::Updaters

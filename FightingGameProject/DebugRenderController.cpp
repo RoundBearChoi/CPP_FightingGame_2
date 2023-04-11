@@ -19,6 +19,7 @@ namespace RB::Render
 		_spriteRenderer->Init();
 
 		_spriteRenderer->LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
+		_spriteRenderer->LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteID::white_sq_tr80);
 	}
 
 	void DebugRenderController::OnUpdate()

@@ -7,5 +7,6 @@ namespace RB::Sprites
 		NONE,
 
 		x_white,
+		white_sq_tr80,
 	};
 }

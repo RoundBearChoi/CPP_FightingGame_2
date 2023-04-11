@@ -13,7 +13,7 @@ namespace RB::Render
 		void Init();
 
 	public:
-		void RenderTBox();
+		void RenderBox();
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;

@@ -17,7 +17,7 @@ namespace RB::Render
 		_spriteLoader.LoadSprite("PNG files/DebugElements/whitesq_tr80.png", RB::Sprites::SpriteID::whitesq_tr80);
 	}
 
-	void BoxRenderer::RenderTBox()
+	void BoxRenderer::RenderBox()
 	{
 
 	}

@@ -2,17 +2,18 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "GameplayControllers.h"
+#include "iCam.h"
 
 namespace RB::Cam
 {
-	class GameCam
+	class GameCam : public iCam
 	{
 	public:
 		GameCam();
 		~GameCam();
 
 	public:
-		olc::vi2d GetPosition();
+		olc::vi2d GetPosition() override;
 
 	public:
 		void Init();

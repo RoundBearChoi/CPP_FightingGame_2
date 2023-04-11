@@ -148,6 +148,7 @@
     <ClCompile Include="ControllerGroup.cpp" />
     <ClCompile Include="GameCam.cpp" />
     <ClCompile Include="GameCamController.cpp" />
+    <ClCompile Include="iGameCamController.cpp" />
     <ClCompile Include="InputController.cpp" />
     <ClCompile Include="KeyBinding.cpp" />
     <ClCompile Include="LoadedSprite.cpp" />
@@ -170,11 +171,13 @@
   <ItemGroup>
     <ClInclude Include="BoxRenderController.h" />
     <ClInclude Include="BoxRenderer.h" />
+    <ClInclude Include="CurrentCam.h" />
     <ClInclude Include="GameCam.h" />
     <ClInclude Include="GameCamController.h" />
     <ClInclude Include="GameplayControllers.h" />
     <ClInclude Include="iBoxRenderController.h" />
     <ClInclude Include="iBoxRenderer.h" />
+    <ClInclude Include="iCam.h" />
     <ClInclude Include="PivotType.h" />
     <ClInclude Include="SpriteID.h" />
     <ClInclude Include="iController.h" />

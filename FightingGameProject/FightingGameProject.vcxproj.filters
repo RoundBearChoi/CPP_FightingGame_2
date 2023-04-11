@@ -116,6 +116,9 @@
     <ClCompile Include="BoxRenderController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="iGameCamController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -249,6 +252,12 @@
     </ClInclude>
     <ClInclude Include="iBoxRenderer.h">
       <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentCam.h">
+      <Filter>Source Files\Cam</Filter>
+    </ClInclude>
+    <ClInclude Include="iCam.h">
+      <Filter>Source Files\Cam</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

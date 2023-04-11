@@ -27,6 +27,8 @@ namespace RB::Cam
 	void GameCamController::Init()
 	{
 		_gameCam.Init();
+
+		RB::Cam::CurrentCam::SetCurrentCam(&_gameCam);
 	}
 
 	void GameCamController::OnUpdate()

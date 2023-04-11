@@ -250,7 +250,7 @@
     <ClInclude Include="iBoxRenderController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="iBoxRenderer.h">
+    <ClInclude Include="iDebugRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="CurrentCam.h">

@@ -1,14 +1,14 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "CurrentCam.h"
-#include "iBoxRenderer.h"
+#include "iDebugRenderer.h"
 #include "SpriteLoader.h"
 #include "LoadedSprite.h"
 #include "SpriteID.h"
 
 namespace RB::Render
 {
-	class SpriteRenderer : public iBoxRenderer
+	class SpriteRenderer : public iDebugRenderer
 	{
 	public:
 		SpriteRenderer();

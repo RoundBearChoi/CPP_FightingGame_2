@@ -1,5 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include "GameplayControllers.h"
 #include "SpriteLoader.h"
 #include "LoadedSprite.h"
 #include "SpriteID.h"

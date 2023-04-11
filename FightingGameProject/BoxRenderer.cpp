@@ -23,14 +23,6 @@ namespace RB::Render
 
 		olc::vf2d half = widthHeight * 0.5f;
 
-		//std::array<olc::vf2d, 4> points
-		//{
-		//	olc::vf2d{0.0f, 0.0f},
-		//	olc::vf2d{0.0f, 50.0f},
-		//	olc::vf2d{50.0f, 50.0f},
-		//	olc::vf2d{50.0f, 0.0f},
-		//};
-
 		std::array<olc::vf2d, 4> points
 		{
 			olc::vf2d{pos.x - half.x, pos.y - half.y},
@@ -39,6 +31,12 @@ namespace RB::Render
 			olc::vf2d{pos.x + half.x, pos.y - half.y},
 		};
 
+		for (int i = 0; i < points.size(); i++)
+		{
+			//temp
+			points[i] = RB::Controllers::GameplayControllers::GAME_CAM_CONTROLLER->GetRelativePos(points[i]);
+		}
+		
 		olc::Decal* decal = loadedSprite->GetDecal();
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 245, 245 }, { 1, 1 }, color);

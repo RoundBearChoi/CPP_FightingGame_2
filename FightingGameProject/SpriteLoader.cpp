@@ -20,11 +20,25 @@ namespace RB::Sprites
 		std::replace(path.begin(), path.end(), '\\', '/'); //convert directory separators
  
 		olc::Sprite* sprite = new olc::Sprite(path);
+		olc::Decal* decal = new olc::Decal(sprite);
 
-		LoadedSprite* loadedSprite = new LoadedSprite(path, sprite, spriteID);
+		LoadedSprite* loadedSprite = new LoadedSprite(path, sprite, decal, spriteID);
 
 		_vecLoadedSprites.push_back(loadedSprite);
 
 		return loadedSprite;
+	}
+
+	LoadedSprite* SpriteLoader::GetLoadedSprite(SpriteID spriteID)
+	{
+		for (int i = 0; i < _vecLoadedSprites.size(); i++)
+		{
+			if (_vecLoadedSprites[i]->GetSpriteID() == spriteID)
+			{
+				return _vecLoadedSprites[i];
+			}
+		}
+
+		return nullptr;
 	}
 }

@@ -15,6 +15,7 @@ namespace RB::Sprites
 
 	public:
 		LoadedSprite* LoadSprite(std::string path, SpriteID spriteID);
+		LoadedSprite* GetLoadedSprite(SpriteID spriteID);
 
 	private:
 		std::vector<LoadedSprite*> _vecLoadedSprites;

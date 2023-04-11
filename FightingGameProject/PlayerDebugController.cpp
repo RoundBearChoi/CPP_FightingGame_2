@@ -50,5 +50,7 @@ namespace RB::PlayerDebug
 
 		olc::Renderer::ptrPGE->DrawLine(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, olc::RED);
 		olc::Renderer::ptrPGE->DrawLine(bottomLeft.x, bottomLeft.y, topRight.x, topRight.y, olc::RED);
+
+		_boxRenderer.RenderBox(olc::vi2d{ 10, 10 }, olc::vi2d{ 5, 5 }, olc::RED);
 	}
 }

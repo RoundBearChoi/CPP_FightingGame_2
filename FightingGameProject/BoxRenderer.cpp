@@ -34,7 +34,16 @@ namespace RB::Render
 				olc::vf2d{ pos.x + half.x, pos.y - half.y },
 			};
 		}
-		
+		else if (pivotType == RB::Sprites::PivotType::BOTTOM_CENTER)
+		{
+			points = {
+				olc::vf2d{ pos.x - half.x, pos.y - widthHeight.y },
+				olc::vf2d{ pos.x - half.x, 0.0f },
+				olc::vf2d{ pos.x + half.x, 0.0f },
+				olc::vf2d{ pos.x + half.x, pos.y - widthHeight.y },
+			};
+		}
+
 		for (int i = 0; i < points.size(); i++)
 		{
 			//temp - should look for a cam so you're not dependent on gameplaycontrollers

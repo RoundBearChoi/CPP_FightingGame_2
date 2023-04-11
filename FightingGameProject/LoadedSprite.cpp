@@ -8,12 +8,12 @@ namespace RB::Sprites
 		_sprite = sprite;
 		_spriteID = spriteID;
 
-		std::cout << "loaded sprite: " << _path << " (sprite type " << static_cast<int>(_spriteID) << ")" << std::endl;
+		std::cout << "loaded sprite: " << _path << " (spriteID " << static_cast<int>(_spriteID) << ")" << std::endl;
 	}
 
 	LoadedSprite::~LoadedSprite()
 	{
-		std::cout << "destroying sprite: " << _path << " (sprite type " << static_cast<int>(_spriteID) << ")" << std::endl;
+		std::cout << "destroying sprite: " << _path << " (spriteID " << static_cast<int>(_spriteID) << ")" << std::endl;
 
 		delete _sprite;
 	}

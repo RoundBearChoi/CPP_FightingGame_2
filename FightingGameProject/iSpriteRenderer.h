@@ -4,10 +4,10 @@
 
 namespace RB::Render
 {
-	class iBoxRenderer
+	class iSpriteRenderer
 	{
 	public:
-		virtual ~iBoxRenderer() {}
+		virtual ~iSpriteRenderer() {}
 
 	public:
 		virtual void Init() = 0;

@@ -2,7 +2,7 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "iController.h"
-#include "iBoxRenderer.h"
+#include "iSpriteRenderer.h"
 
 namespace RB::Render
 {
@@ -12,6 +12,6 @@ namespace RB::Render
 		virtual ~iBoxRenderController() {}
 
 	public:
-		virtual iBoxRenderer* GetBoxRenderer() = 0;
+		virtual iSpriteRenderer* GetBoxRenderer() = 0;
 	};
 }

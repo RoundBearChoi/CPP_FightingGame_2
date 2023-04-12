@@ -45,6 +45,9 @@
     <Filter Include="Source Files\Render">
       <UniqueIdentifier>{b3c35755-a405-481c-9572-98825f240b1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Collisions">
+      <UniqueIdentifier>{fa252507-7496-4f61-be12-ad649267ec07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -261,6 +264,9 @@
     </ClInclude>
     <ClInclude Include="PlayerCollider.h">
       <Filter>Source Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

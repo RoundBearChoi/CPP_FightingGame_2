@@ -169,6 +169,7 @@
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABB.h" />
     <ClInclude Include="DebugRenderController.h" />
     <ClInclude Include="PlayerCollider.h" />
     <ClInclude Include="SpriteRenderer.h" />

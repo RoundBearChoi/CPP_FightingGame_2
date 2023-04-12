@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "iLineRenderer.h"
+#include "CurrentCam.h"
 
 namespace RB::Render
 {

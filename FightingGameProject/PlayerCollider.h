@@ -21,6 +21,7 @@ namespace RB::Players
 		RB::Collisions::AABB GetAABB();
 		olc::vi2d GetPlayerBox();
 		bool IsColliding();
+		void ResolveCollision(iPlayer* otherPlayer);
 
 	private:
 		iPlayer* _player = nullptr;

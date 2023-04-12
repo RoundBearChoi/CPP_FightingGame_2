@@ -31,6 +31,8 @@ namespace RB::Players
 		if (myAABB.IsCollidingAgainst(otherAABB))
 		{
 			_isColliding = true;
+
+			ResolveCollision(otherPlayer);
 		}
 		else
 		{
@@ -57,5 +59,10 @@ namespace RB::Players
 	bool PlayerCollider::IsColliding()
 	{
 		return _isColliding;
+	}
+
+	void PlayerCollider::ResolveCollision(iPlayer* otherPlayer)
+	{
+
 	}
 }

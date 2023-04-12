@@ -30,7 +30,11 @@ namespace RB::Players
 
 		if (myAABB.IsCollidingAgainst(otherAABB))
 		{
-
+			_isColliding = true;
+		}
+		else
+		{
+			_isColliding = false;
 		}
 	}
 

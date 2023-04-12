@@ -24,4 +24,8 @@ namespace RB::Collisions
 		float _width = 0.0f;
 		float _height = 0.0f;
 	};
+
+	//bool checkAABBCollision(AABB a, AABB b) {
+	//	return (a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y);
+	}
 }

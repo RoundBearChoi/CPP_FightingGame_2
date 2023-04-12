@@ -37,11 +37,6 @@ namespace RB::Players
 		_stateMachine->OnFixedUpdate();
 	}
 
-	olc::vi2d Player::GetPosition()
-	{
-		return _position;
-	}
-
 	olc::vi2d Player::GetPlayerBox()
 	{
 		return _playerBox;
@@ -61,6 +56,12 @@ namespace RB::Players
 	{
 		_position += moveAmount;
 	}
+
+	olc::vi2d Player::GetPosition()
+	{
+		return _position;
+	}
+
 	void Player::SetPosition(olc::vi2d pos)
 	{
 		_position = pos;

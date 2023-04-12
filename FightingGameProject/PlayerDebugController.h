@@ -25,6 +25,7 @@ namespace RB::PlayerDebug
 		void DrawPlayerPosition(RB::Players::iPlayer* player);
 		void DrawPlayerBox(RB::Players::iPlayer* player);
 		void DrawPlayerBottomLeft(RB::Players::iPlayer* player);
+		void DrawPlayerAirMomentum(RB::Players::iPlayer* player);
 
 	private:
 		std::vector<RB::Players::iPlayer*> _vecPlayers;

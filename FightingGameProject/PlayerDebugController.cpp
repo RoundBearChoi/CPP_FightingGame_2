@@ -30,6 +30,7 @@ namespace RB::PlayerDebug
 			DrawPlayerBox(_vecPlayers[i]);
 			DrawPlayerPosition(_vecPlayers[i]);
 			DrawPlayerBottomLeft(_vecPlayers[i]);
+			DrawPlayerAirMomentum(_vecPlayers[i]);
 		}
 	}
 
@@ -67,5 +68,21 @@ namespace RB::PlayerDebug
 
 		RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetLineRenderer()->
 			RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
+	}
+
+	void PlayerDebugController::DrawPlayerAirMomentum(RB::Players::iPlayer* player)
+	{
+		olc::vi2d pos = player->GetPosition();
+		olc::vf2d airMomentum = player->GetAirMomentum();
+
+		if (airMomentum.y >= 0.5f)
+		{
+			int32_t boxY = player->GetPlayerBox().y;
+
+			pos.y -= boxY;
+
+			RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetLineRenderer()->
+				RenderLine(pos, pos - player->GetAirMomentum(), olc::CYAN);
+		}
 	}
 }

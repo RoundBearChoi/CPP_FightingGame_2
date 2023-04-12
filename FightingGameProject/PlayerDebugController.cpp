@@ -51,6 +51,8 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::DrawLineToPlayerBottomLeft(RB::Players::iPlayer* player)
 	{
-		
+		RB::Collisions::AABB aabb = player->GetAABB();
+
+
 	}
 }

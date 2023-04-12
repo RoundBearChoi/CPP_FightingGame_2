@@ -12,5 +12,6 @@ namespace RB::Render
 
 	public:
 		void Init() override;
+		void RenderLine(olc::vf2d p1, olc::vf2d p2, olc::Pixel tint) override;
 	};
 }

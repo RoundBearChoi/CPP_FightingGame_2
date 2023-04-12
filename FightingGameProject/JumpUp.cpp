@@ -33,7 +33,7 @@ namespace RB::PlayerStates
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		olc::vf2d momentum = owner->GetAirMomentum();
 
-		if (momentum.y <= 0.5f)
+		if (momentum.y < 0.5f)
 		{
 			owner->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
 		}

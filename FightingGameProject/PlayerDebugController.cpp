@@ -75,7 +75,7 @@ namespace RB::PlayerDebug
 		olc::vi2d pos = player->GetPosition();
 		olc::vf2d airMomentum = player->GetAirMomentum();
 
-		if (airMomentum.y >= 0.5f)
+		if (airMomentum.y > 0.5f)
 		{
 			int32_t boxY = player->GetPlayerBox().y;
 

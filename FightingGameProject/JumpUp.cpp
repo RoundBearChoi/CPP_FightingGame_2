@@ -14,7 +14,9 @@ namespace RB::PlayerStates
 
 	void JumpUp::OnEnter()
 	{
+		RB::Players::PlayerID id = GetOwnerPlayer()->GetPlayerID();
 
+		std::cout << "player " << static_cast<int>(id) << " jump up" << std::endl;
 	}
 
 	void JumpUp::OnUpdate()

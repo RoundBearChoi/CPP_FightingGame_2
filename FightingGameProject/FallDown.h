@@ -1,5 +1,8 @@
 #pragma once
+#include <iostream>
 #include "StateBase.h"
+#include "iPlayer.h"
+#include "PlayerID.h"
 
 namespace RB::PlayerStates
 {

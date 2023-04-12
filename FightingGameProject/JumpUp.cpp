@@ -38,6 +38,8 @@ namespace RB::PlayerStates
 		if (momentum.y < 0.5f)
 		{
 			owner->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
+
+			_stateMachine->QueueNextState(new RB::PlayerStates::FallDown());
 		}
 		else
 		{

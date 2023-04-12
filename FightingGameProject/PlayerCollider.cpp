@@ -63,6 +63,17 @@ namespace RB::Players
 
 	void PlayerCollider::ResolveCollision(iPlayer* otherPlayer)
 	{
-
+		if (_player->GetPosition().x <= otherPlayer->GetPosition().x)
+		{
+			//_player->SetPosition(olc::vi2d{ otherPlayer->GetPosition().x - _player->GetPlayerBox().x, _player->GetPosition().y });
+			_player->Move(olc::vi2d{ -1, 0 });
+			otherPlayer->Move(olc::vi2d{ 1, 0 });
+		}
+		else
+		{
+			//_player->SetPosition(olc::vi2d{ otherPlayer->GetPosition().x + _player->GetPlayerBox().x, _player->GetPosition().y });
+			_player->Move(olc::vi2d{ 1, 0 });
+			otherPlayer->Move(olc::vi2d{ -1, 0 });
+		}
 	}
 }

@@ -87,6 +87,11 @@ namespace RB::Players
 		_airMomentum.SetMomentum(momentum);
 	}
 
+	void Player::AddMomentum(olc::vf2d momentum)
+	{
+		_airMomentum.AddMomentum(momentum);
+	}
+
 	olc::vf2d Player::GetAirMomentum()
 	{
 		return _airMomentum.GetMomentum();

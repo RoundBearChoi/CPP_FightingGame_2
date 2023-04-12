@@ -14,9 +14,12 @@ namespace RB::PlayerStates
 
 	void JumpUp::OnEnter()
 	{
-		RB::Players::PlayerID id = GetOwnerPlayer()->GetPlayerID();
+		RB::Players::iPlayer* owner = GetOwnerPlayer();
+		RB::Players::PlayerID id = owner->GetPlayerID();
 
 		std::cout << "player " << static_cast<int>(id) << " jump up" << std::endl;
+
+		owner->SetAirMomentum(olc::vf2d{ 0.0f, 5.0f });
 	}
 
 	void JumpUp::OnUpdate()
@@ -26,6 +29,18 @@ namespace RB::PlayerStates
 
 	void JumpUp::OnFixedUpdate()
 	{
+		RB::Players::iPlayer* owner = GetOwnerPlayer();
+		olc::vf2d momentum = owner->GetAirMomentum();
 
+		if (momentum.y <= 0.5f)
+		{
+			owner->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
+		}
+		else
+		{
+			std::cout << "player " << static_cast<int>(owner->GetPlayerID()) << " y momentum: " << momentum.y << std::endl;
+
+			owner->AddMomentum(olc::vf2d{ 0.0f, -0.1f });
+		}
 	}
 }

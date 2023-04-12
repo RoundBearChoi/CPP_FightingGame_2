@@ -39,6 +39,7 @@ namespace RB::Players
 
 	public:
 		void SetAirMomentum(olc::vf2d momentum) override;
+		void AddMomentum(olc::vf2d momentum) override;
 		olc::vf2d GetAirMomentum() override;
 
 	private:

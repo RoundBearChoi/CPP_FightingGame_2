@@ -24,6 +24,7 @@ namespace RB::Players
 
 	public:
 		virtual void SetAirMomentum(olc::vf2d momentum) = 0;
+		virtual void AddMomentum(olc::vf2d momentum) = 0;
 		virtual olc::vf2d GetAirMomentum() = 0;
 	};
 }

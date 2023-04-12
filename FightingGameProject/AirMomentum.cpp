@@ -22,6 +22,11 @@ namespace RB::Players
 		_momentum = momentum;
 	}
 
+	void AirMomentum::AddMomentum(olc::vf2d momentum)
+	{
+		_momentum += momentum;
+	}
+
 	olc::vf2d AirMomentum::GetMomentum()
 	{
 		return _momentum;

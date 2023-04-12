@@ -15,6 +15,7 @@ namespace RB::Players
 
 	public:
 		void SetMomentum(olc::vf2d momentum);
+		void AddMomentum(olc::vf2d momentum);
 		olc::vf2d GetMomentum();
 
 	private:

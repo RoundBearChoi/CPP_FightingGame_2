@@ -47,7 +47,7 @@ namespace RB::PlayerStates
 		{
 			RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
-			player->Move(olc::vi2d{ 1, 0 });
+			player->Move(olc::vi2d{ 2, 0 });
 		}
 	}
 }

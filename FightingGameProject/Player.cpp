@@ -30,11 +30,15 @@ namespace RB::Players
 	void Player::OnUpdate()
 	{
 		_stateMachine->OnUpdate();
+
+		_playerCollider.OnUpdate();
 	}
 
 	void Player::OnFixedUpdate()
 	{
 		_stateMachine->OnFixedUpdate();
+
+		_playerCollider.OnFixedUpdate();
 	}
 
 	PlayerID Player::GetPlayerID()

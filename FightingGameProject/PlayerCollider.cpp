@@ -15,6 +15,17 @@ namespace RB::Players
 		_player = owner;
 	}
 
+	void PlayerCollider::OnUpdate()
+	{
+
+	}
+
+	void PlayerCollider::OnFixedUpdate()
+	{
+		PlayerID myID = _player->GetPlayerID();
+		iPlayer* otherPlayer = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetOtherPlayer(myID);
+	}
+
 	RB::Collisions::AABB PlayerCollider::GetAABB()
 	{
 		olc::vi2d bottomCenter = _player->GetPosition();

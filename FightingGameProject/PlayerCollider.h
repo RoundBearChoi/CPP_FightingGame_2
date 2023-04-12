@@ -2,6 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "iPlayer.h"
 #include "AABB.h"
+#include "GameplayControllers.h"
 
 namespace RB::Players
 {
@@ -13,6 +14,10 @@ namespace RB::Players
 
 	public:
 		void Init(iPlayer* owner);
+		void OnUpdate();
+		void OnFixedUpdate();
+
+	public:
 		RB::Collisions::AABB GetAABB();
 		olc::vi2d GetPlayerBox();
 		void CheckCollision();

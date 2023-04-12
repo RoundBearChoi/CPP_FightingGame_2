@@ -60,4 +60,18 @@ namespace RB::Players
 
 		return nullptr;
 	}
+
+	iPlayer* PlayerController::GetOtherPlayer(PlayerID id)
+	{
+		if (_player1.GetPlayerID() == id)
+		{
+			return &_player2;
+		}
+		else if (_player2.GetPlayerID() == id)
+		{
+			return &_player1;
+		}
+
+		return nullptr;
+	}
 }

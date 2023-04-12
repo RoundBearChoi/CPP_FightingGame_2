@@ -3,6 +3,7 @@
 #include "StateBase.h"
 #include "iPlayer.h"
 #include "PlayerID.h"
+#include "Idle.h"
 
 namespace RB::PlayerStates
 {

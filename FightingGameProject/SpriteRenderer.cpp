@@ -43,8 +43,8 @@ namespace RB::Render
 		{
 			points = {
 				olc::vf2d{ pos.x - half.x, pos.y - widthHeight.y },
-				olc::vf2d{ pos.x - half.x, 0.0f },
-				olc::vf2d{ pos.x + half.x, 0.0f },
+				olc::vf2d{ pos.x - half.x, pos.y },
+				olc::vf2d{ pos.x + half.x, pos.y },
 				olc::vf2d{ pos.x + half.x, pos.y - widthHeight.y },
 			};
 		}

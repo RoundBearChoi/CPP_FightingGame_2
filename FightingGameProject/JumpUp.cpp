@@ -20,7 +20,9 @@ namespace RB::PlayerStates
 		std::cout << std::endl;
 		std::cout << "player " << static_cast<int>(id) << " jump up" << std::endl;
 
-		owner->SetAirMomentum(olc::vf2d{ 0.0f, 5.0f });
+		float startUpMomentum = 9.0f;
+
+		owner->SetAirMomentum(olc::vf2d{ 0.0f, startUpMomentum });
 	}
 
 	void JumpUp::OnUpdate()
@@ -39,9 +41,15 @@ namespace RB::PlayerStates
 		}
 		else
 		{
+			float y = owner->GetAirMomentum().y;
+
+			owner->Move(olc::vf2d{ 0.0f, -y });
+
 			std::cout << "player " << static_cast<int>(owner->GetPlayerID()) << " y momentum: " << momentum.y << std::endl;
 
-			owner->AddMomentum(olc::vf2d{ 0.0f, -0.1f });
+			float ySlowAmount = 0.3f;
+
+			owner->AddMomentum(olc::vf2d{ 0.0f, -ySlowAmount });
 		}
 	}
 }

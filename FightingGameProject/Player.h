@@ -35,7 +35,6 @@ namespace RB::Players
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;
-		olc::vi2d _playerBox = { 80, 120 };
 		olc::vi2d _position = { 0, 0 };
 	};
 }

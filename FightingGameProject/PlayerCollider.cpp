@@ -25,4 +25,9 @@ namespace RB::Players
 
 		return RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
 	}
+
+	olc::vi2d PlayerCollider::GetPlayerBox()
+	{
+		return _playerBox;
+	}
 }

@@ -39,7 +39,7 @@ namespace RB::Players
 
 	olc::vi2d Player::GetPlayerBox()
 	{
-		return _playerBox;
+		return _playerCollider.GetPlayerBox();
 	}
 
 	PlayerID Player::GetPlayerID()

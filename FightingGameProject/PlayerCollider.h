@@ -14,6 +14,7 @@ namespace RB::Players
 	public:
 		void Init(iPlayer* owner);
 		RB::Collisions::AABB GetAABB();
+		olc::vi2d GetPlayerBox();
 
 	private:
 		iPlayer* _player = nullptr;

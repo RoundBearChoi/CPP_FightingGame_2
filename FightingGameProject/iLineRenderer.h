@@ -7,5 +7,7 @@ namespace RB::Render
 	public:
 		virtual ~iLineRenderer() {}
 
+	public:
+		virtual void Init() = 0;
 	};
 }

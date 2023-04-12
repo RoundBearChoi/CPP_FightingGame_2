@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "iLineRenderer.h"
 
 namespace RB::Render
@@ -8,5 +9,8 @@ namespace RB::Render
 	public:
 		LineRenderer();
 		~LineRenderer() override;
+
+	public:
+		void Init() override;
 	};
 }

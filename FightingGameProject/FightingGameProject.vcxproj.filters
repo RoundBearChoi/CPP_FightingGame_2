@@ -116,6 +116,9 @@
     <ClCompile Include="DebugRenderController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerCollision.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -255,6 +258,9 @@
     </ClInclude>
     <ClInclude Include="iCam.h">
       <Filter>Source Files\Cam</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCollision.h">
+      <Filter>Source Files\Players</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

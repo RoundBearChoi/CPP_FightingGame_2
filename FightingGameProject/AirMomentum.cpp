@@ -16,4 +16,9 @@ namespace RB::Players
 	{
 		_player = owner;
 	}
+
+	olc::vf2d AirMomentum::GetMomentum()
+	{
+		return _momentum;
+	}
 }

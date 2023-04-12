@@ -13,6 +13,9 @@ namespace RB::Players
 	public:
 		void Init(iPlayer* owner);
 
+	public:
+		olc::vf2d GetMomentum();
+
 	private:
 		iPlayer* _player = nullptr;
 		olc::vf2d _momentum = { 0.0f, 0.0f };

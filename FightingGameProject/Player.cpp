@@ -81,4 +81,9 @@ namespace RB::Players
 	{
 		return _playerCollider.IsColliding();
 	}
+
+	olc::vf2d Player::GetAirMomentum()
+	{
+		return _airMomentum.GetMomentum();
+	}
 }

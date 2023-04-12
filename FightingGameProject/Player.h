@@ -37,6 +37,9 @@ namespace RB::Players
 		RB::Collisions::AABB GetAABB() override;
 		bool IsCollidingAgainstOtherPlayer() override;
 
+	public:
+		olc::vf2d GetAirMomentum() override;
+
 	private:
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;

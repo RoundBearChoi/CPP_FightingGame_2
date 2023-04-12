@@ -1,10 +1,10 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include "iPlayer.h"
+#include "AABB.h"
 
 namespace RB::Players
 {
-	class iPlayer;
-
 	class PlayerCollider
 	{
 	public:
@@ -13,6 +13,7 @@ namespace RB::Players
 
 	public:
 		void Init(iPlayer* owner);
+		RB::Collisions::AABB GetAABB();
 
 	private:
 		iPlayer* _player = nullptr;

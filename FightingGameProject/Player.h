@@ -25,12 +25,14 @@ namespace RB::Players
 		void OnFixedUpdate();
 
 	public:
-		olc::vi2d GetPlayerBox() override;
 		PlayerID GetPlayerID() override;
 		int GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
 		olc::vi2d GetPosition() override;
 		void SetPosition(olc::vi2d pos) override;
+
+	public:
+		olc::vi2d GetPlayerBox() override;
 		RB::Collisions::AABB GetAABB() override;
 
 	private:

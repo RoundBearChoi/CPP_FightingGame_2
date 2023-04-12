@@ -37,11 +37,6 @@ namespace RB::Players
 		_stateMachine->OnFixedUpdate();
 	}
 
-	olc::vi2d Player::GetPlayerBox()
-	{
-		return _playerCollider.GetPlayerBox();
-	}
-
 	PlayerID Player::GetPlayerID()
 	{
 		return _playerID;
@@ -65,6 +60,11 @@ namespace RB::Players
 	void Player::SetPosition(olc::vi2d pos)
 	{
 		_position = pos;
+	}
+
+	olc::vi2d Player::GetPlayerBox()
+	{
+		return _playerCollider.GetPlayerBox();
 	}
 
 	RB::Collisions::AABB Player::GetAABB()

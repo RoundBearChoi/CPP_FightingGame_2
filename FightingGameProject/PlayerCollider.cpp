@@ -24,6 +24,14 @@ namespace RB::Players
 	{
 		PlayerID myID = _player->GetPlayerID();
 		iPlayer* otherPlayer = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetOtherPlayer(myID);
+
+		RB::Collisions::AABB otherAABB = otherPlayer->GetAABB();
+		RB::Collisions::AABB myAABB = GetAABB();
+
+		if (myAABB.IsCollidingAgainst(otherAABB))
+		{
+
+		}
 	}
 
 	RB::Collisions::AABB PlayerCollider::GetAABB()

@@ -172,6 +172,7 @@
   <ItemGroup>
     <ClInclude Include="AABB.h" />
     <ClInclude Include="DebugRenderController.h" />
+    <ClInclude Include="iLineRenderer.h" />
     <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />
     <ClInclude Include="SpriteRenderer.h" />

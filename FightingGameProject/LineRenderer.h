@@ -1,11 +1,12 @@
 #pragma once
+#include "iLineRenderer.h"
 
 namespace RB::Render
 {
-	class LineRenderer
+	class LineRenderer : public iLineRenderer
 	{
 	public:
 		LineRenderer();
-		~LineRenderer();
+		~LineRenderer() override;
 	};
 }

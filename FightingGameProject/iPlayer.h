@@ -23,6 +23,7 @@ namespace RB::Players
 		virtual bool IsCollidingAgainstOtherPlayer() = 0;
 
 	public:
+		virtual void SetAirMomentum(olc::vf2d momentum) = 0;
 		virtual olc::vf2d GetAirMomentum() = 0;
 	};
 }

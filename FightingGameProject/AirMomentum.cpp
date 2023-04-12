@@ -17,6 +17,11 @@ namespace RB::Players
 		_player = owner;
 	}
 
+	void AirMomentum::SetMomentum(olc::vf2d momentum)
+	{
+		_momentum = momentum;
+	}
+
 	olc::vf2d AirMomentum::GetMomentum()
 	{
 		return _momentum;

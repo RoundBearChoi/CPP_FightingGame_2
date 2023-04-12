@@ -14,6 +14,7 @@ namespace RB::Players
 		void Init(iPlayer* owner);
 
 	public:
+		void SetMomentum(olc::vf2d momentum);
 		olc::vf2d GetMomentum();
 
 	private:

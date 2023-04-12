@@ -38,6 +38,7 @@ namespace RB::Players
 		bool IsCollidingAgainstOtherPlayer() override;
 
 	public:
+		void SetAirMomentum(olc::vf2d momentum) override;
 		olc::vf2d GetAirMomentum() override;
 
 	private:

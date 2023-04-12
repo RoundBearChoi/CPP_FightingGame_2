@@ -10,7 +10,7 @@ https://youtube.com/roundbeargames
 
 1. Download ZIP or clone repository
 
-2. Open FightingGameProject.sln (using Visual Studio 2019 Community)
+2. Open FightingGameProject.sln (using Visual Studio 2022 Community)
 
     https://visualstudio.microsoft.com/downloads
     

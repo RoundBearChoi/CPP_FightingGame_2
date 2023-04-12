@@ -22,7 +22,7 @@ namespace RB::Players
 		_stateMachine->SetID(RB::States::StateMachineID::GetID());
 		_stateMachine->Init(new RB::PlayerStates::PlayerTestState());
 
-		_playerCollision.Init(this);
+		_playerCollider.Init(this);
 
 		std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
 	}

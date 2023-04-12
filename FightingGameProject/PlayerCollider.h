@@ -5,11 +5,11 @@ namespace RB::Players
 {
 	class iPlayer;
 
-	class PlayerCollision
+	class PlayerCollider
 	{
 	public:
-		PlayerCollision();
-		~PlayerCollision();
+		PlayerCollider();
+		~PlayerCollider();
 
 	public:
 		void Init(iPlayer* owner);

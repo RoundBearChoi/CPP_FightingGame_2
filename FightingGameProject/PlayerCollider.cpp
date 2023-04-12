@@ -30,4 +30,9 @@ namespace RB::Players
 	{
 		return _playerBox;
 	}
+
+	void PlayerCollider::CheckCollision()
+	{
+
+	}
 }

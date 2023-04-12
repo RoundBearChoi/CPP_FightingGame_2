@@ -15,9 +15,11 @@ namespace RB::Players
 		void Init(iPlayer* owner);
 		RB::Collisions::AABB GetAABB();
 		olc::vi2d GetPlayerBox();
+		void CheckCollision();
 
 	private:
 		iPlayer* _player = nullptr;
+		bool _isColliding = false;
 		olc::vi2d _playerBox = { 80, 120 };
 	};
 }

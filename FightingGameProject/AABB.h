@@ -25,6 +25,11 @@ namespace RB::Collisions
 			return olc::vf2d{ _x, _y };
 		}
 
+		bool IsCollidingAgainst(AABB& other)
+		{
+			return (_x < other._x + other._width && _x + _width > other._x && _y < other._y + other._height && _y + _height > other._y);
+		}
+
 	private:
 		float _x = 0.0f;
 		float _y = 0.0f;

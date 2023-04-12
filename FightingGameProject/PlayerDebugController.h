@@ -22,8 +22,9 @@ namespace RB::PlayerDebug
 		void OnFixedUpdate() override;
 
 	public:
-		void DrawXOnPlayer(RB::Players::iPlayer* player);
-		void DrawLineToPlayerBottomLeft(RB::Players::iPlayer* player);
+		void DrawPlayerPosition(RB::Players::iPlayer* player);
+		void DrawPlayerBox(RB::Players::iPlayer* player);
+		void DrawPlayerBottomLeft(RB::Players::iPlayer* player);
 
 	private:
 		std::vector<RB::Players::iPlayer*> _vecPlayers;

@@ -8,6 +8,7 @@
 #include "iPlayer.h"
 #include "PlayerID.h"
 #include "PlayerTestState.h"
+#include "PlayerCollision.h"
 
 namespace RB::Players
 {
@@ -33,6 +34,7 @@ namespace RB::Players
 	private:
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
+		PlayerCollision _playerCollision;
 		olc::vi2d _playerBox = { 80, 120 };
 		olc::vi2d _position = { 0, 0 };
 	};

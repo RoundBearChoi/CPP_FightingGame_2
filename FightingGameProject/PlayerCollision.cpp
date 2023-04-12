@@ -10,4 +10,8 @@ namespace RB::Players
 	{
 
 	}
+	void PlayerCollision::Init(iPlayer* owner)
+	{
+		_player = owner;
+	}
 }

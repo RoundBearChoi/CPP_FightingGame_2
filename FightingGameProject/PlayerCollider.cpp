@@ -54,8 +54,8 @@ namespace RB::Players
 		return _playerBox;
 	}
 
-	void PlayerCollider::CheckCollision()
+	bool PlayerCollider::IsColliding()
 	{
-
+		return _isColliding;
 	}
 }

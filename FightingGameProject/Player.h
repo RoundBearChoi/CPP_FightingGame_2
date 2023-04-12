@@ -34,6 +34,7 @@ namespace RB::Players
 	public:
 		olc::vi2d GetPlayerBox() override;
 		RB::Collisions::AABB GetAABB() override;
+		bool IsCollidingAgainstOtherPlayer() override;
 
 	private:
 		PlayerID _playerID = PlayerID::NONE;

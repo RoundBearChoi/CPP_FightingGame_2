@@ -75,4 +75,9 @@ namespace RB::Players
 	{
 		return _playerCollider.GetAABB();
 	}
+
+	bool Player::IsCollidingAgainstOtherPlayer()
+	{
+		return _playerCollider.IsColliding();
+	}
 }

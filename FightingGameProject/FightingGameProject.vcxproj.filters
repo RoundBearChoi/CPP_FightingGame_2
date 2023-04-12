@@ -122,6 +122,9 @@
     <ClCompile Include="PlayerCollider.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
+    <ClCompile Include="LineRenderer.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -267,6 +270,9 @@
     </ClInclude>
     <ClInclude Include="AABB.h">
       <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="LineRenderer.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

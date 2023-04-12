@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DebugRenderController.cpp" />
+    <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="ControllerGroup.cpp" />
@@ -171,6 +172,7 @@
   <ItemGroup>
     <ClInclude Include="AABB.h" />
     <ClInclude Include="DebugRenderController.h" />
+    <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="CurrentCam.h" />

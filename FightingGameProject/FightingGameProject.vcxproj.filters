@@ -131,6 +131,9 @@
     <ClCompile Include="JumpUp.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="FallDown.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -287,6 +290,9 @@
       <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="JumpUp.h">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="FallDown.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>

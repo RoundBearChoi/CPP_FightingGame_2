@@ -23,6 +23,7 @@ namespace RB::Players
 		_stateMachine->Init(new RB::PlayerStates::PlayerTestState());
 
 		_playerCollider.Init(this);
+		_airMomentum.Init(this);
 
 		std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
 	}

@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AirMomentum.cpp" />
     <ClCompile Include="DebugRenderController.cpp" />
     <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
@@ -171,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABB.h" />
+    <ClInclude Include="AirMomentum.h" />
     <ClInclude Include="DebugRenderController.h" />
     <ClInclude Include="iLineRenderer.h" />
     <ClInclude Include="LineRenderer.h" />

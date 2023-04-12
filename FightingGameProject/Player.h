@@ -10,6 +10,7 @@
 #include "PlayerTestState.h"
 #include "PlayerCollider.h"
 #include "AABB.h"
+#include "AirMomentum.h"
 
 namespace RB::Players
 {
@@ -40,6 +41,7 @@ namespace RB::Players
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;
+		AirMomentum _airMomentum;
 		olc::vi2d _position = { 0, 0 };
 	};
 }

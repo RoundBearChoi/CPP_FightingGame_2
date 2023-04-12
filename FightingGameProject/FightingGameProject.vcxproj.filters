@@ -125,6 +125,9 @@
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="AirMomentum.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -276,6 +279,9 @@
     </ClInclude>
     <ClInclude Include="iLineRenderer.h">
       <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="AirMomentum.h">
+      <Filter>Source Files\Players</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

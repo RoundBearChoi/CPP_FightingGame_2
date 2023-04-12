@@ -17,6 +17,7 @@ namespace RB::PlayerStates
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		RB::Players::PlayerID id = owner->GetPlayerID();
 
+		std::cout << std::endl;
 		std::cout << "player " << static_cast<int>(id) << " jump up" << std::endl;
 
 		owner->SetAirMomentum(olc::vf2d{ 0.0f, 5.0f });

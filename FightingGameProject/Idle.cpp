@@ -25,7 +25,7 @@ namespace RB::PlayerStates
 		olc::HWButton moveLeft = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
 		olc::HWButton moveRight = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
-		if (jump.bPressed)
+		if (jump.bPressed || jump.bHeld)
 		{
 			_stateMachine->QueueNextState(new RB::PlayerStates::JumpUp());
 
@@ -39,10 +39,32 @@ namespace RB::PlayerStates
 		else if (moveLeft.bPressed)
 		{
 			_stateMachine->QueueNextState(new RB::PlayerStates::MoveBack());
+
+			return;
 		}
 		else if (moveRight.bPressed)
 		{
 			_stateMachine->QueueNextState(new RB::PlayerStates::MoveForward());
+
+			return;
+		}
+
+		//temp
+		if (moveLeft.bHeld && moveRight.bHeld)
+		{
+			// do nothing
+		}
+		else if (moveLeft.bHeld)
+		{
+			_stateMachine->QueueNextState(new RB::PlayerStates::MoveBack());
+
+			return;
+		}
+		else if (moveRight.bHeld)
+		{
+			_stateMachine->QueueNextState(new RB::PlayerStates::MoveForward());
+
+			return;
 		}
 	}
 

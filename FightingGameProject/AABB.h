@@ -1,4 +1,5 @@
 #pragma once
+#include "olcPixelGameEngine.h"
 
 namespace RB::Collisions
 {
@@ -16,6 +17,12 @@ namespace RB::Collisions
 		~AABB()
 		{
 
+		}
+
+	public:
+		olc::vf2d GetBottomLeft()
+		{
+			return olc::vf2d{ _x, _y };
 		}
 
 	private:

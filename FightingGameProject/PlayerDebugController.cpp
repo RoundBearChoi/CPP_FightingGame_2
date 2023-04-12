@@ -53,6 +53,7 @@ namespace RB::PlayerDebug
 	{
 		RB::Collisions::AABB aabb = player->GetAABB();
 
-
+		RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetLineRenderer()->
+			RenderLine(olc::vi2d{ 0,0 }, aabb.GetBottomLeft(), olc::RED);
 	}
 }

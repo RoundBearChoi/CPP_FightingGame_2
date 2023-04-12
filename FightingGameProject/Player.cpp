@@ -66,4 +66,9 @@ namespace RB::Players
 	{
 		_position = pos;
 	}
+
+	RB::Collisions::AABB Player::GetAABB()
+	{
+		return _playerCollider.GetAABB();
+	}
 }

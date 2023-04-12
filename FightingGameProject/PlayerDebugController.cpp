@@ -28,6 +28,7 @@ namespace RB::PlayerDebug
 		for (int i = 0; i < _vecPlayers.size(); i++)
 		{
 			DrawXOnPlayer(_vecPlayers[i]);
+			DrawLineToPlayerBottomLeft(_vecPlayers[i]);
 		}
 	}
 
@@ -46,5 +47,10 @@ namespace RB::PlayerDebug
 
 		RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetSpriteRenderer()->
 			RenderSprite(RB::Sprites::SpriteID::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+	}
+
+	void PlayerDebugController::DrawLineToPlayerBottomLeft(RB::Players::iPlayer* player)
+	{
+		
 	}
 }

@@ -6,6 +6,7 @@
 #include "iPlayer.h"
 #include "PlayerID.h"
 #include "PivotType.h"
+#include "AABB.h"
 
 namespace RB::PlayerDebug
 {
@@ -22,6 +23,7 @@ namespace RB::PlayerDebug
 
 	public:
 		void DrawXOnPlayer(RB::Players::iPlayer* player);
+		void DrawLineToPlayerBottomLeft(RB::Players::iPlayer* player);
 
 	private:
 		std::vector<RB::Players::iPlayer*> _vecPlayers;

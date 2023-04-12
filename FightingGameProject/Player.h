@@ -9,6 +9,7 @@
 #include "PlayerID.h"
 #include "PlayerTestState.h"
 #include "PlayerCollider.h"
+#include "AABB.h"
 
 namespace RB::Players
 {
@@ -30,6 +31,7 @@ namespace RB::Players
 		void Move(olc::vi2d moveAmount) override;
 		olc::vi2d GetPosition() override;
 		void SetPosition(olc::vi2d pos) override;
+		RB::Collisions::AABB GetAABB() override;
 
 	private:
 		PlayerID _playerID = PlayerID::NONE;

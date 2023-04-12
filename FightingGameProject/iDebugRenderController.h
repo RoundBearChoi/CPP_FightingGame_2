@@ -3,6 +3,7 @@
 #include "olcPixelGameEngine.h"
 #include "iController.h"
 #include "iSpriteRenderer.h"
+#include "iLineRenderer.h"
 
 namespace RB::Render
 {
@@ -13,5 +14,6 @@ namespace RB::Render
 
 	public:
 		virtual iSpriteRenderer* GetSpriteRenderer() = 0;
+		virtual iLineRenderer* GetLineRenderer() = 0;
 	};
 }

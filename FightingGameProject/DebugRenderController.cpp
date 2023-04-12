@@ -35,4 +35,9 @@ namespace RB::Render
 	{
 		return _spriteRenderer;
 	}
+
+	iLineRenderer* DebugRenderController::GetLineRenderer()
+	{
+		return _lineRenderer;
+	}
 }

@@ -8,6 +8,7 @@ namespace RB::Input
 
 		MOVE_LEFT,
 		MOVE_RIGHT,
+		JUMP,
 
 		MOVE_CAM_LEFT,
 		MOVE_CAM_RIGHT,

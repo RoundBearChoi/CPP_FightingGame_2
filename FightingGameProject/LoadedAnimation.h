@@ -2,6 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "SpriteID.h"
 #include "PivotType.h"
+#include "LoadedSprite.h"
 
 namespace RB::Render
 {
@@ -22,5 +23,6 @@ namespace RB::Render
 		unsigned int _heightIndexes;
 		unsigned int _totalIndexes;
 		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
+		RB::Sprites::LoadedSprite* _loadedSprite = nullptr;
 	};
 }

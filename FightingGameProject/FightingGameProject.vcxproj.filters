@@ -277,9 +277,6 @@
     <ClInclude Include="LineRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="iLineRenderer.h">
-      <Filter>Source Files\Render</Filter>
-    </ClInclude>
     <ClInclude Include="AirMomentum.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>

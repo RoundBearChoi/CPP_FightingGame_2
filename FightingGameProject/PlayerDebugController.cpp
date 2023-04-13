@@ -9,7 +9,7 @@ namespace RB::PlayerDebug
 
 	PlayerDebugController::~PlayerDebugController()
 	{
-		delete _lineRenderer;
+
 	}
 
 	void PlayerDebugController::Init()
@@ -28,8 +28,7 @@ namespace RB::PlayerDebug
 		_spriteRenderer.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteID::white_sq_tr80);
 
 		//line renderer
-		_lineRenderer = new RB::Render::LineRenderer();
-		_lineRenderer->Init();
+		_lineRenderer.Init();
 	}
 
 	void PlayerDebugController::OnUpdate()
@@ -73,7 +72,7 @@ namespace RB::PlayerDebug
 	{
 		RB::Collisions::AABB aabb = player->GetAABB();
 
-		_lineRenderer->RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
+		_lineRenderer.RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
 	}
 
 	void PlayerDebugController::DrawPlayerAirMomentum(RB::Players::iPlayer* player)
@@ -87,7 +86,7 @@ namespace RB::PlayerDebug
 
 			pos.y -= boxY;
 
-			_lineRenderer->RenderLine(pos, pos - player->GetAirMomentum(), olc::CYAN);
+			_lineRenderer.RenderLine(pos, pos - player->GetAirMomentum(), olc::CYAN);
 		}
 	}
 }

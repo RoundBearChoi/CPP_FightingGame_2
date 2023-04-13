@@ -8,7 +8,6 @@
 #include "PivotType.h"
 #include "AABB.h"
 #include "SpriteRenderer.h"
-#include "iLineRenderer.h"
 #include "LineRenderer.h"
 
 namespace RB::PlayerDebug
@@ -35,6 +34,6 @@ namespace RB::PlayerDebug
 
 	private:
 		RB::Render::SpriteRenderer _spriteRenderer;
-		RB::Render::iLineRenderer* _lineRenderer = nullptr;
+		RB::Render::LineRenderer _lineRenderer;
 	};
 }

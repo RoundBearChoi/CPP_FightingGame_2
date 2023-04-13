@@ -181,7 +181,6 @@
     <ClInclude Include="FallDown.h" />
     <ClInclude Include="GameplayAnimationController.h" />
     <ClInclude Include="iGameplayAnimationController.h" />
-    <ClInclude Include="iLineRenderer.h" />
     <ClInclude Include="JumpUp.h" />
     <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />

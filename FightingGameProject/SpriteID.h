@@ -8,5 +8,7 @@ namespace RB::Sprites
 
 		x_white,
 		white_sq_tr80,
+
+		fighter_0_idle,
 	};
 }

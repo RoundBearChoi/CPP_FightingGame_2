@@ -1,11 +1,13 @@
 #pragma once
 
-namespace RB::Animations
+#include "SpriteID.h"
+
+namespace RB::Render
 {
 	class LoadedAnimation
 	{
 	public:
-		LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes);
+		LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID);
 		~LoadedAnimation();
 
 	public:
@@ -14,5 +16,6 @@ namespace RB::Animations
 		unsigned int _widthIndexes;
 		unsigned int _heightIndexes;
 		unsigned int _totalIndexes;
+		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
 	};
 }

@@ -3,13 +3,13 @@
 #include "SpriteID.h"
 #include "LoadedAnimation.h"
 
-namespace RB::Animations
+namespace RB::Render
 {
-	class AnimationLoader
+	class AnimationRenderer
 	{
 		public:
-		AnimationLoader();
-		~AnimationLoader();
+		AnimationRenderer();
+		~AnimationRenderer();
 
 	public:
 		void Init();

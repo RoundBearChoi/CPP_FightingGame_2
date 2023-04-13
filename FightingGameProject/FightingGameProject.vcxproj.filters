@@ -134,14 +134,14 @@
     <ClCompile Include="FallDown.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
-    <ClCompile Include="GameplayAnimationController.cpp">
-      <Filter>Source Files\Animations</Filter>
-    </ClCompile>
     <ClCompile Include="AnimationLoader.cpp">
-      <Filter>Source Files\Animations</Filter>
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="GameplayAnimationController.cpp">
+      <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="LoadedAnimation.cpp">
-      <Filter>Source Files\Animations</Filter>
+      <Filter>Source Files\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -289,20 +289,20 @@
     <ClInclude Include="FallDown.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
-    <ClInclude Include="GameplayAnimationController.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="iGameplayAnimationController.h">
-      <Filter>Source Files\Animations</Filter>
-    </ClInclude>
     <ClInclude Include="AllocationCount.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="AnimationLoader.h">
-      <Filter>Source Files\Animations</Filter>
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayAnimationController.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="iGameplayAnimationController.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="LoadedAnimation.h">
-      <Filter>Source Files\Animations</Filter>
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@
 #include "SpriteRenderer.h"
 #include "AnimationLoader.h"
 
-namespace RB::Animations
+namespace RB::Render
 {
 	class GameplayAnimationController : public iGameplayAnimationController
 	{
@@ -17,7 +17,7 @@ namespace RB::Animations
 		void OnFixedUpdate() override;
 
 	private:
-		RB::Render::SpriteRenderer _spriteRenderer;
-		AnimationLoader _animationLoader;
+		SpriteRenderer _spriteRenderer;
+		AnimationRenderer _animationRenderer;
 	};
 }

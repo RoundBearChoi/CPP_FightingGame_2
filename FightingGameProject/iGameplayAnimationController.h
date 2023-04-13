@@ -1,7 +1,7 @@
 #pragma once
 #include "iController.h"
 
-namespace RB::Animations
+namespace RB::Render
 {
 	class iGameplayAnimationController : public RB::Controllers::iController
 	{

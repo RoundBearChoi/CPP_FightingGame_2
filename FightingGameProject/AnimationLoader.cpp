@@ -1,12 +1,12 @@
 #include "AnimationLoader.h"
 
-namespace RB::Animations
+namespace RB::Render
 {
-	AnimationLoader::AnimationLoader()
+	AnimationRenderer::AnimationRenderer()
 	{
 
 	}
-	AnimationLoader::~AnimationLoader()
+	AnimationRenderer::~AnimationRenderer()
 	{
 		for (int i = 0; i < _loadedAnimations.size(); i++)
 		{
@@ -14,13 +14,15 @@ namespace RB::Animations
 		}
 	}
 
-	void AnimationLoader::Init()
+	void AnimationRenderer::Init()
 	{
 
 	}
 
-	void AnimationLoader::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID)
+	void AnimationRenderer::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID)
 	{
+		LoadedAnimation* loaded = new LoadedAnimation(widthIndexes, heightIndexes, totalIndexes, spriteID);
 
+		_loadedAnimations.push_back(loaded);
 	}
 }

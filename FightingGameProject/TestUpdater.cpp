@@ -20,7 +20,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Cam::GameCamController()));
-		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Animations::GameplayAnimationController()));
+		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Render::GameplayAnimationController()));
 
 		RB::Controllers::GameplayControllers::FindAll();
 	}

@@ -32,7 +32,7 @@ namespace RB::Render
 
 		//animation renderer
 		_animationRenderer.Init();
-		_animationRenderer.LoadAnimation(5, 1, 5, 60, //temp skip 60 fixed updates
+		_animationRenderer.LoadAnimation(5, 1, 5, 60,
 			RB::Sprites::SpriteID::fighter_0_idle,
 			_spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle));
 	}

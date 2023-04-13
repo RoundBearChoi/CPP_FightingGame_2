@@ -9,7 +9,7 @@ namespace RB::PlayerStates
 
 	Idle::~Idle()
 	{
-		//std::cout << "destroying Idle" << std::endl;
+
 	}
 
 	void Idle::OnEnter()

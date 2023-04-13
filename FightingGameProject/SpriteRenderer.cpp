@@ -4,12 +4,12 @@ namespace RB::Render
 {
 	SpriteRenderer::SpriteRenderer()
 	{
-		std::cout << "constructing SpriteRenderer" << std::endl;
+
 	}
 
 	SpriteRenderer::~SpriteRenderer()
 	{
-		std::cout << "destroying SpriteRenderer" << std::endl;
+
 	}
 
 	void SpriteRenderer::Init()

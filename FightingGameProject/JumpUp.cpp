@@ -17,8 +17,8 @@ namespace RB::PlayerStates
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		RB::Players::PlayerID id = owner->GetPlayerID();
 
-		std::cout << std::endl;
-		std::cout << "player " << static_cast<int>(id) << " jump up" << std::endl;
+		//std::cout << std::endl;
+		//std::cout << "player " << static_cast<int>(id) << " jump up" << std::endl;
 
 		float startUpMomentum = 9.0f;
 
@@ -47,7 +47,7 @@ namespace RB::PlayerStates
 
 			owner->Move(olc::vf2d{ 0.0f, -y });
 
-			std::cout << "player " << static_cast<int>(owner->GetPlayerID()) << " y momentum: " << momentum.y << std::endl;
+			//std::cout << "player " << static_cast<int>(owner->GetPlayerID()) << " y momentum: " << momentum.y << std::endl;
 
 			float ySlowAmount = 0.3f;
 

@@ -17,8 +17,8 @@ namespace RB::PlayerStates
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		RB::Players::PlayerID id = owner->GetPlayerID();
 
-		std::cout << std::endl;
-		std::cout << "player " << static_cast<int>(id) << " fall down" << std::endl;
+		//std::cout << std::endl;
+		//std::cout << "player " << static_cast<int>(id) << " fall down" << std::endl;
 
 		olc::vf2d fallMomentum = olc::vf2d{ owner->GetAirMomentum().x , 6.0f };
 

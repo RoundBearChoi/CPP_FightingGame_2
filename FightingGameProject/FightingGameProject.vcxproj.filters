@@ -172,9 +172,6 @@
     <ClInclude Include="iState.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="StateBase.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
@@ -301,8 +298,5 @@
     <ClInclude Include="AllocationCount.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="FightingGameProject.rc" />
   </ItemGroup>
 </Project>

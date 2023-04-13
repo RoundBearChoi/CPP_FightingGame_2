@@ -216,7 +216,6 @@
     <ClInclude Include="PlayerID.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="PlayerTestState.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="SkipFixedUpdates.h" />
     <ClInclude Include="SpriteLoader.h" />
     <ClInclude Include="StateBase.h" />
@@ -227,9 +226,6 @@
     <ClInclude Include="FixedTimer.h" />
     <ClInclude Include="TriggerOnFixedUpdateCount.h" />
     <ClInclude Include="Updater.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="FightingGameProject.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

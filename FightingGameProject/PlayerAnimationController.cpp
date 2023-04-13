@@ -17,6 +17,15 @@ namespace RB::Render
 
 	void PlayerAnimationController::Init()
 	{
+		//find players
+		RB::Players::iPlayerController* playerController = RB::Controllers::ControllerGroup::FindController<RB::Players::iPlayerController>();
+
+		RB::Players::iPlayer* p1 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+
+		_vecPlayers.push_back(p1);
+		_vecPlayers.push_back(p2);
+
 		//sprite renderer
 		_spriteRenderer.Init();
 		_spriteRenderer.LoadSprite("PNG files/Fighter_0/fighter_0_idle.png", RB::Sprites::SpriteID::fighter_0_idle);

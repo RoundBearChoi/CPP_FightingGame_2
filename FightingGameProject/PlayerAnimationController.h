@@ -3,6 +3,9 @@
 #include "SpriteRenderer.h"
 #include "AnimationRenderer.h"
 #include "AnimationObj.h"
+#include "ControllerGroup.h"
+#include "iPlayerController.h"
+#include "iPlayer.h"
 
 namespace RB::Render
 {
@@ -21,5 +24,6 @@ namespace RB::Render
 		SpriteRenderer _spriteRenderer;
 		AnimationRenderer _animationRenderer;
 		std::vector<AnimationObj*> _vecAnimationObjs;
+		std::vector<RB::Players::iPlayer*> _vecPlayers;
 	};
 }

@@ -3,17 +3,7 @@
 #include <cstdlib>
 
 int numObjects = 0;
-
-void CurrentCount()
-{
-    //std::cout << "current allocation count: " << numObjects << std::endl;
-
-    if (numObjects == 0)
-    {
-        std::cout << std::endl;
-        std::cout << "numObjects is 0" << std::endl;
-    }
-}
+bool showAllocationCount = false;
 
 void* operator new(std::size_t size)
 {
@@ -28,9 +18,10 @@ void operator delete(void* ptr)
 {
     --numObjects;
     
-    //std::cout << "Deallocating" << std::endl;;
-    
     std::free(ptr);
 
-    CurrentCount();
+    if (showAllocationCount)
+    {
+        std::cout << "allocation count: " << numObjects << std::endl;;
+    }
 }

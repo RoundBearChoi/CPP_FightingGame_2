@@ -299,7 +299,7 @@
       <Filter>Source Files\Animations</Filter>
     </ClInclude>
     <ClInclude Include="AllocationCount.h">
-      <Filter>Source Files\Engine</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

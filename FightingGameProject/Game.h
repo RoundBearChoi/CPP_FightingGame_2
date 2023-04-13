@@ -43,6 +43,8 @@ namespace RB::Engine
 
 		~Game()
 		{
+			showAllocationCount = true;
+
 			std::cout << std::endl;
 			std::cout << "destroying Game.." << std::endl;
 		}

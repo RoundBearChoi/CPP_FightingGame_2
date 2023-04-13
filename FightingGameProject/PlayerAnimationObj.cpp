@@ -37,8 +37,8 @@ namespace RB::Render
 
 	void PlayerAnimationObj::UpdateSourceData()
 	{
-		unsigned int height = _loadedAnimation->GetHeightIndexes();
-		unsigned int width = _loadedAnimation->GetWidthIndexes();
+		unsigned int yTiles = _loadedAnimation->GetYTileCount();
+		unsigned int xTiles = _loadedAnimation->GetXTileCount();
 		
 
 	}

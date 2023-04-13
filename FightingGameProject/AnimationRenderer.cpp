@@ -20,7 +20,7 @@ namespace RB::Render
 		LoadAnimation(0, 0, 0, 0, RB::Sprites::SpriteID::NONE, nullptr);
 	}
 
-	void AnimationRenderer::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
+	void AnimationRenderer::LoadAnimation(unsigned int xTileCount, unsigned int yTileCount, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
 	{
 		if (spriteID != RB::Sprites::SpriteID::NONE && loadedSprite == nullptr)
 		{
@@ -29,7 +29,7 @@ namespace RB::Render
 		}
 		else
 		{
-			LoadedAnimation* loaded = new LoadedAnimation(widthIndexes, heightIndexes, totalSprites, skipFixedUpdates, spriteID, loadedSprite);
+			LoadedAnimation* loaded = new LoadedAnimation(xTileCount, yTileCount, totalSprites, skipFixedUpdates, spriteID, loadedSprite);
 
 			_loadedAnimations.push_back(loaded);
 		}

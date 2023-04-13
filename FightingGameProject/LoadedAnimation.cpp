@@ -2,10 +2,10 @@
 
 namespace RB::Render
 {
-	LoadedAnimation::LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
+	LoadedAnimation::LoadedAnimation(unsigned int xTileCount, unsigned int yTileCount, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
 	{
-		_widthIndexes = widthIndexes;
-		_heightIndexes = heightIndexes;
+		_xTileCount = xTileCount;
+		_yTileCount = yTileCount;
 		_totalSprites = totalSprites;
 		_skipFixedUpdates = skipFixedUpdates;
 		_spriteID = spriteID;
@@ -22,14 +22,14 @@ namespace RB::Render
 		return _spriteID;
 	}
 
-	unsigned int LoadedAnimation::GetWidthIndexes()
+	unsigned int LoadedAnimation::GetXTileCount()
 	{
-		return _widthIndexes;
+		return _xTileCount;
 	}
 
-	unsigned int LoadedAnimation::GetHeightIndexes()
+	unsigned int LoadedAnimation::GetYTileCount()
 	{
-		return _heightIndexes;
+		return _yTileCount;
 	}
 
 	unsigned int LoadedAnimation::GetTotalSprites()

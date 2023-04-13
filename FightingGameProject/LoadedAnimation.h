@@ -9,13 +9,13 @@ namespace RB::Render
 	class LoadedAnimation
 	{
 	public:
-		LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite);
+		LoadedAnimation(unsigned int xTileCount, unsigned int yTileCount, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite);
 		~LoadedAnimation();
 
 	public:
 		RB::Sprites::SpriteID GetSpriteID();
-		unsigned int GetWidthIndexes();
-		unsigned int GetHeightIndexes();
+		unsigned int GetXTileCount();
+		unsigned int GetYTileCount();
 		unsigned int GetTotalSprites();
 
 	public:
@@ -23,8 +23,8 @@ namespace RB::Render
 		unsigned int GetFixedUpdateSkipCount();
 
 	private:
-		unsigned int _widthIndexes;
-		unsigned int _heightIndexes;
+		unsigned int _xTileCount;
+		unsigned int _yTileCount;
 		unsigned int _totalSprites;
 		unsigned int _skipFixedUpdates;
 		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;

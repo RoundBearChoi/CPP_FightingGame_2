@@ -2,6 +2,7 @@
 #include "iGameplayAnimationController.h"
 #include "iSpriteRenderer.h"
 #include "SpriteRenderer.h"
+#include "AnimationLoader.h"
 
 namespace RB::Animations
 {
@@ -18,5 +19,6 @@ namespace RB::Animations
 
 	private:
 		RB::Render::iSpriteRenderer* _spriteRenderer = nullptr;
+		AnimationLoader _animationLoader;
 	};
 }

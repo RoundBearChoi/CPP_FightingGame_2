@@ -6,14 +6,16 @@ namespace RB::Frames
 {
 	class FixedTimer
 	{
-	private:
-		float _targetInterval = 1.0f / 60.0f;
+	public:
+		FixedTimer()
+		{
+			std::cout << "constructing FixedTimer" << std::endl;
+		}
 
-		//debug
-		float _accumulatedTime = 0.0f;
-		float _fullSecondCount = 0.0f;
-		int32_t _fixedUpdateCount = 0;
-		int32_t _fixedUpdateCountPerSec = 0;
+		~FixedTimer()
+		{
+			std::cout << "destroying FixedTimer" << std::endl;
+		}
 
 	public:
 		bool DoFixedUpdate()
@@ -52,5 +54,14 @@ namespace RB::Frames
 		{
 			olc::Renderer::ptrPGE->DrawString({3, 3}, "FixedUpdate Count: " + std::to_string(_fixedUpdateCountPerSec), olc::WHITE);
 		}
+
+	private:
+		float _targetInterval = 1.0f / 60.0f;
+
+		//debug
+		float _accumulatedTime = 0.0f;
+		float _fullSecondCount = 0.0f;
+		int32_t _fixedUpdateCount = 0;
+		int32_t _fixedUpdateCountPerSec = 0;
 	};
 }

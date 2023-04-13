@@ -22,4 +22,14 @@ namespace RB::Render
 	{
 		return _loadedAnimation->GetSpriteID();
 	}
+
+	RB::Players::iPlayer* PlayerAnimationObj::GetPlayer()
+	{
+		return _player;
+	}
+
+	void PlayerAnimationObj::RenderAnimation()
+	{
+		_loadedAnimation->RenderAnimation(_currentIndex, _player->GetPlayerBox(), RB::Sprites::PivotType::BOTTOM_CENTER);
+	}
 }

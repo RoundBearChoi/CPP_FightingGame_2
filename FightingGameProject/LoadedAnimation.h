@@ -1,6 +1,7 @@
 #pragma once
-
+#include "olcPixelGameEngine.h"
 #include "SpriteID.h"
+#include "PivotType.h"
 
 namespace RB::Render
 {
@@ -12,6 +13,9 @@ namespace RB::Render
 
 	public:
 		RB::Sprites::SpriteID GetSpriteID();
+
+	public:
+		void RenderAnimation(unsigned int index, olc::vi2d pos, RB::Sprites::PivotType pivot);
 
 	private:
 		unsigned int _widthIndexes;

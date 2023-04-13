@@ -16,9 +16,14 @@ namespace RB::Render
 
 	public:
 		RB::Sprites::SpriteID GetSpriteID();
+		RB::Players::iPlayer* GetPlayer();
+
+	public:
+		void RenderAnimation();
 
 	private:
 		RB::Players::iPlayer* _player = nullptr;
 		LoadedAnimation* _loadedAnimation = nullptr;
+		unsigned int _currentIndex = 0;
 	};
 }

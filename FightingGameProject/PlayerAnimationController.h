@@ -20,6 +20,9 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
+	public:
+		RB::Sprites::SpriteID GetSpriteID(RB::Players::PlayerID playerID);
+
 	private:
 		SpriteRenderer _spriteRenderer;
 		AnimationRenderer _animationRenderer;

@@ -19,4 +19,9 @@ namespace RB::Render
 	{
 		return _spriteID;
 	}
+
+	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vi2d pos, RB::Sprites::PivotType pivot)
+	{
+
+	}
 }

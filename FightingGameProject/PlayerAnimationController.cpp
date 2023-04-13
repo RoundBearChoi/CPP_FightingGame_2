@@ -37,11 +37,28 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
-
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		{
+			//RB::Players::PlayerID pID = _vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID();
+			//RB::Sprites::SpriteID sID = GetSpriteID(pID);
+		}
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
 
+	}
+
+	RB::Sprites::SpriteID PlayerAnimationController::GetSpriteID(RB::Players::PlayerID playerID)
+	{
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		{
+			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
+			{
+				return _vecPlayerAnimationObjs[i]->GetSpriteID();
+			}
+		}
+
+		return RB::Sprites::SpriteID::NONE;
 	}
 }

@@ -11,6 +11,7 @@ namespace RB::States
 	protected:
 		iStateMachine* _stateMachine = nullptr;
 		unsigned int _cumulatedFixedUpdates = 0;
+		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
 
 	public:
 		virtual ~StateBase() {};
@@ -20,6 +21,7 @@ namespace RB::States
 		virtual void AddCumulatedFixedUpdate();
 		virtual unsigned int GetCumulatedFixedUpdates();
 		virtual RB::Players::iPlayer* GetOwnerPlayer();
+		virtual RB::Sprites::SpriteID GetSpriteID();
 
 	public:
 		virtual void OnEnter() {}

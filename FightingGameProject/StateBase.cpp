@@ -28,4 +28,9 @@ namespace RB::States
 
 		return player;
 	}
+
+	RB::Sprites::SpriteID StateBase::GetSpriteID()
+	{
+		return _spriteID;
+	}
 }

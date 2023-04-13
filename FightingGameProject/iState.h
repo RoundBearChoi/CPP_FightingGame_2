@@ -1,5 +1,6 @@
 #pragma once
 #include "iPlayer.h"
+#include "SpriteID.h"
 
 namespace RB::States
 {
@@ -16,6 +17,7 @@ namespace RB::States
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual unsigned int GetCumulatedFixedUpdates() = 0;
 		virtual RB::Players::iPlayer* GetOwnerPlayer() = 0;
+		virtual RB::Sprites::SpriteID GetSpriteID() = 0;
 
 	public:
 		virtual void OnEnter() = 0;

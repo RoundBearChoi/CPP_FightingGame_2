@@ -22,6 +22,11 @@ namespace RB::Render
 
 	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vi2d pos, RB::Sprites::PivotType pivot)
 	{
+		if (_spriteID == RB::Sprites::SpriteID::NONE)
+		{
+			return;
+		}
+
 
 	}
 }

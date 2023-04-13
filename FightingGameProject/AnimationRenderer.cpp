@@ -16,6 +16,7 @@ namespace RB::Render
 
 	void AnimationRenderer::Init()
 	{
+		//NONE by default (will render nothing)
 		LoadAnimation(0, 0, 0, RB::Sprites::SpriteID::NONE);
 	}
 

@@ -30,12 +30,20 @@ namespace RB::Engine
 			return true;
 		}
 
+		bool OnUserDestroy() override
+		{
+			std::cout << std::endl;
+			std::cout << "OnUserDestroy (Game)" << std::endl;
+
+			RB::Controllers::ControllerGroup::OnEnd();
+
+			return true;
+		}
+
 		~Game()
 		{
 			std::cout << std::endl;
-			std::cout << "destroying Game" << std::endl;
-
-			RB::Controllers::ControllerGroup::OnEnd();
+			std::cout << "destroying Game.." << std::endl;
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override

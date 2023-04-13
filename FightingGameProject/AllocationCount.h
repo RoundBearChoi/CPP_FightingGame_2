@@ -6,7 +6,13 @@ int numObjects = 0;
 
 void CurrentCount()
 {
-    std::cout << "current allocation count: " << numObjects << std::endl;
+    //std::cout << "current allocation count: " << numObjects << std::endl;
+
+    if (numObjects == 0)
+    {
+        std::cout << std::endl;
+        std::cout << "numObjects is 0" << std::endl;
+    }
 }
 
 void* operator new(std::size_t size)
@@ -21,7 +27,9 @@ void* operator new(std::size_t size)
 void operator delete(void* ptr)
 {
     --numObjects;
-    std::cout << "Deallocating" << std::endl;;
+    
+    //std::cout << "Deallocating" << std::endl;;
+    
     std::free(ptr);
 
     CurrentCount();

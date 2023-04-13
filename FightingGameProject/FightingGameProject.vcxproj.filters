@@ -298,6 +298,9 @@
     <ClInclude Include="iGameplayAnimationController.h">
       <Filter>Source Files\Animations</Filter>
     </ClInclude>
+    <ClInclude Include="AllocationCount.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FightingGameProject.rc" />

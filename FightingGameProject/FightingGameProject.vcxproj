@@ -175,6 +175,7 @@
   <ItemGroup>
     <ClInclude Include="AABB.h" />
     <ClInclude Include="AirMomentum.h" />
+    <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="FallDown.h" />
     <ClInclude Include="GameplayAnimationController.h" />
     <ClInclude Include="iGameplayAnimationController.h" />

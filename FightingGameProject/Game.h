@@ -1,6 +1,7 @@
 #pragma once
 #define OLC_PGE_APPLICATION 0
 #include "olcPixelGameEngine.h"
+#include "AllocationCount.h"
 #include "Updater.h"
 #include "Time.h"
 #include "FixedTimer.h"

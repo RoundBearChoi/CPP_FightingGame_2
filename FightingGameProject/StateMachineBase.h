@@ -18,6 +18,7 @@ namespace RB::States
 		virtual void QueueNextState(iState* state) override;
 		virtual void SetID(int ID) override;
 		virtual int GetID() override;
+		virtual iState* GetCurrentState() override;
 
 	protected:
 		int _stateMachineID = 0;

@@ -45,9 +45,10 @@ namespace RB::Render
 		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			RB::Players::PlayerID playerID = _vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID();
-			RB::Sprites::SpriteID currentSpriteID = GetSpriteID(playerID);
+			RB::Sprites::SpriteID spriteInPlay = GetSpriteID(playerID);
+			RB::Sprites::SpriteID spriteID = _vecPlayerAnimationObjs[i]->GetSpriteID();
 
-			if (currentSpriteID != RB::Sprites::SpriteID::NONE)
+			if (spriteInPlay != spriteID)
 			{
 
 			}

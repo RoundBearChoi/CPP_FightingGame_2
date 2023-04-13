@@ -96,4 +96,9 @@ namespace RB::Players
 	{
 		return _airMomentum.GetMomentum();
 	}
+
+	RB::Sprites::SpriteID Player::GetCurrentSpriteID()
+	{
+		return _stateMachine->GetCurrentState()->GetSpriteID();
+	}
 }

@@ -2,6 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "PlayerID.h"
 #include "AABB.h"
+#include "SpriteID.h"
 
 namespace RB::Players
 {
@@ -26,5 +27,8 @@ namespace RB::Players
 		virtual void SetAirMomentum(olc::vf2d momentum) = 0;
 		virtual void AddMomentum(olc::vf2d momentum) = 0;
 		virtual olc::vf2d GetAirMomentum() = 0;
+
+	public:
+		virtual RB::Sprites::SpriteID GetCurrentSpriteID() = 0;
 	};
 }

@@ -42,6 +42,9 @@ namespace RB::Players
 		void AddMomentum(olc::vf2d momentum) override;
 		olc::vf2d GetAirMomentum() override;
 
+	public:
+		RB::Sprites::SpriteID GetCurrentSpriteID() override;
+
 	private:
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;

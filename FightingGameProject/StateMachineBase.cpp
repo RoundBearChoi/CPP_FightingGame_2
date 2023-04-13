@@ -72,6 +72,11 @@ namespace RB::States
 		return _stateMachineID;
 	}
 
+	iState* StateMachineBase::GetCurrentState()
+	{
+		return _currentState;
+	}
+
 	void StateMachineBase::_DestroyCurrentState()
 	{
 		if (_currentState != nullptr)

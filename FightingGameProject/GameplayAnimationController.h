@@ -1,7 +1,7 @@
 #pragma once
 #include "iGameplayAnimationController.h"
 #include "SpriteRenderer.h"
-#include "AnimationLoader.h"
+#include "AnimationRenderer.h"
 
 namespace RB::Render
 {

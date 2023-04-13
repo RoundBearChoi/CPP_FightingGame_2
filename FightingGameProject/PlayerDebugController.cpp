@@ -56,7 +56,6 @@ namespace RB::PlayerDebug
 	{
 		olc::vi2d playerPos = player->GetPosition();
 
-		//RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetSpriteRenderer()->
 		_spriteRenderer->
 			RenderSprite(RB::Sprites::SpriteID::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
 	}
@@ -72,18 +71,14 @@ namespace RB::PlayerDebug
 			boxTint = olc::BLUE;
 		}
 
-		//RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetSpriteRenderer()->
-		_spriteRenderer->
-			RenderSprite(RB::Sprites::SpriteID::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
+		_spriteRenderer->RenderSprite(RB::Sprites::SpriteID::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
 	}
 
 	void PlayerDebugController::DrawPlayerBottomLeft(RB::Players::iPlayer* player)
 	{
 		RB::Collisions::AABB aabb = player->GetAABB();
 
-		//RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetLineRenderer()->
-		_lineRenderer->
-			RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
+		_lineRenderer->RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
 	}
 
 	void PlayerDebugController::DrawPlayerAirMomentum(RB::Players::iPlayer* player)
@@ -97,9 +92,7 @@ namespace RB::PlayerDebug
 
 			pos.y -= boxY;
 
-			//RB::Controllers::GameplayControllers::DEBUG_RENDER_CONTROLLER->GetLineRenderer()->
-			_lineRenderer->
-				RenderLine(pos, pos - player->GetAirMomentum(), olc::CYAN);
+			_lineRenderer->RenderLine(pos, pos - player->GetAirMomentum(), olc::CYAN);
 		}
 	}
 }

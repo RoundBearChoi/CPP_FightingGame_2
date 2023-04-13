@@ -262,9 +262,6 @@
     <ClInclude Include="PivotType.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="iSpriteRenderer.h">
-      <Filter>Source Files\Render</Filter>
-    </ClInclude>
     <ClInclude Include="CurrentCam.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>

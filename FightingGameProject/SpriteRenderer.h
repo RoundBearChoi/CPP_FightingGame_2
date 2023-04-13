@@ -2,25 +2,25 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "CurrentCam.h"
-#include "iSpriteRenderer.h"
 #include "SpriteLoader.h"
-#include "LoadedSprite.h"
 #include "SpriteID.h"
+#include "LoadedSprite.h"
+#include "PivotType.h"
 
 namespace RB::Render
 {
-	class SpriteRenderer : public iSpriteRenderer
+	class SpriteRenderer
 	{
 	public:
 		SpriteRenderer();
-		~SpriteRenderer() override;
+		~SpriteRenderer();
 
 	public:
-		void Init() override;
+		void Init();
 
 	public:
-		void LoadSprite(std::string path, RB::Sprites::SpriteID spriteID) override;
-		void RenderSprite(RB::Sprites::SpriteID spriteID, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType) override;
+		void LoadSprite(std::string path, RB::Sprites::SpriteID spriteID);
+		void RenderSprite(RB::Sprites::SpriteID spriteID, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType);
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;

@@ -75,4 +75,17 @@ namespace RB::Render
 
 		return RB::Sprites::SpriteID::NONE;
 	}
+
+	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
+	{
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		{
+			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
+			{
+				delete _vecPlayerAnimationObjs[i];
+				_vecPlayerAnimationObjs.erase(_vecPlayerAnimationObjs.begin() + i);
+				return;
+			}
+		}
+	}
 }

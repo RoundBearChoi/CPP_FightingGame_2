@@ -22,6 +22,7 @@ namespace RB::Render
 
 	public:
 		RB::Sprites::SpriteID GetSpriteID(RB::Players::PlayerID playerID);
+		void DeleteAnimationObj(RB::Players::PlayerID playerID);
 
 	private:
 		SpriteRenderer _spriteRenderer;

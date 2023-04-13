@@ -39,4 +39,9 @@ namespace RB::Sprites
 	{
 		return _spriteID;
 	}
+
+	olc::vi2d LoadedSprite::GetSpriteSize()
+	{
+		return olc::vi2d{ _sprite->width, _sprite->height };
+	}
 }

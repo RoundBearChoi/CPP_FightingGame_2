@@ -21,6 +21,7 @@ namespace RB::Render
 	public:
 		void RenderAnimation(unsigned int index, olc::vi2d worldPos, RB::Sprites::PivotType pivot);
 		unsigned int GetFixedUpdateSkipCount();
+		olc::vi2d GetSpriteSize();
 
 	private:
 		unsigned int _xTileCount;

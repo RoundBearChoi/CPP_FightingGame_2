@@ -51,4 +51,9 @@ namespace RB::Render
 	{
 		return _skipFixedUpdates;
 	}
+
+	olc::vi2d LoadedAnimation::GetSpriteSize()
+	{
+		return _loadedSprite->GetSpriteSize();
+	}
 }

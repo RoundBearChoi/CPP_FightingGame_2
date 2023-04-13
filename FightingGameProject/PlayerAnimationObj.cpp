@@ -40,7 +40,6 @@ namespace RB::Render
 		unsigned int yTiles = _loadedAnimation->GetYTileCount();
 		unsigned int xTiles = _loadedAnimation->GetXTileCount();
 		
-
 	}
 
 	RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()

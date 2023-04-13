@@ -16,6 +16,7 @@ namespace RB::Sprites
 		olc::Sprite* GetSprite();
 		olc::Decal* GetDecal();
 		SpriteID GetSpriteID();
+		olc::vi2d GetSpriteSize();
 
 	private:
 		std::string _path = "NONE";

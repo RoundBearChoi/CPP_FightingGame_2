@@ -1,5 +1,7 @@
 #pragma once
 #include "iGameplayAnimationController.h"
+#include "iSpriteRenderer.h"
+#include "SpriteRenderer.h"
 
 namespace RB::Animations
 {
@@ -13,5 +15,8 @@ namespace RB::Animations
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		RB::Render::iSpriteRenderer* _spriteRenderer = nullptr;
 	};
 }

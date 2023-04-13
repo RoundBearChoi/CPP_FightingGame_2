@@ -9,7 +9,7 @@ namespace RB::PlayerDebug
 
 	PlayerDebugController::~PlayerDebugController()
 	{
-
+		delete _spriteRenderer;
 	}
 
 	void PlayerDebugController::Init()

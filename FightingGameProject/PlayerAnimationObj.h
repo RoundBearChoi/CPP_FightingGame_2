@@ -13,8 +13,10 @@ namespace RB::Render
 
 	public:
 		void Init();
+		void OnFixedUpdate();
 
 	public:
+		void IncreaseAnimationIndex();
 		RB::Sprites::SpriteID GetSpriteID();
 		RB::Players::iPlayer* GetPlayer();
 

@@ -46,7 +46,10 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		{
+			_vecPlayerAnimationObjs[i]->OnFixedUpdate();
+		}
 	}
 
 	RB::Sprites::SpriteID PlayerAnimationController::GetSpriteID(RB::Players::PlayerID playerID)

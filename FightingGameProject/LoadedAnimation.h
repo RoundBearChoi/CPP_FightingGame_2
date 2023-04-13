@@ -11,6 +11,7 @@ namespace RB::Render
 		~LoadedAnimation();
 
 	public:
+		RB::Sprites::SpriteID GetSpriteID();
 
 	private:
 		unsigned int _widthIndexes;

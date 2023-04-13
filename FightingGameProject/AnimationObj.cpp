@@ -26,4 +26,9 @@ namespace RB::Render
 	{
 
 	}
+
+	RB::Sprites::SpriteID AnimationObj::GetSpriteID()
+	{
+		return _loadedAnimation->GetSpriteID();
+	}
 }

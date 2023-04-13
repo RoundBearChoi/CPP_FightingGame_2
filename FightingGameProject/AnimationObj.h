@@ -1,5 +1,6 @@
 #pragma once
 #include "LoadedAnimation.h"
+#include "SpriteID.h"
 
 namespace RB::Render
 {
@@ -13,6 +14,9 @@ namespace RB::Render
 		void Init();
 		void OnUpdate();
 		void OnFixedUpdate();
+
+	public:
+		RB::Sprites::SpriteID GetSpriteID();
 
 	private:
 		LoadedAnimation* _loadedAnimation = nullptr;

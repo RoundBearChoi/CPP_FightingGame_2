@@ -2,7 +2,7 @@
 #include "iPlayerAnimationController.h"
 #include "SpriteRenderer.h"
 #include "AnimationRenderer.h"
-#include "AnimationObj.h"
+#include "PlayerAnimationObj.h"
 #include "ControllerGroup.h"
 #include "iPlayerController.h"
 #include "iPlayer.h"
@@ -23,7 +23,7 @@ namespace RB::Render
 	private:
 		SpriteRenderer _spriteRenderer;
 		AnimationRenderer _animationRenderer;
-		std::vector<AnimationObj*> _vecAnimationObjs;
+		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
 	};
 }

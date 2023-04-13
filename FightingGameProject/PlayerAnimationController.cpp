@@ -9,9 +9,9 @@ namespace RB::Render
 
 	PlayerAnimationController::~PlayerAnimationController()
 	{
-		for (int i = 0; i < _vecAnimationObjs.size(); i++)
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
-			delete _vecAnimationObjs[i];
+			delete _vecPlayerAnimationObjs[i];
 		}
 	}
 
@@ -37,17 +37,17 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
-		for (int i = 0; i < _vecAnimationObjs.size(); i++)
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
-			_vecAnimationObjs[i]->OnUpdate();
+			_vecPlayerAnimationObjs[i]->OnUpdate();
 		}
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-		for (int i = 0; i < _vecAnimationObjs.size(); i++)
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
-			_vecAnimationObjs[i]->OnFixedUpdate();
+			_vecPlayerAnimationObjs[i]->OnFixedUpdate();
 		}
 	}
 }

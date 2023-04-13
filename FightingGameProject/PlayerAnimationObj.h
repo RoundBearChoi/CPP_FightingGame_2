@@ -1,14 +1,15 @@
 #pragma once
+#include "iPlayer.h"
 #include "LoadedAnimation.h"
 #include "SpriteID.h"
 
 namespace RB::Render
 {
-	class AnimationObj
+	class PlayerAnimationObj
 	{
 	public:
-		AnimationObj(LoadedAnimation* loadedAnimation);
-		~AnimationObj();
+		PlayerAnimationObj(RB::Players::iPlayer* owner, LoadedAnimation* loadedAnimation);
+		~PlayerAnimationObj();
 
 	public:
 		void Init();
@@ -19,6 +20,7 @@ namespace RB::Render
 		RB::Sprites::SpriteID GetSpriteID();
 
 	private:
+		RB::Players::iPlayer* _player = nullptr;
 		LoadedAnimation* _loadedAnimation = nullptr;
 	};
 }

@@ -8,7 +8,10 @@ namespace RB::Animations
 	}
 	AnimationLoader::~AnimationLoader()
 	{
-
+		for (int i = 0; i < _loadedAnimations.size(); i++)
+		{
+			delete _loadedAnimations[i];
+		}
 	}
 
 	void AnimationLoader::Init()

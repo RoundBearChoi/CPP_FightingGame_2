@@ -46,6 +46,11 @@ namespace RB::Render
 		{
 			RB::Players::PlayerID playerID = _vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID();
 			RB::Sprites::SpriteID currentSpriteID = GetSpriteID(playerID);
+
+			if (currentSpriteID != RB::Sprites::SpriteID::NONE)
+			{
+
+			}
 		}
 	}
 

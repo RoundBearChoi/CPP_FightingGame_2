@@ -22,9 +22,17 @@ namespace RB::Render
 
 	void AnimationRenderer::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
 	{
-		LoadedAnimation* loaded = new LoadedAnimation(widthIndexes, heightIndexes, totalIndexes, spriteID, loadedSprite);
+		if (spriteID != RB::Sprites::SpriteID::NONE && loadedSprite == nullptr)
+		{
+			std::cout << std::endl;
+			std::cout << "WARNING: LoadedSprite* is null" << std::endl;
+		}
+		else
+		{
+			LoadedAnimation* loaded = new LoadedAnimation(widthIndexes, heightIndexes, totalIndexes, spriteID, loadedSprite);
 
-		_loadedAnimations.push_back(loaded);
+			_loadedAnimations.push_back(loaded);
+		}
 	}
 
 	LoadedAnimation* AnimationRenderer::GetAnimation(RB::Sprites::SpriteID spriteID)

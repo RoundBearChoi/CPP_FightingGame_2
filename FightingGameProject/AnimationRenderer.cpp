@@ -17,12 +17,12 @@ namespace RB::Render
 	void AnimationRenderer::Init()
 	{
 		//NONE by default (will render nothing)
-		LoadAnimation(0, 0, 0, RB::Sprites::SpriteID::NONE);
+		LoadAnimation(0, 0, 0, RB::Sprites::SpriteID::NONE, nullptr);
 	}
 
-	void AnimationRenderer::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID)
+	void AnimationRenderer::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
 	{
-		LoadedAnimation* loaded = new LoadedAnimation(widthIndexes, heightIndexes, totalIndexes, spriteID);
+		LoadedAnimation* loaded = new LoadedAnimation(widthIndexes, heightIndexes, totalIndexes, spriteID, loadedSprite);
 
 		_loadedAnimations.push_back(loaded);
 	}

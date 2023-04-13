@@ -2,12 +2,13 @@
 
 namespace RB::Render
 {
-	LoadedAnimation::LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID)
+	LoadedAnimation::LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
 	{
 		_widthIndexes = widthIndexes;
 		_heightIndexes = heightIndexes;
 		_totalIndexes = totalIndexes;
 		_spriteID = spriteID;
+		_loadedSprite = loadedSprite;
 	}
 
 	LoadedAnimation::~LoadedAnimation()

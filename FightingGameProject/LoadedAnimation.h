@@ -9,7 +9,7 @@ namespace RB::Render
 	class LoadedAnimation
 	{
 	public:
-		LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID);
+		LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite);
 		~LoadedAnimation();
 
 	public:

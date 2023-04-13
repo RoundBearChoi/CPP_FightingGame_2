@@ -32,7 +32,12 @@ namespace RB::Render
 
 		//animation renderer
 		_animationRenderer.Init();
-		_animationRenderer.LoadAnimation(5, 1, 5, RB::Sprites::SpriteID::fighter_0_idle);
+		_animationRenderer.LoadAnimation(
+			5,
+			1,
+			5,
+			RB::Sprites::SpriteID::fighter_0_idle,
+			_spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle));
 	}
 
 	void PlayerAnimationController::OnUpdate()

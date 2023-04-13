@@ -62,4 +62,9 @@ namespace RB::Render
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, sprite->Size(), tint);
 	}
+
+	RB::Sprites::LoadedSprite* SpriteRenderer::GetLoadedSprite(RB::Sprites::SpriteID spriteID)
+	{
+		return _spriteLoader.GetLoadedSprite(spriteID);
+	}
 }

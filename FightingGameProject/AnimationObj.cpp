@@ -2,9 +2,9 @@
 
 namespace RB::Render
 {
-	AnimationObj::AnimationObj()
+	AnimationObj::AnimationObj(LoadedAnimation* loadedAnimation)
 	{
-
+		_loadedAnimation = loadedAnimation;
 	}
 
 	AnimationObj::~AnimationObj()

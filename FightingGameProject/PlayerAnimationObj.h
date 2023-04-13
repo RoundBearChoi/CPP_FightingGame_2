@@ -18,7 +18,7 @@ namespace RB::Render
 
 	public:
 		void IncreaseAnimationIndex();
-		void UpdateSource();
+		void UpdateSourceData();
 		RB::Sprites::SpriteID GetSpriteID();
 		RB::Players::iPlayer* GetPlayer();
 

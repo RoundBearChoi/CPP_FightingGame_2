@@ -2,11 +2,11 @@
 
 namespace RB::Render
 {
-	LoadedAnimation::LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
+	LoadedAnimation::LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
 	{
 		_widthIndexes = widthIndexes;
 		_heightIndexes = heightIndexes;
-		_totalIndexes = totalIndexes;
+		_totalSprites = totalSprites;
 		_skipFixedUpdates = skipFixedUpdates;
 		_spriteID = spriteID;
 		_loadedSprite = loadedSprite;
@@ -22,7 +22,22 @@ namespace RB::Render
 		return _spriteID;
 	}
 
-	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vi2d pos, RB::Sprites::PivotType pivot)
+	unsigned int LoadedAnimation::GetWidthIndexes()
+	{
+		return _widthIndexes;
+	}
+
+	unsigned int LoadedAnimation::GetHeightIndexes()
+	{
+		return _heightIndexes;
+	}
+
+	unsigned int LoadedAnimation::GetTotalSprites()
+	{
+		return _totalSprites;
+	}
+
+	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vi2d worldPos, RB::Sprites::PivotType pivot)
 	{
 		if (_spriteID == RB::Sprites::SpriteID::NONE)
 		{

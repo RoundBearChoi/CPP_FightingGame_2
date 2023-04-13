@@ -13,7 +13,7 @@ namespace RB::Render
 
 	public:
 		void Init();
-		void LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite);
+		void LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite);
 		LoadedAnimation* GetAnimation(RB::Sprites::SpriteID spriteID);
 
 	private:

@@ -25,12 +25,21 @@ namespace RB::Render
 	{
 		//std::cout << "increasing animation index for player " << (int)_player->GetPlayerID() << std::endl;
 
+		unsigned int totalSprites = _loadedAnimation->GetTotalSprites();
+
 		_currentIndex++;
+
+		if (_currentIndex >= totalSprites)
+		{
+			_currentIndex = 0;
+		}
 	}
 
-	void PlayerAnimationObj::UpdateSource()
+	void PlayerAnimationObj::UpdateSourceData()
 	{
-
+		_loadedAnimation->GetHeightIndexes();
+		_loadedAnimation->GetWidthIndexes();
+		
 	}
 
 	RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()
@@ -45,6 +54,8 @@ namespace RB::Render
 
 	void PlayerAnimationObj::RenderAnimation()
 	{
+		UpdateSourceData();
+
 		_loadedAnimation->RenderAnimation(_currentIndex, _player->GetPlayerBox(), RB::Sprites::PivotType::BOTTOM_CENTER);
 	}
 }

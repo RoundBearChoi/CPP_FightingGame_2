@@ -10,6 +10,7 @@
 #include "PlayerDebugController.h"
 #include "CurrentCam.h"
 #include "GameCamController.h"
+#include "GameplayAnimationController.h"
 
 namespace RB::Updaters
 {

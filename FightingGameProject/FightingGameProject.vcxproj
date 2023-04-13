@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="AirMomentum.cpp" />
     <ClCompile Include="FallDown.cpp" />
+    <ClCompile Include="GameplayAnimationController.cpp" />
     <ClCompile Include="JumpUp.cpp" />
     <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
@@ -175,6 +176,8 @@
     <ClInclude Include="AABB.h" />
     <ClInclude Include="AirMomentum.h" />
     <ClInclude Include="FallDown.h" />
+    <ClInclude Include="GameplayAnimationController.h" />
+    <ClInclude Include="iGameplayAnimationController.h" />
     <ClInclude Include="iLineRenderer.h" />
     <ClInclude Include="JumpUp.h" />
     <ClInclude Include="LineRenderer.h" />

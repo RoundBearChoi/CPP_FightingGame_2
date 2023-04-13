@@ -143,6 +143,9 @@
     <ClCompile Include="LoadedAnimation.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="AnimationObj.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -302,6 +305,9 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="LoadedAnimation.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationObj.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>

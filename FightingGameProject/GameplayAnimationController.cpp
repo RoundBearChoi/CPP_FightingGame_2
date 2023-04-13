@@ -9,7 +9,10 @@ namespace RB::Render
 
 	GameplayAnimationController::~GameplayAnimationController()
 	{
-
+		for (int i = 0; i < _vecAnimationObjs.size(); i++)
+		{
+			delete _vecAnimationObjs[i];
+		}
 	}
 
 	void GameplayAnimationController::Init()
@@ -25,11 +28,17 @@ namespace RB::Render
 
 	void GameplayAnimationController::OnUpdate()
 	{
-
+		for (int i = 0; i < _vecAnimationObjs.size(); i++)
+		{
+			_vecAnimationObjs[i]->OnUpdate();
+		}
 	}
 
 	void GameplayAnimationController::OnFixedUpdate()
 	{
-
+		for (int i = 0; i < _vecAnimationObjs.size(); i++)
+		{
+			_vecAnimationObjs[i]->OnFixedUpdate();
+		}
 	}
 }

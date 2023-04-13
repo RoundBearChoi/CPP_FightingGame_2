@@ -2,6 +2,7 @@
 #include "iGameplayAnimationController.h"
 #include "SpriteRenderer.h"
 #include "AnimationRenderer.h"
+#include "AnimationObj.h"
 
 namespace RB::Render
 {
@@ -19,5 +20,6 @@ namespace RB::Render
 	private:
 		SpriteRenderer _spriteRenderer;
 		AnimationRenderer _animationRenderer;
+		std::vector<AnimationObj*> _vecAnimationObjs;
 	};
 }

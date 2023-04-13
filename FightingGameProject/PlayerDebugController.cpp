@@ -24,15 +24,12 @@ namespace RB::PlayerDebug
 
 		//sprite renderer
 		_spriteRenderer = new RB::Render::SpriteRenderer();
-
 		_spriteRenderer->Init();
-
 		_spriteRenderer->LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
 		_spriteRenderer->LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteID::white_sq_tr80);
 
 		//line renderer
 		_lineRenderer = new RB::Render::LineRenderer();
-
 		_lineRenderer->Init();
 	}
 
@@ -43,7 +40,7 @@ namespace RB::PlayerDebug
 			DrawPlayerBox(_vecPlayers[i]);
 			DrawPlayerPosition(_vecPlayers[i]);
 			DrawPlayerAirMomentum(_vecPlayers[i]);
-			//DrawPlayerBottomLeft(_vecPlayers[i]);
+			DrawPlayerBottomLeft(_vecPlayers[i]);
 		}
 	}
 

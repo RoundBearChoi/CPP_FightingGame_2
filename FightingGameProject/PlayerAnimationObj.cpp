@@ -28,6 +28,11 @@ namespace RB::Render
 		_currentIndex++;
 	}
 
+	void PlayerAnimationObj::UpdateSource()
+	{
+
+	}
+
 	RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()
 	{
 		return _loadedAnimation->GetSpriteID();

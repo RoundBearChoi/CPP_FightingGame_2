@@ -18,16 +18,6 @@ namespace RB::Render
 
 	}
 
-	void PlayerAnimationObj::OnUpdate()
-	{
-
-	}
-
-	void PlayerAnimationObj::OnFixedUpdate()
-	{
-
-	}
-
 	RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()
 	{
 		return _loadedAnimation->GetSpriteID();

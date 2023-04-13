@@ -37,17 +37,11 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
-		{
-			_vecPlayerAnimationObjs[i]->OnUpdate();
-		}
+
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
-		{
-			_vecPlayerAnimationObjs[i]->OnFixedUpdate();
-		}
+
 	}
 }

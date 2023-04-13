@@ -13,8 +13,6 @@ namespace RB::Render
 
 	public:
 		void Init();
-		void OnUpdate();
-		void OnFixedUpdate();
 
 	public:
 		RB::Sprites::SpriteID GetSpriteID();

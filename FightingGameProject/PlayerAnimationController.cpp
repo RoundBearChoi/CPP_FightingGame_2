@@ -39,7 +39,14 @@ namespace RB::Render
 	{
 		if (_vecPlayerAnimationObjs.size() == 0)
 		{
+			for (int i = 0; i < _vecPlayers.size(); i++)
+			{
+				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetCurrentSpriteID();
 
+				LoadedAnimation* ani = _animationRenderer.GetAnimation(spriteID);
+
+				_vecPlayerAnimationObjs.push_back(new PlayerAnimationObj(_vecPlayers[i], ani));
+			}
 		}
 
 		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)

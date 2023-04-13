@@ -37,6 +37,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
+		//first animations
 		if (_vecPlayerAnimationObjs.size() == 0)
 		{
 			for (int i = 0; i < _vecPlayers.size(); i++)
@@ -49,6 +50,7 @@ namespace RB::Render
 			}
 		}
 
+		//update on change
 		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			RB::Players::PlayerID playerID = _vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID();

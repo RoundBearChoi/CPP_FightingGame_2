@@ -37,9 +37,10 @@ namespace RB::Render
 
 	void PlayerAnimationObj::UpdateSourceData()
 	{
-		_loadedAnimation->GetHeightIndexes();
-		_loadedAnimation->GetWidthIndexes();
+		unsigned int height = _loadedAnimation->GetHeightIndexes();
+		unsigned int width = _loadedAnimation->GetWidthIndexes();
 		
+
 	}
 
 	RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()

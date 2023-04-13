@@ -15,16 +15,19 @@ namespace RB::Render
 
 	void PlayerAnimationObj::Init()
 	{
-
+		_skipFixedUpdates.SetSkipFrames(_loadedAnimation->GetFixedUpdateSkipCount());
+		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::IncreaseAnimationIndex);
 	}
 
 	void PlayerAnimationObj::OnFixedUpdate()
 	{
-		IncreaseAnimationIndex();
+		_skipFixedUpdates.OnFixedUpdate();
 	}
 
 	void PlayerAnimationObj::IncreaseAnimationIndex()
 	{
+		std::cout << "increasing animation index for player " << (int)_player->GetPlayerID() << std::endl;
+
 		_currentIndex++;
 	}
 

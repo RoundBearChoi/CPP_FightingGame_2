@@ -2,6 +2,7 @@
 #include "iPlayer.h"
 #include "LoadedAnimation.h"
 #include "SpriteID.h"
+#include "SkipFixedUpdates.h"
 
 namespace RB::Render
 {
@@ -27,5 +28,6 @@ namespace RB::Render
 		RB::Players::iPlayer* _player = nullptr;
 		LoadedAnimation* _loadedAnimation = nullptr;
 		unsigned int _currentIndex = 0;
+		RB::Updaters::SkipFixedUpdates<PlayerAnimationObj> _skipFixedUpdates;
 	};
 }

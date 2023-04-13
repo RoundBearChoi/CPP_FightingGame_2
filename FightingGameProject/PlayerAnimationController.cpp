@@ -32,7 +32,7 @@ namespace RB::Render
 
 		//animation renderer
 		_animationRenderer.Init();
-		_animationRenderer.LoadAnimation(5, 1, 5,
+		_animationRenderer.LoadAnimation(5, 1, 5, 60, //temp skip 60 fixed updates
 			RB::Sprites::SpriteID::fighter_0_idle,
 			_spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle));
 	}
@@ -46,9 +46,13 @@ namespace RB::Render
 			{
 				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetSpriteID();
 
-				LoadedAnimation* ani = _animationRenderer.GetAnimation(spriteID);
+				LoadedAnimation* loadedAnimation = _animationRenderer.GetAnimation(spriteID);
 
-				_vecPlayerAnimationObjs.push_back(new PlayerAnimationObj(_vecPlayers[i], ani));
+				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], loadedAnimation);
+
+				playerAnimationObj->Init();
+
+				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 			}
 		}
 
@@ -67,9 +71,11 @@ namespace RB::Render
 
 				DeleteAnimationObj(playerID);
 
-				PlayerAnimationObj* ani = new PlayerAnimationObj(_vecPlayers[i], _animationRenderer.GetAnimation(playerSpriteID));
+				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], _animationRenderer.GetAnimation(playerSpriteID));
 
-				_vecPlayerAnimationObjs.push_back(ani);
+				playerAnimationObj->Init();
+
+				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 			}
 		}
 	}

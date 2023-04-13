@@ -50,8 +50,6 @@ namespace RB::Render
 
 				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], loadedAnimation);
 
-				playerAnimationObj->Init();
-
 				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 			}
 		}
@@ -72,8 +70,6 @@ namespace RB::Render
 				DeleteAnimationObj(playerID);
 
 				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], _animationRenderer.GetAnimation(playerSpriteID));
-
-				playerAnimationObj->Init();
 
 				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 			}

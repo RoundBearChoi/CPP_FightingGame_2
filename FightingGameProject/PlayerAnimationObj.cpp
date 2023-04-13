@@ -6,17 +6,14 @@ namespace RB::Render
 	{
 		_player = owner;
 		_loadedAnimation = loadedAnimation;
+
+		_skipFixedUpdates.SetSkipFrames(_loadedAnimation->GetFixedUpdateSkipCount());
+		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::IncreaseAnimationIndex);
 	}
 
 	PlayerAnimationObj::~PlayerAnimationObj()
 	{
 
-	}
-
-	void PlayerAnimationObj::Init()
-	{
-		_skipFixedUpdates.SetSkipFrames(_loadedAnimation->GetFixedUpdateSkipCount());
-		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::IncreaseAnimationIndex);
 	}
 
 	void PlayerAnimationObj::OnFixedUpdate()
@@ -26,7 +23,7 @@ namespace RB::Render
 
 	void PlayerAnimationObj::IncreaseAnimationIndex()
 	{
-		std::cout << "increasing animation index for player " << (int)_player->GetPlayerID() << std::endl;
+		//std::cout << "increasing animation index for player " << (int)_player->GetPlayerID() << std::endl;
 
 		_currentIndex++;
 	}

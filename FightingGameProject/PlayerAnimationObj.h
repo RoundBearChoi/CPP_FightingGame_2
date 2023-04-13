@@ -13,7 +13,6 @@ namespace RB::Render
 		~PlayerAnimationObj();
 
 	public:
-		void Init();
 		void OnFixedUpdate();
 
 	public:

@@ -42,7 +42,7 @@ namespace RB::Render
 		{
 			for (int i = 0; i < _vecPlayers.size(); i++)
 			{
-				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetCurrentSpriteID();
+				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetSpriteID();
 
 				LoadedAnimation* ani = _animationRenderer.GetAnimation(spriteID);
 
@@ -51,15 +51,23 @@ namespace RB::Render
 		}
 
 		//update on change
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (int i = 0; i < _vecPlayers.size(); i++)
 		{
-			RB::Players::PlayerID playerID = _vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID();
-			RB::Sprites::SpriteID spriteInPlay = GetSpriteID(playerID);
-			RB::Sprites::SpriteID spriteID = _vecPlayerAnimationObjs[i]->GetSpriteID();
+			RB::Sprites::SpriteID playerSpriteID = _vecPlayers[i]->GetSpriteID();
 
-			if (spriteInPlay != spriteID)
+			RB::Players::PlayerID playerID = _vecPlayers[i]->GetPlayerID();
+			RB::Sprites::SpriteID animationSpriteID = GetSpriteID(playerID);
+
+			if (playerSpriteID != animationSpriteID)
 			{
+				std::cout << std::endl;
+				std::cout << "player " << (int)playerID << " changed animation to: " << (int)playerSpriteID << std::endl;
 
+				DeleteAnimationObj(playerID);
+
+				PlayerAnimationObj* ani = new PlayerAnimationObj(_vecPlayers[i], _animationRenderer.GetAnimation(playerSpriteID));
+
+				_vecPlayerAnimationObjs.push_back(ani);
 			}
 		}
 	}
@@ -78,7 +86,9 @@ namespace RB::Render
 		{
 			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
-				return _vecPlayerAnimationObjs[i]->GetSpriteID();
+				RB::Sprites::SpriteID spriteID = _vecPlayerAnimationObjs[i]->GetSpriteID();
+
+				return spriteID;
 			}
 		}
 

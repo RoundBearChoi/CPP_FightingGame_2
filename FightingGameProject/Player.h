@@ -43,7 +43,7 @@ namespace RB::Players
 		olc::vf2d GetAirMomentum() override;
 
 	public:
-		RB::Sprites::SpriteID GetCurrentSpriteID() override;
+		RB::Sprites::SpriteID GetSpriteID() override;
 
 	private:
 		PlayerID _playerID = PlayerID::NONE;

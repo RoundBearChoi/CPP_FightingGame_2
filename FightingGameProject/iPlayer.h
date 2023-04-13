@@ -29,6 +29,6 @@ namespace RB::Players
 		virtual olc::vf2d GetAirMomentum() = 0;
 
 	public:
-		virtual RB::Sprites::SpriteID GetCurrentSpriteID() = 0;
+		virtual RB::Sprites::SpriteID GetSpriteID() = 0;
 	};
 }

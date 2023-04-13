@@ -4,7 +4,7 @@ namespace RB::PlayerStates
 {
 	Idle::Idle()
 	{
-
+		_spriteID = RB::Sprites::SpriteID::fighter_0_idle;
 	}
 
 	Idle::~Idle()

@@ -2,9 +2,11 @@
 
 namespace RB::Animations
 {
-	LoadedAnimation::LoadedAnimation()
+	LoadedAnimation::LoadedAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes)
 	{
-
+		_widthIndexes = widthIndexes;
+		_heightIndexes = heightIndexes;
+		_totalIndexes = totalIndexes;
 	}
 
 	LoadedAnimation::~LoadedAnimation()

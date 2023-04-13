@@ -137,7 +137,7 @@
     <ClCompile Include="AnimationRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="GameplayAnimationController.cpp">
+    <ClCompile Include="PlayerAnimationController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="LoadedAnimation.cpp">
@@ -298,10 +298,10 @@
     <ClInclude Include="AnimationRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="GameplayAnimationController.h">
+    <ClInclude Include="PlayerAnimationController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="iGameplayAnimationController.h">
+    <ClInclude Include="iPlayerAnimationController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="LoadedAnimation.h">

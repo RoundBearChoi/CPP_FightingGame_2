@@ -1,16 +1,16 @@
 #pragma once
-#include "iGameplayAnimationController.h"
+#include "iPlayerAnimationController.h"
 #include "SpriteRenderer.h"
 #include "AnimationRenderer.h"
 #include "AnimationObj.h"
 
 namespace RB::Render
 {
-	class GameplayAnimationController : public iGameplayAnimationController
+	class PlayerAnimationController : public iPlayerAnimationController
 	{
 	public:
-		GameplayAnimationController();
-		~GameplayAnimationController();
+		PlayerAnimationController();
+		~PlayerAnimationController();
 
 	public:
 		void Init() override;

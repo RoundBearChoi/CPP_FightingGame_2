@@ -1,13 +1,13 @@
-#include "GameplayAnimationController.h"
+#include "PlayerAnimationController.h"
 
 namespace RB::Render
 {
-	GameplayAnimationController::GameplayAnimationController()
+	PlayerAnimationController::PlayerAnimationController()
 	{
 
 	}
 
-	GameplayAnimationController::~GameplayAnimationController()
+	PlayerAnimationController::~PlayerAnimationController()
 	{
 		for (int i = 0; i < _vecAnimationObjs.size(); i++)
 		{
@@ -15,7 +15,7 @@ namespace RB::Render
 		}
 	}
 
-	void GameplayAnimationController::Init()
+	void PlayerAnimationController::Init()
 	{
 		//sprite renderer
 		_spriteRenderer.Init();
@@ -26,7 +26,7 @@ namespace RB::Render
 		_animationRenderer.LoadAnimation(5, 1, 5, RB::Sprites::SpriteID::fighter_0_idle);
 	}
 
-	void GameplayAnimationController::OnUpdate()
+	void PlayerAnimationController::OnUpdate()
 	{
 		for (int i = 0; i < _vecAnimationObjs.size(); i++)
 		{
@@ -34,7 +34,7 @@ namespace RB::Render
 		}
 	}
 
-	void GameplayAnimationController::OnFixedUpdate()
+	void PlayerAnimationController::OnFixedUpdate()
 	{
 		for (int i = 0; i < _vecAnimationObjs.size(); i++)
 		{

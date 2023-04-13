@@ -15,4 +15,9 @@ namespace RB::Animations
 	{
 
 	}
+
+	void AnimationLoader::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID)
+	{
+
+	}
 }

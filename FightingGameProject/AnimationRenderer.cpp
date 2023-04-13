@@ -16,7 +16,7 @@ namespace RB::Render
 
 	void AnimationRenderer::Init()
 	{
-
+		LoadAnimation(0, 0, 0, RB::Sprites::SpriteID::NONE);
 	}
 
 	void AnimationRenderer::LoadAnimation(unsigned int widthIndexes, unsigned int heightIndexes, unsigned int totalIndexes, RB::Sprites::SpriteID spriteID)
@@ -24,5 +24,18 @@ namespace RB::Render
 		LoadedAnimation* loaded = new LoadedAnimation(widthIndexes, heightIndexes, totalIndexes, spriteID);
 
 		_loadedAnimations.push_back(loaded);
+	}
+
+	LoadedAnimation* AnimationRenderer::GetAnimation(RB::Sprites::SpriteID spriteID)
+	{
+		for (int i = 0; i < _loadedAnimations.size(); i++)
+		{
+			if (_loadedAnimations[i]->GetSpriteID() == spriteID)
+			{
+				return _loadedAnimations[i];
+			}
+		}
+
+		return nullptr;
 	}
 }

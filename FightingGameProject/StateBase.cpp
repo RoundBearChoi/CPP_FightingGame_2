@@ -38,4 +38,41 @@ namespace RB::States
 	{
 		return _spriteID;
 	}
+
+	void StateBase::AddStateComponent(StateComponentBase* stateComponent)
+	{
+		_vecStateComponents.push_back(stateComponent);
+	}
+
+	void StateBase::EnterStateComponents()
+	{
+		for (int i = 0; i < _vecStateComponents.size(); i++)
+		{
+			_vecStateComponents[i]->OnEnter();
+		}
+	}
+
+	void StateBase::ExitStateComponents()
+	{
+		for (int i = 0; i < _vecStateComponents.size(); i++)
+		{
+			_vecStateComponents[i]->OnExit();
+		}
+	}
+
+	void StateBase::UpdateStateComponents()
+	{
+		for (int i = 0; i < _vecStateComponents.size(); i++)
+		{
+			_vecStateComponents[i]->OnUpdate();
+		}
+	}
+
+	void StateBase::FixedUpdateStateComponents()
+	{
+		for (int i = 0; i < _vecStateComponents.size(); i++)
+		{
+			_vecStateComponents[i]->OnFixedUpdate();
+		}
+	}
 }

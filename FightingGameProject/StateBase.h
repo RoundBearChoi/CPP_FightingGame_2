@@ -11,7 +11,7 @@ namespace RB::States
 	class StateBase : public iState
 	{
 	public:
-		virtual ~StateBase() {};
+		virtual ~StateBase() {}
 
 		virtual void SetStateMachine(iStateMachine* stateMachine);
 		virtual iStateMachine* GetStateMachine();
@@ -20,6 +20,13 @@ namespace RB::States
 		virtual unsigned int GetCumulatedFixedUpdates();
 		virtual RB::Players::iPlayer* GetOwnerPlayer();
 		virtual RB::Sprites::SpriteID GetSpriteID();
+
+	public:
+		virtual void AddStateComponent(StateComponentBase* stateComponent);
+		virtual void EnterStateComponents();
+		virtual void ExitStateComponents();
+		virtual void UpdateStateComponents();
+		virtual void FixedUpdateStateComponents();
 
 	public:
 		virtual void OnEnter() {}
@@ -31,6 +38,6 @@ namespace RB::States
 		iStateMachine* _stateMachine = nullptr;
 		unsigned int _cumulatedFixedUpdates = 0;
 		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
-		std::vector<StateComponentBase> _vecStateComponents;
+		std::vector<StateComponentBase*> _vecStateComponents;
 	};
 }

@@ -23,7 +23,6 @@ namespace RB::PlayerStates
 		void TransitionToIdle();
 
 	private:
-		//Updaters::SkipFixedUpdates<PlayerTestState> _skipFixedUpdates;
 		Updaters::TriggerOnFixedUpdateCount<PlayerTestState> _triggerOnFixedUpdateCount;
 	};
 }

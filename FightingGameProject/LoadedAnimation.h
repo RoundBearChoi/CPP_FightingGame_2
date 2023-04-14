@@ -20,7 +20,7 @@ namespace RB::Render
 		unsigned int GetTotalSprites();
 
 	public:
-		void RenderAnimation(unsigned int index, olc::vf2d sourceSize, olc::vf2d sourcePos, olc::vi2d worldPos, RB::Sprites::PivotType pivot);
+		void RenderAnimation(unsigned int index, olc::vf2d sourcePos, olc::vf2d sourceSize, olc::vi2d worldPos, RB::Sprites::PivotType pivot);
 		unsigned int GetFixedUpdateSkipCount();
 		olc::vi2d GetSpriteSize();
 

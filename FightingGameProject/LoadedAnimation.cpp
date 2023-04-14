@@ -37,7 +37,7 @@ namespace RB::Render
 		return _totalSprites;
 	}
 
-	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vf2d sourceSize, olc::vf2d sourcePos, olc::vi2d worldPos, RB::Sprites::PivotType pivot)
+	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vf2d sourcePos, olc::vf2d sourceSize, olc::vi2d worldPos, RB::Sprites::PivotType pivot)
 	{
 		if (_spriteID == RB::Sprites::SpriteID::NONE)
 		{
@@ -46,6 +46,7 @@ namespace RB::Render
 
 		std::array<olc::vf2d, 4> points;
 
+		//temp
 		float x = 100.0f;
 		float y = 100.0f;
 		float width = 100.0f;

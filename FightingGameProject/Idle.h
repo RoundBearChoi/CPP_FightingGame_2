@@ -4,7 +4,8 @@
 #include "JumpUp.h"
 #include "MoveForward.h"
 #include "MoveBack.h"
-#include "TestComponent.h"
+//#include "TestComponent.h"
+#include "TriggerMoveForward.h"
 
 namespace RB::PlayerStates
 {

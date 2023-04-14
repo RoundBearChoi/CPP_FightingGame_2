@@ -1,18 +1,15 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "iState.h"
 #include "iStateMachine.h"
 #include "GameplayControllers.h"
+#include "StateComponentBase.h"
 
 namespace RB::States
 {
 	class StateBase : public iState
 	{
-	protected:
-		iStateMachine* _stateMachine = nullptr;
-		unsigned int _cumulatedFixedUpdates = 0;
-		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
-
 	public:
 		virtual ~StateBase() {};
 
@@ -28,5 +25,11 @@ namespace RB::States
 		virtual void OnExit() {}
 		virtual void OnUpdate() {}
 		virtual void OnFixedUpdate() {}
+
+	protected:
+		iStateMachine* _stateMachine = nullptr;
+		unsigned int _cumulatedFixedUpdates = 0;
+		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
+		std::vector<StateComponentBase> _vecStateComponents;
 	};
 }

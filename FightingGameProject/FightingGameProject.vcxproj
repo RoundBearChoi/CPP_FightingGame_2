@@ -169,6 +169,7 @@
     <ClCompile Include="PlayerTestState.cpp" />
     <ClCompile Include="SpriteLoader.cpp" />
     <ClCompile Include="StateBase.cpp" />
+    <ClCompile Include="StateComponentBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
     <ClCompile Include="StateMachineID.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
@@ -225,6 +226,7 @@
     <ClInclude Include="SkipFixedUpdates.h" />
     <ClInclude Include="SpriteLoader.h" />
     <ClInclude Include="StateBase.h" />
+    <ClInclude Include="StateComponentBase.h" />
     <ClInclude Include="StateMachineBase.h" />
     <ClInclude Include="StateMachineID.h" />
     <ClInclude Include="TestUpdater.h" />

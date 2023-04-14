@@ -139,6 +139,9 @@
     <ClCompile Include="PlayerAnimationObj.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="StateComponentBase.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -308,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="AnimationSpecs.h">
       <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="StateComponentBase.h">
+      <Filter>Source Files\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -66,6 +66,8 @@ namespace RB::Render
 
 		UpdateSourceData();
 
-		_loadedAnimation->RenderAnimation(_currentIndex, _sourcePos, _sourceSize, _player->GetPosition(), RB::Sprites::PivotType::BOTTOM_CENTER);
+		_loadedAnimation->RenderAnimation(_currentIndex, _sourcePos, _sourceSize,
+			_player->GetPosition(), olc::vf2d{ 300.0f, 150.0f }, //temp sprite size
+			RB::Sprites::PivotType::BOTTOM_CENTER);
 	}
 }

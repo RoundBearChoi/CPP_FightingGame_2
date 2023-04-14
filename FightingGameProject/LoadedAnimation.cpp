@@ -37,7 +37,7 @@ namespace RB::Render
 		return _totalSprites;
 	}
 
-	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vf2d sourcePos, olc::vf2d sourceSize, olc::vi2d worldPos, RB::Sprites::PivotType pivot)
+	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vf2d sourcePos, olc::vf2d sourceSize, olc::vi2d worldPos, olc::vf2d renderSize, RB::Sprites::PivotType pivot)
 	{
 		if (_spriteID == RB::Sprites::SpriteID::NONE)
 		{
@@ -55,8 +55,10 @@ namespace RB::Render
 
 		float x = (float)screenPos.x;
 		float y = (float)screenPos.y;
-		float width = 300.0f;
-		float height = 150.0f;
+
+		//temp
+		float width = renderSize.x;
+		float height = renderSize.y;
 
 		points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
 		points[1] = { (float)x - (float)width / 2.0f, (float)y };

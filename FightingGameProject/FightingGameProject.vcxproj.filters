@@ -303,7 +303,7 @@
     <ClInclude Include="PlayerAnimationObj.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationInfo.h">
+    <ClInclude Include="AnimationRenderSettings.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>

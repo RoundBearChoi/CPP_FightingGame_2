@@ -37,7 +37,7 @@ namespace RB::Render
 		return _totalSprites;
 	}
 
-	void LoadedAnimation::RenderAnimation(AnimationInfo animationInfo)
+	void LoadedAnimation::RenderAnimation(AnimationRenderSettings renderSettings)
 	{
 		if (_spriteID == RB::Sprites::SpriteID::NONE)
 		{
@@ -46,26 +46,26 @@ namespace RB::Render
 
 		std::array<olc::vf2d, 4> points;
 
-		olc::vi2d screenPos = animationInfo.mWorldPos;
+		olc::vi2d screenPos = renderSettings.mWorldPos;
 
 		if (RB::Cam::CurrentCam::CamExists())
 		{
-			screenPos = RB::Cam::CurrentCam::GetRelativePos(animationInfo.mWorldPos);
+			screenPos = RB::Cam::CurrentCam::GetRelativePos(renderSettings.mWorldPos);
 		}
 
 		float x = (float)screenPos.x;
 		float y = (float)screenPos.y;
 
 		//temp
-		float width = animationInfo.mRenderSize.x;
-		float height = animationInfo.mRenderSize.y;
+		float width = renderSettings.mRenderSize.x;
+		float height = renderSettings.mRenderSize.y;
 
 		points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
 		points[1] = { (float)x - (float)width / 2.0f, (float)y };
 		points[2] = { (float)x + (float)width / 2.0f, (float)y };
 		points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
 
-		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_loadedSprite->GetDecal(), points, animationInfo.mSourcePos, animationInfo.mSourceSize);
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_loadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
 	}
 
 	unsigned int LoadedAnimation::GetFixedUpdateSkipCount()

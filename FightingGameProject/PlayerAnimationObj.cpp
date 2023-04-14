@@ -74,15 +74,15 @@ namespace RB::Render
 			return;
 		}
 
-		AnimationInfo animationInfo;
+		AnimationRenderSettings renderSettings;
 
-		animationInfo.mCurrentIndex = _currentIndex;
-		animationInfo.mSourceSize = GetSourceSize();
-		animationInfo.mSourcePos = GetSourcePos(animationInfo.mSourceSize);
-		animationInfo.mWorldPos = _player->GetPosition();
-		animationInfo.mRenderSize = olc::vf2d{ 300.0f, 150.0f }; //temp sprite size
-		animationInfo.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
+		renderSettings.mCurrentIndex = _currentIndex;
+		renderSettings.mSourceSize = GetSourceSize();
+		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
+		renderSettings.mWorldPos = _player->GetPosition();
+		renderSettings.mRenderSize = olc::vf2d{ 300.0f, 150.0f }; //temp sprite size
+		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 
-		_loadedAnimation->RenderAnimation(animationInfo);
+		_loadedAnimation->RenderAnimation(renderSettings);
 	}
 }

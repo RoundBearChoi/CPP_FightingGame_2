@@ -4,11 +4,11 @@
 
 namespace RB::Render
 {
-	class AnimationInfo
+	class AnimationRenderSettings
 	{
 	public:
-		AnimationInfo() {}
-		~AnimationInfo() {}
+		AnimationRenderSettings() {}
+		~AnimationRenderSettings() {}
 
 	public:
 		unsigned int mCurrentIndex = 0;

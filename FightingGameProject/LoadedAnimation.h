@@ -5,7 +5,7 @@
 #include "PivotType.h"
 #include "LoadedSprite.h"
 #include "CurrentCam.h"
-#include "AnimationInfo.h"
+#include "AnimationRenderSettings.h"
 
 namespace RB::Render
 {
@@ -22,7 +22,7 @@ namespace RB::Render
 		unsigned int GetTotalSprites();
 
 	public:
-		void RenderAnimation(AnimationInfo animationInfo);
+		void RenderAnimation(AnimationRenderSettings animationRenderSettings);
 		unsigned int GetFixedUpdateSkipCount();
 		olc::vi2d GetSpriteSize();
 

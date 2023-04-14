@@ -127,7 +127,7 @@
     <ClCompile Include="FallDown.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationLoader.cpp">
+    <ClCompile Include="AnimationRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="PlayerAnimationController.cpp">
@@ -288,7 +288,7 @@
     <ClInclude Include="AllocationCount.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationLoader.h">
+    <ClInclude Include="AnimationRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAnimationController.h">

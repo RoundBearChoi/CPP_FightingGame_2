@@ -5,11 +5,11 @@
 
 namespace RB::Render
 {
-	class AnimationLoader
+	class AnimationRenderer
 	{
 		public:
-		AnimationLoader();
-		~AnimationLoader();
+		AnimationRenderer();
+		~AnimationRenderer();
 
 	public:
 		void Init();

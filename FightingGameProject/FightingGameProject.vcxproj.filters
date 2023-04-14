@@ -142,6 +142,9 @@
     <ClCompile Include="StateComponentBase.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+    <ClCompile Include="TestComponent.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -313,6 +316,9 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="StateComponentBase.h">
+      <Filter>Source Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="TestComponent.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,6 +4,7 @@
 #include "SpriteID.h"
 #include "PivotType.h"
 #include "LoadedSprite.h"
+#include "CurrentCam.h"
 
 namespace RB::Render
 {

@@ -46,9 +46,15 @@ namespace RB::Render
 
 		std::array<olc::vf2d, 4> points;
 
-		//temp
-		float x = 100.0f;
-		float y = 100.0f;
+		olc::vi2d screenPos = worldPos;
+
+		if (RB::Cam::CurrentCam::CamExists())
+		{
+			screenPos = RB::Cam::CurrentCam::GetRelativePos(worldPos);
+		}
+
+		float x = (float)screenPos.x;
+		float y = (float)screenPos.y;
 		float width = 200.0f;
 		float height = 100.0f;
 
@@ -56,6 +62,8 @@ namespace RB::Render
 		points[1] = { (float)x - (float)width / 2.0f, (float)y };
 		points[2] = { (float)x + (float)width / 2.0f, (float)y };
 		points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+
+
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_loadedSprite->GetDecal(), points, sourcePos, sourceSize);
 	}

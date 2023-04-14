@@ -23,7 +23,7 @@ namespace RB::Players
 	void PlayerCollider::OnFixedUpdate()
 	{
 		PlayerID myID = _player->GetPlayerID();
-		iPlayer* otherPlayer = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetOtherPlayer(myID);
+		iPlayer* otherPlayer = _player->GetOtherPlayer();
 
 		RB::Collisions::AABB otherAABB = otherPlayer->GetAABB();
 		RB::Collisions::AABB myAABB = GetAABB();

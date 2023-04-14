@@ -9,11 +9,20 @@ namespace RB::PlayerStates
 
 	void Idle::OnEnter()
 	{
+		AddStateComponent(new RB::States::TestComponent());
 
+		EnterStateComponents();
+	}
+
+	void Idle::OnExit()
+	{
+		ExitStateComponents();
 	}
 
 	void Idle::OnUpdate()
 	{
+		UpdateStateComponents();
+
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 
 		olc::HWButton jump = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::JUMP);
@@ -65,6 +74,6 @@ namespace RB::PlayerStates
 
 	void Idle::OnFixedUpdate()
 	{
-
+		FixedUpdateStateComponents();
 	}
 }

@@ -49,6 +49,8 @@ namespace RB::States
 
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)
 	{
+		stateComponent->SetState(this);
+
 		_vecStateComponents.push_back(stateComponent);
 	}
 

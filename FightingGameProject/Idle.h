@@ -4,6 +4,7 @@
 #include "JumpUp.h"
 #include "MoveForward.h"
 #include "MoveBack.h"
+#include "TestComponent.h"
 
 namespace RB::PlayerStates
 {
@@ -14,6 +15,7 @@ namespace RB::PlayerStates
 
 	public:
 		void OnEnter() override;
+		void OnExit() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 	};

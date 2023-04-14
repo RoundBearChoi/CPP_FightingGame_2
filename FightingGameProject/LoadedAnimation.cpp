@@ -37,14 +37,26 @@ namespace RB::Render
 		return _totalSprites;
 	}
 
-	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vi2d worldPos, RB::Sprites::PivotType pivot)
+	void LoadedAnimation::RenderAnimation(unsigned int index, olc::vf2d sourceSize, olc::vf2d sourcePos, olc::vi2d worldPos, RB::Sprites::PivotType pivot)
 	{
 		if (_spriteID == RB::Sprites::SpriteID::NONE)
 		{
 			return;
 		}
 
+		std::array<olc::vf2d, 4> points;
 
+		float x = 100.0f;
+		float y = 100.0f;
+		float width = 100.0f;
+		float height = 100.0f;
+
+		points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
+		points[1] = { (float)x - (float)width / 2.0f, (float)y };
+		points[2] = { (float)x + (float)width / 2.0f, (float)y };
+		points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+
+		//olc::Renderer::ptrPGE->DrawPartialWarpedDecal(d, points, sourcePos, sourceSize);
 	}
 
 	unsigned int LoadedAnimation::GetFixedUpdateSkipCount()

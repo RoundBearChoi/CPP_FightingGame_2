@@ -74,6 +74,11 @@ namespace RB::Render
 				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 			}
 		}
+
+		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		{
+			_vecPlayerAnimationObjs[i]->RenderAnimation();
+		}
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()

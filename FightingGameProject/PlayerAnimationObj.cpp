@@ -40,6 +40,11 @@ namespace RB::Render
 		unsigned int yTiles = _loadedAnimation->GetYTileCount();
 		unsigned int xTiles = _loadedAnimation->GetXTileCount();
 		
+		_sourceSize.x = (float)_loadedAnimation->GetSpriteSize().x / (float)xTiles;
+		_sourceSize.y = (float)_loadedAnimation->GetSpriteSize().y / (float)yTiles;
+
+		_sourcePos.x = (_currentIndex % _loadedAnimation->GetXTileCount()) * _sourceSize.x;
+		_sourcePos.y = (int32_t)floor(_currentIndex / _loadedAnimation->GetXTileCount()) * _sourceSize.y;
 	}
 
 	RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()
@@ -54,8 +59,13 @@ namespace RB::Render
 
 	void PlayerAnimationObj::RenderAnimation()
 	{
+		if (_loadedAnimation->GetSpriteID() == RB::Sprites::SpriteID::NONE)
+		{
+			return;
+		}
+
 		UpdateSourceData();
 
-		_loadedAnimation->RenderAnimation(_currentIndex, _player->GetPlayerBox(), RB::Sprites::PivotType::BOTTOM_CENTER);
+		_loadedAnimation->RenderAnimation(_currentIndex, _sourceSize, _sourcePos, _player->GetPlayerBox(), RB::Sprites::PivotType::BOTTOM_CENTER);
 	}
 }

@@ -23,9 +23,7 @@ namespace RB::Render
 
 	void PlayerAnimationObj::IncreaseAnimationIndex()
 	{
-		//std::cout << "increasing animation index for player " << (int)_player->GetPlayerID() << std::endl;
-
-		unsigned int totalSprites = _loadedAnimation->GetAnimationSpecs().mTotalSprites;// GetTotalSprites();
+		unsigned int totalSprites = _loadedAnimation->GetAnimationSpecs().mTotalSprites;
 
 		_currentIndex++;
 
@@ -39,8 +37,8 @@ namespace RB::Render
 	{
 		AnimationSpecs specs = _loadedAnimation->GetAnimationSpecs();
 
-		unsigned int xTiles = specs.mX_TileCount;// GetXTileCount();
-		unsigned int yTiles = specs.mY_TileCount;// GetYTileCount();
+		unsigned int xTiles = specs.mX_TileCount;
+		unsigned int yTiles = specs.mY_TileCount;
 
 		olc::vf2d sourceSize = { 0.0f, 0.0f };
 		sourceSize.x = (float)specs.mLoadedSprite->GetSpriteSize().x / (float)xTiles;
@@ -60,11 +58,6 @@ namespace RB::Render
 
 		return sourcePos;
 	}
-
-	//RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()
-	//{
-	//	return _loadedAnimation->GetSpriteID();
-	//}
 
 	RB::Players::iPlayer* PlayerAnimationObj::GetPlayer()
 	{

@@ -5,13 +5,6 @@ namespace RB::Render
 	LoadedAnimation::LoadedAnimation(AnimationSpecs specs)
 	{
 		_animationSpecs = specs;
-
-		//_xTileCount = xTileCount;
-		//_yTileCount = yTileCount;
-		//_totalSprites = totalSprites;
-		//_skipFixedUpdates = skipFixedUpdates;
-		//_spriteID = spriteID;
-		//_loadedSprite = loadedSprite;
 	}
 
 	LoadedAnimation::~LoadedAnimation()
@@ -23,26 +16,6 @@ namespace RB::Render
 	{
 		return _animationSpecs;
 	}
-
-	//RB::Sprites::SpriteID LoadedAnimation::GetSpriteID()
-	//{
-	//	return _spriteID;
-	//}
-	//
-	//unsigned int LoadedAnimation::GetXTileCount()
-	//{
-	//	return _xTileCount;
-	//}
-	//
-	//unsigned int LoadedAnimation::GetYTileCount()
-	//{
-	//	return _yTileCount;
-	//}
-	//
-	//unsigned int LoadedAnimation::GetTotalSprites()
-	//{
-	//	return _totalSprites;
-	//}
 
 	void LoadedAnimation::RenderAnimation(AnimationRenderSettings renderSettings)
 	{
@@ -74,14 +47,4 @@ namespace RB::Render
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
 	}
-
-	//unsigned int LoadedAnimation::GetFixedUpdateSkipCount()
-	//{
-	//	return _skipFixedUpdates;
-	//}
-	//
-	//olc::vi2d LoadedAnimation::GetSpriteSize()
-	//{
-	//	return _loadedSprite->GetSpriteSize();
-	//}
 }

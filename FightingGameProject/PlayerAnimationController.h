@@ -21,6 +21,8 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
+		void SetFirstAnimations();
+		void SetNewAnimationObjsOnChange();
 		RB::Sprites::SpriteID GetSpriteID(RB::Players::PlayerID playerID);
 		void DeleteAnimationObj(RB::Players::PlayerID playerID);
 

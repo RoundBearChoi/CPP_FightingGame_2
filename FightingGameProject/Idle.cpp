@@ -9,7 +9,7 @@ namespace RB::PlayerStates
 
 	void Idle::OnEnter()
 	{
-		AddStateComponent(new RB::States::TestComponent());
+		//AddStateComponent(new RB::States::TestComponent());
 
 		EnterStateComponents();
 	}

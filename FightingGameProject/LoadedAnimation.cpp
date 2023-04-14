@@ -55,8 +55,8 @@ namespace RB::Render
 
 		float x = (float)screenPos.x;
 		float y = (float)screenPos.y;
-		float width = 200.0f;
-		float height = 100.0f;
+		float width = 300.0f;
+		float height = 150.0f;
 
 		points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
 		points[1] = { (float)x - (float)width / 2.0f, (float)y };

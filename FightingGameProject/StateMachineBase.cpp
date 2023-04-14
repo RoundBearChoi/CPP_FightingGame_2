@@ -77,6 +77,11 @@ namespace RB::States
 		return _currentState;
 	}
 
+	bool StateMachineBase::IsTransitioning()
+	{
+		return _makeTransition;
+	}
+
 	void StateMachineBase::_DestroyCurrentState()
 	{
 		if (_currentState != nullptr)

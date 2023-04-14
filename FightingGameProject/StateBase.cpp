@@ -6,6 +6,11 @@ namespace RB::States
 	{
 		_stateMachine = stateMachine;
 	}
+
+	iStateMachine* StateBase::GetStateMachine()
+	{
+		return _stateMachine;
+	}
 	
 	void StateBase::QueueNextState(iState* nextState)
 	{

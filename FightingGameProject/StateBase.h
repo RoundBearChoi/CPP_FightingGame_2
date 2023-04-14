@@ -14,6 +14,7 @@ namespace RB::States
 		virtual ~StateBase() {};
 
 		virtual void SetStateMachine(iStateMachine* stateMachine);
+		virtual iStateMachine* GetStateMachine();
 		virtual void QueueNextState(iState* nextState);
 		virtual void AddCumulatedFixedUpdate();
 		virtual unsigned int GetCumulatedFixedUpdates();

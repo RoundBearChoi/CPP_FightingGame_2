@@ -19,6 +19,7 @@ namespace RB::States
 		virtual void SetID(int ID) override;
 		virtual int GetID() override;
 		virtual iState* GetCurrentState() override;
+		virtual bool IsTransitioning() override;
 
 	protected:
 		int _stateMachineID = 0;

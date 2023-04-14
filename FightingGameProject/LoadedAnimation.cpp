@@ -49,7 +49,7 @@ namespace RB::Render
 		//temp
 		float x = 100.0f;
 		float y = 100.0f;
-		float width = 100.0f;
+		float width = 200.0f;
 		float height = 100.0f;
 
 		points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
@@ -57,7 +57,7 @@ namespace RB::Render
 		points[2] = { (float)x + (float)width / 2.0f, (float)y };
 		points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
 
-		//olc::Renderer::ptrPGE->DrawPartialWarpedDecal(d, points, sourcePos, sourceSize);
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_loadedSprite->GetDecal(), points, sourcePos, sourceSize);
 	}
 
 	unsigned int LoadedAnimation::GetFixedUpdateSkipCount()

@@ -84,11 +84,7 @@ namespace RB::Render
 		renderSettings.mWorldPos = _player->GetPosition();
 		renderSettings.mRenderSize = olc::vf2d{ 300.0f, 150.0f }; //temp sprite size
 		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
-
-		if (_player->GetPosition().x > _player->GetOtherPlayer()->GetPosition().x)
-		{
-			renderSettings.mFaceRight = false;
-		}
+		renderSettings.mFaceRight = _player->OtherPlayerIsOnRightSide();
 
 		_animationRenderer->RenderAnimation(renderSettings);
 	}

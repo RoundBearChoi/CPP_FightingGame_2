@@ -14,6 +14,7 @@ namespace RB::Players
 	public:
 		virtual PlayerID GetPlayerID() = 0;
 		virtual iPlayer* GetOtherPlayer() = 0;
+		virtual bool OtherPlayerIsOnRightSide() = 0;
 		virtual int GetStateMachineID() = 0;
 		virtual void Move(olc::vi2d moveAmount) = 0;
 		virtual olc::vi2d GetPosition() = 0;

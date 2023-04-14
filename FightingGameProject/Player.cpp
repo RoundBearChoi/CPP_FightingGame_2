@@ -57,6 +57,18 @@ namespace RB::Players
 		return _otherPlayer;
 	}
 
+	bool Player::OtherPlayerIsOnRightSide()
+	{
+		if (_position.x < _otherPlayer->GetPosition().x)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	int Player::GetStateMachineID()
 	{
 		return _stateMachine->GetID();

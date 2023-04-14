@@ -26,6 +26,5 @@ namespace RB::Players
 	public:
 		iPlayer* GetPlayerOnID(PlayerID id) override;
 		iPlayer* GetPlayerOnStateMachineID(int id) override;
-		//iPlayer* GetOtherPlayer(PlayerID id) override;
 	};
 }

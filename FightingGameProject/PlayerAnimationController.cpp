@@ -31,8 +31,8 @@ namespace RB::Render
 		_spriteRenderer.LoadSprite("PNG files/Fighter_0/fighter_0_idle.png", RB::Sprites::SpriteID::fighter_0_idle);
 
 		//animation renderer
-		_animationRenderer.Init();
-		_animationRenderer.LoadAnimation(5, 1, 5, 60,
+		_animationLoader.Init();
+		_animationLoader.LoadAnimation(5, 1, 5, 60,
 			RB::Sprites::SpriteID::fighter_0_idle,
 			_spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle));
 	}
@@ -46,7 +46,7 @@ namespace RB::Render
 			{
 				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetSpriteID();
 
-				LoadedAnimation* loadedAnimation = _animationRenderer.GetAnimation(spriteID);
+				LoadedAnimation* loadedAnimation = _animationLoader.GetAnimation(spriteID);
 
 				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], loadedAnimation);
 
@@ -69,7 +69,7 @@ namespace RB::Render
 
 				DeleteAnimationObj(playerID);
 
-				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], _animationRenderer.GetAnimation(playerSpriteID));
+				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], _animationLoader.GetAnimation(playerSpriteID));
 
 				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 			}

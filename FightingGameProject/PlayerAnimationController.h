@@ -1,7 +1,7 @@
 #pragma once
 #include "iPlayerAnimationController.h"
 #include "SpriteRenderer.h"
-#include "AnimationRenderer.h"
+#include "AnimationLoader.h"
 #include "PlayerAnimationObj.h"
 #include "ControllerGroup.h"
 #include "iPlayerController.h"
@@ -26,7 +26,7 @@ namespace RB::Render
 
 	private:
 		SpriteRenderer _spriteRenderer;
-		AnimationRenderer _animationRenderer;
+		AnimationLoader _animationLoader;
 		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
 	};

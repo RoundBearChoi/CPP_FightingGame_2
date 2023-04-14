@@ -1,12 +1,12 @@
-#include "AnimationRenderer.h"
+#include "AnimationLoader.h"
 
 namespace RB::Render
 {
-	AnimationRenderer::AnimationRenderer()
+	AnimationLoader::AnimationLoader()
 	{
 
 	}
-	AnimationRenderer::~AnimationRenderer()
+	AnimationLoader::~AnimationLoader()
 	{
 		for (int i = 0; i < _loadedAnimations.size(); i++)
 		{
@@ -14,13 +14,13 @@ namespace RB::Render
 		}
 	}
 
-	void AnimationRenderer::Init()
+	void AnimationLoader::Init()
 	{
 		//NONE by default (will render nothing)
 		LoadAnimation(0, 0, 0, 0, RB::Sprites::SpriteID::NONE, nullptr);
 	}
 
-	void AnimationRenderer::LoadAnimation(unsigned int xTileCount, unsigned int yTileCount, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
+	void AnimationLoader::LoadAnimation(unsigned int xTileCount, unsigned int yTileCount, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
 	{
 		if (spriteID != RB::Sprites::SpriteID::NONE && loadedSprite == nullptr)
 		{
@@ -35,7 +35,7 @@ namespace RB::Render
 		}
 	}
 
-	LoadedAnimation* AnimationRenderer::GetAnimation(RB::Sprites::SpriteID spriteID)
+	LoadedAnimation* AnimationLoader::GetAnimation(RB::Sprites::SpriteID spriteID)
 	{
 		for (int i = 0; i < _loadedAnimations.size(); i++)
 		{

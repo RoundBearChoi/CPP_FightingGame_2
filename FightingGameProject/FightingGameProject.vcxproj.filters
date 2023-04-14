@@ -44,6 +44,9 @@
     <Filter Include="Source Files\Collisions">
       <UniqueIdentifier>{fa252507-7496-4f61-be12-ad649267ec07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PlayerStateComponents">
+      <UniqueIdentifier>{5c769669-76bc-46ef-9f84-25716e4cfdeb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -144,6 +147,9 @@
     </ClCompile>
     <ClCompile Include="TestComponent.cpp">
       <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerMoveForward.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +326,9 @@
     </ClInclude>
     <ClInclude Include="TestComponent.h">
       <Filter>Source Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerMoveForward.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

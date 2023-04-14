@@ -175,6 +175,7 @@
     <ClCompile Include="TestComponent.cpp" />
     <ClCompile Include="TestUpdater.cpp" />
     <ClCompile Include="Time.cpp" />
+    <ClCompile Include="TriggerMoveForward.cpp" />
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +235,7 @@
     <ClInclude Include="TestUpdater.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="FixedTimer.h" />
+    <ClInclude Include="TriggerMoveForward.h" />
     <ClInclude Include="TriggerOnFixedUpdateCount.h" />
     <ClInclude Include="Updater.h" />
   </ItemGroup>

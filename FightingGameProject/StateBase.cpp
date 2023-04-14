@@ -59,6 +59,11 @@ namespace RB::States
 		for (int i = 0; i < _vecStateComponents.size(); i++)
 		{
 			_vecStateComponents[i]->OnEnter();
+
+			if (_stateMachine->IsTransitioning())
+			{
+				break;
+			}
 		}
 	}
 
@@ -75,6 +80,11 @@ namespace RB::States
 		for (int i = 0; i < _vecStateComponents.size(); i++)
 		{
 			_vecStateComponents[i]->OnUpdate();
+
+			if (_stateMachine->IsTransitioning())
+			{
+				break;
+			}
 		}
 	}
 
@@ -83,6 +93,11 @@ namespace RB::States
 		for (int i = 0; i < _vecStateComponents.size(); i++)
 		{
 			_vecStateComponents[i]->OnFixedUpdate();
+
+			if (_stateMachine->IsTransitioning())
+			{
+				break;
+			}
 		}
 	}
 }

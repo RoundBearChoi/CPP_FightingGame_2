@@ -8,11 +8,11 @@
 
 namespace RB::Render
 {
-	class LoadedAnimation
+	class AnimationRenderer
 	{
 	public:
-		LoadedAnimation(AnimationSpecs specs);
-		~LoadedAnimation();
+		AnimationRenderer(AnimationSpecs specs);
+		~AnimationRenderer();
 
 	public:
 		AnimationSpecs GetAnimationSpecs();

@@ -150,7 +150,7 @@
     <ClCompile Include="PlayerAnimationController.cpp" />
     <ClCompile Include="JumpUp.cpp" />
     <ClCompile Include="LineRenderer.cpp" />
-    <ClCompile Include="LoadedAnimation.cpp" />
+    <ClCompile Include="AnimationRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="ControllerGroup.cpp" />
@@ -188,7 +188,7 @@
     <ClInclude Include="iPlayerAnimationController.h" />
     <ClInclude Include="JumpUp.h" />
     <ClInclude Include="LineRenderer.h" />
-    <ClInclude Include="LoadedAnimation.h" />
+    <ClInclude Include="AnimationRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="CurrentCam.h" />

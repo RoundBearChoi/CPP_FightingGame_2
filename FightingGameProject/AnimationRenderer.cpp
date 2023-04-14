@@ -1,23 +1,23 @@
-#include "LoadedAnimation.h"
+#include "AnimationRenderer.h"
 
 namespace RB::Render
 {
-	LoadedAnimation::LoadedAnimation(AnimationSpecs specs)
+	AnimationRenderer::AnimationRenderer(AnimationSpecs specs)
 	{
 		_animationSpecs = specs;
 	}
 
-	LoadedAnimation::~LoadedAnimation()
+	AnimationRenderer::~AnimationRenderer()
 	{
 
 	}
 
-	AnimationSpecs LoadedAnimation::GetAnimationSpecs()
+	AnimationSpecs AnimationRenderer::GetAnimationSpecs()
 	{
 		return _animationSpecs;
 	}
 
-	void LoadedAnimation::RenderAnimation(AnimationRenderSettings renderSettings)
+	void AnimationRenderer::RenderAnimation(AnimationRenderSettings renderSettings)
 	{
 		if (_animationSpecs.mSpriteID == RB::Sprites::SpriteID::NONE)
 		{

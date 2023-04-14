@@ -133,7 +133,7 @@
     <ClCompile Include="PlayerAnimationController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="LoadedAnimation.cpp">
+    <ClCompile Include="AnimationRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="PlayerAnimationObj.cpp">
@@ -297,7 +297,7 @@
     <ClInclude Include="iPlayerAnimationController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="LoadedAnimation.h">
+    <ClInclude Include="AnimationRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAnimationObj.h">

@@ -2,12 +2,12 @@
 
 namespace RB::Render
 {
-	PlayerAnimationObj::PlayerAnimationObj(RB::Players::iPlayer* owner, LoadedAnimation* loadedAnimation)
+	PlayerAnimationObj::PlayerAnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer)
 	{
 		_player = owner;
-		_loadedAnimation = loadedAnimation;
+		_animationRenderer = animationRenderer;
 
-		_skipFixedUpdates.SetSkipFrames(_loadedAnimation->GetAnimationSpecs().mSkipFixedUpdates);
+		_skipFixedUpdates.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
 		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::IncreaseAnimationIndex);
 	}
 
@@ -23,7 +23,7 @@ namespace RB::Render
 
 	void PlayerAnimationObj::IncreaseAnimationIndex()
 	{
-		unsigned int totalSprites = _loadedAnimation->GetAnimationSpecs().mTotalSprites;
+		unsigned int totalSprites = _animationRenderer->GetAnimationSpecs().mTotalSprites;
 
 		_currentIndex++;
 
@@ -35,7 +35,7 @@ namespace RB::Render
 
 	olc::vf2d PlayerAnimationObj::GetSourceSize()
 	{
-		AnimationSpecs specs = _loadedAnimation->GetAnimationSpecs();
+		AnimationSpecs specs = _animationRenderer->GetAnimationSpecs();
 
 		unsigned int xTiles = specs.mX_TileCount;
 		unsigned int yTiles = specs.mY_TileCount;
@@ -49,7 +49,7 @@ namespace RB::Render
 
 	olc::vf2d PlayerAnimationObj::GetSourcePos(olc::vf2d sourceSize)
 	{
-		AnimationSpecs specs = _loadedAnimation->GetAnimationSpecs();
+		AnimationSpecs specs = _animationRenderer->GetAnimationSpecs();
 
 		olc::vf2d sourcePos = { 0.0f, 0.0f };
 
@@ -66,12 +66,12 @@ namespace RB::Render
 
 	AnimationSpecs PlayerAnimationObj::GetAnimationSpecs()
 	{
-		return _loadedAnimation->GetAnimationSpecs();
+		return _animationRenderer->GetAnimationSpecs();
 	}
 
 	void PlayerAnimationObj::RenderAnimation()
 	{
-		if (_loadedAnimation->GetAnimationSpecs().mSpriteID == RB::Sprites::SpriteID::NONE)
+		if (_animationRenderer->GetAnimationSpecs().mSpriteID == RB::Sprites::SpriteID::NONE)
 		{
 			return;
 		}
@@ -85,6 +85,6 @@ namespace RB::Render
 		renderSettings.mRenderSize = olc::vf2d{ 300.0f, 150.0f }; //temp sprite size
 		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 
-		_loadedAnimation->RenderAnimation(renderSettings);
+		_animationRenderer->RenderAnimation(renderSettings);
 	}
 }

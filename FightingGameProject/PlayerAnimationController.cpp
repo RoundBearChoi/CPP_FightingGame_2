@@ -53,9 +53,9 @@ namespace RB::Render
 			{
 				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetSpriteID();
 
-				LoadedAnimation* loadedAnimation = _animationLoader.GetAnimation(spriteID);
+				AnimationRenderer* animationRenderer = _animationLoader.GetAnimation(spriteID);
 
-				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], loadedAnimation);
+				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], animationRenderer);
 
 				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 			}

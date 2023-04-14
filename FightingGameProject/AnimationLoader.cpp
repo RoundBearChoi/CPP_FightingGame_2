@@ -8,9 +8,9 @@ namespace RB::Render
 	}
 	AnimationLoader::~AnimationLoader()
 	{
-		for (int i = 0; i < _loadedAnimations.size(); i++)
+		for (int i = 0; i < _animationRenderer.size(); i++)
 		{
-			delete _loadedAnimations[i];
+			delete _animationRenderer[i];
 		}
 	}
 
@@ -30,19 +30,19 @@ namespace RB::Render
 		}
 		else
 		{
-			LoadedAnimation* loaded = new LoadedAnimation(specs);
+			AnimationRenderer* loaded = new AnimationRenderer(specs);
 
-			_loadedAnimations.push_back(loaded);
+			_animationRenderer.push_back(loaded);
 		}
 	}
 
-	LoadedAnimation* AnimationLoader::GetAnimation(RB::Sprites::SpriteID spriteID)
+	AnimationRenderer* AnimationLoader::GetAnimation(RB::Sprites::SpriteID spriteID)
 	{
-		for (int i = 0; i < _loadedAnimations.size(); i++)
+		for (int i = 0; i < _animationRenderer.size(); i++)
 		{
-			if (_loadedAnimations[i]->GetAnimationSpecs().mSpriteID == spriteID)
+			if (_animationRenderer[i]->GetAnimationSpecs().mSpriteID == spriteID)
 			{
-				return _loadedAnimations[i];
+				return _animationRenderer[i];
 			}
 		}
 

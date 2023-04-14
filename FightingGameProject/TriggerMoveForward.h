@@ -7,6 +7,7 @@ namespace RB::PlayerStateComponents
 	{
 	public:
 		TriggerMoveForward();
+		~TriggerMoveForward() override;
 		
 	public:
 		void OnUpdate() override;

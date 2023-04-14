@@ -4,8 +4,14 @@ namespace RB::PlayerStateComponents
 {
 	TriggerMoveForward::TriggerMoveForward()
 	{
-		//std::cout << "TriggerMoveForward" << std::endl;
+
 	}
+
+	TriggerMoveForward::~TriggerMoveForward()
+	{
+
+	}
+
 	void TriggerMoveForward::OnUpdate()
 	{
 

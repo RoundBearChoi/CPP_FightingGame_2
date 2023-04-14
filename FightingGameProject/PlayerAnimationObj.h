@@ -23,7 +23,7 @@ namespace RB::Render
 		olc::vf2d GetSourceSize();
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize);
 		RB::Players::iPlayer* GetPlayer();
-		AnimationSpecs GetAnimationSpecs();
+		const AnimationSpecs& GetAnimationSpecs();
 
 	public:
 		void RenderAnimation();

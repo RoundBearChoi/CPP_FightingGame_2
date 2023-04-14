@@ -15,8 +15,8 @@ namespace RB::Render
 		~AnimationRenderer();
 
 	public:
-		AnimationSpecs GetAnimationSpecs();
-		void RenderAnimation(AnimationRenderSettings animationRenderSettings);
+		const AnimationSpecs& GetAnimationSpecs();
+		void RenderAnimation(const AnimationRenderSettings& animationRenderSettings);
 
 	private:
 		AnimationSpecs _animationSpecs;

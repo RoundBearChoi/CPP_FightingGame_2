@@ -12,12 +12,12 @@ namespace RB::Render
 
 	}
 
-	AnimationSpecs AnimationRenderer::GetAnimationSpecs()
+	const AnimationSpecs& AnimationRenderer::GetAnimationSpecs()
 	{
 		return _animationSpecs;
 	}
 
-	void AnimationRenderer::RenderAnimation(AnimationRenderSettings renderSettings)
+	void AnimationRenderer::RenderAnimation(const AnimationRenderSettings& renderSettings)
 	{
 		if (_animationSpecs.mSpriteID == RB::Sprites::SpriteID::NONE)
 		{

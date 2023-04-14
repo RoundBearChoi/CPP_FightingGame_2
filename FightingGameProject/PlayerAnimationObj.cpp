@@ -35,7 +35,7 @@ namespace RB::Render
 
 	olc::vf2d PlayerAnimationObj::GetSourceSize()
 	{
-		AnimationSpecs specs = _animationRenderer->GetAnimationSpecs();
+		const AnimationSpecs& specs = _animationRenderer->GetAnimationSpecs();
 
 		unsigned int xTiles = specs.mX_TileCount;
 		unsigned int yTiles = specs.mY_TileCount;
@@ -49,7 +49,7 @@ namespace RB::Render
 
 	olc::vf2d PlayerAnimationObj::GetSourcePos(olc::vf2d sourceSize)
 	{
-		AnimationSpecs specs = _animationRenderer->GetAnimationSpecs();
+		const AnimationSpecs& specs = _animationRenderer->GetAnimationSpecs();
 
 		olc::vf2d sourcePos = { 0.0f, 0.0f };
 
@@ -64,7 +64,7 @@ namespace RB::Render
 		return _player;
 	}
 
-	AnimationSpecs PlayerAnimationObj::GetAnimationSpecs()
+	const AnimationSpecs& PlayerAnimationObj::GetAnimationSpecs()
 	{
 		return _animationRenderer->GetAnimationSpecs();
 	}

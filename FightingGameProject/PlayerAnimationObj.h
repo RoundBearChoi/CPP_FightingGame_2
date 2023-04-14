@@ -18,7 +18,6 @@ namespace RB::Render
 
 	public:
 		void IncreaseAnimationIndex();
-		//void UpdateSourceData();
 		olc::vf2d GetSourceSize();
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize);
 		RB::Sprites::SpriteID GetSpriteID();
@@ -31,8 +30,6 @@ namespace RB::Render
 		RB::Players::iPlayer* _player = nullptr;
 		LoadedAnimation* _loadedAnimation = nullptr;
 		unsigned int _currentIndex = 0;
-		//olc::vf2d _sourcePos = { 0.0f, 0.0f };
-		//olc::vf2d _sourceSize = { 0.0f, 0.0f };
 		RB::Updaters::SkipFixedUpdates<PlayerAnimationObj> _skipFixedUpdates;
 	};
 }

@@ -35,18 +35,6 @@ namespace RB::Render
 		}
 	}
 
-	//void PlayerAnimationObj::UpdateSourceData()
-	//{
-	//	unsigned int yTiles = _loadedAnimation->GetYTileCount();
-	//	unsigned int xTiles = _loadedAnimation->GetXTileCount();
-	//	
-	//	_sourceSize.x = (float)_loadedAnimation->GetSpriteSize().x / (float)xTiles;
-	//	_sourceSize.y = (float)_loadedAnimation->GetSpriteSize().y / (float)yTiles;
-	//
-	//	_sourcePos.x = (_currentIndex % _loadedAnimation->GetXTileCount()) * _sourceSize.x;
-	//	_sourcePos.y = (int32_t)floor(_currentIndex / _loadedAnimation->GetXTileCount()) * _sourceSize.y;
-	//}
-
 	olc::vf2d PlayerAnimationObj::GetSourceSize()
 	{
 		unsigned int xTiles = _loadedAnimation->GetXTileCount();
@@ -88,8 +76,6 @@ namespace RB::Render
 
 		olc::vf2d sourceSize = GetSourceSize();
 		olc::vf2d sourcePos = GetSourcePos(sourceSize);
-
-		//UpdateSourceData();
 
 		_loadedAnimation->RenderAnimation(_currentIndex, sourcePos, sourceSize,
 			_player->GetPosition(), olc::vf2d{ 300.0f, 150.0f }, //temp sprite size

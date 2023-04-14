@@ -22,11 +22,13 @@ namespace RB::Players
 
 	public:
 		void Init(PlayerID id);
+		void SetOtherPlayer(iPlayer* otherPlayer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	public:
 		PlayerID GetPlayerID() override;
+		iPlayer* GetOtherPlayer() override;
 		int GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
 		olc::vi2d GetPosition() override;
@@ -51,5 +53,6 @@ namespace RB::Players
 		PlayerCollider _playerCollider;
 		AirMomentum _airMomentum;
 		olc::vi2d _position = { 0, 0 };
+		iPlayer* _otherPlayer = nullptr;
 	};
 }

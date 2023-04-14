@@ -28,6 +28,11 @@ namespace RB::Players
 		std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
 	}
 
+	void Player::SetOtherPlayer(iPlayer* otherPlayer)
+	{
+		_otherPlayer = otherPlayer;
+	}
+
 	void Player::OnUpdate()
 	{
 		_stateMachine->OnUpdate();
@@ -45,6 +50,11 @@ namespace RB::Players
 	PlayerID Player::GetPlayerID()
 	{
 		return _playerID;
+	}
+
+	iPlayer* Player::GetOtherPlayer()
+	{
+		return _otherPlayer;
 	}
 
 	int Player::GetStateMachineID()

@@ -19,6 +19,9 @@ namespace RB::Players
 
 		_player1.SetPosition(olc::vi2d{ -150, 0 });
 		_player2.SetPosition(olc::vi2d{ 150, 0 });
+
+		_player1.SetOtherPlayer(&_player2);
+		_player2.SetOtherPlayer(&_player1);
 	}
 
 	void PlayerController::OnUpdate()

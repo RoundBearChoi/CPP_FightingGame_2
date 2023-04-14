@@ -4,6 +4,7 @@
 #include "LoadedAnimation.h"
 #include "SpriteID.h"
 #include "SkipFixedUpdates.h"
+#include "AnimationInfo.h"
 
 namespace RB::Render
 {

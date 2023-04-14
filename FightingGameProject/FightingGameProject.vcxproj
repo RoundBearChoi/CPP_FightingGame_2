@@ -179,6 +179,7 @@
     <ClInclude Include="AABB.h" />
     <ClInclude Include="AirMomentum.h" />
     <ClInclude Include="AllocationCount.h" />
+    <ClInclude Include="AnimationInfo.h" />
     <ClInclude Include="PlayerAnimationObj.h" />
     <ClInclude Include="AnimationRenderer.h" />
     <ClInclude Include="FallDown.h" />

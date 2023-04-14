@@ -40,10 +40,20 @@ namespace RB::Render
 		float width = renderSettings.mRenderSize.x;
 		float height = renderSettings.mRenderSize.y;
 
-		points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
-		points[1] = { (float)x - (float)width / 2.0f, (float)y };
-		points[2] = { (float)x + (float)width / 2.0f, (float)y };
-		points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+		if (renderSettings.mFaceRight)
+		{
+			points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
+			points[1] = { (float)x - (float)width / 2.0f, (float)y };
+			points[2] = { (float)x + (float)width / 2.0f, (float)y };
+			points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+		}
+		else
+		{
+			points[0] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+			points[1] = { (float)x + (float)width / 2.0f, (float)y };
+			points[2] = { (float)x - (float)width / 2.0f, (float)y };
+			points[3] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
+		}
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
 	}

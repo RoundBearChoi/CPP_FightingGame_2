@@ -125,7 +125,9 @@ namespace RB::Render
 			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
 				delete _vecPlayerAnimationObjs[i];
+
 				_vecPlayerAnimationObjs.erase(_vecPlayerAnimationObjs.begin() + i);
+
 				return;
 			}
 		}

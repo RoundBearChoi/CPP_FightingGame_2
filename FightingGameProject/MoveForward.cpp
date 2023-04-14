@@ -7,11 +7,6 @@ namespace RB::PlayerStates
 
 	}
 
-	MoveForward::~MoveForward()
-	{
-
-	}
-
 	void MoveForward::OnEnter()
 	{
 

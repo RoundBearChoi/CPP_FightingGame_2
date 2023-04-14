@@ -7,11 +7,6 @@ namespace RB::PlayerStates
 		_spriteID = RB::Sprites::SpriteID::fighter_0_idle;
 	}
 
-	Idle::~Idle()
-	{
-
-	}
-
 	void Idle::OnEnter()
 	{
 

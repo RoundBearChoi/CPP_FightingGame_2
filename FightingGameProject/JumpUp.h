@@ -12,7 +12,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		JumpUp();
-		~JumpUp() override;
 
 	public:
 		void OnEnter() override;

@@ -7,11 +7,6 @@ namespace RB::PlayerStates
 
 	}
 
-	JumpUp::~JumpUp()
-	{
-
-	}
-
 	void JumpUp::OnEnter()
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();

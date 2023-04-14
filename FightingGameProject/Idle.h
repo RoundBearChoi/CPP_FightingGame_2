@@ -11,7 +11,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		Idle();
-		~Idle() override;
 
 	public:
 		void OnEnter() override;

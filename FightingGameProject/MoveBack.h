@@ -11,7 +11,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		MoveBack();
-		~MoveBack() override;
 
 	public:
 		void OnEnter() override;

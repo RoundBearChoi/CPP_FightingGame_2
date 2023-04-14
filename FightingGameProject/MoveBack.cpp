@@ -7,11 +7,6 @@ namespace RB::PlayerStates
 
 	}
 
-	MoveBack::~MoveBack()
-	{
-
-	}
-
 	void MoveBack::OnEnter()
 	{
 

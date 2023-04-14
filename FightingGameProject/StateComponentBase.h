@@ -6,7 +6,7 @@ namespace RB::States
 	class StateComponentBase
 	{
 	public:
-		~StateComponentBase() {}
+		virtual ~StateComponentBase() {}
 
 	public:
 		virtual void SetState(iState* state);

@@ -11,7 +11,7 @@ namespace RB::PlayerStates
 	{
 	public:
 		FallDown();
-		~FallDown() override;
+
 	public:
 		void OnEnter() override;
 		void OnUpdate() override;

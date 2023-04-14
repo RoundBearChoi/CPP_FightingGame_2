@@ -12,7 +12,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		PlayerTestState();
-		~PlayerTestState() override;
 
 	public:
 		void OnEnter() override;

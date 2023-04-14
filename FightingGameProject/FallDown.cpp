@@ -7,11 +7,6 @@ namespace RB::PlayerStates
 
 	}
 
-	FallDown::~FallDown()
-	{
-
-	}
-
 	void FallDown::OnEnter()
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();

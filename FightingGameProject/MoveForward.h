@@ -11,7 +11,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		MoveForward();
-		~MoveForward() override;
 
 	public:
 		void OnEnter() override;

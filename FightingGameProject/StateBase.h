@@ -11,7 +11,7 @@ namespace RB::States
 	class StateBase : public iState
 	{
 	public:
-		virtual ~StateBase() {}
+		virtual ~StateBase();
 
 		virtual void SetStateMachine(iStateMachine* stateMachine);
 		virtual iStateMachine* GetStateMachine();

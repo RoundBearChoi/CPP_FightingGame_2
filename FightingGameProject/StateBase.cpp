@@ -2,6 +2,14 @@
 
 namespace RB::States
 {
+	StateBase::~StateBase()
+	{
+		for (int i = 0; i < _vecStateComponents.size(); i++)
+		{
+			delete _vecStateComponents[i];
+		}
+	}
+
 	void StateBase::SetStateMachine(iStateMachine* stateMachine)
 	{
 		_stateMachine = stateMachine;

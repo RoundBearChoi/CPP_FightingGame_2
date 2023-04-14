@@ -8,11 +8,6 @@ namespace RB::PlayerStates
 
 	}
 
-	PlayerTestState::~PlayerTestState()
-	{
-
-	}
-
 	void PlayerTestState::OnEnter()
 	{
 		//_skipFixedUpdates.SetSkipFrames(1);

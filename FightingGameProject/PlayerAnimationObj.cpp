@@ -66,6 +66,6 @@ namespace RB::Render
 
 		UpdateSourceData();
 
-		_loadedAnimation->RenderAnimation(_currentIndex, _sourcePos, _sourceSize, _player->GetPlayerBox(), RB::Sprites::PivotType::BOTTOM_CENTER);
+		_loadedAnimation->RenderAnimation(_currentIndex, _sourcePos, _sourceSize, _player->GetPosition(), RB::Sprites::PivotType::BOTTOM_CENTER);
 	}
 }

@@ -5,6 +5,7 @@
 #include "SpriteID.h"
 #include "SkipFixedUpdates.h"
 #include "AnimationRenderSettings.h"
+#include "AnimationSpecs.h"
 
 namespace RB::Render
 {
@@ -21,8 +22,9 @@ namespace RB::Render
 		void IncreaseAnimationIndex();
 		olc::vf2d GetSourceSize();
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize);
-		RB::Sprites::SpriteID GetSpriteID();
+		//RB::Sprites::SpriteID GetSpriteID();
 		RB::Players::iPlayer* GetPlayer();
+		AnimationSpecs GetAnimationSpecs();
 
 	public:
 		void RenderAnimation();

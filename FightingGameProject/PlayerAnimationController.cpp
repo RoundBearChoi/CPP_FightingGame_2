@@ -32,9 +32,20 @@ namespace RB::Render
 
 		//animation renderer
 		_animationRenderer.Init();
-		_animationRenderer.LoadAnimation(5, 1, 5, 6,
-			RB::Sprites::SpriteID::fighter_0_idle,
-			_spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle));
+
+		AnimationSpecs idleSpecs;
+		idleSpecs.mX_TileCount = 5;
+		idleSpecs.mY_TileCount = 1;
+		idleSpecs.mTotalSprites = 5;
+		idleSpecs.mSkipFixedUpdates = 6;
+		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
+		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
+
+		_animationRenderer.LoadAnimation(idleSpecs);
+
+		//_animationRenderer.LoadAnimation(5, 1, 5, 6,
+		//	RB::Sprites::SpriteID::fighter_0_idle,
+		//	_spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle));
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -95,7 +106,7 @@ namespace RB::Render
 		{
 			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
-				RB::Sprites::SpriteID spriteID = _vecPlayerAnimationObjs[i]->GetSpriteID();
+				RB::Sprites::SpriteID spriteID = _vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteID;// GetSpriteID();
 
 				return spriteID;
 			}

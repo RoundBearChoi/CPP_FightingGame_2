@@ -180,6 +180,7 @@
     <ClInclude Include="AirMomentum.h" />
     <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
+    <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="PlayerAnimationObj.h" />
     <ClInclude Include="AnimationRenderer.h" />
     <ClInclude Include="FallDown.h" />

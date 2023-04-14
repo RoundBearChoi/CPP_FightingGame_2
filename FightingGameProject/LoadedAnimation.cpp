@@ -2,14 +2,16 @@
 
 namespace RB::Render
 {
-	LoadedAnimation::LoadedAnimation(unsigned int xTileCount, unsigned int yTileCount, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
+	LoadedAnimation::LoadedAnimation(AnimationSpecs specs)
 	{
-		_xTileCount = xTileCount;
-		_yTileCount = yTileCount;
-		_totalSprites = totalSprites;
-		_skipFixedUpdates = skipFixedUpdates;
-		_spriteID = spriteID;
-		_loadedSprite = loadedSprite;
+		_animationSpecs = specs;
+
+		//_xTileCount = xTileCount;
+		//_yTileCount = yTileCount;
+		//_totalSprites = totalSprites;
+		//_skipFixedUpdates = skipFixedUpdates;
+		//_spriteID = spriteID;
+		//_loadedSprite = loadedSprite;
 	}
 
 	LoadedAnimation::~LoadedAnimation()
@@ -17,29 +19,34 @@ namespace RB::Render
 
 	}
 
-	RB::Sprites::SpriteID LoadedAnimation::GetSpriteID()
+	AnimationSpecs LoadedAnimation::GetAnimationSpecs()
 	{
-		return _spriteID;
+		return _animationSpecs;
 	}
 
-	unsigned int LoadedAnimation::GetXTileCount()
-	{
-		return _xTileCount;
-	}
-
-	unsigned int LoadedAnimation::GetYTileCount()
-	{
-		return _yTileCount;
-	}
-
-	unsigned int LoadedAnimation::GetTotalSprites()
-	{
-		return _totalSprites;
-	}
+	//RB::Sprites::SpriteID LoadedAnimation::GetSpriteID()
+	//{
+	//	return _spriteID;
+	//}
+	//
+	//unsigned int LoadedAnimation::GetXTileCount()
+	//{
+	//	return _xTileCount;
+	//}
+	//
+	//unsigned int LoadedAnimation::GetYTileCount()
+	//{
+	//	return _yTileCount;
+	//}
+	//
+	//unsigned int LoadedAnimation::GetTotalSprites()
+	//{
+	//	return _totalSprites;
+	//}
 
 	void LoadedAnimation::RenderAnimation(AnimationRenderSettings renderSettings)
 	{
-		if (_spriteID == RB::Sprites::SpriteID::NONE)
+		if (_animationSpecs.mSpriteID == RB::Sprites::SpriteID::NONE)
 		{
 			return;
 		}
@@ -65,16 +72,16 @@ namespace RB::Render
 		points[2] = { (float)x + (float)width / 2.0f, (float)y };
 		points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
 
-		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_loadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
 	}
 
-	unsigned int LoadedAnimation::GetFixedUpdateSkipCount()
-	{
-		return _skipFixedUpdates;
-	}
-
-	olc::vi2d LoadedAnimation::GetSpriteSize()
-	{
-		return _loadedSprite->GetSpriteSize();
-	}
+	//unsigned int LoadedAnimation::GetFixedUpdateSkipCount()
+	//{
+	//	return _skipFixedUpdates;
+	//}
+	//
+	//olc::vi2d LoadedAnimation::GetSpriteSize()
+	//{
+	//	return _loadedSprite->GetSpriteSize();
+	//}
 }

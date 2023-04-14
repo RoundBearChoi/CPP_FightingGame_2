@@ -17,19 +17,20 @@ namespace RB::Render
 	void AnimationRenderer::Init()
 	{
 		//NONE by default (will render nothing)
-		LoadAnimation(0, 0, 0, 0, RB::Sprites::SpriteID::NONE, nullptr);
+		AnimationSpecs none;
+		LoadAnimation(none);
 	}
 
-	void AnimationRenderer::LoadAnimation(unsigned int xTileCount, unsigned int yTileCount, unsigned int totalSprites, unsigned int skipFixedUpdates, RB::Sprites::SpriteID spriteID, RB::Sprites::LoadedSprite* loadedSprite)
+	void AnimationRenderer::LoadAnimation(AnimationSpecs specs)
 	{
-		if (spriteID != RB::Sprites::SpriteID::NONE && loadedSprite == nullptr)
+		if (specs.mSpriteID != RB::Sprites::SpriteID::NONE && specs.mLoadedSprite == nullptr)
 		{
 			std::cout << std::endl;
 			std::cout << "WARNING: LoadedSprite* is null" << std::endl;
 		}
 		else
 		{
-			LoadedAnimation* loaded = new LoadedAnimation(xTileCount, yTileCount, totalSprites, skipFixedUpdates, spriteID, loadedSprite);
+			LoadedAnimation* loaded = new LoadedAnimation(specs);
 
 			_loadedAnimations.push_back(loaded);
 		}
@@ -39,7 +40,7 @@ namespace RB::Render
 	{
 		for (int i = 0; i < _loadedAnimations.size(); i++)
 		{
-			if (_loadedAnimations[i]->GetSpriteID() == spriteID)
+			if (_loadedAnimations[i]->GetAnimationSpecs().mSpriteID == spriteID)
 			{
 				return _loadedAnimations[i];
 			}

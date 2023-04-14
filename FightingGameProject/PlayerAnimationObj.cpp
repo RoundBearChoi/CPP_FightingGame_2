@@ -7,7 +7,7 @@ namespace RB::Render
 		_player = owner;
 		_loadedAnimation = loadedAnimation;
 
-		_skipFixedUpdates.SetSkipFrames(_loadedAnimation->GetFixedUpdateSkipCount());
+		_skipFixedUpdates.SetSkipFrames(_loadedAnimation->GetAnimationSpecs().mSkipFixedUpdates);
 		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::IncreaseAnimationIndex);
 	}
 
@@ -25,7 +25,7 @@ namespace RB::Render
 	{
 		//std::cout << "increasing animation index for player " << (int)_player->GetPlayerID() << std::endl;
 
-		unsigned int totalSprites = _loadedAnimation->GetTotalSprites();
+		unsigned int totalSprites = _loadedAnimation->GetAnimationSpecs().mTotalSprites;// GetTotalSprites();
 
 		_currentIndex++;
 
@@ -37,39 +37,48 @@ namespace RB::Render
 
 	olc::vf2d PlayerAnimationObj::GetSourceSize()
 	{
-		unsigned int xTiles = _loadedAnimation->GetXTileCount();
-		unsigned int yTiles = _loadedAnimation->GetYTileCount();
+		AnimationSpecs specs = _loadedAnimation->GetAnimationSpecs();
+
+		unsigned int xTiles = specs.mX_TileCount;// GetXTileCount();
+		unsigned int yTiles = specs.mY_TileCount;// GetYTileCount();
 
 		olc::vf2d sourceSize = { 0.0f, 0.0f };
-		sourceSize.x = (float)_loadedAnimation->GetSpriteSize().x / (float)xTiles;
-		sourceSize.y = (float)_loadedAnimation->GetSpriteSize().y / (float)yTiles;
+		sourceSize.x = (float)specs.mLoadedSprite->GetSpriteSize().x / (float)xTiles;
+		sourceSize.y = (float)specs.mLoadedSprite->GetSpriteSize().y / (float)yTiles;
 
 		return sourceSize;
 	}
 
 	olc::vf2d PlayerAnimationObj::GetSourcePos(olc::vf2d sourceSize)
 	{
+		AnimationSpecs specs = _loadedAnimation->GetAnimationSpecs();
+
 		olc::vf2d sourcePos = { 0.0f, 0.0f };
 
-		sourcePos.x = (_currentIndex % _loadedAnimation->GetXTileCount()) * sourceSize.x;
-		sourcePos.y = (int32_t)floor(_currentIndex / _loadedAnimation->GetXTileCount()) * sourceSize.y;
+		sourcePos.x = (_currentIndex % specs.mX_TileCount) * sourceSize.x;
+		sourcePos.y = (int32_t)floor(_currentIndex / specs.mX_TileCount) * sourceSize.y;
 
 		return sourcePos;
 	}
 
-	RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()
-	{
-		return _loadedAnimation->GetSpriteID();
-	}
+	//RB::Sprites::SpriteID PlayerAnimationObj::GetSpriteID()
+	//{
+	//	return _loadedAnimation->GetSpriteID();
+	//}
 
 	RB::Players::iPlayer* PlayerAnimationObj::GetPlayer()
 	{
 		return _player;
 	}
 
+	AnimationSpecs PlayerAnimationObj::GetAnimationSpecs()
+	{
+		return _loadedAnimation->GetAnimationSpecs();
+	}
+
 	void PlayerAnimationObj::RenderAnimation()
 	{
-		if (_loadedAnimation->GetSpriteID() == RB::Sprites::SpriteID::NONE)
+		if (_loadedAnimation->GetAnimationSpecs().mSpriteID == RB::Sprites::SpriteID::NONE)
 		{
 			return;
 		}

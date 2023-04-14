@@ -5,10 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Source Files\Engine">
       <UniqueIdentifier>{5bfb9078-62fb-43c2-ac67-cf0a5a26fd3f}</UniqueIdentifier>
     </Filter>
@@ -47,9 +43,6 @@
     </Filter>
     <Filter Include="Source Files\Collisions">
       <UniqueIdentifier>{fa252507-7496-4f61-be12-ad649267ec07}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Animations">
-      <UniqueIdentifier>{aabf45ae-496a-4ae0-96c3-103f05e662f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

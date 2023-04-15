@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "iUpdaterObj.h"
-#include "TestUpdater.h"
+#include "GameplayUpdater.h"
 
 namespace RB::Updaters
 {

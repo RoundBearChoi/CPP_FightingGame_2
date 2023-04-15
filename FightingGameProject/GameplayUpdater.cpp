@@ -1,18 +1,18 @@
-#include "TestUpdater.h"
+#include "GameplayUpdater.h"
 
 namespace RB::Updaters
 {
-	TestUpdater::TestUpdater()
+	GameplayUpdater::GameplayUpdater()
 	{
-		std::cout << "constructing TestUpdater" << std::endl;
+		std::cout << "constructing GameplayUpdater" << std::endl;
 	}
 
-	TestUpdater::~TestUpdater()
+	GameplayUpdater::~GameplayUpdater()
 	{
-		std::cout << "destroying TestUpdater" << std::endl;
+		std::cout << "destroying GameplayUpdater" << std::endl;
 	}
 
-	void TestUpdater::Init()
+	void GameplayUpdater::Init()
 	{
 		RB::Input::CurrentInputController::Init();
 
@@ -27,12 +27,12 @@ namespace RB::Updaters
 		RB::Controllers::GameplayControllers::FindAll();
 	}
 
-	void TestUpdater::OnUpdate()
+	void GameplayUpdater::OnUpdate()
 	{
 		RB::Controllers::ControllerGroup::UpdateAll();
 	}
 
-	void TestUpdater::OnFixedUpdate()
+	void GameplayUpdater::OnFixedUpdate()
 	{
 		RB::Controllers::ControllerGroup::FixedUpdateAll();
 	}

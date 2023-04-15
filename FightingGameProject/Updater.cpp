@@ -1,6 +1,6 @@
 #include "olcPixelGameEngine.h"
 #include "Updater.h"
-#include "TestUpdater.h"
+#include "GameplayUpdater.h"
 
 namespace RB::Updaters
 {
@@ -20,7 +20,7 @@ namespace RB::Updaters
 	{
 		//std::cout << "initializing Updater" << std::endl;
 
-		_updaterObj = new TestUpdater();
+		_updaterObj = new GameplayUpdater();
 
 		_updaterObj->Init();
 	}

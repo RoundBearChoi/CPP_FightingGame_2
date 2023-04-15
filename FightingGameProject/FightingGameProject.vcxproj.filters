@@ -70,7 +70,7 @@
     <ClCompile Include="PlayerDebugController.cpp">
       <Filter>Source Files\PlayerDebug</Filter>
     </ClCompile>
-    <ClCompile Include="TestUpdater.cpp">
+    <ClCompile Include="GameplayUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
     <ClCompile Include="StateMachineID.cpp">
@@ -216,7 +216,7 @@
     <ClInclude Include="PlayerDebugController.h">
       <Filter>Source Files\PlayerDebug</Filter>
     </ClInclude>
-    <ClInclude Include="TestUpdater.h">
+    <ClInclude Include="GameplayUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="StateMachineID.h">

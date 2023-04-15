@@ -17,11 +17,11 @@
 
 namespace RB::Updaters
 {
-	class TestUpdater : public iUpdaterObj
+	class GameplayUpdater : public iUpdaterObj
 	{
 	public:
-		TestUpdater();
-		~TestUpdater() override;
+		GameplayUpdater();
+		~GameplayUpdater() override;
 
 		void Init() override;
 		void OnUpdate() override;

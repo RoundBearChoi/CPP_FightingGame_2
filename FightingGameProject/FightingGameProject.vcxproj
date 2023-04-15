@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AirMomentum.cpp" />
-    <ClCompile Include="KeepMovingForward.cpp" />
+    <ClCompile Include="WhileMovingForward.cpp" />
     <ClCompile Include="MoveBackDetector.cpp" />
     <ClCompile Include="MoveForwardDetector.cpp" />
     <ClCompile Include="PlayerAnimationObj.cpp" />
@@ -187,7 +187,7 @@
     <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
-    <ClInclude Include="KeepMovingForward.h" />
+    <ClInclude Include="WhileMovingForward.h" />
     <ClInclude Include="MoveBackDetector.h" />
     <ClInclude Include="MoveForwardDetector.h" />
     <ClInclude Include="PlayerAnimationObj.h" />

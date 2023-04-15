@@ -9,7 +9,7 @@ namespace RB::PlayerStates
 
 	void MoveForward::OnEnter()
 	{
-		AddStateComponent(new RB::PlayerStateComponents::KeepMovingForward());
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
 
 		EnterStateComponents();
 	}

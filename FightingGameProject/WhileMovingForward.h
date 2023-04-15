@@ -6,11 +6,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class KeepMovingForward : public RB::States::StateComponentBase
+	class WhileMovingForward : public RB::States::StateComponentBase
 	{
 	public:
-		KeepMovingForward();
-		~KeepMovingForward() override;
+		WhileMovingForward();
+		~WhileMovingForward() override;
 
 	public:
 		void OnEnter() override;

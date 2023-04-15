@@ -1,23 +1,23 @@
-#include "KeepMovingForward.h"
+#include "WhileMovingForward.h"
 
 namespace RB::PlayerStateComponents
 {
-	KeepMovingForward::KeepMovingForward()
+	WhileMovingForward::WhileMovingForward()
 	{
 
 	}
-	KeepMovingForward::~KeepMovingForward()
+	WhileMovingForward::~WhileMovingForward()
 	{
 
 	}
 
-	void KeepMovingForward::OnEnter()
+	void WhileMovingForward::OnEnter()
 	{
 		_moveForwardDetector.Init(_state->GetOwnerPlayer());
 		_moveBackDetector.Init(_state->GetOwnerPlayer());
 	}
 
-	void KeepMovingForward::OnUpdate()
+	void WhileMovingForward::OnUpdate()
 	{
 		_keepMoving = false;
 		_moveBack = false;
@@ -42,7 +42,7 @@ namespace RB::PlayerStateComponents
 		}
 	}
 
-	void KeepMovingForward::OnFixedUpdate()
+	void WhileMovingForward::OnFixedUpdate()
 	{
 		if (_keepMoving)
 		{

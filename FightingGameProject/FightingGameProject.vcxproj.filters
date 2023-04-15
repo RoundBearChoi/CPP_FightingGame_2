@@ -148,7 +148,7 @@
     <ClCompile Include="TriggerMoveForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="KeepMovingForward.cpp">
+    <ClCompile Include="WhileMovingForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="MoveForwardDetector.cpp">
@@ -336,7 +336,7 @@
     <ClInclude Include="TriggerMoveForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="KeepMovingForward.h">
+    <ClInclude Include="WhileMovingForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="MoveForwardDetector.h">

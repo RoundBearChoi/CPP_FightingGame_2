@@ -38,7 +38,7 @@ namespace RB::Render
 		idleSpecs.mX_TileCount = 5;
 		idleSpecs.mY_TileCount = 1;
 		idleSpecs.mTotalSprites = 5;
-		idleSpecs.mSkipFixedUpdates = 6;
+		idleSpecs.mSkipFixedUpdates = 5;
 		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
 		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
 
@@ -46,7 +46,7 @@ namespace RB::Render
 		walkSpecs.mX_TileCount = 6;
 		walkSpecs.mY_TileCount = 1;
 		walkSpecs.mTotalSprites = 6;
-		walkSpecs.mSkipFixedUpdates = 6;
+		walkSpecs.mSkipFixedUpdates = 3;
 		walkSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_walk;
 		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_walk);
 

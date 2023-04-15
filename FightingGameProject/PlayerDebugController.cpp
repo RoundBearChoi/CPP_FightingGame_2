@@ -38,7 +38,7 @@ namespace RB::PlayerDebug
 			DrawPlayerBox(_vecPlayers[i]);
 			DrawPlayerPosition(_vecPlayers[i]);
 			DrawPlayerAirMomentum(_vecPlayers[i]);
-			DrawPlayerBottomLeft(_vecPlayers[i]);
+			//DrawPlayerBottomLeft(_vecPlayers[i]);
 		}
 	}
 

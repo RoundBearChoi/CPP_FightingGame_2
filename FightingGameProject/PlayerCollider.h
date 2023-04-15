@@ -26,6 +26,6 @@ namespace RB::Players
 	private:
 		iPlayer* _player = nullptr;
 		bool _isColliding = false;
-		olc::vi2d _playerBox = { 68, 124 };
+		olc::vi2d _playerBox = { 68, 124 }; //even numbers?
 	};
 }

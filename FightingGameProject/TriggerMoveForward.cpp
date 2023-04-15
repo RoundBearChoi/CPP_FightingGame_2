@@ -23,7 +23,9 @@ namespace RB::PlayerStateComponents
 
 		if (_moveForwardDetector.MoveForward())
 		{
-			std::cout << "player " << (int)_state->GetOwnerPlayer()->GetPlayerID() << " is moving forward" << std::endl;
+			//std::cout << "player " << (int)_state->GetOwnerPlayer()->GetPlayerID() << " is moving forward" << std::endl;
+
+			_state->QueueNextState(new RB::PlayerStates::MoveForward());
 		}
 	}
 }

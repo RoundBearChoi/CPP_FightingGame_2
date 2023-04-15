@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "CurrentInputController.h"
 #include "iInputController.h"
 #include "PlayerInput.h"
 #include "PlayerID.h"

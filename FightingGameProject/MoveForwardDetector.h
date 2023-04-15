@@ -1,6 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "GameplayControllers.h" //temp - input controller should be similar to currentcam
+#include "CurrentInputController.h"
 #include "iPlayer.h"
 
 namespace RB::PlayerStateComponents

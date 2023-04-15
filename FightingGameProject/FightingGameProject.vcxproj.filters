@@ -354,5 +354,8 @@
     <ClInclude Include="WhileMovingBack.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
+    <ClInclude Include="CurrentInputController.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

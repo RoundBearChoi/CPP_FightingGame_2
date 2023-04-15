@@ -33,7 +33,7 @@ namespace RB::PlayerStates
 
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		
-		olc::HWButton jump = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::JUMP);
+		olc::HWButton jump = RB::Input::CurrentInputController::GetController()->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::JUMP);
 		
 		if (jump.bPressed || jump.bHeld)
 		{

@@ -1,5 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include "CurrentInputController.h"
 #include "PlayerID.h"
 #include "AABB.h"
 #include "SpriteID.h"

@@ -14,6 +14,8 @@ namespace RB::Updaters
 
 	void TestUpdater::Init()
 	{
+		RB::Input::CurrentInputController::Init();
+
 		RB::Cam::CurrentCam::Init();
 
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));

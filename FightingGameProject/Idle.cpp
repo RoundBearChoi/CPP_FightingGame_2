@@ -10,6 +10,7 @@ namespace RB::PlayerStates
 	void Idle::OnEnter()
 	{
 		AddStateComponent(new RB::PlayerStateComponents::TriggerMoveForward());
+		AddStateComponent(new RB::PlayerStateComponents::TriggerMoveBack());
 
 		EnterStateComponents();
 	}

@@ -33,6 +33,11 @@ namespace RB::PlayerStateComponents
 		}
 	}
 
+	bool MoveBackDetector::MoveBack()
+	{
+		return _moveBack;
+	}
+
 	bool MoveBackDetector::_BothPressed()
 	{
 		olc::HWButton moveLeft = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);

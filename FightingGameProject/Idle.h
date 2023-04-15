@@ -5,6 +5,7 @@
 #include "MoveForward.h"
 #include "MoveBack.h"
 #include "TriggerMoveForward.h"
+#include "TriggerMoveBack.h"
 
 namespace RB::PlayerStates
 {

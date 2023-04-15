@@ -14,6 +14,7 @@ namespace RB::PlayerStateComponents
 	public:
 		void Init(RB::Players::iPlayer* owner);
 		void OnUpdate();
+		bool MoveBack();
 
 	private:
 		bool _BothPressed();

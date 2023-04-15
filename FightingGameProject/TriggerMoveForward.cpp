@@ -21,7 +21,7 @@ namespace RB::PlayerStateComponents
 
 		if (_MoveForwardPressed())
 		{
-			std::cout << "player " << (int)_state->GetOwnerPlayer()->GetPlayerID() << " move forward" << std::endl;
+			//std::cout << "player " << (int)_state->GetOwnerPlayer()->GetPlayerID() << " move forward" << std::endl;
 		}
 	}
 

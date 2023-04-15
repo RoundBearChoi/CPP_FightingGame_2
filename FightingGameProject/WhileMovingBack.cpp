@@ -17,6 +17,7 @@ namespace RB::PlayerStateComponents
 		_moveForwardDetector.Init(_state->GetOwnerPlayer());
 		_moveBackDetector.Init(_state->GetOwnerPlayer());
 	}
+
 	void WhileMovingBack::OnUpdate()
 	{
 		_keepMoving = false;

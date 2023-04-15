@@ -1,6 +1,7 @@
 #pragma once
 #include "StateComponentBase.h"
 #include "MoveBackDetector.h"
+#include "MoveBack.h"
 
 namespace RB::PlayerStateComponents
 {

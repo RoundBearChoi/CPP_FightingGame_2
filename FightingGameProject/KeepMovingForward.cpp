@@ -14,10 +14,12 @@ namespace RB::PlayerStateComponents
 	void KeepMovingForward::OnEnter()
 	{
 		_moveForwardDetector.Init(_state->GetOwnerPlayer());
+		_moveBackDetector.Init(_state->GetOwnerPlayer());
 	}
 
 	void KeepMovingForward::OnUpdate()
 	{
 		_moveForwardDetector.OnUpdate();
+		_moveBackDetector.OnUpdate();
 	}
 }

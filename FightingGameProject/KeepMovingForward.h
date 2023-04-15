@@ -1,6 +1,7 @@
 #pragma once
 #include "StateComponentBase.h"
 #include "MoveForwardDetector.h"
+#include "MoveBackDetector.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -16,5 +17,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		MoveForwardDetector _moveForwardDetector;
+		MoveBackDetector _moveBackDetector;
 	};
 }

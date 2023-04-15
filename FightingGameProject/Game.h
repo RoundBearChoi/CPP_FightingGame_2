@@ -54,8 +54,7 @@ namespace RB::Engine
 			RB::Frames::Time::SetDeltaTime(fElapsedTime);
 			RB::Frames::Time::AddFixedDeltaTime();
 
-			olc::Pixel grayBackground(20, 20, 20);
-			Clear(grayBackground);
+			Clear(olc::Pixel{ 20, 20, 20});
 
 			_updater.OnUpdate();
 

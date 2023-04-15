@@ -17,5 +17,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 int main()
 {
 	RB::Engine::Game game;
+
 	game.Run();
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "StateComponentBase.h"
-#include "GameplayControllers.h"
+#include "MoveForwardDetector.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -11,14 +11,10 @@ namespace RB::PlayerStateComponents
 		~TriggerMoveForward() override;
 		
 	public:
+		void OnEnter() override;
 		void OnUpdate() override;
 
 	private:
-		bool _BothPressed();
-		bool _MoveForwardPressed();
-
-	private:
-		olc::HWButton moveLeft;
-		olc::HWButton moveRight;
+		MoveForwardDetector _moveForwardDetector;
 	};
 }

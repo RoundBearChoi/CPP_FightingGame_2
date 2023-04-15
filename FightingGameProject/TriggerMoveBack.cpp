@@ -23,7 +23,7 @@ namespace RB::PlayerStateComponents
 
 		if (_moveBackDetector.MoveBack())
 		{
-			std::cout << "player " << (int)_state->GetOwnerPlayer()->GetPlayerID() << " is moving back" << std::endl;
+			//std::cout << "player " << (int)_state->GetOwnerPlayer()->GetPlayerID() << " is moving back" << std::endl;
 
 			_state->QueueNextState(new RB::PlayerStates::MoveBack());
 		}

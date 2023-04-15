@@ -18,6 +18,7 @@ namespace RB::PlayerStateComponents
 
 	void MoveBackDetector::OnUpdate()
 	{
+		//false by default
 		_moveBack = false;
 
 		if (_BothPressed())

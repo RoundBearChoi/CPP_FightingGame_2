@@ -19,6 +19,7 @@ namespace RB::PlayerStateComponents
 
 	void MoveForwardDetector::OnUpdate()
 	{
+		//false by default
 		_moveForward = false;
 
 		if (_BothPressed())

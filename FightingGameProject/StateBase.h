@@ -11,7 +11,7 @@ namespace RB::States
 	class StateBase : public iState
 	{
 	public:
-		virtual ~StateBase();
+		~StateBase(); // child class is NOT overriding this
 
 		virtual void SetStateMachine(iStateMachine* stateMachine);
 		virtual iStateMachine* GetStateMachine();

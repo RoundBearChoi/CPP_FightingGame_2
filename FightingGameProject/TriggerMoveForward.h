@@ -1,5 +1,6 @@
 #pragma once
 #include "StateComponentBase.h"
+#include "GameplayControllers.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -11,5 +12,13 @@ namespace RB::PlayerStateComponents
 		
 	public:
 		void OnUpdate() override;
+
+	private:
+		bool _BothPressed();
+		bool _MoveForwardPressed();
+
+	private:
+		olc::HWButton moveLeft;
+		olc::HWButton moveRight;
 	};
 }

@@ -4,7 +4,7 @@ namespace RB::PlayerStates
 {
 	MoveForward::MoveForward()
 	{
-
+		_spriteID = RB::Sprites::SpriteID::fighter_0_walk;
 	}
 
 	void MoveForward::OnEnter()

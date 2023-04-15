@@ -29,6 +29,7 @@ namespace RB::Render
 		//sprites
 		_spriteRenderer.Init();
 		_spriteRenderer.LoadSprite("PNG files/Fighter_0/fighter_0_idle.png", RB::Sprites::SpriteID::fighter_0_idle);
+		_spriteRenderer.LoadSprite("PNG files/Fighter_0/fighter_0_walk.png", RB::Sprites::SpriteID::fighter_0_walk);
 
 		//animations
 		_animationLoader.Init();
@@ -41,7 +42,16 @@ namespace RB::Render
 		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
 		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
 
+		AnimationSpecs walkSpecs;
+		walkSpecs.mX_TileCount = 6;
+		walkSpecs.mY_TileCount = 1;
+		walkSpecs.mTotalSprites = 6;
+		walkSpecs.mSkipFixedUpdates = 6;
+		walkSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_walk;
+		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_walk);
+
 		_animationLoader.LoadAnimation(idleSpecs);
+		_animationLoader.LoadAnimation(walkSpecs);
 	}
 
 	void PlayerAnimationController::OnUpdate()

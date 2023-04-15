@@ -1,48 +1,47 @@
-#include "WhileMovingForward.h"
+#include "WhileMovingBack.h"
 
 namespace RB::PlayerStateComponents
 {
-	WhileMovingForward::WhileMovingForward()
-	{
-
-	}
-	WhileMovingForward::~WhileMovingForward()
+	WhileMovingBack::WhileMovingBack()
 	{
 
 	}
 
-	void WhileMovingForward::OnEnter()
+	WhileMovingBack::~WhileMovingBack()
+	{
+
+	}
+
+	void WhileMovingBack::OnEnter()
 	{
 		_moveForwardDetector.Init(_state->GetOwnerPlayer());
 		_moveBackDetector.Init(_state->GetOwnerPlayer());
 	}
-
-	void WhileMovingForward::OnUpdate()
+	void WhileMovingBack::OnUpdate()
 	{
 		_keepMoving = false;
-		_moveBack = false;
+		_moveForward = false;
 
 		_moveForwardDetector.OnUpdate();
 		_moveBackDetector.OnUpdate();
 
-		if (_moveBackDetector.MoveBack())
+		if (_moveForwardDetector.MoveForward())
 		{
-			_moveBack = true;
+			_moveForward = true;
 			_keepMoving = false;
 
 			return;
 		}
 
-		if (_moveForwardDetector.MoveForward())
+		if (_moveBackDetector.MoveBack())
 		{
-			_moveBack = false;
+			_moveForward = false;
 			_keepMoving = true;
 
 			return;
 		}
 	}
-
-	void WhileMovingForward::OnFixedUpdate()
+	void WhileMovingBack::OnFixedUpdate()
 	{
 		if (_keepMoving)
 		{
@@ -50,11 +49,11 @@ namespace RB::PlayerStateComponents
 
 			if (_state->GetOwnerPlayer()->OtherPlayerIsOnRightSide())
 			{
-				movement = 2;
+				movement = -2;
 			}
 			else
 			{
-				movement = -2;
+				movement = 2;
 			}
 
 			_state->GetOwnerPlayer()->Move(olc::vi2d{ movement, 0 });
@@ -62,7 +61,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_moveBack)
+		if (_moveForward)
 		{
 			//_state->GetStateMachine()->QueueNextState(new RB::PlayerStates::MoveBack());
 

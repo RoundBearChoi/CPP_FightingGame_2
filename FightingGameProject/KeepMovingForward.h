@@ -1,5 +1,6 @@
 #pragma once
 #include "StateComponentBase.h"
+#include "MoveForwardDetector.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -10,6 +11,10 @@ namespace RB::PlayerStateComponents
 		~KeepMovingForward() override;
 
 	public:
+		void OnEnter() override;
 		void OnUpdate() override;
+
+	private:
+		MoveForwardDetector _moveForwardDetector;
 	};
 }

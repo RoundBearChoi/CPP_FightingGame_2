@@ -157,6 +157,9 @@
     <ClCompile Include="MoveForwardDetector.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="MoveBackDetector.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -340,6 +343,9 @@
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="MoveForwardDetector.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveBackDetector.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>

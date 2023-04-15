@@ -9,16 +9,25 @@ namespace RB::PlayerStates
 
 	void MoveForward::OnEnter()
 	{
+		AddStateComponent(new RB::PlayerStateComponents::KeepMovingForward());
 
+		EnterStateComponents();
+	}
+
+	void MoveForward::OnExit()
+	{
+		ExitStateComponents();
 	}
 
 	void MoveForward::OnUpdate()
 	{
-
+		UpdateStateComponents();
 	}
 
 	void MoveForward::OnFixedUpdate()
 	{
+		FixedUpdateStateComponents();
+
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 
 		olc::HWButton moveLeft = RB::Controllers::GameplayControllers::INPUT_CONTROLLER->GetButton(owner->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);

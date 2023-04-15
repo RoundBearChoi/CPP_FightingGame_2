@@ -18,8 +18,6 @@ namespace RB::Updaters
 
 	void Updater::Init()
 	{
-		//std::cout << "initializing Updater" << std::endl;
-
 		_updaterObj = new GameplayUpdater();
 
 		_updaterObj->Init();

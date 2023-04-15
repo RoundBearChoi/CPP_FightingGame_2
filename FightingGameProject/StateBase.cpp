@@ -60,10 +60,10 @@ namespace RB::States
 		{
 			_vecStateComponents[i]->OnEnter();
 
-			//if (_stateMachine->IsTransitioning())
-			//{
-			//	break;
-			//}
+			if (_stateMachine->IsTransitioning())
+			{
+				break;
+			}
 		}
 	}
 

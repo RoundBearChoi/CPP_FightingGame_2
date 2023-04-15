@@ -100,12 +100,11 @@ namespace RB::States
 
 			_currentState = _nextState;
 
-			_currentState->SetStateMachine(this);
-			_currentState->OnEnter();
-
+			_makeTransition = false;
 			_nextState = nullptr;
 
-			_makeTransition = false;
+			_currentState->SetStateMachine(this);
+			_currentState->OnEnter();
 		}
 	}
 }

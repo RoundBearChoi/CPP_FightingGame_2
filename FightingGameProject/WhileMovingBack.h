@@ -3,6 +3,7 @@
 #include "MoveBackDetector.h"
 #include "MoveForwardDetector.h"
 #include "Idle.h"
+#include "MoveForward.h"
 
 namespace RB::PlayerStateComponents
 {

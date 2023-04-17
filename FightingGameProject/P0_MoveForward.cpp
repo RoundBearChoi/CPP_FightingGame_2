@@ -1,30 +1,30 @@
-#include "MoveForward.h"
+#include "P0_MoveForward.h"
 
 namespace RB::Player0_States
 {
-	MoveForward::MoveForward()
+	P0_MoveForward::P0_MoveForward()
 	{
 		_spriteID = RB::Sprites::SpriteID::fighter_0_walk;
 	}
 
-	void MoveForward::OnEnter()
+	void P0_MoveForward::OnEnter()
 	{
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
 
 		EnterStateComponents();
 	}
 
-	void MoveForward::OnExit()
+	void P0_MoveForward::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void MoveForward::OnUpdate()
+	void P0_MoveForward::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void MoveForward::OnFixedUpdate()
+	void P0_MoveForward::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

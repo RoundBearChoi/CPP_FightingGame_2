@@ -1,7 +1,7 @@
 #pragma once
 #include "StateComponentBase.h"
 #include "MoveForwardDetector.h"
-#include "MoveForward.h"
+#include "P0_MoveForward.h"
 
 namespace RB::PlayerStateComponents
 {

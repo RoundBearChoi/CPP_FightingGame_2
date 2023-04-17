@@ -169,7 +169,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerDebugController.cpp" />
     <ClCompile Include="P0_Idle.cpp" />
-    <ClCompile Include="MoveForward.cpp" />
+    <ClCompile Include="P0_MoveForward.cpp" />
     <ClCompile Include="Player0_Start.cpp" />
     <ClCompile Include="SpriteLoader.cpp" />
     <ClCompile Include="StateBase.cpp" />
@@ -230,7 +230,7 @@
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="PlayerDebugController.h" />
     <ClInclude Include="P0_Idle.h" />
-    <ClInclude Include="MoveForward.h" />
+    <ClInclude Include="P0_MoveForward.h" />
     <ClInclude Include="PlayerID.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="Player0_Start.h" />

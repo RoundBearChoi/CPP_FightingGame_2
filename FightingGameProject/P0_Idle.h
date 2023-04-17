@@ -3,7 +3,7 @@
 #include "StateBase.h"
 #include "CurrentInputController.h"
 #include "P0_JumpUp.h"
-#include "MoveForward.h"
+#include "P0_MoveForward.h"
 #include "P0_MoveBack.h"
 #include "TriggerMoveForward.h"
 #include "TriggerMoveBack.h"

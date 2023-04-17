@@ -8,10 +8,10 @@
 
 namespace RB::Player0_States
 {
-	class Player0_Start : public RB::States::StateBase
+	class P0_Start : public RB::States::StateBase
 	{
 	public:
-		Player0_Start();
+		P0_Start();
 
 	public:
 		void OnEnter() override;
@@ -22,6 +22,6 @@ namespace RB::Player0_States
 		void TransitionToIdle();
 
 	private:
-		Updaters::TriggerOnFixedUpdateCount<Player0_Start> _triggerOnFixedUpdateCount;
+		Updaters::TriggerOnFixedUpdateCount<P0_Start> _triggerOnFixedUpdateCount;
 	};
 }

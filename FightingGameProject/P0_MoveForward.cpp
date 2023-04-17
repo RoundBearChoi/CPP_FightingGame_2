@@ -1,6 +1,6 @@
 #include "P0_MoveForward.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	P0_MoveForward::P0_MoveForward()
 	{

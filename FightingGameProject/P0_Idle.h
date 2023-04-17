@@ -8,7 +8,7 @@
 #include "TriggerMoveForward.h"
 #include "TriggerMoveBack.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	class P0_Idle : public RB::States::StateBase
 	{

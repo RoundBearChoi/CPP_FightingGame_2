@@ -1,6 +1,6 @@
 #include "P0_MoveBack.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	P0_MoveBack::P0_MoveBack()
 	{

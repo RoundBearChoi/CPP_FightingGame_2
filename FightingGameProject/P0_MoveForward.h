@@ -6,7 +6,7 @@
 #include "P0_MoveBack.h"
 #include "WhileMovingForward.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	class P0_MoveForward : public RB::States::StateBase
 	{

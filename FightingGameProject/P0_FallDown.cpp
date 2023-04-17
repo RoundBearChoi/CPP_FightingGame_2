@@ -1,6 +1,6 @@
 #include "P0_FallDown.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	P0_FallDown::P0_FallDown()
 	{
@@ -36,7 +36,7 @@ namespace RB::Player0_States
 			owner->SetPosition(olc::vi2d{ owner->GetPosition().x, 0 });
 			owner->SetAirMomentum(olc::vf2d{ 0.0f, 0.0f });
 
-			_stateMachine->QueueNextState(new RB::Player0_States::P0_Idle());
+			_stateMachine->QueueNextState(new RB::P0_States::P0_Idle());
 		}
 	}
 }

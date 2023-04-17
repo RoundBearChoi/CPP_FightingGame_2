@@ -5,7 +5,7 @@
 #include "PlayerID.h"
 #include "P0_Idle.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	class P0_FallDown : public RB::States::StateBase
 	{

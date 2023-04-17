@@ -6,7 +6,7 @@
 #include "PlayerID.h"
 #include "P0_FallDown.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	class P0_JumpUp : public RB::States::StateBase
 	{

@@ -1,6 +1,6 @@
 #include "P0_Idle.h"
 
-namespace RB::Player0_States
+namespace RB::P0_States
 {
 	P0_Idle::P0_Idle()
 	{
@@ -37,7 +37,7 @@ namespace RB::Player0_States
 		
 		if (jump.bPressed || jump.bHeld)
 		{
-			_stateMachine->QueueNextState(new RB::Player0_States::P0_JumpUp());
+			_stateMachine->QueueNextState(new RB::P0_States::P0_JumpUp());
 		
 			return;
 		}

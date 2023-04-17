@@ -170,7 +170,7 @@
     <ClCompile Include="PlayerDebugController.cpp" />
     <ClCompile Include="Idle.cpp" />
     <ClCompile Include="MoveForward.cpp" />
-    <ClCompile Include="PlayerTestState.cpp" />
+    <ClCompile Include="Player0_Start.cpp" />
     <ClCompile Include="SpriteLoader.cpp" />
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateComponentBase.cpp" />
@@ -233,7 +233,7 @@
     <ClInclude Include="MoveForward.h" />
     <ClInclude Include="PlayerID.h" />
     <ClInclude Include="PlayerInput.h" />
-    <ClInclude Include="PlayerTestState.h" />
+    <ClInclude Include="Player0_Start.h" />
     <ClInclude Include="SkipFixedUpdates.h" />
     <ClInclude Include="SpriteLoader.h" />
     <ClInclude Include="StateBase.h" />

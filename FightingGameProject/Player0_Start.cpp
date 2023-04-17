@@ -1,32 +1,32 @@
-#include "PlayerTestState.h"
+#include "Player0_Start.h"
 #include "Idle.h"
 
 namespace RB::Player0_States
 {
-	PlayerTestState::PlayerTestState()
+	Player0_Start::Player0_Start()
 	{
 
 	}
 
-	void PlayerTestState::OnEnter()
+	void Player0_Start::OnEnter()
 	{
 		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(1);
-		_triggerOnFixedUpdateCount.SetFunction(this, &PlayerTestState::TransitionToIdle);
+		_triggerOnFixedUpdateCount.SetFunction(this, &Player0_Start::TransitionToIdle);
 	}
 
-	void PlayerTestState::OnFixedUpdate()
+	void Player0_Start::OnFixedUpdate()
 	{
 		_triggerOnFixedUpdateCount.OnFixedUpdate();
 	}
 
-	void PlayerTestState::Move()
+	void Player0_Start::Move()
 	{
 		RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
 		
 		player->Move(olc::vi2d{ 1, 1 });
 	}
 
-	void PlayerTestState::TransitionToIdle()
+	void Player0_Start::TransitionToIdle()
 	{
 		_stateMachine->QueueNextState(new RB::Player0_States::Idle());
 	}

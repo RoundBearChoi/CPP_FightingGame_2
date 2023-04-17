@@ -16,12 +16,9 @@ namespace RB::States
 
 	void StateMachineBase::Init(iState* state)
 	{
-		if (state != nullptr)
-		{
-			_currentState = state;
-			_currentState->SetStateMachine(this);
-			_currentState->OnEnter();
-		}
+		_currentState = state;
+		_currentState->SetStateMachine(this);
+		_currentState->OnEnter();
 	}
 
 	void StateMachineBase::OnUpdate()

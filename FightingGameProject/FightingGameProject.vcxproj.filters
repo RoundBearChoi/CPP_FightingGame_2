@@ -82,7 +82,7 @@
     <ClCompile Include="Updater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerTestState.cpp">
+    <ClCompile Include="Player0_Start.cpp">
       <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="Idle.cpp">
@@ -231,7 +231,7 @@
     <ClInclude Include="SkipFixedUpdates.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerTestState.h">
+    <ClInclude Include="Player0_Start.h">
       <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="Idle.h">

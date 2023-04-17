@@ -16,16 +16,23 @@ namespace RB::Players
 
 	void Player::Init(PlayerID id, RB::States::iState* firstPlayerState)
 	{
-		_playerID = id;
+		if (firstPlayerState == nullptr)
+		{
+			std::cout << "WARNING: firstPlayerState is nullptr" << std::endl;
+		}
+		else
+		{
+			_playerID = id;
 
-		_stateMachine = new RB::States::StateMachineBase();
-		_stateMachine->SetID(RB::States::StateMachineID::GetID());
-		_stateMachine->Init(firstPlayerState);
+			_stateMachine = new RB::States::StateMachineBase();
+			_stateMachine->SetID(RB::States::StateMachineID::GetID());
+			_stateMachine->Init(firstPlayerState);
 
-		_playerCollider.Init(this);
-		_airMomentum.Init(this);
+			_playerCollider.Init(this);
+			_airMomentum.Init(this);
 
-		std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
+			std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
+		}
 	}
 
 	void Player::SetOtherPlayer(iPlayer* otherPlayer)

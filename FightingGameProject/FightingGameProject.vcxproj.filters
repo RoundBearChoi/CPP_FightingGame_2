@@ -127,7 +127,7 @@
     <ClCompile Include="JumpUp.cpp">
       <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
-    <ClCompile Include="FallDown.cpp">
+    <ClCompile Include="P0_FallDown.cpp">
       <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="AnimationLoader.cpp">
@@ -306,7 +306,7 @@
     <ClInclude Include="JumpUp.h">
       <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
-    <ClInclude Include="FallDown.h">
+    <ClInclude Include="P0_FallDown.h">
       <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="AllocationCount.h">

@@ -1,13 +1,13 @@
-#include "FallDown.h"
+#include "P0_FallDown.h"
 
 namespace RB::Player0_States
 {
-	FallDown::FallDown()
+	P0_FallDown::P0_FallDown()
 	{
 
 	}
 
-	void FallDown::OnEnter()
+	void P0_FallDown::OnEnter()
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		RB::Players::PlayerID id = owner->GetPlayerID();
@@ -20,12 +20,12 @@ namespace RB::Player0_States
 		owner->SetAirMomentum(fallMomentum);
 	}
 
-	void FallDown::OnUpdate()
+	void P0_FallDown::OnUpdate()
 	{
 
 	}
 
-	void FallDown::OnFixedUpdate()
+	void P0_FallDown::OnFixedUpdate()
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		olc::vf2d momentum = owner->GetAirMomentum();

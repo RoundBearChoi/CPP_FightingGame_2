@@ -34,7 +34,7 @@ namespace RB::Player0_States
 		{
 			owner->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
 
-			_stateMachine->QueueNextState(new RB::Player0_States::FallDown());
+			_stateMachine->QueueNextState(new RB::Player0_States::P0_FallDown());
 		}
 		else
 		{

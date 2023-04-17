@@ -7,10 +7,10 @@
 
 namespace RB::Player0_States
 {
-	class FallDown : public RB::States::StateBase
+	class P0_FallDown : public RB::States::StateBase
 	{
 	public:
-		FallDown();
+		P0_FallDown();
 
 	public:
 		void OnEnter() override;

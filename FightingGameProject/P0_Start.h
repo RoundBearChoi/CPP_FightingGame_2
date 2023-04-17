@@ -18,7 +18,6 @@ namespace RB::Player0_States
 		void OnFixedUpdate() override;
 
 	public:
-		void Move();
 		void TransitionToIdle();
 
 	private:

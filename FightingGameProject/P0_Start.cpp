@@ -19,13 +19,6 @@ namespace RB::Player0_States
 		_triggerOnFixedUpdateCount.OnFixedUpdate();
 	}
 
-	void P0_Start::Move()
-	{
-		RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
-		
-		player->Move(olc::vi2d{ 1, 1 });
-	}
-
 	void P0_Start::TransitionToIdle()
 	{
 		_stateMachine->QueueNextState(new RB::Player0_States::P0_Idle());

@@ -5,6 +5,7 @@
 #include "iPlayer.h"
 #include "Player.h"
 #include "PlayerID.h"
+#include "PlayerTestState.h"
 
 namespace RB::Players
 {

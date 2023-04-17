@@ -14,8 +14,8 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-		_player1.Init(PlayerID::PLAYER_1);
-		_player2.Init(PlayerID::PLAYER_2);
+		_player1.Init(PlayerID::PLAYER_1, new RB::Player0_States::PlayerTestState());
+		_player2.Init(PlayerID::PLAYER_2, new RB::Player0_States::PlayerTestState());
 
 		_player1.SetPosition(olc::vi2d{ -150, 0 });
 		_player2.SetPosition(olc::vi2d{ 150, 0 });

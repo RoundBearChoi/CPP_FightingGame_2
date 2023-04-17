@@ -14,13 +14,13 @@ namespace RB::Players
 		delete _stateMachine;
 	}
 
-	void Player::Init(PlayerID id)
+	void Player::Init(PlayerID id, RB::States::iState* firstPlayerState)
 	{
 		_playerID = id;
 
 		_stateMachine = new RB::States::StateMachineBase();
 		_stateMachine->SetID(RB::States::StateMachineID::GetID());
-		_stateMachine->Init(new RB::Player0_States::PlayerTestState());
+		_stateMachine->Init(firstPlayerState);
 
 		_playerCollider.Init(this);
 		_airMomentum.Init(this);

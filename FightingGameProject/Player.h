@@ -21,7 +21,7 @@ namespace RB::Players
 		~Player() override;
 
 	public:
-		void Init(PlayerID id);
+		void Init(PlayerID id, RB::States::iState* firstPlayerState);
 		void SetOtherPlayer(iPlayer* otherPlayer);
 		void OnUpdate();
 		void OnFixedUpdate();

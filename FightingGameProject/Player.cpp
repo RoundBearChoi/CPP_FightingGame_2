@@ -20,7 +20,7 @@ namespace RB::Players
 
 		_stateMachine = new RB::States::StateMachineBase();
 		_stateMachine->SetID(RB::States::StateMachineID::GetID());
-		_stateMachine->Init(new RB::PlayerStates::PlayerTestState());
+		_stateMachine->Init(new RB::Player0_States::PlayerTestState());
 
 		_playerCollider.Init(this);
 		_airMomentum.Init(this);

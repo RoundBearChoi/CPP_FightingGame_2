@@ -64,14 +64,14 @@ namespace RB::PlayerStateComponents
 
 		if (_moveBack)
 		{
-			_state->GetStateMachine()->QueueNextState(new RB::PlayerStates::MoveBack());
+			_state->GetStateMachine()->QueueNextState(new RB::Player0_States::MoveBack());
 
 			return;
 		}
 
 		if (!_keepMoving)
 		{
-			_state->QueueNextState(new RB::PlayerStates::Idle());
+			_state->QueueNextState(new RB::Player0_States::Idle());
 
 			return;
 		}

@@ -26,9 +26,6 @@
     <Filter Include="Source Files\Updaters">
       <UniqueIdentifier>{168f9cf3-a809-4fa0-9c97-2eae554d7b92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PlayerStates">
-      <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Input">
       <UniqueIdentifier>{79b244d5-9bc6-4530-acf4-aad8f319266a}</UniqueIdentifier>
     </Filter>
@@ -46,6 +43,9 @@
     </Filter>
     <Filter Include="Source Files\PlayerStateComponents">
       <UniqueIdentifier>{5c769669-76bc-46ef-9f84-25716e4cfdeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player0_States">
+      <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -83,13 +83,13 @@
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
     <ClCompile Include="PlayerTestState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="Idle.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="MoveForward.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="InputController.cpp">
       <Filter>Source Files\Input</Filter>
@@ -98,7 +98,7 @@
       <Filter>Source Files\Input</Filter>
     </ClCompile>
     <ClCompile Include="MoveBack.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="GameCamController.cpp">
       <Filter>Source Files\Cam</Filter>
@@ -125,10 +125,10 @@
       <Filter>Source Files\Players</Filter>
     </ClCompile>
     <ClCompile Include="JumpUp.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="FallDown.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="AnimationLoader.cpp">
       <Filter>Source Files\Render</Filter>
@@ -232,16 +232,16 @@
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="PlayerTestState.h">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="Idle.h">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="TriggerOnFixedUpdateCount.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="MoveForward.h">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="InputController.h">
       <Filter>Source Files\Input</Filter>
@@ -259,7 +259,7 @@
       <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="MoveBack.h">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="GameCamController.h">
       <Filter>Source Files\Cam</Filter>
@@ -304,10 +304,10 @@
       <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="JumpUp.h">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="FallDown.h">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="AllocationCount.h">
       <Filter>Source Files</Filter>

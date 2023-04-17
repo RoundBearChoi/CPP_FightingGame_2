@@ -1,7 +1,7 @@
 #include "PlayerTestState.h"
 #include "Idle.h"
 
-namespace RB::PlayerStates
+namespace RB::Player0_States
 {
 	PlayerTestState::PlayerTestState()
 	{
@@ -33,6 +33,6 @@ namespace RB::PlayerStates
 
 	void PlayerTestState::TransitionToIdle()
 	{
-		_stateMachine->QueueNextState(new RB::PlayerStates::Idle());
+		_stateMachine->QueueNextState(new RB::Player0_States::Idle());
 	}
 }

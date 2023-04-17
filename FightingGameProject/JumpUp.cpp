@@ -1,6 +1,6 @@
 #include "JumpUp.h"
 
-namespace RB::PlayerStates
+namespace RB::Player0_States
 {
 	JumpUp::JumpUp()
 	{
@@ -34,7 +34,7 @@ namespace RB::PlayerStates
 		{
 			owner->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
 
-			_stateMachine->QueueNextState(new RB::PlayerStates::FallDown());
+			_stateMachine->QueueNextState(new RB::Player0_States::FallDown());
 		}
 		else
 		{

@@ -1,13 +1,13 @@
-#include "JumpUp.h"
+#include "P0_JumpUp.h"
 
 namespace RB::Player0_States
 {
-	JumpUp::JumpUp()
+	P0_JumpUp::P0_JumpUp()
 	{
 
 	}
 
-	void JumpUp::OnEnter()
+	void P0_JumpUp::OnEnter()
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		RB::Players::PlayerID id = owner->GetPlayerID();
@@ -17,12 +17,12 @@ namespace RB::Player0_States
 		owner->SetAirMomentum(olc::vf2d{ 0.0f, startUpMomentum });
 	}
 
-	void JumpUp::OnUpdate()
+	void P0_JumpUp::OnUpdate()
 	{
 
 	}
 
-	void JumpUp::OnFixedUpdate()
+	void P0_JumpUp::OnFixedUpdate()
 	{
 		RB::Players::iPlayer* owner = GetOwnerPlayer();
 		olc::vf2d momentum = owner->GetAirMomentum();

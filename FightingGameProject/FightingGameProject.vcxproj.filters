@@ -124,7 +124,7 @@
     <ClCompile Include="AirMomentum.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
-    <ClCompile Include="JumpUp.cpp">
+    <ClCompile Include="P0_JumpUp.cpp">
       <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
     <ClCompile Include="P0_FallDown.cpp">
@@ -303,7 +303,7 @@
     <ClInclude Include="AirMomentum.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>
-    <ClInclude Include="JumpUp.h">
+    <ClInclude Include="P0_JumpUp.h">
       <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
     <ClInclude Include="P0_FallDown.h">

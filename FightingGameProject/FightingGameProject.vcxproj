@@ -152,7 +152,7 @@
     <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="P0_FallDown.cpp" />
     <ClCompile Include="PlayerAnimationController.cpp" />
-    <ClCompile Include="JumpUp.cpp" />
+    <ClCompile Include="P0_JumpUp.cpp" />
     <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="AnimationRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
@@ -198,7 +198,7 @@
     <ClInclude Include="P0_FallDown.h" />
     <ClInclude Include="PlayerAnimationController.h" />
     <ClInclude Include="iPlayerAnimationController.h" />
-    <ClInclude Include="JumpUp.h" />
+    <ClInclude Include="P0_JumpUp.h" />
     <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="AnimationRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />

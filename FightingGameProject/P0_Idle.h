@@ -2,7 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "StateBase.h"
 #include "CurrentInputController.h"
-#include "JumpUp.h"
+#include "P0_JumpUp.h"
 #include "MoveForward.h"
 #include "MoveBack.h"
 #include "TriggerMoveForward.h"

@@ -8,10 +8,10 @@
 
 namespace RB::Player0_States
 {
-	class JumpUp : public RB::States::StateBase
+	class P0_JumpUp : public RB::States::StateBase
 	{
 	public:
-		JumpUp();
+		P0_JumpUp();
 
 	public:
 		void OnEnter() override;

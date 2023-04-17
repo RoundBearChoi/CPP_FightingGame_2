@@ -37,7 +37,7 @@ namespace RB::Player0_States
 		
 		if (jump.bPressed || jump.bHeld)
 		{
-			_stateMachine->QueueNextState(new RB::Player0_States::JumpUp());
+			_stateMachine->QueueNextState(new RB::Player0_States::P0_JumpUp());
 		
 			return;
 		}

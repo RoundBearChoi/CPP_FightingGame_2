@@ -1,30 +1,30 @@
-#include "MoveBack.h"
+#include "P0_MoveBack.h"
 
 namespace RB::Player0_States
 {
-	MoveBack::MoveBack()
+	P0_MoveBack::P0_MoveBack()
 	{
 
 	}
 
-	void MoveBack::OnEnter()
+	void P0_MoveBack::OnEnter()
 	{
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack());
 
 		EnterStateComponents();
 	}
 
-	void MoveBack::OnExit()
+	void P0_MoveBack::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void MoveBack::OnUpdate()
+	void P0_MoveBack::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void MoveBack::OnFixedUpdate()
+	void P0_MoveBack::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

@@ -64,7 +64,7 @@ namespace RB::PlayerStateComponents
 
 		if (_moveBack)
 		{
-			_state->GetStateMachine()->QueueNextState(new RB::Player0_States::MoveBack());
+			_state->GetStateMachine()->QueueNextState(new RB::Player0_States::P0_MoveBack());
 
 			return;
 		}

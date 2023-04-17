@@ -8,10 +8,10 @@
 
 namespace RB::Player0_States
 {
-	class MoveBack : public RB::States::StateBase
+	class P0_MoveBack : public RB::States::StateBase
 	{
 	public:
-		MoveBack();
+		P0_MoveBack();
 
 	public:
 		void OnEnter() override;

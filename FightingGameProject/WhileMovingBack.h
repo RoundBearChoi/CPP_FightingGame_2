@@ -2,7 +2,7 @@
 #include "StateComponentBase.h"
 #include "MoveBackDetector.h"
 #include "MoveForwardDetector.h"
-#include "Idle.h"
+#include "P0_Idle.h"
 #include "MoveForward.h"
 
 namespace RB::PlayerStateComponents

@@ -1,13 +1,13 @@
-#include "Idle.h"
+#include "P0_Idle.h"
 
 namespace RB::Player0_States
 {
-	Idle::Idle()
+	P0_Idle::P0_Idle()
 	{
 		_spriteID = RB::Sprites::SpriteID::fighter_0_idle;
 	}
 
-	void Idle::OnEnter()
+	void P0_Idle::OnEnter()
 	{
 		AddStateComponent(new RB::PlayerStateComponents::TriggerMoveForward());
 		AddStateComponent(new RB::PlayerStateComponents::TriggerMoveBack());
@@ -15,12 +15,12 @@ namespace RB::Player0_States
 		EnterStateComponents();
 	}
 
-	void Idle::OnExit()
+	void P0_Idle::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void Idle::OnUpdate()
+	void P0_Idle::OnUpdate()
 	{
 		UpdateStateComponents();
 
@@ -43,7 +43,7 @@ namespace RB::Player0_States
 		}
 	}
 
-	void Idle::OnFixedUpdate()
+	void P0_Idle::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

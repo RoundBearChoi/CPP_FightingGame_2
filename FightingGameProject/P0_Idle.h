@@ -10,10 +10,10 @@
 
 namespace RB::Player0_States
 {
-	class Idle : public RB::States::StateBase
+	class P0_Idle : public RB::States::StateBase
 	{
 	public:
-		Idle();
+		P0_Idle();
 
 	public:
 		void OnEnter() override;

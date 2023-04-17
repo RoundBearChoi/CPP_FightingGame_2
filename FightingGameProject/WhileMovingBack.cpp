@@ -71,7 +71,7 @@ namespace RB::PlayerStateComponents
 
 		if (!_keepMoving)
 		{
-			_state->QueueNextState(new RB::Player0_States::Idle());
+			_state->QueueNextState(new RB::Player0_States::P0_Idle());
 
 			return;
 		}

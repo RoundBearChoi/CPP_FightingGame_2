@@ -2,7 +2,7 @@
 #include "StateBase.h"
 #include "iPlayer.h"
 #include "GameplayControllers.h"
-#include "Idle.h"
+#include "P0_Idle.h"
 #include "MoveBack.h"
 #include "WhileMovingForward.h"
 

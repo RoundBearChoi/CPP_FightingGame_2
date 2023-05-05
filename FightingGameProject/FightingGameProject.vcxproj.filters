@@ -163,6 +163,9 @@
     <ClCompile Include="WhileMovingBack.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="TriggerJumpUp.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -356,6 +359,9 @@
     </ClInclude>
     <ClInclude Include="CurrentInputController.h">
       <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerJumpUp.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

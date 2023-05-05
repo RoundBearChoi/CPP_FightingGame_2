@@ -28,17 +28,17 @@ namespace RB::Render
 
 		//sprites
 		_spriteRenderer.Init();
-		_spriteRenderer.LoadSprite("PNG files/Fighter_0/fighter_0_idle.png", RB::Sprites::SpriteID::fighter_0_idle);
+		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Idle.png", RB::Sprites::SpriteID::fighter_0_idle);
 		_spriteRenderer.LoadSprite("PNG files/Fighter_0/fighter_0_walk.png", RB::Sprites::SpriteID::fighter_0_walk);
 
 		//animations
 		_animationLoader.Init();
 
 		AnimationSpecs idleSpecs;
-		idleSpecs.mX_TileCount = 5;
+		idleSpecs.mX_TileCount = 10;
 		idleSpecs.mY_TileCount = 1;
-		idleSpecs.mTotalSprites = 5;
-		idleSpecs.mSkipFixedUpdates = 5;
+		idleSpecs.mTotalSprites = 10;
+		idleSpecs.mSkipFixedUpdates = 6;
 		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
 		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
 

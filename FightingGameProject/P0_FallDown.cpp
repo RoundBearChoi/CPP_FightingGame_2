@@ -4,7 +4,7 @@ namespace RB::P0_States
 {
 	P0_FallDown::P0_FallDown()
 	{
-
+		_spriteID = RB::Sprites::SpriteID::fighter_0_fall;
 	}
 
 	void P0_FallDown::OnEnter()

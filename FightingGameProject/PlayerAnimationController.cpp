@@ -30,6 +30,7 @@ namespace RB::Render
 		_spriteRenderer.Init();
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Idle.png", RB::Sprites::SpriteID::fighter_0_idle);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteID::fighter_0_walk);
+		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteID::fighter_0_jump_up);
 
 		//animations
 		_animationLoader.Init();
@@ -54,8 +55,19 @@ namespace RB::Render
 		walkSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_walk;
 		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_walk);
 
+		AnimationSpecs jumpSpecs;
+        jumpSpecs.mX_TileCount = 3;
+		jumpSpecs.mY_TileCount = 1;
+		jumpSpecs.mTotalSprites = 3;
+		jumpSpecs.mSkipFixedUpdates = 4;
+		jumpSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
+		jumpSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
+		jumpSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_jump_up;
+		jumpSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_jump_up);
+
 		_animationLoader.LoadAnimation(idleSpecs);
 		_animationLoader.LoadAnimation(walkSpecs);
+		_animationLoader.LoadAnimation(jumpSpecs);
 	}
 
 	void PlayerAnimationController::OnUpdate()

@@ -9,6 +9,7 @@ namespace RB::P0_States
 
 	void P0_MoveBack::OnEnter()
 	{
+		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack());
 
 		EnterStateComponents();

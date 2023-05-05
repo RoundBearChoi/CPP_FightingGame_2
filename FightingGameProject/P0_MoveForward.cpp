@@ -9,6 +9,7 @@ namespace RB::P0_States
 
 	void P0_MoveForward::OnEnter()
 	{
+		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
 
 		EnterStateComponents();

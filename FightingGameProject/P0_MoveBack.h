@@ -4,6 +4,7 @@
 #include "GameplayControllers.h"
 #include "P0_Idle.h"
 #include "P0_MoveForward.h"
+#include "TriggerJumpUp.h"
 #include "WhileMovingBack.h"
 
 namespace RB::P0_States

@@ -29,7 +29,7 @@ namespace RB::Render
 		//sprites
 		_spriteRenderer.Init();
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Idle.png", RB::Sprites::SpriteID::fighter_0_idle);
-		_spriteRenderer.LoadSprite("PNG files/Fighter_0/fighter_0_walk.png", RB::Sprites::SpriteID::fighter_0_walk);
+		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteID::fighter_0_walk);
 
 		//animations
 		_animationLoader.Init();
@@ -44,11 +44,11 @@ namespace RB::Render
 		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
 
 		AnimationSpecs walkSpecs;
-		walkSpecs.mX_TileCount = 6;
+		walkSpecs.mX_TileCount = 10;
 		walkSpecs.mY_TileCount = 1;
-		walkSpecs.mTotalSprites = 6;
-		walkSpecs.mSkipFixedUpdates = 3;
-		walkSpecs.mRenderSize = olc::vf2d{ 300.0f, 150.0f };
+		walkSpecs.mTotalSprites = 10;
+		walkSpecs.mSkipFixedUpdates = 4;
+		walkSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		walkSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_walk;
 		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_walk);
 

@@ -40,6 +40,7 @@ namespace RB::Render
 		idleSpecs.mTotalSprites = 10;
 		idleSpecs.mSkipFixedUpdates = 6;
 		idleSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
+		idleSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
 		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
 
@@ -49,6 +50,7 @@ namespace RB::Render
 		walkSpecs.mTotalSprites = 10;
 		walkSpecs.mSkipFixedUpdates = 4;
 		walkSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
+		walkSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		walkSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_walk;
 		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_walk);
 

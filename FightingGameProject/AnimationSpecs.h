@@ -16,6 +16,7 @@ namespace RB::Render
 		unsigned int mTotalSprites = 0;
 		unsigned int mSkipFixedUpdates = 0;
 		olc::vf2d mRenderSize = { 0.0f, 0.0f };
+		olc::vf2d mRenderOffset = { 0.0f, 0.0f };
 		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
 		RB::Sprites::LoadedSprite* mLoadedSprite = nullptr;
 	};

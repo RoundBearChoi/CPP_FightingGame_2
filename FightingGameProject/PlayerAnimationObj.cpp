@@ -64,6 +64,11 @@ namespace RB::Render
 		return _animationRenderer->GetAnimationSpecs().mRenderSize;
 	}
 
+	olc::vf2d PlayerAnimationObj::GetRenderOffset()
+	{
+		return _animationRenderer->GetAnimationSpecs().mRenderOffset;
+	}
+
 	RB::Players::iPlayer* PlayerAnimationObj::GetPlayer()
 	{
 		return _player;
@@ -87,6 +92,7 @@ namespace RB::Render
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderSize = GetRenderSize();
+		renderSettings.mRenderOffset = GetRenderOffset();
 		renderSettings.mWorldPos = _player->GetPosition();
 		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		renderSettings.mFaceRight = _player->OtherPlayerIsOnRightSide();

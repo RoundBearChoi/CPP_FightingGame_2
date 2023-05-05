@@ -33,8 +33,8 @@ namespace RB::Render
 			screenPos = RB::Cam::CurrentCam::GetRelativePos(renderSettings.mWorldPos);
 		}
 
-		float x = (float)screenPos.x;
-		float y = (float)screenPos.y;
+		float x = (float)screenPos.x;// +renderSettings.mRenderOffset.x;
+		float y = (float)screenPos.y;// +renderSettings.mRenderOffset.y;
 
 		//temp
 		float width = renderSettings.mRenderSize.x;
@@ -42,6 +42,9 @@ namespace RB::Render
 
 		if (renderSettings.mFaceRight)
 		{
+			x += renderSettings.mRenderOffset.x;
+			y += renderSettings.mRenderOffset.y;
+
 			points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
 			points[1] = { (float)x - (float)width / 2.0f, (float)y };
 			points[2] = { (float)x + (float)width / 2.0f, (float)y };
@@ -49,6 +52,9 @@ namespace RB::Render
 		}
 		else
 		{
+			x -= renderSettings.mRenderOffset.x;
+			y += renderSettings.mRenderOffset.y;
+
 			points[0] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
 			points[1] = { (float)x + (float)width / 2.0f, (float)y };
 			points[2] = { (float)x - (float)width / 2.0f, (float)y };

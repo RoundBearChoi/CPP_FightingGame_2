@@ -39,7 +39,7 @@ namespace RB::Render
 		idleSpecs.mY_TileCount = 1;
 		idleSpecs.mTotalSprites = 10;
 		idleSpecs.mSkipFixedUpdates = 6;
-		idleSpecs.mRenderSize = olc::vf2d{ 300.0f, 150.0f };
+		idleSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
 		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
 

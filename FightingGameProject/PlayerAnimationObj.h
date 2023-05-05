@@ -22,6 +22,7 @@ namespace RB::Render
 		void IncreaseAnimationIndex();
 		olc::vf2d GetSourceSize();
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize);
+		olc::vf2d GetRenderSize();
 		RB::Players::iPlayer* GetPlayer();
 		const AnimationSpecs& GetAnimationSpecs();
 

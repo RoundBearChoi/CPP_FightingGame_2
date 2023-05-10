@@ -11,8 +11,8 @@ namespace RB::Input
 	class InputController : public iInputController
 	{
 	public:
-		InputController();
-		~InputController() override;
+		InputController() = default;
+		~InputController() = default;
 
 	public:
 		void Init() override;

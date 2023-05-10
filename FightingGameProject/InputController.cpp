@@ -2,15 +2,15 @@
 
 namespace RB::Input
 {
-	InputController::InputController()
-	{
-
-	}
-
-	InputController::~InputController()
-	{
-
-	}
+	//InputController::InputController()
+	//{
+	//
+	//}
+	//
+	//InputController::~InputController()
+	//{
+	//
+	//}
 
 	void InputController::Init()
 	{

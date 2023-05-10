@@ -8,8 +8,8 @@ namespace RB::PlayerStateComponents
 	class MoveForwardDetector
 	{
 	public:
-		MoveForwardDetector();
-		~MoveForwardDetector();
+		MoveForwardDetector() = default;
+		~MoveForwardDetector() = default;
 
 	public:
 		void Init(RB::Players::iPlayer* player);

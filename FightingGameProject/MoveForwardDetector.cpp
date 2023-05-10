@@ -2,16 +2,6 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveForwardDetector::MoveForwardDetector()
-	{
-
-	}
-
-	MoveForwardDetector::~MoveForwardDetector()
-	{
-
-	}
-
 	void MoveForwardDetector::Init(RB::Players::iPlayer* player)
 	{
 		_player = player;

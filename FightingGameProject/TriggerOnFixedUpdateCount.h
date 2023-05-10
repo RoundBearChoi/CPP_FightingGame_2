@@ -7,6 +7,10 @@ namespace RB::Updaters
 	class TriggerOnFixedUpdateCount
 	{
 	public:
+		TriggerOnFixedUpdateCount() = default;
+		~TriggerOnFixedUpdateCount() = default;
+
+	public:
 		void SetTargetFixedUpdate(unsigned int target)
 		{
 			_targetFixedUpdate = target;

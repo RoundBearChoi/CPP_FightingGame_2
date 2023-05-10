@@ -7,15 +7,16 @@ namespace RB::Updaters
 {
 	class Updater
 	{
-	private:
-		iUpdaterObj* _updaterObj = nullptr;
-
 	public:
 		Updater();
 		~Updater();
 
+	public:
 		void Init();
 		void OnUpdate();
 		void OnFixedUpdate();
+
+	private:
+		iUpdaterObj* _updaterObj = nullptr;
 	};
 }

@@ -2,16 +2,6 @@
 
 namespace RB::PlayerDebug
 {
-	PlayerDebugController::PlayerDebugController()
-	{
-
-	}
-
-	PlayerDebugController::~PlayerDebugController()
-	{
-
-	}
-
 	void PlayerDebugController::Init()
 	{
 		RB::Players::iPlayerController* pc = RB::Controllers::ControllerGroup::FindController<RB::Players::iPlayerController>();

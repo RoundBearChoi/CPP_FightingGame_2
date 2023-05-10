@@ -10,7 +10,8 @@ namespace RB::Players
 	class iPlayer
 	{
 	public:
-		virtual ~iPlayer() {};
+		iPlayer() = default;
+		virtual ~iPlayer() = default;
 
 	public:
 		virtual PlayerID GetPlayerID() = 0;

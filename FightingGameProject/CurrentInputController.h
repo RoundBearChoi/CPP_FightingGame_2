@@ -6,8 +6,8 @@ namespace RB::Input
 	class CurrentInputController
 	{
 	public:
-		CurrentInputController() = default;
-		~CurrentInputController() = default;
+		CurrentInputController() = delete;
+		~CurrentInputController() = delete;
 
 	public:
 		static void Init()

@@ -2,16 +2,6 @@
 
 namespace RB::Input
 {
-	//InputController::InputController()
-	//{
-	//
-	//}
-	//
-	//InputController::~InputController()
-	//{
-	//
-	//}
-
 	void InputController::Init()
 	{
 		CurrentInputController::SetCurrentInputController(this);

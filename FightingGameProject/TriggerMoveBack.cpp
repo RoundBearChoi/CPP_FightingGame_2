@@ -2,16 +2,6 @@
 
 namespace RB::PlayerStateComponents
 {
-	TriggerMoveBack::TriggerMoveBack()
-	{
-
-	}
-
-	TriggerMoveBack::~TriggerMoveBack()
-	{
-
-	}
-
 	void TriggerMoveBack::OnEnter()
 	{
 		_moveBackDetector.Init(_state->GetOwnerPlayer());

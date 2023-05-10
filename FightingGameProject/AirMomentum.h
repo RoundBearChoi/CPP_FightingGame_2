@@ -7,8 +7,8 @@ namespace RB::Players
 	class AirMomentum
 	{
 	public:
-		AirMomentum();
-		~AirMomentum();
+		AirMomentum() = default;
+		~AirMomentum() = default;
 
 	public:
 		void Init(iPlayer* owner);

@@ -10,7 +10,7 @@ namespace RB::Sprites
 	class SpriteLoader
 	{
 	public:
-		SpriteLoader();
+		SpriteLoader() = default;
 		~SpriteLoader();
 
 	public:

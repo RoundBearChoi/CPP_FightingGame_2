@@ -2,11 +2,6 @@
 
 namespace RB::Sprites
 {
-	SpriteLoader::SpriteLoader()
-	{
-
-	}
-
 	SpriteLoader::~SpriteLoader()
 	{
 		for (int i = 0; i < _vecLoadedSprites.size(); i++)

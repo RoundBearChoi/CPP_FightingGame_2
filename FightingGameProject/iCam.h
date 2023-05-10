@@ -6,7 +6,7 @@ namespace RB::Cam
 	class iCam
 	{
 	public:
-		virtual ~iCam() {}
+		virtual ~iCam() = default;
 
 	public:
 		virtual olc::vi2d GetPosition() = 0;

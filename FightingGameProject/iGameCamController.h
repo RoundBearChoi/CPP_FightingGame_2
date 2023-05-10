@@ -6,6 +6,7 @@ namespace RB::Cam
 	class iGameCamController : public RB::Controllers::iController
 	{
 	public:
-
+		iGameCamController() = default;
+		~iGameCamController() override {};
 	};
 }

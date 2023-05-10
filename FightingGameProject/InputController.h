@@ -12,7 +12,7 @@ namespace RB::Input
 	{
 	public:
 		InputController() = default;
-		~InputController() = default;
+		~InputController() override {};
 
 	public:
 		void Init() override;

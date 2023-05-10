@@ -6,6 +6,7 @@ namespace RB::Cam
 	{
 
 	}
+
 	void GameCamController::Init()
 	{
 		_gameCam.Init();

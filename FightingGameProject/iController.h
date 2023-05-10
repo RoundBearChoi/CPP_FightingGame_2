@@ -5,6 +5,7 @@ namespace RB::Controllers
 	class iController
 	{
 	public:
+		iController() = default;
 		virtual ~iController() = default;
 
 	public:

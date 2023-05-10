@@ -8,6 +8,9 @@ namespace RB::Players
 	class iPlayerController : public RB::Controllers::iController
 	{
 	public:
+		iPlayerController() = default;
+		~ iPlayerController() override {};
+
 		virtual iPlayer* GetPlayerOnID(PlayerID id) = 0;
 		virtual iPlayer* GetPlayerOnStateMachineID(int id) = 0;
 	};

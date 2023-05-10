@@ -2,16 +2,6 @@
 
 namespace RB::PlayerStateComponents
 {
-	TriggerJumpUp::TriggerJumpUp()
-	{
-
-	}
-
-	TriggerJumpUp::~TriggerJumpUp()
-	{
-
-	}
-
 	void TriggerJumpUp::OnEnter()
 	{
 

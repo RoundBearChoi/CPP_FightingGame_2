@@ -7,8 +7,8 @@ namespace RB::PlayerStateComponents
 	class TriggerJumpUp : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerJumpUp();
-		~TriggerJumpUp() override;
+		TriggerJumpUp() = default;
+		~TriggerJumpUp() override {};
 
 		public:
 			void OnEnter() override;

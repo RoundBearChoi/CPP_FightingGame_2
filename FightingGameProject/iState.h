@@ -9,7 +9,8 @@ namespace RB::States
 	class iState
 	{
 	public:
-		virtual ~iState() {}
+		iState() = default;
+		virtual ~iState() = default;
 
 	public:
 		virtual void SetStateMachine(iStateMachine* stateMachine) = 0;

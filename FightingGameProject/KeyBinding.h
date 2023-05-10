@@ -9,7 +9,7 @@ namespace RB::Input
 	{
 	public:
 		KeyBinding(RB::Players::PlayerID playerID, PlayerInput playerInput, olc::Key key);
-		~KeyBinding();
+		~KeyBinding() = default;
 
 	public:
 		RB::Players::PlayerID GetPlayerID();

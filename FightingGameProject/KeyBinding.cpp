@@ -9,11 +9,6 @@ namespace RB::Input
 		_key = key;
 	}
 
-	KeyBinding::~KeyBinding()
-	{
-
-	}
-
 	RB::Players::PlayerID KeyBinding::GetPlayerID()
 	{
 		return _playerID;

@@ -9,8 +9,8 @@ namespace RB::Players
 	class PlayerCollider
 	{
 	public:
-		PlayerCollider();
-		~PlayerCollider();
+		PlayerCollider() = default;
+		~PlayerCollider() = default;
 
 	public:
 		void Init(iPlayer* owner);

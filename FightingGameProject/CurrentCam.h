@@ -6,14 +6,17 @@ namespace RB::Cam
 	class CurrentCam
 	{
 	public:
-		CurrentCam() {}
-		~CurrentCam() {}
+		CurrentCam() = default;
+		~CurrentCam() = default;
+
+	private:
+		static inline iCam* _cam = nullptr;
+		static inline bool _camExists = false;
 
 	public:
 		static void Init()
 		{
-			_cam = nullptr;
-			_camExists = false;
+
 		}
 
 		static void SetCurrentCam(iCam* cam)
@@ -42,9 +45,5 @@ namespace RB::Cam
 
 			return rel;
 		}
-
-	private:
-		static inline iCam* _cam = nullptr;
-		static inline bool _camExists = false;
 	};
 }

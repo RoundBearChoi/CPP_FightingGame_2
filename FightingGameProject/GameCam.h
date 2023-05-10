@@ -9,8 +9,8 @@ namespace RB::Cam
 	class GameCam : public iCam
 	{
 	public:
-		GameCam();
-		~GameCam();
+		GameCam() = default;
+		~GameCam() = default;
 
 	public:
 		olc::vi2d GetPosition() override;

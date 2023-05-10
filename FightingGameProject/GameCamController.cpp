@@ -2,16 +2,10 @@
 
 namespace RB::Cam
 {
-	GameCamController::GameCamController()
-	{
-
-	}
-
 	GameCamController::~GameCamController()
 	{
 
 	}
-
 	void GameCamController::Init()
 	{
 		_gameCam.Init();

@@ -2,16 +2,6 @@
 
 namespace RB::Cam
 {
-	GameCam::GameCam()
-	{
-
-	}
-
-	GameCam::~GameCam()
-	{
-
-	}
-
 	olc::vi2d GameCam::GetPosition()
 	{
 		return _position;

@@ -9,6 +9,10 @@ namespace RB::Controllers
 	class GameplayControllers
 	{
 	public:
+		GameplayControllers() = delete;
+		~GameplayControllers() = delete;
+
+	public:
 		inline static RB::Players::iPlayerController* PLAYER_CONTROLLER = nullptr;
 		inline static RB::PlayerDebug::iPlayerDebugController* PLAYER_DEBUG_CONTROLLER = nullptr;
 		inline static RB::Render::iPlayerAnimationController* GAMEPLAY_ANIMATION_CONTROLLER = nullptr;

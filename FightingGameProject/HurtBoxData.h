@@ -4,7 +4,7 @@ namespace RB::HurtbOX
 {
 	class HurtBoxData
 	{
-		public:
+	public:
 		HurtBoxData() = default;
 		~HurtBoxData() = default;
 

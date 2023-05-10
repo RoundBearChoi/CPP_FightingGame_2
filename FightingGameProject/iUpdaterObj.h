@@ -5,7 +5,8 @@ namespace RB::Updaters
 	class iUpdaterObj
 	{
 	public:
-		virtual ~iUpdaterObj() {}
+		iUpdaterObj() = default;
+		virtual ~iUpdaterObj() = default;
 
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;

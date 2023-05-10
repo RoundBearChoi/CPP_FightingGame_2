@@ -4,10 +4,14 @@ namespace RB::States
 {
 	class StateMachineID
 	{
-	private:
-		static inline int _cumulatedID = 0;
+	public:
+		StateMachineID() = default;
+		~StateMachineID() = default;
 
 	public:
 		static int GetID();
+
+	private:
+		static inline int _cumulatedID = 0;
 	};
 }

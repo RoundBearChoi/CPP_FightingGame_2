@@ -6,6 +6,10 @@ namespace RB::Updaters
 	class SkipFixedUpdates
 	{
 	public:
+		SkipFixedUpdates() = default;
+		~SkipFixedUpdates() = default;
+
+	public:
 		void SetSkipFrames(unsigned int skipFrames)
 		{
 			_skipFrames = skipFrames;

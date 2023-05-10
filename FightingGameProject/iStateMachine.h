@@ -6,7 +6,7 @@ namespace RB::States
 	class iStateMachine
 	{
 	public:
-		virtual ~iStateMachine() {}
+		virtual ~iStateMachine() = default;
 
 		virtual void Init(iState *state) = 0;
 		virtual void OnUpdate() = 0;

@@ -5,7 +5,7 @@ namespace RB::P0_States
 {
 	P0_Start::P0_Start()
 	{
-
+		// no sprite yet
 	}
 
 	void P0_Start::OnEnter()

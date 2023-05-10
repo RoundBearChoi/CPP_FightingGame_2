@@ -28,7 +28,7 @@ namespace RB::Render
 
 		//sprites
 		_spriteRenderer.Init();
-		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Idle.png", RB::Sprites::SpriteID::fighter_0_idle);
+		_spriteRenderer.LoadSprite("PNG files/StickFigures/test_fight_pose.png", RB::Sprites::SpriteID::fighter_0_idle);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteID::fighter_0_walk);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteID::fighter_0_jump_up);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteID::fighter_0_fall);
@@ -37,12 +37,12 @@ namespace RB::Render
 		_animationLoader.Init();
 
 		AnimationSpecs idleSpecs;
-		idleSpecs.mX_TileCount = 10;
+		idleSpecs.mX_TileCount = 9;
 		idleSpecs.mY_TileCount = 1;
-		idleSpecs.mTotalSprites = 10;
-		idleSpecs.mSkipFixedUpdates = 6;
-		idleSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
-		idleSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
+		idleSpecs.mTotalSprites = 9;
+		idleSpecs.mSkipFixedUpdates = 3;
+		idleSpecs.mRenderSize = olc::vf2d{ 400.0, 225.0f };
+		idleSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
 		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
 

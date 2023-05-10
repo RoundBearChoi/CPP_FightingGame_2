@@ -190,6 +190,7 @@
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="CurrentInputController.h" />
+    <ClInclude Include="HurtBoxData.h" />
     <ClInclude Include="TriggerJumpUp.h" />
     <ClInclude Include="WhileMovingBack.h" />
     <ClInclude Include="WhileMovingForward.h" />

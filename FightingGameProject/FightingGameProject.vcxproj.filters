@@ -47,6 +47,9 @@
     <Filter Include="Source Files\Player0_States">
       <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\HurtBox">
+      <UniqueIdentifier>{fe1b8a65-7c77-4239-b315-58179c8028ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -362,6 +365,9 @@
     </ClInclude>
     <ClInclude Include="TriggerJumpUp.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="HurtBoxData.h">
+      <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

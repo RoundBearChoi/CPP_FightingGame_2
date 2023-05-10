@@ -17,7 +17,7 @@ namespace RB::Players
 	class Player : public iPlayer
 	{
 	public:
-		Player();
+		Player() = default;
 		~Player() override;
 
 	public:

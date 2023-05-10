@@ -2,11 +2,6 @@
 
 namespace RB::Players
 {
-	Player::Player()
-	{
-
-	}
-
 	Player::~Player()
 	{
 		std::cout << "destroying player: " << static_cast<int>(_playerID) << std::endl;

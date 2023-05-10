@@ -2,15 +2,6 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveBackDetector::MoveBackDetector()
-	{
-
-	}
-	MoveBackDetector::~MoveBackDetector()
-	{
-
-	}
-
 	void MoveBackDetector::Init(RB::Players::iPlayer* player)
 	{
 		_player = player;

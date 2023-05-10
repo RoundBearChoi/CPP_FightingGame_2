@@ -8,8 +8,8 @@ namespace RB::PlayerStateComponents
 	class MoveBackDetector
 	{
 	public:
-		MoveBackDetector();
-		~MoveBackDetector();
+		MoveBackDetector() = default;
+		~MoveBackDetector() = default;
 
 	public:
 		void Init(RB::Players::iPlayer* owner);

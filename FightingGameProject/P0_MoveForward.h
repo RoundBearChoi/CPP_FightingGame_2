@@ -13,6 +13,7 @@ namespace RB::P0_States
 	{
 	public:
 		P0_MoveForward();
+		~P0_MoveForward() = default;
 
 	public:
 		void OnEnter() override;

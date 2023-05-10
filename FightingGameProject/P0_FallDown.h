@@ -11,6 +11,7 @@ namespace RB::P0_States
 	{
 	public:
 		P0_FallDown();
+		~P0_FallDown() = default;
 
 	public:
 		void OnEnter() override;

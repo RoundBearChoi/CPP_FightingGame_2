@@ -12,6 +12,7 @@ namespace RB::P0_States
 	{
 	public:
 		P0_JumpUp();
+		~P0_JumpUp() = default;
 
 	public:
 		void OnEnter() override;

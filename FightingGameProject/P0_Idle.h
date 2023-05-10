@@ -15,6 +15,7 @@ namespace RB::P0_States
 	{
 	public:
 		P0_Idle();
+		~P0_Idle() = default;
 
 	public:
 		void OnEnter() override;

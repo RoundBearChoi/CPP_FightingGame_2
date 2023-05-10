@@ -12,6 +12,7 @@ namespace RB::P0_States
 	{
 	public:
 		P0_Start();
+		~P0_Start() = default;
 
 	public:
 		void OnEnter() override;

@@ -10,7 +10,7 @@ namespace RB::Cam
 	{
 	public:
 		GameCamController() = default;
-		~GameCamController() override;
+		~GameCamController() override {};
 
 	public:
 		void Init() override;

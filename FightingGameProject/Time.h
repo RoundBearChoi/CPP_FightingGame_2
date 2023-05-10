@@ -4,6 +4,10 @@ namespace RB::Frames
 {
 	class Time
 	{
+	public:
+		Time() = delete;
+		~Time() = delete;
+
 	private:
 		static float _deltaTime;
 		static float _fixedDeltaTime;

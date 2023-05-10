@@ -28,7 +28,7 @@ namespace RB::Render
 
 		//sprites
 		_spriteRenderer.Init();
-		_spriteRenderer.LoadSprite("PNG files/StickFigures/test_fight_pose.png", RB::Sprites::SpriteID::fighter_0_idle);
+		_spriteRenderer.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteID::fighter_0_idle);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteID::fighter_0_walk);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteID::fighter_0_jump_up);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteID::fighter_0_fall);

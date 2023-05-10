@@ -2,16 +2,6 @@
 
 namespace RB::PlayerStateComponents
 {
-	TriggerMoveForward::TriggerMoveForward()
-	{
-
-	}
-
-	TriggerMoveForward::~TriggerMoveForward()
-	{
-
-	}
-
 	void TriggerMoveForward::OnEnter()
 	{
 		_moveForwardDetector.Init(_state->GetOwnerPlayer());

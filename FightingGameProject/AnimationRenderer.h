@@ -12,7 +12,7 @@ namespace RB::Render
 	{
 	public:
 		AnimationRenderer(AnimationSpecs specs);
-		~AnimationRenderer();
+		~AnimationRenderer() = default;
 
 	public:
 		const AnimationSpecs& GetAnimationSpecs();

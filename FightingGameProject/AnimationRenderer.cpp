@@ -7,11 +7,6 @@ namespace RB::Render
 		_animationSpecs = specs;
 	}
 
-	AnimationRenderer::~AnimationRenderer()
-	{
-
-	}
-
 	const AnimationSpecs& AnimationRenderer::GetAnimationSpecs()
 	{
 		return _animationSpecs;

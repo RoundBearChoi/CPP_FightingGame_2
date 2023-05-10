@@ -7,8 +7,8 @@ namespace RB::Render
 	class AnimationSpecs
 	{
 	public:
-		AnimationSpecs() {}
-		~AnimationSpecs() {}
+		AnimationSpecs() = default;
+		~AnimationSpecs() = default;
 
 	public:
 		unsigned int mX_TileCount = 0;

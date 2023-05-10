@@ -7,8 +7,8 @@ namespace RB::Render
 	class AnimationRenderSettings
 	{
 	public:
-		AnimationRenderSettings() {}
-		~AnimationRenderSettings() {}
+		AnimationRenderSettings() = default;
+		~AnimationRenderSettings() = default;
 
 	public:
 		unsigned int mCurrentIndex = 0;

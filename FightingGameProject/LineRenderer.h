@@ -8,8 +8,8 @@ namespace RB::Render
 	class LineRenderer
 	{
 	public:
-		LineRenderer();
-		~LineRenderer();
+		LineRenderer() = default;
+		~LineRenderer() = default;
 
 	public:
 		void Init();

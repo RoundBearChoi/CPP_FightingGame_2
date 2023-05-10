@@ -2,16 +2,6 @@
 
 namespace RB::PlayerStateComponents
 {
-	WhileMovingBack::WhileMovingBack()
-	{
-
-	}
-
-	WhileMovingBack::~WhileMovingBack()
-	{
-
-	}
-
 	void WhileMovingBack::OnEnter()
 	{
 		_moveForwardDetector.Init(_state->GetOwnerPlayer());

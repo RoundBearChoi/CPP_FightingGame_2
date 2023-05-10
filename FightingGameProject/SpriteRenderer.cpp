@@ -2,16 +2,6 @@
 
 namespace RB::Render
 {
-	SpriteRenderer::SpriteRenderer()
-	{
-
-	}
-
-	SpriteRenderer::~SpriteRenderer()
-	{
-
-	}
-
 	void SpriteRenderer::Init()
 	{
 

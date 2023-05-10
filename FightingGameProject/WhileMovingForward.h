@@ -10,8 +10,8 @@ namespace RB::PlayerStateComponents
 	class WhileMovingForward : public RB::States::StateComponentBase
 	{
 	public:
-		WhileMovingForward();
-		~WhileMovingForward() override;
+		WhileMovingForward() = default;
+		~WhileMovingForward() override {};
 
 	public:
 		void OnEnter() override;

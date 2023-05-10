@@ -2,11 +2,6 @@
 
 namespace RB::Render
 {
-	PlayerAnimationController::PlayerAnimationController()
-	{
-
-	}
-
 	PlayerAnimationController::~PlayerAnimationController()
 	{
 		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)

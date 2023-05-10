@@ -9,7 +9,7 @@ namespace RB::Render
 	class AnimationLoader
 	{
 		public:
-		AnimationLoader();
+		AnimationLoader() = default;
 		~AnimationLoader();
 
 	public:

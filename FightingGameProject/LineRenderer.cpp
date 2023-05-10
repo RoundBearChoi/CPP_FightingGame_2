@@ -2,16 +2,6 @@
 
 namespace RB::Render
 {
-	LineRenderer::LineRenderer()
-	{
-
-	}
-
-	LineRenderer::~LineRenderer()
-	{
-
-	}
-
 	void LineRenderer::Init()
 	{
 

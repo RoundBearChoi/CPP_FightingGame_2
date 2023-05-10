@@ -12,8 +12,8 @@ namespace RB::Render
 	class SpriteRenderer
 	{
 	public:
-		SpriteRenderer();
-		~SpriteRenderer();
+		SpriteRenderer() = default;
+		~SpriteRenderer() = default;
 
 	public:
 		void Init();

@@ -10,8 +10,8 @@ namespace RB::PlayerStateComponents
 	class WhileMovingBack : public RB::States::StateComponentBase
 	{
 	public:
-		WhileMovingBack();
-		~WhileMovingBack() override;
+		WhileMovingBack() = default;
+		~WhileMovingBack() override {};
 
 	public:
 		void OnEnter() override;

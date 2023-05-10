@@ -2,10 +2,6 @@
 
 namespace RB::Render
 {
-	AnimationLoader::AnimationLoader()
-	{
-
-	}
 	AnimationLoader::~AnimationLoader()
 	{
 		for (int i = 0; i < _animationRenderer.size(); i++)

@@ -8,8 +8,8 @@ namespace RB::PlayerStateComponents
 	class TriggerMoveForward : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerMoveForward();
-		~TriggerMoveForward() override;
+		TriggerMoveForward() = default;
+		~TriggerMoveForward() override {};
 		
 	public:
 		void OnEnter() override;

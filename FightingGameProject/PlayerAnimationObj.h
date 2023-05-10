@@ -13,7 +13,7 @@ namespace RB::Render
 	{
 	public:
 		PlayerAnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer);
-		~PlayerAnimationObj();
+		~PlayerAnimationObj() = default;
 
 	public:
 		void OnFixedUpdate();

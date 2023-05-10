@@ -11,11 +11,6 @@ namespace RB::Render
 		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::IncreaseAnimationIndex);
 	}
 
-	PlayerAnimationObj::~PlayerAnimationObj()
-	{
-
-	}
-
 	void PlayerAnimationObj::OnFixedUpdate()
 	{
 		_skipFixedUpdates.OnFixedUpdate();

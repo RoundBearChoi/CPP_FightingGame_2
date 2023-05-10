@@ -6,31 +6,14 @@ namespace RB::Input
 	class CurrentInputController
 	{
 	public:
-		CurrentInputController() {}
-		~CurrentInputController() {}
+		CurrentInputController() = default;
+		~CurrentInputController() = default;
 
 	public:
 		static void Init()
 		{
-			_inputController = nullptr;
-			_controllerExists = false;
+
 		}
-
-		//static void OnUpdate()
-		//{
-		//	if (_controllerExists)
-		//	{
-		//		_inputController->OnUpdate();
-		//	}
-		//}
-
-		//static void OnFixedUpdate()
-		//{
-		//	if (_controllerExists)
-		//	{
-		//		_inputController->OnFixedUpdate();
-		//	}
-		//}
 
 	public:
 		static void SetCurrentInputController(iInputController* controller)

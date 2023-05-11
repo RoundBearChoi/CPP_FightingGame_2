@@ -4,9 +4,9 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerJumpUp::OnEnter()
 	{
-		_inputController = RB::Controllers::CurrentControllers::GetController<RB::Input::InputController>();
+		_inputController = RB::Controllers::Controllers::GetController<RB::Input::InputController>();
 
-		RB::Players::PlayerController* pc = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
+		RB::Players::PlayerController* pc = RB::Controllers::Controllers::GetController<RB::Players::PlayerController>();
 		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachine()->GetID());
 	}
 

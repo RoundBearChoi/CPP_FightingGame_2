@@ -18,7 +18,7 @@ namespace RB::Render
 	void PlayerAnimationController::Init()
 	{
 		//players
-		_playerController = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
+		_playerController = RB::Controllers::Controllers::GetController<RB::Players::PlayerController>();
 
 		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
 		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);

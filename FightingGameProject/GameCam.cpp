@@ -9,7 +9,7 @@ namespace RB::Cam
 
 	void GameCam::Init()
 	{
-		_inputController = RB::Controllers::CurrentControllers::GetController<RB::Input::InputController>();
+		_inputController = RB::Controllers::Controllers::GetController<RB::Input::InputController>();
 	}
 
 	void GameCam::OnUpdate()

@@ -6,7 +6,7 @@ namespace RB::PlayerStateComponents
 	{
 		_player = player;
 
-		_inputController = RB::Controllers::CurrentControllers::GetController<RB::Input::InputController>();
+		_inputController = RB::Controllers::Controllers::GetController<RB::Input::InputController>();
 	}
 
 	void MoveBackDetector::OnUpdate()

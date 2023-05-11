@@ -9,7 +9,7 @@ namespace RB::P0_States
 
 	void P0_JumpUp::OnEnter()
 	{
-		RB::Players::PlayerController* pc = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
+		RB::Players::PlayerController* pc = RB::Controllers::Controllers::GetController<RB::Players::PlayerController>();
 		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
 		float startUpMomentum = 9.0f;

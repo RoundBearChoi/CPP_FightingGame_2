@@ -5,7 +5,7 @@
 
 namespace RB::Controllers
 {
-	class CurrentControllers
+	class Controllers
 	{
 	public:
 		static void Init();
@@ -26,7 +26,7 @@ namespace RB::Controllers
 	};
 
 	template<class T>
-	inline T* CurrentControllers::GetController()
+	inline T* Controllers::GetController()
 	{
 		std::string name = typeid(T).name();
 		std::hash<std::string> hasher;

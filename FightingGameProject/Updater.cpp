@@ -18,6 +18,15 @@ namespace RB::Updaters
 
 	void Updater::SetUpdaterObj(iUpdaterObj* updaterObj)
 	{
+		//delete previous updater obj
+		if (_updaterObj != nullptr)
+		{
+			delete _updaterObj;
+
+			_updaterObj = nullptr;
+		}
+
+		//set new updater obj
 		_updaterObj = updaterObj;
 
 		if (_updaterObj != nullptr)

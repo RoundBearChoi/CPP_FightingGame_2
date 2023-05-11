@@ -1,6 +1,7 @@
 #include "olcPixelGameEngine.h"
 #include "Updater.h"
 #include "GameplayUpdater.h"
+#include "HurtBoxEditorUpdater.h"
 
 namespace RB::Updaters
 {
@@ -31,28 +32,80 @@ namespace RB::Updaters
 
 		if (_updaterObj != nullptr)
 		{
-			_updaterObjExists = true;
-
 			_updaterObj->Init();
+
+			_firstUpdaterInitialized = true;
+		}
+	}
+
+	void Updater::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
+	{
+		if (nextUpdaterObj == nullptr)
+		{
+			//nothing happens
+			_updaterIsQueued = false;
+			
+			return;
+		}
+
+		if (_updaterIsQueued)
+		{
+			//nothing happens (already queued)
+			_updaterIsQueued = false;
+
+			delete nextUpdaterObj;
+		}
+		else
+		{
+			_updaterIsQueued = true;
+
+			_nextUpdaterObj = nextUpdaterObj;
+		}
+	}
+
+	void Updater::MakeUpdaterTransition()
+	{
+		if (_updaterIsQueued)
+		{
+			_updaterIsQueued = false;
+
+			SetUpdaterObj(_nextUpdaterObj);
 		}
 	}
 
 	void Updater::Init()
 	{
-		SetUpdaterObj(new GameplayUpdater());
+		QueueUpdaterObj(new GameplayUpdater());
 	}
 
 	void Updater::OnUpdate()
 	{
-		if (_updaterObjExists)
+		//queue
+		olc::HWButton f11 = olc::Platform::ptrPGE->GetKey(olc::Key::F11);
+		olc::HWButton f10 = olc::Platform::ptrPGE->GetKey(olc::Key::F10);
+
+		if (f11.bPressed)
+		{
+			QueueUpdaterObj(new GameplayUpdater());
+		}
+		else if (f10.bPressed)
+		{
+			QueueUpdaterObj(new HurtBoxEditorUpdater());
+		}
+
+		//update
+		if (_firstUpdaterInitialized && !_updaterIsQueued)
 		{
 			_updaterObj->OnUpdate();
 		}
+		
+		//transition
+		MakeUpdaterTransition();
 	}
 
 	void Updater::OnFixedUpdate()
 	{
-		if (_updaterObjExists)
+		if (_firstUpdaterInitialized && !_updaterIsQueued)
 		{
 			_updaterObj->OnFixedUpdate();
 		}

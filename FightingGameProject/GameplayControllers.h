@@ -18,7 +18,20 @@ namespace RB::Controllers
 		inline static RB::Render::iPlayerAnimationController* GAMEPLAY_ANIMATION_CONTROLLER = nullptr;
 
 	public:
-		static void FindAll()
+		static void Init()
+		{
+			_FindAll();
+		}
+
+		static void OnEnd()
+		{
+			PLAYER_CONTROLLER = nullptr;
+			PLAYER_DEBUG_CONTROLLER = nullptr;
+			GAMEPLAY_ANIMATION_CONTROLLER = nullptr;
+		}
+
+	private:
+		static void _FindAll()
 		{
 			PLAYER_CONTROLLER = ControllerGroup::FindController<RB::Players::iPlayerController>();
 			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<RB::PlayerDebug::iPlayerDebugController>();

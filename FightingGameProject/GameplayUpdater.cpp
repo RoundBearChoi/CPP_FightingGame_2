@@ -9,7 +9,12 @@ namespace RB::Updaters
 
 	GameplayUpdater::~GameplayUpdater()
 	{
-		std::cout << "destroying GameplayUpdater" << std::endl;
+		std::cout << "GameplayUpdater OnEnd" << std::endl;
+
+		RB::Input::CurrentInputController::OnEnd();
+		RB::Cam::CurrentCam::OnEnd();
+		RB::Controllers::ControllerGroup::OnEnd();
+		RB::Controllers::GameplayControllers::OnEnd();
 	}
 
 	void GameplayUpdater::Init()
@@ -18,13 +23,14 @@ namespace RB::Updaters
 
 		RB::Cam::CurrentCam::Init();
 
+		RB::Controllers::ControllerGroup::Init();
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Cam::GameCamController()));
 		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
 
-		RB::Controllers::GameplayControllers::FindAll();
+		RB::Controllers::GameplayControllers::Init();
 	}
 
 	void GameplayUpdater::OnUpdate()

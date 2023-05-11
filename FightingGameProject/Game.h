@@ -25,7 +25,6 @@ namespace RB::Engine
 		
 			_updater.Init();
 
-			RB::Controllers::ControllerGroup::Init();
 			RB::Frames::Time::ClearFixedDeltaTime();
 
 			return true;
@@ -33,10 +32,10 @@ namespace RB::Engine
 
 		bool OnUserDestroy() override
 		{
-			std::cout << std::endl;
-			std::cout << "OnUserDestroy.." << std::endl;
-
-			RB::Controllers::ControllerGroup::OnEnd();
+			//std::cout << std::endl;
+			//std::cout << "OnUserDestroy.." << std::endl;
+			//
+			//RB::Controllers::ControllerGroup::OnEnd();
 
 			return true;
 		}

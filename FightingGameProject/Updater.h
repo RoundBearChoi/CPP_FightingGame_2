@@ -13,12 +13,18 @@ namespace RB::Updaters
 
 	public:
 		void SetUpdaterObj(iUpdaterObj* updaterObj);
+		void QueueUpdaterObj(iUpdaterObj* updaterObj);
+		void MakeUpdaterTransition();
+
+	public:
 		void Init();
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	private:
-		bool _updaterObjExists = false;
+		bool _firstUpdaterInitialized = false;
+		bool _updaterIsQueued = false;
 		iUpdaterObj* _updaterObj = nullptr;
+		iUpdaterObj* _nextUpdaterObj = nullptr;
 	};
 }

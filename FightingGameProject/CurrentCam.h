@@ -19,6 +19,12 @@ namespace RB::Cam
 
 		}
 
+		static void OnEnd()
+		{
+			_cam = nullptr;
+			_camExists = false;
+		}
+
 		static void SetCurrentCam(iCam* cam)
 		{
 			_cam = cam;

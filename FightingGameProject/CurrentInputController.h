@@ -15,6 +15,12 @@ namespace RB::Input
 
 		}
 
+		static void OnEnd()
+		{
+			_inputController = nullptr;
+			_controllerExists = false;
+		}
+
 	public:
 		static void SetCurrentInputController(iInputController* controller)
 		{

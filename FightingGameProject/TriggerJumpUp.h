@@ -1,8 +1,8 @@
 #pragma once
 #include "StateComponentBase.h"
 #include "P0_JumpUp.h"
-#include "InputController.h"
 #include "CurrentControllers.h"
+#include "InputController.h"
 
 namespace RB::PlayerStateComponents
 {

@@ -3,8 +3,8 @@
 #include "olcPixelGameEngine.h"
 #include "iCam.h"
 #include "iController.h"
-#include "InputController.h"
 #include "CurrentControllers.h"
+#include "InputController.h"
 
 namespace RB::Cam
 {

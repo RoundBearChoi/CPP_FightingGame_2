@@ -1,7 +1,10 @@
 #pragma once
 #include <iostream>
+#include <assert.h>
+#include "olcPixelGameEngine.h"
 #include "iUpdaterObj.h"
 #include "GameplayUpdater.h"
+#include "HurtBoxEditorUpdater.h"
 
 namespace RB::Updaters
 {

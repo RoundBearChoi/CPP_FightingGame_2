@@ -1,7 +1,4 @@
-#include "olcPixelGameEngine.h"
 #include "Updater.h"
-#include "GameplayUpdater.h"
-#include "HurtBoxEditorUpdater.h"
 
 namespace RB::Updaters
 {
@@ -91,7 +88,14 @@ namespace RB::Updaters
 
 	void Updater::Init()
 	{
-		QueueUpdaterObj(new GameplayUpdater());
+		bool firstQueueSuccessful = QueueUpdaterObj(new GameplayUpdater());
+
+		if (!firstQueueSuccessful)
+		{
+			std::cout << "first updater queue failed.. aborting.." << std::endl;
+
+			assert(firstQueueSuccessful);
+		}
 	}
 
 	void Updater::OnUpdate()

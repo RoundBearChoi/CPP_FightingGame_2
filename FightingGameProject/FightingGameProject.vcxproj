@@ -228,7 +228,6 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="iPlayerController.h" />
     <ClInclude Include="iUpdaterObj.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="PlayerDebugController.h" />

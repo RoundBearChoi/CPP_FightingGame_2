@@ -3,7 +3,7 @@
 #include "PlayerAnimationObj.h"
 #include "ControllerBase.h"
 #include "CurrentControllers.h"
-#include "iPlayerController.h"
+#include "PlayerController.h"
 #include "iPlayer.h"
 
 namespace RB::Render
@@ -11,7 +11,7 @@ namespace RB::Render
 	class PlayerAnimationController : public RB::Controllers::ControllerBase
 	{
 	public:
-		PlayerAnimationController() = default;
+		PlayerAnimationController();
 		~PlayerAnimationController() override;
 
 	public:
@@ -30,5 +30,8 @@ namespace RB::Render
 		AnimationLoader _animationLoader;
 		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
 		std::vector<RB::Players::iPlayer*> _vecPlayers;
+
+	private:
+		RB::Players::PlayerController* _playerController = nullptr;
 	};
 }

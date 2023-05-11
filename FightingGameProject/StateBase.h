@@ -19,7 +19,6 @@ namespace RB::States
 		virtual void QueueNextState(iState* nextState) override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual unsigned int GetCumulatedFixedUpdates() override;
-		virtual RB::Players::iPlayer* GetOwnerPlayer() override;
 		virtual RB::Sprites::SpriteID GetSpriteID() override;
 
 	public:

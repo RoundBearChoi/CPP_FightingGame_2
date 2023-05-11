@@ -18,5 +18,8 @@ namespace RB::P0_States
 		void OnEnter() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

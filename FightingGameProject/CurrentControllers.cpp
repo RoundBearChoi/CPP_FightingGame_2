@@ -22,25 +22,6 @@ namespace RB::Controllers
 		}
 	}
 
-	iController* CurrentControllers::GetController(const std::type_info& ti)
-	{
-		std::string name = ti.name();
-
-		std::hash<std::string> hasher;
-
-		size_t hash = hasher(name);
-
-		for (int i = 0; i < _vecControllers.size(); i++)
-		{
-			if (_vecControllers[i]->GetHash() == hash)
-			{
-				return _vecControllers[i];
-			}
-		}
-
-		return nullptr;
-	}
-
 	void CurrentControllers::UpdateAll()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)

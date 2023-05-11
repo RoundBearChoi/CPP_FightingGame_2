@@ -23,5 +23,8 @@ namespace RB::PlayerStateComponents
 		MoveBackDetector _moveBackDetector;
 		bool _keepMoving = false;
 		bool _moveBack = false;
+
+	private:
+		RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

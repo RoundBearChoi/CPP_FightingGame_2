@@ -4,7 +4,10 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerMoveBack::OnEnter()
 	{
-		_moveBackDetector.Init(_state->GetOwnerPlayer());
+		RB::Players::PlayerController* pc = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
+		RB::Players::iPlayer* owner = pc->GetPlayerOnStateMachineID(_state->GetStateMachine()->GetID());
+
+		_moveBackDetector.Init(owner);
 	}
 
 	void TriggerMoveBack::OnUpdate()
@@ -13,8 +16,6 @@ namespace RB::PlayerStateComponents
 
 		if (_moveBackDetector.MoveBack())
 		{
-			//std::cout << "player " << (int)_state->GetOwnerPlayer()->GetPlayerID() << " is moving back" << std::endl;
-
 			_state->QueueNextState(new RB::P0_States::P0_MoveBack());
 		}
 	}

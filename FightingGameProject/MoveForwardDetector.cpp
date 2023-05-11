@@ -6,8 +6,7 @@ namespace RB::PlayerStateComponents
 	{
 		_player = player;
 
-		RB::Controllers::iController* ic = RB::Controllers::CurrentControllers::GetController(typeid(RB::Input::InputController));
-		_inputController = dynamic_cast<RB::Input::InputController*>(ic);
+		_inputController = RB::Controllers::CurrentControllers::GetController<RB::Input::InputController>();
 	}
 
 	void MoveForwardDetector::OnUpdate()

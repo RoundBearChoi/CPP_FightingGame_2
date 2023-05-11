@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "iPlayerController.h"
+#include "ControllerBase.h"
 #include "iPlayer.h"
 #include "Player.h"
 #include "PlayerID.h"
@@ -9,7 +9,7 @@
 
 namespace RB::Players
 {
-	class PlayerController : public iPlayerController
+	class PlayerController : public RB::Controllers::ControllerBase
 	{
 	private:
 		Player _player1;
@@ -25,7 +25,7 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		iPlayer* GetPlayerOnID(PlayerID id) override;
-		iPlayer* GetPlayerOnStateMachineID(int id) override;
+		iPlayer* GetPlayerOnID(PlayerID id);
+		iPlayer* GetPlayerOnStateMachineID(int id);
 	};
 }

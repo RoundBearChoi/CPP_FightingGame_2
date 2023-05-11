@@ -5,6 +5,8 @@ namespace RB::Players
 	PlayerController::PlayerController()
 	{
 		std::cout << "constructing PlayerController" << std::endl;
+
+		SetHash(typeid(*this));
 	}
 
 	PlayerController::~PlayerController()

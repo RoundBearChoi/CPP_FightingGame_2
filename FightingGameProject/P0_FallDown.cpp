@@ -9,12 +9,12 @@ namespace RB::P0_States
 
 	void P0_FallDown::OnEnter()
 	{
-		RB::Players::iPlayer* owner = GetOwnerPlayer();
-		RB::Players::PlayerID id = owner->GetPlayerID();
+		RB::Players::PlayerController* pc = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
+		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
-		olc::vf2d fallMomentum = olc::vf2d{ owner->GetAirMomentum().x , 6.0f };
+		olc::vf2d fallMomentum = olc::vf2d{ _ownerPlayer->GetAirMomentum().x , 6.0f };
 
-		owner->SetAirMomentum(fallMomentum);
+		_ownerPlayer->SetAirMomentum(fallMomentum);
 	}
 
 	void P0_FallDown::OnUpdate()
@@ -24,17 +24,16 @@ namespace RB::P0_States
 
 	void P0_FallDown::OnFixedUpdate()
 	{
-		RB::Players::iPlayer* owner = GetOwnerPlayer();
-		olc::vf2d momentum = owner->GetAirMomentum();
+		olc::vf2d momentum = _ownerPlayer->GetAirMomentum();
 
-		if (owner->GetPosition().y < -0.5f)
+		if (_ownerPlayer->GetPosition().y < -0.5f)
 		{
-			owner->Move(olc::vf2d{ 0.0f, momentum.y });
+			_ownerPlayer->Move(olc::vf2d{ 0.0f, momentum.y });
 		}
 		else
 		{
-			owner->SetPosition(olc::vi2d{ owner->GetPosition().x, 0 });
-			owner->SetAirMomentum(olc::vf2d{ 0.0f, 0.0f });
+			_ownerPlayer->SetPosition(olc::vi2d{ _ownerPlayer->GetPosition().x, 0 });
+			_ownerPlayer->SetAirMomentum(olc::vf2d{ 0.0f, 0.0f });
 
 			_stateMachine->QueueNextState(new RB::P0_States::P0_Idle());
 		}

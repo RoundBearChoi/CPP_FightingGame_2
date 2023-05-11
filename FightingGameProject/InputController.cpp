@@ -4,7 +4,7 @@ namespace RB::Input
 {
 	InputController::InputController()
 	{
-		SetHash(typeid(*this).name());
+		SetHash(typeid(*this));
 	}
 
 	void InputController::Init()

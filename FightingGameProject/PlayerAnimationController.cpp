@@ -2,6 +2,11 @@
 
 namespace RB::Render
 {
+	PlayerAnimationController::PlayerAnimationController()
+	{
+		SetHash(typeid(*this));
+	}
+
 	PlayerAnimationController::~PlayerAnimationController()
 	{
 		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
@@ -13,10 +18,10 @@ namespace RB::Render
 	void PlayerAnimationController::Init()
 	{
 		//players
-		RB::Players::iPlayerController* playerController = RB::Controllers::CurrentControllers::FindController<RB::Players::iPlayerController>();
+		_playerController = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
 
-		RB::Players::iPlayer* p1 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
 		_vecPlayers.push_back(p1);
 		_vecPlayers.push_back(p2);

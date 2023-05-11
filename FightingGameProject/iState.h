@@ -18,7 +18,6 @@ namespace RB::States
 		virtual void QueueNextState(iState* nextState) = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual unsigned int GetCumulatedFixedUpdates() = 0;
-		virtual RB::Players::iPlayer* GetOwnerPlayer() = 0;
 		virtual RB::Sprites::SpriteID GetSpriteID() = 0;
 
 	public:

@@ -4,6 +4,7 @@
 #include "iPlayer.h"
 #include "PlayerID.h"
 #include "P0_Idle.h"
+#include "PlayerController.h"
 
 namespace RB::P0_States
 {
@@ -17,5 +18,8 @@ namespace RB::P0_States
 		void OnEnter() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

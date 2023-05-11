@@ -4,14 +4,15 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerJumpUp::OnEnter()
 	{
-		RB::Controllers::iController* ic = RB::Controllers::CurrentControllers::GetController(typeid(RB::Input::InputController));
-		_inputController = dynamic_cast<RB::Input::InputController*>(ic);
+		_inputController = RB::Controllers::CurrentControllers::GetController<RB::Input::InputController>();
+
+		RB::Players::PlayerController* pc = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
+		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachine()->GetID());
 	}
 
 	void TriggerJumpUp::OnUpdate()
 	{
-		RB::Players::iPlayer* player = _state->GetOwnerPlayer();
-		RB::Players::PlayerID playerID = player->GetPlayerID();
+		RB::Players::PlayerID playerID = _ownerPlayer->GetPlayerID();
 
 		olc::HWButton jump = _inputController->GetButton(playerID, RB::Input::PlayerInput::JUMP);
 

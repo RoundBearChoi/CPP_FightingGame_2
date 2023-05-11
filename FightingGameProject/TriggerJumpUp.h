@@ -18,5 +18,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		RB::Input::InputController* _inputController = nullptr;
+		RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

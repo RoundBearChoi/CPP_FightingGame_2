@@ -9,13 +9,15 @@
 #include "AABB.h"
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
+#include "CurrentControllers.h"
+#include "PlayerController.h"
 
 namespace RB::PlayerDebug
 {
 	class PlayerDebugController : public iPlayerDebugController
 	{
 	public:
-		PlayerDebugController() = default;
+		PlayerDebugController();
 		~PlayerDebugController() override {};
 
 	public:
@@ -35,5 +37,8 @@ namespace RB::PlayerDebug
 	private:
 		RB::Render::SpriteRenderer _spriteRenderer;
 		RB::Render::LineRenderer _lineRenderer;
+
+	private:
+		RB::Players::PlayerController* _playerController = nullptr;
 	};
 }

@@ -11,7 +11,7 @@ namespace RB::Controllers
 		virtual ~ControllerBase() override {}
 
 	public:
-		virtual void SetHash(std::string str);
+		virtual void SetHash(const type_info& ti);
 		virtual size_t GetHash() override;
 
 	public:

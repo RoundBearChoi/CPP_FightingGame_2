@@ -2,13 +2,13 @@
 
 namespace RB::Controllers
 {
-	void ControllerBase::SetHash(std::string str)
+	void ControllerBase::SetHash(const type_info& ti)
 	{
-		//_hash = std::hash<std::string>{}(str);
+		std::string name = ti.name();
 
 		std::hash<std::string> hasher;
 
-		_hash = hasher(str);
+		_hash = hasher(name);
 	}
 
 	size_t ControllerBase::GetHash()

@@ -4,8 +4,11 @@ namespace RB::PlayerStateComponents
 {
 	void WhileMovingBack::OnEnter()
 	{
-		_moveForwardDetector.Init(_state->GetOwnerPlayer());
-		_moveBackDetector.Init(_state->GetOwnerPlayer());
+		RB::Players::PlayerController* pc = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
+		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachine()->GetID());
+
+		_moveForwardDetector.Init(_ownerPlayer);
+		_moveBackDetector.Init(_ownerPlayer);
 	}
 
 	void WhileMovingBack::OnUpdate()
@@ -38,7 +41,7 @@ namespace RB::PlayerStateComponents
 		{
 			int movement = 0;
 
-			if (_state->GetOwnerPlayer()->OtherPlayerIsOnRightSide())
+			if (_ownerPlayer->OtherPlayerIsOnRightSide())
 			{
 				movement = -2;
 			}
@@ -47,7 +50,7 @@ namespace RB::PlayerStateComponents
 				movement = 2;
 			}
 
-			_state->GetOwnerPlayer()->Move(olc::vi2d{ movement, 0 });
+			_ownerPlayer->Move(olc::vi2d{ movement, 0 });
 
 			return;
 		}

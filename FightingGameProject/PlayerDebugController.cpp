@@ -2,15 +2,17 @@
 
 namespace RB::PlayerDebug
 {
+	PlayerDebugController::PlayerDebugController()
+	{
+		SetHash(typeid(*this));
+	}
+
 	void PlayerDebugController::Init()
 	{
-		RB::Players::iPlayerController* pc = RB::Controllers::CurrentControllers::FindController<RB::Players::iPlayerController>();
+		_playerController = RB::Controllers::CurrentControllers::GetController<RB::Players::PlayerController>();
 
-		if (pc != nullptr)
-		{
-			_vecPlayers.push_back(pc->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
-			_vecPlayers.push_back(pc->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2));
-		}
+		_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
+		_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2));
 
 		//sprite renderer
 		_spriteRenderer.Init();

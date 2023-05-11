@@ -40,13 +40,6 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
-	RB::Players::iPlayer* StateBase::GetOwnerPlayer()
-	{
-		RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
-	
-		return player;
-	}
-
 	RB::Sprites::SpriteID StateBase::GetSpriteID()
 	{
 		return _spriteID;

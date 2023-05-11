@@ -12,11 +12,13 @@ namespace RB::Updaters
 		~Updater();
 
 	public:
+		void SetUpdaterObj(iUpdaterObj* updaterObj);
 		void Init();
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	private:
+		bool _updaterObjExists = false;
 		iUpdaterObj* _updaterObj = nullptr;
 	};
 }

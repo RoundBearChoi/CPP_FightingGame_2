@@ -16,20 +16,36 @@ namespace RB::Updaters
 		delete _updaterObj;
 	}
 
+	void Updater::SetUpdaterObj(iUpdaterObj* updaterObj)
+	{
+		_updaterObj = updaterObj;
+
+		if (_updaterObj != nullptr)
+		{
+			_updaterObjExists = true;
+
+			_updaterObj->Init();
+		}
+	}
+
 	void Updater::Init()
 	{
-		_updaterObj = new GameplayUpdater();
-
-		_updaterObj->Init();
+		SetUpdaterObj(new GameplayUpdater());
 	}
 
 	void Updater::OnUpdate()
 	{
-		_updaterObj->OnUpdate();
+		if (_updaterObjExists)
+		{
+			_updaterObj->OnUpdate();
+		}
 	}
 
 	void Updater::OnFixedUpdate()
 	{
-		_updaterObj->OnFixedUpdate();
+		if (_updaterObjExists)
+		{
+			_updaterObj->OnFixedUpdate();
+		}
 	}
 }

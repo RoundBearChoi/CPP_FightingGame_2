@@ -4,7 +4,7 @@ namespace RB::Cam
 {
 	GameCamController::GameCamController()
 	{
-		SetHash(typeid(this).name());
+		SetHash(typeid(*this).name());
 	}
 
 	void GameCamController::Init()

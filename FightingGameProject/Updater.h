@@ -14,6 +14,7 @@ namespace RB::Updaters
 	public:
 		void SetUpdaterObj(iUpdaterObj* updaterObj);
 		void QueueUpdaterObj(iUpdaterObj* updaterObj);
+		void UpdateQueue();
 		void MakeUpdaterTransition();
 
 	public:

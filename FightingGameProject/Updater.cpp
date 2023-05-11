@@ -63,6 +63,21 @@ namespace RB::Updaters
 		}
 	}
 
+	void Updater::UpdateQueue()
+	{
+		olc::HWButton f11 = olc::Platform::ptrPGE->GetKey(olc::Key::F11);
+		olc::HWButton f10 = olc::Platform::ptrPGE->GetKey(olc::Key::F10);
+
+		if (f11.bPressed)
+		{
+			QueueUpdaterObj(new GameplayUpdater());
+		}
+		else if (f10.bPressed)
+		{
+			QueueUpdaterObj(new HurtBoxEditorUpdater());
+		}
+	}
+
 	void Updater::MakeUpdaterTransition()
 	{
 		if (_updaterIsQueued)
@@ -80,26 +95,12 @@ namespace RB::Updaters
 
 	void Updater::OnUpdate()
 	{
-		//queue
-		olc::HWButton f11 = olc::Platform::ptrPGE->GetKey(olc::Key::F11);
-		olc::HWButton f10 = olc::Platform::ptrPGE->GetKey(olc::Key::F10);
-
-		if (f11.bPressed)
-		{
-			QueueUpdaterObj(new GameplayUpdater());
-		}
-		else if (f10.bPressed)
-		{
-			QueueUpdaterObj(new HurtBoxEditorUpdater());
-		}
-
-		//update
 		if (_firstUpdaterInitialized && !_updaterIsQueued)
 		{
 			_updaterObj->OnUpdate();
 		}
 		
-		//transition
+		UpdateQueue();
 		MakeUpdaterTransition();
 	}
 

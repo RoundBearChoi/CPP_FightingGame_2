@@ -1,12 +1,12 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "iController.h"
+#include "ControllerBase.h"
 #include "PlayerInput.h"
 #include "PlayerID.h"
 
 namespace RB::Input
 {
-	class iInputController : public RB::Controllers::iController
+	class iInputController : public RB::Controllers::ControllerBase
 	{
 	public:
 		iInputController() = default;

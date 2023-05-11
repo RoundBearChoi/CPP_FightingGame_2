@@ -1,9 +1,9 @@
 #pragma once
-#include "iController.h"
+#include "ControllerBase.h"
 
 namespace RB::PlayerDebug
 {
-	class iPlayerDebugController : public RB::Controllers::iController
+	class iPlayerDebugController : public RB::Controllers::ControllerBase
 	{
 	public:
 		iPlayerDebugController() = default;

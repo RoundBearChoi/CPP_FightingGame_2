@@ -1,9 +1,10 @@
 #pragma once
-#include "iController.h"
 #include "olcPixelGameEngine.h"
+#include "ControllerBase.h"
+
 namespace RB::Cam
 {
-	class iGameCamController : public RB::Controllers::iController
+	class iGameCamController : public RB::Controllers::ControllerBase
 	{
 	public:
 		iGameCamController() = default;

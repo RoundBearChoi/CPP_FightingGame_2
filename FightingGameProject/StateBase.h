@@ -11,16 +11,16 @@ namespace RB::States
 	class StateBase : public iState
 	{
 	public:
-		StateBase() = default;
+		StateBase();
 		~StateBase() override;
 
-		virtual void SetStateMachine(iStateMachine* stateMachine);
-		virtual iStateMachine* GetStateMachine();
-		virtual void QueueNextState(iState* nextState);
-		virtual void AddCumulatedFixedUpdate();
-		virtual unsigned int GetCumulatedFixedUpdates();
-		virtual RB::Players::iPlayer* GetOwnerPlayer();
-		virtual RB::Sprites::SpriteID GetSpriteID();
+		virtual void SetStateMachine(iStateMachine* stateMachine) override;
+		virtual iStateMachine* GetStateMachine() override;
+		virtual void QueueNextState(iState* nextState) override;
+		virtual void AddCumulatedFixedUpdate() override;
+		virtual unsigned int GetCumulatedFixedUpdates() override;
+		virtual RB::Players::iPlayer* GetOwnerPlayer() override;
+		virtual RB::Sprites::SpriteID GetSpriteID() override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);
@@ -30,10 +30,10 @@ namespace RB::States
 		virtual void FixedUpdateStateComponents();
 
 	public:
-		virtual void OnEnter() {}
-		virtual void OnExit() {}
-		virtual void OnUpdate() {}
-		virtual void OnFixedUpdate() {}
+		virtual void OnEnter() override {}
+		virtual void OnExit() override {}
+		virtual void OnUpdate() override {}
+		virtual void OnFixedUpdate() override {}
 
 	protected:
 		iStateMachine* _stateMachine = nullptr;

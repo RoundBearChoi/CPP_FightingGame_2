@@ -1,11 +1,11 @@
 #pragma once
-#include "iController.h"
+#include "ControllerBase.h"
 #include "iPlayer.h"
 #include "PlayerID.h"
 
 namespace RB::Players
 {
-	class iPlayerController : public RB::Controllers::iController
+	class iPlayerController : public RB::Controllers::ControllerBase
 	{
 	public:
 		iPlayerController() = default;

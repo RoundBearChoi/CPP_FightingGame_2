@@ -2,6 +2,11 @@
 
 namespace RB::States
 {
+	StateBase::StateBase()
+	{
+
+	}
+
 	StateBase::~StateBase()
 	{
 		for (int i = 0; i < _vecStateComponents.size(); i++)
@@ -38,7 +43,7 @@ namespace RB::States
 	RB::Players::iPlayer* StateBase::GetOwnerPlayer()
 	{
 		RB::Players::iPlayer* player = RB::Controllers::GameplayControllers::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachine->GetID());
-
+	
 		return player;
 	}
 

@@ -172,6 +172,9 @@
     <ClCompile Include="HurtBoxEditorUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
+    <ClCompile Include="ControllerBase.cpp">
+      <Filter>Source Files\Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -374,6 +377,9 @@
     </ClInclude>
     <ClInclude Include="HurtBoxEditorUpdater.h">
       <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerBase.h">
+      <Filter>Source Files\Controllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AirMomentum.cpp" />
+    <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
+    <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="CurrentInputController.h" />
     <ClInclude Include="HurtBoxData.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />

@@ -1,17 +1,16 @@
 #pragma once
 #include <iostream>
-#include "CurrentInputController.h"
-#include "iInputController.h"
+#include "ControllerBase.h"
 #include "PlayerInput.h"
 #include "PlayerID.h"
 #include "KeyBinding.h"
 
 namespace RB::Input
 {
-	class InputController : public iInputController
+	class InputController : public RB::Controllers::ControllerBase
 	{
 	public:
-		InputController() = default;
+		InputController();
 		~InputController() override {};
 
 	public:
@@ -20,7 +19,7 @@ namespace RB::Input
 		void OnFixedUpdate() override;
 
 	public:
-		olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput);
 
 	private:
 		std::vector<KeyBinding> _vecKeyBindings;

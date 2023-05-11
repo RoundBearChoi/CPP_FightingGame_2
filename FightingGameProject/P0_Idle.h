@@ -1,7 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "StateBase.h"
-#include "CurrentInputController.h"
 #include "P0_JumpUp.h"
 #include "P0_MoveForward.h"
 #include "P0_MoveBack.h"

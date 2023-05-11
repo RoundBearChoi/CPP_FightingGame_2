@@ -12,7 +12,11 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = _state->GetOwnerPlayer();
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		olc::HWButton jump = RB::Input::CurrentInputController::GetController()->GetButton(playerID, RB::Input::PlayerInput::JUMP);
+		std::string name = typeid(RB::Input::InputController).name();
+		RB::Controllers::iController* inputController = RB::Controllers::CurrentControllers::GetController(std::hash<std::string>{}(name));
+		RB::Input::InputController* ic = dynamic_cast<RB::Input::InputController*>(inputController);
+
+		olc::HWButton jump = ic->GetButton(playerID, RB::Input::PlayerInput::JUMP);
 
 		if (jump.bPressed || jump.bHeld)
 		{

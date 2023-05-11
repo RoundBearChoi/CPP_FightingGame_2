@@ -192,7 +192,6 @@
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="ControllerBase.h" />
-    <ClInclude Include="CurrentInputController.h" />
     <ClInclude Include="HurtBoxData.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="TriggerJumpUp.h" />
@@ -219,7 +218,6 @@
     <ClInclude Include="SpriteID.h" />
     <ClInclude Include="iController.h" />
     <ClInclude Include="CurrentControllers.h" />
-    <ClInclude Include="iInputController.h" />
     <ClInclude Include="InputController.h" />
     <ClInclude Include="iPlayer.h" />
     <ClInclude Include="iPlayerDebugController.h" />

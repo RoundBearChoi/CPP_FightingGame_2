@@ -11,7 +11,6 @@ namespace RB::Updaters
 	{
 		std::cout << "destructing GameplayUpdater" << std::endl;
 
-		RB::Input::CurrentInputController::OnEnd();
 		RB::Cam::CurrentCam::OnEnd();
 		RB::Controllers::CurrentControllers::OnEnd();
 		RB::Controllers::GameplayControllers::OnEnd();
@@ -19,8 +18,6 @@ namespace RB::Updaters
 
 	void GameplayUpdater::Init()
 	{
-		RB::Input::CurrentInputController::Init();
-
 		RB::Cam::CurrentCam::Init();
 
 		RB::Controllers::CurrentControllers::Init();

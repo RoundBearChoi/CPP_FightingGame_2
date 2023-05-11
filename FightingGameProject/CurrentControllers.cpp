@@ -22,6 +22,19 @@ namespace RB::Controllers
 		}
 	}
 
+	iController* CurrentControllers::GetController(size_t hash)
+	{
+		for (int i = 0; i < _vecControllers.size(); i++)
+		{
+			if (_vecControllers[i]->GetHash() == hash)
+			{
+				return _vecControllers[i];
+			}
+		}
+
+		return nullptr;
+	}
+
 	void CurrentControllers::UpdateAll()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)

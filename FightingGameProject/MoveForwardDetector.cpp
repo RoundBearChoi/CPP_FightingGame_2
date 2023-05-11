@@ -34,8 +34,12 @@ namespace RB::PlayerStateComponents
 
 	bool MoveForwardDetector::_BothPressed()
 	{
-		olc::HWButton moveLeft = RB::Input::CurrentInputController::GetController()->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		olc::HWButton moveRight = RB::Input::CurrentInputController::GetController()->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		std::string name = typeid(RB::Input::InputController).name();
+		RB::Controllers::iController* inputController = RB::Controllers::CurrentControllers::GetController(std::hash<std::string>{}(name));
+		RB::Input::InputController* ic = dynamic_cast<RB::Input::InputController*>(inputController);
+
+		olc::HWButton moveLeft = ic->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		olc::HWButton moveRight = ic->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (moveLeft.bPressed && moveRight.bPressed)
 		{
@@ -50,8 +54,12 @@ namespace RB::PlayerStateComponents
 
 	bool MoveForwardDetector::_MoveForwardPressed()
 	{
-		olc::HWButton moveLeft = RB::Input::CurrentInputController::GetController()->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		olc::HWButton moveRight = RB::Input::CurrentInputController::GetController()->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		std::string name = typeid(RB::Input::InputController).name();
+		RB::Controllers::iController* inputController = RB::Controllers::CurrentControllers::GetController(std::hash<std::string>{}(name));
+		RB::Input::InputController* ic = dynamic_cast<RB::Input::InputController*>(inputController);
+
+		olc::HWButton moveLeft = ic->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		olc::HWButton moveRight = ic->GetButton(_player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (_player->OtherPlayerIsOnRightSide())
 		{

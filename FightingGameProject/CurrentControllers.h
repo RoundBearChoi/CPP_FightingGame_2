@@ -11,6 +11,7 @@ namespace RB::Controllers
 		static void Init();
 		static void OnEnd();
 		static void AddController(iController* newController);
+		static iController* GetController(size_t hash);
 		static void UpdateAll();
 		static void FixedUpdateAll();
 		template <class T> static T* FindController();

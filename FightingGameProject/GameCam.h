@@ -1,8 +1,10 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "CurrentInputController.h"
 #include "iCam.h"
+#include "iController.h"
+#include "CurrentControllers.h"
+#include "InputController.h"
 
 namespace RB::Cam
 {

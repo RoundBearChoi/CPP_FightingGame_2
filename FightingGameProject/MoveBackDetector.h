@@ -1,7 +1,8 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "CurrentInputController.h"
 #include "iPlayer.h"
+#include "InputController.h"
+#include "CurrentControllers.h"
 
 namespace RB::PlayerStateComponents
 {

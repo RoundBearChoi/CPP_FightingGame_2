@@ -1,12 +1,12 @@
 #pragma once
 #include"olcPixelGameEngine.h"
-#include "iGameCamController.h"
+#include "ControllerBase.h"
 #include "GameCam.h"
 #include "CurrentCam.h"
 
 namespace RB::Cam
 {
-	class GameCamController : iGameCamController
+	class GameCamController : public RB::Controllers::ControllerBase
 	{
 	public:
 		GameCamController();

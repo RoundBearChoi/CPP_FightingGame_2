@@ -219,7 +219,6 @@
     <ClInclude Include="SpriteID.h" />
     <ClInclude Include="iController.h" />
     <ClInclude Include="CurrentControllers.h" />
-    <ClInclude Include="iGameCamController.h" />
     <ClInclude Include="iInputController.h" />
     <ClInclude Include="InputController.h" />
     <ClInclude Include="iPlayer.h" />

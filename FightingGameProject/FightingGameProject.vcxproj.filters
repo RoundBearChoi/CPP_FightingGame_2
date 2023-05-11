@@ -276,9 +276,6 @@
     <ClInclude Include="GameCamController.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
-    <ClInclude Include="iGameCamController.h">
-      <Filter>Source Files\Cam</Filter>
-    </ClInclude>
     <ClInclude Include="GameCam.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>

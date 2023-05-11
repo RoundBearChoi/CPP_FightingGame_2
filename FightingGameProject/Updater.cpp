@@ -36,14 +36,14 @@ namespace RB::Updaters
 		}
 	}
 
-	void Updater::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
+	bool Updater::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
 	{
 		if (nextUpdaterObj == nullptr)
 		{
 			//nothing happens
 			_updaterIsQueued = false;
 			
-			return;
+			return false;
 		}
 
 		if (_updaterIsQueued)
@@ -53,13 +53,15 @@ namespace RB::Updaters
 
 			delete nextUpdaterObj;
 
-			return;
+			return false;
 		}
 
 		//finally queue if conditions are met
 		_updaterIsQueued = true;
 
 		_nextUpdaterObj = nextUpdaterObj;
+
+		return true;
 	}
 
 	void Updater::UpdateQueue()

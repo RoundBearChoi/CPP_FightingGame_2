@@ -15,6 +15,8 @@ namespace RB::States
 		virtual void Init(iState* state) override;
 		virtual void OnUpdate() override;
 		virtual void OnFixedUpdate() override;
+
+	public:
 		virtual void QueueNextState(iState* state) override;
 		virtual void SetID(int ID) override;
 		virtual int GetID() override;

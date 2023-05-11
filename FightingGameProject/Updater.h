@@ -23,7 +23,6 @@ namespace RB::Updaters
 		void OnFixedUpdate();
 
 	private:
-		bool _firstUpdaterInitialized = false;
 		bool _updaterIsQueued = false;
 		iUpdaterObj* _updaterObj = nullptr;
 		iUpdaterObj* _nextUpdaterObj = nullptr;

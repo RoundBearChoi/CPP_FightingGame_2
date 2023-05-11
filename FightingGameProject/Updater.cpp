@@ -33,8 +33,6 @@ namespace RB::Updaters
 		if (_updaterObj != nullptr)
 		{
 			_updaterObj->Init();
-
-			_firstUpdaterInitialized = true;
 		}
 	}
 
@@ -96,7 +94,7 @@ namespace RB::Updaters
 
 	void Updater::OnUpdate()
 	{
-		if (_firstUpdaterInitialized && !_updaterIsQueued)
+		if (!_updaterIsQueued)
 		{
 			_updaterObj->OnUpdate();
 		}
@@ -107,7 +105,7 @@ namespace RB::Updaters
 
 	void Updater::OnFixedUpdate()
 	{
-		if (_firstUpdaterInitialized && !_updaterIsQueued)
+		if (!_updaterIsQueued)
 		{
 			_updaterObj->OnFixedUpdate();
 		}

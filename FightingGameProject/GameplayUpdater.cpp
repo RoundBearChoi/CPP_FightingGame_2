@@ -13,7 +13,6 @@ namespace RB::Updaters
 
 		RB::Cam::CurrentCam::OnEnd();
 		RB::Controllers::CurrentControllers::OnEnd();
-		RB::Controllers::GameplayControllers::OnEnd();
 	}
 
 	void GameplayUpdater::Init()
@@ -26,8 +25,6 @@ namespace RB::Updaters
 		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
 		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::Cam::GameCamController()));
 		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
-
-		RB::Controllers::GameplayControllers::Init();
 	}
 
 	void GameplayUpdater::OnUpdate()

@@ -216,9 +216,6 @@
     <ClInclude Include="iPlayer.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>
-    <ClInclude Include="GameplayControllers.h">
-      <Filter>Source Files\Controllers</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerDebugController.h">
       <Filter>Source Files\PlayerDebug</Filter>
     </ClInclude>

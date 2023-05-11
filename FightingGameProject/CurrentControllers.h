@@ -18,7 +18,6 @@ namespace RB::Controllers
 		template<class T> static T* GetController();
 		static void UpdateAll();
 		static void FixedUpdateAll();
-		template <class T> static T* FindController();
 
 	private:
 		inline static std::vector<iController*> _vecControllers;
@@ -38,21 +37,6 @@ namespace RB::Controllers
 			if (_vecControllers[i]->GetHash() == hash)
 			{
 				return dynamic_cast<T*>(_vecControllers[i]);
-			}
-		}
-
-		return nullptr;
-	}
-
-	template<class T> T* CurrentControllers::FindController()
-	{
-		for (int i = 0; i < _vecControllers.size(); i++)
-		{
-			T* d = dynamic_cast<T*>(_vecControllers[i]);
-
-			if (d != nullptr)
-			{
-				return d;
 			}
 		}
 

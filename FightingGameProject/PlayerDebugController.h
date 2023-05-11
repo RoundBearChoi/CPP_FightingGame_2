@@ -2,19 +2,19 @@
 #include <vector>
 #include "olcPixelGameEngine.h"
 #include "GameplayControllers.h"
-#include "iPlayerDebugController.h"
 #include "iPlayer.h"
 #include "PlayerID.h"
 #include "PivotType.h"
 #include "AABB.h"
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
+#include "ControllerBase.h"
 #include "CurrentControllers.h"
 #include "PlayerController.h"
 
 namespace RB::PlayerDebug
 {
-	class PlayerDebugController : public iPlayerDebugController
+	class PlayerDebugController : public RB::Controllers::ControllerBase
 	{
 	public:
 		PlayerDebugController();

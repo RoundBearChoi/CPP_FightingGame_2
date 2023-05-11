@@ -219,7 +219,6 @@
     <ClInclude Include="CurrentControllers.h" />
     <ClInclude Include="InputController.h" />
     <ClInclude Include="iPlayer.h" />
-    <ClInclude Include="iPlayerDebugController.h" />
     <ClInclude Include="iState.h" />
     <ClInclude Include="iStateMachine.h" />
     <ClInclude Include="KeyBinding.h" />

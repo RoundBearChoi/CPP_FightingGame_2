@@ -4,7 +4,7 @@ namespace RB::PlayerDebug
 {
 	void PlayerDebugController::Init()
 	{
-		RB::Players::iPlayerController* pc = RB::Controllers::ControllerGroup::FindController<RB::Players::iPlayerController>();
+		RB::Players::iPlayerController* pc = RB::Controllers::CurrentControllers::FindController<RB::Players::iPlayerController>();
 
 		if (pc != nullptr)
 		{

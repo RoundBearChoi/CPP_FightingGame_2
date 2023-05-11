@@ -5,7 +5,7 @@
 
 namespace RB::Controllers
 {
-	class ControllerGroup
+	class CurrentControllers
 	{
 	public:
 		static void Init();
@@ -21,7 +21,7 @@ namespace RB::Controllers
 		static void _DestroyAll();
 	};
 
-	template<class T> T* ControllerGroup::FindController()
+	template<class T> T* CurrentControllers::FindController()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{

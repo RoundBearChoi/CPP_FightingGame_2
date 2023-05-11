@@ -5,7 +5,7 @@
 #include "Updater.h"
 #include "Time.h"
 #include "FixedTimer.h"
-#include "ControllerGroup.h"
+#include "CurrentControllers.h"
 
 namespace RB::Engine
 {
@@ -32,11 +32,6 @@ namespace RB::Engine
 
 		bool OnUserDestroy() override
 		{
-			//std::cout << std::endl;
-			//std::cout << "OnUserDestroy.." << std::endl;
-			//
-			//RB::Controllers::ControllerGroup::OnEnd();
-
 			return true;
 		}
 

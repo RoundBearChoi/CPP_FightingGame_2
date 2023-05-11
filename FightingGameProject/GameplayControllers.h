@@ -1,5 +1,5 @@
 #pragma once
-#include "ControllerGroup.h"
+#include "CurrentControllers.h"
 #include "iPlayerController.h"
 #include "iPlayerDebugController.h"
 #include "iPlayerAnimationController.h"
@@ -33,9 +33,9 @@ namespace RB::Controllers
 	private:
 		static void _FindAll()
 		{
-			PLAYER_CONTROLLER = ControllerGroup::FindController<RB::Players::iPlayerController>();
-			PLAYER_DEBUG_CONTROLLER = ControllerGroup::FindController<RB::PlayerDebug::iPlayerDebugController>();
-			GAMEPLAY_ANIMATION_CONTROLLER = ControllerGroup::FindController<RB::Render::iPlayerAnimationController>();
+			PLAYER_CONTROLLER = CurrentControllers::FindController<RB::Players::iPlayerController>();
+			PLAYER_DEBUG_CONTROLLER = CurrentControllers::FindController<RB::PlayerDebug::iPlayerDebugController>();
+			GAMEPLAY_ANIMATION_CONTROLLER = CurrentControllers::FindController<RB::Render::iPlayerAnimationController>();
 		}
 	};
 }

@@ -1,20 +1,18 @@
-#include "ControllerGroup.h"
+#include "CurrentControllers.h"
 
 namespace RB::Controllers
 {
-	void ControllerGroup::Init()
+	void CurrentControllers::Init()
 	{
-		//cout << "ControllerGroup::Init()" << endl;
+
 	}
 
-	void ControllerGroup::OnEnd()
+	void CurrentControllers::OnEnd()
 	{
-		//cout << "ControllerGroup::OnEnd()" << endl;
-
 		_DestroyAll();
 	}
 
-	void ControllerGroup::AddController(iController* newController)
+	void CurrentControllers::AddController(iController* newController)
 	{
 		if (newController != nullptr)
 		{
@@ -24,7 +22,7 @@ namespace RB::Controllers
 		}
 	}
 
-	void ControllerGroup::UpdateAll()
+	void CurrentControllers::UpdateAll()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{
@@ -32,7 +30,7 @@ namespace RB::Controllers
 		}
 	}
 
-	void ControllerGroup::FixedUpdateAll()
+	void CurrentControllers::FixedUpdateAll()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{
@@ -40,7 +38,7 @@ namespace RB::Controllers
 		}
 	}
 
-	void ControllerGroup::_DestroyAll()
+	void CurrentControllers::_DestroyAll()
 	{
 		for (int i = 0; i < _vecControllers.size(); i++)
 		{

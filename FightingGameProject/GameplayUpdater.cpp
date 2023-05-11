@@ -13,7 +13,7 @@ namespace RB::Updaters
 
 		RB::Input::CurrentInputController::OnEnd();
 		RB::Cam::CurrentCam::OnEnd();
-		RB::Controllers::ControllerGroup::OnEnd();
+		RB::Controllers::CurrentControllers::OnEnd();
 		RB::Controllers::GameplayControllers::OnEnd();
 	}
 
@@ -23,23 +23,23 @@ namespace RB::Updaters
 
 		RB::Cam::CurrentCam::Init();
 
-		RB::Controllers::ControllerGroup::Init();
-		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
-		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
-		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
-		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Cam::GameCamController()));
-		RB::Controllers::ControllerGroup::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
+		RB::Controllers::CurrentControllers::Init();
+		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
+		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
+		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
+		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::Cam::GameCamController()));
+		RB::Controllers::CurrentControllers::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
 
 		RB::Controllers::GameplayControllers::Init();
 	}
 
 	void GameplayUpdater::OnUpdate()
 	{
-		RB::Controllers::ControllerGroup::UpdateAll();
+		RB::Controllers::CurrentControllers::UpdateAll();
 	}
 
 	void GameplayUpdater::OnFixedUpdate()
 	{
-		RB::Controllers::ControllerGroup::FixedUpdateAll();
+		RB::Controllers::CurrentControllers::FixedUpdateAll();
 	}
 }

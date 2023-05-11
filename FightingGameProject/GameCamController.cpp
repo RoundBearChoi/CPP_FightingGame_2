@@ -2,6 +2,11 @@
 
 namespace RB::Cam
 {
+	GameCamController::GameCamController()
+	{
+		SetHash("temp");
+	}
+
 	void GameCamController::Init()
 	{
 		_gameCam.Init();

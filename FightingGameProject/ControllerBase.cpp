@@ -4,13 +4,11 @@ namespace RB::Controllers
 {
 	void ControllerBase::SetHash(std::string str)
 	{
-		//temp
-		_hash = 0;
+		_hash = std::hash<std::string>{}(str);
 	}
 
 	size_t ControllerBase::GetHash()
 	{
-		//temp
-		return 0;
+		return _hash;
 	}
 }

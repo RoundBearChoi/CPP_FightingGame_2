@@ -124,9 +124,6 @@ namespace RB::Render
 
 			if (playerSpriteID != animationSpriteID)
 			{
-				std::cout << std::endl;
-				std::cout << "player " << (int)playerID << " changed animation to: " << (int)playerSpriteID << std::endl;
-
 				DeleteAnimationObj(playerID);
 
 				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], _animationLoader.GetAnimation(playerSpriteID));

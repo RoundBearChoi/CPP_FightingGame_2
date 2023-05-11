@@ -9,7 +9,7 @@ namespace RB::Updaters
 
 	GameplayUpdater::~GameplayUpdater()
 	{
-		std::cout << "GameplayUpdater OnEnd" << std::endl;
+		std::cout << "destructing GameplayUpdater" << std::endl;
 
 		RB::Input::CurrentInputController::OnEnd();
 		RB::Cam::CurrentCam::OnEnd();

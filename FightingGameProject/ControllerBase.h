@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "iController.h"
 
 namespace RB::Controllers
@@ -10,11 +11,15 @@ namespace RB::Controllers
 		virtual ~ControllerBase() override {}
 
 	public:
-		size_t GetHash() override;
+		virtual void SetHash(std::string str);
+		virtual size_t GetHash() override;
 
 	public:
 		virtual void Init() override {};
 		virtual void OnUpdate() override {};
 		virtual void OnFixedUpdate() override {};
+
+	protected:
+		size_t _hash = 0;
 	};
 }

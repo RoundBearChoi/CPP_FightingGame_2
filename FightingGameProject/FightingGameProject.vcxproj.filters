@@ -324,9 +324,6 @@
     <ClInclude Include="PlayerAnimationController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="iPlayerAnimationController.h">
-      <Filter>Source Files\Render</Filter>
-    </ClInclude>
     <ClInclude Include="AnimationRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>

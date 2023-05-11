@@ -203,7 +203,6 @@
     <ClInclude Include="AnimationLoader.h" />
     <ClInclude Include="P0_FallDown.h" />
     <ClInclude Include="PlayerAnimationController.h" />
-    <ClInclude Include="iPlayerAnimationController.h" />
     <ClInclude Include="P0_JumpUp.h" />
     <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="AnimationRenderer.h" />

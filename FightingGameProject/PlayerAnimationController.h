@@ -1,15 +1,14 @@
-#pragma once
-#include "iPlayerAnimationController.h"
 #include "SpriteRenderer.h"
 #include "AnimationLoader.h"
 #include "PlayerAnimationObj.h"
+#include "ControllerBase.h"
 #include "CurrentControllers.h"
 #include "iPlayerController.h"
 #include "iPlayer.h"
 
 namespace RB::Render
 {
-	class PlayerAnimationController : public iPlayerAnimationController
+	class PlayerAnimationController : public RB::Controllers::ControllerBase
 	{
 	public:
 		PlayerAnimationController() = default;

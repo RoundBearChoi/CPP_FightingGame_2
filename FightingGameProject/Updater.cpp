@@ -54,13 +54,14 @@ namespace RB::Updaters
 			_updaterIsQueued = false;
 
 			delete nextUpdaterObj;
-		}
-		else
-		{
-			_updaterIsQueued = true;
 
-			_nextUpdaterObj = nextUpdaterObj;
+			return;
 		}
+
+		//finally queue if conditions are met
+		_updaterIsQueued = true;
+
+		_nextUpdaterObj = nextUpdaterObj;
 	}
 
 	void Updater::UpdateQueue()

@@ -11,7 +11,11 @@ namespace RB::Controllers
 		static void Init();
 		static void OnEnd();
 		static void AddController(iController* newController);
-		static iController* GetController(size_t hash);
+		/// <summary>
+		/// very slow!
+		/// only use this for initialization
+		/// </summary>
+		static iController* GetController(const std::type_info& ti);
 		static void UpdateAll();
 		static void FixedUpdateAll();
 		template <class T> static T* FindController();

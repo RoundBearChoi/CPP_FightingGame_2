@@ -3,8 +3,8 @@
 #include "olcPixelGameEngine.h"
 #include "iCam.h"
 #include "iController.h"
-#include "CurrentControllers.h"
 #include "InputController.h"
+#include "CurrentControllers.h"
 
 namespace RB::Cam
 {
@@ -29,5 +29,8 @@ namespace RB::Cam
 		bool _moveRight = false;
 		bool _moveUp = false;
 		bool _moveDown = false;
+
+	private:
+		RB::Input::InputController* _inputController = nullptr;
 	};
 }

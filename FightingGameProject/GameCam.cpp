@@ -9,7 +9,8 @@ namespace RB::Cam
 
 	void GameCam::Init()
 	{
-
+		RB::Controllers::iController* ic = RB::Controllers::CurrentControllers::GetController(typeid(RB::Input::InputController));
+		_inputController = dynamic_cast<RB::Input::InputController*>(ic);
 	}
 
 	void GameCam::OnUpdate()
@@ -19,15 +20,11 @@ namespace RB::Cam
 		_moveLeft = false;
 		_moveRight = false;
 
-		std::string name = typeid(RB::Input::InputController).name();
-		RB::Controllers::iController* inputController = RB::Controllers::CurrentControllers::GetController(std::hash<std::string>{}(name));
-		RB::Input::InputController* ic = dynamic_cast<RB::Input::InputController*>(inputController);
+		olc::HWButton moveUp = _inputController->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
+		olc::HWButton moveDown = _inputController->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
 
-		olc::HWButton moveUp = ic->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
-		olc::HWButton moveDown = ic->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
-
-		olc::HWButton moveLeft = ic->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
-		olc::HWButton moveRight = ic->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
+		olc::HWButton moveLeft = _inputController->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
+		olc::HWButton moveRight = _inputController->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
 
 		if (moveUp.bHeld && moveDown.bHeld)
 		{

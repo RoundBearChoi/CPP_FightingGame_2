@@ -26,5 +26,8 @@ namespace RB::PlayerStateComponents
 		olc::HWButton moveLeft;
 		olc::HWButton moveRight;
 		bool _moveForward = false;
+
+	private:
+		RB::Input::InputController* _inputController = nullptr;
 	};
 }

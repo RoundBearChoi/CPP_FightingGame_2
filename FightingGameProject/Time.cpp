@@ -15,7 +15,7 @@ namespace RB::Frames
 		_fixedDeltaTime += _deltaTime;
 	}
 
-	void Time::ClearFixedDeltaTime()
+	void Time::ResetFixedDeltaTime()
 	{
 		_fixedDeltaTime = 0.0f;
 	}

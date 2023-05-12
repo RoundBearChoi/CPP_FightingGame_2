@@ -25,7 +25,7 @@ namespace RB::Engine
 		
 			_updater.Init();
 
-			RB::Frames::Time::ClearFixedDeltaTime();
+			RB::Frames::Time::ResetFixedDeltaTime();
 
 			return true;
 		}
@@ -56,7 +56,7 @@ namespace RB::Engine
 			{
 				_updater.OnFixedUpdate();
 
-				RB::Frames::Time::ClearFixedDeltaTime();
+				RB::Frames::Time::ResetFixedDeltaTime();
 			}
 
 			return true;

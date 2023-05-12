@@ -15,7 +15,7 @@ namespace RB::Frames
 	public:
 		static void SetDeltaTime(float delta);
 		static void AddFixedDeltaTime();
-		static void ClearFixedDeltaTime();
+		static void ResetFixedDeltaTime();
 		static float GetDeltaTime();
 		static float GetFixedDeltaTime();
 	};

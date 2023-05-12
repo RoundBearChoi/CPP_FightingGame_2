@@ -161,8 +161,8 @@
     <ClCompile Include="PlayerCollider.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="Controllers.cpp" />
-    <ClCompile Include="GameCam.cpp" />
-    <ClCompile Include="GameCamController.cpp" />
+    <ClCompile Include="CamObj.cpp" />
+    <ClCompile Include="CamController.cpp" />
     <ClCompile Include="InputController.cpp" />
     <ClCompile Include="KeyBinding.cpp" />
     <ClCompile Include="LoadedSprite.cpp" />
@@ -209,8 +209,8 @@
     <ClInclude Include="PlayerCollider.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="CurrentCam.h" />
-    <ClInclude Include="GameCam.h" />
-    <ClInclude Include="GameCamController.h" />
+    <ClInclude Include="CamObj.h" />
+    <ClInclude Include="CamController.h" />
     <ClInclude Include="iCam.h" />
     <ClInclude Include="PivotType.h" />
     <ClInclude Include="SpriteID.h" />

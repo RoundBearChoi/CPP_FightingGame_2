@@ -1,18 +1,18 @@
-#include "GameCam.h"
+#include "CamObj.h"
 
 namespace RB::Cam
 {
-	olc::vi2d GameCam::GetPosition()
+	olc::vi2d CamObj::GetPosition()
 	{
 		return _position;
 	}
 
-	void GameCam::Init()
+	void CamObj::Init()
 	{
 		_inputController = RB::Controllers::Controllers::GetController<RB::Input::InputController>();
 	}
 
-	void GameCam::OnUpdate()
+	void CamObj::OnUpdate()
 	{
 		_moveUp = false;
 		_moveDown = false;
@@ -52,7 +52,7 @@ namespace RB::Cam
 		}
 	}
 
-	void GameCam::OnFixedUpdate()
+	void CamObj::OnFixedUpdate()
 	{
 		if (_moveUp)
 		{

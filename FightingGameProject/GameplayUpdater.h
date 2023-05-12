@@ -7,7 +7,7 @@
 #include "InputController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
-#include "GameCamController.h"
+#include "CamController.h"
 #include "PlayerAnimationController.h"
 
 

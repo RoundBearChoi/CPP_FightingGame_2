@@ -103,10 +103,10 @@
     <ClCompile Include="P0_MoveBack.cpp">
       <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
-    <ClCompile Include="GameCamController.cpp">
+    <ClCompile Include="CamController.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
-    <ClCompile Include="GameCam.cpp">
+    <ClCompile Include="CamObj.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
     <ClCompile Include="SpriteLoader.cpp">
@@ -261,10 +261,10 @@
     <ClInclude Include="P0_MoveBack.h">
       <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
-    <ClInclude Include="GameCamController.h">
+    <ClInclude Include="CamController.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
-    <ClInclude Include="GameCam.h">
+    <ClInclude Include="CamObj.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
     <ClInclude Include="SpriteLoader.h">

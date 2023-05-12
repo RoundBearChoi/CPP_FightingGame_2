@@ -4,11 +4,13 @@ namespace RB::Updaters
 {
 	GameplayUpdater::GameplayUpdater()
 	{
+		std::cout << std::endl;
 		std::cout << "constructing GameplayUpdater" << std::endl;
 	}
 
 	GameplayUpdater::~GameplayUpdater()
 	{
+		std::cout << std::endl;
 		std::cout << "destructing GameplayUpdater" << std::endl;
 
 		RB::Controllers::Controllers::OnEnd();

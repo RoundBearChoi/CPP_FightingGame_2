@@ -4,12 +4,16 @@ namespace RB::Updaters
 {
 	HurtBoxEditorUpdater::HurtBoxEditorUpdater()
 	{
+		std::cout << std::endl;
 		std::cout << "constructing HurtBoxEditorUpdater" << std::endl;
 	}
 
 	HurtBoxEditorUpdater::~HurtBoxEditorUpdater()
 	{
+		std::cout << std::endl;
 		std::cout << "destructing HurtBoxEditorUpdater" << std::endl;
+
+		RB::Controllers::Controllers::OnEnd();
 	}
 
 	void HurtBoxEditorUpdater::Init()

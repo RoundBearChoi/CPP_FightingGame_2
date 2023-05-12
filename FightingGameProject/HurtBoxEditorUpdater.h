@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include "iUpdaterObj.h"
+#include "Controllers.h"
+#include "CamController.h"
 
 namespace RB::Updaters
 {

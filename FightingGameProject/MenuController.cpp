@@ -19,8 +19,7 @@ namespace RB::HBE::Menu
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "WASD : move box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "Q : enlarge box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, "E : shrink box", olc::WHITE);
-
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "ENTER : save data", olc::WHITE);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "ENTER : save data", olc::WHITE);
 	}
 
 	void MenuController::OnFixedUpdate()

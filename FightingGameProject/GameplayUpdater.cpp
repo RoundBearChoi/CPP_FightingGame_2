@@ -17,6 +17,7 @@ namespace RB::Updaters
 	void GameplayUpdater::Init()
 	{
 		RB::Controllers::Controllers::Init();
+
 		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
 		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
 		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));

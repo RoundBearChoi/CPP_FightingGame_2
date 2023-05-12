@@ -97,6 +97,12 @@ namespace RB::HBE::Menu
 
 		assert(b_5th->next == NULL);
 
+		std::stringstream str5;
+		str5 << n5->number;
+
+		float floatValue;
+		str5 >> floatValue;
+
 		/* Don't forget to free the one allocation! */
 		free(root);
 	}

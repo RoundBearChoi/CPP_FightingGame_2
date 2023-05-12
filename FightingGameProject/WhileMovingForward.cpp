@@ -40,15 +40,16 @@ namespace RB::PlayerStateComponents
 	{
 		if (_keepMoving)
 		{
-			int movement = 0;
+			int movement = 3;
 
 			if (_ownerPlayer->OtherPlayerIsOnRightSide())
 			{
-				movement = 2;
+				//normal movement
 			}
 			else
 			{
-				movement = -2;
+				//reverse movement
+				movement *= -1;
 			}
 
 			_ownerPlayer->Move(olc::vi2d{ movement, 0 });

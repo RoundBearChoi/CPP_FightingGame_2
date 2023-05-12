@@ -76,17 +76,19 @@ namespace RB::HBE::Menu
 		assert(0 == strcmp(string->string, "foo"));
 		assert(string->string_size == strlen("foo"));
 
+		std::string s(string->string);
+
 		struct json_array_element_s* b_4th = b_3rd->next;
 		assert(b_4th->next == NULL);
 		
 		struct json_number_s* n = json_value_as_number(b_4th->value);
 		assert(0 == strcmp(n->number, "123"));
 
-		std::stringstream strValue;
-		strValue << n->number;
+		std::stringstream str4;
+		str4 << n->number;
 
 		int intValue;
-		strValue >> intValue;
+		str4 >> intValue;
 
 		/* Don't forget to free the one allocation! */
 		free(root);

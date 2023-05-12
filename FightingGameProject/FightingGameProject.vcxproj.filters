@@ -50,7 +50,7 @@
     <Filter Include="Source Files\HurtBox">
       <UniqueIdentifier>{fe1b8a65-7c77-4239-b315-58179c8028ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\HBEMenu">
+    <Filter Include="Source Files\HBE::Menu">
       <UniqueIdentifier>{ce12ffd0-f884-40f0-ad74-819e6fba4248}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -179,7 +179,7 @@
       <Filter>Source Files\Controllers</Filter>
     </ClCompile>
     <ClCompile Include="MenuController.cpp">
-      <Filter>Source Files\HBEMenu</Filter>
+      <Filter>Source Files\HBE::Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -364,7 +364,7 @@
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
     <ClInclude Include="MenuController.h">
-      <Filter>Source Files\HBEMenu</Filter>
+      <Filter>Source Files\HBE::Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

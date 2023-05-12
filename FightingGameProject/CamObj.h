@@ -16,6 +16,7 @@ namespace RB::Cam
 
 	public:
 		olc::vi2d GetPosition() override;
+		olc::vi2d GetRelativePosition(olc::vi2d pos) override;
 
 	public:
 		void Init();
@@ -23,7 +24,7 @@ namespace RB::Cam
 		void OnFixedUpdate();
 
 	private:
-		olc::vi2d _position = { -427, -427 };
+		olc::vi2d _camPosition = { -427, -427 };
 		int _moveSpeed = 2;
 		bool _moveLeft = false;
 		bool _moveRight = false;

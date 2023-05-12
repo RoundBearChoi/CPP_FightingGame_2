@@ -4,7 +4,14 @@ namespace RB::Cam
 {
 	olc::vi2d CamObj::GetPosition()
 	{
-		return _position;
+		return _camPosition;
+	}
+
+	olc::vi2d CamObj::GetRelativePosition(olc::vi2d pos)
+	{
+		olc::vi2d rel = pos - _camPosition;
+
+		return rel;
 	}
 
 	void CamObj::Init()
@@ -56,22 +63,22 @@ namespace RB::Cam
 	{
 		if (_moveUp)
 		{
-			_position.y -= _moveSpeed;
+			_camPosition.y -= _moveSpeed;
 		}
 
 		if (_moveDown)
 		{
-			_position.y += _moveSpeed;
+			_camPosition.y += _moveSpeed;
 		}
 
 		if (_moveLeft)
 		{
-			_position.x -= _moveSpeed;
+			_camPosition.x -= _moveSpeed;
 		}
 
 		if (_moveRight)
 		{
-			_position.x += _moveSpeed;
+			_camPosition.x += _moveSpeed;
 		}
 	}
 }

@@ -369,5 +369,8 @@
     <ClInclude Include="json.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="jsonExample.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@
 #include "Time.h"
 #include "FixedTimer.h"
 #include "ActiveControllers.h"
+#include "jsonExample.h"
 
 namespace RB::Engine
 {
@@ -26,6 +27,9 @@ namespace RB::Engine
 			_updater.Init();
 
 			RB::Frames::Time::ResetFixedDeltaTime();
+
+			RB::jsonExample e;
+			e.example();
 
 			return true;
 		}

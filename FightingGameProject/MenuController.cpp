@@ -32,7 +32,7 @@ namespace RB::HBE::Menu
 	{
 		//'{"a" : true, "b" : [false, null, "foo", 123]}'
 
-		const char json[] = "{\"a\" : true, \"b\" : [false, null, \"foo\", 123]}";
+		const char json[] = "{\"a\" : true, \"b\" : [false, null, \"foo\", 123, 3.14]}";
 		struct json_value_s* root = json_parse(json, strlen(json));
 
 		struct json_object_s* object = json_value_as_object(root);
@@ -56,7 +56,7 @@ namespace RB::HBE::Menu
 		assert(b_name->string_size == strlen("b"));
 
 		struct json_array_s* array = json_value_as_array(b->value);
-		assert(array->length == 4);
+		assert(array->length == 5);
 
 		struct json_array_element_s* b_1st = array->start;
 
@@ -79,16 +79,23 @@ namespace RB::HBE::Menu
 		std::string s(string->string);
 
 		struct json_array_element_s* b_4th = b_3rd->next;
-		assert(b_4th->next == NULL);
+		assert(b_4th->next != NULL);
 		
-		struct json_number_s* n = json_value_as_number(b_4th->value);
-		assert(0 == strcmp(n->number, "123"));
+		struct json_number_s* n4 = json_value_as_number(b_4th->value);
+		assert(0 == strcmp(n4->number, "123"));
 
 		std::stringstream str4;
-		str4 << n->number;
+		str4 << n4->number;
 
 		int intValue;
 		str4 >> intValue;
+
+		assert(b_4th->next != NULL);
+
+		struct json_array_element_s* b_5th = b_4th->next;
+		struct json_number_s* n5 = json_value_as_number(b_5th->value);
+
+		assert(b_5th->next == NULL);
 
 		/* Don't forget to free the one allocation! */
 		free(root);

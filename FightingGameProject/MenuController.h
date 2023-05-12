@@ -16,5 +16,9 @@ namespace RB::HBE::Menu
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		void example1();
+		void example2();
 	};
 }

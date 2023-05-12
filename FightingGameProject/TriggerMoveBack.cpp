@@ -4,7 +4,7 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerMoveBack::OnEnter()
 	{
-		RB::Players::PlayerController* pc = RB::Controllers::Controllers::GetController<RB::Players::PlayerController>();
+		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 		RB::Players::iPlayer* owner = pc->GetPlayerOnStateMachineID(_state->GetStateMachine()->GetID());
 
 		_moveBackDetector.Init(owner);

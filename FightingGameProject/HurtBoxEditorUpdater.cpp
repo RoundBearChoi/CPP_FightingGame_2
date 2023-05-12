@@ -13,23 +13,23 @@ namespace RB::Updaters
 		std::cout << std::endl;
 		std::cout << "destructing HurtBoxEditorUpdater" << std::endl;
 
-		RB::Controllers::Controllers::OnEnd();
+		RB::Controllers::ActiveControllers::OnEnd();
 	}
 
 	void HurtBoxEditorUpdater::Init()
 	{
-		RB::Controllers::Controllers::Init();
+		RB::Controllers::ActiveControllers::Init();
 
-		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
 	}
 
 	void HurtBoxEditorUpdater::OnUpdate()
 	{
-		RB::Controllers::Controllers::UpdateAll();
+		RB::Controllers::ActiveControllers::UpdateAll();
 	}
 
 	void HurtBoxEditorUpdater::OnFixedUpdate()
 	{
-		RB::Controllers::Controllers::FixedUpdateAll();
+		RB::Controllers::ActiveControllers::FixedUpdateAll();
 	}
 }

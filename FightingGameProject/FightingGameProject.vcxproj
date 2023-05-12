@@ -160,7 +160,7 @@
     <ClCompile Include="AnimationRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
-    <ClCompile Include="Controllers.cpp" />
+    <ClCompile Include="ActiveControllers.cpp" />
     <ClCompile Include="CamObj.cpp" />
     <ClCompile Include="CamController.cpp" />
     <ClCompile Include="InputController.cpp" />
@@ -214,7 +214,7 @@
     <ClInclude Include="PivotType.h" />
     <ClInclude Include="SpriteID.h" />
     <ClInclude Include="iController.h" />
-    <ClInclude Include="Controllers.h" />
+    <ClInclude Include="ActiveControllers.h" />
     <ClInclude Include="InputController.h" />
     <ClInclude Include="iPlayer.h" />
     <ClInclude Include="iState.h" />

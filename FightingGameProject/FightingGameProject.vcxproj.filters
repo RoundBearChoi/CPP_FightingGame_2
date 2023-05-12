@@ -55,7 +55,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Controllers.cpp">
+    <ClCompile Include="ActiveControllers.cpp">
       <Filter>Source Files\Controllers</Filter>
     </ClCompile>
     <ClCompile Include="PlayerController.cpp">
@@ -183,7 +183,7 @@
     <ClInclude Include="olcPixelGameEngine.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Controllers.h">
+    <ClInclude Include="ActiveControllers.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">

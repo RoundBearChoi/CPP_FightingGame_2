@@ -13,27 +13,27 @@ namespace RB::Updaters
 		std::cout << std::endl;
 		std::cout << "destructing GameplayUpdater" << std::endl;
 
-		RB::Controllers::Controllers::OnEnd();
+		RB::Controllers::ActiveControllers::OnEnd();
 	}
 
 	void GameplayUpdater::Init()
 	{
-		RB::Controllers::Controllers::Init();
+		RB::Controllers::ActiveControllers::Init();
 
-		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
-		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
-		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
-		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
-		RB::Controllers::Controllers::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Players::PlayerController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
 	}
 
 	void GameplayUpdater::OnUpdate()
 	{
-		RB::Controllers::Controllers::UpdateAll();
+		RB::Controllers::ActiveControllers::UpdateAll();
 	}
 
 	void GameplayUpdater::OnFixedUpdate()
 	{
-		RB::Controllers::Controllers::FixedUpdateAll();
+		RB::Controllers::ActiveControllers::FixedUpdateAll();
 	}
 }

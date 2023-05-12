@@ -9,7 +9,7 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::Init()
 	{
-		_playerController = RB::Controllers::Controllers::GetController<RB::Players::PlayerController>();
+		_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 
 		_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
 		_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2));

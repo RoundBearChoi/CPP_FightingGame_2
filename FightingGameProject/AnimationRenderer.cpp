@@ -6,7 +6,7 @@ namespace RB::Render
 	{
 		_animationSpecs = specs;
 
-		_camController = RB::Controllers::Controllers::GetController<RB::Cam::CamController>();
+		_camController = RB::Controllers::ActiveControllers::GetController<RB::Cam::CamController>();
 	}
 
 	const AnimationSpecs& AnimationRenderer::GetAnimationSpecs()

@@ -16,7 +16,7 @@ namespace RB::Render
 	{
 		if (_camController == nullptr)
 		{
-			_camController = RB::Controllers::Controllers::GetController<RB::Cam::CamController>();
+			_camController = RB::Controllers::ActiveControllers::GetController<RB::Cam::CamController>();
 
 			return;
 		}

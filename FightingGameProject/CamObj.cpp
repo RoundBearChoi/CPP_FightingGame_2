@@ -23,7 +23,7 @@ namespace RB::Cam
 	{
 		if (_inputController == nullptr)
 		{
-			_inputController = RB::Controllers::Controllers::GetController<RB::Input::InputController>();
+			_inputController = RB::Controllers::ActiveControllers::GetController<RB::Input::InputController>();
 
 			return;
 		}

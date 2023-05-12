@@ -9,7 +9,7 @@ namespace RB::P0_States
 
 	void P0_FallDown::OnEnter()
 	{
-		RB::Players::PlayerController* pc = RB::Controllers::Controllers::GetController<RB::Players::PlayerController>();
+		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachine->GetID());
 
 		olc::vf2d fallMomentum = olc::vf2d{ _ownerPlayer->GetAirMomentum().x , 6.0f };

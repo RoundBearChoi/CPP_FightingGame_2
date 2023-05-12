@@ -82,6 +82,12 @@ namespace RB::HBE::Menu
 		struct json_number_s* n = json_value_as_number(b_4th->value);
 		assert(0 == strcmp(n->number, "123"));
 
+		std::stringstream strValue;
+		strValue << n->number;
+
+		int intValue;
+		strValue >> intValue;
+
 		/* Don't forget to free the one allocation! */
 		free(root);
 	}

@@ -366,5 +366,8 @@
     <ClInclude Include="MenuController.h">
       <Filter>Source Files\HBE::Menu</Filter>
     </ClInclude>
+    <ClInclude Include="json.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

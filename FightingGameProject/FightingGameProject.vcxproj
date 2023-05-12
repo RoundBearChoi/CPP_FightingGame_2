@@ -193,6 +193,7 @@
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="ControllerBase.h" />
+    <ClInclude Include="json.h" />
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="HurtBoxData.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />

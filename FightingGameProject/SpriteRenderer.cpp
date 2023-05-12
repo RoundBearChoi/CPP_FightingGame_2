@@ -4,7 +4,7 @@ namespace RB::Render
 {
 	void SpriteRenderer::Init()
 	{
-
+		
 	}
 
 	void SpriteRenderer::LoadSprite(std::string path, RB::Sprites::SpriteID spriteID)
@@ -14,6 +14,13 @@ namespace RB::Render
 
 	void SpriteRenderer::RenderSprite(RB::Sprites::SpriteID spriteID, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType)
 	{
+		if (_camController == nullptr)
+		{
+			_camController = RB::Controllers::Controllers::GetController<RB::Cam::CamController>();
+
+			return;
+		}
+
 		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(spriteID);
 
 		olc::vf2d half = widthHeight * 0.5f;
@@ -39,12 +46,9 @@ namespace RB::Render
 			};
 		}
 
-		if (RB::Cam::CurrentCam::CamExists())
+		for (int i = 0; i < points.size(); i++)
 		{
-			for (int i = 0; i < points.size(); i++)
-			{
-				points[i] = RB::Cam::CurrentCam::GetRelativePos(points[i]);
-			}
+			points[i] = _camController->GetCamObj()->GetRelativePosition(points[i]);
 		}
 
 		olc::Decal* decal = loadedSprite->GetDecal();

@@ -2,9 +2,10 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "SpriteID.h"
-#include "CurrentCam.h"
 #include "AnimationRenderSettings.h"
 #include "AnimationSpecs.h"
+#include "Controllers.h"
+#include "CamController.h"
 
 namespace RB::Render
 {
@@ -20,5 +21,8 @@ namespace RB::Render
 
 	private:
 		AnimationSpecs _animationSpecs;
+
+	private:
+		RB::Cam::CamController* _camController = nullptr;
 	};
 }

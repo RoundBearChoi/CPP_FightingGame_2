@@ -16,11 +16,18 @@ namespace RB::Cam
 
 	void CamObj::Init()
 	{
-		_inputController = RB::Controllers::Controllers::GetController<RB::Input::InputController>();
+
 	}
 
 	void CamObj::OnUpdate()
 	{
+		if (_inputController == nullptr)
+		{
+			_inputController = RB::Controllers::Controllers::GetController<RB::Input::InputController>();
+
+			return;
+		}
+
 		_moveUp = false;
 		_moveDown = false;
 		_moveLeft = false;

@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "CurrentCam.h"
 #include "SpriteLoader.h"
 #include "SpriteID.h"
 #include "LoadedSprite.h"
 #include "PivotType.h"
+#include "CamController.h"
 
 namespace RB::Render
 {
@@ -25,5 +25,8 @@ namespace RB::Render
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;
+
+	private:
+		RB::Cam::CamController* _camController = nullptr;
 	};
 }

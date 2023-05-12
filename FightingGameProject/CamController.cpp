@@ -10,8 +10,6 @@ namespace RB::Cam
 	void CamController::Init()
 	{
 		_camObj.Init();
-
-		RB::Cam::CurrentCam::SetCurrentCam(&_camObj);
 	}
 
 	void CamController::OnUpdate()
@@ -22,5 +20,10 @@ namespace RB::Cam
 	void CamController::OnFixedUpdate()
 	{
 		_camObj.OnFixedUpdate();
+	}
+
+	CamObj* CamController::GetCamObj()
+	{
+		return &_camObj;
 	}
 }

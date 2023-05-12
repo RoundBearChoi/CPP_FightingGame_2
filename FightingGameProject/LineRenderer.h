@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "CurrentCam.h"
+#include "CamController.h"
 
 namespace RB::Render
 {
@@ -14,5 +14,8 @@ namespace RB::Render
 	public:
 		void Init();
 		void RenderLine(olc::vf2d p1, olc::vf2d p2, olc::Pixel tint);
+
+	private:
+		RB::Cam::CamController* _camController = nullptr;
 	};
 }

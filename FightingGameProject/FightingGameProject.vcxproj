@@ -208,7 +208,6 @@
     <ClInclude Include="AnimationRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />
     <ClInclude Include="SpriteRenderer.h" />
-    <ClInclude Include="CurrentCam.h" />
     <ClInclude Include="CamObj.h" />
     <ClInclude Include="CamController.h" />
     <ClInclude Include="iCam.h" />

@@ -2,7 +2,6 @@
 #include"olcPixelGameEngine.h"
 #include "ControllerBase.h"
 #include "CamObj.h"
-#include "CurrentCam.h"
 
 namespace RB::Cam
 {
@@ -16,6 +15,9 @@ namespace RB::Cam
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	public:
+		CamObj* GetCamObj();
 
 	private:
 		CamObj _camObj;

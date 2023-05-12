@@ -5,6 +5,8 @@ namespace RB::Render
 	AnimationRenderer::AnimationRenderer(AnimationSpecs specs)
 	{
 		_animationSpecs = specs;
+
+		_camController = RB::Controllers::Controllers::GetController<RB::Cam::CamController>();
 	}
 
 	const AnimationSpecs& AnimationRenderer::GetAnimationSpecs()
@@ -23,13 +25,10 @@ namespace RB::Render
 
 		olc::vi2d screenPos = renderSettings.mWorldPos;
 
-		if (RB::Cam::CurrentCam::CamExists())
-		{
-			screenPos = RB::Cam::CurrentCam::GetRelativePos(renderSettings.mWorldPos);
-		}
+		screenPos = _camController->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
-		float x = (float)screenPos.x;// +renderSettings.mRenderOffset.x;
-		float y = (float)screenPos.y;// +renderSettings.mRenderOffset.y;
+		float x = (float)screenPos.x;
+		float y = (float)screenPos.y;
 
 		//temp
 		float width = renderSettings.mRenderSize.x;

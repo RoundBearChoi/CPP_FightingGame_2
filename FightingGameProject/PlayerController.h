@@ -11,10 +11,6 @@ namespace RB::Players
 {
 	class PlayerController : public RB::Controllers::ControllerBase
 	{
-	private:
-		Player _player1;
-		Player _player2;
-
 	public:
 		PlayerController();
 		~PlayerController() override;
@@ -27,5 +23,9 @@ namespace RB::Players
 	public:
 		iPlayer* GetPlayerOnID(PlayerID id);
 		iPlayer* GetPlayerOnStateMachineID(int id);
+
+	private:
+		Player _player1;
+		Player _player2;
 	};
 }

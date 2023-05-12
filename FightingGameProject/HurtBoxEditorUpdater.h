@@ -3,6 +3,7 @@
 #include "iUpdaterObj.h"
 #include "ActiveControllers.h"
 #include "CamController.h"
+#include "MenuController.h"
 
 namespace RB::Updaters
 {

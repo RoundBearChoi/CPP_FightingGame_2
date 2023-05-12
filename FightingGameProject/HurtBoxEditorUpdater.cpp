@@ -21,6 +21,7 @@ namespace RB::Updaters
 		RB::Controllers::ActiveControllers::Init();
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBE::Menu::MenuController()));
 	}
 
 	void HurtBoxEditorUpdater::OnUpdate()

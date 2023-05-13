@@ -2,12 +2,12 @@
 
 namespace RB::HurtBox
 {
-	void HurtBoxDataLoader::Init()
+	void HurtBoxSpecsLoader::Init()
 	{
 		SaveSample();
 		LoadSample();
 
-		json_value_s* root = LoadRoot("HurtBoxData/Sample.HurtBoxData");
+		json_value_s* root = LoadRoot("HurtBoxSpecs/Sample.HurtBoxSpecs");
 		json_array_s* arr = json_value_as_array(root);
 		size_t length = arr->length;
 
@@ -26,7 +26,7 @@ namespace RB::HurtBox
 		free(root);
 	}
 
-	json_value_s* HurtBoxDataLoader::LoadRoot(std::string path)
+	json_value_s* HurtBoxSpecsLoader::LoadRoot(std::string path)
 	{
 		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
 
@@ -37,7 +37,7 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	std::vector<HurtBoxSpecs> HurtBoxDataLoader::ParseData(json_value_s* root, size_t frame)
+	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(json_value_s* root, size_t frame)
 	{
 		struct json_array_s* whole = json_value_as_array(root);
 		json_array_element_s* element = whole->start;
@@ -69,9 +69,9 @@ namespace RB::HurtBox
 		return std::vector<HurtBoxSpecs>{};
 	}
 
-	void HurtBoxDataLoader::LoadSample()
+	void HurtBoxSpecsLoader::LoadSample()
 	{
-		std::string loaded = RB::JSON::JGetter::LoadJSONFile("HurtBoxData/Sample.HurtBoxData");
+		std::string loaded = RB::JSON::JGetter::LoadJSONFile("HurtBoxSpecs/Sample.HurtBoxSpecs");
 		const char* json = loaded.c_str();
 
 		struct json_value_s* root = json_parse(json, strlen(json));
@@ -95,9 +95,9 @@ namespace RB::HurtBox
 		free(root);
 	}
 
-	void HurtBoxDataLoader::SaveSample()
+	void HurtBoxSpecsLoader::SaveSample()
 	{
-		std::string path = "HurtBoxData/Sample.HurtBoxData";
+		std::string path = "HurtBoxSpecs/Sample.HurtBoxSpecs";
 
 		std::ofstream file(path);
 
@@ -178,7 +178,7 @@ namespace RB::HurtBox
 		}
 	}
 
-	HurtBoxSpecs HurtBoxDataLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)
+	HurtBoxSpecs HurtBoxSpecsLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)
 	{
 		int count = 0;
 

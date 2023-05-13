@@ -11,11 +11,11 @@
 
 namespace RB::HurtBox
 {
-	class HurtBoxDataLoader
+	class HurtBoxSpecsLoader
 	{
 	public:
-		HurtBoxDataLoader() = default;
-		~HurtBoxDataLoader() = default;
+		HurtBoxSpecsLoader() = default;
+		~HurtBoxSpecsLoader() = default;
 
 	public:
 		void Init();

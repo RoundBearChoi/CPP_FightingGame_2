@@ -16,6 +16,6 @@ namespace RB::HurtBox
 		void OnFixedUpdate() override;
 
 	private:
-		HurtBoxDataLoader _loader;
+		HurtBoxSpecsLoader _loader;
 	};
 }

@@ -1,0 +1,4 @@
+{
+"a" : true,
+"b" : [false, null, "foo", 123, 3.14]
+}

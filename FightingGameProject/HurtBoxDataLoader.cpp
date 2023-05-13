@@ -30,26 +30,14 @@ namespace RB::HurtBox
 		json_object_element_s* positionElement = RB::JSON::JGetter::GetFirstElement(*object, "position");
 		json_object_element_s* sizeElement = RB::JSON::JGetter::GetNextElement(*positionElement, "size");
 
-		//struct json_object_element_s* posElement = object->start;
-		//struct json_string_s* posName = posElement->name;
+		struct json_array_s* posArray = json_value_as_array(positionElement->value);
+		struct json_array_s* sizeArray = json_value_as_array(sizeElement->value);
 
-		//struct json_array_s* posArray = json_value_as_array(posElement->value);
-		//struct json_array_element_s* xElement = posArray->start;
-		//struct json_array_element_s* yElement = xElement->next;
-		//struct json_number_s* xNumber = json_value_as_number(xElement->value);
-		//struct json_number_s* yNumber = json_value_as_number(yElement->value);
-		//
-		//std::stringstream xStringStream;
-		//std::stringstream yStringStream;
-		//
-		//xStringStream << xNumber->number;
-		//yStringStream << yNumber->number;
-		//
-		//int x;
-		//int y;
-		//
-		//xStringStream >> x;
-		//yStringStream >> y;
+		struct json_array_element_s* posXElement = RB::JSON::JGetter::GetFirstArrayElement(*posArray);
+		struct json_array_element_s* posYElement = RB::JSON::JGetter::GetNextArrayElement(*posXElement);
+
+		int x = RB::JSON::JGetter::GetArrayElementInt(*posXElement);
+		int y = RB::JSON::JGetter::GetArrayElementInt(*posYElement);
 
 		free(root);
 	}

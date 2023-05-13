@@ -40,5 +40,31 @@ namespace RB::JSON
 
 			return nullptr;
 		}
+
+		static json_array_element_s* GetFirstArrayElement(const json_array_s& arr)
+		{
+			json_array_element_s* firstElement = arr.start;
+
+			return firstElement;
+		}
+
+		static int GetArrayElementInt(const json_array_element_s& element)
+		{
+			struct json_number_s* number = json_value_as_number(element.value);
+
+			std::stringstream stream;
+			stream << number->number;
+			int result = 0;
+			stream >> result;
+
+			return result;
+		}
+
+		static json_array_element_s* GetNextArrayElement(const json_array_element_s& element)
+		{
+			json_array_element_s* nextElement = element.next;
+
+			return nextElement;
+		}
 	};
 }

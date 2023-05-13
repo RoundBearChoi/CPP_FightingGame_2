@@ -50,10 +50,12 @@ namespace RB::JSON
 		static int GetInt_FromElement(const json_object_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
+
 			std::stringstream stream;
 			stream << number->number;
 			int result = 0;
 			stream >> result;
+
 			return result;
 		}
 

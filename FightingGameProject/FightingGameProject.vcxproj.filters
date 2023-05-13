@@ -387,5 +387,8 @@
     <ClInclude Include="HurtBoxDataController.h">
       <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
+    <ClInclude Include="JGetter.h">
+      <Filter>Source Files\JSON</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -20,13 +20,10 @@ namespace RB::HurtBox
 		void Init();
 
 	public:
-		void LoadSample();
-		void SaveSample();
 		void LoadSample2();
 		void SaveSample2();
 
 	public:
-		HurtBoxData GetHurtBoxData_FromSample(const json_object_s&, int index);
-		HurtBoxData GetHurtBoxData_FromSample2(const json_array_s& array, int index);
+		HurtBoxData GetHurtBoxData(const json_array_s& array, size_t index);
 	};
 }

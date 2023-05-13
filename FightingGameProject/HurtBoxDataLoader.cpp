@@ -4,8 +4,43 @@ namespace RB::HurtBox
 {
 	void HurtBoxDataLoader::Init()
 	{
-		SaveSample();
-		LoadSample();
+		//SaveSample();
+		//LoadSample();
+
+		std::vector<HurtBoxData> vec;
+		LoadData("HurtBoxData/Sample.HurtBoxData", 2, vec);
+	}
+
+	void HurtBoxDataLoader::LoadData(std::string path, int frame, std::vector<HurtBoxData> &vec)
+	{
+		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
+		const char* json = loaded.c_str();
+
+		struct json_value_s* root = json_parse(json, strlen(json));
+
+		struct json_array_s* whole = json_value_as_array(root);
+
+		json_array_element_s* element = whole->start;
+
+		int count = 0;
+
+		while (element != nullptr)
+		{
+			if (count == frame)
+			{
+				struct json_array_s* arr = json_value_as_array(element->value);
+
+				for (size_t i = 0; i < arr->length; i++)
+				{
+					HurtBoxData data = GetHurtBoxData(*arr, i);
+
+					vec.push_back(data);
+				}
+			}
+
+			count++;
+			element = element->next;
+		}
 	}
 
 	void HurtBoxDataLoader::LoadSample()
@@ -42,6 +77,7 @@ namespace RB::HurtBox
 
 		if (file.is_open())
 		{
+			//start of whole array
 			file << "[" << std::endl;
 
 			//frame 0
@@ -94,9 +130,29 @@ namespace RB::HurtBox
 			file << "\"height\" : 4.5" << std::endl;
 			file << "}" << std::endl;
 			
+			file << "]," << std::endl;
+
+			//frame 2
+			file << "[" << std::endl;
+
+			file << "{" << std::endl;
+			file << "\"posX\" : 10," << std::endl;
+			file << "\"posY\" : 20," << std::endl;
+			file << "\"width\" : 1.111," << std::endl;
+			file << "\"height\" : 2.222" << std::endl;
+			file << "}," << std::endl;
+
+			file << "{" << std::endl;
+			file << "\"posX\" : 30," << std::endl;
+			file << "\"posY\" : 40," << std::endl;
+			file << "\"width\" : 3.333," << std::endl;
+			file << "\"height\" : 4.444" << std::endl;
+			file << "}" << std::endl;
+
 			file << "]" << std::endl;
 
-			file << "]";
+			//end of whole array
+			file << "]"; 
 
 			file.flush();
 			file.close();

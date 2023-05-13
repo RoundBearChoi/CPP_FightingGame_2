@@ -6,7 +6,7 @@
 #include <vector>
 #include "json.h"
 #include "JGetter.h"
-#include "HurtBoxData.h"
+#include "HurtBoxSpecs.h"
 #include "HurtBoxDataSet.h"
 
 namespace RB::HurtBox
@@ -25,13 +25,13 @@ namespace RB::HurtBox
 		/// make sure to free root after use
 		/// </summary>
 		json_value_s* LoadRoot(std::string path);
-		std::vector<HurtBoxData> ParseData(json_value_s* root, size_t frame);
+		std::vector<HurtBoxSpecs> ParseData(json_value_s* root, size_t frame);
 
 	public:
 		void LoadSample();
 		void SaveSample();
 
 	public:
-		HurtBoxData GetHurtBoxData(const json_array_s& array, size_t index);
+		HurtBoxSpecs GetHurtBoxSpecs(const json_array_s& array, size_t index);
 	};
 }

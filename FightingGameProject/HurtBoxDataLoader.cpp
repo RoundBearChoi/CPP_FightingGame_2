@@ -16,7 +16,7 @@ namespace RB::HurtBox
 
 		for (size_t i = 0; i < length; i++)
 		{
-			std::vector<HurtBoxData> vec = ParseData(root, i);
+			std::vector<HurtBoxSpecs> vec = ParseData(root, i);
 
 			HurtBoxDataSet set{ RB::Sprites::SpriteID::NONE, vec, i };
 
@@ -37,7 +37,7 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	std::vector<HurtBoxData> HurtBoxDataLoader::ParseData(json_value_s* root, size_t frame)
+	std::vector<HurtBoxSpecs> HurtBoxDataLoader::ParseData(json_value_s* root, size_t frame)
 	{
 		struct json_array_s* whole = json_value_as_array(root);
 		json_array_element_s* element = whole->start;
@@ -50,12 +50,12 @@ namespace RB::HurtBox
 			{
 				struct json_array_s* arr = json_value_as_array(element->value);
 
-				std::vector<HurtBoxData> vec;
+				std::vector<HurtBoxSpecs> vec;
 				vec.reserve(arr->length);
 
 				for (size_t i = 0; i < arr->length; i++)
 				{
-					HurtBoxData data = GetHurtBoxData(*arr, i);
+					HurtBoxSpecs data = GetHurtBoxSpecs(*arr, i);
 					vec.push_back(data);
 				}
 
@@ -66,7 +66,7 @@ namespace RB::HurtBox
 			element = element->next;
 		}
 
-		return std::vector<HurtBoxData>{};
+		return std::vector<HurtBoxSpecs>{};
 	}
 
 	void HurtBoxDataLoader::LoadSample()
@@ -83,11 +83,11 @@ namespace RB::HurtBox
 
 		size_t count = arr->length;
 
-		std::vector<HurtBoxData> vec;
+		std::vector<HurtBoxSpecs> vec;
 		
 		for (size_t i = 0; i < count; i++)
 		{
-			HurtBoxData data = GetHurtBoxData(*arr, i);
+			HurtBoxSpecs data = GetHurtBoxSpecs(*arr, i);
 		
 			vec.push_back(data);
 		}
@@ -178,7 +178,7 @@ namespace RB::HurtBox
 		}
 	}
 
-	HurtBoxData HurtBoxDataLoader::GetHurtBoxData(const json_array_s& jArray, size_t index)
+	HurtBoxSpecs HurtBoxDataLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)
 	{
 		int count = 0;
 
@@ -200,7 +200,7 @@ namespace RB::HurtBox
 				float width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
 				float height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
 
-				HurtBoxData data{ x, y, width, height };
+				HurtBoxSpecs data{ x, y, width, height };
 
 				return data;
 			}
@@ -210,6 +210,6 @@ namespace RB::HurtBox
 			count++;
 		}
 
-		return HurtBoxData();
+		return HurtBoxSpecs();
 	}
 }

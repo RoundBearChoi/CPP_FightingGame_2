@@ -2,11 +2,11 @@
 
 namespace RB::HurtBox
 {
-	class HurtBoxData
+	class HurtBoxSpecs
 	{
 	public:
-		HurtBoxData() = default;
-		~HurtBoxData() = default;
+		HurtBoxSpecs() = default;
+		~HurtBoxSpecs() = default;
 
 		int mX = 0;
 		int mY = 0;

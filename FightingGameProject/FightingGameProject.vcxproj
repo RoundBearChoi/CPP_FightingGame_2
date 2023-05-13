@@ -202,7 +202,7 @@
     <ClInclude Include="jsonExample.h" />
     <ClInclude Include="HurtBoxDataLoader.h" />
     <ClInclude Include="MenuController.h" />
-    <ClInclude Include="HurtBoxData.h" />
+    <ClInclude Include="HurtBoxSpecs.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="TriggerJumpUp.h" />
     <ClInclude Include="WhileMovingBack.h" />

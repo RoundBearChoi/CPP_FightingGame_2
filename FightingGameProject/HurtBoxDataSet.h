@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "SpriteID.h"
-#include "HurtBoxData.h"
+#include "HurtBoxSpecs.h"
 
 namespace RB::HurtBox
 {
@@ -13,7 +13,7 @@ namespace RB::HurtBox
 
 	public:
 		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
-		std::vector<HurtBoxData> mHurtBoxData;
+		std::vector<HurtBoxSpecs> mVecSpecs;
 		size_t mFrame = 0;
 	};
 }

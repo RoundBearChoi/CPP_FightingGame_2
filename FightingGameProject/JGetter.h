@@ -26,6 +26,27 @@ namespace RB::JSON
 			return nullptr;
 		}
 
+		static json_object_element_s* GetElementN(const json_object_s& obj, int index)
+		{
+			json_object_element_s* element = obj.start;
+
+			int count = 0;
+			
+			while (element != nullptr)
+			{
+				if (count == index)
+				{
+					return element;
+				}
+
+				element = element->next;
+				
+				count++;
+			}
+
+			return nullptr;
+		}
+
 		static json_object_element_s* GetNextElement(const json_object_element_s& element, std::string name)
 		{
 			json_object_element_s* nextElement = element.next;

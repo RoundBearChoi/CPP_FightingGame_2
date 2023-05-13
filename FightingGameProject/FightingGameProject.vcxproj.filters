@@ -390,8 +390,5 @@
     <ClInclude Include="JGetter.h">
       <Filter>Source Files\JSON</Filter>
     </ClInclude>
-    <ClInclude Include="HurtBoxDataSet.h">
-      <Filter>Source Files\HurtBox</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

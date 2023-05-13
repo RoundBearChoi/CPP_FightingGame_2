@@ -14,19 +14,23 @@ namespace RB::HurtBox
 		const char* json = loaded.c_str();
 
 		struct json_value_s* root = json_parse(json, strlen(json));
-		struct json_array_s* jArray = json_value_as_array(root);
 
-		size_t count = jArray->length;
+		struct json_array_s* whole = json_value_as_array(root);
+
+		//struct json_array_s* arr = json_value_as_array(whole->start->value);
+		struct json_array_s* arr = json_value_as_array(whole->start->next->value);
+
+		size_t count = arr->length;
 
 		std::vector<HurtBoxData> vec;
-
+		
 		for (size_t i = 0; i < count; i++)
 		{
-			HurtBoxData data = GetHurtBoxData(*jArray, i);
-
+			HurtBoxData data = GetHurtBoxData(*arr, i);
+		
 			vec.push_back(data);
 		}
-
+		
 		free(root);
 	}
 
@@ -38,6 +42,8 @@ namespace RB::HurtBox
 
 		if (file.is_open())
 		{
+			file << "[" << std::endl;
+
 			file << "[" << std::endl;
 
 			file << "{" << std::endl;
@@ -67,6 +73,26 @@ namespace RB::HurtBox
 			file << "\"width\" : 7.7," << std::endl;
 			file << "\"height\" : 8.8" << std::endl;
 			file << "}" << std::endl;
+
+			file << "]," << std::endl;
+
+			file << "[" << std::endl;
+			
+			file << "{" << std::endl;
+			file << "\"posX\" : 1," << std::endl;
+			file << "\"posY\" : 2," << std::endl;
+			file << "\"width\" : 1.5," << std::endl;
+			file << "\"height\" : 2.5" << std::endl;
+			file << "}," << std::endl;
+			
+			file << "{" << std::endl;
+			file << "\"posX\" : 3," << std::endl;
+			file << "\"posY\" : 4," << std::endl;
+			file << "\"width\" : 3.5," << std::endl;
+			file << "\"height\" : 4.5" << std::endl;
+			file << "}" << std::endl;
+			
+			file << "]" << std::endl;
 
 			file << "]";
 

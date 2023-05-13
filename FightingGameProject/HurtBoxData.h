@@ -5,11 +5,11 @@
 
 namespace RB::HurtBox
 {
-	class HurtBoxDataSet
+	class HurtBoxData
 	{
 	public:
-		HurtBoxDataSet() = default;
-		~HurtBoxDataSet() = default;
+		HurtBoxData() = default;
+		~HurtBoxData() = default;
 
 	public:
 		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;

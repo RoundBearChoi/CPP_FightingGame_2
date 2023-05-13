@@ -196,7 +196,7 @@
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="HurtBoxDataController.h" />
-    <ClInclude Include="HurtBoxDataSet.h" />
+    <ClInclude Include="HurtBoxData.h" />
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="jsonExample.h" />

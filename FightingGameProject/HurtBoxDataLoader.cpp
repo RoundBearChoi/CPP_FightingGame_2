@@ -11,16 +11,16 @@ namespace RB::HurtBox
 		json_array_s* arr = json_value_as_array(root);
 		size_t length = arr->length;
 
-		std::vector<HurtBoxDataSet> vecSets;
-		vecSets.reserve(length);
+		std::vector<HurtBoxData> vecData;
+		vecData.reserve(length);
 
 		for (size_t i = 0; i < length; i++)
 		{
 			std::vector<HurtBoxSpecs> vec = ParseData(root, i);
 
-			HurtBoxDataSet set{ RB::Sprites::SpriteID::NONE, vec, i };
+			HurtBoxData data{ RB::Sprites::SpriteID::NONE, vec, i };
 
-			vecSets.push_back(set);
+			vecData.push_back(data);
 		}
 
 		free(root);

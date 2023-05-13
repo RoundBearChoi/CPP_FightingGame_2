@@ -7,7 +7,7 @@
 #include "json.h"
 #include "JGetter.h"
 #include "HurtBoxSpecs.h"
-#include "HurtBoxDataSet.h"
+#include "HurtBoxData.h"
 
 namespace RB::HurtBox
 {

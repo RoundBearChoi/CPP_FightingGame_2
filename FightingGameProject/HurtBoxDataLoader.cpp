@@ -104,6 +104,13 @@ namespace RB::HurtBox
 			file << "\"posY\" : 6," << std::endl;
 			file << "\"width\" : 5.5," << std::endl;
 			file << "\"height\" : 6.6" << std::endl;
+			file << "}," << std::endl;
+
+			file << "{" << std::endl;
+			file << "\"posX\" : 7," << std::endl;
+			file << "\"posY\" : 8," << std::endl;
+			file << "\"width\" : 7.7," << std::endl;
+			file << "\"height\" : 8.8" << std::endl;
 			file << "}" << std::endl;
 
 			file << "]" << std::endl;

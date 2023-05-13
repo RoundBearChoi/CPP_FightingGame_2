@@ -1,6 +1,6 @@
 #pragma once
 
-namespace RB::HurtbOX
+namespace RB::HurtBox
 {
 	class HurtBoxData
 	{

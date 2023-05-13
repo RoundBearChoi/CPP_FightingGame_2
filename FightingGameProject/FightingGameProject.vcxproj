@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="AirMomentum.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
+    <ClCompile Include="HurtBoxDataLoader.cpp" />
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="jsonExample.h" />
+    <ClInclude Include="HurtBoxDataLoader.h" />
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="HurtBoxData.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />

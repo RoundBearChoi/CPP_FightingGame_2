@@ -4,11 +4,11 @@ namespace RB::HurtBox
 {
 	void HurtBoxDataLoader::Init()
 	{
-		SaveSample2();
-		LoadSample2();
+		SaveSample();
+		LoadSample();
 	}
 
-	void HurtBoxDataLoader::LoadSample2()
+	void HurtBoxDataLoader::LoadSample()
 	{
 		std::string loaded = RB::JSON::JGetter::LoadJSONFile("HurtBoxData/Sample2.HurtBoxData");
 		const char* json = loaded.c_str();
@@ -30,7 +30,7 @@ namespace RB::HurtBox
 		free(root);
 	}
 
-	void HurtBoxDataLoader::SaveSample2()
+	void HurtBoxDataLoader::SaveSample()
 	{
 		std::string path = "HurtBoxData/Sample2.HurtBoxData";
 

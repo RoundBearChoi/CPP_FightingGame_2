@@ -1,19 +1,29 @@
-#pragma once
-#include <vector>
-#include "SpriteID.h"
-#include "HurtBoxData.h"
-
-namespace RB::HurtBox
-{
-	class HurtBoxDataSet
-	{
-	public:
-		HurtBoxDataSet() = default;
-		~HurtBoxDataSet() = default;
-
-	public:
-		int mFrame = 0;
-		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
-		std::vector<HurtBoxData> mHurtBoxes;
-	};
-}
+//#pragma once
+//#include <vector>
+//#include "SpriteID.h"
+//#include "HurtBoxData.h"
+//
+//namespace RB::HurtBox
+//{
+//	class HurtBoxDataSet
+//	{
+//	public:
+//		HurtBoxDataSet() = default;
+//
+//		~HurtBoxDataSet()
+//		{
+//			if (arrHurtBoxes != nullptr)
+//			{
+//				for (size_t i = 0; i < arrHurtBoxes->; i++)
+//				{
+//					delete[] arrHurtBoxes[i];
+//				}
+//			}
+//
+//		}
+//
+//	public:
+//		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
+//		HurtBoxData[] arrHurtBoxes;
+//	};
+//}

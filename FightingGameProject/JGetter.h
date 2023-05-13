@@ -11,7 +11,7 @@ namespace RB::JSON
 		~JGetter() = delete;
 
 	public:
-		static std::string GetJSONString(std::string jsonFilePath)
+		static std::string LoadJSONFile(std::string jsonFilePath)
 		{
 			std::cout << std::endl;
 			std::cout << "loading json: " << jsonFilePath << std::endl;
@@ -20,9 +20,13 @@ namespace RB::JSON
 
 			std::string loadedStr((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
 
+			std::cout << std::endl;
 			std::cout << loadedStr << std::endl;
 
 			loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
+
+			//std::cout << std::endl;
+			//std::cout << loadedStr << std::endl;
 
 			return loadedStr;
 		}

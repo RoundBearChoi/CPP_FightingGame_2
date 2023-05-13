@@ -63,6 +63,16 @@ namespace RB::HurtBox
 
 		json_object_s* obj1 = json_value_as_object(jArray->start->value);
 
+		json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementN(*obj1, 0);
+		json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementN(*obj1, 1);
+		json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj1, 2);
+		json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj1, 3);
+
+		int x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
+		int y = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
+		float width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
+		float height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
+
 		free(root);
 	}
 

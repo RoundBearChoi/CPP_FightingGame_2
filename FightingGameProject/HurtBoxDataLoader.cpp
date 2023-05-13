@@ -46,7 +46,7 @@ namespace RB::HurtBox
 
 			file << "\"position\" : [7, 8]," << std::endl;
 			file << "\"size\" : [7.7, 8.8]" << std::endl;
-			file << "}" << std::endl;
+			file << "}";
 
 			file.flush();
 			file.close();
@@ -113,7 +113,7 @@ namespace RB::HurtBox
 			file << "\"height\" : 8.8" << std::endl;
 			file << "}" << std::endl;
 
-			file << "]" << std::endl;
+			file << "]";
 
 			file.flush();
 			file.close();

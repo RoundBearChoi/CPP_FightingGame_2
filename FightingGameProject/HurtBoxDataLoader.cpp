@@ -4,10 +4,8 @@ namespace RB::HurtBox
 {
 	void HurtBoxDataLoader::Init()
 	{
-		SaveSample();
-		LoadSample();
-
-		std::vector<HurtBoxData> vec = LoadData("HurtBoxData/Sample.HurtBoxData", 2);
+		//SaveSample();
+		//LoadSample();
 	}
 
 	std::vector<HurtBoxData> HurtBoxDataLoader::LoadData(std::string path, int frame)

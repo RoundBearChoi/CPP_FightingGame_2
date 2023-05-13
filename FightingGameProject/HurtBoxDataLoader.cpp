@@ -4,8 +4,8 @@ namespace RB::HurtBox
 {
 	void HurtBoxDataLoader::Init()
 	{
-		//SaveSample();
-		//LoadSample();
+		SaveSample();
+		LoadSample();
 
 		json_value_s* root = LoadRoot("HurtBoxData/Sample.HurtBoxData");
 

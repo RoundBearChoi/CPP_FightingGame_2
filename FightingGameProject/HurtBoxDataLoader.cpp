@@ -75,12 +75,21 @@ namespace RB::HurtBox
 		if (file.is_open())
 		{
 			file << "[" << std::endl;
+
 			file << "{" << std::endl;
 			file << "\"posX\" : 1," << std::endl;
 			file << "\"posY\" : 2," << std::endl;
 			file << "\"width\" : 1.1," << std::endl;
 			file << "\"height\" : 2.2" << std::endl;
+			file << "}," << std::endl;
+
+			file << "{" << std::endl;
+			file << "\"posX\" : 3," << std::endl;
+			file << "\"posY\" : 4," << std::endl;
+			file << "\"width\" : 3.3," << std::endl;
+			file << "\"height\" : 4.4" << std::endl;
 			file << "}" << std::endl;
+
 			file << "]" << std::endl;
 
 			file.flush();
@@ -125,12 +134,13 @@ namespace RB::HurtBox
 
 	HurtBoxData HurtBoxDataLoader::GetHurtBoxData_FromSample2(const json_array_s& jArray, int index)
 	{
-		json_object_s* obj1 = json_value_as_object(jArray.start->value);
+		//json_object_s* obj = json_value_as_object(jArray.start->value);
+		json_object_s* obj = json_value_as_object(jArray.start->next->value);
 
-		json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementN(*obj1, 0);
-		json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementN(*obj1, 1);
-		json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj1, 2);
-		json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj1, 3);
+		json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementN(*obj, 0);
+		json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementN(*obj, 1);
+		json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj, 2);
+		json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj, 3);
 
 		int x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
 		int y = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);

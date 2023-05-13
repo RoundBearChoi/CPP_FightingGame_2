@@ -20,7 +20,11 @@ namespace RB::HurtBox
 		void Init();
 
 	public:
-		std::vector<HurtBoxData> LoadData(std::string path, int frame);
+		/// <summary>
+		/// make sure to free root after use
+		/// </summary>
+		json_value_s* LoadRoot(std::string path);
+		std::vector<HurtBoxData> ParseData(json_value_s* root, int frame);
 
 	public:
 		void LoadSample();

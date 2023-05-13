@@ -1,7 +1,6 @@
 #pragma once
 #include "ControllerBase.h"
 #include "HurtBoxDataLoader.h"
-#include "HurtBoxDataSet.h"
 
 namespace RB::HurtBox
 {

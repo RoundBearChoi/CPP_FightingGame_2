@@ -6,7 +6,7 @@ namespace RB::HurtBox
 	{
 		for (size_t i = 0; i < _vecData.size(); i++)
 		{
-			delete _vecData[i];
+			delete[] _vecData[i];
 		}
 	}
 

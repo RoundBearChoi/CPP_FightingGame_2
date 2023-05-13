@@ -20,10 +20,7 @@ namespace RB::HurtBox
 		void Init();
 
 	public:
-		/// <summary>
-		/// make sure to delete the returned pointer
-		/// </summary>
-		HurtBoxData* LoadData(std::string path, int frame);
+		std::vector<HurtBoxData> LoadData(std::string path, int frame);
 
 	public:
 		void LoadSample();

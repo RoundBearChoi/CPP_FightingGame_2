@@ -8,7 +8,7 @@ namespace RB::HurtBox
 		//LoadSample();
 	}
 
-	HurtBoxData* HurtBoxDataLoader::LoadData(std::string path, int frame)
+	std::vector<HurtBoxData> HurtBoxDataLoader::LoadData(std::string path, int frame)
 	{
 		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
 		const char* json = loaded.c_str();
@@ -20,6 +20,7 @@ namespace RB::HurtBox
 		json_array_element_s* element = whole->start;
 
 		int count = 0;
+		std::vector<HurtBoxData> vec;
 
 		while (element != nullptr)
 		{
@@ -27,25 +28,19 @@ namespace RB::HurtBox
 			{
 				struct json_array_s* arr = json_value_as_array(element->value);
 
-				const size_t size = arr->length;
-
-				HurtBoxData* result = new HurtBoxData[size];
-
 				for (size_t i = 0; i < arr->length; i++)
 				{
 					HurtBoxData data = GetHurtBoxData(*arr, i);
 
-					result[i] = data;
+					vec.push_back(data);
 				}
-
-				return result;
 			}
 
 			count++;
 			element = element->next;
 		}
 
-		return nullptr;
+		return vec;
 	}
 
 	void HurtBoxDataLoader::LoadSample()

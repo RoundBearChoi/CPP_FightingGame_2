@@ -6,9 +6,7 @@ namespace RB::HurtBox
 	{
 		_loader.Init();
 
-		HurtBoxData* arr = _loader.LoadData("HurtBoxData/Sample.HurtBoxData", 0);
-
-		delete arr;
+		std::vector<HurtBoxData> vec = _loader.LoadData("HurtBoxData/Sample.HurtBoxData", 2);
 	}
 
 	void HurtBoxDataController::OnUpdate()

@@ -10,7 +10,7 @@ namespace RB::HurtBox
 
 		int mX = 0;
 		int mY = 0;
-		int mWidth = 0; //even numbers?
-		int mWeight = 0; //even numbers?
+		float mWidth = 0; //even numbers?
+		float mWeight = 0; //even numbers?
 	};
 }

@@ -4,14 +4,13 @@ namespace RB::HurtBox
 {
 	void HurtBoxDataLoader::Init()
 	{
-		//SaveSample();
-		//LoadSample();
+		SaveSample();
+		LoadSample();
 
-		std::vector<HurtBoxData> vec;
-		LoadData("HurtBoxData/Sample.HurtBoxData", 2, vec);
+		std::vector<HurtBoxData> vec = LoadData("HurtBoxData/Sample.HurtBoxData", 2);
 	}
 
-	void HurtBoxDataLoader::LoadData(std::string path, int frame, std::vector<HurtBoxData> &vec)
+	std::vector<HurtBoxData> HurtBoxDataLoader::LoadData(std::string path, int frame)
 	{
 		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
 		const char* json = loaded.c_str();
@@ -23,6 +22,7 @@ namespace RB::HurtBox
 		json_array_element_s* element = whole->start;
 
 		int count = 0;
+		std::vector<HurtBoxData> vec;
 
 		while (element != nullptr)
 		{
@@ -41,6 +41,8 @@ namespace RB::HurtBox
 			count++;
 			element = element->next;
 		}
+
+		return vec;
 	}
 
 	void HurtBoxDataLoader::LoadSample()

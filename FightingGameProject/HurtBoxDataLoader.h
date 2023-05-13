@@ -20,7 +20,7 @@ namespace RB::HurtBox
 		void Init();
 
 	public:
-		void LoadData(std::string path, int frame, std::vector<HurtBoxData> &vec);
+		std::vector<HurtBoxData> LoadData(std::string path, int frame);
 
 	public:
 		void LoadSample();

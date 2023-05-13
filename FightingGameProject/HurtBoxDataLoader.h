@@ -14,6 +14,7 @@ namespace RB::HurtBox
 		void Init();
 
 	public:
+		void LoadSample();
 		void SaveSample();
 	};
 }

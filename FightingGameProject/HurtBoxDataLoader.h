@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include <cassert>
+#include <sstream>
+#include "json.h"
 
 namespace RB::HurtBox
 {

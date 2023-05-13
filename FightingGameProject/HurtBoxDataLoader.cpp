@@ -30,8 +30,8 @@ namespace RB::HurtBox
 		json_object_element_s* countElement = RB::JSON::JGetter::GetFirstElement(*object, "sets count");
 		int count = RB::JSON::JGetter::GetInt_FromElement(*countElement);
 
-		json_object_element_s* positionElement = RB::JSON::JGetter::GetElementN(*object, 1);
-		json_object_element_s* sizeElement = RB::JSON::JGetter::GetElementN(*object, 2);
+		json_object_element_s* positionElement = RB::JSON::JGetter::GetElementN(*object, 3);
+		json_object_element_s* sizeElement = RB::JSON::JGetter::GetElementN(*object, 4);
 
 		struct json_array_s* arrPos = json_value_as_array(positionElement->value);
 		

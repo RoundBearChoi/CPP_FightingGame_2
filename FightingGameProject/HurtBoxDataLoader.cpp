@@ -30,20 +30,21 @@ namespace RB::HurtBox
 		json_object_element_s* positionElement = RB::JSON::JGetter::GetFirstElement(*object, "position");
 		json_object_element_s* sizeElement = RB::JSON::JGetter::GetNextElement(*positionElement, "size");
 
-		struct json_array_s* posArray = json_value_as_array(positionElement->value);
-		struct json_array_s* sizeArray = json_value_as_array(sizeElement->value);
+		struct json_array_s* arrPos = json_value_as_array(positionElement->value);
+		
+		struct json_array_element_s* posX_Element = RB::JSON::JGetter::GetFirstArrayElement(*arrPos);
+		struct json_array_element_s* posY_Element = RB::JSON::JGetter::GetNextArrayElement(*posX_Element);
 
-		struct json_array_element_s* posXElement = RB::JSON::JGetter::GetFirstArrayElement(*posArray);
-		struct json_array_element_s* posYElement = RB::JSON::JGetter::GetNextArrayElement(*posXElement);
+		int posX = RB::JSON::JGetter::GetArrayElementInt(*posX_Element);
+		int posY = RB::JSON::JGetter::GetArrayElementInt(*posY_Element);
 
-		int x = RB::JSON::JGetter::GetArrayElementInt(*posXElement);
-		int y = RB::JSON::JGetter::GetArrayElementInt(*posYElement);
+		struct json_array_s* arrSize = json_value_as_array(sizeElement->value);
 
-		struct json_array_element_s* widthElement = RB::JSON::JGetter::GetFirstArrayElement(*sizeArray);
-		struct json_array_element_s* HeightElement = RB::JSON::JGetter::GetNextArrayElement(*widthElement);
+		struct json_array_element_s* width_Element = RB::JSON::JGetter::GetFirstArrayElement(*arrSize);
+		struct json_array_element_s* height_Element = RB::JSON::JGetter::GetNextArrayElement(*width_Element);
 
-		float width = RB::JSON::JGetter::GetArrayElementFloat(*widthElement);
-		float height = RB::JSON::JGetter::GetArrayElementFloat(*HeightElement);
+		float width = RB::JSON::JGetter::GetArrayElementFloat(*width_Element);
+		float height = RB::JSON::JGetter::GetArrayElementFloat(*height_Element);
 
 		free(root);
 	}

@@ -8,20 +8,20 @@ namespace RB::HurtBox
 		LoadSample();
 
 		json_value_s* root = LoadRoot("HurtBoxData/Sample.HurtBoxData");
-
 		json_array_s* arr = json_value_as_array(root);
-		
 		size_t length = arr->length;
+
+		std::vector<HurtBoxDataSet> vecSets;
+		vecSets.reserve(length);
 
 		for (size_t i = 0; i < length; i++)
 		{
 			std::vector<HurtBoxData> vec = ParseData(root, i);
-		}
 
-		//std::vector<HurtBoxData> vec0 = ParseData(root, 0);
-		//std::vector<HurtBoxData> vec1 = ParseData(root, 1);
-		//std::vector<HurtBoxData> vec2 = ParseData(root, 2);
-		//std::vector<HurtBoxData> vec3 = ParseData(root, 3);
+			HurtBoxDataSet set{ RB::Sprites::SpriteID::NONE, vec, i };
+
+			vecSets.push_back(set);
+		}
 
 		free(root);
 	}
@@ -37,7 +37,7 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	std::vector<HurtBoxData> HurtBoxDataLoader::ParseData(json_value_s* root, int frame)
+	std::vector<HurtBoxData> HurtBoxDataLoader::ParseData(json_value_s* root, size_t frame)
 	{
 		struct json_array_s* whole = json_value_as_array(root);
 		json_array_element_s* element = whole->start;

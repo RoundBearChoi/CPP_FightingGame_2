@@ -7,6 +7,7 @@
 #include "json.h"
 #include "JGetter.h"
 #include "HurtBoxData.h"
+#include "HurtBoxDataSet.h"
 
 namespace RB::HurtBox
 {
@@ -24,7 +25,7 @@ namespace RB::HurtBox
 		/// make sure to free root after use
 		/// </summary>
 		json_value_s* LoadRoot(std::string path);
-		std::vector<HurtBoxData> ParseData(json_value_s* root, int frame);
+		std::vector<HurtBoxData> ParseData(json_value_s* root, size_t frame);
 
 	public:
 		void LoadSample();

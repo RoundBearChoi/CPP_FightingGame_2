@@ -1,4 +1,4 @@
 {
-"a" : true,
-"b" : [false, null, "foo", 123, 3.14]
+"position" : [5, 6],
+"size" : [123, 3.14]
 }

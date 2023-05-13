@@ -21,6 +21,8 @@ namespace RB::HurtBox
 	public:
 		void LoadSample();
 		void SaveSample();
+		void LoadSample2();
+		void SaveSample2();
 
 	public:
 		HurtBoxData GetHurtBoxData(const json_object_s&, int index);

@@ -6,6 +6,9 @@ namespace RB::HurtBox
 	{
 		SaveSample();
 		LoadSample();
+
+		SaveSample2();
+		LoadSample2();
 	}
 
 	void HurtBoxDataLoader::LoadSample()
@@ -23,9 +26,7 @@ namespace RB::HurtBox
 
 	void HurtBoxDataLoader::SaveSample()
 	{
-		std::string path = "HurtBoxData/";
-
-		path += "Sample.HurtBoxData";
+		std::string path = "HurtBoxData/Sample.HurtBoxData";
 
 		std::ofstream file(path);
 
@@ -46,6 +47,39 @@ namespace RB::HurtBox
 			file << "\"position\" : [7, 8]," << std::endl;
 			file << "\"size\" : [7.7, 8.8]" << std::endl;
 			file << "}" << std::endl;
+
+			file.flush();
+			file.close();
+		}
+	}
+
+	void HurtBoxDataLoader::LoadSample2()
+	{
+		std::string loaded = RB::JSON::JGetter::LoadJSONFile("HurtBoxData/Sample2.HurtBoxData");
+		const char* json = loaded.c_str();
+
+		struct json_value_s* root = json_parse(json, strlen(json));
+		struct json_array_s* jArray = json_value_as_array(root);
+
+		free(root);
+	}
+
+	void HurtBoxDataLoader::SaveSample2()
+	{
+		std::string path = "HurtBoxData/Sample2.HurtBoxData";
+
+		std::ofstream file(path);
+
+		if (file.is_open())
+		{
+			file << "[" << std::endl;
+			file << "{" << std::endl;
+			file << "\"posX\" : 1," << std::endl;
+			file << "\"posY\" : 2," << std::endl;
+			file << "\"width\" : 1.1," << std::endl;
+			file << "\"height\" : 2.2" << std::endl;
+			file << "}" << std::endl;
+			file << "]" << std::endl;
 
 			file.flush();
 			file.close();

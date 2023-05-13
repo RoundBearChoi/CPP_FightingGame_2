@@ -51,7 +51,6 @@ namespace RB::HurtBox
 			element = element->next;
 		}
 
-		//return empty vector
 		return std::vector<HurtBoxData>{};
 	}
 
@@ -134,13 +133,6 @@ namespace RB::HurtBox
 			file << "\"width\" : 1.5," << std::endl;
 			file << "\"height\" : 2.5" << std::endl;
 			file << "}" << std::endl;
-			
-			//file << "{" << std::endl;
-			//file << "\"posX\" : 3," << std::endl;
-			//file << "\"posY\" : 4," << std::endl;
-			//file << "\"width\" : 3.5," << std::endl;
-			//file << "\"height\" : 4.5" << std::endl;
-			//file << "}" << std::endl;
 			
 			file << "]," << std::endl;
 

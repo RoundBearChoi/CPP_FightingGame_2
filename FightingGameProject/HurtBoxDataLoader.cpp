@@ -91,6 +91,7 @@ namespace RB::HurtBox
 	HurtBoxData HurtBoxDataLoader::GetHurtBoxData_FromSample(const json_object_s& object, int setIndex)
 	{
 		json_object_element_s* countElement = RB::JSON::JGetter::GetFirstElement(object, "sets count");
+
 		int totalSetsCount = RB::JSON::JGetter::GetInt_FromElement(*countElement);
 
 		if (setIndex >= totalSetsCount)

@@ -61,6 +61,8 @@ namespace RB::HurtBox
 		struct json_value_s* root = json_parse(json, strlen(json));
 		struct json_array_s* jArray = json_value_as_array(root);
 
+		json_object_s* obj1 = json_value_as_object(jArray->start->value);
+
 		free(root);
 	}
 

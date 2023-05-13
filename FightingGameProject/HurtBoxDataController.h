@@ -21,6 +21,5 @@ namespace RB::HurtBox
 
 	private:
 		std::vector<HurtBoxData*> _vecHurtBoxes;
-		std::vector<HurtBoxDataSet> _vecHurtBoxDataSets;
 	};
 }

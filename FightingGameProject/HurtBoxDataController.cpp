@@ -17,11 +17,6 @@ namespace RB::HurtBox
 		HurtBoxData* arr = _loader.LoadData("HurtBoxData/Sample.HurtBoxData", 0);
 
 		_vecHurtBoxes.push_back(arr);
-
-		//temp
-		HurtBoxDataSet set{ RB::Sprites::SpriteID::fighter_0_idle, 0, arr};
-
-		_vecHurtBoxDataSets.push_back(set);
 	}
 
 	void HurtBoxDataController::OnUpdate()

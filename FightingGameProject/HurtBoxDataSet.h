@@ -13,7 +13,6 @@ namespace RB::HurtBox
 
 	public:
 		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
-		int mFrame = 0;
 		HurtBoxData* mArrHurtBoxes = nullptr;
 	};
 }

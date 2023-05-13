@@ -4,9 +4,9 @@ namespace RB::HurtBox
 {
 	HurtBoxDataController::~HurtBoxDataController()
 	{
-		for (size_t i = 0; i < _vecHurtBoxes.size(); i++)
+		for (size_t i = 0; i < _vecData.size(); i++)
 		{
-			delete _vecHurtBoxes[i];
+			delete _vecData[i];
 		}
 	}
 
@@ -16,7 +16,7 @@ namespace RB::HurtBox
 
 		HurtBoxData* arr = _loader.LoadData("HurtBoxData/Sample.HurtBoxData", 0);
 
-		_vecHurtBoxes.push_back(arr);
+		_vecData.push_back(arr);
 	}
 
 	void HurtBoxDataController::OnUpdate()

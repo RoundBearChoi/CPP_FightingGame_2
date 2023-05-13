@@ -20,6 +20,6 @@ namespace RB::HurtBox
 		HurtBoxDataLoader _loader;
 
 	private:
-		std::vector<HurtBoxData*> _vecHurtBoxes;
+		std::vector<HurtBoxData*> _vecData;
 	};
 }

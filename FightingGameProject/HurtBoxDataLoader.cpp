@@ -61,7 +61,7 @@ namespace RB::HurtBox
 		struct json_value_s* root = json_parse(json, strlen(json));
 		struct json_array_s* jArray = json_value_as_array(root);
 
-		HurtBoxData data = GetHurtBoxData_FromSample2(*jArray, 0);
+		HurtBoxData data = GetHurtBoxData_FromSample2(*jArray, 1);
 
 		free(root);
 	}
@@ -134,21 +134,36 @@ namespace RB::HurtBox
 
 	HurtBoxData HurtBoxDataLoader::GetHurtBoxData_FromSample2(const json_array_s& jArray, int index)
 	{
-		//json_object_s* obj = json_value_as_object(jArray.start->value);
-		json_object_s* obj = json_value_as_object(jArray.start->next->value);
+		int count = 0;
 
-		json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementN(*obj, 0);
-		json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementN(*obj, 1);
-		json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj, 2);
-		json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj, 3);
+		json_array_element_s* element = jArray.start;
 
-		int x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
-		int y = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
-		float width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
-		float height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
+		while (element != nullptr)
+		{
+			if (count == index)
+			{
+				json_object_s* obj = json_value_as_object(element->value);
 
-		HurtBoxData data{ x, y, width, height };
+				json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementN(*obj, 0);
+				json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementN(*obj, 1);
+				json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj, 2);
+				json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj, 3);
 
-		return data;
+				int x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
+				int y = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
+				float width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
+				float height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
+
+				HurtBoxData data{ x, y, width, height };
+
+				return data;
+			}
+
+			element = element->next;
+
+			count++;
+		}
+
+		return HurtBoxData();
 	}
 }

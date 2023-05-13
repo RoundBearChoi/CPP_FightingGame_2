@@ -4,6 +4,7 @@
 #include "ActiveControllers.h"
 #include "CamController.h"
 #include "MenuController.h"
+#include "HurtBoxDataController.h"
 
 namespace RB::Updaters
 {

@@ -2,12 +2,12 @@
 #include "json.h"
 #include <cassert>
 
-namespace RB
+namespace RB::JSON
 {
-	class jsonExample
+	class example
 	{
 		public:
-			void example()
+			void example1()
 			{
 				//'{"a" : true, "b" : [false, null, "foo", 123, 3.14]}'
 

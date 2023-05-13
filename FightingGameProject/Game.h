@@ -28,8 +28,7 @@ namespace RB::Engine
 
 			RB::Frames::Time::ResetFixedDeltaTime();
 
-			RB::jsonExample e;
-			e.example();
+			RB::JSON::example{}.example1();
 
 			return true;
 		}

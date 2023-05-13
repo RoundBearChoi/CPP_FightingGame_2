@@ -53,6 +53,9 @@
     <Filter Include="Source Files\HBE::Menu">
       <UniqueIdentifier>{ce12ffd0-f884-40f0-ad74-819e6fba4248}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\JSON">
+      <UniqueIdentifier>{1b794089-24c2-440a-b4ca-fa0e0cb4730c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -367,10 +370,10 @@
       <Filter>Source Files\HBE::Menu</Filter>
     </ClInclude>
     <ClInclude Include="json.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\JSON</Filter>
     </ClInclude>
     <ClInclude Include="jsonExample.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\JSON</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

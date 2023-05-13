@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cassert>
 #include <sstream>
+#include <vector>
 #include "json.h"
 #include "JGetter.h"
 #include "HurtBoxData.h"

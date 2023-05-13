@@ -10,5 +10,11 @@
 "posY" : 4,
 "width" : 3.3,
 "height" : 4.4
+},
+{
+"posX" : 5,
+"posY" : 6,
+"width" : 5.5,
+"height" : 6.6
 }
 ]

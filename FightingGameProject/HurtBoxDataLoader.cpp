@@ -61,7 +61,16 @@ namespace RB::HurtBox
 		struct json_value_s* root = json_parse(json, strlen(json));
 		struct json_array_s* jArray = json_value_as_array(root);
 
-		HurtBoxData data = GetHurtBoxData_FromSample2(*jArray, 1);
+		size_t count = jArray->length;
+
+		std::vector<HurtBoxData> vec;
+
+		for (size_t i = 0; i < count; i++)
+		{
+			HurtBoxData data = GetHurtBoxData_FromSample2(*jArray, i);
+
+			vec.push_back(data);
+		}
 
 		free(root);
 	}
@@ -88,6 +97,13 @@ namespace RB::HurtBox
 			file << "\"posY\" : 4," << std::endl;
 			file << "\"width\" : 3.3," << std::endl;
 			file << "\"height\" : 4.4" << std::endl;
+			file << "}," << std::endl;
+
+			file << "{" << std::endl;
+			file << "\"posX\" : 5," << std::endl;
+			file << "\"posY\" : 6," << std::endl;
+			file << "\"width\" : 5.5," << std::endl;
+			file << "\"height\" : 6.6" << std::endl;
 			file << "}" << std::endl;
 
 			file << "]" << std::endl;
@@ -150,7 +166,7 @@ namespace RB::HurtBox
 				json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj, 3);
 
 				int x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
-				int y = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
+				int y = RB::JSON::JGetter::GetInt_FromElement(*posY_Element);
 				float width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
 				float height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
 

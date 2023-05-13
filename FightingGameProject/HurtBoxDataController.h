@@ -8,7 +8,7 @@ namespace RB::HurtBox
 	{
 	public:
 		HurtBoxDataController() = default;
-		~HurtBoxDataController() override {};
+		~HurtBoxDataController() override;
 
 	public:
 		void Init() override;
@@ -17,5 +17,8 @@ namespace RB::HurtBox
 
 	private:
 		HurtBoxDataLoader _loader;
+
+	private:
+		std::vector<HurtBoxData*> _vecData;
 	};
 }

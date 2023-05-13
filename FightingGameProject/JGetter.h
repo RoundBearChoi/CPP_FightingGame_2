@@ -60,6 +60,18 @@ namespace RB::JSON
 			return result;
 		}
 
+		static float GetArrayElementFloat(const json_array_element_s& element)
+		{
+			struct json_number_s* number = json_value_as_number(element.value);
+
+			std::stringstream stream;
+			stream << number->number;
+			float result = 0.0f;
+			stream >> result;
+
+			return result;
+		}
+
 		static json_array_element_s* GetNextArrayElement(const json_array_element_s& element)
 		{
 			json_array_element_s* nextElement = element.next;

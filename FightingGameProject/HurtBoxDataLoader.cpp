@@ -44,6 +44,7 @@ namespace RB::HurtBox
 		{
 			file << "[" << std::endl;
 
+			//frame 0
 			file << "[" << std::endl;
 
 			file << "{" << std::endl;
@@ -76,8 +77,9 @@ namespace RB::HurtBox
 
 			file << "]," << std::endl;
 
+			//frame 1
 			file << "[" << std::endl;
-			
+
 			file << "{" << std::endl;
 			file << "\"posX\" : 1," << std::endl;
 			file << "\"posY\" : 2," << std::endl;

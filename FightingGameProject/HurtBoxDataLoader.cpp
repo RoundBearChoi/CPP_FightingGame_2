@@ -7,7 +7,15 @@ namespace RB::HurtBox
 		SaveSample();
 		LoadSample();
 
-		std::vector<HurtBoxData> vec = LoadData("HurtBoxData/Sample.HurtBoxData", 2);
+		std::vector<HurtBoxData> vec0 = LoadData("HurtBoxData/Sample.HurtBoxData", 0);
+		std::vector<HurtBoxData> vec1 = LoadData("HurtBoxData/Sample.HurtBoxData", 1);
+		std::vector<HurtBoxData> vec2 = LoadData("HurtBoxData/Sample.HurtBoxData", 2);
+		std::vector<HurtBoxData> vec3 = LoadData("HurtBoxData/Sample.HurtBoxData", 3);
+
+		size_t c0 = vec0.capacity();
+		size_t c1 = vec1.capacity();
+		size_t c2 = vec2.capacity();
+		size_t c3 = vec3.capacity();
 	}
 
 	std::vector<HurtBoxData> HurtBoxDataLoader::LoadData(std::string path, int frame)
@@ -16,33 +24,35 @@ namespace RB::HurtBox
 		const char* json = loaded.c_str();
 
 		struct json_value_s* root = json_parse(json, strlen(json));
-
 		struct json_array_s* whole = json_value_as_array(root);
-
 		json_array_element_s* element = whole->start;
 
 		int count = 0;
-		std::vector<HurtBoxData> vec;
-
+		
 		while (element != nullptr)
 		{
 			if (count == frame)
 			{
 				struct json_array_s* arr = json_value_as_array(element->value);
 
+				std::vector<HurtBoxData> vec;
+				vec.reserve(arr->length);
+
 				for (size_t i = 0; i < arr->length; i++)
 				{
 					HurtBoxData data = GetHurtBoxData(*arr, i);
-
 					vec.push_back(data);
 				}
+
+				return vec;
 			}
 
 			count++;
 			element = element->next;
 		}
 
-		return vec;
+		//return empty vector
+		return std::vector<HurtBoxData>{};
 	}
 
 	void HurtBoxDataLoader::LoadSample()

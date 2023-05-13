@@ -10,23 +10,13 @@ namespace RB::HurtBox
 
 	void HurtBoxDataLoader::LoadSample()
 	{
-		std::cout << std::endl;
-		std::cout << "loading sample HurtBoxData.." << std::endl;
-
-		std::ifstream ifs("HurtBoxData/Sample.HurtBoxData");
-
-		std::string loadedStr((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
-
-		std::cout << loadedStr << std::endl;
-
-		loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
-
-		const char* json = loadedStr.c_str();
+		std::string loaded = RB::JSON::JGetter::GetJSONString("HurtBoxData/Sample.HurtBoxData");
+		const char* json = loaded.c_str();
 
 		struct json_value_s* root = json_parse(json, strlen(json));
 		struct json_object_s* object = json_value_as_object(root);
 
-		HurtBoxData data = GetHurtBoxData(*object, 1);
+		HurtBoxData data = GetHurtBoxData(*object, 2);
 
 		free(root);
 	}

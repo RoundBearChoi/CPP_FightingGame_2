@@ -1,5 +1,4 @@
 #include "HurtBoxDataLoader.h"
-#include "JGetter.h"
 
 namespace RB::HurtBox
 {

@@ -4,6 +4,7 @@
 #include <cassert>
 #include <sstream>
 #include "json.h"
+#include "JGetter.h"
 
 namespace RB::HurtBox
 {

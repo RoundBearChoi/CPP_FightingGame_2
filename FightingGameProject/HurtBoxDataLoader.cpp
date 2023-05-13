@@ -18,17 +18,19 @@ namespace RB::HurtBox
 
 		std::string loadedStr((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
 
-		loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
-
 		std::cout << loadedStr << std::endl;
+
+		loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
 
 		const char* json = loadedStr.c_str();
 
 		struct json_value_s* root = json_parse(json, strlen(json));
 		struct json_object_s* object = json_value_as_object(root);
 
-		json_object_element_s* positionElement = RB::JSON::JGetter::GetFirstElement(*object, "position");
-		json_object_element_s* sizeElement = RB::JSON::JGetter::GetNextElement(*positionElement, "size");
+		json_object_element_s* countElement = RB::JSON::JGetter::GetFirstElement(*object, "sets count");
+
+		json_object_element_s* positionElement = RB::JSON::JGetter::GetElementN(*object, 1); //RB::JSON::JGetter::GetFirstElement(*object, "position");
+		json_object_element_s* sizeElement = RB::JSON::JGetter::GetElementN(*object, 2); //RB::JSON::JGetter::GetNextElement(*positionElement, "size");
 
 		struct json_array_s* arrPos = json_value_as_array(positionElement->value);
 		
@@ -60,8 +62,14 @@ namespace RB::HurtBox
 		if (file.is_open())
 		{
 			file << "{" << std::endl;
+			file << "\"sets count\" : 2," << std::endl;
+
 			file << "\"position\" : [5, 6]," << std::endl;
-			file << "\"size\" : [123, 3.14]" << std::endl;
+			file << "\"size\" : [123, 3.14]," << std::endl;
+
+			file << "\"position\" : [7, 8]," << std::endl;
+			file << "\"size\" : [10.1, 11.1]" << std::endl;
+
 			file << "}" << std::endl;
 
 			file.flush();

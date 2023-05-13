@@ -1,4 +1,7 @@
 {
+"sets count" : 2,
 "position" : [5, 6],
-"size" : [123, 3.14]
+"size" : [123, 3.14],
+"position" : [7, 8],
+"size" : [10.1, 11.1]
 }

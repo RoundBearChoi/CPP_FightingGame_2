@@ -44,12 +44,16 @@ namespace RB::HurtBox
 					vec.push_back(data);
 				}
 
+				free(root);
+
 				return vec;
 			}
 
 			count++;
 			element = element->next;
 		}
+
+		free(root);
 
 		return std::vector<HurtBoxData>{};
 	}

@@ -48,7 +48,7 @@ namespace RB::JSON
 			return firstElement;
 		}
 
-		static int GetArrayElementInt(const json_array_element_s& element)
+		static int GetInt_FromArrayElement(const json_array_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
 
@@ -60,7 +60,7 @@ namespace RB::JSON
 			return result;
 		}
 
-		static float GetArrayElementFloat(const json_array_element_s& element)
+		static float GetFloat_FromArrayAelement(const json_array_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
 

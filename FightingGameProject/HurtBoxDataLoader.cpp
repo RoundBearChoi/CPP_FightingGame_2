@@ -35,16 +35,16 @@ namespace RB::HurtBox
 		struct json_array_element_s* posX_Element = RB::JSON::JGetter::GetFirstArrayElement(*arrPos);
 		struct json_array_element_s* posY_Element = RB::JSON::JGetter::GetNextArrayElement(*posX_Element);
 
-		int posX = RB::JSON::JGetter::GetArrayElementInt(*posX_Element);
-		int posY = RB::JSON::JGetter::GetArrayElementInt(*posY_Element);
+		int posX = RB::JSON::JGetter::GetInt_FromArrayElement(*posX_Element);
+		int posY = RB::JSON::JGetter::GetInt_FromArrayElement(*posY_Element);
 
 		struct json_array_s* arrSize = json_value_as_array(sizeElement->value);
 
 		struct json_array_element_s* width_Element = RB::JSON::JGetter::GetFirstArrayElement(*arrSize);
 		struct json_array_element_s* height_Element = RB::JSON::JGetter::GetNextArrayElement(*width_Element);
 
-		float width = RB::JSON::JGetter::GetArrayElementFloat(*width_Element);
-		float height = RB::JSON::JGetter::GetArrayElementFloat(*height_Element);
+		float width = RB::JSON::JGetter::GetFloat_FromArrayAelement(*width_Element);
+		float height = RB::JSON::JGetter::GetFloat_FromArrayAelement(*height_Element);
 
 		free(root);
 	}

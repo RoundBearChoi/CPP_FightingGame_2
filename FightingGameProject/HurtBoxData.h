@@ -13,6 +13,6 @@ namespace RB::HurtBox
 
 	public:
 		size_t mFrame = 0;
-		std::vector<HurtBoxSpecs> mVecSpecs;
+		std::vector<HurtBoxSpecs> mSpecs;
 	};
 }

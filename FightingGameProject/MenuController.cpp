@@ -4,7 +4,7 @@ namespace RB::HBE::Menu
 {
     void MenuController::Init()
 	{
-
+		_spriteSelector.Init();
 	}
 
 	void MenuController::OnUpdate()
@@ -20,10 +20,12 @@ namespace RB::HBE::Menu
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "Q : enlarge box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, "E : shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "ENTER : save data", olc::WHITE);
+
+		_spriteSelector.OnUpdate();
 	}
 
 	void MenuController::OnFixedUpdate()
 	{
-
+		_spriteSelector.OnFixedUpdate();
 	}
 }

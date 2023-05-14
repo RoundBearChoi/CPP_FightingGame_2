@@ -14,14 +14,20 @@ namespace RB::JSON
 		static std::string LoadJSONFile(std::string jsonFilePath)
 		{
 			std::cout << std::endl;
-			std::cout << "loading json: " << jsonFilePath << std::endl;
+			std::cout << "loading " << jsonFilePath << ".." << std::endl;
 
 			std::ifstream ifs(jsonFilePath);
 
 			std::string loadedStr((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
-
-			std::cout << std::endl;
-			std::cout << loadedStr << std::endl;
+			
+			if (loadedStr.empty())
+			{
+				std::cout << "file doesn't exist" << std::endl;
+			}
+			else
+			{
+				std::cout << loadedStr << std::endl;
+			}
 
 			loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
 

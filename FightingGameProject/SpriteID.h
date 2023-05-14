@@ -2,9 +2,9 @@
 
 namespace RB::Sprites
 {
-	enum class SpriteID
+	enum class SpriteID : int32_t
 	{
-		NONE,
+		NONE = 0,
 
 		x_white,
 		white_sq_tr80,
@@ -15,5 +15,7 @@ namespace RB::Sprites
 		fighter_0_walk,
 		fighter_0_jump_up,
 		fighter_0_fall,
+
+		COUNT,
 	};
 }

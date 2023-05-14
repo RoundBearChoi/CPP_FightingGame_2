@@ -2,11 +2,6 @@
 
 namespace RB::States
 {
-	StateBase::StateBase()
-	{
-
-	}
-
 	StateBase::~StateBase()
 	{
 		for (size_t i = 0; i < _vecStateComponents.size(); i++)
@@ -14,11 +9,6 @@ namespace RB::States
 			delete _vecStateComponents[i];
 		}
 	}
-
-	//void StateBase::SetStateMachine(iStateMachine* stateMachine)
-	//{
-	//	_stateMachine = stateMachine;
-	//}
 
 	void StateBase::SetStateMachineID(size_t id)
 	{
@@ -29,16 +19,6 @@ namespace RB::States
 	{
 		return _stateMachineID;
 	}
-
-	//iStateMachine* StateBase::GetStateMachine()
-	//{
-	//	return _stateMachine;
-	//}
-	
-	//void StateBase::QueueNextState(iState* nextState)
-	//{
-	//	_stateMachine->QueueNextState(nextState);
-	//}
 
 	void StateBase::SetTransitionStatus(bool status)
 	{
@@ -78,7 +58,7 @@ namespace RB::States
 		{
 			_vecStateComponents[i]->OnEnter();
 
-			if (_isTransitioning) //(_stateMachine->IsTransitioning())
+			if (_isTransitioning)
 			{
 				break;
 			}
@@ -99,7 +79,7 @@ namespace RB::States
 		{
 			_vecStateComponents[i]->OnUpdate();
 
-			if (_isTransitioning) //(_stateMachine->IsTransitioning())
+			if (_isTransitioning)
 			{
 				break;
 			}
@@ -112,7 +92,7 @@ namespace RB::States
 		{
 			_vecStateComponents[i]->OnFixedUpdate();
 
-			if (_isTransitioning)  //(_stateMachine->IsTransitioning())
+			if (_isTransitioning)
 			{
 				break;
 			}

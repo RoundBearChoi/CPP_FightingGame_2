@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
 #include "StateBase.h"
-#include "iPlayer.h"
 #include "PlayerID.h"
 #include "P0_Idle.h"
 #include "PlayerController.h"
+#include "iPlayer.h"
 
 namespace RB::P0_States
 {

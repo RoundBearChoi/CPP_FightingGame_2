@@ -9,12 +9,11 @@ namespace RB::States
 	class StateBase : public iState
 	{
 	public:
-		StateBase();
+		StateBase() = default;
 		~StateBase() override;
 
 		virtual void SetStateMachineID(size_t id) override;
 		virtual size_t GetStateMachineID() override;
-		//virtual void QueueNextState(iState* nextState) override;
 		virtual void SetTransitionStatus(bool status) override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual size_t GetCumulatedFixedUpdates() override;

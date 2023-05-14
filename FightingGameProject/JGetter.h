@@ -28,11 +28,11 @@ namespace RB::JSON
 			return loadedStr;
 		}
 
-		static json_object_element_s* GetElementN(const json_object_s& obj, int index)
+		static json_object_element_s* GetElementN(const json_object_s& obj, size_t index)
 		{
 			json_object_element_s* element = obj.start;
 
-			int count = 0;
+			size_t count = 0;
 			
 			while (element != nullptr)
 			{
@@ -49,19 +49,19 @@ namespace RB::JSON
 			return nullptr;
 		}
 
-		static int GetInt_FromElement(const json_object_element_s& element)
+		static int32_t GetInt_FromElement(const json_object_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
 
 			std::stringstream stream;
 			stream << number->number;
-			int result = 0;
+			int32_t result = 0;
 			stream >> result;
 
 			return result;
 		}
 
-		static float GetFloat_FromElement(const json_object_element_s& element)
+		static float_t GetFloat_FromElement(const json_object_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
 
@@ -73,19 +73,19 @@ namespace RB::JSON
 			return result;
 		}
 
-		static int GetInt_FromArrayElement(const json_array_element_s& element)
+		static int32_t GetInt_FromArrayElement(const json_array_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
 
 			std::stringstream stream;
 			stream << number->number;
-			int result = 0;
+			int32_t result = 0;
 			stream >> result;
 
 			return result;
 		}
 
-		static float GetFloat_FromArrayElement(const json_array_element_s& element)
+		static float_t GetFloat_FromArrayElement(const json_array_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
 

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 
-int numObjects = 0;
+size_t numObjects = 0;
 bool showAllocationCount = false;
 
 void* operator new(std::size_t size)

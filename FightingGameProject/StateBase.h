@@ -17,7 +17,7 @@ namespace RB::States
 		virtual iStateMachine* GetStateMachine() override;
 		virtual void QueueNextState(iState* nextState) override;
 		virtual void AddCumulatedFixedUpdate() override;
-		virtual unsigned int GetCumulatedFixedUpdates() override;
+		virtual size_t GetCumulatedFixedUpdates() override;
 		virtual RB::Sprites::SpriteID GetSpriteID() override;
 
 	public:
@@ -35,7 +35,7 @@ namespace RB::States
 
 	protected:
 		iStateMachine* _stateMachine = nullptr;
-		unsigned int _cumulatedFixedUpdates = 0;
+		size_t _cumulatedFixedUpdates = 0;
 		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
 		std::vector<StateComponentBase*> _vecStateComponents;
 	};

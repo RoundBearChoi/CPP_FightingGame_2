@@ -66,7 +66,7 @@ namespace RB::JSON
 				std::stringstream str4;
 				str4 << n4->number;
 
-				int intValue;
+				int32_t intValue;
 				str4 >> intValue;
 
 				assert(b_4th->next != NULL);

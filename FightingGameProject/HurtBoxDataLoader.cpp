@@ -142,7 +142,7 @@ namespace RB::HurtBox
 	{
 		json_object_element_s* objE = wholeObj.start;
 
-		int count = 0;
+		size_t count = 0;
 		
 		while (objE != nullptr)
 		{
@@ -171,7 +171,7 @@ namespace RB::HurtBox
 
 	HurtBoxSpecs HurtBoxSpecsLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)
 	{
-		int count = 0;
+		size_t count = 0;
 
 		json_array_element_s* element = jArray.start;
 
@@ -186,10 +186,10 @@ namespace RB::HurtBox
 				json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj, 2);
 				json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj, 3);
 
-				int x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
-				int y = RB::JSON::JGetter::GetInt_FromElement(*posY_Element);
-				float width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
-				float height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
+				int32_t x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
+				int32_t y = RB::JSON::JGetter::GetInt_FromElement(*posY_Element);
+				float_t width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
+				float_t height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
 
 				HurtBoxSpecs data{ x, y, width, height };
 

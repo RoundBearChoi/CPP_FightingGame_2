@@ -30,7 +30,7 @@ namespace RB::Players
 		PlayerID GetPlayerID() override;
 		iPlayer* GetOtherPlayer() override;
 		bool OtherPlayerIsOnRightSide() override;
-		int GetStateMachineID() override;
+		size_t GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
 		olc::vi2d GetPosition() override;
 		void SetPosition(olc::vi2d pos) override;

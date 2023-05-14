@@ -35,7 +35,7 @@ namespace RB::States
 		_cumulatedFixedUpdates++;
 	}
 
-	unsigned int StateBase::GetCumulatedFixedUpdates()
+	size_t StateBase::GetCumulatedFixedUpdates()
 	{
 		return _cumulatedFixedUpdates;
 	}

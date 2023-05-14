@@ -52,7 +52,7 @@ namespace RB::Players
 		return nullptr;
 	}
 
-	iPlayer* PlayerController::GetPlayerOnStateMachineID(int id)
+	iPlayer* PlayerController::GetPlayerOnStateMachineID(size_t id)
 	{
 		if (_player1.GetStateMachineID() == id)
 		{

@@ -22,7 +22,7 @@ namespace RB::Players
 
 	public:
 		iPlayer* GetPlayerOnID(PlayerID id);
-		iPlayer* GetPlayerOnStateMachineID(int id);
+		iPlayer* GetPlayerOnStateMachineID(size_t id);
 
 	private:
 		Player _player1;

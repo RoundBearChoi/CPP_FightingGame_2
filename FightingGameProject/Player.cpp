@@ -71,7 +71,7 @@ namespace RB::Players
 		}
 	}
 
-	int Player::GetStateMachineID()
+	size_t Player::GetStateMachineID()
 	{
 		return _stateMachine->GetID();
 	}

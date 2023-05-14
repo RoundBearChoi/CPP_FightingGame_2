@@ -38,8 +38,8 @@ namespace RB::Updaters
 		}
 
 	private:
-		unsigned int _cumulatedFixedUpdates = 0;
-		unsigned int _targetFixedUpdate = 0;
+		size_t _cumulatedFixedUpdates = 0;
+		size_t _targetFixedUpdate = 0;
 		bool _functionCalled = false;
 
 	private:

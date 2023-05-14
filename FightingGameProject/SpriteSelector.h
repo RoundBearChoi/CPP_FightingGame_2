@@ -1,4 +1,6 @@
 #pragma once
+#include "olcPixelGameEngine.h"
+#include "SpriteID.h"
 
 namespace RB::HBE::Menu
 {
@@ -12,5 +14,8 @@ namespace RB::HBE::Menu
 		void Init();
 		void OnUpdate();
 		void OnFixedUpdate();
+
+	private:
+		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
 	};
 }

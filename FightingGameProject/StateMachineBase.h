@@ -18,13 +18,13 @@ namespace RB::States
 
 	public:
 		virtual void QueueNextState(iState* state) override;
-		virtual void SetID(int ID) override;
-		virtual int GetID() override;
+		virtual void SetID(size_t ID) override;
+		virtual size_t GetID() override;
 		virtual iState* GetCurrentState() override;
 		virtual bool IsTransitioning() override;
 
 	protected:
-		int _stateMachineID = 0;
+		size_t _stateMachineID = 0;
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
 		bool _makeTransition = false;

@@ -25,7 +25,7 @@ namespace RB::Cam
 
 	private:
 		olc::vi2d _camPosition = { -427, -427 };
-		int _moveSpeed = 2;
+		int32_t _moveSpeed = 2;
 		bool _moveLeft = false;
 		bool _moveRight = false;
 		bool _moveUp = false;

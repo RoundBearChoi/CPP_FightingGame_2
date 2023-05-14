@@ -17,7 +17,7 @@ namespace RB::States
 		virtual iStateMachine* GetStateMachine() = 0;
 		virtual void QueueNextState(iState* nextState) = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
-		virtual unsigned int GetCumulatedFixedUpdates() = 0;
+		virtual size_t GetCumulatedFixedUpdates() = 0;
 		virtual RB::Sprites::SpriteID GetSpriteID() = 0;
 
 	public:

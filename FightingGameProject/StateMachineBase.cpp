@@ -59,12 +59,12 @@ namespace RB::States
 		}
 	}
 
-	void StateMachineBase::SetID(int ID)
+	void StateMachineBase::SetID(size_t ID)
 	{
 		_stateMachineID = ID;
 	}
 
-	int StateMachineBase::GetID()
+	size_t StateMachineBase::GetID()
 	{
 		return _stateMachineID;
 	}

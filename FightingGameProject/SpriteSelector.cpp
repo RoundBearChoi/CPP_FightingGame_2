@@ -22,7 +22,7 @@ namespace RB::HBE::Menu
 	{
 		_spriteID = static_cast<RB::Sprites::SpriteID>(index);
 
-		std::cout << "SpriteID: " << index << std::endl;
+		//std::cout << "SpriteID: " << index << std::endl;
 	}
 
 	void SpriteSelector::_NextSel()
@@ -44,7 +44,6 @@ namespace RB::HBE::Menu
 
 		if (endButton.bPressed)
 		{
-
 			int32_t current = static_cast<int32_t>(_spriteID);
 			current--;
 			current = _LimitSelection(current);

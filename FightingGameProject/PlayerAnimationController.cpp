@@ -20,11 +20,11 @@ namespace RB::Render
 		//players
 		_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 
-		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		//RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		//RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
-		_vecPlayers.push_back(p1);
-		_vecPlayers.push_back(p2);
+		//_vecPlayers.push_back(p1);
+		//_vecPlayers.push_back(p2);
 
 		//sprites
 		_spriteRenderer.Init();
@@ -84,9 +84,14 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
-		SetFirstAnimations();
+		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
-		SetNewAnimationObjsOnChange();
+		SetFirstAnimations(*p1);
+		SetFirstAnimations(*p2);
+
+		SetNewAnimationObjsOnChange(*p1);
+		SetNewAnimationObjsOnChange(*p2);
 
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
@@ -102,40 +107,69 @@ namespace RB::Render
 		}
 	}
 
-	void PlayerAnimationController::SetFirstAnimations()
+	void PlayerAnimationController::SetFirstAnimations(RB::Players::iPlayer& player)
 	{
-		if (_vecPlayerAnimationObjs.size() == 0)
+		if (_p1_FirstAnimationExists && _p2_FirstAnimationExists)
 		{
-			for (size_t i = 0; i < _vecPlayers.size(); i++)
-			{
-				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetSpriteID();
-
-				AnimationRenderer* animationRenderer = _animationLoader.GetAnimation(spriteID);
-
-				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], animationRenderer);
-
-				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
-			}
+			return;
 		}
+			
+		_p1_FirstAnimationExists = true;
+		_p2_FirstAnimationExists = true;
+
+		RB::Sprites::SpriteID spriteID = player.GetSpriteID();
+
+		AnimationRenderer* animationRenderer = _animationLoader.GetAnimation(spriteID);
+
+		PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, animationRenderer);
+
+		_vecPlayerAnimationObjs.push_back(playerAnimationObj);
+
+		//if (_vecPlayerAnimationObjs.size() == 0)
+		//{
+		//	for (size_t i = 0; i < _vecPlayers.size(); i++)
+		//	{
+		//		RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetSpriteID();
+		//
+		//		AnimationRenderer* animationRenderer = _animationLoader.GetAnimation(spriteID);
+		//
+		//		PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], animationRenderer);
+		//
+		//		_vecPlayerAnimationObjs.push_back(playerAnimationObj);
+		//	}
+		//}
 	}
 
-	void PlayerAnimationController::SetNewAnimationObjsOnChange()
+	void PlayerAnimationController::SetNewAnimationObjsOnChange(RB::Players::iPlayer& player)
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		RB::Sprites::SpriteID playerSpriteID = player.GetSpriteID();
+		RB::Players::PlayerID playerID = player.GetPlayerID();
+		RB::Sprites::SpriteID animationSpriteID = GetSpriteID(playerID);
+
+		if (playerSpriteID != animationSpriteID)
 		{
-			RB::Sprites::SpriteID playerSpriteID = _vecPlayers[i]->GetSpriteID();
-			RB::Players::PlayerID playerID = _vecPlayers[i]->GetPlayerID();
-			RB::Sprites::SpriteID animationSpriteID = GetSpriteID(playerID);
+			DeleteAnimationObj(playerID);
 
-			if (playerSpriteID != animationSpriteID)
-			{
-				DeleteAnimationObj(playerID);
+			PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteID));
 
-				PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], _animationLoader.GetAnimation(playerSpriteID));
-
-				_vecPlayerAnimationObjs.push_back(playerAnimationObj);
-			}
+			_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 		}
+
+		//for (size_t i = 0; i < _vecPlayers.size(); i++)
+		//{
+		//	RB::Sprites::SpriteID playerSpriteID = _vecPlayers[i]->GetSpriteID();
+		//	RB::Players::PlayerID playerID = _vecPlayers[i]->GetPlayerID();
+		//	RB::Sprites::SpriteID animationSpriteID = GetSpriteID(playerID);
+		//
+		//	if (playerSpriteID != animationSpriteID)
+		//	{
+		//		DeleteAnimationObj(playerID);
+		//
+		//		PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(_vecPlayers[i], _animationLoader.GetAnimation(playerSpriteID));
+		//
+		//		_vecPlayerAnimationObjs.push_back(playerAnimationObj);
+		//	}
+		//}
 	}
 
 	RB::Sprites::SpriteID PlayerAnimationController::GetSpriteID(RB::Players::PlayerID playerID)

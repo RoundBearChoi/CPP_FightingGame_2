@@ -20,8 +20,8 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
-		void SetFirstAnimations();
-		void SetNewAnimationObjsOnChange();
+		void SetFirstAnimations(RB::Players::iPlayer& player);
+		void SetNewAnimationObjsOnChange(RB::Players::iPlayer& player);
 		RB::Sprites::SpriteID GetSpriteID(RB::Players::PlayerID playerID);
 		void DeleteAnimationObj(RB::Players::PlayerID playerID);
 
@@ -29,9 +29,13 @@ namespace RB::Render
 		SpriteRenderer _spriteRenderer;
 		AnimationLoader _animationLoader;
 		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
-		std::vector<RB::Players::iPlayer*> _vecPlayers;
+		//std::vector<RB::Players::iPlayer*> _vecPlayers;
 
 	private:
 		RB::Players::PlayerController* _playerController = nullptr;
+
+	private:
+		bool _p1_FirstAnimationExists = false;
+		bool _p2_FirstAnimationExists = false;
 	};
 }

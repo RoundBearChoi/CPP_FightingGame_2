@@ -83,16 +83,19 @@ namespace RB::Render
 
 		SetFirstAnimations();
 
-		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
-		if (p1 == nullptr || p2 == nullptr)
+		for (size_t i = 0; i < 2; i++)
 		{
-			return;
-		}
+			arr[i] = _playerController->GetPlayerOnIndex(i);
 
-		SetNewAnimationObjsOnChange(*p1);
-		SetNewAnimationObjsOnChange(*p2);
+			if (arr[i] == nullptr)
+			{
+				continue;
+			}
+
+			SetNewAnimationObjsOnChange(*arr[i]);
+		}
 
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
@@ -120,11 +123,14 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
-		int32_t size = sizeof(arr) / sizeof(arr[0]);
+		_vecPlayerAnimationObjs.reserve(4);
 
-		for (size_t i = 0; i < size; i++)
+		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
+
+		for (size_t i = 0; i < 2; i++)
 		{
+			arr[i] = _playerController->GetPlayerOnIndex(i);
+
 			if (arr[i] == nullptr)
 			{
 				continue;

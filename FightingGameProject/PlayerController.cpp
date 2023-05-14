@@ -54,6 +54,16 @@ namespace RB::Players
 		}
 	}
 
+	iPlayer* PlayerController::GetPlayerOnIndex(size_t index)
+	{
+		if (index < _vecPlayers.size())
+		{
+			return _vecPlayers[index];
+		}
+
+		return nullptr;
+	}
+
 	iPlayer* PlayerController::GetPlayerOnID(PlayerID id)
 	{
 		for (size_t i = 0; i < _vecPlayers.size(); i++)

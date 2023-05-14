@@ -22,6 +22,7 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
+		iPlayer* GetPlayerOnIndex(size_t index);
 		iPlayer* GetPlayerOnID(PlayerID id);
 		iPlayer* GetPlayerOnStateMachineID(size_t id);
 

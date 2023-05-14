@@ -68,32 +68,6 @@ namespace RB::HurtBox
 		return std::vector<HurtBoxSpecs>{};
 	}
 
-	/*void HurtBoxSpecsLoader::LoadSample()
-	{
-		std::string loaded = RB::JSON::JGetter::LoadJSONFile("HurtBoxSpecs/Sample.HurtBoxSpecs");
-		const char* json = loaded.c_str();
-
-		struct json_value_s* root = json_parse(json, strlen(json));
-
-		struct json_array_s* whole = json_value_as_array(root);
-
-		//struct json_array_s* arr = json_value_as_array(whole->start->value);
-		struct json_array_s* arr = json_value_as_array(whole->start->next->value);
-
-		size_t count = arr->length;
-
-		std::vector<HurtBoxSpecs> vec;
-		
-		for (size_t i = 0; i < count; i++)
-		{
-			HurtBoxSpecs data = GetHurtBoxSpecs(*arr, i);
-		
-			vec.push_back(data);
-		}
-		
-		free(root);
-	}*/
-
 	void HurtBoxSpecsLoader::SaveSample()
 	{
 		std::string path = "HurtBoxSpecs/Sample.HurtBoxSpecs";
@@ -106,68 +80,73 @@ namespace RB::HurtBox
 			file << "{" << std::endl;
 
 			//frame 0
-			file << "\"frame_0\" : [" << std::endl;
+			file << "    \"frame_0\":" << std::endl;
+			file << "    [" << std::endl;
 
-			file << "{" << std::endl;
-			file << "\"posX\" : 1," << std::endl;
-			file << "\"posY\" : 2," << std::endl;
-			file << "\"width\" : 1.1," << std::endl;
-			file << "\"height\" : 2.2" << std::endl;
-			file << "}," << std::endl;
+			file << "        {" << std::endl;
+			file << "        \"posX\" : 1," << std::endl;
+			file << "        \"posY\" : 2," << std::endl;
+			file << "        \"width\" : 1.1," << std::endl;
+			file << "        \"height\" : 2.2" << std::endl;
+			file << "        }," << std::endl;
 
-			file << "{" << std::endl;
-			file << "\"posX\" : 3," << std::endl;
-			file << "\"posY\" : 4," << std::endl;
-			file << "\"width\" : 3.3," << std::endl;
-			file << "\"height\" : 4.4" << std::endl;
-			file << "}," << std::endl;
+			file << "        {" << std::endl;
+			file << "        \"posX\" : 3," << std::endl;
+			file << "        \"posY\" : 4," << std::endl;
+			file << "        \"width\" : 3.3," << std::endl;
+			file << "        \"height\" : 4.4" << std::endl;
+			file << "        }," << std::endl;
 
-			file << "{" << std::endl;
-			file << "\"posX\" : 5," << std::endl;
-			file << "\"posY\" : 6," << std::endl;
-			file << "\"width\" : 5.5," << std::endl;
-			file << "\"height\" : 6.6" << std::endl;
-			file << "}," << std::endl;
+			file << "        {" << std::endl;
+			file << "        \"posX\" : 5," << std::endl;
+			file << "        \"posY\" : 6," << std::endl;
+			file << "        \"width\" : 5.5," << std::endl;
+			file << "        \"height\" : 6.6" << std::endl;
+			file << "        }," << std::endl;
 
-			file << "{" << std::endl;
-			file << "\"posX\" : 7," << std::endl;
-			file << "\"posY\" : 8," << std::endl;
-			file << "\"width\" : 7.7," << std::endl;
-			file << "\"height\" : 8.8" << std::endl;
-			file << "}" << std::endl;
+			file << "        {" << std::endl;
+			file << "        \"posX\" : 7," << std::endl;
+			file << "        \"posY\" : 8," << std::endl;
+			file << "        \"width\" : 7.7," << std::endl;
+			file << "        \"height\" : 8.8" << std::endl;
+			file << "        }" << std::endl;
 
-			file << "]," << std::endl;
+			file << "    ]," << std::endl;
+			file << std::endl;
 
 			//frame 1
-			file << "\"frame_1\" : [" << std::endl;
+			file << "    \"frame_1\":" << std::endl;
+			file << "    [" << std::endl;
 
-			file << "{" << std::endl;
-			file << "\"posX\" : 1," << std::endl;
-			file << "\"posY\" : 2," << std::endl;
-			file << "\"width\" : 1.5," << std::endl;
-			file << "\"height\" : 2.5" << std::endl;
-			file << "}" << std::endl;
+			file << "        {" << std::endl;
+			file << "        \"posX\" : 1," << std::endl;
+			file << "        \"posY\" : 2," << std::endl;
+			file << "        \"width\" : 1.5," << std::endl;
+			file << "        \"height\" : 2.5" << std::endl;
+			file << "        }" << std::endl;
 			
-			file << "]," << std::endl;
+			file << "    ]," << std::endl;
+			file << std::endl;
 
 			//frame 2
-			file << "\"frame_2\" : [" << std::endl;
+			file << "    \"frame_2\":" << std::endl;
+			file << "    [" << std::endl;
 
-			file << "{" << std::endl;
-			file << "\"posX\" : 10," << std::endl;
-			file << "\"posY\" : 20," << std::endl;
-			file << "\"width\" : 1.111," << std::endl;
-			file << "\"height\" : 2.222" << std::endl;
-			file << "}," << std::endl;
+			file << "        {" << std::endl;
+			file << "        \"posX\" : 10," << std::endl;
+			file << "        \"posY\" : 20," << std::endl;
+			file << "        \"width\" : 1.111," << std::endl;
+			file << "        \"height\" : 2.222" << std::endl;
+			file << "        }," << std::endl;
 
-			file << "{" << std::endl;
-			file << "\"posX\" : 30," << std::endl;
-			file << "\"posY\" : 40," << std::endl;
-			file << "\"width\" : 3.333," << std::endl;
-			file << "\"height\" : 4.444" << std::endl;
-			file << "}" << std::endl;
+			file << "        {" << std::endl;
+			file << "        \"posX\" : 30," << std::endl;
+			file << "        \"posY\" : 40," << std::endl;
+			file << "        \"width\" : 3.333," << std::endl;
+			file << "        \"height\" : 4.444" << std::endl;
+			file << "        }" << std::endl;
 
-			file << "]" << std::endl;
+			file << "    ]" << std::endl;
 
 			//end of whole obj
 			file << "}"; 

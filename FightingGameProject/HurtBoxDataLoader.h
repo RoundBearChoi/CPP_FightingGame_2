@@ -28,7 +28,6 @@ namespace RB::HurtBox
 		std::vector<HurtBoxSpecs> ParseData(const json_object_s& wholeObj, size_t frame);
 
 	public:
-		//void LoadSample();
 		void SaveSample();
 
 	public:

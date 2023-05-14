@@ -30,9 +30,6 @@ namespace RB::PlayerDebug
 		void DrawPlayerBottomLeft(RB::Players::iPlayer* player);
 		void DrawPlayerAirMomentum(RB::Players::iPlayer* player);
 
-	//private:
-	//	std::vector<RB::Players::iPlayer*> _vecPlayers;
-
 	private:
 		RB::Render::SpriteRenderer _spriteRenderer;
 		RB::Render::LineRenderer _lineRenderer;

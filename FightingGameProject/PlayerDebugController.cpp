@@ -11,9 +11,6 @@ namespace RB::PlayerDebug
 	{
 		_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 
-		//_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
-		//_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2));
-
 		//sprite renderer
 		_spriteRenderer.Init();
 		_spriteRenderer.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
@@ -34,14 +31,6 @@ namespace RB::PlayerDebug
 		DrawPlayerPosition(p2);
 		DrawPlayerAirMomentum(p1);
 		DrawPlayerAirMomentum(p2);
-
-		//for (size_t i = 0; i < _vecPlayers.size(); i++)
-		//{
-		//	DrawPlayerBox(_vecPlayers[i]);
-		//	DrawPlayerPosition(_vecPlayers[i]);
-		//	DrawPlayerAirMomentum(_vecPlayers[i]);
-		//	//DrawPlayerBottomLeft(_vecPlayers[i]);
-		//}
 	}
 
 	void PlayerDebugController::OnFixedUpdate()

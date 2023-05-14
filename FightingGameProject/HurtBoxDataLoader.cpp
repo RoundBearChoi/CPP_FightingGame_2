@@ -105,7 +105,14 @@ namespace RB::HurtBox
 
 	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteID spriteID)
 	{
-		json_value_s* root = LoadRoot("HurtBoxSpecs/Sample.HurtBoxSpecs");
+		json_value_s* root = LoadRoot(path);
+
+		if (root == nullptr)
+		{
+			HurtBoxDataSet emptySet;
+			emptySet.mSpriteID = spriteID;
+			return emptySet;
+		}
 
 		struct json_object_s* obj = json_value_as_object(root);
 
@@ -123,12 +130,12 @@ namespace RB::HurtBox
 			vecData.push_back(data);
 		}
 
-		HurtBoxDataSet set{ spriteID, vecData };
+		HurtBoxDataSet resultSet{ spriteID, vecData };
 
 		//make sure to free root after use
 		free(root);
 
-		return set;
+		return resultSet;
 	}
 
 	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const json_object_s& wholeObj, const RB::Sprites::SpriteID spriteID)

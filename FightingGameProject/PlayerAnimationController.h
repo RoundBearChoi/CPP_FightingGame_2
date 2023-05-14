@@ -20,7 +20,7 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
-		void SetFirstAnimations(RB::Players::iPlayer& player);
+		void SetFirstAnimations();
 		void SetNewAnimationObjsOnChange(RB::Players::iPlayer& player);
 		RB::Sprites::SpriteID GetSpriteID(RB::Players::PlayerID playerID);
 		void DeleteAnimationObj(RB::Players::PlayerID playerID);
@@ -35,7 +35,7 @@ namespace RB::Render
 		RB::Players::PlayerController* _playerController = nullptr;
 
 	private:
-		bool _p1_FirstAnimationExists = false;
-		bool _p2_FirstAnimationExists = false;
+		//bool _p1_FirstAnimationExists = false;
+		//bool _p2_FirstAnimationExists = false;
 	};
 }

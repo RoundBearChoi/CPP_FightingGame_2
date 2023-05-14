@@ -79,7 +79,6 @@ namespace RB::HurtBox
 			//start of whole obj
 			file << "{" << std::endl;
 
-			//frame 0
 			file << "    \"frame_0\":" << std::endl;
 			file << "    [" << std::endl;
 
@@ -114,7 +113,6 @@ namespace RB::HurtBox
 			file << "    ]," << std::endl;
 			file << std::endl;
 
-			//frame 1
 			file << "    \"frame_1\":" << std::endl;
 			file << "    [" << std::endl;
 
@@ -128,7 +126,6 @@ namespace RB::HurtBox
 			file << "    ]," << std::endl;
 			file << std::endl;
 
-			//frame 2
 			file << "    \"frame_2\":" << std::endl;
 			file << "    [" << std::endl;
 

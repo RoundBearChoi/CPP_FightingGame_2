@@ -8,6 +8,7 @@
 #include "JGetter.h"
 #include "HurtBoxSpecs.h"
 #include "HurtBoxData.h"
+#include "HurtBoxDataSet.h"
 
 namespace RB::HurtBox
 {
@@ -25,7 +26,8 @@ namespace RB::HurtBox
 		/// make sure to free root after use
 		/// </summary>
 		json_value_s* LoadRoot(std::string path);
-		std::vector<HurtBoxSpecs> ParseData(const json_object_s& wholeObj, size_t frame);
+		HurtBoxDataSet GetDataSet(const json_object_s& wholeObj, const RB::Sprites::SpriteID spriteID);
+		std::vector<HurtBoxSpecs> ParseData(const json_object_s& wholeObj, const size_t frame);
 
 	public:
 		void SaveSample();

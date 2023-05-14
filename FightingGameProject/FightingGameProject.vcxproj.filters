@@ -393,5 +393,8 @@
     <ClInclude Include="HurtBoxData.h">
       <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
+    <ClInclude Include="HurtBoxDataSet.h">
+      <Filter>Source Files\HurtBox</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

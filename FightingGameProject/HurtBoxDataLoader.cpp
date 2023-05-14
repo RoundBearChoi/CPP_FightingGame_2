@@ -9,19 +9,8 @@ namespace RB::HurtBox
 		json_value_s* root = LoadRoot("HurtBoxSpecs/Sample.HurtBoxSpecs");
 
 		struct json_object_s* obj = json_value_as_object(root);
-		size_t length = obj->length;
 
-		std::vector<HurtBoxData> vecData;
-		vecData.reserve(length);
-		
-		for (size_t i = 0; i < length; i++)
-		{
-			std::vector<HurtBoxSpecs> vec = ParseData(*obj, i);
-		
-			HurtBoxData data{ i, vec };
-		
-			vecData.push_back(data);
-		}
+		HurtBoxDataSet set = GetDataSet(*obj, RB::Sprites::SpriteID::NONE);
 
 		free(root);
 	}
@@ -37,7 +26,28 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, size_t frame)
+	HurtBoxDataSet HurtBoxSpecsLoader::GetDataSet(const json_object_s& wholeObj, const RB::Sprites::SpriteID spriteID)
+	{
+		size_t length = wholeObj.length;
+
+		std::vector<HurtBoxData> vecData;
+		vecData.reserve(length);
+
+		for (size_t i = 0; i < length; i++)
+		{
+			std::vector<HurtBoxSpecs> vec = ParseData(wholeObj, i);
+
+			HurtBoxData data{ i, vec };
+
+			vecData.push_back(data);
+		}
+
+		HurtBoxDataSet set{ spriteID, vecData };
+
+		return set;
+	}
+
+	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 

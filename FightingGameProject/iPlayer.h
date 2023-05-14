@@ -4,6 +4,7 @@
 #include "PlayerID.h"
 #include "AABB.h"
 #include "SpriteID.h"
+#include "iStateMachine.h"
 
 namespace RB::Players
 {
@@ -22,6 +23,7 @@ namespace RB::Players
 		virtual PlayerID GetPlayerID() = 0;
 		virtual bool OtherPlayerIsOnRightSide() = 0;
 		virtual size_t GetStateMachineID() = 0;
+		virtual RB::States::iStateMachine* GetStateMachine() = 0;
 		virtual void Move(olc::vi2d moveAmount) = 0;
 		virtual olc::vi2d GetPosition() = 0;
 		virtual void SetPosition(olc::vi2d pos) = 0;

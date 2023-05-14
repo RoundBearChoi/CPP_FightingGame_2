@@ -17,7 +17,7 @@ namespace RB::States
 	void StateMachineBase::Init(iState* state)
 	{
 		_currentState = state;
-		_currentState->SetStateMachine(this);
+		_currentState->SetStateMachineID(_stateMachineID);
 		_currentState->OnEnter();
 	}
 
@@ -49,9 +49,11 @@ namespace RB::States
 
 		if (_makeTransition == false)
 		{
-			_nextState = state;
+			_currentState->SetTransitionStatus(true);
 
 			_makeTransition = true;
+
+			_nextState = state;
 		}
 		else
 		{
@@ -100,7 +102,7 @@ namespace RB::States
 			_makeTransition = false;
 			_nextState = nullptr;
 
-			_currentState->SetStateMachine(this);
+			_currentState->SetStateMachineID(_stateMachineID);
 			_currentState->OnEnter();
 		}
 	}

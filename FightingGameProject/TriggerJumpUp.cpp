@@ -7,7 +7,7 @@ namespace RB::PlayerStateComponents
 		_inputController = RB::Controllers::ActiveControllers::GetController<RB::Input::InputController>();
 
 		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachine()->GetID());
+		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 	}
 
 	void TriggerJumpUp::OnUpdate()
@@ -18,7 +18,8 @@ namespace RB::PlayerStateComponents
 
 		if (jump.bPressed || jump.bHeld)
 		{
-			_state->QueueNextState(new RB::P0_States::P0_JumpUp());
+			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
+			machine->QueueNextState(new RB::P0_States::P0_JumpUp());
 
 			return;
 		}

@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 #include "iState.h"
-#include "iStateMachine.h"
 #include "StateComponentBase.h"
 
 namespace RB::States
@@ -13,9 +12,10 @@ namespace RB::States
 		StateBase();
 		~StateBase() override;
 
-		virtual void SetStateMachine(iStateMachine* stateMachine) override;
-		virtual iStateMachine* GetStateMachine() override;
-		virtual void QueueNextState(iState* nextState) override;
+		virtual void SetStateMachineID(size_t id) override;
+		virtual size_t GetStateMachineID() override;
+		//virtual void QueueNextState(iState* nextState) override;
+		virtual void SetTransitionStatus(bool status) override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual size_t GetCumulatedFixedUpdates() override;
 		virtual RB::Sprites::SpriteID GetSpriteID() override;
@@ -34,8 +34,9 @@ namespace RB::States
 		virtual void OnFixedUpdate() override {}
 
 	protected:
-		iStateMachine* _stateMachine = nullptr;
+		size_t _stateMachineID = 0;
 		size_t _cumulatedFixedUpdates = 0;
+		bool _isTransitioning = false;
 		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
 		std::vector<StateComponentBase*> _vecStateComponents;
 	};

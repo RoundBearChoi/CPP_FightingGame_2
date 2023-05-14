@@ -3,6 +3,7 @@
 #include "P0_JumpUp.h"
 #include "ActiveControllers.h"
 #include "InputController.h"
+#include "iPlayer.h"
 
 namespace RB::PlayerStateComponents
 {

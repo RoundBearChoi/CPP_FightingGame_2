@@ -80,6 +80,11 @@ namespace RB::Players
 		}
 	}
 
+	RB::States::iStateMachine* Player::GetStateMachine()
+	{
+		return _stateMachine;
+	}
+
 	size_t Player::GetStateMachineID()
 	{
 		return _stateMachine->GetID();

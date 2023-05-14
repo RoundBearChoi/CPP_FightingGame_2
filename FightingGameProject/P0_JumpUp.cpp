@@ -10,7 +10,7 @@ namespace RB::P0_States
 	void P0_JumpUp::OnEnter()
 	{
 		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachine->GetID());
+		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachineID);
 
 		float startUpMomentum = 9.0f;
 		_ownerPlayer->SetAirMomentum(olc::vf2d{ 0.0f, startUpMomentum });
@@ -29,7 +29,9 @@ namespace RB::P0_States
 		{
 			_ownerPlayer->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
 
-			_stateMachine->QueueNextState(new RB::P0_States::P0_FallDown());
+			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
+
+			machine->QueueNextState(new RB::P0_States::P0_FallDown());
 		}
 		else
 		{

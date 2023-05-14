@@ -15,6 +15,7 @@ namespace RB::P0_States
 
 	public:
 		void OnEnter() override;
+		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
 	public:
@@ -22,5 +23,6 @@ namespace RB::P0_States
 
 	private:
 		Updaters::TriggerOnFixedUpdateCount<P0_Start> _triggerOnFixedUpdateCount;
+		RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

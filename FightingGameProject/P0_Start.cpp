@@ -5,7 +5,7 @@ namespace RB::P0_States
 {
 	P0_Start::P0_Start()
 	{
-		// no sprite yet
+		// no sprite
 	}
 
 	void P0_Start::OnEnter()
@@ -14,13 +14,28 @@ namespace RB::P0_States
 		_triggerOnFixedUpdateCount.SetFunction(this, &P0_Start::TransitionToIdle);
 	}
 
+	void P0_Start::OnUpdate()
+	{
+		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+
+		if (pc != nullptr)
+		{
+			_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachineID);
+		}
+	}
+
 	void P0_Start::OnFixedUpdate()
 	{
-		_triggerOnFixedUpdateCount.OnFixedUpdate();
+		if (_ownerPlayer != nullptr)
+		{
+			_triggerOnFixedUpdateCount.OnFixedUpdate();
+		}
 	}
 
 	void P0_Start::TransitionToIdle()
 	{
-		_stateMachine->QueueNextState(new RB::P0_States::P0_Idle());
+		RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
+
+		machine->QueueNextState(new RB::P0_States::P0_Idle());
 	}
 }

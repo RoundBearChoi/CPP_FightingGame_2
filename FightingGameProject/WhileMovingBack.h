@@ -4,6 +4,7 @@
 #include "MoveForwardDetector.h"
 #include "P0_Idle.h"
 #include "P0_MoveForward.h"
+#include "iPlayer.h"
 
 namespace RB::PlayerStateComponents
 {

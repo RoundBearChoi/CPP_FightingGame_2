@@ -21,19 +21,7 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-		//RB::Players::iPlayer* p1 = new RB::Players::Player();
-		//RB::Players::iPlayer* p2 = new RB::Players::Player();
-		//
-		//_vecPlayers.reserve(2);
-		//
-		//_vecPlayers.push_back(p1);
-		//_vecPlayers.push_back(p2);
-		//
-		//p1->Init(PlayerID::PLAYER_1, new RB::P0_States::P0_Start());
-		//p2->Init(PlayerID::PLAYER_2, new RB::P0_States::P0_Start());
-		//
-		//p1->SetPosition(olc::vi2d{ -150, 0 });
-		//p2->SetPosition(olc::vi2d{ 150, 0 });
+
 	}
 
 	void PlayerController::OnUpdate()

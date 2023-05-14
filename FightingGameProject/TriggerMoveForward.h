@@ -2,6 +2,7 @@
 #include "StateComponentBase.h"
 #include "MoveForwardDetector.h"
 #include "P0_MoveForward.h"
+#include "iPlayer.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -17,5 +18,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		MoveForwardDetector _moveForwardDetector;
+		RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

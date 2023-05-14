@@ -5,7 +5,7 @@ namespace RB::PlayerStateComponents
 	void WhileMovingBack::OnEnter()
 	{
 		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachine()->GetID());
+		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		_moveForwardDetector.Init(_ownerPlayer);
 		_moveBackDetector.Init(_ownerPlayer);
@@ -57,14 +57,17 @@ namespace RB::PlayerStateComponents
 
 		if (_moveForward)
 		{
-			_state->GetStateMachine()->QueueNextState(new RB::P0_States::P0_MoveForward());
+			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
+			machine->QueueNextState(new RB::P0_States::P0_MoveForward());
 
 			return;
 		}
 
 		if (!_keepMoving)
 		{
-			_state->QueueNextState(new RB::P0_States::P0_Idle());
+			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
+
+			machine->QueueNextState(new RB::P0_States::P0_Idle());
 
 			return;
 		}

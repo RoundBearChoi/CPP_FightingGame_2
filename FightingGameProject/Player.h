@@ -2,7 +2,6 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "Time.h"
-#include "iStateMachine.h"
 #include "StateMachineBase.h"
 #include "StateMachineID.h"
 #include "iPlayer.h"
@@ -30,6 +29,7 @@ namespace RB::Players
 	public:
 		PlayerID GetPlayerID() override;
 		bool OtherPlayerIsOnRightSide() override;
+		RB::States::iStateMachine* GetStateMachine() override;
 		size_t GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
 		olc::vi2d GetPosition() override;

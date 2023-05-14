@@ -25,9 +25,6 @@ namespace RB::JSON
 
 			loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
 
-			//std::cout << std::endl;
-			//std::cout << loadedStr << std::endl;
-
 			return loadedStr;
 		}
 

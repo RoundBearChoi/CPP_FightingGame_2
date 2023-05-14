@@ -27,6 +27,8 @@ namespace RB::Players
 		virtual void Move(olc::vi2d moveAmount) = 0;
 		virtual olc::vi2d GetPosition() = 0;
 		virtual void SetPosition(olc::vi2d pos) = 0;
+		virtual void SetManualAnimationUpdate(bool manual) = 0;
+		virtual bool ManualAnimationUpdate() = 0;
 
 	public:
 		virtual olc::vi2d GetPlayerBox() = 0;

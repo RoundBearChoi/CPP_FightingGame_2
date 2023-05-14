@@ -18,6 +18,11 @@ namespace RB::Render
 
 	void PlayerAnimationObj::IncreaseAnimationIndex()
 	{
+		if (_ownerPlayer->ManualAnimationUpdate())
+		{
+			return;
+		}
+
 		uint32_t totalSprites = _animationRenderer->GetAnimationSpecs().mTotalSprites;
 
 		_currentIndex++;

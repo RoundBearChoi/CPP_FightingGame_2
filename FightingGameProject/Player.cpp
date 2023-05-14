@@ -105,6 +105,16 @@ namespace RB::Players
 		_position = pos;
 	}
 
+	void Player::SetManualAnimationUpdate(bool manual)
+	{
+		_manualAnimationUpdate = manual;
+	}
+
+	bool Player::ManualAnimationUpdate()
+	{
+		return _manualAnimationUpdate;
+	}
+
 	olc::vi2d Player::GetPlayerBox()
 	{
 		return _playerCollider.GetPlayerBox();

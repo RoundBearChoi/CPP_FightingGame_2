@@ -34,6 +34,8 @@ namespace RB::Players
 		void Move(olc::vi2d moveAmount) override;
 		olc::vi2d GetPosition() override;
 		void SetPosition(olc::vi2d pos) override;
+		void SetManualAnimationUpdate(bool manual) override;
+		bool ManualAnimationUpdate() override;
 
 	public:
 		olc::vi2d GetPlayerBox() override;
@@ -55,5 +57,6 @@ namespace RB::Players
 		PlayerCollider _playerCollider;
 		AirMomentum _airMomentum;
 		olc::vi2d _position = { 0, 0 };
+		bool _manualAnimationUpdate = false;
 	};
 }

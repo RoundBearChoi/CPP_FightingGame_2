@@ -138,27 +138,6 @@ namespace RB::HurtBox
 		return resultSet;
 	}
 
-	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const json_object_s& wholeObj, const RB::Sprites::SpriteID spriteID)
-	{
-		size_t length = wholeObj.length;
-
-		std::vector<HurtBoxData> vecData;
-		vecData.reserve(length);
-
-		for (size_t i = 0; i < length; i++)
-		{
-			std::vector<HurtBoxSpecs> vec = ParseData(wholeObj, i);
-
-			HurtBoxData data{ i, vec };
-
-			vecData.push_back(data);
-		}
-
-		HurtBoxDataSet set{ spriteID, vecData };
-
-		return set;
-	}
-
 	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
 	{
 		json_object_element_s* objE = wholeObj.start;

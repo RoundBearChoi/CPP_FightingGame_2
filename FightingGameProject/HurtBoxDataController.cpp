@@ -20,16 +20,16 @@ namespace RB::HurtBox
 
 	}
 
-	HurtBoxDataSet& HurtBoxDataController::GetDataSet(RB::Sprites::SpriteID spriteID)
+	HurtBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteID spriteID)
 	{
 		for (size_t i = 0; i < _vecDataSets.size(); i++)
 		{
 			if (_vecDataSets[i].mSpriteID == spriteID)
 			{
-				return _vecDataSets[i];
+				return &_vecDataSets[i];
 			}
 		}
 
-		return _vecDataSets[0];
+		return nullptr;
 	}
 }

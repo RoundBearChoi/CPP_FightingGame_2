@@ -206,6 +206,7 @@
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="HurtBoxSpecs.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
+    <ClInclude Include="P0_Idle_Dummy.h" />
     <ClInclude Include="SpriteSelector.h" />
     <ClInclude Include="TriggerJumpUp.h" />
     <ClInclude Include="WhileMovingBack.h" />

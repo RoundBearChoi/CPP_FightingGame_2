@@ -21,7 +21,7 @@ namespace RB::Updaters
 		RB::Controllers::ActiveControllers::Init();
 
 		RB::Players::PlayerController* playerController = new RB::Players::PlayerController();
-		playerController->AddPlayer(new RB::Players::Player(), new RB::P0_States::P0_Start(), olc::vi2d{ 0, 0 }, RB::Players::PlayerID::PLAYER_1);
+		playerController->AddPlayer(new RB::Players::Player(), new RB::P0_States::P0_Idle_Dummy(), olc::vi2d{ 0, 0 }, RB::Players::PlayerID::PLAYER_1);
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(playerController));
 

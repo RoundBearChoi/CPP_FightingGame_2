@@ -10,6 +10,7 @@
 #include "MenuController.h"
 #include "HurtBoxDataController.h"
 #include "Player.h"
+#include "P0_Idle_Dummy.h"
 
 namespace RB::Updaters
 {

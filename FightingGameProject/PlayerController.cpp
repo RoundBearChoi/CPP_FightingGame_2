@@ -25,6 +25,7 @@ namespace RB::Players
 		RB::Players::iPlayer* p2 = new RB::Players::Player();
 
 		_vecPlayers.reserve(2);
+
 		_vecPlayers.push_back(p1);
 		_vecPlayers.push_back(p2);
 

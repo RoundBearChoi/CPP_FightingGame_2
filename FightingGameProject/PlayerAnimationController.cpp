@@ -120,20 +120,24 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
+		int32_t size = sizeof(arr) / sizeof(arr[0]);
 
-		RB::Sprites::SpriteID p1_SpriteID = p1->GetSpriteID();
-		RB::Sprites::SpriteID p2_SpriteID = p2->GetSpriteID();
+		for (size_t i = 0; i < size; i++)
+		{
+			if (arr[i] == nullptr)
+			{
+				continue;
+			}
 
-		AnimationRenderer* p1_renderer = _animationLoader.GetAnimation(p1_SpriteID);
-		AnimationRenderer* p2_renderer = _animationLoader.GetAnimation(p2_SpriteID);
+			RB::Sprites::SpriteID p1_SpriteID = arr[i]->GetSpriteID();
 
-		PlayerAnimationObj* p1_ani_obj = new PlayerAnimationObj(p1, p1_renderer);
-		PlayerAnimationObj* p2_ani_obj = new PlayerAnimationObj(p2, p2_renderer);
+			AnimationRenderer* p1_renderer = _animationLoader.GetAnimation(p1_SpriteID);
 
-		_vecPlayerAnimationObjs.push_back(p1_ani_obj);
-		_vecPlayerAnimationObjs.push_back(p2_ani_obj);
+			PlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], p1_renderer);
+
+			_vecPlayerAnimationObjs.push_back(animationObj);
+		}
 	}
 
 	void PlayerAnimationController::SetNewAnimationObjsOnChange(RB::Players::iPlayer& player)

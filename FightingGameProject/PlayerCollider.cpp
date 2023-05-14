@@ -17,6 +17,11 @@ namespace RB::Players
 		PlayerID myID = _player->GetPlayerID();
 		iPlayer* otherPlayer = _player->GetOtherPlayer();
 
+		if (otherPlayer == nullptr)
+		{
+			return;
+		}
+
 		RB::Collisions::AABB otherAABB = otherPlayer->GetAABB();
 		RB::Collisions::AABB myAABB = GetAABB();
 

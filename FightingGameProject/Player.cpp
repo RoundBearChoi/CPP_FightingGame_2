@@ -61,6 +61,11 @@ namespace RB::Players
 
 	bool Player::OtherPlayerIsOnRightSide()
 	{
+		if (_otherPlayer == nullptr)
+		{
+			return true;
+		}
+
 		if (_position.x < _otherPlayer->GetPosition().x)
 		{
 			return true;

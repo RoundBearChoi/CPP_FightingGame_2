@@ -5,21 +5,21 @@ namespace RB::HurtBox
 	void HurtBoxSpecsLoader::Init()
 	{
 		SaveSample();
-		LoadSample();
 
 		json_value_s* root = LoadRoot("HurtBoxSpecs/Sample.HurtBoxSpecs");
-		json_array_s* arr = json_value_as_array(root);
-		size_t length = arr->length;
+
+		struct json_object_s* obj = json_value_as_object(root);
+		size_t length = obj->length;
 
 		std::vector<HurtBoxData> vecData;
 		vecData.reserve(length);
-
+		
 		for (size_t i = 0; i < length; i++)
 		{
-			std::vector<HurtBoxSpecs> vec = ParseData(root, i);
-
-			HurtBoxData data{ RB::Sprites::SpriteID::NONE, vec, i };
-
+			std::vector<HurtBoxSpecs> vec = ParseData(*obj, i);
+		
+			HurtBoxData data{ i, vec };
+		
 			vecData.push_back(data);
 		}
 
@@ -37,18 +37,17 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(json_value_s* root, size_t frame)
+	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, size_t frame)
 	{
-		struct json_array_s* whole = json_value_as_array(root);
-		json_array_element_s* element = whole->start;
+		json_object_element_s* objE = wholeObj.start;
 
 		int count = 0;
 		
-		while (element != nullptr)
+		while (objE != nullptr)
 		{
 			if (count == frame)
 			{
-				struct json_array_s* arr = json_value_as_array(element->value);
+				struct json_array_s* arr = json_value_as_array(objE->value);
 
 				std::vector<HurtBoxSpecs> vec;
 				vec.reserve(arr->length);
@@ -63,13 +62,13 @@ namespace RB::HurtBox
 			}
 
 			count++;
-			element = element->next;
+			objE = objE->next;
 		}
 
 		return std::vector<HurtBoxSpecs>{};
 	}
 
-	void HurtBoxSpecsLoader::LoadSample()
+	/*void HurtBoxSpecsLoader::LoadSample()
 	{
 		std::string loaded = RB::JSON::JGetter::LoadJSONFile("HurtBoxSpecs/Sample.HurtBoxSpecs");
 		const char* json = loaded.c_str();
@@ -93,7 +92,7 @@ namespace RB::HurtBox
 		}
 		
 		free(root);
-	}
+	}*/
 
 	void HurtBoxSpecsLoader::SaveSample()
 	{
@@ -103,11 +102,11 @@ namespace RB::HurtBox
 
 		if (file.is_open())
 		{
-			//start of whole array
-			file << "[" << std::endl;
+			//start of whole obj
+			file << "{" << std::endl;
 
 			//frame 0
-			file << "[" << std::endl;
+			file << "\"frame_0\" : [" << std::endl;
 
 			file << "{" << std::endl;
 			file << "\"posX\" : 1," << std::endl;
@@ -140,7 +139,7 @@ namespace RB::HurtBox
 			file << "]," << std::endl;
 
 			//frame 1
-			file << "[" << std::endl;
+			file << "\"frame_1\" : [" << std::endl;
 
 			file << "{" << std::endl;
 			file << "\"posX\" : 1," << std::endl;
@@ -152,7 +151,7 @@ namespace RB::HurtBox
 			file << "]," << std::endl;
 
 			//frame 2
-			file << "[" << std::endl;
+			file << "\"frame_2\" : [" << std::endl;
 
 			file << "{" << std::endl;
 			file << "\"posX\" : 10," << std::endl;
@@ -170,8 +169,8 @@ namespace RB::HurtBox
 
 			file << "]" << std::endl;
 
-			//end of whole array
-			file << "]"; 
+			//end of whole obj
+			file << "}"; 
 
 			file.flush();
 			file.close();

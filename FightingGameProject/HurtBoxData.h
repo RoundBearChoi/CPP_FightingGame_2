@@ -12,8 +12,7 @@ namespace RB::HurtBox
 		~HurtBoxData() = default;
 
 	public:
-		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
-		std::vector<HurtBoxSpecs> mVecSpecs;
 		size_t mFrame = 0;
+		std::vector<HurtBoxSpecs> mVecSpecs;
 	};
 }

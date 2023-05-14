@@ -25,10 +25,10 @@ namespace RB::HurtBox
 		/// make sure to free root after use
 		/// </summary>
 		json_value_s* LoadRoot(std::string path);
-		std::vector<HurtBoxSpecs> ParseData(json_value_s* root, size_t frame);
+		std::vector<HurtBoxSpecs> ParseData(const json_object_s& wholeObj, size_t frame);
 
 	public:
-		void LoadSample();
+		//void LoadSample();
 		void SaveSample();
 
 	public:

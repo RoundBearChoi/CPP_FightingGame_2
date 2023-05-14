@@ -5,77 +5,6 @@ namespace RB::HurtBox
 	void HurtBoxSpecsLoader::Init()
 	{
 		SaveSample();
-
-		json_value_s* root = LoadRoot("HurtBoxSpecs/Sample.HurtBoxSpecs");
-
-		struct json_object_s* obj = json_value_as_object(root);
-
-		HurtBoxDataSet set = GetDataSet(*obj, RB::Sprites::SpriteID::NONE);
-
-		free(root);
-	}
-
-	json_value_s* HurtBoxSpecsLoader::LoadRoot(std::string path)
-	{
-		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
-
-		const char* json = loaded.c_str();
-
-		struct json_value_s* root = json_parse(json, strlen(json));
-
-		return root;
-	}
-
-	HurtBoxDataSet HurtBoxSpecsLoader::GetDataSet(const json_object_s& wholeObj, const RB::Sprites::SpriteID spriteID)
-	{
-		size_t length = wholeObj.length;
-
-		std::vector<HurtBoxData> vecData;
-		vecData.reserve(length);
-
-		for (size_t i = 0; i < length; i++)
-		{
-			std::vector<HurtBoxSpecs> vec = ParseData(wholeObj, i);
-
-			HurtBoxData data{ i, vec };
-
-			vecData.push_back(data);
-		}
-
-		HurtBoxDataSet set{ spriteID, vecData };
-
-		return set;
-	}
-
-	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
-	{
-		json_object_element_s* objE = wholeObj.start;
-
-		int count = 0;
-		
-		while (objE != nullptr)
-		{
-			if (count == frame)
-			{
-				struct json_array_s* arr = json_value_as_array(objE->value);
-
-				std::vector<HurtBoxSpecs> vec;
-				vec.reserve(arr->length);
-
-				for (size_t i = 0; i < arr->length; i++)
-				{
-					HurtBoxSpecs data = GetHurtBoxSpecs(*arr, i);
-					vec.push_back(data);
-				}
-
-				return vec;
-			}
-
-			count++;
-			objE = objE->next;
-		}
-
-		return std::vector<HurtBoxSpecs>{};
 	}
 
 	void HurtBoxSpecsLoader::SaveSample()
@@ -132,7 +61,7 @@ namespace RB::HurtBox
 			file << "        \"width\" : 1.5," << std::endl;
 			file << "        \"height\" : 2.5" << std::endl;
 			file << "        }" << std::endl;
-			
+
 			file << "    ]," << std::endl;
 			file << std::endl;
 
@@ -156,11 +85,102 @@ namespace RB::HurtBox
 			file << "    ]" << std::endl;
 
 			//end of whole obj
-			file << "}"; 
+			file << "}";
 
 			file.flush();
 			file.close();
 		}
+	}
+
+	json_value_s* HurtBoxSpecsLoader::LoadRoot(std::string path)
+	{
+		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
+
+		const char* json = loaded.c_str();
+
+		struct json_value_s* root = json_parse(json, strlen(json));
+
+		return root;
+	}
+
+	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteID spriteID)
+	{
+		json_value_s* root = LoadRoot("HurtBoxSpecs/Sample.HurtBoxSpecs");
+
+		struct json_object_s* obj = json_value_as_object(root);
+
+		size_t length = obj->length;
+
+		std::vector<HurtBoxData> vecData;
+		vecData.reserve(length);
+
+		for (size_t i = 0; i < length; i++)
+		{
+			std::vector<HurtBoxSpecs> vec = ParseData(*obj, i);
+
+			HurtBoxData data{ i, vec };
+
+			vecData.push_back(data);
+		}
+
+		HurtBoxDataSet set{ spriteID, vecData };
+
+		//make sure to free root after use
+		free(root);
+
+		return set;
+	}
+
+	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const json_object_s& wholeObj, const RB::Sprites::SpriteID spriteID)
+	{
+		size_t length = wholeObj.length;
+
+		std::vector<HurtBoxData> vecData;
+		vecData.reserve(length);
+
+		for (size_t i = 0; i < length; i++)
+		{
+			std::vector<HurtBoxSpecs> vec = ParseData(wholeObj, i);
+
+			HurtBoxData data{ i, vec };
+
+			vecData.push_back(data);
+		}
+
+		HurtBoxDataSet set{ spriteID, vecData };
+
+		return set;
+	}
+
+	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
+	{
+		json_object_element_s* objE = wholeObj.start;
+
+		int count = 0;
+		
+		while (objE != nullptr)
+		{
+			if (count == frame)
+			{
+				struct json_array_s* arr = json_value_as_array(objE->value);
+
+				std::vector<HurtBoxSpecs> vec;
+				vec.reserve(arr->length);
+
+				for (size_t i = 0; i < arr->length; i++)
+				{
+					HurtBoxSpecs data = GetHurtBoxSpecs(*arr, i);
+					vec.push_back(data);
+				}
+
+				return vec;
+			}
+
+			count++;
+			objE = objE->next;
+		}
+
+		return std::vector<HurtBoxSpecs>{};
 	}
 
 	HurtBoxSpecs HurtBoxSpecsLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)

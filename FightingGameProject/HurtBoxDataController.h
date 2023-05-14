@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "ControllerBase.h"
 #include "HurtBoxDataLoader.h"
 
@@ -17,5 +18,6 @@ namespace RB::HurtBox
 
 	private:
 		HurtBoxSpecsLoader _loader;
+		std::vector<HurtBoxDataSet> _vecDataSets;
 	};
 }

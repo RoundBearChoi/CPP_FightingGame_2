@@ -3,6 +3,7 @@
 #include "olcPixelGameEngine.h"
 #include "iUpdaterObj.h"
 #include "iUpdaterObj.h"
+#include "Player.h"
 #include "ActiveControllers.h"
 #include "InputController.h"
 #include "PlayerController.h"

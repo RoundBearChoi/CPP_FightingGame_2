@@ -30,13 +30,15 @@ namespace RB::Players
 		}
 	}
 
-	void Player::SetOtherPlayer(iPlayer* otherPlayer)
-	{
-		_otherPlayer = otherPlayer;
-	}
-
 	void Player::OnUpdate()
 	{
+		if (_playerController == nullptr)
+		{
+			_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+
+			return;
+		}
+
 		_stateMachine->OnUpdate();
 
 		_playerCollider.OnUpdate();
@@ -54,19 +56,21 @@ namespace RB::Players
 		return _playerID;
 	}
 
-	iPlayer* Player::GetOtherPlayer()
-	{
-		return _otherPlayer;
-	}
-
 	bool Player::OtherPlayerIsOnRightSide()
 	{
-		if (_otherPlayer == nullptr)
+		if (_playerController == nullptr)
 		{
 			return true;
 		}
 
-		if (_position.x < _otherPlayer->GetPosition().x)
+		iPlayer* other = _playerController->GetOtherPlayer(this);
+
+		if (other == nullptr)
+		{
+			return true;
+		}
+
+		if (_position.x < other->GetPosition().x)
 		{
 			return true;
 		}

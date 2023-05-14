@@ -21,22 +21,19 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-		RB::Players::iPlayer* p1 = new RB::Players::Player();
-		RB::Players::iPlayer* p2 = new RB::Players::Player();
-
-		_vecPlayers.reserve(2);
-
-		_vecPlayers.push_back(p1);
-		_vecPlayers.push_back(p2);
-
-		p1->Init(PlayerID::PLAYER_1, new RB::P0_States::P0_Start());
-		p2->Init(PlayerID::PLAYER_2, new RB::P0_States::P0_Start());
-
-		p1->SetPosition(olc::vi2d{ -150, 0 });
-		p2->SetPosition(olc::vi2d{ 150, 0 });
-
-		p1->SetOtherPlayer(p2);
-		p2->SetOtherPlayer(p1);
+		//RB::Players::iPlayer* p1 = new RB::Players::Player();
+		//RB::Players::iPlayer* p2 = new RB::Players::Player();
+		//
+		//_vecPlayers.reserve(2);
+		//
+		//_vecPlayers.push_back(p1);
+		//_vecPlayers.push_back(p2);
+		//
+		//p1->Init(PlayerID::PLAYER_1, new RB::P0_States::P0_Start());
+		//p2->Init(PlayerID::PLAYER_2, new RB::P0_States::P0_Start());
+		//
+		//p1->SetPosition(olc::vi2d{ -150, 0 });
+		//p2->SetPosition(olc::vi2d{ 150, 0 });
 	}
 
 	void PlayerController::OnUpdate()
@@ -53,6 +50,18 @@ namespace RB::Players
 		{
 			_vecPlayers[i]->OnFixedUpdate();
 		}
+	}
+
+	void PlayerController::AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID)
+	{
+		_vecPlayers.reserve(2);
+
+		iPlayer* p = player;
+
+		p->Init(playerID, firstState);
+		p->SetPosition(startPos);
+
+		_vecPlayers.push_back(p);
 	}
 
 	iPlayer* PlayerController::GetPlayerOnIndex(size_t index)
@@ -83,6 +92,19 @@ namespace RB::Players
 		for (size_t i = 0; i < _vecPlayers.size(); i++)
 		{
 			if (_vecPlayers[i]->GetStateMachineID() == id)
+			{
+				return _vecPlayers[i];
+			}
+		}
+
+		return nullptr;
+	}
+
+	iPlayer* PlayerController::GetOtherPlayer(iPlayer* currentPlayer)
+	{
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		{
+			if (_vecPlayers[i]->GetPlayerID() != currentPlayer->GetPlayerID())
 			{
 				return _vecPlayers[i];
 			}

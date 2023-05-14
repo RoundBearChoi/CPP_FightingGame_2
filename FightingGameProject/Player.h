@@ -11,6 +11,8 @@
 #include "PlayerCollider.h"
 #include "AABB.h"
 #include "AirMomentum.h"
+#include "ActiveControllers.h"
+#include "PlayerController.h"
 
 namespace RB::Players
 {
@@ -22,13 +24,11 @@ namespace RB::Players
 
 	public:
 		void Init(PlayerID id, RB::States::iState* firstPlayerState) override;
-		void SetOtherPlayer(iPlayer* otherPlayer) override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
 	public:
 		PlayerID GetPlayerID() override;
-		iPlayer* GetOtherPlayer() override;
 		bool OtherPlayerIsOnRightSide() override;
 		size_t GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
@@ -49,11 +49,11 @@ namespace RB::Players
 		RB::Sprites::SpriteID GetSpriteID() override;
 
 	private:
+		RB::Players::PlayerController* _playerController = nullptr;
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;
 		AirMomentum _airMomentum;
 		olc::vi2d _position = { 0, 0 };
-		iPlayer* _otherPlayer = nullptr;
 	};
 }

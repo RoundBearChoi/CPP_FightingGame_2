@@ -15,13 +15,11 @@ namespace RB::Players
 
 	public:
 		virtual void Init(PlayerID id, RB::States::iState* firstPlayerState) = 0;
-		virtual void SetOtherPlayer(iPlayer* otherPlayer) = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
 	public:
 		virtual PlayerID GetPlayerID() = 0;
-		virtual iPlayer* GetOtherPlayer() = 0;
 		virtual bool OtherPlayerIsOnRightSide() = 0;
 		virtual size_t GetStateMachineID() = 0;
 		virtual void Move(olc::vi2d moveAmount) = 0;

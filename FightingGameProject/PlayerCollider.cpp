@@ -9,27 +9,36 @@ namespace RB::Players
 
 	void PlayerCollider::OnUpdate()
 	{
-
+		if (_playerController == nullptr)
+		{
+			_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+			return;
+		}
 	}
 
 	void PlayerCollider::OnFixedUpdate()
 	{
-		PlayerID myID = _player->GetPlayerID();
-		iPlayer* otherPlayer = _player->GetOtherPlayer();
-
-		if (otherPlayer == nullptr)
+		if (_playerController == nullptr)
 		{
 			return;
 		}
 
-		RB::Collisions::AABB otherAABB = otherPlayer->GetAABB();
+		PlayerID myID = _player->GetPlayerID();
+		iPlayer* other = _playerController->GetOtherPlayer(_player);
+
+		if (other == nullptr)
+		{
+			return;
+		}
+
+		RB::Collisions::AABB otherAABB = other->GetAABB();
 		RB::Collisions::AABB myAABB = GetAABB();
 
 		if (myAABB.IsCollidingAgainst(otherAABB))
 		{
 			_isColliding = true;
 
-			ResolveCollision(otherPlayer);
+			ResolveCollision(other);
 		}
 		else
 		{

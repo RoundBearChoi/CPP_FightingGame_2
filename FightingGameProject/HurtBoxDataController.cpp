@@ -12,7 +12,7 @@ namespace RB::HurtBox
 
 	void HurtBoxDataController::OnUpdate()
 	{
-
+		
 	}
 
 	void HurtBoxDataController::OnFixedUpdate()

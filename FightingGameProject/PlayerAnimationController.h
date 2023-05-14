@@ -25,6 +25,7 @@ namespace RB::Render
 		void SetNewAnimationObjsOnChange(RB::Players::iPlayer& player);
 		RB::Sprites::SpriteID GetSpriteID(RB::Players::PlayerID playerID);
 		void DeleteAnimationObj(RB::Players::PlayerID playerID);
+		PlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteID spriteID);
 
 	private:
 		SpriteRenderer _spriteRenderer;

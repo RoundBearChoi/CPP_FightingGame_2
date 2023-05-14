@@ -191,4 +191,20 @@ namespace RB::Render
 			}
 		}
 	}
+
+	PlayerAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteID spriteID)
+	{
+		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		{
+			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
+			{
+				if (_vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteID == spriteID)
+				{
+					return _vecPlayerAnimationObjs[i];
+				}
+			}
+		}
+
+		return nullptr;
+	}
 }

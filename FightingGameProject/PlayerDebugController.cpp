@@ -11,8 +11,8 @@ namespace RB::PlayerDebug
 	{
 		_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 
-		_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
-		_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2));
+		//_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
+		//_vecPlayers.push_back(_playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2));
 
 		//sprite renderer
 		_spriteRenderer.Init();
@@ -25,13 +25,23 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::OnUpdate()
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
-		{
-			DrawPlayerBox(_vecPlayers[i]);
-			DrawPlayerPosition(_vecPlayers[i]);
-			DrawPlayerAirMomentum(_vecPlayers[i]);
-			//DrawPlayerBottomLeft(_vecPlayers[i]);
-		}
+		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+
+		DrawPlayerBox(p1);
+		DrawPlayerBox(p2);
+		DrawPlayerPosition(p1);
+		DrawPlayerPosition(p2);
+		DrawPlayerAirMomentum(p1);
+		DrawPlayerAirMomentum(p2);
+
+		//for (size_t i = 0; i < _vecPlayers.size(); i++)
+		//{
+		//	DrawPlayerBox(_vecPlayers[i]);
+		//	DrawPlayerPosition(_vecPlayers[i]);
+		//	DrawPlayerAirMomentum(_vecPlayers[i]);
+		//	//DrawPlayerBottomLeft(_vecPlayers[i]);
+		//}
 	}
 
 	void PlayerDebugController::OnFixedUpdate()

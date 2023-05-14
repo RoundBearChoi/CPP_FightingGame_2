@@ -13,6 +13,7 @@ namespace RB::States
 		virtual void SetStateMachineID(size_t id) = 0;
 		virtual size_t GetStateMachineID() = 0;
 		virtual void SetTransitionStatus(bool status) = 0;
+		virtual bool IsTransitioning() = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual size_t GetCumulatedFixedUpdates() = 0;
 		virtual RB::Sprites::SpriteID GetSpriteID() = 0;

@@ -23,7 +23,7 @@ namespace RB::States
 
 	void StateMachineBase::OnUpdate()
 	{
-		if (!_makeTransition)
+		if (!_currentState->IsTransitioning())
 		{
 			_currentState->OnUpdate();
 		}
@@ -33,7 +33,7 @@ namespace RB::States
 
 	void StateMachineBase::OnFixedUpdate()
 	{
-		if (!_makeTransition)
+		if (!_currentState->IsTransitioning())
 		{
 			_currentState->OnFixedUpdate();
 			_currentState->AddCumulatedFixedUpdate();
@@ -47,11 +47,9 @@ namespace RB::States
 			return;
 		}
 
-		if (_makeTransition == false)
+		if (!_currentState->IsTransitioning())
 		{
 			_currentState->SetTransitionStatus(true);
-
-			_makeTransition = true;
 
 			_nextState = state;
 		}
@@ -78,7 +76,7 @@ namespace RB::States
 
 	bool StateMachineBase::IsTransitioning()
 	{
-		return _makeTransition;
+		return _currentState->IsTransitioning();
 	}
 
 	void StateMachineBase::_DestroyCurrentState()
@@ -93,13 +91,12 @@ namespace RB::States
 
 	void StateMachineBase::_MakeTransition()
 	{
-		if (_makeTransition)
+		if (_currentState->IsTransitioning())
 		{
 			_DestroyCurrentState();
 
 			_currentState = _nextState;
 
-			_makeTransition = false;
 			_nextState = nullptr;
 
 			_currentState->SetStateMachineID(_stateMachineID);

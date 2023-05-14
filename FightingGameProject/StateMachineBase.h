@@ -26,7 +26,7 @@ namespace RB::States
 		size_t _stateMachineID = 0;
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
-		bool _makeTransition = false;
+		//bool _makeTransition = false;
 
 		virtual void _DestroyCurrentState();
 		virtual void _MakeTransition() override;

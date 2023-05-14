@@ -25,6 +25,11 @@ namespace RB::States
 		_isTransitioning = status;
 	}
 
+	bool StateBase::IsTransitioning()
+	{
+		return _isTransitioning;
+	}
+
 	void StateBase::AddCumulatedFixedUpdate()
 	{
 		_cumulatedFixedUpdates++;

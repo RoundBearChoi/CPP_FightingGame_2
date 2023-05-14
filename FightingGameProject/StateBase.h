@@ -15,6 +15,7 @@ namespace RB::States
 		virtual void SetStateMachineID(size_t id) override;
 		virtual size_t GetStateMachineID() override;
 		virtual void SetTransitionStatus(bool status) override;
+		virtual bool IsTransitioning() override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual size_t GetCumulatedFixedUpdates() override;
 		virtual RB::Sprites::SpriteID GetSpriteID() override;

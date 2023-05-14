@@ -1,3 +1,4 @@
+#pragma once
 #include "SpriteRenderer.h"
 #include "AnimationLoader.h"
 #include "PlayerAnimationObj.h"

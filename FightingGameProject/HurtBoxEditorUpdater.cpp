@@ -20,6 +20,15 @@ namespace RB::Updaters
 	{
 		RB::Controllers::ActiveControllers::Init();
 
+		RB::Players::PlayerController* playerController = new RB::Players::PlayerController();
+		playerController->AddPlayer(new RB::Players::Player(), new RB::P0_States::P0_Start(), olc::vi2d{ 0, 0 }, RB::Players::PlayerID::PLAYER_1);
+
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(playerController));
+
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
+
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBE::Menu::MenuController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::HurtBoxDataController()));

@@ -5,12 +5,17 @@ namespace RB::PlayerStateComponents
 	void MoveBackDetector::Init(RB::Players::iPlayer* player)
 	{
 		_player = player;
-
-		_inputController = RB::Controllers::ActiveControllers::GetController<RB::Input::InputController>();
 	}
 
 	void MoveBackDetector::OnUpdate()
 	{
+		if (_inputController == nullptr)
+		{
+			_inputController = RB::Controllers::ActiveControllers::GetController<RB::Input::InputController>();
+
+			return;
+		}
+
 		//false by default
 		_moveBack = false;
 

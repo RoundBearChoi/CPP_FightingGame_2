@@ -5,12 +5,17 @@ namespace RB::PlayerStateComponents
 	void MoveForwardDetector::Init(RB::Players::iPlayer* player)
 	{
 		_player = player;
-
-		_inputController = RB::Controllers::ActiveControllers::GetController<RB::Input::InputController>();
 	}
 
 	void MoveForwardDetector::OnUpdate()
 	{
+		if (_inputController == nullptr)
+		{
+			_inputController = RB::Controllers::ActiveControllers::GetController<RB::Input::InputController>();
+
+			return;
+		}
+
 		//false by default
 		_moveForward = false;
 

@@ -5,8 +5,6 @@ namespace RB::Render
 	AnimationRenderer::AnimationRenderer(AnimationSpecs specs)
 	{
 		_animationSpecs = specs;
-
-		_camController = RB::Controllers::ActiveControllers::GetController<RB::Cam::CamController>();
 	}
 
 	const AnimationSpecs& AnimationRenderer::GetAnimationSpecs()
@@ -18,6 +16,13 @@ namespace RB::Render
 	{
 		if (_animationSpecs.mSpriteID == RB::Sprites::SpriteID::NONE)
 		{
+			return;
+		}
+
+		if (_camController == nullptr)
+		{
+			_camController = RB::Controllers::ActiveControllers::GetController<RB::Cam::CamController>();
+
 			return;
 		}
 

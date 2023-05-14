@@ -2,7 +2,7 @@
 
 namespace RB::Sprites
 {
-	enum class SpriteID : int32_t
+	enum class SpriteID
 	{
 		NONE = 0,
 

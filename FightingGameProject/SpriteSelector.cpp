@@ -22,7 +22,7 @@ namespace RB::HBE::Menu
 	{
 		_spriteID = static_cast<RB::Sprites::SpriteID>(index);
 
-		//std::cout << "SpriteID: " << index << std::endl;
+		std::cout << "SpriteID: " << index << std::endl;
 	}
 
 	void SpriteSelector::_NextSel()

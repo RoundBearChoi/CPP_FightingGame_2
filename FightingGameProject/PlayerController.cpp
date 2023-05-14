@@ -12,41 +12,56 @@ namespace RB::Players
 	PlayerController::~PlayerController()
 	{
 		std::cout << "destroying PlayerController" << std::endl;
+
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		{
+			delete _vecPlayers[i];
+		}
 	}
 
 	void PlayerController::Init()
 	{
-		_player1.Init(PlayerID::PLAYER_1, new RB::P0_States::P0_Start());
-		_player2.Init(PlayerID::PLAYER_2, new RB::P0_States::P0_Start());
+		RB::Players::iPlayer* p1 = new RB::Players::Player();
+		RB::Players::iPlayer* p2 = new RB::Players::Player();
 
-		_player1.SetPosition(olc::vi2d{ -150, 0 });
-		_player2.SetPosition(olc::vi2d{ 150, 0 });
+		_vecPlayers.reserve(2);
+		_vecPlayers.push_back(p1);
+		_vecPlayers.push_back(p2);
 
-		_player1.SetOtherPlayer(&_player2);
-		_player2.SetOtherPlayer(&_player1);
+		p1->Init(PlayerID::PLAYER_1, new RB::P0_States::P0_Start());
+		p2->Init(PlayerID::PLAYER_2, new RB::P0_States::P0_Start());
+
+		p1->SetPosition(olc::vi2d{ -150, 0 });
+		p2->SetPosition(olc::vi2d{ 150, 0 });
+
+		p1->SetOtherPlayer(p2);
+		p2->SetOtherPlayer(p1);
 	}
 
 	void PlayerController::OnUpdate()
 	{
-		_player1.OnUpdate();
-		_player2.OnUpdate();
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		{
+			_vecPlayers[i]->OnUpdate();
+		}
 	}
 
 	void PlayerController::OnFixedUpdate()
 	{
-		_player1.OnFixedUpdate();
-		_player2.OnFixedUpdate();
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		{
+			_vecPlayers[i]->OnFixedUpdate();
+		}
 	}
 
 	iPlayer* PlayerController::GetPlayerOnID(PlayerID id)
 	{
-		if (_player1.GetPlayerID() == id)
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
 		{
-			return &_player1;
-		}
-		else if (_player2.GetPlayerID() == id)
-		{
-			return &_player2;
+			if (_vecPlayers[i]->GetPlayerID() == id)
+			{
+				return _vecPlayers[i];
+			}
 		}
 
 		return nullptr;
@@ -54,13 +69,12 @@ namespace RB::Players
 
 	iPlayer* PlayerController::GetPlayerOnStateMachineID(size_t id)
 	{
-		if (_player1.GetStateMachineID() == id)
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
 		{
-			return &_player1;
-		}
-		else if (_player2.GetStateMachineID() == id)
-		{
-			return &_player2;
+			if (_vecPlayers[i]->GetStateMachineID() == id)
+			{
+				return _vecPlayers[i];
+			}
 		}
 
 		return nullptr;

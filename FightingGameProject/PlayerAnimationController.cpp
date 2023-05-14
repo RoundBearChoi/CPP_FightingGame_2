@@ -17,9 +17,6 @@ namespace RB::Render
 
 	void PlayerAnimationController::Init()
 	{
-		//players
-		_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-
 		//sprites
 		_spriteRenderer.Init();
 		_spriteRenderer.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteID::fighter_0_idle);
@@ -78,10 +75,21 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
+		if (_playerController == nullptr)
+		{
+			_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+			return;
+		}
+
 		SetFirstAnimations();
 
 		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
 		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+
+		if (p1 == nullptr || p2 == nullptr)
+		{
+			return;
+		}
 
 		SetNewAnimationObjsOnChange(*p1);
 		SetNewAnimationObjsOnChange(*p2);
@@ -102,6 +110,11 @@ namespace RB::Render
 
 	void PlayerAnimationController::SetFirstAnimations()
 	{
+		if (_playerController == nullptr)
+		{
+			return;
+		}
+
 		if (_vecPlayerAnimationObjs.size() > 0)
 		{
 			return;

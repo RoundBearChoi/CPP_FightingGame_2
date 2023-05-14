@@ -25,12 +25,19 @@ namespace RB::PlayerDebug
 		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
 		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
-		DrawPlayerBox(p1);
-		DrawPlayerBox(p2);
-		DrawPlayerPosition(p1);
-		DrawPlayerPosition(p2);
-		DrawPlayerAirMomentum(p1);
-		DrawPlayerAirMomentum(p2);
+		if (p1 != nullptr)
+		{
+			DrawPlayerBox(p1);
+			DrawPlayerPosition(p1);
+			DrawPlayerAirMomentum(p1);
+		}
+
+		if (p2 != nullptr)
+		{
+			DrawPlayerBox(p2);
+			DrawPlayerPosition(p2);
+			DrawPlayerAirMomentum(p2);
+		}
 	}
 
 	void PlayerDebugController::OnFixedUpdate()

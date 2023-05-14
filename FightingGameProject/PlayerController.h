@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "olcPixelGameEngine.h"
 #include "ControllerBase.h"
 #include "iPlayer.h"
@@ -25,7 +26,6 @@ namespace RB::Players
 		iPlayer* GetPlayerOnStateMachineID(size_t id);
 
 	private:
-		Player _player1;
-		Player _player2;
+		std::vector<RB::Players::iPlayer*> _vecPlayers;
 	};
 }

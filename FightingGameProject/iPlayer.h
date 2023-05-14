@@ -1,5 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include "iState.h"
 #include "PlayerID.h"
 #include "AABB.h"
 #include "SpriteID.h"
@@ -11,6 +12,12 @@ namespace RB::Players
 	public:
 		iPlayer() = default;
 		virtual ~iPlayer() = default;
+
+	public:
+		virtual void Init(PlayerID id, RB::States::iState* firstPlayerState) = 0;
+		virtual void SetOtherPlayer(iPlayer* otherPlayer) = 0;
+		virtual void OnUpdate() = 0;
+		virtual void OnFixedUpdate() = 0;
 
 	public:
 		virtual PlayerID GetPlayerID() = 0;

@@ -31,7 +31,7 @@ namespace RB::Render
 		void RenderAnimation();
 
 	private:
-		RB::Players::iPlayer* _player = nullptr;
+		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		AnimationRenderer* _animationRenderer = nullptr;
 		unsigned int _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<PlayerAnimationObj> _skipFixedUpdates;

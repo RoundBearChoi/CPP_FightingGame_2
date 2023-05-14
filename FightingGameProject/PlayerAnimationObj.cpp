@@ -4,7 +4,7 @@ namespace RB::Render
 {
 	PlayerAnimationObj::PlayerAnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer)
 	{
-		_player = owner;
+		_ownerPlayer = owner;
 		_animationRenderer = animationRenderer;
 
 		_skipFixedUpdates.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
@@ -66,7 +66,7 @@ namespace RB::Render
 
 	RB::Players::iPlayer* PlayerAnimationObj::GetPlayer()
 	{
-		return _player;
+		return _ownerPlayer;
 	}
 
 	const AnimationSpecs& PlayerAnimationObj::GetAnimationSpecs()
@@ -88,9 +88,9 @@ namespace RB::Render
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderSize = GetRenderSize();
 		renderSettings.mRenderOffset = GetRenderOffset();
-		renderSettings.mWorldPos = _player->GetPosition();
+		renderSettings.mWorldPos = _ownerPlayer->GetPosition();
 		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
-		renderSettings.mFaceRight = _player->OtherPlayerIsOnRightSide();
+		renderSettings.mFaceRight = _ownerPlayer->OtherPlayerIsOnRightSide();
 
 		_animationRenderer->RenderAnimation(renderSettings);
 	}

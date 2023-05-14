@@ -35,7 +35,7 @@ namespace RB::Input
 
 	olc::HWButton InputController::GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		for (int i = 0; i < _vecKeyBindings.size(); i++)
+		for (size_t i = 0; i < _vecKeyBindings.size(); i++)
 		{
 			if (_vecKeyBindings[i].GetPlayerID() == playerID)
 			{

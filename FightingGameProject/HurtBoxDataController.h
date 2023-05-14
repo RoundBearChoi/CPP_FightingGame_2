@@ -16,6 +16,9 @@ namespace RB::HurtBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
+	public:
+		HurtBoxDataSet& GetDataSet(RB::Sprites::SpriteID spriteID);
+
 	private:
 		HurtBoxSpecsLoader _loader;
 		std::vector<HurtBoxDataSet> _vecDataSets;

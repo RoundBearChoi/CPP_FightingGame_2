@@ -9,7 +9,7 @@ namespace RB::Render
 
 	PlayerAnimationController::~PlayerAnimationController()
 	{
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			delete _vecPlayerAnimationObjs[i];
 		}
@@ -88,7 +88,7 @@ namespace RB::Render
 
 		SetNewAnimationObjsOnChange();
 
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			_vecPlayerAnimationObjs[i]->RenderAnimation();
 		}
@@ -96,7 +96,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			_vecPlayerAnimationObjs[i]->OnFixedUpdate();
 		}
@@ -106,7 +106,7 @@ namespace RB::Render
 	{
 		if (_vecPlayerAnimationObjs.size() == 0)
 		{
-			for (int i = 0; i < _vecPlayers.size(); i++)
+			for (size_t i = 0; i < _vecPlayers.size(); i++)
 			{
 				RB::Sprites::SpriteID spriteID = _vecPlayers[i]->GetSpriteID();
 
@@ -121,7 +121,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::SetNewAnimationObjsOnChange()
 	{
-		for (int i = 0; i < _vecPlayers.size(); i++)
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
 		{
 			RB::Sprites::SpriteID playerSpriteID = _vecPlayers[i]->GetSpriteID();
 			RB::Players::PlayerID playerID = _vecPlayers[i]->GetPlayerID();
@@ -140,7 +140,7 @@ namespace RB::Render
 
 	RB::Sprites::SpriteID PlayerAnimationController::GetSpriteID(RB::Players::PlayerID playerID)
 	{
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
@@ -155,7 +155,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		for (int i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{

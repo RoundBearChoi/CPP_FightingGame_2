@@ -46,7 +46,7 @@ namespace RB::Render
 			};
 		}
 
-		for (int i = 0; i < points.size(); i++)
+		for (size_t i = 0; i < points.size(); i++)
 		{
 			points[i] = _camController->GetCamObj()->GetRelativePosition(points[i]);
 		}

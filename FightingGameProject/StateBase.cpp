@@ -9,7 +9,7 @@ namespace RB::States
 
 	StateBase::~StateBase()
 	{
-		for (int i = 0; i < _vecStateComponents.size(); i++)
+		for (size_t i = 0; i < _vecStateComponents.size(); i++)
 		{
 			delete _vecStateComponents[i];
 		}
@@ -54,7 +54,7 @@ namespace RB::States
 
 	void StateBase::EnterStateComponents()
 	{
-		for (int i = 0; i < _vecStateComponents.size(); i++)
+		for (size_t i = 0; i < _vecStateComponents.size(); i++)
 		{
 			_vecStateComponents[i]->OnEnter();
 
@@ -67,7 +67,7 @@ namespace RB::States
 
 	void StateBase::ExitStateComponents()
 	{
-		for (int i = 0; i < _vecStateComponents.size(); i++)
+		for (size_t i = 0; i < _vecStateComponents.size(); i++)
 		{
 			_vecStateComponents[i]->OnExit();
 		}
@@ -75,7 +75,7 @@ namespace RB::States
 
 	void StateBase::UpdateStateComponents()
 	{
-		for (int i = 0; i < _vecStateComponents.size(); i++)
+		for (size_t i = 0; i < _vecStateComponents.size(); i++)
 		{
 			_vecStateComponents[i]->OnUpdate();
 
@@ -88,7 +88,7 @@ namespace RB::States
 
 	void StateBase::FixedUpdateStateComponents()
 	{
-		for (int i = 0; i < _vecStateComponents.size(); i++)
+		for (size_t i = 0; i < _vecStateComponents.size(); i++)
 		{
 			_vecStateComponents[i]->OnFixedUpdate();
 

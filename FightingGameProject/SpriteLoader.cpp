@@ -4,7 +4,7 @@ namespace RB::Sprites
 {
 	SpriteLoader::~SpriteLoader()
 	{
-		for (int i = 0; i < _vecLoadedSprites.size(); i++)
+		for (size_t i = 0; i < _vecLoadedSprites.size(); i++)
 		{
 			delete _vecLoadedSprites[i];
 		}
@@ -26,7 +26,7 @@ namespace RB::Sprites
 
 	LoadedSprite* SpriteLoader::GetLoadedSprite(SpriteID spriteID)
 	{
-		for (int i = 0; i < _vecLoadedSprites.size(); i++)
+		for (size_t i = 0; i < _vecLoadedSprites.size(); i++)
 		{
 			if (_vecLoadedSprites[i]->GetSpriteID() == spriteID)
 			{

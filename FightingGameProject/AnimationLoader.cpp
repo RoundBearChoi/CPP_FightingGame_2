@@ -4,7 +4,7 @@ namespace RB::Render
 {
 	AnimationLoader::~AnimationLoader()
 	{
-		for (int i = 0; i < _animationRenderer.size(); i++)
+		for (size_t i = 0; i < _animationRenderer.size(); i++)
 		{
 			delete _animationRenderer[i];
 		}
@@ -34,7 +34,7 @@ namespace RB::Render
 
 	AnimationRenderer* AnimationLoader::GetAnimation(RB::Sprites::SpriteID spriteID)
 	{
-		for (int i = 0; i < _animationRenderer.size(); i++)
+		for (size_t i = 0; i < _animationRenderer.size(); i++)
 		{
 			if (_animationRenderer[i]->GetAnimationSpecs().mSpriteID == spriteID)
 			{

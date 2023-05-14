@@ -25,7 +25,7 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::OnUpdate()
 	{
-		for (int i = 0; i < _vecPlayers.size(); i++)
+		for (size_t i = 0; i < _vecPlayers.size(); i++)
 		{
 			DrawPlayerBox(_vecPlayers[i]);
 			DrawPlayerPosition(_vecPlayers[i]);

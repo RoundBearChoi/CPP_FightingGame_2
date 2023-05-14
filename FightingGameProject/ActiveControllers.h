@@ -32,7 +32,7 @@ namespace RB::Controllers
 		std::hash<std::string> hasher;
 		size_t hash = hasher(name);
 
-		for (int i = 0; i < _vecControllers.size(); i++)
+		for (size_t i = 0; i < _vecControllers.size(); i++)
 		{
 			if (_vecControllers[i]->GetHash() == hash)
 			{

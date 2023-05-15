@@ -24,5 +24,4 @@ namespace RB::P0_States
 		_manualAnimationUpdater.OnFixedUpdate();
 		_manualTransitioner.OnFixedUpdate();
 	}
-
 }

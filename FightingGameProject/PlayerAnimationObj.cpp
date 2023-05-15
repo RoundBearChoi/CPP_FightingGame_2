@@ -8,7 +8,7 @@ namespace RB::Render
 		_animationRenderer = animationRenderer;
 
 		_skipFixedUpdates.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
-		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::IncreaseAnimationIndex);
+		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::UpdateAnimationIndex);
 	}
 
 	void PlayerAnimationObj::OnFixedUpdate()
@@ -16,21 +16,24 @@ namespace RB::Render
 		_skipFixedUpdates.OnFixedUpdate();
 	}
 
-	void PlayerAnimationObj::IncreaseAnimationIndex()
+	void PlayerAnimationObj::UpdateAnimationIndex()
 	{
 		if (_ownerPlayer->ManualAnimationUpdate())
 		{
 			return;
 		}
 
-		uint32_t totalSprites = _animationRenderer->GetAnimationSpecs().mTotalSprites;
-
 		_currentIndex++;
 
-		if (_currentIndex >= totalSprites)
+		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites)
 		{
 			_currentIndex = 0;
 		}
+	}
+
+	void PlayerAnimationObj::ManualAddAnimationIndex(int32_t amount)
+	{
+		_currentIndex += amount;
 	}
 
 	olc::vf2d PlayerAnimationObj::GetSourceSize()

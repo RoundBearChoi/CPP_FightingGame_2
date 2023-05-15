@@ -19,7 +19,8 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	public:
-		void IncreaseAnimationIndex();
+		void UpdateAnimationIndex();
+		void ManualAddAnimationIndex(int32_t amount);
 		olc::vf2d GetSourceSize();
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize);
 		olc::vf2d GetRenderSize();
@@ -33,7 +34,7 @@ namespace RB::Render
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		AnimationRenderer* _animationRenderer = nullptr;
-		unsigned int _currentIndex = 0;
+		int32_t _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<PlayerAnimationObj> _skipFixedUpdates;
 	};
 }

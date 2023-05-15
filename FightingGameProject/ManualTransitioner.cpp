@@ -32,20 +32,11 @@ namespace RB::States
 		{
 			RB::States::iStateMachine* m = RB::States::ActiveStateMachines::GetStateMachine(_stateMachineID);
 
-			if (m != nullptr)
-			{
-				if (_prevState != nullptr)
-				{
-					if (_nextState != nullptr)
-					{
-						delete _nextState;
-					}
+			delete _nextState;
 
-					m->QueueNextState(_prevState);
+			m->QueueNextState(_prevState);
 
-					return true;
-				}
-			}
+			return true;
 		}
 	}
 }

@@ -38,5 +38,7 @@ namespace RB::States
 
 			return true;
 		}
+
+		return false;
 	}
 }

@@ -148,6 +148,7 @@
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HurtBoxDataLoader.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
+    <ClCompile Include="ManualTransitioner.cpp" />
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="jsonExample.h" />
     <ClInclude Include="HurtBoxDataLoader.h" />
     <ClInclude Include="ManualAnimationUpdater.h" />
+    <ClInclude Include="ManualTransitioner.h" />
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="HurtBoxSpecs.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />

@@ -11,7 +11,7 @@ namespace RB::Render
 		~ManualAnimationUpdater() = default;
 
 	public:
-		void Init(RB::Sprites::SpriteID spriteID);
+		void OnEnter(RB::Sprites::SpriteID spriteID);
 		void OnUpdate();
 		void OnFixedUpdate();
 

@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-	void ManualAnimationUpdater::Init(RB::Sprites::SpriteID spriteID)
+	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteID spriteID)
 	{
 		_spriteID = spriteID;
 	}

@@ -23,12 +23,25 @@ namespace RB::States
 		}
 	}
 
+	iStateMachine* ActiveStateMachines::GetStateMachine(size_t id)
+	{
+		for (size_t i = 0; i < _vecStateMachines.size(); i++)
+		{
+			if (_vecStateMachines[i]->GetID() == id)
+			{
+				return _vecStateMachines[i];
+			}
+		}
+
+		return nullptr;
+	}
+
 	void ActiveStateMachines::ResetID()
 	{
 		_cumulatedID = 0;
 	}
 
-	int ActiveStateMachines::GetID()
+	size_t ActiveStateMachines::GetID()
 	{
 		_cumulatedID++;
 

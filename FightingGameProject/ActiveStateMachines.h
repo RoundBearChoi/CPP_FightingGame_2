@@ -17,11 +17,12 @@ namespace RB::States
 
 	public:
 		static void AddStateMachine(iStateMachine* stateMachine);
+		static iStateMachine* GetStateMachine(size_t id);
 		static void ResetID();
-		static int GetID();
+		static size_t GetID();
 
 	private:
-		static inline int _cumulatedID = 0;
+		static inline size_t _cumulatedID = 0;
 		static inline std::vector<iStateMachine*> _vecStateMachines;
 	};
 }

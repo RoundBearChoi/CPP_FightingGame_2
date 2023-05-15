@@ -11,6 +11,21 @@ namespace RB::States
 
 	void ManualTransitioner::OnUpdate()
 	{
+		if (_ToPrev())
+		{
+			return;
+		}
+
+
+	}
+
+	void ManualTransitioner::OnFixedUpdate()
+	{
+
+	}
+	
+	bool ManualTransitioner::_ToPrev()
+	{
 		olc::HWButton home = olc::Platform::ptrPGE->GetKey(olc::Key::HOME);
 
 		if (home.bPressed)
@@ -27,13 +42,10 @@ namespace RB::States
 					}
 
 					m->QueueNextState(_prevState);
+
+					return true;
 				}
 			}
 		}
-	}
-
-	void ManualTransitioner::OnFixedUpdate()
-	{
-
 	}
 }

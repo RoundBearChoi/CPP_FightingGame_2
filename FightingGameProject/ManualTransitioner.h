@@ -17,6 +17,9 @@ namespace RB::States
 		void OnFixedUpdate();
 
 	private:
+		bool _ToPrev();
+
+	private:
 		size_t _stateMachineID = 0;
 		RB::States::iState* _prevState = nullptr;
 		RB::States::iState* _nextState = nullptr;

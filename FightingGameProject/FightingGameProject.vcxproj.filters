@@ -190,6 +190,9 @@
     <ClCompile Include="HurtBoxDataController.cpp">
       <Filter>Source Files\HurtBox</Filter>
     </ClCompile>
+    <ClCompile Include="ManualAnimationUpdater.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -398,6 +401,9 @@
     </ClInclude>
     <ClInclude Include="P0_Idle_Dummy.h">
       <Filter>Source Files\Player0_States</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualAnimationUpdater.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

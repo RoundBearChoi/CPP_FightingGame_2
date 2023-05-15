@@ -14,11 +14,13 @@ namespace RB::Updaters
 		std::cout << "destructing GameplayUpdater" << std::endl;
 
 		RB::Controllers::ActiveControllers::OnEnd();
+		RB::States::ActiveStateMachines::OnEnd();
 	}
 
 	void GameplayUpdater::Init()
 	{
 		RB::Controllers::ActiveControllers::Init();
+		RB::States::ActiveStateMachines::Init();
 
 		RB::Players::PlayerController* playerController = new RB::Players::PlayerController();
 		playerController->AddPlayer(new RB::Players::Player(), new RB::P0_States::P0_Start(), olc::vi2d{-150, 0}, RB::Players::PlayerID::PLAYER_1, false);

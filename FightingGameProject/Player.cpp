@@ -20,7 +20,6 @@ namespace RB::Players
 			_playerID = id;
 
 			_stateMachine = new RB::States::StateMachineBase();
-			_stateMachine->SetID(RB::States::StateMachineID::GetID());
 			_stateMachine->Init(firstPlayerState);
 
 			_playerCollider.Init(this);

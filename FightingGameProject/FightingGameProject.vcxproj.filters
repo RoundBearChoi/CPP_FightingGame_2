@@ -82,7 +82,7 @@
     <ClCompile Include="GameplayUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
-    <ClCompile Include="StateMachineID.cpp">
+    <ClCompile Include="ActiveStateMachines.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
@@ -237,7 +237,7 @@
     <ClInclude Include="GameplayUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
-    <ClInclude Include="StateMachineID.h">
+    <ClInclude Include="ActiveStateMachines.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="iUpdaterObj.h">

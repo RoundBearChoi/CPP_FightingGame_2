@@ -2,6 +2,16 @@
 
 namespace RB::States
 {
+	ManualTransitioner::~ManualTransitioner()
+	{
+		//only delete at the end of program
+		if (!_transitioning)
+		{
+			delete _prevState;
+			delete _nextState;
+		}
+	}
+
 	void ManualTransitioner::OnEnter(size_t stateMachineID, RB::States::iState* prev, RB::States::iState* next)
 	{
 		_stateMachineID = stateMachineID;
@@ -11,12 +21,14 @@ namespace RB::States
 
 	void ManualTransitioner::OnUpdate()
 	{
-		if (_ToPrev())
+		_transitioning = _ToPrev();
+
+		if (_transitioning)
 		{
 			return;
 		}
 
-		_ToNext();
+		_transitioning = _ToNext();
 	}
 
 	void ManualTransitioner::OnFixedUpdate()
@@ -30,11 +42,15 @@ namespace RB::States
 
 		if (home.bPressed)
 		{
-			RB::States::iStateMachine* m = RB::States::ActiveStateMachines::GetStateMachine(_stateMachineID);
-			delete _nextState;
-			m->QueueNextState(_prevState);
+			if (_prevState != nullptr)
+			{
+				RB::States::iStateMachine* m = RB::States::ActiveStateMachines::GetStateMachine(_stateMachineID);
+				delete _nextState;
+				_nextState = nullptr;
+				m->QueueNextState(_prevState);
 
-			return true;
+				return true;
+			}
 		}
 
 		return false;
@@ -46,12 +62,17 @@ namespace RB::States
 
 		if (end.bPressed)
 		{
-			RB::States::iStateMachine* m = RB::States::ActiveStateMachines::GetStateMachine(_stateMachineID);
-			delete _prevState;
-			m->QueueNextState(_nextState);
+			if ((_nextState != nullptr))
+			{
+				RB::States::iStateMachine* m = RB::States::ActiveStateMachines::GetStateMachine(_stateMachineID);
+				delete _prevState;
+				_prevState = nullptr;
+				m->QueueNextState(_nextState);
 
-			return true;
+				return true;
+			}
 		}
+
 		return false;
 	}
 }

@@ -9,7 +9,7 @@ namespace RB::States
 	{
 	public:
 		ManualTransitioner() = default;
-		~ManualTransitioner() = default;
+		~ManualTransitioner();
 
 	public:
 		void OnEnter(size_t stateMachineID, RB::States::iState* prev, RB::States::iState* next);
@@ -24,5 +24,6 @@ namespace RB::States
 		size_t _stateMachineID = 0;
 		RB::States::iState* _prevState = nullptr;
 		RB::States::iState* _nextState = nullptr;
+		bool _transitioning = false;
 	};
 }

@@ -25,15 +25,27 @@ namespace RB::Render
 
 		_currentIndex++;
 
-		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites)
-		{
-			_currentIndex = 0;
-		}
+		LimitAnimationIndex();
 	}
 
 	void PlayerAnimationObj::ManualAddAnimationIndex(int32_t amount)
 	{
 		_currentIndex += amount;
+
+		LimitAnimationIndex();
+	}
+
+	void PlayerAnimationObj::LimitAnimationIndex()
+	{
+		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites)
+		{
+			_currentIndex = 0;
+		}
+
+		else if (_currentIndex < 0)
+		{
+			_currentIndex = _animationRenderer->GetAnimationSpecs().mTotalSprites - 1;
+		}
 	}
 
 	olc::vf2d PlayerAnimationObj::GetSourceSize()

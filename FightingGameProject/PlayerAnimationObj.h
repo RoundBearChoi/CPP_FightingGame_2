@@ -21,6 +21,7 @@ namespace RB::Render
 	public:
 		void UpdateAnimationIndex();
 		void ManualAddAnimationIndex(int32_t amount);
+		void LimitAnimationIndex();
 		olc::vf2d GetSourceSize();
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize);
 		olc::vf2d GetRenderSize();

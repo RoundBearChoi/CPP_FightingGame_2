@@ -1,5 +1,4 @@
 #pragma once
-#include "olcPixelGameEngine.h"
 #include "StateBase.h"
 #include "ManualAnimationUpdater.h"
 #include "ManualTransitioner.h"

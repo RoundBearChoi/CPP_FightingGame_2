@@ -1,8 +1,6 @@
 #pragma once
 #include "StateBase.h"
 #include "iPlayer.h"
-#include "P0_Idle.h"
-#include "P0_MoveBack.h"
 #include "TriggerJumpUp.h"
 #include "WhileMovingForward.h"
 

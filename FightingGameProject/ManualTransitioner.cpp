@@ -16,7 +16,7 @@ namespace RB::States
 			return;
 		}
 
-
+		_ToNext();
 	}
 
 	void ManualTransitioner::OnFixedUpdate()
@@ -31,14 +31,27 @@ namespace RB::States
 		if (home.bPressed)
 		{
 			RB::States::iStateMachine* m = RB::States::ActiveStateMachines::GetStateMachine(_stateMachineID);
-
 			delete _nextState;
-
 			m->QueueNextState(_prevState);
 
 			return true;
 		}
 
+		return false;
+	}
+
+	bool ManualTransitioner::_ToNext()
+	{
+		olc::HWButton end = olc::Platform::ptrPGE->GetKey(olc::Key::END);
+
+		if (end.bPressed)
+		{
+			RB::States::iStateMachine* m = RB::States::ActiveStateMachines::GetStateMachine(_stateMachineID);
+			delete _prevState;
+			m->QueueNextState(_nextState);
+
+			return true;
+		}
 		return false;
 	}
 }

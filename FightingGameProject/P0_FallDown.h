@@ -2,9 +2,10 @@
 #include <iostream>
 #include "StateBase.h"
 #include "PlayerID.h"
-#include "P0_Idle.h"
 #include "PlayerController.h"
 #include "iPlayer.h"
+
+#include "P0_Idle.h"
 
 namespace RB::P0_States
 {

@@ -151,6 +151,8 @@
     <ClCompile Include="ManualTransitioner.cpp" />
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
+    <ClCompile Include="P0_FallDown_Dummy.cpp" />
+    <ClCompile Include="P0_Idle_Dummy.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
     <ClCompile Include="WhileMovingForward.cpp" />

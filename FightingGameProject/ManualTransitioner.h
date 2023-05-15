@@ -18,6 +18,7 @@ namespace RB::States
 
 	private:
 		bool _ToPrev();
+		bool _ToNext();
 
 	private:
 		size_t _stateMachineID = 0;

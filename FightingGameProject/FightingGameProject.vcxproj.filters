@@ -190,9 +190,6 @@
     <ClCompile Include="HurtBoxDataController.cpp">
       <Filter>Source Files\HurtBox</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteSelector.cpp">
-      <Filter>Source Files\HBE::Menu</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -398,9 +395,6 @@
     </ClInclude>
     <ClInclude Include="HurtBoxDataSet.h">
       <Filter>Source Files\HurtBox</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteSelector.h">
-      <Filter>Source Files\HBE::Menu</Filter>
     </ClInclude>
     <ClInclude Include="P0_Idle_Dummy.h">
       <Filter>Source Files\Player0_States</Filter>

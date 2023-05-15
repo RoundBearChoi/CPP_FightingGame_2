@@ -1,7 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "ControllerBase.h"
-#include "SpriteSelector.h"
 
 namespace RB::HBE::Menu
 {
@@ -15,8 +14,5 @@ namespace RB::HBE::Menu
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-
-	private:
-		SpriteSelector _spriteSelector;
 	};
 }

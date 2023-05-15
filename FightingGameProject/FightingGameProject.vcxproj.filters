@@ -202,6 +202,9 @@
     <ClCompile Include="P0_Idle_Dummy.cpp">
       <Filter>Source Files\Player0_States</Filter>
     </ClCompile>
+    <ClCompile Include="P0_JumpUp_Dummy.cpp">
+      <Filter>Source Files\Player0_States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -418,6 +421,9 @@
       <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="P0_FallDown_Dummy.h">
+      <Filter>Source Files\Player0_States</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_JumpUp_Dummy.h">
       <Filter>Source Files\Player0_States</Filter>
     </ClInclude>
   </ItemGroup>

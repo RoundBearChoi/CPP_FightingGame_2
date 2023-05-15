@@ -10,7 +10,7 @@ namespace RB::P0_States
 	void P0_FallDown_Dummy::OnEnter()
 	{
 		_manualAnimationUpdater.OnEnter(_spriteID);
-		_manualTransitioner.OnEnter(_stateMachineID, nullptr, new P0_Idle_Dummy());
+		_manualTransitioner.OnEnter(_stateMachineID, new P0_JumpUp_Dummy, new P0_Idle_Dummy());
 	}
 
 	void P0_FallDown_Dummy::OnUpdate()

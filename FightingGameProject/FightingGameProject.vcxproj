@@ -153,6 +153,7 @@
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_FallDown_Dummy.cpp" />
     <ClCompile Include="P0_Idle_Dummy.cpp" />
+    <ClCompile Include="P0_JumpUp_Dummy.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
     <ClCompile Include="WhileMovingForward.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_FallDown_Dummy.h" />
     <ClInclude Include="P0_Idle_Dummy.h" />
+    <ClInclude Include="P0_JumpUp_Dummy.h" />
     <ClInclude Include="TriggerJumpUp.h" />
     <ClInclude Include="WhileMovingBack.h" />
     <ClInclude Include="WhileMovingForward.h" />

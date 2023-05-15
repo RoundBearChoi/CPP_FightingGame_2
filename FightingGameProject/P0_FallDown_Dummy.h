@@ -3,6 +3,7 @@
 #include "ManualAnimationUpdater.h"
 #include "ManualTransitioner.h"
 
+#include "P0_JumpUp_Dummy.h"
 #include "P0_Idle_Dummy.h"
 
 namespace RB::P0_States

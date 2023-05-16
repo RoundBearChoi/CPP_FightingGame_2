@@ -25,6 +25,5 @@ namespace RB::HBE::Menu
 	private:
 		RB::Sprites::SpriteDataController* _spriteDataController = nullptr;
 		RB::Players::PlayerController* _playerController = nullptr;
-		
 	};
 }

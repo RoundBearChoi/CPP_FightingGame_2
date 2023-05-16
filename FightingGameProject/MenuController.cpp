@@ -14,8 +14,6 @@ namespace RB::HBE::Menu
 
 	void MenuController::OnUpdate()
 	{
-
-
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "HurtBoxEditor", olc::WHITE, 2);
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);

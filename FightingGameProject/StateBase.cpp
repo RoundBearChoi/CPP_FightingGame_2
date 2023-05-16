@@ -40,9 +40,9 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
-	RB::Sprites::SpriteID StateBase::GetSpriteID()
+	RB::Sprites::SpriteEnum StateBase::GetSpriteEnum()
 	{
-		return _spriteID;
+		return _spriteEnum;
 	}
 
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)

@@ -23,9 +23,9 @@ namespace RB::Render
 	public:
 		void SetFirstAnimations();
 		void SetNewAnimationObjsOnChange(RB::Players::iPlayer& player);
-		RB::Sprites::SpriteID GetSpriteID(RB::Players::PlayerID playerID);
+		RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID);
 		void DeleteAnimationObj(RB::Players::PlayerID playerID);
-		PlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteID spriteID);
+		PlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
 		SpriteRenderer _spriteRenderer;

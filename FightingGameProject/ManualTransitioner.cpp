@@ -1,3 +1,4 @@
+/*
 #include "ManualTransitioner.h"
 
 namespace RB::States
@@ -76,3 +77,4 @@ namespace RB::States
 		return false;
 	}
 }
+*/

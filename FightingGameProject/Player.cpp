@@ -144,12 +144,12 @@ namespace RB::Players
 		return _airMomentum.GetMomentum();
 	}
 
-	RB::Sprites::SpriteID Player::GetSpriteID()
+	RB::Sprites::SpriteEnum Player::GetSpriteEnum()
 	{
 		RB::States::iState* state = _stateMachine->GetCurrentState();
 
-		RB::Sprites::SpriteID spriteID = state->GetSpriteID();
+		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		return spriteID;
+		return spriteEnum;
 	}
 }

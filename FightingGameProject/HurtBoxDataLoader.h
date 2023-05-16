@@ -30,7 +30,7 @@ namespace RB::HurtBox
 		/// <summary>
 		/// only use during initialization (vector addresses)
 		/// </summary>
-		HurtBoxDataSet LoadDataSet(const std::string path, const RB::Sprites::SpriteID spriteID);
+		HurtBoxDataSet LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
 		std::vector<HurtBoxSpecs> ParseData(const json_object_s& wholeObj, const size_t frame);
 
 	public:

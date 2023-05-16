@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 #include "AnimationRenderer.h"
 #include "AnimationSpecs.h"
 
@@ -15,7 +15,7 @@ namespace RB::Render
 	public:
 		void Init();
 		void LoadAnimation(AnimationSpecs specs);
-		AnimationRenderer* GetAnimation(RB::Sprites::SpriteID spriteID);
+		AnimationRenderer* GetAnimation(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
 		std::vector<AnimationRenderer*> _animationRenderer;

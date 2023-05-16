@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 #include "HurtBoxSpecs.h"
 
 namespace RB::HurtBox

@@ -2,7 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "iPlayer.h"
 #include "AnimationRenderer.h"
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 #include "SkipFixedUpdates.h"
 #include "AnimationRenderSettings.h"
 #include "AnimationSpecs.h"

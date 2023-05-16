@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 #include "AnimationRenderSettings.h"
 #include "AnimationSpecs.h"
 #include "ActiveControllers.h"

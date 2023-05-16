@@ -19,10 +19,10 @@ namespace RB::Render
 	{
 		//sprites
 		_spriteRenderer.Init();
-		_spriteRenderer.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteID::fighter_0_idle);
-		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteID::fighter_0_walk);
-		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteID::fighter_0_jump_up);
-		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteID::fighter_0_fall);
+		_spriteRenderer.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::fighter_0_idle);
+		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
+		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
+		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
 
 		//animations
 		_animationLoader.Init();
@@ -34,8 +34,8 @@ namespace RB::Render
 		idleSpecs.mSkipFixedUpdates = 3;
 		idleSpecs.mRenderSize = olc::vf2d{ 400.0, 225.0f };
 		idleSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
-		idleSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_idle;
-		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_idle);
+		idleSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
+		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		AnimationSpecs walkSpecs;
 		walkSpecs.mX_TileCount = 10;
@@ -44,8 +44,8 @@ namespace RB::Render
 		walkSpecs.mSkipFixedUpdates = 4;
 		walkSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		walkSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
-		walkSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_walk;
-		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_walk);
+		walkSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
+		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_walk);
 
 		AnimationSpecs jumpUpSpecs;
         jumpUpSpecs.mX_TileCount = 3;
@@ -54,8 +54,8 @@ namespace RB::Render
 		jumpUpSpecs.mSkipFixedUpdates = 6;
 		jumpUpSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		jumpUpSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
-		jumpUpSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_jump_up;
-		jumpUpSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_jump_up);
+		jumpUpSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
+		jumpUpSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
 		AnimationSpecs fallSpecs;
         fallSpecs.mX_TileCount = 3;
@@ -64,8 +64,8 @@ namespace RB::Render
 		fallSpecs.mSkipFixedUpdates = 6;
 		fallSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		fallSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
-		fallSpecs.mSpriteID = RB::Sprites::SpriteID::fighter_0_fall;
-		fallSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteID::fighter_0_fall);
+		fallSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
+		fallSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_fall);
 
 		_animationLoader.LoadAnimation(idleSpecs);
 		_animationLoader.LoadAnimation(walkSpecs);
@@ -136,9 +136,9 @@ namespace RB::Render
 				continue;
 			}
 
-			RB::Sprites::SpriteID p1_SpriteID = arr[i]->GetSpriteID();
+			RB::Sprites::SpriteEnum p1_SpriteEnum = arr[i]->GetSpriteEnum();
 
-			AnimationRenderer* p1_renderer = _animationLoader.GetAnimation(p1_SpriteID);
+			AnimationRenderer* p1_renderer = _animationLoader.GetAnimation(p1_SpriteEnum);
 
 			PlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], p1_renderer);
 
@@ -148,33 +148,33 @@ namespace RB::Render
 
 	void PlayerAnimationController::SetNewAnimationObjsOnChange(RB::Players::iPlayer& player)
 	{
-		RB::Sprites::SpriteID playerSpriteID = player.GetSpriteID();
+		RB::Sprites::SpriteEnum playerSpriteEnum = player.GetSpriteEnum();
 		RB::Players::PlayerID playerID = player.GetPlayerID();
-		RB::Sprites::SpriteID animationSpriteID = GetSpriteID(playerID);
+		RB::Sprites::SpriteEnum animationSpriteEnum = GetSpriteEnum(playerID);
 
-		if (playerSpriteID != animationSpriteID)
+		if (playerSpriteEnum != animationSpriteEnum)
 		{
 			DeleteAnimationObj(playerID);
 
-			PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteID));
+			PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
 
 			_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 		}
 	}
 
-	RB::Sprites::SpriteID PlayerAnimationController::GetSpriteID(RB::Players::PlayerID playerID)
+	RB::Sprites::SpriteEnum PlayerAnimationController::GetSpriteEnum(RB::Players::PlayerID playerID)
 	{
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
-				RB::Sprites::SpriteID spriteID = _vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteID;
+				RB::Sprites::SpriteEnum spriteEnum = _vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteEnum;
 
-				return spriteID;
+				return spriteEnum;
 			}
 		}
 
-		return RB::Sprites::SpriteID::NONE;
+		return RB::Sprites::SpriteEnum::NONE;
 	}
 
 	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
@@ -192,13 +192,13 @@ namespace RB::Render
 		}
 	}
 
-	PlayerAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteID spriteID)
+	PlayerAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
-				if (_vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteID == spriteID)
+				if (_vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
 				{
 					return _vecPlayerAnimationObjs[i];
 				}

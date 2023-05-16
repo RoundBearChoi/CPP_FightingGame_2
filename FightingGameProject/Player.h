@@ -48,7 +48,7 @@ namespace RB::Players
 		olc::vf2d GetAirMomentum() override;
 
 	public:
-		RB::Sprites::SpriteID GetSpriteID() override;
+		RB::Sprites::SpriteEnum GetSpriteEnum() override;
 
 	private:
 		RB::Players::PlayerController* _playerController = nullptr;

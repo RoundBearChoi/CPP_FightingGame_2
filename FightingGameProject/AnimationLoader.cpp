@@ -19,7 +19,7 @@ namespace RB::Render
 
 	void AnimationLoader::LoadAnimation(AnimationSpecs specs)
 	{
-		if (specs.mSpriteID != RB::Sprites::SpriteID::NONE && specs.mLoadedSprite == nullptr)
+		if (specs.mSpriteEnum != RB::Sprites::SpriteEnum::NONE && specs.mLoadedSprite == nullptr)
 		{
 			std::cout << std::endl;
 			std::cout << "WARNING: LoadedSprite* is null" << std::endl;
@@ -32,11 +32,11 @@ namespace RB::Render
 		}
 	}
 
-	AnimationRenderer* AnimationLoader::GetAnimation(RB::Sprites::SpriteID spriteID)
+	AnimationRenderer* AnimationLoader::GetAnimation(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _animationRenderer.size(); i++)
 		{
-			if (_animationRenderer[i]->GetAnimationSpecs().mSpriteID == spriteID)
+			if (_animationRenderer[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
 			{
 				return _animationRenderer[i];
 			}

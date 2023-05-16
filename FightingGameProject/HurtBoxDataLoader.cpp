@@ -103,14 +103,14 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteID spriteID)
+	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		json_value_s* root = LoadRoot(path);
 
 		if (root == nullptr)
 		{
 			HurtBoxDataSet emptySet;
-			emptySet.mSpriteID = spriteID;
+			emptySet.mSpriteEnum = spriteEnum;
 			return emptySet;
 		}
 
@@ -130,7 +130,7 @@ namespace RB::HurtBox
 			vecData.push_back(data);
 		}
 
-		HurtBoxDataSet resultSet{ spriteID, vecData };
+		HurtBoxDataSet resultSet{ spriteEnum, vecData };
 
 		//make sure to free root after use
 		free(root);

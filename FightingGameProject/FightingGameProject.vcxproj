@@ -233,7 +233,7 @@
     <ClInclude Include="CamController.h" />
     <ClInclude Include="iCam.h" />
     <ClInclude Include="PivotType.h" />
-    <ClInclude Include="SpriteID.h" />
+    <ClInclude Include="SpriteEnum.h" />
     <ClInclude Include="iController.h" />
     <ClInclude Include="ActiveControllers.h" />
     <ClInclude Include="InputController.h" />

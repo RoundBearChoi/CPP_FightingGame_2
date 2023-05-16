@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 #include "HurtBoxData.h"
 
 namespace RB::HurtBox
@@ -12,7 +12,7 @@ namespace RB::HurtBox
 		~HurtBoxDataSet() = default;
 
 	public:
-		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
+		RB::Sprites::SpriteEnum mSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::vector<HurtBoxData> mData;
 	};
 }

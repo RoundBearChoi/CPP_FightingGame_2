@@ -1,5 +1,5 @@
 #pragma once
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 #include "LoadedSprite.h"
 
 namespace RB::Render
@@ -17,7 +17,7 @@ namespace RB::Render
 		int32_t mSkipFixedUpdates = 0;
 		olc::vf2d mRenderSize = { 0.0f, 0.0f };
 		olc::vf2d mRenderOffset = { 0.0f, 0.0f };
-		RB::Sprites::SpriteID mSpriteID = RB::Sprites::SpriteID::NONE;
+		RB::Sprites::SpriteEnum mSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		RB::Sprites::LoadedSprite* mLoadedSprite = nullptr;
 	};
 }

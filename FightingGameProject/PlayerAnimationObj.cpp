@@ -96,7 +96,7 @@ namespace RB::Render
 
 	void PlayerAnimationObj::RenderAnimation()
 	{
-		if (_animationRenderer->GetAnimationSpecs().mSpriteID == RB::Sprites::SpriteID::NONE)
+		if (_animationRenderer->GetAnimationSpecs().mSpriteEnum == RB::Sprites::SpriteEnum::NONE)
 		{
 			return;
 		}

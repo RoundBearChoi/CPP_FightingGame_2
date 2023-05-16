@@ -1,5 +1,5 @@
 #pragma once
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 
 namespace RB::States
 {
@@ -16,7 +16,7 @@ namespace RB::States
 		virtual bool IsTransitioning() = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual size_t GetCumulatedFixedUpdates() = 0;
-		virtual RB::Sprites::SpriteID GetSpriteID() = 0;
+		virtual RB::Sprites::SpriteEnum GetSpriteEnum() = 0;
 
 	public:
 		virtual void OnEnter() = 0;

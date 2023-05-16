@@ -14,7 +14,7 @@ namespace RB::Render
 
 	void AnimationRenderer::RenderAnimation(const AnimationRenderSettings& renderSettings)
 	{
-		if (_animationSpecs.mSpriteID == RB::Sprites::SpriteID::NONE)
+		if (_animationSpecs.mSpriteEnum == RB::Sprites::SpriteEnum::NONE)
 		{
 			return;
 		}

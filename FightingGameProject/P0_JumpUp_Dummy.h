@@ -21,6 +21,6 @@ namespace RB::P0_States
 
 	private:
 		RB::Render::ManualAnimationUpdater _manualAnimationUpdater;
-		RB::States::ManualTransitioner _manualTransitioner;
+		//RB::States::ManualTransitioner _manualTransitioner;
 	};
 }

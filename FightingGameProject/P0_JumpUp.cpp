@@ -4,7 +4,7 @@ namespace RB::P0_States
 {
 	P0_JumpUp::P0_JumpUp()
 	{
-		_spriteID = RB::Sprites::SpriteID::fighter_0_jump_up;
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
 	}
 
 	void P0_JumpUp::OnEnter()

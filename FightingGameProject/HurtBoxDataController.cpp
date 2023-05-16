@@ -6,8 +6,8 @@ namespace RB::HurtBox
 	{
 		_loader.Init();
 
-		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteID::hurtbox_dataset_sample));
-		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteID::fighter_0_idle));
+		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_dataset_sample));
+		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_idle));
 	}
 
 	void HurtBoxDataController::OnUpdate()
@@ -20,11 +20,11 @@ namespace RB::HurtBox
 
 	}
 
-	HurtBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteID spriteID)
+	HurtBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecDataSets.size(); i++)
 		{
-			if (_vecDataSets[i].mSpriteID == spriteID)
+			if (_vecDataSets[i].mSpriteEnum == spriteEnum)
 			{
 				return &_vecDataSets[i];
 			}

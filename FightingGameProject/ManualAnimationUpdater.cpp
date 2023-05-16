@@ -2,9 +2,9 @@
 
 namespace RB::Render
 {
-	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteID spriteID)
+	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		_spriteID = spriteID;
+		_spriteEnum = spriteEnum;
 	}
 
 	void ManualAnimationUpdater::OnUpdate()
@@ -16,7 +16,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Render::PlayerAnimationObj* playerAnimationObj = _playerAnimationController->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteID);
+		RB::Render::PlayerAnimationObj* playerAnimationObj = _playerAnimationController->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteEnum);
 
 		if (playerAnimationObj == nullptr)
 		{

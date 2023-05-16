@@ -13,8 +13,8 @@ namespace RB::PlayerDebug
 
 		//sprite renderer
 		_spriteRenderer.Init();
-		_spriteRenderer.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteID::x_white);
-		_spriteRenderer.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteID::white_sq_tr80);
+		_spriteRenderer.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
+		_spriteRenderer.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteEnum::white_sq_tr80);
 
 		//line renderer
 		_lineRenderer.Init();
@@ -49,7 +49,7 @@ namespace RB::PlayerDebug
 	{
 		olc::vi2d playerPos = player->GetPosition();
 
-		_spriteRenderer.RenderSprite(RB::Sprites::SpriteID::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+		_spriteRenderer.RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
 	}
 
 	void PlayerDebugController::DrawPlayerBox(RB::Players::iPlayer* player)
@@ -63,7 +63,7 @@ namespace RB::PlayerDebug
 			boxTint = olc::BLUE;
 		}
 
-		_spriteRenderer.RenderSprite(RB::Sprites::SpriteID::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
+		_spriteRenderer.RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
 	}
 
 	void PlayerDebugController::DrawPlayerBottomLeft(RB::Players::iPlayer* player)

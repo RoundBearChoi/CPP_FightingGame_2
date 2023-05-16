@@ -1,6 +1,6 @@
 #pragma once
 #include "PlayerAnimationController.h"
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 
 namespace RB::Render
 {
@@ -11,12 +11,12 @@ namespace RB::Render
 		~ManualAnimationUpdater() = default;
 
 	public:
-		void OnEnter(RB::Sprites::SpriteID spriteID);
+		void OnEnter(RB::Sprites::SpriteEnum spriteEnum);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	private:
-		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
+		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
 		RB::Render::PlayerAnimationController* _playerAnimationController = nullptr;
 	};
 }

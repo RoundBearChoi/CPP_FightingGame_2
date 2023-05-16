@@ -1,3 +1,4 @@
+/*
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "ActiveStateMachines.h"
@@ -27,3 +28,4 @@ namespace RB::States
 		bool _transitioning = false;
 	};
 }
+*/

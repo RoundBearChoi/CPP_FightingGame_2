@@ -18,7 +18,7 @@ namespace RB::States
 		virtual bool IsTransitioning() override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual size_t GetCumulatedFixedUpdates() override;
-		virtual RB::Sprites::SpriteID GetSpriteID() override;
+		virtual RB::Sprites::SpriteEnum GetSpriteEnum() override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);
@@ -37,7 +37,7 @@ namespace RB::States
 		size_t _stateMachineID = 0;
 		size_t _cumulatedFixedUpdates = 0;
 		bool _isTransitioning = false;
-		RB::Sprites::SpriteID _spriteID = RB::Sprites::SpriteID::NONE;
+		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::vector<StateComponentBase*> _vecStateComponents;
 	};
 }

@@ -2,19 +2,19 @@
 
 namespace RB::Sprites
 {
-	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite, olc::Decal* decal, SpriteID spriteID)
+	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite, olc::Decal* decal, SpriteEnum spriteEnum)
 	{
 		_path = path;
 		_sprite = sprite;
 		_decal = decal;
-		_spriteID = spriteID;
+		_spriteEnum = spriteEnum;
 
-		std::cout << "loaded sprite & decal: " << _path << " (spriteID " << static_cast<int>(_spriteID) << ")" << std::endl;
+		std::cout << "loaded sprite & decal: " << _path << " (spriteEnum " << static_cast<int>(_spriteEnum) << ")" << std::endl;
 	}
 
 	LoadedSprite::~LoadedSprite()
 	{
-		std::cout << "destroying sprite & decal: " << _path << " (spriteID " << static_cast<int>(_spriteID) << ")" << std::endl;
+		std::cout << "destroying sprite & decal: " << _path << " (spriteEnum " << static_cast<int>(_spriteEnum) << ")" << std::endl;
 
 		delete _sprite;
 		delete _decal;
@@ -35,9 +35,9 @@ namespace RB::Sprites
 		return _decal;
 	}
 
-	SpriteID LoadedSprite::GetSpriteID()
+	SpriteEnum LoadedSprite::GetSpriteEnum()
 	{
-		return _spriteID;
+		return _spriteEnum;
 	}
 
 	olc::vi2d LoadedSprite::GetSpriteSize()

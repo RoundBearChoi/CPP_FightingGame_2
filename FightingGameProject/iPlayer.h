@@ -3,7 +3,7 @@
 #include "iState.h"
 #include "PlayerID.h"
 #include "AABB.h"
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 #include "iStateMachine.h"
 
 namespace RB::Players
@@ -41,6 +41,6 @@ namespace RB::Players
 		virtual olc::vf2d GetAirMomentum() = 0;
 
 	public:
-		virtual RB::Sprites::SpriteID GetSpriteID() = 0;
+		virtual RB::Sprites::SpriteEnum GetSpriteEnum() = 0;
 	};
 }

@@ -3,7 +3,7 @@
 #include <filesystem>
 #include "olcPixelGameEngine.h"
 #include "LoadedSprite.h"
-#include "SpriteID.h"
+#include "SpriteEnum.h"
 
 namespace RB::Sprites
 {
@@ -14,8 +14,8 @@ namespace RB::Sprites
 		~SpriteLoader();
 
 	public:
-		LoadedSprite* LoadSprite(std::string path, SpriteID spriteID);
-		LoadedSprite* GetLoadedSprite(SpriteID spriteID);
+		LoadedSprite* LoadSprite(std::string path, SpriteEnum spriteEnum);
+		LoadedSprite* GetLoadedSprite(SpriteEnum spriteEnum);
 
 	private:
 		std::vector<LoadedSprite*> _vecLoadedSprites;

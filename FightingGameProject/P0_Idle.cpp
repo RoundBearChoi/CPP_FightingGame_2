@@ -4,7 +4,7 @@ namespace RB::P0_States
 {
 	P0_Idle::P0_Idle()
 	{
-		_spriteID = RB::Sprites::SpriteID::fighter_0_idle;
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
 	}
 
 	void P0_Idle::OnEnter()

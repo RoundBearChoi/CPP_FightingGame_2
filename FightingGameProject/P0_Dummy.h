@@ -3,16 +3,13 @@
 #include "ManualAnimationUpdater.h"
 #include "ManualTransitioner.h"
 
-#include "P0_Idle_Dummy.h"
-#include "P0_FallDown_Dummy.h"
-
 namespace RB::P0_States
 {
-	class P0_JumpUp_Dummy : public RB::States::StateBase
+	class P0_Dummy : public RB::States::StateBase
 	{
 	public:
-		P0_JumpUp_Dummy();
-		~P0_JumpUp_Dummy() = default;
+		P0_Dummy();
+		~P0_Dummy() = default;
 
 	public:
 		void OnEnter() override;
@@ -21,6 +18,5 @@ namespace RB::P0_States
 
 	private:
 		RB::Render::ManualAnimationUpdater _manualAnimationUpdater;
-		//RB::States::ManualTransitioner _manualTransitioner;
 	};
 }

@@ -18,8 +18,13 @@ namespace RB::HBE::Menu
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
+	public:
+		RB::Sprites::SpriteEnum GetCurrentSpriteEnum();
+		std::string GetCurrentSpriteString();
+
 	private:
 		RB::Sprites::SpriteDataController* _spriteDataController = nullptr;
 		RB::Players::PlayerController* _playerController = nullptr;
+		
 	};
 }

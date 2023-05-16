@@ -8,7 +8,7 @@ namespace RB::P0_States
 	class P0_Dummy : public RB::States::StateBase
 	{
 	public:
-		P0_Dummy();
+		P0_Dummy() = default;
 		~P0_Dummy() = default;
 
 	public:

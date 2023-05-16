@@ -15,10 +15,10 @@ namespace RB::Sprites
 
 	public:
 		SpriteEnum GetEnum() { return _spriteEnum; }
-		std::string GetString() { return _string; }
+		const std::string* GetString() { return &_string; }
 
 	private:
 		SpriteEnum _spriteEnum = SpriteEnum::NONE;
-		std::string _string = "";
+		std::string _string = "NONE";
 	};
 }

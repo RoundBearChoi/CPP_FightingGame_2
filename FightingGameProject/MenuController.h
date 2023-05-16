@@ -21,7 +21,7 @@ namespace RB::HBE::Menu
 
 	public:
 		RB::Sprites::SpriteEnum GetCurrentSpriteEnum();
-		std::string GetCurrentSpriteString();
+		const std::string* GetCurrentSpriteString();
 		int32_t GetCurrentFrame();
 
 	private:

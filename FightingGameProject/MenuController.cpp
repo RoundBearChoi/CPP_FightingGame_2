@@ -14,6 +14,11 @@ namespace RB::HBE::Menu
 
 	void MenuController::OnUpdate()
 	{
+		if (GetCurrentSpriteString() == nullptr)
+		{
+			return;
+		}
+
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "HurtBoxEditor", olc::WHITE, 2);
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);
@@ -24,7 +29,7 @@ namespace RB::HBE::Menu
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data", olc::WHITE);
 
 		//debug
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + GetCurrentSpriteString(), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + *GetCurrentSpriteString(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(GetCurrentFrame()), olc::YELLOW);
 	}
 
@@ -49,18 +54,18 @@ namespace RB::HBE::Menu
 		return _currentSpriteEnum;
 	}
 
-	std::string MenuController::GetCurrentSpriteString()
+	const std::string* MenuController::GetCurrentSpriteString()
 	{
 		if (_spriteDataController == nullptr)
 		{
 			_spriteDataController = RB::Controllers::ActiveControllers::GetController<RB::Sprites::SpriteDataController>();
 
-			return "NONE";
+			return nullptr;
 		}
 
 		RB::Sprites::SpriteEnum se = GetCurrentSpriteEnum();
 
-		std::string str = _spriteDataController->GetString(se);
+		const std::string* str = _spriteDataController->GetString(se);
 
 		return str;
 	}

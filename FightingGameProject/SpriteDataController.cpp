@@ -34,7 +34,7 @@ namespace RB::Sprites
 
 	}
 
-	std::string SpriteDataController::GetString(SpriteEnum spriteEnum)
+	const std::string* SpriteDataController::GetString(SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecEnumStrings.size(); i++)
 		{
@@ -44,6 +44,6 @@ namespace RB::Sprites
 			}
 		}
 
-		return "NONE";
+		return nullptr;
 	}
 }

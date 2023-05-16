@@ -17,6 +17,7 @@ namespace RB::Sprites
 
 	void SpriteDataController::Init()
 	{
+		_vecEnumStrings.reserve((size_t)SpriteEnum::COUNT);
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::NONE, "NONE"));
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_idle, "fighter_0_idle"));
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_walk, "fighter_0_walk"));

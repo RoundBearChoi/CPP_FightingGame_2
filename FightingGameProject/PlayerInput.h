@@ -14,5 +14,7 @@ namespace RB::Input
 		MOVE_CAM_RIGHT,
 		MOVE_CAM_UP,
 		MOVE_CAM_DOWN,
+
+		COUNT,
 	};
 }

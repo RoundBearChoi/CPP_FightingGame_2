@@ -4,6 +4,7 @@
 #include "ActiveControllers.h"
 #include "SpriteDataController.h"
 #include "PlayerController.h"
+#include "PlayerAnimationController.h"
 
 namespace RB::HBE::Menu
 {
@@ -21,9 +22,12 @@ namespace RB::HBE::Menu
 	public:
 		RB::Sprites::SpriteEnum GetCurrentSpriteEnum();
 		std::string GetCurrentSpriteString();
+		int32_t GetCurrentFrame();
 
 	private:
 		RB::Sprites::SpriteDataController* _spriteDataController = nullptr;
 		RB::Players::PlayerController* _playerController = nullptr;
+		RB::Render::PlayerAnimationController* _playerAnimationController = nullptr;
+		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 	};
 }

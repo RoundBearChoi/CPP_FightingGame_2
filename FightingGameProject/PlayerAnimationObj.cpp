@@ -94,6 +94,11 @@ namespace RB::Render
 		return _animationRenderer->GetAnimationSpecs();
 	}
 
+	int32_t PlayerAnimationObj::GetCurrentIndex()
+	{
+		return _currentIndex;
+	}
+
 	void PlayerAnimationObj::RenderAnimation()
 	{
 		if (_animationRenderer->GetAnimationSpecs().mSpriteEnum == RB::Sprites::SpriteEnum::NONE)

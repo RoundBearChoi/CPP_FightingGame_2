@@ -28,6 +28,7 @@ namespace RB::Render
 		olc::vf2d GetRenderOffset();
 		RB::Players::iPlayer* GetPlayer();
 		const AnimationSpecs& GetAnimationSpecs();
+		int32_t GetCurrentIndex();
 
 	public:
 		void RenderAnimation();

@@ -24,7 +24,7 @@ namespace RB::HBE::Menu
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data", olc::WHITE);
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + GetCurrentSpriteString(), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: ", olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(GetCurrentFrame()), olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()
@@ -38,11 +38,14 @@ namespace RB::HBE::Menu
 		{
 			_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 
-			return RB::Sprites::SpriteEnum::NONE;
+			return _currentSpriteEnum;
 		}
 
 		RB::Players::iPlayer* p = _playerController->GetPlayerOnIndex(0);
-		RB::Sprites::SpriteEnum se = p->GetSpriteEnum();
+
+		_currentSpriteEnum = p->GetSpriteEnum();
+
+		return _currentSpriteEnum;
 	}
 
 	std::string MenuController::GetCurrentSpriteString()
@@ -59,5 +62,24 @@ namespace RB::HBE::Menu
 		std::string str = _spriteDataController->GetString(se);
 
 		return str;
+	}
+
+	int32_t MenuController::GetCurrentFrame()
+	{
+		_playerAnimationController = RB::Controllers::ActiveControllers::GetController<RB::Render::PlayerAnimationController>();
+
+		if (_playerAnimationController == nullptr)
+		{
+			return 0;
+		}
+
+		RB::Render::PlayerAnimationObj* obj = _playerAnimationController->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
+
+		if (obj == nullptr)
+		{
+			return 0;
+		}
+
+		return obj->GetCurrentIndex();
 	}
 }

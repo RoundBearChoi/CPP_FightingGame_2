@@ -6,10 +6,10 @@
 
 namespace RB::Sprites
 {
-	class SpriteDataController : RB::Controllers::ControllerBase
+	class SpriteDataController : public RB::Controllers::ControllerBase
 	{
 	public:
-		SpriteDataController() = default;
+		SpriteDataController();
 		~SpriteDataController() override;
 
 	public:

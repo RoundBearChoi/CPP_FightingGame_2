@@ -2,6 +2,11 @@
 
 namespace RB::Sprites
 {
+	SpriteDataController::SpriteDataController()
+	{
+		SetHash(typeid(*this));
+	}
+
 	SpriteDataController::~SpriteDataController()
 	{
 		for (size_t i = 0; i < _vecEnumStrings.size(); i++)

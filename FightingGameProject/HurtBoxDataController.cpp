@@ -4,6 +4,8 @@ namespace RB::HurtBox
 {
 	void HurtBoxDataController::Init()
 	{
+		SetHash(typeid(*this));
+
 		_loader.Init();
 
 		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_dataset_sample));

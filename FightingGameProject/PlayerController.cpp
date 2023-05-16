@@ -4,15 +4,11 @@ namespace RB::Players
 {
 	PlayerController::PlayerController()
 	{
-		std::cout << "constructing PlayerController" << std::endl;
-
 		SetHash(typeid(*this));
 	}
 
 	PlayerController::~PlayerController()
 	{
-		std::cout << "destroying PlayerController" << std::endl;
-
 		for (size_t i = 0; i < _vecPlayers.size(); i++)
 		{
 			delete _vecPlayers[i];

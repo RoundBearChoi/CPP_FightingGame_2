@@ -2,13 +2,30 @@
 
 namespace RB::HBE::Menu
 {
-    void MenuController::Init()
+	MenuController::MenuController()
 	{
+		SetHash(typeid(*this));
+	}
 
+	void MenuController::Init()
+	{
+		
 	}
 
 	void MenuController::OnUpdate()
 	{
+		if (_playerController == nullptr)
+		{
+			_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+			return;
+		}
+
+		if (_spriteDataController == nullptr)
+		{
+			_spriteDataController = RB::Controllers::ActiveControllers::GetController<RB::Sprites::SpriteDataController>();
+			return;
+		}
+
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "HurtBoxEditor", olc::WHITE, 2);
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);

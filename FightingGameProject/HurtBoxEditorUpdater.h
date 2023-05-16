@@ -7,6 +7,7 @@
 #include "PlayerAnimationController.h"
 #include "InputController.h"
 #include "CamController.h"
+#include "SpriteDataController.h"
 #include "MenuController.h"
 #include "HurtBoxDataController.h"
 #include "Player.h"

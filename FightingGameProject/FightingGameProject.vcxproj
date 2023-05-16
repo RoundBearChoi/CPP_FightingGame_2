@@ -152,6 +152,7 @@
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Dummy.cpp" />
+    <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
     <ClCompile Include="WhileMovingForward.cpp" />
@@ -211,6 +212,8 @@
     <ClInclude Include="HurtBoxSpecs.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
+    <ClInclude Include="SpriteDataController.h" />
+    <ClInclude Include="SpriteEnumString.h" />
     <ClInclude Include="TriggerJumpUp.h" />
     <ClInclude Include="WhileMovingBack.h" />
     <ClInclude Include="WhileMovingForward.h" />

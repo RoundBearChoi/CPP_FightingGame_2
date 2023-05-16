@@ -5,10 +5,11 @@
 #include "iUpdaterObj.h"
 #include "Player.h"
 #include "ActiveControllers.h"
+#include "SpriteDataController.h"
 #include "InputController.h"
+#include "CamController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
-#include "CamController.h"
 #include "PlayerAnimationController.h"
 
 

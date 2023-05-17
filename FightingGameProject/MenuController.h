@@ -6,7 +6,7 @@
 #include "PlayerController.h"
 #include "PlayerAnimationController.h"
 
-namespace RB::HBE::Menu
+namespace RB::HurtBox
 {
 	class MenuController : public RB::Controllers::ControllerBase
 	{

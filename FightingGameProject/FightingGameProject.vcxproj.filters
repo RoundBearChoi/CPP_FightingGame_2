@@ -50,9 +50,6 @@
     <Filter Include="Source Files\HurtBox">
       <UniqueIdentifier>{fe1b8a65-7c77-4239-b315-58179c8028ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\HBE::Menu">
-      <UniqueIdentifier>{ce12ffd0-f884-40f0-ad74-819e6fba4248}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\JSON">
       <UniqueIdentifier>{1b794089-24c2-440a-b4ca-fa0e0cb4730c}</UniqueIdentifier>
     </Filter>
@@ -181,9 +178,6 @@
     <ClCompile Include="ControllerBase.cpp">
       <Filter>Source Files\Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="MenuController.cpp">
-      <Filter>Source Files\HBE::Menu</Filter>
-    </ClCompile>
     <ClCompile Include="HurtBoxDataLoader.cpp">
       <Filter>Source Files\HurtBox</Filter>
     </ClCompile>
@@ -201,6 +195,9 @@
     </ClCompile>
     <ClCompile Include="SpriteDataController.cpp">
       <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuController.cpp">
+      <Filter>Source Files\HurtBox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -384,9 +381,6 @@
     <ClInclude Include="ControllerBase.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
-    <ClInclude Include="MenuController.h">
-      <Filter>Source Files\HBE::Menu</Filter>
-    </ClInclude>
     <ClInclude Include="json.h">
       <Filter>Source Files\JSON</Filter>
     </ClInclude>
@@ -422,6 +416,9 @@
     </ClInclude>
     <ClInclude Include="SpriteDataController.h">
       <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuController.h">
+      <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

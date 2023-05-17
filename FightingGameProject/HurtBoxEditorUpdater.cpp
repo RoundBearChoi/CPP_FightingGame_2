@@ -32,7 +32,7 @@ namespace RB::Updaters
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
 
-		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBE::Menu::MenuController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::MenuController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::HurtBoxDataController()));
 	}
 

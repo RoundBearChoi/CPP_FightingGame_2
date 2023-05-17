@@ -29,5 +29,6 @@ namespace RB::HurtBox
 		RB::Players::PlayerController* _playerController = nullptr;
 		RB::Render::PlayerAnimationController* _playerAnimationController = nullptr;
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
+		const std::string _none = "NONE";
 	};
 }

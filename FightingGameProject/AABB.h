@@ -14,10 +14,7 @@ namespace RB::Collisions
 			_height = height;
 		}
 
-		~AABB()
-		{
-
-		}
+		~AABB() = default;
 
 	public:
 		void SetBottomLeft(float bottomLeftX, float bottomLeftY)
@@ -31,7 +28,7 @@ namespace RB::Collisions
 			return olc::vf2d{ _bottomLeftX, _bottomLeftY };
 		}
 
-		bool IsCollidingAgainst(AABB& other)
+		bool IsCollidingAgainst(const AABB& other)
 		{
 			return (_bottomLeftX < other._bottomLeftX + other._width && _bottomLeftX + _width > other._bottomLeftX && _bottomLeftY < other._bottomLeftY + other._height && _bottomLeftY + _height > other._bottomLeftY);
 		}

@@ -55,7 +55,7 @@ namespace RB::HurtBox
 		{
 			_spriteDataController = RB::Controllers::ActiveControllers::GetController<RB::Sprites::SpriteDataController>();
 
-			return "NONE";
+			return _none;
 		}
 
 		RB::Sprites::SpriteEnum se = GetCurrentSpriteEnum();

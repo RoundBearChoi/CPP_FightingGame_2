@@ -17,7 +17,7 @@ namespace RB::HurtBox
 		void OnFixedUpdate() override;
 
 	public:
-		const HurtBoxDataSet& GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
+		HurtBoxDataSet& GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
 		HurtBoxLoader _loader;

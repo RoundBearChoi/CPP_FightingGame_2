@@ -20,7 +20,7 @@ namespace RB::Players
 
 	public:
 		void InitPlayerColliderAABB();
-		const RB::Collisions::AABB& GetAABB();
+		RB::Collisions::AABB& GetAABB();
 		olc::vi2d GetPlayerBox();
 		bool IsColliding();
 		void ResolveCollision(iPlayer* otherPlayer);

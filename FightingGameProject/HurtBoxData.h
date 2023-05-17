@@ -23,7 +23,7 @@ namespace RB::HurtBox
 		void SetFrame(size_t frame) { _frame = frame; }
 		void AddAABB(RB::Collisions::AABB aabb) { _vecAABB.push_back(aabb); }
 		void SetSpecs(std::vector<RB::Collisions::AABB> vec) { _vecAABB = vec; }
-		const RB::Collisions::AABB& GetSpecs(size_t index) { return _vecAABB[index]; }
+		RB::Collisions::AABB& GetSpecs(size_t index) { return _vecAABB[index]; }
 
 	private:
 		size_t _frame = 0;

@@ -59,7 +59,7 @@ namespace RB::Players
 		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
 	}
 
-	const RB::Collisions::AABB& PlayerCollider::GetAABB()
+	RB::Collisions::AABB& PlayerCollider::GetAABB()
 	{
 		olc::vi2d bottomCenter = _player->GetPosition();
 		olc::vi2d playerBox = _player->GetPlayerBox();

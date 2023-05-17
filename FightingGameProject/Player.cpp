@@ -119,7 +119,7 @@ namespace RB::Players
 		return _playerCollider.GetPlayerBox();
 	}
 
-	const RB::Collisions::AABB& Player::GetAABB()
+	RB::Collisions::AABB& Player::GetAABB()
 	{
 		return _playerCollider.GetAABB();
 	}

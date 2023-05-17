@@ -21,6 +21,16 @@ namespace RB::HurtBox
 			_vecHurtBoxData.push_back(data);
 		}
 
+		HurtBoxData& GetHurtBoxData(size_t index)
+		{
+			if (index >= _vecHurtBoxData.size())
+			{
+				return _vecHurtBoxData[_vecHurtBoxData.size() - 1];
+			}
+
+			return _vecHurtBoxData[index];
+		}
+
 		RB::Sprites::SpriteEnum GetSpriteEnum()
 		{
 			return _spriteEnum;

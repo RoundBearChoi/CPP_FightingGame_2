@@ -19,7 +19,13 @@ namespace RB::P0_States
 			return;
 		}
 		
-		RB::HurtBox::HurtBoxDataSet dataSet = _hurtBoxDataController->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
+		RB::HurtBox::HurtBoxDataSet& sample = _hurtBoxDataController->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
+		RB::HurtBox::HurtBoxDataSet& idle = _hurtBoxDataController->GetDataSet(RB::Sprites::SpriteEnum::fighter_0_idle);
+
+		RB::HurtBox::HurtBoxData& id = idle.GetHurtBoxData(0);
+
+		RB::HurtBox::HurtBoxData& s0 = sample.GetHurtBoxData(0);
+		RB::HurtBox::HurtBoxData& s1 = sample.GetHurtBoxData(1);
 
 		_manualAnimationUpdater.OnUpdate();
 	}

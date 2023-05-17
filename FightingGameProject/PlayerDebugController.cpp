@@ -58,6 +58,7 @@ namespace RB::PlayerDebug
 		olc::vi2d playerPos = player->GetPosition();
 
 		olc::Pixel boxTint = olc::GREEN;
+
 		if (player->IsCollidingAgainstOtherPlayer())
 		{
 			boxTint = olc::BLUE;

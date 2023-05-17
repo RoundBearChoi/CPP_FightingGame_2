@@ -111,6 +111,8 @@ namespace RB::HurtBox
 		{
 			HurtBoxDataSet defaultSet{ spriteEnum };
 
+			//defaultSet.AddHurtBoxData(RB::HurtBox::HurtBoxData{});
+
 			return defaultSet;
 		}
 
@@ -127,8 +129,7 @@ namespace RB::HurtBox
 		{
 			std::vector<HurtBoxSpecs> vec = ParseData(*obj, i);
 
-			HurtBoxData data{ i, vec };
-
+			HurtBoxData data { i, vec };
 			resultSet.AddHurtBoxData(data);
 		}
 

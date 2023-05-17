@@ -111,7 +111,11 @@ namespace RB::HurtBox
 		{
 			HurtBoxDataSet defaultSet{ spriteEnum };
 
-			//defaultSet.AddHurtBoxData(RB::HurtBox::HurtBoxData{});
+			HurtBoxData defaultData;
+			defaultData.SetFrame(0);
+			defaultData.AddSpecs(HurtBoxSpecs{ 0, 0, 100, 100 });
+
+			defaultSet.AddHurtBoxData(defaultData);
 
 			return defaultSet;
 		}

@@ -17,10 +17,11 @@ namespace RB::HurtBox
 		void OnFixedUpdate() override;
 
 	public:
-		HurtBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
+		const HurtBoxDataSet& GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
 		HurtBoxSpecsLoader _loader;
 		std::vector<HurtBoxDataSet> _vecDataSets;
+		HurtBoxDataSet _empty{ RB::Sprites::SpriteEnum::NONE };
 	};
 }

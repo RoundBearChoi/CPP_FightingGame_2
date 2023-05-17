@@ -2,6 +2,9 @@
 #include "StateBase.h"
 #include "ManualAnimationUpdater.h"
 #include "ManualTransitioner.h"
+#include "SpriteEnum.h"
+#include "ActiveControllers.h"
+#include "HurtBoxDataController.h"
 
 namespace RB::P0_States
 {
@@ -18,5 +21,8 @@ namespace RB::P0_States
 
 	private:
 		RB::Render::ManualAnimationUpdater _manualAnimationUpdater;
+
+	private:
+		RB::HurtBox::HurtBoxDataController* _hurtBoxDataController = nullptr;
 	};
 }

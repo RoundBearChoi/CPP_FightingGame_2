@@ -12,6 +12,15 @@ namespace RB::P0_States
 
 	void P0_Dummy::OnUpdate()
 	{
+		if (_hurtBoxDataController == nullptr)
+		{
+			_hurtBoxDataController = RB::Controllers::ActiveControllers::GetController<RB::HurtBox::HurtBoxDataController>();
+
+			return;
+		}
+		
+		RB::HurtBox::HurtBoxDataSet dataSet = _hurtBoxDataController->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
+
 		_manualAnimationUpdater.OnUpdate();
 	}
 

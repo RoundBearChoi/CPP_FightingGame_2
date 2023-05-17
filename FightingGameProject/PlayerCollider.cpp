@@ -33,10 +33,10 @@ namespace RB::Players
 			return;
 		}
 
-		RB::Collisions::AABB otherAABB = other->GetAABB();
-		RB::Collisions::AABB myAABB = GetAABB();
+		const RB::Collisions::AABB& otherAABB = other->GetAABB();
+		const RB::Collisions::AABB& myAABB = GetAABB();
 
-		if (myAABB.IsCollidingAgainst(otherAABB))
+		if (RB::Collisions::AABB::IsColliding(myAABB, otherAABB))
 		{
 			_isColliding = true;
 

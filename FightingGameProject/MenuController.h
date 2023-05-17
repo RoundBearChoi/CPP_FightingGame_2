@@ -21,7 +21,7 @@ namespace RB::HurtBox
 
 	public:
 		RB::Sprites::SpriteEnum GetCurrentSpriteEnum();
-		const std::string* GetCurrentSpriteString();
+		const std::string& GetCurrentSpriteString();
 		int32_t GetCurrentFrame();
 
 	private:

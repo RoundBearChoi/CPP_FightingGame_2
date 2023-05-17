@@ -19,6 +19,7 @@ namespace RB::Players
 		void OnFixedUpdate();
 
 	public:
+		void InitPlayerColliderAABB();
 		RB::Collisions::AABB GetAABB();
 		olc::vi2d GetPlayerBox();
 		bool IsColliding();
@@ -29,5 +30,6 @@ namespace RB::Players
 		iPlayer* _player = nullptr;
 		bool _isColliding = false;
 		olc::vi2d _playerBox = { 82, 124 }; //even numbers?
+		RB::Collisions::AABB _aabb{ 0, 0, 0, 0 };
 	};
 }

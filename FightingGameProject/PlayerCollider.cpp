@@ -5,6 +5,8 @@ namespace RB::Players
 	void PlayerCollider::Init(iPlayer* owner)
 	{
 		_player = owner;
+
+		InitPlayerColliderAABB();
 	}
 
 	void PlayerCollider::OnUpdate()
@@ -46,6 +48,17 @@ namespace RB::Players
 		}
 	}
 
+	void PlayerCollider::InitPlayerColliderAABB()
+	{
+		olc::vi2d bottomCenter = _player->GetPosition();
+		olc::vi2d playerBox = _player->GetPlayerBox();
+		float halfWidth = playerBox.x * 0.5f;
+
+		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
+
+		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
+	}
+
 	RB::Collisions::AABB PlayerCollider::GetAABB()
 	{
 		olc::vi2d bottomCenter = _player->GetPosition();
@@ -54,7 +67,9 @@ namespace RB::Players
 
 		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
 
-		return RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
+		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
+
+		return _aabb;
 	}
 
 	olc::vi2d PlayerCollider::GetPlayerBox()

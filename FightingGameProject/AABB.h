@@ -6,10 +6,10 @@ namespace RB::Collisions
 	class AABB
 	{
 	public:
-		AABB(float x, float y, float width, float height)
+		AABB(float bottomLeftX, float bottomLeftY, float width, float height)
 		{
-			_x = x;
-			_y = y;
+			_bottomLeftX = bottomLeftX;
+			_bottomLeftY = bottomLeftY;
 			_width = width;
 			_height = height;
 		}
@@ -20,19 +20,25 @@ namespace RB::Collisions
 		}
 
 	public:
+		void SetBottomLeft(float bottomLeftX, float bottomLeftY)
+		{
+			_bottomLeftX = bottomLeftX;
+			_bottomLeftY = bottomLeftY;
+		}
+
 		olc::vf2d GetBottomLeft()
 		{
-			return olc::vf2d{ _x, _y };
+			return olc::vf2d{ _bottomLeftX, _bottomLeftY };
 		}
 
 		bool IsCollidingAgainst(AABB& other)
 		{
-			return (_x < other._x + other._width && _x + _width > other._x && _y < other._y + other._height && _y + _height > other._y);
+			return (_bottomLeftX < other._bottomLeftX + other._width && _bottomLeftX + _width > other._bottomLeftX && _bottomLeftY < other._bottomLeftY + other._height && _bottomLeftY + _height > other._bottomLeftY);
 		}
 
 	private:
-		float _x = 0.0f;
-		float _y = 0.0f;
+		float _bottomLeftX = 0.0f;
+		float _bottomLeftY = 0.0f;
 		float _width = 0.0f;
 		float _height = 0.0f;
 	};

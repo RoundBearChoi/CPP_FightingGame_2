@@ -28,10 +28,9 @@ namespace RB::Collisions
 			return olc::vf2d{ _bottomLeftX, _bottomLeftY };
 		}
 
-	public:
-		static bool IsColliding(const AABB& a, const AABB& b)
+		bool IsCollidingAgainst(const AABB& other)
 		{
-			return (a._bottomLeftX < b._bottomLeftX + b._width && a._bottomLeftX + a._width > b._bottomLeftX && a._bottomLeftY < b._bottomLeftY + b._height && a._bottomLeftY + a._height > b._bottomLeftY);
+			return (_bottomLeftX < other._bottomLeftX + other._width && _bottomLeftX + _width > other._bottomLeftX && _bottomLeftY < other._bottomLeftY + other._height && _bottomLeftY + _height > other._bottomLeftY);
 		}
 
 	private:

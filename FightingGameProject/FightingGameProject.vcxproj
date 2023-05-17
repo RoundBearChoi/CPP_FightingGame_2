@@ -147,6 +147,7 @@
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HurtBoxDataLoader.cpp" />
+    <ClCompile Include="HurtBoxDataSet.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
     <ClCompile Include="ManualTransitioner.cpp" />
     <ClCompile Include="MenuController.cpp" />

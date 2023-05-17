@@ -8,11 +8,15 @@ namespace RB::HurtBox
 	class HurtBoxDataSet
 	{
 	public:
-		HurtBoxDataSet() = default;
+		HurtBoxDataSet(RB::Sprites::SpriteEnum spriteEnum);
 		~HurtBoxDataSet() = default;
 
 	public:
-		RB::Sprites::SpriteEnum mSpriteEnum = RB::Sprites::SpriteEnum::NONE;
-		std::vector<HurtBoxData> mData;
+		void AddHurtBoxData(HurtBoxData data);
+		RB::Sprites::SpriteEnum GetSpriteEnum();
+
+	private:
+		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
+		std::vector<HurtBoxData> _vecHurtBoxData;
 	};
 }

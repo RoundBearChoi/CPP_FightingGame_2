@@ -199,6 +199,9 @@
     <ClCompile Include="MenuController.cpp">
       <Filter>Source Files\HurtBox</Filter>
     </ClCompile>
+    <ClCompile Include="HurtBoxDataSet.cpp">
+      <Filter>Source Files\HurtBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">

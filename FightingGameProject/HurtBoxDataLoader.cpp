@@ -109,9 +109,9 @@ namespace RB::HurtBox
 
 		if (root == nullptr)
 		{
-			HurtBoxDataSet emptySet;
-			emptySet.mSpriteEnum = spriteEnum;
-			return emptySet;
+			HurtBoxDataSet defaultSet{ spriteEnum };
+
+			return defaultSet;
 		}
 
 		struct json_object_s* obj = json_value_as_object(root);
@@ -121,16 +121,16 @@ namespace RB::HurtBox
 		std::vector<HurtBoxData> vecData;
 		vecData.reserve(length);
 
+		HurtBoxDataSet resultSet{ spriteEnum };
+
 		for (size_t i = 0; i < length; i++)
 		{
 			std::vector<HurtBoxSpecs> vec = ParseData(*obj, i);
 
 			HurtBoxData data{ i, vec };
 
-			vecData.push_back(data);
+			resultSet.AddHurtBoxData(data);
 		}
-
-		HurtBoxDataSet resultSet{ spriteEnum, vecData };
 
 		//make sure to free root after use
 		free(root);

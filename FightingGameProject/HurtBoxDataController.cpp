@@ -26,7 +26,7 @@ namespace RB::HurtBox
 	{
 		for (size_t i = 0; i < _vecDataSets.size(); i++)
 		{
-			if (_vecDataSets[i].mSpriteEnum == spriteEnum)
+			if (_vecDataSets[i].GetSpriteEnum() == spriteEnum)
 			{
 				return &_vecDataSets[i];
 			}

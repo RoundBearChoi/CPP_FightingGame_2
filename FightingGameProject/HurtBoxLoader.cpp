@@ -1,13 +1,13 @@
-#include "HurtBoxDataLoader.h"
+#include "HurtBoxLoader.h"
 
 namespace RB::HurtBox
 {
-	void HurtBoxSpecsLoader::Init()
+	void HurtBoxLoader::Init()
 	{
 		SaveSample();
 	}
 
-	void HurtBoxSpecsLoader::SaveSample()
+	void HurtBoxLoader::SaveSample()
 	{
 		std::string path = "HurtBoxSpecs/Sample.HurtBoxSpecs";
 
@@ -92,7 +92,7 @@ namespace RB::HurtBox
 		}
 	}
 
-	json_value_s* HurtBoxSpecsLoader::LoadRoot(std::string path)
+	json_value_s* HurtBoxLoader::LoadRoot(std::string path)
 	{
 		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
 
@@ -103,7 +103,7 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	HurtBoxDataSet HurtBoxSpecsLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	HurtBoxDataSet HurtBoxLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		json_value_s* root = LoadRoot(path);
 
@@ -143,7 +143,7 @@ namespace RB::HurtBox
 		return resultSet;
 	}
 
-	std::vector<RB::Collisions::AABB> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
+	std::vector<RB::Collisions::AABB> HurtBoxLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -160,7 +160,7 @@ namespace RB::HurtBox
 
 				for (size_t i = 0; i < arr->length; i++)
 				{
-					RB::Collisions::AABB data = GetHurtBoxSpecs(*arr, i);
+					RB::Collisions::AABB data = GetHurtBoxAABB(*arr, i);
 					vec.push_back(data);
 				}
 
@@ -174,7 +174,7 @@ namespace RB::HurtBox
 		return std::vector<RB::Collisions::AABB>{};
 	}
 
-	RB::Collisions::AABB HurtBoxSpecsLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)
+	RB::Collisions::AABB HurtBoxLoader::GetHurtBoxAABB(const json_array_s& jArray, size_t index)
 	{
 		size_t count = 0;
 

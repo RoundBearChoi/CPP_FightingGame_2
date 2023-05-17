@@ -12,11 +12,11 @@
 
 namespace RB::HurtBox
 {
-	class HurtBoxSpecsLoader
+	class HurtBoxLoader
 	{
 	public:
-		HurtBoxSpecsLoader() = default;
-		~HurtBoxSpecsLoader() = default;
+		HurtBoxLoader() = default;
+		~HurtBoxLoader() = default;
 
 	public:
 		void Init();
@@ -34,6 +34,6 @@ namespace RB::HurtBox
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const size_t frame);
 
 	public:
-		RB::Collisions::AABB GetHurtBoxSpecs(const json_array_s& array, size_t index);
+		RB::Collisions::AABB GetHurtBoxAABB(const json_array_s& array, size_t index);
 	};
 }

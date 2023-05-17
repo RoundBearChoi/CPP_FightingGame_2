@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "ControllerBase.h"
-#include "HurtBoxDataLoader.h"
+#include "HurtBoxLoader.h"
 
 namespace RB::HurtBox
 {
@@ -20,7 +20,7 @@ namespace RB::HurtBox
 		const HurtBoxDataSet& GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
-		HurtBoxSpecsLoader _loader;
+		HurtBoxLoader _loader;
 		std::vector<HurtBoxDataSet> _vecDataSets;
 		HurtBoxDataSet _empty{ RB::Sprites::SpriteEnum::NONE };
 	};

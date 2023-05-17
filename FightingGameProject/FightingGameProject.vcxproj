@@ -209,7 +209,6 @@
     <ClInclude Include="ManualAnimationUpdater.h" />
     <ClInclude Include="ManualTransitioner.h" />
     <ClInclude Include="MenuController.h" />
-    <ClInclude Include="HurtBoxSpecs.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
     <ClInclude Include="SpriteDataController.h" />

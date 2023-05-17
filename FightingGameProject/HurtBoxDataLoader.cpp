@@ -113,7 +113,7 @@ namespace RB::HurtBox
 
 			HurtBoxData defaultData;
 			defaultData.SetFrame(0);
-			defaultData.AddSpecs(HurtBoxSpecs{ 0, 0, 100, 100 });
+			defaultData.AddAABB(RB::Collisions::AABB{ 0, 0, 100, 100 });
 
 			defaultSet.AddHurtBoxData(defaultData);
 
@@ -131,7 +131,7 @@ namespace RB::HurtBox
 
 		for (size_t i = 0; i < length; i++)
 		{
-			std::vector<HurtBoxSpecs> vec = ParseData(*obj, i);
+			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 
 			HurtBoxData data { i, vec };
 			resultSet.AddHurtBoxData(data);
@@ -143,7 +143,7 @@ namespace RB::HurtBox
 		return resultSet;
 	}
 
-	std::vector<HurtBoxSpecs> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
+	std::vector<RB::Collisions::AABB> HurtBoxSpecsLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -155,12 +155,12 @@ namespace RB::HurtBox
 			{
 				struct json_array_s* arr = json_value_as_array(objE->value);
 
-				std::vector<HurtBoxSpecs> vec;
+				std::vector<RB::Collisions::AABB> vec;
 				vec.reserve(arr->length);
 
 				for (size_t i = 0; i < arr->length; i++)
 				{
-					HurtBoxSpecs data = GetHurtBoxSpecs(*arr, i);
+					RB::Collisions::AABB data = GetHurtBoxSpecs(*arr, i);
 					vec.push_back(data);
 				}
 
@@ -171,10 +171,10 @@ namespace RB::HurtBox
 			objE = objE->next;
 		}
 
-		return std::vector<HurtBoxSpecs>{};
+		return std::vector<RB::Collisions::AABB>{};
 	}
 
-	HurtBoxSpecs HurtBoxSpecsLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)
+	RB::Collisions::AABB HurtBoxSpecsLoader::GetHurtBoxSpecs(const json_array_s& jArray, size_t index)
 	{
 		size_t count = 0;
 
@@ -191,14 +191,14 @@ namespace RB::HurtBox
 				json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj, 2);
 				json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj, 3);
 
-				int32_t x = RB::JSON::JGetter::GetInt_FromElement(*posX_Element);
-				int32_t y = RB::JSON::JGetter::GetInt_FromElement(*posY_Element);
+				float_t x = RB::JSON::JGetter::GetFloat_FromElement(*posX_Element);
+				float_t y = RB::JSON::JGetter::GetFloat_FromElement(*posY_Element);
 				float_t width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
 				float_t height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
 
-				HurtBoxSpecs data{ x, y, width, height };
+				RB::Collisions::AABB aabb{ x, y, width, height };
 
-				return data;
+				return aabb;
 			}
 
 			element = element->next;
@@ -206,6 +206,6 @@ namespace RB::HurtBox
 			count++;
 		}
 
-		return HurtBoxSpecs();
+		return RB::Collisions::AABB();
 	}
 }

@@ -6,7 +6,7 @@
 #include <vector>
 #include "json.h"
 #include "JGetter.h"
-#include "HurtBoxSpecs.h"
+#include "AABB.h"
 #include "HurtBoxData.h"
 #include "HurtBoxDataSet.h"
 
@@ -31,9 +31,9 @@ namespace RB::HurtBox
 		/// only use during initialization (vector addresses)
 		/// </summary>
 		HurtBoxDataSet LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
-		std::vector<HurtBoxSpecs> ParseData(const json_object_s& wholeObj, const size_t frame);
+		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const size_t frame);
 
 	public:
-		HurtBoxSpecs GetHurtBoxSpecs(const json_array_s& array, size_t index);
+		RB::Collisions::AABB GetHurtBoxSpecs(const json_array_s& array, size_t index);
 	};
 }

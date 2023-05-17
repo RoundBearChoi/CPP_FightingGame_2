@@ -6,7 +6,9 @@ namespace RB::Collisions
 	class AABB
 	{
 	public:
-		AABB(float bottomLeftX, float bottomLeftY, float width, float height)
+		AABB() = default;
+
+		AABB(float_t bottomLeftX, float_t bottomLeftY, float_t width, float_t height)
 		{
 			_bottomLeftX = bottomLeftX;
 			_bottomLeftY = bottomLeftY;
@@ -23,7 +25,7 @@ namespace RB::Collisions
 			_bottomLeftY = bottomLeftY;
 		}
 
-		const olc::vf2d& GetBottomLeft()
+		olc::vf2d GetBottomLeft()
 		{
 			return olc::vf2d{ _bottomLeftX, _bottomLeftY };
 		}
@@ -34,9 +36,9 @@ namespace RB::Collisions
 		}
 
 	private:
-		float _bottomLeftX = 0.0f;
-		float _bottomLeftY = 0.0f;
-		float _width = 0.0f;
-		float _height = 0.0f;
+		float_t _bottomLeftX = 0.0f;
+		float_t _bottomLeftY = 0.0f;
+		float_t _width = 0.0f;
+		float_t _height = 0.0f;
 	};
 }

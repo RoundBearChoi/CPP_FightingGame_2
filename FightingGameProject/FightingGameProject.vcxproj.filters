@@ -372,9 +372,6 @@
     <ClInclude Include="TriggerJumpUp.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="HurtBoxSpecs.h">
-      <Filter>Source Files\HurtBox</Filter>
-    </ClInclude>
     <ClInclude Include="HurtBoxEditorUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>

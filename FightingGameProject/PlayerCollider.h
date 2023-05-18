@@ -2,7 +2,8 @@
 #include "olcPixelGameEngine.h"
 #include "iPlayer.h"
 #include "AABB.h"
-#include "ActiveControllers.h"
+
+#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::Players
@@ -26,7 +27,7 @@ namespace RB::Players
 		void ResolveCollision(iPlayer* otherPlayer);
 
 	private:
-		RB::Players::PlayerController* _playerController = nullptr;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		iPlayer* _player = nullptr;
 		bool _isColliding = false;
 		olc::vi2d _playerBox = { 82, 124 }; //even numbers?

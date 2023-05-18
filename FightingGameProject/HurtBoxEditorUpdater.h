@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include "iUpdaterObj.h"
+#include "Player.h"
+
 #include "ActiveControllers.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
@@ -10,7 +12,9 @@
 #include "SpriteDataController.h"
 #include "MenuController.h"
 #include "HurtBoxDataController.h"
-#include "Player.h"
+
+#include "ActiveStateMachines.h"
+
 #include "P0_Dummy.h"
 
 namespace RB::Updaters

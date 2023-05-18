@@ -1,14 +1,17 @@
 #pragma once
-#include "StateBase.h"
+#include "PlayerState.h"
 #include "ManualAnimationUpdater.h"
 #include "ManualTransitioner.h"
 #include "SpriteEnum.h"
+
 #include "ControllerGetter.h"
 #include "HurtBoxDataController.h"
 
-namespace RB::P0_States
+#include "ActivePlayerStates.h"
+
+namespace RB::PlayerStates
 {
-	class P0_Dummy : public RB::States::StateBase
+	class P0_Dummy : public RB::PlayerStates::PlayerState
 	{
 	public:
 		P0_Dummy() = default;
@@ -16,6 +19,7 @@ namespace RB::P0_States
 
 	public:
 		void OnEnter() override;
+		void OnExit() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 

@@ -18,7 +18,7 @@ namespace RB::PlayerStateComponents
 		{
 			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
 
-			machine->QueueNextState(new RB::P0_States::P0_MoveBack());
+			machine->QueueNextState(new RB::PlayerStates::P0_MoveBack());
 		}
 	}
 }

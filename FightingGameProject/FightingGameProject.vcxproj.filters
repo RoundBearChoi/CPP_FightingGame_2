@@ -44,14 +44,14 @@
     <Filter Include="Source Files\PlayerStateComponents">
       <UniqueIdentifier>{5c769669-76bc-46ef-9f84-25716e4cfdeb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Player0_States">
-      <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\HurtBox">
       <UniqueIdentifier>{fe1b8a65-7c77-4239-b315-58179c8028ad}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\JSON">
       <UniqueIdentifier>{1b794089-24c2-440a-b4ca-fa0e0cb4730c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerStates">
+      <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -89,13 +89,13 @@
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
     <ClCompile Include="P0_Start.cpp">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="P0_Idle.cpp">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="P0_MoveForward.cpp">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="InputController.cpp">
       <Filter>Source Files\Input</Filter>
@@ -104,7 +104,7 @@
       <Filter>Source Files\Input</Filter>
     </ClCompile>
     <ClCompile Include="P0_MoveBack.cpp">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="CamController.cpp">
       <Filter>Source Files\Cam</Filter>
@@ -131,10 +131,10 @@
       <Filter>Source Files\Players</Filter>
     </ClCompile>
     <ClCompile Include="P0_JumpUp.cpp">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="P0_FallDown.cpp">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="AnimationLoader.cpp">
       <Filter>Source Files\Render</Filter>
@@ -191,13 +191,19 @@
       <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="P0_Dummy.cpp">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="SpriteDataController.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
     <ClCompile Include="MenuController.cpp">
       <Filter>Source Files\HurtBox</Filter>
+    </ClCompile>
+    <ClCompile Include="ActivePlayerStates.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -259,16 +265,16 @@
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="P0_Start.h">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="P0_Idle.h">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="TriggerOnFixedUpdateCount.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="P0_MoveForward.h">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="InputController.h">
       <Filter>Source Files\Input</Filter>
@@ -283,7 +289,7 @@
       <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="P0_MoveBack.h">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="CamController.h">
       <Filter>Source Files\Cam</Filter>
@@ -322,10 +328,10 @@
       <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="P0_JumpUp.h">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="P0_FallDown.h">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="AllocationCount.h">
       <Filter>Source Files</Filter>
@@ -400,7 +406,7 @@
       <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
     <ClInclude Include="P0_Dummy.h">
-      <Filter>Source Files\Player0_States</Filter>
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="ManualAnimationUpdater.h">
       <Filter>Source Files\Render</Filter>
@@ -419,6 +425,12 @@
     </ClInclude>
     <ClInclude Include="ControllerGetter.h">
       <Filter>Source Files\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivePlayerStates.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,11 +2,6 @@
 
 namespace RB::Controllers
 {
-	void ActiveControllers::Init()
-	{
-
-	}
-
 	void ActiveControllers::OnEnd()
 	{
 		_DestroyAll();

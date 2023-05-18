@@ -28,7 +28,7 @@ namespace RB::States
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
 
-		virtual void _DestroyCurrentState();
+		virtual void _ExitAndDestroyCurrentState();
 		virtual void _MakeTransition() override;
 	};
 }

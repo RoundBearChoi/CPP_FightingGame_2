@@ -1,12 +1,15 @@
 #pragma once
-#include "StateBase.h"
+#include "PlayerState.h"
 #include "iPlayer.h"
+
+#include "ActivePlayerStates.h"
+
 #include "TriggerJumpUp.h"
 #include "WhileMovingBack.h"
 
-namespace RB::P0_States
+namespace RB::PlayerStates
 {
-	class P0_MoveBack : public RB::States::StateBase
+	class P0_MoveBack : public RB::PlayerStates::PlayerState
 	{
 	public:
 		P0_MoveBack() = default;

@@ -24,7 +24,7 @@ namespace RB::PlayerStateComponents
 		if (jump.bPressed || jump.bHeld)
 		{
 			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
-			machine->QueueNextState(new RB::P0_States::P0_JumpUp());
+			machine->QueueNextState(new RB::PlayerStates::P0_JumpUp());
 
 			return;
 		}

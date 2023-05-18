@@ -12,7 +12,6 @@ namespace RB::States
 		~ActiveStateMachines() = delete;
 
 	public:
-		static void Init();
 		static void OnEnd();
 
 	public:

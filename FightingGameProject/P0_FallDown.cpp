@@ -1,17 +1,24 @@
 #include "P0_FallDown.h"
 
-namespace RB::P0_States
+namespace RB::PlayerStates
 {
 	void P0_FallDown::OnEnter()
 	{
+		ActivePlayerStates::AddPlayerState(this);
+
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
 
-		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachineID);
+		_getter_PlayerController.FindController();
+		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 
 		olc::vf2d fallMomentum = olc::vf2d{ _ownerPlayer->GetAirMomentum().x , 6.0f };
 
 		_ownerPlayer->SetAirMomentum(fallMomentum);
+	}
+
+	void P0_FallDown::OnExit()
+	{
+		ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_FallDown::OnUpdate()
@@ -33,7 +40,7 @@ namespace RB::P0_States
 			_ownerPlayer->SetAirMomentum(olc::vf2d{ 0.0f, 0.0f });
 
 			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
-			machine->QueueNextState(new RB::P0_States::P0_Idle());
+			machine->QueueNextState(new RB::PlayerStates::P0_Idle());
 		}
 	}
 }

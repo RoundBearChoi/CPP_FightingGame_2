@@ -39,8 +39,5 @@ namespace RB::Players
 		virtual void SetAirMomentum(olc::vf2d momentum) = 0;
 		virtual void AddMomentum(olc::vf2d momentum) = 0;
 		virtual olc::vf2d GetAirMomentum() = 0;
-
-	public:
-		virtual RB::Sprites::SpriteEnum GetSpriteEnum() = 0;
 	};
 }

@@ -19,12 +19,9 @@ namespace RB::Updaters
 
 	void GameplayUpdater::Init()
 	{
-		RB::Controllers::ActiveControllers::Init();
-		RB::States::ActiveStateMachines::Init();
-
 		RB::Players::PlayerController* playerController = new RB::Players::PlayerController();
-		playerController->AddPlayer(new RB::Players::Player(), new RB::P0_States::P0_Start(), olc::vi2d{-150, 0}, RB::Players::PlayerID::PLAYER_1, false);
-		playerController->AddPlayer(new RB::Players::Player(), new RB::P0_States::P0_Start(), olc::vi2d{150, 0}, RB::Players::PlayerID::PLAYER_2, false);
+		playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::P0_Start(), olc::vi2d{-150, 0}, RB::Players::PlayerID::PLAYER_1, false);
+		playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::P0_Start(), olc::vi2d{150, 0}, RB::Players::PlayerID::PLAYER_2, false);
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::PlayerDebug::PlayerDebugController()));

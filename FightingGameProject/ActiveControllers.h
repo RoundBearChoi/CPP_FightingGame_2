@@ -8,7 +8,6 @@ namespace RB::Controllers
 	class ActiveControllers
 	{
 	public:
-		static void Init();
 		static void OnEnd();
 		static void AddController(iController* newController);
 		/// <summary>
@@ -20,9 +19,10 @@ namespace RB::Controllers
 		static void FixedUpdateAll();
 
 	private:
-		inline static std::vector<iController*> _vecControllers;
-
 		static void _DestroyAll();
+
+	private:
+		inline static std::vector<iController*> _vecControllers;
 	};
 
 	template<class T>

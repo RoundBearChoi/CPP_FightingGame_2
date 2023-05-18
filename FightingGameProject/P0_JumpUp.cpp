@@ -1,16 +1,23 @@
 #include "P0_JumpUp.h"
 
-namespace RB::P0_States
+namespace RB::PlayerStates
 {
 	void P0_JumpUp::OnEnter()
 	{
+		ActivePlayerStates::AddPlayerState(this);
+
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
 
-		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachineID);
+		_getter_PlayerController.FindController();
+		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 
 		float startUpMomentum = 9.0f;
 		_ownerPlayer->SetAirMomentum(olc::vf2d{ 0.0f, startUpMomentum });
+	}
+
+	void P0_JumpUp::OnExit()
+	{
+		ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_JumpUp::OnUpdate()
@@ -28,7 +35,7 @@ namespace RB::P0_States
 
 			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
 
-			machine->QueueNextState(new RB::P0_States::P0_FallDown());
+			machine->QueueNextState(new RB::PlayerStates::P0_FallDown());
 		}
 		else
 		{

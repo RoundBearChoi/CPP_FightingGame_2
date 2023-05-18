@@ -40,11 +40,6 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
-	RB::Sprites::SpriteEnum StateBase::GetSpriteEnum()
-	{
-		return _spriteEnum;
-	}
-
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)
 	{
 		if (stateComponent == nullptr)

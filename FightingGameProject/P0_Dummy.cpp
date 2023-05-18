@@ -1,24 +1,34 @@
 #include "P0_Dummy.h"
 
-namespace RB::P0_States
+namespace RB::PlayerStates
 {
 	void P0_Dummy::OnEnter()
 	{
+		ActivePlayerStates::AddPlayerState(this);
+
 		//change spriteEnum to edit different sprites
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
 
 		_manualAnimationUpdater.OnEnter(_spriteEnum);
 	}
 
+	void P0_Dummy::OnExit()
+	{
+		ActivePlayerStates::RemovePlayerState(this);
+	}
+
 	void P0_Dummy::OnUpdate()
 	{
+		_getter_PlayerController.OnUpdate();
 		_getter_HurtBoxDataController.OnUpdate();
 
-		if (_getter_HurtBoxDataController.GetController() == nullptr)
+		if (_getter_PlayerController.GetController() == nullptr || _getter_HurtBoxDataController.GetController() == nullptr)
 		{
 			return;
 		}
 		
+		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+
 		RB::HurtBox::HurtBoxDataSet& sample = _getter_HurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
 		RB::HurtBox::HurtBoxDataSet& idle = _getter_HurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::fighter_0_idle);
 

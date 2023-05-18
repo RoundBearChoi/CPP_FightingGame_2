@@ -58,7 +58,7 @@ namespace RB::PlayerStateComponents
 		if (_moveForward)
 		{
 			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
-			machine->QueueNextState(new RB::P0_States::P0_MoveForward());
+			machine->QueueNextState(new RB::PlayerStates::P0_MoveForward());
 
 			return;
 		}
@@ -67,7 +67,7 @@ namespace RB::PlayerStateComponents
 		{
 			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
 
-			machine->QueueNextState(new RB::P0_States::P0_Idle());
+			machine->QueueNextState(new RB::PlayerStates::P0_Idle());
 
 			return;
 		}

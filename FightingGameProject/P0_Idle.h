@@ -1,13 +1,16 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "StateBase.h"
+#include "PlayerState.h"
+
+#include "ActivePlayerStates.h"
+
 #include "TriggerJumpUp.h"
 #include "TriggerMoveForward.h"
 #include "TriggerMoveBack.h"
 
-namespace RB::P0_States
+namespace RB::PlayerStates
 {
-	class P0_Idle : public RB::States::StateBase
+	class P0_Idle : public RB::PlayerStates::PlayerState
 	{
 	public:
 		P0_Idle() = default;

@@ -136,11 +136,18 @@ namespace RB::Render
 				continue;
 			}
 
-			RB::Sprites::SpriteEnum p1_SpriteEnum = arr[i]->GetSpriteEnum();
+			RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(arr[i]->GetPlayerID());
 
-			AnimationRenderer* p1_renderer = _animationLoader.GetAnimation(p1_SpriteEnum);
+			if (state == nullptr)
+			{
+				continue;
+			}
 
-			PlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], p1_renderer);
+			RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+
+			AnimationRenderer* aniRenderer = _animationLoader.GetAnimation(spriteEnum);
+
+			PlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], aniRenderer);
 
 			_vecPlayerAnimationObjs.push_back(animationObj);
 		}
@@ -148,7 +155,14 @@ namespace RB::Render
 
 	void PlayerAnimationController::SetNewAnimationObjsOnChange(RB::Players::iPlayer& player)
 	{
-		RB::Sprites::SpriteEnum playerSpriteEnum = player.GetSpriteEnum();
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player.GetPlayerID());
+
+		if (state == nullptr)
+		{
+			return;
+		}
+
+		RB::Sprites::SpriteEnum playerSpriteEnum = state->GetSpriteEnum();
 		RB::Players::PlayerID playerID = player.GetPlayerID();
 		RB::Sprites::SpriteEnum animationSpriteEnum = GetSpriteEnum(playerID);
 

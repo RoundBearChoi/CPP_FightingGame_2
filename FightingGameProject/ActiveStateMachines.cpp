@@ -2,11 +2,6 @@
 
 namespace RB::States
 {
-	void ActiveStateMachines::Init()
-	{
-
-	}
-
 	void ActiveStateMachines::OnEnd()
 	{
 		//pointers should already be deleted by owners

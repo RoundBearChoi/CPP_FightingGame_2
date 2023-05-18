@@ -13,11 +13,11 @@ namespace RB::Controllers
 	public:
 		void OnUpdate()
 		{
-			_controller = FindController();
+			FindController();
 		}
 
 		T* GetController();
-		T* FindController();
+		void FindController();
 
 	private:
 		T* _controller = nullptr;
@@ -26,16 +26,16 @@ namespace RB::Controllers
 	};
 
 	template<class T>
-	T* ControllerGetter<T>::FindController()
+	void ControllerGetter<T>::FindController()
 	{
 		if (_searchCount >= 5)
 		{
-			return nullptr;
+			return;
 		}
 
 		if (_controllerFound)
 		{
-			return _controller;
+			return;
 		}
 
 		_controller = RB::Controllers::ActiveControllers::GetController<T>();
@@ -45,8 +45,6 @@ namespace RB::Controllers
 		{
 			_controllerFound = true;
 		}
-
-		return _controller;
 	}
 
 	template<class T>

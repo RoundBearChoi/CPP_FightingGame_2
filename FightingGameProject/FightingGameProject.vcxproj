@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActivePlayerStates.cpp" />
     <ClCompile Include="AirMomentum.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Dummy.cpp" />
+    <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
@@ -194,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABB.h" />
+    <ClInclude Include="ActivePlayerStates.h" />
     <ClInclude Include="AirMomentum.h" />
     <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
@@ -212,6 +215,7 @@
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
+    <ClInclude Include="PlayerState.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
     <ClInclude Include="TriggerJumpUp.h" />

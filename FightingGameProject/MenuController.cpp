@@ -42,9 +42,10 @@ namespace RB::HurtBox
 			return _currentSpriteEnum;
 		}
 
-		RB::Players::iPlayer* p = _playerController->GetPlayerOnIndex(0);
-
-		_currentSpriteEnum = p->GetSpriteEnum();
+		RB::Players::iPlayer* player = _playerController->GetPlayerOnIndex(0);
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
+		state->GetSpriteEnum();
+		_currentSpriteEnum = state->GetSpriteEnum();
 
 		return _currentSpriteEnum;
 	}

@@ -1,10 +1,15 @@
 #include "P0_MoveForward.h"
 
-namespace RB::P0_States
+namespace RB::PlayerStates
 {
 	void P0_MoveForward::OnEnter()
 	{
+		ActivePlayerStates::AddPlayerState(this);
+
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
+
+		_getter_PlayerController.FindController();
+		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
@@ -15,6 +20,8 @@ namespace RB::P0_States
 	void P0_MoveForward::OnExit()
 	{
 		ExitStateComponents();
+
+		ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_MoveForward::OnUpdate()

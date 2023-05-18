@@ -1,13 +1,16 @@
 #pragma once
 #include <iostream>
-#include "StateBase.h"
-#include "SkipFixedUpdates.h"
-#include "TriggerOnFixedUpdateCount.h"
+#include "PlayerState.h"
 #include "iPlayer.h"
 
-namespace RB::P0_States
+#include "ActivePlayerStates.h"
+
+#include "SkipFixedUpdates.h"
+#include "TriggerOnFixedUpdateCount.h"
+
+namespace RB::PlayerStates
 {
-	class P0_Start : public RB::States::StateBase
+	class P0_Start : public RB::PlayerStates::PlayerState
 	{
 	public:
 		P0_Start() = default;
@@ -15,6 +18,7 @@ namespace RB::P0_States
 
 	public:
 		void OnEnter() override;
+		void OnExit() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
@@ -23,6 +27,5 @@ namespace RB::P0_States
 
 	private:
 		Updaters::TriggerOnFixedUpdateCount<P0_Start> _triggerOnFixedUpdateCount;
-		RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

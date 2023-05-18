@@ -5,7 +5,6 @@
 #include "ControllerBase.h"
 #include "iPlayer.h"
 #include "PlayerID.h"
-#include "P0_Start.h"
 
 namespace RB::Players
 {

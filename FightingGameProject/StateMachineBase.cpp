@@ -11,7 +11,7 @@ namespace RB::States
 	{
 		std::cout << "destroying StateMachineBase" << std::endl;
 
-		_DestroyCurrentState();
+		_ExitAndDestroyCurrentState();
 	}
 
 	void StateMachineBase::Init(iState* state)
@@ -82,7 +82,7 @@ namespace RB::States
 		return _currentState->IsTransitioning();
 	}
 
-	void StateMachineBase::_DestroyCurrentState()
+	void StateMachineBase::_ExitAndDestroyCurrentState()
 	{
 		if (_currentState != nullptr)
 		{
@@ -96,7 +96,7 @@ namespace RB::States
 	{
 		if (_currentState->IsTransitioning())
 		{
-			_DestroyCurrentState();
+			_ExitAndDestroyCurrentState();
 
 			_currentState = _nextState;
 

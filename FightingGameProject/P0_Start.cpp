@@ -1,38 +1,49 @@
 #include "P0_Start.h"
 #include "P0_Idle.h"
 
-namespace RB::P0_States
+namespace RB::PlayerStates
 {
 	void P0_Start::OnEnter()
 	{
+		ActivePlayerStates::AddPlayerState(this);
+
 		// no sprite
 
 		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(1);
 		_triggerOnFixedUpdateCount.SetFunction(this, &P0_Start::TransitionToIdle);
 	}
 
+	void P0_Start::OnExit()
+	{
+		ActivePlayerStates::RemovePlayerState(this);
+	}
+
 	void P0_Start::OnUpdate()
 	{
-		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+		_getter_PlayerController.OnUpdate();
 
-		if (pc != nullptr)
+		if (_getter_PlayerController.GetController() == nullptr)
 		{
-			_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachineID);
+			return;
 		}
+
+		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	void P0_Start::OnFixedUpdate()
 	{
-		if (_ownerPlayer != nullptr)
+		if (_getter_PlayerController.GetController() == nullptr || _ownerPlayer == nullptr)
 		{
-			_triggerOnFixedUpdateCount.OnFixedUpdate();
+			return;
 		}
+
+		_triggerOnFixedUpdateCount.OnFixedUpdate();
 	}
 
 	void P0_Start::TransitionToIdle()
 	{
 		RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
 
-		machine->QueueNextState(new RB::P0_States::P0_Idle());
+		machine->QueueNextState(new RB::PlayerStates::P0_Idle());
 	}
 }

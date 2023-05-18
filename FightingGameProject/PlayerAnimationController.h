@@ -3,10 +3,10 @@
 #include "AnimationLoader.h"
 #include "PlayerAnimationObj.h"
 #include "ControllerBase.h"
-
-#include "ActiveControllers.h"
-#include "PlayerController.h"
 #include "iPlayer.h"
+
+#include "ControllerGetter.h"
+#include "PlayerController.h"
 
 #include "ActivePlayerStates.h"
 #include "PlayerState.h"
@@ -37,6 +37,6 @@ namespace RB::Render
 		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
 
 	private:
-		RB::Players::PlayerController* _playerController = nullptr;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

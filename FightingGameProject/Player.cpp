@@ -31,10 +31,10 @@ namespace RB::Players
 
 	void Player::OnUpdate()
 	{
-		if (_playerController == nullptr)
-		{
-			_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+		_getter_playerController.OnUpdate();
 
+		if (_getter_playerController.GetController() == nullptr)
+		{
 			return;
 		}
 
@@ -57,12 +57,12 @@ namespace RB::Players
 
 	bool Player::OtherPlayerIsOnRightSide()
 	{
-		if (_playerController == nullptr)
+		if (_getter_playerController.GetController() == nullptr)
 		{
 			return true;
 		}
 
-		iPlayer* other = _playerController->GetOtherPlayer(this);
+		iPlayer* other = _getter_playerController.GetController()->GetOtherPlayer(this);
 
 		if (other == nullptr)
 		{
@@ -143,13 +143,4 @@ namespace RB::Players
 	{
 		return _airMomentum.GetMomentum();
 	}
-
-	//RB::Sprites::SpriteEnum Player::GetSpriteEnum()
-	//{
-	//	RB::States::iState* state = _stateMachine->GetCurrentState();
-	//
-	//	RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
-	//
-	//	return spriteEnum;
-	//}
 }

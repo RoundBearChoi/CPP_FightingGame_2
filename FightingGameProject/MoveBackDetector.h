@@ -4,6 +4,7 @@
 
 #include "ControllerGetter.h"
 #include "InputController.h"
+#include "PlayerController.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -14,7 +15,7 @@ namespace RB::PlayerStateComponents
 		~MoveBackDetector() = default;
 
 	public:
-		void SetOwnerPlayer(RB::Players::iPlayer* player);
+		void SetStateMachineID(size_t id);
 		void OnUpdate();
 		bool MoveBack();
 
@@ -23,12 +24,13 @@ namespace RB::PlayerStateComponents
 		bool _MoveBackPressed();
 
 	private:
-		RB::Players::iPlayer* _player = nullptr;
+		size_t _stateMachineID = 0;
 		olc::HWButton moveLeft;
 		olc::HWButton moveRight;
 		bool _moveBack = false;
 
 	private:
 		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

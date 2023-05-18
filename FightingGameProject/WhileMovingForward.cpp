@@ -4,7 +4,8 @@ namespace RB::PlayerStateComponents
 {
 	void WhileMovingForward::OnEnter()
 	{
-
+		_moveForwardDetector.SetStateMachineID(_state->GetStateMachineID());
+		_moveBackDetector.SetStateMachineID(_state->GetStateMachineID());
 	}
 
 	void WhileMovingForward::OnUpdate()
@@ -19,16 +20,7 @@ namespace RB::PlayerStateComponents
 		_keepMoving = false;
 		_moveBack = false;
 
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-
-		if (player == nullptr)
-		{
-			return;
-		}
-
-		_moveForwardDetector.SetOwnerPlayer(player);
 		_moveForwardDetector.OnUpdate();
-		_moveBackDetector.SetOwnerPlayer(player);
 		_moveBackDetector.OnUpdate();
 
 		if (_moveBackDetector.MoveBack())

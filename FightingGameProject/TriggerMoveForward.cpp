@@ -4,7 +4,7 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerMoveForward::OnEnter()
 	{
-
+		_moveForwardDetector.SetStateMachineID(_state->GetStateMachineID());
 	}
 
 	void TriggerMoveForward::OnUpdate()
@@ -18,7 +18,11 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		_moveForwardDetector.SetOwnerPlayer(player);
+		if (player == nullptr)
+		{
+			return;
+		}
+
 		_moveForwardDetector.OnUpdate();
 
 		if (_moveForwardDetector.MoveForward())

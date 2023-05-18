@@ -1,7 +1,8 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "iPlayer.h"
-#include "ActiveControllers.h"
+
+#include "ControllerGetter.h"
 #include "InputController.h"
 
 namespace RB::PlayerStateComponents
@@ -28,6 +29,6 @@ namespace RB::PlayerStateComponents
 		bool _moveBack = false;
 
 	private:
-		RB::Input::InputController* _inputController = nullptr;
+		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
 	};
 }

@@ -2,13 +2,10 @@
 
 namespace RB::P0_States
 {
-	P0_MoveForward::P0_MoveForward()
-	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
-	}
-
 	void P0_MoveForward::OnEnter()
 	{
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
+
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
 

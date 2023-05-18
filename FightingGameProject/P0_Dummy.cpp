@@ -4,6 +4,8 @@ namespace RB::P0_States
 {
 	void P0_Dummy::OnEnter()
 	{
+		_finder_HurtBoxDataController.Init();
+
 		//change spriteEnum to edit different sprites
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
 
@@ -12,15 +14,15 @@ namespace RB::P0_States
 
 	void P0_Dummy::OnUpdate()
 	{
-		if (_hurtBoxDataController == nullptr)
-		{
-			_hurtBoxDataController = RB::Controllers::ActiveControllers::GetController<RB::HurtBox::HurtBoxDataController>();
+		_finder_HurtBoxDataController.OnUpdate();
 
+		if (_finder_HurtBoxDataController.GetController() == nullptr)
+		{
 			return;
 		}
 		
-		RB::HurtBox::HurtBoxDataSet& sample = _hurtBoxDataController->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
-		RB::HurtBox::HurtBoxDataSet& idle = _hurtBoxDataController->GetDataSet(RB::Sprites::SpriteEnum::fighter_0_idle);
+		RB::HurtBox::HurtBoxDataSet& sample = _finder_HurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
+		RB::HurtBox::HurtBoxDataSet& idle = _finder_HurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		RB::HurtBox::HurtBoxData& id = idle.GetHurtBoxData(0);
 

@@ -10,7 +10,7 @@ namespace RB::P0_States
 	class P0_Idle : public RB::States::StateBase
 	{
 	public:
-		P0_Idle();
+		P0_Idle() = default;
 		~P0_Idle() = default;
 
 	public:

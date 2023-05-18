@@ -2,13 +2,10 @@
 
 namespace RB::P0_States
 {
-	P0_MoveBack::P0_MoveBack()
-	{
-		// no sprite yet
-	}
-
 	void P0_MoveBack::OnEnter()
 	{
+		// no sprite yet
+
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack());
 

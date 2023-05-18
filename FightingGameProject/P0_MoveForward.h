@@ -9,7 +9,7 @@ namespace RB::P0_States
 	class P0_MoveForward : public RB::States::StateBase
 	{
 	public:
-		P0_MoveForward();
+		P0_MoveForward() = default;
 		~P0_MoveForward() = default;
 
 	public:

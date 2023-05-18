@@ -12,7 +12,7 @@ namespace RB::P0_States
 	class P0_FallDown : public RB::States::StateBase
 	{
 	public:
-		P0_FallDown();
+		P0_FallDown() = default;
 		~P0_FallDown() = default;
 
 	public:

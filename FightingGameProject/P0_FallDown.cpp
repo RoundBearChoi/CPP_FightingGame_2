@@ -2,13 +2,10 @@
 
 namespace RB::P0_States
 {
-	P0_FallDown::P0_FallDown()
-	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
-	}
-
 	void P0_FallDown::OnEnter()
 	{
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
+
 		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachineID);
 

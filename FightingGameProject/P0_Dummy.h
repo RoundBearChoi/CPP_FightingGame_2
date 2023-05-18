@@ -3,7 +3,7 @@
 #include "ManualAnimationUpdater.h"
 #include "ManualTransitioner.h"
 #include "SpriteEnum.h"
-#include "ActiveControllers.h"
+#include "ControllerFinder.h"
 #include "HurtBoxDataController.h"
 
 namespace RB::P0_States
@@ -23,6 +23,7 @@ namespace RB::P0_States
 		RB::Render::ManualAnimationUpdater _manualAnimationUpdater;
 
 	private:
-		RB::HurtBox::HurtBoxDataController* _hurtBoxDataController = nullptr;
+		//RB::HurtBox::HurtBoxDataController* _hurtBoxDataController = nullptr;
+		RB::Controllers::ControllerFinder<RB::HurtBox::HurtBoxDataController> _finder_HurtBoxDataController;
 	};
 }

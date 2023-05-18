@@ -3,13 +3,10 @@
 
 namespace RB::P0_States
 {
-	P0_Start::P0_Start()
-	{
-		// no sprite
-	}
-
 	void P0_Start::OnEnter()
 	{
+		// no sprite
+
 		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(1);
 		_triggerOnFixedUpdateCount.SetFunction(this, &P0_Start::TransitionToIdle);
 	}

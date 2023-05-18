@@ -12,7 +12,7 @@ namespace RB::P0_States
 	class P0_JumpUp : public RB::States::StateBase
 	{
 	public:
-		P0_JumpUp();
+		P0_JumpUp() = default;
 		~P0_JumpUp() = default;
 
 	public:

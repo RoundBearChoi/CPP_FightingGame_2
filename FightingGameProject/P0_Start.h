@@ -10,7 +10,7 @@ namespace RB::P0_States
 	class P0_Start : public RB::States::StateBase
 	{
 	public:
-		P0_Start();
+		P0_Start() = default;
 		~P0_Start() = default;
 
 	public:

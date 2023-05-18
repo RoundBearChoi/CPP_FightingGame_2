@@ -2,13 +2,10 @@
 
 namespace RB::P0_States
 {
-	P0_JumpUp::P0_JumpUp()
-	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
-	}
-
 	void P0_JumpUp::OnEnter()
 	{
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
+
 		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
 		_ownerPlayer = pc->GetPlayerOnStateMachineID(_stateMachineID);
 

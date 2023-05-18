@@ -22,8 +22,5 @@ namespace RB::PlayerStates
 		void OnExit() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-
-	//private:
-	//	RB::Players::iPlayer* _ownerPlayer = nullptr;
 	};
 }

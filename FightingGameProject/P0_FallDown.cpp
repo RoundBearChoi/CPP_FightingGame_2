@@ -6,10 +6,7 @@ namespace RB::PlayerStates
 	{
 		ActivePlayerStates::AddPlayerState(this);
 
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
-
-		_getter_PlayerController.FindController();
-		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		StandardInit(RB::Sprites::SpriteEnum::fighter_0_fall);
 
 		olc::vf2d fallMomentum = olc::vf2d{ _ownerPlayer->GetAirMomentum().x , 6.0f };
 

@@ -10,6 +10,7 @@ namespace RB::PlayerStates
 	class PlayerState : public RB::States::StateBase
 	{
 	public:
+		void StandardInit(RB::Sprites::SpriteEnum spriteEnum);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
 		RB::Players::PlayerID GetPlayerID();
 

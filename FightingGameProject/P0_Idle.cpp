@@ -6,10 +6,7 @@ namespace RB::PlayerStates
 	{
 		ActivePlayerStates::AddPlayerState(this);
 
-		_getter_PlayerController.FindController();
-		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
-
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
+		StandardInit(RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
 		AddStateComponent(new RB::PlayerStateComponents::TriggerMoveForward());

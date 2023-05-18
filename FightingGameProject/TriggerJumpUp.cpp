@@ -4,26 +4,27 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerJumpUp::OnEnter()
 	{
-		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+
 	}
 
 	void TriggerJumpUp::OnUpdate()
 	{
-		if (_inputController == nullptr)
-		{
-			_inputController = RB::Controllers::ActiveControllers::GetController<RB::Input::InputController>();
+		_getter_inputController.OnUpdate();
+		_getter_playerController.OnUpdate();
 
+		if (_getter_inputController.GetController() == nullptr || _getter_playerController.GetController() == nullptr)
+		{
 			return;
 		}
 
-		RB::Players::PlayerID playerID = _ownerPlayer->GetPlayerID();
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		olc::HWButton jump = _inputController->GetButton(playerID, RB::Input::PlayerInput::JUMP);
+		olc::HWButton jump = _getter_inputController.GetController()->GetButton(playerID, RB::Input::PlayerInput::JUMP);
 
 		if (jump.bPressed || jump.bHeld)
 		{
-			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
+			RB::States::iStateMachine* machine = player->GetStateMachine();
 			machine->QueueNextState(new RB::PlayerStates::P0_JumpUp());
 
 			return;

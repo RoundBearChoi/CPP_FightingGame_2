@@ -1,9 +1,11 @@
 #pragma once
 #include "StateComponentBase.h"
 #include "P0_JumpUp.h"
-#include "ActiveControllers.h"
-#include "InputController.h"
 #include "iPlayer.h"
+
+#include "ActiveControllers.h"
+#include "PlayerController.h"
+#include "InputController.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -18,7 +20,7 @@ namespace RB::PlayerStateComponents
 			void OnUpdate() override;
 
 	private:
-		RB::Input::InputController* _inputController = nullptr;
-		RB::Players::iPlayer* _ownerPlayer = nullptr;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
 	};
 }

@@ -11,11 +11,6 @@ namespace RB::Controllers
 		~ControllerGetter() = default;
 
 	public:
-		void Init()
-		{
-
-		}
-
 		void OnUpdate()
 		{
 			_controller = FindController();

@@ -4,8 +4,6 @@ namespace RB::P0_States
 {
 	void P0_Dummy::OnEnter()
 	{
-		_getter_HurtBoxDataController.Init();
-
 		//change spriteEnum to edit different sprites
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
 

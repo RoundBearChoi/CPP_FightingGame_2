@@ -14,6 +14,17 @@ namespace RB::HurtBox
 
 	void MenuController::OnUpdate()
 	{
+		_getter_pAniController.OnUpdate();
+		_getter_PlayerController.OnUpdate();
+		_getter_SprDataController.OnUpdate();
+
+		if (_getter_pAniController.GetController() == nullptr ||
+			_getter_PlayerController.GetController() == nullptr ||
+			_getter_SprDataController.GetController() == nullptr)
+		{
+			return;
+		}
+
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "HurtBoxEditor", olc::WHITE, 2);
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);
@@ -35,15 +46,14 @@ namespace RB::HurtBox
 
 	RB::Sprites::SpriteEnum MenuController::GetCurrentSpriteEnum()
 	{
-		if (_playerController == nullptr)
-		{
-			_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
+		RB::Players::iPlayer* player = _getter_PlayerController.GetController()->GetPlayerOnIndex(0);
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
 
+		if (state == nullptr)
+		{
 			return _currentSpriteEnum;
 		}
 
-		RB::Players::iPlayer* player = _playerController->GetPlayerOnIndex(0);
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
 		state->GetSpriteEnum();
 		_currentSpriteEnum = state->GetSpriteEnum();
 
@@ -52,30 +62,16 @@ namespace RB::HurtBox
 
 	const std::string& MenuController::GetCurrentSpriteString()
 	{
-		if (_spriteDataController == nullptr)
-		{
-			_spriteDataController = RB::Controllers::ActiveControllers::GetController<RB::Sprites::SpriteDataController>();
-
-			return _none;
-		}
-
 		RB::Sprites::SpriteEnum se = GetCurrentSpriteEnum();
 
-		const std::string& str = _spriteDataController->GetString(se);
+		const std::string& str = _getter_SprDataController.GetController()->GetString(se);
 
 		return str;
 	}
 
 	int32_t MenuController::GetCurrentFrame()
 	{
-		_playerAnimationController = RB::Controllers::ActiveControllers::GetController<RB::Render::PlayerAnimationController>();
-
-		if (_playerAnimationController == nullptr)
-		{
-			return 0;
-		}
-
-		RB::Render::PlayerAnimationObj* obj = _playerAnimationController->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
+		RB::Render::PlayerAnimationObj* obj = _getter_pAniController.GetController()->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
 
 		if (obj == nullptr)
 		{

@@ -9,16 +9,16 @@ namespace RB::Render
 
 	void ManualAnimationUpdater::OnUpdate()
 	{
-		if (_playerAnimationController == nullptr)
-		{
-			_playerAnimationController = RB::Controllers::ActiveControllers::GetController<RB::Render::PlayerAnimationController>();
+		_getter_PlayerAnimationController.OnUpdate();
 
+		if (_getter_PlayerAnimationController.GetController() == nullptr)
+		{
 			return;
 		}
 
-		RB::Render::PlayerAnimationObj* playerAnimationObj = _playerAnimationController->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteEnum);
+		RB::Render::PlayerAnimationObj* aniObj = _getter_PlayerAnimationController.GetController()->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteEnum);
 
-		if (playerAnimationObj == nullptr)
+		if (aniObj == nullptr)
 		{
 			return;
 		}
@@ -28,12 +28,12 @@ namespace RB::Render
 
 		if (up.bPressed)
 		{
-			playerAnimationObj->ManualAddAnimationIndex(1);
+			aniObj->ManualAddAnimationIndex(1);
 		}
 
 		if (down.bPressed)
 		{
-			playerAnimationObj->ManualAddAnimationIndex(-1);
+			aniObj->ManualAddAnimationIndex(-1);
 		}
 	}
 

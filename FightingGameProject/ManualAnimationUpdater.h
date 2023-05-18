@@ -1,6 +1,8 @@
 #pragma once
-#include "PlayerAnimationController.h"
 #include "SpriteEnum.h"
+
+#include "ControllerGetter.h"
+#include "PlayerAnimationController.h"
 
 namespace RB::Render
 {
@@ -17,6 +19,6 @@ namespace RB::Render
 
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		RB::Render::PlayerAnimationController* _playerAnimationController = nullptr;
+		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_PlayerAnimationController;
 	};
 }

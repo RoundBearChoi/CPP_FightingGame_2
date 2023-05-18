@@ -4,7 +4,7 @@
 
 #include "ActivePlayerStates.h"
 
-#include "ActiveControllers.h"
+#include "ControllerGetter.h"
 #include "SpriteDataController.h"
 #include "PlayerController.h"
 #include "PlayerAnimationController.h"
@@ -28,9 +28,9 @@ namespace RB::HurtBox
 		int32_t GetCurrentFrame();
 
 	private:
-		RB::Sprites::SpriteDataController* _spriteDataController = nullptr;
-		RB::Players::PlayerController* _playerController = nullptr;
-		RB::Render::PlayerAnimationController* _playerAnimationController = nullptr;
+		RB::Controllers::ControllerGetter<RB::Sprites::SpriteDataController> _getter_SprDataController;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_PlayerController;
+		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_pAniController;
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		const std::string _none = "NONE";
 	};

@@ -33,7 +33,6 @@ namespace RB::Cam
 		bool _moveDown = false;
 
 	private:
-		//RB::Input::InputController* _inputController = nullptr;
-		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_InputController;
+		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
 	};
 }

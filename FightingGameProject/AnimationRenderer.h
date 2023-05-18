@@ -24,7 +24,6 @@ namespace RB::Render
 		AnimationSpecs _animationSpecs;
 
 	private:
-		//RB::Cam::CamController* _camController = nullptr;
-		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_CamController;
+		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

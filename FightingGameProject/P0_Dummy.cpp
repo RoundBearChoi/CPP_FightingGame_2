@@ -19,18 +19,18 @@ namespace RB::PlayerStates
 
 	void P0_Dummy::OnUpdate()
 	{
-		_getter_PlayerController.OnUpdate();
-		_getter_HurtBoxDataController.OnUpdate();
+		_getter_playerController.OnUpdate();
+		_getter_hurtBoxDataController.OnUpdate();
 
-		if (_getter_PlayerController.GetController() == nullptr || _getter_HurtBoxDataController.GetController() == nullptr)
+		if (_getter_playerController.GetController() == nullptr || _getter_hurtBoxDataController.GetController() == nullptr)
 		{
 			return;
 		}
 		
-		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		_ownerPlayer = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 
-		RB::HurtBox::HurtBoxDataSet& sample = _getter_HurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
-		RB::HurtBox::HurtBoxDataSet& idle = _getter_HurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::fighter_0_idle);
+		RB::HurtBox::HurtBoxDataSet& sample = _getter_hurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
+		RB::HurtBox::HurtBoxDataSet& idle = _getter_hurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		RB::HurtBox::HurtBoxData& id = idle.GetHurtBoxData(0);
 

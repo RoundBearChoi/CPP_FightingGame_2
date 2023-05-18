@@ -19,6 +19,6 @@ namespace RB::Render
 
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_PlayerAnimationController;
+		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_pAniController;
 	};
 }

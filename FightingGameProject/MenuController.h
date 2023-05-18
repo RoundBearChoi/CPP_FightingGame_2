@@ -28,8 +28,8 @@ namespace RB::HurtBox
 		int32_t GetCurrentFrame();
 
 	private:
-		RB::Controllers::ControllerGetter<RB::Sprites::SpriteDataController> _getter_SprDataController;
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_PlayerController;
+		RB::Controllers::ControllerGetter<RB::Sprites::SpriteDataController> _getter_sprDataController;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_pAniController;
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		const std::string _none = "NONE";

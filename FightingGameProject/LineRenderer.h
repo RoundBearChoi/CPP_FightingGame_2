@@ -17,7 +17,6 @@ namespace RB::Render
 		void RenderLine(olc::vf2d p1, olc::vf2d p2, olc::Pixel tint);
 
 	private:
-		//RB::Cam::CamController* _camController = nullptr;
-		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_CamController;
+		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

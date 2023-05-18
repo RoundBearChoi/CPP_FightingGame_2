@@ -21,9 +21,9 @@ namespace RB::Cam
 
 	void CamObj::OnUpdate()
 	{
-		_getter_InputController.OnUpdate();
+		_getter_inputController.OnUpdate();
 
-		if (_getter_InputController.GetController() == nullptr)
+		if (_getter_inputController.GetController() == nullptr)
 		{
 			return;
 		}
@@ -33,11 +33,11 @@ namespace RB::Cam
 		_moveLeft = false;
 		_moveRight = false;
 
-		olc::HWButton moveUp = _getter_InputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
-		olc::HWButton moveDown = _getter_InputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
+		olc::HWButton moveUp = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
+		olc::HWButton moveDown = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
 
-		olc::HWButton moveLeft = _getter_InputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
-		olc::HWButton moveRight = _getter_InputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
+		olc::HWButton moveLeft = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
+		olc::HWButton moveRight = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
 
 		if (moveUp.bHeld && moveDown.bHeld)
 		{

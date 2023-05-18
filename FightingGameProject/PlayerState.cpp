@@ -6,8 +6,8 @@ namespace RB::PlayerStates
 	{
 		_spriteEnum = spriteEnum;
 
-		_getter_PlayerController.FindController();
-		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		_getter_playerController.FindController();
+		_ownerPlayer = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	RB::Players::PlayerID PlayerState::GetPlayerID()

@@ -15,12 +15,12 @@ namespace RB::HurtBox
 	void MenuController::OnUpdate()
 	{
 		_getter_pAniController.OnUpdate();
-		_getter_PlayerController.OnUpdate();
-		_getter_SprDataController.OnUpdate();
+		_getter_playerController.OnUpdate();
+		_getter_sprDataController.OnUpdate();
 
 		if (_getter_pAniController.GetController() == nullptr ||
-			_getter_PlayerController.GetController() == nullptr ||
-			_getter_SprDataController.GetController() == nullptr)
+			_getter_playerController.GetController() == nullptr ||
+			_getter_sprDataController.GetController() == nullptr)
 		{
 			return;
 		}
@@ -46,7 +46,7 @@ namespace RB::HurtBox
 
 	RB::Sprites::SpriteEnum MenuController::GetCurrentSpriteEnum()
 	{
-		RB::Players::iPlayer* player = _getter_PlayerController.GetController()->GetPlayerOnIndex(0);
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)
@@ -64,7 +64,7 @@ namespace RB::HurtBox
 	{
 		RB::Sprites::SpriteEnum se = GetCurrentSpriteEnum();
 
-		const std::string& str = _getter_SprDataController.GetController()->GetString(se);
+		const std::string& str = _getter_sprDataController.GetController()->GetString(se);
 
 		return str;
 	}

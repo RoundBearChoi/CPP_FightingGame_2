@@ -20,19 +20,19 @@ namespace RB::PlayerStates
 
 	void P0_Start::OnUpdate()
 	{
-		_getter_PlayerController.OnUpdate();
+		_getter_playerController.OnUpdate();
 
-		if (_getter_PlayerController.GetController() == nullptr)
+		if (_getter_playerController.GetController() == nullptr)
 		{
 			return;
 		}
 
-		_ownerPlayer = _getter_PlayerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		_ownerPlayer = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	void P0_Start::OnFixedUpdate()
 	{
-		if (_getter_PlayerController.GetController() == nullptr || _ownerPlayer == nullptr)
+		if (_getter_playerController.GetController() == nullptr || _ownerPlayer == nullptr)
 		{
 			return;
 		}

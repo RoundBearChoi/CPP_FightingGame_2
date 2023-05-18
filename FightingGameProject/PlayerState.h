@@ -15,7 +15,7 @@ namespace RB::PlayerStates
 		RB::Players::PlayerID GetPlayerID();
 
 	protected:
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_PlayerController;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
 	};

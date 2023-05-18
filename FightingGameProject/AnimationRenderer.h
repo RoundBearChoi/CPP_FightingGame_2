@@ -4,7 +4,8 @@
 #include "SpriteEnum.h"
 #include "AnimationRenderSettings.h"
 #include "AnimationSpecs.h"
-#include "ActiveControllers.h"
+//#include "ActiveControllers.h"
+#include "ControllerGetter.h"
 #include "CamController.h"
 
 namespace RB::Render
@@ -23,6 +24,7 @@ namespace RB::Render
 		AnimationSpecs _animationSpecs;
 
 	private:
-		RB::Cam::CamController* _camController = nullptr;
+		//RB::Cam::CamController* _camController = nullptr;
+		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_CamController;
 	};
 }

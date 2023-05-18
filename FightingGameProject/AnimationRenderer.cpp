@@ -19,10 +19,10 @@ namespace RB::Render
 			return;
 		}
 
-		if (_camController == nullptr)
-		{
-			_camController = RB::Controllers::ActiveControllers::GetController<RB::Cam::CamController>();
+		_getter_CamController.OnUpdate();
 
+		if (_getter_CamController.GetController() == nullptr)
+		{
 			return;
 		}
 
@@ -30,7 +30,7 @@ namespace RB::Render
 
 		olc::vi2d screenPos = renderSettings.mWorldPos;
 
-		screenPos = _camController->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
+		screenPos = _getter_CamController.GetController()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
 		float x = (float)screenPos.x;
 		float y = (float)screenPos.y;

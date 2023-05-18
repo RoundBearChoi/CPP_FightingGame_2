@@ -199,7 +199,7 @@
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="ControllerBase.h" />
-    <ClInclude Include="ControllerFinder.h" />
+    <ClInclude Include="ControllerGetter.h" />
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HurtBoxData.h" />
     <ClInclude Include="HurtBoxDataSet.h" />

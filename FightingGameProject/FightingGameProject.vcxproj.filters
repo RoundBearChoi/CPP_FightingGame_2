@@ -417,7 +417,7 @@
     <ClInclude Include="MenuController.h">
       <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
-    <ClInclude Include="ControllerFinder.h">
+    <ClInclude Include="ControllerGetter.h">
       <Filter>Source Files\Controllers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,11 +4,11 @@
 namespace RB::Controllers
 {
 	template <class T>
-	class ControllerFinder
+	class ControllerGetter
 	{
 	public:
-		ControllerFinder() = default;
-		~ControllerFinder() = default;
+		ControllerGetter() = default;
+		~ControllerGetter() = default;
 
 	public:
 		void Init()
@@ -31,7 +31,7 @@ namespace RB::Controllers
 	};
 
 	template<class T>
-	T* ControllerFinder<T>::FindController()
+	T* ControllerGetter<T>::FindController()
 	{
 		if (_searchCount >= 5)
 		{
@@ -45,11 +45,17 @@ namespace RB::Controllers
 
 		_controller = RB::Controllers::ActiveControllers::GetController<T>();
 		_searchCount++;
+
+		if (_controller != nullptr)
+		{
+			_controllerFound = true;
+		}
+
 		return _controller;
 	}
 
 	template<class T>
-	T* ControllerFinder<T>::GetController()
+	T* ControllerGetter<T>::GetController()
 	{
 		return _controller;
 	}

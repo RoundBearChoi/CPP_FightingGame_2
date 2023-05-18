@@ -12,9 +12,9 @@ namespace RB::Controllers
 		static void AddController(iController* newController);
 		/// <summary>
 		/// very slow!
-		/// only use this for initialization
+		/// do NOT use every frame
 		/// </summary>
-		template<class T> static T* GetController();
+		template<class T> static T* SearchController();
 		static void UpdateAll();
 		static void FixedUpdateAll();
 
@@ -26,7 +26,7 @@ namespace RB::Controllers
 	};
 
 	template<class T>
-	inline T* ActiveControllers::GetController()
+	inline T* ActiveControllers::SearchController()
 	{
 		std::string name = typeid(T).name();
 		std::hash<std::string> hasher;

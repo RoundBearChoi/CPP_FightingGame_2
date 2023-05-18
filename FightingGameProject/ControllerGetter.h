@@ -38,7 +38,7 @@ namespace RB::Controllers
 			return;
 		}
 
-		_controller = RB::Controllers::ActiveControllers::GetController<T>();
+		_controller = RB::Controllers::ActiveControllers::SearchController<T>();
 		_searchCount++;
 
 		if (_controller != nullptr)

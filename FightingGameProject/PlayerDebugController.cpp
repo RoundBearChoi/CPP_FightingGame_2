@@ -9,8 +9,6 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::Init()
 	{
-		_playerController = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-
 		//sprite renderer
 		_spriteRenderer.Init();
 		_spriteRenderer.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
@@ -22,8 +20,15 @@ namespace RB::PlayerDebug
 
 	void PlayerDebugController::OnUpdate()
 	{
-		RB::Players::iPlayer* p1 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = _playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		_getter_playerController.OnUpdate();
+
+		if (_getter_playerController.GetController() == nullptr)
+		{
+			return;
+		}
+
+		RB::Players::iPlayer* p1 = _getter_playerController.GetController()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = _getter_playerController.GetController()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
 		if (p1 != nullptr)
 		{

@@ -8,7 +8,8 @@
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
 #include "ControllerBase.h"
-#include "ActiveControllers.h"
+
+#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::PlayerDebug
@@ -35,6 +36,6 @@ namespace RB::PlayerDebug
 		RB::Render::LineRenderer _lineRenderer;
 
 	private:
-		RB::Players::PlayerController* _playerController = nullptr;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

@@ -4,21 +4,28 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerMoveBack::OnEnter()
 	{
-		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		_moveBackDetector.Init(_ownerPlayer);
 	}
 
 	void TriggerMoveBack::OnUpdate()
 	{
+		_getter_playerController.OnUpdate();
+
+		if (_getter_playerController.GetController() == nullptr)
+		{
+			return;
+		}
+
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+
+		_moveBackDetector.SetOwnerPlayer(player);
 		_moveBackDetector.OnUpdate();
 
 		if (_moveBackDetector.MoveBack())
 		{
-			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
+			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 
-			machine->QueueNextState(new RB::PlayerStates::P0_MoveBack());
+			stateMachine->QueueNextState(new RB::PlayerStates::P0_MoveBack());
 		}
 	}
 }

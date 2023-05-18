@@ -14,7 +14,7 @@ namespace RB::PlayerStateComponents
 		~MoveForwardDetector() = default;
 
 	public:
-		void Init(RB::Players::iPlayer* player);
+		void SetOwnerPlayer(RB::Players::iPlayer* player);
 		void OnUpdate();
 		bool MoveForward();
 

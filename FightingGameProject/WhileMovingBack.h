@@ -6,6 +6,9 @@
 #include "P0_MoveForward.h"
 #include "iPlayer.h"
 
+#include "ControllerGetter.h"
+#include "PlayerController.h"
+
 namespace RB::PlayerStateComponents
 {
 	class WhileMovingBack : public RB::States::StateComponentBase
@@ -26,6 +29,6 @@ namespace RB::PlayerStateComponents
 		bool _moveForward = false;
 
 	private:
-		RB::Players::iPlayer* _ownerPlayer = nullptr;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

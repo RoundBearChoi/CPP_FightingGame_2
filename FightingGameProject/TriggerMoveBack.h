@@ -4,6 +4,9 @@
 #include "P0_MoveBack.h"
 #include "iPlayer.h"
 
+#include "ControllerGetter.h"
+#include "PlayerController.h"
+
 namespace RB::PlayerStateComponents
 {
 	class TriggerMoveBack : public RB::States::StateComponentBase
@@ -18,6 +21,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		MoveBackDetector _moveBackDetector;
-		RB::Players::iPlayer* _ownerPlayer = nullptr;
+		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

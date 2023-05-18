@@ -4,19 +4,31 @@ namespace RB::PlayerStateComponents
 {
 	void WhileMovingBack::OnEnter()
 	{
-		RB::Players::PlayerController* pc = RB::Controllers::ActiveControllers::GetController<RB::Players::PlayerController>();
-		_ownerPlayer = pc->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		_moveForwardDetector.Init(_ownerPlayer);
-		_moveBackDetector.Init(_ownerPlayer);
 	}
 
 	void WhileMovingBack::OnUpdate()
 	{
+		_getter_playerController.OnUpdate();
+
+		if (_getter_playerController.GetController() == nullptr)
+		{
+			return;
+		}
+
 		_keepMoving = false;
 		_moveForward = false;
 
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+
+		if (player == nullptr)
+		{
+			return;
+		}
+
+		_moveForwardDetector.SetOwnerPlayer(player);
 		_moveForwardDetector.OnUpdate();
+		_moveBackDetector.SetOwnerPlayer(player);
 		_moveBackDetector.OnUpdate();
 
 		if (_moveForwardDetector.MoveForward())
@@ -37,11 +49,23 @@ namespace RB::PlayerStateComponents
 	}
 	void WhileMovingBack::OnFixedUpdate()
 	{
+		if (_getter_playerController.GetController() == nullptr)
+		{
+			return;
+		}
+
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+
+		if (player == nullptr)
+		{
+			return;
+		}
+
 		if (_keepMoving)
 		{
 			int movement = 0;
 
-			if (_ownerPlayer->OtherPlayerIsOnRightSide())
+			if (player->OtherPlayerIsOnRightSide())
 			{
 				movement = -2;
 			}
@@ -50,24 +74,23 @@ namespace RB::PlayerStateComponents
 				movement = 2;
 			}
 
-			_ownerPlayer->Move(olc::vi2d{ movement, 0 });
+			player->Move(olc::vi2d{ movement, 0 });
 
 			return;
 		}
 
 		if (_moveForward)
 		{
-			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
-			machine->QueueNextState(new RB::PlayerStates::P0_MoveForward());
+			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
+			stateMachine->QueueNextState(new RB::PlayerStates::P0_MoveForward());
 
 			return;
 		}
 
 		if (!_keepMoving)
 		{
-			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
-
-			machine->QueueNextState(new RB::PlayerStates::P0_Idle());
+			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
+			stateMachine->QueueNextState(new RB::PlayerStates::P0_Idle());
 
 			return;
 		}

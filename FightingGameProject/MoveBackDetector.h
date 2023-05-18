@@ -14,7 +14,7 @@ namespace RB::PlayerStateComponents
 		~MoveBackDetector() = default;
 
 	public:
-		void Init(RB::Players::iPlayer* owner);
+		void SetOwnerPlayer(RB::Players::iPlayer* player);
 		void OnUpdate();
 		bool MoveBack();
 

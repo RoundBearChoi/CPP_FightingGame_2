@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	void MoveForwardDetector::Init(RB::Players::iPlayer* player)
+	void MoveForwardDetector::SetOwnerPlayer(RB::Players::iPlayer* player)
 	{
 		_player = player;
 	}
@@ -11,7 +11,7 @@ namespace RB::PlayerStateComponents
 	{
 		_getter_inputController.OnUpdate();
 
-		if (_getter_inputController.GetController() == nullptr)
+		if (_getter_inputController.GetController() == nullptr || _player == nullptr)
 		{
 			return;
 		}

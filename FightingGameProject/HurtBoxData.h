@@ -32,7 +32,7 @@ namespace RB::HurtBox
 		void SetIndex(size_t frame) { _index = frame; }
 		void SetFrameName(std::string name) { _frameName = name; }
 		void AddAABB(RB::Collisions::AABB aabb) { _vecAABB.push_back(aabb); }
-		void SetSpecs(std::vector<RB::Collisions::AABB> vec) { _vecAABB = vec; }
+		void ReserveAABBCapacity(size_t size) { _vecAABB.reserve(size); }
 		RB::Collisions::AABB& GetSpecs(size_t index) { return _vecAABB[index]; }
 
 	private:

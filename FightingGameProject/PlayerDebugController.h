@@ -4,6 +4,7 @@
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
 
+#include "PlayerHurtBoxRenderer.h"
 #include "PlayerColliderBoxRenderer.h"
 #include "PlayerPositionRenderer.h"
 
@@ -25,6 +26,7 @@ namespace RB::Render
 		RB::Render::LineRenderer _lineRenderer;
 
 	private:
+		PlayerHurtBoxRenderer _playerHurtBoxRenderer;
 		PlayerColliderBoxRenderer _playerColliderBoxRenderer;
 		PlayerPositionRenderer _playerPositionRenderer;
 	};

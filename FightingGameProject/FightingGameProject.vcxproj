@@ -154,6 +154,7 @@
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Dummy.cpp" />
     <ClCompile Include="PlayerColliderBoxRenderer.cpp" />
+    <ClCompile Include="PlayerHurtBoxRenderer.cpp" />
     <ClCompile Include="PlayerPositionRenderer.cpp" />
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
     <ClInclude Include="PlayerColliderBoxRenderer.h" />
+    <ClInclude Include="PlayerHurtBoxRenderer.h" />
     <ClInclude Include="PlayerPositionRenderer.h" />
     <ClInclude Include="PlayerState.h" />
     <ClInclude Include="SpriteDataController.h" />

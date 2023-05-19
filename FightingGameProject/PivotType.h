@@ -8,5 +8,6 @@ namespace RB::Sprites
 
 		CENTER,
 		BOTTOM_CENTER,
+		BOTTOM_LEFT,
 	};
 }

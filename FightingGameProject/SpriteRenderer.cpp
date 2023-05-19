@@ -45,6 +45,15 @@ namespace RB::Render
 				olc::vf2d{ pos.x + half.x, pos.y - widthHeight.y },
 			};
 		}
+		else if (pivotType == RB::Sprites::PivotType::BOTTOM_LEFT)
+		{
+            points = {
+				olc::vf2d{ pos.x, pos.y - widthHeight.y },
+				olc::vf2d{ pos.x, pos.y },
+				olc::vf2d{ pos.x + widthHeight.x, pos.y },
+				olc::vf2d{ pos.x + widthHeight.x, pos.y - widthHeight.y },
+			};
+		}
 
 		for (size_t i = 0; i < points.size(); i++)
 		{

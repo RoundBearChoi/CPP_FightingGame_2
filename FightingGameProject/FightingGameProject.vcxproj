@@ -146,6 +146,7 @@
     <ClCompile Include="ActivePlayerStates.cpp" />
     <ClCompile Include="AirMomentum.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
+    <ClCompile Include="HurtBoxData.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HurtBoxLoader.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />

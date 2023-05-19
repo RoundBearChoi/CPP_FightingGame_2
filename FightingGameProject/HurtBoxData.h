@@ -10,23 +10,14 @@ namespace RB::HurtBox
 	{
 	public:
 		HurtBoxData() = default;
-
-		HurtBoxData(size_t index, std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
-		{
-			_index = index;
-			_frameName = frameName;
-			_vecAABB = vecAABB;
-
-			_frame = _ParseFrame(frameName);
-		}
-
+		HurtBoxData(size_t index, std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
 		~HurtBoxData() = default;
 
 	public:
-		size_t GetIndex() { return _index; }
-		size_t GetFrame() { return _frame; }
-		size_t GetDataCount() { return _vecAABB.size(); }
-		RB::Collisions::AABB& GetAABB(size_t index) { return _vecAABB[index]; }
+		size_t GetIndex();// { return _index; }
+		size_t GetFrame();// { return _frame; }
+		size_t GetDataCount();// { return _vecAABB.size(); }
+		RB::Collisions::AABB& GetAABB(size_t index);// { return _vecAABB[index]; }
 
 	public:
 		void ReserveAABBCapacity(size_t size) { _vecAABB.reserve(size); }

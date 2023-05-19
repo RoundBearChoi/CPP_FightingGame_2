@@ -211,6 +211,9 @@
     <ClCompile Include="PlayerHurtBoxRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="HurtBoxData.cpp">
+      <Filter>Source Files\HurtBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">

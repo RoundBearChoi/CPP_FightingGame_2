@@ -41,7 +41,7 @@ namespace RB::HurtBox
 		_index = frame;
 	}
 
-	void HurtBoxData::SetFrameName(std::string name)
+	void HurtBoxData::SetFrameName(const std::string& name)
 	{
 		_frameName = name;
 		_frame = _ParseFrame(name);

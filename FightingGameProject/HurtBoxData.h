@@ -22,7 +22,7 @@ namespace RB::HurtBox
 	public:
 		void ReserveAABBCapacity(size_t size);
 		void SetIndex(size_t frame);
-		void SetFrameName(std::string name);
+		void SetFrameName(const std::string& name);
 		void AddAABB(RB::Collisions::AABB aabb);
 
 	private:

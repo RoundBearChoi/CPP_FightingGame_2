@@ -14,30 +14,19 @@ namespace RB::HurtBox
 		~HurtBoxData() = default;
 
 	public:
-		size_t GetIndex();// { return _index; }
-		size_t GetFrame();// { return _frame; }
-		size_t GetDataCount();// { return _vecAABB.size(); }
-		RB::Collisions::AABB& GetAABB(size_t index);// { return _vecAABB[index]; }
+		size_t GetIndex();
+		size_t GetFrame();
+		size_t GetDataCount();
+		RB::Collisions::AABB& GetAABB(size_t index);
 
 	public:
-		void ReserveAABBCapacity(size_t size) { _vecAABB.reserve(size); }
-		void SetIndex(size_t frame) { _index = frame; }
-		void SetFrameName(std::string name) { _frameName = name; _frame = _ParseFrame(name); }
-		void AddAABB(RB::Collisions::AABB aabb) { _vecAABB.push_back(aabb); }
+		void ReserveAABBCapacity(size_t size);
+		void SetIndex(size_t frame);
+		void SetFrameName(std::string name);
+		void AddAABB(RB::Collisions::AABB aabb);
 
 	private:
-		size_t _ParseFrame(std::string str)
-		{
-			std::regex pattern("frame_");
-			std::string replacement = "";
-			std::string s = std::regex_replace(str, pattern, replacement);
-			std::stringstream stream(s);
-
-			size_t result;
-			stream >> result;
-
-			return result;
-		}
+		size_t _ParseFrame(std::string str);
 
 	private:
 		size_t _index = 0;

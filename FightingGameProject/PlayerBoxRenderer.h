@@ -6,11 +6,11 @@
 
 namespace RB::Render
 {
-	class PlayerColliderBoxRenderer
+	class PlayerBoxRenderer
 	{
 	public:
-		PlayerColliderBoxRenderer() = default;
-		~PlayerColliderBoxRenderer() = default;
+		PlayerBoxRenderer() = default;
+		~PlayerBoxRenderer() = default;
 
 	public:
 		void Init(SpriteRenderer* spriteRenderer);

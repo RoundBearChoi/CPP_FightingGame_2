@@ -1,13 +1,13 @@
-#include "PlayerColliderBoxRenderer.h"
+#include "PlayerBoxRenderer.h"
 
 namespace RB::Render
 {
-    void PlayerColliderBoxRenderer::Init(SpriteRenderer* spriteRenderer)
+    void PlayerBoxRenderer::Init(SpriteRenderer* spriteRenderer)
 	{
 		_spriteRenderer = spriteRenderer;
 	}
 
-	void PlayerColliderBoxRenderer::OnUpdate()
+	void PlayerBoxRenderer::OnUpdate()
 	{
 		_getter_playerController.OnUpdate();
 
@@ -39,7 +39,7 @@ namespace RB::Render
 		}
 	}
 
-	void PlayerColliderBoxRenderer::OnFixedUpdate()
+	void PlayerBoxRenderer::OnFixedUpdate()
 	{
 
 	}

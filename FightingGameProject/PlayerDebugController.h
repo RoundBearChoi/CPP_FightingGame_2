@@ -5,7 +5,7 @@
 #include "LineRenderer.h"
 
 #include "PlayerHurtBoxRenderer.h"
-#include "PlayerColliderBoxRenderer.h"
+#include "PlayerBoxRenderer.h"
 #include "PlayerPositionRenderer.h"
 
 namespace RB::Render
@@ -27,7 +27,7 @@ namespace RB::Render
 
 	private:
 		PlayerHurtBoxRenderer _playerHurtBoxRenderer;
-		PlayerColliderBoxRenderer _playerColliderBoxRenderer;
+		PlayerBoxRenderer _playerBoxRenderer;
 		PlayerPositionRenderer _playerPositionRenderer;
 	};
 }

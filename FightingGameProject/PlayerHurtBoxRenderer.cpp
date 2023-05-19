@@ -60,6 +60,12 @@ namespace RB::Render
 		for (size_t i = 0; i < data->GetSize(); i++)
 		{
 			RB::Collisions::AABB& aabb = data->GetAABB(i);
+
+			olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
+			pos.x += (aabb.GetWidthHeight().x * 0.5f);
+			pos.y -= (aabb.GetWidthHeight().y * 0.5f);
+
+			_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::WHITE, RB::Sprites::PivotType::CENTER);
 		}
 	}
 }

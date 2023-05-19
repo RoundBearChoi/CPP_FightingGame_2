@@ -44,13 +44,17 @@ namespace RB::Render
 			return;
 		}
 
-		PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, state->GetSpriteEnum());
+		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		if (aniObj == nullptr)
-		{
-			return;
-		}
+		//PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, spriteEnum);
+		//
+		//if (aniObj == nullptr)
+		//{
+		//	return;
+		//}
+		//
+		//int32_t currentIndex = aniObj->GetCurrentIndex();
 
-		int32_t currentIndex = aniObj->GetCurrentIndex();
+		RB::HurtBox::HurtBoxDataSet dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
 	}
 }

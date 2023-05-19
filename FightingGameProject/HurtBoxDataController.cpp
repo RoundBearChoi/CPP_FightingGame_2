@@ -24,16 +24,16 @@ namespace RB::HurtBox
 
 	}
 
-	HurtBoxDataSet& HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)
+	HurtBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecDataSets.size(); i++)
 		{
 			if (_vecDataSets[i].GetSpriteEnum() == spriteEnum)
 			{
-				return _vecDataSets[i];
+				return &_vecDataSets[i];
 			}
 		}
 
-		return _empty;
+		return nullptr;
 	}
 }

@@ -28,6 +28,7 @@ namespace RB::HurtBox
 
 	public:
 		size_t GetIndex() { return _index; }
+		size_t GetFrame() { return _frame; }
 		void SetIndex(size_t frame) { _index = frame; }
 		void SetFrameName(std::string name) { _frameName = name; }
 		void AddAABB(RB::Collisions::AABB aabb) { _vecAABB.push_back(aabb); }

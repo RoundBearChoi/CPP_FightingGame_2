@@ -21,14 +21,27 @@ namespace RB::HurtBox
 			_vecHurtBoxData.push_back(data);
 		}
 
-		HurtBoxData& GetHurtBoxData(size_t index)
+		HurtBoxData* GetHurtBoxDataByIndex(size_t index)
 		{
 			if (index >= _vecHurtBoxData.size())
 			{
-				return _vecHurtBoxData[_vecHurtBoxData.size() - 1];
+				return nullptr;
 			}
 
-			return _vecHurtBoxData[index];
+			return &_vecHurtBoxData[index];
+		}
+
+		HurtBoxData* GetHurtBoxDataByFrame(size_t frame)
+		{
+			for (size_t i = 0; i < _vecHurtBoxData.size(); i++)
+			{
+				if (_vecHurtBoxData[i].GetFrame() == frame)
+				{
+					return &_vecHurtBoxData[i];
+				}
+			}
+
+			return nullptr;
 		}
 
 		RB::Sprites::SpriteEnum GetSpriteEnum()

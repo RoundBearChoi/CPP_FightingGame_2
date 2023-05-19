@@ -114,7 +114,7 @@ namespace RB::HurtBox
 			HurtBoxData defaultData;
 			defaultData.SetIndex(0);
 			defaultData.SetFrameName("frame_0");
-			defaultData.AddAABB(RB::Collisions::AABB{ 0, 0, 100, 100 });
+			defaultData.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f }); //center on playerPos by default
 
 			defaultSet.AddHurtBoxData(defaultData);
 

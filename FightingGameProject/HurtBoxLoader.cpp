@@ -111,12 +111,19 @@ namespace RB::HurtBox
 		{
 			HurtBoxDataSet defaultSet{ spriteEnum };
 
-			HurtBoxData defaultData;
-			defaultData.SetIndex(0);
-			defaultData.SetFrameName("frame_0");
-			defaultData.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f }); //center on playerPos by default
+			HurtBoxData data0;
+			data0.SetIndex(0);
+			data0.SetFrameName("frame_0");
+			data0.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f }); //center on playerPos by default
+			data0.AddAABB(RB::Collisions::AABB{ -50.0f, -200.0f, 100.0f, 100.0f }); //testing
 
-			defaultSet.AddHurtBoxData(defaultData);
+			HurtBoxData data1;
+			data1.SetIndex(1);
+			data1.SetFrameName("frame_1");
+			data1.AddAABB(RB::Collisions::AABB{ -25.0f, 50.0f, 50.0f, 50.0f }); //testing
+
+			defaultSet.AddHurtBoxData(data0);
+			defaultSet.AddHurtBoxData(data1);
 
 			return defaultSet;
 		}

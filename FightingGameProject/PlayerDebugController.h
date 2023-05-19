@@ -26,8 +26,8 @@ namespace RB::Render
 		RB::Render::LineRenderer _lineRenderer;
 
 	private:
-		PlayerHurtBoxRenderer _playerHurtBoxRenderer;
 		PlayerBoxRenderer _playerBoxRenderer;
+		PlayerHurtBoxRenderer _playerHurtBoxRenderer;
 		PlayerPositionRenderer _playerPositionRenderer;
 	};
 }

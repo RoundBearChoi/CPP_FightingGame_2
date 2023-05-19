@@ -65,7 +65,7 @@ namespace RB::Render
 			pos.x += (aabb.GetWidthHeight().x * 0.5f);
 			pos.y -= (aabb.GetWidthHeight().y * 0.5f);
 
-			_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::WHITE, RB::Sprites::PivotType::CENTER);
+			_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::CENTER);
 		}
 	}
 }

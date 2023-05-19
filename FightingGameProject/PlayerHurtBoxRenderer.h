@@ -5,6 +5,7 @@
 #include "ControllerGetter.h"
 #include "PlayerController.h"
 #include "PlayerAnimationController.h"
+#include "HurtBoxDataController.h"
 
 namespace RB::Render
 {
@@ -25,6 +26,7 @@ namespace RB::Render
 	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_playerAnimationController;
+		RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxDataController> _getter_hurtBoxDataController;
 
 	private:
 		SpriteRenderer* _spriteRenderer = nullptr;

@@ -10,8 +10,11 @@ namespace RB::Render
 	{
 		_getter_playerController.OnUpdate();
 		_getter_playerAnimationController.OnUpdate();
+		_getter_hurtBoxDataController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr || _getter_playerAnimationController.GetController() == nullptr)
+		if (_getter_playerController.GetController() == nullptr ||
+			_getter_playerAnimationController.GetController() == nullptr ||
+			_getter_hurtBoxDataController.GetController() == nullptr)
 		{
 			return;
 		}

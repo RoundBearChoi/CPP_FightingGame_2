@@ -1,14 +1,8 @@
 #pragma once
-#include <vector>
-#include "olcPixelGameEngine.h"
-#include "PivotType.h"
-#include "AABB.h"
-#include "SpriteRenderer.h"
-#include "LineRenderer.h"
 #include "ControllerBase.h"
 
-#include "ControllerGetter.h"
-#include "PlayerController.h"
+#include "SpriteRenderer.h"
+#include "LineRenderer.h"
 
 #include "PlayerColliderBoxRenderer.h"
 #include "PlayerPositionRenderer.h"
@@ -26,15 +20,11 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-	public:
-		//void DrawPlayerAirMomentum(RB::Players::iPlayer* player);
-
 	private:
 		RB::Render::SpriteRenderer _spriteRenderer;
 		RB::Render::LineRenderer _lineRenderer;
 
 	private:
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		PlayerColliderBoxRenderer _playerColliderBoxRenderer;
 		PlayerPositionRenderer _playerPositionRenderer;
 	};

@@ -1,4 +1,7 @@
 #pragma once
+#include "olcPixelGameEngine.h"
+#include "AABB.h"
+
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
 

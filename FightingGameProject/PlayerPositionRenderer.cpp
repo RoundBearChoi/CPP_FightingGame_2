@@ -19,9 +19,12 @@ namespace RB::Render
 
 		RenderPosition(RB::Players::PlayerID::PLAYER_1);
 		RenderPosition(RB::Players::PlayerID::PLAYER_2);
-
+		
 		RenderBottomLeft(RB::Players::PlayerID::PLAYER_1);
 		RenderBottomLeft(RB::Players::PlayerID::PLAYER_2);
+
+		RenderAirMomentum(RB::Players::PlayerID::PLAYER_1);
+		RenderAirMomentum(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	void PlayerPositionRenderer::OnFixedUpdate()
@@ -55,5 +58,27 @@ namespace RB::Render
 		RB::Collisions::AABB aabb = player->GetAABB();
 
 		_lineRenderer->RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
+	}
+
+	void PlayerPositionRenderer::RenderAirMomentum(RB::Players::PlayerID playerID)
+	{
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+
+		if (player == nullptr)
+		{
+			return;
+		}
+
+		olc::vi2d pos = player->GetPosition();
+		olc::vf2d airMomentum = player->GetAirMomentum();
+
+		if (airMomentum.y > 0.5f)
+		{
+			int32_t boxY = player->GetPlayerBox().y;
+
+			pos.y -= boxY;
+
+			_lineRenderer->RenderLine(pos, pos - player->GetAirMomentum(), olc::CYAN);
+		}
 	}
 }

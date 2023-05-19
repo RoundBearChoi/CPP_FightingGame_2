@@ -21,6 +21,7 @@ namespace RB::Render
 	public:
 		void RenderPosition(RB::Players::PlayerID playerID);
 		void RenderBottomLeft(RB::Players::PlayerID playerID);
+		void RenderAirMomentum(RB::Players::PlayerID playerID);
 
 	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;

@@ -27,8 +27,7 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
-		//void DrawPlayerBottomLeft(RB::Players::iPlayer* player);
-		void DrawPlayerAirMomentum(RB::Players::iPlayer* player);
+		//void DrawPlayerAirMomentum(RB::Players::iPlayer* player);
 
 	private:
 		RB::Render::SpriteRenderer _spriteRenderer;

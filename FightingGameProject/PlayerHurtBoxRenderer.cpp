@@ -30,13 +30,27 @@ namespace RB::Render
 
 	void PlayerHurtBoxRenderer::RenderHurtBox(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+		//RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+		//
+		//if (player == nullptr)
+		//{
+		//	return;
+		//}
 
-		if (player == nullptr)
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
+
+		if (state == nullptr)
 		{
 			return;
 		}
 
+		PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, state->GetSpriteEnum());
 
+		if (aniObj == nullptr)
+		{
+			return;
+		}
+
+		int32_t currentIndex = aniObj->GetCurrentIndex();
 	}
 }

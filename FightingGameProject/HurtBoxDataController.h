@@ -22,6 +22,5 @@ namespace RB::HurtBox
 	private:
 		HurtBoxLoader _loader;
 		std::vector<HurtBoxDataSet> _vecDataSets;
-		//HurtBoxDataSet _empty{ RB::Sprites::SpriteEnum::NONE };
 	};
 }

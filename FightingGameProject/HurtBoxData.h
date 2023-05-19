@@ -26,7 +26,7 @@ namespace RB::HurtBox
 		void AddAABB(RB::Collisions::AABB aabb);
 
 	private:
-		size_t _ParseFrame(std::string str);
+		size_t _ParseFrame(const std::string& str);
 
 	private:
 		size_t _index = 0;

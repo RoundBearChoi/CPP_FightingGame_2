@@ -52,7 +52,7 @@ namespace RB::HurtBox
 		_vecAABB.push_back(aabb);
 	}
 
-	size_t HurtBoxData::_ParseFrame(std::string str)
+	size_t HurtBoxData::_ParseFrame(const std::string& str)
 	{
 		std::regex pattern("frame_");
 		std::string replacement = "";

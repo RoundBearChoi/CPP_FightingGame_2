@@ -41,7 +41,7 @@ namespace RB::HurtBox
 				}
 			}
 
-			return nullptr;
+			return &_vecHurtBoxData[_vecHurtBoxData.size() - 1];
 		}
 
 		RB::Sprites::SpriteEnum GetSpriteEnum()

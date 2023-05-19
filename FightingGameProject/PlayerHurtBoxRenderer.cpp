@@ -46,15 +46,18 @@ namespace RB::Render
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		//PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, spriteEnum);
-		//
-		//if (aniObj == nullptr)
-		//{
-		//	return;
-		//}
-		//
-		//int32_t currentIndex = aniObj->GetCurrentIndex();
+		PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, spriteEnum);
+		
+		if (aniObj == nullptr)
+		{
+			return;
+		}
+		
+		int32_t currentIndex = aniObj->GetCurrentIndex();
 
 		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
+
+		RB::HurtBox::HurtBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
+		
 	}
 }

@@ -2,9 +2,10 @@
 
 namespace RB::Render
 {
-	void PlayerPositionRenderer::Init(SpriteRenderer* spriteRenderer)
+	void PlayerPositionRenderer::Init(SpriteRenderer* spriteRenderer, LineRenderer* lineRenderer)
 	{
 		_spriteRenderer = spriteRenderer;
+		_lineRenderer = lineRenderer;
 	}
 
 	void PlayerPositionRenderer::OnUpdate()
@@ -18,6 +19,9 @@ namespace RB::Render
 
 		RenderPosition(RB::Players::PlayerID::PLAYER_1);
 		RenderPosition(RB::Players::PlayerID::PLAYER_2);
+
+		RenderBottomLeft(RB::Players::PlayerID::PLAYER_1);
+		RenderBottomLeft(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	void PlayerPositionRenderer::OnFixedUpdate()
@@ -37,5 +41,19 @@ namespace RB::Render
 		olc::vi2d playerPos = player->GetPosition();
 
 		_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+	}
+
+	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PlayerID playerID)
+	{
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+
+		if (player == nullptr)
+		{
+			return;
+		}
+
+		RB::Collisions::AABB aabb = player->GetAABB();
+
+		_lineRenderer->RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
 	}
 }

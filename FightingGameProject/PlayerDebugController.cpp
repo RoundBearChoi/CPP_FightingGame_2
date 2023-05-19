@@ -18,7 +18,7 @@ namespace RB::Render
 		_lineRenderer.Init();
 
 		_playerColliderBoxRenderer.Init(&_spriteRenderer);
-		_playerPositionRenderer.Init(&_spriteRenderer);
+		_playerPositionRenderer.Init(&_spriteRenderer, &_lineRenderer);
 	}
 
 	void PlayerDebugController::OnUpdate()
@@ -53,12 +53,12 @@ namespace RB::Render
 		_playerPositionRenderer.OnFixedUpdate();
 	}
 
-	void PlayerDebugController::DrawPlayerBottomLeft(RB::Players::iPlayer* player)
-	{
-		RB::Collisions::AABB aabb = player->GetAABB();
-
-		_lineRenderer.RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
-	}
+	//void PlayerDebugController::DrawPlayerBottomLeft(RB::Players::iPlayer* player)
+	//{
+	//	RB::Collisions::AABB aabb = player->GetAABB();
+	//
+	//	_lineRenderer.RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
+	//}
 
 	void PlayerDebugController::DrawPlayerAirMomentum(RB::Players::iPlayer* player)
 	{

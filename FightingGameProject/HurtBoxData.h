@@ -17,11 +17,12 @@ namespace RB::HurtBox
 			_frameName = frameName;
 			_vecAABB = vecAABB;
 
-			std::regex pattern("frame_"); 
-			std::string replacement = "";
-			std::string s = std::regex_replace(frameName, pattern, replacement);
-			std::stringstream stream(s);
-			stream >> _frame;
+			_UpdateFrame();
+			//std::regex pattern("frame_"); 
+			//std::string replacement = "";
+			//std::string s = std::regex_replace(frameName, pattern, replacement);
+			//std::stringstream stream(s);
+			//stream >> _frame;
 		}
 
 		~HurtBoxData() = default;
@@ -29,14 +30,24 @@ namespace RB::HurtBox
 	public:
 		size_t GetIndex() { return _index; }
 		size_t GetFrame() { return _frame; }
-		size_t GetSize() { return _vecAABB.size(); }
+		size_t GetDataCount() { return _vecAABB.size(); }
 		RB::Collisions::AABB& GetAABB(size_t index) { return _vecAABB[index]; }
 
 	public:
 		void ReserveAABBCapacity(size_t size) { _vecAABB.reserve(size); }
 		void SetIndex(size_t frame) { _index = frame; }
-		void SetFrameName(std::string name) { _frameName = name; }
+		void SetFrameName(std::string name) { _frameName = name; _UpdateFrame(); }
 		void AddAABB(RB::Collisions::AABB aabb) { _vecAABB.push_back(aabb); }
+
+	private:
+		void _UpdateFrame()
+		{
+			std::regex pattern("frame_");
+			std::string replacement = "";
+			std::string s = std::regex_replace(_frameName, pattern, replacement);
+			std::stringstream stream(s);
+			stream >> _frame;
+		}
 
 	private:
 		size_t _index = 0;

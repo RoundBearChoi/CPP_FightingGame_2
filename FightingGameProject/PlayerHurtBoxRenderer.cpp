@@ -57,13 +57,13 @@ namespace RB::Render
 		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
 		RB::HurtBox::HurtBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
 
-		for (size_t i = 0; i < data->GetSize(); i++)
+		size_t count = data->GetDataCount();
+
+		for (size_t i = 0; i < count; i++)
 		{
 			RB::Collisions::AABB& aabb = data->GetAABB(i);
 
 			olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
-			//pos.x += (aabb.GetWidthHeight().x * 0.5f);
-			//pos.y -= (aabb.GetWidthHeight().y * 0.5f);
 
 			_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_LEFT);
 		}

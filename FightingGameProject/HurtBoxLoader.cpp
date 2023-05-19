@@ -116,13 +116,19 @@ namespace RB::HurtBox
 			data0.SetFrameName("frame_0");
 			data0.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f }); //center on playerPos by default
 
-			//HurtBoxData data1;
-			//data1.SetIndex(1);
-			//data1.SetFrameName("frame_1");
-			//data1.AddAABB(RB::Collisions::AABB{ -25.0f, 50.0f, 50.0f, 50.0f }); //testing
+			HurtBoxData data1;
+			data1.SetIndex(1);
+			data1.SetFrameName("frame_1");
+			data1.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 50.0f, 50.0f }); //test
+
+			HurtBoxData data2;
+			data2.SetIndex(2);
+			data2.SetFrameName("frame_2");
+			data2.AddAABB(RB::Collisions::AABB{ 50.0f, 0.0f, 50.0f, 50.0f }); //test
 
 			defaultSet.AddHurtBoxData(data0);
-			//defaultSet.AddHurtBoxData(data1);
+			defaultSet.AddHurtBoxData(data1);
+			defaultSet.AddHurtBoxData(data2);
 
 			return defaultSet;
 		}

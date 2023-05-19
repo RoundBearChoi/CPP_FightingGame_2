@@ -112,7 +112,7 @@ namespace RB::HurtBox
 			HurtBoxDataSet defaultSet{ spriteEnum };
 
 			HurtBoxData defaultData;
-			defaultData.SetFrame(0);
+			defaultData.SetIndex(0);
 			defaultData.AddAABB(RB::Collisions::AABB{ 0, 0, 100, 100 });
 
 			defaultSet.AddHurtBoxData(defaultData);
@@ -132,6 +132,7 @@ namespace RB::HurtBox
 		for (size_t i = 0; i < length; i++)
 		{
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
+			std::string name = ParseName(*obj, i);
 
 			HurtBoxData data { i, vec };
 			resultSet.AddHurtBoxData(data);
@@ -172,6 +173,30 @@ namespace RB::HurtBox
 		}
 
 		return std::vector<RB::Collisions::AABB>{};
+	}
+
+	std::string HurtBoxLoader::ParseName(const json_object_s& wholeObj, const size_t frame)
+	{
+		json_object_element_s* objE = wholeObj.start;
+
+		size_t count = 0;
+
+		while (objE != nullptr)
+		{
+			if (count == frame)
+			{
+				json_string_s* jstring = objE->name;
+
+				std::string str = std::string(jstring->string, jstring->string_size);
+
+				return str;
+			}
+
+			count++;
+			objE = objE->next;
+		}
+
+		return "";
 	}
 
 	RB::Collisions::AABB HurtBoxLoader::GetHurtBoxAABB(const json_array_s& jArray, size_t index)

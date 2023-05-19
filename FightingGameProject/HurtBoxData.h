@@ -10,23 +10,23 @@ namespace RB::HurtBox
 	public:
 		HurtBoxData() = default;
 
-		HurtBoxData(size_t frame, std::vector<RB::Collisions::AABB> vecAABB)
+		HurtBoxData(size_t index, std::vector<RB::Collisions::AABB> vecAABB)
 		{
-			_frame = frame;
+			_index = index;
 			_vecAABB = vecAABB;
 		}
 
 		~HurtBoxData() = default;
 
 	public:
-		size_t GetFrame() { return _frame; }
-		void SetFrame(size_t frame) { _frame = frame; }
+		size_t GetIndex() { return _index; }
+		void SetIndex(size_t frame) { _index = frame; }
 		void AddAABB(RB::Collisions::AABB aabb) { _vecAABB.push_back(aabb); }
 		void SetSpecs(std::vector<RB::Collisions::AABB> vec) { _vecAABB = vec; }
 		RB::Collisions::AABB& GetSpecs(size_t index) { return _vecAABB[index]; }
 
 	private:
-		size_t _frame = 0;
+		size_t _index = 0;
 		std::vector<RB::Collisions::AABB> _vecAABB;
 	};
 }

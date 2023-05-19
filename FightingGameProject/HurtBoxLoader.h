@@ -32,6 +32,7 @@ namespace RB::HurtBox
 		/// </summary>
 		HurtBoxDataSet LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const size_t frame);
+		std::string ParseName(const json_object_s& wholeObj, const size_t frame);
 
 	public:
 		RB::Collisions::AABB GetHurtBoxAABB(const json_array_s& array, size_t index);

@@ -113,6 +113,7 @@ namespace RB::HurtBox
 
 			HurtBoxData defaultData;
 			defaultData.SetIndex(0);
+			defaultData.SetFrameName("frame_0");
 			defaultData.AddAABB(RB::Collisions::AABB{ 0, 0, 100, 100 });
 
 			defaultSet.AddHurtBoxData(defaultData);
@@ -134,7 +135,7 @@ namespace RB::HurtBox
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);
 
-			HurtBoxData data { i, vec };
+			HurtBoxData data { i, name, vec };
 			resultSet.AddHurtBoxData(data);
 		}
 

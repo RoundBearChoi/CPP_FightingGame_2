@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <regex>
 #include "SpriteEnum.h"
 #include "AABB.h"
 
@@ -15,6 +16,12 @@ namespace RB::HurtBox
 			_index = index;
 			_frameName = frameName;
 			_vecAABB = vecAABB;
+
+			std::regex pattern("frame_"); 
+			std::string replacement = "";
+			std::string s = std::regex_replace(frameName, pattern, replacement);
+			std::stringstream stream(s);
+			stream >> _frame;
 		}
 
 		~HurtBoxData() = default;
@@ -30,6 +37,7 @@ namespace RB::HurtBox
 	private:
 		size_t _index = 0;
 		std::string _frameName = "";
+		size_t _frame = 0;
 		std::vector<RB::Collisions::AABB> _vecAABB;
 	};
 }

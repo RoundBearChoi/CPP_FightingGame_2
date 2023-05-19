@@ -20,9 +20,6 @@
     <Filter Include="Source Files\States">
       <UniqueIdentifier>{24bbd811-49a3-4158-954b-838e04e9748c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PlayerDebug">
-      <UniqueIdentifier>{098c133e-1038-4493-8797-bcbeb252a740}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Updaters">
       <UniqueIdentifier>{168f9cf3-a809-4fa0-9c97-2eae554d7b92}</UniqueIdentifier>
     </Filter>
@@ -72,9 +69,6 @@
     </ClCompile>
     <ClCompile Include="StateMachineBase.cpp">
       <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerDebugController.cpp">
-      <Filter>Source Files\PlayerDebug</Filter>
     </ClCompile>
     <ClCompile Include="GameplayUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
@@ -205,6 +199,12 @@
     <ClCompile Include="PlayerState.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerDebugController.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerColliderBoxRenderer.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -245,9 +245,6 @@
     </ClInclude>
     <ClInclude Include="iPlayer.h">
       <Filter>Source Files\Players</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerDebugController.h">
-      <Filter>Source Files\PlayerDebug</Filter>
     </ClInclude>
     <ClInclude Include="GameplayUpdater.h">
       <Filter>Source Files\Updaters</Filter>
@@ -431,6 +428,12 @@
     </ClInclude>
     <ClInclude Include="ActivePlayerStates.h">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDebugController.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerColliderBoxRenderer.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

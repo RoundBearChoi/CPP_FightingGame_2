@@ -1,8 +1,6 @@
 #pragma once
 #include <vector>
 #include "olcPixelGameEngine.h"
-#include "iPlayer.h"
-#include "PlayerID.h"
 #include "PivotType.h"
 #include "AABB.h"
 #include "SpriteRenderer.h"
@@ -12,7 +10,9 @@
 #include "ControllerGetter.h"
 #include "PlayerController.h"
 
-namespace RB::PlayerDebug
+#include "PlayerColliderBoxRenderer.h"
+
+namespace RB::Render
 {
 	class PlayerDebugController : public RB::Controllers::ControllerBase
 	{
@@ -27,7 +27,6 @@ namespace RB::PlayerDebug
 
 	public:
 		void DrawPlayerPosition(RB::Players::iPlayer* player);
-		void DrawPlayerBox(RB::Players::iPlayer* player);
 		void DrawPlayerBottomLeft(RB::Players::iPlayer* player);
 		void DrawPlayerAirMomentum(RB::Players::iPlayer* player);
 
@@ -37,5 +36,6 @@ namespace RB::PlayerDebug
 
 	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		PlayerColliderBoxRenderer _playerColliderBoxRenderer;
 	};
 }

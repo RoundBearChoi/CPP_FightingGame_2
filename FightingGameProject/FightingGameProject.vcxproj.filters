@@ -205,6 +205,9 @@
     <ClCompile Include="PlayerColliderBoxRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerPositionRenderer.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -433,6 +436,9 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="PlayerColliderBoxRenderer.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerPositionRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>

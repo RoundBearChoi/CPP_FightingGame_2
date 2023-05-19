@@ -18,6 +18,7 @@ namespace RB::Render
 		_lineRenderer.Init();
 
 		_playerColliderBoxRenderer.Init(&_spriteRenderer);
+		_playerPositionRenderer.Init(&_spriteRenderer);
 	}
 
 	void PlayerDebugController::OnUpdate()
@@ -35,31 +36,33 @@ namespace RB::Render
 		if (p1 != nullptr)
 		{
 			//DrawPlayerBox(p1);
-			DrawPlayerPosition(p1);
+			//DrawPlayerPosition(p1);
 			DrawPlayerAirMomentum(p1);
 		}
 
 		if (p2 != nullptr)
 		{
 			//DrawPlayerBox(p2);
-			DrawPlayerPosition(p2);
+			//DrawPlayerPosition(p2);
 			DrawPlayerAirMomentum(p2);
 		}
 
 		_playerColliderBoxRenderer.OnUpdate();
+		_playerPositionRenderer.OnUpdate();
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
 	{
 		_playerColliderBoxRenderer.OnFixedUpdate();
+		_playerPositionRenderer.OnFixedUpdate();
 	}
 
-	void PlayerDebugController::DrawPlayerPosition(RB::Players::iPlayer* player)
-	{
-		olc::vi2d playerPos = player->GetPosition();
-
-		_spriteRenderer.RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
-	}
+	//void PlayerDebugController::DrawPlayerPosition(RB::Players::iPlayer* player)
+	//{
+	//	olc::vi2d playerPos = player->GetPosition();
+	//
+	//	_spriteRenderer.RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+	//}
 
 	void PlayerDebugController::DrawPlayerBottomLeft(RB::Players::iPlayer* player)
 	{

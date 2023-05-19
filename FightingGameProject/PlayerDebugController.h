@@ -11,6 +11,7 @@
 #include "PlayerController.h"
 
 #include "PlayerColliderBoxRenderer.h"
+#include "PlayerPositionRenderer.h"
 
 namespace RB::Render
 {
@@ -26,7 +27,7 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	public:
-		void DrawPlayerPosition(RB::Players::iPlayer* player);
+		//void DrawPlayerPosition(RB::Players::iPlayer* player);
 		void DrawPlayerBottomLeft(RB::Players::iPlayer* player);
 		void DrawPlayerAirMomentum(RB::Players::iPlayer* player);
 
@@ -37,5 +38,6 @@ namespace RB::Render
 	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		PlayerColliderBoxRenderer _playerColliderBoxRenderer;
+		PlayerPositionRenderer _playerPositionRenderer;
 	};
 }

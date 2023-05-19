@@ -30,12 +30,12 @@ namespace RB::Render
 
 	void PlayerHurtBoxRenderer::RenderHurtBox(RB::Players::PlayerID playerID)
 	{
-		//RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
-		//
-		//if (player == nullptr)
-		//{
-		//	return;
-		//}
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+		
+		if (player == nullptr)
+		{
+			return;
+		}
 
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -54,10 +54,12 @@ namespace RB::Render
 		}
 		
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-
 		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
-
 		RB::HurtBox::HurtBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
-		
+
+		for (size_t i = 0; i < data->GetSize(); i++)
+		{
+			RB::Collisions::AABB& aabb = data->GetAABB(i);
+		}
 	}
 }

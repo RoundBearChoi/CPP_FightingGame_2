@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include "ControllerBase.h"
 
 #include "ActiveControllers.h"

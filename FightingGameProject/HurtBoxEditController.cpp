@@ -9,7 +9,9 @@ namespace RB::HurtBox
 
 	void HurtBoxEditController::OnUpdate()
 	{
-
+		_getter_playerController.OnUpdate();
+		_getter_playerAnimationController.OnUpdate();
+		_getter_hurtBoxDataController.OnUpdate();
 	}
 
 	void HurtBoxEditController::OnFixedUpdate()

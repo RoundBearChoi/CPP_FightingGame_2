@@ -23,7 +23,7 @@ namespace RB::HurtBox
 		void _Edit(RB::Players::PlayerID playerID);
 
 	private:
-		int32_t _selectedIndex = 0;
+		size_t _selectedIndex = 0;
 
 	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;

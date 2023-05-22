@@ -73,13 +73,13 @@ namespace RB::HurtBox
 			_selectedIndex++;
 		}
 
-		if (_selectedIndex >= count)
-		{
-			_selectedIndex = 0;
-		}
-		else if (_selectedIndex < 0)
+		if (_selectedIndex == SIZE_MAX)
 		{
 			_selectedIndex = count - 1;
+		}
+		else if (_selectedIndex >= count)
+		{
+			_selectedIndex = 0;
 		}
 	}
 }

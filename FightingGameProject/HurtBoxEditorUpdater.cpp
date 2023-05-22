@@ -32,6 +32,7 @@ namespace RB::Updaters
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::MenuController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::HurtBoxDataController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::HurtBoxEditController()));
 	}
 
 	void HurtBoxEditorUpdater::OnUpdate()

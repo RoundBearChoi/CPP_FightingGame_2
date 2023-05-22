@@ -22,6 +22,7 @@ namespace RB::HurtBox
 
 	private:
 		void _Edit(RB::Players::PlayerID playerID);
+		void _UpdateSelectedIndex(size_t count);
 
 	private:
 		size_t _selectedIndex = 0;

@@ -60,6 +60,11 @@ namespace RB::HurtBox
 			//_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_LEFT);
 		}
 
+		_UpdateSelectedIndex(count);
+	}
+
+	void HurtBoxEditController::_UpdateSelectedIndex(size_t count)
+	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
 

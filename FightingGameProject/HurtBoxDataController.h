@@ -2,6 +2,7 @@
 #include <vector>
 #include "ControllerBase.h"
 #include "HurtBoxLoader.h"
+#include "HurtBoxEdit.h"
 
 namespace RB::HurtBox
 {
@@ -22,5 +23,8 @@ namespace RB::HurtBox
 	private:
 		HurtBoxLoader _loader;
 		std::vector<HurtBoxDataSet> _vecDataSets;
+
+	private:
+		HurtBoxEdit _hurtBoxEdit;
 	};
 }

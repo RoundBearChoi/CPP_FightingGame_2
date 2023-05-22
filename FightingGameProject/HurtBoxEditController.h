@@ -23,6 +23,9 @@ namespace RB::HurtBox
 		void _Edit(RB::Players::PlayerID playerID);
 
 	private:
+		int32_t _selectedIndex = 0;
+
+	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_playerAnimationController;
 		RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxDataController> _getter_hurtBoxDataController;

@@ -59,5 +59,27 @@ namespace RB::HurtBox
 			//olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
 			//_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_LEFT);
 		}
+
+		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
+		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
+
+		if (oButton.bPressed)
+		{
+			_selectedIndex--;
+		}
+
+		if (pButton.bPressed)
+		{
+			_selectedIndex++;
+		}
+
+		if (_selectedIndex >= count)
+		{
+			_selectedIndex = 0;
+		}
+		else if (_selectedIndex < 0)
+		{
+			_selectedIndex = count - 1;
+		}
 	}
 }

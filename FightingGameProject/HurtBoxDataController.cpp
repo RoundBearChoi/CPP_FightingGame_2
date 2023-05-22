@@ -12,18 +12,16 @@ namespace RB::HurtBox
 		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_dataset_sample));
 		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_idle));
 		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/fighter_0_walk.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_walk));
-
-		_hurtBoxEdit.Init();
 	}
 
 	void HurtBoxDataController::OnUpdate()
 	{
-		_hurtBoxEdit.OnUpdate();
+
 	}
 
 	void HurtBoxDataController::OnFixedUpdate()
 	{
-		_hurtBoxEdit.OnFixedUpdate();
+
 	}
 
 	HurtBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)

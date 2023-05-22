@@ -214,9 +214,6 @@
     <ClCompile Include="HurtBoxData.cpp">
       <Filter>Source Files\HurtBox</Filter>
     </ClCompile>
-    <ClCompile Include="HurtBoxEdit.cpp">
-      <Filter>Source Files\HurtBox</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -452,9 +449,6 @@
     </ClInclude>
     <ClInclude Include="PlayerHurtBoxRenderer.h">
       <Filter>Source Files\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="HurtBoxEdit.h">
-      <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

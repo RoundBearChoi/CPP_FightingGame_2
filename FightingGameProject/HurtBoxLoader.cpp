@@ -120,6 +120,7 @@ namespace RB::HurtBox
 			data1.SetIndex(1);
 			data1.SetFrameName("frame_1");
 			data1.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 50.0f, 50.0f }); //test
+			data1.AddAABB(RB::Collisions::AABB{ 70.0f, -70.0f, 50.0f, 50.0f }); //test
 
 			HurtBoxData data2;
 			data2.SetIndex(2);

@@ -6,6 +6,7 @@
 #include "PlayerController.h"
 #include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
+#include "CamController.h"
 
 namespace RB::HurtBox
 {
@@ -31,5 +32,6 @@ namespace RB::HurtBox
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_playerAnimationController;
 		RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxDataController> _getter_hurtBoxDataController;
+		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

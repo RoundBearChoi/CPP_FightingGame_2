@@ -25,6 +25,11 @@ namespace RB::Collisions
 			_bottomLeftY = bottomLeftY;
 		}
 
+		olc::vf2d GetCenter()
+		{
+            return olc::vf2d{ _bottomLeftX + (_width * 0.5f), _bottomLeftY - (_height * 0.5f) };
+		}
+
 		olc::vf2d GetBottomLeft()
 		{
 			return olc::vf2d{ _bottomLeftX, _bottomLeftY };

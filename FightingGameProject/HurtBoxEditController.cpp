@@ -12,10 +12,12 @@ namespace RB::HurtBox
 		_getter_playerController.OnUpdate();
 		_getter_playerAnimationController.OnUpdate();
 		_getter_hurtBoxDataController.OnUpdate();
+		_getter_camController.OnUpdate();
 
 		if (_getter_playerController.GetController() == nullptr ||
 			_getter_playerAnimationController.GetController() == nullptr ||
-			_getter_hurtBoxDataController.GetController() == nullptr)
+			_getter_hurtBoxDataController.GetController() == nullptr ||
+			_getter_camController.GetController() == nullptr)
 		{
 			return;
 		}
@@ -52,15 +54,24 @@ namespace RB::HurtBox
 
 		size_t count = data->GetDataCount();
 
+		_UpdateSelectedIndex(count);
+
 		for (size_t i = 0; i < count; i++)
 		{
-			RB::Collisions::AABB& aabb = data->GetAABB(i);
+			if (i == _selectedIndex)
+			{
+				RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
 
-			//olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
-			//_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_LEFT);
+				RB::Collisions::AABB& aabb = data->GetAABB(i);
+
+				olc::vf2d pos = player->GetPosition() + aabb.GetBottomLeft();
+
+				olc::vi2d relPos = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{1, -1};
+
+				olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
+				olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
+			}
 		}
-
-		_UpdateSelectedIndex(count);
 	}
 
 	void HurtBoxEditController::_UpdateSelectedIndex(size_t count)

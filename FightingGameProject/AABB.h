@@ -19,10 +19,40 @@ namespace RB::Collisions
 		~AABB() = default;
 
 	public:
-		void SetBottomLeft(float bottomLeftX, float bottomLeftY)
+		void SetBottomLeft(float_t bottomLeftX, float_t bottomLeftY)
 		{
 			_bottomLeftX = bottomLeftX;
 			_bottomLeftY = bottomLeftY;
+		}
+
+		void MoveX(float_t x)
+		{
+			_bottomLeftX += x;
+		}
+
+		void MoveY(float_t y)
+		{
+			_bottomLeftY += y;
+		}
+
+		void IncreaseWidth(float_t amount)
+		{
+			_width += amount;
+
+			if (_width < 0.0f)
+			{
+				_width = 0.0f;
+			}
+		}
+
+		void IncreaseHeight(float_t amount)
+		{
+			_height += amount;
+
+			if (_height < 0.0f)
+			{
+				_height = 0.0f;
+			}
 		}
 
 		olc::vf2d GetCenter()

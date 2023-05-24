@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include "ControllerBase.h"
+#include "Time.h"
 
 #include "ActiveControllers.h"
 #include "PlayerController.h"
@@ -22,7 +23,8 @@ namespace RB::HurtBox
 		void OnFixedUpdate() override;
 
 	private:
-		void _Edit(RB::Players::PlayerID playerID);
+		RB::Collisions::AABB* _GetCurrentAABB(RB::Players::PlayerID playerID);
+		void _EditAABB(RB::Collisions::AABB* aabb);
 		void _UpdateSelectedIndex(size_t count);
 
 	private:

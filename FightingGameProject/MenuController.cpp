@@ -37,6 +37,8 @@ namespace RB::HurtBox
 		//debug
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + GetCurrentSpriteString(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(GetCurrentFrame()), olc::YELLOW);
+
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "AABB count: ", olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()

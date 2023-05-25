@@ -37,10 +37,10 @@ namespace RB::HurtBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data", olc::WHITE);
 
 		//debug
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + GetCurrentSpriteString(), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(GetCurrentFrame()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
 
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "AABB count: " + std::to_string(GetAABBCount()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()
@@ -48,7 +48,16 @@ namespace RB::HurtBox
 
 	}
 
-	RB::Sprites::SpriteEnum MenuController::GetCurrentSpriteEnum()
+	const std::string& MenuController::_GetCurrentSpriteString()
+	{
+		RB::Sprites::SpriteEnum se = _GetCurrentSpriteEnum();
+
+		const std::string& str = _getter_sprDataController.GetController()->GetString(se);
+
+		return str;
+	}
+
+	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()
 	{
 		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
@@ -64,16 +73,7 @@ namespace RB::HurtBox
 		return _currentSpriteEnum;
 	}
 
-	const std::string& MenuController::GetCurrentSpriteString()
-	{
-		RB::Sprites::SpriteEnum se = GetCurrentSpriteEnum();
-
-		const std::string& str = _getter_sprDataController.GetController()->GetString(se);
-
-		return str;
-	}
-
-	int32_t MenuController::GetCurrentFrame()
+	int32_t MenuController::_GetCurrentAnimationFrame()
 	{
 		RB::Render::PlayerAnimationObj* obj = _getter_pAniController.GetController()->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
 
@@ -85,7 +85,7 @@ namespace RB::HurtBox
 		return obj->GetCurrentIndex();
 	}
 
-	size_t MenuController::GetAABBCount()
+	size_t MenuController::_GetAABBCount()
 	{
 		RB::HurtBox::HurtBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
 
@@ -94,7 +94,7 @@ namespace RB::HurtBox
 			return 0;
 		}
 
-		RB::HurtBox::HurtBoxData* data = set->GetHurtBoxDataByFrame(GetCurrentFrame());
+		RB::HurtBox::HurtBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (data == nullptr)
 		{

@@ -23,17 +23,16 @@ namespace RB::HurtBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-	public:
-		RB::Sprites::SpriteEnum GetCurrentSpriteEnum();
-		const std::string& GetCurrentSpriteString();
-		int32_t GetCurrentFrame();
-		size_t GetAABBCount();
+	private:
+		const std::string& _GetCurrentSpriteString();
+		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
+		int32_t _GetCurrentAnimationFrame();
+		size_t _GetAABBCount();
 
 	private:
 		RB::Controllers::ControllerGetter<RB::Sprites::SpriteDataController> _getter_sprDataController;
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_pAniController;
-		//RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxEditController> _getter_hurtBoxEditController;
 		RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxDataController> _getter_hurtBoxDataController;
 
 	private:

@@ -17,10 +17,12 @@ namespace RB::HurtBox
 		_getter_pAniController.OnUpdate();
 		_getter_playerController.OnUpdate();
 		_getter_sprDataController.OnUpdate();
+		_getter_hurtBoxDataController.OnUpdate();
 
 		if (_getter_pAniController.GetController() == nullptr ||
 			_getter_playerController.GetController() == nullptr ||
-			_getter_sprDataController.GetController() == nullptr)
+			_getter_sprDataController.GetController() == nullptr ||
+			_getter_hurtBoxDataController.GetController() == nullptr)
 		{
 			return;
 		}
@@ -38,7 +40,7 @@ namespace RB::HurtBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + GetCurrentSpriteString(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(GetCurrentFrame()), olc::YELLOW);
 
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "AABB count: ", olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "AABB count: " + std::to_string(GetAABBCount()), olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()
@@ -83,8 +85,11 @@ namespace RB::HurtBox
 		return obj->GetCurrentIndex();
 	}
 
-	//size_t MenuController::GetCurrentAABBCount()
-	//{
-	//	return size_t();
-	//}
+	size_t MenuController::GetAABBCount()
+	{
+		RB::HurtBox::HurtBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+		RB::HurtBox::HurtBoxData* data = set->GetHurtBoxDataByFrame(GetCurrentFrame());
+
+		return data->GetDataCount();
+	}
 }

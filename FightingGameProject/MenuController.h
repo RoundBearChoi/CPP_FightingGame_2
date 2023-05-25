@@ -26,6 +26,7 @@ namespace RB::HurtBox
 		RB::Sprites::SpriteEnum GetCurrentSpriteEnum();
 		const std::string& GetCurrentSpriteString();
 		int32_t GetCurrentFrame();
+		//size_t GetCurrentAABBCount();
 
 	private:
 		RB::Controllers::ControllerGetter<RB::Sprites::SpriteDataController> _getter_sprDataController;

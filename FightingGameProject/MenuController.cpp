@@ -82,4 +82,9 @@ namespace RB::HurtBox
 
 		return obj->GetCurrentIndex();
 	}
+
+	//size_t MenuController::GetCurrentAABBCount()
+	//{
+	//	return size_t();
+	//}
 }

@@ -22,8 +22,11 @@ namespace RB::HurtBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
+	public:
+		RB::Collisions::AABB* GetCurrentAABB(RB::Players::PlayerID playerID);
+
 	private:
-		RB::Collisions::AABB* _GetCurrentAABB(RB::Players::PlayerID playerID);
+		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
 		void _EditAABB(RB::Collisions::AABB* aabb);
 		void _UpdateSelectedIndex(size_t count);
 

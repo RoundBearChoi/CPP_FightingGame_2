@@ -22,7 +22,10 @@ namespace RB::HurtBox
 			return;
 		}
 
-		RB::Collisions::AABB* aabb = _GetCurrentAABB(RB::Players::PlayerID::PLAYER_1);
+		RB::Collisions::AABB* aabb = GetCurrentAABB(RB::Players::PlayerID::PLAYER_1);
+
+		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
+
 		_EditAABB(aabb);
 	}
 
@@ -31,7 +34,7 @@ namespace RB::HurtBox
 
 	}
 
-	RB::Collisions::AABB* HurtBoxEditController::_GetCurrentAABB(RB::Players::PlayerID playerID)
+	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -61,22 +64,30 @@ namespace RB::HurtBox
 		{
 			if (i == _selectedIndex)
 			{
-				RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
-
 				RB::Collisions::AABB& aabb = data->GetAABB(i);
-
-				olc::vf2d pos = player->GetPosition() + aabb.GetBottomLeft();
-				
-				olc::vi2d relPos = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{1, -1};
-				
-				olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
-				olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 
 				return &aabb;
 			}
 		}
 
 		return nullptr;
+	}
+
+	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
+	{
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+
+		if (player == nullptr)
+		{
+			return;
+		}
+
+		olc::vf2d pos = player->GetPosition() + aabb->GetBottomLeft();
+
+		olc::vi2d relPos = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{1, -1};
+
+		olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
+		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	}
 
 	void HurtBoxEditController::_EditAABB(RB::Collisions::AABB* aabb)

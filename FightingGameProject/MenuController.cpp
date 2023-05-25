@@ -88,7 +88,18 @@ namespace RB::HurtBox
 	size_t MenuController::GetAABBCount()
 	{
 		RB::HurtBox::HurtBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+
+		if (set == nullptr)
+		{
+			return 0;
+		}
+
 		RB::HurtBox::HurtBoxData* data = set->GetHurtBoxDataByFrame(GetCurrentFrame());
+
+		if (data == nullptr)
+		{
+			return 0;
+		}
 
 		return data->GetDataCount();
 	}

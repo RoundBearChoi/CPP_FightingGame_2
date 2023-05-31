@@ -24,7 +24,7 @@ namespace RB::HurtBox
 
 	public:
 		RB::HurtBox::HurtBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
-		RB::Collisions::AABB* GetCurrentAABB(RB::Players::PlayerID playerID);
+		RB::Collisions::AABB* GetCurrentAABB(RB::HurtBox::HurtBoxData* data);
 
 	private:
 		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);

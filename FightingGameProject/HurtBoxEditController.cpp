@@ -22,7 +22,8 @@ namespace RB::HurtBox
 			return;
 		}
 
-		RB::Collisions::AABB* aabb = GetCurrentAABB(RB::Players::PlayerID::PLAYER_1);
+		RB::HurtBox::HurtBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
+		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
 		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
 
@@ -60,10 +61,8 @@ namespace RB::HurtBox
 		return data;
 	}
 
-	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::Players::PlayerID playerID)
+	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::HurtBox::HurtBoxData* data)
 	{
-		RB::HurtBox::HurtBoxData* data = GetCurrentHurtBoxData(playerID);
-
 		size_t count = data->GetDataCount();
 
 		_UpdateSelectedIndex(count);

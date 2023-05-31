@@ -2,19 +2,13 @@
 
 namespace RB::HurtBox
 {
-	HurtBoxData::HurtBoxData(/*size_t index,*/ std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
+	HurtBoxData::HurtBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
 	{
-		//_index = index;
 		_frameName = frameName;
 		_vecAABB = vecAABB;
 
 		_frame = _ParseFrame(frameName);
 	}
-
-	//size_t HurtBoxData::GetIndex()
-	//{
-	//	return _index;
-	//}
 
 	size_t HurtBoxData::GetFrame()
 	{
@@ -35,11 +29,6 @@ namespace RB::HurtBox
 	{
 		_vecAABB.reserve(size);
 	}
-
-	//void HurtBoxData::SetIndex(size_t frame)
-	//{
-	//	_index = frame;
-	//}
 
 	void HurtBoxData::SetFrameName(const std::string& name)
 	{

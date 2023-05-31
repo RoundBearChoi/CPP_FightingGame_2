@@ -59,6 +59,11 @@ namespace RB::HurtBox
 			return false;
 		}
 
+		if (_vecAABB.size() == 1)
+		{
+			return false;
+		}
+
 		_vecAABB.erase(_vecAABB.begin() + index);
 
 		return true;

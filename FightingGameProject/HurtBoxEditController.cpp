@@ -86,7 +86,7 @@ namespace RB::HurtBox
 
 		if (insButton.bPressed)
 		{
-
+			data->AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f });
 		}
 	}
 

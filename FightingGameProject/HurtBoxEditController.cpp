@@ -130,7 +130,7 @@ namespace RB::HurtBox
 		olc::HWButton aButton = olc::Platform::ptrPGE->GetKey(olc::A);
 		olc::HWButton dButton = olc::Platform::ptrPGE->GetKey(olc::D);
 
-		float_t moveAmount = 40.0f;
+		float_t moveAmount = 50.0f;
 
 		if (wButton.bHeld)
 		{

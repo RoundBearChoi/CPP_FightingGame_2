@@ -16,7 +16,7 @@ namespace RB::HurtBox
 	public:
 		size_t GetIndex();
 		size_t GetFrame();
-		size_t GetDataCount();
+		size_t GetAABBCount();
 		RB::Collisions::AABB& GetAABB(size_t index);
 
 	public:

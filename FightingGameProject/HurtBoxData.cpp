@@ -21,7 +21,7 @@ namespace RB::HurtBox
 		return _frame;
 	}
 
-	size_t HurtBoxData::GetDataCount()
+	size_t HurtBoxData::GetAABBCount()
 	{
 		return _vecAABB.size();
 	}

@@ -62,7 +62,7 @@ namespace RB::HurtBox
 
 	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::HurtBox::HurtBoxData* data)
 	{
-		size_t count = data->GetDataCount();
+		size_t count = data->GetAABBCount();
 
 		_UpdateSelectedIndex(count);
 
@@ -87,6 +87,8 @@ namespace RB::HurtBox
 		if (insButton.bPressed)
 		{
 			data->AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f });
+
+			_selectedIndex = data->GetAABBCount() - 1;
 		}
 	}
 

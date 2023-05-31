@@ -57,7 +57,7 @@ namespace RB::Render
 		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
 		RB::HurtBox::HurtBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
 
-		size_t count = data->GetDataCount();
+		size_t count = data->GetAABBCount();
 
 		for (size_t i = 0; i < count; i++)
 		{

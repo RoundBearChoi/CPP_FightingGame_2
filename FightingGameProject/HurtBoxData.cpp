@@ -52,6 +52,18 @@ namespace RB::HurtBox
 		_vecAABB.push_back(aabb);
 	}
 
+	bool HurtBoxData::DeleteAABB(size_t index)
+	{
+		if (index >= _vecAABB.size())
+		{
+			return false;
+		}
+
+		_vecAABB.erase(_vecAABB.begin() + index);
+
+		return true;
+	}
+
 	size_t HurtBoxData::_ParseFrame(const std::string& str)
 	{
 		std::regex pattern("frame_");

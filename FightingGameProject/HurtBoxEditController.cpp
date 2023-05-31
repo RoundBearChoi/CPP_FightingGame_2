@@ -90,6 +90,14 @@ namespace RB::HurtBox
 
 			_selectedIndex = data->GetAABBCount() - 1;
 		}
+
+		if (delButton.bPressed)
+		{
+			if (data->DeleteAABB(_selectedIndex))
+			{
+				_selectedIndex--;
+			}
+		}
 	}
 
 	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)

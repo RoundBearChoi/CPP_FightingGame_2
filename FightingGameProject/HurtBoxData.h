@@ -24,6 +24,7 @@ namespace RB::HurtBox
 		void SetIndex(size_t frame);
 		void SetFrameName(const std::string& name);
 		void AddAABB(RB::Collisions::AABB aabb);
+		bool DeleteAABB(size_t index);
 
 	private:
 		size_t _ParseFrame(const std::string& str);

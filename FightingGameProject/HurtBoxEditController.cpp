@@ -26,7 +26,8 @@ namespace RB::HurtBox
 
 		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
 
-		_EditAABB(aabb);
+		_EditAABB_OnPress(aabb);
+		_AddAABB_OnPress();
 	}
 
 	void HurtBoxEditController::OnFixedUpdate()
@@ -34,7 +35,7 @@ namespace RB::HurtBox
 
 	}
 
-	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::Players::PlayerID playerID)
+	RB::HurtBox::HurtBoxData* HurtBoxEditController::GetCurrentHurtBoxData(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -55,6 +56,13 @@ namespace RB::HurtBox
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
 		RB::HurtBox::HurtBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
+
+		return data;
+	}
+
+	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::Players::PlayerID playerID)
+	{
+		RB::HurtBox::HurtBoxData* data = GetCurrentHurtBoxData(playerID);
 
 		size_t count = data->GetDataCount();
 
@@ -90,7 +98,7 @@ namespace RB::HurtBox
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	}
 
-	void HurtBoxEditController::_EditAABB(RB::Collisions::AABB* aabb)
+	void HurtBoxEditController::_EditAABB_OnPress(RB::Collisions::AABB* aabb)
 	{
 		if (aabb == nullptr)
 		{
@@ -151,6 +159,17 @@ namespace RB::HurtBox
 		if (kButton.bHeld)
 		{
 			aabb->IncreaseWidth(sizeAmount * RB::Frames::Time::GetDeltaTime());
+		}
+	}
+
+	void HurtBoxEditController::_AddAABB_OnPress()
+	{
+		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
+		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
+
+		if (insButton.bPressed)
+		{
+
 		}
 	}
 

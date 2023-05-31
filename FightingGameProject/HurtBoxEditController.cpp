@@ -25,10 +25,9 @@ namespace RB::HurtBox
 		RB::HurtBox::HurtBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
+		_AddAABB_OnPress(data);
 		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
-
 		_EditAABB_OnPress(aabb);
-		_AddAABB_OnPress();
 	}
 
 	void HurtBoxEditController::OnFixedUpdate()
@@ -78,6 +77,17 @@ namespace RB::HurtBox
 		}
 
 		return nullptr;
+	}
+
+	void HurtBoxEditController::_AddAABB_OnPress(RB::HurtBox::HurtBoxData* data)
+	{
+		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
+		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
+
+		if (insButton.bPressed)
+		{
+
+		}
 	}
 
 	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
@@ -158,17 +168,6 @@ namespace RB::HurtBox
 		if (kButton.bHeld)
 		{
 			aabb->IncreaseWidth(sizeAmount * RB::Frames::Time::GetDeltaTime());
-		}
-	}
-
-	void HurtBoxEditController::_AddAABB_OnPress()
-	{
-		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
-		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
-
-		if (insButton.bPressed)
-		{
-
 		}
 	}
 

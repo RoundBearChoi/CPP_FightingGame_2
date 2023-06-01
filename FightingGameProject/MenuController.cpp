@@ -37,10 +37,10 @@ namespace RB::HurtBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data (saves the entire set)", olc::WHITE);
 
 		//debug
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()

@@ -69,9 +69,18 @@ namespace RB::Render
 		{
 			RB::Collisions::AABB& aabb = data->GetAABB(i);
 
-			olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
-
-			_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_LEFT);
+			if (player->OtherPlayerIsOnRightSide())
+			{
+				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
+				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_LEFT);
+			}
+			else
+			{
+				olc::vf2d bottomleft = aabb.GetBottomLeft();
+				bottomleft.x *= -1.0f;
+				olc::vf2d pos = bottomleft + player->GetPosition();
+				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_RIGHT);
+			}
 		}
 	}
 }

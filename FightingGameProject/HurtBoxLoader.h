@@ -9,6 +9,7 @@
 #include "AABB.h"
 #include "HurtBoxData.h"
 #include "HurtBoxDataSet.h"
+#include "HurtBoxDataSetPath.h"
 
 namespace RB::HurtBox
 {

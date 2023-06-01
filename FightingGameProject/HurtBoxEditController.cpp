@@ -27,7 +27,7 @@ namespace RB::HurtBox
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
 		_SaveSet_OnPress(set);
-		_AddAABB_OnPress(data);
+		_Add_Delete_AABB_OnPress(data);
 		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
 		_EditAABB_OnPress(aabb);
 
@@ -91,7 +91,7 @@ namespace RB::HurtBox
 	{
 		size_t count = data->GetAABBCount();
 
-		_UpdateSelectedIndex(count);
+		_UpdateSelectedIndex_OnPress(count);
 
 		for (size_t i = 0; i < count; i++)
 		{
@@ -106,7 +106,24 @@ namespace RB::HurtBox
 		return nullptr;
 	}
 
-	void HurtBoxEditController::_AddAABB_OnPress(RB::HurtBox::HurtBoxData* data)
+	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
+	{
+		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+
+		if (player == nullptr)
+		{
+			return;
+		}
+
+		olc::vf2d pos = player->GetPosition() + aabb->GetBottomLeft();
+
+		olc::vi2d relPos = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{1, -1};
+
+		olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
+		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
+	}
+
+	void HurtBoxEditController::_Add_Delete_AABB_OnPress(RB::HurtBox::HurtBoxData* data)
 	{
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
@@ -125,23 +142,6 @@ namespace RB::HurtBox
 				_selectedIndex--;
 			}
 		}
-	}
-
-	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
-	{
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
-
-		if (player == nullptr)
-		{
-			return;
-		}
-
-		olc::vf2d pos = player->GetPosition() + aabb->GetBottomLeft();
-
-		olc::vi2d relPos = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{1, -1};
-
-		olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
-		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	}
 
 	void HurtBoxEditController::_EditAABB_OnPress(RB::Collisions::AABB* aabb)
@@ -208,7 +208,7 @@ namespace RB::HurtBox
 		}
 	}
 
-	void HurtBoxEditController::_UpdateSelectedIndex(size_t count)
+	void HurtBoxEditController::_UpdateSelectedIndex_OnPress(size_t count)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);

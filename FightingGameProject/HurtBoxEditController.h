@@ -28,10 +28,10 @@ namespace RB::HurtBox
 		RB::Collisions::AABB* GetCurrentAABB(RB::HurtBox::HurtBoxData* data);
 
 	private:
-		void _AddAABB_OnPress(RB::HurtBox::HurtBoxData* data);
 		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
+		void _Add_Delete_AABB_OnPress(RB::HurtBox::HurtBoxData* data);
 		void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
-		void _UpdateSelectedIndex(size_t count);
+		void _UpdateSelectedIndex_OnPress(size_t count);
 		void _SaveSet_OnPress(RB::HurtBox::HurtBoxDataSet* set);
 
 	private:

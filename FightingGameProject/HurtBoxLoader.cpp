@@ -103,7 +103,7 @@ namespace RB::HurtBox
 		return root;
 	}
 
-	HurtBoxDataSet HurtBoxLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	HBoxDataSet HurtBoxLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
 		if (GetDataSetPath(spriteEnum) == nullptr)
@@ -116,7 +116,7 @@ namespace RB::HurtBox
 
 		if (root == nullptr)
 		{
-			HurtBoxDataSet defaultSet{ spriteEnum };
+			HBoxDataSet defaultSet{ spriteEnum };
 
 			HBoxData data0;
 			data0.SetFrameNameAndParse("frame_0");
@@ -148,7 +148,7 @@ namespace RB::HurtBox
 		std::vector<HBoxData> vecData;
 		vecData.reserve(length);
 
-		HurtBoxDataSet resultSet{ spriteEnum };
+		HBoxDataSet resultSet{ spriteEnum };
 
 		for (size_t i = 0; i < length; i++)
 		{

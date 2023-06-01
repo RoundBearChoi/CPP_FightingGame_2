@@ -8,7 +8,7 @@
 #include "JGetter.h"
 #include "AABB.h"
 #include "HBoxData.h"
-#include "HurtBoxDataSet.h"
+#include "HBoxDataSet.h"
 #include "HurtBoxDataSetPath.h"
 
 namespace RB::HurtBox
@@ -31,7 +31,7 @@ namespace RB::HurtBox
 		/// <summary>
 		/// only use during initialization (vector addresses)
 		/// </summary>
-		HurtBoxDataSet LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
+		HBoxDataSet LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const size_t frame);
 		std::string ParseName(const json_object_s& wholeObj, const size_t frame);
 

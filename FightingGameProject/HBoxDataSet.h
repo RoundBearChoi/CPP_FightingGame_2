@@ -5,15 +5,15 @@
 
 namespace RB::HurtBox
 {
-	class HurtBoxDataSet
+	class HBoxDataSet
 	{
 	public:
-		HurtBoxDataSet(RB::Sprites::SpriteEnum spriteEnum)
+		HBoxDataSet(RB::Sprites::SpriteEnum spriteEnum)
 		{
 			_spriteEnum = spriteEnum;
 		}
 
-		~HurtBoxDataSet() = default;
+		~HBoxDataSet() = default;
 
 	public:
 		void AddHurtBoxData(HBoxData data)

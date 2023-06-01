@@ -24,7 +24,7 @@ namespace RB::HurtBox
 
 	}
 
-	HurtBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)
+	HBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecDataSets.size(); i++)
 		{

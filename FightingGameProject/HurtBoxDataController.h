@@ -17,12 +17,12 @@ namespace RB::HurtBox
 		void OnFixedUpdate() override;
 
 	public:
-		HurtBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
+		HBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
 		HurtBoxLoader _loader;
-		std::vector<HurtBoxDataSet> _vecDataSets;
+		std::vector<HBoxDataSet> _vecDataSets;
 
 	private:
 		std::string _none = "none";

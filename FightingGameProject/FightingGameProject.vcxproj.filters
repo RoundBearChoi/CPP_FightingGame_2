@@ -414,7 +414,7 @@
     <ClInclude Include="HBoxData.h">
       <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
-    <ClInclude Include="HurtBoxDataSet.h">
+    <ClInclude Include="HBoxDataSet.h">
       <Filter>Source Files\HurtBox</Filter>
     </ClInclude>
     <ClInclude Include="P0_Dummy.h">

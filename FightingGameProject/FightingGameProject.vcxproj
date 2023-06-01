@@ -211,7 +211,7 @@
     <ClInclude Include="ControllerGetter.h" />
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HBoxData.h" />
-    <ClInclude Include="HurtBoxDataSet.h" />
+    <ClInclude Include="HBoxDataSet.h" />
     <ClInclude Include="HurtBoxEditController.h" />
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />

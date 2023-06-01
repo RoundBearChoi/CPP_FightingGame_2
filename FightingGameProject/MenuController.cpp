@@ -59,7 +59,7 @@ namespace RB::HurtBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HurtBox::HurtBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+		RB::HurtBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{
@@ -106,7 +106,7 @@ namespace RB::HurtBox
 
 	size_t MenuController::_GetAABBCount()
 	{
-		RB::HurtBox::HurtBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+		RB::HurtBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{

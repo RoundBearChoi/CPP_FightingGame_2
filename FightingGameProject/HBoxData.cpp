@@ -1,8 +1,8 @@
-#include "HurtBoxData.h"
+#include "HBoxData.h"
 
 namespace RB::HurtBox
 {
-	HurtBoxData::HurtBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
+	HBoxData::HBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
 	{
 		_frameName = frameName;
 		_vecAABB = vecAABB;
@@ -10,43 +10,43 @@ namespace RB::HurtBox
 		_frame = _ParseFrame(frameName);
 	}
 
-	size_t HurtBoxData::GetFrame()
+	size_t HBoxData::GetFrame()
 	{
 		return _frame;
 	}
 
-	size_t HurtBoxData::GetAABBCount()
+	size_t HBoxData::GetAABBCount()
 	{
 		return _vecAABB.size();
 	}
 
-	RB::Collisions::AABB& HurtBoxData::GetAABB(size_t index)
+	RB::Collisions::AABB& HBoxData::GetAABB(size_t index)
 	{
 		return _vecAABB[index];
 	}
 
-	const std::string& HurtBoxData::GetFrameName()
+	const std::string& HBoxData::GetFrameName()
 	{
 		return _frameName;
 	}
 
-	void HurtBoxData::ReserveAABBCapacity(size_t size)
+	void HBoxData::ReserveAABBCapacity(size_t size)
 	{
 		_vecAABB.reserve(size);
 	}
 
-	void HurtBoxData::SetFrameNameAndParse(const std::string& name)
+	void HBoxData::SetFrameNameAndParse(const std::string& name)
 	{
 		_frameName = name;
 		_frame = _ParseFrame(name);
 	}
 
-	void HurtBoxData::AddAABB(RB::Collisions::AABB aabb)
+	void HBoxData::AddAABB(RB::Collisions::AABB aabb)
 	{
 		_vecAABB.push_back(aabb);
 	}
 
-	bool HurtBoxData::DeleteAABB(size_t index)
+	bool HBoxData::DeleteAABB(size_t index)
 	{
 		if (index >= _vecAABB.size())
 		{
@@ -63,7 +63,7 @@ namespace RB::HurtBox
 		return true;
 	}
 
-	size_t HurtBoxData::_ParseFrame(const std::string& str)
+	size_t HBoxData::_ParseFrame(const std::string& str)
 	{
 		std::regex pattern("frame_");
 		std::string replacement = "";

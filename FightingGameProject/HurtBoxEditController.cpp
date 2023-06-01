@@ -23,7 +23,7 @@ namespace RB::HurtBox
 		}
 
 		RB::HurtBox::HurtBoxDataSet* set = GetCurrentHurtBoxDataSet(RB::Players::PlayerID::PLAYER_1);
-		RB::HurtBox::HurtBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
+		RB::HurtBox::HBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
 		_SaveSet_OnPress(set);
@@ -62,7 +62,7 @@ namespace RB::HurtBox
 		return dataSet;
 	}
 
-	RB::HurtBox::HurtBoxData* HurtBoxEditController::GetCurrentHurtBoxData(RB::Players::PlayerID playerID)
+	RB::HurtBox::HBoxData* HurtBoxEditController::GetCurrentHurtBoxData(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -82,12 +82,12 @@ namespace RB::HurtBox
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
-		RB::HurtBox::HurtBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
+		RB::HurtBox::HBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
 
 		return data;
 	}
 
-	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::HurtBox::HurtBoxData* data)
+	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::HurtBox::HBoxData* data)
 	{
 		size_t count = data->GetAABBCount();
 
@@ -123,7 +123,7 @@ namespace RB::HurtBox
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	}
 
-	void HurtBoxEditController::_Add_Delete_AABB_OnPress(RB::HurtBox::HurtBoxData* data)
+	void HurtBoxEditController::_Add_Delete_AABB_OnPress(RB::HurtBox::HBoxData* data)
 	{
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
@@ -252,7 +252,7 @@ namespace RB::HurtBox
 
 				for (size_t f = 0; f < set->GetSize(); f++)
 				{
-					HurtBoxData* data = set->GetHurtBoxDataByFrame(f);
+					HBoxData* data = set->GetHurtBoxDataByFrame(f);
 					const std::string& frameName = data->GetFrameName();
 
 					file << "    \"" << frameName << "\":" << std::endl;

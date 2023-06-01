@@ -118,7 +118,7 @@ namespace RB::HurtBox
 		{
 			HurtBoxDataSet defaultSet{ spriteEnum };
 
-			HurtBoxData data0;
+			HBoxData data0;
 			data0.SetFrameNameAndParse("frame_0");
 			data0.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f }); //center on playerPos by default
 
@@ -145,7 +145,7 @@ namespace RB::HurtBox
 
 		size_t length = obj->length;
 
-		std::vector<HurtBoxData> vecData;
+		std::vector<HBoxData> vecData;
 		vecData.reserve(length);
 
 		HurtBoxDataSet resultSet{ spriteEnum };
@@ -155,7 +155,7 @@ namespace RB::HurtBox
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);
 
-			HurtBoxData data { name, vec};
+			HBoxData data { name, vec};
 			resultSet.AddHurtBoxData(data);
 		}
 

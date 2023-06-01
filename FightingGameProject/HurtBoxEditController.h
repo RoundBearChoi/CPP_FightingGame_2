@@ -24,12 +24,12 @@ namespace RB::HurtBox
 
 	public:
 		RB::HurtBox::HurtBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID);
-		RB::HurtBox::HurtBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
-		RB::Collisions::AABB* GetCurrentAABB(RB::HurtBox::HurtBoxData* data);
+		RB::HurtBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
+		RB::Collisions::AABB* GetCurrentAABB(RB::HurtBox::HBoxData* data);
 
 	private:
 		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
-		void _Add_Delete_AABB_OnPress(RB::HurtBox::HurtBoxData* data);
+		void _Add_Delete_AABB_OnPress(RB::HurtBox::HBoxData* data);
 		void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
 		void _UpdateSelectedIndex_OnPress(size_t count);
 		void _SaveSet_OnPress(RB::HurtBox::HurtBoxDataSet* set);

@@ -7,7 +7,7 @@
 #include "json.h"
 #include "JGetter.h"
 #include "AABB.h"
-#include "HurtBoxData.h"
+#include "HBoxData.h"
 #include "HurtBoxDataSet.h"
 #include "HurtBoxDataSetPath.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "SpriteEnum.h"
-#include "HurtBoxData.h"
+#include "HBoxData.h"
 
 namespace RB::HurtBox
 {
@@ -16,7 +16,7 @@ namespace RB::HurtBox
 		~HurtBoxDataSet() = default;
 
 	public:
-		void AddHurtBoxData(HurtBoxData data)
+		void AddHurtBoxData(HBoxData data)
 		{
 			_vecHurtBoxData.push_back(data);
 		}
@@ -26,16 +26,16 @@ namespace RB::HurtBox
 			return _vecHurtBoxData.size();
 		}
 
-		HurtBoxData* GetHurtBoxDataByFrame(size_t frame)
+		HBoxData* GetHurtBoxDataByFrame(size_t frame)
 		{
-			HurtBoxData* result = _FindHurtBoxDataByFrame(frame);
+			HBoxData* result = _FindHurtBoxDataByFrame(frame);
 
 			if (result != nullptr)
 			{
 				return result;
 			}
 
-			HurtBoxData data;
+			HBoxData data;
 			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
 			data.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f });
 
@@ -51,10 +51,10 @@ namespace RB::HurtBox
 
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		std::vector<HurtBoxData> _vecHurtBoxData;
+		std::vector<HBoxData> _vecHurtBoxData;
 
 	private:
-		HurtBoxData* _FindHurtBoxDataByFrame(size_t frame)
+		HBoxData* _FindHurtBoxDataByFrame(size_t frame)
 		{
 			for (size_t i = 0; i < _vecHurtBoxData.size(); i++)
 			{

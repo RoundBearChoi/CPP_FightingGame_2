@@ -6,12 +6,12 @@
 
 namespace RB::HurtBox
 {
-	class HurtBoxData
+	class HBoxData
 	{
 	public:
-		HurtBoxData() = default;
-		HurtBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
-		~HurtBoxData() = default;
+		HBoxData() = default;
+		HBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
+		~HBoxData() = default;
 
 	public:
 		size_t GetFrame();

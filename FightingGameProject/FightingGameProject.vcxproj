@@ -146,7 +146,7 @@
     <ClCompile Include="ActivePlayerStates.cpp" />
     <ClCompile Include="AirMomentum.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
-    <ClCompile Include="HurtBoxData.cpp" />
+    <ClCompile Include="HBoxData.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HurtBoxDataSetPath.h" />
     <ClCompile Include="HurtBoxEditController.cpp" />
@@ -210,7 +210,7 @@
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="ControllerGetter.h" />
     <ClInclude Include="HurtBoxDataController.h" />
-    <ClInclude Include="HurtBoxData.h" />
+    <ClInclude Include="HBoxData.h" />
     <ClInclude Include="HurtBoxDataSet.h" />
     <ClInclude Include="HurtBoxEditController.h" />
     <ClInclude Include="JGetter.h" />

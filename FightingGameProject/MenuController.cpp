@@ -66,7 +66,7 @@ namespace RB::HurtBox
 			return _none;
 		}
 
-		RB::HurtBox::HurtBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HurtBox::HBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (data == nullptr)
 		{
@@ -113,7 +113,7 @@ namespace RB::HurtBox
 			return 0;
 		}
 
-		RB::HurtBox::HurtBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HurtBox::HBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (data == nullptr)
 		{

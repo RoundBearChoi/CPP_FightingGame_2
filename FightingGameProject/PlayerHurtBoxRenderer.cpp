@@ -55,7 +55,7 @@ namespace RB::Render
 		
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
-		RB::HurtBox::HurtBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
+		RB::HurtBox::HBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
 
 		size_t count = data->GetAABBCount();
 

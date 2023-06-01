@@ -1,25 +1,107 @@
 {
     frame_0":
     [
-    ], 
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        },
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        },
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        },
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        },
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        },
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        },
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
 
     frame_1":
     [
-    ], 
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
 
     frame_2":
     [
-    ], 
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
 
     frame_3":
     [
-    ], 
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
 
     frame_4":
     [
-    ], 
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
 
     frame_5":
     [
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
+
+    frame_6":
+    [
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
     ]
 }

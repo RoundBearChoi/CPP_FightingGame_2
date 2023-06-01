@@ -250,22 +250,42 @@ namespace RB::HurtBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				for (size_t i = 0; i < set->GetSize(); i++)
+				for (size_t f = 0; f < set->GetSize(); f++)
 				{
-					HurtBoxData* data = set->GetHurtBoxDataByFrame(i);
+					HurtBoxData* data = set->GetHurtBoxDataByFrame(f);
 					const std::string& frameName = data->GetFrameName();
 
 					file << "    " << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					file << "    ]";
-					
-					if (i != set->GetSize() - 1)
+					for (size_t a = 0; a < data->GetAABBCount(); a++)
 					{
-						file << ", " << std::endl;
+						RB::Collisions::AABB aabb = data->GetAABB(a);
+
+						file << "        {" << std::endl;
+						file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
+						file << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
+						file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
+						file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
+						
+						if (a != data->GetAABBCount() - 1)
+						{
+							file << "        }," << std::endl;
+						}
+						else
+						{
+							file << "        }" << std::endl;
+						}
 					}
-					
-					file << std::endl;
+
+					if (f != set->GetSize() - 1)
+					{
+						file << "    ]," << std::endl << std::endl;
+					}
+					else
+					{
+						file << "    ]" << std::endl;
+					}
 				}
 
 				//end of whole obj

@@ -256,6 +256,16 @@ namespace RB::HurtBox
 					const std::string& frameName = data->GetFrameName();
 
 					file << "    " << frameName << "\":" << std::endl;
+					file << "    [" << std::endl;
+
+					file << "    ]";
+					
+					if (i != set->GetSize() - 1)
+					{
+						file << ", " << std::endl;
+					}
+					
+					file << std::endl;
 				}
 
 				//end of whole obj

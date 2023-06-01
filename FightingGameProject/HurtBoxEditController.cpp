@@ -255,7 +255,7 @@ namespace RB::HurtBox
 					HurtBoxData* data = set->GetHurtBoxDataByFrame(f);
 					const std::string& frameName = data->GetFrameName();
 
-					file << "    " << frameName << "\":" << std::endl;
+					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
 					for (size_t a = 0; a < data->GetAABBCount(); a++)

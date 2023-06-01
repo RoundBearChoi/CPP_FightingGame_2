@@ -241,6 +241,7 @@ namespace RB::HurtBox
 			std::cout << std::endl;
 			std::cout << "saving hurtbox set" << std::endl;
 
+			//temp
 			std::string path = "HurtBoxSpecs/TestSave.HurtBoxSpecs";
 
 			std::ofstream file(path);

@@ -18,9 +18,13 @@ namespace RB::HurtBox
 
 	public:
 		HurtBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
+		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
 		HurtBoxLoader _loader;
 		std::vector<HurtBoxDataSet> _vecDataSets;
+
+	private:
+		std::string _none = "none";
 	};
 }

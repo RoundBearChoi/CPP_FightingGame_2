@@ -2,44 +2,26 @@
     "frame_0":
     [
         {
-        "posX" : 119.945,
-        "posY" : -30.9638,
+        "posX" : 138.89,
+        "posY" : -17.6172,
+        "width" : 148.737,
+        "height" : 93.2505
+        },
+        {
+        "posX" : 67.8137,
+        "posY" : -5.74925,
         "width" : 50,
         "height" : 50
         },
         {
-        "posX" : -79.0627,
-        "posY" : 71.3852,
+        "posX" : -0.0544759,
+        "posY" : 46.2159,
         "width" : 50,
         "height" : 50
         },
         {
-        "posX" : -32.7724,
-        "posY" : 96.287,
-        "width" : 50,
-        "height" : 50
-        },
-        {
-        "posX" : 11.6372,
-        "posY" : 71.4172,
-        "width" : 50,
-        "height" : 50
-        },
-        {
-        "posX" : 42.487,
-        "posY" : 40.3901,
-        "width" : 50,
-        "height" : 50
-        },
-        {
-        "posX" : 69.4111,
-        "posY" : 11.432,
-        "width" : 50,
-        "height" : 50
-        },
-        {
-        "posX" : 88.8671,
-        "posY" : -11.6175,
+        "posX" : -48.0192,
+        "posY" : 69.5058,
         "width" : 50,
         "height" : 50
         }
@@ -96,6 +78,26 @@
     ],
 
     "frame_6":
+    [
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
+
+    "frame_7":
+    [
+        {
+        "posX" : -25,
+        "posY" : 25,
+        "width" : 50,
+        "height" : 50
+        }
+    ],
+
+    "frame_8":
     [
         {
         "posX" : -25,

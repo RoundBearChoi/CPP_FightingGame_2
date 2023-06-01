@@ -36,4 +36,16 @@ namespace RB::HurtBox
 
 		return nullptr;
 	}
+
+	const std::string& HurtBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum)
+	{
+		HurtBoxDataSetPath* p = _loader.GetDataSetPath(spriteEnum);
+
+		if (p != nullptr)
+		{
+			return p->GetPath();
+		}
+
+		return _none;
+	}
 }

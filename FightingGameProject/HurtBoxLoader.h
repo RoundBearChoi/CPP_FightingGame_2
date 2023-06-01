@@ -37,5 +37,9 @@ namespace RB::HurtBox
 
 	public:
 		RB::Collisions::AABB GetHurtBoxAABB(const json_array_s& array, size_t index);
+		RB::HurtBox::HurtBoxDataSetPath* GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum);
+
+	private:
+		std::vector<HurtBoxDataSetPath> _vecDataSetPaths;
 	};
 }

@@ -105,6 +105,13 @@ namespace RB::HurtBox
 
 	HurtBoxDataSet HurtBoxLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
+		//save path - spriteEnum
+		if (GetDataSetPath(spriteEnum) == nullptr)
+		{
+			_vecDataSetPaths.push_back(HurtBoxDataSetPath{ path, spriteEnum });
+		}
+
+		//load
 		json_value_s* root = LoadRoot(path);
 
 		if (root == nullptr)
@@ -246,5 +253,18 @@ namespace RB::HurtBox
 		}
 
 		return RB::Collisions::AABB();
+	}
+
+	RB::HurtBox::HurtBoxDataSetPath* HurtBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
+	{
+		for (size_t i = 0; i < _vecDataSetPaths.size(); i++)
+		{
+			if (_vecDataSetPaths[i].GetSpriteEnum() == spriteEnum)
+			{
+				return &_vecDataSetPaths[i];
+			}
+		}
+
+		return nullptr;
 	}
 }

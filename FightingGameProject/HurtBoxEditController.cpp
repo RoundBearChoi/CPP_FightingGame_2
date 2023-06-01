@@ -241,8 +241,7 @@ namespace RB::HurtBox
 			std::cout << std::endl;
 			std::cout << "saving hurtbox set" << std::endl;
 
-			//temp
-			std::string path = "HurtBoxSpecs/TestSave.HurtBoxSpecs";
+			const std::string& path = _getter_hurtBoxDataController.GetController()->GetPath(set->GetSpriteEnum());
 
 			std::ofstream file(path);
 

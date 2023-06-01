@@ -36,7 +36,7 @@ namespace RB::HBox
 		std::string ParseName(const json_object_s& wholeObj, const size_t frame);
 
 	public:
-		RB::Collisions::AABB GetHurtBoxAABB(const json_array_s& array, size_t index);
+		RB::Collisions::AABB GetAABB(const json_array_s& array, size_t index);
 		RB::HBox::HBoxDataSetPath* GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:

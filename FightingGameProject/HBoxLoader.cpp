@@ -182,7 +182,7 @@ namespace RB::HBox
 
 				for (size_t i = 0; i < arr->length; i++)
 				{
-					RB::Collisions::AABB data = GetHurtBoxAABB(*arr, i);
+					RB::Collisions::AABB data = GetAABB(*arr, i);
 					vec.push_back(data);
 				}
 
@@ -220,7 +220,7 @@ namespace RB::HBox
 		return "";
 	}
 
-	RB::Collisions::AABB HBoxLoader::GetHurtBoxAABB(const json_array_s& jArray, size_t index)
+	RB::Collisions::AABB HBoxLoader::GetAABB(const json_array_s& jArray, size_t index)
 	{
 		size_t count = 0;
 

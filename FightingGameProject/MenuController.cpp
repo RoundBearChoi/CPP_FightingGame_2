@@ -39,8 +39,8 @@ namespace RB::HurtBox
 		//debug
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 220 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
-
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()
@@ -55,6 +55,25 @@ namespace RB::HurtBox
 		const std::string& str = _getter_sprDataController.GetController()->GetString(se);
 
 		return str;
+	}
+
+	const std::string& MenuController::_GetFrameName()
+	{
+		RB::HurtBox::HurtBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+
+		if (set == nullptr)
+		{
+			return _none;
+		}
+
+		RB::HurtBox::HurtBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
+
+		if (data == nullptr)
+		{
+			return _none;
+		}
+
+		data->GetFrameName();
 	}
 
 	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()

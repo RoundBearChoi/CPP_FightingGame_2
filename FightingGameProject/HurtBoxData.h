@@ -17,6 +17,7 @@ namespace RB::HurtBox
 		size_t GetFrame();
 		size_t GetAABBCount();
 		RB::Collisions::AABB& GetAABB(size_t index);
+		const std::string& GetFrameName();
 
 	public:
 		void ReserveAABBCapacity(size_t size);

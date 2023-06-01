@@ -25,6 +25,11 @@ namespace RB::HurtBox
 		return _vecAABB[index];
 	}
 
+	const std::string& HurtBoxData::GetFrameName()
+	{
+		return _frameName;
+	}
+
 	void HurtBoxData::ReserveAABBCapacity(size_t size)
 	{
 		_vecAABB.reserve(size);

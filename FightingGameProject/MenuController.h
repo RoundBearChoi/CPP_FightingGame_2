@@ -25,6 +25,7 @@ namespace RB::HurtBox
 
 	private:
 		const std::string& _GetCurrentSpriteString();
+		const std::string& _GetFrameName();
 		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
 		int32_t _GetCurrentAnimationFrame();
 		size_t _GetAABBCount();

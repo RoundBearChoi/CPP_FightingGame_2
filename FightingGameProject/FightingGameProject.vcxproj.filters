@@ -172,7 +172,7 @@
     <ClCompile Include="ControllerBase.cpp">
       <Filter>Source Files\Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="HurtBoxLoader.cpp">
+    <ClCompile Include="HBoxLoader.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="HurtBoxDataController.cpp">
@@ -402,7 +402,7 @@
     <ClInclude Include="jsonExample.h">
       <Filter>Source Files\JSON</Filter>
     </ClInclude>
-    <ClInclude Include="HurtBoxLoader.h">
+    <ClInclude Include="HBoxLoader.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="HurtBoxDataController.h">

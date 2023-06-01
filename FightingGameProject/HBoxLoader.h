@@ -13,11 +13,11 @@
 
 namespace RB::HBox
 {
-	class HurtBoxLoader
+	class HBoxLoader
 	{
 	public:
-		HurtBoxLoader() = default;
-		~HurtBoxLoader() = default;
+		HBoxLoader() = default;
+		~HBoxLoader() = default;
 
 	public:
 		void Init();

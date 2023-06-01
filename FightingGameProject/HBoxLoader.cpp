@@ -1,13 +1,13 @@
-#include "HurtBoxLoader.h"
+#include "HBoxLoader.h"
 
 namespace RB::HBox
 {
-	void HurtBoxLoader::Init()
+	void HBoxLoader::Init()
 	{
 		SaveSample();
 	}
 
-	void HurtBoxLoader::SaveSample()
+	void HBoxLoader::SaveSample()
 	{
 		std::string path = "HurtBoxSpecs/Sample.HurtBoxSpecs";
 
@@ -92,7 +92,7 @@ namespace RB::HBox
 		}
 	}
 
-	json_value_s* HurtBoxLoader::LoadRoot(std::string path)
+	json_value_s* HBoxLoader::LoadRoot(std::string path)
 	{
 		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
 
@@ -103,7 +103,7 @@ namespace RB::HBox
 		return root;
 	}
 
-	HBoxDataSet HurtBoxLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	HBoxDataSet HBoxLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
 		if (GetDataSetPath(spriteEnum) == nullptr)
@@ -165,7 +165,7 @@ namespace RB::HBox
 		return resultSet;
 	}
 
-	std::vector<RB::Collisions::AABB> HurtBoxLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
+	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -196,7 +196,7 @@ namespace RB::HBox
 		return std::vector<RB::Collisions::AABB>{};
 	}
 
-	std::string HurtBoxLoader::ParseName(const json_object_s& wholeObj, const size_t frame)
+	std::string HBoxLoader::ParseName(const json_object_s& wholeObj, const size_t frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -220,7 +220,7 @@ namespace RB::HBox
 		return "";
 	}
 
-	RB::Collisions::AABB HurtBoxLoader::GetHurtBoxAABB(const json_array_s& jArray, size_t index)
+	RB::Collisions::AABB HBoxLoader::GetHurtBoxAABB(const json_array_s& jArray, size_t index)
 	{
 		size_t count = 0;
 
@@ -255,7 +255,7 @@ namespace RB::HBox
 		return RB::Collisions::AABB();
 	}
 
-	RB::HBox::HBoxDataSetPath* HurtBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
+	RB::HBox::HBoxDataSetPath* HBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecDataSetPaths.size(); i++)
 		{

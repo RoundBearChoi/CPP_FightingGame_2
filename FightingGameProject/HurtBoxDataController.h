@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "ControllerBase.h"
-#include "HurtBoxLoader.h"
+#include "HBoxLoader.h"
 
 namespace RB::HBox
 {
@@ -21,7 +21,7 @@ namespace RB::HBox
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
-		HurtBoxLoader _loader;
+		HBoxLoader _loader;
 		std::vector<HBoxDataSet> _vecDataSets;
 
 	private:

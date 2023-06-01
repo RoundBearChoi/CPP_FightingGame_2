@@ -150,7 +150,7 @@
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HBoxDataSetPath.h" />
     <ClCompile Include="HurtBoxEditController.cpp" />
-    <ClCompile Include="HurtBoxLoader.cpp" />
+    <ClCompile Include="HBoxLoader.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
     <ClCompile Include="ManualTransitioner.cpp" />
     <ClCompile Include="MenuController.cpp" />
@@ -216,7 +216,7 @@
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="jsonExample.h" />
-    <ClInclude Include="HurtBoxLoader.h" />
+    <ClInclude Include="HBoxLoader.h" />
     <ClInclude Include="ManualAnimationUpdater.h" />
     <ClInclude Include="ManualTransitioner.h" />
     <ClInclude Include="MenuController.h" />

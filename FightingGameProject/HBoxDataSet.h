@@ -16,7 +16,7 @@ namespace RB::HBox
 		~HBoxDataSet() = default;
 
 	public:
-		void AddHurtBoxData(HBoxData data)
+		void AddHBoxData(HBoxData data)
 		{
 			_vecHurtBoxData.push_back(data);
 		}
@@ -26,9 +26,9 @@ namespace RB::HBox
 			return _vecHurtBoxData.size();
 		}
 
-		HBoxData* GetHurtBoxDataByFrame(size_t frame)
+		HBoxData* GetHBoxDataByFrame(size_t frame)
 		{
-			HBoxData* result = _FindHurtBoxDataByFrame(frame);
+			HBoxData* result = _FindHBoxDataByFrame(frame);
 
 			if (result != nullptr)
 			{
@@ -41,7 +41,7 @@ namespace RB::HBox
 
 			_vecHurtBoxData.push_back(data);
 
-			return _FindHurtBoxDataByFrame(frame);
+			return _FindHBoxDataByFrame(frame);
 		}
 
 		RB::Sprites::SpriteEnum GetSpriteEnum()
@@ -54,7 +54,7 @@ namespace RB::HBox
 		std::vector<HBoxData> _vecHurtBoxData;
 
 	private:
-		HBoxData* _FindHurtBoxDataByFrame(size_t frame)
+		HBoxData* _FindHBoxDataByFrame(size_t frame)
 		{
 			for (size_t i = 0; i < _vecHurtBoxData.size(); i++)
 			{

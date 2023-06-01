@@ -82,7 +82,7 @@ namespace RB::HBox
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 		RB::HBox::HBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
-		RB::HBox::HBoxData* data = dataSet->GetHurtBoxDataByFrame(currentIndex);
+		RB::HBox::HBoxData* data = dataSet->GetHBoxDataByFrame(currentIndex);
 
 		return data;
 	}
@@ -252,7 +252,7 @@ namespace RB::HBox
 
 				for (size_t f = 0; f < set->GetSize(); f++)
 				{
-					HBoxData* data = set->GetHurtBoxDataByFrame(f);
+					HBoxData* data = set->GetHBoxDataByFrame(f);
 					const std::string& frameName = data->GetFrameName();
 
 					file << "    \"" << frameName << "\":" << std::endl;

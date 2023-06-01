@@ -122,7 +122,7 @@ namespace RB::HBox
 			data0.SetFrameNameAndParse("frame_0");
 			data0.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f }); //center on playerPos by default
 
-			defaultSet.AddHurtBoxData(data0);
+			defaultSet.AddHBoxData(data0);
 
 			//HurtBoxData data1;
 			//data1.SetFrameName("frame_1");
@@ -156,7 +156,7 @@ namespace RB::HBox
 			std::string name = ParseName(*obj, i);
 
 			HBoxData data { name, vec};
-			resultSet.AddHurtBoxData(data);
+			resultSet.AddHBoxData(data);
 		}
 
 		//make sure to free root after use

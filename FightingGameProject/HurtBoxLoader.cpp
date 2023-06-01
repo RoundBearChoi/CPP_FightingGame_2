@@ -108,7 +108,7 @@ namespace RB::HBox
 		//save path - spriteEnum
 		if (GetDataSetPath(spriteEnum) == nullptr)
 		{
-			_vecDataSetPaths.push_back(HurtBoxDataSetPath{ path, spriteEnum });
+			_vecDataSetPaths.push_back(HBoxDataSetPath{ path, spriteEnum });
 		}
 
 		//load
@@ -255,7 +255,7 @@ namespace RB::HBox
 		return RB::Collisions::AABB();
 	}
 
-	RB::HBox::HurtBoxDataSetPath* HurtBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
+	RB::HBox::HBoxDataSetPath* HurtBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecDataSetPaths.size(); i++)
 		{

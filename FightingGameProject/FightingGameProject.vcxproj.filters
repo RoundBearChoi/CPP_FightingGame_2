@@ -217,7 +217,7 @@
     <ClCompile Include="HurtBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HurtBoxDataSetPath.h">
+    <ClCompile Include="HBoxDataSetPath.h">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
   </ItemGroup>

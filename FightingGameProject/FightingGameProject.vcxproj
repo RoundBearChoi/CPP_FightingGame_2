@@ -148,7 +148,7 @@
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="HBoxData.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
-    <ClCompile Include="HurtBoxDataSetPath.h" />
+    <ClCompile Include="HBoxDataSetPath.h" />
     <ClCompile Include="HurtBoxEditController.cpp" />
     <ClCompile Include="HurtBoxLoader.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />

@@ -9,7 +9,7 @@
 #include "AABB.h"
 #include "HBoxData.h"
 #include "HBoxDataSet.h"
-#include "HurtBoxDataSetPath.h"
+#include "HBoxDataSetPath.h"
 
 namespace RB::HBox
 {
@@ -37,9 +37,9 @@ namespace RB::HBox
 
 	public:
 		RB::Collisions::AABB GetHurtBoxAABB(const json_array_s& array, size_t index);
-		RB::HBox::HurtBoxDataSetPath* GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum);
+		RB::HBox::HBoxDataSetPath* GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
-		std::vector<HurtBoxDataSetPath> _vecDataSetPaths;
+		std::vector<HBoxDataSetPath> _vecDataSetPaths;
 	};
 }

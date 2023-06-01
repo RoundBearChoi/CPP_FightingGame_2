@@ -39,7 +39,7 @@ namespace RB::HBox
 
 	const std::string& HurtBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		HurtBoxDataSetPath* p = _loader.GetDataSetPath(spriteEnum);
+		HBoxDataSetPath* p = _loader.GetDataSetPath(spriteEnum);
 
 		if (p != nullptr)
 		{

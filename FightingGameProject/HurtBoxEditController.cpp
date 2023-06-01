@@ -22,17 +22,44 @@ namespace RB::HurtBox
 			return;
 		}
 
+		RB::HurtBox::HurtBoxDataSet* set = GetCurrentHurtBoxDataSet(RB::Players::PlayerID::PLAYER_1);
 		RB::HurtBox::HurtBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
+		_SaveSet_OnPress(set);
 		_AddAABB_OnPress(data);
 		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
 		_EditAABB_OnPress(aabb);
+
 	}
 
 	void HurtBoxEditController::OnFixedUpdate()
 	{
 
+	}
+
+	RB::HurtBox::HurtBoxDataSet* HurtBoxEditController::GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID)
+	{
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
+
+		if (state == nullptr)
+		{
+			return nullptr;
+		}
+
+		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+
+		RB::Render::PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, spriteEnum);
+
+		if (aniObj == nullptr)
+		{
+			return nullptr;
+		}
+
+		int32_t currentIndex = aniObj->GetCurrentIndex();
+		RB::HurtBox::HurtBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
+
+		return dataSet;
 	}
 
 	RB::HurtBox::HurtBoxData* HurtBoxEditController::GetCurrentHurtBoxData(RB::Players::PlayerID playerID)
@@ -203,6 +230,16 @@ namespace RB::HurtBox
 		else if (_selectedIndex >= count)
 		{
 			_selectedIndex = 0;
+		}
+	}
+	void HurtBoxEditController::_SaveSet_OnPress(RB::HurtBox::HurtBoxDataSet* set)
+	{
+		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
+
+		if (enterButton.bPressed)
+		{
+			std::cout << std::endl;
+			std::cout << "saving hurtbox set" << std::endl;
 		}
 	}
 }

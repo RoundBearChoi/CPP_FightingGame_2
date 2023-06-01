@@ -23,6 +23,7 @@ namespace RB::HurtBox
 		void OnFixedUpdate() override;
 
 	public:
+		RB::HurtBox::HurtBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID);
 		RB::HurtBox::HurtBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
 		RB::Collisions::AABB* GetCurrentAABB(RB::HurtBox::HurtBoxData* data);
 
@@ -31,6 +32,7 @@ namespace RB::HurtBox
 		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
 		void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
 		void _UpdateSelectedIndex(size_t count);
+		void _SaveSet_OnPress(RB::HurtBox::HurtBoxDataSet* set);
 
 	private:
 		size_t _selectedIndex = 0;

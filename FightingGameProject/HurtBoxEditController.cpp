@@ -240,6 +240,24 @@ namespace RB::HurtBox
 		{
 			std::cout << std::endl;
 			std::cout << "saving hurtbox set" << std::endl;
+
+			std::string path = "HurtBoxSpecs/TestSave.HurtBoxSpecs";
+
+			std::ofstream file(path);
+
+			if (file.is_open())
+			{
+				//start of whole obj
+				file << "{" << std::endl;
+
+
+
+				//end of whole obj
+				file << "}";
+
+				file.flush();
+				file.close();
+			}
 		}
 	}
 }

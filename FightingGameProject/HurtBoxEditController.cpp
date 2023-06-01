@@ -250,7 +250,13 @@ namespace RB::HurtBox
 				//start of whole obj
 				file << "{" << std::endl;
 
+				for (size_t i = 0; i < set->GetSize(); i++)
+				{
+					HurtBoxData* data = set->GetHurtBoxDataByFrame(i);
+					const std::string& frameName = data->GetFrameName();
 
+					file << "    " << frameName << "\":" << std::endl;
+				}
 
 				//end of whole obj
 				file << "}";

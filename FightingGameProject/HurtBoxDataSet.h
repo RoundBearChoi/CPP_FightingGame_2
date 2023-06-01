@@ -21,6 +21,11 @@ namespace RB::HurtBox
 			_vecHurtBoxData.push_back(data);
 		}
 
+		size_t GetSize()
+		{
+			return _vecHurtBoxData.size();
+		}
+
 		HurtBoxData* GetHurtBoxDataByFrame(size_t frame)
 		{
 			HurtBoxData* result = _FindHurtBoxDataByFrame(frame);

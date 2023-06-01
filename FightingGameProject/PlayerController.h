@@ -20,13 +20,14 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID, bool manualAnimationUpdate);
+		void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID);
 
 	public:
 		iPlayer* GetPlayerOnIndex(size_t index);
 		iPlayer* GetPlayerOnID(PlayerID id);
 		iPlayer* GetPlayerOnStateMachineID(size_t id);
 		iPlayer* GetOtherPlayer(iPlayer* currentPlayer);
+		void SetManualAnimationUpdate(PlayerID id, bool manual);
 
 	private:
 		std::vector<RB::Players::iPlayer*> _vecPlayers;

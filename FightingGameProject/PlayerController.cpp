@@ -36,7 +36,7 @@ namespace RB::Players
 		}
 	}
 
-	void PlayerController::AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID, bool manualAnimationUpdate)
+	void PlayerController::AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID)
 	{
 		_vecPlayers.reserve(2);
 
@@ -44,7 +44,6 @@ namespace RB::Players
 
 		p->Init(playerID, firstState);
 		p->SetPosition(startPos);
-		p->SetManualAnimationUpdate(manualAnimationUpdate);
 
 		_vecPlayers.push_back(p);
 	}
@@ -96,5 +95,15 @@ namespace RB::Players
 		}
 
 		return nullptr;
+	}
+
+	void PlayerController::SetManualAnimationUpdate(PlayerID id, bool manual)
+	{
+		iPlayer* p = GetPlayerOnID(id);
+
+		if (p != nullptr)
+		{
+			p->SetManualAnimationUpdate(manual);
+		}
 	}
 }

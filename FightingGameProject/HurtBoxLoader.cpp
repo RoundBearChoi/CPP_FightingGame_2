@@ -1,6 +1,6 @@
 #include "HurtBoxLoader.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	void HurtBoxLoader::Init()
 	{
@@ -255,7 +255,7 @@ namespace RB::HurtBox
 		return RB::Collisions::AABB();
 	}
 
-	RB::HurtBox::HurtBoxDataSetPath* HurtBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
+	RB::HBox::HurtBoxDataSetPath* HurtBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecDataSetPaths.size(); i++)
 		{

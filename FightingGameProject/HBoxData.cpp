@@ -1,6 +1,6 @@
 #include "HBoxData.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	HBoxData::HBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
 	{

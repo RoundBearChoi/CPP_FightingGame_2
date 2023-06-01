@@ -1,6 +1,6 @@
 #include "HurtBoxDataController.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	void HurtBoxDataController::Init()
 	{

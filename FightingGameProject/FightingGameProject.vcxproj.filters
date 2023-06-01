@@ -41,14 +41,14 @@
     <Filter Include="Source Files\PlayerStateComponents">
       <UniqueIdentifier>{5c769669-76bc-46ef-9f84-25716e4cfdeb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\HurtBox">
-      <UniqueIdentifier>{fe1b8a65-7c77-4239-b315-58179c8028ad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\JSON">
       <UniqueIdentifier>{1b794089-24c2-440a-b4ca-fa0e0cb4730c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\PlayerStates">
       <UniqueIdentifier>{e22c1192-df7f-4778-9319-3af6f75f1e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HBox">
+      <UniqueIdentifier>{fe1b8a65-7c77-4239-b315-58179c8028ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -173,10 +173,10 @@
       <Filter>Source Files\Controllers</Filter>
     </ClCompile>
     <ClCompile Include="HurtBoxLoader.cpp">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="HurtBoxDataController.cpp">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="ManualAnimationUpdater.cpp">
       <Filter>Source Files\Render</Filter>
@@ -191,7 +191,7 @@
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
     <ClCompile Include="MenuController.cpp">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="ActivePlayerStates.cpp">
       <Filter>Source Files\PlayerStates</Filter>
@@ -212,13 +212,13 @@
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="HBoxData.cpp">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="HurtBoxEditController.cpp">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="HurtBoxDataSetPath.h">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -403,19 +403,19 @@
       <Filter>Source Files\JSON</Filter>
     </ClInclude>
     <ClInclude Include="HurtBoxLoader.h">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="HurtBoxDataController.h">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="JGetter.h">
       <Filter>Source Files\JSON</Filter>
     </ClInclude>
     <ClInclude Include="HBoxData.h">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="HBoxDataSet.h">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="P0_Dummy.h">
       <Filter>Source Files\PlayerStates</Filter>
@@ -433,7 +433,7 @@
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="MenuController.h">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="ControllerGetter.h">
       <Filter>Source Files\Controllers</Filter>
@@ -457,7 +457,7 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="HurtBoxEditController.h">
-      <Filter>Source Files\HurtBox</Filter>
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

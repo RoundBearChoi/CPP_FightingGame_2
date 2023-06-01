@@ -3,7 +3,7 @@
 #include "ControllerBase.h"
 #include "HurtBoxLoader.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	class HurtBoxDataController : public RB::Controllers::ControllerBase
 	{

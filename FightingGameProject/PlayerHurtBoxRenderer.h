@@ -28,7 +28,7 @@ namespace RB::Render
 	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_playerAnimationController;
-		RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxDataController> _getter_hurtBoxDataController;
+		RB::Controllers::ControllerGetter<RB::HBox::HurtBoxDataController> _getter_hurtBoxDataController;
 
 	private:
 		SpriteRenderer* _spriteRenderer = nullptr;

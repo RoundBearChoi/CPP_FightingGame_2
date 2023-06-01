@@ -3,7 +3,7 @@
 #include "SpriteEnum.h"
 #include "HBoxData.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	class HBoxDataSet
 	{

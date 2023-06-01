@@ -2,7 +2,7 @@
 #include <iostream>
 #include "SpriteEnum.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	class HurtBoxDataSetPath
 	{

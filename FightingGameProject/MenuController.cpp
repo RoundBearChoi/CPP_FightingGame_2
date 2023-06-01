@@ -1,6 +1,6 @@
 #include "MenuController.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	MenuController::MenuController()
 	{
@@ -59,14 +59,14 @@ namespace RB::HurtBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HurtBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{
 			return _none;
 		}
 
-		RB::HurtBox::HBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (data == nullptr)
 		{
@@ -106,14 +106,14 @@ namespace RB::HurtBox
 
 	size_t MenuController::_GetAABBCount()
 	{
-		RB::HurtBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{
 			return 0;
 		}
 
-		RB::HurtBox::HBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBoxData* data = set->GetHurtBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (data == nullptr)
 		{

@@ -31,9 +31,9 @@ namespace RB::Updaters
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
 
-		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::MenuController()));
-		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::HurtBoxDataController()));
-		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HurtBox::HurtBoxEditController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::MenuController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController()));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxEditController()));
 	}
 
 	void HurtBoxEditorUpdater::OnUpdate()

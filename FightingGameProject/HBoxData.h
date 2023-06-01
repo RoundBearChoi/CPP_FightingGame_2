@@ -4,7 +4,7 @@
 #include "SpriteEnum.h"
 #include "AABB.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	class HBoxData
 	{

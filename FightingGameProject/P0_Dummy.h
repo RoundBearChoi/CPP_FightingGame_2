@@ -27,6 +27,6 @@ namespace RB::PlayerStates
 		RB::Render::ManualAnimationUpdater _manualAnimationUpdater;
 
 	private:
-		RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxDataController> _getter_hurtBoxDataController;
+		RB::Controllers::ControllerGetter<RB::HBox::HurtBoxDataController> _getter_hurtBoxDataController;
 	};
 }

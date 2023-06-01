@@ -9,7 +9,7 @@
 #include "HurtBoxDataController.h"
 #include "CamController.h"
 
-namespace RB::HurtBox
+namespace RB::HBox
 {
 	class HurtBoxEditController : public RB::Controllers::ControllerBase
 	{
@@ -23,16 +23,16 @@ namespace RB::HurtBox
 		void OnFixedUpdate() override;
 
 	public:
-		RB::HurtBox::HBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID);
-		RB::HurtBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
-		RB::Collisions::AABB* GetCurrentAABB(RB::HurtBox::HBoxData* data);
+		RB::HBox::HBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID);
+		RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
+		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
 
 	private:
 		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
-		void _Add_Delete_AABB_OnPress(RB::HurtBox::HBoxData* data);
+		void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
 		void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
 		void _UpdateSelectedIndex_OnPress(size_t count);
-		void _SaveSet_OnPress(RB::HurtBox::HBoxDataSet* set);
+		void _SaveSet_OnPress(RB::HBox::HBoxDataSet* set);
 
 	private:
 		size_t _selectedIndex = 0;
@@ -40,7 +40,7 @@ namespace RB::HurtBox
 	private:
 		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_playerAnimationController;
-		RB::Controllers::ControllerGetter<RB::HurtBox::HurtBoxDataController> _getter_hurtBoxDataController;
+		RB::Controllers::ControllerGetter<RB::HBox::HurtBoxDataController> _getter_hurtBoxDataController;
 		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

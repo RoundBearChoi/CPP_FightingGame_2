@@ -21,27 +21,22 @@ namespace RB::HurtBox
 			_vecHurtBoxData.push_back(data);
 		}
 
-		HurtBoxData* GetHurtBoxDataByIndex(size_t index)
-		{
-			if (index >= _vecHurtBoxData.size())
-			{
-				return nullptr;
-			}
-
-			return &_vecHurtBoxData[index];
-		}
-
 		HurtBoxData* GetHurtBoxDataByFrame(size_t frame)
 		{
-			for (size_t i = 0; i < _vecHurtBoxData.size(); i++)
+			HurtBoxData* result = _FindHurtBoxDataByFrame(frame);
+
+			if (result != nullptr)
 			{
-				if (_vecHurtBoxData[i].GetFrame() == frame)
-				{
-					return &_vecHurtBoxData[i];
-				}
+				return result;
 			}
 
-			return &_vecHurtBoxData[_vecHurtBoxData.size() - 1];
+			HurtBoxData data;
+			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
+			data.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f });
+
+			_vecHurtBoxData.push_back(data);
+
+			return _FindHurtBoxDataByFrame(frame);
 		}
 
 		RB::Sprites::SpriteEnum GetSpriteEnum()
@@ -52,5 +47,19 @@ namespace RB::HurtBox
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::vector<HurtBoxData> _vecHurtBoxData;
+
+	private:
+		HurtBoxData* _FindHurtBoxDataByFrame(size_t frame)
+		{
+			for (size_t i = 0; i < _vecHurtBoxData.size(); i++)
+			{
+				if (_vecHurtBoxData[i].GetFrame() == frame)
+				{
+					return &_vecHurtBoxData[i];
+				}
+			}
+
+			return nullptr;
+		}
 	};
 }

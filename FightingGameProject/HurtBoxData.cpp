@@ -30,7 +30,7 @@ namespace RB::HurtBox
 		_vecAABB.reserve(size);
 	}
 
-	void HurtBoxData::SetFrameName(const std::string& name)
+	void HurtBoxData::SetFrameNameAndParse(const std::string& name)
 	{
 		_frameName = name;
 		_frame = _ParseFrame(name);

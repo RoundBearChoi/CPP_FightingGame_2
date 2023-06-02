@@ -32,12 +32,12 @@ namespace RB::Render
 
 		screenPos = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
-		float_t x = (float)screenPos.x;
-		float_t y = (float)screenPos.y;
+		float_t x = (float_t)screenPos.x;
+		float_t y = (float_t)screenPos.y;
 
-		//temp
-		float_t width = renderSettings.mRenderSize.x;
-		float_t height = renderSettings.mRenderSize.y;
+		float_t zoom = _getter_camController.GetController()->GetCamObj()->GetZoom();
+		float_t width = renderSettings.mRenderSize.x * zoom;
+		float_t height = renderSettings.mRenderSize.y * zoom;
 
 		if (renderSettings.mFaceRight)
 		{

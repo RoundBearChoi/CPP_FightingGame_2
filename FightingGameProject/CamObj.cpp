@@ -11,7 +11,14 @@ namespace RB::Cam
 	{
 		olc::vf2d rel = pos - _camPosition;
 
+		rel *= _zoomAmount;
+
 		return rel;
+	}
+
+	float_t CamObj::GetZoom()
+	{
+		return _zoomAmount;
 	}
 
 	void CamObj::Init()
@@ -68,7 +75,7 @@ namespace RB::Cam
 			_moveRight = true;
 		}
 
-		float_t zoomSpeed = 10.0f;
+		float_t zoomSpeed = 0.75f;
 
 		if (zoomIn.bHeld)
 		{

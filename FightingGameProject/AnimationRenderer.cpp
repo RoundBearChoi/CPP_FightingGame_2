@@ -28,36 +28,36 @@ namespace RB::Render
 
 		std::array<olc::vf2d, 4> points;
 
-		olc::vi2d screenPos = renderSettings.mWorldPos;
+		olc::vf2d screenPos = renderSettings.mWorldPos;
 
 		screenPos = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
-		float x = (float)screenPos.x;
-		float y = (float)screenPos.y;
+		float_t x = (float)screenPos.x;
+		float_t y = (float)screenPos.y;
 
 		//temp
-		float width = renderSettings.mRenderSize.x;
-		float height = renderSettings.mRenderSize.y;
+		float_t width = renderSettings.mRenderSize.x;
+		float_t height = renderSettings.mRenderSize.y;
 
 		if (renderSettings.mFaceRight)
 		{
 			x += renderSettings.mRenderOffset.x;
 			y += renderSettings.mRenderOffset.y;
 
-			points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
-			points[1] = { (float)x - (float)width / 2.0f, (float)y };
-			points[2] = { (float)x + (float)width / 2.0f, (float)y };
-			points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+			points[0] = { (float_t)x - (float_t)width / 2.0f, (float_t)y - (float_t)height };
+			points[1] = { (float_t)x - (float_t)width / 2.0f, (float_t)y };
+			points[2] = { (float_t)x + (float_t)width / 2.0f, (float_t)y };
+			points[3] = { (float_t)x + (float_t)width / 2.0f, (float_t)y - (float_t)height };
 		}
 		else
 		{
 			x -= renderSettings.mRenderOffset.x;
 			y += renderSettings.mRenderOffset.y;
 
-			points[0] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
-			points[1] = { (float)x + (float)width / 2.0f, (float)y };
-			points[2] = { (float)x - (float)width / 2.0f, (float)y };
-			points[3] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
+			points[0] = { (float_t)x + (float_t)width / 2.0f, (float_t)y - (float_t)height };
+			points[1] = { (float_t)x + (float_t)width / 2.0f, (float_t)y };
+			points[2] = { (float_t)x - (float_t)width / 2.0f, (float_t)y };
+			points[3] = { (float_t)x - (float_t)width / 2.0f, (float_t)y - (float_t)height };
 		}
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);

@@ -16,8 +16,8 @@ namespace RB::Render
 			return;
 		}
 
-		olc::vi2d screenPos1;
-		olc::vi2d screenPos2;
+		olc::vf2d screenPos1;
+		olc::vf2d screenPos2;
 
 		screenPos1 = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(p1);
 		screenPos2 = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(p2);

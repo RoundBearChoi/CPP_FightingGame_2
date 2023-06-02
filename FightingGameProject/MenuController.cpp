@@ -73,7 +73,7 @@ namespace RB::HBox
 			return _none;
 		}
 
-		data->GetFrameName();
+		return data->GetFrameName();
 	}
 
 	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()

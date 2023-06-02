@@ -2,8 +2,8 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "iCam.h"
-#include "iController.h"
-//#include "ActiveControllers.h"
+#include "Time.h"
+
 #include "ControllerGetter.h"
 #include "InputController.h"
 
@@ -26,6 +26,7 @@ namespace RB::Cam
 
 	private:
 		olc::vi2d _camPosition = { -427, -427 };
+		float_t _zoomAmount = 1.0f;
 		int32_t _moveSpeed = 2;
 		bool _moveLeft = false;
 		bool _moveRight = false;

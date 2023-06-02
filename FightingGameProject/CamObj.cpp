@@ -39,6 +39,9 @@ namespace RB::Cam
 		olc::HWButton moveLeft = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
 		olc::HWButton moveRight = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
 
+		olc::HWButton zoomIn = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_IN);
+		olc::HWButton zoomOut = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_OUT);
+
 		if (moveUp.bHeld && moveDown.bHeld)
 		{
 			// do nothing
@@ -63,6 +66,18 @@ namespace RB::Cam
 		else if (moveRight.bHeld)
 		{
 			_moveRight = true;
+		}
+
+		float_t zoomSpeed = 10.0f;
+
+		if (zoomIn.bHeld)
+		{
+			_zoomAmount += RB::Frames::Time::GetDeltaTime() * zoomSpeed;
+		}
+
+		if (zoomOut.bHeld)
+		{
+			_zoomAmount -= RB::Frames::Time::GetDeltaTime() * zoomSpeed;
 		}
 	}
 

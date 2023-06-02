@@ -7,9 +7,9 @@ namespace RB::Cam
 		return _camPosition;
 	}
 
-	olc::vi2d CamObj::GetRelativePosition(olc::vi2d pos)
+	olc::vf2d CamObj::GetRelativePosition(olc::vf2d pos)
 	{
-		olc::vi2d rel = pos - _camPosition;
+		olc::vf2d rel = pos - _camPosition;
 
 		return rel;
 	}

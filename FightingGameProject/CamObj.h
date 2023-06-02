@@ -17,7 +17,7 @@ namespace RB::Cam
 
 	public:
 		olc::vi2d GetPosition() override;
-		olc::vi2d GetRelativePosition(olc::vi2d pos) override;
+		olc::vf2d GetRelativePosition(olc::vf2d pos) override;
 
 	public:
 		void Init();

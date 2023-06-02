@@ -36,6 +36,7 @@ namespace RB::Render
 		float_t y = (float_t)screenPos.y;
 
 		float_t zoom = _getter_camController.GetController()->GetCamObj()->GetZoom();
+
 		float_t width = renderSettings.mRenderSize.x * zoom;
 		float_t height = renderSettings.mRenderSize.y * zoom;
 

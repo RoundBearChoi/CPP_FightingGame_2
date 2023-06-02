@@ -11,14 +11,14 @@ namespace RB::Cam
 	{
 		olc::vf2d rel = pos - _camPosition;
 
-		rel *= _zoomAmount;
+		rel *= _zoom;
 
 		return rel;
 	}
 
 	float_t CamObj::GetZoom()
 	{
-		return _zoomAmount;
+		return _zoom;
 	}
 
 	void CamObj::Init()
@@ -79,12 +79,12 @@ namespace RB::Cam
 
 		if (zoomIn.bHeld)
 		{
-			_zoomAmount += RB::Frames::Time::GetDeltaTime() * zoomSpeed;
+			_zoom += RB::Frames::Time::GetDeltaTime() * zoomSpeed;
 		}
 
 		if (zoomOut.bHeld)
 		{
-			_zoomAmount -= RB::Frames::Time::GetDeltaTime() * zoomSpeed;
+			_zoom -= RB::Frames::Time::GetDeltaTime() * zoomSpeed;
 		}
 	}
 

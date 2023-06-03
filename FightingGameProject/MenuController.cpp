@@ -36,6 +36,11 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data (saves the entire set)", olc::WHITE);
 
+		if (_notificationFrameCount > 0)
+		{
+			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved, olc::GREEN);
+		}
+
 		//debug
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
@@ -45,7 +50,10 @@ namespace RB::HBox
 
 	void MenuController::OnFixedUpdate()
 	{
-
+		if (_notificationFrameCount > 0)
+		{
+			_notificationFrameCount--;
+		}
 	}
 
 	const std::string& MenuController::_GetCurrentSpriteString()

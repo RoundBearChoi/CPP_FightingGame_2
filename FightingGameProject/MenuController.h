@@ -40,6 +40,6 @@ namespace RB::HBox
 
 	private:
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
-		const std::string _none = "NONE";
+		std::string _none = "NONE";
 	};
 }

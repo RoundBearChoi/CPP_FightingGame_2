@@ -38,7 +38,8 @@ namespace RB::HBox
 
 		if (_notificationFrameCount > 0)
 		{
-			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved, olc::GREEN, 2);
+			const std::string& path = _getter_hurtBoxDataController.GetController()->GetPath(_currentSpriteEnum);
+			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved + path, olc::GREEN);
 		}
 
 		//debug
@@ -58,7 +59,7 @@ namespace RB::HBox
 
 	void MenuController::ShowNotification()
 	{
-		_notificationFrameCount = 40;
+		_notificationFrameCount = 120;
 	}
 
 	const std::string& MenuController::_GetCurrentSpriteString()

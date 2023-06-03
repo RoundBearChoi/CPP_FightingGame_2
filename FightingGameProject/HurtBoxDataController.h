@@ -26,5 +26,6 @@ namespace RB::HBox
 
 	private:
 		std::string _none = "none";
+		std::string _testing = "testing";
 	};
 }

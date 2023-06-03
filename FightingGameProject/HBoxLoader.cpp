@@ -138,6 +138,9 @@ namespace RB::HBox
 			//defaultSet.AddHurtBoxData(data1);
 			//defaultSet.AddHurtBoxData(data2);
 
+			//make sure to free root after use
+			free(root);
+
 			return defaultSet;
 		}
 

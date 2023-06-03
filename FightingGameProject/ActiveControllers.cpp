@@ -35,7 +35,7 @@ namespace RB::Controllers
 
 	void ActiveControllers::_DestroyAll()
 	{
-		for (size_t i = 0; i < _vecControllers.size(); i++)
+		for (int32_t i = _vecControllers.size() - 1; i >= 0; i--)
 		{
 			delete _vecControllers[i];
 

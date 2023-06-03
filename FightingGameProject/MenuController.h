@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <cstdint>
 #include "olcPixelGameEngine.h"
 #include "ControllerBase.h"
 

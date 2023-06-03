@@ -296,6 +296,8 @@ namespace RB::HBox
 				file.flush();
 				file.close();
 			}
+
+			_getter_menuController.GetController()->ShowNotification();
 		}
 	}
 }

@@ -38,14 +38,14 @@ namespace RB::HBox
 
 		if (_notificationFrameCount > 0)
 		{
-			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved, olc::GREEN);
+			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved, olc::GREEN, 2);
 		}
 
 		//debug
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 240 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()
@@ -54,6 +54,11 @@ namespace RB::HBox
 		{
 			_notificationFrameCount--;
 		}
+	}
+
+	void MenuController::ShowNotification()
+	{
+		_notificationFrameCount = 40;
 	}
 
 	const std::string& MenuController::_GetCurrentSpriteString()

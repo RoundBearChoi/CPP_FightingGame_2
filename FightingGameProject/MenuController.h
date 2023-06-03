@@ -20,10 +20,11 @@ namespace RB::HBox
 		MenuController();
 		~MenuController() override {};
 
-	public:
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+		void ShowNotification();
 
 	private:
 		const std::string& _GetCurrentSpriteString();

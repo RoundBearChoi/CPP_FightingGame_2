@@ -12,11 +12,13 @@ namespace RB::HBox
 		_getter_playerController.OnUpdate();
 		_getter_playerAnimationController.OnUpdate();
 		_getter_hurtBoxDataController.OnUpdate();
+		_getter_menuController.OnUpdate();
 		_getter_camController.OnUpdate();
 
 		if (_getter_playerController.GetController() == nullptr ||
 			_getter_playerAnimationController.GetController() == nullptr ||
 			_getter_hurtBoxDataController.GetController() == nullptr ||
+			_getter_menuController.GetController() == nullptr ||
 			_getter_camController.GetController() == nullptr)
 		{
 			return;

@@ -9,9 +9,7 @@ namespace RB::Cam
 
 	olc::vf2d CamObj::GetRelativePosition(olc::vf2d pos)
 	{
-		olc::vf2d rel = pos - _camPosition;
-
-		rel *= _zoom;
+		olc::vf2d rel = (pos * _zoom) - _camPosition;
 
 		return rel;
 	}
@@ -75,7 +73,7 @@ namespace RB::Cam
 			_moveRight = true;
 		}
 
-		float_t zoomSpeed = 0.75f;
+		float_t zoomSpeed = 0.8f;
 
 		if (zoomIn.bHeld)
 		{
@@ -85,6 +83,11 @@ namespace RB::Cam
 		if (zoomOut.bHeld)
 		{
 			_zoom -= RB::Frames::Time::GetDeltaTime() * zoomSpeed;
+		}
+
+		if (_zoom < 0.01f)
+		{
+			_zoom = 0.01f;
 		}
 	}
 

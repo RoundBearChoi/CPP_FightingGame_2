@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include "SpriteEnum.h"
 
 namespace RB::Background
 {
@@ -15,5 +16,6 @@ namespace RB::Background
 
 	private:
 		float_t _percentage = 0.0f;
+		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
 	};
 }

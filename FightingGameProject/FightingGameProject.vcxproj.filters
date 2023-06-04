@@ -226,6 +226,9 @@
     <ClCompile Include="BackgroundObj.cpp">
       <Filter>Source Files\Background</Filter>
     </ClCompile>
+    <ClCompile Include="BackgroundController.cpp">
+      <Filter>Source Files\Background</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -466,6 +469,9 @@
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="BackgroundObj.h">
+      <Filter>Source Files\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundController.h">
       <Filter>Source Files\Background</Filter>
     </ClInclude>
   </ItemGroup>

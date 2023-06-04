@@ -1,5 +1,7 @@
 #pragma once
+#include <vector>
 #include "ControllerBase.h"
+#include "BackgroundObj.h"
 
 namespace RB::Background
 {
@@ -13,5 +15,8 @@ namespace RB::Background
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		std::vector<BackgroundObj*> _vecBackgroundObjs;
 	};
 }

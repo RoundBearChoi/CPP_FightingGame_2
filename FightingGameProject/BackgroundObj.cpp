@@ -20,7 +20,16 @@ namespace RB::Background
 
 	void BackgroundObj::OnUpdate()
 	{
-		_spriteRenderer.RenderSprite(_spriteEnum, _renderSize, _position, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT);
+		_camControllerGetter.OnUpdate();
+
+		if (_camControllerGetter.GetController() == nullptr)
+		{
+			return;
+		}
+
+		float_t offsetX = _position.x + (_camControllerGetter.GetController()->GetCamObj()->GetPosition().x * _percentage);
+
+		_spriteRenderer.RenderSprite(_spriteEnum, _renderSize, olc::vf2d{ offsetX, _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT);
 	}
 
 	void BackgroundObj::OnFixedUpdate()

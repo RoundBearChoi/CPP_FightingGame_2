@@ -15,12 +15,10 @@ namespace RB::Cam
 		CamObj() = default;
 		~CamObj() = default;
 
-	public:
 		olc::vf2d GetPosition() override;
 		olc::vf2d GetRelativePosition(olc::vf2d pos) override;
 		float_t GetZoom() override;
 
-	public:
 		void Init();
 		void OnUpdate();
 		void OnFixedUpdate();
@@ -35,7 +33,6 @@ namespace RB::Cam
 		bool _moveUp = false;
 		bool _moveDown = false;
 
-	private:
 		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
 	};
 }

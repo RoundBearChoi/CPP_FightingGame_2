@@ -2,7 +2,7 @@
 
 namespace RB::Cam
 {
-	olc::vi2d CamObj::GetPosition()
+	olc::vf2d CamObj::GetPosition()
 	{
 		return _camPosition;
 	}
@@ -73,16 +73,14 @@ namespace RB::Cam
 			_moveRight = true;
 		}
 
-		float_t zoomSpeed = 0.8f;
-
 		if (zoomIn.bHeld)
 		{
-			_zoom += RB::Frames::Time::GetDeltaTime() * zoomSpeed;
+			_zoom += RB::Frames::Time::GetDeltaTime() * _zoomSpeed;
 		}
 
 		if (zoomOut.bHeld)
 		{
-			_zoom -= RB::Frames::Time::GetDeltaTime() * zoomSpeed;
+			_zoom -= RB::Frames::Time::GetDeltaTime() * _zoomSpeed;
 		}
 
 		if (_zoom < 0.01f)

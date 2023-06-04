@@ -9,7 +9,7 @@ namespace RB::Background
 	class BackgroundObj
 	{
 	public:
-		BackgroundObj(std::string path, RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos, float_t percentage);
+		BackgroundObj(std::string path, RB::Sprites::SpriteEnum spriteEnum, float_t percentage);
 		~BackgroundObj() = default;
 
 		void Init();

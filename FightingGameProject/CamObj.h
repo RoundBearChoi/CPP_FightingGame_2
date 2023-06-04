@@ -16,7 +16,7 @@ namespace RB::Cam
 		~CamObj() = default;
 
 	public:
-		olc::vi2d GetPosition() override;
+		olc::vf2d GetPosition() override;
 		olc::vf2d GetRelativePosition(olc::vf2d pos) override;
 		float_t GetZoom() override;
 
@@ -26,9 +26,10 @@ namespace RB::Cam
 		void OnFixedUpdate();
 
 	private:
-		olc::vi2d _camPosition = { -427, -427 };
+		olc::vf2d _camPosition = { -427.0f, -427.0f };
 		float_t _zoom = 1.0f;
-		int32_t _moveSpeed = 2;
+		float_t _zoomSpeed = 0.6f;
+		float_t _moveSpeed = 3.0f;
 		bool _moveLeft = false;
 		bool _moveRight = false;
 		bool _moveUp = false;

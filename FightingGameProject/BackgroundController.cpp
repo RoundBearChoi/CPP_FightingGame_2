@@ -17,9 +17,9 @@ namespace RB::Background
 
 	void BackgroundController::Init()
 	{
-		_vecBackgroundObjs.push_back(new BackgroundObj("PNG files/Backgrounds/background_0.png", RB::Sprites::SpriteEnum::background_0, olc::vf2d{ 0.0f, 0.0f }, 1.0f));
-		_vecBackgroundObjs.push_back(new BackgroundObj("PNG files/Backgrounds/background_1.png", RB::Sprites::SpriteEnum::background_1, olc::vf2d{ 0.0f, 0.0f }, 1.0f));
-		_vecBackgroundObjs.push_back(new BackgroundObj("PNG files/Backgrounds/background_2.png", RB::Sprites::SpriteEnum::background_2, olc::vf2d{ 0.0f, 0.0f }, 1.0f));
+		_vecBackgroundObjs.push_back(new BackgroundObj("PNG files/Backgrounds/background_0.png", RB::Sprites::SpriteEnum::background_0, 1.0f));
+		_vecBackgroundObjs.push_back(new BackgroundObj("PNG files/Backgrounds/background_1.png", RB::Sprites::SpriteEnum::background_1, 1.0f));
+		_vecBackgroundObjs.push_back(new BackgroundObj("PNG files/Backgrounds/background_2.png", RB::Sprites::SpriteEnum::background_2, 1.0f));
 	}
 
 	void BackgroundController::OnUpdate()

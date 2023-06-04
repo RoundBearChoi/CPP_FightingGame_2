@@ -18,7 +18,7 @@ namespace RB::Background
 
 	void BackgroundObj::OnUpdate()
 	{
-
+		_spriteRenderer.RenderSprite(_spriteEnum, olc::vf2d{100.0f, 100.0f}, _position, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT);
 	}
 
 	void BackgroundObj::OnFixedUpdate()

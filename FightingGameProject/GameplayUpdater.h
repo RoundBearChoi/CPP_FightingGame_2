@@ -5,8 +5,8 @@
 #include "Player.h"
 
 #include "ActiveControllers.h"
-#include "SpriteDataController.h"
 #include "BackgroundController.h"
+#include "SpriteDataController.h"
 #include "InputController.h"
 #include "CamController.h"
 #include "PlayerController.h"

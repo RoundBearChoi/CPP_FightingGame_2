@@ -24,11 +24,17 @@ namespace RB::Background
 
 	void BackgroundController::OnUpdate()
 	{
-
+		for (size_t i = 0; i < _vecBackgroundObjs.size(); i++)
+		{
+			_vecBackgroundObjs[i]->OnUpdate();
+		}
 	}
 
 	void BackgroundController::OnFixedUpdate()
 	{
-
+		for (size_t i = 0; i < _vecBackgroundObjs.size(); i++)
+		{
+			_vecBackgroundObjs[i]->OnFixedUpdate();
+		}
 	}
 }

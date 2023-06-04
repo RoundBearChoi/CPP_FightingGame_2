@@ -50,6 +50,9 @@
     <Filter Include="Source Files\HBox">
       <UniqueIdentifier>{fe1b8a65-7c77-4239-b315-58179c8028ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Background">
+      <UniqueIdentifier>{9cf48022-262a-43c3-b9f5-65bab335b131}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -219,6 +222,9 @@
     </ClCompile>
     <ClCompile Include="HBoxDataSetPath.h">
       <Filter>Source Files\HBox</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundObj.cpp">
+      <Filter>Source Files\Background</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -458,6 +464,9 @@
     </ClInclude>
     <ClInclude Include="HurtBoxEditController.h">
       <Filter>Source Files\HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundObj.h">
+      <Filter>Source Files\Background</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

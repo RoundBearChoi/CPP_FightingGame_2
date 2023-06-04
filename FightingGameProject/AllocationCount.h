@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 size_t numObjects = 0;
 bool showAllocationCount = false;

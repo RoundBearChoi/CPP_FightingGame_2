@@ -16,9 +16,14 @@ namespace RB::Sprites
 		fighter_0_jump_up,
 		fighter_0_fall,
 
-		background_0,
 		background_1,
 		background_2,
+		background_3,
+		background_4,
+		background_5,
+		background_6,
+		background_7,
+		background_8,
 
 		COUNT,
 	};

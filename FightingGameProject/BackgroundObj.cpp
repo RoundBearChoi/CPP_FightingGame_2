@@ -4,7 +4,7 @@ namespace RB::Background
 {
 	BackgroundObj::BackgroundObj(std::string path, RB::Sprites::SpriteEnum spriteEnum, float_t percentage)
 	{
-		_renderSize = olc::vf2d{ 1152.0f, 720.0f };
+		_renderSize = olc::vf2d{ 1152.0f, 736.0f };
 		_position = olc::vf2d{ _renderSize.x * 2.0f * -1.0f, 0.0f };
 
 		_spriteEnum = spriteEnum;

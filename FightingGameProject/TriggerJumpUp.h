@@ -16,12 +16,8 @@ namespace RB::PlayerStateComponents
 		TriggerJumpUp() = default;
 		~TriggerJumpUp() override {};
 
-		public:
-			void OnEnter() override;
-			void OnUpdate() override;
-
-	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
-		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
+	public:
+		void OnEnter() override;
+		void OnUpdate() override;
 	};
 }

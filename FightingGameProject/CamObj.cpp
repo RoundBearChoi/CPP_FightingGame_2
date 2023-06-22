@@ -26,9 +26,7 @@ namespace RB::Cam
 
 	void CamObj::OnUpdate()
 	{
-		_getter_inputController.OnUpdate();
-
-		if (_getter_inputController.GetController() == nullptr)
+		if (RB::Input::InputController::PTR == nullptr)
 		{
 			return;
 		}
@@ -38,14 +36,14 @@ namespace RB::Cam
 		_moveLeft = false;
 		_moveRight = false;
 
-		olc::HWButton moveUp = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
-		olc::HWButton moveDown = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
+		olc::HWButton moveUp = RB::Input::InputController::PTR->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
+		olc::HWButton moveDown = RB::Input::InputController::PTR->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
 
-		olc::HWButton moveLeft = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
-		olc::HWButton moveRight = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
+		olc::HWButton moveLeft = RB::Input::InputController::PTR->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
+		olc::HWButton moveRight = RB::Input::InputController::PTR->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
 
-		olc::HWButton zoomIn = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_IN);
-		olc::HWButton zoomOut = _getter_inputController.GetController()->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_OUT);
+		olc::HWButton zoomIn = RB::Input::InputController::PTR->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_IN);
+		olc::HWButton zoomOut = RB::Input::InputController::PTR->GetButton(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_OUT);
 
 		if (moveUp.bHeld && moveDown.bHeld)
 		{

@@ -11,7 +11,8 @@ namespace RB::Input
 	{
 	public:
 		InputController();
-		~InputController() override {};
+		~InputController() override;
+		static inline InputController* PTR = nullptr;
 
 	public:
 		void Init() override;

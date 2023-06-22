@@ -5,6 +5,13 @@ namespace RB::Input
 	InputController::InputController()
 	{
 		SetHash(typeid(*this));
+
+		PTR = this;
+	}
+
+	InputController::~InputController()
+	{
+		PTR = nullptr;
 	}
 
 	void InputController::Init()

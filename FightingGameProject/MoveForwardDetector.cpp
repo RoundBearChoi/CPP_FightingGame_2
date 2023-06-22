@@ -9,15 +9,8 @@ namespace RB::PlayerStateComponents
 
 	void MoveForwardDetector::OnUpdate()
 	{
-		_getter_inputController.OnUpdate();
-		//_getter_playerController.OnUpdate();
-
-		if (_getter_inputController.GetController() == nullptr)// || _getter_playerController.GetController() == nullptr)
-		{
-			return;
-		}
-
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr ||
+			RB::Input::InputController::PTR == nullptr)
 		{
 			return;
 		}
@@ -47,15 +40,15 @@ namespace RB::PlayerStateComponents
 
 	bool MoveForwardDetector::_BothPressed()
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
 
 		if (player == nullptr)
 		{
 			return false;
 		}
 
-		olc::HWButton moveLeft = _getter_inputController.GetController()->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		olc::HWButton moveRight = _getter_inputController.GetController()->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		olc::HWButton moveLeft = RB::Input::InputController::PTR->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		olc::HWButton moveRight = RB::Input::InputController::PTR->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (moveLeft.bPressed && moveRight.bPressed)
 		{
@@ -70,15 +63,15 @@ namespace RB::PlayerStateComponents
 
 	bool MoveForwardDetector::_MoveForwardPressed()
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
 
 		if (player == nullptr)
 		{
 			return false;
 		}
 
-		olc::HWButton moveLeft = _getter_inputController.GetController()->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		olc::HWButton moveRight = _getter_inputController.GetController()->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		olc::HWButton moveLeft = RB::Input::InputController::PTR->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		olc::HWButton moveRight = RB::Input::InputController::PTR->GetButton(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (player->OtherPlayerIsOnRightSide())
 		{

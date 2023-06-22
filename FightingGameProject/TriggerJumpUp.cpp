@@ -9,24 +9,16 @@ namespace RB::PlayerStateComponents
 
 	void TriggerJumpUp::OnUpdate()
 	{
-		_getter_inputController.OnUpdate();
-		//_getter_playerController.OnUpdate();
-
-		if (//_getter_playerController.GetController() == nullptr ||
-			_getter_inputController.GetController() == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr ||
+			RB::Input::InputController::PTR == nullptr)
 		{
 			return;
 		}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
-		{
-			return;
-		}
-
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_state->GetStateMachineID()); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		olc::HWButton jump = _getter_inputController.GetController()->GetButton(playerID, RB::Input::PlayerInput::JUMP);
+		olc::HWButton jump = RB::Input::InputController::PTR->GetButton(playerID, RB::Input::PlayerInput::JUMP);
 
 		if (jump.bPressed || jump.bHeld)
 		{

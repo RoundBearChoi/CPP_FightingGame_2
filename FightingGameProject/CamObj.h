@@ -32,7 +32,5 @@ namespace RB::Cam
 		bool _moveRight = false;
 		bool _moveUp = false;
 		bool _moveDown = false;
-
-		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
 	};
 }

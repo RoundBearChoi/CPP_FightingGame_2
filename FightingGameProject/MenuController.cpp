@@ -15,14 +15,19 @@ namespace RB::HBox
 	void MenuController::OnUpdate()
 	{
 		_getter_pAniController.OnUpdate();
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 		_getter_sprDataController.OnUpdate();
 		_getter_hurtBoxDataController.OnUpdate();
 
 		if (_getter_pAniController.GetController() == nullptr ||
-			_getter_playerController.GetController() == nullptr ||
+			//_getter_playerController.GetController() == nullptr ||
 			_getter_sprDataController.GetController() == nullptr ||
 			_getter_hurtBoxDataController.GetController() == nullptr)
+		{
+			return;
+		}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -92,7 +97,7 @@ namespace RB::HBox
 
 	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()
 	{
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnIndex(0);
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnIndex(0); //_getter_playerController.GetController()->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)

@@ -184,9 +184,6 @@
     <ClCompile Include="ManualAnimationUpdater.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="ManualTransitioner.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
     <ClCompile Include="P0_Dummy.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
@@ -431,9 +428,6 @@
     </ClInclude>
     <ClInclude Include="ManualAnimationUpdater.h">
       <Filter>Source Files\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="ManualTransitioner.h">
-      <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="SpriteEnumString.h">
       <Filter>Source Files\Sprites</Filter>

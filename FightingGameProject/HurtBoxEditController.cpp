@@ -9,17 +9,22 @@ namespace RB::HBox
 
 	void HurtBoxEditController::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 		_getter_playerAnimationController.OnUpdate();
 		_getter_hurtBoxDataController.OnUpdate();
 		_getter_menuController.OnUpdate();
 		_getter_camController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr ||
+		if (//_getter_playerController.GetController() == nullptr ||
 			_getter_playerAnimationController.GetController() == nullptr ||
 			_getter_hurtBoxDataController.GetController() == nullptr ||
 			_getter_menuController.GetController() == nullptr ||
 			_getter_camController.GetController() == nullptr)
+		{
+			return;
+		}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -110,7 +115,7 @@ namespace RB::HBox
 
 	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{

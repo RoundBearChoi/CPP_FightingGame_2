@@ -6,16 +6,16 @@ namespace RB::PlayerStates
 	{
 		_spriteEnum = spriteEnum;
 
-		_getter_playerController.FindController();
-		_ownerPlayer = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		_ownerPlayer = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	RB::Players::PlayerID PlayerState::GetPlayerID()
 	{
-		if (_ownerPlayer == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return RB::Players::PlayerID::NONE;
 		}
+				
 		return _ownerPlayer->GetPlayerID();
 	}
 

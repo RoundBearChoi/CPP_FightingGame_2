@@ -27,7 +27,7 @@ namespace RB::Render
 		void RenderAirMomentum(RB::Players::PlayerID playerID);
 
 	private:
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 
 	private:
 		SpriteRenderer* _spriteRenderer = nullptr;

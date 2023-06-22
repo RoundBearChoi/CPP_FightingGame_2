@@ -20,19 +20,24 @@ namespace RB::PlayerStates
 
 	void P0_Start::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
 
-		_ownerPlayer = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		_ownerPlayer = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	void P0_Start::OnFixedUpdate()
 	{
-		if (_getter_playerController.GetController() == nullptr || _ownerPlayer == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -42,6 +47,11 @@ namespace RB::PlayerStates
 
 	void P0_Start::TransitionToIdle()
 	{
+		if (_ownerPlayer == nullptr)
+		{
+			return;
+		}
+
 		RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
 
 		machine->QueueNextState(new RB::PlayerStates::P0_Idle());

@@ -11,9 +11,14 @@ namespace RB::Players
 
 	void PlayerCollider::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -21,13 +26,18 @@ namespace RB::Players
 
 	void PlayerCollider::OnFixedUpdate()
 	{
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
 
 		PlayerID myID = _player->GetPlayerID();
-		iPlayer* other = _getter_playerController.GetController()->GetOtherPlayer(_player);
+		iPlayer* other = RB::Players::PlayerController::PTR->GetOtherPlayer(_player); //_getter_playerController.GetController()->GetOtherPlayer(_player);
 
 		if (other == nullptr)
 		{

@@ -31,9 +31,14 @@ namespace RB::Players
 
 	void Player::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -57,12 +62,17 @@ namespace RB::Players
 
 	bool Player::OtherPlayerIsOnRightSide()
 	{
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return true;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return true;
 		}
 
-		iPlayer* other = _getter_playerController.GetController()->GetOtherPlayer(this);
+		iPlayer* other = RB::Players::PlayerController::PTR->GetOtherPlayer(this); //_getter_playerController.GetController()->GetOtherPlayer(this);
 
 		if (other == nullptr)
 		{

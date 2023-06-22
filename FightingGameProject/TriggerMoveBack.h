@@ -21,6 +21,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		MoveBackDetector _moveBackDetector;
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

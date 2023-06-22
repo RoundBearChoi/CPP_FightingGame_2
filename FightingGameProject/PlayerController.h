@@ -13,6 +13,7 @@ namespace RB::Players
 	public:
 		PlayerController();
 		~PlayerController() override;
+		static inline PlayerController* PTR = nullptr;
 
 	public:
 		void Init() override;

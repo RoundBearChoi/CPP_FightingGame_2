@@ -10,9 +10,14 @@ namespace RB::PlayerStateComponents
 
 	void WhileMovingForward::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -42,12 +47,17 @@ namespace RB::PlayerStateComponents
 
 	void WhileMovingForward::OnFixedUpdate()
 	{
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_state->GetStateMachineID()); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		if (player == nullptr)
 		{

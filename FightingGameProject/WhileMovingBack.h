@@ -29,6 +29,6 @@ namespace RB::PlayerStateComponents
 		bool _moveForward = false;
 
 	private:
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

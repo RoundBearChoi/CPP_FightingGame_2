@@ -9,6 +9,7 @@ namespace RB::PlayerStates
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
 		float startUpMomentum = 9.0f;
+
 		_ownerPlayer->SetAirMomentum(olc::vf2d{ 0.0f, startUpMomentum });
 	}
 

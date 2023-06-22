@@ -31,6 +31,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		RB::Controllers::ControllerGetter<RB::Input::InputController> _getter_inputController;
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

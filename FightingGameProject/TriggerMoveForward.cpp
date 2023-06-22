@@ -9,14 +9,19 @@ namespace RB::PlayerStateComponents
 
 	void TriggerMoveForward::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
+		//
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
 
-		if (_getter_playerController.GetController() == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_state->GetStateMachineID()); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		if (player == nullptr)
 		{

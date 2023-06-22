@@ -21,6 +21,6 @@ namespace RB::Render
 		SpriteRenderer* _spriteRenderer = nullptr;
 
 	private:
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

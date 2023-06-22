@@ -8,13 +8,18 @@ namespace RB::Render
 	}
 	void PlayerHurtBoxRenderer::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 		_getter_playerAnimationController.OnUpdate();
 		_getter_hurtBoxDataController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr ||
+		if (//_getter_playerController.GetController() == nullptr ||
 			_getter_playerAnimationController.GetController() == nullptr ||
 			_getter_hurtBoxDataController.GetController() == nullptr)
+		{
+			return;
+		}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -30,7 +35,7 @@ namespace RB::Render
 
 	void PlayerHurtBoxRenderer::RenderHurtBox(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = _getter_playerController.GetController()->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
 		
 		if (player == nullptr)
 		{

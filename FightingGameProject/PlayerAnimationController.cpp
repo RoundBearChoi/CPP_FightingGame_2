@@ -75,9 +75,14 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
+		//_getter_playerController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -88,7 +93,7 @@ namespace RB::Render
 
 		for (size_t i = 0; i < 2; i++)
 		{
-			arr[i] = _getter_playerController.GetController()->GetPlayerOnIndex(i);
+			arr[i] = RB::Players::PlayerController::PTR->GetPlayerOnIndex(i); //_getter_playerController.GetController()->GetPlayerOnIndex(i);
 
 			if (arr[i] == nullptr)
 			{
@@ -114,7 +119,12 @@ namespace RB::Render
 
 	void PlayerAnimationController::SetFirstAnimations()
 	{
-		if (_getter_playerController.GetController() == nullptr)
+		//if (_getter_playerController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
@@ -130,7 +140,7 @@ namespace RB::Render
 
 		for (size_t i = 0; i < 2; i++)
 		{
-			arr[i] = _getter_playerController.GetController()->GetPlayerOnIndex(i);
+			arr[i] = RB::Players::PlayerController::PTR->GetPlayerOnIndex(i); //_getter_playerController.GetController()->GetPlayerOnIndex(i);
 
 			if (arr[i] == nullptr)
 			{

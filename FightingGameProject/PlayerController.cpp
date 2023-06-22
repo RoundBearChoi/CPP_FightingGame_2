@@ -5,6 +5,8 @@ namespace RB::Players
 	PlayerController::PlayerController()
 	{
 		SetHash(typeid(*this));
+
+		PTR = this;
 	}
 
 	PlayerController::~PlayerController()
@@ -13,6 +15,8 @@ namespace RB::Players
 		{
 			delete _vecPlayers[i];
 		}
+
+		PTR = nullptr;
 	}
 
 	void PlayerController::Init()

@@ -1,7 +1,6 @@
 #pragma once
 #include "PlayerState.h"
 #include "ManualAnimationUpdater.h"
-#include "ManualTransitioner.h"
 #include "SpriteEnum.h"
 
 #include "ControllerGetter.h"

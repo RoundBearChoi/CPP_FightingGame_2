@@ -20,7 +20,7 @@ namespace RB::PlayerStateComponents
 		void OnUpdate() override;
 
 	private:
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		MoveForwardDetector _moveForwardDetector;
 	};
 }

@@ -19,26 +19,19 @@ namespace RB::PlayerStates
 
 	void P0_Dummy::OnUpdate()
 	{
-		_getter_playerController.OnUpdate();
 		_getter_hurtBoxDataController.OnUpdate();
 
-		if (_getter_playerController.GetController() == nullptr || _getter_hurtBoxDataController.GetController() == nullptr)
+		if (_getter_hurtBoxDataController.GetController() == nullptr)
+		{
+			return;
+		}
+
+		if (RB::Players::PlayerController::PTR == nullptr)
 		{
 			return;
 		}
 		
-		_ownerPlayer = _getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
-
-		//RB::HurtBox::HurtBoxDataSet* sample = _getter_hurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::hurtbox_dataset_sample);
-		//RB::HurtBox::HurtBoxDataSet* idle = _getter_hurtBoxDataController.GetController()->GetDataSet(RB::Sprites::SpriteEnum::fighter_0_idle);
-		//
-		//RB::HurtBox::HurtBoxData* idle0 = idle->GetHurtBoxDataByIndex(0);
-		//RB::HurtBox::HurtBoxData* idle1 = idle->GetHurtBoxDataByIndex(1);
-		//
-		//RB::HurtBox::HurtBoxData* s0 = sample->GetHurtBoxDataByIndex(0);
-		//RB::HurtBox::HurtBoxData* s1 = sample->GetHurtBoxDataByIndex(1);
-		//RB::HurtBox::HurtBoxData* s2 = sample->GetHurtBoxDataByIndex(2);
-		//RB::HurtBox::HurtBoxData* s3 = sample->GetHurtBoxDataByIndex(3);
+		_ownerPlayer = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
 
 		_manualAnimationUpdater.OnUpdate();
 	}

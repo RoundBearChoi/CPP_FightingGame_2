@@ -37,6 +37,6 @@ namespace RB::Render
 		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
 
 	private:
-		RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
+		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

@@ -35,7 +35,7 @@ namespace RB::HBox
 
 		RB::Controllers::ControllerGetter<RB::Sprites::SpriteDataController> _getter_sprDataController;
 		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
-		RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_pAniController;
+		//RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_pAniController;
 		RB::Controllers::ControllerGetter<RB::HBox::HurtBoxDataController> _getter_hurtBoxDataController;
 
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;

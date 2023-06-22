@@ -10,13 +10,13 @@ namespace RB::HBox
 	void HurtBoxEditController::OnUpdate()
 	{
 		//_getter_playerController.OnUpdate();
-		_getter_playerAnimationController.OnUpdate();
+		//_getter_playerAnimationController.OnUpdate();
 		_getter_hurtBoxDataController.OnUpdate();
 		_getter_menuController.OnUpdate();
 		_getter_camController.OnUpdate();
 
 		if (//_getter_playerController.GetController() == nullptr ||
-			_getter_playerAnimationController.GetController() == nullptr ||
+			//_getter_playerAnimationController.GetController() == nullptr ||
 			_getter_hurtBoxDataController.GetController() == nullptr ||
 			_getter_menuController.GetController() == nullptr ||
 			_getter_camController.GetController() == nullptr)
@@ -24,7 +24,8 @@ namespace RB::HBox
 			return;
 		}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr ||
+			RB::Render::PlayerAnimationController::PTR == nullptr)
 		{
 			return;
 		}
@@ -56,7 +57,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		RB::Render::PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, spriteEnum);
+		RB::Render::PlayerAnimationObj* aniObj = RB::Render::PlayerAnimationController::PTR->GetAnimationObj(playerID, spriteEnum);
 
 		if (aniObj == nullptr)
 		{
@@ -80,7 +81,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		RB::Render::PlayerAnimationObj* aniObj = _getter_playerAnimationController.GetController()->GetAnimationObj(playerID, spriteEnum);
+		RB::Render::PlayerAnimationObj* aniObj = RB::Render::PlayerAnimationController::PTR->GetAnimationObj(playerID, spriteEnum);
 
 		if (aniObj == nullptr)
 		{
@@ -115,7 +116,7 @@ namespace RB::HBox
 
 	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{

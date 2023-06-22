@@ -18,6 +18,7 @@ namespace RB::Render
 	public:
 		PlayerAnimationController();
 		~PlayerAnimationController() override;
+		static inline PlayerAnimationController* PTR = nullptr;
 
 	public:
 		void Init() override;
@@ -35,8 +36,5 @@ namespace RB::Render
 		SpriteRenderer _spriteRenderer;
 		AnimationLoader _animationLoader;
 		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
-
-	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

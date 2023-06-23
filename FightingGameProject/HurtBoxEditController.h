@@ -40,7 +40,7 @@ namespace RB::HBox
 		size_t _selectedIndex = 0;
 
 	private:
-		RB::Controllers::ControllerGetter<RB::HBox::MenuController> _getter_menuController;
+		//RB::Controllers::ControllerGetter<RB::HBox::MenuController> _getter_menuController;
 		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

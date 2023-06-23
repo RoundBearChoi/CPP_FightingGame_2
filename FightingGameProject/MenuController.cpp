@@ -5,6 +5,13 @@ namespace RB::HBox
 	MenuController::MenuController()
 	{
 		SetHash(typeid(*this));
+
+		PTR = this;
+	}
+
+	MenuController::~MenuController()
+	{
+		PTR = nullptr;
 	}
 
 	void MenuController::Init()

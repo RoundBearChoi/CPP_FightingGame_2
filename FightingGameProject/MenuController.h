@@ -18,7 +18,8 @@ namespace RB::HBox
 	{
 	public:
 		MenuController();
-		~MenuController() override {};
+		~MenuController() override;
+		static inline MenuController* PTR = nullptr;
 
 		void Init() override;
 		void OnUpdate() override;

@@ -9,18 +9,17 @@ namespace RB::HBox
 
 	void HurtBoxEditController::OnUpdate()
 	{
-		_getter_menuController.OnUpdate();
 		_getter_camController.OnUpdate();
 
-		if (_getter_menuController.GetController() == nullptr ||
-			_getter_camController.GetController() == nullptr)
+		if (_getter_camController.GetController() == nullptr)
 		{
 			return;
 		}
 
 		if (RB::Players::PlayerController::PTR == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
-			RB::HBox::HurtBoxDataController::PTR == nullptr)
+			RB::HBox::HurtBoxDataController::PTR == nullptr ||
+			RB::HBox::MenuController::PTR == nullptr)
 		{
 			return;
 		}
@@ -298,7 +297,7 @@ namespace RB::HBox
 				file.close();
 			}
 
-			_getter_menuController.GetController()->ShowNotification();
+			RB::HBox::MenuController::PTR->ShowNotification();
 		}
 	}
 }

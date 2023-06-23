@@ -14,15 +14,9 @@ namespace RB::HBox
 
 	void MenuController::OnUpdate()
 	{
-		//_getter_pAniController.OnUpdate();
-		//_getter_playerController.OnUpdate();
-		//_getter_hurtBoxDataController.OnUpdate();
 		_getter_sprDataController.OnUpdate();
 
-		if (//_getter_pAniController.GetController() == nullptr ||
-			//_getter_playerController.GetController() == nullptr ||
-			//_getter_hurtBoxDataController.GetController() == nullptr ||
-			_getter_sprDataController.GetController() == nullptr)
+		if (_getter_sprDataController.GetController() == nullptr)
 
 		{
 			return;

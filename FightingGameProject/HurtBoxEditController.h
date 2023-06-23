@@ -40,9 +40,6 @@ namespace RB::HBox
 		size_t _selectedIndex = 0;
 
 	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
-		//RB::Controllers::ControllerGetter<RB::Render::PlayerAnimationController> _getter_playerAnimationController;
-		//RB::Controllers::ControllerGetter<RB::HBox::HurtBoxDataController> _getter_hurtBoxDataController;
 		RB::Controllers::ControllerGetter<RB::HBox::MenuController> _getter_menuController;
 		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};

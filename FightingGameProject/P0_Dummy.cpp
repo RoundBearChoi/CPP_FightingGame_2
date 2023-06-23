@@ -19,14 +19,15 @@ namespace RB::PlayerStates
 
 	void P0_Dummy::OnUpdate()
 	{
-		_getter_hurtBoxDataController.OnUpdate();
+		//_getter_hurtBoxDataController.OnUpdate();
 
-		if (_getter_hurtBoxDataController.GetController() == nullptr)
-		{
-			return;
-		}
+		//if (_getter_hurtBoxDataController.GetController() == nullptr)
+		//{
+		//	return;
+		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr ||
+			RB::HBox::HurtBoxDataController::PTR == nullptr)
 		{
 			return;
 		}

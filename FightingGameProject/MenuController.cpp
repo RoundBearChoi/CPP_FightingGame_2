@@ -16,18 +16,21 @@ namespace RB::HBox
 	{
 		//_getter_pAniController.OnUpdate();
 		//_getter_playerController.OnUpdate();
+		//_getter_hurtBoxDataController.OnUpdate();
 		_getter_sprDataController.OnUpdate();
-		_getter_hurtBoxDataController.OnUpdate();
 
 		if (//_getter_pAniController.GetController() == nullptr ||
 			//_getter_playerController.GetController() == nullptr ||
-			_getter_sprDataController.GetController() == nullptr ||
-			_getter_hurtBoxDataController.GetController() == nullptr)
+			//_getter_hurtBoxDataController.GetController() == nullptr ||
+			_getter_sprDataController.GetController() == nullptr)
+
 		{
 			return;
 		}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PlayerController::PTR == nullptr ||
+			RB::Render::PlayerAnimationController::PTR == nullptr ||
+			RB::HBox::HurtBoxDataController::PTR == nullptr)
 		{
 			return;
 		}
@@ -43,7 +46,7 @@ namespace RB::HBox
 
 		if (_notificationFrameCount > 0)
 		{
-			const std::string& path = _getter_hurtBoxDataController.GetController()->GetPath(_currentSpriteEnum);
+			const std::string& path = RB::HBox::HurtBoxDataController::PTR->GetPath(_currentSpriteEnum);
 			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved + path, olc::GREEN);
 		}
 
@@ -78,7 +81,7 @@ namespace RB::HBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = RB::HBox::HurtBoxDataController::PTR->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{
@@ -125,7 +128,7 @@ namespace RB::HBox
 
 	size_t MenuController::_GetAABBCount()
 	{
-		RB::HBox::HBoxDataSet* set = _getter_hurtBoxDataController.GetController()->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = RB::HBox::HurtBoxDataController::PTR->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{

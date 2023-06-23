@@ -11,13 +11,13 @@ namespace RB::HBox
 	{
 		//_getter_playerController.OnUpdate();
 		//_getter_playerAnimationController.OnUpdate();
-		_getter_hurtBoxDataController.OnUpdate();
+		//_getter_hurtBoxDataController.OnUpdate();
 		_getter_menuController.OnUpdate();
 		_getter_camController.OnUpdate();
 
 		if (//_getter_playerController.GetController() == nullptr ||
 			//_getter_playerAnimationController.GetController() == nullptr ||
-			_getter_hurtBoxDataController.GetController() == nullptr ||
+			//_getter_hurtBoxDataController.GetController() == nullptr ||
 			_getter_menuController.GetController() == nullptr ||
 			_getter_camController.GetController() == nullptr)
 		{
@@ -25,7 +25,8 @@ namespace RB::HBox
 		}
 
 		if (RB::Players::PlayerController::PTR == nullptr ||
-			RB::Render::PlayerAnimationController::PTR == nullptr)
+			RB::Render::PlayerAnimationController::PTR == nullptr ||
+			RB::HBox::HurtBoxDataController::PTR == nullptr)
 		{
 			return;
 		}
@@ -65,7 +66,7 @@ namespace RB::HBox
 		}
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HurtBoxDataController::PTR->GetDataSet(spriteEnum);
 
 		return dataSet;
 	}
@@ -89,7 +90,7 @@ namespace RB::HBox
 		}
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HurtBoxDataController::PTR->GetDataSet(spriteEnum);
 		RB::HBox::HBoxData* data = dataSet->GetHBoxDataByFrame(currentIndex);
 
 		return data;
@@ -249,7 +250,7 @@ namespace RB::HBox
 			std::cout << std::endl;
 			std::cout << "saving hurtbox set" << std::endl;
 
-			const std::string& path = _getter_hurtBoxDataController.GetController()->GetPath(set->GetSpriteEnum());
+			const std::string& path = RB::HBox::HurtBoxDataController::PTR->GetPath(set->GetSpriteEnum());
 
 			std::ofstream file(path);
 

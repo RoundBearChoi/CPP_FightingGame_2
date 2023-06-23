@@ -8,8 +8,9 @@ namespace RB::HBox
 	class HurtBoxDataController : public RB::Controllers::ControllerBase
 	{
 	public:
-		HurtBoxDataController() = default;
-		~HurtBoxDataController() override {};
+		HurtBoxDataController();
+		~HurtBoxDataController() override;
+		static inline HurtBoxDataController* PTR = nullptr;
 
 	public:
 		void Init() override;

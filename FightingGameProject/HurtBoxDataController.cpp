@@ -2,6 +2,16 @@
 
 namespace RB::HBox
 {
+	HurtBoxDataController::HurtBoxDataController()
+	{
+		PTR = this;
+	}
+
+	HurtBoxDataController::~HurtBoxDataController()
+	{
+		PTR = nullptr;
+	}
+
 	void HurtBoxDataController::Init()
 	{
 		SetHash(typeid(*this));

@@ -3,7 +3,6 @@
 #include "ManualAnimationUpdater.h"
 #include "SpriteEnum.h"
 
-#include "ControllerGetter.h"
 #include "HurtBoxDataController.h"
 
 #include "ActivePlayerStates.h"

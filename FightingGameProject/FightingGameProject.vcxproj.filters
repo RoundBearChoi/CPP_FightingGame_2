@@ -438,9 +438,6 @@
     <ClInclude Include="MenuController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="ControllerGetter.h">
-      <Filter>Source Files\Controllers</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerState.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>

@@ -2,7 +2,6 @@
 #include "olcPixelGameEngine.h"
 #include "iPlayer.h"
 
-#include "ControllerGetter.h"
 #include "InputController.h"
 #include "PlayerController.h"
 

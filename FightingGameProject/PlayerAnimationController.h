@@ -5,7 +5,6 @@
 #include "ControllerBase.h"
 #include "iPlayer.h"
 
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 #include "ActivePlayerStates.h"

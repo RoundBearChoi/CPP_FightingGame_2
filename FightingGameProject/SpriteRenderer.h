@@ -6,7 +6,6 @@
 #include "LoadedSprite.h"
 #include "PivotType.h"
 
-#include "ControllerGetter.h"
 #include "CamController.h"
 
 namespace RB::Render
@@ -27,8 +26,5 @@ namespace RB::Render
 
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;
-
-	//private:
-	//	RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

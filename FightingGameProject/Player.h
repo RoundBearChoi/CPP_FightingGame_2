@@ -11,7 +11,6 @@
 #include "AABB.h"
 #include "AirMomentum.h"
 
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::Players
@@ -49,7 +48,6 @@ namespace RB::Players
 		olc::vf2d GetAirMomentum() override;
 
 	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;

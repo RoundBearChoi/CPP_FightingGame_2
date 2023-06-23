@@ -4,7 +4,6 @@
 #include "P0_MoveForward.h"
 #include "iPlayer.h"
 
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::PlayerStateComponents
@@ -20,7 +19,6 @@ namespace RB::PlayerStateComponents
 		void OnUpdate() override;
 
 	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		MoveForwardDetector _moveForwardDetector;
 	};
 }

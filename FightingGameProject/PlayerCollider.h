@@ -3,7 +3,6 @@
 #include "iPlayer.h"
 #include "AABB.h"
 
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::Players
@@ -27,7 +26,6 @@ namespace RB::Players
 		void ResolveCollision(iPlayer* otherPlayer);
 
 	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 		iPlayer* _player = nullptr;
 		bool _isColliding = false;
 		olc::vi2d _playerBox = { 82, 124 }; //even numbers?

@@ -5,7 +5,6 @@
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
 
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::Render
@@ -25,9 +24,6 @@ namespace RB::Render
 		void RenderPosition(RB::Players::PlayerID playerID);
 		void RenderBottomLeft(RB::Players::PlayerID playerID);
 		void RenderAirMomentum(RB::Players::PlayerID playerID);
-
-	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 
 	private:
 		SpriteRenderer* _spriteRenderer = nullptr;

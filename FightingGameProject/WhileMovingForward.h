@@ -6,7 +6,6 @@
 #include "P0_MoveBack.h"
 #include "iPlayer.h"
 
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::PlayerStateComponents
@@ -27,8 +26,5 @@ namespace RB::PlayerStateComponents
 		MoveBackDetector _moveBackDetector;
 		bool _keepMoving = false;
 		bool _moveBack = false;
-
-	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

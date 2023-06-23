@@ -3,8 +3,6 @@
 #include "P0_JumpUp.h"
 #include "iPlayer.h"
 
-//#include "ActiveControllers.h"
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 #include "InputController.h"
 

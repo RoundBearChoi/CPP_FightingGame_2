@@ -1,7 +1,6 @@
 #pragma once
 #include "SpriteRenderer.h"
 
-#include "ControllerGetter.h"
 #include "PlayerController.h"
 
 namespace RB::Render
@@ -19,8 +18,5 @@ namespace RB::Render
 
 	private:
 		SpriteRenderer* _spriteRenderer = nullptr;
-
-	private:
-		//RB::Controllers::ControllerGetter<RB::Players::PlayerController> _getter_playerController;
 	};
 }

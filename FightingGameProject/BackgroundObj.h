@@ -4,7 +4,6 @@
 #include "SpriteEnum.h"
 #include "SpriteRenderer.h"
 
-#include "ControllerGetter.h"
 #include "CamController.h"
 
 namespace RB::Background
@@ -25,7 +24,5 @@ namespace RB::Background
 		olc::vf2d _renderSize = { 0.0f ,0.0f };
 		olc::vf2d _position = { 0.0f, 0.0f };
 		RB::Render::SpriteRenderer _spriteRenderer;
-
-		//RB::Controllers::ControllerGetter<RB::Cam::CamController> _camControllerGetter;
 	};
 }

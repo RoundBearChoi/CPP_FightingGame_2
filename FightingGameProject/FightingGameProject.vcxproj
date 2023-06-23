@@ -211,7 +211,6 @@
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
-    <ClInclude Include="ControllerGetter.h" />
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HBoxData.h" />
     <ClInclude Include="HBoxDataSet.h" />

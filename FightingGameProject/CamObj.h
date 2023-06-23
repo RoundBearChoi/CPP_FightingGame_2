@@ -4,7 +4,6 @@
 #include "iCam.h"
 #include "Time.h"
 
-#include "ControllerGetter.h"
 #include "InputController.h"
 
 namespace RB::Cam

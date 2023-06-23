@@ -6,11 +6,10 @@
 
 #include "ActivePlayerStates.h"
 
-#include "ControllerGetter.h"
-#include "SpriteDataController.h"
 #include "PlayerController.h"
 #include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
+#include "SpriteDataController.h"
 
 namespace RB::HBox
 {

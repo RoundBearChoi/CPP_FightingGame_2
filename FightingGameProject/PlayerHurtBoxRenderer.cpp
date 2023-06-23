@@ -8,19 +8,9 @@ namespace RB::Render
 	}
 	void PlayerHurtBoxRenderer::OnUpdate()
 	{
-		//_getter_playerController.OnUpdate();
-		//_getter_playerAnimationController.OnUpdate();
-		_getter_hurtBoxDataController.OnUpdate();
-
-		if (//_getter_playerController.GetController() == nullptr ||
-			//_getter_playerAnimationController.GetController() == nullptr ||
-			_getter_hurtBoxDataController.GetController() == nullptr)
-		{
-			return;
-		}
-
 		if (RB::Players::PlayerController::PTR == nullptr ||
-			RB::Render::PlayerAnimationController::PTR == nullptr)
+			RB::Render::PlayerAnimationController::PTR == nullptr ||
+			RB::HBox::HurtBoxDataController::PTR == nullptr)
 		{
 			return;
 		}
@@ -60,7 +50,7 @@ namespace RB::Render
 		}
 		
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = _getter_hurtBoxDataController.GetController()->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HurtBoxDataController::PTR->GetDataSet(spriteEnum);
 
 		if (dataSet == nullptr)
 		{

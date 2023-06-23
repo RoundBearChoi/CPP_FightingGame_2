@@ -41,6 +41,6 @@ namespace RB::HBox
 
 	private:
 		//RB::Controllers::ControllerGetter<RB::HBox::MenuController> _getter_menuController;
-		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
+		//RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

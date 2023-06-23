@@ -9,7 +9,8 @@ namespace RB::Cam
 	{
 	public:
 		CamController();
-		~CamController() override {};
+		~CamController() override;
+		static inline CamController* PTR = nullptr;
 
 	public:
 		void Init() override;

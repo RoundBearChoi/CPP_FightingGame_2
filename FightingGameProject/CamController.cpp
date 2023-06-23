@@ -5,6 +5,13 @@ namespace RB::Cam
 	CamController::CamController()
 	{
 		SetHash(typeid(*this));
+
+		PTR = this;
+	}
+
+	CamController::~CamController()
+	{
+		PTR = nullptr;
 	}
 
 	void CamController::Init()

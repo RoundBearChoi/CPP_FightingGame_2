@@ -22,8 +22,5 @@ namespace RB::Render
 
 	private:
 		AnimationSpecs _animationSpecs;
-
-	//private:
-	//	RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

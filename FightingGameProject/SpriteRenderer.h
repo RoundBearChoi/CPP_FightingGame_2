@@ -28,7 +28,7 @@ namespace RB::Render
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;
 
-	private:
-		RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
+	//private:
+	//	RB::Controllers::ControllerGetter<RB::Cam::CamController> _getter_camController;
 	};
 }

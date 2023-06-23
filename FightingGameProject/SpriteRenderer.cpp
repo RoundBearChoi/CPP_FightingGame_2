@@ -14,9 +14,7 @@ namespace RB::Render
 
 	void SpriteRenderer::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType)
 	{
-		_getter_camController.OnUpdate();
-
-		if (_getter_camController.GetController() == nullptr)
+		if (RB::Cam::CamController::PTR == nullptr)
 		{
 			return;
 		}
@@ -66,7 +64,7 @@ namespace RB::Render
 
 		for (size_t i = 0; i < points.size(); i++)
 		{
-			points[i] = _getter_camController.GetController()->GetCamObj()->GetRelativePosition(points[i]);
+			points[i] = RB::Cam::CamController::PTR->GetCamObj()->GetRelativePosition(points[i]);
 		}
 
 		olc::Decal* decal = loadedSprite->GetDecal();

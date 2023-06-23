@@ -26,6 +26,6 @@ namespace RB::Background
 		olc::vf2d _position = { 0.0f, 0.0f };
 		RB::Render::SpriteRenderer _spriteRenderer;
 
-		RB::Controllers::ControllerGetter<RB::Cam::CamController> _camControllerGetter;
+		//RB::Controllers::ControllerGetter<RB::Cam::CamController> _camControllerGetter;
 	};
 }

@@ -21,9 +21,7 @@ namespace RB::HBox
 
 	void MenuController::OnUpdate()
 	{
-		_getter_sprDataController.OnUpdate();
-
-		if (_getter_sprDataController.GetController() == nullptr)
+		if (RB::Sprites::SpriteDataController::PTR == nullptr)
 
 		{
 			return;
@@ -75,7 +73,7 @@ namespace RB::HBox
 	{
 		RB::Sprites::SpriteEnum se = _GetCurrentSpriteEnum();
 
-		const std::string& str = _getter_sprDataController.GetController()->GetString(se);
+		const std::string& str = RB::Sprites::SpriteDataController::PTR->GetString(se);
 
 		return str;
 	}

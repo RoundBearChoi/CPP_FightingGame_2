@@ -5,6 +5,8 @@ namespace RB::Sprites
 	SpriteDataController::SpriteDataController()
 	{
 		SetHash(typeid(*this));
+
+		PTR = this;
 	}
 
 	SpriteDataController::~SpriteDataController()
@@ -13,6 +15,8 @@ namespace RB::Sprites
 		{
 			delete _vecEnumStrings[i];
 		}
+
+		PTR = nullptr;
 	}
 
 	void SpriteDataController::Init()
@@ -45,6 +49,6 @@ namespace RB::Sprites
 			}
 		}
 
-		return nullptr;
+		return _empty;
 	}
 }

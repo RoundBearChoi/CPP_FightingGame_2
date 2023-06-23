@@ -34,8 +34,6 @@ namespace RB::HBox
 		int32_t _GetCurrentAnimationFrame();
 		size_t _GetAABBCount();
 
-		RB::Controllers::ControllerGetter<RB::Sprites::SpriteDataController> _getter_sprDataController;
-
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::string _none = "none";
 		std::string _fileSaved = "File saved: ";

@@ -11,6 +11,7 @@ namespace RB::Sprites
 	public:
 		SpriteDataController();
 		~SpriteDataController() override;
+		static inline SpriteDataController* PTR = nullptr;
 
 	public:
 		void Init() override;
@@ -22,5 +23,6 @@ namespace RB::Sprites
 
 	private:
 		std::vector<SpriteEnumString*> _vecEnumStrings;
+		std::string _empty = "EMPTY";
 	};
 }

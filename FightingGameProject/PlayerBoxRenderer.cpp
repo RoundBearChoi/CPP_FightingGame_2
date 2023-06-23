@@ -16,14 +16,14 @@ namespace RB::Render
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
 
 		for (int32_t i = 0; i < 2; i++)
 		{
-			RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnIndex(i); //_getter_playerController.GetController()->GetPlayerOnIndex(i);
+			RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i); //_getter_playerController.GetController()->GetPlayerOnIndex(i);
 
 			if (player == nullptr)
 			{

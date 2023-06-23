@@ -38,7 +38,7 @@ namespace RB::Players
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -67,12 +67,12 @@ namespace RB::Players
 		//	return true;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return true;
 		}
 
-		iPlayer* other = RB::Players::PlayerController::PTR->GetOtherPlayer(this); //_getter_playerController.GetController()->GetOtherPlayer(this);
+		iPlayer* other = RB::Players::PLAYER_CONTROLLER->GetOtherPlayer(this); //_getter_playerController.GetController()->GetOtherPlayer(this);
 
 		if (other == nullptr)
 		{

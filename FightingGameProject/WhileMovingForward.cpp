@@ -17,7 +17,7 @@ namespace RB::PlayerStateComponents
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -52,12 +52,12 @@ namespace RB::PlayerStateComponents
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_state->GetStateMachineID()); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID()); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		if (player == nullptr)
 		{

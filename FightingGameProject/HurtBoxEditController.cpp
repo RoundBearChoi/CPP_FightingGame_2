@@ -9,7 +9,7 @@ namespace RB::HBox
 
 	void HurtBoxEditController::OnUpdate()
 	{
-		if (RB::Players::PlayerController::PTR == nullptr ||
+		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
 			RB::HBox::HurtBoxDataController::PTR == nullptr ||
 			RB::HBox::MenuController::PTR == nullptr ||
@@ -104,7 +104,7 @@ namespace RB::HBox
 
 	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{

@@ -8,7 +8,7 @@ namespace RB::Render
 	}
 	void PlayerHurtBoxRenderer::OnUpdate()
 	{
-		if (RB::Players::PlayerController::PTR == nullptr ||
+		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
 			RB::HBox::HurtBoxDataController::PTR == nullptr)
 		{
@@ -26,7 +26,7 @@ namespace RB::Render
 
 	void PlayerHurtBoxRenderer::RenderHurtBox(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 		
 		if (player == nullptr)
 		{

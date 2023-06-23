@@ -1,19 +1,22 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include "olcPixelGameEngine.h"
-#include "ControllerBase.h"
-#include "iPlayer.h"
-#include "PlayerID.h"
+#include "iPlayerController.h"
+//#include <iostream>
+//#include <vector>
+//#include "olcPixelGameEngine.h"
+//#include "ControllerBase.h"
+//#include "iPlayer.h"
+//#include "PlayerID.h"
 
 namespace RB::Players
 {
-	class PlayerController : public RB::Controllers::ControllerBase
+	extern iPlayerController* PLAYER_CONTROLLER;
+
+	class PlayerController : public iPlayerController
 	{
 	public:
 		PlayerController();
 		~PlayerController() override;
-		static inline PlayerController* PTR = nullptr;
+		//static inline PlayerController* PTR = nullptr;
 
 	public:
 		void Init() override;
@@ -21,14 +24,14 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID);
+		void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) override;
 
 	public:
-		iPlayer* GetPlayerOnIndex(size_t index);
-		iPlayer* GetPlayerOnID(PlayerID id);
-		iPlayer* GetPlayerOnStateMachineID(size_t id);
-		iPlayer* GetOtherPlayer(iPlayer* currentPlayer);
-		void SetManualAnimationUpdate(PlayerID id, bool manual);
+		iPlayer* GetPlayerOnIndex(size_t index) override;
+		iPlayer* GetPlayerOnID(PlayerID id) override;
+		iPlayer* GetPlayerOnStateMachineID(size_t id) override;
+		iPlayer* GetOtherPlayer(iPlayer* currentPlayer) override;
+		void SetManualAnimationUpdate(PlayerID id, bool manual) override;
 
 	private:
 		std::vector<RB::Players::iPlayer*> _vecPlayers;

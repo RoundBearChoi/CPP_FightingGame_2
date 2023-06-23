@@ -9,7 +9,7 @@ namespace RB::PlayerStateComponents
 
 	void MoveBackDetector::OnUpdate()
 	{
-		if (RB::Players::PlayerController::PTR == nullptr ||
+		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Input::InputController::PTR == nullptr)
 		{
 			return;
@@ -40,7 +40,7 @@ namespace RB::PlayerStateComponents
 
 	bool MoveBackDetector::_BothPressed()
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
 		if (player == nullptr)
 		{
@@ -65,7 +65,7 @@ namespace RB::PlayerStateComponents
 
 	bool MoveBackDetector::_MoveBackPressed()
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
 		if (player == nullptr)
 		{

@@ -465,5 +465,8 @@
     <ClInclude Include="BackgroundController.h">
       <Filter>Source Files\Background</Filter>
     </ClInclude>
+    <ClInclude Include="iPlayerController.h">
+      <Filter>Source Files\Players</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

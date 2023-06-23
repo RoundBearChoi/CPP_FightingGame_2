@@ -2,11 +2,13 @@
 
 namespace RB::Players
 {
+	iPlayerController* PLAYER_CONTROLLER = nullptr;
+
 	PlayerController::PlayerController()
 	{
 		SetHash(typeid(*this));
 
-		PTR = this;
+		PLAYER_CONTROLLER = this;
 	}
 
 	PlayerController::~PlayerController()
@@ -16,7 +18,7 @@ namespace RB::Players
 			delete _vecPlayers[i];
 		}
 
-		PTR = nullptr;
+		PLAYER_CONTROLLER = nullptr;
 	}
 
 	void PlayerController::Init()

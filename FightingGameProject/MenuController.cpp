@@ -27,7 +27,7 @@ namespace RB::HBox
 			return;
 		}
 
-		if (RB::Players::PlayerController::PTR == nullptr ||
+		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
 			RB::HBox::HurtBoxDataController::PTR == nullptr)
 		{
@@ -99,7 +99,7 @@ namespace RB::HBox
 
 	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnIndex(0);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)

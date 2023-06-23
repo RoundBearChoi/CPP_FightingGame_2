@@ -18,7 +18,7 @@ namespace RB::Players
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -31,13 +31,13 @@ namespace RB::Players
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
 
 		PlayerID myID = _player->GetPlayerID();
-		iPlayer* other = RB::Players::PlayerController::PTR->GetOtherPlayer(_player); //_getter_playerController.GetController()->GetOtherPlayer(_player);
+		iPlayer* other = RB::Players::PLAYER_CONTROLLER->GetOtherPlayer(_player); //_getter_playerController.GetController()->GetOtherPlayer(_player);
 
 		if (other == nullptr)
 		{

@@ -17,7 +17,7 @@ namespace RB::Render
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -39,7 +39,7 @@ namespace RB::Render
 
 	void PlayerPositionRenderer::RenderPosition(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{
@@ -53,7 +53,7 @@ namespace RB::Render
 
 	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{
@@ -67,7 +67,7 @@ namespace RB::Render
 
 	void PlayerPositionRenderer::RenderAirMomentum(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::PlayerController::PTR->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID); //_getter_playerController.GetController()->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{

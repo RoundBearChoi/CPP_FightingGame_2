@@ -215,6 +215,7 @@
     <ClInclude Include="HBoxData.h" />
     <ClInclude Include="HBoxDataSet.h" />
     <ClInclude Include="HurtBoxEditController.h" />
+    <ClInclude Include="iPlayerController.h" />
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="jsonExample.h" />

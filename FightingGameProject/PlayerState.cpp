@@ -6,12 +6,12 @@ namespace RB::PlayerStates
 	{
 		_spriteEnum = spriteEnum;
 
-		_ownerPlayer = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
+		_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	RB::Players::PlayerID PlayerState::GetPlayerID()
 	{
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return RB::Players::PlayerID::NONE;
 		}

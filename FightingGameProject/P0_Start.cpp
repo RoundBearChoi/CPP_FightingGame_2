@@ -27,17 +27,17 @@ namespace RB::PlayerStates
 		//	return;
 		//}
 
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}
 
-		_ownerPlayer = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
+		_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID); //_getter_playerController.GetController()->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	void P0_Start::OnFixedUpdate()
 	{
-		if (RB::Players::PlayerController::PTR == nullptr)
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
 		}

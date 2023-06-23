@@ -19,13 +19,13 @@ namespace RB::PlayerStates
 
 	void P0_Dummy::OnUpdate()
 	{
-		if (RB::Players::PlayerController::PTR == nullptr ||
+		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::HBox::HurtBoxDataController::PTR == nullptr)
 		{
 			return;
 		}
 		
-		_ownerPlayer = RB::Players::PlayerController::PTR->GetPlayerOnStateMachineID(_stateMachineID);
+		_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
 		_manualAnimationUpdater.OnUpdate();
 	}

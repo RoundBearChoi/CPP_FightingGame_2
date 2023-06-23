@@ -9,13 +9,6 @@ namespace RB::Render
 
 	void PlayerBoxRenderer::OnUpdate()
 	{
-		//_getter_playerController.OnUpdate();
-
-		//if (_getter_playerController.GetController() == nullptr)
-		//{
-		//	return;
-		//}
-
 		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
 			return;
@@ -23,7 +16,7 @@ namespace RB::Render
 
 		for (int32_t i = 0; i < 2; i++)
 		{
-			RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i); //_getter_playerController.GetController()->GetPlayerOnIndex(i);
+			RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i);
 
 			if (player == nullptr)
 			{

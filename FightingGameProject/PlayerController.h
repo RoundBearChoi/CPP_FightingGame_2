@@ -1,11 +1,5 @@
 #pragma once
 #include "iPlayerController.h"
-//#include <iostream>
-//#include <vector>
-//#include "olcPixelGameEngine.h"
-//#include "ControllerBase.h"
-//#include "iPlayer.h"
-//#include "PlayerID.h"
 
 namespace RB::Players
 {
@@ -16,7 +10,6 @@ namespace RB::Players
 	public:
 		PlayerController();
 		~PlayerController() override;
-		//static inline PlayerController* PTR = nullptr;
 
 	public:
 		void Init() override;

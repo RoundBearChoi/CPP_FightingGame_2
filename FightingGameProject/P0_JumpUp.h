@@ -2,8 +2,9 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "PlayerState.h"
-#include "PlayerID.h"
+
 #include "iPlayer.h"
+#include "PlayerID.h"
 
 #include "ActivePlayerStates.h"
 

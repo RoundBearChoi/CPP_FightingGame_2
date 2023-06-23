@@ -3,8 +3,6 @@
 
 namespace RB::Players
 {
-	extern iPlayerController* PLAYER_CONTROLLER;
-
 	class PlayerController : public iPlayerController
 	{
 	public:

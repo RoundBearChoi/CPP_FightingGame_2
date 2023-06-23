@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
 #include "ControllerBase.h"
+#include "KeyBinding.h"
+
 #include "PlayerInput.h"
 #include "PlayerID.h"
-#include "KeyBinding.h"
 
 namespace RB::Input
 {

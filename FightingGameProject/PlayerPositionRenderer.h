@@ -5,7 +5,7 @@
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
 
-#include "PlayerController.h"
+#include "iPlayerController.h"
 
 namespace RB::Render
 {

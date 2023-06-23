@@ -6,7 +6,8 @@
 
 #include "ActivePlayerStates.h"
 
-#include "PlayerController.h"
+#include "iPlayerController.h"
+
 #include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
 #include "SpriteDataController.h"

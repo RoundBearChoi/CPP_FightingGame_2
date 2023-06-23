@@ -3,9 +3,9 @@
 #include "AnimationLoader.h"
 #include "PlayerAnimationObj.h"
 #include "ControllerBase.h"
-#include "iPlayer.h"
 
-#include "PlayerController.h"
+#include "iPlayerController.h"
+#include "iPlayer.h"
 
 #include "ActivePlayerStates.h"
 #include "PlayerState.h"

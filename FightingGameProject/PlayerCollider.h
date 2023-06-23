@@ -1,9 +1,9 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "iPlayer.h"
 #include "AABB.h"
 
-#include "PlayerController.h"
+#include "iPlayerController.h"
+#include "iPlayer.h"
 
 namespace RB::Players
 {

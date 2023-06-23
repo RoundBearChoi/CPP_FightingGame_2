@@ -2,9 +2,9 @@
 #include "StateComponentBase.h"
 #include "MoveForwardDetector.h"
 #include "P0_MoveForward.h"
-#include "iPlayer.h"
 
-#include "PlayerController.h"
+#include "iPlayerController.h"
+#include "iPlayer.h"
 
 namespace RB::PlayerStateComponents
 {

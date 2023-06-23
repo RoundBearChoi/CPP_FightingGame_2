@@ -2,8 +2,6 @@
 
 namespace RB::Players
 {
-	iPlayerController* PLAYER_CONTROLLER = nullptr;
-
 	PlayerController::PlayerController()
 	{
 		SetHash(typeid(*this));

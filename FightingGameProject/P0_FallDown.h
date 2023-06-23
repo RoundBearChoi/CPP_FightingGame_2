@@ -1,13 +1,15 @@
 #pragma once
 #include <iostream>
-#include "PlayerState.h"
-#include "PlayerID.h"
-#include "PlayerController.h"
-#include "iPlayer.h"
 
-#include "ActivePlayerStates.h"
+#include "iPlayerController.h"
+#include "iPlayer.h"
+#include "PlayerID.h"
+
+#include "PlayerState.h"
 
 #include "P0_Idle.h"
+
+#include "ActivePlayerStates.h"
 
 namespace RB::PlayerStates
 {

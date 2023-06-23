@@ -1,7 +1,7 @@
 #pragma once
 #include "SpriteRenderer.h"
 
-#include "PlayerController.h"
+#include "iPlayerController.h"
 
 namespace RB::Render
 {

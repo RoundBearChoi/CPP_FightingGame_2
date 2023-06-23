@@ -3,6 +3,7 @@
 #include <vector>
 #include "olcPixelGameEngine.h"
 #include "ControllerBase.h"
+
 #include "iPlayer.h"
 #include "iState.h"
 #include "PlayerID.h"
@@ -26,4 +27,6 @@ namespace RB::Players
 		virtual iPlayer* GetOtherPlayer(iPlayer* currentPlayer) = 0;
 		virtual void SetManualAnimationUpdate(PlayerID id, bool manual) = 0;
 	};
+
+	extern iPlayerController* PLAYER_CONTROLLER;
 }

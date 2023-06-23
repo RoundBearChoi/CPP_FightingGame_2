@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
+
 #include "PlayerState.h"
+
 #include "PlayerID.h"
 
 namespace RB::PlayerStates

@@ -3,7 +3,8 @@
 #include "ControllerBase.h"
 #include "Time.h"
 
-#include "PlayerController.h"
+#include "iPlayerController.h"
+
 #include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
 #include "MenuController.h"

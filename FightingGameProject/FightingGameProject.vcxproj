@@ -153,6 +153,7 @@
     <ClCompile Include="HBoxDataSetPath.h" />
     <ClCompile Include="HurtBoxEditController.cpp" />
     <ClCompile Include="HBoxLoader.cpp" />
+    <ClCompile Include="iPlayerController.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />

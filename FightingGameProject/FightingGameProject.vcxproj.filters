@@ -232,6 +232,9 @@
     <ClCompile Include="iBackgroundController.cpp">
       <Filter>Source Files\Background</Filter>
     </ClCompile>
+    <ClCompile Include="iCamController.cpp">
+      <Filter>Source Files\Cam</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -476,6 +479,9 @@
     </ClInclude>
     <ClInclude Include="iBackgroundController.h">
       <Filter>Source Files\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="iCamController.h">
+      <Filter>Source Files\Cam</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

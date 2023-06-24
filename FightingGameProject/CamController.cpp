@@ -6,12 +6,12 @@ namespace RB::Cam
 	{
 		SetHash(typeid(*this));
 
-		PTR = this;
+		CAM_CONTROLLER = this;
 	}
 
 	CamController::~CamController()
 	{
-		PTR = nullptr;
+		CAM_CONTROLLER = nullptr;
 	}
 
 	void CamController::Init()

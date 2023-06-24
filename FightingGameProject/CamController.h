@@ -1,23 +1,21 @@
 #pragma once
 #include"olcPixelGameEngine.h"
-#include "ControllerBase.h"
-#include "CamObj.h"
+
+#include "iCamController.h"
 
 namespace RB::Cam
 {
-	class CamController : public RB::Controllers::ControllerBase
+	class CamController : public iCamController
 	{
 	public:
 		CamController();
 		~CamController() override;
-		static inline CamController* PTR = nullptr;
 
 	public:
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-	public:
 		CamObj* GetCamObj();
 
 	private:

@@ -13,7 +13,7 @@ namespace RB::HBox
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
 			RB::HBox::HurtBoxDataController::PTR == nullptr ||
 			RB::HBox::MenuController::PTR == nullptr ||
-			RB::Cam::CamController::PTR == nullptr)
+			RB::Cam::CAM_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -113,7 +113,7 @@ namespace RB::HBox
 
 		olc::vf2d pos = player->GetPosition() + aabb->GetBottomLeft();
 
-		olc::vf2d relPos = RB::Cam::CamController::PTR->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{1, -1};
+		olc::vf2d relPos = RB::Cam::CAM_CONTROLLER->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{1, -1};
 
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);

@@ -6,12 +6,12 @@ namespace RB::Input
 	{
 		SetHash(typeid(*this));
 
-		PTR = this;
+		INPUT_CONTROLLER = this;
 	}
 
 	InputController::~InputController()
 	{
-		PTR = nullptr;
+		INPUT_CONTROLLER = nullptr;
 	}
 
 	void InputController::Init()

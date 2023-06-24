@@ -238,6 +238,9 @@
     <ClCompile Include="iHurtBoxDataController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
+    <ClCompile Include="iInputController.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -488,6 +491,9 @@
     </ClInclude>
     <ClInclude Include="iHurtBoxDataController.h">
       <Filter>Source Files\HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="iInputController.h">
+      <Filter>Source Files\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

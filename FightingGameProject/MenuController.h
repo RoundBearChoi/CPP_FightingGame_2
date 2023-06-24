@@ -2,11 +2,11 @@
 #include <iostream>
 #include <cstdint>
 #include "olcPixelGameEngine.h"
-#include "ControllerBase.h"
 
 #include "ActivePlayerStates.h"
 
 #include "iPlayerController.h"
+#include "iMenuController.h"
 
 #include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
@@ -14,18 +14,17 @@
 
 namespace RB::HBox
 {
-	class MenuController : public RB::Controllers::ControllerBase
+	class MenuController : public iMenuController
 	{
 	public:
 		MenuController();
 		~MenuController() override;
-		static inline MenuController* PTR = nullptr;
 
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		void ShowNotification();
+		void ShowNotification() override;
 
 	private:
 		const std::string& _GetCurrentSpriteString();

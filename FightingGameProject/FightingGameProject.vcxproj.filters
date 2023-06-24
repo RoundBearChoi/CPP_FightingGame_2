@@ -244,6 +244,9 @@
     <ClCompile Include="iHurtBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
+    <ClCompile Include="iMenuController.cpp">
+      <Filter>Source Files\HBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -499,6 +502,9 @@
       <Filter>Source Files\Input</Filter>
     </ClInclude>
     <ClInclude Include="iHurtBoxEditController.h">
+      <Filter>Source Files\HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="iMenuController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,7 +22,7 @@ namespace RB::HBox
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
 			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr ||
-			RB::HBox::MenuController::PTR == nullptr ||
+			RB::HBox::MENU_CONTROLLER == nullptr ||
 			RB::Cam::CAM_CONTROLLER == nullptr)
 		{
 			return;
@@ -301,7 +301,7 @@ namespace RB::HBox
 				file.close();
 			}
 
-			RB::HBox::MenuController::PTR->ShowNotification();
+			RB::HBox::MENU_CONTROLLER->ShowNotification();
 		}
 	}
 }

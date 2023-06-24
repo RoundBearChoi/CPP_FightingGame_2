@@ -1,32 +1,30 @@
 #pragma once
 #include <cstdint>
-#include "ControllerBase.h"
 #include "Time.h"
 
 #include "iPlayerController.h"
-
-#include "PlayerAnimationController.h"
+#include "iHurtBoxEditController.h"
 #include "HurtBoxDataController.h"
-#include "MenuController.h"
 #include "CamController.h"
+#include "PlayerAnimationController.h"
+#include "MenuController.h"
 
 namespace RB::HBox
 {
-	class HurtBoxEditController : public RB::Controllers::ControllerBase
+	class HurtBoxEditController : public iHurtBoxEditController
 	{
 	public:
-		HurtBoxEditController() = default;
-		~HurtBoxEditController() override {};
+		HurtBoxEditController();
+		~HurtBoxEditController() override;
 
 	public:
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-	public:
-		RB::HBox::HBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID);
-		RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
-		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
+		RB::HBox::HBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID) override;
+		RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID) override;
+		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
 
 	private:
 		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);

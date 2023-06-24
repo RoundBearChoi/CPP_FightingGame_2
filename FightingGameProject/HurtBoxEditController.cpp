@@ -2,6 +2,16 @@
 
 namespace RB::HBox
 {
+	HurtBoxEditController::HurtBoxEditController()
+	{
+		HURTBOX_EDIT_CONTROLLER = this;
+	}
+
+	HurtBoxEditController::~HurtBoxEditController()
+	{
+		HURTBOX_EDIT_CONTROLLER = nullptr;
+	}
+
 	void HurtBoxEditController::Init()
 	{
 

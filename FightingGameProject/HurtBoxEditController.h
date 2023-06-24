@@ -5,6 +5,7 @@
 #include "iPlayerController.h"
 #include "iHurtBoxEditController.h"
 #include "iMenuController.h"
+
 #include "HurtBoxDataController.h"
 #include "CamController.h"
 #include "PlayerAnimationController.h"

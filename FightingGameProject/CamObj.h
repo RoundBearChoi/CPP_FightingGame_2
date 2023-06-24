@@ -24,7 +24,7 @@ namespace RB::Cam
 
 	private:
 		olc::vf2d _camPosition = { -427.0f, -427.0f };
-		float_t _zoom = 1.0f;
+		float_t _zoom = 0.6f;
 		float_t _zoomSpeed = 0.6f;
 		float_t _moveSpeed = 3.0f;
 		bool _moveLeft = false;

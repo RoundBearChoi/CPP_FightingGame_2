@@ -7,8 +7,8 @@
 
 #include "iPlayerController.h"
 #include "iMenuController.h"
+#include "iPlayerAnimationController.h"
 
-#include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
 #include "SpriteDataController.h"
 

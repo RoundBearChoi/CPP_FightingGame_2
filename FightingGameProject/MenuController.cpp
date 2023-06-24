@@ -28,7 +28,7 @@ namespace RB::HBox
 		}
 
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Render::PlayerAnimationController::PTR == nullptr ||
+			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
 			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
 		{
 			return;
@@ -115,7 +115,7 @@ namespace RB::HBox
 
 	int32_t MenuController::_GetCurrentAnimationFrame()
 	{
-		RB::Render::PlayerAnimationObj* obj = RB::Render::PlayerAnimationController::PTR->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
+		RB::Render::PlayerAnimationObj* obj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
 
 		if (obj == nullptr)
 		{

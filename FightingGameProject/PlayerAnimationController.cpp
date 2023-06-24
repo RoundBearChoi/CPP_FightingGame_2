@@ -6,7 +6,7 @@ namespace RB::Render
 	{
 		SetHash(typeid(*this));
 
-		PTR = this;
+		PLAYER_ANIMATION_CONTROLLER = this;
 	}
 
 	PlayerAnimationController::~PlayerAnimationController()
@@ -16,7 +16,7 @@ namespace RB::Render
 			delete _vecPlayerAnimationObjs[i];
 		}
 
-		PTR = nullptr;
+		PLAYER_ANIMATION_CONTROLLER = nullptr;
 	}
 
 	void PlayerAnimationController::Init()

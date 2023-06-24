@@ -9,7 +9,7 @@ namespace RB::Render
 	void PlayerHurtBoxRenderer::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Render::PlayerAnimationController::PTR == nullptr ||
+			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
 			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
 		{
 			return;
@@ -42,7 +42,7 @@ namespace RB::Render
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		PlayerAnimationObj* aniObj = RB::Render::PlayerAnimationController::PTR->GetAnimationObj(playerID, spriteEnum);
+		PlayerAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(playerID, spriteEnum);
 		
 		if (aniObj == nullptr)
 		{

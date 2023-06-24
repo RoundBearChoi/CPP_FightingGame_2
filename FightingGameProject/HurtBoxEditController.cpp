@@ -20,7 +20,7 @@ namespace RB::HBox
 	void HurtBoxEditController::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Render::PlayerAnimationController::PTR == nullptr ||
+			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
 			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr ||
 			RB::HBox::MENU_CONTROLLER == nullptr ||
 			RB::Cam::CAM_CONTROLLER == nullptr)
@@ -55,7 +55,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		RB::Render::PlayerAnimationObj* aniObj = RB::Render::PlayerAnimationController::PTR->GetAnimationObj(playerID, spriteEnum);
+		RB::Render::PlayerAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(playerID, spriteEnum);
 
 		if (aniObj == nullptr)
 		{
@@ -79,7 +79,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		RB::Render::PlayerAnimationObj* aniObj = RB::Render::PlayerAnimationController::PTR->GetAnimationObj(playerID, spriteEnum);
+		RB::Render::PlayerAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(playerID, spriteEnum);
 
 		if (aniObj == nullptr)
 		{

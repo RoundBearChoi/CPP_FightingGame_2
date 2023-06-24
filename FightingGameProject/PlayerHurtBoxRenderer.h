@@ -4,9 +4,9 @@
 
 #include "ActivePlayerStates.h"
 
-#include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
 
+#include "iPlayerAnimationController.h"
 #include "iPlayerController.h"
 
 namespace RB::Render

@@ -229,6 +229,9 @@
     <ClCompile Include="iPlayerController.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
+    <ClCompile Include="iBackgroundController.cpp">
+      <Filter>Source Files\Background</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -470,6 +473,9 @@
     </ClInclude>
     <ClInclude Include="iPlayerController.h">
       <Filter>Source Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="iBackgroundController.h">
+      <Filter>Source Files\Background</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

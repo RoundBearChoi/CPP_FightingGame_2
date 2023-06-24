@@ -5,6 +5,8 @@ namespace RB::Background
 	BackgroundController::BackgroundController()
 	{
 		SetHash(typeid(*this));
+
+		BACKGROUND_CONTROLLER = this;
 	}
 
 	BackgroundController::~BackgroundController()
@@ -13,6 +15,8 @@ namespace RB::Background
 		{
 			delete _vecBackgroundObjs[i];
 		}
+
+		BACKGROUND_CONTROLLER = nullptr;
 	}
 
 	void BackgroundController::Init()

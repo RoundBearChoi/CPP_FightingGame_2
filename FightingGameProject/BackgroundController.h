@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
-#include "ControllerBase.h"
 #include "BackgroundObj.h"
+
+#include "iBackgroundController.h"
 
 namespace RB::Background
 {
-	class BackgroundController : public RB::Controllers::ControllerBase
+	class BackgroundController : public iBackgroundController
 	{
 	public:
 		BackgroundController();

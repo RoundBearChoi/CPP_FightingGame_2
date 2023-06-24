@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "iCamObj.h"
 #include "Time.h"
 
+#include "iCamObj.h"
 #include "InputController.h"
 
 namespace RB::Cam

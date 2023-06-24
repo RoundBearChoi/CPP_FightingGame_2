@@ -1,5 +1,6 @@
 #pragma once
 #include "ControllerBase.h"
+
 #include "iCamObj.h"
 
 namespace RB::Cam

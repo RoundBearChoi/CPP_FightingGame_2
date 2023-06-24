@@ -29,7 +29,7 @@ namespace RB::Cam
 		_camObj.OnFixedUpdate();
 	}
 
-	CamObj* CamController::GetCamObj()
+	iCamObj* CamController::GetCamObj()
 	{
 		return &_camObj;
 	}

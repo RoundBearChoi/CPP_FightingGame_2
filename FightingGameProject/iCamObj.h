@@ -3,10 +3,10 @@
 
 namespace RB::Cam
 {
-	class iCam
+	class iCamObj
 	{
 	public:
-		virtual ~iCam() = default;
+		virtual ~iCamObj() = default;
 
 	public:
 		virtual olc::vf2d GetPosition() = 0;

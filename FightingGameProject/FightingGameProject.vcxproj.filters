@@ -339,7 +339,7 @@
     <ClInclude Include="PivotType.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="iCam.h">
+    <ClInclude Include="iCamObj.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
     <ClInclude Include="PlayerCollider.h">

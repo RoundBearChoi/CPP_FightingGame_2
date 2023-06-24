@@ -1,14 +1,14 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "iCam.h"
+#include "iCamObj.h"
 #include "Time.h"
 
 #include "InputController.h"
 
 namespace RB::Cam
 {
-	class CamObj : public iCam
+	class CamObj : public iCamObj
 	{
 	public:
 		CamObj() = default;

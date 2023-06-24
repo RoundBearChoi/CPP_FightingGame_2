@@ -1,6 +1,6 @@
 #pragma once
 #include "ControllerBase.h"
-#include "CamObj.h"
+#include "iCamObj.h"
 
 namespace RB::Cam
 {
@@ -11,7 +11,7 @@ namespace RB::Cam
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual CamObj* GetCamObj() = 0;
+		virtual iCamObj* GetCamObj() = 0;
 	};
 
 	extern iCamController* CAM_CONTROLLER;

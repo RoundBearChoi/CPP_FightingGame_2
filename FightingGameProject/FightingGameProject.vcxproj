@@ -251,7 +251,7 @@
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="CamObj.h" />
     <ClInclude Include="CamController.h" />
-    <ClInclude Include="iCam.h" />
+    <ClInclude Include="iCamObj.h" />
     <ClInclude Include="PivotType.h" />
     <ClInclude Include="SpriteEnum.h" />
     <ClInclude Include="iController.h" />

@@ -235,6 +235,9 @@
     <ClCompile Include="iCamController.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
+    <ClCompile Include="iHurtBoxDataController.cpp">
+      <Filter>Source Files\HBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -482,6 +485,9 @@
     </ClInclude>
     <ClInclude Include="iCamController.h">
       <Filter>Source Files\Cam</Filter>
+    </ClInclude>
+    <ClInclude Include="iHurtBoxDataController.h">
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

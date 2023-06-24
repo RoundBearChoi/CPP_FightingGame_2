@@ -20,7 +20,7 @@ namespace RB::PlayerStates
 	void P0_Dummy::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::HBox::HurtBoxDataController::PTR == nullptr)
+			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
 		{
 			return;
 		}

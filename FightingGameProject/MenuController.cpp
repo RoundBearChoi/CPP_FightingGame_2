@@ -29,7 +29,7 @@ namespace RB::HBox
 
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
-			RB::HBox::HurtBoxDataController::PTR == nullptr)
+			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -45,7 +45,7 @@ namespace RB::HBox
 
 		if (_notificationFrameCount > 0)
 		{
-			const std::string& path = RB::HBox::HurtBoxDataController::PTR->GetPath(_currentSpriteEnum);
+			const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(_currentSpriteEnum);
 			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved + path, olc::GREEN);
 		}
 
@@ -80,7 +80,7 @@ namespace RB::HBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HBox::HBoxDataSet* set = RB::HBox::HurtBoxDataController::PTR->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{
@@ -127,7 +127,7 @@ namespace RB::HBox
 
 	size_t MenuController::_GetAABBCount()
 	{
-		RB::HBox::HBoxDataSet* set = RB::HBox::HurtBoxDataController::PTR->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{

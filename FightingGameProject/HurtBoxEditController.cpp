@@ -11,7 +11,7 @@ namespace RB::HBox
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
-			RB::HBox::HurtBoxDataController::PTR == nullptr ||
+			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr ||
 			RB::HBox::MenuController::PTR == nullptr ||
 			RB::Cam::CAM_CONTROLLER == nullptr)
 		{
@@ -53,7 +53,7 @@ namespace RB::HBox
 		}
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HurtBoxDataController::PTR->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
 
 		return dataSet;
 	}
@@ -77,7 +77,7 @@ namespace RB::HBox
 		}
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HurtBoxDataController::PTR->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
 		RB::HBox::HBoxData* data = dataSet->GetHBoxDataByFrame(currentIndex);
 
 		return data;
@@ -237,7 +237,7 @@ namespace RB::HBox
 			std::cout << std::endl;
 			std::cout << "saving hurtbox set" << std::endl;
 
-			const std::string& path = RB::HBox::HurtBoxDataController::PTR->GetPath(set->GetSpriteEnum());
+			const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(set->GetSpriteEnum());
 
 			std::ofstream file(path);
 

@@ -4,12 +4,12 @@ namespace RB::HBox
 {
 	HurtBoxDataController::HurtBoxDataController()
 	{
-		PTR = this;
+		HURTBOX_DATA_CONTROLLER = this;
 	}
 
 	HurtBoxDataController::~HurtBoxDataController()
 	{
-		PTR = nullptr;
+		HURTBOX_DATA_CONTROLLER = nullptr;
 	}
 
 	void HurtBoxDataController::Init()

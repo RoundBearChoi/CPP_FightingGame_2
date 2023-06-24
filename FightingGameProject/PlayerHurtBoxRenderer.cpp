@@ -10,7 +10,7 @@ namespace RB::Render
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PlayerAnimationController::PTR == nullptr ||
-			RB::HBox::HurtBoxDataController::PTR == nullptr)
+			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -50,7 +50,7 @@ namespace RB::Render
 		}
 		
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HurtBoxDataController::PTR->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
 
 		if (dataSet == nullptr)
 		{

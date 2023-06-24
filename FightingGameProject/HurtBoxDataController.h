@@ -1,25 +1,23 @@
 #pragma once
 #include <vector>
-#include "ControllerBase.h"
 #include "HBoxLoader.h"
+
+#include "iHurtBoxDataController.h"
 
 namespace RB::HBox
 {
-	class HurtBoxDataController : public RB::Controllers::ControllerBase
+	class HurtBoxDataController : public iHurtBoxDataController
 	{
 	public:
 		HurtBoxDataController();
 		~HurtBoxDataController() override;
-		static inline HurtBoxDataController* PTR = nullptr;
 
-	public:
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-	public:
-		HBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum);
-		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum);
+		HBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum) override;
+		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
 		HBoxLoader _loader;

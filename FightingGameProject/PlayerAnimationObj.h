@@ -1,15 +1,17 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "iPlayer.h"
 #include "AnimationRenderer.h"
 #include "SpriteEnum.h"
 #include "SkipFixedUpdates.h"
 #include "AnimationRenderSettings.h"
-#include "AnimationSpecs.h"
+
+#include "iPlayerAnimationObj.h"
+#include "iPlayer.h"
+//#include "AnimationSpecs.h"
 
 namespace RB::Render
 {
-	class PlayerAnimationObj
+	class PlayerAnimationObj : public iPlayerAnimationObj
 	{
 	public:
 		PlayerAnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer);
@@ -18,7 +20,6 @@ namespace RB::Render
 	public:
 		void OnFixedUpdate();
 
-	public:
 		void UpdateAnimationIndex();
 		void ManualAddAnimationIndex(int32_t amount);
 		void LimitAnimationIndex();
@@ -29,8 +30,6 @@ namespace RB::Render
 		RB::Players::iPlayer* GetPlayer();
 		const AnimationSpecs& GetAnimationSpecs();
 		int32_t GetCurrentIndex();
-
-	public:
 		void RenderAnimation();
 
 	private:

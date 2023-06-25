@@ -6,6 +6,9 @@
 #include "iPlayer.h"
 #include "iPlayerAnimationController.h"
 
+#include "iPlayerAnimationObj.h"
+#include "PlayerAnimationObj.h"
+
 #include "ActivePlayerStates.h"
 #include "PlayerState.h"
 
@@ -26,11 +29,11 @@ namespace RB::Render
 		void SetNewAnimationObjsOnChange(RB::Players::iPlayer& player) override;
 		RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) override;
 		void DeleteAnimationObj(RB::Players::PlayerID playerID) override;
-		PlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
+		iPlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
 		SpriteRenderer _spriteRenderer;
 		AnimationLoader _animationLoader;
-		std::vector<PlayerAnimationObj*> _vecPlayerAnimationObjs;
+		std::vector<iPlayerAnimationObj*> _vecPlayerAnimationObjs;
 	};
 }

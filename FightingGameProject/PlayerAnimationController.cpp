@@ -150,7 +150,7 @@ namespace RB::Render
 
 			AnimationRenderer* aniRenderer = _animationLoader.GetAnimation(spriteEnum);
 
-			PlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], aniRenderer);
+			iPlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], aniRenderer);
 
 			_vecPlayerAnimationObjs.push_back(animationObj);
 		}
@@ -173,7 +173,7 @@ namespace RB::Render
 		{
 			DeleteAnimationObj(playerID);
 
-			PlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
+			iPlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
 
 			_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 		}
@@ -209,7 +209,7 @@ namespace RB::Render
 		}
 	}
 
-	PlayerAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
+	iPlayerAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{

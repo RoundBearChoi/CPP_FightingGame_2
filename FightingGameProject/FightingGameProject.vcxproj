@@ -230,6 +230,7 @@
     <ClInclude Include="iInputController.h" />
     <ClInclude Include="iMenuController.h" />
     <ClInclude Include="iPlayerAnimationController.h" />
+    <ClInclude Include="iPlayerAnimationObj.h" />
     <ClInclude Include="iPlayerController.h" />
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />

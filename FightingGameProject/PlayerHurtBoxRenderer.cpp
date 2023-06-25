@@ -42,7 +42,7 @@ namespace RB::Render
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		PlayerAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(playerID, spriteEnum);
+		iPlayerAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(playerID, spriteEnum);
 		
 		if (aniObj == nullptr)
 		{

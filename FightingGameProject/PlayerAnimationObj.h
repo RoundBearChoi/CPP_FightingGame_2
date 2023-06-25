@@ -7,7 +7,6 @@
 
 #include "iPlayerAnimationObj.h"
 #include "iPlayer.h"
-//#include "AnimationSpecs.h"
 
 namespace RB::Render
 {
@@ -18,19 +17,19 @@ namespace RB::Render
 		~PlayerAnimationObj() = default;
 
 	public:
-		void OnFixedUpdate();
+		void OnFixedUpdate() override;
 
-		void UpdateAnimationIndex();
-		void ManualAddAnimationIndex(int32_t amount);
-		void LimitAnimationIndex();
-		olc::vf2d GetSourceSize();
-		olc::vf2d GetSourcePos(olc::vf2d sourceSize);
-		olc::vf2d GetRenderSize();
-		olc::vf2d GetRenderOffset();
-		RB::Players::iPlayer* GetPlayer();
-		const AnimationSpecs& GetAnimationSpecs();
-		int32_t GetCurrentIndex();
-		void RenderAnimation();
+		void UpdateAnimationIndex() override;
+		void ManualAddAnimationIndex(int32_t amount) override;
+		void LimitAnimationIndex() override;
+		olc::vf2d GetSourceSize() override;
+		olc::vf2d GetSourcePos(olc::vf2d sourceSize) override;
+		olc::vf2d GetRenderSize() override;
+		olc::vf2d GetRenderOffset() override;
+		RB::Players::iPlayer* GetPlayer() override;
+		const AnimationSpecs& GetAnimationSpecs() override;
+		int32_t GetCurrentIndex() override;
+		void RenderAnimation() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;

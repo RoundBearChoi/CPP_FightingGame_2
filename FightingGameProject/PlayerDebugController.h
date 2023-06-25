@@ -1,5 +1,4 @@
 #pragma once
-#include "ControllerBase.h"
 
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
@@ -8,13 +7,15 @@
 #include "PlayerBoxRenderer.h"
 #include "PlayerPositionRenderer.h"
 
+#include "iPlayerDebugController.h"
+
 namespace RB::Render
 {
-	class PlayerDebugController : public RB::Controllers::ControllerBase
+	class PlayerDebugController : public iPlayerDebugController
 	{
 	public:
 		PlayerDebugController();
-		~PlayerDebugController() override {};
+		~PlayerDebugController() override;
 
 	public:
 		void Init() override;

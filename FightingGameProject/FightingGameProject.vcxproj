@@ -161,6 +161,7 @@
     <ClCompile Include="iMenuController.cpp" />
     <ClCompile Include="iPlayerAnimationController.cpp" />
     <ClCompile Include="iPlayerController.cpp" />
+    <ClCompile Include="iPlayerDebugController.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
@@ -232,6 +233,7 @@
     <ClInclude Include="iPlayerAnimationController.h" />
     <ClInclude Include="iPlayerAnimationObj.h" />
     <ClInclude Include="iPlayerController.h" />
+    <ClInclude Include="iPlayerDebugController.h" />
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="jsonExample.h" />

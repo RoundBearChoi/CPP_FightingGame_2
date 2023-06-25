@@ -250,6 +250,9 @@
     <ClCompile Include="iPlayerAnimationController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="iPlayerDebugController.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -514,6 +517,9 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="iPlayerAnimationObj.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="iPlayerDebugController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>

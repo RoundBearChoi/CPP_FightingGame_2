@@ -253,6 +253,9 @@
     <ClCompile Include="iPlayerDebugController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="iSpriteDataController.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -521,6 +524,9 @@
     </ClInclude>
     <ClInclude Include="iPlayerDebugController.h">
       <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="iSpriteDataController.h">
+      <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

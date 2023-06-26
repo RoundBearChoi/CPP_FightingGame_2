@@ -8,9 +8,9 @@
 #include "iPlayerController.h"
 #include "iMenuController.h"
 #include "iPlayerAnimationController.h"
+#include "iSpriteDataController.h"
 
 #include "HurtBoxDataController.h"
-#include "SpriteDataController.h"
 
 namespace RB::HBox
 {

@@ -6,7 +6,7 @@ namespace RB::Sprites
 	{
 		SetHash(typeid(*this));
 
-		PTR = this;
+		SPRITE_DATA_CONTROLLER = this;
 	}
 
 	SpriteDataController::~SpriteDataController()
@@ -16,7 +16,7 @@ namespace RB::Sprites
 			delete _vecEnumStrings[i];
 		}
 
-		PTR = nullptr;
+		SPRITE_DATA_CONTROLLER = nullptr;
 	}
 
 	void SpriteDataController::Init()

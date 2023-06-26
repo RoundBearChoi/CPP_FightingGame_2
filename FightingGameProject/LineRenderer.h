@@ -2,7 +2,7 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 
-#include "CamController.h"
+#include "iCamController.h"
 
 namespace RB::Render
 {

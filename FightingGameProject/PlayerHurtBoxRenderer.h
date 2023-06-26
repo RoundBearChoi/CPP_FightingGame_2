@@ -4,8 +4,7 @@
 
 #include "ActivePlayerStates.h"
 
-#include "HurtBoxDataController.h"
-
+#include "iHurtBoxDataController.h"
 #include "iPlayerAnimationController.h"
 #include "iPlayerController.h"
 

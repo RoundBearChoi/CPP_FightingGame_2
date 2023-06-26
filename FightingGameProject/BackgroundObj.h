@@ -4,7 +4,7 @@
 #include "SpriteEnum.h"
 #include "SpriteRenderer.h"
 
-#include "CamController.h"
+#include "iCamController.h"
 
 namespace RB::Background
 {

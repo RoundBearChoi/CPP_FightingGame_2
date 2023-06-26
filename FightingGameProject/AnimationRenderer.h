@@ -5,7 +5,7 @@
 #include "AnimationRenderSettings.h"
 #include "AnimationSpecs.h"
 
-#include "CamController.h"
+#include "iCamController.h"
 
 namespace RB::Render
 {

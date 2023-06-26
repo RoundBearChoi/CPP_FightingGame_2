@@ -6,7 +6,7 @@
 #include "LoadedSprite.h"
 #include "PivotType.h"
 
-#include "CamController.h"
+#include "iCamController.h"
 
 namespace RB::Render
 {

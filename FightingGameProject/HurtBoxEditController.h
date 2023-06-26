@@ -6,12 +6,11 @@
 #include "iHurtBoxEditController.h"
 #include "iMenuController.h"
 #include "iPlayerAnimationController.h"
+#include "iHurtBoxDataController.h"
+#include "iCamController.h"
 
 #include "ActivePlayerStates.h"
 #include "PlayerState.h"
-
-#include "HurtBoxDataController.h"
-#include "CamController.h"
 
 namespace RB::HBox
 {

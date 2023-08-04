@@ -217,7 +217,7 @@
     <ClCompile Include="HurtBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HBoxDataSetPath.h">
+    <ClCompile Include="HBoxDataListPath.h">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="BackgroundObj.cpp">
@@ -450,7 +450,7 @@
     <ClInclude Include="HBoxData.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="HBoxDataSet.h">
+    <ClInclude Include="HBoxDataList.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="P0_Dummy.h">

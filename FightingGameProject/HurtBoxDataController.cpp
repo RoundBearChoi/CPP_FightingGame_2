@@ -18,10 +18,10 @@ namespace RB::HBox
 
 		_loader.Init();
 
-		//load every hurtbox dataset
-		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_dataset_sample));
-		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_idle));
-		_vecDataSets.push_back(_loader.LoadDataSet("HurtBoxSpecs/fighter_0_walk.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_walk));
+		//load every hurtbox datalist
+		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_datalist_sample));
+		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_idle));
+		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_walk.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_walk));
 	}
 
 	void HurtBoxDataController::OnUpdate()
@@ -34,13 +34,13 @@ namespace RB::HBox
 
 	}
 
-	HBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)
+	HBoxDataList* HurtBoxDataController::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecDataSets.size(); i++)
+		for (size_t i = 0; i < _vecLists.size(); i++)
 		{
-			if (_vecDataSets[i].GetSpriteEnum() == spriteEnum)
+			if (_vecLists[i].GetSpriteEnum() == spriteEnum)
 			{
-				return &_vecDataSets[i];
+				return &_vecLists[i];
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace RB::HBox
 
 	const std::string& HurtBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		HBoxDataSetPath* p = _loader.GetDataSetPath(spriteEnum);
+		HBoxDataListPath* p = _loader.GetDataListPath(spriteEnum);
 
 		if (p != nullptr)
 		{

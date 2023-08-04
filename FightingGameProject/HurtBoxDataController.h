@@ -16,12 +16,12 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		HBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum) override;
+		HBoxDataList* GetDataList(RB::Sprites::SpriteEnum spriteEnum) override;
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
 		HBoxLoader _loader;
-		std::vector<HBoxDataSet> _vecDataSets;
+		std::vector<HBoxDataList> _vecLists;
 
 	private:
 		std::string _none = "none";

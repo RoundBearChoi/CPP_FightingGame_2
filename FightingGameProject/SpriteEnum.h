@@ -9,7 +9,7 @@ namespace RB::Sprites
 		x_white,
 		white_sq_tr80,
 
-		hurtbox_dataset_sample,
+		hurtbox_datalist_sample,
 
 		fighter_0_idle,
 		fighter_0_walk,

@@ -103,12 +103,12 @@ namespace RB::HBox
 		return root;
 	}
 
-	HBoxDataSet HBoxLoader::LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	HBoxDataList HBoxLoader::LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
-		if (GetDataSetPath(spriteEnum) == nullptr)
+		if (GetDataListPath(spriteEnum) == nullptr)
 		{
-			_vecDataSetPaths.push_back(HBoxDataSetPath{ path, spriteEnum });
+			_vecLists.push_back(HBoxDataListPath{ path, spriteEnum });
 		}
 
 		//load
@@ -116,7 +116,7 @@ namespace RB::HBox
 
 		if (root == nullptr)
 		{
-			HBoxDataSet defaultSet{ spriteEnum };
+			HBoxDataList defaultSet{ spriteEnum };
 
 			HBoxData data0;
 			data0.SetFrameNameAndParse("frame_0");
@@ -148,7 +148,7 @@ namespace RB::HBox
 		std::vector<HBoxData> vecData;
 		vecData.reserve(length);
 
-		HBoxDataSet resultSet{ spriteEnum };
+		HBoxDataList resultSet{ spriteEnum };
 
 		for (size_t i = 0; i < length; i++)
 		{
@@ -255,13 +255,13 @@ namespace RB::HBox
 		return RB::Collisions::AABB();
 	}
 
-	RB::HBox::HBoxDataSetPath* HBoxLoader::GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum)
+	RB::HBox::HBoxDataListPath* HBoxLoader::GetDataListPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecDataSetPaths.size(); i++)
+		for (size_t i = 0; i < _vecLists.size(); i++)
 		{
-			if (_vecDataSetPaths[i].GetSpriteEnum() == spriteEnum)
+			if (_vecLists[i].GetSpriteEnum() == spriteEnum)
 			{
-				return &_vecDataSetPaths[i];
+				return &_vecLists[i];
 			}
 		}
 

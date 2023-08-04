@@ -8,8 +8,8 @@
 #include "JGetter.h"
 #include "AABB.h"
 #include "HBoxData.h"
-#include "HBoxDataSet.h"
-#include "HBoxDataSetPath.h"
+#include "HBoxDataset.h"
+#include "HBoxDatasetPath.h"
 
 namespace RB::HBox
 {
@@ -31,15 +31,15 @@ namespace RB::HBox
 		/// <summary>
 		/// only use during initialization (vector addresses)
 		/// </summary>
-		HBoxDataSet LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
+		HBoxDataset LoadDataSet(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const size_t frame);
 		std::string ParseName(const json_object_s& wholeObj, const size_t frame);
 
 	public:
 		RB::Collisions::AABB GetAABB(const json_array_s& array, size_t index);
-		RB::HBox::HBoxDataSetPath* GetDataSetPath(RB::Sprites::SpriteEnum spriteEnum);
+		RB::HBox::HBoxDatasetPath* GetDatasetPath(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
-		std::vector<HBoxDataSetPath> _vecDataSetPaths;
+		std::vector<HBoxDatasetPath> _vecDataSetPaths;
 	};
 }

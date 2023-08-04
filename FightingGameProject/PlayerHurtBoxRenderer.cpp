@@ -50,7 +50,7 @@ namespace RB::Render
 		}
 		
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataset* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
 
 		if (dataSet == nullptr)
 		{

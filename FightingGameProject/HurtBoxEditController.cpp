@@ -28,7 +28,7 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBoxDataSet* set = GetCurrentHurtBoxDataSet(RB::Players::PlayerID::PLAYER_1);
+		RB::HBox::HBoxDataset* set = GetCurrentHurtBoxDataset(RB::Players::PlayerID::PLAYER_1);
 		RB::HBox::HBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
@@ -44,7 +44,7 @@ namespace RB::HBox
 
 	}
 
-	RB::HBox::HBoxDataSet* HurtBoxEditController::GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID)
+	RB::HBox::HBoxDataset* HurtBoxEditController::GetCurrentHurtBoxDataset(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -63,7 +63,7 @@ namespace RB::HBox
 		}
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataset* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
 
 		return dataSet;
 	}
@@ -87,7 +87,7 @@ namespace RB::HBox
 		}
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
-		RB::HBox::HBoxDataSet* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
+		RB::HBox::HBoxDataset* dataSet = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(spriteEnum);
 		RB::HBox::HBoxData* data = dataSet->GetHBoxDataByFrame(currentIndex);
 
 		return data;
@@ -238,7 +238,7 @@ namespace RB::HBox
 			_selectedIndex = 0;
 		}
 	}
-	void HurtBoxEditController::_SaveSet_OnPress(RB::HBox::HBoxDataSet* set)
+	void HurtBoxEditController::_SaveSet_OnPress(RB::HBox::HBoxDataset* set)
 	{
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 

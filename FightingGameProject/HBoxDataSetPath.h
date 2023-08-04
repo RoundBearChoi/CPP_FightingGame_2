@@ -4,16 +4,16 @@
 
 namespace RB::HBox
 {
-	class HBoxDataSetPath
+	class HBoxDatasetPath
 	{
 	public:
-		HBoxDataSetPath(std::string path, RB::Sprites::SpriteEnum spriteEnum)
+		HBoxDatasetPath(std::string path, RB::Sprites::SpriteEnum spriteEnum)
 		{
 			_path = path;
 			_spriteEnum = spriteEnum;
 		}
 
-		~HBoxDataSetPath() = default;
+		~HBoxDatasetPath() = default;
 
 	public:
 		const std::string& GetPath()

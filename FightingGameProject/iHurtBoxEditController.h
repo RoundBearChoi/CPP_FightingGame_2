@@ -1,6 +1,6 @@
 #pragma once
 #include "ControllerBase.h"
-#include "HBoxDataSet.h"
+#include "HBoxDataset.h"
 #include "AABB.h"
 #include "PlayerID.h"
 
@@ -12,7 +12,7 @@ namespace RB::HBox
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual RB::HBox::HBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID) = 0;
+		virtual RB::HBox::HBoxDataset* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID) = 0;
 		virtual RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID) = 0;
 		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) = 0;
 	};

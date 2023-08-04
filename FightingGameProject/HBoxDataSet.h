@@ -5,15 +5,15 @@
 
 namespace RB::HBox
 {
-	class HBoxDataSet
+	class HBoxDataset
 	{
 	public:
-		HBoxDataSet(RB::Sprites::SpriteEnum spriteEnum)
+		HBoxDataset(RB::Sprites::SpriteEnum spriteEnum)
 		{
 			_spriteEnum = spriteEnum;
 		}
 
-		~HBoxDataSet() = default;
+		~HBoxDataset() = default;
 
 	public:
 		void AddHBoxData(HBoxData data)

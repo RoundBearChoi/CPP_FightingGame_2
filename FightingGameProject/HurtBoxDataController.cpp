@@ -34,7 +34,7 @@ namespace RB::HBox
 
 	}
 
-	HBoxDataset* HurtBoxDataController::GetDataset(RB::Sprites::SpriteEnum spriteEnum)
+	HBoxDataSet* HurtBoxDataController::GetDataSet(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecDataSets.size(); i++)
 		{
@@ -49,7 +49,7 @@ namespace RB::HBox
 
 	const std::string& HurtBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		HBoxDatasetPath* p = _loader.GetDatasetPath(spriteEnum);
+		HBoxDataSetPath* p = _loader.GetDataSetPath(spriteEnum);
 
 		if (p != nullptr)
 		{

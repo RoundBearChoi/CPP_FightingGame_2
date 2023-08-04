@@ -150,7 +150,7 @@
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="HBoxData.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
-    <ClCompile Include="HBoxDatasetPath.h" />
+    <ClCompile Include="HBoxDataSetPath.h" />
     <ClCompile Include="HurtBoxEditController.cpp" />
     <ClCompile Include="HBoxLoader.cpp" />
     <ClCompile Include="iBackgroundController.cpp" />
@@ -223,7 +223,7 @@
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HBoxData.h" />
-    <ClInclude Include="HBoxDataset.h" />
+    <ClInclude Include="HBoxDataSet.h" />
     <ClInclude Include="HurtBoxEditController.h" />
     <ClInclude Include="iBackgroundController.h" />
     <ClInclude Include="iCamController.h" />

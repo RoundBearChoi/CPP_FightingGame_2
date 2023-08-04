@@ -80,7 +80,7 @@ namespace RB::HBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HBox::HBoxDataset* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{
@@ -127,7 +127,7 @@ namespace RB::HBox
 
 	size_t MenuController::_GetAABBCount()
 	{
-		RB::HBox::HBoxDataset* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(_currentSpriteEnum);
+		RB::HBox::HBoxDataSet* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataSet(_currentSpriteEnum);
 
 		if (set == nullptr)
 		{

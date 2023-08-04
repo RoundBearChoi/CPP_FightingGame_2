@@ -1,6 +1,6 @@
 #pragma once
 #include "ControllerBase.h"
-#include "HBoxDataset.h"
+#include "HBoxDataSet.h"
 
 namespace RB::HBox
 {
@@ -11,7 +11,7 @@ namespace RB::HBox
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual HBoxDataset* GetDataSet(RB::Sprites::SpriteEnum spriteEnum) = 0;
+		virtual HBoxDataSet* GetDataSet(RB::Sprites::SpriteEnum spriteEnum) = 0;
 		virtual const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) = 0;
 	};
 

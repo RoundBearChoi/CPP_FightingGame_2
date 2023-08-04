@@ -25,7 +25,7 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::HBox::HBoxDataset* GetCurrentHurtBoxDataset(RB::Players::PlayerID playerID) override;
+		RB::HBox::HBoxDataSet* GetCurrentHurtBoxDataSet(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID) override;
 		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
 
@@ -34,7 +34,7 @@ namespace RB::HBox
 		void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
 		void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
 		void _UpdateSelectedIndex_OnPress(size_t count);
-		void _SaveSet_OnPress(RB::HBox::HBoxDataset* set);
+		void _SaveSet_OnPress(RB::HBox::HBoxDataSet* set);
 
 	private:
 		size_t _selectedIndex = 0;

@@ -2,12 +2,14 @@
 
 namespace RB::PlayerStates
 {
+	P0_Dummy::P0_Dummy(Sprites::SpriteEnum startingSpriteEnum)
+	{
+		_spriteEnum = startingSpriteEnum;
+	}
+
 	void P0_Dummy::OnEnter()
 	{
 		ActivePlayerStates::AddPlayerState(this);
-
-		//change spriteEnum to edit different sprites
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
 
 		_manualAnimationUpdater.OnEnter(_spriteEnum);
 	}

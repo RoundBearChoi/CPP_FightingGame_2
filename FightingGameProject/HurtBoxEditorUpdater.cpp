@@ -20,7 +20,12 @@ namespace RB::Updaters
 	void HurtBoxEditorUpdater::Init()
 	{
 		RB::Players::PlayerController* playerController = new RB::Players::PlayerController();
-		playerController->AddPlayer(new RB::Players::Player, new RB::PlayerStates::P0_Dummy(), olc::vi2d{ 0, 0 }, RB::Players::PlayerID::PLAYER_1);
+
+		playerController->AddPlayer(new RB::Players::Player,
+			new RB::PlayerStates::P0_Dummy(RB::Sprites::SpriteEnum::fighter_0_idle), //set starting sprite enum
+			olc::vi2d{ 0, 0 },
+			RB::Players::PlayerID::PLAYER_1);
+
 		playerController->SetManualAnimationUpdate(RB::Players::PlayerID::PLAYER_1, true);
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(playerController));

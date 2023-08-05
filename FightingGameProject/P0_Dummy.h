@@ -12,7 +12,7 @@ namespace RB::PlayerStates
 	class P0_Dummy : public RB::PlayerStates::PlayerState
 	{
 	public:
-		P0_Dummy() = default;
+		P0_Dummy(Sprites::SpriteEnum startingSpriteEnum);
 		~P0_Dummy() = default;
 
 	public:

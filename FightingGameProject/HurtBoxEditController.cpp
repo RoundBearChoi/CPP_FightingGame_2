@@ -28,11 +28,11 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBoxDataList* set = GetCurrentHurtBoxDataList(RB::Players::PlayerID::PLAYER_1);
+		RB::HBox::HBoxDataList* list = GetCurrentHurtBoxDataList(RB::Players::PlayerID::PLAYER_1);
 		RB::HBox::HBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
-		_SaveSet_OnPress(set);
+		_SaveSet_OnPress(list);
 		_Add_Delete_AABB_OnPress(data);
 		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
 		_EditAABB_OnPress(aabb);

@@ -35,6 +35,8 @@ namespace RB::HBox
 				return result;
 			}
 
+			//temp - adding default data if not found
+
 			HBoxData data;
 			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
 			data.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f });

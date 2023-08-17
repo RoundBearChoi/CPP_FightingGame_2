@@ -41,6 +41,6 @@ namespace RB::HBox
 
 	private:
 		std::vector<HBoxDataListPath> _vecLists;
-		std::string _path;
+		std::string _samplePath;
 	};
 }

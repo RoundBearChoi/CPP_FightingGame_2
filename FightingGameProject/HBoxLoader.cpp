@@ -4,14 +4,14 @@ namespace RB::HBox
 {
 	void HBoxLoader::Init(std::string path)
 	{
-		SaveSample();
+		_samplePath = path;
 
-		_path = path;
+		SaveSample();
 	}
 
 	void HBoxLoader::SaveSample()
 	{
-		std::ofstream file(_path);
+		std::ofstream file(_samplePath);
 
 		if (file.is_open())
 		{

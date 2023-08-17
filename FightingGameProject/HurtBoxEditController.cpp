@@ -32,7 +32,7 @@ namespace RB::HBox
 		RB::HBox::HBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
-		_SaveSet_OnPress(list);
+		_SaveHurtBoxes_OnPress(list);
 		_Add_Delete_AABB_OnPress(data);
 		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
 		_EditAABB_OnPress(aabb);
@@ -136,7 +136,7 @@ namespace RB::HBox
 
 		if (insButton.bPressed)
 		{
-			data->AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f });
+			data->AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
 
 			_selectedIndex = data->GetAABBCount() - 1;
 		}
@@ -238,7 +238,7 @@ namespace RB::HBox
 			_selectedIndex = 0;
 		}
 	}
-	void HurtBoxEditController::_SaveSet_OnPress(RB::HBox::HBoxDataList* set)
+	void HurtBoxEditController::_SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set)
 	{
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 

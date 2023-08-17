@@ -34,7 +34,7 @@ namespace RB::HBox
 		void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
 		void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
 		void _UpdateSelectedIndex_OnPress(size_t count);
-		void _SaveSet_OnPress(RB::HBox::HBoxDataList* set);
+		void _SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set);
 
 	private:
 		size_t _selectedIndex = 0;

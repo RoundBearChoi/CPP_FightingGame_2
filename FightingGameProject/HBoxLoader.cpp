@@ -7,7 +7,6 @@ namespace RB::HBox
 		SaveSample();
 
 		_path = path;
-		//std::string path = "HurtBoxSpecs/Sample.HurtBoxSpecs";
 	}
 
 	void HBoxLoader::SaveSample()
@@ -121,23 +120,9 @@ namespace RB::HBox
 
 			HBoxData data0;
 			data0.SetFrameNameAndParse("frame_0");
-			data0.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f }); //center on playerPos by default
+			data0.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //0, 0 by default
 
 			defaultSet.AddHBoxData(data0);
-
-			//HurtBoxData data1;
-			//data1.SetFrameName("frame_1");
-			//data1.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 50.0f, 50.0f }); //test
-			//data1.AddAABB(RB::Collisions::AABB{ 70.0f, -70.0f, 50.0f, 50.0f }); //test
-			//data1.AddAABB(RB::Collisions::AABB{ 70.0f, -180.0f, 50.0f, 50.0f }); //test
-			//
-			//HurtBoxData data2;
-			//data2.SetFrameName("frame_2");
-			//data2.AddAABB(RB::Collisions::AABB{ 50.0f, 0.0f, 50.0f, 50.0f }); //test
-			//data2.AddAABB(RB::Collisions::AABB{ 150.0f, 0.0f, 50.0f, 50.0f }); //test
-			//
-			//defaultSet.AddHurtBoxData(data1);
-			//defaultSet.AddHurtBoxData(data2);
 
 			return defaultSet;
 		}

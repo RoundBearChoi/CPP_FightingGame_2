@@ -20,7 +20,7 @@ namespace RB::HBox
 		~HBoxLoader() = default;
 
 	public:
-		void Init();
+		void Init(std::string path);
 		void SaveSample();
 
 	public:
@@ -41,5 +41,6 @@ namespace RB::HBox
 
 	private:
 		std::vector<HBoxDataListPath> _vecLists;
+		std::string _path;
 	};
 }

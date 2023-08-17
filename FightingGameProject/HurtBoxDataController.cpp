@@ -16,7 +16,7 @@ namespace RB::HBox
 	{
 		SetHash(typeid(*this));
 
-		_loader.Init();
+		_loader.Init("HurtBoxSpecs/Sample.HurtBoxSpecs");
 
 		//load every hurtbox datalist
 		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_datalist_sample));

@@ -2,16 +2,17 @@
 
 namespace RB::HBox
 {
-	void HBoxLoader::Init()
+	void HBoxLoader::Init(std::string path)
 	{
 		SaveSample();
+
+		_path = path;
+		//std::string path = "HurtBoxSpecs/Sample.HurtBoxSpecs";
 	}
 
 	void HBoxLoader::SaveSample()
 	{
-		std::string path = "HurtBoxSpecs/Sample.HurtBoxSpecs";
-
-		std::ofstream file(path);
+		std::ofstream file(_path);
 
 		if (file.is_open())
 		{

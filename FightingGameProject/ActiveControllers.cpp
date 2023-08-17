@@ -8,7 +8,7 @@ namespace RB::Controllers
 	}
 
 	/// <summary>
-	/// adding also initializes
+	/// adding controller also initializes it
 	/// </summary>
 	/// <param name="newController"></param>
 	void ActiveControllers::AddController(iController* newController)

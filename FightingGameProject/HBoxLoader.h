@@ -20,7 +20,7 @@ namespace RB::HBox
 		~HBoxLoader() = default;
 
 	public:
-		void Init(std::string path);
+		void InitSample(std::string path);
 		void SaveSample();
 
 	public:

@@ -2,7 +2,7 @@
 
 namespace RB::HBox
 {
-	void HBoxLoader::Init(std::string path)
+	void HBoxLoader::InitSample(std::string path)
 	{
 		_samplePath = path;
 

@@ -7,6 +7,10 @@ namespace RB::Controllers
 		_DestroyAll();
 	}
 
+	/// <summary>
+	/// adding also initializes
+	/// </summary>
+	/// <param name="newController"></param>
 	void ActiveControllers::AddController(iController* newController)
 	{
 		if (newController != nullptr)

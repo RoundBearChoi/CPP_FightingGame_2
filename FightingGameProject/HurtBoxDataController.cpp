@@ -16,6 +16,7 @@ namespace RB::HBox
 	{
 		SetHash(typeid(*this));
 
+		//temp
 		_loader.InitSample("HurtBoxSpecs/Sample.HurtBoxSpecs");
 
 		//temp - load every hurtbox datalist

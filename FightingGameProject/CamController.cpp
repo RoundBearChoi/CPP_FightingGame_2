@@ -29,6 +29,11 @@ namespace RB::Cam
 		_camObj.OnFixedUpdate();
 	}
 
+	void CamController::SetZoom(float_t zoom)
+	{
+		_camObj.SetZoom(zoom);
+	}
+
 	iCamObj* CamController::GetCamObj()
 	{
 		return &_camObj;

@@ -17,6 +17,7 @@ namespace RB::Cam
 		olc::vf2d GetPosition() override;
 		olc::vf2d GetRelativePosition(olc::vf2d pos) override;
 		float_t GetZoom() override;
+		void SetZoom(float_t zoom) override;
 
 		void Init();
 		void OnUpdate();

@@ -19,6 +19,11 @@ namespace RB::Cam
 		return _zoom;
 	}
 
+	void CamObj::SetZoom(float_t zoom)
+	{
+		_zoom = zoom;
+	}
+
 	void CamObj::Init()
 	{
 

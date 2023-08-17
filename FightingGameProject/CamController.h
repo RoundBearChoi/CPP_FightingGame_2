@@ -18,7 +18,8 @@ namespace RB::Cam
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		iCamObj* GetCamObj();
+		void SetZoom(float_t zoom) override;
+		iCamObj* GetCamObj() override;
 
 	private:
 		CamObj _camObj;

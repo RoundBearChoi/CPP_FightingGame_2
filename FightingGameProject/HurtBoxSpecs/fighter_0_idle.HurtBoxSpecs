@@ -120,10 +120,10 @@
     "frame_7":
     [
         {
-        "posX" : -25,
-        "posY" : 25,
-        "width" : 50,
-        "height" : 50
+        "posX" : 0,
+        "posY" : 0,
+        "width" : 0,
+        "height" : 0
         }
     ],
 
@@ -132,8 +132,8 @@
         {
         "posX" : 0,
         "posY" : 0,
-        "width" : 150.458,
-        "height" : 141.061
+        "width" : 132.162,
+        "height" : 74.2205
         }
     ]
 }

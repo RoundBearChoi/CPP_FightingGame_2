@@ -50,6 +50,7 @@ namespace RB::Render
 		}
 		
 		int32_t currentIndex = aniObj->GetCurrentIndex();
+
 		RB::HBox::HBoxDataList* dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 
 		if (dataList == nullptr)
@@ -60,6 +61,11 @@ namespace RB::Render
 		RB::HBox::HBoxData* data = dataList->GetHBoxDataByFrame(currentIndex);
 
 		size_t count = data->GetAABBCount();
+
+		if (count == 0)
+		{
+			int n = 0;
+		}
 
 		for (size_t i = 0; i < count; i++)
 		{

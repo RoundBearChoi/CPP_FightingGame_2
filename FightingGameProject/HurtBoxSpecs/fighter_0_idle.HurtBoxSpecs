@@ -110,10 +110,10 @@
     "frame_6":
     [
         {
-        "posX" : -25,
-        "posY" : 25,
-        "width" : 50,
-        "height" : 50
+        "posX" : 0,
+        "posY" : 0,
+        "width" : 0,
+        "height" : 0
         }
     ],
 

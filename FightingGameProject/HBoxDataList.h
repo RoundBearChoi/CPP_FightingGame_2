@@ -26,6 +26,11 @@ namespace RB::HBox
 			return _vecHurtBoxData.size();
 		}
 
+		/// <summary>
+		/// adding default data if not found
+		/// </summary>
+		/// <param name="frame"></param>
+		/// <returns></returns>
 		HBoxData* GetHBoxDataByFrame(size_t frame)
 		{
 			HBoxData* result = _FindHBoxDataByFrame(frame);
@@ -35,11 +40,9 @@ namespace RB::HBox
 				return result;
 			}
 
-			//temp - adding default data if not found
-
 			HBoxData data;
 			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
-			data.AddAABB(RB::Collisions::AABB{ -25.0f, 25.0f, 50.0f, 50.0f });
+			data.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //position & size 0 by default
 
 			_vecHurtBoxData.push_back(data);
 

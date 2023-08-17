@@ -71,6 +71,16 @@ namespace RB::Render
 		{
 			RB::Collisions::AABB& aabb = data->GetAABB(i);
 
+			if (aabb.GetWidthHeight().x <= 0.001f)
+			{
+				continue;
+			}
+			
+			if (aabb.GetWidthHeight().y <= 0.001f)
+			{
+				continue;
+			}
+
 			if (player->OtherPlayerIsOnRightSide())
 			{
 				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();

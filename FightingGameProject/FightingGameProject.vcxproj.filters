@@ -256,6 +256,9 @@
     <ClCompile Include="iSpriteDataController.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="HB.cpp">
+      <Filter>Source Files\HBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -527,6 +530,9 @@
     </ClInclude>
     <ClInclude Include="iSpriteDataController.h">
       <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="HB.h">
+      <Filter>Source Files\HBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

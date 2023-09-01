@@ -1,6 +1,8 @@
 #pragma once
-#include <vector>
-#include "HBoxLoader.h"
+//#include <vector>
+//#include "HBoxLoader.h"
+
+#include "HB.h"
 
 #include "iHurtBoxDataController.h"
 
@@ -20,11 +22,14 @@ namespace RB::HBox
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
-		HBoxLoader _loader;
-		std::vector<HBoxDataList> _vecLists;
+		HB _hb;
 
-	private:
-		std::string _none = "none";
-		std::string _testing = "testing";
+	//private:
+	//	HBoxLoader _loader;
+	//	std::vector<HBoxDataList> _vecLists;
+	//
+	//private:
+	//	std::string _none = "none";
+	//	std::string _testing = "testing";
 	};
 }

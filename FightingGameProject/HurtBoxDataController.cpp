@@ -16,13 +16,15 @@ namespace RB::HBox
 	{
 		SetHash(typeid(*this));
 
-		//temp
-		_loader.InitSample("HurtBoxSpecs/Sample.HurtBoxSpecs");
+		_hb.Init();
 
-		//temp - load every hurtbox datalist
-		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_datalist_sample));
-		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_idle));
-		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_walk.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_walk));
+		////temp
+		//_loader.InitSample("HurtBoxSpecs/Sample.HurtBoxSpecs");
+		//
+		////temp - load every hurtbox datalist
+		//_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_datalist_sample));
+		//_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_idle));
+		//_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_walk.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_walk));
 	}
 
 	void HurtBoxDataController::OnUpdate()
@@ -37,26 +39,30 @@ namespace RB::HBox
 
 	HBoxDataList* HurtBoxDataController::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecLists.size(); i++)
-		{
-			if (_vecLists[i].GetSpriteEnum() == spriteEnum)
-			{
-				return &_vecLists[i];
-			}
-		}
+		return _hb.GetDataList(spriteEnum);
 
-		return nullptr;
+		//for (size_t i = 0; i < _vecLists.size(); i++)
+		//{
+		//	if (_vecLists[i].GetSpriteEnum() == spriteEnum)
+		//	{
+		//		return &_vecLists[i];
+		//	}
+		//}
+		//
+		//return nullptr;
 	}
 
 	const std::string& HurtBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		HBoxDataListPath* p = _loader.GetDataListPath(spriteEnum);
+		return _hb.GetPath(spriteEnum);
 
-		if (p != nullptr)
-		{
-			return p->GetPath();
-		}
-
-		return _none;
+		//HBoxDataListPath* p = _loader.GetDataListPath(spriteEnum);
+		//
+		//if (p != nullptr)
+		//{
+		//	return p->GetPath();
+		//}
+		//
+		//return _none;
 	}
 }

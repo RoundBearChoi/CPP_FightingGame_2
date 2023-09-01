@@ -1,6 +1,4 @@
 #pragma once
-//#include <vector>
-//#include "HBoxLoader.h"
 
 #include "HB.h"
 
@@ -23,13 +21,5 @@ namespace RB::HBox
 
 	private:
 		HB _hb;
-
-	//private:
-	//	HBoxLoader _loader;
-	//	std::vector<HBoxDataList> _vecLists;
-	//
-	//private:
-	//	std::string _none = "none";
-	//	std::string _testing = "testing";
 	};
 }

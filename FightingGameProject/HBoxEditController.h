@@ -22,7 +22,12 @@ namespace RB::HBox
 
 		virtual RB::HBox::HBoxDataList* GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID);
 		virtual RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
-		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) = 0;
+		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
+
+		virtual void _UpdateSelectedIndex_OnPress(size_t count);
+
+	protected:
+		size_t _selectedIndex = 0;
 	};
 
 	extern HBoxEditController* HURTBOX_EDIT_CONTROLLER;

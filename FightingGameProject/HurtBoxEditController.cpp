@@ -69,24 +69,24 @@ namespace RB::HBox
 	//	return data;
 	//}
 
-	RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
-	{
-		size_t count = data->GetAABBCount();
-
-		_UpdateSelectedIndex_OnPress(count);
-
-		for (size_t i = 0; i < count; i++)
-		{
-			if (i == _selectedIndex)
-			{
-				RB::Collisions::AABB& aabb = data->GetAABB(i);
-
-				return &aabb;
-			}
-		}
-
-		return nullptr;
-	}
+	//RB::Collisions::AABB* HurtBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
+	//{
+	//	size_t count = data->GetAABBCount();
+	//
+	//	_UpdateSelectedIndex_OnPress(count);
+	//
+	//	for (size_t i = 0; i < count; i++)
+	//	{
+	//		if (i == _selectedIndex)
+	//		{
+	//			RB::Collisions::AABB& aabb = data->GetAABB(i);
+	//
+	//			return &aabb;
+	//		}
+	//	}
+	//
+	//	return nullptr;
+	//}
 
 	void HurtBoxEditController::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
 	{
@@ -190,30 +190,31 @@ namespace RB::HBox
 		}
 	}
 
-	void HurtBoxEditController::_UpdateSelectedIndex_OnPress(size_t count)
-	{
-		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
-		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
+	//void HurtBoxEditController::_UpdateSelectedIndex_OnPress(size_t count)
+	//{
+	//	olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
+	//	olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
+	//
+	//	if (oButton.bPressed)
+	//	{
+	//		_selectedIndex--;
+	//	}
+	//
+	//	if (pButton.bPressed)
+	//	{
+	//		_selectedIndex++;
+	//	}
+	//
+	//	if (_selectedIndex == SIZE_MAX)
+	//	{
+	//		_selectedIndex = count - 1;
+	//	}
+	//	else if (_selectedIndex >= count)
+	//	{
+	//		_selectedIndex = 0;
+	//	}
+	//}
 
-		if (oButton.bPressed)
-		{
-			_selectedIndex--;
-		}
-
-		if (pButton.bPressed)
-		{
-			_selectedIndex++;
-		}
-
-		if (_selectedIndex == SIZE_MAX)
-		{
-			_selectedIndex = count - 1;
-		}
-		else if (_selectedIndex >= count)
-		{
-			_selectedIndex = 0;
-		}
-	}
 	void HurtBoxEditController::_SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set)
 	{
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);

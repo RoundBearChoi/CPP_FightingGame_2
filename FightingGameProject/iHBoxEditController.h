@@ -6,7 +6,7 @@
 
 namespace RB::HBox
 {
-	class iHurtBoxEditController : public RB::Controllers::ControllerBase
+	class iHBoxEditController : public RB::Controllers::ControllerBase
 	{
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
@@ -17,5 +17,5 @@ namespace RB::HBox
 		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) = 0;
 	};
 
-	extern iHurtBoxEditController* HURTBOX_EDIT_CONTROLLER;
+	extern iHBoxEditController* HURTBOX_EDIT_CONTROLLER;
 }

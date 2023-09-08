@@ -3,7 +3,7 @@
 #include "Time.h"
 
 #include "iPlayerController.h"
-#include "iHurtBoxEditController.h"
+#include "iHBoxEditController.h"
 #include "iMenuController.h"
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"
@@ -14,7 +14,7 @@
 
 namespace RB::HBox
 {
-	class HurtBoxEditController : public iHurtBoxEditController
+	class HurtBoxEditController : public iHBoxEditController
 	{
 	public:
 		HurtBoxEditController();

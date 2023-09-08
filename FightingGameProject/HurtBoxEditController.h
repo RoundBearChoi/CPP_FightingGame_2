@@ -25,7 +25,7 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::HBox::HBoxDataList* GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID) override;
+		//RB::HBox::HBoxDataList* GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID) override;
 		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
 

@@ -259,6 +259,9 @@
     <ClCompile Include="HB.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
+    <ClCompile Include="HitBoxEditorUpdater.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -533,6 +536,9 @@
     </ClInclude>
     <ClInclude Include="HB.h">
       <Filter>Source Files\HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="HitBoxEditorUpdater.h">
+      <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

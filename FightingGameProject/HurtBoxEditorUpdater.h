@@ -15,8 +15,6 @@
 #include "HurtBoxDataController.h"
 #include "HurtBoxEditController.h"
 
-#include "ActiveStateMachines.h"
-
 namespace RB::Updaters
 {
 	class HurtBoxEditorUpdater : public iUpdaterObj

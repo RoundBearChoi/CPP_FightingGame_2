@@ -3,7 +3,7 @@
 #include "Time.h"
 
 #include "iPlayerController.h"
-#include "iHBoxEditController.h"
+#include "HBoxEditController.h"
 #include "iMenuController.h"
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"
@@ -14,7 +14,7 @@
 
 namespace RB::HBox
 {
-	class HurtBoxEditController : public iHBoxEditController
+	class HurtBoxEditController : public HBoxEditController
 	{
 	public:
 		HurtBoxEditController();
@@ -25,7 +25,6 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		//RB::HBox::HBoxDataList* GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID) override;
 		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
 

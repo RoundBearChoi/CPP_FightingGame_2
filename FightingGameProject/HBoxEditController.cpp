@@ -1,11 +1,11 @@
 
-#include "iHBoxEditController.h"
+#include "HBoxEditController.h"
 
 namespace RB::HBox
 {
-	iHBoxEditController* HURTBOX_EDIT_CONTROLLER = nullptr;
+	HBoxEditController* HURTBOX_EDIT_CONTROLLER = nullptr;
 
-	RB::HBox::HBoxDataList* iHBoxEditController::GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID)
+	RB::HBox::HBoxDataList* HBoxEditController::GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 

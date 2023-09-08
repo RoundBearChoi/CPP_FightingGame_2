@@ -5,6 +5,7 @@
 #include "iUpdaterObj.h"
 #include "GameplayUpdater.h"
 #include "HurtBoxEditorUpdater.h"
+#include "HitBoxEditorUpdater.h"
 
 namespace RB::Updaters
 {

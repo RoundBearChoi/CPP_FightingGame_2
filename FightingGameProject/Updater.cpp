@@ -68,11 +68,18 @@ namespace RB::Updaters
 
 		if (f11.bPressed)
 		{
-			QueueUpdaterObj(new GameplayUpdater());
+			if (QueueUpdaterObj(new GameplayUpdater()))
+			{
+				return;
+			}
 		}
-		else if (f10.bPressed)
+		
+		if (f10.bPressed)
 		{
-			QueueUpdaterObj(new HurtBoxEditorUpdater());
+			if (QueueUpdaterObj(new HitBoxEditorUpdater()))
+			{
+				return;
+			}
 		}
 	}
 

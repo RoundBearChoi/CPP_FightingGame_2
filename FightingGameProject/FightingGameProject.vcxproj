@@ -158,7 +158,7 @@
     <ClCompile Include="iBackgroundController.cpp" />
     <ClCompile Include="iCamController.cpp" />
     <ClCompile Include="iHurtBoxDataController.cpp" />
-    <ClCompile Include="HBoxEditController.cpp" />
+    <ClCompile Include="HBoxEditControllerBase.cpp" />
     <ClCompile Include="iInputController.cpp" />
     <ClCompile Include="iMenuController.cpp" />
     <ClCompile Include="iPlayerAnimationController.cpp" />
@@ -232,7 +232,7 @@
     <ClInclude Include="iBackgroundController.h" />
     <ClInclude Include="iCamController.h" />
     <ClInclude Include="iHurtBoxDataController.h" />
-    <ClInclude Include="HBoxEditController.h" />
+    <ClInclude Include="HBoxEditControllerBase.h" />
     <ClInclude Include="iInputController.h" />
     <ClInclude Include="iMenuController.h" />
     <ClInclude Include="iPlayerAnimationController.h" />

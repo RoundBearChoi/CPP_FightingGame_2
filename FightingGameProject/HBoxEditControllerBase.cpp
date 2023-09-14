@@ -1,11 +1,11 @@
 
-#include "HBoxEditController.h"
+#include "HBoxEditControllerBase.h"
 
 namespace RB::HBox
 {
-	HBoxEditController* HURTBOX_EDIT_CONTROLLER = nullptr;
+	HBoxEditControllerBase* HURTBOX_EDIT_CONTROLLER = nullptr;
 
-	RB::HBox::HBoxDataList* HBoxEditController::GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID)
+	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -29,7 +29,7 @@ namespace RB::HBox
 		return dataList;
 	}
 
-	RB::HBox::HBoxData* HBoxEditController::GetCurrentHurtBoxData(RB::Players::PlayerID playerID)
+	RB::HBox::HBoxData* HBoxEditControllerBase::GetCurrentHurtBoxData(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -54,7 +54,7 @@ namespace RB::HBox
 		return data;
 	}
 
-	RB::Collisions::AABB* HBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
+	RB::Collisions::AABB* HBoxEditControllerBase::GetCurrentAABB(RB::HBox::HBoxData* data)
 	{
 		size_t count = data->GetAABBCount();
 
@@ -73,7 +73,7 @@ namespace RB::HBox
 		return nullptr;
 	}
 
-	void HBoxEditController::_UpdateSelectedIndex_OnPress(size_t count)
+	void HBoxEditControllerBase::_UpdateSelectedIndex_OnPress(size_t count)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);

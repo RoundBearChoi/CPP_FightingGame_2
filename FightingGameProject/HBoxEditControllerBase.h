@@ -13,7 +13,7 @@
 
 namespace RB::HBox
 {
-	class HBoxEditController : public RB::Controllers::ControllerBase
+	class HBoxEditControllerBase : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;
@@ -30,5 +30,5 @@ namespace RB::HBox
 		size_t _selectedIndex = 0;
 	};
 
-	extern HBoxEditController* HURTBOX_EDIT_CONTROLLER;
+	extern HBoxEditControllerBase* HURTBOX_EDIT_CONTROLLER;
 }

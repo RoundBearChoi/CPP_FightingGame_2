@@ -37,6 +37,4 @@ namespace RB::HBox
 	protected:
 		size_t _selectedIndex = 0;
 	};
-
-	extern HBoxEditControllerBase* HURTBOX_EDIT_CONTROLLER;
 }

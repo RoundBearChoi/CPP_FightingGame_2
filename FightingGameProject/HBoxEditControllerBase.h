@@ -10,6 +10,7 @@
 
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"
+#include "iCamController.h"
 
 namespace RB::HBox
 {
@@ -24,7 +25,9 @@ namespace RB::HBox
 		virtual RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
 		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
 
+	protected:
 		virtual void _UpdateSelectedIndex_OnPress(size_t count);
+		virtual void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
 
 	protected:
 		size_t _selectedIndex = 0;

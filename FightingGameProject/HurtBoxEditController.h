@@ -26,7 +26,7 @@ namespace RB::HBox
 		void OnFixedUpdate() override;
 
 	private:
-		void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
+		//void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
 		void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
 		void _SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set);

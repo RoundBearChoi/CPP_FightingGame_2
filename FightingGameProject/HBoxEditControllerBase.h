@@ -12,6 +12,7 @@
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"
 #include "iCamController.h"
+#include "iMenuController.h"
 
 namespace RB::HBox
 {
@@ -31,6 +32,7 @@ namespace RB::HBox
 		virtual void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
 		virtual void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
 		virtual void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
+		virtual void _SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set);
 
 	protected:
 		size_t _selectedIndex = 0;

@@ -146,70 +146,70 @@ namespace RB::HBox
 	//	}
 	//}
 
-	void HurtBoxEditController::_SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set)
-	{
-		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
-
-		if (enterButton.bPressed)
-		{
-			std::cout << std::endl;
-			std::cout << "saving hurtbox set" << std::endl;
-
-			const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(set->GetSpriteEnum());
-
-			std::ofstream file(path);
-
-			if (file.is_open())
-			{
-				//start of whole obj
-				file << "{" << std::endl;
-
-				for (size_t f = 0; f < set->GetSize(); f++)
-				{
-					HBoxData* data = set->GetHBoxDataByFrame(f);
-					const std::string& frameName = data->GetFrameName();
-
-					file << "    \"" << frameName << "\":" << std::endl;
-					file << "    [" << std::endl;
-
-					for (size_t a = 0; a < data->GetAABBCount(); a++)
-					{
-						RB::Collisions::AABB aabb = data->GetAABB(a);
-
-						file << "        {" << std::endl;
-						file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
-						file << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
-						file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
-						file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
-						
-						if (a != data->GetAABBCount() - 1)
-						{
-							file << "        }," << std::endl;
-						}
-						else
-						{
-							file << "        }" << std::endl;
-						}
-					}
-
-					if (f != set->GetSize() - 1)
-					{
-						file << "    ]," << std::endl << std::endl;
-					}
-					else
-					{
-						file << "    ]" << std::endl;
-					}
-				}
-
-				//end of whole obj
-				file << "}";
-
-				file.flush();
-				file.close();
-			}
-
-			RB::HBox::MENU_CONTROLLER->ShowNotification();
-		}
-	}
+	//void HurtBoxEditController::_SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set)
+	//{
+	//	olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
+	//
+	//	if (enterButton.bPressed)
+	//	{
+	//		std::cout << std::endl;
+	//		std::cout << "saving hurtbox set" << std::endl;
+	//
+	//		const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(set->GetSpriteEnum());
+	//
+	//		std::ofstream file(path);
+	//
+	//		if (file.is_open())
+	//		{
+	//			//start of whole obj
+	//			file << "{" << std::endl;
+	//
+	//			for (size_t f = 0; f < set->GetSize(); f++)
+	//			{
+	//				HBoxData* data = set->GetHBoxDataByFrame(f);
+	//				const std::string& frameName = data->GetFrameName();
+	//
+	//				file << "    \"" << frameName << "\":" << std::endl;
+	//				file << "    [" << std::endl;
+	//
+	//				for (size_t a = 0; a < data->GetAABBCount(); a++)
+	//				{
+	//					RB::Collisions::AABB aabb = data->GetAABB(a);
+	//
+	//					file << "        {" << std::endl;
+	//					file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
+	//					file << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
+	//					file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
+	//					file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
+	//					
+	//					if (a != data->GetAABBCount() - 1)
+	//					{
+	//						file << "        }," << std::endl;
+	//					}
+	//					else
+	//					{
+	//						file << "        }" << std::endl;
+	//					}
+	//				}
+	//
+	//				if (f != set->GetSize() - 1)
+	//				{
+	//					file << "    ]," << std::endl << std::endl;
+	//				}
+	//				else
+	//				{
+	//					file << "    ]" << std::endl;
+	//				}
+	//			}
+	//
+	//			//end of whole obj
+	//			file << "}";
+	//
+	//			file.flush();
+	//			file.close();
+	//		}
+	//
+	//		RB::HBox::MENU_CONTROLLER->ShowNotification();
+	//	}
+	//}
 }

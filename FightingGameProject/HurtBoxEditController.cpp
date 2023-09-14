@@ -61,26 +61,26 @@ namespace RB::HBox
 	//	olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	//}
 
-	void HurtBoxEditController::_Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data)
-	{
-		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
-		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
-
-		if (insButton.bPressed)
-		{
-			data->AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
-
-			_selectedIndex = data->GetAABBCount() - 1;
-		}
-
-		if (delButton.bPressed)
-		{
-			if (data->DeleteAABB(_selectedIndex))
-			{
-				_selectedIndex--;
-			}
-		}
-	}
+	//void HurtBoxEditController::_Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data)
+	//{
+	//	olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
+	//	olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
+	//
+	//	if (insButton.bPressed)
+	//	{
+	//		data->AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
+	//
+	//		_selectedIndex = data->GetAABBCount() - 1;
+	//	}
+	//
+	//	if (delButton.bPressed)
+	//	{
+	//		if (data->DeleteAABB(_selectedIndex))
+	//		{
+	//			_selectedIndex--;
+	//		}
+	//	}
+	//}
 
 	void HurtBoxEditController::_EditAABB_OnPress(RB::Collisions::AABB* aabb)
 	{

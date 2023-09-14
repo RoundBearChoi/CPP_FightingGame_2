@@ -28,6 +28,7 @@ namespace RB::HBox
 	protected:
 		virtual void _UpdateSelectedIndex_OnPress(size_t count);
 		virtual void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
+		virtual void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
 
 	protected:
 		size_t _selectedIndex = 0;

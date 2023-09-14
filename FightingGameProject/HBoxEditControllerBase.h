@@ -3,6 +3,7 @@
 #include "HBoxDataList.h"
 #include "AABB.h"
 #include "PlayerID.h"
+#include "Time.h"
 
 #include "PlayerState.h"
 #include "ActivePlayerStates.h"
@@ -29,6 +30,7 @@ namespace RB::HBox
 		virtual void _UpdateSelectedIndex_OnPress(size_t count);
 		virtual void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
 		virtual void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
+		virtual void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
 
 	protected:
 		size_t _selectedIndex = 0;

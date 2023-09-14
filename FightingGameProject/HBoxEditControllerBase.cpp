@@ -133,4 +133,68 @@ namespace RB::HBox
 			}
 		}
 	}
+
+	void HBoxEditControllerBase::_EditAABB_OnPress(RB::Collisions::AABB* aabb)
+	{
+		if (aabb == nullptr)
+		{
+			return;
+		}
+
+		olc::HWButton wButton = olc::Platform::ptrPGE->GetKey(olc::W);
+		olc::HWButton sButton = olc::Platform::ptrPGE->GetKey(olc::S);
+
+		olc::HWButton aButton = olc::Platform::ptrPGE->GetKey(olc::A);
+		olc::HWButton dButton = olc::Platform::ptrPGE->GetKey(olc::D);
+
+		float_t moveAmount = 50.0f;
+
+		if (wButton.bHeld)
+		{
+			aabb->MoveY(-moveAmount * RB::Frames::Time::GetDeltaTime());
+		}
+
+		if (sButton.bHeld)
+		{
+			aabb->MoveY(moveAmount * RB::Frames::Time::GetDeltaTime());
+		}
+
+		if (aButton.bHeld)
+		{
+			aabb->MoveX(-moveAmount * RB::Frames::Time::GetDeltaTime());
+		}
+
+		if (dButton.bHeld)
+		{
+			aabb->MoveX(moveAmount * RB::Frames::Time::GetDeltaTime());
+		}
+
+		olc::HWButton uButton = olc::Platform::ptrPGE->GetKey(olc::U);
+		olc::HWButton jButton = olc::Platform::ptrPGE->GetKey(olc::J);
+
+		olc::HWButton hButton = olc::Platform::ptrPGE->GetKey(olc::H);
+		olc::HWButton kButton = olc::Platform::ptrPGE->GetKey(olc::K);
+
+		float_t sizeAmount = 40.0f;
+
+		if (uButton.bHeld)
+		{
+			aabb->IncreaseHeight(sizeAmount * RB::Frames::Time::GetDeltaTime());
+		}
+
+		if (jButton.bHeld)
+		{
+			aabb->IncreaseHeight(-sizeAmount * RB::Frames::Time::GetDeltaTime());
+		}
+
+		if (hButton.bHeld)
+		{
+			aabb->IncreaseWidth(-sizeAmount * RB::Frames::Time::GetDeltaTime());
+		}
+
+		if (kButton.bHeld)
+		{
+			aabb->IncreaseWidth(sizeAmount * RB::Frames::Time::GetDeltaTime());
+		}
+	}
 }

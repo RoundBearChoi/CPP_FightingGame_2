@@ -27,7 +27,7 @@ namespace RB::HBox
 		}
 
 		/// <summary>
-		/// adding 0, 0 default data if not found
+		/// 0, 0 by default if no data found
 		/// </summary>
 		/// <param name="frame"></param>
 		/// <returns></returns>
@@ -42,8 +42,8 @@ namespace RB::HBox
 
 			HBoxData data;
 			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
-			data.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default if no data found
-
+			data.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f });
+			
 			_vecHurtBoxData.push_back(data);
 
 			return _FindHBoxDataByFrame(frame);

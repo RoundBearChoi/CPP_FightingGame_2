@@ -25,6 +25,8 @@ namespace RB::HBox
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 
 		//can get either hurtbox or hitbox
+		RB::HBox::HBoxDataList* dataList = nullptr;
+
 		if (boxType == HBoxType::HURT_BOX)
 		{
 
@@ -34,7 +36,7 @@ namespace RB::HBox
 
 		}
 
-		RB::HBox::HBoxDataList* dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+		dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 
 		return dataList;
 	}

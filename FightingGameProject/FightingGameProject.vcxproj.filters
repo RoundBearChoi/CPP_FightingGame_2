@@ -540,5 +540,8 @@
     <ClInclude Include="HitBoxEditorUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
+    <ClInclude Include="HBoxType.h">
+      <Filter>Source Files\HBox</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

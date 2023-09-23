@@ -32,7 +32,7 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBoxDataList* list = GetCurrentHurtBoxDataList(RB::Players::PlayerID::PLAYER_1);
+		RB::HBox::HBoxDataList* list = GetCurrentHurtBoxDataList(RB::Players::PlayerID::PLAYER_1, HBoxType::HURT_BOX);
 		RB::HBox::HBoxData* data = GetCurrentHurtBoxData(RB::Players::PlayerID::PLAYER_1);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 

@@ -4,7 +4,7 @@ namespace RB::HBox
 {
 	HBoxEditControllerBase* HURTBOX_EDIT_CONTROLLER = nullptr;
 
-	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID)
+	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -23,6 +23,17 @@ namespace RB::HBox
 		}
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
+
+		//can get either hurtbox or hitbox
+		if (boxType == HBoxType::HURT_BOX)
+		{
+
+		}
+		else if (boxType == HBoxType::HIT_BOX)
+		{
+
+		}
+
 		RB::HBox::HBoxDataList* dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 
 		return dataList;

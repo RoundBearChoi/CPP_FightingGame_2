@@ -224,6 +224,7 @@
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="HB.h" />
+    <ClInclude Include="HBoxType.h" />
     <ClInclude Include="HitBoxEditorUpdater.h" />
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HBoxData.h" />

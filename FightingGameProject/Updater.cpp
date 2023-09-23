@@ -64,7 +64,9 @@ namespace RB::Updaters
 	void Updater::UpdateQueue()
 	{
 		olc::HWButton f11 = olc::Platform::ptrPGE->GetKey(olc::Key::F11);
-		olc::HWButton f10 = olc::Platform::ptrPGE->GetKey(olc::Key::F10);
+
+		olc::HWButton f7 = olc::Platform::ptrPGE->GetKey(olc::Key::F7);
+		olc::HWButton f8 = olc::Platform::ptrPGE->GetKey(olc::Key::F8);
 
 		if (f11.bPressed)
 		{
@@ -74,9 +76,17 @@ namespace RB::Updaters
 			}
 		}
 		
-		if (f10.bPressed)
+		if (f7.bPressed)
 		{
 			if (QueueUpdaterObj(new HitBoxEditorUpdater()))
+			{
+				return;
+			}
+		}
+
+		if (f8.bPressed)
+		{
+			if (QueueUpdaterObj(new HurtBoxEditorUpdater()))
 			{
 				return;
 			}

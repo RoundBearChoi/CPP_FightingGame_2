@@ -15,8 +15,8 @@ namespace RB::Render
 			return;
 		}
 
-		RenderHurtBox(RB::Players::PlayerID::PLAYER_1);
-		RenderHurtBox(RB::Players::PlayerID::PLAYER_2);
+		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::HURT_BOX);
+		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::HURT_BOX);
 	}
 
 	void PlayerHurtBoxRenderer::OnFixedUpdate()
@@ -24,7 +24,7 @@ namespace RB::Render
 
 	}
 
-	void PlayerHurtBoxRenderer::RenderHurtBox(RB::Players::PlayerID playerID)
+	void PlayerHurtBoxRenderer::RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType)
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 		
@@ -51,7 +51,18 @@ namespace RB::Render
 		
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 
-		RB::HBox::HBoxDataList* dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+		RB::HBox::HBoxDataList* dataList = nullptr;
+
+		if (boxType == RB::HBox::HBoxType::HURT_BOX)
+		{
+
+		}
+		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		{
+
+		}
+
+		dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 
 		if (dataList == nullptr)
 		{
@@ -81,17 +92,28 @@ namespace RB::Render
 				continue;
 			}
 
+			olc::Pixel color = olc::RED;
+
+			if (boxType == RB::HBox::HBoxType::HURT_BOX)
+			{
+				color = olc::MAGENTA;
+			}
+			else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+			{
+				color = olc::GREEN;
+			}
+
 			if (player->OtherPlayerIsOnRightSide())
 			{
 				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
-				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_LEFT);
+				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_LEFT);
 			}
 			else
 			{
 				olc::vf2d bottomleft = aabb.GetBottomLeft();
 				bottomleft.x *= -1.0f;
 				olc::vf2d pos = bottomleft + player->GetPosition();
-				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, olc::MAGENTA, RB::Sprites::PivotType::BOTTOM_RIGHT);
+				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT);
 			}
 		}
 	}

@@ -3,6 +3,7 @@
 #include "AABB.h"
 
 #include "ActivePlayerStates.h"
+#include "HBoxType.h"
 
 #include "iHurtBoxDataController.h"
 #include "iPlayerAnimationController.h"
@@ -22,7 +23,7 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	public:
-		void RenderHurtBox(RB::Players::PlayerID playerID);
+		void RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType);
 
 	private:
 		SpriteRenderer* _spriteRenderer = nullptr;

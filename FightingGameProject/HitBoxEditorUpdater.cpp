@@ -47,6 +47,7 @@ namespace RB::Updaters
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::MenuController()));
+
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/")));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxEditController()));
 

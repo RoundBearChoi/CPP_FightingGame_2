@@ -12,6 +12,8 @@ namespace RB::HBox
 		HBoxDataList* GetDataList(RB::Sprites::SpriteEnum spriteEnum);
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum);
 
+		void PresetDir(std::string dir);
+
 	private:
 		HBoxLoader _loader;
 		std::vector<HBoxDataList> _vecLists;

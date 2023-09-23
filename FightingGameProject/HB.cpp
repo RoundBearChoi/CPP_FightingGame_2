@@ -37,4 +37,11 @@ namespace RB::HBox
 
 		return _none;
 	}
+
+	void HB::PresetDir(std::string dir)
+	{
+		std::cout << std::endl;
+		std::cout << "presetting dir: " << dir << std::endl;
+		_dir = dir;
+	}
 }

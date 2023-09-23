@@ -2,9 +2,11 @@
 
 namespace RB::HBox
 {
-	HurtBoxDataController::HurtBoxDataController()
+	HurtBoxDataController::HurtBoxDataController(std::string dir)
 	{
 		HURTBOX_DATA_CONTROLLER = this;
+
+		_hb.PresetDir(dir);
 	}
 
 	HurtBoxDataController::~HurtBoxDataController()

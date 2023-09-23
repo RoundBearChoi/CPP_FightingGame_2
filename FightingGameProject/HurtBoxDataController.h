@@ -9,7 +9,7 @@ namespace RB::HBox
 	class HurtBoxDataController : public iHurtBoxDataController
 	{
 	public:
-		HurtBoxDataController();
+		HurtBoxDataController(std::string dir);
 		~HurtBoxDataController() override;
 
 		void Init() override;

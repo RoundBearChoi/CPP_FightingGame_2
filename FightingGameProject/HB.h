@@ -19,7 +19,7 @@ namespace RB::HBox
 		std::vector<HBoxDataList> _vecLists;
 
 		const std::string _none = "none";
-		std::string _dir = "HurtBoxSpecs/";
+		std::string _dir = "AssignHBDataDirectory/";
 		std::string _extention = ".HurtBoxSpecs";
 	};
 }

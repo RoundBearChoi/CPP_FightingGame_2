@@ -50,7 +50,7 @@ namespace RB::Updaters
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxEditController()));
 
-		RB::Cam::CAM_CONTROLLER->SetZoom(2.0f);
+		RB::Cam::CAM_CONTROLLER->SetZoom(1.75f);
 	}
 
 	void HurtBoxEditorUpdater::OnUpdate()

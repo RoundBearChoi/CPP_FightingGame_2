@@ -4,7 +4,7 @@ namespace RB::HBox
 {
 	HBoxEditControllerBase* HURTBOX_EDIT_CONTROLLER = nullptr;
 
-	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHurtBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
+	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 

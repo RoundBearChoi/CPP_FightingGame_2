@@ -19,9 +19,13 @@ namespace RB::HBox
 
 	void HurtBoxEditController::OnUpdate()
 	{
+		if (RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
+		{
+			return;
+		}
+
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
-			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr ||
 			RB::HBox::MENU_CONTROLLER == nullptr ||
 			RB::Cam::CAM_CONTROLLER == nullptr)
 		{

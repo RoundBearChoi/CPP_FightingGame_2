@@ -71,12 +71,23 @@ namespace RB::Render
 
 		RB::HBox::HBoxData* data = dataList->GetHBoxDataByFrame(currentIndex);
 
-		size_t count = data->GetAABBCount();
+		olc::Pixel color = olc::RED;
 
-		if (count == 0)
+		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			int n = 0;
+			color = olc::MAGENTA;
 		}
+		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		{
+			color = olc::GREEN;
+		}
+
+		_Render(player, data, color);
+	}
+
+	void PlayerHurtBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::HBoxData* data, olc::Pixel color)
+	{
+		size_t count = data->GetAABBCount();
 
 		for (size_t i = 0; i < count; i++)
 		{
@@ -86,26 +97,16 @@ namespace RB::Render
 			{
 				continue;
 			}
-			
+
 			if (aabb.GetWidthHeight().y <= 0.001f)
 			{
 				continue;
 			}
 
-			olc::Pixel color = olc::RED;
-
-			if (boxType == RB::HBox::HBoxType::HURT_BOX)
-			{
-				color = olc::MAGENTA;
-			}
-			else if (boxType == RB::HBox::HBoxType::HIT_BOX)
-			{
-				color = olc::GREEN;
-			}
-
 			if (player->OtherPlayerIsOnRightSide())
 			{
 				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
+
 				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_LEFT);
 			}
 			else
@@ -113,6 +114,7 @@ namespace RB::Render
 				olc::vf2d bottomleft = aabb.GetBottomLeft();
 				bottomleft.x *= -1.0f;
 				olc::vf2d pos = bottomleft + player->GetPosition();
+
 				_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT);
 			}
 		}

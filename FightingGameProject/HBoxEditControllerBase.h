@@ -25,7 +25,7 @@ namespace RB::HBox
 		virtual void OnFixedUpdate() = 0;
 
 		virtual RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType);
-		virtual RB::HBox::HBoxData* GetCurrentHurtBoxData(RB::Players::PlayerID playerID);
+		virtual RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID);
 		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
 
 	protected:

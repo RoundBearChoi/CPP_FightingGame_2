@@ -16,7 +16,8 @@ namespace RB::HBox
 		HBoxLoader _loader;
 		std::vector<HBoxDataList> _vecLists;
 
-		std::string _none = "none";
-		std::string _testing = "testing";
+		const std::string _none = "none";
+		std::string _dir = "HurtBoxSpecs/";
+		std::string _extention = ".HurtBoxSpecs";
 	};
 }

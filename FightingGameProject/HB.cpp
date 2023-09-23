@@ -5,12 +5,12 @@ namespace RB::HBox
 	void HB::Init()
 	{
 		//temp
-		_loader.InitSample("HurtBoxSpecs/Sample.HurtBoxSpecs");
+		//_loader.InitSample("HurtBoxSpecs/Sample.HurtBoxSpecs");
+		//_vecLists.push_back(_loader.LoadDataList(_dir + "Sample" + _extention, RB::Sprites::SpriteEnum::hurtbox_datalist_sample));
 
-		//temp - load every hurtbox datalist
-		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/Sample.HurtBoxSpecs", RB::Sprites::SpriteEnum::hurtbox_datalist_sample));
-		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_idle.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_idle));
-		_vecLists.push_back(_loader.LoadDataList("HurtBoxSpecs/fighter_0_walk.HurtBoxSpecs", RB::Sprites::SpriteEnum::fighter_0_walk));
+		//load every hurtbox datalist
+		_vecLists.push_back(_loader.LoadDataList(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteEnum::fighter_0_idle));
+		_vecLists.push_back(_loader.LoadDataList(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteEnum::fighter_0_walk));
 	}
 
 	HBoxDataList* HB::GetDataList(RB::Sprites::SpriteEnum spriteEnum)

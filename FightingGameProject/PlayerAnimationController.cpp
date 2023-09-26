@@ -77,7 +77,7 @@ namespace RB::Render
 		jabSpecs.mY_TileCount = 1;
 		jabSpecs.mTotalSprites = 6;
 		jabSpecs.mSkipFixedUpdates = 3;
-		jabSpecs.mRenderSize = olc::vf2d{ 250.0f, 166.7f };
+		jabSpecs.mRenderSize = olc::vf2d{ 240.0f, 160.0f };
 		jabSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
 		jabSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jab);

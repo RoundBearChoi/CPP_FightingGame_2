@@ -89,7 +89,7 @@ namespace RB::Render
 		return _ownerPlayer;
 	}
 
-	const AnimationSpecs& PlayerAnimationObj::GetAnimationSpecs()
+	const AnimationSpecs& PlayerAnimationObj::GetAnimationSpecs() const
 	{
 		return _animationRenderer->GetAnimationSpecs();
 	}

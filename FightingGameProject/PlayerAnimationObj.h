@@ -27,7 +27,7 @@ namespace RB::Render
 		olc::vf2d GetRenderSize() override;
 		olc::vf2d GetRenderOffset() override;
 		RB::Players::iPlayer* GetPlayer() override;
-		const AnimationSpecs& GetAnimationSpecs() override;
+		const AnimationSpecs& GetAnimationSpecs() const override;
 		int32_t GetCurrentIndex() override;
 		void RenderAnimation() override;
 

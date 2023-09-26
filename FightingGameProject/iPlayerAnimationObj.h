@@ -17,7 +17,7 @@ namespace RB::Render
 		virtual olc::vf2d GetRenderSize() = 0;
 		virtual olc::vf2d GetRenderOffset() = 0;
 		virtual RB::Players::iPlayer* GetPlayer() = 0;
-		virtual const AnimationSpecs& GetAnimationSpecs() = 0;
+		virtual const AnimationSpecs& GetAnimationSpecs() const = 0;
 		virtual int32_t GetCurrentIndex() = 0;
 		virtual void RenderAnimation() = 0;
 	};

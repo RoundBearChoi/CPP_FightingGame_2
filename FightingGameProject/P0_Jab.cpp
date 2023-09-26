@@ -8,6 +8,8 @@ namespace RB::PlayerStates
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jab);
 
+		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnAnimationEnd());
+
 		EnterStateComponents();
 	}
 

@@ -4,6 +4,8 @@
 
 #include "ActivePlayerStates.h"
 
+#include "TriggerIdleOnAnimationEnd.h"
+
 namespace RB::PlayerStates
 {
 	class P0_Jab : public RB::PlayerStates::PlayerState

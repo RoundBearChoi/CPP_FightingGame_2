@@ -20,7 +20,7 @@ namespace RB::Sprites
 		delete _decal;
 	}
 
-	std::string LoadedSprite::GetPath()
+	const std::string& LoadedSprite::GetPath() const
 	{
 		return _path;
 	}

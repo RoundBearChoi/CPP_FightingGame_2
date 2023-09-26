@@ -12,7 +12,7 @@ namespace RB::Sprites
 		~LoadedSprite();
 
 	public:
-		std::string GetPath();
+		const std::string& GetPath() const;
 		olc::Sprite* GetSprite();
 		olc::Decal* GetDecal();
 		SpriteEnum GetSpriteEnum();

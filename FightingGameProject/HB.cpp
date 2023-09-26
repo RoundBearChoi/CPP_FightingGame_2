@@ -23,16 +23,15 @@ namespace RB::HBox
 		return nullptr;
 	}
 
-	const std::string& HB::GetPath(RB::Sprites::SpriteEnum spriteEnum)
+	const std::string& HB::GetPath(RB::Sprites::SpriteEnum spriteEnum) const
 	{
-		HBoxDataListPath* p = _loader.GetDataListPath(spriteEnum);
+		const HBoxDataListPath& p = _loader.GetDataListPath(spriteEnum);
 
-		if (p != nullptr)
-		{
-			return p->GetPath();
-		}
+		return p.GetPath();
 
-		return _none;
+		const std::string& str = p.GetPath();
+
+		return str;
 	}
 
 	void HB::PresetDir(std::string dir)

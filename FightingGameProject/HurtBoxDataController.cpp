@@ -36,7 +36,7 @@ namespace RB::HBox
 		return _hb.GetDataList(spriteEnum);
 	}
 
-	const std::string& HurtBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum)
+	const std::string& HurtBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum) const
 	{
 		return _hb.GetPath(spriteEnum);
 	}

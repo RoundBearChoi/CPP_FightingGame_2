@@ -106,7 +106,7 @@ namespace RB::HBox
 	HBoxDataList HBoxLoader::LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
-		if (GetDataListPath(spriteEnum) == nullptr)
+		if (GetDataListPath(spriteEnum).GetSpriteEnum() == RB::Sprites::SpriteEnum::NONE)
 		{
 			_vecLists.push_back(HBoxDataListPath{ path, spriteEnum });
 		}
@@ -241,16 +241,18 @@ namespace RB::HBox
 		return RB::Collisions::AABB();
 	}
 
-	RB::HBox::HBoxDataListPath* HBoxLoader::GetDataListPath(RB::Sprites::SpriteEnum spriteEnum)
+	const RB::HBox::HBoxDataListPath& HBoxLoader::GetDataListPath(RB::Sprites::SpriteEnum spriteEnum) const
 	{
-		for (size_t i = 0; i < _vecLists.size(); i++)
+		const std::vector<HBoxDataListPath>& vec = _getVector();
+
+		for (size_t i = 0; i < vec.size(); i++)
 		{
-			if (_vecLists[i].GetSpriteEnum() == spriteEnum)
+			if (vec[i].GetSpriteEnum() == spriteEnum)
 			{
-				return &_vecLists[i];
+				return vec[i];
 			}
 		}
 
-		return nullptr;
+		return _none;
 	}
 }

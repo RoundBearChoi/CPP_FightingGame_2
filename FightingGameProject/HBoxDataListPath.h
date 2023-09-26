@@ -16,12 +16,12 @@ namespace RB::HBox
 		~HBoxDataListPath() = default;
 
 	public:
-		const std::string& GetPath()
+		const std::string& GetPath() const
 		{
 			return _path;
 		}
 		
-		RB::Sprites::SpriteEnum GetSpriteEnum()
+		const RB::Sprites::SpriteEnum& GetSpriteEnum() const
 		{
 			return _spriteEnum;
 		}

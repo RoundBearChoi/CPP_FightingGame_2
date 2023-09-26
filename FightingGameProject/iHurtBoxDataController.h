@@ -12,7 +12,7 @@ namespace RB::HBox
 		virtual void OnFixedUpdate() = 0;
 
 		virtual HBoxDataList* GetDataList(RB::Sprites::SpriteEnum spriteEnum) = 0;
-		virtual const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) = 0;
+		virtual const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const = 0;
 	};
 
 	extern iHurtBoxDataController* HURTBOX_DATA_CONTROLLER;

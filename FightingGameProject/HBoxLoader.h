@@ -37,10 +37,14 @@ namespace RB::HBox
 
 	public:
 		RB::Collisions::AABB GetAABB(const json_array_s& array, size_t index);
-		RB::HBox::HBoxDataListPath* GetDataListPath(RB::Sprites::SpriteEnum spriteEnum);
+		const RB::HBox::HBoxDataListPath& GetDataListPath(RB::Sprites::SpriteEnum spriteEnum) const;
+		
 
 	private:
 		std::vector<HBoxDataListPath> _vecLists;
+		const std::vector<HBoxDataListPath>& _getVector() const { return _vecLists; }
 		std::string _samplePath;
+
+		const HBoxDataListPath _none = { "none", RB::Sprites::SpriteEnum::NONE };
 	};
 }

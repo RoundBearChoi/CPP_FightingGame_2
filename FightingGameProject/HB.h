@@ -10,7 +10,7 @@ namespace RB::HBox
 	public:
 		void Init();
 		HBoxDataList* GetDataList(RB::Sprites::SpriteEnum spriteEnum);
-		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum);
+		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const;
 
 		void PresetDir(std::string dir);
 

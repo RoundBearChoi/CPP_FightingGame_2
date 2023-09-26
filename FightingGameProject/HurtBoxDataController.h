@@ -17,7 +17,7 @@ namespace RB::HBox
 		void OnFixedUpdate() override;
 
 		HBoxDataList* GetDataList(RB::Sprites::SpriteEnum spriteEnum) override;
-		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) override;
+		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const override;
 
 	private:
 		HB _hb;

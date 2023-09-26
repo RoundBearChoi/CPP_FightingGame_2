@@ -33,5 +33,12 @@ namespace RB::PlayerStateComponents
 		}
 
 		const RB::Render::AnimationSpecs& specs = aniObj->GetAnimationSpecs();
+
+		size_t updates = state->GetCumulatedFixedUpdates();
+
+		if (specs.mTotalSprites * specs.mSkipFixedUpdates < updates)
+		{
+			player->GetStateMachine()->QueueNextState(new RB::PlayerStates::P0_Idle());
+		}
 	}
 }

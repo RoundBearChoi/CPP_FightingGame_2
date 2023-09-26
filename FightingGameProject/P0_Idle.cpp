@@ -9,6 +9,7 @@ namespace RB::PlayerStates
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
+		AddStateComponent(new RB::PlayerStateComponents::TriggerJab());
 		AddStateComponent(new RB::PlayerStateComponents::TriggerMoveForward());
 		AddStateComponent(new RB::PlayerStateComponents::TriggerMoveBack());
 

@@ -5,6 +5,7 @@
 #include "ActivePlayerStates.h"
 
 #include "TriggerJumpUp.h"
+#include "TriggerJab.h"
 #include "TriggerMoveForward.h"
 #include "TriggerMoveBack.h"
 

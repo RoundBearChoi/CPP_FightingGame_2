@@ -265,6 +265,9 @@
     <ClCompile Include="P0_Jab.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="TriggerJab.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -548,6 +551,9 @@
     </ClInclude>
     <ClInclude Include="P0_Jab.h">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerJab.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

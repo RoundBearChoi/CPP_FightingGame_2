@@ -18,7 +18,6 @@ namespace RB::PlayerStates
 	void P0_Idle::OnExit()
 	{
 		ExitStateComponents();
-
 		ActivePlayerStates::RemovePlayerState(this);
 	}
 

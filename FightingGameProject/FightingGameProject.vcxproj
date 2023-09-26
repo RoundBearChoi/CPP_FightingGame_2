@@ -148,6 +148,7 @@
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
+    <ClCompile Include="P0_Jab.cpp" />
     <ClCompile Include="HB.cpp" />
     <ClCompile Include="HBoxData.cpp" />
     <ClCompile Include="HitBoxEditorUpdater.cpp" />
@@ -223,6 +224,7 @@
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
+    <ClInclude Include="P0_Jab.h" />
     <ClInclude Include="HB.h" />
     <ClInclude Include="HBoxType.h" />
     <ClInclude Include="HitBoxEditorUpdater.h" />

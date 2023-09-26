@@ -17,7 +17,6 @@ namespace RB::PlayerStates
 	void P0_MoveBack::OnExit()
 	{
 		ExitStateComponents();
-
 		ActivePlayerStates::RemovePlayerState(this);
 	}
 

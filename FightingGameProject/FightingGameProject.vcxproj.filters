@@ -262,6 +262,9 @@
     <ClCompile Include="HitBoxEditorUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
+    <ClCompile Include="P0_Jab.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -542,6 +545,9 @@
     </ClInclude>
     <ClInclude Include="HBoxType.h">
       <Filter>Source Files\HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Jab.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

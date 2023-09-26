@@ -268,6 +268,9 @@
     <ClCompile Include="TriggerJab.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="TriggerIdleOnAnimationEnd.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -553,6 +556,9 @@
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="TriggerJab.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerIdleOnAnimationEnd.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>

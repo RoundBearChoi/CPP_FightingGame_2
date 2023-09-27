@@ -76,7 +76,7 @@ namespace RB::Render
 		jabSpecs.mX_TileCount = 6;
 		jabSpecs.mY_TileCount = 1;
 		jabSpecs.mTotalSprites = 6;
-		jabSpecs.mSkipFixedUpdates = 3;
+		jabSpecs.mSkipFixedUpdates = 2;
 		jabSpecs.mRenderSize = olc::vf2d{ 240.0f, 160.0f };
 		jabSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;

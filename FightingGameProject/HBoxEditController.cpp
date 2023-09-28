@@ -1,23 +1,23 @@
-#include "HurtBoxEditController.h"
+#include "HBoxEditController.h"
 
 namespace RB::HBox
 {
-	HurtBoxEditController::HurtBoxEditController()
+	HBoxEditController::HBoxEditController()
 	{
 		HURTBOX_EDIT_CONTROLLER = this;
 	}
 
-	HurtBoxEditController::~HurtBoxEditController()
+	HBoxEditController::~HBoxEditController()
 	{
 		HURTBOX_EDIT_CONTROLLER = nullptr;
 	}
 
-	void HurtBoxEditController::Init()
+	void HBoxEditController::Init()
 	{
 
 	}
 
-	void HurtBoxEditController::OnUpdate()
+	void HBoxEditController::OnUpdate()
 	{
 		if (_ControllersExist() == false)
 		{
@@ -31,7 +31,7 @@ namespace RB::HBox
 
 	}
 
-	void HurtBoxEditController::OnFixedUpdate()
+	void HBoxEditController::OnFixedUpdate()
 	{
 
 	}

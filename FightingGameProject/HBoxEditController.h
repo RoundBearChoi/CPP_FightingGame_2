@@ -4,11 +4,11 @@
 
 namespace RB::HBox
 {
-	class HurtBoxEditController : public HBoxEditControllerBase
+	class HBoxEditController : public HBoxEditControllerBase
 	{
 	public:
-		HurtBoxEditController();
-		~HurtBoxEditController() override;
+		HBoxEditController();
+		~HBoxEditController() override;
 
 	public:
 		void Init() override;

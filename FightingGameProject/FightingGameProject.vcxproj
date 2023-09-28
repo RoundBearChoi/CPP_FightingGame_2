@@ -148,13 +148,15 @@
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
+    <ClCompile Include="HitBoxDataController.cpp" />
+    <ClCompile Include="iHitBoxDataController.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
     <ClCompile Include="HB.cpp" />
     <ClCompile Include="HBoxData.cpp" />
     <ClCompile Include="HitBoxEditorUpdater.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HBoxDataListPath.h" />
-    <ClCompile Include="HurtBoxEditController.cpp" />
+    <ClCompile Include="HBoxEditController.cpp" />
     <ClCompile Include="HBoxLoader.cpp" />
     <ClCompile Include="iBackgroundController.cpp" />
     <ClCompile Include="iCamController.cpp" />
@@ -226,6 +228,8 @@
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
+    <ClInclude Include="HitBoxDataController.h" />
+    <ClInclude Include="iHitBoxDataController.h" />
     <ClInclude Include="P0_Jab.h" />
     <ClInclude Include="HB.h" />
     <ClInclude Include="HBoxType.h" />
@@ -233,7 +237,7 @@
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HBoxData.h" />
     <ClInclude Include="HBoxDataList.h" />
-    <ClInclude Include="HurtBoxEditController.h" />
+    <ClInclude Include="HBoxEditController.h" />
     <ClInclude Include="iBackgroundController.h" />
     <ClInclude Include="iCamController.h" />
     <ClInclude Include="iHurtBoxDataController.h" />

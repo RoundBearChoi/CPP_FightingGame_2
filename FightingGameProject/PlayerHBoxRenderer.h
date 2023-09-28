@@ -11,11 +11,11 @@
 
 namespace RB::Render
 {
-	class PlayerHurtBoxRenderer
+	class PlayerHBoxRenderer
 	{
 	public:
-		PlayerHurtBoxRenderer() = default;
-		~PlayerHurtBoxRenderer() = default;
+		PlayerHBoxRenderer() = default;
+		~PlayerHBoxRenderer() = default;
 
 	public:
 		void Init(SpriteRenderer* spriteRenderer);

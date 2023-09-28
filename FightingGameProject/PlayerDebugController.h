@@ -3,7 +3,7 @@
 #include "SpriteRenderer.h"
 #include "LineRenderer.h"
 
-#include "PlayerHurtBoxRenderer.h"
+#include "PlayerHBoxRenderer.h"
 #include "PlayerBoxRenderer.h"
 #include "PlayerPositionRenderer.h"
 
@@ -28,7 +28,7 @@ namespace RB::Render
 
 	private:
 		PlayerBoxRenderer _playerBoxRenderer;
-		PlayerHurtBoxRenderer _playerHurtBoxRenderer;
+		PlayerHBoxRenderer _playerHBoxRenderer;
 		PlayerPositionRenderer _playerPositionRenderer;
 	};
 }

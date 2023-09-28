@@ -1,12 +1,12 @@
-#include "PlayerHurtBoxRenderer.h"
+#include "PlayerHBoxRenderer.h"
 
 namespace RB::Render
 {
-    void PlayerHurtBoxRenderer::Init(SpriteRenderer* spriteRenderer)
+    void PlayerHBoxRenderer::Init(SpriteRenderer* spriteRenderer)
 	{
 		_spriteRenderer = spriteRenderer;
 	}
-	void PlayerHurtBoxRenderer::OnUpdate()
+	void PlayerHBoxRenderer::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
@@ -19,12 +19,12 @@ namespace RB::Render
 		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::HURT_BOX);
 	}
 
-	void PlayerHurtBoxRenderer::OnFixedUpdate()
+	void PlayerHBoxRenderer::OnFixedUpdate()
 	{
 
 	}
 
-	void PlayerHurtBoxRenderer::RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType)
+	void PlayerHBoxRenderer::RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType)
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 		
@@ -85,7 +85,7 @@ namespace RB::Render
 		_Render(player, data, color);
 	}
 
-	void PlayerHurtBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::HBoxData* data, olc::Pixel color)
+	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::HBoxData* data, olc::Pixel color)
 	{
 		size_t count = data->GetAABBCount();
 

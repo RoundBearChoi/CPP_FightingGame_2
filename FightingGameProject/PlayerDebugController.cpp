@@ -23,21 +23,21 @@ namespace RB::Render
 		_lineRenderer.Init();
 
 		_playerBoxRenderer.Init(&_spriteRenderer);
-		_playerHurtBoxRenderer.Init(&_spriteRenderer);
+		_playerHBoxRenderer.Init(&_spriteRenderer);
 		_playerPositionRenderer.Init(&_spriteRenderer, &_lineRenderer);
 	}
 
 	void PlayerDebugController::OnUpdate()
 	{
 		_playerBoxRenderer.OnUpdate();
-		_playerHurtBoxRenderer.OnUpdate();
+		_playerHBoxRenderer.OnUpdate();
 		_playerPositionRenderer.OnUpdate();
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
 	{
 		_playerBoxRenderer.OnFixedUpdate();
-		_playerHurtBoxRenderer.OnFixedUpdate();
+		_playerHBoxRenderer.OnFixedUpdate();
 		_playerPositionRenderer.OnFixedUpdate();
 	}
 }

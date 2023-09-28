@@ -208,7 +208,7 @@
     <ClCompile Include="PlayerPositionRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerHurtBoxRenderer.cpp">
+    <ClCompile Include="PlayerHBoxRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="HBoxData.cpp">
@@ -498,7 +498,7 @@
     <ClInclude Include="PlayerPositionRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerHurtBoxRenderer.h">
+    <ClInclude Include="PlayerHBoxRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="HurtBoxEditController.h">

@@ -88,6 +88,24 @@ namespace RB::HBox
 		return nullptr;
 	}
 
+	bool HBoxEditControllerBase::_ControllersExist()
+	{
+		if (RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
+		{
+			return false;
+		}
+
+		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
+			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
+			RB::HBox::MENU_CONTROLLER == nullptr ||
+			RB::Cam::CAM_CONTROLLER == nullptr)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 	void HBoxEditControllerBase::_UpdateSelectedIndex_OnPress(size_t count)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);

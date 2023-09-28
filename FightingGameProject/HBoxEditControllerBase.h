@@ -29,6 +29,7 @@ namespace RB::HBox
 		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
 
 	protected:
+		virtual bool _ControllersExist();
 		virtual void _UpdateSelectedIndex_OnPress(size_t count);
 		virtual void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
 		virtual void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);

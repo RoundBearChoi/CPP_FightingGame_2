@@ -130,8 +130,11 @@ namespace RB::HBox
 			_selectedIndex = 0;
 		}
 	}
-	void HBoxEditControllerBase::_RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID)
+	void HBoxEditControllerBase::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
+		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
+		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
+
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
@@ -147,8 +150,10 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	}
 
-	void HBoxEditControllerBase::_Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data)
+	void HBoxEditControllerBase::_Add_Delete_AABB_OnPress()
 	{
+		RB::HBox::HBoxData* data = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
+
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
 
@@ -168,8 +173,11 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxEditControllerBase::_EditAABB_OnPress(RB::Collisions::AABB* aabb)
+	void HBoxEditControllerBase::_EditAABB_OnPress(RB::Players::PlayerID playerID)
 	{
+		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
+		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
+
 		if (aabb == nullptr)
 		{
 			return;
@@ -232,8 +240,10 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxEditControllerBase::_SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set)
+	void HBoxEditControllerBase::_SaveHurtBoxes_OnPress()
 	{
+		RB::HBox::HBoxDataList* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, HBoxType::HURT_BOX);
+
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 
 		if (enterButton.bPressed)
@@ -241,7 +251,7 @@ namespace RB::HBox
 			std::cout << std::endl;
 			std::cout << "saving hurtbox set" << std::endl;
 
-			const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(set->GetSpriteEnum());
+			const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(list->GetSpriteEnum());
 
 			std::ofstream file(path);
 
@@ -250,9 +260,9 @@ namespace RB::HBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				for (size_t f = 0; f < set->GetSize(); f++)
+				for (size_t f = 0; f < list->GetSize(); f++)
 				{
-					HBoxData* data = set->GetHBoxDataByFrame(f);
+					HBoxData* data = list->GetHBoxDataByFrame(f);
 					const std::string& frameName = data->GetFrameName();
 
 					file << "    \"" << frameName << "\":" << std::endl;
@@ -278,7 +288,7 @@ namespace RB::HBox
 						}
 					}
 
-					if (f != set->GetSize() - 1)
+					if (f != list->GetSize() - 1)
 					{
 						file << "    ]," << std::endl << std::endl;
 					}

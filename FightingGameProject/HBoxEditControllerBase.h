@@ -31,10 +31,10 @@ namespace RB::HBox
 	protected:
 		virtual bool _ControllersExist();
 		virtual void _UpdateSelectedIndex_OnPress(size_t count);
-		virtual void _RenderCircleOnAABB(RB::Collisions::AABB* aabb, RB::Players::PlayerID playerID);
-		virtual void _Add_Delete_AABB_OnPress(RB::HBox::HBoxData* data);
-		virtual void _EditAABB_OnPress(RB::Collisions::AABB* aabb);
-		virtual void _SaveHurtBoxes_OnPress(RB::HBox::HBoxDataList* set);
+		virtual void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
+		virtual void _Add_Delete_AABB_OnPress();
+		virtual void _EditAABB_OnPress(RB::Players::PlayerID playerID);
+		virtual void _SaveHurtBoxes_OnPress();
 
 	protected:
 		size_t _selectedIndex = 0;

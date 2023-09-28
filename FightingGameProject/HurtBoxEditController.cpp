@@ -24,14 +24,14 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBoxDataList* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, HBoxType::HURT_BOX);
-		RB::HBox::HBoxData* data = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
-		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
+		//RB::HBox::HBoxDataList* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, HBoxType::HURT_BOX);
+		//RB::HBox::HBoxData* data = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
+		//RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
-		_SaveHurtBoxes_OnPress(list);
-		_Add_Delete_AABB_OnPress(data);
-		_RenderCircleOnAABB(aabb, RB::Players::PlayerID::PLAYER_1);
-		_EditAABB_OnPress(aabb);
+		_SaveHurtBoxes_OnPress();
+		_Add_Delete_AABB_OnPress();
+		_RenderCircleOnAABB(RB::Players::PlayerID::PLAYER_1);
+		_EditAABB_OnPress(RB::Players::PlayerID::PLAYER_1);
 
 	}
 

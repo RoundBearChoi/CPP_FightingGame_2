@@ -2,9 +2,11 @@
 
 namespace RB::HBox
 {
-	HBoxEditController::HBoxEditController()
+	HBoxEditController::HBoxEditController(RB::HBox::HBoxType boxType)
 	{
 		HURTBOX_EDIT_CONTROLLER = this;
+
+		_boxType = boxType;
 	}
 
 	HBoxEditController::~HBoxEditController()

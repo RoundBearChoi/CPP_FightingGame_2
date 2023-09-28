@@ -240,7 +240,7 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxEditControllerBase::_SaveHurtBoxes_OnPress()
+	void HBoxEditControllerBase::_SaveHBoxes_OnPress()
 	{
 		RB::HBox::HBoxDataList* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, HBoxType::HURT_BOX);
 

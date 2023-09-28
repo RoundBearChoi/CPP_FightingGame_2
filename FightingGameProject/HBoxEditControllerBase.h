@@ -34,7 +34,7 @@ namespace RB::HBox
 		virtual void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
 		virtual void _Add_Delete_AABB_OnPress();
 		virtual void _EditAABB_OnPress(RB::Players::PlayerID playerID);
-		virtual void _SaveHurtBoxes_OnPress();
+		virtual void _SaveHBoxes_OnPress();
 
 	protected:
 		size_t _selectedIndex = 0;

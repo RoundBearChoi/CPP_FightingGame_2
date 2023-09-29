@@ -70,8 +70,6 @@ namespace RB::Render
 			}
 		}
 
-		//dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
-
 		if (dataList == nullptr)
 		{
 			return;

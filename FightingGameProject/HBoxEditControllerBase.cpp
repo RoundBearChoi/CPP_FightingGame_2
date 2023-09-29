@@ -2,7 +2,40 @@
 
 namespace RB::HBox
 {
-	HBoxEditControllerBase* HBOX_EDIT_CONTROLLER = nullptr;
+	HBoxEditControllerBase::HBoxEditControllerBase(RB::HBox::HBoxType boxType)
+	{
+		HBOX_EDIT_CONTROLLER = this;
+
+		_boxType = boxType;
+	}
+
+	HBoxEditControllerBase::~HBoxEditControllerBase()
+	{
+		HBOX_EDIT_CONTROLLER = nullptr;
+	}
+
+	void HBoxEditControllerBase::Init()
+	{
+
+	}
+
+	void HBoxEditControllerBase::OnUpdate()
+	{
+		if (_ControllersExist() == false)
+		{
+			return;
+		}
+
+		_SaveHBoxes_OnPress();
+		_Add_Delete_AABB_OnPress();
+		_RenderCircleOnAABB(RB::Players::PlayerID::PLAYER_1);
+		_EditAABB_OnPress(RB::Players::PlayerID::PLAYER_1);
+	}
+
+	void HBoxEditControllerBase::OnFixedUpdate()
+	{
+
+	}
 
 	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
 	{

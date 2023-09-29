@@ -9,7 +9,9 @@
 #include "iMenuController.h"
 #include "iPlayerAnimationController.h"
 #include "iSpriteDataController.h"
-#include "HBoxEditController.h"
+#include "iHBoxEditController.h"
+#include "iHurtBoxDataController.h"
+#include "iHitBoxDataController.h"
 
 namespace RB::HBox
 {

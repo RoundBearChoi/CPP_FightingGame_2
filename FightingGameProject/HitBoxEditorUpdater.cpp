@@ -13,7 +13,7 @@
 #include "MenuController.h"
 #include "HurtBoxDataController.h"
 #include "HitBoxDataController.h"
-#include "HBoxEditController.h"
+#include "HBoxEditControllerBase.h"
 
 namespace RB::Updaters
 {
@@ -51,7 +51,7 @@ namespace RB::Updaters
 
 		//RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/")));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HitBoxDataController("HitBoxSpecs/")));
-		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HIT_BOX)));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HBoxEditControllerBase(RB::HBox::HBoxType::HIT_BOX)));
 
 		RB::Cam::CAM_CONTROLLER->SetZoom(1.75f);
 	}

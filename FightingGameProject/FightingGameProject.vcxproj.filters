@@ -214,9 +214,6 @@
     <ClCompile Include="HBoxData.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HBoxEditController.cpp">
-      <Filter>Source Files\HBox</Filter>
-    </ClCompile>
     <ClCompile Include="HBoxDataListPath.h">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
@@ -275,6 +272,9 @@
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="iHitBoxDataController.cpp">
+      <Filter>Source Files\HBox</Filter>
+    </ClCompile>
+    <ClCompile Include="iHBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
   </ItemGroup>
@@ -507,9 +507,6 @@
     <ClInclude Include="PlayerHBoxRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="HBoxEditController.h">
-      <Filter>Source Files\HBox</Filter>
-    </ClInclude>
     <ClInclude Include="BackgroundObj.h">
       <Filter>Source Files\Background</Filter>
     </ClInclude>
@@ -571,6 +568,9 @@
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="iHitBoxDataController.h">
+      <Filter>Source Files\HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="iHBoxEditController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
   </ItemGroup>

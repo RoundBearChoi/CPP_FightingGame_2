@@ -1,5 +1,4 @@
 #pragma once
-#include "ControllerBase.h"
 #include "HBoxDataList.h"
 #include "AABB.h"
 #include "PlayerID.h"
@@ -10,6 +9,7 @@
 #include "ActivePlayerStates.h"
 #include "iPlayerAnimationObj.h"
 
+#include "iHBoxEditController.h"
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"
 #include "iHitBoxDataController.h"
@@ -18,28 +18,30 @@
 
 namespace RB::HBox
 {
-	class HBoxEditControllerBase : public RB::Controllers::ControllerBase
+	class HBoxEditControllerBase : public RB::HBox::iHBoxEditController
 	{
 	public:
-		virtual void Init() = 0;
-		virtual void OnUpdate() = 0;
-		virtual void OnFixedUpdate() = 0;
+		HBoxEditControllerBase(RB::HBox::HBoxType boxType);
+		~HBoxEditControllerBase() override;
 
-		virtual RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType);
-		virtual RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID);
-		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
+		void Init() override;
+		void OnUpdate() override;
+		void OnFixedUpdate() override;
 
-		virtual RB::HBox::HBoxType GetHBoxType();
+		RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) override;
+		RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
+		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
+		RB::HBox::HBoxType GetHBoxType() override;
 
-	protected:
-		virtual bool _ControllersExist();
-		virtual void _UpdateSelectedIndex_OnPress(size_t count);
-		virtual void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
-		virtual void _Add_Delete_AABB_OnPress();
-		virtual void _EditAABB_OnPress(RB::Players::PlayerID playerID);
-		virtual void _SaveHBoxes_OnPress();
+	private:
+		bool _ControllersExist();
+		void _UpdateSelectedIndex_OnPress(size_t count);
+		void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
+		void _Add_Delete_AABB_OnPress();
+		void _EditAABB_OnPress(RB::Players::PlayerID playerID);
+		void _SaveHBoxes_OnPress();
 
-	protected:
+	private:
 		size_t _selectedIndex = 0;
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 	};

@@ -19,5 +19,5 @@ namespace RB::HBox
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 	};
 
-	extern HBoxEditControllerBase* HURTBOX_EDIT_CONTROLLER;
+	extern HBoxEditControllerBase* HBOX_EDIT_CONTROLLER;
 }

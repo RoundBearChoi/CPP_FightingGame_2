@@ -2,7 +2,7 @@
 
 namespace RB::HBox
 {
-	HBoxEditControllerBase* HURTBOX_EDIT_CONTROLLER = nullptr;
+	HBoxEditControllerBase* HBOX_EDIT_CONTROLLER = nullptr;
 
 	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
 	{

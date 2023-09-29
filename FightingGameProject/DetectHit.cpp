@@ -36,5 +36,8 @@ namespace RB::PlayerStateComponents
 
 		RB::HBox::HBoxData* ownerData = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
 		RB::HBox::HBoxData* enemyData = enemyList->GetHBoxDataByFrame(enemyAniObj->GetCurrentIndex());
+
+		size_t ownerAABBCount = ownerData->GetAABBCount();
+		size_t enemyAABBCount = enemyData->GetAABBCount();
 	}
 }

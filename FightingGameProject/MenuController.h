@@ -9,7 +9,7 @@
 #include "iMenuController.h"
 #include "iPlayerAnimationController.h"
 #include "iSpriteDataController.h"
-#include "iHurtBoxDataController.h"
+#include "HBoxEditController.h"
 
 namespace RB::HBox
 {
@@ -31,6 +31,7 @@ namespace RB::HBox
 		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
 		int32_t _GetCurrentAnimationFrame();
 		size_t _GetAABBCount();
+		RB::HBox::HBoxDataList* _getList();
 
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::string _none = "none";

@@ -29,6 +29,8 @@ namespace RB::HBox
 		virtual RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID);
 		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data);
 
+		virtual RB::HBox::HBoxType GetHBoxType();
+
 	protected:
 		virtual bool _ControllersExist();
 		virtual void _UpdateSelectedIndex_OnPress(size_t count);

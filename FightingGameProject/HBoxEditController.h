@@ -14,8 +14,6 @@ namespace RB::HBox
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-
-
 	};
 
 	extern HBoxEditControllerBase* HBOX_EDIT_CONTROLLER;

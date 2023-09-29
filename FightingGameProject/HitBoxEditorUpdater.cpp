@@ -49,8 +49,8 @@ namespace RB::Updaters
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::MenuController()));
 
-		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/")));
-		//RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HitBoxDataController("HitBoxSpecs/")));
+		//RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/")));
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HitBoxDataController("HitBoxSpecs/")));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HIT_BOX)));
 
 		RB::Cam::CAM_CONTROLLER->SetZoom(1.75f);

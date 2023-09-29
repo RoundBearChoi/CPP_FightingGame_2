@@ -29,14 +29,18 @@ namespace RB::HBox
 
 		if (boxType == HBoxType::HURT_BOX)
 		{
-			dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			if (RB::HBox::HURTBOX_DATA_CONTROLLER != nullptr)
+			{
+				dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			}
 		}
 		else if (boxType == HBoxType::HIT_BOX)
 		{
-			dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+			{
+				dataList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			}
 		}
-
-		//dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 
 		return dataList;
 	}
@@ -99,6 +103,11 @@ namespace RB::HBox
 		}
 
 		return nullptr;
+	}
+
+	RB::HBox::HBoxType HBoxEditControllerBase::GetHBoxType()
+	{
+		return _boxType;
 	}
 
 	bool HBoxEditControllerBase::_ControllersExist()

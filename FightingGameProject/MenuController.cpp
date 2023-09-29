@@ -22,14 +22,12 @@ namespace RB::HBox
 	void MenuController::OnUpdate()
 	{
 		if (RB::Sprites::SPRITE_DATA_CONTROLLER == nullptr)
-
 		{
 			return;
 		}
 
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
-			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
+			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr)
 		{
 			return;
 		}
@@ -45,7 +43,25 @@ namespace RB::HBox
 
 		if (_notificationFrameCount > 0)
 		{
-			const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(_currentSpriteEnum);
+			std::string path;
+
+			RB::HBox::HBoxType boxType = RB::HBox::HBOX_EDIT_CONTROLLER->GetHBoxType();
+
+			if (boxType == RB::HBox::HBoxType::HURT_BOX)
+			{
+				if (RB::HBox::HURTBOX_DATA_CONTROLLER != nullptr)
+				{
+					path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(_currentSpriteEnum);
+				}
+			}
+			else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+			{
+				if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+				{
+					path = RB::HBox::HITBOX_DATA_CONTROLLER->GetPath(_currentSpriteEnum);
+				}
+			}
+
 			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved + path, olc::GREEN);
 		}
 
@@ -80,14 +96,14 @@ namespace RB::HBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HBox::HBoxDataList* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(_currentSpriteEnum);
-
-		if (set == nullptr)
+		RB::HBox::HBoxDataList* list = _getList();
+		
+		if (list == nullptr)
 		{
 			return _none;
 		}
 
-		RB::HBox::HBoxData* data = set->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (data == nullptr)
 		{
@@ -127,14 +143,14 @@ namespace RB::HBox
 
 	size_t MenuController::_GetAABBCount()
 	{
-		RB::HBox::HBoxDataList* set = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(_currentSpriteEnum);
+		RB::HBox::HBoxDataList* list = _getList();
 
-		if (set == nullptr)
+		if (list == nullptr)
 		{
 			return 0;
 		}
 
-		RB::HBox::HBoxData* data = set->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (data == nullptr)
 		{
@@ -142,5 +158,29 @@ namespace RB::HBox
 		}
 
 		return data->GetAABBCount();
+	}
+
+	RB::HBox::HBoxDataList* MenuController::_getList()
+	{
+		RB::HBox::HBoxType boxType = RB::HBox::HBOX_EDIT_CONTROLLER->GetHBoxType();
+
+		RB::HBox::HBoxDataList* list = nullptr;
+
+		if (boxType == RB::HBox::HBoxType::HURT_BOX)
+		{
+			if (RB::HBox::HURTBOX_DATA_CONTROLLER != nullptr)
+			{
+				list = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(_currentSpriteEnum);
+			}
+		}
+		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		{
+			if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+			{
+				list = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(_currentSpriteEnum);
+			}
+		}
+
+		return list;
 	}
 }

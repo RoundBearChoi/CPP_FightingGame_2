@@ -17,6 +17,9 @@ namespace RB::Render
 
 		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::HURT_BOX);
 		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::HURT_BOX);
+
+		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::HIT_BOX);
+		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::HIT_BOX);
 	}
 
 	void PlayerHBoxRenderer::OnFixedUpdate()
@@ -55,14 +58,20 @@ namespace RB::Render
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-
+			if (RB::HBox::HURTBOX_DATA_CONTROLLER != nullptr)
+			{
+				dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
-
+			if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+			{
+				dataList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			}
 		}
 
-		dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+		//dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 
 		if (dataList == nullptr)
 		{

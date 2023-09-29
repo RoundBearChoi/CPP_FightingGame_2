@@ -29,14 +29,14 @@ namespace RB::HBox
 
 		if (boxType == HBoxType::HURT_BOX)
 		{
-
+			dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 		}
 		else if (boxType == HBoxType::HIT_BOX)
 		{
-
+			dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 		}
 
-		dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+		//dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
 
 		return dataList;
 	}
@@ -62,7 +62,21 @@ namespace RB::HBox
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 
 		//should get either hurtbox or hitbox
-		RB::HBox::HBoxDataList* dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+		RB::HBox::HBoxDataList* dataList = nullptr;
+		
+		if (_boxType == HBoxType::HURT_BOX)
+		{
+			dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+		}
+		else if (_boxType == HBoxType::HIT_BOX)
+		{
+			dataList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+		}
+
+		if (dataList == nullptr)
+		{
+			return nullptr;
+		}
 
 		RB::HBox::HBoxData* data = dataList->GetHBoxDataByFrame(currentIndex);
 
@@ -90,9 +104,19 @@ namespace RB::HBox
 
 	bool HBoxEditControllerBase::_ControllersExist()
 	{
-		if (RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
+		if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			return false;
+			if (RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
+			{
+				return false;
+			}
+		}
+		else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
+		{
+			if (RB::HBox::HITBOX_DATA_CONTROLLER == nullptr)
+			{
+				return false;
+			}
 		}
 
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
@@ -242,7 +266,7 @@ namespace RB::HBox
 
 	void HBoxEditControllerBase::_SaveHBoxes_OnPress()
 	{
-		RB::HBox::HBoxDataList* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, HBoxType::HURT_BOX);
+		RB::HBox::HBoxDataList* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, _boxType);
 
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 
@@ -251,7 +275,16 @@ namespace RB::HBox
 			std::cout << std::endl;
 			std::cout << "saving hurtbox set" << std::endl;
 
-			const std::string& path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(list->GetSpriteEnum());
+			std::string path;
+
+			if (_boxType == RB::HBox::HBoxType::HURT_BOX)
+			{
+				path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(list->GetSpriteEnum());
+			}
+			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
+			{
+				path = RB::HBox::HITBOX_DATA_CONTROLLER->GetPath(list->GetSpriteEnum());
+			}
 
 			std::ofstream file(path);
 

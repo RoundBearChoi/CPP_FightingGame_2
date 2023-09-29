@@ -6,6 +6,7 @@
 #include "HBoxType.h"
 
 #include "iHurtBoxDataController.h"
+#include "iHitBoxDataController.h"
 #include "iPlayerAnimationController.h"
 #include "iPlayerController.h"
 

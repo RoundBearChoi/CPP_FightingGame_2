@@ -13,6 +13,7 @@
 #include "PlayerDebugController.h"
 #include "PlayerAnimationController.h"
 #include "HurtBoxDataController.h"
+#include "HitBoxDataController.h"
 
 namespace RB::Updaters
 {

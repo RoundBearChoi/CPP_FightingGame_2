@@ -15,8 +15,7 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-	private:
-		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
+
 	};
 
 	extern HBoxEditControllerBase* HBOX_EDIT_CONTROLLER;

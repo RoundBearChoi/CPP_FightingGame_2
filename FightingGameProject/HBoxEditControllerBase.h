@@ -12,6 +12,7 @@
 
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"
+#include "iHitBoxDataController.h"
 #include "iCamController.h"
 #include "iMenuController.h"
 
@@ -38,5 +39,6 @@ namespace RB::HBox
 
 	protected:
 		size_t _selectedIndex = 0;
+		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 	};
 }

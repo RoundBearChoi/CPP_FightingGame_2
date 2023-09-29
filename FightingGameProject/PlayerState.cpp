@@ -16,6 +16,11 @@ namespace RB::PlayerStates
 			return RB::Players::PlayerID::NONE;
 		}
 				
+		if (_ownerPlayer == nullptr)
+		{
+			std::cout << "no owner player" << std::endl;
+		}
+
 		return _ownerPlayer->GetPlayerID();
 	}
 

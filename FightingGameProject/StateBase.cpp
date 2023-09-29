@@ -44,7 +44,7 @@ namespace RB::States
 	{
 		if (stateComponent == nullptr)
 		{
-			std::cout << "wtf" << std::endl;
+			std::cout << "null StateComponent" << std::endl;
 		}
 
 		stateComponent->SetState(this);

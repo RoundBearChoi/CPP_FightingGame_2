@@ -61,7 +61,6 @@ namespace RB::HBox
 
 		int32_t currentIndex = aniObj->GetCurrentIndex();
 
-		//should get either hurtbox or hitbox
 		RB::HBox::HBoxDataList* dataList = nullptr;
 		
 		if (_boxType == HBoxType::HURT_BOX)

@@ -39,5 +39,23 @@ namespace RB::PlayerStateComponents
 
 		size_t ownerAABBCount = ownerData->GetAABBCount();
 		size_t enemyAABBCount = enemyData->GetAABBCount();
+		
+		for (size_t i = 0; i < ownerAABBCount; i++)
+		{
+			for (size_t j = 0; j < enemyAABBCount; j++)
+			{
+				RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
+				RB::Collisions::AABB& enemyAABB = enemyData->GetAABB(j);
+
+				if (ownerAABB.IsCollidingAgainst(enemyAABB))
+				{
+					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << enemy->GetPlayerID_int() << std::endl;
+					std::cout << std::endl;
+
+					return;
+				}
+			}
+		}
 	}
 }

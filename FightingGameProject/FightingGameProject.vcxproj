@@ -177,6 +177,7 @@
     <ClCompile Include="PlayerHBoxRenderer.cpp" />
     <ClCompile Include="PlayerPositionRenderer.cpp" />
     <ClCompile Include="PlayerState.cpp" />
+    <ClCompile Include="PlayerStateInstantiator.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="TriggerIdleOnAnimationEnd.cpp" />
     <ClCompile Include="TriggerJab.cpp" />
@@ -263,6 +264,7 @@
     <ClInclude Include="PlayerHBoxRenderer.h" />
     <ClInclude Include="PlayerPositionRenderer.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="PlayerStateInstantiator.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
     <ClInclude Include="TriggerIdleOnAnimationEnd.h" />

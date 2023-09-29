@@ -28,6 +28,7 @@ namespace RB::Players
 
 	public:
 		PlayerID GetPlayerID() override;
+		int GetPlayerID_int() override;
 		bool OtherPlayerIsOnRightSide() override;
 		RB::States::iStateMachine* GetStateMachine() override;
 		size_t GetStateMachineID() override;

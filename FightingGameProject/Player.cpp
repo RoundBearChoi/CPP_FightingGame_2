@@ -53,6 +53,20 @@ namespace RB::Players
 		return _playerID;
 	}
 
+	int Player::GetPlayerID_int()
+	{
+		if (_playerID == RB::Players::PlayerID::PLAYER_1)
+		{
+			return 1;
+		}
+		else if (_playerID == RB::Players::PlayerID::PLAYER_2)
+		{
+			return 2;
+		}
+
+		return 0;
+	}
+
 	bool Player::OtherPlayerIsOnRightSide()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr)

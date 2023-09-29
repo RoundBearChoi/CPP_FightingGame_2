@@ -24,6 +24,7 @@ namespace RB::Players
 
 	public:
 		virtual PlayerID GetPlayerID() = 0;
+		virtual int GetPlayerID_int() = 0;
 		virtual bool OtherPlayerIsOnRightSide() = 0;
 		virtual size_t GetStateMachineID() = 0;
 		virtual RB::States::iStateMachine* GetStateMachine() = 0;

@@ -9,8 +9,7 @@ namespace RB::Render
 	void PlayerHBoxRenderer::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
-			RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
+			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr)
 		{
 			return;
 		}

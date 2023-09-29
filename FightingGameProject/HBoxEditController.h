@@ -18,11 +18,11 @@
 
 namespace RB::HBox
 {
-	class HBoxEditControllerBase : public RB::HBox::iHBoxEditController
+	class HBoxEditController : public RB::HBox::iHBoxEditController
 	{
 	public:
-		HBoxEditControllerBase(RB::HBox::HBoxType boxType);
-		~HBoxEditControllerBase() override;
+		HBoxEditController(RB::HBox::HBoxType boxType);
+		~HBoxEditController() override;
 
 		void Init() override;
 		void OnUpdate() override;

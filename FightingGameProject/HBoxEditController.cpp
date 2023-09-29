@@ -1,25 +1,25 @@
-#include "HBoxEditControllerBase.h"
+#include "HBoxEditController.h"
 
 namespace RB::HBox
 {
-	HBoxEditControllerBase::HBoxEditControllerBase(RB::HBox::HBoxType boxType)
+	HBoxEditController::HBoxEditController(RB::HBox::HBoxType boxType)
 	{
 		HBOX_EDIT_CONTROLLER = this;
 
 		_boxType = boxType;
 	}
 
-	HBoxEditControllerBase::~HBoxEditControllerBase()
+	HBoxEditController::~HBoxEditController()
 	{
 		HBOX_EDIT_CONTROLLER = nullptr;
 	}
 
-	void HBoxEditControllerBase::Init()
+	void HBoxEditController::Init()
 	{
 
 	}
 
-	void HBoxEditControllerBase::OnUpdate()
+	void HBoxEditController::OnUpdate()
 	{
 		if (_ControllersExist() == false)
 		{
@@ -32,12 +32,12 @@ namespace RB::HBox
 		_EditAABB_OnPress(RB::Players::PlayerID::PLAYER_1);
 	}
 
-	void HBoxEditControllerBase::OnFixedUpdate()
+	void HBoxEditController::OnFixedUpdate()
 	{
 
 	}
 
-	RB::HBox::HBoxDataList* HBoxEditControllerBase::GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
+	RB::HBox::HBoxDataList* HBoxEditController::GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -78,7 +78,7 @@ namespace RB::HBox
 		return dataList;
 	}
 
-	RB::HBox::HBoxData* HBoxEditControllerBase::GetCurrentHBoxData(RB::Players::PlayerID playerID)
+	RB::HBox::HBoxData* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
 
@@ -119,7 +119,7 @@ namespace RB::HBox
 		return data;
 	}
 
-	RB::Collisions::AABB* HBoxEditControllerBase::GetCurrentAABB(RB::HBox::HBoxData* data)
+	RB::Collisions::AABB* HBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
 	{
 		size_t count = data->GetAABBCount();
 
@@ -138,12 +138,12 @@ namespace RB::HBox
 		return nullptr;
 	}
 
-	RB::HBox::HBoxType HBoxEditControllerBase::GetHBoxType()
+	RB::HBox::HBoxType HBoxEditController::GetHBoxType()
 	{
 		return _boxType;
 	}
 
-	bool HBoxEditControllerBase::_ControllersExist()
+	bool HBoxEditController::_ControllersExist()
 	{
 		if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
@@ -171,7 +171,7 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditControllerBase::_UpdateSelectedIndex_OnPress(size_t count)
+	void HBoxEditController::_UpdateSelectedIndex_OnPress(size_t count)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
@@ -195,7 +195,7 @@ namespace RB::HBox
 			_selectedIndex = 0;
 		}
 	}
-	void HBoxEditControllerBase::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
+	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
@@ -215,7 +215,7 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	}
 
-	void HBoxEditControllerBase::_Add_Delete_AABB_OnPress()
+	void HBoxEditController::_Add_Delete_AABB_OnPress()
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
 
@@ -238,7 +238,7 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxEditControllerBase::_EditAABB_OnPress(RB::Players::PlayerID playerID)
+	void HBoxEditController::_EditAABB_OnPress(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
@@ -305,7 +305,7 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxEditControllerBase::_SaveHBoxes_OnPress()
+	void HBoxEditController::_SaveHBoxes_OnPress()
 	{
 		RB::HBox::HBoxDataList* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, _boxType);
 

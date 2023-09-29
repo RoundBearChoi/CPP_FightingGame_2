@@ -238,7 +238,7 @@
     <ClCompile Include="iInputController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
-    <ClCompile Include="HBoxEditControllerBase.cpp">
+    <ClCompile Include="HBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="iMenuController.cpp">
@@ -528,7 +528,7 @@
     <ClInclude Include="iInputController.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="HBoxEditControllerBase.h">
+    <ClInclude Include="HBoxEditController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="iMenuController.h">

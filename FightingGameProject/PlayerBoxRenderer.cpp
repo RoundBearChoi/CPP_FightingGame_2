@@ -26,7 +26,7 @@ namespace RB::Render
 			olc::vi2d playerBox = player->GetPlayerBox();
 			olc::vi2d playerPos = player->GetPosition();
 
-			olc::Pixel boxTint = olc::GREEN;
+			olc::Pixel boxTint = olc::YELLOW;
 
 			if (player->IsCollidingAgainstOtherPlayer())
 			{

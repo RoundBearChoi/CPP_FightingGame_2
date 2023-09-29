@@ -3,8 +3,12 @@
 
 #include "iPlayer.h"
 #include "PlayerID.h"
+#include "PlayerState.h"
+#include "ActivePlayerStates.h"
 
 #include "iPlayerController.h"
+#include "iHitBoxDataController.h"
+#include "iHurtBoxDataController.h"
 
 namespace RB::PlayerStateComponents
 {

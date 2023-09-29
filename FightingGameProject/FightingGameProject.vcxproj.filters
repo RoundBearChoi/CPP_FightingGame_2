@@ -277,6 +277,9 @@
     <ClCompile Include="iHBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
+    <ClCompile Include="DetectHit.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -572,6 +575,9 @@
     </ClInclude>
     <ClInclude Include="iHBoxEditController.h">
       <Filter>Source Files\HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectHit.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

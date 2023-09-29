@@ -148,6 +148,7 @@
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
+    <ClCompile Include="DetectHit.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />
@@ -228,6 +229,7 @@
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
+    <ClInclude Include="DetectHit.h" />
     <ClInclude Include="HitBoxDataController.h" />
     <ClInclude Include="iHBoxEditController.h" />
     <ClInclude Include="iHitBoxDataController.h" />

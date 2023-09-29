@@ -28,7 +28,13 @@ namespace RB::PlayerStateComponents
 		RB::Sprites::SpriteEnum ownerSpriteEnum = ownerState->GetSpriteEnum();
 		RB::Sprites::SpriteEnum enemySpriteEnum = enemyState->GetSpriteEnum();
 		
+		RB::Render::iPlayerAnimationObj* ownerAniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(owner->GetPlayerID(), ownerSpriteEnum);
+		RB::Render::iPlayerAnimationObj* enemyAniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(enemy->GetPlayerID(), enemySpriteEnum);
+
 		RB::HBox::HBoxDataList* ownerList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(ownerSpriteEnum);
-		RB::HBox::HBoxDataList* enemyList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(enemySpriteEnum);
+		RB::HBox::HBoxDataList* enemyList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(enemySpriteEnum);
+
+		RB::HBox::HBoxData* ownerData = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
+		RB::HBox::HBoxData* enemyData = enemyList->GetHBoxDataByFrame(enemyAniObj->GetCurrentIndex());
 	}
 }

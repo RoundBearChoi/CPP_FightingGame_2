@@ -9,6 +9,7 @@
 #include "iPlayerController.h"
 #include "iHitBoxDataController.h"
 #include "iHurtBoxDataController.h"
+#include "iPlayerAnimationController.h"
 
 namespace RB::PlayerStateComponents
 {

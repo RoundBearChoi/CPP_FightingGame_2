@@ -72,6 +72,16 @@ namespace RB::Collisions
 
 		bool IsCollidingAgainst(const AABB& other)
 		{
+			if (_width <= 0.001f || _height <= 0.001f)
+			{
+				return false;
+			}
+
+			if (other._width <= 0.001f || other._height <= 0.001f)
+			{
+				return false;
+			}
+
 			return (_bottomLeftX < other._bottomLeftX + other._width && _bottomLeftX + _width > other._bottomLeftX && _bottomLeftY < other._bottomLeftY + other._height && _bottomLeftY + _height > other._bottomLeftY);
 		}
 

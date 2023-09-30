@@ -9,11 +9,18 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnUpdate()
 	{
+		if (_tempPos.x != 0.0f && _tempPos.y != 0.0f)
+		{
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempPos, olc::RED);
 
+			//olc::Renderer::ptrPGE->DrawLine({ 0, 0 }, { 100, 100 }, olc::RED);
+		}
 	}
 
 	void DetectHit::OnFixedUpdate()
 	{
+		_tempPos = { 0.0f, 0.0f };
+
 		RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::PLAYER_CONTROLLER->GetOtherPlayer(owner);
 
@@ -64,6 +71,8 @@ namespace RB::PlayerStateComponents
 
 				RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(ownerPos);
 				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(targetPos);
+
+				_tempPos = ownerWorldAABB.GetBottomLeft();
 
 				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB))
 				{

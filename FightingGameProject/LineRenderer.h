@@ -13,7 +13,6 @@ namespace RB::Render
 		~LineRenderer() = default;
 
 	public:
-		void Init();
 		void RenderLine(olc::vf2d p1, olc::vf2d p2, olc::Pixel tint);
 	};
 }

@@ -2,11 +2,6 @@
 
 namespace RB::Render
 {
-	void LineRenderer::Init()
-	{
-		
-	}
-
 	void LineRenderer::RenderLine(olc::vf2d p1, olc::vf2d p2, olc::Pixel tint)
 	{
 		if (RB::Cam::CAM_CONTROLLER == nullptr)

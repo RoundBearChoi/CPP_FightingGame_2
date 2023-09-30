@@ -14,6 +14,9 @@
 #include "iPlayerAnimationController.h"
 #include "iAttackRegisterController.h"
 
+//temp
+#include "LineRenderer.h"
+
 namespace RB::PlayerStateComponents
 {
 	class DetectHit : public RB::States::StateComponentBase
@@ -26,5 +29,9 @@ namespace RB::PlayerStateComponents
 		void OnEnter() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		RB::Render::LineRenderer _lineRenderer;
+		olc::vf2d _tempPos = { 0.0f, 0.0f };
 	};
 }

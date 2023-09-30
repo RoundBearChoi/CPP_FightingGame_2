@@ -4,7 +4,7 @@ namespace RB::PlayerStateComponents
 {
 	void WhileMovingBack::OnEnter()
 	{
-		_moveForwardDetector.SetStateMachineID(_state->GetStateMachineID());
+		_moveForward.SetStateMachineID(_state->GetStateMachineID());
 		_moveBackDetector.SetStateMachineID(_state->GetStateMachineID());
 	}
 
@@ -15,24 +15,24 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		_keepMoving = false;
-		_moveForward = false;
+		_bKeepMoving = false;
+		_bMoveForward = false;
 
-		_moveForwardDetector.OnUpdate();
+		_moveForward.OnUpdate();
 		_moveBackDetector.OnUpdate();
 
-		if (_moveForwardDetector.MoveForward())
+		if (_moveForward.ProcMoveForward())
 		{
-			_moveForward = true;
-			_keepMoving = false;
+			_bMoveForward = true;
+			_bKeepMoving = false;
 
 			return;
 		}
 
 		if (_moveBackDetector.MoveBack())
 		{
-			_moveForward = false;
-			_keepMoving = true;
+			_bMoveForward = false;
+			_bKeepMoving = true;
 
 			return;
 		}
@@ -51,7 +51,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_keepMoving)
+		if (_bKeepMoving)
 		{
 			int movement = 0;
 
@@ -69,7 +69,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_moveForward)
+		if (_bMoveForward)
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 			stateMachine->QueueNextState(new RB::PlayerStates::P0_MoveForward());
@@ -77,7 +77,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (!_keepMoving)
+		if (!_bKeepMoving)
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 			stateMachine->QueueNextState(new RB::PlayerStates::P0_Idle());

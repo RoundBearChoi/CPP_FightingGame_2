@@ -1,7 +1,7 @@
 #pragma once
 #include "StateComponentBase.h"
 #include "MoveBackDetector.h"
-#include "MoveForwardDetector.h"
+#include "MoveForward.h"
 #include "P0_Idle.h"
 #include "P0_MoveForward.h"
 
@@ -23,8 +23,8 @@ namespace RB::PlayerStateComponents
 
 	private:
 		MoveBackDetector _moveBackDetector;
-		MoveForwardDetector _moveForwardDetector;
-		bool _keepMoving = false;
-		bool _moveForward = false;
+		MoveForward _moveForward;
+		bool _bKeepMoving = false;
+		bool _bMoveForward = false;
 	};
 }

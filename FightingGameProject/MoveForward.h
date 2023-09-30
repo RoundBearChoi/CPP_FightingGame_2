@@ -7,16 +7,16 @@
 
 namespace RB::PlayerStateComponents
 {
-	class MoveForwardDetector
+	class MoveForward
 	{
 	public:
-		MoveForwardDetector() = default;
-		~MoveForwardDetector() = default;
+		MoveForward() = default;
+		~MoveForward() = default;
 
 	public:
 		void SetStateMachineID(size_t id);
 		void OnUpdate();
-		bool MoveForward();
+		bool ProcMoveForward();
 
 	private:
 		bool _BothPressed();

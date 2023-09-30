@@ -1,13 +1,13 @@
-#include "MoveForwardDetector.h"
+#include "MoveForward.h"
 
 namespace RB::PlayerStateComponents
 {
-	void MoveForwardDetector::SetStateMachineID(size_t id)
+	void MoveForward::SetStateMachineID(size_t id)
 	{
 		_stateMachineID = id;
 	}
 
-	void MoveForwardDetector::OnUpdate()
+	void MoveForward::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Input::INPUT_CONTROLLER == nullptr)
@@ -33,12 +33,12 @@ namespace RB::PlayerStateComponents
 		}
 	}
 
-	bool MoveForwardDetector::MoveForward()
+	bool MoveForward::ProcMoveForward()
 	{
 		return _moveForward;
 	}
 
-	bool MoveForwardDetector::_BothPressed()
+	bool MoveForward::_BothPressed()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
@@ -61,7 +61,7 @@ namespace RB::PlayerStateComponents
 		return false;
 	}
 
-	bool MoveForwardDetector::_MoveForwardPressed()
+	bool MoveForward::_MoveForwardPressed()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 

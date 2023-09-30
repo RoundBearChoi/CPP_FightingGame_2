@@ -154,7 +154,7 @@
     <ClCompile Include="WhileMovingForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="MoveForwardDetector.cpp">
+    <ClCompile Include="MoveForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="MoveBackDetector.cpp">
@@ -450,7 +450,7 @@
     <ClInclude Include="WhileMovingForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="MoveForwardDetector.h">
+    <ClInclude Include="MoveForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="MoveBackDetector.h">

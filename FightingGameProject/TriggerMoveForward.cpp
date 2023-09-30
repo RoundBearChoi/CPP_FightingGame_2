@@ -4,7 +4,7 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerMoveForward::OnEnter()
 	{
-		_moveForwardDetector.SetStateMachineID(_state->GetStateMachineID());
+		_moveForward.SetStateMachineID(_state->GetStateMachineID());
 	}
 
 	void TriggerMoveForward::OnUpdate()
@@ -21,9 +21,9 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		_moveForwardDetector.OnUpdate();
+		_moveForward.OnUpdate();
 
-		if (_moveForwardDetector.MoveForward())
+		if (_moveForward.ProcMoveForward())
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 

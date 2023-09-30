@@ -32,10 +32,10 @@ namespace RB::PlayerStateComponents
 		RB::Render::iPlayerAnimationObj* targetAniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(target->GetPlayerID(), targetSpriteEnum);
 
 		RB::HBox::HBoxDataList* ownerList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(ownerSpriteEnum);
-		RB::HBox::HBoxDataList* enemyList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(targetSpriteEnum);
+		RB::HBox::HBoxDataList* targetList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(targetSpriteEnum);
 
 		RB::HBox::HBoxData* ownerData = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
-		RB::HBox::HBoxData* targetData = enemyList->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
+		RB::HBox::HBoxData* targetData = targetList->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 
 		size_t ownerAABBCount = ownerData->GetAABBCount();
 		size_t targetAABBCount = targetData->GetAABBCount();

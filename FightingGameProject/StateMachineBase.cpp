@@ -62,6 +62,18 @@ namespace RB::States
 		}
 	}
 
+	void StateMachineBase::OverrideNextState(RB::States::iState* state)
+	{
+		if (_nextState != nullptr)
+		{
+			delete _nextState;
+		}
+
+		_currentState->SetTransitionStatus(true);
+
+		_nextState = state;
+	}
+
 	void StateMachineBase::SetID(size_t ID)
 	{
 		_stateMachineID = ID;

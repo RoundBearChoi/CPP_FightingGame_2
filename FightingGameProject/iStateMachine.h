@@ -15,6 +15,7 @@ namespace RB::States
 
 	public:
 		virtual void QueueNextState(iState* state) = 0;
+		virtual void OverrideNextState(RB::States::iState* state) = 0;
 		virtual void SetID(size_t ID) = 0;
 		virtual size_t GetID() = 0;
 		virtual iState* GetCurrentState() = 0;

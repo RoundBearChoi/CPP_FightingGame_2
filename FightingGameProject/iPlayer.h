@@ -36,7 +36,7 @@ namespace RB::Players
 
 	public:
 		virtual olc::vi2d GetPlayerBox() = 0;
-		virtual RB::Collisions::AABB& GetAABB() = 0;
+		virtual RB::Collisions::AABB& UpdateAABBOnPlayerPos() = 0;
 		virtual bool IsCollidingAgainstOtherPlayer() = 0;
 
 	public:

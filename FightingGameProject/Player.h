@@ -40,7 +40,7 @@ namespace RB::Players
 
 	public:
 		olc::vi2d GetPlayerBox() override;
-		RB::Collisions::AABB& GetAABB() override;
+		RB::Collisions::AABB& UpdateAABBOnPlayerPos() override;
 		bool IsCollidingAgainstOtherPlayer() override;
 
 	public:

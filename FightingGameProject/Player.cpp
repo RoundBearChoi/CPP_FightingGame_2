@@ -131,9 +131,9 @@ namespace RB::Players
 		return _playerCollider.GetPlayerBox();
 	}
 
-	RB::Collisions::AABB& Player::GetAABB()
+	RB::Collisions::AABB& Player::UpdateAABBOnPlayerPos()
 	{
-		return _playerCollider.GetAABB();
+		return _playerCollider.UpdateAABBOnPlayerPos();
 	}
 
 	bool Player::IsCollidingAgainstOtherPlayer()

@@ -32,8 +32,8 @@ namespace RB::Players
 			return;
 		}
 
-		RB::Collisions::AABB otherAABB = other->GetAABB();
-		RB::Collisions::AABB myAABB = GetAABB();
+		RB::Collisions::AABB otherAABB = other->UpdateAABBOnPlayerPos();
+		RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();
 
 		if (myAABB.IsCollidingAgainst(otherAABB))
 		{
@@ -58,7 +58,7 @@ namespace RB::Players
 		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
 	}
 
-	RB::Collisions::AABB& PlayerCollider::GetAABB()
+	RB::Collisions::AABB& PlayerCollider::UpdateAABBOnPlayerPos()
 	{
 		olc::vi2d bottomCenter = _player->GetPosition();
 		olc::vi2d playerBox = _player->GetPlayerBox();
@@ -66,7 +66,6 @@ namespace RB::Players
 
 		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
 
-		//why set here?
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
 
 		return _aabb;

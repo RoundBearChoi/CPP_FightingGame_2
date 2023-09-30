@@ -8,6 +8,7 @@ namespace RB::HBox
 		_vecLists.push_back(_loader.LoadDataList(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteEnum::fighter_0_idle));
 		_vecLists.push_back(_loader.LoadDataList(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteEnum::fighter_0_walk));
 		_vecLists.push_back(_loader.LoadDataList(_dir + "fighter_0_jab" + _extention, RB::Sprites::SpriteEnum::fighter_0_jab));
+		_vecLists.push_back(_loader.LoadDataList(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteEnum::fighter_0_wince));
 	}
 
 	HBoxDataList* HB::GetDataList(RB::Sprites::SpriteEnum spriteEnum)

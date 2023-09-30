@@ -28,6 +28,7 @@ namespace RB::Render
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
 		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
 		_spriteRenderer.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
+		_spriteRenderer.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
 
 		//animations
 		_animationLoader.Init();
@@ -82,11 +83,22 @@ namespace RB::Render
 		jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
 		jabSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jab);
 
+		AnimationSpecs winceSpecs;
+		winceSpecs.mX_TileCount = 1;
+		winceSpecs.mY_TileCount = 1;
+		winceSpecs.mTotalSprites = 1;
+		winceSpecs.mSkipFixedUpdates = 2;
+		winceSpecs.mRenderSize = olc::vf2d{ 240.0f, 160.0f };
+		winceSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		winceSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
+		winceSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_wince);
+
 		_animationLoader.LoadAnimation(idleSpecs);
 		_animationLoader.LoadAnimation(walkSpecs);
 		_animationLoader.LoadAnimation(jumpUpSpecs);
 		_animationLoader.LoadAnimation(fallSpecs);
 		_animationLoader.LoadAnimation(jabSpecs);
+		_animationLoader.LoadAnimation(winceSpecs);
 	}
 
 	void PlayerAnimationController::OnUpdate()

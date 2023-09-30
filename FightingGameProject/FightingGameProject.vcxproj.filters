@@ -289,6 +289,9 @@
     <ClCompile Include="iAttackRegisterController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
+    <ClCompile Include="P0_Wince.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -599,6 +602,9 @@
     </ClInclude>
     <ClInclude Include="AttackRegister.h">
       <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Wince.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

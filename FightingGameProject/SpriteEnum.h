@@ -16,6 +16,7 @@ namespace RB::Sprites
 		fighter_0_jump_up,
 		fighter_0_fall,
 		fighter_0_jab,
+		fighter_0_wince,
 
 		background_1,
 		background_2,

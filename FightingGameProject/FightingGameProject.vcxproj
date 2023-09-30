@@ -175,6 +175,7 @@
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Dummy.cpp" />
+    <ClCompile Include="P0_Wince.cpp" />
     <ClCompile Include="PlayerBoxRenderer.cpp" />
     <ClCompile Include="PlayerHBoxRenderer.cpp" />
     <ClCompile Include="PlayerPositionRenderer.cpp" />
@@ -265,6 +266,7 @@
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
+    <ClInclude Include="P0_Wince.h" />
     <ClInclude Include="PlayerBoxRenderer.h" />
     <ClInclude Include="PlayerHBoxRenderer.h" />
     <ClInclude Include="PlayerPositionRenderer.h" />

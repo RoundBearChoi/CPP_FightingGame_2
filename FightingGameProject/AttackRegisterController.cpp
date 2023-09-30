@@ -14,6 +14,21 @@ namespace RB::Collisions
 		ATTACK_REGISTER_CONTROLLER = nullptr;
 	}
 
+	void AttackRegisterController::Init()
+	{
+
+	}
+
+	void AttackRegisterController::OnUpdate()
+	{
+
+	}
+
+	void AttackRegisterController::OnFixedUpdate()
+	{
+
+	}
+
 	void AttackRegisterController::RegisterAttack(AttackRegister attackRegister)
 	{
 		if (RB::Players::PlayerID::PLAYER_1 == attackRegister.target->GetPlayerID())
@@ -29,5 +44,19 @@ namespace RB::Collisions
 	void AttackRegisterController::ProcessHits()
 	{
 
+	}
+
+	size_t AttackRegisterController::GetRegisteredAttackCount(RB::Players::PlayerID playerID)
+	{
+		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		{
+			return _vec_p1_hits_taken.size();
+		}
+		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		{
+			return _vec_p2_hits_taken.size();
+		}
+
+		return 0;
 	}
 }

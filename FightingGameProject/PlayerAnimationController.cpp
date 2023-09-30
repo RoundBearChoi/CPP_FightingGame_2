@@ -88,7 +88,7 @@ namespace RB::Render
 		winceSpecs.mY_TileCount = 1;
 		winceSpecs.mTotalSprites = 1;
 		winceSpecs.mSkipFixedUpdates = 2;
-		winceSpecs.mRenderSize = olc::vf2d{ 240.0f, 160.0f };
+		winceSpecs.mRenderSize = olc::vf2d{ 71.5f, 132.1f };
 		winceSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		winceSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
 		winceSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_wince);

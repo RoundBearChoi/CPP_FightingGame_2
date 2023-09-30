@@ -12,6 +12,7 @@
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
 #include "PlayerAnimationController.h"
+#include "AttackRegisterController.h"
 #include "HurtBoxDataController.h"
 #include "HitBoxDataController.h"
 

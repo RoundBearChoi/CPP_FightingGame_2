@@ -15,6 +15,7 @@ namespace RB::Collisions
 	public:
 		virtual void RegisterAttack(AttackRegister attackRegister) = 0;
 		virtual void ProcessHits() = 0;
+		virtual size_t GetRegisteredAttackCount(RB::Players::PlayerID playerID) = 0;
 	};
 
 	extern iAttackRegisterController* ATTACK_REGISTER_CONTROLLER;

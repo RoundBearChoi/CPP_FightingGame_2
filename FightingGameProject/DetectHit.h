@@ -6,10 +6,13 @@
 #include "PlayerState.h"
 #include "ActivePlayerStates.h"
 
+#include "P0_Wince.h"
+
 #include "iPlayerController.h"
 #include "iHitBoxDataController.h"
 #include "iHurtBoxDataController.h"
 #include "iPlayerAnimationController.h"
+#include "iAttackRegisterController.h"
 
 namespace RB::PlayerStateComponents
 {

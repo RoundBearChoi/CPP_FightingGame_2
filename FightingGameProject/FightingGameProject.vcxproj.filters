@@ -283,6 +283,12 @@
     <ClCompile Include="PlayerStateInstantiator.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="AttackRegisterController.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="iAttackRegisterController.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -584,6 +590,15 @@
     </ClInclude>
     <ClInclude Include="PlayerStateInstantiator.h">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackRegisterController.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="iAttackRegisterController.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackRegister.h">
+      <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

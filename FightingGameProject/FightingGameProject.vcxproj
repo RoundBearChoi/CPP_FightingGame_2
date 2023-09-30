@@ -145,11 +145,13 @@
   <ItemGroup>
     <ClCompile Include="ActivePlayerStates.cpp" />
     <ClCompile Include="AirMomentum.cpp" />
+    <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
+    <ClCompile Include="iAttackRegisterController.cpp" />
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
@@ -227,11 +229,14 @@
     <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
+    <ClInclude Include="AttackRegister.h" />
+    <ClInclude Include="AttackRegisterController.h" />
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="DetectHit.h" />
     <ClInclude Include="HitBoxDataController.h" />
+    <ClInclude Include="iAttackRegisterController.h" />
     <ClInclude Include="iHBoxEditController.h" />
     <ClInclude Include="iHitBoxDataController.h" />
     <ClInclude Include="P0_Jab.h" />

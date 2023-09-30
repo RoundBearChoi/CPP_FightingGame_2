@@ -32,6 +32,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		RB::Render::LineRenderer _lineRenderer;
-		olc::vf2d _tempPos = { 0.0f, 0.0f };
+		RB::Collisions::AABB _tempOwnerAABB;
 	};
 }

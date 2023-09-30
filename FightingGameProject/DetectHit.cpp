@@ -9,17 +9,20 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnUpdate()
 	{
-		if (_tempPos.x != 0.0f && _tempPos.y != 0.0f)
-		{
-			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempPos, olc::RED);
+		olc::vf2d wh = _tempOwnerAABB.GetWidthHeight();
 
-			//olc::Renderer::ptrPGE->DrawLine({ 0, 0 }, { 100, 100 }, olc::RED);
+		if (wh.x != 0.0f && wh.y != 0.0f)
+		{
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft(), olc::RED);
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft() + olc::vf2d{_tempOwnerAABB.GetWidthHeight().x, 0.0f }, olc::RED);
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft() + olc::vf2d{ 0.0f, -_tempOwnerAABB.GetWidthHeight().y }, olc::RED);
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft() + olc::vf2d{ _tempOwnerAABB.GetWidthHeight().x, -_tempOwnerAABB.GetWidthHeight().y }, olc::RED);
 		}
 	}
 
 	void DetectHit::OnFixedUpdate()
 	{
-		_tempPos = { 0.0f, 0.0f };
+		_tempOwnerAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 		RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::PLAYER_CONTROLLER->GetOtherPlayer(owner);
@@ -72,7 +75,7 @@ namespace RB::PlayerStateComponents
 				RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(ownerPos);
 				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(targetPos);
 
-				_tempPos = ownerWorldAABB.GetBottomLeft();
+				_tempOwnerAABB = ownerWorldAABB;
 
 				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB))
 				{

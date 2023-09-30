@@ -9,20 +9,31 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnUpdate()
 	{
-		olc::vf2d wh = _tempOwnerAABB.GetWidthHeight();
+		olc::vf2d ownerWH = _tempOwnerAABB.GetWidthHeight();
 
-		if (wh.x != 0.0f && wh.y != 0.0f)
+		if (ownerWH.x != 0.0f && ownerWH.y != 0.0f)
 		{
 			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft(), olc::RED);
 			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft() + olc::vf2d{_tempOwnerAABB.GetWidthHeight().x, 0.0f }, olc::RED);
 			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft() + olc::vf2d{ 0.0f, -_tempOwnerAABB.GetWidthHeight().y }, olc::RED);
 			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempOwnerAABB.GetBottomLeft() + olc::vf2d{ _tempOwnerAABB.GetWidthHeight().x, -_tempOwnerAABB.GetWidthHeight().y }, olc::RED);
 		}
+
+		olc::vf2d targetWH = _tempTargetAABB.GetWidthHeight();
+
+		if (targetWH.x != 0.0f && targetWH.y != 0.0f)
+		{
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempTargetAABB.GetBottomLeft(), olc::MAGENTA);
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempTargetAABB.GetBottomLeft() + olc::vf2d{ _tempTargetAABB.GetWidthHeight().x, 0.0f }, olc::MAGENTA);
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempTargetAABB.GetBottomLeft() + olc::vf2d{ 0.0f, -_tempTargetAABB.GetWidthHeight().y }, olc::MAGENTA);
+			_lineRenderer.RenderLine({ 0.0f, 100.0f }, _tempTargetAABB.GetBottomLeft() + olc::vf2d{ _tempTargetAABB.GetWidthHeight().x, -_tempTargetAABB.GetWidthHeight().y }, olc::MAGENTA);
+		}
 	}
 
 	void DetectHit::OnFixedUpdate()
 	{
 		_tempOwnerAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
+		_tempTargetAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 		RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::PLAYER_CONTROLLER->GetOtherPlayer(owner);
@@ -76,6 +87,7 @@ namespace RB::PlayerStateComponents
 				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(targetPos);
 
 				_tempOwnerAABB = ownerWorldAABB;
+				_tempTargetAABB = targetWorldAABB;
 
 				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB))
 				{

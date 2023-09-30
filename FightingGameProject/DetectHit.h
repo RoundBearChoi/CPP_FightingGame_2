@@ -33,5 +33,6 @@ namespace RB::PlayerStateComponents
 	private:
 		RB::Render::LineRenderer _lineRenderer;
 		RB::Collisions::AABB _tempOwnerAABB;
+		RB::Collisions::AABB _tempTargetAABB;
 	};
 }

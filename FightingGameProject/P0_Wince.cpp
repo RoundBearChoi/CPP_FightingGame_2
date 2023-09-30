@@ -16,16 +16,17 @@ namespace RB::PlayerStates
 
 	void P0_Wince::OnExit()
 	{
-
+		ExitStateComponents();
+		ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_Wince::OnUpdate()
 	{
-
+		UpdateStateComponents();
 	}
 
 	void P0_Wince::OnFixedUpdate()
 	{
-
+		FixedUpdateStateComponents();
 	}
 }

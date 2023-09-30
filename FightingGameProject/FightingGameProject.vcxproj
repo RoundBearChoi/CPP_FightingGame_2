@@ -182,6 +182,7 @@
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="PlayerStateInstantiator.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
+    <ClCompile Include="TriggerIdle.cpp" />
     <ClCompile Include="TriggerIdleOnAnimationEnd.cpp" />
     <ClCompile Include="TriggerJab.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
@@ -274,6 +275,7 @@
     <ClInclude Include="PlayerStateInstantiator.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
+    <ClInclude Include="TriggerIdle.h" />
     <ClInclude Include="TriggerIdleOnAnimationEnd.h" />
     <ClInclude Include="TriggerJab.h" />
     <ClInclude Include="TriggerJumpUp.h" />

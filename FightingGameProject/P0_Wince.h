@@ -2,6 +2,8 @@
 #include "PlayerState.h"
 #include "ActivePlayerStates.h"
 
+#include "TriggerIdle.h"
+
 namespace RB::PlayerStates
 {
 	class P0_Wince : public RB::PlayerStates::PlayerState

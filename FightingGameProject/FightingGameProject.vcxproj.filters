@@ -292,6 +292,9 @@
     <ClCompile Include="P0_Wince.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="TriggerIdle.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -605,6 +608,9 @@
     </ClInclude>
     <ClInclude Include="P0_Wince.h">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerIdle.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -90,6 +90,16 @@ namespace RB::States
 	{
 		for (size_t i = 0; i < _vecStateComponents.size(); i++)
 		{
+			int32_t fixedUpdateOnCount = _vecStateComponents[i]->GetFixedUpdateOnCount();
+
+			if (fixedUpdateOnCount >= 0)
+			{
+				if (_cumulatedFixedUpdates != fixedUpdateOnCount)
+				{
+					continue;
+				}
+			}
+
 			_vecStateComponents[i]->OnFixedUpdate();
 
 			if (_isTransitioning)

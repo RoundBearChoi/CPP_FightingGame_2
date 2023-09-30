@@ -26,4 +26,14 @@ namespace RB::States
 	{
 
 	}
+	
+	const int32_t& StateComponentBase::GetFixedUpdateOnCount() const
+	{
+		return _fixedUpdateOnCount;
+	}
+
+	const int32_t& StateComponentBase::GetUpdateOnCount() const
+	{
+		return _updateOnCount;
+	}
 }

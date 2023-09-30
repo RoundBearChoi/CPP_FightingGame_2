@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include "iState.h"
 
 namespace RB::States
@@ -18,7 +19,12 @@ namespace RB::States
 		virtual void OnUpdate();
 		virtual void OnFixedUpdate();
 
+		const virtual int32_t& GetFixedUpdateOnCount() const;
+		const virtual int32_t& GetUpdateOnCount() const;
+
 	protected:
 		iState* _state = nullptr;
+		int32_t _fixedUpdateOnCount = -1;
+		int32_t _updateOnCount = -1;
 	};
 }

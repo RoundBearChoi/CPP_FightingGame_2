@@ -8,8 +8,7 @@ namespace RB::PlayerStates
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_wince);
 
-		//AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
-		//AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
+		AddStateComponent(new RB::PlayerStateComponents::TriggerIdle(20));
 
 		EnterStateComponents();
 	}

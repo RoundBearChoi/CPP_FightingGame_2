@@ -49,7 +49,23 @@ namespace RB::PlayerStateComponents
 				RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
 				RB::Collisions::AABB& targetAABB = targetData->GetAABB(j);
 
-				if (ownerAABB.IsCollidingAgainst(targetAABB))
+				if (ownerAABB.GetWidthHeight().x <= 0.001f || ownerAABB.GetWidthHeight().y <= 0.001f)
+				{
+					continue;
+				}
+
+				if (targetAABB.GetWidthHeight().x <= 0.001f || targetAABB.GetWidthHeight().y <= 0.001f)
+				{
+					continue;
+				}
+
+				olc::vi2d ownerPos = owner->GetPosition();
+				olc::vi2d targetPos = target->GetPosition();
+
+				RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(ownerPos);
+				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(targetPos);
+
+				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB))
 				{
 					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;

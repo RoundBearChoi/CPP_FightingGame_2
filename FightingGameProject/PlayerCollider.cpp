@@ -66,6 +66,7 @@ namespace RB::Players
 
 		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
 
+		//why set here?
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
 
 		return _aabb;

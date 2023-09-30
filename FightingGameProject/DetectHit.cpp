@@ -40,6 +40,8 @@ namespace RB::PlayerStateComponents
 		size_t ownerAABBCount = ownerData->GetAABBCount();
 		size_t targetAABBCount = targetData->GetAABBCount();
 		
+		//gotta get worldpos
+
 		for (size_t i = 0; i < ownerAABBCount; i++)
 		{
 			for (size_t j = 0; j < targetAABBCount; j++)

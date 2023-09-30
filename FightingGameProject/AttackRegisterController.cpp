@@ -28,6 +28,6 @@ namespace RB::Collisions
 
 	void AttackRegisterController::ProcessHits()
 	{
-		
+
 	}
 }

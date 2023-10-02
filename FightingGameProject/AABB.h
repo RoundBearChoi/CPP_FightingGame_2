@@ -84,8 +84,8 @@ namespace RB::Collisions
 
 			bool horizontalCol_L = _bottomLeftX < other._bottomLeftX + other._width;
 			bool horizontalCol_R = _bottomLeftX + _width > other._bottomLeftX;
-			bool verticalCol_B = _bottomLeftY < other._bottomLeftY + other._height;
-			bool verticalCol_U = _bottomLeftY + _height > other._bottomLeftY;
+			bool verticalCol_B = _bottomLeftY > other._bottomLeftY - other._height;
+			bool verticalCol_U = _bottomLeftY - _height < other._bottomLeftY;
 
 			if (horizontalCol_L && horizontalCol_R && verticalCol_B && verticalCol_U)
 			{
@@ -93,8 +93,6 @@ namespace RB::Collisions
 			}
 
 			return false;
-
-			//return (_bottomLeftX < other._bottomLeftX + other._width && _bottomLeftX + _width > other._bottomLeftX && _bottomLeftY < other._bottomLeftY + other._height && _bottomLeftY + _height > other._bottomLeftY);
 		}
 
 		AABB GetWorldPos(const olc::vf2d& playerPos, const bool& otherPlayerIsOnRightSide)

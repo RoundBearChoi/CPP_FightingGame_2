@@ -98,12 +98,12 @@ namespace RB::Collisions
 		}
 
 		//gotta fix
-		AABB GetWorldPos(const olc::vi2d& playerPos)
-		{
-			AABB worldAABB{ playerPos.x + _bottomLeftX, playerPos.y + _bottomLeftY, _width, _height };
-
-			return worldAABB;
-		}
+		//AABB GetWorldPos(const olc::vi2d& playerPos)
+		//{
+		//	AABB worldAABB{ playerPos.x + _bottomLeftX, playerPos.y + _bottomLeftY, _width, _height };
+		//
+		//	return worldAABB;
+		//}
 
 		AABB GetWorldPos(const olc::vf2d& playerPos, const bool& otherPlayerIsOnRightSide)
 		{

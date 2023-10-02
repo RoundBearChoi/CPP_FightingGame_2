@@ -70,6 +70,11 @@ namespace RB::Collisions
 			return olc::vf2d{ _width, _height };
 		}
 
+		/// <summary>
+		/// up is -y for olc
+		/// </summary>
+		/// <param name="other"></param>
+		/// <returns></returns>
 		bool IsCollidingAgainst(const AABB& other)
 		{
 			if (_width <= 0.001f || _height <= 0.001f)

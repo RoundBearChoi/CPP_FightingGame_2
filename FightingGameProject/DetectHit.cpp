@@ -62,31 +62,30 @@ namespace RB::PlayerStateComponents
 
 		for (size_t i = 0; i < ownerAABBCount; i++)
 		{
+			_tempOwnerAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
+			RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
+
+			if (ownerAABB.GetWidthHeight().x <= 0.001f || ownerAABB.GetWidthHeight().y <= 0.001f)
+			{
+				continue;
+			}
+
+			olc::vi2d ownerPos = owner->GetPosition();
+			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->OtherPlayerIsOnRightSide());
+			_tempOwnerAABB = ownerWorldAABB;
+
 			for (size_t j = 0; j < targetAABBCount; j++)
 			{
-				_tempOwnerAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
 				_tempTargetAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
-
-				RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
 				RB::Collisions::AABB& targetAABB = targetData->GetAABB(j);
-
-				if (ownerAABB.GetWidthHeight().x <= 0.001f || ownerAABB.GetWidthHeight().y <= 0.001f)
-				{
-					continue;
-				}
 
 				if (targetAABB.GetWidthHeight().x <= 0.001f || targetAABB.GetWidthHeight().y <= 0.001f)
 				{
 					continue;
 				}
 
-				olc::vi2d ownerPos = owner->GetPosition();
 				olc::vi2d targetPos = target->GetPosition();
-
-				RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->OtherPlayerIsOnRightSide());
 				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), target->OtherPlayerIsOnRightSide());
-
-				_tempOwnerAABB = ownerWorldAABB;
 				_tempTargetAABB = targetWorldAABB;
 
 				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB))

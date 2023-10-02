@@ -14,9 +14,6 @@
 #include "iPlayerAnimationController.h"
 #include "iAttackRegisterController.h"
 
-//temp
-#include "LineRenderer.h"
-
 namespace RB::PlayerStateComponents
 {
 	class DetectHit : public RB::States::StateComponentBase
@@ -30,9 +27,7 @@ namespace RB::PlayerStateComponents
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-	//private:
-	//	RB::Render::LineRenderer _lineRenderer;
-	//	RB::Collisions::AABB _tempOwnerAABB;
-	//	RB::Collisions::AABB _tempTargetAABB;
+	private:
+		RB::Collisions::AABB _GetWorldAABB(RB::HBox::HBoxData* HBoxData, size_t frame);
 	};
 }

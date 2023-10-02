@@ -104,7 +104,7 @@ namespace RB::Collisions
 			}
 			else
 			{
-
+				worldAABB.SetBottomLeft(playerPos.x - _bottomLeftX -_width, playerPos.y + _bottomLeftY);
 			}
 
 			return worldAABB;

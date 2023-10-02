@@ -32,9 +32,6 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnFixedUpdate()
 	{
-		_tempOwnerAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
-		_tempTargetAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
-
 		RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::PLAYER_CONTROLLER->GetOtherPlayer(owner);
 
@@ -67,6 +64,9 @@ namespace RB::PlayerStateComponents
 		{
 			for (size_t j = 0; j < targetAABBCount; j++)
 			{
+				_tempOwnerAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
+				_tempTargetAABB = { 0.0f, 0.0f, 0.0f, 0.0f };
+
 				RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
 				RB::Collisions::AABB& targetAABB = targetData->GetAABB(j);
 
@@ -83,8 +83,8 @@ namespace RB::PlayerStateComponents
 				olc::vi2d ownerPos = owner->GetPosition();
 				olc::vi2d targetPos = target->GetPosition();
 
-				RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(ownerPos);
-				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(targetPos);
+				RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->OtherPlayerIsOnRightSide());
+				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), target->OtherPlayerIsOnRightSide());
 
 				_tempOwnerAABB = ownerWorldAABB;
 				_tempTargetAABB = targetWorldAABB;

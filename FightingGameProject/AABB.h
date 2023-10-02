@@ -97,14 +97,6 @@ namespace RB::Collisions
 			//return (_bottomLeftX < other._bottomLeftX + other._width && _bottomLeftX + _width > other._bottomLeftX && _bottomLeftY < other._bottomLeftY + other._height && _bottomLeftY + _height > other._bottomLeftY);
 		}
 
-		//gotta fix
-		//AABB GetWorldPos(const olc::vi2d& playerPos)
-		//{
-		//	AABB worldAABB{ playerPos.x + _bottomLeftX, playerPos.y + _bottomLeftY, _width, _height };
-		//
-		//	return worldAABB;
-		//}
-
 		AABB GetWorldPos(const olc::vf2d& playerPos, const bool& otherPlayerIsOnRightSide)
 		{
 

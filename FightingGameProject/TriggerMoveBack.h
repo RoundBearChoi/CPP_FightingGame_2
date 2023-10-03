@@ -1,6 +1,6 @@
 #pragma once
 #include "StateComponentBase.h"
-#include "MoveBackDetector.h"
+#include "MoveBack.h"
 #include "P0_MoveBack.h"
 
 #include "iPlayerController.h"
@@ -19,6 +19,6 @@ namespace RB::PlayerStateComponents
 		void OnUpdate() override;
 
 	private:
-		MoveBack _moveBackDetector;
+		MoveBack _moveBack;
 	};
 }

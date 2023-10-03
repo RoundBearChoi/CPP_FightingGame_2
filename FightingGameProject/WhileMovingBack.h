@@ -1,6 +1,6 @@
 #pragma once
 #include "StateComponentBase.h"
-#include "MoveBackDetector.h"
+#include "MoveBack.h"
 #include "MoveForward.h"
 #include "P0_Idle.h"
 #include "P0_MoveForward.h"
@@ -22,7 +22,7 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
-		MoveBack _moveBackDetector;
+		MoveBack _moveBack;
 		MoveForward _moveForward;
 		bool _bKeepMoving = false;
 		bool _bMoveForward = false;

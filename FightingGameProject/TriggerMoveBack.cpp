@@ -4,7 +4,7 @@ namespace RB::PlayerStateComponents
 {
 	void TriggerMoveBack::OnEnter()
 	{
-		_moveBackDetector.SetStateMachineID(_state->GetStateMachineID());
+		_moveBack.SetStateMachineID(_state->GetStateMachineID());
 	}
 
 	void TriggerMoveBack::OnUpdate()
@@ -21,9 +21,9 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		_moveBackDetector.OnUpdate();
+		_moveBack.OnUpdate();
 
-		if (_moveBackDetector.ProcMoveBack())
+		if (_moveBack.ProcMoveBack())
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 

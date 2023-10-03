@@ -5,7 +5,7 @@ namespace RB::PlayerStateComponents
 	void WhileMovingBack::OnEnter()
 	{
 		_moveForward.SetStateMachineID(_state->GetStateMachineID());
-		_moveBackDetector.SetStateMachineID(_state->GetStateMachineID());
+		_moveBack.SetStateMachineID(_state->GetStateMachineID());
 	}
 
 	void WhileMovingBack::OnUpdate()
@@ -19,7 +19,7 @@ namespace RB::PlayerStateComponents
 		_bMoveForward = false;
 
 		_moveForward.OnUpdate();
-		_moveBackDetector.OnUpdate();
+		_moveBack.OnUpdate();
 
 		if (_moveForward.ProcMoveForward())
 		{
@@ -29,7 +29,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_moveBackDetector.ProcMoveBack())
+		if (_moveBack.ProcMoveBack())
 		{
 			_bMoveForward = false;
 			_bKeepMoving = true;

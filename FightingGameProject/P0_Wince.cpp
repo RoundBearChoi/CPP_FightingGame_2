@@ -8,7 +8,7 @@ namespace RB::PlayerStates
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_wince);
 
-		AddStateComponent(new RB::PlayerStateComponents::TriggerIdle(20));
+		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnFixedUpdateCount(20));
 
 		EnterStateComponents();
 	}

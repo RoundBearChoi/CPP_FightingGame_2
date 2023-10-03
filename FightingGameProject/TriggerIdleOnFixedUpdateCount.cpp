@@ -1,22 +1,22 @@
-#include "TriggerIdle.h"
+#include "TriggerIdleOnFixedUpdateCount.h"
 
 namespace RB::PlayerStateComponents
 {
-	TriggerIdle::TriggerIdle(int32_t fixedUpdateOnCount)
+	TriggerIdleOnFixedUpdateCount::TriggerIdleOnFixedUpdateCount(int32_t fixedUpdateOnCount)
 	{
 		_fixedUpdateOnCount = fixedUpdateOnCount;
 	}
-	void TriggerIdle::OnEnter()
+	void TriggerIdleOnFixedUpdateCount::OnEnter()
 	{
 
 	}
 
-	void TriggerIdle::OnUpdate()
+	void TriggerIdleOnFixedUpdateCount::OnUpdate()
 	{
 
 	}
 
-	void TriggerIdle::OnFixedUpdate()
+	void TriggerIdleOnFixedUpdateCount::OnFixedUpdate()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 

@@ -6,8 +6,6 @@
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 
-//#include "AnimationSpecs.h"
-
 namespace RB::PlayerStateComponents
 {
 	class TriggerIdleOnAnimationEnd : public RB::States::StateComponentBase

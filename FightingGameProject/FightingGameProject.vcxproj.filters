@@ -292,7 +292,7 @@
     <ClCompile Include="P0_Wince.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerIdle.cpp">
+    <ClCompile Include="TriggerIdleOnFixedUpdateCount.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
   </ItemGroup>
@@ -609,7 +609,7 @@
     <ClInclude Include="P0_Wince.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerIdle.h">
+    <ClInclude Include="TriggerIdleOnFixedUpdateCount.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>

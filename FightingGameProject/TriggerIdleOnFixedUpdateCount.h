@@ -9,11 +9,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class TriggerIdle : public RB::States::StateComponentBase
+	class TriggerIdleOnFixedUpdateCount : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerIdle(int32_t fixedUpdateOnCount);
-		~TriggerIdle() override {};
+		TriggerIdleOnFixedUpdateCount(int32_t fixedUpdateOnCount);
+		~TriggerIdleOnFixedUpdateCount() override {};
 
 	public:
 		void OnEnter() override;

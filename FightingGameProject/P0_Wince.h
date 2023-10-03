@@ -2,7 +2,7 @@
 #include "PlayerState.h"
 #include "ActivePlayerStates.h"
 
-#include "TriggerIdle.h"
+#include "TriggerIdleOnFixedUpdateCount.h"
 
 namespace RB::PlayerStates
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "StateComponentBase.h"
-#include "MoveForward.h"
+#include "MoveForwardOnPress.h"
 #include "P0_MoveForward.h"
 
 #include "iPlayerController.h"
@@ -19,6 +19,6 @@ namespace RB::PlayerStateComponents
 		void OnUpdate() override;
 
 	private:
-		MoveForward _moveForward;
+		MoveForwardOnPress _moveForwardOnPress;
 	};
 }

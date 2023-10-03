@@ -1,13 +1,13 @@
-#include "MoveBack.h"
+#include "MoveBackOnPress.h"
 
 namespace RB::PlayerStateComponents
 {
-	void MoveBack::SetStateMachineID(size_t id)
+	void MoveBackOnPress::SetStateMachineID(size_t id)
 	{
 		_stateMachineID = id;
 	}
 
-	void MoveBack::OnUpdate()
+	void MoveBackOnPress::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Input::INPUT_CONTROLLER == nullptr)
@@ -16,29 +16,29 @@ namespace RB::PlayerStateComponents
 		}
 
 		//false by default
-		_moveBack = false;
+		_bMoveBack = false;
 
 		if (_BothPressed())
 		{
-			_moveBack = false;
+			_bMoveBack = false;
 
 			return;
 		}
 
 		if (_MoveBackPressed())
 		{
-			_moveBack = true;
+			_bMoveBack = true;
 
 			return;
 		}
 	}
 
-	bool MoveBack::ProcMoveBack()
+	bool MoveBackOnPress::ProcMoveBack()
 	{
-		return _moveBack;
+		return _bMoveBack;
 	}
 
-	bool MoveBack::_BothPressed()
+	bool MoveBackOnPress::_BothPressed()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
@@ -63,7 +63,7 @@ namespace RB::PlayerStateComponents
 		return false;
 	}
 
-	bool MoveBack::_MoveBackPressed()
+	bool MoveBackOnPress::_MoveBackPressed()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 

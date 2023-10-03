@@ -188,8 +188,8 @@
     <ClCompile Include="TriggerJumpUp.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
     <ClCompile Include="WhileMovingForward.cpp" />
-    <ClCompile Include="MoveBack.cpp" />
-    <ClCompile Include="MoveForward.cpp" />
+    <ClCompile Include="MoveBackOnPress.cpp" />
+    <ClCompile Include="MoveForwardOnPress.cpp" />
     <ClCompile Include="PlayerAnimationObj.cpp" />
     <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="P0_FallDown.cpp" />
@@ -281,8 +281,8 @@
     <ClInclude Include="TriggerJumpUp.h" />
     <ClInclude Include="WhileMovingBack.h" />
     <ClInclude Include="WhileMovingForward.h" />
-    <ClInclude Include="MoveBack.h" />
-    <ClInclude Include="MoveForward.h" />
+    <ClInclude Include="MoveBackOnPress.h" />
+    <ClInclude Include="MoveForwardOnPress.h" />
     <ClInclude Include="PlayerAnimationObj.h" />
     <ClInclude Include="AnimationLoader.h" />
     <ClInclude Include="P0_FallDown.h" />

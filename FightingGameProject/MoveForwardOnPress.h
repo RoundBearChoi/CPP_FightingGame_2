@@ -7,25 +7,25 @@
 
 namespace RB::PlayerStateComponents
 {
-	class MoveBack
+	class MoveForwardOnPress
 	{
 	public:
-		MoveBack() = default;
-		~MoveBack() = default;
+		MoveForwardOnPress() = default;
+		~MoveForwardOnPress() = default;
 
 	public:
 		void SetStateMachineID(size_t id);
 		void OnUpdate();
-		bool ProcMoveBack();
+		bool ProcMoveForward();
 
 	private:
 		bool _BothPressed();
-		bool _MoveBackPressed();
+		bool _MoveForwardPressed();
 
 	private:
 		size_t _stateMachineID = 0;
 		olc::HWButton moveLeft;
 		olc::HWButton moveRight;
-		bool _moveBack = false;
+		bool _bMoveForward = false;
 	};
 }

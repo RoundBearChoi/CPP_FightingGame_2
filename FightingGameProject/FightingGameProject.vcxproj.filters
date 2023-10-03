@@ -154,10 +154,10 @@
     <ClCompile Include="WhileMovingForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="MoveForward.cpp">
+    <ClCompile Include="MoveForwardOnPress.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="MoveBack.cpp">
+    <ClCompile Include="MoveBackOnPress.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="TriggerMoveBack.cpp">
@@ -450,10 +450,10 @@
     <ClInclude Include="WhileMovingForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="MoveForward.h">
+    <ClInclude Include="MoveForwardOnPress.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="MoveBack.h">
+    <ClInclude Include="MoveBackOnPress.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="TriggerMoveBack.h">

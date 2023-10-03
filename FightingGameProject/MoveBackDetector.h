@@ -7,16 +7,16 @@
 
 namespace RB::PlayerStateComponents
 {
-	class MoveBackDetector
+	class MoveBack
 	{
 	public:
-		MoveBackDetector() = default;
-		~MoveBackDetector() = default;
+		MoveBack() = default;
+		~MoveBack() = default;
 
 	public:
 		void SetStateMachineID(size_t id);
 		void OnUpdate();
-		bool MoveBack();
+		bool ProcMoveBack();
 
 	private:
 		bool _BothPressed();

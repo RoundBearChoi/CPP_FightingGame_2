@@ -23,7 +23,7 @@ namespace RB::PlayerStateComponents
 
 	private:
 		MoveForward _moveForward;
-		MoveBackDetector _moveBackDetector;
+		MoveBack _moveBackDetector;
 		bool _keepMoving = false;
 		bool _moveBack = false;
 	};

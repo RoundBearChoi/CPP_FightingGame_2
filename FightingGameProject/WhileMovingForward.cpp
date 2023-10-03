@@ -21,7 +21,7 @@ namespace RB::PlayerStateComponents
 		_moveForward.OnUpdate();
 		_moveBackDetector.OnUpdate();
 
-		if (_moveBackDetector.MoveBack())
+		if (_moveBackDetector.ProcMoveBack())
 		{
 			_moveBack = true;
 			_keepMoving = false;

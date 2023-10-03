@@ -23,7 +23,7 @@ namespace RB::PlayerStateComponents
 
 		_moveBackDetector.OnUpdate();
 
-		if (_moveBackDetector.MoveBack())
+		if (_moveBackDetector.ProcMoveBack())
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 

@@ -22,7 +22,7 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
-		MoveBackDetector _moveBackDetector;
+		MoveBack _moveBackDetector;
 		MoveForward _moveForward;
 		bool _bKeepMoving = false;
 		bool _bMoveForward = false;

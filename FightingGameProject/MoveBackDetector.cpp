@@ -2,12 +2,12 @@
 
 namespace RB::PlayerStateComponents
 {
-	void MoveBackDetector::SetStateMachineID(size_t id)
+	void MoveBack::SetStateMachineID(size_t id)
 	{
 		_stateMachineID = id;
 	}
 
-	void MoveBackDetector::OnUpdate()
+	void MoveBack::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Input::INPUT_CONTROLLER == nullptr)
@@ -33,12 +33,12 @@ namespace RB::PlayerStateComponents
 		}
 	}
 
-	bool MoveBackDetector::MoveBack()
+	bool MoveBack::ProcMoveBack()
 	{
 		return _moveBack;
 	}
 
-	bool MoveBackDetector::_BothPressed()
+	bool MoveBack::_BothPressed()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
@@ -63,7 +63,7 @@ namespace RB::PlayerStateComponents
 		return false;
 	}
 
-	bool MoveBackDetector::_MoveBackPressed()
+	bool MoveBack::_MoveBackPressed()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 

@@ -29,7 +29,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_moveBackDetector.MoveBack())
+		if (_moveBackDetector.ProcMoveBack())
 		{
 			_bMoveForward = false;
 			_bKeepMoving = true;

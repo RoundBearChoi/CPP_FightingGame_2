@@ -19,6 +19,6 @@ namespace RB::PlayerStateComponents
 		void OnUpdate() override;
 
 	private:
-		MoveBackDetector _moveBackDetector;
+		MoveBack _moveBackDetector;
 	};
 }

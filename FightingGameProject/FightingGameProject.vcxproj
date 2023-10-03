@@ -154,7 +154,7 @@
     <ClCompile Include="iAttackRegisterController.cpp" />
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />
-    <ClCompile Include="MoveForwardOnFixedUpdateCount.cpp" />
+    <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
     <ClCompile Include="HB.cpp" />
     <ClCompile Include="HBoxData.cpp" />
@@ -242,7 +242,7 @@
     <ClInclude Include="iAttackRegisterController.h" />
     <ClInclude Include="iHBoxEditController.h" />
     <ClInclude Include="iHitBoxDataController.h" />
-    <ClInclude Include="MoveForwardOnFixedUpdateCount.h" />
+    <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h" />
     <ClInclude Include="P0_Jab.h" />
     <ClInclude Include="HB.h" />
     <ClInclude Include="HBoxType.h" />

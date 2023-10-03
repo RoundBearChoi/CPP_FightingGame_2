@@ -295,6 +295,9 @@
     <ClCompile Include="TriggerIdleOnFixedUpdateCount.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="MoveForwardOnFixedUpdateCount.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -610,6 +613,9 @@
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="TriggerIdleOnFixedUpdateCount.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveForwardOnFixedUpdateCount.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>

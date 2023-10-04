@@ -28,4 +28,26 @@ namespace RB::Collisions
 	{
 
 	}
+
+	bool GeneralHitStopController::SkipFrame()
+	{
+		if (_skipFrames > 0)
+		{
+			_skipFrames--;
+
+			return true;
+		}
+
+		if (_skipFrames < 0)
+		{
+			_skipFrames = 0;
+		}
+
+		return false;
+	}
+
+	void GeneralHitStopController::AddSkipFrames(uint32_t frames)
+	{
+		_skipFrames += frames;
+	}
 }

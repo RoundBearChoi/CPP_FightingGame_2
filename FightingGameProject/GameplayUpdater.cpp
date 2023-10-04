@@ -37,6 +37,8 @@ namespace RB::Updaters
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/")));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::HBox::HitBoxDataController("HitBoxSpecs/")));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Collisions::AttackRegisterController()));
+
+		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Collisions::GeneralHitStopController()));
 	}
 
 	void GameplayUpdater::OnUpdate()

@@ -13,6 +13,7 @@
 #include "iHurtBoxDataController.h"
 #include "iPlayerAnimationController.h"
 #include "iAttackRegisterController.h"
+#include "iGeneralHitStopController.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -26,8 +27,5 @@ namespace RB::PlayerStateComponents
 		void OnEnter() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-
-	private:
-		RB::Collisions::AABB _GetWorldAABB(RB::HBox::HBoxData* HBoxData, size_t frame);
 	};
 }

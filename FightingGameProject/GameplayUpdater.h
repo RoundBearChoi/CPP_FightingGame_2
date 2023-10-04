@@ -15,6 +15,7 @@
 #include "AttackRegisterController.h"
 #include "HurtBoxDataController.h"
 #include "HitBoxDataController.h"
+#include "GeneralHitStopController.h"
 
 namespace RB::Updaters
 {

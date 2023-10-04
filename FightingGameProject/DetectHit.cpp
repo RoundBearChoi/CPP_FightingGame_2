@@ -70,6 +70,11 @@ namespace RB::PlayerStateComponents
 					if (RB::Collisions::ATTACK_REGISTER_CONTROLLER->GetRegisteredAttackCount(target->GetPlayerID()) <= 0)
 					{
 						target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::P0_Wince());
+
+						if (RB::Collisions::GENERAL_HIT_STOP_CONTROLLER != nullptr)
+						{
+							RB::Collisions::GENERAL_HIT_STOP_CONTROLLER->AddSkipFrames(2);
+						}
 					}
 
 					return;

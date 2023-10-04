@@ -131,7 +131,21 @@ namespace RB::Updaters
 	{
 		if (!_updaterIsQueued)
 		{
-			_updaterObj->OnFixedUpdate();
+			bool skip = false;
+
+			if (RB::Collisions::GENERAL_HIT_STOP_CONTROLLER != nullptr)
+			{
+				if (RB::Collisions::GENERAL_HIT_STOP_CONTROLLER->SkipFrame())
+				{
+					std::cout << "skipping fixed update.." << std::endl;
+					skip = true;
+				}
+			}
+
+			if (!skip)
+			{
+				_updaterObj->OnFixedUpdate();
+			}
 		}
 	}
 }

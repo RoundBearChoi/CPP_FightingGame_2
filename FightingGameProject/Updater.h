@@ -7,6 +7,8 @@
 #include "HurtBoxEditorUpdater.h"
 #include "HitBoxEditorUpdater.h"
 
+#include "iGeneralHitStopController.h"
+
 namespace RB::Updaters
 {
 	class Updater

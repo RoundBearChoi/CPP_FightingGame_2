@@ -150,8 +150,10 @@
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
+    <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="iAttackRegisterController.cpp" />
+    <ClCompile Include="iGeneralHitStopController.cpp" />
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp" />
@@ -238,8 +240,10 @@
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="DetectHit.h" />
+    <ClInclude Include="GeneralHitStopController.h" />
     <ClInclude Include="HitBoxDataController.h" />
     <ClInclude Include="iAttackRegisterController.h" />
+    <ClInclude Include="iGeneralHitStopController.h" />
     <ClInclude Include="iHBoxEditController.h" />
     <ClInclude Include="iHitBoxDataController.h" />
     <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h" />

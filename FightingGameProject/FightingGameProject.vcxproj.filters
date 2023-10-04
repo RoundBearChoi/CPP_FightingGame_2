@@ -298,6 +298,12 @@
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="GeneralHitStopController.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="iGeneralHitStopController.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -617,6 +623,12 @@
     </ClInclude>
     <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralHitStopController.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="iGeneralHitStopController.h">
+      <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

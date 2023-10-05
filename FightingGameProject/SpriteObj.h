@@ -17,9 +17,6 @@ namespace RB::Render
 		~SpriteObj() = default;
 
 	public:
-		void Init();
-
-	public:
 		void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum);
 		void RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType);
 		RB::Sprites::LoadedSprite* GetLoadedSprite(RB::Sprites::SpriteEnum spriteEnum);

@@ -32,7 +32,7 @@ namespace RB::Render
 		}
 	}
 
-	AnimationRenderer* AnimationLoader::GetAnimation(RB::Sprites::SpriteEnum spriteEnum)
+	AnimationRenderer* AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _animationRenderer.size(); i++)
 		{

@@ -1,16 +1,10 @@
 #pragma once
-#include "SpriteObj.h"
-#include "AnimationLoader.h"
+
+#include "Ani.h"
 
 #include "iPlayerController.h"
-#include "iPlayer.h"
 #include "iPlayerAnimationController.h"
-
-#include "iAnimationObj.h"
-#include "AnimationObj.h"
-
 #include "ActivePlayerStates.h"
-#include "PlayerState.h"
 
 namespace RB::Render
 {
@@ -34,8 +28,6 @@ namespace RB::Render
 		RB::Sprites::SpriteEnum _GetSpriteEnum(RB::Players::PlayerID playerID);
 
 	private:
-		SpriteObj _spriteObj;
-		AnimationLoader _animationLoader;
-		std::vector<iAnimationObj*> _vecCurrentAnimations;
+		Ani _ani;
 	};
 }

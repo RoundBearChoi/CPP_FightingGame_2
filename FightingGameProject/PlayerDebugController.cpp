@@ -16,7 +16,6 @@ namespace RB::Render
 
 	void PlayerDebugController::Init()
 	{
-		_spriteObj.Init();
 		_spriteObj.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
 		_spriteObj.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteEnum::white_sq_tr80);
 

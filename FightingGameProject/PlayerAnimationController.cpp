@@ -11,28 +11,22 @@ namespace RB::Render
 
 	PlayerAnimationController::~PlayerAnimationController()
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		{
-			delete _vecCurrentAnimations[i];
-		}
-
 		PLAYER_ANIMATION_CONTROLLER = nullptr;
 	}
 
 	void PlayerAnimationController::Init()
 	{
+		_ani.Init();
+
 		//sprites
-		_spriteObj.Init();
-		_spriteObj.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::fighter_0_idle);
-		_spriteObj.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
-		_spriteObj.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
-		_spriteObj.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
-		_spriteObj.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
-		_spriteObj.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
+		_ani.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::fighter_0_idle);
+		_ani.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
+		_ani.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
+		_ani.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
+		_ani.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
+		_ani.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
 
 		//animations
-		_animationLoader.Init();
-
 		AnimationSpecs idleSpecs;
 		idleSpecs.mX_TileCount = 9;
 		idleSpecs.mY_TileCount = 1;
@@ -41,7 +35,8 @@ namespace RB::Render
 		idleSpecs.mRenderSize = olc::vf2d{ 400.0, 225.0f };
 		idleSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		idleSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
-		idleSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_idle);
+
+		_ani.LoadAnimation(idleSpecs, RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		AnimationSpecs walkSpecs;
 		walkSpecs.mX_TileCount = 10;
@@ -51,7 +46,8 @@ namespace RB::Render
 		walkSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		walkSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		walkSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
-		walkSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_walk);
+
+		_ani.LoadAnimation(walkSpecs, RB::Sprites::SpriteEnum::fighter_0_walk);
 
 		AnimationSpecs jumpUpSpecs;
         jumpUpSpecs.mX_TileCount = 3;
@@ -61,7 +57,8 @@ namespace RB::Render
 		jumpUpSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		jumpUpSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		jumpUpSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
-		jumpUpSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jump_up);
+
+		_ani.LoadAnimation(jumpUpSpecs, RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
 		AnimationSpecs fallSpecs;
         fallSpecs.mX_TileCount = 3;
@@ -71,7 +68,8 @@ namespace RB::Render
 		fallSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		fallSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		fallSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
-		fallSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_fall);
+
+		_ani.LoadAnimation(fallSpecs, RB::Sprites::SpriteEnum::fighter_0_fall);
 
 		AnimationSpecs jabSpecs;
 		jabSpecs.mX_TileCount = 6;
@@ -81,7 +79,8 @@ namespace RB::Render
 		jabSpecs.mRenderSize = olc::vf2d{ 240.0f, 160.0f };
 		jabSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
-		jabSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jab);
+
+		_ani.LoadAnimation(jabSpecs, RB::Sprites::SpriteEnum::fighter_0_jab);
 
 		AnimationSpecs winceSpecs;
 		winceSpecs.mX_TileCount = 1;
@@ -91,14 +90,8 @@ namespace RB::Render
 		winceSpecs.mRenderSize = olc::vf2d{ 71.5f, 132.1f };
 		winceSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		winceSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
-		winceSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_wince);
 
-		_animationLoader.LoadAnimation(idleSpecs);
-		_animationLoader.LoadAnimation(walkSpecs);
-		_animationLoader.LoadAnimation(jumpUpSpecs);
-		_animationLoader.LoadAnimation(fallSpecs);
-		_animationLoader.LoadAnimation(jabSpecs);
-		_animationLoader.LoadAnimation(winceSpecs);
+		_ani.LoadAnimation(winceSpecs, RB::Sprites::SpriteEnum::fighter_0_wince);
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -124,53 +117,22 @@ namespace RB::Render
 			_SetNewAnimationObjsOnChange(*arr[i]);
 		}
 
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		{
-			RB::Players::iPlayer* p = _vecCurrentAnimations[i]->GetPlayer();
-
-			olc::vi2d pos = p->GetPosition();
-
-			_vecCurrentAnimations[i]->RenderAnimation(pos);
-		}
+		_ani.OnUpdate();
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		{
-			_vecCurrentAnimations[i]->OnFixedUpdate();
-		}
+		_ani.OnFixedUpdate();
 	}
 
 	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		{
-			if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
-			{
-				delete _vecCurrentAnimations[i];
-
-				_vecCurrentAnimations.erase(_vecCurrentAnimations.begin() + i);
-
-				return;
-			}
-		}
+		_ani.DeleteAnimationObj(playerID);
 	}
 
 	iAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		{
-			if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
-			{
-				if (_vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
-				{
-					return _vecCurrentAnimations[i];
-				}
-			}
-		}
-
-		return nullptr;
+		return _ani.GetCurrentAnimationObj(playerID, spriteEnum);
 	}
 
 	void PlayerAnimationController::_SetFirstAnimations()
@@ -180,12 +142,10 @@ namespace RB::Render
 			return;
 		}
 
-		if (_vecCurrentAnimations.size() > 0)
+		if (_ani.GetCurrentAniCount() > 0)
 		{
 			return;
 		}
-
-		_vecCurrentAnimations.reserve(4);
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
@@ -207,11 +167,11 @@ namespace RB::Render
 
 			RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-			AnimationRenderer* aniRenderer = _animationLoader.GetAnimation(spriteEnum);
+			AnimationRenderer* aniRenderer = _ani.GetAnimationRenderer(spriteEnum);
 
 			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer);
 
-			_vecCurrentAnimations.push_back(animationObj);
+			_ani.PushCurrentAnimation(animationObj);
 		}
 	}
 
@@ -232,24 +192,14 @@ namespace RB::Render
 		{
 			DeleteAnimationObj(playerID);
 
-			iAnimationObj* animationObj = new AnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
+			iAnimationObj* aniObj = _ani.GetNewAnimationObj(player, playerSpriteEnum);
 
-			_vecCurrentAnimations.push_back(animationObj);
+			_ani.PushCurrentAnimation(aniObj);
 		}
 	}
 
 	RB::Sprites::SpriteEnum PlayerAnimationController::_GetSpriteEnum(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		{
-			if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
-			{
-				RB::Sprites::SpriteEnum spriteEnum = _vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum;
-
-				return spriteEnum;
-			}
-		}
-
-		return RB::Sprites::SpriteEnum::NONE;
+		return _ani.GetSpriteEnum(playerID);
 	}
 }

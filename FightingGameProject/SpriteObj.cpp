@@ -2,11 +2,6 @@
 
 namespace RB::Render
 {
-	void SpriteObj::Init()
-	{
-		
-	}
-
 	void SpriteObj::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		_spriteLoader.LoadSprite(path, spriteEnum);

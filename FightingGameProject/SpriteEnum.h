@@ -27,6 +27,8 @@ namespace RB::Sprites
 		background_7,
 		background_8,
 
+		vfx_hiteffect_0,
+
 		COUNT,
 	};
 }

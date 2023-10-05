@@ -20,12 +20,12 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 		void DeleteAnimationObj(RB::Players::PlayerID playerID) override;
-		iAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
+		iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
-		void _SetFirstAnimations();
-		void _SetNewAnimationObjsOnChange(RB::Players::iPlayer& player);
-		RB::Sprites::SpriteEnum _GetSpriteEnum(RB::Players::PlayerID playerID);
+		void _SetFirstPlayerAnimations();
+		void _SetNewPlayerAnimationObjOnChange(RB::Players::iPlayer& player);
+		RB::Sprites::SpriteEnum _GetPlayerSpriteEnum(RB::Players::PlayerID playerID);
 
 	private:
 		Ani _ani;

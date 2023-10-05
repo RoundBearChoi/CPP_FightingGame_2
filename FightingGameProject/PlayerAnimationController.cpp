@@ -101,7 +101,7 @@ namespace RB::Render
 			return;
 		}
 
-		_SetFirstAnimations();
+		_SetFirstPlayerAnimations();
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
@@ -114,7 +114,7 @@ namespace RB::Render
 				continue;
 			}
 
-			_SetNewAnimationObjsOnChange(*arr[i]);
+			_SetNewPlayerAnimationObjOnChange(*arr[i]);
 		}
 
 		_ani.OnUpdate();
@@ -130,12 +130,12 @@ namespace RB::Render
 		_ani.DeleteAnimationObj(playerID);
 	}
 
-	iAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
+	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		return _ani.GetCurrentAnimationObj(playerID, spriteEnum);
 	}
 
-	void PlayerAnimationController::_SetFirstAnimations()
+	void PlayerAnimationController::_SetFirstPlayerAnimations()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
@@ -175,7 +175,7 @@ namespace RB::Render
 		}
 	}
 
-	void PlayerAnimationController::_SetNewAnimationObjsOnChange(RB::Players::iPlayer& player)
+	void PlayerAnimationController::_SetNewPlayerAnimationObjOnChange(RB::Players::iPlayer& player)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player.GetPlayerID());
 
@@ -186,7 +186,7 @@ namespace RB::Render
 
 		RB::Sprites::SpriteEnum playerSpriteEnum = state->GetSpriteEnum();
 		RB::Players::PlayerID playerID = player.GetPlayerID();
-		RB::Sprites::SpriteEnum animationSpriteEnum = _GetSpriteEnum(playerID);
+		RB::Sprites::SpriteEnum animationSpriteEnum = _GetPlayerSpriteEnum(playerID);
 
 		if (playerSpriteEnum != animationSpriteEnum)
 		{
@@ -198,7 +198,7 @@ namespace RB::Render
 		}
 	}
 
-	RB::Sprites::SpriteEnum PlayerAnimationController::_GetSpriteEnum(RB::Players::PlayerID playerID)
+	RB::Sprites::SpriteEnum PlayerAnimationController::_GetPlayerSpriteEnum(RB::Players::PlayerID playerID)
 	{
 		return _ani.GetSpriteEnum(playerID);
 	}

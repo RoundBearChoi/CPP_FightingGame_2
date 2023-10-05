@@ -114,11 +114,11 @@ namespace RB::Render
 		AnimationRenderSettings renderSettings;
 
 		renderSettings.mCurrentIndex = _currentIndex;
+		renderSettings.mWorldPos = pos;
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderSize = GetRenderSize();
 		renderSettings.mRenderOffset = GetRenderOffset();
-		renderSettings.mWorldPos = pos;
 		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		renderSettings.mFaceRight = _ownerPlayer->OtherPlayerIsOnRightSide();
 

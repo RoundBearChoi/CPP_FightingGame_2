@@ -128,7 +128,9 @@ namespace RB::Render
 		{
 			RB::Players::iPlayer* p = _vecAnimationObjs[i]->GetPlayer();
 
-			_vecAnimationObjs[i]->RenderAnimation(p->GetPosition());
+			olc::vi2d pos = p->GetPosition();
+
+			_vecAnimationObjs[i]->RenderAnimation(pos);
 		}
 	}
 

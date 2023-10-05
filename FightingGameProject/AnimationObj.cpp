@@ -7,13 +7,13 @@ namespace RB::Render
 		_ownerPlayer = owner;
 		_animationRenderer = animationRenderer;
 
-		_skipFixedUpdates.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
-		_skipFixedUpdates.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
+		_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
+		_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
 	}
 
 	void AnimationObj::OnFixedUpdate()
 	{
-		_skipFixedUpdates.OnFixedUpdate();
+		_customFixedUpdate.OnFixedUpdate();
 	}
 
 	void AnimationObj::UpdateAnimationIndex()

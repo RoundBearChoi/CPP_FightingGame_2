@@ -35,6 +35,6 @@ namespace RB::Render
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		AnimationRenderer* _animationRenderer = nullptr;
 		int32_t _currentIndex = 0;
-		RB::Updaters::SkipFixedUpdates<AnimationObj> _skipFixedUpdates;
+		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 	};
 }

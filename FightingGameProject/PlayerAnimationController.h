@@ -25,11 +25,13 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		void SetFirstAnimations();
-		void SetNewAnimationObjsOnChange(RB::Players::iPlayer& player) override;
 		RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) override;
 		void DeleteAnimationObj(RB::Players::PlayerID playerID) override;
 		iPlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
+
+	private:
+		void _SetFirstAnimations();
+		void _SetNewAnimationObjsOnChange(RB::Players::iPlayer& player);
 
 	private:
 		SpriteObj _spriteObj;

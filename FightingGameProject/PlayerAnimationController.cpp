@@ -108,7 +108,7 @@ namespace RB::Render
 			return;
 		}
 
-		SetFirstAnimations();
+		_SetFirstAnimations();
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
@@ -121,7 +121,7 @@ namespace RB::Render
 				continue;
 			}
 
-			SetNewAnimationObjsOnChange(*arr[i]);
+			_SetNewAnimationObjsOnChange(*arr[i]);
 		}
 
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
@@ -135,71 +135,6 @@ namespace RB::Render
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
 			_vecPlayerAnimationObjs[i]->OnFixedUpdate();
-		}
-	}
-
-	void PlayerAnimationController::SetFirstAnimations()
-	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
-		{
-			return;
-		}
-
-		if (_vecPlayerAnimationObjs.size() > 0)
-		{
-			return;
-		}
-
-		_vecPlayerAnimationObjs.reserve(4);
-
-		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
-
-		for (size_t i = 0; i < 2; i++)
-		{
-			arr[i] = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i);
-
-			if (arr[i] == nullptr)
-			{
-				continue;
-			}
-
-			RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(arr[i]->GetPlayerID());
-
-			if (state == nullptr)
-			{
-				continue;
-			}
-
-			RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
-
-			AnimationRenderer* aniRenderer = _animationLoader.GetAnimation(spriteEnum);
-
-			iPlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], aniRenderer);
-
-			_vecPlayerAnimationObjs.push_back(animationObj);
-		}
-	}
-
-	void PlayerAnimationController::SetNewAnimationObjsOnChange(RB::Players::iPlayer& player)
-	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player.GetPlayerID());
-
-		if (state == nullptr)
-		{
-			return;
-		}
-
-		RB::Sprites::SpriteEnum playerSpriteEnum = state->GetSpriteEnum();
-		RB::Players::PlayerID playerID = player.GetPlayerID();
-		RB::Sprites::SpriteEnum animationSpriteEnum = GetSpriteEnum(playerID);
-
-		if (playerSpriteEnum != animationSpriteEnum)
-		{
-			DeleteAnimationObj(playerID);
-
-			iPlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
-
-			_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 		}
 	}
 
@@ -247,5 +182,70 @@ namespace RB::Render
 		}
 
 		return nullptr;
+	}
+
+	void PlayerAnimationController::_SetFirstAnimations()
+	{
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		{
+			return;
+		}
+
+		if (_vecPlayerAnimationObjs.size() > 0)
+		{
+			return;
+		}
+
+		_vecPlayerAnimationObjs.reserve(4);
+
+		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
+
+		for (size_t i = 0; i < 2; i++)
+		{
+			arr[i] = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i);
+
+			if (arr[i] == nullptr)
+			{
+				continue;
+			}
+
+			RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(arr[i]->GetPlayerID());
+
+			if (state == nullptr)
+			{
+				continue;
+			}
+
+			RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+
+			AnimationRenderer* aniRenderer = _animationLoader.GetAnimation(spriteEnum);
+
+			iPlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], aniRenderer);
+
+			_vecPlayerAnimationObjs.push_back(animationObj);
+		}
+	}
+
+	void PlayerAnimationController::_SetNewAnimationObjsOnChange(RB::Players::iPlayer& player)
+	{
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player.GetPlayerID());
+
+		if (state == nullptr)
+		{
+			return;
+		}
+
+		RB::Sprites::SpriteEnum playerSpriteEnum = state->GetSpriteEnum();
+		RB::Players::PlayerID playerID = player.GetPlayerID();
+		RB::Sprites::SpriteEnum animationSpriteEnum = GetSpriteEnum(playerID);
+
+		if (playerSpriteEnum != animationSpriteEnum)
+		{
+			DeleteAnimationObj(playerID);
+
+			iPlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
+
+			_vecPlayerAnimationObjs.push_back(playerAnimationObj);
+		}
 	}
 }

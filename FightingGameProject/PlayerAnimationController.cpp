@@ -126,7 +126,9 @@ namespace RB::Render
 
 		for (size_t i = 0; i < _vecAnimationObjs.size(); i++)
 		{
-			_vecAnimationObjs[i]->RenderAnimation();
+			RB::Players::iPlayer* p = _vecAnimationObjs[i]->GetPlayer();
+
+			_vecAnimationObjs[i]->RenderAnimation(p->GetPosition());
 		}
 	}
 

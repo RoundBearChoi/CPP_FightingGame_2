@@ -29,7 +29,7 @@ namespace RB::Render
 		RB::Players::iPlayer* GetPlayer() override;
 		const AnimationSpecs& GetAnimationSpecs() const override;
 		int32_t GetCurrentIndex() override;
-		void RenderAnimation() override;
+		void RenderAnimation(const olc::vi2d& pos) override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;

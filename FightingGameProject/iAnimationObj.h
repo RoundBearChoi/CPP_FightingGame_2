@@ -19,6 +19,6 @@ namespace RB::Render
 		virtual RB::Players::iPlayer* GetPlayer() = 0;
 		virtual const AnimationSpecs& GetAnimationSpecs() const = 0;
 		virtual int32_t GetCurrentIndex() = 0;
-		virtual void RenderAnimation() = 0;
+		virtual void RenderAnimation(const olc::vi2d& pos) = 0;
 	};
 }

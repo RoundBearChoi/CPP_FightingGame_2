@@ -104,7 +104,7 @@ namespace RB::Render
 		return _currentIndex;
 	}
 
-	void AnimationObj::RenderAnimation()
+	void AnimationObj::RenderAnimation(const olc::vi2d& pos)
 	{
 		if (_animationRenderer->GetAnimationSpecs().mSpriteEnum == RB::Sprites::SpriteEnum::NONE)
 		{
@@ -118,7 +118,7 @@ namespace RB::Render
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderSize = GetRenderSize();
 		renderSettings.mRenderOffset = GetRenderOffset();
-		renderSettings.mWorldPos = _ownerPlayer->GetPosition();
+		renderSettings.mWorldPos = pos;
 		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		renderSettings.mFaceRight = _ownerPlayer->OtherPlayerIsOnRightSide();
 

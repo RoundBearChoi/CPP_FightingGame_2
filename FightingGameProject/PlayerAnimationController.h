@@ -32,7 +32,7 @@ namespace RB::Render
 		iPlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
-		SpriteRenderer _spriteRenderer;
+		SpriteObj _spriteObj;
 		AnimationLoader _animationLoader;
 		std::vector<iPlayerAnimationObj*> _vecPlayerAnimationObjs;
 	};

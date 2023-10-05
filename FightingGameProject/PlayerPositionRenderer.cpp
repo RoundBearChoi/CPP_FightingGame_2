@@ -2,9 +2,9 @@
 
 namespace RB::Render
 {
-	void PlayerPositionRenderer::Init(SpriteRenderer* spriteRenderer, LineRenderer* lineRenderer)
+	void PlayerPositionRenderer::Init(SpriteObj* spriteRenderer, LineRenderer* lineRenderer)
 	{
-		_spriteRenderer = spriteRenderer;
+		_spriteObj = spriteRenderer;
 		_lineRenderer = lineRenderer;
 	}
 
@@ -41,7 +41,7 @@ namespace RB::Render
 
 		olc::vi2d playerPos = player->GetPosition();
 
-		_spriteRenderer->RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+		_spriteObj->RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
 	}
 
 	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PlayerID playerID)

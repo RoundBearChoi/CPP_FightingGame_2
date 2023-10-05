@@ -10,7 +10,7 @@ namespace RB::Background
 		_spriteEnum = spriteEnum;
 		_percentage = percentage;
 
-		_spriteRenderer.LoadSprite(path, spriteEnum);
+		_spriteObj.LoadSprite(path, spriteEnum);
 	}
 
 	void BackgroundObj::Init()
@@ -30,7 +30,7 @@ namespace RB::Background
 		//background horizontal tile
 		for (int32_t i = 0; i < 4; i++)
 		{
-			_spriteRenderer.RenderSprite(_spriteEnum, _renderSize, olc::vf2d{ offsetX + (_renderSize.x * i), _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT);
+			_spriteObj.RenderSprite(_spriteEnum, _renderSize, olc::vf2d{ offsetX + (_renderSize.x * i), _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT);
 		}
 	}
 

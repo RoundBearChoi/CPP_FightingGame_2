@@ -16,7 +16,7 @@ namespace RB::Render
 		~PlayerPositionRenderer() = default;
 
 	public:
-		void Init(SpriteRenderer* spriteRenderer, LineRenderer* lineRenderer);
+		void Init(SpriteObj* spriteRenderer, LineRenderer* lineRenderer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
@@ -26,7 +26,7 @@ namespace RB::Render
 		void RenderAirMomentum(RB::Players::PlayerID playerID);
 
 	private:
-		SpriteRenderer* _spriteRenderer = nullptr;
+		SpriteObj* _spriteObj = nullptr;
 		LineRenderer* _lineRenderer = nullptr;
 	};
 }

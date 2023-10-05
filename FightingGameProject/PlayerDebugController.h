@@ -23,7 +23,7 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 	private:
-		RB::Render::SpriteRenderer _spriteRenderer;
+		RB::Render::SpriteObj _spriteObj;
 		RB::Render::LineRenderer _lineRenderer;
 
 	private:

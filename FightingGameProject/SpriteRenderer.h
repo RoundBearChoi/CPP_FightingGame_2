@@ -10,11 +10,11 @@
 
 namespace RB::Render
 {
-	class SpriteRenderer
+	class SpriteObj
 	{
 	public:
-		SpriteRenderer() = default;
-		~SpriteRenderer() = default;
+		SpriteObj() = default;
+		~SpriteObj() = default;
 
 	public:
 		void Init();

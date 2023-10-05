@@ -22,13 +22,13 @@ namespace RB::Render
 	void PlayerAnimationController::Init()
 	{
 		//sprites
-		_spriteRenderer.Init();
-		_spriteRenderer.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::fighter_0_idle);
-		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
-		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
-		_spriteRenderer.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
-		_spriteRenderer.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
-		_spriteRenderer.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
+		_spriteObj.Init();
+		_spriteObj.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::fighter_0_idle);
+		_spriteObj.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
+		_spriteObj.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
+		_spriteObj.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
+		_spriteObj.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
+		_spriteObj.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
 
 		//animations
 		_animationLoader.Init();
@@ -41,7 +41,7 @@ namespace RB::Render
 		idleSpecs.mRenderSize = olc::vf2d{ 400.0, 225.0f };
 		idleSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		idleSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
-		idleSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_idle);
+		idleSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		AnimationSpecs walkSpecs;
 		walkSpecs.mX_TileCount = 10;
@@ -51,7 +51,7 @@ namespace RB::Render
 		walkSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		walkSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		walkSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
-		walkSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_walk);
+		walkSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_walk);
 
 		AnimationSpecs jumpUpSpecs;
         jumpUpSpecs.mX_TileCount = 3;
@@ -61,7 +61,7 @@ namespace RB::Render
 		jumpUpSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		jumpUpSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		jumpUpSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
-		jumpUpSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jump_up);
+		jumpUpSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
 		AnimationSpecs fallSpecs;
         fallSpecs.mX_TileCount = 3;
@@ -71,7 +71,7 @@ namespace RB::Render
 		fallSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
 		fallSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
 		fallSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
-		fallSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_fall);
+		fallSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_fall);
 
 		AnimationSpecs jabSpecs;
 		jabSpecs.mX_TileCount = 6;
@@ -81,7 +81,7 @@ namespace RB::Render
 		jabSpecs.mRenderSize = olc::vf2d{ 240.0f, 160.0f };
 		jabSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
-		jabSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jab);
+		jabSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_jab);
 
 		AnimationSpecs winceSpecs;
 		winceSpecs.mX_TileCount = 1;
@@ -91,7 +91,7 @@ namespace RB::Render
 		winceSpecs.mRenderSize = olc::vf2d{ 71.5f, 132.1f };
 		winceSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		winceSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
-		winceSpecs.mLoadedSprite = _spriteRenderer.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_wince);
+		winceSpecs.mLoadedSprite = _spriteObj.GetLoadedSprite(RB::Sprites::SpriteEnum::fighter_0_wince);
 
 		_animationLoader.LoadAnimation(idleSpecs);
 		_animationLoader.LoadAnimation(walkSpecs);

@@ -27,7 +27,7 @@ namespace RB::Render
 
 		RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) override;
 		void DeleteAnimationObj(RB::Players::PlayerID playerID) override;
-		iPlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
+		iAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
 		void _SetFirstAnimations();
@@ -36,6 +36,6 @@ namespace RB::Render
 	private:
 		SpriteObj _spriteObj;
 		AnimationLoader _animationLoader;
-		std::vector<iPlayerAnimationObj*> _vecPlayerAnimationObjs;
+		std::vector<iAnimationObj*> _vecPlayerAnimationObjs;
 	};
 }

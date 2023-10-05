@@ -2,21 +2,21 @@
 
 namespace RB::Render
 {
-	PlayerAnimationObj::PlayerAnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer)
+	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer)
 	{
 		_ownerPlayer = owner;
 		_animationRenderer = animationRenderer;
 
 		_skipFixedUpdates.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
-		_skipFixedUpdates.SetFunction(this, &PlayerAnimationObj::UpdateAnimationIndex);
+		_skipFixedUpdates.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
 	}
 
-	void PlayerAnimationObj::OnFixedUpdate()
+	void AnimationObj::OnFixedUpdate()
 	{
 		_skipFixedUpdates.OnFixedUpdate();
 	}
 
-	void PlayerAnimationObj::UpdateAnimationIndex()
+	void AnimationObj::UpdateAnimationIndex()
 	{
 		if (_ownerPlayer->ManualAnimationUpdate())
 		{
@@ -28,14 +28,14 @@ namespace RB::Render
 		LimitAnimationIndex();
 	}
 
-	void PlayerAnimationObj::ManualAddAnimationIndex(int32_t amount)
+	void AnimationObj::ManualAddAnimationIndex(int32_t amount)
 	{
 		_currentIndex += amount;
 
 		LimitAnimationIndex();
 	}
 
-	void PlayerAnimationObj::LimitAnimationIndex()
+	void AnimationObj::LimitAnimationIndex()
 	{
 		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites)
 		{
@@ -48,7 +48,7 @@ namespace RB::Render
 		}
 	}
 
-	olc::vf2d PlayerAnimationObj::GetSourceSize()
+	olc::vf2d AnimationObj::GetSourceSize()
 	{
 		const AnimationSpecs& specs = _animationRenderer->GetAnimationSpecs();
 
@@ -62,7 +62,7 @@ namespace RB::Render
 		return sourceSize;
 	}
 
-	olc::vf2d PlayerAnimationObj::GetSourcePos(olc::vf2d sourceSize)
+	olc::vf2d AnimationObj::GetSourcePos(olc::vf2d sourceSize)
 	{
 		const AnimationSpecs& specs = _animationRenderer->GetAnimationSpecs();
 
@@ -74,32 +74,32 @@ namespace RB::Render
 		return sourcePos;
 	}
 
-	olc::vf2d PlayerAnimationObj::GetRenderSize()
+	olc::vf2d AnimationObj::GetRenderSize()
 	{
 		return _animationRenderer->GetAnimationSpecs().mRenderSize;
 	}
 
-	olc::vf2d PlayerAnimationObj::GetRenderOffset()
+	olc::vf2d AnimationObj::GetRenderOffset()
 	{
 		return _animationRenderer->GetAnimationSpecs().mRenderOffset;
 	}
 
-	RB::Players::iPlayer* PlayerAnimationObj::GetPlayer()
+	RB::Players::iPlayer* AnimationObj::GetPlayer()
 	{
 		return _ownerPlayer;
 	}
 
-	const AnimationSpecs& PlayerAnimationObj::GetAnimationSpecs() const
+	const AnimationSpecs& AnimationObj::GetAnimationSpecs() const
 	{
 		return _animationRenderer->GetAnimationSpecs();
 	}
 
-	int32_t PlayerAnimationObj::GetCurrentIndex()
+	int32_t AnimationObj::GetCurrentIndex()
 	{
 		return _currentIndex;
 	}
 
-	void PlayerAnimationObj::RenderAnimation()
+	void AnimationObj::RenderAnimation()
 	{
 		if (_animationRenderer->GetAnimationSpecs().mSpriteEnum == RB::Sprites::SpriteEnum::NONE)
 		{

@@ -10,11 +10,11 @@
 
 namespace RB::Render
 {
-	class PlayerAnimationObj : public iPlayerAnimationObj
+	class AnimationObj : public iAnimationObj
 	{
 	public:
-		PlayerAnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer);
-		~PlayerAnimationObj() = default;
+		AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer);
+		~AnimationObj() = default;
 
 	public:
 		void OnFixedUpdate() override;
@@ -35,6 +35,6 @@ namespace RB::Render
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		AnimationRenderer* _animationRenderer = nullptr;
 		int32_t _currentIndex = 0;
-		RB::Updaters::SkipFixedUpdates<PlayerAnimationObj> _skipFixedUpdates;
+		RB::Updaters::SkipFixedUpdates<AnimationObj> _skipFixedUpdates;
 	};
 }

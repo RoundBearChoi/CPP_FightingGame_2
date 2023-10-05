@@ -131,7 +131,7 @@ namespace RB::HBox
 
 	int32_t MenuController::_GetCurrentAnimationFrame()
 	{
-		RB::Render::iPlayerAnimationObj* obj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
+		RB::Render::iAnimationObj* obj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
 
 		if (obj == nullptr)
 		{

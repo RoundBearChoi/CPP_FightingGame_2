@@ -4,7 +4,7 @@
 
 namespace RB::Render
 {
-	class iPlayerAnimationObj
+	class iAnimationObj
 	{
 	public:
 		virtual void OnFixedUpdate() = 0;

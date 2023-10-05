@@ -13,7 +13,7 @@ namespace RB::Render
 
 		virtual RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) = 0;
 		virtual void DeleteAnimationObj(RB::Players::PlayerID playerID) = 0;
-		virtual iPlayerAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) = 0;
+		virtual iAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) = 0;
 	};
 
 	extern iPlayerAnimationController* PLAYER_ANIMATION_CONTROLLER;

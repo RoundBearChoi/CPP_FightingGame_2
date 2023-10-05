@@ -168,7 +168,7 @@ namespace RB::Render
 		}
 	}
 
-	iPlayerAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
+	iAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
 		{
@@ -220,7 +220,7 @@ namespace RB::Render
 
 			AnimationRenderer* aniRenderer = _animationLoader.GetAnimation(spriteEnum);
 
-			iPlayerAnimationObj* animationObj = new PlayerAnimationObj(arr[i], aniRenderer);
+			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer);
 
 			_vecPlayerAnimationObjs.push_back(animationObj);
 		}
@@ -243,7 +243,7 @@ namespace RB::Render
 		{
 			DeleteAnimationObj(playerID);
 
-			iPlayerAnimationObj* playerAnimationObj = new PlayerAnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
+			iAnimationObj* playerAnimationObj = new AnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
 
 			_vecPlayerAnimationObjs.push_back(playerAnimationObj);
 		}

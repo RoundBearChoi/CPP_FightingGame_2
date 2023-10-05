@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SpriteRenderer.h"
+#include "SpriteObj.h"
 #include "LineRenderer.h"
 
 #include "PlayerHBoxRenderer.h"

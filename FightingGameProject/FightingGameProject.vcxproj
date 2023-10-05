@@ -201,7 +201,7 @@
     <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="AnimationRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
-    <ClCompile Include="SpriteRenderer.cpp" />
+    <ClCompile Include="SpriteObj.cpp" />
     <ClCompile Include="ActiveControllers.cpp" />
     <ClCompile Include="CamObj.cpp" />
     <ClCompile Include="CamController.cpp" />
@@ -297,7 +297,7 @@
     <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="AnimationRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />
-    <ClInclude Include="SpriteRenderer.h" />
+    <ClInclude Include="SpriteObj.h" />
     <ClInclude Include="CamObj.h" />
     <ClInclude Include="CamController.h" />
     <ClInclude Include="iCamObj.h" />

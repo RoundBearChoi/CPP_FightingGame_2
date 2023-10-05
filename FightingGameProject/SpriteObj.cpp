@@ -1,4 +1,4 @@
-#include "SpriteRenderer.h"
+#include "SpriteObj.h"
 
 namespace RB::Render
 {

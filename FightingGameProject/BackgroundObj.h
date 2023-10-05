@@ -2,7 +2,7 @@
 #include <cmath>
 #include "olcPixelGameEngine.h"
 #include "SpriteEnum.h"
-#include "SpriteRenderer.h"
+#include "SpriteObj.h"
 
 #include "iCamController.h"
 

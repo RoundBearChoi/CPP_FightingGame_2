@@ -5,7 +5,7 @@
 #include "SkipFixedUpdates.h"
 #include "AnimationRenderSettings.h"
 
-#include "iPlayerAnimationObj.h"
+#include "iAnimationObj.h"
 #include "iPlayer.h"
 
 namespace RB::Render

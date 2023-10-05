@@ -1,6 +1,6 @@
 #pragma once
 #include "ControllerBase.h"
-#include "iPlayerAnimationObj.h"
+#include "iAnimationObj.h"
 
 namespace RB::Render
 {

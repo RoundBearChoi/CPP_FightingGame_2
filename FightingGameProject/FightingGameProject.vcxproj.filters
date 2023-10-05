@@ -142,7 +142,7 @@
     <ClCompile Include="AnimationRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerAnimationObj.cpp">
+    <ClCompile Include="AnimationObj.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="StateComponentBase.cpp">
@@ -441,7 +441,7 @@
     <ClInclude Include="AnimationRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerAnimationObj.h">
+    <ClInclude Include="AnimationObj.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="AnimationRenderSettings.h">
@@ -564,7 +564,7 @@
     <ClInclude Include="iPlayerAnimationController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="iPlayerAnimationObj.h">
+    <ClInclude Include="iAnimationObj.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="iPlayerDebugController.h">

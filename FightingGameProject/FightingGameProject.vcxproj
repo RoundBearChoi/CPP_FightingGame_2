@@ -193,7 +193,7 @@
     <ClCompile Include="WhileMovingForward.cpp" />
     <ClCompile Include="MoveBackOnPress.cpp" />
     <ClCompile Include="MoveForwardOnPress.cpp" />
-    <ClCompile Include="PlayerAnimationObj.cpp" />
+    <ClCompile Include="AnimationObj.cpp" />
     <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="P0_FallDown.cpp" />
     <ClCompile Include="PlayerAnimationController.cpp" />
@@ -261,7 +261,7 @@
     <ClInclude Include="iInputController.h" />
     <ClInclude Include="iMenuController.h" />
     <ClInclude Include="iPlayerAnimationController.h" />
-    <ClInclude Include="iPlayerAnimationObj.h" />
+    <ClInclude Include="iAnimationObj.h" />
     <ClInclude Include="iPlayerController.h" />
     <ClInclude Include="iPlayerDebugController.h" />
     <ClInclude Include="iSpriteDataController.h" />
@@ -289,7 +289,7 @@
     <ClInclude Include="WhileMovingForward.h" />
     <ClInclude Include="MoveBackOnPress.h" />
     <ClInclude Include="MoveForwardOnPress.h" />
-    <ClInclude Include="PlayerAnimationObj.h" />
+    <ClInclude Include="AnimationObj.h" />
     <ClInclude Include="AnimationLoader.h" />
     <ClInclude Include="P0_FallDown.h" />
     <ClInclude Include="PlayerAnimationController.h" />

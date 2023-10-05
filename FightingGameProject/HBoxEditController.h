@@ -7,7 +7,7 @@
 
 #include "PlayerState.h"
 #include "ActivePlayerStates.h"
-#include "iPlayerAnimationObj.h"
+#include "iAnimationObj.h"
 
 #include "iHBoxEditController.h"
 #include "iPlayerAnimationController.h"

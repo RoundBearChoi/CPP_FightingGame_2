@@ -11,9 +11,9 @@ namespace RB::Render
 
 	PlayerAnimationController::~PlayerAnimationController()
 	{
-		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecAnimationObjs.size(); i++)
 		{
-			delete _vecPlayerAnimationObjs[i];
+			delete _vecAnimationObjs[i];
 		}
 
 		PLAYER_ANIMATION_CONTROLLER = nullptr;
@@ -124,27 +124,27 @@ namespace RB::Render
 			_SetNewAnimationObjsOnChange(*arr[i]);
 		}
 
-		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecAnimationObjs.size(); i++)
 		{
-			_vecPlayerAnimationObjs[i]->RenderAnimation();
+			_vecAnimationObjs[i]->RenderAnimation();
 		}
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecAnimationObjs.size(); i++)
 		{
-			_vecPlayerAnimationObjs[i]->OnFixedUpdate();
+			_vecAnimationObjs[i]->OnFixedUpdate();
 		}
 	}
 
 	RB::Sprites::SpriteEnum PlayerAnimationController::GetSpriteEnum(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecAnimationObjs.size(); i++)
 		{
-			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
+			if (_vecAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
-				RB::Sprites::SpriteEnum spriteEnum = _vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteEnum;
+				RB::Sprites::SpriteEnum spriteEnum = _vecAnimationObjs[i]->GetAnimationSpecs().mSpriteEnum;
 
 				return spriteEnum;
 			}
@@ -155,13 +155,13 @@ namespace RB::Render
 
 	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecAnimationObjs.size(); i++)
 		{
-			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
+			if (_vecAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
-				delete _vecPlayerAnimationObjs[i];
+				delete _vecAnimationObjs[i];
 
-				_vecPlayerAnimationObjs.erase(_vecPlayerAnimationObjs.begin() + i);
+				_vecAnimationObjs.erase(_vecAnimationObjs.begin() + i);
 
 				return;
 			}
@@ -170,13 +170,13 @@ namespace RB::Render
 
 	iAnimationObj* PlayerAnimationController::GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecPlayerAnimationObjs.size(); i++)
+		for (size_t i = 0; i < _vecAnimationObjs.size(); i++)
 		{
-			if (_vecPlayerAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
+			if (_vecAnimationObjs[i]->GetPlayer()->GetPlayerID() == playerID)
 			{
-				if (_vecPlayerAnimationObjs[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
+				if (_vecAnimationObjs[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
 				{
-					return _vecPlayerAnimationObjs[i];
+					return _vecAnimationObjs[i];
 				}
 			}
 		}
@@ -191,12 +191,12 @@ namespace RB::Render
 			return;
 		}
 
-		if (_vecPlayerAnimationObjs.size() > 0)
+		if (_vecAnimationObjs.size() > 0)
 		{
 			return;
 		}
 
-		_vecPlayerAnimationObjs.reserve(4);
+		_vecAnimationObjs.reserve(4);
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
@@ -222,7 +222,7 @@ namespace RB::Render
 
 			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer);
 
-			_vecPlayerAnimationObjs.push_back(animationObj);
+			_vecAnimationObjs.push_back(animationObj);
 		}
 	}
 
@@ -243,9 +243,9 @@ namespace RB::Render
 		{
 			DeleteAnimationObj(playerID);
 
-			iAnimationObj* playerAnimationObj = new AnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
+			iAnimationObj* animationObj = new AnimationObj(&player, _animationLoader.GetAnimation(playerSpriteEnum));
 
-			_vecPlayerAnimationObjs.push_back(playerAnimationObj);
+			_vecAnimationObjs.push_back(animationObj);
 		}
 	}
 }

@@ -6,8 +6,8 @@
 #include "iPlayer.h"
 #include "iPlayerAnimationController.h"
 
-#include "iPlayerAnimationObj.h"
-#include "PlayerAnimationObj.h"
+#include "iAnimationObj.h"
+#include "AnimationObj.h"
 
 #include "ActivePlayerStates.h"
 #include "PlayerState.h"
@@ -36,6 +36,6 @@ namespace RB::Render
 	private:
 		SpriteObj _spriteObj;
 		AnimationLoader _animationLoader;
-		std::vector<iAnimationObj*> _vecPlayerAnimationObjs;
+		std::vector<iAnimationObj*> _vecAnimationObjs;
 	};
 }

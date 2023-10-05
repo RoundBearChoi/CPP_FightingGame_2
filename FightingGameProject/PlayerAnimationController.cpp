@@ -26,7 +26,7 @@ namespace RB::Render
 		_ani.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
 		_ani.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
 
-		//animations
+		//animations (requires loades sprites first)
 		AnimationSpecs idleSpecs;
 		idleSpecs.mX_TileCount = 9;
 		idleSpecs.mY_TileCount = 1;

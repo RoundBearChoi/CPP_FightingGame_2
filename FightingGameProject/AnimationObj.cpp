@@ -18,6 +18,11 @@ namespace RB::Render
 
 	void AnimationObj::UpdateAnimationIndex()
 	{
+		if (_ownerPlayer == nullptr)
+		{
+			return;
+		}
+
 		if (_ownerPlayer->ManualAnimationUpdate())
 		{
 			return;

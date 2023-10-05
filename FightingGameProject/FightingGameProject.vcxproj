@@ -145,7 +145,6 @@
   <ItemGroup>
     <ClCompile Include="ActivePlayerStates.cpp" />
     <ClCompile Include="AirMomentum.cpp" />
-    <ClCompile Include="AnimationControllerBase.cpp" />
     <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
@@ -233,7 +232,6 @@
     <ClInclude Include="ActivePlayerStates.h" />
     <ClInclude Include="AirMomentum.h" />
     <ClInclude Include="AllocationCount.h" />
-    <ClInclude Include="AnimationControllerBase.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="AttackRegister.h" />

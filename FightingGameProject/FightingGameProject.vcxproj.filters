@@ -304,9 +304,6 @@
     <ClCompile Include="iGeneralHitStopController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationControllerBase.cpp">
-      <Filter>Source Files\Render</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -632,9 +629,6 @@
     </ClInclude>
     <ClInclude Include="iGeneralHitStopController.h">
       <Filter>Source Files\Collisions</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimationControllerBase.h">
-      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

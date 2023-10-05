@@ -25,19 +25,17 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) override;
 		void DeleteAnimationObj(RB::Players::PlayerID playerID) override;
 		iAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
 
 	private:
 		void _SetFirstAnimations();
 		void _SetNewAnimationObjsOnChange(RB::Players::iPlayer& player);
+		RB::Sprites::SpriteEnum _GetSpriteEnum(RB::Players::PlayerID playerID);
 
 	private:
 		SpriteObj _spriteObj;
 		AnimationLoader _animationLoader;
-
-		//current animations to render
-		std::vector<iAnimationObj*> _vecAnimationObjs;
+		std::vector<iAnimationObj*> _vecCurrentAnimations;
 	};
 }

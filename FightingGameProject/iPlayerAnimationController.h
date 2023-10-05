@@ -11,7 +11,6 @@ namespace RB::Render
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) = 0;
 		virtual void DeleteAnimationObj(RB::Players::PlayerID playerID) = 0;
 		virtual iAnimationObj* GetAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) = 0;
 	};

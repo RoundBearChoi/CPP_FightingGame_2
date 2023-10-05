@@ -36,6 +36,8 @@ namespace RB::Render
 	private:
 		SpriteObj _spriteObj;
 		AnimationLoader _animationLoader;
+
+		//current animations to render
 		std::vector<iAnimationObj*> _vecAnimationObjs;
 	};
 }

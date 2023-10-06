@@ -39,8 +39,9 @@ namespace RB::Render
 				olc::vi2d pos = p->GetPosition();
 
 				_vecCurrentAnimations[i]->SetWorldPos(pos);
-				_vecCurrentAnimations[i]->RenderAnimation();
 			}
+
+			_vecCurrentAnimations[i]->RenderAnimation();
 		}
 	}
 

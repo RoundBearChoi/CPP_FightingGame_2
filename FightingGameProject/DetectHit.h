@@ -14,6 +14,7 @@
 #include "iPlayerAnimationController.h"
 #include "iAttackRegisterController.h"
 #include "iGeneralHitStopController.h"
+#include "iVFXAnimationController.h"
 
 #include "LineRenderer.h"
 

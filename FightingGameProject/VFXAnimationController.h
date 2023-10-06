@@ -16,7 +16,7 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		void InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum) override;
+		void InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos) override;
 
 	private:
 		Ani _ani;

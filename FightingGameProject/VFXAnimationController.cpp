@@ -42,12 +42,14 @@ namespace RB::Render
         _ani.OnFixedUpdate();
     }
 
-    void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum)
+    void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos)
     {
         AnimationRenderer* aniRenderer = _ani.GetAnimationRenderer(spriteEnum);
         
         //no owner player
         iAnimationObj* animationObj = new AnimationObj(nullptr, aniRenderer);
+
+        animationObj->SetWorldPos(pos);
 
         _ani.PushCurrentAnimation(animationObj);
     }

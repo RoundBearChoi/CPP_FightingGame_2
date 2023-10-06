@@ -67,6 +67,8 @@ namespace RB::PlayerStateComponents
 				{
 					_col = col;
 
+					RB::Render::VFX_ANIMATION_CONTROLLER->InstantiateAnimation(RB::Sprites::SpriteEnum::vfx_hiteffect_0, col);
+
 					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
 					std::cout << std::endl;

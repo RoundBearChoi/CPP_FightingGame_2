@@ -103,9 +103,14 @@ namespace RB::Collisions
 			return false;
 		}
 
+		/// <summary>
+		/// olc y is reversed
+		/// </summary>
+		/// <param name="other"></param>
+		/// <returns></returns>
 		olc::vf2d GetCollisionCenter(const AABB& other)
 		{
-			float_t minxX = std::max(_bottomLeftX, other._bottomLeftX); //min vs min
+			float_t minxX = std::max(_bottomLeftX, other._bottomLeftX);
 			float_t minY = std::min(_bottomLeftY, other._bottomLeftY);
 
 			float_t maxX = std::min(_bottomLeftX + _width, other._bottomLeftX + other._width);

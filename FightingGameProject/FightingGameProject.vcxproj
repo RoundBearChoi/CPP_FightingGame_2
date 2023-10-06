@@ -157,6 +157,7 @@
     <ClCompile Include="iGeneralHitStopController.cpp" />
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />
+    <ClCompile Include="iVFXAnimationController.cpp" />
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
     <ClCompile Include="HB.cpp" />
@@ -190,6 +191,7 @@
     <ClCompile Include="TriggerIdleOnAnimationEnd.cpp" />
     <ClCompile Include="TriggerJab.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
+    <ClCompile Include="VFXAnimationController.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
     <ClCompile Include="WhileMovingForward.cpp" />
     <ClCompile Include="MoveBackOnPress.cpp" />
@@ -249,6 +251,7 @@
     <ClInclude Include="iGeneralHitStopController.h" />
     <ClInclude Include="iHBoxEditController.h" />
     <ClInclude Include="iHitBoxDataController.h" />
+    <ClInclude Include="iVFXAnimationController.h" />
     <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h" />
     <ClInclude Include="P0_Jab.h" />
     <ClInclude Include="HB.h" />
@@ -288,6 +291,7 @@
     <ClInclude Include="TriggerIdleOnAnimationEnd.h" />
     <ClInclude Include="TriggerJab.h" />
     <ClInclude Include="TriggerJumpUp.h" />
+    <ClInclude Include="VFXAnimationController.h" />
     <ClInclude Include="WhileMovingBack.h" />
     <ClInclude Include="WhileMovingForward.h" />
     <ClInclude Include="MoveBackOnPress.h" />

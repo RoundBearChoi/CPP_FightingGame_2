@@ -307,6 +307,12 @@
     <ClCompile Include="Ani.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="VFXAnimationController.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="iVFXAnimationController.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -637,6 +643,12 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="iAni.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="VFXAnimationController.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="iVFXAnimationController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>

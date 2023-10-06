@@ -9,7 +9,7 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnUpdate()
 	{
-
+		_lineRenderer.RenderLine({ 0.0f, 20.0f }, _col, olc::RED);
 	}
 
 	void DetectHit::OnFixedUpdate()
@@ -61,8 +61,12 @@ namespace RB::PlayerStateComponents
 				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), target->OtherPlayerIsOnRightSide());
 
 				//compare
-				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB))
+				olc::vf2d col;
+
+				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB, col))
 				{
+					_col = col;
+
 					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
 					std::cout << std::endl;

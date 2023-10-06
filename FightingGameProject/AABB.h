@@ -1,5 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include <algorithm>
 
 namespace RB::Collisions
 {
@@ -75,7 +76,7 @@ namespace RB::Collisions
 		/// </summary>
 		/// <param name="other"></param>
 		/// <returns></returns>
-		bool IsCollidingAgainst(const AABB& other)
+		bool IsCollidingAgainst(const AABB& other, olc::vf2d& collisionCenter)
 		{
 			if (_width <= 0.001f || _height <= 0.001f)
 			{
@@ -94,10 +95,23 @@ namespace RB::Collisions
 
 			if (horizontalCol_L && horizontalCol_R && verticalCol_B && verticalCol_U)
 			{
+				collisionCenter = GetCollisionCenter(other);
+
 				return true;
 			}
 
 			return false;
+		}
+
+		olc::vf2d GetCollisionCenter(const AABB& other)
+		{
+			float_t minxX = std::max(_bottomLeftX, other._bottomLeftX); //min vs min
+			float_t minY = std::min(_bottomLeftY, other._bottomLeftY);
+
+			float_t maxX = std::min(_bottomLeftX + _width, other._bottomLeftX + other._width);
+			float_t maxY = std::max(_bottomLeftY - _height, other._bottomLeftY - other._height);
+
+			return { (minxX + maxX) * 0.5f, (minY + maxY) * 0.5f };
 		}
 
 		AABB GetWorldPos(const olc::vf2d& playerPos, const bool& otherPlayerIsOnRightSide)

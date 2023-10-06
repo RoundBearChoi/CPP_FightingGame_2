@@ -15,6 +15,8 @@
 #include "iAttackRegisterController.h"
 #include "iGeneralHitStopController.h"
 
+#include "LineRenderer.h"
+
 namespace RB::PlayerStateComponents
 {
 	class DetectHit : public RB::States::StateComponentBase
@@ -27,5 +29,9 @@ namespace RB::PlayerStateComponents
 		void OnEnter() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		olc::vf2d _col = { 0.0f, 0.0f };
+		RB::Render::LineRenderer _lineRenderer;
 	};
 }

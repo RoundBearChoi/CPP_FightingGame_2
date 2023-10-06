@@ -35,7 +35,9 @@ namespace RB::Players
 		RB::Collisions::AABB otherAABB = other->UpdateAABBOnPlayerPos();
 		RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();
 
-		if (myAABB.IsCollidingAgainst(otherAABB))
+		olc::vf2d col;
+
+		if (myAABB.IsCollidingAgainst(otherAABB, col))
 		{
 			_isColliding = true;
 

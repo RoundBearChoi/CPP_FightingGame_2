@@ -1,6 +1,8 @@
 #pragma once
 #include "iVFXAnimationController.h"
 
+#include "Ani.h"
+
 namespace RB::Render
 {
 	class VFXAnimationController : public RB::Render::iVFXAnimationController
@@ -13,5 +15,8 @@ namespace RB::Render
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		Ani _ani;
 	};
 }

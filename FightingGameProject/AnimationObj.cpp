@@ -18,14 +18,12 @@ namespace RB::Render
 
 	void AnimationObj::UpdateAnimationIndex()
 	{
-		if (_ownerPlayer == nullptr)
+		if (_ownerPlayer != nullptr)
 		{
-			return;
-		}
-
-		if (_ownerPlayer->ManualAnimationUpdate())
-		{
-			return;
+			if (_ownerPlayer->ManualAnimationUpdate())
+			{
+				return;
+			}
 		}
 
 		_currentIndex++;

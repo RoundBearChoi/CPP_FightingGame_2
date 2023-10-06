@@ -25,7 +25,7 @@ namespace RB::Render
         hit0Specs.mY_TileCount = 1;
         hit0Specs.mTotalSprites = 5;
         hit0Specs.mSkipFixedUpdates = 3;
-        hit0Specs.mRenderSize = olc::vf2d{ 184.0f, 38.4f };
+        hit0Specs.mRenderSize = olc::vf2d{ 73.6f, 76.8f };
         hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
         hit0Specs.mSpriteEnum = RB::Sprites::SpriteEnum::vfx_hiteffect_0;
 

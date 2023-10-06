@@ -26,7 +26,7 @@ namespace RB::Render
         hit0Specs.mTotalSprites = 5;
         hit0Specs.mSkipFixedUpdates = 1;
         hit0Specs.mRenderSize = olc::vf2d{ 73.6f, 76.8f };
-        hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+        hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, -6.0f };
         hit0Specs.mSpriteEnum = RB::Sprites::SpriteEnum::vfx_hiteffect_0;
 
         _ani.LoadAnimation(hit0Specs, RB::Sprites::SpriteEnum::vfx_hiteffect_0);

@@ -135,5 +135,11 @@ namespace RB::Render
 	void AnimationObj::SetWorldPos(const olc::vf2d& pos)
 	{
 		_worldPos = pos;
+
+		//default render pivot is bottom center, so making adjustments
+		if (_pivotType == RB::Sprites::PivotType::CENTER)
+		{
+			_worldPos.y += GetRenderSize().y * 0.5f;
+		}
 	}
 }

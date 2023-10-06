@@ -24,10 +24,11 @@ namespace RB::Updaters
 
 		void OnFixedUpdate()
 		{
+			_totalFrameCount++;
+
 			if (_frameCount < _skipFrames)
 			{
 				_frameCount++;
-				_totalFrameCount++;
 			}
 			else
 			{

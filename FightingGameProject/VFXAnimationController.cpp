@@ -24,7 +24,7 @@ namespace RB::Render
         hit0Specs.mX_TileCount = 5;
         hit0Specs.mY_TileCount = 1;
         hit0Specs.mTotalSprites = 5;
-        hit0Specs.mSkipFixedUpdates = 3;
+        hit0Specs.mSkipFixedUpdates = 1;
         hit0Specs.mRenderSize = olc::vf2d{ 73.6f, 76.8f };
         hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
         hit0Specs.mSpriteEnum = RB::Sprites::SpriteEnum::vfx_hiteffect_0;
@@ -68,9 +68,9 @@ namespace RB::Render
             int32_t skipFixedUpdates = aniObj->GetAnimationSpecs().mSkipFixedUpdates;
             int32_t totalSprites = aniObj->GetAnimationSpecs().mTotalSprites;
 
-            size_t currentFixedUpdateCount = aniObj->GetFixedUpdateCount();
+            size_t totalFixedUpdates = aniObj->GetFixedUpdateCount();
 
-            if (totalSprites * (skipFixedUpdates + 1) <= currentFixedUpdateCount)
+            if (totalSprites * (skipFixedUpdates + 1) <= totalFixedUpdates)
             {
                 _ani.DeleteAnimationObj(i);
 			}

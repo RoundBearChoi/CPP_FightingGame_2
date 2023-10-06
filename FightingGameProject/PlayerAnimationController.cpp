@@ -169,7 +169,7 @@ namespace RB::Render
 
 			AnimationRenderer* aniRenderer = _ani.GetAnimationRenderer(spriteEnum);
 
-			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer);
+			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, RB::Sprites::PivotType::BOTTOM_CENTER);
 
 			_ani.PushCurrentAnimation(animationObj);
 		}
@@ -192,7 +192,7 @@ namespace RB::Render
 		{
 			DeleteAnimationObj(playerID);
 
-			iAnimationObj* aniObj = _ani.GetNewAnimationObj(player, playerSpriteEnum);
+			iAnimationObj* aniObj = _ani.InstantiateNewAnimationObj(player, playerSpriteEnum, RB::Sprites::PivotType::BOTTOM_CENTER);
 
 			_ani.PushCurrentAnimation(aniObj);
 		}

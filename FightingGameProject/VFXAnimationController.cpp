@@ -47,7 +47,7 @@ namespace RB::Render
         AnimationRenderer* aniRenderer = _ani.GetAnimationRenderer(spriteEnum);
         
         //no owner player
-        iAnimationObj* animationObj = new AnimationObj(nullptr, aniRenderer);
+        iAnimationObj* animationObj = new AnimationObj(nullptr, aniRenderer, RB::Sprites::PivotType::CENTER);
 
         animationObj->SetWorldPos(pos);
 

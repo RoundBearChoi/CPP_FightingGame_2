@@ -13,7 +13,7 @@ namespace RB::Render
 	class AnimationObj : public iAnimationObj
 	{
 	public:
-		AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer);
+		AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, RB::Sprites::PivotType pivotType);
 		~AnimationObj() = default;
 
 	public:
@@ -35,6 +35,7 @@ namespace RB::Render
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		AnimationRenderer* _animationRenderer = nullptr;
+		RB::Sprites::PivotType _pivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		int32_t _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		olc::vf2d _worldPos = { 0, 0 };

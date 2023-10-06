@@ -2,10 +2,11 @@
 
 namespace RB::Render
 {
-	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer)
+	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, RB::Sprites::PivotType pivotType)
 	{
 		_ownerPlayer = owner;
 		_animationRenderer = animationRenderer;
+		_pivotType = pivotType;
 
 		_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
 		_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
@@ -113,11 +114,11 @@ namespace RB::Render
 
 		renderSettings.mWorldPos = _worldPos;
 		renderSettings.mCurrentIndex = _currentIndex;
+		renderSettings.mPivotType = _pivotType;
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderSize = GetRenderSize();
 		renderSettings.mRenderOffset = GetRenderOffset();
-		renderSettings.mPivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 
 		if (_ownerPlayer != nullptr)
 		{

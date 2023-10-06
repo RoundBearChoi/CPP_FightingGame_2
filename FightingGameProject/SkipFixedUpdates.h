@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 
 namespace RB::Updaters
 {
@@ -10,7 +11,7 @@ namespace RB::Updaters
 		~SkipFixedUpdates() = default;
 
 	public:
-		void SetSkipFrames(unsigned int skipFrames)
+		void SetSkipFrames(uint32_t skipFrames)
 		{
 			_skipFrames = skipFrames;
 		}
@@ -26,6 +27,7 @@ namespace RB::Updaters
 			if (_frameCount < _skipFrames)
 			{
 				_frameCount++;
+				_totalFrameCount++;
 			}
 			else
 			{
@@ -35,9 +37,15 @@ namespace RB::Updaters
 			}
 		}
 
+		size_t GetTotalFixedUpdateCount()
+		{
+			return _totalFrameCount;
+		}
+
 	private:
-		unsigned int _skipFrames = 0;
-		unsigned int _frameCount = 0;
+		uint32_t _skipFrames = 0;
+		size_t _frameCount = 0;
+		size_t _totalFrameCount = 0;
 		T* _obj = nullptr;
 		void (T::* _function)() = nullptr;
 	};

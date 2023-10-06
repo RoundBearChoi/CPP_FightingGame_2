@@ -72,6 +72,17 @@ namespace RB::Render
 		}
 	}
 
+	void Ani::DeleteAnimationObj(size_t index)
+	{
+		if (index < _vecCurrentAnimations.size())
+		{
+			delete _vecCurrentAnimations[index];
+			_vecCurrentAnimations[index] = nullptr;
+
+			_vecCurrentAnimations.erase(_vecCurrentAnimations.begin() + index);
+		}
+	}
+
 	iAnimationObj* Ani::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
@@ -83,6 +94,16 @@ namespace RB::Render
 					return _vecCurrentAnimations[i];
 				}
 			}
+		}
+
+		return nullptr;
+	}
+
+	iAnimationObj* Ani::GetCurrentAnimationObj(size_t index)
+	{
+		if (index < _vecCurrentAnimations.size())
+		{
+			return _vecCurrentAnimations[index];
 		}
 
 		return nullptr;

@@ -31,6 +31,7 @@ namespace RB::Render
 		int32_t GetCurrentIndex() override;
 		void RenderAnimation() override;
 		void SetWorldPos(const olc::vf2d& pos) override;
+		size_t GetFixedUpdateCount() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;

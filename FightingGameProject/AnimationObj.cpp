@@ -142,4 +142,9 @@ namespace RB::Render
 			_worldPos.y += GetRenderSize().y * 0.5f;
 		}
 	}
+
+	size_t AnimationObj::GetFixedUpdateCount()
+	{
+		return _customFixedUpdate.GetTotalFixedUpdateCount();
+	}
 }

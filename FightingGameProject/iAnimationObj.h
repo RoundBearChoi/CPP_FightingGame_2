@@ -21,5 +21,6 @@ namespace RB::Render
 		virtual int32_t GetCurrentIndex() = 0;
 		virtual void RenderAnimation() = 0;
 		virtual void SetWorldPos(const olc::vf2d& pos) = 0;
+		virtual size_t GetFixedUpdateCount() = 0;
 	};
 }

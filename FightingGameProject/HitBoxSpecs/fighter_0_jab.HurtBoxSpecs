@@ -2,8 +2,8 @@
     "frame_0":
     [
         {
-        "posX" : 38.2656,
-        "posY" : -39.9448,
+        "posX" : 0,
+        "posY" : 0,
         "width" : 0,
         "height" : 0
         }
@@ -42,8 +42,8 @@
     "frame_4":
     [
         {
-        "posX" : -11.3527,
-        "posY" : -9.2293,
+        "posX" : 0,
+        "posY" : 0,
         "width" : 0,
         "height" : 0
         }
@@ -52,8 +52,8 @@
     "frame_5":
     [
         {
-        "posX" : -67.7084,
-        "posY" : -26.4497,
+        "posX" : 0,
+        "posY" : 0,
         "width" : 0,
         "height" : 0
         }

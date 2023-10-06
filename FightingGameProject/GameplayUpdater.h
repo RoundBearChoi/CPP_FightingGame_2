@@ -16,6 +16,7 @@
 #include "HurtBoxDataController.h"
 #include "HitBoxDataController.h"
 #include "GeneralHitStopController.h"
+#include "VFXAnimationController.h"
 
 namespace RB::Updaters
 {

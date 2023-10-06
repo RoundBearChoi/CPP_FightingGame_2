@@ -16,6 +16,8 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
+		void InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum) override;
+
 	private:
 		Ani _ani;
 	};

@@ -29,12 +29,14 @@ namespace RB::Render
 		RB::Players::iPlayer* GetPlayer() override;
 		const AnimationSpecs& GetAnimationSpecs() const override;
 		int32_t GetCurrentIndex() override;
-		void RenderAnimation(const olc::vi2d& pos) override;
+		void RenderAnimation() override;
+		void SetWorldPos(const olc::vf2d& pos) override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		AnimationRenderer* _animationRenderer = nullptr;
 		int32_t _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
+		olc::vf2d _worldPos = { 0, 0 };
 	};
 }

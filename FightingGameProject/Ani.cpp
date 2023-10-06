@@ -34,9 +34,13 @@ namespace RB::Render
 		{
 			RB::Players::iPlayer* p = _vecCurrentAnimations[i]->GetPlayer();
 
-			olc::vi2d pos = p->GetPosition();
+			if (p != nullptr)
+			{
+				olc::vi2d pos = p->GetPosition();
 
-			_vecCurrentAnimations[i]->RenderAnimation(pos);
+				_vecCurrentAnimations[i]->SetWorldPos(pos);
+				_vecCurrentAnimations[i]->RenderAnimation();
+			}
 		}
 	}
 

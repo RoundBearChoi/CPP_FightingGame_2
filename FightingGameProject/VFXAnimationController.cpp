@@ -40,6 +40,8 @@ namespace RB::Render
     void VFXAnimationController::OnFixedUpdate()
     {
         _ani.OnFixedUpdate();
+        
+        _DeleteUsedAnimations();
     }
 
     void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos)
@@ -52,5 +54,18 @@ namespace RB::Render
         animationObj->SetWorldPos(pos);
 
         _ani.PushCurrentAnimation(animationObj);
+    }
+
+    void VFXAnimationController::_DeleteUsedAnimations()
+    {
+        for (int32_t i = _ani.GetCurrentAniCount() - 1; i >= 0; i--)
+        {
+			//iAnimationObj* aniObj = _ani.GetCurrentAnimation(i);
+            //
+			//if (aniObj->IsAnimationFinished())
+			//{
+			//	_ani.DeleteCurrentAnimation(i);
+			//}
+        }
     }
 }

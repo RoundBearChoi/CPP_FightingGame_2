@@ -19,6 +19,9 @@ namespace RB::Render
 		void InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos) override;
 
 	private:
+		void _DeleteUsedAnimations();
+
+	private:
 		Ani _ani;
 	};
 }

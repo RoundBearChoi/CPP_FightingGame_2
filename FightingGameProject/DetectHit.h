@@ -30,10 +30,5 @@ namespace RB::PlayerStateComponents
 		void OnEnter() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-
-	private:
-		//temp debug
-		olc::vf2d _col = { 0.0f, 0.0f };
-		RB::Render::LineRenderer _lineRenderer;
 	};
 }

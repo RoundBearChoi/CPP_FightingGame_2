@@ -9,7 +9,7 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnUpdate()
 	{
-		_lineRenderer.RenderLine({ 0.0f, 20.0f }, _col, olc::RED);
+		//_lineRenderer.RenderLine({ 0.0f, 20.0f }, _col, olc::RED);
 	}
 
 	void DetectHit::OnFixedUpdate()
@@ -65,7 +65,7 @@ namespace RB::PlayerStateComponents
 
 				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB, col))
 				{
-					_col = col;
+					//_col = col;
 
 					RB::Render::VFX_ANIMATION_CONTROLLER->InstantiateAnimation(RB::Sprites::SpriteEnum::vfx_hiteffect_0, col);
 

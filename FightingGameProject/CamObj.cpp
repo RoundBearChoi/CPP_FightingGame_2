@@ -44,10 +44,10 @@ namespace RB::Cam
 		//gotta convert to world space
 
 		//start in the middle
-		float_t w = (float_t)RB::Engine::displayWidth;
-		float_t h = (float_t)RB::Engine::displayHeight;
+		_displayHalfWidth = (float_t)RB::Engine::displayWidth;
+		_displayHalfHeight = (float_t)RB::Engine::displayHeight;
 
-		_camPosition = { w * -0.5f, h * -0.5f };
+		_camPosition = { _displayHalfWidth * -0.5f, _displayHalfHeight * -0.5f };
 	}
 
 	void CamObj::OnUpdate()

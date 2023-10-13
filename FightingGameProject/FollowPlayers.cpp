@@ -34,5 +34,8 @@ namespace RB::Cam
 		olc::vf2d result = (olc::vf2d)p0_pos + mid;
 
 		_camObj->SetPosition(result * _camObj->GetZoom());
+
+		//should be dynamic.. but for now
+		_camObj->SetYPosition(-200.0f);
 	}
 }

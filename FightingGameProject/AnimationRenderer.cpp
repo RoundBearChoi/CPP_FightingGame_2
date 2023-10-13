@@ -40,8 +40,8 @@ namespace RB::Render
 
 		if (renderSettings.mFaceRight)
 		{
-			x += renderSettings.mRenderOffset.x;
-			y += renderSettings.mRenderOffset.y;
+			x += renderSettings.mRenderOffset.x * zoom;
+			y += renderSettings.mRenderOffset.y * zoom;
 
 			points[0] = { (float_t)x - (float_t)width / 2.0f, (float_t)y - (float_t)height };
 			points[1] = { (float_t)x - (float_t)width / 2.0f, (float_t)y };
@@ -50,8 +50,8 @@ namespace RB::Render
 		}
 		else
 		{
-			x -= renderSettings.mRenderOffset.x;
-			y += renderSettings.mRenderOffset.y;
+			x -= renderSettings.mRenderOffset.x * zoom;
+			y += renderSettings.mRenderOffset.y * zoom;
 
 			points[0] = { (float_t)x + (float_t)width / 2.0f, (float_t)y - (float_t)height };
 			points[1] = { (float_t)x + (float_t)width / 2.0f, (float_t)y };

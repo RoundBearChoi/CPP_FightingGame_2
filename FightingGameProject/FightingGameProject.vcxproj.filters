@@ -657,5 +657,8 @@
     <ClInclude Include="FollowPlayers.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
+    <ClInclude Include="DisplaySize.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

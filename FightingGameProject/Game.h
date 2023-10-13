@@ -5,6 +5,7 @@
 #include "Updater.h"
 #include "Time.h"
 #include "FixedTimer.h"
+#include "DisplaySize.h"
 #include "ActiveControllers.h"
 #include "jsonExample.h"
 
@@ -67,7 +68,7 @@ namespace RB::Engine
 
 		void Run()
 		{
-			if (Construct(854, 480, 1, 1))
+			if (Construct(displayWidth, displayHeight, 1, 1))
 			{
 				Start();
 			}

@@ -41,7 +41,13 @@ namespace RB::Cam
 
 	void CamObj::Init()
 	{
+		//temp gotta convert to world space
 
+		//start in the middle
+		float_t w = (float_t)RB::Engine::displayWidth;
+		float_t h = (float_t)RB::Engine::displayHeight;
+
+		_camPosition = { w * -0.5f, h * -0.5f };
 	}
 
 	void CamObj::OnUpdate()

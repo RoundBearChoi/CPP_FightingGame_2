@@ -245,6 +245,7 @@
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="DetectHit.h" />
+    <ClInclude Include="DisplaySize.h" />
     <ClInclude Include="FollowPlayers.h" />
     <ClInclude Include="GeneralHitStopController.h" />
     <ClInclude Include="HitBoxDataController.h" />

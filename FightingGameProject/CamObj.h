@@ -2,6 +2,7 @@
 #include <iostream>
 #include "olcPixelGameEngine.h"
 #include "Time.h"
+#include "DisplaySize.h"
 
 #include "iCamObj.h"
 #include "iInputController.h"
@@ -27,7 +28,7 @@ namespace RB::Cam
 		void OnFixedUpdate();
 
 	private:
-		olc::vf2d _camPosition = { -427.0f, -427.0f };
+		olc::vf2d _camPosition = { 0.0f, 0.0f };
 		float_t _zoom = 0.6f;
 		float_t _zoomSpeed = 0.6f;
 		float_t _moveSpeed = 3.0f;

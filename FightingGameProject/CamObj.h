@@ -15,6 +15,9 @@ namespace RB::Cam
 		~CamObj() = default;
 
 		olc::vf2d GetPosition() override;
+		void SetPosition(olc::vf2d pos) override;
+		void SetXPosition(float_t x) override;
+		void SetYPosition(float_t y) override;
 		olc::vf2d GetRelativePosition(olc::vf2d pos) override;
 		float_t GetZoom() override;
 		void SetZoom(float_t zoom) override;

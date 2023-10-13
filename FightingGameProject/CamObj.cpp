@@ -7,6 +7,21 @@ namespace RB::Cam
 		return _camPosition;
 	}
 
+	void CamObj::SetPosition(olc::vf2d pos)
+	{
+		_camPosition = pos;
+	}
+
+	void CamObj::SetXPosition(float_t x)
+	{
+		_camPosition.x = x;
+	}
+
+	void CamObj::SetYPosition(float_t y)
+	{
+		_camPosition.y = y;
+	}
+
 	olc::vf2d CamObj::GetRelativePosition(olc::vf2d pos)
 	{
 		olc::vf2d rel = (pos * _zoom) - _camPosition;

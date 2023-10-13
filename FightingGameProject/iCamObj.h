@@ -10,6 +10,9 @@ namespace RB::Cam
 
 	public:
 		virtual olc::vf2d GetPosition() = 0;
+		virtual void SetPosition(olc::vf2d pos) = 0;
+		virtual void SetXPosition(float_t x) = 0;
+		virtual void SetYPosition(float_t y) = 0;
 		virtual olc::vf2d GetRelativePosition(olc::vf2d pos) = 0;
 		virtual float_t GetZoom() = 0;
 		virtual void SetZoom(float_t zoom) = 0;

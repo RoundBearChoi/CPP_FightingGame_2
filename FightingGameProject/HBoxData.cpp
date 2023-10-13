@@ -55,6 +55,10 @@ namespace RB::HBox
 
 		if (_vecAABB.size() == 1)
 		{
+			RB::Collisions::AABB aabb{ 0, 0, 0, 0 };
+
+			_vecAABB[0].ForceAABB(aabb);
+
 			return false;
 		}
 

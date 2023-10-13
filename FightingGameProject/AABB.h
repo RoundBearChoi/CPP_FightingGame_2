@@ -136,6 +136,14 @@ namespace RB::Collisions
 			return worldAABB;
 		}
 
+		void ForceAABB(AABB& aabb)
+		{
+			_bottomLeftX = aabb._bottomLeftX;
+			_bottomLeftY = aabb._bottomLeftY;
+			_width = aabb._width;
+			_height = aabb._height;
+		}
+
 	private:
 		float_t _bottomLeftX = 0.0f;
 		float_t _bottomLeftY = 0.0f;

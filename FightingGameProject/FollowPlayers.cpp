@@ -35,7 +35,7 @@ namespace RB::Cam
 		olc::vf2d mid = (olc::vf2d)dir * 0.5f;
 		olc::vf2d result = (olc::vf2d)p0_pos + mid;
 
-		//_camObj->SetPosition(result);
+		//_camObj->SetPosition(olc::vf2d{ 0.0f, -427.0f });
 		//_camObj->SetYPosition(-427.0f);
 	}
 }

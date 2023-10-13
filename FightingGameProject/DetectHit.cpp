@@ -9,7 +9,7 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnUpdate()
 	{
-		//_lineRenderer.RenderLine({ 0.0f, 20.0f }, _col, olc::RED);
+
 	}
 
 	void DetectHit::OnFixedUpdate()

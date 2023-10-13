@@ -41,7 +41,7 @@ namespace RB::Cam
 
 	void CamObj::Init()
 	{
-		//temp gotta convert to world space
+		//gotta convert to world space
 
 		//start in the middle
 		float_t w = (float_t)RB::Engine::displayWidth;

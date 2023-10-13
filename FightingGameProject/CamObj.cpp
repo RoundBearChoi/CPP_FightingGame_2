@@ -26,6 +26,9 @@ namespace RB::Cam
 	{
 		olc::vf2d rel = (pos * _zoom) - _camPosition;
 
+		rel.x += _displayHalfWidth;
+		rel.y += _displayHalfHeight;
+
 		return rel;
 	}
 
@@ -41,13 +44,8 @@ namespace RB::Cam
 
 	void CamObj::Init()
 	{
-		//gotta convert to world space
-
-		//start in the middle
-		_displayHalfWidth = (float_t)RB::Engine::displayWidth;
-		_displayHalfHeight = (float_t)RB::Engine::displayHeight;
-
-		_camPosition = { _displayHalfWidth * -0.5f, _displayHalfHeight * -0.5f };
+		_displayHalfWidth = (float_t)RB::Engine::displayWidth * 0.5f;
+		_displayHalfHeight = (float_t)RB::Engine::displayHeight * 0.5f;
 	}
 
 	void CamObj::OnUpdate()

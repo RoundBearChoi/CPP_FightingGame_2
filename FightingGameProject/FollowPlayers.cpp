@@ -27,15 +27,12 @@ namespace RB::Cam
 			return;
 		}
 
-		olc::vf2d currentPos = _camObj->GetPosition();
-
 		olc::vi2d p0_pos = p0->GetPosition();
 		olc::vi2d p1_pos = p1->GetPosition();
 		olc::vi2d dir = p1_pos - p0_pos;
 		olc::vf2d mid = (olc::vf2d)dir * 0.5f;
-		olc::vf2d result = (olc::vf2d)p0_pos + mid - olc::vf2d{ 427.0f, 0.0f };
+		olc::vf2d result = (olc::vf2d)p0_pos + mid;
 
-		//_camObj->SetPosition(result);
-		//_camObj->SetYPosition(-427.0f);
+		_camObj->SetPosition(result * _camObj->GetZoom());
 	}
 }

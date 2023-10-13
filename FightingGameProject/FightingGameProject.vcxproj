@@ -151,6 +151,7 @@
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
+    <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="iAttackRegisterController.cpp" />
@@ -244,6 +245,7 @@
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="DetectHit.h" />
+    <ClInclude Include="FollowPlayers.h" />
     <ClInclude Include="GeneralHitStopController.h" />
     <ClInclude Include="HitBoxDataController.h" />
     <ClInclude Include="iAni.h" />

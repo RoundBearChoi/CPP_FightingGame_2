@@ -17,16 +17,20 @@ namespace RB::Cam
 	void CamController::Init()
 	{
 		_camObj.Init();
+
+		_followPlayers.Init(&_camObj);
 	}
 
 	void CamController::OnUpdate()
 	{
 		_camObj.OnUpdate();
+		_followPlayers.OnUpdate();
 	}
 
 	void CamController::OnFixedUpdate()
 	{
 		_camObj.OnFixedUpdate();
+		_followPlayers.OnFixedUpdate();
 	}
 
 	void CamController::SetZoom(float_t zoom)

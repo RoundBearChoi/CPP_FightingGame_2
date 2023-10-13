@@ -313,6 +313,9 @@
     <ClCompile Include="iVFXAnimationController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="FollowPlayers.cpp">
+      <Filter>Source Files\Cam</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -650,6 +653,9 @@
     </ClInclude>
     <ClInclude Include="iVFXAnimationController.h">
       <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowPlayers.h">
+      <Filter>Source Files\Cam</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,6 +5,8 @@
 #include "iCamController.h"
 #include "iCamObj.h"
 
+#include "FollowPlayers.h"
+
 namespace RB::Cam
 {
 	class CamController : public iCamController
@@ -23,5 +25,6 @@ namespace RB::Cam
 
 	private:
 		CamObj _camObj;
+		FollowPlayers _followPlayers;
 	};
 }

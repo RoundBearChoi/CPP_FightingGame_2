@@ -31,9 +31,12 @@ namespace RB::Cam
 		olc::vi2d p1_pos = p1->GetPosition();
 		olc::vi2d dir = p1_pos - p0_pos;
 		olc::vf2d mid = (olc::vf2d)dir * 0.5f;
-		olc::vf2d result = (olc::vf2d)p0_pos + mid;
+		olc::vf2d result = ((olc::vf2d)p0_pos + mid) * _camObj->GetZoom();
 
-		_camObj->SetPosition(result * _camObj->GetZoom());
+		olc::vf2d curr = _camObj->GetPosition();
+		olc::vf2d lerped = curr.lerp(result, 0.05f);
+
+		_camObj->SetPosition(lerped);
 
 		//should be dynamic.. but for now
 		_camObj->SetYPosition(-200.0f);

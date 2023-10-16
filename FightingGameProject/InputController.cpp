@@ -111,6 +111,8 @@ namespace RB::Input
 				{
 					iInputObj* newObj = new InputObj(input);
 					_vecInputObjs.push_back(newObj);
+
+					std::cout << "adding input obj: " << static_cast<int>(input) << std::endl;
 				}
 
 				//add 2nd obj if released
@@ -120,14 +122,21 @@ namespace RB::Input
 					{
 						iInputObj* newObj = new InputObj(input);
 						_vecInputObjs.push_back(newObj);
+
+						std::cout << "adding input obj: " << static_cast<int>(input) << std::endl;
 					}
 				}
 			}
 			//set release status so 2nd obj can be added
 			else if (button.bReleased)
 			{
+				//gotta fix.. need to get ALL input objs..
 				iInputObj* obj = GetInputObj(RB::Players::PlayerID::PLAYER_1, input);
-				obj->SetReleasedStatus(true);
+
+				if (obj != nullptr)
+				{
+					obj->SetReleasedStatus(true);
+				}
 			}
 		}
 

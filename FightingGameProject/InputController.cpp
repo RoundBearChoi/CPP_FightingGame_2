@@ -130,5 +130,21 @@ namespace RB::Input
 				obj->SetReleasedStatus(true);
 			}
 		}
+
+		//destroy old buffers
+		for (int32_t i = _vecInputObjs.size() - 1; i >= 0; i--)
+		{
+			if (_vecInputObjs[i]->GetFixedUpdateCount() >= 60)
+			{
+				//std::cout << "deleting input obj: " << static_cast<int>(_vecInputObjs[i]->GetPlayerInput()) << std::endl;
+
+				delete _vecInputObjs[i];
+				_vecInputObjs[i] = nullptr;
+
+				std::vector<iInputObj*>::iterator it;
+				it = _vecInputObjs.begin();
+				_vecInputObjs.erase(it + i);
+			}
+		}
 	}
 }

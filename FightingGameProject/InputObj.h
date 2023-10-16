@@ -15,6 +15,7 @@ namespace RB::Input
 		PlayerInput GetPlayerInput() override;
 		void SetReleasedStatus(bool released) override;
 		bool IsReleased() override;
+		size_t GetFixedUpdateCount() override;
 
 	private:
 		size_t _fixedUpdateCount = 0;

@@ -36,4 +36,9 @@ namespace RB::Input
 	{
 		return _released;
 	}
+
+	size_t InputObj::GetFixedUpdateCount()
+	{
+		return _fixedUpdateCount;
+	}
 }

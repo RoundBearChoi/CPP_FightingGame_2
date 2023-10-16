@@ -81,10 +81,20 @@ namespace RB::Input
 		return olc::HWButton();
 	}
 
-	/// <summary>
-	/// getting latest input first
-	/// </summary>
-	iInputObj* InputController::GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	iInputObj* InputController::GetInputOBJ_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	{
+		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		{
+			if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
+			{
+				return _vecInputObjs[i];
+			}
+		}
+
+		return nullptr;
+	}
+
+	iInputObj* InputController::GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		for (int32_t i = _vecInputObjs.size() - 1; i >= 0; i--)
 		{
@@ -107,7 +117,7 @@ namespace RB::Input
 
 			if (button.bPressed)
 			{
-				iInputObj* obj = GetInputObj(RB::Players::PlayerID::PLAYER_1, input);
+				iInputObj* obj = GetInputObj_LIFO(RB::Players::PlayerID::PLAYER_1, input);
 
 				//add new obj
 				if (obj == nullptr)

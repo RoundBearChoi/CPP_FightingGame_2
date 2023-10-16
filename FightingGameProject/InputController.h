@@ -24,7 +24,9 @@ namespace RB::Input
 		iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 
 	private:
-		void _AddInputBuffer();
+		void _UpdateInputBuffer();
+		void _AddInputBuffer(PlayerInput input);
+		void _DestroyOldBuffers();
 
 		std::vector<KeyBinding> _vecKeyBindings;
 		std::vector<iInputObj*> _vecInputObjs;

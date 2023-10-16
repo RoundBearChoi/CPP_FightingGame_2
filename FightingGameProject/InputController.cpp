@@ -50,7 +50,7 @@ namespace RB::Input
 
 	void InputController::OnUpdate()
 	{
-		_AddInputBuffer();
+		_UpdateInputBuffer();
 	}
 
 	void InputController::OnFixedUpdate()
@@ -107,7 +107,7 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	void InputController::_AddInputBuffer()
+	void InputController::_UpdateInputBuffer()
 	{
 		for (size_t all = 0; all < _totalInputTypes; all++)
 		{
@@ -119,13 +119,10 @@ namespace RB::Input
 			{
 				iInputObj* obj = GetInputObj_LIFO(RB::Players::PlayerID::PLAYER_1, input);
 
-				//add new obj
+				//add new obj if first time pressed
 				if (obj == nullptr)
 				{
-					iInputObj* newObj = new InputObj(input);
-					_vecInputObjs.push_back(newObj);
-
-					std::cout << "adding input obj: " << static_cast<int>(input) << std::endl;
+					_AddInputBuffer(input);
 				}
 
 				//add 2nd obj if released
@@ -133,10 +130,7 @@ namespace RB::Input
 				{
 					if (obj->IsReleased())
 					{
-						iInputObj* newObj = new InputObj(input);
-						_vecInputObjs.push_back(newObj);
-
-						std::cout << "adding input obj: " << static_cast<int>(input) << std::endl;
+						_AddInputBuffer(input);
 					}
 				}
 			}
@@ -154,13 +148,23 @@ namespace RB::Input
 			}
 		}
 
-		//destroy old buffers
+		_DestroyOldBuffers();
+	}
+
+	void InputController::_AddInputBuffer(PlayerInput input)
+	{
+		iInputObj* newObj = new InputObj(input);
+		_vecInputObjs.push_back(newObj);
+
+		//std::cout << "adding input obj: " << static_cast<int>(input) << std::endl;
+	}
+
+	void InputController::_DestroyOldBuffers()
+	{
 		for (int32_t i = _vecInputObjs.size() - 1; i >= 0; i--)
 		{
 			if (_vecInputObjs[i]->GetFixedUpdateCount() >= 60)
 			{
-				//std::cout << "deleting input obj: " << static_cast<int>(_vecInputObjs[i]->GetPlayerInput()) << std::endl;
-
 				delete _vecInputObjs[i];
 				_vecInputObjs[i] = nullptr;
 

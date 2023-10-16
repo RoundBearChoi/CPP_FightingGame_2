@@ -15,7 +15,9 @@ namespace RB::Input
 
 		virtual PlayerInput GetPlayerInput() = 0;
 		virtual void SetReleasedStatus(bool released) = 0;
+		virtual void SetUsedStatus(bool used) = 0;
 		virtual bool IsReleased() = 0;
+		virtual bool IsUsed() = 0;
 		virtual size_t GetFixedUpdateCount() = 0;
 	};
 }

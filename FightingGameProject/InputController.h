@@ -19,8 +19,8 @@ namespace RB::Input
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		iInputObj* GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput);
+		olc::HWButton GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		iInputObj* GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 
 	private:
 		void _AddInputBuffer();

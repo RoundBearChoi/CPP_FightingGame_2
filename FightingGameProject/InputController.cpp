@@ -61,7 +61,7 @@ namespace RB::Input
 		}
 	}
 
-	olc::HWButton InputController::GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	olc::HWButton InputController::GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		for (size_t i = 0; i < _vecKeyBindings.size(); i++)
 		{
@@ -103,7 +103,7 @@ namespace RB::Input
 		{
 			PlayerInput input = (PlayerInput)all;
 
-			olc::HWButton button = GetButton(RB::Players::PlayerID::PLAYER_1, input);
+			olc::HWButton button = GetKeyBinding(RB::Players::PlayerID::PLAYER_1, input);
 
 			if (button.bPressed)
 			{

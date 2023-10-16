@@ -29,12 +29,22 @@ namespace RB::Input
 
 	void InputObj::SetReleasedStatus(bool released)
 	{
-		_released = released;
+		_isReleased = released;
+	}
+
+	void InputObj::SetUsedStatus(bool used)
+	{
+		_isUsed = used;
 	}
 
 	bool InputObj::IsReleased()
 	{
-		return _released;
+		return _isReleased;
+	}
+
+	bool InputObj::IsUsed()
+	{
+		return _isUsed;
 	}
 
 	size_t InputObj::GetFixedUpdateCount()

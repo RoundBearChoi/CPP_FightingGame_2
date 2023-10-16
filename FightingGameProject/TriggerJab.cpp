@@ -18,7 +18,7 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		olc::HWButton jump = RB::Input::INPUT_CONTROLLER->GetButton(playerID, RB::Input::PlayerInput::ATTACK_LP_WEAK);
+		olc::HWButton jump = RB::Input::INPUT_CONTROLLER->GetKeyBinding(playerID, RB::Input::PlayerInput::ATTACK_LP_WEAK);
 
 		if (jump.bPressed || jump.bHeld)
 		{

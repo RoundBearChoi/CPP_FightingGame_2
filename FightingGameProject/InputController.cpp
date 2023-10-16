@@ -55,7 +55,10 @@ namespace RB::Input
 
 	void InputController::OnFixedUpdate()
 	{
-
+		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		{
+			_vecInputObjs[i]->OnFixedUpdate();
+		}
 	}
 
 	olc::HWButton InputController::GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)

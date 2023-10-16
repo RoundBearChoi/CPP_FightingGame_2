@@ -84,19 +84,8 @@ namespace RB::Input
 	/// <summary>
 	/// getting latest input first
 	/// </summary>
-	/// <param name="playerID"></param>
-	/// <param name="playerInput"></param>
-	/// <returns></returns>
 	iInputObj* InputController::GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		//for (size_t i = 0; i < _vecInputObjs.size(); i++)
-		//{
-		//	if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
-		//	{
-		//		return _vecInputObjs[i];
-		//	}
-		//}
-
 		for (int32_t i = _vecInputObjs.size() - 1; i >= 0; i--)
 		{
 			if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
@@ -110,9 +99,9 @@ namespace RB::Input
 
 	void InputController::_AddInputBuffer()
 	{
-		for (size_t inputType = 0; inputType < _totalInputTypes; inputType++)
+		for (size_t all = 0; all < _totalInputTypes; all++)
 		{
-			PlayerInput input = (PlayerInput)inputType;
+			PlayerInput input = (PlayerInput)all;
 
 			olc::HWButton button = GetButton(RB::Players::PlayerID::PLAYER_1, input);
 
@@ -141,24 +130,17 @@ namespace RB::Input
 					}
 				}
 			}
+
 			//set release status so 2nd obj can be added
 			else if (button.bReleased)
 			{
-				for (size_t v = 0; v < _vecInputObjs.size(); v++)
+				for (size_t release = 0; release < _vecInputObjs.size(); release++)
 				{
-					if (_vecInputObjs[v]->GetPlayerInput() == input)
+					if (_vecInputObjs[release]->GetPlayerInput() == input)
 					{
-						_vecInputObjs[v]->SetReleasedStatus(true);
+						_vecInputObjs[release]->SetReleasedStatus(true);
 					}
 				}
-
-				//gotta fix.. need to get ALL input objs..
-				//iInputObj* obj = GetInputObj(RB::Players::PlayerID::PLAYER_1, input);
-				//
-				//if (obj != nullptr)
-				//{
-				//	obj->SetReleasedStatus(true);
-				//}
 			}
 		}
 

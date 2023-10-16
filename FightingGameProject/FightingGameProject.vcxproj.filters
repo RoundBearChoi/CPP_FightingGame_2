@@ -316,6 +316,9 @@
     <ClCompile Include="FollowPlayers.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
+    <ClCompile Include="InputObj.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -659,6 +662,12 @@
     </ClInclude>
     <ClInclude Include="DisplaySize.h">
       <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="InputObj.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="iInputObj.h">
+      <Filter>Source Files\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

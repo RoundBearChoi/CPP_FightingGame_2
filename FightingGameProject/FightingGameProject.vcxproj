@@ -158,6 +158,7 @@
     <ClCompile Include="iGeneralHitStopController.cpp" />
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />
+    <ClCompile Include="InputObj.cpp" />
     <ClCompile Include="iVFXAnimationController.cpp" />
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
@@ -254,6 +255,8 @@
     <ClInclude Include="iGeneralHitStopController.h" />
     <ClInclude Include="iHBoxEditController.h" />
     <ClInclude Include="iHitBoxDataController.h" />
+    <ClInclude Include="iInputObj.h" />
+    <ClInclude Include="InputObj.h" />
     <ClInclude Include="iVFXAnimationController.h" />
     <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h" />
     <ClInclude Include="P0_Jab.h" />

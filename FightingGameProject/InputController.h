@@ -3,6 +3,7 @@
 #include "KeyBinding.h"
 
 #include "iInputController.h"
+#include "iInputObj.h"
 
 namespace RB::Input
 {
@@ -17,9 +18,15 @@ namespace RB::Input
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput);
+		olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		iInputObj* GetInputObj(RB::Players::PlayerID playerID, olc::Key key) override;
+		iInputObj* GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput);
 
 	private:
+		void _AddInputBuffer();
+
 		std::vector<KeyBinding> _vecKeyBindings;
+		std::vector<iInputObj*> _vecInputObjs;
+		size_t _totalInputTypes = 0;
 	};
 }

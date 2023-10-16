@@ -16,6 +16,8 @@ namespace RB::Input
 
 	void InputController::Init()
 	{
+		_totalInputTypes = static_cast<int>(PlayerInput::COUNT);
+
 		_vecKeyBindings.reserve((size_t)PlayerInput::COUNT);
 
 		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_LEFT, olc::A });
@@ -40,7 +42,7 @@ namespace RB::Input
 
 	void InputController::OnUpdate()
 	{
-
+		_AddInputBuffer();
 	}
 
 	void InputController::OnFixedUpdate()
@@ -66,5 +68,50 @@ namespace RB::Input
 		}
 
 		return olc::HWButton();
+	}
+
+	iInputObj* InputController::GetInputObj(RB::Players::PlayerID playerID, olc::Key key)
+	{
+		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		{
+			if (_vecInputObjs[i]->GetKey() == key)
+			{
+				return _vecInputObjs[i];
+			}
+		}
+
+		return nullptr;
+	}
+
+	iInputObj* InputController::GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	{
+		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		{
+			if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
+			{
+				return _vecInputObjs[i];
+			}
+		}
+
+		return nullptr;
+	}
+
+	void InputController::_AddInputBuffer()
+	{
+		for (size_t i = 0; i < _totalInputTypes; i++)
+		{
+			PlayerInput input = (PlayerInput)i;
+
+			olc::HWButton button = GetButton(RB::Players::PlayerID::PLAYER_1, input);
+
+			if (button.bPressed)
+			{
+
+			}
+			else if (button.bReleased)
+			{
+
+			}
+		}
 	}
 }

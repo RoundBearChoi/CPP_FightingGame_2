@@ -2,10 +2,9 @@
 
 namespace RB::Input
 {
-	InputObj::InputObj(PlayerInput playerInput, olc::Key key)
+	InputObj::InputObj(PlayerInput playerInput)
 	{
 		_playerInput = playerInput;
-		_key = key;
 	}
 
 	InputObj::~InputObj()
@@ -28,13 +27,13 @@ namespace RB::Input
 		return _playerInput;
 	}
 
-	olc::Key InputObj::GetKey()
-	{
-		return _key;
-	}
-
 	void InputObj::SetReleasedStatus(bool released)
 	{
 		_released = released;
+	}
+
+	bool InputObj::IsReleased()
+	{
+		return _released;
 	}
 }

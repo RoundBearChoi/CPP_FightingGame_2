@@ -12,6 +12,14 @@ namespace RB::Input
 	InputController::~InputController()
 	{
 		INPUT_CONTROLLER = nullptr;
+
+		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		{
+			delete _vecInputObjs[i];
+			_vecInputObjs[i] = nullptr;
+		}
+
+		_vecInputObjs.clear();
 	}
 
 	void InputController::Init()
@@ -70,19 +78,6 @@ namespace RB::Input
 		return olc::HWButton();
 	}
 
-	iInputObj* InputController::GetInputObj(RB::Players::PlayerID playerID, olc::Key key)
-	{
-		for (size_t i = 0; i < _vecInputObjs.size(); i++)
-		{
-			if (_vecInputObjs[i]->GetKey() == key)
-			{
-				return _vecInputObjs[i];
-			}
-		}
-
-		return nullptr;
-	}
-
 	iInputObj* InputController::GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		for (size_t i = 0; i < _vecInputObjs.size(); i++)
@@ -106,11 +101,30 @@ namespace RB::Input
 
 			if (button.bPressed)
 			{
+				iInputObj* obj = GetInputObj(RB::Players::PlayerID::PLAYER_1, input);
 
+				//add new obj
+				if (obj == nullptr)
+				{
+					iInputObj* newObj = new InputObj(input);
+					_vecInputObjs.push_back(newObj);
+				}
+
+				//add 2nd obj if released
+				else
+				{
+					if (obj->IsReleased())
+					{
+						iInputObj* newObj = new InputObj(input);
+						_vecInputObjs.push_back(newObj);
+					}
+				}
 			}
+			//set release status so 2nd obj can be added
 			else if (button.bReleased)
 			{
-
+				iInputObj* obj = GetInputObj(RB::Players::PlayerID::PLAYER_1, input);
+				obj->SetReleasedStatus(true);
 			}
 		}
 	}

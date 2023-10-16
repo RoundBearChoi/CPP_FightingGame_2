@@ -16,7 +16,6 @@ namespace RB::Input
 		virtual void OnFixedUpdate() = 0;
 
 		virtual olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetInputObj(RB::Players::PlayerID playerID, olc::Key key) = 0;
 		virtual iInputObj* GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 	};
 

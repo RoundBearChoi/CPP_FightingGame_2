@@ -4,6 +4,7 @@
 
 #include "iInputController.h"
 #include "iInputObj.h"
+#include "InputObj.h"
 
 namespace RB::Input
 {
@@ -19,7 +20,6 @@ namespace RB::Input
 		void OnFixedUpdate() override;
 
 		olc::HWButton GetButton(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		iInputObj* GetInputObj(RB::Players::PlayerID playerID, olc::Key key) override;
 		iInputObj* GetInputObj(RB::Players::PlayerID playerID, Input::PlayerInput playerInput);
 
 	private:

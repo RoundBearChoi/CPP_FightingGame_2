@@ -14,7 +14,7 @@ namespace RB::Input
 		virtual void OnFixedUpdate() = 0;
 
 		virtual PlayerInput GetPlayerInput() = 0;
-		virtual olc::Key GetKey() = 0;
 		virtual void SetReleasedStatus(bool released) = 0;
+		virtual bool IsReleased() = 0;
 	};
 }

@@ -91,7 +91,7 @@ namespace RB::Input
 
 		for (size_t i = 0; i < vec.size(); i++)
 		{
-			if (vec[i]->GetPlayerInput() == playerInput)
+			if (vec[i]->GetPlayerInputType() == playerInput)
 			{
 				return vec[i];
 			}
@@ -106,7 +106,7 @@ namespace RB::Input
 
 		for (int32_t i = vec.size() - 1; i >= 0; i--)
 		{
-			if (vec[i]->GetPlayerInput() == playerInput)
+			if (vec[i]->GetPlayerInputType() == playerInput)
 			{
 				return vec[i];
 			}
@@ -121,7 +121,7 @@ namespace RB::Input
 
 		for (size_t i = 0; i < vec.size(); i++)
 		{
-			if (vec[i]->GetPlayerInput() == playerInput)
+			if (vec[i]->GetPlayerInputType() == playerInput)
 			{
 				if (vec[i]->IsUsed() == false)
 				{
@@ -186,7 +186,7 @@ namespace RB::Input
 
 		for (size_t i = 0; i < vec.size(); i++)
 		{
-			if (vec[i]->GetPlayerInput() == input)
+			if (vec[i]->GetPlayerInputType() == input)
 			{
 				vec[i]->SetReleasedStatus(true);
 			}

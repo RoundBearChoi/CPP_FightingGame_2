@@ -22,7 +22,7 @@ namespace RB::Input
 		_fixedUpdateCount++;
 	}
 
-	PlayerInput InputObj::GetPlayerInput()
+	PlayerInput InputObj::GetPlayerInputType()
 	{
 		return _playerInput;
 	}

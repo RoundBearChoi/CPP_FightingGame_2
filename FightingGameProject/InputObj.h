@@ -12,7 +12,7 @@ namespace RB::Input
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		PlayerInput GetPlayerInput() override;
+		PlayerInput GetPlayerInputType() override;
 		void SetReleasedStatus(bool released) override;
 		void SetUsedStatus(bool used) override;
 		bool IsReleased() override;

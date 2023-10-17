@@ -13,7 +13,7 @@ namespace RB::Input
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual PlayerInput GetPlayerInput() = 0;
+		virtual PlayerInput GetPlayerInputType() = 0;
 		virtual void SetReleasedStatus(bool released) = 0;
 		virtual void SetUsedStatus(bool used) = 0;
 		virtual bool IsReleased() = 0;

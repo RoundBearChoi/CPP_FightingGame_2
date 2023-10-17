@@ -13,13 +13,8 @@ namespace RB::Input
 	{
 		INPUT_CONTROLLER = nullptr;
 
-		for (size_t i = 0; i < _vecInputObjs.size(); i++)
-		{
-			delete _vecInputObjs[i];
-			_vecInputObjs[i] = nullptr;
-		}
-
-		_vecInputObjs.clear();
+		_ClearAllBuffers(RB::Players::PlayerID::PLAYER_1);
+		_ClearAllBuffers(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	void InputController::Init()
@@ -50,14 +45,23 @@ namespace RB::Input
 
 	void InputController::OnUpdate()
 	{
-		_UpdateInputBuffer();
+		_UpdateInputBuffer(RB::Players::PlayerID::PLAYER_1);
+		_UpdateInputBuffer(RB::Players::PlayerID::PLAYER_2);
+
+		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_1);
+		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	void InputController::OnFixedUpdate()
 	{
-		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		for (size_t i = 0; i < _vecP1_InputObjs.size(); i++)
 		{
-			_vecInputObjs[i]->OnFixedUpdate();
+			_vecP1_InputObjs[i]->OnFixedUpdate();
+		}
+
+		for (size_t i = 0; i < _vecP2_InputObjs.size(); i++)
+		{
+			_vecP2_InputObjs[i]->OnFixedUpdate();
 		}
 	}
 
@@ -83,11 +87,13 @@ namespace RB::Input
 
 	iInputObj* InputController::GetInputOBJ_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (size_t i = 0; i < vec.size(); i++)
 		{
-			if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
+			if (vec[i]->GetPlayerInput() == playerInput)
 			{
-				return _vecInputObjs[i];
+				return vec[i];
 			}
 		}
 
@@ -96,11 +102,13 @@ namespace RB::Input
 
 	iInputObj* InputController::GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		for (int32_t i = _vecInputObjs.size() - 1; i >= 0; i--)
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (int32_t i = vec.size() - 1; i >= 0; i--)
 		{
-			if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
+			if (vec[i]->GetPlayerInput() == playerInput)
 			{
-				return _vecInputObjs[i];
+				return vec[i];
 			}
 		}
 
@@ -109,13 +117,15 @@ namespace RB::Input
 
 	iInputObj* InputController::GetUnusedInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (size_t i = 0; i < vec.size(); i++)
 		{
-			if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
+			if (vec[i]->GetPlayerInput() == playerInput)
 			{
-				if (_vecInputObjs[i]->IsUsed() == false)
+				if (vec[i]->IsUsed() == false)
 				{
-					return _vecInputObjs[i];
+					return vec[i];
 				}
 			}
 		}
@@ -123,22 +133,22 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	void InputController::_UpdateInputBuffer()
+	void InputController::_UpdateInputBuffer(RB::Players::PlayerID playerID)
 	{
 		for (size_t all = 0; all < _totalInputTypes; all++)
 		{
 			PlayerInput input = (PlayerInput)all;
 
-			olc::HWButton button = GetKeyBinding(RB::Players::PlayerID::PLAYER_1, input);
+			olc::HWButton button = GetKeyBinding(playerID, input);
 
 			if (button.bPressed)
 			{
-				iInputObj* obj = GetInputObj_LIFO(RB::Players::PlayerID::PLAYER_1, input);
+				iInputObj* obj = GetInputObj_LIFO(playerID, input);
 
 				//add new obj if first time pressed
 				if (obj == nullptr)
 				{
-					_AddInputBuffer(input);
+					_AddNewInputBuffer(playerID, input);
 				}
 
 				//add 2nd obj if released
@@ -146,7 +156,7 @@ namespace RB::Input
 				{
 					if (obj->IsReleased())
 					{
-						_AddInputBuffer(input);
+						_AddNewInputBuffer(playerID, input);
 					}
 				}
 			}
@@ -154,40 +164,82 @@ namespace RB::Input
 			//set release status so 2nd obj can be added
 			else if (button.bReleased)
 			{
-				for (size_t release = 0; release < _vecInputObjs.size(); release++)
-				{
-					if (_vecInputObjs[release]->GetPlayerInput() == input)
-					{
-						_vecInputObjs[release]->SetReleasedStatus(true);
-					}
-				}
+				_AddSecondInputBuffer(playerID, input);
 			}
 		}
-
-		_DestroyOldBuffers();
 	}
 
-	void InputController::_AddInputBuffer(PlayerInput input)
+	void InputController::_AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input)
 	{
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
 		iInputObj* newObj = new InputObj(input);
-		_vecInputObjs.push_back(newObj);
 
-		//std::cout << "adding input obj: " << static_cast<int>(input) << std::endl;
+		vec.push_back(newObj);
+
+		//if (playerID == RB::Players::PlayerID::PLAYER_1)
+		//{
+		//	_vecP1_InputObjs.push_back(newObj);
+		//}
+		//else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		//{
+		//	_vecP2_InputObjs.push_back(newObj);
+		//}
 	}
 
-	void InputController::_DestroyOldBuffers()
+	void InputController::_AddSecondInputBuffer(RB::Players::PlayerID playerID, PlayerInput input)
 	{
-		for (int32_t i = _vecInputObjs.size() - 1; i >= 0; i--)
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (size_t i = 0; i < vec.size(); i++)
 		{
-			if (_vecInputObjs[i]->GetFixedUpdateCount() >= 60)
+			if (vec[i]->GetPlayerInput() == input)
 			{
-				delete _vecInputObjs[i];
-				_vecInputObjs[i] = nullptr;
+				vec[i]->SetReleasedStatus(true);
+			}
+		}
+	}
+
+	void InputController::_DestroyOldBuffers(RB::Players::PlayerID playerID)
+	{
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		{
+			if (vec[i]->GetFixedUpdateCount() >= 60)
+			{
+				delete vec[i];
+				vec[i] = nullptr;
 
 				std::vector<iInputObj*>::iterator it;
-				it = _vecInputObjs.begin();
-				_vecInputObjs.erase(it + i);
+				it = vec.begin();
+				vec.erase(it + i);
 			}
+		}
+	}
+
+	void InputController::_ClearAllBuffers(RB::Players::PlayerID playerID)
+	{
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (size_t i = 0; i < vec.size(); i++)
+		{
+			delete vec[i];
+			vec[i] = nullptr;
+		}
+
+		vec.clear();
+	}
+
+	std::vector<iInputObj*>& InputController::_GetInputObjs(RB::Players::PlayerID playerID)
+	{
+		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		{
+			return _vecP1_InputObjs;
+		}
+		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		{
+			return _vecP2_InputObjs;
 		}
 	}
 }

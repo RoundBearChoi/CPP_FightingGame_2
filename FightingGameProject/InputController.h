@@ -25,12 +25,18 @@ namespace RB::Input
 		iInputObj* GetUnusedInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 
 	private:
-		void _UpdateInputBuffer();
-		void _AddInputBuffer(PlayerInput input);
-		void _DestroyOldBuffers();
+		void _UpdateInputBuffer(RB::Players::PlayerID playerID);
+		void _AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input);
+		void _AddSecondInputBuffer(RB::Players::PlayerID playerID, PlayerInput input);
+		void _DestroyOldBuffers(RB::Players::PlayerID playerID);
+		void _ClearAllBuffers(RB::Players::PlayerID playerID);
+		std::vector<iInputObj*>& _GetInputObjs(RB::Players::PlayerID playerID);
 
 		std::vector<KeyBinding> _vecKeyBindings;
-		std::vector<iInputObj*> _vecInputObjs;
+		//std::vector<iInputObj*> _vecInputObjs;
+
+		std::vector<iInputObj*> _vecP1_InputObjs;
+		std::vector<iInputObj*> _vecP2_InputObjs;
 		size_t _totalInputTypes = 0;
 	};
 }

@@ -176,15 +176,6 @@ namespace RB::Input
 		iInputObj* newObj = new InputObj(input);
 
 		vec.push_back(newObj);
-
-		//if (playerID == RB::Players::PlayerID::PLAYER_1)
-		//{
-		//	_vecP1_InputObjs.push_back(newObj);
-		//}
-		//else if (playerID == RB::Players::PlayerID::PLAYER_2)
-		//{
-		//	_vecP2_InputObjs.push_back(newObj);
-		//}
 	}
 
 	void InputController::_AddSecondInputBuffer(RB::Players::PlayerID playerID, PlayerInput input)

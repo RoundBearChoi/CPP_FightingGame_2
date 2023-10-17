@@ -33,8 +33,6 @@ namespace RB::Input
 		std::vector<iInputObj*>& _GetInputObjs(RB::Players::PlayerID playerID);
 
 		std::vector<KeyBinding> _vecKeyBindings;
-		//std::vector<iInputObj*> _vecInputObjs;
-
 		std::vector<iInputObj*> _vecP1_InputObjs;
 		std::vector<iInputObj*> _vecP2_InputObjs;
 		size_t _totalInputTypes = 0;

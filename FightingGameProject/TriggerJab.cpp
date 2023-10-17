@@ -18,10 +18,12 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		olc::HWButton jump = RB::Input::INPUT_CONTROLLER->GetKeyBinding(playerID, RB::Input::PlayerInput::ATTACK_LP_WEAK);
+		RB::Input::iInputObj* obj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::ATTACK_LP_WEAK);
 
-		if (jump.bPressed || jump.bHeld)
+		if (obj != nullptr)
 		{
+			obj->SetUsedStatus(true);
+
 			RB::States::iStateMachine* machine = player->GetStateMachine();
 			machine->QueueNextState(new RB::PlayerStates::P0_Jab());
 

@@ -24,8 +24,8 @@ namespace RB::Cam
 		void SetZoom(float_t zoom) override;
 
 		void Init();
-		void OnUpdate();
-		void OnFixedUpdate();
+		void ManualUpdate();
+		void ManualFixedUpdate();
 
 	private:
 		olc::vf2d _camPosition = { 0.0f, 0.0f };

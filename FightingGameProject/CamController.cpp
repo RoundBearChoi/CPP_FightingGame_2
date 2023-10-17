@@ -23,14 +23,26 @@ namespace RB::Cam
 
 	void CamController::OnUpdate()
 	{
-		_camObj.OnUpdate();
-		_followPlayers.OnUpdate();
+		if (_allowManualControl)
+		{
+			_camObj.ManualUpdate();
+		}
+		else
+		{
+			_followPlayers.OnUpdate();
+		}
 	}
 
 	void CamController::OnFixedUpdate()
 	{
-		_camObj.OnFixedUpdate();
-		_followPlayers.OnFixedUpdate();
+		if (_allowManualControl)
+		{
+			_camObj.ManualFixedUpdate();
+		}
+		else
+		{
+			_followPlayers.OnFixedUpdate();
+		}
 	}
 
 	void CamController::SetZoom(float_t zoom)
@@ -41,5 +53,10 @@ namespace RB::Cam
 	iCamObj* CamController::GetCamObj()
 	{
 		return &_camObj;
+	}
+
+	void CamController::AllowManualControl(bool toggle)
+	{
+		_allowManualControl = toggle;
 	}
 }

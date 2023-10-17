@@ -14,6 +14,7 @@ namespace RB::Cam
 
 		virtual void SetZoom(float_t zoom) = 0;
 		virtual iCamObj* GetCamObj() = 0;
+		virtual void AllowManualControl(bool toggle) = 0;
 	};
 
 	extern iCamController* CAM_CONTROLLER;

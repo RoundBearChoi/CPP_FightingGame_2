@@ -48,7 +48,7 @@ namespace RB::Cam
 		_displayHalfHeight = (float_t)RB::Engine::displayHeight * 0.5f;
 	}
 
-	void CamObj::OnUpdate()
+	void CamObj::ManualUpdate()
 	{
 		if (RB::Input::INPUT_CONTROLLER == nullptr)
 		{
@@ -111,7 +111,7 @@ namespace RB::Cam
 		}
 	}
 
-	void CamObj::OnFixedUpdate()
+	void CamObj::ManualFixedUpdate()
 	{
 		if (_moveUp)
 		{

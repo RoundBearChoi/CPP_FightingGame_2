@@ -22,9 +22,11 @@ namespace RB::Cam
 
 		void SetZoom(float_t zoom) override;
 		iCamObj* GetCamObj() override;
+		void AllowManualControl(bool toggle) override;
 
 	private:
 		CamObj _camObj;
 		FollowPlayers _followPlayers;
+		bool _allowManualControl = true;
 	};
 }

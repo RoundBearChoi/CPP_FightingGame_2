@@ -40,6 +40,8 @@ namespace RB::Updaters
 
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Collisions::GeneralHitStopController()));
 		RB::Controllers::ActiveControllers::AddController((RB::Controllers::iController*)(new RB::Render::VFXAnimationController()));
+
+		RB::Cam::CAM_CONTROLLER->AllowManualControl(false);
 	}
 
 	void GameplayUpdater::OnUpdate()

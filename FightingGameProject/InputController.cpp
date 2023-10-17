@@ -107,6 +107,22 @@ namespace RB::Input
 		return nullptr;
 	}
 
+	iInputObj* InputController::GetUnusedInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	{
+		for (size_t i = 0; i < _vecInputObjs.size(); i++)
+		{
+			if (_vecInputObjs[i]->GetPlayerInput() == playerInput)
+			{
+				if (_vecInputObjs[i]->IsUsed() == false)
+				{
+					return _vecInputObjs[i];
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
 	void InputController::_UpdateInputBuffer()
 	{
 		for (size_t all = 0; all < _totalInputTypes; all++)

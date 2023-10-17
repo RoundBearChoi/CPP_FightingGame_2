@@ -164,7 +164,7 @@ namespace RB::Input
 			//set release status so 2nd obj can be added
 			else if (button.bReleased)
 			{
-				_AddSecondInputBuffer(playerID, input);
+				_UpdateReleaseStatus(playerID, input);
 			}
 		}
 	}
@@ -176,9 +176,11 @@ namespace RB::Input
 		iInputObj* newObj = new InputObj(input);
 
 		vec.push_back(newObj);
+
+		std::cout << "adding player " << static_cast<int>(playerID) << " input: " << static_cast<int>(input) << std::endl;
 	}
 
-	void InputController::_AddSecondInputBuffer(RB::Players::PlayerID playerID, PlayerInput input)
+	void InputController::_UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 

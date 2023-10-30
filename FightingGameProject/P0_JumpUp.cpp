@@ -8,8 +8,12 @@ namespace RB::PlayerStates
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
-		float startUpMomentum = 9.0f;
+		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump());
 
+		EnterStateComponents();
+
+		//temp
+		float startUpMomentum = 9.0f;
 		_ownerPlayer->SetAirMomentum(olc::vf2d{ 0.0f, startUpMomentum });
 	}
 
@@ -20,30 +24,11 @@ namespace RB::PlayerStates
 
 	void P0_JumpUp::OnUpdate()
 	{
-
+		UpdateStateComponents();
 	}
 
 	void P0_JumpUp::OnFixedUpdate()
 	{
-		olc::vf2d momentum = _ownerPlayer->GetAirMomentum();
-
-		if (momentum.y < 0.5f)
-		{
-			_ownerPlayer->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
-
-			RB::States::iStateMachine* machine = _ownerPlayer->GetStateMachine();
-
-			machine->QueueNextState(new RB::PlayerStates::P0_FallDown());
-		}
-		else
-		{
-			float y = _ownerPlayer->GetAirMomentum().y;
-
-			_ownerPlayer->Move(olc::vf2d{ 0.0f, -y });
-
-			float ySlowAmount = 0.3f;
-
-			_ownerPlayer->AddMomentum(olc::vf2d{ 0.0f, -ySlowAmount });
-		}
+		FixedUpdateStateComponents();
 	}
 }

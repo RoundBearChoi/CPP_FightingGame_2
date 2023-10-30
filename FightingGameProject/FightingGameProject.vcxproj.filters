@@ -319,6 +319,9 @@
     <ClCompile Include="InputObj.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
+    <ClCompile Include="MoveUpOnJump.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -668,6 +671,9 @@
     </ClInclude>
     <ClInclude Include="iInputObj.h">
       <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveUpOnJump.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

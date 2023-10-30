@@ -1,14 +1,13 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "PlayerState.h"
 
+#include "ActivePlayerStates.h"
+#include "PlayerState.h"
 #include "iPlayer.h"
 #include "PlayerID.h"
 
-#include "ActivePlayerStates.h"
-
-#include "P0_FallDown.h"
+#include "MoveUpOnJump.h"
 
 namespace RB::PlayerStates
 {

@@ -161,6 +161,7 @@
     <ClCompile Include="InputObj.cpp" />
     <ClCompile Include="iVFXAnimationController.cpp" />
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp" />
+    <ClCompile Include="MoveUpOnJump.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
     <ClCompile Include="HB.cpp" />
     <ClCompile Include="HBoxData.cpp" />
@@ -259,6 +260,7 @@
     <ClInclude Include="InputObj.h" />
     <ClInclude Include="iVFXAnimationController.h" />
     <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h" />
+    <ClInclude Include="MoveUpOnJump.h" />
     <ClInclude Include="P0_Jab.h" />
     <ClInclude Include="HB.h" />
     <ClInclude Include="HBoxType.h" />

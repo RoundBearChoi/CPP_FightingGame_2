@@ -20,15 +20,14 @@ namespace RB::PlayerStateComponents
 		}
 
 		//get vertical up
-		float_t percentage = (float_t)_state->GetCumulatedFixedUpdates() / (float_t)_totalFrames;
+		size_t frame = _state->GetCumulatedFixedUpdates();
+		float_t percentage = (float_t)frame / (float_t)_totalFrames;
 		float_t multiplier = 28.0f;
 		float_t amount = RB::EaseEquations::Ease::EaseOutSine(percentage);
 		float_t result = amount * multiplier;
 
 		//apply
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		olc::vf2d momentum = player->GetAirMomentum();
-		player->SetAirMomentum(olc::vf2d{ momentum.x, -result });
 		player->Move(olc::vf2d{ 0.0f, -result });
 
 		//next state

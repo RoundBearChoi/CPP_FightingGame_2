@@ -64,7 +64,6 @@ namespace RB::Render
         {
             iAnimationObj* aniObj = _ani.GetCurrentAnimationObj(i);
 
-            //int32_t currIndex = aniObj->GetCurrentIndex();
             int32_t skipFixedUpdates = aniObj->GetAnimationSpecs().mSkipFixedUpdates;
             int32_t totalSprites = aniObj->GetAnimationSpecs().mTotalSprites;
 

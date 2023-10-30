@@ -27,23 +27,20 @@ namespace RB::Cam
 			return;
 		}
 
-		olc::vi2d p0_pos = p0->GetPosition();
-		olc::vi2d p1_pos = p1->GetPosition();
-		olc::vi2d dir = p1_pos - p0_pos;
-		olc::vf2d mid = (olc::vf2d)dir * 0.5f;
-		olc::vf2d result = ((olc::vf2d)p0_pos + mid) * _camObj->GetZoom();
+		int32_t p0_pos_x = p0->GetPosition().x;
+		int32_t p1_pos_x = p1->GetPosition().x;
+		int32_t xDir = p1_pos_x - p0_pos_x;
+		float_t mid = (float_t)xDir * 0.5f;
+		float_t result = ((float_t)p0_pos_x + mid) * _camObj->GetZoom();
 
-		olc::vf2d curr = _camObj->GetPosition();
+		float_t curr = _camObj->GetPosition().x;
 
-		float_t xDist = result.x - curr.x;
+		float_t xDist = result - curr;
 		xDist = abs(xDist);
-		//std::cout << "x dist: " << xDist << std::endl;
 
-		olc::vf2d lerped = curr.lerp(result, 0.05f);
+		float_t lerped = std::lerp(curr, result, 0.05f);
 
-		_camObj->SetPosition(lerped);
-
-		//should be dynamic.. but for now
-		_camObj->SetYPosition(-200.0f);
+		//y should be dynamic.. but for now
+		_camObj->SetPosition(olc::vf2d{ lerped, -200.0f });
 	}
 }

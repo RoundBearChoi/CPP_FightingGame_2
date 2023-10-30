@@ -325,6 +325,9 @@
     <ClCompile Include="MoveUpOnJump.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="MoveDownOnFall.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -680,6 +683,9 @@
     </ClInclude>
     <ClInclude Include="Ease.h">
       <Filter>Source Files\Equations</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveDownOnFall.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

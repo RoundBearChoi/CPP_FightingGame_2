@@ -22,7 +22,7 @@ namespace RB::PlayerStateComponents
 		//get vertical up
 		float_t percentage = (float_t)_state->GetCumulatedFixedUpdates() / (float_t)_totalFrames;
 		float_t multiplier = 28.0f;
-		float_t amount = RB::EaseEquations::Ease::EaseOutQuad(percentage);
+		float_t amount = RB::EaseEquations::Ease::EaseOutSine(percentage);
 		float_t result = amount * multiplier;
 
 		//apply

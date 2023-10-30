@@ -1,7 +1,7 @@
 #pragma once
 #include <cmath>
 
-namespace RB::Equations
+namespace RB::EaseEquations
 {
 	class Ease
 	{

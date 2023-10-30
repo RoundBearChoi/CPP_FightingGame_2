@@ -177,7 +177,7 @@ namespace RB::Input
 
 		vec.push_back(newObj);
 
-		std::cout << "adding player " << static_cast<int>(playerID) << " input: " << static_cast<int>(input) << std::endl;
+		//std::cout << "adding player " << static_cast<int>(playerID) << " input: " << static_cast<int>(input) << std::endl;
 	}
 
 	void InputController::_UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input)

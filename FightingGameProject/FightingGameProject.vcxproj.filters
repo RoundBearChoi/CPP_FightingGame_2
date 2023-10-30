@@ -53,6 +53,9 @@
     <Filter Include="Source Files\Background">
       <UniqueIdentifier>{9cf48022-262a-43c3-b9f5-65bab335b131}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Equations">
+      <UniqueIdentifier>{2effc39d-8e14-4f34-860d-92ad1939234a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -674,6 +677,9 @@
     </ClInclude>
     <ClInclude Include="MoveUpOnJump.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Ease.h">
+      <Filter>Source Files\Equations</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

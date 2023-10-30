@@ -34,6 +34,11 @@ namespace RB::Cam
 		olc::vf2d result = ((olc::vf2d)p0_pos + mid) * _camObj->GetZoom();
 
 		olc::vf2d curr = _camObj->GetPosition();
+
+		float_t xDist = result.x - curr.x;
+		xDist = abs(xDist);
+		//std::cout << "x dist: " << xDist << std::endl;
+
 		olc::vf2d lerped = curr.lerp(result, 0.05f);
 
 		_camObj->SetPosition(lerped);

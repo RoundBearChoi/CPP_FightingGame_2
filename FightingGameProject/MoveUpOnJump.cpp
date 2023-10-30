@@ -20,7 +20,7 @@ namespace RB::PlayerStateComponents
 		}
 
 		//get vertical up
-		float_t prog = (float_t)_state->GetCumulatedFixedUpdates() / (float_t)_totalFrames;
+		float_t prog = 1.0f - ((float_t)_state->GetCumulatedFixedUpdates() / (float_t)_totalFrames);
 		float_t multiplier = 3.0f;
 		float_t amount = RB::Equations::Ease::EaseOutQuint(prog * multiplier);
 

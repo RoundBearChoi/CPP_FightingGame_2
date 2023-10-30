@@ -2,6 +2,11 @@
 
 namespace RB::PlayerStateComponents
 {
+	MoveUpOnJump::MoveUpOnJump(size_t totalFrames)
+	{
+		_totalFrames = totalFrames;
+	}
+
 	void MoveUpOnJump::OnEnter()
 	{
 
@@ -14,27 +19,22 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
+		//get vertical up
+		float_t prog = (float_t)_state->GetCumulatedFixedUpdates() / (float_t)_totalFrames;
+		float_t multiplier = 3.0f;
+		float_t amount = RB::Equations::Ease::EaseOutQuint(prog * multiplier);
+
+		//apply
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-
 		olc::vf2d momentum = player->GetAirMomentum();
+		player->SetAirMomentum(olc::vf2d{ momentum.x, -amount });
+		player->Move(olc::vf2d{ 0.0f, -amount });
 
-		if (momentum.y < 0.5f)
+		//next state
+		if (_state->GetCumulatedFixedUpdates() >= _totalFrames)
 		{
-			player->SetAirMomentum(olc::vf2d{ momentum.x, 0.0f });
-
 			RB::States::iStateMachine* machine = player->GetStateMachine();
-
 			machine->QueueNextState(new RB::PlayerStates::P0_FallDown());
-		}
-		else
-		{
-			float y = player->GetAirMomentum().y;
-
-			player->Move(olc::vf2d{ 0.0f, -y });
-
-			float ySlowAmount = 0.3f;
-
-			player->AddMomentum(olc::vf2d{ 0.0f, -ySlowAmount });
 		}
 	}
 }

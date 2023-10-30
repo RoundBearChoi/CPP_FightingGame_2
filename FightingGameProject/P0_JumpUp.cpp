@@ -8,7 +8,7 @@ namespace RB::PlayerStates
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
-		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump());
+		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(30));
 
 		EnterStateComponents();
 

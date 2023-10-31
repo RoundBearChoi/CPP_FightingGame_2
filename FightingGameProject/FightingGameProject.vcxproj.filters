@@ -53,7 +53,7 @@
     <Filter Include="Source Files\Background">
       <UniqueIdentifier>{9cf48022-262a-43c3-b9f5-65bab335b131}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Equations">
+    <Filter Include="Source Files\EaseEquations">
       <UniqueIdentifier>{2effc39d-8e14-4f34-860d-92ad1939234a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -682,7 +682,7 @@
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="Ease.h">
-      <Filter>Source Files\Equations</Filter>
+      <Filter>Source Files\EaseEquations</Filter>
     </ClInclude>
     <ClInclude Include="MoveDownOnFall.h">
       <Filter>Source Files\PlayerStateComponents</Filter>

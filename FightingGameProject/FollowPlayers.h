@@ -2,6 +2,7 @@
 #include <cmath>
 #include "iCamObj.h"
 #include "iPlayerController.h"
+#include "Ease.h"
 
 namespace RB::Cam
 {
@@ -18,5 +19,6 @@ namespace RB::Cam
 
 	private:
 		iCamObj* _camObj = nullptr;
+		float_t _maxDist = 0.0f;
 	};
 }

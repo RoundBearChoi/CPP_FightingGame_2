@@ -5,6 +5,7 @@ namespace RB::Cam
 	void FollowPlayers::Init(iCamObj* cam)
 	{
 		_camObj = cam;
+		_maxDist = 80.0f;
 	}
 
 	void FollowPlayers::OnUpdate()
@@ -38,7 +39,33 @@ namespace RB::Cam
 		float_t xDist = result - curr;
 		xDist = abs(xDist);
 
-		float_t lerped = std::lerp(curr, result, 0.05f);
+		float_t percentage = xDist / _maxDist;
+
+		if (percentage < 0.0f)
+		{
+			percentage = 0.0f;
+		}
+
+		if (percentage > 1.0f)
+		{
+			percentage = 1.0f;
+		}
+
+		float_t ease = RB::EaseEquations::Ease::EaseOutCubic( 1.0f - percentage);
+
+		std::cout << ease << std::endl;
+
+		if (ease <= 0.08f)
+		{
+			ease = 0.0f;
+		}
+
+		if (ease >= 1.0f)
+		{
+			ease = 1.0f;
+		}
+
+		float_t lerped = std::lerp(curr, result, ease * 0.05f);
 
 		//y should be dynamic.. but for now
 		_camObj->SetPosition(olc::vf2d{ lerped, -200.0f });

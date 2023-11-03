@@ -7,6 +7,10 @@ namespace RB::PlayerStates
 		ActivePlayerStates::AddPlayerState(this);
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_forward);
+
+		//AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(15, 25.0f));
+
+		EnterStateComponents();
 	}
 
 	void P0_JumpForward::OnExit()

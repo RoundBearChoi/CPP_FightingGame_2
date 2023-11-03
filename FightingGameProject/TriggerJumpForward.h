@@ -4,6 +4,8 @@
 #include "iInputController.h"
 #include "iPlayerController.h"
 
+#include "P0_JumpForward.h"
+
 namespace RB::PlayerStateComponents
 {
 	class TriggerJumpForward : public RB::States::StateComponentBase

@@ -22,6 +22,7 @@ namespace RB::Render
 		_ani.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::fighter_0_idle);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
+		_ani.LoadSprite("PNG files/Aku/aku_jump_forward.png", RB::Sprites::SpriteEnum::fighter_0_jump_forward);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
 		_ani.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
 		_ani.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
@@ -60,6 +61,17 @@ namespace RB::Render
 
 		_ani.LoadAnimation(jumpUpSpecs, RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
+		AnimationSpecs jumpForwardSpecs;
+		jumpForwardSpecs.mX_TileCount = 8;
+		jumpForwardSpecs.mY_TileCount = 1;
+		jumpForwardSpecs.mTotalSprites = 8;
+		jumpForwardSpecs.mSkipFixedUpdates = 4;
+		jumpForwardSpecs.mRenderSize = olc::vf2d{ 167.0f, 133.0f };
+		jumpForwardSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		jumpForwardSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward;
+
+		_ani.LoadAnimation(jumpForwardSpecs, RB::Sprites::SpriteEnum::fighter_0_jump_forward);
+
 		AnimationSpecs fallSpecs;
         fallSpecs.mX_TileCount = 3;
 		fallSpecs.mY_TileCount = 1;
@@ -76,7 +88,7 @@ namespace RB::Render
 		jabSpecs.mY_TileCount = 1;
 		jabSpecs.mTotalSprites = 6;
 		jabSpecs.mSkipFixedUpdates = 2;
-		jabSpecs.mRenderSize = olc::vf2d{ 240.0f, 160.0f };
+		jabSpecs.mRenderSize = olc::vf2d{ 280.0f, 160.0f };
 		jabSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
 

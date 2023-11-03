@@ -331,6 +331,9 @@
     <ClCompile Include="TriggerJumpForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="P0_JumpForward.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -692,6 +695,9 @@
     </ClInclude>
     <ClInclude Include="TriggerJumpForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_JumpForward.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

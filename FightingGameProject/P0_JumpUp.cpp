@@ -19,6 +19,7 @@ namespace RB::PlayerStates
 
 	void P0_JumpUp::OnExit()
 	{
+		ExitStateComponents();
 		ActivePlayerStates::RemovePlayerState(this);
 	}
 

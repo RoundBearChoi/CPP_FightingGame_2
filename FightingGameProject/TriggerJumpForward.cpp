@@ -36,7 +36,10 @@ namespace RB::PlayerStateComponents
 			{
 				jumpPress->SetUsedStatus(true);
 
-				std::cout << "jump forward" << std::endl;
+				RB::States::iStateMachine* machine = player->GetStateMachine();
+				machine->QueueNextState(new RB::PlayerStates::P0_JumpForward());
+
+				//std::cout << "jump forward" << std::endl;
 			}
 		}
 	}

@@ -4,6 +4,7 @@
 
 #include "ActivePlayerStates.h"
 
+#include "TriggerJumpForward.h"
 #include "TriggerJumpUp.h"
 #include "WhileMovingForward.h"
 

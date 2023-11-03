@@ -1,13 +1,13 @@
-#include "TriggerJumpUp.h"
+#include "TriggerJumpForward.h"
 
 namespace RB::PlayerStateComponents
 {
-	void TriggerJumpUp::OnEnter()
+	void TriggerJumpForward::OnEnter()
 	{
 
 	}
 
-	void TriggerJumpUp::OnUpdate()
+	void TriggerJumpForward::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
 			RB::Input::INPUT_CONTROLLER == nullptr)
@@ -20,7 +20,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::JUMP);
 		olc::HWButton forwardHold;
-
+		
 		if (player->OtherPlayerIsOnRightSide())
 		{
 			forwardHold = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
@@ -29,15 +29,15 @@ namespace RB::PlayerStateComponents
 		{
 			forwardHold = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
 		}
-		
-		if (jumpPress != nullptr && forwardHold.bHeld == false)
-		{
-			jumpPress->SetUsedStatus(true);
 
-			RB::States::iStateMachine* machine = player->GetStateMachine();
-			machine->QueueNextState(new RB::PlayerStates::P0_JumpUp());
-		
-			return;
+		if (jumpPress != nullptr)
+		{
+			if (forwardHold.bHeld)
+			{
+				jumpPress->SetUsedStatus(true);
+
+				std::cout << "jump forward" << std::endl;
+			}
 		}
 	}
 }

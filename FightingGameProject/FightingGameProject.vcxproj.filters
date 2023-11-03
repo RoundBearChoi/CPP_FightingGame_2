@@ -328,6 +328,9 @@
     <ClCompile Include="MoveDownOnFall.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="TriggerJumpForward.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -685,6 +688,9 @@
       <Filter>Source Files\EaseEquations</Filter>
     </ClInclude>
     <ClInclude Include="MoveDownOnFall.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerJumpForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>

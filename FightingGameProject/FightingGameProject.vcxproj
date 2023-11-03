@@ -194,6 +194,7 @@
     <ClCompile Include="TriggerIdleOnFixedUpdateCount.cpp" />
     <ClCompile Include="TriggerIdleOnAnimationEnd.cpp" />
     <ClCompile Include="TriggerJab.cpp" />
+    <ClCompile Include="TriggerJumpForward.cpp" />
     <ClCompile Include="TriggerJumpUp.cpp" />
     <ClCompile Include="VFXAnimationController.cpp" />
     <ClCompile Include="WhileMovingBack.cpp" />
@@ -301,6 +302,7 @@
     <ClInclude Include="TriggerIdleOnFixedUpdateCount.h" />
     <ClInclude Include="TriggerIdleOnAnimationEnd.h" />
     <ClInclude Include="TriggerJab.h" />
+    <ClInclude Include="TriggerJumpForward.h" />
     <ClInclude Include="TriggerJumpUp.h" />
     <ClInclude Include="VFXAnimationController.h" />
     <ClInclude Include="WhileMovingBack.h" />

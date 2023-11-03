@@ -38,10 +38,5 @@ namespace RB::Players
 		virtual olc::vi2d GetPlayerBox() = 0;
 		virtual RB::Collisions::AABB& UpdateAABBOnPlayerPos() = 0;
 		virtual bool IsCollidingAgainstOtherPlayer() = 0;
-
-	public:
-		virtual void SetAirMomentum(olc::vf2d momentum) = 0;
-		virtual void AddMomentum(olc::vf2d momentum) = 0;
-		virtual olc::vf2d GetAirMomentum() = 0;
 	};
 }

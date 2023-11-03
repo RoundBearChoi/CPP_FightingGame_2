@@ -11,10 +11,6 @@ namespace RB::PlayerStates
 		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(15));
 
 		EnterStateComponents();
-
-		//temp
-		float startUpMomentum = 9.0f;
-		_ownerPlayer->SetAirMomentum(olc::vf2d{ 0.0f, startUpMomentum });
 	}
 
 	void P0_JumpUp::OnExit()

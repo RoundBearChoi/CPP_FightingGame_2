@@ -69,6 +69,7 @@ namespace RB::Render
 		jumpForwardSpecs.mRenderSize = olc::vf2d{ 167.0f, 133.0f };
 		jumpForwardSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jumpForwardSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward;
+		jumpForwardSpecs.mPlayOnce = true; //exception
 
 		_ani.LoadAnimation(jumpForwardSpecs, RB::Sprites::SpriteEnum::fighter_0_jump_forward);
 

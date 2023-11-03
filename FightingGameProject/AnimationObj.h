@@ -21,7 +21,7 @@ namespace RB::Render
 
 		void UpdateAnimationIndex() override;
 		void ManualAddAnimationIndex(int32_t amount) override;
-		void LimitAnimationIndex() override;
+		void RecycleAnimationIndex() override;
 		olc::vf2d GetSourceSize() override;
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize) override;
 		olc::vf2d GetRenderSize() override;

@@ -127,9 +127,6 @@
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="AirMomentum.cpp">
-      <Filter>Source Files\Players</Filter>
-    </ClCompile>
     <ClCompile Include="P0_JumpUp.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
@@ -449,9 +446,6 @@
     </ClInclude>
     <ClInclude Include="LineRenderer.h">
       <Filter>Source Files\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="AirMomentum.h">
-      <Filter>Source Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="P0_JumpUp.h">
       <Filter>Source Files\PlayerStates</Filter>

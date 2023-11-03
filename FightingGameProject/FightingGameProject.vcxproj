@@ -144,7 +144,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ActivePlayerStates.cpp" />
-    <ClCompile Include="AirMomentum.cpp" />
     <ClCompile Include="Ani.cpp" />
     <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />
@@ -239,7 +238,6 @@
   <ItemGroup>
     <ClInclude Include="AABB.h" />
     <ClInclude Include="ActivePlayerStates.h" />
-    <ClInclude Include="AirMomentum.h" />
     <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="Ani.h" />
     <ClInclude Include="AnimationRenderSettings.h" />

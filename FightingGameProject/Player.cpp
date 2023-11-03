@@ -23,7 +23,6 @@ namespace RB::Players
 			_stateMachine->Init(firstPlayerState);
 
 			_playerCollider.Init(this);
-			_airMomentum.Init(this);
 
 			std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
 		}
@@ -139,20 +138,5 @@ namespace RB::Players
 	bool Player::IsCollidingAgainstOtherPlayer()
 	{
 		return _playerCollider.IsColliding();
-	}
-
-	void Player::SetAirMomentum(olc::vf2d momentum)
-	{
-		_airMomentum.SetMomentum(momentum);
-	}
-
-	void Player::AddMomentum(olc::vf2d momentum)
-	{
-		_airMomentum.AddMomentum(momentum);
-	}
-
-	olc::vf2d Player::GetAirMomentum()
-	{
-		return _airMomentum.GetMomentum();
 	}
 }

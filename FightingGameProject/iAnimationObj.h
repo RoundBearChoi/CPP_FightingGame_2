@@ -11,7 +11,7 @@ namespace RB::Render
 
 		virtual void UpdateAnimationIndex() = 0;
 		virtual void ManualAddAnimationIndex(int32_t amount) = 0;
-		virtual void LimitAnimationIndex() = 0;
+		virtual void RecycleAnimationIndex() = 0;
 		virtual olc::vf2d GetSourceSize() = 0;
 		virtual olc::vf2d GetSourcePos(olc::vf2d sourceSize) = 0;
 		virtual olc::vf2d GetRenderSize() = 0;

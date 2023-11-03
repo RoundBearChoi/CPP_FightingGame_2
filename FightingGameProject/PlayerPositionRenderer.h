@@ -23,7 +23,6 @@ namespace RB::Render
 	public:
 		void RenderPosition(RB::Players::PlayerID playerID);
 		void RenderBottomLeft(RB::Players::PlayerID playerID);
-		void RenderAirMomentum(RB::Players::PlayerID playerID);
 
 	private:
 		SpriteObj* _spriteObj = nullptr;

@@ -27,23 +27,36 @@ namespace RB::Render
 			}
 		}
 
+		if (_animationRenderer->GetAnimationSpecs().mPlayOnce)
+		{
+			if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites - 1)
+			{
+				_currentIndex = _animationRenderer->GetAnimationSpecs().mTotalSprites - 1;
+
+				return;
+			}
+		}
+
 		_currentIndex++;
 
-		LimitAnimationIndex();
+		RecycleAnimationIndex();
 	}
 
 	void AnimationObj::ManualAddAnimationIndex(int32_t amount)
 	{
 		_currentIndex += amount;
 
-		LimitAnimationIndex();
+		RecycleAnimationIndex();
 	}
 
-	void AnimationObj::LimitAnimationIndex()
+	void AnimationObj::RecycleAnimationIndex()
 	{
-		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites)
+		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites - 1)
 		{
-			_currentIndex = 0;
+			if (!_animationRenderer->GetAnimationSpecs().mPlayOnce)
+			{
+				_currentIndex = 0;
+			}
 		}
 
 		else if (_currentIndex < 0)

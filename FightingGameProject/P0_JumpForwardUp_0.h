@@ -1,6 +1,8 @@
 #pragma once
 #include "PlayerState.h"
 
+#include "MoveUpOnJump.h"
+
 #include "ActivePlayerStates.h"
 
 namespace RB::PlayerStates

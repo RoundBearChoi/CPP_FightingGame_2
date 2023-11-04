@@ -1,6 +1,7 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "StateComponentBase.h"
+#include "SpriteEnum.h"
 #include "Ease.h"
 
 #include "iPlayer.h"
@@ -11,8 +12,8 @@ namespace RB::PlayerStateComponents
 	class MoveUpOnJump : public RB::States::StateComponentBase
 	{
 	public:
-		MoveUpOnJump(size_t totalFrames, float_t multiplier);
-		~MoveUpOnJump() override {};
+		MoveUpOnJump(size_t totalFrames, float_t multiplier, RB::PlayerStates::PlayerState* nextState);
+		~MoveUpOnJump() override;
 
 	public:
 		void OnEnter() override;
@@ -21,5 +22,7 @@ namespace RB::PlayerStateComponents
 	private:
 		size_t _totalFrames = 0;
 		float_t _multiplier = 1.0f;
+		RB::PlayerStates::PlayerState* _nextState = nullptr;
+		bool _switchedToNextState = false;
 	};
 }

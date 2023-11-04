@@ -2,10 +2,20 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveUpOnJump::MoveUpOnJump(size_t totalFrames, float_t multiplier)
+	MoveUpOnJump::MoveUpOnJump(size_t totalFrames, float_t multiplier, RB::PlayerStates::PlayerState* nextState)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
+		_nextState = nextState;
+	}
+
+	MoveUpOnJump::~MoveUpOnJump()
+	{
+		if (!_switchedToNextState)
+		{
+			delete _nextState;
+			_nextState = nullptr;
+		}
 	}
 
 	void MoveUpOnJump::OnEnter()
@@ -26,15 +36,24 @@ namespace RB::PlayerStateComponents
 		float_t amount = RB::EaseEquations::Ease::EaseOutSine(percentage);
 		float_t result = amount * _multiplier;
 
-		//apply
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		player->Move(olc::vf2d{ 0.0f, -result });
+
+		//apply vertical up
+		if (_state->GetCumulatedFixedUpdates() < _totalFrames)
+		{
+			player->Move(olc::vf2d{ 0.0f, -result });
+		}
 
 		//next state
-		if (_state->GetCumulatedFixedUpdates() >= _totalFrames)
+		else
 		{
 			RB::States::iStateMachine* machine = player->GetStateMachine();
-			machine->QueueNextState(new RB::PlayerStates::P0_FallDown());
+
+			if (_nextState != nullptr)
+			{
+				_switchedToNextState = true;
+				machine->QueueNextState(_nextState);
+			}
 		}
 	}
 }

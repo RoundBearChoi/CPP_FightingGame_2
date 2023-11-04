@@ -280,9 +280,6 @@
     <ClCompile Include="DetectHit.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerStateInstantiator.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
     <ClCompile Include="AttackRegisterController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
@@ -626,9 +623,6 @@
     </ClInclude>
     <ClInclude Include="DetectHit.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerStateInstantiator.h">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="AttackRegisterController.h">
       <Filter>Source Files\Collisions</Filter>

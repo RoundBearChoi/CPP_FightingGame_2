@@ -5,6 +5,7 @@
 #include "iPlayerController.h"
 
 #include "P0_JumpForward.h"
+#include "P0_JumpForwardUp_0.h"
 
 namespace RB::PlayerStateComponents
 {

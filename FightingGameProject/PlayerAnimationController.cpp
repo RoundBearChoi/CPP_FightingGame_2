@@ -23,6 +23,8 @@ namespace RB::Render
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
 		_ani.LoadSprite("PNG files/Aku/aku_jump_forward.png", RB::Sprites::SpriteEnum::fighter_0_jump_forward);
+		_ani.LoadSprite("PNG files/Aku/aku_jump_forward_up_0.png", RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_0);
+		_ani.LoadSprite("PNG files/Aku/aku_jump_forward_up_1.png", RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
 		_ani.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
 		_ani.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
@@ -69,9 +71,33 @@ namespace RB::Render
 		jumpForwardSpecs.mRenderSize = olc::vf2d{ 167.0f, 133.0f };
 		jumpForwardSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jumpForwardSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward;
-		jumpForwardSpecs.mPlayOnce = true; //exception
+		jumpForwardSpecs.mPlayOnce = true;
 
 		_ani.LoadAnimation(jumpForwardSpecs, RB::Sprites::SpriteEnum::fighter_0_jump_forward);
+
+		AnimationSpecs jumpForwardUp_0_Specs;
+		jumpForwardUp_0_Specs.mX_TileCount = 4;
+		jumpForwardUp_0_Specs.mY_TileCount = 1;
+		jumpForwardUp_0_Specs.mTotalSprites = 4;
+		jumpForwardUp_0_Specs.mSkipFixedUpdates = 4;
+		jumpForwardUp_0_Specs.mRenderSize = olc::vf2d{ 167.0f, 133.0f };
+		jumpForwardUp_0_Specs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		jumpForwardUp_0_Specs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_0;
+		jumpForwardUp_0_Specs.mPlayOnce = true;
+
+		_ani.LoadAnimation(jumpForwardUp_0_Specs, RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_0);
+
+		AnimationSpecs jumpForwardUp_1_Specs;
+		jumpForwardUp_1_Specs.mX_TileCount = 4;
+		jumpForwardUp_1_Specs.mY_TileCount = 1;
+		jumpForwardUp_1_Specs.mTotalSprites = 4;
+		jumpForwardUp_1_Specs.mSkipFixedUpdates = 4;
+		jumpForwardUp_1_Specs.mRenderSize = olc::vf2d{ 167.0f, 133.0f };
+		jumpForwardUp_1_Specs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		jumpForwardUp_1_Specs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1;
+		jumpForwardUp_1_Specs.mPlayOnce = true;
+
+		_ani.LoadAnimation(jumpForwardUp_1_Specs, RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1);
 
 		AnimationSpecs fallSpecs;
         fallSpecs.mX_TileCount = 3;

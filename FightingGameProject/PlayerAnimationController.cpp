@@ -66,7 +66,7 @@ namespace RB::Render
 		jumpForwardUp_0_Specs.mX_TileCount = 4;
 		jumpForwardUp_0_Specs.mY_TileCount = 1;
 		jumpForwardUp_0_Specs.mTotalSprites = 4;
-		jumpForwardUp_0_Specs.mSkipFixedUpdates = 4;
+		jumpForwardUp_0_Specs.mSkipFixedUpdates = 5;
 		jumpForwardUp_0_Specs.mRenderSize = olc::vf2d{ 167.0f, 133.0f };
 		jumpForwardUp_0_Specs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jumpForwardUp_0_Specs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_0;
@@ -78,7 +78,7 @@ namespace RB::Render
 		jumpForwardUp_1_Specs.mX_TileCount = 4;
 		jumpForwardUp_1_Specs.mY_TileCount = 1;
 		jumpForwardUp_1_Specs.mTotalSprites = 4;
-		jumpForwardUp_1_Specs.mSkipFixedUpdates = 4;
+		jumpForwardUp_1_Specs.mSkipFixedUpdates = 5;
 		jumpForwardUp_1_Specs.mRenderSize = olc::vf2d{ 167.0f, 133.0f };
 		jumpForwardUp_1_Specs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		jumpForwardUp_1_Specs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1;

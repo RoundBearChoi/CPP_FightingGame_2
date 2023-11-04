@@ -3,6 +3,8 @@
 
 #include "ActivePlayerStates.h"
 
+#include "MoveDownOnFall.h"
+
 namespace RB::PlayerStates
 {
 	class P0_JumpForwardUp_1 : public RB::PlayerStates::PlayerState

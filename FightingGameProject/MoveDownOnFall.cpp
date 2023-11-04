@@ -40,7 +40,7 @@ namespace RB::PlayerStateComponents
 
 		int32_t y = player->GetPosition().y;
 
-		//transition to idle
+		//transition to idle 1 frame before hitting ground
 		if ((float_t)y + result >= 0.0f)
 		{
 			player->SetPosition({ player->GetPosition().x, 0 });

@@ -184,6 +184,7 @@
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Dummy.cpp" />
     <ClCompile Include="P0_JumpForwardUp_0.cpp" />
+    <ClCompile Include="P0_JumpForwardUp_1.cpp" />
     <ClCompile Include="P0_Wince.cpp" />
     <ClCompile Include="PlayerBoxRenderer.cpp" />
     <ClCompile Include="PlayerHBoxRenderer.cpp" />
@@ -290,6 +291,7 @@
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
     <ClInclude Include="P0_JumpForwardUp_0.h" />
+    <ClInclude Include="P0_JumpForwardUp_1.h" />
     <ClInclude Include="P0_Wince.h" />
     <ClInclude Include="PlayerBoxRenderer.h" />
     <ClInclude Include="PlayerHBoxRenderer.h" />

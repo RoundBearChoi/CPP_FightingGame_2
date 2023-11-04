@@ -183,7 +183,6 @@
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Dummy.cpp" />
-    <ClCompile Include="P0_JumpForward.cpp" />
     <ClCompile Include="P0_JumpForwardUp_0.cpp" />
     <ClCompile Include="P0_Wince.cpp" />
     <ClCompile Include="PlayerBoxRenderer.cpp" />
@@ -291,7 +290,6 @@
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
-    <ClInclude Include="P0_JumpForward.h" />
     <ClInclude Include="P0_JumpForwardUp_0.h" />
     <ClInclude Include="P0_Wince.h" />
     <ClInclude Include="PlayerBoxRenderer.h" />

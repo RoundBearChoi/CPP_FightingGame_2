@@ -12,7 +12,6 @@ namespace RB::Sprites
 		fighter_0_idle,
 		fighter_0_walk,
 		fighter_0_jump_up,
-		fighter_0_jump_forward, //temp
 		fighter_0_jump_forward_up_0, //up
 		fighter_0_jump_forward_up_1, //down
 		fighter_0_fall,

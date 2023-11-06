@@ -11,7 +11,12 @@ namespace RB::States
 	{
 		std::cout << "destroying StateMachineBase" << std::endl;
 
-		_ExitAndDestroyCurrentState();
+		if (_currentState != nullptr)
+		{
+			_currentState->OnExit();
+
+			delete _currentState;
+		}
 	}
 
 	void StateMachineBase::Init(iState* state)
@@ -92,16 +97,6 @@ namespace RB::States
 	bool StateMachineBase::IsTransitioning()
 	{
 		return _currentState->IsTransitioning();
-	}
-
-	void StateMachineBase::_ExitAndDestroyCurrentState()
-	{
-		if (_currentState != nullptr)
-		{
-			_currentState->OnExit();
-
-			delete _currentState;
-		}
 	}
 
 	void StateMachineBase::_MakeTransition()

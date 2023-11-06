@@ -1,6 +1,7 @@
 #pragma once
 #include "PlayerState.h"
 
+#include "ToggleInitiallyFacingRight.h"
 #include "MoveUpOnJump.h"
 #include "MoveForwardOnJump_0.h"
 

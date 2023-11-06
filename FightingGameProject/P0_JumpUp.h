@@ -7,8 +7,8 @@
 #include "iPlayer.h"
 #include "PlayerID.h"
 
-#include "MoveUpOnJump.h"
 #include "ToggleInitiallyFacingRight.h"
+#include "MoveUpOnJump.h"
 
 namespace RB::PlayerStates
 {

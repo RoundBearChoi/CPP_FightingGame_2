@@ -68,7 +68,7 @@ namespace RB::Players
 
 	bool Player::IsFacingRight()
 	{
-		if (_position.y < -0.01f)
+		if (_position.y < -0.1f)
 		{
 			return _initiallyFacingRight;
 		}

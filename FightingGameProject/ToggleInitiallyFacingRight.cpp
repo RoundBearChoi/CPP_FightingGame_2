@@ -18,6 +18,6 @@ namespace RB::PlayerStateComponents
 
 		player->InitiallyFacingRight(_facingRight);
 
-		std::cout << "player " << player->GetPlayerID_int() << " initially facing right: " << _facingRight << std::endl;
+		//std::cout << "player " << player->GetPlayerID_int() << " initially facing right: " << _facingRight << std::endl;
 	}
 }

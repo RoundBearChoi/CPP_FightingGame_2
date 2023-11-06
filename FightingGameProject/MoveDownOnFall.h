@@ -12,8 +12,8 @@ namespace RB::PlayerStateComponents
 	class MoveDownOnFall : public RB::States::StateComponentBase
 	{
 	public:
-		MoveDownOnFall(size_t totalFrames, float_t multiplier);
-		~MoveDownOnFall() override {};
+		MoveDownOnFall(size_t totalFrames, float_t multiplier, RB::States::iState* nextState);
+		~MoveDownOnFall() override;
 
 	public:
 		void OnEnter() override;
@@ -22,5 +22,6 @@ namespace RB::PlayerStateComponents
 	private:
 		size_t _totalFrames = 0;
 		float_t _multiplier = 1.0f;
+		RB::States::iState* _nextState = nullptr;
 	};
 }

@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveUpOnJump::MoveUpOnJump(size_t totalFrames, float_t multiplier, RB::PlayerStates::PlayerState* nextState)
+	MoveUpOnJump::MoveUpOnJump(size_t totalFrames, float_t multiplier, RB::States::iState* nextState)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;

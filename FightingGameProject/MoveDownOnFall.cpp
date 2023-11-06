@@ -5,10 +5,20 @@ namespace RB::PlayerStateComponents
 	/// <summary>
 	/// total frames to reach max fall speed
 	/// </summary>
-	MoveDownOnFall::MoveDownOnFall(size_t totalFrames, float_t multiplier)
+	MoveDownOnFall::MoveDownOnFall(size_t totalFrames, float_t multiplier, RB::States::iState* nextState)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
+		_nextState = nextState;
+	}
+
+	MoveDownOnFall::~MoveDownOnFall()
+	{
+		if (!_state->IsTransitioning())
+		{
+			delete _nextState;
+			_nextState = nullptr;
+		}
 	}
 
 	void MoveDownOnFall::OnEnter()
@@ -46,7 +56,7 @@ namespace RB::PlayerStateComponents
 			player->SetPosition({ player->GetPosition().x, 0 });
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();
-			machine->QueueNextState(new RB::PlayerStates::P0_Idle());
+			machine->QueueNextState(_nextState);
 		}
 
 		//keep falling

@@ -4,6 +4,7 @@
 #include "ActivePlayerStates.h"
 
 #include "MoveDownOnFall.h"
+#include "MoveForwardOnJump_1.h"
 
 namespace RB::PlayerStates
 {

@@ -334,6 +334,9 @@
     <ClCompile Include="MoveForwardOnJump_0.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="MoveForwardOnJump_1.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -697,6 +700,9 @@
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="MoveForwardOnJump_0.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveForwardOnJump_1.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>

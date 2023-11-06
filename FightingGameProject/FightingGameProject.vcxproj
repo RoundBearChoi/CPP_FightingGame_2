@@ -161,6 +161,7 @@
     <ClCompile Include="iVFXAnimationController.cpp" />
     <ClCompile Include="MoveDownOnFall.cpp" />
     <ClCompile Include="MoveForwardOnJump_0.cpp" />
+    <ClCompile Include="MoveForwardOnJump_1.cpp" />
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp" />
     <ClCompile Include="MoveUpOnJump.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="iVFXAnimationController.h" />
     <ClInclude Include="MoveDownOnFall.h" />
     <ClInclude Include="MoveForwardOnJump_0.h" />
+    <ClInclude Include="MoveForwardOnJump_1.h" />
     <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h" />
     <ClInclude Include="MoveUpOnJump.h" />
     <ClInclude Include="P0_Jab.h" />

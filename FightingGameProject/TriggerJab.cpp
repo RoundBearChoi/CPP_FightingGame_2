@@ -2,7 +2,26 @@
 
 namespace RB::PlayerStateComponents
 {
+	TriggerJab::TriggerJab(RB::States::iState* nextState)
+	{
+		_nextState = nextState;
+	}
+
+	TriggerJab::~TriggerJab()
+	{
+		if (!_state->IsTransitioning())
+		{
+			delete _nextState;
+			_nextState = nullptr;
+		}
+	}
+
 	void TriggerJab::OnEnter()
+	{
+
+	}
+
+	void TriggerJab::OnExit()
 	{
 
 	}
@@ -25,7 +44,7 @@ namespace RB::PlayerStateComponents
 			obj->SetUsedStatus(true);
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();
-			machine->QueueNextState(new RB::PlayerStates::P0_Jab());
+			machine->QueueNextState(_nextState);
 
 			return;
 		}

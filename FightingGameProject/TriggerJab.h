@@ -11,11 +11,15 @@ namespace RB::PlayerStateComponents
 	class TriggerJab : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerJab() = default;
-		~TriggerJab() override {};
+		TriggerJab(RB::States::iState* nextState);
+		~TriggerJab() override;
 
 	public:
 		void OnEnter() override;
+		void OnExit() override;
 		void OnUpdate() override;
+
+	private:
+		RB::States::iState* _nextState = nullptr;
 	};
 }

@@ -26,6 +26,9 @@ namespace RB::EaseEquations
 			return ((1.0f - percentage) * (1.0f - percentage));
 		}
 
-
+		static float_t EaseOutCirc(float_t percentage)
+		{
+			return (std::sqrt(1.0f - std::pow(percentage, 2.0f)));
+		}
 	};
 }

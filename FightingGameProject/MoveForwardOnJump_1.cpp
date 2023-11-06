@@ -27,6 +27,9 @@ namespace RB::PlayerStateComponents
 
 		float_t t = (float_t)frame / ((float_t)_totalFrames * 2.0f);
 
+		//start from 0.5 (second half only)
+		t += 0.5f;
+
 		if (t <= 0.5f)
 		{
 			t = 0.5f;
@@ -36,10 +39,7 @@ namespace RB::PlayerStateComponents
 			t = 1.0f;
 		}
 
-		//start from 0.5 (second half only)
-		t += 0.5f;
-
-		float_t percentage = RB::EaseEquations::Ease::EaseOutSine(t);
+		float_t percentage = RB::EaseEquations::Ease::EaseOutCirc(t);
 		float_t result = percentage * _multiplier;
 
 		if (!player->OtherPlayerIsOnRightSide())

@@ -11,7 +11,7 @@ namespace RB::PlayerStateComponents
 
 	MoveUpOnJump::~MoveUpOnJump()
 	{
-		if (!_switchedToNextState)
+		if (!_state->IsTransitioning())
 		{
 			delete _nextState;
 			_nextState = nullptr;
@@ -51,7 +51,6 @@ namespace RB::PlayerStateComponents
 
 			if (_nextState != nullptr)
 			{
-				_switchedToNextState = true;
 				machine->QueueNextState(_nextState);
 			}
 		}

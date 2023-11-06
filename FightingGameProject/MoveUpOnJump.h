@@ -23,6 +23,5 @@ namespace RB::PlayerStateComponents
 		size_t _totalFrames = 0;
 		float_t _multiplier = 1.0f;
 		RB::PlayerStates::PlayerState* _nextState = nullptr;
-		bool _switchedToNextState = false;
 	};
 }

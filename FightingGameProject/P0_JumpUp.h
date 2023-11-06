@@ -8,7 +8,7 @@
 #include "PlayerID.h"
 
 #include "MoveUpOnJump.h"
-//#include "SetInitiallyFacingRightStatus.h"
+#include "ToggleInitiallyFacingRight.h"
 
 namespace RB::PlayerStates
 {

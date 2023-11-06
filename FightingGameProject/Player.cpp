@@ -68,7 +68,12 @@ namespace RB::Players
 
 	bool Player::IsFacingRight()
 	{
-		return false;
+		if (_position.y <= 0)
+		{
+			return _initiallyFacingRight;
+		}
+
+		return OtherPlayerIsOnRightSide();
 	}
 
 	bool Player::OtherPlayerIsOnRightSide()

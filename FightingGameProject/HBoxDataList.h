@@ -61,6 +61,11 @@ namespace RB::HBox
 	private:
 		HBoxData* _FindHBoxDataByFrame(size_t frame)
 		{
+			if (_vecHurtBoxData.empty())
+			{
+				return nullptr;
+			}
+
 			for (size_t i = 0; i < _vecHurtBoxData.size(); i++)
 			{
 				if (_vecHurtBoxData[i].GetFrame() == frame)

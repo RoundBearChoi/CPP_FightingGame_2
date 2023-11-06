@@ -39,7 +39,7 @@ namespace RB::PlayerStateComponents
 		float_t percentage = RB::EaseEquations::Ease::EaseOutCirc(t);
 		float_t result = percentage * _multiplier;
 
-		if (!player->IsFacingRight()) //OtherPlayerIsOnRightSide())
+		if (!player->IsFacingRight())
 		{
 			result *= -1.0f;
 		}

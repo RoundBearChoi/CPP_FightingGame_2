@@ -28,14 +28,14 @@ namespace RB::PlayerStateComponents
 		size_t frame = _state->GetCumulatedFixedUpdates();
 
 		//get vertical down
-		float_t percentage = (float_t)frame / (float_t)_totalFrames;
+		float_t t = (float_t)frame / (float_t)_totalFrames;
 
-		if (percentage >= 1.0f)
+		if (t >= 1.0f)
 		{
-			percentage = 1.0f;
+			t = 1.0f;
 		}
 
-		float_t amount = 1.0f - RB::EaseEquations::Ease::EaseOutSine(percentage);
+		float_t amount = 1.0f - RB::EaseEquations::Ease::EaseOutSine(t);
 		float_t result = amount * _multiplier;
 
 		int32_t y = player->GetPosition().y;

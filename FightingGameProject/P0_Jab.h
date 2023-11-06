@@ -12,7 +12,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_Jab() = default;
-		~P0_Jab() = default;
 
 	public:
 		void OnEnter() override;

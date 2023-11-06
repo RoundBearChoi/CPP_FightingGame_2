@@ -13,7 +13,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_JumpForwardUp_0() = default;
-		~P0_JumpForwardUp_0() = default;
 
 	public:
 		void OnEnter() override;

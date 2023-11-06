@@ -14,7 +14,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_MoveForward() = default;
-		~P0_MoveForward() = default;
 
 	public:
 		void OnEnter() override;

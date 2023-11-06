@@ -13,7 +13,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_MoveBack() = default;
-		~P0_MoveBack() = default;
 
 	public:
 		void OnEnter() override;

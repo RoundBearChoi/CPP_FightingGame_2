@@ -14,7 +14,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_Start() = default;
-		~P0_Start() = default;
 
 	public:
 		void OnEnter() override;

@@ -15,7 +15,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_Idle() = default;
-		~P0_Idle() = default;
 
 	public:
 		void OnEnter() override;

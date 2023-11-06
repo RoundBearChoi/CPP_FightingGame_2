@@ -11,7 +11,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_Wince() = default;
-		~P0_Wince() = default;
 
 	public:
 		void OnEnter() override;

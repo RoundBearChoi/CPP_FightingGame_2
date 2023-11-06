@@ -13,7 +13,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_Dummy(Sprites::SpriteEnum startingSpriteEnum);
-		~P0_Dummy() = default;
 
 	public:
 		void OnEnter() override;

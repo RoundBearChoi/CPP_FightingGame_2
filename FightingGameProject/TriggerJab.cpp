@@ -9,11 +9,7 @@ namespace RB::PlayerStateComponents
 
 	TriggerJab::~TriggerJab()
 	{
-		if (!_nextState->Entered())
-		{
-			delete _nextState;
-			_nextState = nullptr;
-		}
+
 	}
 
 	void TriggerJab::OnEnter()

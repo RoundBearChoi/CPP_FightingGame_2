@@ -2,6 +2,18 @@
 
 namespace RB::States
 {
+	StateComponentBase::~StateComponentBase()
+	{
+		if (_nextState != nullptr)
+		{
+			if (!_nextState->Entered())
+			{
+				delete _nextState;
+				_nextState = nullptr;
+			}
+		}
+	}
+
 	void StateComponentBase::SetState(iState* state)
 	{
 		_state = state;

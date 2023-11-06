@@ -8,7 +8,7 @@ namespace RB::States
 	{
 	public:
 		StateComponentBase() = default;
-		virtual ~StateComponentBase() = default;
+		virtual ~StateComponentBase();
 
 	public:
 		virtual void SetState(iState* state);

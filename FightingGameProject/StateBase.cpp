@@ -8,6 +8,8 @@ namespace RB::States
 		{
 			delete _vecStateComponents[i];
 		}
+
+		_vecStateComponents.clear();
 	}
 
 	void StateBase::SetStateMachineID(size_t id)

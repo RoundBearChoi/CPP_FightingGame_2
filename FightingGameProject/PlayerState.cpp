@@ -2,6 +2,16 @@
 
 namespace RB::PlayerStates
 {
+	PlayerState::~PlayerState()
+	{
+		for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		{
+			delete _vecStateComponents[i];
+		}
+
+		_vecStateComponents.clear();
+	}
+
 	void PlayerState::StandardInit(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		_spriteEnum = spriteEnum;

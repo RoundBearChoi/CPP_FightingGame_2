@@ -14,11 +14,11 @@ namespace RB::PlayerStateComponents
 
 	MoveDownOnFall::~MoveDownOnFall()
 	{
-		//if (!_state->IsTransitioning())
-		//{
-		//	delete _nextState;
-		//	_nextState = nullptr;
-		//}
+		if (!_nextState->Entered())
+		{
+			delete _nextState;
+			_nextState = nullptr;
+		}
 	}
 
 	void MoveDownOnFall::OnEnter()

@@ -24,6 +24,7 @@ namespace RB::States
 
 	protected:
 		iState* _state = nullptr;
+		iState* _nextState = nullptr;
 		int32_t _fixedUpdateOnCount = -1;
 		int32_t _updateOnCount = -1;
 	};

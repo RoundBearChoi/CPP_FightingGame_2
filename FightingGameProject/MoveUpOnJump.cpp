@@ -15,11 +15,11 @@ namespace RB::PlayerStateComponents
 	{
 		std::cout << "destructing MoveUpOnJump" << std::endl;
 
-		//if (!_state->IsTransitioning())
-		//{
-		//	delete _nextState;
-		//	_nextState = nullptr;
-		//}
+		if (!_nextState->Entered())
+		{
+			delete _nextState;
+			_nextState = nullptr;
+		}
 	}
 
 	void MoveUpOnJump::OnEnter()

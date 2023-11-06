@@ -108,14 +108,18 @@ namespace RB::States
 	{
 		if (_currentState->IsTransitioning())
 		{
-			_ExitAndDestroyCurrentState();
+			//exit current state first
+			_currentState->OnExit();
 
+			//enter next state
+			_nextState->SetStateMachineID(_stateMachineID);
+			_nextState->OnEnter();
+			_nextState->Entered(true);
+
+			//clean up last so statecomponents don't delete next state
+			delete _currentState;
 			_currentState = _nextState;
-
 			_nextState = nullptr;
-
-			_currentState->SetStateMachineID(_stateMachineID);
-			_currentState->OnEnter();
 		}
 	}
 }

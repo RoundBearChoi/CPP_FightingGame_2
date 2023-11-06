@@ -16,6 +16,8 @@ namespace RB::States
 		virtual bool IsTransitioning() = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual size_t GetCumulatedFixedUpdates() = 0;
+		virtual bool Entered() = 0;
+		virtual void Entered(bool entered) = 0;
 
 	public:
 		virtual void OnEnter() = 0;

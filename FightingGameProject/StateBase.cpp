@@ -40,6 +40,16 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
+	bool StateBase::Entered()
+	{
+		return _entered;
+	}
+
+	void StateBase::Entered(bool entered)
+	{
+		_entered = entered;
+	}
+
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)
 	{
 		if (stateComponent == nullptr)

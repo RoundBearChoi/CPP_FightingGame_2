@@ -18,6 +18,8 @@ namespace RB::States
 		virtual bool IsTransitioning() override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual size_t GetCumulatedFixedUpdates() override;
+		virtual bool Entered() override;
+		virtual void Entered(bool entered) override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);
@@ -36,6 +38,7 @@ namespace RB::States
 		size_t _stateMachineID = 0;
 		size_t _cumulatedFixedUpdates = 0;
 		bool _isTransitioning = false;
+		bool _entered = false;
 		std::vector<StateComponentBase*> _vecStateComponents;
 	};
 }

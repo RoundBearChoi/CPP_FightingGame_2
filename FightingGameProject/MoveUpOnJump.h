@@ -22,6 +22,5 @@ namespace RB::PlayerStateComponents
 	private:
 		size_t _totalFrames = 0;
 		float_t _multiplier = 1.0f;
-		RB::States::iState* _nextState = nullptr;
 	};
 }

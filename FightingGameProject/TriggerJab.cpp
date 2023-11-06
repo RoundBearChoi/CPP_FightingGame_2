@@ -9,7 +9,7 @@ namespace RB::PlayerStateComponents
 
 	TriggerJab::~TriggerJab()
 	{
-		if (!_state->IsTransitioning())
+		if (!_nextState->Entered())
 		{
 			delete _nextState;
 			_nextState = nullptr;

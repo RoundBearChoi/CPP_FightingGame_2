@@ -16,7 +16,6 @@ namespace RB::PlayerStates
 	{
 	public:
 		P0_FallDown() = default;
-		~P0_FallDown() = default;
 
 	public:
 		void OnEnter() override;

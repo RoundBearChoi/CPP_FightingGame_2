@@ -2,11 +2,6 @@
 
 namespace RB::PlayerStates
 {
-	P0_JumpUp::~P0_JumpUp()
-	{
-
-	}
-
 	void P0_JumpUp::OnEnter()
 	{
 		ActivePlayerStates::AddPlayerState(this);

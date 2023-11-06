@@ -32,7 +32,7 @@ namespace RB::PlayerStateComponents
 			t = 0.5f;
 		}
 
-		float_t percentage = /*1.0f -*/ RB::EaseEquations::Ease::EaseOutSine(t);
+		float_t percentage = RB::EaseEquations::Ease::EaseOutSine(t);
 		float_t result = percentage * _multiplier;
 
 		if (!player->OtherPlayerIsOnRightSide())
@@ -40,6 +40,7 @@ namespace RB::PlayerStateComponents
 			result *= -1.0f;
 		}
 
+		//apply move
 		player->Move({ (int32_t)result, 0 });
 	}
 }

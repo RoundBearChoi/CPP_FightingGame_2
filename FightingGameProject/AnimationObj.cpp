@@ -135,7 +135,7 @@ namespace RB::Render
 
 		if (_ownerPlayer != nullptr)
 		{
-			renderSettings.mFaceRight = _ownerPlayer->OtherPlayerIsOnRightSide();
+			renderSettings.mFaceRight = _ownerPlayer->IsFacingRight(); //OtherPlayerIsOnRightSide();
 		}
 		else
 		{

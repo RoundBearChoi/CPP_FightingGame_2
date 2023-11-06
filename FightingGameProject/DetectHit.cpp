@@ -45,7 +45,7 @@ namespace RB::PlayerStateComponents
 			//get owner AABB
 			RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
 			olc::vi2d ownerPos = owner->GetPosition();
-			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->OtherPlayerIsOnRightSide());
+			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->IsFacingRight()); //OtherPlayerIsOnRightSide());
 
 			//skip if width or height is 0
 			if (ownerWorldAABB.GetWidthHeight().x <= 0.001 || ownerWorldAABB.GetWidthHeight().y <= 0.001f)
@@ -58,7 +58,7 @@ namespace RB::PlayerStateComponents
 				//get target AABB
 				RB::Collisions::AABB& targetAABB = targetData->GetAABB(j);
 				olc::vi2d targetPos = target->GetPosition();
-				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), target->OtherPlayerIsOnRightSide());
+				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), owner->IsFacingRight()); //target->OtherPlayerIsOnRightSide());
 
 				//compare
 				olc::vf2d col;

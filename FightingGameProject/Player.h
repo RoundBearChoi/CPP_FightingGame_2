@@ -28,7 +28,10 @@ namespace RB::Players
 	public:
 		PlayerID GetPlayerID() override;
 		int GetPlayerID_int() override;
+		bool IsFacingRight() override;
 		bool OtherPlayerIsOnRightSide() override;
+		bool InitiallyFacingRight();
+		void InitiallyFacingRight(bool initiallyFacingRight);
 		RB::States::iStateMachine* GetStateMachine() override;
 		size_t GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
@@ -48,5 +51,6 @@ namespace RB::Players
 		PlayerCollider _playerCollider;
 		olc::vi2d _position = { 0, 0 };
 		bool _manualAnimationUpdate = false;
+		bool _initiallyFacingRight = false;
 	};
 }

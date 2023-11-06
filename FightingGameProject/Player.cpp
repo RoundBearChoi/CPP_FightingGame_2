@@ -66,6 +66,11 @@ namespace RB::Players
 		return 0;
 	}
 
+	bool Player::IsFacingRight()
+	{
+		return false;
+	}
+
 	bool Player::OtherPlayerIsOnRightSide()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr)
@@ -88,6 +93,16 @@ namespace RB::Players
 		{
 			return false;
 		}
+	}
+
+	bool Player::InitiallyFacingRight()
+	{
+		return false;
+	}
+
+	void Player::InitiallyFacingRight(bool initiallyFacingRight)
+	{
+		_initiallyFacingRight = initiallyFacingRight;
 	}
 
 	RB::States::iStateMachine* Player::GetStateMachine()

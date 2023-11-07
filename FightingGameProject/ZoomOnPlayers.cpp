@@ -9,10 +9,12 @@ namespace RB::Cam
 
 	void ZoomOnPlayers::OnFixedUpdate()
 	{
-		float_t dist = _GetSqMagBetweenPlayers();
+		float_t sq = _GetMagSqBetweenPlayers();
+
+		_AutoZoom(sq);
 	}
 
-	float_t ZoomOnPlayers::_GetSqMagBetweenPlayers()
+	float_t ZoomOnPlayers::_GetMagSqBetweenPlayers()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{
@@ -27,8 +29,35 @@ namespace RB::Cam
 		olc::vf2d dist = (olc::vf2d)p2_pos - (olc::vf2d)p1_pos;
 
 		float_t mag2 = dist.mag2(); //mag2 is mag * mag
-		//float_t mag = dist.mag();
-		//std::cout << "mag: " << mag << " | mag2: " << mag2 << std::endl;
+		float_t mag = dist.mag();
+		std::cout << "mag: " << mag << " | mag2: " << mag2 << std::endl;
 
+		return mag2;
+	}
+
+	void ZoomOnPlayers::_AutoZoom(float_t playerDistSq)
+	{
+		if (RB::Cam::CAM_CONTROLLER == nullptr)
+		{
+			return;
+		}
+
+		float_t maxSq = _maxDist * _maxDist;
+
+		if (playerDistSq >= maxSq)
+		{
+			playerDistSq = maxSq;
+		}
+
+		float_t percentage = 1.0f - (playerDistSq / maxSq);
+
+		float_t zoom = _maxZoomIn * percentage;
+
+		if (zoom <= _minZoomOut)
+		{
+			zoom = _minZoomOut;
+		}
+
+		RB::Cam::CAM_CONTROLLER->SetZoom(zoom);
 	}
 }

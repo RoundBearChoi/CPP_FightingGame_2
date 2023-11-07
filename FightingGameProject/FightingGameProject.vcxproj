@@ -237,6 +237,7 @@
     <ClCompile Include="TriggerMoveBack.cpp" />
     <ClCompile Include="TriggerMoveForward.cpp" />
     <ClCompile Include="Updater.cpp" />
+    <ClCompile Include="ZoomOnPlayers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABB.h" />
@@ -362,6 +363,7 @@
     <ClInclude Include="TriggerMoveForward.h" />
     <ClInclude Include="TriggerOnFixedUpdateCount.h" />
     <ClInclude Include="Updater.h" />
+    <ClInclude Include="ZoomOnPlayers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

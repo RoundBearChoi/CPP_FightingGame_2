@@ -340,6 +340,9 @@
     <ClCompile Include="ToggleInitiallyFacingRight.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="ZoomOnPlayers.cpp">
+      <Filter>Source Files\Cam</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -710,6 +713,9 @@
     </ClInclude>
     <ClInclude Include="ToggleInitiallyFacingRight.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoomOnPlayers.h">
+      <Filter>Source Files\Cam</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

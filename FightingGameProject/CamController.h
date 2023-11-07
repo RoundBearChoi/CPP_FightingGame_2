@@ -5,9 +5,8 @@
 #include "iCamController.h"
 #include "iCamObj.h"
 
-#include "iPlayerController.h"
-
 #include "FollowPlayers.h"
+#include "ZoomOnPlayers.h"
 
 namespace RB::Cam
 {
@@ -27,11 +26,9 @@ namespace RB::Cam
 		void AllowManualControl(bool toggle) override;
 
 	private:
-		float_t _GetDistanceBetweenPlayers();
-
-	private:
 		CamObj _camObj;
 		FollowPlayers _followPlayers;
+		ZoomOnPlayers _zoomOnPlayers;
 		bool _allowManualControl = true;
 	};
 }

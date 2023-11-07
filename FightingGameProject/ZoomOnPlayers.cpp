@@ -9,10 +9,10 @@ namespace RB::Cam
 
 	void ZoomOnPlayers::OnFixedUpdate()
 	{
-		float_t dist = _GetDistanceBetweenPlayers();
+		float_t dist = _GetSqMagBetweenPlayers();
 	}
 
-	float_t ZoomOnPlayers::_GetDistanceBetweenPlayers()
+	float_t ZoomOnPlayers::_GetSqMagBetweenPlayers()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr)
 		{

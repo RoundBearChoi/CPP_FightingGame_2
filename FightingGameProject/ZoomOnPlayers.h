@@ -16,6 +16,6 @@ namespace RB::Cam
 		void OnFixedUpdate();
 
 	private:
-		float_t _GetDistanceBetweenPlayers();
+		float_t _GetSqMagBetweenPlayers();
 	};
 }

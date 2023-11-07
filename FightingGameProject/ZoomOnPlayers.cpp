@@ -49,9 +49,11 @@ namespace RB::Cam
 			playerDistSq = maxSq;
 		}
 
-		float_t percentage = 1.0f - (playerDistSq / maxSq);
+		float_t t = /*1.0f -*/ (playerDistSq / maxSq);
 
-		float_t zoom = _maxZoomIn * percentage;
+		float_t result = RB::EaseEquations::Ease::EaseOutSine(t);
+
+		float_t zoom = _maxZoomIn * result;
 
 		if (zoom <= _minZoomOut)
 		{

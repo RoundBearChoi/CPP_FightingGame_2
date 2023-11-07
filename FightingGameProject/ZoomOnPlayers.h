@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include "Ease.h"
 
 #include "iPlayerController.h"
 #include "iCamController.h"
@@ -21,7 +22,7 @@ namespace RB::Cam
 		void _AutoZoom(float_t playerDistSq);
 
 	private:
-		float_t _maxDist = 1500.0f;
+		float_t _maxDist = 1600.0f;
 		float_t _minZoomOut = 0.5f;
 		float_t _maxZoomIn = 1.25f;
 	};

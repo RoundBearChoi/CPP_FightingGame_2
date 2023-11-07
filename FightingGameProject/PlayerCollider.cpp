@@ -87,7 +87,15 @@ namespace RB::Players
 	{
 		int moveCorrectionAmount = 2;
 
-		if (_player->GetPosition().x <= otherPlayer->GetPosition().x)
+		olc::vi2d otherPlayerPos = otherPlayer->GetPosition();
+		olc::vi2d myPos = _player->GetPosition();
+
+		if (otherPlayerPos.y < -0.01f && myPos.y > -0.01f)
+		{
+			moveCorrectionAmount *= 2.0f;
+		}
+
+		if (myPos.x <= otherPlayerPos.x)
 		{
 			_player->Move(olc::vi2d{ -moveCorrectionAmount, 0 });
 			otherPlayer->Move(olc::vi2d{ moveCorrectionAmount, 0 });

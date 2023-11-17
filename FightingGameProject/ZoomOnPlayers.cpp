@@ -30,7 +30,7 @@ namespace RB::Cam
 
 		float_t mag2 = dist.mag2(); //mag2 is mag * mag
 		float_t mag = dist.mag();
-		std::cout << "mag: " << mag << " | mag2: " << mag2 << std::endl;
+		//std::cout << "mag: " << mag << " | mag2: " << mag2 << std::endl;
 
 		return mag2;
 	}

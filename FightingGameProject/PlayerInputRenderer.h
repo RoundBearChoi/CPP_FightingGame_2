@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Sprites.h"
+#include "SpriteEnum.h"
 
 #include "iPlayerController.h"
 #include "iInputController.h"
@@ -20,6 +21,7 @@ namespace RB::Render
 	private:
 		void _RenderPlayerInputIcons(RB::Players::iPlayer* player);
 		void _RenderIcon(RB::Sprites::SpriteEnum spriteEnum, olc::vi2d pos, olc::Pixel tint);
+		RB::Sprites::SpriteEnum _GetSpriteEnum(const RB::Input::PlayerInput& playerInput);
 
 		Sprites* _sprites = nullptr;
 	};

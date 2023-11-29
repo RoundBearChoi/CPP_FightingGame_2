@@ -25,12 +25,38 @@ namespace RB::Render
 		{
 			RB::Input::iInputObj* inputObj = RB::Input::INPUT_CONTROLLER->GetInputByIndex(player->GetPlayerID(), i);
 
-			_RenderIcon(RB::Sprites::SpriteEnum::input_arrow_up, olc::vi2d(5 + (i * 25), 40), olc::WHITE);
+			_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), 50), olc::WHITE);
 		}
 	}
 
 	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteEnum spriteEnum, olc::vi2d pos, olc::Pixel tint)
 	{
-		_sprites->RenderSprite(spriteEnum, olc::vi2d{ 30, 30 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
+		_sprites->RenderSprite(spriteEnum, olc::vi2d{ 28, 28 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
+	}
+
+	RB::Sprites::SpriteEnum PlayerInputRenderer::_GetSpriteEnum(const RB::Input::PlayerInput& playerInput)
+	{
+		if (playerInput == RB::Input::PlayerInput::MOVE_LEFT)
+		{
+			return RB::Sprites::SpriteEnum::input_arrow_left;
+		}
+		else if (playerInput == RB::Input::PlayerInput::MOVE_RIGHT)
+		{
+			return RB::Sprites::SpriteEnum::input_arrow_right;
+		}
+		else if (playerInput == RB::Input::PlayerInput::JUMP)
+		{
+			return RB::Sprites::SpriteEnum::input_arrow_up;
+		}
+		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH)
+		{
+			return RB::Sprites::SpriteEnum::input_weak_punch;
+		}
+		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_KICK)
+		{
+			return RB::Sprites::SpriteEnum::input_weak_kick;
+		}
+
+		return RB::Sprites::SpriteEnum::NONE;
 	}
 }

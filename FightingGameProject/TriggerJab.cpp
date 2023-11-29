@@ -33,7 +33,7 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		RB::Input::iInputObj* obj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::ATTACK_LP_WEAK);
+		RB::Input::iInputObj* obj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::ATTACK_WEAK_PUNCH);
 
 		if (obj != nullptr)
 		{

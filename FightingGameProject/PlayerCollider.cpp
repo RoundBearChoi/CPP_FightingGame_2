@@ -93,7 +93,7 @@ namespace RB::Players
 		//if other player is in air and I'm on ground, I move away more quickly
 		if (otherPlayerPos.y < -0.01f && myPos.y > -0.01f)
 		{
-			correction *= 2.0f;
+			correction *= 2;
 		}
 
 		if (myPos.x <= otherPlayerPos.x)

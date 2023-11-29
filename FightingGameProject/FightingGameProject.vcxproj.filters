@@ -723,5 +723,8 @@
     <ClInclude Include="PlayerInputRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
+    <ClInclude Include="GameFrame.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 
 #include "olcPixelGameEngine.h"
 #include "AllocationCount.h"
+#include "GameFrame.h"
 #include "Updater.h"
 #include "Time.h"
 #include "FixedTimer.h"
@@ -56,6 +57,7 @@ namespace RB::Engine
 			Clear(olc::Pixel{ 20, 20, 20});
 
 			_updater.OnUpdate();
+			AddGameFrame();
 
 			if (_timer.DoFixedUpdate())
 			{

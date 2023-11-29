@@ -47,18 +47,21 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		bool moveLeftHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		bool moveRightHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
-		if (moveLeft.bPressed && moveRight.bPressed)
+		//olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		//olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+
+		if (moveLeftHeld && moveRightHeld) //moveLeft.bPressed && moveRight.bPressed)
 		{
 			return true;
 		}
 
-		if (moveLeft.bHeld && moveRight.bHeld)
-		{
-			return true;
-		}
+		//if (moveLeft.bHeld && moveRight.bHeld)
+		//{
+		//	return true;
+		//}
 
 		return false;
 	}
@@ -72,19 +75,22 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		bool moveLeftHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		bool moveRightHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+
+		//olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		//olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			if (moveLeft.bPressed || moveLeft.bHeld)
+			if (moveLeftHeld)
 			{
 				return true;
 			}
 		}
 		else
 		{
-			if (moveRight.bPressed || moveRight.bHeld)
+			if (moveRightHeld)
 			{
 				return true;
 			}

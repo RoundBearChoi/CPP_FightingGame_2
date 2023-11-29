@@ -164,6 +164,32 @@ namespace RB::Input
 		return false;
 	}
 
+	size_t InputController::GetTotalInputCount(RB::Players::PlayerID playerID)
+	{
+		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		{
+			return _vecP1_InputObjs.size();
+		}
+		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		{
+			return _vecP2_InputObjs.size();
+		}
+
+		return 0;
+	}
+
+	iInputObj* InputController::GetInputByIndex(RB::Players::PlayerID playerID, size_t index)
+	{
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		if (vec.size() > index)
+		{
+			return vec[index];
+		}
+
+		return nullptr;
+	}
+
 	void InputController::_UpdateInputBuffer(RB::Players::PlayerID playerID)
 	{
 		for (size_t all = 0; all < _totalInputTypes; all++)

@@ -20,6 +20,8 @@ namespace RB::Input
 		virtual iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual iInputObj* GetUnusedInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual size_t GetTotalInputCount(RB::Players::PlayerID playerID) = 0;
+		virtual iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, size_t index) = 0;
 	};
 
 	extern iInputController* INPUT_CONTROLLER;

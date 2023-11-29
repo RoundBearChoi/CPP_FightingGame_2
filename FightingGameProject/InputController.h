@@ -24,6 +24,8 @@ namespace RB::Input
 		iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		iInputObj* GetUnusedInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		size_t GetTotalInputCount(RB::Players::PlayerID playerID) override;
+		iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, size_t index) override;
 
 	private:
 		void _UpdateInputBuffer(RB::Players::PlayerID playerID);

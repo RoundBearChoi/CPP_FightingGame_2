@@ -22,6 +22,7 @@ namespace RB::Render
 		_playerBoxRenderer.Init(&_spriteObj);
 		_playerHBoxRenderer.Init(&_spriteObj);
 		_playerPositionRenderer.Init(&_spriteObj, &_lineRenderer);
+		_playerInputRenderer.Init();
 	}
 
 	void PlayerDebugController::OnUpdate()
@@ -29,6 +30,7 @@ namespace RB::Render
 		_playerBoxRenderer.OnUpdate();
 		_playerHBoxRenderer.OnUpdate();
 		_playerPositionRenderer.OnUpdate();
+		_playerInputRenderer.OnUpdate();
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
@@ -36,5 +38,6 @@ namespace RB::Render
 		_playerBoxRenderer.OnFixedUpdate();
 		_playerHBoxRenderer.OnFixedUpdate();
 		_playerPositionRenderer.OnFixedUpdate();
+		_playerInputRenderer.OnFixedUpdate();
 	}
 }

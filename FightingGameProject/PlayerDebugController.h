@@ -6,6 +6,7 @@
 #include "PlayerHBoxRenderer.h"
 #include "PlayerBoxRenderer.h"
 #include "PlayerPositionRenderer.h"
+#include "PlayerInputRenderer.h"
 
 #include "iPlayerDebugController.h"
 
@@ -30,5 +31,6 @@ namespace RB::Render
 		PlayerBoxRenderer _playerBoxRenderer;
 		PlayerHBoxRenderer _playerHBoxRenderer;
 		PlayerPositionRenderer _playerPositionRenderer;
+		PlayerInputRenderer _playerInputRenderer;
 	};
 }

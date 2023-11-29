@@ -343,6 +343,9 @@
     <ClCompile Include="ZoomOnPlayers.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerInputRenderer.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -716,6 +719,9 @@
     </ClInclude>
     <ClInclude Include="ZoomOnPlayers.h">
       <Filter>Source Files\Cam</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInputRenderer.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

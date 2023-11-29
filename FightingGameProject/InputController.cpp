@@ -208,7 +208,7 @@ namespace RB::Input
 					_AddNewInputBuffer(playerID, input);
 				}
 
-				//add 2nd obj if released
+				//add 2nd obj on top of existing obj
 				else
 				{
 					if (obj->IsReleased())

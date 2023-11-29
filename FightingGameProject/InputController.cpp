@@ -133,6 +133,37 @@ namespace RB::Input
 		return nullptr;
 	}
 
+	bool InputController::IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	{
+		std::vector<RB::Input::iInputObj*>* vec = nullptr;
+
+		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		{
+			vec = &_vecP1_InputObjs;
+		}
+		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		{
+			vec = &_vecP2_InputObjs;
+		}
+		else
+		{
+			return false;
+		}
+
+		for (size_t i = 0; i < vec->size(); i++)
+		{
+			if ((*vec)[i]->GetPlayerInputType() == playerInput)
+			{
+				if (!(*vec)[i]->IsReleased())
+				{
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
 	void InputController::_UpdateInputBuffer(RB::Players::PlayerID playerID)
 	{
 		for (size_t all = 0; all < _totalInputTypes; all++)

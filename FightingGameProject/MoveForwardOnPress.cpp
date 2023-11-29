@@ -47,17 +47,22 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		bool moveLeftHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		bool moveRightHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
-		if (moveLeft.bPressed && moveRight.bPressed)
+		//olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		//olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+
+		if (moveLeftHeld && moveRightHeld)
 		{
 			return true;
 		}
-		if (moveLeft.bHeld && moveRight.bHeld)
-		{
-			return true;
-		}
+
+		//if (moveLeft.bHeld && moveRight.bHeld)
+		//{
+		//	return true;
+		//}
+
 		return false;
 	}
 

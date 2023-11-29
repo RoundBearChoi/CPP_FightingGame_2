@@ -23,6 +23,7 @@ namespace RB::Input
 		iInputObj* GetInputOBJ_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		iInputObj* GetUnusedInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 
 	private:
 		void _UpdateInputBuffer(RB::Players::PlayerID playerID);

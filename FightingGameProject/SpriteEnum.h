@@ -17,7 +17,6 @@ namespace RB::Sprites
 		input_weak_kick,
 		input_strong_punch,
 		input_strong_kick,
-		input_jump,
 
 		fighter_0_idle,
 		fighter_0_walk,

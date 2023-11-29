@@ -44,8 +44,8 @@ namespace RB::Cam
 
 	void CamObj::Init()
 	{
-		_displayHalfWidth = (float_t)RB::Engine::displayWidth * 0.5f;
-		_displayHalfHeight = (float_t)RB::Engine::displayHeight * 0.5f;
+		_displayHalfWidth = (float_t)RB::displayWidth * 0.5f;
+		_displayHalfHeight = (float_t)RB::displayHeight * 0.5f;
 	}
 
 	void CamObj::ManualUpdate()

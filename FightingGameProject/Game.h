@@ -11,7 +11,7 @@
 #include "ActiveControllers.h"
 #include "jsonExample.h"
 
-namespace RB::Engine
+namespace RB
 {
 	class Game : public olc::PixelGameEngine
 	{

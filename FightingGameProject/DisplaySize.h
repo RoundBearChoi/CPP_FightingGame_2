@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 
-namespace RB::Engine
+namespace RB
 {
 	//global variables
 	static int32_t displayWidth = 854;

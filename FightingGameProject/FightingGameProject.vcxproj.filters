@@ -347,7 +347,7 @@
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="GameFrame.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -470,9 +470,6 @@
     </ClInclude>
     <ClInclude Include="P0_FallDown.h">
       <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
-    <ClInclude Include="AllocationCount.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="AnimationLoader.h">
       <Filter>Source Files\Render</Filter>
@@ -726,8 +723,11 @@
     <ClInclude Include="PlayerInputRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
+    <ClInclude Include="AllocationCount.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
     <ClInclude Include="GameFrame.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

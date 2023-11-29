@@ -9,16 +9,16 @@ bool showAllocationCount = false;
 void* operator new(std::size_t size)
 {
     ++numObjects;
-    
+
     //std::cout << "Allocating " << size << " bytes" << std::endl;
-    
+
     return std::malloc(size);
 }
 
 void operator delete(void* ptr)
 {
     --numObjects;
-    
+
     std::free(ptr);
 
     if (showAllocationCount)

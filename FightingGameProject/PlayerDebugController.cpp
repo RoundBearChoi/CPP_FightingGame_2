@@ -16,12 +16,12 @@ namespace RB::Render
 
 	void PlayerDebugController::Init()
 	{
-		_spriteObj.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
-		_spriteObj.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteEnum::white_sq_tr80);
+		_sprites.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
+		_sprites.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteEnum::white_sq_tr80);
 
-		_playerBoxRenderer.Init(&_spriteObj);
-		_playerHBoxRenderer.Init(&_spriteObj);
-		_playerPositionRenderer.Init(&_spriteObj, &_lineRenderer);
+		_playerBoxRenderer.Init(&_sprites);
+		_playerHBoxRenderer.Init(&_sprites);
+		_playerPositionRenderer.Init(&_sprites, &_lineRenderer);
 		_playerInputRenderer.Init();
 	}
 

@@ -10,11 +10,11 @@
 
 namespace RB::Render
 {
-	class SpriteObj
+	class Sprites
 	{
 	public:
-		SpriteObj() = default;
-		~SpriteObj() = default;
+		Sprites() = default;
+		~Sprites() = default;
 
 	public:
 		void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum);

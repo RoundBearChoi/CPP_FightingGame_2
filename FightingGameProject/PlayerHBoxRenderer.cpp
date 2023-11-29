@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-    void PlayerHBoxRenderer::Init(SpriteObj* spriteRenderer)
+    void PlayerHBoxRenderer::Init(Sprites* spriteRenderer)
 	{
 		_spriteObj = spriteRenderer;
 	}

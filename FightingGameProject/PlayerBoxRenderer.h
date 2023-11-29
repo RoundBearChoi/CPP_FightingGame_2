@@ -12,11 +12,11 @@ namespace RB::Render
 		~PlayerBoxRenderer() = default;
 
 	public:
-		void Init(SpriteObj* spriteRenderer);
+		void Init(Sprites* spriteRenderer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	private:
-		SpriteObj* _spriteObj = nullptr;
+		Sprites* _spriteObj = nullptr;
 	};
 }

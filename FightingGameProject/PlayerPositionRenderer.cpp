@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-	void PlayerPositionRenderer::Init(SpriteObj* spriteRenderer, LineRenderer* lineRenderer)
+	void PlayerPositionRenderer::Init(Sprites* spriteRenderer, LineRenderer* lineRenderer)
 	{
 		_spriteObj = spriteRenderer;
 		_lineRenderer = lineRenderer;

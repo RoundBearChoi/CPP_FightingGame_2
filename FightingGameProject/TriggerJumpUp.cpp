@@ -16,22 +16,24 @@ namespace RB::PlayerStateComponents
 		}
 
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::JUMP);
-		olc::HWButton forwardHold;
+		bool jumpHeld = false;
+		bool forwardHeld = false;
+
+		jumpHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::JUMP);
 
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			forwardHold = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+			forwardHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 		}
 		else
 		{
-			forwardHold = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+			forwardHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
 		}
 		
-		if (jumpPress != nullptr && forwardHold.bHeld == false)
+		if (jumpHeld && !forwardHeld)
 		{
+			RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::JUMP);
 			jumpPress->SetUsedStatus(true);
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();

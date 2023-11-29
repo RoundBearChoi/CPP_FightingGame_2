@@ -269,5 +269,7 @@ namespace RB::Input
 		{
 			return _vecP2_InputObjs;
 		}
+
+		return _vecNone;
 	}
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "SpriteObj.h"
+#include "Sprites.h"
 
 #include "iPlayerController.h"
 

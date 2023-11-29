@@ -47,12 +47,12 @@ namespace RB::Render
 
 	void Ani::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		_spriteObj.LoadSprite(path, spriteEnum);
+		_sprites.LoadSprite(path, spriteEnum);
 	}
 
 	void Ani::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		specs.mLoadedSprite = _spriteObj.GetLoadedSprite(spriteEnum);
+		specs.mLoadedSprite = _sprites.GetLoadedSprite(spriteEnum);
 
 		_animationLoader.LoadAnimation(specs);
 	}

@@ -2,7 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "AABB.h"
 
-#include "SpriteObj.h"
+#include "Sprites.h"
 #include "LineRenderer.h"
 
 #include "iPlayerController.h"

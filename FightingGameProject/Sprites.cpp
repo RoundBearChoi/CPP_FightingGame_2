@@ -1,4 +1,4 @@
-#include "SpriteObj.h"
+#include "Sprites.h"
 
 namespace RB::Render
 {

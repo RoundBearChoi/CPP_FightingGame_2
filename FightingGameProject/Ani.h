@@ -3,7 +3,7 @@
 #include "iAnimationObj.h"
 #include "AnimationObj.h"
 
-#include "SpriteObj.h"
+#include "Sprites.h"
 #include "AnimationLoader.h"
 
 namespace RB::Render
@@ -31,7 +31,7 @@ namespace RB::Render
 		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum) override;
 
 	protected:
-		Sprites _spriteObj;
+		Sprites _sprites;
 		AnimationLoader _animationLoader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
 	};

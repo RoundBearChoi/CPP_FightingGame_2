@@ -25,7 +25,14 @@ namespace RB::Render
 		{
 			RB::Input::iInputObj* inputObj = RB::Input::INPUT_CONTROLLER->GetInputByIndex(player->GetPlayerID(), i);
 
-			_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), 50), olc::WHITE);
+			olc::Pixel tint = olc::WHITE;
+
+			if (inputObj->IsReleased())
+			{
+				tint = olc::DARK_GREY;
+			}
+
+			_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), 50), tint);
 		}
 	}
 

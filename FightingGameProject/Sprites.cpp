@@ -7,7 +7,7 @@ namespace RB::Render
 		_spriteLoader.LoadSprite(path, spriteEnum);
 	}
 
-	void Sprites::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useScreenSpace)
+	void Sprites::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
 	{
 		if (RB::Cam::CAM_CONTROLLER == nullptr)
 		{
@@ -57,9 +57,12 @@ namespace RB::Render
 			};
 		}
 
-		for (size_t i = 0; i < points.size(); i++)
+		if (useWorldSpace)
 		{
-			points[i] = RB::Cam::CAM_CONTROLLER->GetCamObj()->GetRelativePosition(points[i]);
+			for (size_t i = 0; i < points.size(); i++)
+			{
+				points[i] = RB::Cam::CAM_CONTROLLER->GetCamObj()->GetRelativePosition(points[i]);
+			}
 		}
 
 		olc::Decal* decal = loadedSprite->GetDecal();

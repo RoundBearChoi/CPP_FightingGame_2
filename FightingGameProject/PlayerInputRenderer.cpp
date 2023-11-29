@@ -10,8 +10,6 @@ namespace RB::Render
 	void PlayerInputRenderer::OnUpdate()
 	{
 		_RenderPlayerInputIcons(RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
-
-		//_RenderIcon(RB::Sprites::SpriteEnum::input_arrow_up, olc::vi2d(5, 40), olc::WHITE);
 	}
 
 	void PlayerInputRenderer::OnFixedUpdate()

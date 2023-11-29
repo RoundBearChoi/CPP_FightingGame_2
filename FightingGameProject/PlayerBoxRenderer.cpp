@@ -4,7 +4,7 @@ namespace RB::Render
 {
     void PlayerBoxRenderer::Init(Sprites* spriteRenderer)
 	{
-		_spriteObj = spriteRenderer;
+		_sprites = spriteRenderer;
 	}
 
 	void PlayerBoxRenderer::OnUpdate()
@@ -33,7 +33,7 @@ namespace RB::Render
 				boxTint = olc::BLUE;
 			}
 
-			_spriteObj->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
+			_sprites->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
 		}
 	}
 

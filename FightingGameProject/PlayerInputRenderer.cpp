@@ -2,9 +2,9 @@
 
 namespace RB::Render
 {
-	void PlayerInputRenderer::Init()
+	void PlayerInputRenderer::Init(Sprites* sprites)
 	{
-
+		_sprites = sprites;
 	}
 
 	void PlayerInputRenderer::OnUpdate()

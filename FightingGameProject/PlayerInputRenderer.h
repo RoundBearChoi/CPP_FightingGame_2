@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Sprites.h"
+
 namespace RB::Render
 {
 	class PlayerInputRenderer
@@ -8,8 +10,11 @@ namespace RB::Render
 		PlayerInputRenderer() = default;
 		~PlayerInputRenderer() = default;
 
-		void Init();
+		void Init(Sprites* sprites);
 		void OnUpdate();
 		void OnFixedUpdate();
+
+	private:
+		Sprites* _sprites = nullptr;
 	};
 }

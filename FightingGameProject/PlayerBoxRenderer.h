@@ -17,6 +17,6 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	private:
-		Sprites* _spriteObj = nullptr;
+		Sprites* _sprites = nullptr;
 	};
 }

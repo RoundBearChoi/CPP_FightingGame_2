@@ -26,11 +26,10 @@ namespace RB::Render
 		_sprites.LoadSprite("PNG files/InputIcons/weak_punch.png", RB::Sprites::SpriteEnum::input_weak_punch);
 		_sprites.LoadSprite("PNG files/InputIcons/weak_kick.png", RB::Sprites::SpriteEnum::input_weak_kick);
 
-
 		_playerBoxRenderer.Init(&_sprites);
 		_playerHBoxRenderer.Init(&_sprites);
 		_playerPositionRenderer.Init(&_sprites, &_lineRenderer);
-		_playerInputRenderer.Init();
+		_playerInputRenderer.Init(&_sprites);
 	}
 
 	void PlayerDebugController::OnUpdate()

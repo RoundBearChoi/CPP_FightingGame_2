@@ -151,6 +151,7 @@
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
     <ClCompile Include="FollowPlayers.cpp" />
+    <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="iAttackRegisterController.cpp" />

@@ -6,7 +6,7 @@ namespace RB::Input
 	class InputObj : public iInputObj
 	{
 	public:
-		InputObj(PlayerInput playerInput);
+		InputObj(PlayerInput playerInput, size_t gameFrame, size_t gameFrameLoop);
 		~InputObj() override;
 
 		void OnUpdate() override;
@@ -20,6 +20,8 @@ namespace RB::Input
 		size_t GetFixedUpdateCount() override;
 
 	private:
+		size_t _gameFrameCount = 0;
+		size_t _gameFrameLoopCount = 0;
 		size_t _fixedUpdateCount = 0;
 		PlayerInput _playerInput = PlayerInput::NONE;
 		bool _isReleased = false;

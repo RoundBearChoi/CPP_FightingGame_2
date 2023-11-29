@@ -2,9 +2,11 @@
 
 namespace RB::Input
 {
-	InputObj::InputObj(PlayerInput playerInput)
+	InputObj::InputObj(PlayerInput playerInput, size_t gameFrame, size_t gameFrameLoop)
 	{
 		_playerInput = playerInput;
+		_gameFrameCount = gameFrame;
+		_gameFrameLoopCount = gameFrameLoop;
 	}
 
 	InputObj::~InputObj()

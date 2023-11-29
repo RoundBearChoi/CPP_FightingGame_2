@@ -230,7 +230,7 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		iInputObj* newObj = new InputObj(input);
+		iInputObj* newObj = new InputObj(input, RB::gameFrameCount, RB::gameFrameLoopCount);
 
 		vec.push_back(newObj);
 

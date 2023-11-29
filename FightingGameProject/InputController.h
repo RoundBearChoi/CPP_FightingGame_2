@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "KeyBinding.h"
+#include "GameFrame.h"
 
 #include "iInputController.h"
 #include "iInputObj.h"

@@ -57,7 +57,7 @@ namespace RB::Engine
 			Clear(olc::Pixel{ 20, 20, 20});
 
 			_updater.OnUpdate();
-			AddGameFrame();
+			RB::AddGameFrame();
 
 			if (_timer.DoFixedUpdate())
 			{

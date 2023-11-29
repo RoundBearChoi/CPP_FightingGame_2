@@ -230,14 +230,18 @@ namespace RB::Input
 
 		for (int32_t i = vec.size() - 1; i >= 0; i--)
 		{
-			if (vec[i]->GetFixedUpdateCount() >= 60)
+			//only destroy when key is released
+			if (vec[i]->IsReleased())
 			{
-				delete vec[i];
-				vec[i] = nullptr;
+				if (vec[i]->GetFixedUpdateCount() >= 60)
+				{
+					delete vec[i];
+					vec[i] = nullptr;
 
-				std::vector<iInputObj*>::iterator it;
-				it = vec.begin();
-				vec.erase(it + i);
+					std::vector<iInputObj*>::iterator it;
+					it = vec.begin();
+					vec.erase(it + i);
+				}
 			}
 		}
 	}

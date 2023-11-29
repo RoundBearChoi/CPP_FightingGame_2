@@ -9,7 +9,7 @@ namespace RB::Render
 
 	void PlayerInputRenderer::OnUpdate()
 	{
-		_RenderPlayerInputIcons(RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1));
+		_RenderPlayerOneInputIcons();
 	}
 
 	void PlayerInputRenderer::OnFixedUpdate()
@@ -17,8 +17,10 @@ namespace RB::Render
 
 	}
 
-	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::iPlayer* player)
+	void PlayerInputRenderer::_RenderPlayerOneInputIcons()
 	{
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+
 		size_t count = RB::Input::INPUT_CONTROLLER->GetTotalInputCount(player->GetPlayerID());
 
 		for (size_t i = 0; i < count; i++)

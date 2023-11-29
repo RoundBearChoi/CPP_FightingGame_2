@@ -19,7 +19,7 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	private:
-		void _RenderPlayerInputIcons(RB::Players::iPlayer* player);
+		void _RenderPlayerOneInputIcons();
 		void _RenderIcon(RB::Sprites::SpriteEnum spriteEnum, olc::vi2d pos, olc::Pixel tint);
 		RB::Sprites::SpriteEnum _GetSpriteEnum(const RB::Input::PlayerInput& playerInput);
 

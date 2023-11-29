@@ -9,6 +9,16 @@ namespace RB::Sprites
 		x_white,
 		white_sq_tr80,
 
+		input_arrow_up,
+		input_arrow_down,
+		input_arrow_left,
+		input_arrow_right,
+		input_weak_punch,
+		input_weak_kick,
+		input_strong_punch,
+		input_strong_kick,
+		input_jump,
+
 		fighter_0_idle,
 		fighter_0_walk,
 		fighter_0_jump_up,

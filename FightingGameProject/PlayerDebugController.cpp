@@ -18,6 +18,7 @@ namespace RB::Render
 	{
 		_sprites.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
 		_sprites.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteEnum::white_sq_tr80);
+		//_sprites.LoadSprite("PNG files/InputBuffer/", RB::Sprites::SpriteEnum::input_arrow_up);
 
 		_playerBoxRenderer.Init(&_sprites);
 		_playerHBoxRenderer.Init(&_sprites);

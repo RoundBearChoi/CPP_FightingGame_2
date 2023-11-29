@@ -15,6 +15,8 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	private:
+		void _RenderIcon(RB::Sprites::SpriteEnum spriteEnum, olc::vi2d pos, olc::Pixel tint);
+
 		Sprites* _sprites = nullptr;
 	};
 }

@@ -18,7 +18,7 @@ namespace RB::Render
 
 	public:
 		void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum);
-		void RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType);
+		void RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useScreenSpace = false);
 		RB::Sprites::LoadedSprite* GetLoadedSprite(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:

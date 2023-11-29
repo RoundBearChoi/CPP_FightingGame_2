@@ -7,7 +7,7 @@ namespace RB::Render
 		_spriteLoader.LoadSprite(path, spriteEnum);
 	}
 
-	void Sprites::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType)
+	void Sprites::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useScreenSpace)
 	{
 		if (RB::Cam::CAM_CONTROLLER == nullptr)
 		{

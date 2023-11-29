@@ -50,18 +50,10 @@ namespace RB::PlayerStateComponents
 		bool moveLeftHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
 		bool moveRightHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
-		//olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		//olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
-
-		if (moveLeftHeld && moveRightHeld) //moveLeft.bPressed && moveRight.bPressed)
+		if (moveLeftHeld && moveRightHeld)
 		{
 			return true;
 		}
-
-		//if (moveLeft.bHeld && moveRight.bHeld)
-		//{
-		//	return true;
-		//}
 
 		return false;
 	}
@@ -77,9 +69,6 @@ namespace RB::PlayerStateComponents
 
 		bool moveLeftHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
 		bool moveRightHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
-
-		//olc::HWButton moveLeft = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		//olc::HWButton moveRight = RB::Input::INPUT_CONTROLLER->GetKeyBinding(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (player->OtherPlayerIsOnRightSide())
 		{

@@ -50,6 +50,8 @@ namespace RB::Input
 		_UpdateInputBuffer(RB::Players::PlayerID::PLAYER_1);
 		_UpdateInputBuffer(RB::Players::PlayerID::PLAYER_2);
 
+		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
+
 		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_1);
 		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_2);
 	}
@@ -252,9 +254,43 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_UpdateDiagBuffer(RB::Players::PlayerID playerID)
+	void InputController::_AddDiagBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput)
 	{
+		const std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
+		iInputObj* obj0 = nullptr;
+		iInputObj* obj1 = nullptr;
+
+		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		{
+			if (vec[i]->GetPlayerInputType() == input0)
+			{
+				obj0 = vec[i];
+			}
+			
+			if (vec[i]->GetPlayerInputType() == input1)
+			{
+				obj1 = vec[i];
+			}
+
+			if (obj0 != nullptr && obj1 != nullptr)
+			{
+				break;
+			}
+		}
+
+		if (obj0 != nullptr && obj1 != nullptr)
+		{
+			if (!obj0->IsReleased() && !obj1->IsReleased())
+			{
+				iInputObj* existing = GetInputObj_LIFO(playerID, resultInput);
+
+				if (existing == nullptr)
+				{
+					_AddNewInputBuffer(playerID, resultInput);
+				}
+			}
+		}
 	}
 
 	void InputController::_DestroyOldBuffers(RB::Players::PlayerID playerID)

@@ -9,7 +9,8 @@ namespace RB::Render
 
 	void PlayerInputRenderer::OnUpdate()
 	{
-		_RenderPlayerOneInputIcons();
+		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 50);
+		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 100);
 	}
 
 	void PlayerInputRenderer::OnFixedUpdate()
@@ -17,9 +18,9 @@ namespace RB::Render
 
 	}
 
-	void PlayerInputRenderer::_RenderPlayerOneInputIcons()
+	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int32_t yPos)
 	{
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 
 		size_t count = RB::Input::INPUT_CONTROLLER->GetTotalInputCount(player->GetPlayerID());
 
@@ -34,7 +35,7 @@ namespace RB::Render
 				tint = olc::GREY;
 			}
 
-			_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), 50), tint);
+			_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), yPos), tint);
 		}
 	}
 

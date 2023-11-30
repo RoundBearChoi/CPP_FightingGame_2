@@ -53,7 +53,7 @@ namespace RB::Render
 		{
 			return RB::Sprites::SpriteEnum::input_arrow_right;
 		}
-		else if (playerInput == RB::Input::PlayerInput::JUMP)
+		else if (playerInput == RB::Input::PlayerInput::MOVE_UP)
 		{
 			return RB::Sprites::SpriteEnum::input_arrow_up;
 		}

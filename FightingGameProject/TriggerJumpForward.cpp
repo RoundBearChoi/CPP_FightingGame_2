@@ -17,7 +17,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		bool jumpHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::JUMP);
+		bool jumpHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
 		bool forwardHeld = false;
 		
 		if (player->OtherPlayerIsOnRightSide())
@@ -33,7 +33,7 @@ namespace RB::PlayerStateComponents
 		{
 			if (forwardHeld)
 			{
-				RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::JUMP);
+				RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
 				jumpPress->SetUsedStatus(true);
 
 				RB::States::iStateMachine* machine = player->GetStateMachine();

@@ -8,6 +8,7 @@ namespace RB::Input
 
 		MOVE_LEFT,
 		MOVE_RIGHT,
+		MOVE_DOWN,
 		JUMP,
 
 		ATTACK_WEAK_PUNCH,

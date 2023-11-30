@@ -57,6 +57,10 @@ namespace RB::Render
 		{
 			return RB::Sprites::SpriteEnum::input_arrow_up;
 		}
+		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN)
+		{
+			return RB::Sprites::SpriteEnum::input_arrow_down;
+		}
 		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH)
 		{
 			return RB::Sprites::SpriteEnum::input_weak_punch;

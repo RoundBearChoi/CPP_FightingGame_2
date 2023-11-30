@@ -306,17 +306,18 @@ namespace RB::Input
 				//destroy both
 				if (obj0->IsPressedOnSameFrameAs(obj1))
 				{
-
+					_DestroyBuffer(playerID, obj0->GetPlayerInputType(), obj0->GetGameFrameCount(), obj0->GetGameFrameLoopCount());
+					_DestroyBuffer(playerID, obj1->GetPlayerInputType(), obj1->GetGameFrameCount(), obj1->GetGameFrameLoopCount());
 				}
-				//destroy just one
+				//destroy the latter
 				else if (obj0->IsPressedEarlierThan(obj1))
 				{
-
+					_DestroyBuffer(playerID, obj1->GetPlayerInputType(), obj1->GetGameFrameCount(), obj1->GetGameFrameLoopCount());
 				}
-				//destroy just one
+				//destroy the latter
 				else
 				{
-
+					_DestroyBuffer(playerID, obj0->GetPlayerInputType(), obj0->GetGameFrameCount(), obj0->GetGameFrameLoopCount());
 				}
 			}
 		}
@@ -366,6 +367,56 @@ namespace RB::Input
 					std::vector<iInputObj*>::iterator it;
 					it = vec.begin();
 					vec.erase(it + i);
+				}
+			}
+		}
+	}
+
+	/// <summary>
+	/// erase all that matches
+	/// </summary>
+	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, size_t gameFrame, size_t gameFrameLoop)
+	{
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		{
+			if (vec[i]->GetPlayerInputType() == playerInput)
+			{
+				if (vec[i]->GetGameFrameCount() == gameFrame && vec[i]->GetGameFrameLoopCount() == gameFrameLoop)
+				{
+					delete vec[i];
+					vec[i] = nullptr;
+
+					std::vector<iInputObj*>::iterator it;
+					it = vec.begin();
+					vec.erase(it + i);
+				}
+			}
+		}
+	}
+
+	/// <summary>
+	/// erase just one
+	/// </summary>
+	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, iInputObj* inputObj)
+	{
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		{
+			if (vec[i]->GetPlayerInputType() == inputObj->GetPlayerInputType())
+			{
+				if (vec[i]->IsPressedOnSameFrameAs(inputObj))
+				{
+					delete vec[i];
+					vec[i] = nullptr;
+
+					std::vector<iInputObj*>::iterator it;
+					it = vec.begin();
+					vec.erase(it + i);
+
+					return;
 				}
 			}
 		}

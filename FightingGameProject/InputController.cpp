@@ -325,26 +325,18 @@ namespace RB::Input
 
 	void InputController::_UpdateDiagBufferRelease(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput)
 	{
-		const std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+		olc::HWButton button0 = GetKeyBinding(playerID, input0);
+		olc::HWButton button1 = GetKeyBinding(playerID, input1);
 
-		iInputObj* objResult = GetInputObj_LIFO(playerID, resultInput);
-
-		if (objResult != nullptr)
+		if (!button0.bHeld || !button1.bHeld)
 		{
-			iInputObj* obj0 = GetInputObj_LIFO(playerID, input0);
-			iInputObj* obj1 = GetInputObj_LIFO(playerID, input1);
+			const std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-			if (obj0 != nullptr && obj1 != nullptr)
+			for (size_t i = 0; i < vec.size(); i++)
 			{
-				if (obj0->IsReleased() || obj1->IsReleased())
+				if (vec[i]->GetPlayerInputType() == resultInput)
 				{
-					for (size_t i = 0; i < vec.size(); i++)
-					{
-						if (vec[i]->GetPlayerInputType() == resultInput)
-						{
-							vec[i]->SetReleasedStatus(true);
-						}
-					}
+					vec[i]->SetReleasedStatus(true);
 				}
 			}
 		}

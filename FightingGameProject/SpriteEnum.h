@@ -13,8 +13,15 @@ namespace RB::Sprites
 		input_arrow_down,
 		input_arrow_left,
 		input_arrow_right,
+
+		input_arrow_up_left,
+		input_arrow_up_right,
+		input_arrow_down_left,
+		input_arrow_down_right,
+
 		input_weak_punch,
 		input_weak_kick,
+
 		input_strong_punch,
 		input_strong_kick,
 

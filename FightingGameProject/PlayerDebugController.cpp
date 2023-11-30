@@ -23,6 +23,12 @@ namespace RB::Render
 		_sprites.LoadSprite("PNG files/InputIcons/arrow_down.png", RB::Sprites::SpriteEnum::input_arrow_down);
 		_sprites.LoadSprite("PNG files/InputIcons/arrow_left.png", RB::Sprites::SpriteEnum::input_arrow_left);
 		_sprites.LoadSprite("PNG files/InputIcons/arrow_right.png", RB::Sprites::SpriteEnum::input_arrow_right);
+
+		_sprites.LoadSprite("PNG files/InputIcons/arrow_up_left.png", RB::Sprites::SpriteEnum::input_arrow_up_left);
+		_sprites.LoadSprite("PNG files/InputIcons/arrow_up_right.png", RB::Sprites::SpriteEnum::input_arrow_up_right);
+		_sprites.LoadSprite("PNG files/InputIcons/arrow_down_left.png", RB::Sprites::SpriteEnum::input_arrow_down_left);
+		_sprites.LoadSprite("PNG files/InputIcons/arrow_down_right.png", RB::Sprites::SpriteEnum::input_arrow_down_right);
+
 		_sprites.LoadSprite("PNG files/InputIcons/weak_punch.png", RB::Sprites::SpriteEnum::input_weak_punch);
 		_sprites.LoadSprite("PNG files/InputIcons/weak_kick.png", RB::Sprites::SpriteEnum::input_weak_kick);
 

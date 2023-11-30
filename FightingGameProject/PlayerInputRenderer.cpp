@@ -45,30 +45,18 @@ namespace RB::Render
 
 	RB::Sprites::SpriteEnum PlayerInputRenderer::_GetSpriteEnum(const RB::Input::PlayerInput& playerInput)
 	{
-		if (playerInput == RB::Input::PlayerInput::MOVE_LEFT)
-		{
-			return RB::Sprites::SpriteEnum::input_arrow_left;
-		}
-		else if (playerInput == RB::Input::PlayerInput::MOVE_RIGHT)
-		{
-			return RB::Sprites::SpriteEnum::input_arrow_right;
-		}
-		else if (playerInput == RB::Input::PlayerInput::MOVE_UP)
-		{
-			return RB::Sprites::SpriteEnum::input_arrow_up;
-		}
-		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN)
-		{
-			return RB::Sprites::SpriteEnum::input_arrow_down;
-		}
-		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH)
-		{
-			return RB::Sprites::SpriteEnum::input_weak_punch;
-		}
-		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_KICK)
-		{
-			return RB::Sprites::SpriteEnum::input_weak_kick;
-		}
+		if (playerInput == RB::Input::PlayerInput::MOVE_UP) { return RB::Sprites::SpriteEnum::input_arrow_up; }
+		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN) { return RB::Sprites::SpriteEnum::input_arrow_down; }
+		else if (playerInput == RB::Input::PlayerInput::MOVE_LEFT) { return RB::Sprites::SpriteEnum::input_arrow_left; }
+		else if (playerInput == RB::Input::PlayerInput::MOVE_RIGHT) { return RB::Sprites::SpriteEnum::input_arrow_right; }
+
+		else if (playerInput == RB::Input::PlayerInput::MOVE_UP_LEFT) { return RB::Sprites::SpriteEnum::input_arrow_up_left; }
+		else if (playerInput == RB::Input::PlayerInput::MOVE_UP_RIGHT) { return RB::Sprites::SpriteEnum::input_arrow_up_right; }
+		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN_LEFT) { return RB::Sprites::SpriteEnum::input_arrow_down_left; }
+		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN_RIGHT) { return RB::Sprites::SpriteEnum::input_arrow_down_right; }
+
+		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH) { return RB::Sprites::SpriteEnum::input_weak_punch; }
+		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_KICK) { return RB::Sprites::SpriteEnum::input_weak_kick; }
 
 		return RB::Sprites::SpriteEnum::NONE;
 	}

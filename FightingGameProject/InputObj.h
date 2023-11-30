@@ -18,6 +18,10 @@ namespace RB::Input
 		bool IsReleased() override;
 		bool IsUsed() override;
 		size_t GetFixedUpdateCount() override;
+		size_t GetGameFrameCount() override;
+		size_t GetGameFrameLoopCount() override;
+		bool IsPressedOnSameFrameAs(iInputObj* iObj) override;
+		bool IsPressedEarlierThan(iInputObj* iObj) override;
 
 	private:
 		size_t _gameFrameCount = 0;

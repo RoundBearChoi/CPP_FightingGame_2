@@ -53,4 +53,41 @@ namespace RB::Input
 	{
 		return _fixedUpdateCount;
 	}
+
+	size_t InputObj::GetGameFrameCount()
+	{
+		return _gameFrameCount;
+	}
+
+	size_t InputObj::GetGameFrameLoopCount()
+	{
+		return _gameFrameLoopCount;
+	}
+
+	bool InputObj::IsPressedOnSameFrameAs(iInputObj* iObj)
+	{
+		if (_gameFrameCount == iObj->GetGameFrameCount() && _gameFrameLoopCount == iObj->GetGameFrameLoopCount())
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	bool InputObj::IsPressedEarlierThan(iInputObj* iObj)
+	{
+		if (_gameFrameLoopCount == iObj->GetGameFrameLoopCount())
+		{
+			if (_gameFrameCount < iObj->GetGameFrameCount())
+			{
+				return true;
+			}
+		}
+		else if (_gameFrameLoopCount < iObj->GetGameFrameLoopCount())
+		{
+			return true;
+		}
+
+		return false;
+	}
 }

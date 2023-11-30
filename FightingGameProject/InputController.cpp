@@ -303,7 +303,21 @@ namespace RB::Input
 				}
 
 				//destroy existing straight direction buffers
-				
+				//destroy both
+				if (obj0->IsPressedOnSameFrameAs(obj1))
+				{
+
+				}
+				//destroy just one
+				else if (obj0->IsPressedEarlierThan(obj1))
+				{
+
+				}
+				//destroy just one
+				else
+				{
+
+				}
 			}
 		}
 	}

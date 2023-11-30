@@ -32,12 +32,16 @@ namespace RB::PlayerStateComponents
 		if (jumpHeld && !forwardHeld)
 		{
 			RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
-			jumpPress->SetUsedStatus(true);
 
-			RB::States::iStateMachine* machine = player->GetStateMachine();
-			machine->QueueNextState(new RB::PlayerStates::P0_JumpUp());
-		
-			return;
+			if (jumpPress != nullptr)
+			{
+				jumpPress->SetUsedStatus(true);
+
+				RB::States::iStateMachine* machine = player->GetStateMachine();
+				machine->QueueNextState(new RB::PlayerStates::P0_JumpUp());
+
+				return;
+			}
 		}
 	}
 }

@@ -33,6 +33,7 @@ namespace RB::Input
 		void _AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input);
 		void _UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input);
 		void _AddDiagBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);
+		void _UpdateDiagBufferRelease(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);
 		void _DestroyOldBuffers(RB::Players::PlayerID playerID);
 		void _ClearAllBuffers(RB::Players::PlayerID playerID);
 		std::vector<iInputObj*>& _GetInputObjs(RB::Players::PlayerID playerID);

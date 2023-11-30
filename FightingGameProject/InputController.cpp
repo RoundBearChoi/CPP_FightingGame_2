@@ -297,6 +297,13 @@ namespace RB::Input
 				{
 					_AddNewInputBuffer(playerID, resultInput);
 				}
+				else if (existing->IsReleased())
+				{
+					_AddNewInputBuffer(playerID, resultInput);
+				}
+
+				//destroy existing straight direction buffers
+				
 			}
 		}
 	}

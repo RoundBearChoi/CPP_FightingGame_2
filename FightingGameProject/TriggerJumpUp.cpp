@@ -17,19 +17,19 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		bool jumpHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
-		bool forwardHeld = false;
+		bool jumpUp = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
+		bool jumpForwardUp = false;
 
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			forwardHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+			jumpForwardUp = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 		}
 		else
 		{
-			forwardHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+			jumpForwardUp = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 		}
 		
-		if (jumpHeld && !forwardHeld)
+		if (jumpUp && !jumpForwardUp)
 		{
 			RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
 

@@ -194,9 +194,9 @@ namespace RB::Input
 
 	void InputController::_UpdateInputBuffer(RB::Players::PlayerID playerID)
 	{
-		for (size_t all = 0; all < _totalInputTypes; all++)
+		for (size_t i = 0; i < _totalInputTypes; i++)
 		{
-			PlayerInput input = (PlayerInput)all;
+			PlayerInput input = (PlayerInput)i;
 
 			olc::HWButton button = GetKeyBinding(playerID, input);
 
@@ -250,6 +250,11 @@ namespace RB::Input
 				vec[i]->SetReleasedStatus(true);
 			}
 		}
+	}
+
+	void InputController::_UpdateDiagBuffer(RB::Players::PlayerID playerID)
+	{
+
 	}
 
 	void InputController::_DestroyOldBuffers(RB::Players::PlayerID playerID)

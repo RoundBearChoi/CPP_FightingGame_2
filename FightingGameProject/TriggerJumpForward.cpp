@@ -17,33 +17,28 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		bool jumpHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
-		bool forwardHeld = false;
-		
+		bool jumpForward = false;
+		RB::Input::iInputObj* jumpForwardInputObj = nullptr;
+
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			forwardHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+			jumpForward = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForwardInputObj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 		}
 		else
 		{
-			forwardHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+			jumpForward = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForwardInputObj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 		}
 
-		if (jumpHeld)
+		if (jumpForward)
 		{
-			if (forwardHeld)
+			if (jumpForwardInputObj != nullptr)
 			{
-				RB::Input::iInputObj* jumpPress = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
+				jumpForwardInputObj->SetUsedStatus(true);
 
-				if (jumpPress != nullptr)
-				{
-					jumpPress->SetUsedStatus(true);
-
-					RB::States::iStateMachine* machine = player->GetStateMachine();
-					machine->QueueNextState(new RB::PlayerStates::P0_JumpForwardUp_0());
-
-					//std::cout << "jump forward" << std::endl;
-				}
+				RB::States::iStateMachine* machine = player->GetStateMachine();
+				machine->QueueNextState(new RB::PlayerStates::P0_JumpForwardUp_0());
 			}
 		}
 	}

@@ -35,6 +35,11 @@ namespace RB::Render
 				tint = olc::GREY;
 			}
 
+			if (inputObj->IsUsed())
+			{
+				tint = olc::YELLOW;
+			}
+
 			_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), yPos), tint);
 		}
 	}

@@ -22,8 +22,8 @@ namespace RB::Input
 		RB::Input::SpecialMoveType GetSpecialMove(RB::Players::PlayerID playerID) override;
 
 	private:
-		void _ClearAllSequences();
-		const std::vector<iSpecialMoveSequence*>& _GetSequence(RB::Players::PlayerID playerID);
+		void _ClearSequences(RB::Players::PlayerID playerID);
+		std::vector<iSpecialMoveSequence*>& _GetSequence(RB::Players::PlayerID playerID);
 
 		std::vector<iSpecialMoveSequence*> _vecP1_Sequences;
 		std::vector<iSpecialMoveSequence*> _vecP2_Sequences;

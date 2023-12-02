@@ -13,8 +13,6 @@ namespace RB::Input
 		virtual ~SpecialMoveSequenceBase() override;
 
 	public:
-		//virtual void Init(RB::Input::SpecialMoveType specialMoveType, RB::Input::PlayerInput* arr, size_t size) override;
-
 		virtual bool IsAMatch(RB::Players::PlayerID playerID) override;
 
 	protected:

@@ -159,6 +159,7 @@
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
+    <ClCompile Include="iSpecialMovesController.cpp" />
     <ClCompile Include="iVFXAnimationController.cpp" />
     <ClCompile Include="MoveDownOnFall.cpp" />
     <ClCompile Include="MoveForwardOnJump_0.cpp" />
@@ -194,6 +195,7 @@
     <ClCompile Include="PlayerInputRenderer.cpp" />
     <ClCompile Include="PlayerPositionRenderer.cpp" />
     <ClCompile Include="PlayerState.cpp" />
+    <ClCompile Include="SpecialMovesController.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
     <ClCompile Include="TriggerIdleOnFixedUpdateCount.cpp" />
@@ -267,6 +269,7 @@
     <ClInclude Include="iHitBoxDataController.h" />
     <ClInclude Include="iInputObj.h" />
     <ClInclude Include="InputObj.h" />
+    <ClInclude Include="iSpecialMovesController.h" />
     <ClInclude Include="iVFXAnimationController.h" />
     <ClInclude Include="MoveDownOnFall.h" />
     <ClInclude Include="MoveForwardOnJump_0.h" />
@@ -307,6 +310,7 @@
     <ClInclude Include="PlayerInputRenderer.h" />
     <ClInclude Include="PlayerPositionRenderer.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="SpecialMovesController.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
     <ClInclude Include="ToggleInitiallyFacingRight.h" />

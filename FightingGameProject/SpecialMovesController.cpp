@@ -18,7 +18,7 @@ namespace RB::Input
 
 	void SpecialMovesController::Init()
 	{
-		_vecSequences.push_back(new SpecialMoveSequence());
+		_vecSequences.push_back(new SpecialMoveSequenceBase());
 	}
 
 	void SpecialMovesController::OnUpdate()

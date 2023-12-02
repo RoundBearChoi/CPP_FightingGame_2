@@ -355,7 +355,7 @@
     <ClCompile Include="SpecialMovesController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
-    <ClCompile Include="SpecialMoveSequence.cpp">
+    <ClCompile Include="SpecialMoveSequenceBase.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
   </ItemGroup>
@@ -747,7 +747,7 @@
     <ClInclude Include="iSpecialMoveSequence.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="SpecialMoveSequence.h">
+    <ClInclude Include="SpecialMoveSequenceBase.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
     <ClInclude Include="SpecialMoveType.h">

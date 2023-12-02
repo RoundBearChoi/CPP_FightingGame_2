@@ -6,11 +6,11 @@
 
 namespace RB::Input
 {
-	class SpecialMoveSequence : public iSpecialMoveSequence
+	class SpecialMoveSequenceBase : public iSpecialMoveSequence
 	{
 	public:
-		SpecialMoveSequence() = default;
-		virtual ~SpecialMoveSequence() override;
+		SpecialMoveSequenceBase() = default;
+		virtual ~SpecialMoveSequenceBase() override;
 
 	public:
 		virtual void Init(RB::Input::SpecialMoveType specialMoveType, RB::Input::PlayerInput* arr, size_t size) override;

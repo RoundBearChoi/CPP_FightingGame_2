@@ -196,7 +196,7 @@
     <ClCompile Include="PlayerPositionRenderer.cpp" />
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="SpecialMovesController.cpp" />
-    <ClCompile Include="SpecialMoveSequence.cpp" />
+    <ClCompile Include="SpecialMoveSequenceBase.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
     <ClCompile Include="TriggerIdleOnFixedUpdateCount.cpp" />
@@ -313,7 +313,7 @@
     <ClInclude Include="PlayerPositionRenderer.h" />
     <ClInclude Include="PlayerState.h" />
     <ClInclude Include="SpecialMovesController.h" />
-    <ClInclude Include="SpecialMoveSequence.h" />
+    <ClInclude Include="SpecialMoveSequenceBase.h" />
     <ClInclude Include="SpecialMoveType.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />

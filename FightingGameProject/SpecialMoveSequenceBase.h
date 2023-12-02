@@ -13,7 +13,8 @@ namespace RB::Input
 		virtual ~SpecialMoveSequenceBase() override;
 
 	public:
-		virtual bool IsAMatch(RB::Players::PlayerID playerID) override;
+		virtual bool IsMatching(RB::Players::PlayerID playerID) override;
+		virtual RB::Input::SpecialMoveType GetSpecialMoveType() override;
 
 	protected:
 		std::vector<RB::Input::PlayerInput> _vecSequence;

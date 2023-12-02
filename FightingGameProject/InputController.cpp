@@ -256,7 +256,7 @@ namespace RB::Input
 
 		vec.push_back(newObj);
 
-		//std::cout << "adding player " << static_cast<int>(playerID) << " input: " << static_cast<int>(input) << std::endl;
+		_CheckSpecialMoves(playerID, input);
 	}
 
 	void InputController::_CheckSpecialMoves(RB::Players::PlayerID playerID, PlayerInput input)

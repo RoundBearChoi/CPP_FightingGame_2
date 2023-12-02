@@ -7,22 +7,17 @@ namespace RB::Input
 
 	}
 
-	//void SpecialMoveSequenceBase::Init(RB::Input::SpecialMoveType specialMoveType, RB::Input::PlayerInput* arr, size_t size)
-	//{
-	//	_specialMoveType = specialMoveType;
-	//
-	//	for (size_t i = 0; i < size; i++)
-	//	{
-	//		_vecSequence.push_back(arr[i]);
-	//	}
-	//}
-
-	bool SpecialMoveSequenceBase::IsAMatch(RB::Players::PlayerID playerID)
+	bool SpecialMoveSequenceBase::IsMatching(RB::Players::PlayerID playerID)
 	{
 	
 	
 	
 	
 		return false;
+	}
+
+	RB::Input::SpecialMoveType SpecialMoveSequenceBase::GetSpecialMoveType()
+	{
+		return _specialMoveType;
 	}
 }

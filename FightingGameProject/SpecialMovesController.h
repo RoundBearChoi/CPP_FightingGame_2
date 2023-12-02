@@ -23,7 +23,10 @@ namespace RB::Input
 
 	private:
 		void _ClearAllSequences();
+		const std::vector<iSpecialMoveSequence*>& _GetSequence(RB::Players::PlayerID playerID);
 
-		std::vector<iSpecialMoveSequence*> _vecSequences;
+		std::vector<iSpecialMoveSequence*> _vecP1_Sequences;
+		std::vector<iSpecialMoveSequence*> _vecP2_Sequences;
+		std::vector<iSpecialMoveSequence*> _vecNoSequences;
 	};
 }

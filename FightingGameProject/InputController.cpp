@@ -259,6 +259,9 @@ namespace RB::Input
 		_CheckSpecialMoves(playerID, input);
 	}
 
+	/// <summary>
+	/// Check every time a punch or kick is pressed
+	/// </summary>
 	void InputController::_CheckSpecialMoves(RB::Players::PlayerID playerID, PlayerInput input)
 	{
 		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK)

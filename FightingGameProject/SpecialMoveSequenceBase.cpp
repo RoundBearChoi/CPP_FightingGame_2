@@ -9,10 +9,6 @@ namespace RB::Input
 
 	bool SpecialMoveSequenceBase::IsMatching(RB::Players::PlayerID playerID)
 	{
-	
-	
-	
-	
 		return false;
 	}
 

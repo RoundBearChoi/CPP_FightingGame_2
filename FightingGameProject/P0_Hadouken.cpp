@@ -11,4 +11,9 @@ namespace RB::Input::Sequences
 			_vecSequence.push_back(vec[i]);
 		}
 	}
+
+	bool P0_Hadouken::IsMatching(RB::Players::PlayerID playerID)
+	{
+		return false;
+	}
 }

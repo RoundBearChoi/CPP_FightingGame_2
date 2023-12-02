@@ -56,6 +56,9 @@
     <Filter Include="Source Files\RB">
       <UniqueIdentifier>{5bfb9078-62fb-43c2-ac67-cf0a5a26fd3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Input\Sequences">
+      <UniqueIdentifier>{46bce2a1-6e1b-42f8-b5b7-b2d2b7bc4248}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -357,6 +360,9 @@
     </ClCompile>
     <ClCompile Include="SpecialMoveSequenceBase.cpp">
       <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_Hadouken.cpp">
+      <Filter>Source Files\Input\Sequences</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -752,6 +758,9 @@
     </ClInclude>
     <ClInclude Include="SpecialMoveType.h">
       <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Hadouken.h">
+      <Filter>Source Files\Input\Sequences</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

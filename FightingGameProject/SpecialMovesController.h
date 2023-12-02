@@ -5,7 +5,9 @@
 #include "iSpecialMovesController.h"
 #include "iSpecialMoveSequence.h"
 
-#include "SpecialMoveSequenceBase.h"
+//#include "SpecialMoveSequenceBase.h"
+
+#include "P0_Hadouken.h"
 
 namespace RB::Input
 {

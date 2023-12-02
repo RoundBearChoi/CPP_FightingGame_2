@@ -31,6 +31,11 @@ namespace RB::Input
 
 	}
 
+	SpecialMoveType SpecialMovesController::GetSpecialMove(RB::Players::PlayerID playerID)
+	{
+		return SpecialMoveType::NONE;
+	}
+
 	void SpecialMovesController::_ClearAllSequences()
 	{
 		for (int32_t i = _vecSequences.size() - 1; i >= 0; i--)

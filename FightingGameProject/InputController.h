@@ -7,6 +7,9 @@
 #include "iInputObj.h"
 #include "InputObj.h"
 
+#include "iSpecialMovesController.h"
+#include "SpecialMoveType.h"
+
 namespace RB::Input
 {
 	class InputController : public iInputController
@@ -31,6 +34,7 @@ namespace RB::Input
 	private:
 		void _UpdateInputBuffer(RB::Players::PlayerID playerID);
 		void _AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input);
+		void _CheckSpecialMoves(RB::Players::PlayerID playerID, PlayerInput input);
 		void _UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input);
 		void _AddDiagBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);
 		void _UpdateDiagBufferRelease(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);

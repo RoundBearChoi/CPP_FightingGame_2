@@ -1,6 +1,6 @@
 #pragma once
 
-#include "PlayerID.h";
+#include "PlayerID.h"
 #include "PlayerInput.h"
 #include "SpecialMoveType.h"
 

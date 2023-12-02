@@ -259,6 +259,14 @@ namespace RB::Input
 		//std::cout << "adding player " << static_cast<int>(playerID) << " input: " << static_cast<int>(input) << std::endl;
 	}
 
+	void InputController::_CheckSpecialMoves(RB::Players::PlayerID playerID, PlayerInput input)
+	{
+		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK)
+		{
+			RB::Input::SpecialMoveType specialMove = RB::Input::SPECIAL_MOVES_CONTROLLER->GetSpecialMove(playerID);
+		}
+	}
+
 	void InputController::_UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);

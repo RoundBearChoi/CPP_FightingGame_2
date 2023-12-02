@@ -19,6 +19,7 @@ namespace RB::Input
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+		RB::Input::SpecialMoveType GetSpecialMove(RB::Players::PlayerID playerID) override;
 
 	private:
 		void _ClearAllSequences();

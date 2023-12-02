@@ -11,6 +11,8 @@ namespace RB::Input
 
 	SpecialMovesController::~SpecialMovesController()
 	{
+		_ClearAllSequences();
+
 		SPECIAL_MOVES_CONTROLLER = nullptr;
 	}
 
@@ -27,5 +29,16 @@ namespace RB::Input
 	void SpecialMovesController::OnFixedUpdate()
 	{
 
+	}
+
+	void SpecialMovesController::_ClearAllSequences()
+	{
+		for (int32_t i = _vecSequences.size() - 1; i >= 0; i--)
+		{
+			delete _vecSequences[i];
+			_vecSequences[i] = nullptr;
+		}
+
+		_vecSequences.clear();
 	}
 }

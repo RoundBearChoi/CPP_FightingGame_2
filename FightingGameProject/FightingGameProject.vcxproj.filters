@@ -355,6 +355,9 @@
     <ClCompile Include="SpecialMovesController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
+    <ClCompile Include="SpecialMoveSequence.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -739,6 +742,12 @@
       <Filter>Source Files\Input</Filter>
     </ClInclude>
     <ClInclude Include="SpecialMovesController.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="iSpecialMoveSequence.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecialMoveSequence.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
   </ItemGroup>

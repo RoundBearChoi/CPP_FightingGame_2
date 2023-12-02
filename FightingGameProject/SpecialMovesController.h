@@ -1,6 +1,10 @@
 #pragma once
 
+#include <vector>
+
 #include "iSpecialMovesController.h"
+
+#include "iSpecialMoveSequence.h"
 
 namespace RB::Input
 {
@@ -14,5 +18,10 @@ namespace RB::Input
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		void _ClearAllSequences();
+
+		std::vector<iSpecialMoveSequence*> _vecSequences;
 	};
 }

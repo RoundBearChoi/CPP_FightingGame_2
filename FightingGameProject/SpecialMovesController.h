@@ -3,8 +3,9 @@
 #include <vector>
 
 #include "iSpecialMovesController.h"
-
 #include "iSpecialMoveSequence.h"
+
+#include "SpecialMoveSequence.h"
 
 namespace RB::Input
 {

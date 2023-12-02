@@ -750,5 +750,8 @@
     <ClInclude Include="SpecialMoveSequence.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
+    <ClInclude Include="SpecialMoveType.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

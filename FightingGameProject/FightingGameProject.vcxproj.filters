@@ -361,7 +361,7 @@
     <ClCompile Include="SpecialMoveSequenceBase.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
-    <ClCompile Include="P0_Hadouken.cpp">
+    <ClCompile Include="P0_Seq_Hadouken.cpp">
       <Filter>Source Files\Input\Sequences</Filter>
     </ClCompile>
   </ItemGroup>
@@ -759,7 +759,7 @@
     <ClInclude Include="SpecialMoveType.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="P0_Hadouken.h">
+    <ClInclude Include="P0_Seq_Hadouken.h">
       <Filter>Source Files\Input\Sequences</Filter>
     </ClInclude>
   </ItemGroup>

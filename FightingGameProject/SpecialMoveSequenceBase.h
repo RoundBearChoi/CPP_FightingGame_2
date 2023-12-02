@@ -17,6 +17,9 @@ namespace RB::Input
 		virtual RB::Input::SpecialMoveType GetSpecialMoveType() override;
 
 	protected:
+		void _SetSequence(SpecialMoveType specialMoveType, const std::vector<RB::Input::PlayerInput>& vec);
+		void _SetSequenceForRightSide(const std::vector<RB::Input::PlayerInput>& vec);
+
 		std::vector<RB::Input::PlayerInput> _vecSequence;
 		std::vector<RB::Input::PlayerInput> _vecSequenceFromRightSide;
 		SpecialMoveType _specialMoveType = RB::Input::SpecialMoveType::NONE;

@@ -8,6 +8,7 @@
 #include "BackgroundController.h"
 #include "SpriteDataController.h"
 #include "InputController.h"
+#include "SpecialMovesController.h"
 #include "CamController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"

@@ -7,6 +7,8 @@
 #include "iInputObj.h"
 #include "InputObj.h"
 
+#include "iPlayerController.h"
+
 #include "iSpecialMovesController.h"
 #include "SpecialMoveType.h"
 

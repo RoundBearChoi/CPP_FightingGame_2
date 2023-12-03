@@ -497,7 +497,11 @@ namespace RB::Input
 
 		if (!vec.empty())
 		{
+			RB::States::iState* state = RB::Input::SPECIAL_MOVES_CONTROLLER->GetState(vec[0]);
 
+			RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
+
+			player->GetStateMachine()->OverrideNextState(state);
 
 			vec.erase(vec.begin());
 

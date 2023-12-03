@@ -7,9 +7,4 @@ namespace RB::Input::Sequences
 		_SetSequence(specialMoveType, vec);
 		_SetSequenceForRightSide(vec);
 	}
-
-	bool P0_Seq_Hadouken::IsMatching(RB::Players::PlayerID playerID)
-	{
-		return false;
-	}
 }

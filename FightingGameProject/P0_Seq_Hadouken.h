@@ -8,8 +8,5 @@ namespace RB::Input::Sequences
 	{
 	public:
 		P0_Seq_Hadouken(RB::Input::SpecialMoveType specialMoveType, const std::vector<PlayerInput>& vec);
-
-	public:
-		bool IsMatching(RB::Players::PlayerID playerID) override;
 	};
 }

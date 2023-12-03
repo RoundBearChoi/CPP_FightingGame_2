@@ -4,6 +4,9 @@
 
 #include "iSpecialMoveSequence.h"
 
+#include "iInputController.h"
+#include "iPlayerController.h"
+
 namespace RB::Input
 {
 	class SpecialMoveSequenceBase : public iSpecialMoveSequence
@@ -19,6 +22,7 @@ namespace RB::Input
 	protected:
 		void _SetSequence(SpecialMoveType specialMoveType, const std::vector<RB::Input::PlayerInput>& vec);
 		void _SetSequenceForRightSide(const std::vector<RB::Input::PlayerInput>& vec);
+		const std::vector<RB::Input::PlayerInput>& _GetSequence(bool playerIsFacingRight);
 
 		std::vector<RB::Input::PlayerInput> _vecSequence;
 		std::vector<RB::Input::PlayerInput> _vecSequenceFromRightSide;

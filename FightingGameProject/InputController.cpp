@@ -492,6 +492,8 @@ namespace RB::Input
 
 		if (!vec.empty())
 		{
+
+
 			vec.erase(vec.begin());
 		}
 	}

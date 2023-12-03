@@ -20,7 +20,22 @@ namespace RB::Render
 
 	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int32_t yPos)
 	{
+		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		{
+			return;
+		}
+
+		if (RB::Input::INPUT_CONTROLLER == nullptr)
+		{
+			return;
+		}
+
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
+
+		if (player == nullptr)
+		{
+			return;
+		}
 
 		size_t count = RB::Input::INPUT_CONTROLLER->GetTotalInputCount(player->GetPlayerID());
 

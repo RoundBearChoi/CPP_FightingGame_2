@@ -267,6 +267,11 @@ namespace RB::Input
 	/// </summary>
 	void InputController::_OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input)
 	{
+		if (RB::Input::SPECIAL_MOVES_CONTROLLER == nullptr)
+		{
+			return;
+		}
+
 		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK)
 		{
 			RB::Input::SpecialMoveType specialMove = RB::Input::SPECIAL_MOVES_CONTROLLER->GetSpecialMove(playerID);

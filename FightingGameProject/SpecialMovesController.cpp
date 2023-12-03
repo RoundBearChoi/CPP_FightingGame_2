@@ -49,6 +49,19 @@ namespace RB::Input
 		return SpecialMoveType::NONE;
 	}
 
+	/// <summary>
+	/// make sure to delete state after use
+	/// </summary>
+	RB::States::iState* SpecialMovesController::GetState(RB::Input::SpecialMoveType specialMoveType)
+	{
+		if (specialMoveType == RB::Input::SpecialMoveType::P0_HADOUKEN)
+		{
+
+		}
+
+		return nullptr;
+	}
+
 	void SpecialMovesController::_ClearSequences(RB::Players::PlayerID playerID)
 	{
 		std::vector<iSpecialMoveSequence*>& vec = _GetSequence(playerID);

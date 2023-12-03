@@ -2,6 +2,7 @@
 #include "ControllerBase.h"
 #include "SpecialMoveType.h"
 #include "PlayerID.h"
+#include "iState.h"
 
 namespace RB::Input
 {
@@ -12,6 +13,7 @@ namespace RB::Input
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 		virtual RB::Input::SpecialMoveType GetSpecialMove(RB::Players::PlayerID playerID) = 0;
+		virtual RB::States::iState* GetState(RB::Input::SpecialMoveType specialMoveType) = 0;
 	};
 
 	extern iSpecialMovesController* SPECIAL_MOVES_CONTROLLER;

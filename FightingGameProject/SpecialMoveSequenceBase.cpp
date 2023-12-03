@@ -22,8 +22,13 @@ namespace RB::Input
 		size_t seqIndex = 0;
 		std::vector<bool> vecCorrect;
 		std::vector<RB::Input::iInputObj*> vecCorrectObjs;
-
 		RB::Players::iPlayer* p = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
+
+		if (p->IsWincing())
+		{
+			return false;
+		}
+
 		const std::vector<RB::Input::PlayerInput>& vec = _GetSequence(p->IsFacingRight());
 
 		for (size_t i = 0; i < RB::Input::INPUT_CONTROLLER->GetTotalInputCount(playerID); i++)

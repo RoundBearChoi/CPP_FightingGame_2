@@ -10,7 +10,6 @@ namespace RB::PlayerStates
 	class P0_Wince : public RB::PlayerStates::PlayerState
 	{
 	public:
-		P0_Wince();
 		~P0_Wince() override;
 
 	public:

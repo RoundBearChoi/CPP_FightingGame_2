@@ -38,9 +38,4 @@ namespace RB::PlayerStates
 
 		return _ownerPlayer->GetPlayerID();
 	}
-
-	bool PlayerState::IsWincing()
-	{
-		return _isWincing;
-	}
 }

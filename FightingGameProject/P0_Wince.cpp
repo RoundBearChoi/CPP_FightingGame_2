@@ -2,11 +2,6 @@
 
 namespace RB::PlayerStates
 {
-	P0_Wince::P0_Wince()
-	{
-		_ownerPlayer->SetWincingStatus(true);
-	}
-
 	P0_Wince::~P0_Wince()
 	{
 		_ownerPlayer->SetWincingStatus(false);
@@ -17,6 +12,8 @@ namespace RB::PlayerStates
 		ActivePlayerStates::AddPlayerState(this);
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_wince);
+
+		_ownerPlayer->SetWincingStatus(true);
 
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, false, 2)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(1, true, 2)); //forward, rest

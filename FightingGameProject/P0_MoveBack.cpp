@@ -8,6 +8,8 @@ namespace RB::PlayerStates
 
 		StandardInit(RB::Sprites::SpriteEnum::NONE);
 
+		_ownerPlayer->FixDirDuringState(false);
+
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack());
 
@@ -16,6 +18,8 @@ namespace RB::PlayerStates
 
 	void P0_MoveBack::OnExit()
 	{
+		_ownerPlayer->FixDirDuringState(true);
+
 		ExitStateComponents();
 		ActivePlayerStates::RemovePlayerState(this);
 	}

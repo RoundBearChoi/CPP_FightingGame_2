@@ -13,6 +13,7 @@ namespace RB::PlayerStates
 		//AddStateComponent(new RB::PlayerStateComponents::TriggerJab(new P0_Jab()));
 		//AddStateComponent(new RB::PlayerStateComponents::TriggerMoveForward());
 		//AddStateComponent(new RB::PlayerStateComponents::TriggerMoveBack());
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnAnimationEnd());
 
 		EnterStateComponents();

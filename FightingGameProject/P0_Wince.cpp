@@ -2,11 +2,6 @@
 
 namespace RB::PlayerStates
 {
-	P0_Wince::~P0_Wince()
-	{
-		_ownerPlayer->SetWincingStatus(false);
-	}
-
 	void P0_Wince::OnEnter()
 	{
 		ActivePlayerStates::AddPlayerState(this);
@@ -15,6 +10,7 @@ namespace RB::PlayerStates
 
 		_ownerPlayer->SetWincingStatus(true);
 
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, false, 2)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(1, true, 2)); //forward, rest
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(4, true, 3)); //forward
@@ -27,6 +23,8 @@ namespace RB::PlayerStates
 
 	void P0_Wince::OnExit()
 	{
+		_ownerPlayer->SetWincingStatus(false);
+
 		ExitStateComponents();
 		ActivePlayerStates::RemovePlayerState(this);
 	}

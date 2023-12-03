@@ -8,6 +8,7 @@ namespace RB::PlayerStates
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jab);
 
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());
 		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnAnimationEnd());
 

@@ -41,6 +41,7 @@ namespace RB::Players
 		bool ManualAnimationUpdate() override;
 		void SetWincingStatus(bool wincing) override;
 		bool IsWincing() override;
+		void FixDirDuringState(bool fix) override;
 
 	public:
 		olc::vi2d GetPlayerBox() override;
@@ -55,5 +56,6 @@ namespace RB::Players
 		bool _manualAnimationUpdate = false;
 		bool _initiallyFacingRight = false;
 		bool _isWincing = false;
+		bool _dirIsFixedDuringState = false;
 	};
 }

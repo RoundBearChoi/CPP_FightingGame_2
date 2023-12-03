@@ -68,7 +68,8 @@ namespace RB::Players
 
 	bool Player::IsFacingRight()
 	{
-		if (_position.y < -0.1f)
+		if (_dirIsFixedDuringState)
+		//if (_position.y < -0.1f)
 		{
 			return _initiallyFacingRight;
 		}
@@ -153,6 +154,11 @@ namespace RB::Players
 	bool Player::IsWincing()
 	{
 		return _isWincing;
+	}
+
+	void Player::FixDirDuringState(bool fix)
+	{
+		_dirIsFixedDuringState = fix;
 	}
 
 	olc::vi2d Player::GetPlayerBox()

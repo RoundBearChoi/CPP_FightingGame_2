@@ -30,11 +30,14 @@ namespace RB::Input
 		{
 			RB::Input::iInputObj* obj = RB::Input::INPUT_CONTROLLER->GetInputByIndex(playerID, i);
 
-			if (obj->GetPlayerInputType() == vec[seqIndex])
+			if (!obj->IsUsed())
 			{
-				vecCorrect.push_back(true);
-				vecCorrectObjs.push_back(obj);
-				seqIndex++;
+				if (obj->GetPlayerInputType() == vec[seqIndex])
+				{
+					vecCorrect.push_back(true);
+					vecCorrectObjs.push_back(obj);
+					seqIndex++;
+				}
 			}
 		}
 

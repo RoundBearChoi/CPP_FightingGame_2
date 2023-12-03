@@ -39,18 +39,21 @@ namespace RB::Players
 		void SetPosition(olc::vi2d pos) override;
 		void SetManualAnimationUpdate(bool manual) override;
 		bool ManualAnimationUpdate() override;
+		void SetWincingStatus(bool wincing) override;
+		bool IsWincing() override;
 
 	public:
 		olc::vi2d GetPlayerBox() override;
 		RB::Collisions::AABB& UpdateAABBOnPlayerPos() override;
 		bool IsCollidingAgainstOtherPlayer() override;
 
-	private:
+	protected:
 		PlayerID _playerID = PlayerID::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;
 		olc::vi2d _position = { 0, 0 };
 		bool _manualAnimationUpdate = false;
 		bool _initiallyFacingRight = false;
+		bool _isWincing = false;
 	};
 }

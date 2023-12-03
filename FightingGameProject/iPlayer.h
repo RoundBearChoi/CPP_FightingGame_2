@@ -36,6 +36,8 @@ namespace RB::Players
 		virtual void SetPosition(olc::vi2d pos) = 0;
 		virtual void SetManualAnimationUpdate(bool manual) = 0;
 		virtual bool ManualAnimationUpdate() = 0;
+		virtual void SetWincingStatus(bool wincing) = 0;
+		virtual bool IsWincing() = 0;
 
 	public:
 		virtual olc::vi2d GetPlayerBox() = 0;

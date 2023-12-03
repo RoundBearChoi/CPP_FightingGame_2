@@ -145,6 +145,16 @@ namespace RB::Players
 		return _manualAnimationUpdate;
 	}
 
+	void Player::SetWincingStatus(bool wincing)
+	{
+		_isWincing = wincing;
+	}
+
+	bool Player::IsWincing()
+	{
+		return _isWincing;
+	}
+
 	olc::vi2d Player::GetPlayerBox()
 	{
 		return _playerCollider.GetPlayerBox();

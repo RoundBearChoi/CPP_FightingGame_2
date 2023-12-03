@@ -2,6 +2,11 @@
 
 namespace RB::PlayerStates
 {
+	P0_Wince::P0_Wince()
+	{
+		_isWincing = true;
+	}
+
 	void P0_Wince::OnEnter()
 	{
 		ActivePlayerStates::AddPlayerState(this);

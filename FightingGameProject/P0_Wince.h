@@ -10,7 +10,7 @@ namespace RB::PlayerStates
 	class P0_Wince : public RB::PlayerStates::PlayerState
 	{
 	public:
-		P0_Wince() = default;
+		P0_Wince();
 
 	public:
 		void OnEnter() override;

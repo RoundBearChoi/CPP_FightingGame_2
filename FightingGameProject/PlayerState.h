@@ -14,9 +14,11 @@ namespace RB::PlayerStates
 		void StandardInit(RB::Sprites::SpriteEnum spriteEnum);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
 		RB::Players::PlayerID GetPlayerID();
+		bool IsWincing();
 
 	protected:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
+		bool _isWincing = false;
 	};
 }

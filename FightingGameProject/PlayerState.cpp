@@ -19,6 +19,11 @@ namespace RB::PlayerStates
 		_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
+	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
+	{
+		return _spriteEnum;
+	}
+
 	RB::Players::PlayerID PlayerState::GetPlayerID()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr)
@@ -34,8 +39,8 @@ namespace RB::PlayerStates
 		return _ownerPlayer->GetPlayerID();
 	}
 
-	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
+	bool PlayerState::IsWincing()
 	{
-		return _spriteEnum;
+		return _isWincing;
 	}
 }

@@ -43,11 +43,15 @@ namespace RB::Input
 		void _DestroyBuffer(RB::Players::PlayerID playerID, iInputObj* inputObj);
 		void _ClearAllBuffers(RB::Players::PlayerID playerID);
 		std::vector<iInputObj*>& _GetInputObjs(RB::Players::PlayerID playerID);
+		std::vector<SpecialMoveType>& _GetSpecialMoves(RB::Players::PlayerID playerID);
 
 		std::vector<KeyBinding> _vecKeyBindings;
-		std::vector<iInputObj*> _vecNone;
 		std::vector<iInputObj*> _vecP1_InputObjs;
 		std::vector<iInputObj*> _vecP2_InputObjs;
+		std::vector<iInputObj*> _vecNone_InputObjs;
 		size_t _totalInputTypes = 0;
+		std::vector<SpecialMoveType> _vecP1_SpecialMoves;
+		std::vector<SpecialMoveType> _vecP2_SpecialMoves;
+		std::vector<SpecialMoveType> _vecNone_SpecialMoves;
 	};
 }

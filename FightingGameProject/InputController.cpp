@@ -268,9 +268,11 @@ namespace RB::Input
 		{
 			RB::Input::SpecialMoveType specialMove = RB::Input::SPECIAL_MOVES_CONTROLLER->GetSpecialMove(playerID);
 
-			if (specialMove != RB::Input::SpecialMoveType::NONE)
+			if (specialMove != SpecialMoveType::NONE)
 			{
-				int g = 0;
+				std::vector<SpecialMoveType>& vec = _GetSpecialMoves(playerID);
+
+				vec.push_back(specialMove);
 			}
 		}
 	}
@@ -464,6 +466,20 @@ namespace RB::Input
 			return _vecP2_InputObjs;
 		}
 
-		return _vecNone;
+		return _vecNone_InputObjs;
+	}
+
+	std::vector<SpecialMoveType>& InputController::_GetSpecialMoves(RB::Players::PlayerID playerID)
+	{
+		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		{
+			return _vecP1_SpecialMoves;
+		}
+		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		{
+			return _vecP2_SpecialMoves;
+		}
+
+		return _vecNone_SpecialMoves;
 	}
 }

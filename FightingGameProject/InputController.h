@@ -44,6 +44,7 @@ namespace RB::Input
 		void _ClearAllBuffers(RB::Players::PlayerID playerID);
 		std::vector<iInputObj*>& _GetInputObjs(RB::Players::PlayerID playerID);
 		std::vector<SpecialMoveType>& _GetSpecialMoves(RB::Players::PlayerID playerID);
+		void _TriggerSpecialMove(RB::Players::PlayerID playerID);
 
 		std::vector<KeyBinding> _vecKeyBindings;
 		std::vector<iInputObj*> _vecP1_InputObjs;

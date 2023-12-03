@@ -76,6 +76,9 @@ namespace RB::Input
 
 	void InputController::OnFixedUpdate()
 	{
+		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_1);
+		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_2);
+
 		for (size_t i = 0; i < _vecP1_InputObjs.size(); i++)
 		{
 			_vecP1_InputObjs[i]->OnFixedUpdate();
@@ -481,5 +484,15 @@ namespace RB::Input
 		}
 
 		return _vecNone_SpecialMoves;
+	}
+
+	void InputController::_TriggerSpecialMove(RB::Players::PlayerID playerID)
+	{
+		std::vector<SpecialMoveType>& vec = _GetSpecialMoves(playerID);
+
+		if (!vec.empty())
+		{
+			vec.erase(vec.begin());
+		}
 	}
 }

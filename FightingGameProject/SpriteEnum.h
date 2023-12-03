@@ -34,6 +34,8 @@ namespace RB::Sprites
 		fighter_0_jab,
 		fighter_0_wince,
 
+		fighter_0_hadouken,
+
 		background_1,
 		background_2,
 		background_3,

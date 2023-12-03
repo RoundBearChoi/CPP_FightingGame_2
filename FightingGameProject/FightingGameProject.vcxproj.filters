@@ -364,6 +364,9 @@
     <ClCompile Include="P0_Seq_Hadouken.cpp">
       <Filter>Source Files\Input\Sequences</Filter>
     </ClCompile>
+    <ClCompile Include="P0_Hadouken.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -761,6 +764,9 @@
     </ClInclude>
     <ClInclude Include="P0_Seq_Hadouken.h">
       <Filter>Source Files\Input\Sequences</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Hadouken.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

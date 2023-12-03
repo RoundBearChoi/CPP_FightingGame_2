@@ -19,9 +19,9 @@ namespace RB::Input
 			return false;
 		}
 
-		//size_t inputCount = ;
 		size_t seqIndex = 0;
-		std::vector<bool> vecCorrectInput;
+		std::vector<bool> vecCorrect;
+		std::vector<RB::Input::iInputObj*> vecCorrectObjs;
 
 		RB::Players::iPlayer* p = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 		const std::vector<RB::Input::PlayerInput>& vec = _GetSequence(p->IsFacingRight());
@@ -32,13 +32,19 @@ namespace RB::Input
 
 			if (obj->GetPlayerInputType() == vec[seqIndex])
 			{
-				vecCorrectInput.push_back(true);
+				vecCorrect.push_back(true);
+				vecCorrectObjs.push_back(obj);
 				seqIndex++;
 			}
 		}
 
-		if (vecCorrectInput.size() == vec.size())
+		if (vecCorrect.size() == vec.size())
 		{
+			for (size_t i = 0; i < vecCorrectObjs.size(); i++)
+			{
+				vecCorrectObjs[i]->SetUsedStatus(true);
+			}
+
 			return true;
 		}
 

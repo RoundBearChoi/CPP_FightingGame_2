@@ -13,6 +13,7 @@ namespace RB::PlayerStates
 		//AddStateComponent(new RB::PlayerStateComponents::TriggerJab(new P0_Jab()));
 		//AddStateComponent(new RB::PlayerStateComponents::TriggerMoveForward());
 		//AddStateComponent(new RB::PlayerStateComponents::TriggerMoveBack());
+		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnAnimationEnd());
 
 		EnterStateComponents();
 	}
@@ -25,11 +26,11 @@ namespace RB::PlayerStates
 
 	void P0_Hadouken::OnUpdate()
 	{
-
+		UpdateStateComponents();
 	}
 
 	void P0_Hadouken::OnFixedUpdate()
 	{
-
+		FixedUpdateStateComponents();
 	}
 }

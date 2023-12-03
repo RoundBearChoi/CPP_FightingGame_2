@@ -2,6 +2,8 @@
 #include "PlayerState.h"
 #include "ActivePlayerStates.h"
 
+#include "TriggerIdleOnAnimationEnd.h"
+
 namespace RB::PlayerStates
 {
 	class P0_Hadouken : public RB::PlayerStates::PlayerState

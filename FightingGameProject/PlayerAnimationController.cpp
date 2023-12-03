@@ -27,6 +27,7 @@ namespace RB::Render
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::fighter_0_fall);
 		_ani.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::fighter_0_jab);
 		_ani.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
+		_ani.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
 		//animations (requires loades sprites first)
 		AnimationSpecs idleSpecs;
@@ -118,6 +119,17 @@ namespace RB::Render
 		winceSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
 
 		_ani.LoadAnimation(winceSpecs, RB::Sprites::SpriteEnum::fighter_0_wince);
+
+		AnimationSpecs hadoukenSpecs;
+		hadoukenSpecs.mX_TileCount = 13;
+		hadoukenSpecs.mY_TileCount = 1;
+		hadoukenSpecs.mTotalSprites = 13;
+		hadoukenSpecs.mSkipFixedUpdates = 2;
+		hadoukenSpecs.mRenderSize = olc::vf2d{ 137.0f, 137.0f };
+		hadoukenSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		hadoukenSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_hadouken;
+
+		_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
 	}
 
 	void PlayerAnimationController::OnUpdate()

@@ -128,6 +128,7 @@ namespace RB::Render
 		hadoukenSpecs.mRenderSize = olc::vf2d{ 137.0f, 137.0f };
 		hadoukenSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
 		hadoukenSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_hadouken;
+		hadoukenSpecs.mPlayOnce = true;
 
 		_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
 	}

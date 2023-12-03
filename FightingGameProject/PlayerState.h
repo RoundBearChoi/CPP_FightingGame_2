@@ -19,6 +19,5 @@ namespace RB::PlayerStates
 	protected:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		bool _isWincing = false;
 	};
 }

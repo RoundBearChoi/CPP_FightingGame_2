@@ -4,7 +4,12 @@ namespace RB::PlayerStates
 {
 	P0_Wince::P0_Wince()
 	{
-		_isWincing = true;
+		_ownerPlayer->SetWincingStatus(true);
+	}
+
+	P0_Wince::~P0_Wince()
+	{
+		_ownerPlayer->SetWincingStatus(false);
 	}
 
 	void P0_Wince::OnEnter()

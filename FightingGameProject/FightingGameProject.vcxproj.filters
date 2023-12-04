@@ -64,9 +64,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files\RB</Filter>
     </ClCompile>
-    <ClCompile Include="ActiveControllers.cpp">
-      <Filter>Source Files\Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerController.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
@@ -374,9 +371,6 @@
     </ClInclude>
     <ClInclude Include="olcPixelGameEngine.h">
       <Filter>Source Files\RB</Filter>
-    </ClInclude>
-    <ClInclude Include="ActiveControllers.h">
-      <Filter>Source Files\Controllers</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
       <Filter>Source Files\Players</Filter>

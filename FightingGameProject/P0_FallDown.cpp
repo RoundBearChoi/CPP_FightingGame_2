@@ -4,7 +4,7 @@ namespace RB::PlayerStates
 {
 	void P0_FallDown::OnEnter()
 	{
-		ActivePlayerStates::AddPlayerState(this);
+		//ActivePlayerStates::AddPlayerState(this);
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_fall);
 
@@ -16,7 +16,7 @@ namespace RB::PlayerStates
 
 	void P0_FallDown::OnExit()
 	{
-		ActivePlayerStates::RemovePlayerState(this);
+		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_FallDown::OnUpdate()

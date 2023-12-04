@@ -2,13 +2,15 @@
 #include "Sprites.h"
 #include "AABB.h"
 
-#include "ActivePlayerStates.h"
+//#include "ActivePlayerStates.h"
 #include "HBoxType.h"
 
 #include "iHurtBoxDataController.h"
 #include "iHitBoxDataController.h"
 #include "iPlayerAnimationController.h"
 #include "iPlayerController.h"
+
+#include "PlayerState.h"
 
 namespace RB::Render
 {

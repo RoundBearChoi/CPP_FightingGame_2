@@ -4,7 +4,7 @@ namespace RB::PlayerStates
 {
 	void P0_JumpForwardUp_0::OnEnter()
 	{
-		ActivePlayerStates::AddPlayerState(this);
+		//ActivePlayerStates::AddPlayerState(this);
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_0);
 
@@ -18,7 +18,7 @@ namespace RB::PlayerStates
 	void P0_JumpForwardUp_0::OnExit()
 	{
 		ExitStateComponents();
-		ActivePlayerStates::RemovePlayerState(this);
+		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_JumpForwardUp_0::OnUpdate()

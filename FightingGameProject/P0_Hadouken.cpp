@@ -4,7 +4,7 @@ namespace RB::PlayerStates
 {
 	void P0_Hadouken::OnEnter()
 	{
-		ActivePlayerStates::AddPlayerState(this);
+		//ActivePlayerStates::AddPlayerState(this);
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
@@ -17,7 +17,7 @@ namespace RB::PlayerStates
 	void P0_Hadouken::OnExit()
 	{
 		ExitStateComponents();
-		ActivePlayerStates::RemovePlayerState(this);
+		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_Hadouken::OnUpdate()

@@ -116,7 +116,7 @@ namespace RB::HBox
 	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()
 	{
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(0);
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(player->GetPlayerID());
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)
 		{

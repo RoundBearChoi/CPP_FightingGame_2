@@ -39,7 +39,7 @@ namespace RB::HBox
 
 	RB::HBox::HBoxDataList* HBoxEditController::GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{
@@ -80,7 +80,7 @@ namespace RB::HBox
 
 	RB::HBox::HBoxData* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
 	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{

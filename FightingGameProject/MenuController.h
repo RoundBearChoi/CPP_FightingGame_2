@@ -3,7 +3,7 @@
 #include <cstdint>
 #include "olcPixelGameEngine.h"
 
-#include "ActivePlayerStates.h"
+//#include "ActivePlayerStates.h"
 
 #include "iPlayerController.h"
 #include "iMenuController.h"
@@ -12,6 +12,8 @@
 #include "iHBoxEditController.h"
 #include "iHurtBoxDataController.h"
 #include "iHitBoxDataController.h"
+
+#include "PlayerState.h"
 
 namespace RB::HBox
 {

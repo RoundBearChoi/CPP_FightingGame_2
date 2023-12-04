@@ -5,7 +5,7 @@ namespace RB::PlayerStates
 {
 	void P0_Start::OnEnter()
 	{
-		ActivePlayerStates::AddPlayerState(this);
+		//ActivePlayerStates::AddPlayerState(this);
 
 		// no sprite
 
@@ -15,7 +15,7 @@ namespace RB::PlayerStates
 
 	void P0_Start::OnExit()
 	{
-		ActivePlayerStates::RemovePlayerState(this);
+		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_Start::OnUpdate()

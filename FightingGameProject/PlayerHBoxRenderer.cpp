@@ -35,7 +35,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::ActivePlayerStates::GetPlayerState(playerID);
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{

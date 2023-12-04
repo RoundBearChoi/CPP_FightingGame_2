@@ -4,7 +4,7 @@ namespace RB::PlayerStates
 {
 	void P0_Wince::OnEnter()
 	{
-		ActivePlayerStates::AddPlayerState(this);
+		//ActivePlayerStates::AddPlayerState(this);
 
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_wince);
 
@@ -26,7 +26,7 @@ namespace RB::PlayerStates
 		_ownerPlayer->SetWincingStatus(false);
 
 		ExitStateComponents();
-		ActivePlayerStates::RemovePlayerState(this);
+		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_Wince::OnUpdate()

@@ -18,8 +18,8 @@ namespace RB::HBox
 	class MenuController : public iMenuController
 	{
 	public:
-		MenuController();
-		~MenuController() override;
+		MenuController() = default;
+		~MenuController() override {};
 
 		void Init() override;
 		void OnUpdate() override;

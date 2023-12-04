@@ -2,16 +2,6 @@
 
 namespace RB::HBox
 {
-	MenuController::MenuController()
-	{
-		MENU_CONTROLLER = this;
-	}
-
-	MenuController::~MenuController()
-	{
-		MENU_CONTROLLER = nullptr;
-	}
-
 	void MenuController::Init()
 	{
 

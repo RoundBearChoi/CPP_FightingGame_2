@@ -1,9 +1,9 @@
 #pragma once
-#include "ControllerBase.h"
+#include "ControllerT.h"
 
 namespace RB::HBox
 {
-	class iMenuController : public RB::Controllers::ControllerBase
+	class iMenuController : public RB::Controllers::ControllerT<iMenuController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -12,6 +12,4 @@ namespace RB::HBox
 
 		virtual void ShowNotification() = 0;
 	};
-
-	extern iMenuController* MENU_CONTROLLER;
 }

@@ -176,7 +176,6 @@
     <ClCompile Include="iCamController.cpp" />
     <ClCompile Include="HBoxEditController.cpp" />
     <ClCompile Include="iInputController.cpp" />
-    <ClCompile Include="iMenuController.cpp" />
     <ClCompile Include="iPlayerAnimationController.cpp" />
     <ClCompile Include="iPlayerController.cpp" />
     <ClCompile Include="iPlayerDebugController.cpp" />

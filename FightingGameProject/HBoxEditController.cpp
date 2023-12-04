@@ -62,9 +62,9 @@ namespace RB::HBox
 		}
 		else if (boxType == HBoxType::HIT_BOX)
 		{
-			if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				dataList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+				dataList = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
 			}
 		}
 
@@ -99,7 +99,7 @@ namespace RB::HBox
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
-			dataList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			dataList = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
 		}
 
 		if (dataList == nullptr)
@@ -147,7 +147,7 @@ namespace RB::HBox
 		}
 		else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
-			if (RB::HBox::HITBOX_DATA_CONTROLLER == nullptr)
+			if (RB::HBox::iHitBoxDataController::instance == nullptr)
 			{
 				return false;
 			}
@@ -317,7 +317,7 @@ namespace RB::HBox
 			}
 			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 			{
-				path = RB::HBox::HITBOX_DATA_CONTROLLER->GetPath(list->GetSpriteEnum());
+				path = RB::HBox::iHitBoxDataController::instance->GetPath(list->GetSpriteEnum());
 			}
 
 			std::ofstream file(path);

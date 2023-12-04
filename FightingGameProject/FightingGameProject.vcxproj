@@ -156,7 +156,6 @@
     <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="iGeneralHitStopController.cpp" />
-    <ClCompile Include="iHitBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
     <ClCompile Include="iSpecialMovesController.cpp" />
     <ClCompile Include="iVFXAnimationController.cpp" />

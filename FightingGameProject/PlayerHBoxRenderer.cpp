@@ -64,9 +64,9 @@ namespace RB::Render
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
-			if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				dataList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+				dataList = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
 			}
 		}
 

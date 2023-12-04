@@ -4,14 +4,7 @@ namespace RB::HBox
 {
 	HitBoxDataController::HitBoxDataController(std::string dir)
 	{
-		HITBOX_DATA_CONTROLLER = this;
-
 		_hb.PresetDir(dir);
-	}
-
-	HitBoxDataController::~HitBoxDataController()
-	{
-		HITBOX_DATA_CONTROLLER = nullptr;
 	}
 
 	void HitBoxDataController::Init()

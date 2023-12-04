@@ -31,7 +31,7 @@ namespace RB::PlayerStateComponents
 		RB::Render::iAnimationObj* ownerAniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteEnum);
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteEnum);
 
-		RB::HBox::HBoxDataList* ownerList = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(ownerSpriteEnum);
+		RB::HBox::HBoxDataList* ownerList = RB::HBox::iHitBoxDataController::instance->GetDataList(ownerSpriteEnum);
 		RB::HBox::HBoxDataList* targetList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(targetSpriteEnum);
 
 		if (ownerList == nullptr || targetList == nullptr)
@@ -50,7 +50,7 @@ namespace RB::PlayerStateComponents
 			//get owner AABB
 			RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
 			olc::vi2d ownerPos = owner->GetPosition();
-			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->IsFacingRight()); //OtherPlayerIsOnRightSide());
+			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
 
 			//skip if width or height is 0
 			if (ownerWorldAABB.GetWidthHeight().x <= 0.001 || ownerWorldAABB.GetWidthHeight().y <= 0.001f)

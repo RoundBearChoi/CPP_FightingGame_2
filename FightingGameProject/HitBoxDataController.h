@@ -10,7 +10,7 @@ namespace RB::HBox
 	{
 	public:
 		HitBoxDataController(std::string dir);
-		~HitBoxDataController() override;
+		~HitBoxDataController() override {};
 
 		void Init() override;
 		void OnUpdate() override;

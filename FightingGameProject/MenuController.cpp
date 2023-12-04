@@ -54,9 +54,9 @@ namespace RB::HBox
 			}
 			else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 			{
-				if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+				if (RB::HBox::iHitBoxDataController::instance != nullptr)
 				{
-					path = RB::HBox::HITBOX_DATA_CONTROLLER->GetPath(_currentSpriteEnum);
+					path = RB::HBox::iHitBoxDataController::instance->GetPath(_currentSpriteEnum);
 				}
 			}
 
@@ -173,9 +173,9 @@ namespace RB::HBox
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
-			if (RB::HBox::HITBOX_DATA_CONTROLLER != nullptr)
+			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				list = RB::HBox::HITBOX_DATA_CONTROLLER->GetDataList(_currentSpriteEnum);
+				list = RB::HBox::iHitBoxDataController::instance->GetDataList(_currentSpriteEnum);
 			}
 		}
 

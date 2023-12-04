@@ -262,9 +262,6 @@
     <ClCompile Include="HitBoxDataController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="iHitBoxDataController.cpp">
-      <Filter>Source Files\HBox</Filter>
-    </ClCompile>
     <ClCompile Include="DetectHit.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>

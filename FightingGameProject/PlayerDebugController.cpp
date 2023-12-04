@@ -2,16 +2,6 @@
 
 namespace RB::Render
 {
-	PlayerDebugController::PlayerDebugController()
-	{
-		PLAYER_DEBUG_CONTROLLER = this;
-	}
-
-	PlayerDebugController::~PlayerDebugController()
-	{
-		PLAYER_DEBUG_CONTROLLER = nullptr;
-	}
-
 	void PlayerDebugController::Init()
 	{
 		_sprites.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);

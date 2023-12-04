@@ -150,6 +150,7 @@
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
+    <ClCompile Include="FixDirectionDuringState.cpp" />
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
@@ -261,6 +262,7 @@
     <ClInclude Include="DetectHit.h" />
     <ClInclude Include="DisplaySize.h" />
     <ClInclude Include="Ease.h" />
+    <ClInclude Include="FixDirectionDuringState.h" />
     <ClInclude Include="FollowPlayers.h" />
     <ClInclude Include="GameFrame.h" />
     <ClInclude Include="GeneralHitStopController.h" />

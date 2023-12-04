@@ -22,8 +22,6 @@ namespace RB::PlayerStates
 		{
 			return;
 		}
-
-		//_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	void P0_Start::OnFixedUpdate()
@@ -38,11 +36,6 @@ namespace RB::PlayerStates
 
 	void P0_Start::TransitionToIdle()
 	{
-		//if (_ownerPlayer == nullptr)
-		//{
-		//	return;
-		//}
-
 		RB::States::iStateMachine* machine = GetPlayer()->GetStateMachine();
 
 		machine->QueueNextState(new RB::PlayerStates::P0_Idle());

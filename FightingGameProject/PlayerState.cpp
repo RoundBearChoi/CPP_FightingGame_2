@@ -58,24 +58,10 @@ namespace RB::PlayerStates
 		return nullptr;
 	}
 
-	//void PlayerState::StandardInit(RB::Sprites::SpriteEnum spriteEnum)
-	//{
-	//	_spriteEnum = spriteEnum;
-	//
-	//	_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
-	//}
-
 	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
 	{
 		return _spriteEnum;
 	}
-
-	//RB::Players::PlayerID PlayerState::GetPlayerID()
-	//{
-	//	RB::Players::iPlayer* player = GetPlayer();
-	//
-	//	return player->GetPlayerID();
-	//}
 
 	size_t PlayerState::GetCreationID()
 	{

@@ -20,9 +20,7 @@ namespace RB::PlayerStates
 		~PlayerState() override;
 
 		RB::Players::iPlayer* GetPlayer();
-		//void StandardInit(RB::Sprites::SpriteEnum spriteEnum);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
-		//RB::Players::PlayerID GetPlayerID();
 		size_t GetCreationID();
 
 	protected:

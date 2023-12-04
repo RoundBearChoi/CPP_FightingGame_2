@@ -5,7 +5,6 @@ namespace RB::PlayerStates
 	void P0_Hadouken::OnEnter()
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_hadouken;
-		//StandardInit(RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnAnimationEnd());

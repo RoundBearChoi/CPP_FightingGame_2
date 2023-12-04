@@ -5,13 +5,10 @@ namespace RB::PlayerStates
 	void P0_Wince::OnEnter()
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
-		//StandardInit(RB::Sprites::SpriteEnum::fighter_0_wince);
 
-		RB::Players::iPlayer* player = GetPlayer();
-		player->SetWincingStatus(true);
-		//_ownerPlayer->SetWincingStatus(true);
+		GetPlayer()->SetWincingStatus(true);
 
-		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(player->OtherPlayerIsOnRightSide()));
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, false, 2)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(1, true, 2)); //forward, rest
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(4, true, 3)); //forward
@@ -24,9 +21,7 @@ namespace RB::PlayerStates
 
 	void P0_Wince::OnExit()
 	{
-		RB::Players::iPlayer* player = GetPlayer();
-		player->SetWincingStatus(false);
-		//_ownerPlayer->SetWincingStatus(false);
+		GetPlayer()->SetWincingStatus(false);
 
 		ExitStateComponents();
 	}

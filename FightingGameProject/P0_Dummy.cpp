@@ -23,8 +23,6 @@ namespace RB::PlayerStates
 		{
 			return;
 		}
-		
-		//_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
 		_manualAnimationUpdater.OnUpdate();
 	}

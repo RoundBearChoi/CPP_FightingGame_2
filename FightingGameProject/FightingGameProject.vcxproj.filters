@@ -277,9 +277,6 @@
     <ClCompile Include="AttackRegisterController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
-    <ClCompile Include="iAttackRegisterController.cpp">
-      <Filter>Source Files\Collisions</Filter>
-    </ClCompile>
     <ClCompile Include="P0_Wince.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>

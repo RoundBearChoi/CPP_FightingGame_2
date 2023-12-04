@@ -8,8 +8,8 @@ namespace RB::Collisions
 	class AttackRegisterController : public iAttackRegisterController
 	{
 	public:
-		AttackRegisterController();
-		~AttackRegisterController() override;
+		AttackRegisterController() = default;
+		~AttackRegisterController() override = default;
 
 		void Init() override;
 		void OnUpdate() override;

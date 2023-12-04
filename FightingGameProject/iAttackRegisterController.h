@@ -1,12 +1,11 @@
 #pragma once
-//#include "ControllerBase.h"
 #include "ControllerT.h"
 
 #include "AttackRegister.h"
 
 namespace RB::Collisions
 {
-	class iAttackRegisterController : public RB::Controllers::ControllerT<iAttackRegisterController> //public RB::Controllers::ControllerBase
+	class iAttackRegisterController : public RB::Controllers::ControllerT<iAttackRegisterController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -18,6 +17,4 @@ namespace RB::Collisions
 		virtual void ProcessHits() = 0;
 		virtual size_t GetRegisteredAttackCount(RB::Players::PlayerID playerID) = 0;
 	};
-
-	//extern iAttackRegisterController* ATTACK_REGISTER_CONTROLLER;
 }

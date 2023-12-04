@@ -155,7 +155,6 @@
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
-    <ClCompile Include="iAttackRegisterController.cpp" />
     <ClCompile Include="iGeneralHitStopController.cpp" />
     <ClCompile Include="iHBoxEditController.cpp" />
     <ClCompile Include="iHitBoxDataController.cpp" />

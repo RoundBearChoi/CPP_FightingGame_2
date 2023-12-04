@@ -8,7 +8,7 @@ namespace RB::PlayerStates
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());
-		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnAnimationEnd(new RB::PlayerStates::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::PlayerStates::P0_Idle()));
 
 		EnterStateComponents();
 	}

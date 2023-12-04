@@ -3,7 +3,7 @@
 
 #include "FixSpecialMoveStatusDuringState.h"
 #include "ToggleInitiallyFacingRight.h"
-#include "TriggerIdleOnAnimationEnd.h"
+#include "TransitionOnAnimationEnd.h"
 
 namespace RB::PlayerStates
 {

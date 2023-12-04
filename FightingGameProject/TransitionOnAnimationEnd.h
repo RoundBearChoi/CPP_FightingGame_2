@@ -8,11 +8,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class TriggerIdleOnAnimationEnd : public RB::States::StateComponentBase
+	class TransitionOnAnimationEnd : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerIdleOnAnimationEnd(RB::States::iState* nextState);
-		~TriggerIdleOnAnimationEnd() override {};
+		TransitionOnAnimationEnd(RB::States::iState* nextState);
+		~TransitionOnAnimationEnd() override {};
 
 	public:
 		void OnEnter() override;

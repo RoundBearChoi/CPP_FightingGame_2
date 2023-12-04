@@ -3,7 +3,7 @@
 #include "PlayerState.h"
 
 #include "DetectHit.h"
-#include "TriggerIdleOnAnimationEnd.h"
+#include "TransitionOnAnimationEnd.h"
 
 #include "P0_Idle.h"
 

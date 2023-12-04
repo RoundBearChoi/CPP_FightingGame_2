@@ -232,7 +232,7 @@
     <ClCompile Include="TriggerJab.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerIdleOnAnimationEnd.cpp">
+    <ClCompile Include="TransitionOnAnimationEnd.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="HitBoxDataController.cpp">
@@ -591,7 +591,7 @@
     <ClInclude Include="TriggerJab.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerIdleOnAnimationEnd.h">
+    <ClInclude Include="TransitionOnAnimationEnd.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="HitBoxDataController.h">

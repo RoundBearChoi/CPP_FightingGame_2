@@ -1,20 +1,20 @@
-#include "TriggerIdleOnAnimationEnd.h"
+#include "TransitionOnAnimationEnd.h"
 
 #include "P0_Idle.h"
 
 namespace RB::PlayerStateComponents
 {
-	TriggerIdleOnAnimationEnd::TriggerIdleOnAnimationEnd(RB::States::iState* nextState)
+	TransitionOnAnimationEnd::TransitionOnAnimationEnd(RB::States::iState* nextState)
 	{
 		_nextState = nextState;
 	}
 
-	void TriggerIdleOnAnimationEnd::OnEnter()
+	void TransitionOnAnimationEnd::OnEnter()
 	{
 
 	}
 
-	void TriggerIdleOnAnimationEnd::OnFixedUpdate()
+	void TransitionOnAnimationEnd::OnFixedUpdate()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr)
 		{

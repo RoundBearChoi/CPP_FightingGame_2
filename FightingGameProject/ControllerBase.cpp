@@ -4,6 +4,11 @@ namespace RB::Controllers
 {
 	std::vector<iController*> ControllerBase::vecControllers;
 
+	ControllerBase::~ControllerBase()
+	{
+		//std::cout << "destroying controller base" << std::endl;
+	}
+
 	void ControllerBase::AddController(iController* controller)
 	{
 		controller->Init();

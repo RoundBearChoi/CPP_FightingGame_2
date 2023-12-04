@@ -16,7 +16,7 @@ namespace RB::Controllers
 
 	public:
 		ControllerBase() = default;
-		virtual ~ControllerBase() override {}
+		virtual ~ControllerBase() override;
 
 	public:
 		virtual void Init() override {};

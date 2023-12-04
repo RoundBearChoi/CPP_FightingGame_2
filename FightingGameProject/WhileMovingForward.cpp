@@ -10,7 +10,7 @@ namespace RB::PlayerStateComponents
 
 	void WhileMovingForward::OnUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
@@ -40,12 +40,12 @@ namespace RB::PlayerStateComponents
 
 	void WhileMovingForward::OnFixedUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		if (player == nullptr)
 		{

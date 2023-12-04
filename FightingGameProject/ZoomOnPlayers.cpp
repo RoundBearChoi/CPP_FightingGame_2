@@ -16,13 +16,13 @@ namespace RB::Cam
 
 	float_t ZoomOnPlayers::_GetMagSqBetweenPlayers()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return 0.0f;
 		}
 
-		RB::Players::iPlayer* p1 = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::instance->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = RB::Players::iPlayerController::instance->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
 		olc::vi2d p1_pos = p1->GetPosition();
 		olc::vi2d p2_pos = p2->GetPosition();

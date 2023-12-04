@@ -9,7 +9,7 @@ namespace RB::Input
 
 	bool SpecialMoveSequenceBase::IsMatching(RB::Players::PlayerID playerID)
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return false;
 		}
@@ -22,7 +22,7 @@ namespace RB::Input
 		size_t seqIndex = 0;
 		std::vector<bool> vecCorrect;
 		std::vector<RB::Input::iInputObj*> vecCorrectObjs;
-		RB::Players::iPlayer* p = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* p = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
 		if (p->IsWincing())
 		{

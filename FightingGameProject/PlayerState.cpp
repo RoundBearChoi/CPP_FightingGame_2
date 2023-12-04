@@ -9,7 +9,7 @@ namespace RB::PlayerStates
 	{
 		for (size_t i = 0; i < currentPlayerStates.size(); i++)
 		{
-			RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(currentPlayerStates[i]->GetStateMachineID());
+			RB::Players::iPlayer* owner = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(currentPlayerStates[i]->GetStateMachineID());
 
 			if (owner != nullptr)
 			{
@@ -53,7 +53,7 @@ namespace RB::PlayerStates
 
 	RB::Players::iPlayer* PlayerState::GetPlayer()
 	{
-		return RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
+		return RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_stateMachineID);
 
 		return nullptr;
 	}

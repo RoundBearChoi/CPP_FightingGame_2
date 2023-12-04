@@ -14,7 +14,7 @@ namespace RB::HBox
 			return;
 		}
 
-		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
+		if (RB::Players::iPlayerController::instance == nullptr ||
 			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr)
 		{
 			return;
@@ -103,7 +103,7 @@ namespace RB::HBox
 
 	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()
 	{
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(0);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)

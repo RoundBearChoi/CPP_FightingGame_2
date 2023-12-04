@@ -19,7 +19,7 @@ namespace RB::PlayerStates
 
 	void P0_Dummy::OnUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}

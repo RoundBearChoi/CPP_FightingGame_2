@@ -9,13 +9,13 @@ namespace RB::PlayerStateComponents
 
 	void TriggerJumpUp::OnUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
+		if (RB::Players::iPlayerController::instance == nullptr ||
 			RB::Input::iInputController::instance == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		bool jumpUp = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
 		bool jumpForwardUp = false;

@@ -9,14 +9,14 @@ namespace RB::Render
 
 	void PlayerBoxRenderer::OnUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
 
 		for (int32_t i = 0; i < 2; i++)
 		{
-			RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i);
+			RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(i);
 
 			if (player == nullptr)
 			{

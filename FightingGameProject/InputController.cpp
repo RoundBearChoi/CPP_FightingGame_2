@@ -490,7 +490,7 @@ namespace RB::Input
 		{
 			RB::States::iState* state = RB::Input::iSpecialMovesController::instance->GetState(vec[0]);
 
-			RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
+			RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
 			player->GetStateMachine()->OverrideNextState(state);
 

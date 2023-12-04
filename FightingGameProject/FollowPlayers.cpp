@@ -15,13 +15,13 @@ namespace RB::Cam
 
 	void FollowPlayers::OnFixedUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* p0 = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(0);
-		RB::Players::iPlayer* p1 = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(1);
+		RB::Players::iPlayer* p0 = RB::Players::iPlayerController::instance->GetPlayerOnIndex(0);
+		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::instance->GetPlayerOnIndex(1);
 
 		if (p0 == nullptr || p1 == nullptr)
 		{

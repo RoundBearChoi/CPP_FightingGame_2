@@ -20,7 +20,7 @@ namespace RB::Render
 
 	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int32_t yPos)
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
@@ -30,7 +30,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{

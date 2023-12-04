@@ -18,7 +18,7 @@ namespace RB::PlayerStateComponents
 
 	void TriggerIdleOnFixedUpdateCount::OnFixedUpdate()
 	{
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		player->GetStateMachine()->QueueNextState(new RB::PlayerStates::P0_Idle());
 	}

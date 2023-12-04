@@ -2,19 +2,12 @@
 
 namespace RB::Players
 {
-	PlayerController::PlayerController()
-	{
-		PLAYER_CONTROLLER = this;
-	}
-
 	PlayerController::~PlayerController()
 	{
 		for (size_t i = 0; i < _vecPlayers.size(); i++)
 		{
 			delete _vecPlayers[i];
 		}
-
-		PLAYER_CONTROLLER = nullptr;
 	}
 
 	void PlayerController::Init()

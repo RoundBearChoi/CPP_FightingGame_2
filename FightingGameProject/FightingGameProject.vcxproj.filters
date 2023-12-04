@@ -217,9 +217,6 @@
     <ClCompile Include="BackgroundController.cpp">
       <Filter>Source Files\Background</Filter>
     </ClCompile>
-    <ClCompile Include="iPlayerController.cpp">
-      <Filter>Source Files\Players</Filter>
-    </ClCompile>
     <ClCompile Include="HBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>

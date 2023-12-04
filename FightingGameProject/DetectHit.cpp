@@ -14,8 +14,8 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnFixedUpdate()
 	{
-		RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::iPlayer* target = RB::Players::PLAYER_CONTROLLER->GetOtherPlayer(owner);
+		RB::Players::iPlayer* owner = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* target = RB::Players::iPlayerController::instance->GetOtherPlayer(owner);
 
 		RB::PlayerStates::PlayerState* ownerState = RB::PlayerStates::PlayerState::GetPlayerState(owner->GetPlayerID());
 		RB::PlayerStates::PlayerState* enemyState = RB::PlayerStates::PlayerState::GetPlayerState(target->GetPlayerID());

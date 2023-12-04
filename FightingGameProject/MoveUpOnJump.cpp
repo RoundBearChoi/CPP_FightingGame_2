@@ -21,7 +21,7 @@ namespace RB::PlayerStateComponents
 
 	void MoveUpOnJump::OnFixedUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
@@ -32,7 +32,7 @@ namespace RB::PlayerStateComponents
 		float_t amount = RB::EaseEquations::Ease::EaseOutSine(percentage);
 		float_t result = amount * _multiplier;
 
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		//apply vertical up
 		if (_state->GetCumulatedFixedUpdates() < _totalFrames)

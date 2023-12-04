@@ -21,7 +21,7 @@ namespace RB::PlayerStateComponents
 
 	void MoveHorizontalOnFixedUpdateCount::OnFixedUpdate()
 	{
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		if (_moveAmount < 0)
 		{

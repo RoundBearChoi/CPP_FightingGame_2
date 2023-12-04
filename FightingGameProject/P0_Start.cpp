@@ -18,7 +18,7 @@ namespace RB::PlayerStates
 
 	void P0_Start::OnUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
@@ -26,7 +26,7 @@ namespace RB::PlayerStates
 
 	void P0_Start::OnFixedUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}

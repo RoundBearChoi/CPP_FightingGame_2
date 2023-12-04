@@ -6,7 +6,7 @@ namespace RB::Players
 	class PlayerController : public iPlayerController
 	{
 	public:
-		PlayerController();
+		PlayerController() = default;
 		~PlayerController() override;
 
 	public:

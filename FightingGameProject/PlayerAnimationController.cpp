@@ -133,7 +133,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
@@ -144,7 +144,7 @@ namespace RB::Render
 
 		for (size_t i = 0; i < 2; i++)
 		{
-			arr[i] = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i);
+			arr[i] = RB::Players::iPlayerController::instance->GetPlayerOnIndex(i);
 
 			if (arr[i] == nullptr)
 			{
@@ -174,7 +174,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::_SetFirstPlayerAnimations()
 	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
+		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
 		}
@@ -188,7 +188,7 @@ namespace RB::Render
 
 		for (size_t i = 0; i < 2; i++)
 		{
-			arr[i] = RB::Players::PLAYER_CONTROLLER->GetPlayerOnIndex(i);
+			arr[i] = RB::Players::iPlayerController::instance->GetPlayerOnIndex(i);
 
 			if (arr[i] == nullptr)
 			{

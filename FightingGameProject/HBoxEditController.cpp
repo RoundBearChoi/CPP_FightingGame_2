@@ -153,7 +153,7 @@ namespace RB::HBox
 			}
 		}
 
-		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
+		if (RB::Players::iPlayerController::instance == nullptr ||
 			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
 			RB::HBox::iMenuController::instance == nullptr ||
 			RB::Cam::iCamController::instance == nullptr)
@@ -193,7 +193,7 @@ namespace RB::HBox
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
 		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
 
-		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{

@@ -8,7 +8,7 @@
 
 namespace RB::HBox
 {
-	class iHBoxEditController : public RB::Controllers::ControllerT<iHBoxEditController> //public RB::Controllers::ControllerBase
+	class iHBoxEditController : public RB::Controllers::ControllerT<iHBoxEditController>
 	{
 	public:
 		virtual void Init() = 0;

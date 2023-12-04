@@ -247,7 +247,7 @@
     <ClCompile Include="P0_Wince.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerIdleOnFixedUpdateCount.cpp">
+    <ClCompile Include="TransitionOnFixedUpdateCount.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp">
@@ -618,7 +618,7 @@
     <ClInclude Include="P0_Wince.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerIdleOnFixedUpdateCount.h">
+    <ClInclude Include="TransitionOnFixedUpdateCount.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="MoveHorizontalOnFixedUpdateCount.h">

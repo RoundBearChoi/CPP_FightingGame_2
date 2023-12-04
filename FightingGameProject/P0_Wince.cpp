@@ -15,7 +15,7 @@ namespace RB::PlayerStates
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(4, true, 3)); //forward
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(5, false, 4)); //way back, rest
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(8, false, 2)); // slightly back
-		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnFixedUpdateCount(10));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(10, new RB::PlayerStates::P0_Idle()));
 
 		EnterStateComponents();
 	}

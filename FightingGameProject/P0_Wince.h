@@ -3,7 +3,9 @@
 
 #include "FixWincingStatusDuringState.h"
 #include "MoveHorizontalOnFixedUpdateCount.h"
-#include "TriggerIdleOnFixedUpdateCount.h"
+#include "TransitionOnFixedUpdateCount.h"
+
+#include "P0_Idle.h"
 
 namespace RB::PlayerStates
 {

@@ -188,7 +188,7 @@
     <ClCompile Include="SpecialMoveSequenceBase.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
-    <ClCompile Include="TriggerIdleOnFixedUpdateCount.cpp" />
+    <ClCompile Include="TransitionOnFixedUpdateCount.cpp" />
     <ClCompile Include="TransitionOnAnimationEnd.cpp" />
     <ClCompile Include="TriggerJab.cpp" />
     <ClCompile Include="TriggerJumpForward.cpp" />
@@ -310,7 +310,7 @@
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
     <ClInclude Include="ToggleInitiallyFacingRight.h" />
-    <ClInclude Include="TriggerIdleOnFixedUpdateCount.h" />
+    <ClInclude Include="TransitionOnFixedUpdateCount.h" />
     <ClInclude Include="TransitionOnAnimationEnd.h" />
     <ClInclude Include="TriggerJab.h" />
     <ClInclude Include="TriggerJumpForward.h" />

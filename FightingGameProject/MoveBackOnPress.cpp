@@ -10,7 +10,7 @@ namespace RB::PlayerStateComponents
 	void MoveBackOnPress::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Input::INPUT_CONTROLLER == nullptr)
+			RB::Input::iInputController::instance == nullptr)
 		{
 			return;
 		}
@@ -47,8 +47,8 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		bool moveLeftHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		bool moveRightHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		bool moveLeftHeld = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		bool moveRightHeld = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (moveLeftHeld && moveRightHeld)
 		{
@@ -67,8 +67,8 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		bool moveLeftHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
-		bool moveRightHeld = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
+		bool moveLeftHeld = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_LEFT);
+		bool moveRightHeld = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_RIGHT);
 
 		if (player->OtherPlayerIsOnRightSide())
 		{

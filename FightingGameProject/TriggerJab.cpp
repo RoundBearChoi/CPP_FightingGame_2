@@ -25,7 +25,7 @@ namespace RB::PlayerStateComponents
 	void TriggerJab::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Input::INPUT_CONTROLLER == nullptr)
+			RB::Input::iInputController::instance == nullptr)
 		{
 			return;
 		}
@@ -33,7 +33,7 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		RB::Input::iInputObj* obj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::ATTACK_WEAK_PUNCH);
+		RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::ATTACK_WEAK_PUNCH);
 
 		if (obj != nullptr)
 		{

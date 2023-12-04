@@ -1,6 +1,7 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "ControllerBase.h"
+#include "ControllerT.h"
+
 #include "PlayerID.h"
 #include "PlayerInput.h"
 
@@ -8,7 +9,7 @@
 
 namespace RB::Input
 {
-	class iInputController : public RB::Controllers::ControllerBase
+	class iInputController : public RB::Controllers::ControllerT<iInputController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -23,6 +24,4 @@ namespace RB::Input
 		virtual size_t GetTotalInputCount(RB::Players::PlayerID playerID) = 0;
 		virtual iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, size_t index) = 0;
 	};
-
-	extern iInputController* INPUT_CONTROLLER;
 }

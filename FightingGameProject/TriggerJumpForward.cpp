@@ -10,7 +10,7 @@ namespace RB::PlayerStateComponents
 	void TriggerJumpForward::OnUpdate()
 	{
 		if (RB::Players::PLAYER_CONTROLLER == nullptr ||
-			RB::Input::INPUT_CONTROLLER == nullptr)
+			RB::Input::iInputController::instance == nullptr)
 		{
 			return;
 		}
@@ -22,13 +22,13 @@ namespace RB::PlayerStateComponents
 
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			jumpForward = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-			jumpForwardInputObj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForward = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 		}
 		else
 		{
-			jumpForward = RB::Input::INPUT_CONTROLLER->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-			jumpForwardInputObj = RB::Input::INPUT_CONTROLLER->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForward = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 		}
 
 		if (jumpForward)

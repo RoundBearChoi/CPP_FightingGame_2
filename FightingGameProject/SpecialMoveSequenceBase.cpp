@@ -14,7 +14,7 @@ namespace RB::Input
 			return false;
 		}
 
-		if (RB::Input::INPUT_CONTROLLER == nullptr)
+		if (RB::Input::iInputController::instance == nullptr)
 		{
 			return false;
 		}
@@ -31,9 +31,9 @@ namespace RB::Input
 
 		const std::vector<RB::Input::PlayerInput>& vec = _GetSequence(p->IsFacingRight());
 
-		for (size_t i = 0; i < RB::Input::INPUT_CONTROLLER->GetTotalInputCount(playerID); i++)
+		for (size_t i = 0; i < RB::Input::iInputController::instance->GetTotalInputCount(playerID); i++)
 		{
-			RB::Input::iInputObj* obj = RB::Input::INPUT_CONTROLLER->GetInputByIndex(playerID, i);
+			RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetInputByIndex(playerID, i);
 
 			if (!obj->IsUsed())
 			{

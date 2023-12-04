@@ -173,7 +173,6 @@
     <ClCompile Include="HBoxDataListPath.h" />
     <ClCompile Include="HBoxLoader.cpp" />
     <ClCompile Include="HBoxEditController.cpp" />
-    <ClCompile Include="iInputController.cpp" />
     <ClCompile Include="iPlayerAnimationController.cpp" />
     <ClCompile Include="iPlayerController.cpp" />
     <ClCompile Include="iPlayerDebugController.cpp" />

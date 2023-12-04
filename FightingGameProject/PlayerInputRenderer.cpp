@@ -25,7 +25,7 @@ namespace RB::Render
 			return;
 		}
 
-		if (RB::Input::INPUT_CONTROLLER == nullptr)
+		if (RB::Input::iInputController::instance == nullptr)
 		{
 			return;
 		}
@@ -37,11 +37,11 @@ namespace RB::Render
 			return;
 		}
 
-		size_t count = RB::Input::INPUT_CONTROLLER->GetTotalInputCount(player->GetPlayerID());
+		size_t count = RB::Input::iInputController::instance->GetTotalInputCount(player->GetPlayerID());
 
 		for (size_t i = 0; i < count; i++)
 		{
-			RB::Input::iInputObj* inputObj = RB::Input::INPUT_CONTROLLER->GetInputByIndex(player->GetPlayerID(), i);
+			RB::Input::iInputObj* inputObj = RB::Input::iInputController::instance->GetInputByIndex(player->GetPlayerID(), i);
 
 			olc::Pixel tint = olc::WHITE;
 

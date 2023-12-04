@@ -2,15 +2,8 @@
 
 namespace RB::Input
 {
-	InputController::InputController()
-	{
-		INPUT_CONTROLLER = this;
-	}
-
 	InputController::~InputController()
 	{
-		INPUT_CONTROLLER = nullptr;
-
 		_ClearAllBuffers(RB::Players::PlayerID::PLAYER_1);
 		_ClearAllBuffers(RB::Players::PlayerID::PLAYER_2);
 	}

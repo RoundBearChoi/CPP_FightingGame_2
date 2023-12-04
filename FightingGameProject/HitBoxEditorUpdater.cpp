@@ -25,7 +25,6 @@ namespace RB::Updaters
 	HitBoxEditorUpdater::~HitBoxEditorUpdater()
 	{
 		RB::Controllers::ActiveControllers::OnEnd();
-		RB::States::ActiveStateMachines::OnEnd();
 	}
 
 	void HitBoxEditorUpdater::Init()

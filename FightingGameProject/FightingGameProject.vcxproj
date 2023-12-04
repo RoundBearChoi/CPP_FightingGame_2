@@ -239,7 +239,6 @@
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateComponentBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
-    <ClCompile Include="ActiveStateMachines.cpp" />
     <ClCompile Include="GameplayUpdater.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="TriggerMoveBack.cpp" />
@@ -373,7 +372,6 @@
     <ClInclude Include="StateBase.h" />
     <ClInclude Include="StateComponentBase.h" />
     <ClInclude Include="StateMachineBase.h" />
-    <ClInclude Include="ActiveStateMachines.h" />
     <ClInclude Include="GameplayUpdater.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="FixedTimer.h" />

@@ -24,7 +24,6 @@ namespace RB::Updaters
 	HurtBoxEditorUpdater::~HurtBoxEditorUpdater()
 	{
 		RB::Controllers::ActiveControllers::OnEnd();
-		RB::States::ActiveStateMachines::OnEnd();
 	}
 
 	void HurtBoxEditorUpdater::Init()

@@ -14,7 +14,6 @@ namespace RB::Updaters
 		std::cout << "destructing GameplayUpdater" << std::endl;
 
 		RB::Controllers::ActiveControllers::OnEnd();
-		RB::States::ActiveStateMachines::OnEnd();
 	}
 
 	void GameplayUpdater::Init()

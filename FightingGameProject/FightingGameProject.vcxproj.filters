@@ -82,9 +82,6 @@
     <ClCompile Include="GameplayUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
-    <ClCompile Include="ActiveStateMachines.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
     <ClCompile Include="Time.cpp">
       <Filter>Source Files\Frames</Filter>
     </ClCompile>
@@ -413,9 +410,6 @@
     </ClInclude>
     <ClInclude Include="GameplayUpdater.h">
       <Filter>Source Files\Updaters</Filter>
-    </ClInclude>
-    <ClInclude Include="ActiveStateMachines.h">
-      <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="iUpdaterObj.h">
       <Filter>Source Files\Updaters</Filter>

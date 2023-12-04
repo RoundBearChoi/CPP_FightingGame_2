@@ -2,5 +2,5 @@
 
 namespace RB::Background
 {
-	iBackgroundController* BACKGROUND_CONTROLLER = nullptr;
+	//iBackgroundController* BACKGROUND_CONTROLLER = nullptr;
 }

@@ -2,5 +2,5 @@
 
 namespace RB::Collisions
 {
-	iAttackRegisterController* ATTACK_REGISTER_CONTROLLER = nullptr;
+	//iAttackRegisterController* ATTACK_REGISTER_CONTROLLER = nullptr;
 }

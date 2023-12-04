@@ -762,5 +762,8 @@
     <ClInclude Include="FixWincingStatusDuringState.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
+    <ClInclude Include="ControllerT.h">
+      <Filter>Source Files\Controllers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,12 +4,12 @@ namespace RB::Collisions
 {
 	AttackRegisterController::AttackRegisterController()
 	{
-		ATTACK_REGISTER_CONTROLLER = this;
+		//ATTACK_REGISTER_CONTROLLER = this;
 	}
 
 	AttackRegisterController::~AttackRegisterController()
 	{
-		ATTACK_REGISTER_CONTROLLER = nullptr;
+		//ATTACK_REGISTER_CONTROLLER = nullptr;
 	}
 
 	void AttackRegisterController::Init()

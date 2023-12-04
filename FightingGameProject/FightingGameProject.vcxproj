@@ -256,6 +256,7 @@
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="ControllerBase.h" />
+    <ClInclude Include="ControllerT.h" />
     <ClInclude Include="DetectHit.h" />
     <ClInclude Include="DisplaySize.h" />
     <ClInclude Include="Ease.h" />

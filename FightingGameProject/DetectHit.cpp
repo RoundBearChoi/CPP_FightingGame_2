@@ -78,7 +78,7 @@ namespace RB::PlayerStateComponents
 					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
 					std::cout << std::endl;
 
-					if (RB::Collisions::ATTACK_REGISTER_CONTROLLER->GetRegisteredAttackCount(target->GetPlayerID()) <= 0)
+					if (RB::Collisions::iAttackRegisterController::instance->GetRegisteredAttackCount(target->GetPlayerID()) <= 0)
 					{
 						target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::P0_Wince());
 

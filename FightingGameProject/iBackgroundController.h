@@ -1,9 +1,10 @@
 #pragma once
-#include "ControllerBase.h"
+//#include "ControllerBase.h"
+#include "ControllerT.h"
 
 namespace RB::Background
 {
-	class iBackgroundController : public RB::Controllers::ControllerBase
+	class iBackgroundController : public RB::Controllers::ControllerT<iBackgroundController> //public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;
@@ -11,5 +12,5 @@ namespace RB::Background
 		virtual void OnFixedUpdate() = 0;
 	};
 
-	extern iBackgroundController* BACKGROUND_CONTROLLER;
+	//extern iBackgroundController* BACKGROUND_CONTROLLER;
 }

@@ -2,19 +2,12 @@
 
 namespace RB::Sprites
 {
-	SpriteDataController::SpriteDataController()
-	{
-		SPRITE_DATA_CONTROLLER = this;
-	}
-
 	SpriteDataController::~SpriteDataController()
 	{
 		for (size_t i = 0; i < _vecEnumStrings.size(); i++)
 		{
 			delete _vecEnumStrings[i];
 		}
-
-		SPRITE_DATA_CONTROLLER = nullptr;
 	}
 
 	void SpriteDataController::Init()

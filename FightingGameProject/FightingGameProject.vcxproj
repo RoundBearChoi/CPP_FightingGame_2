@@ -171,7 +171,6 @@
     <ClCompile Include="HBoxDataListPath.h" />
     <ClCompile Include="HBoxLoader.cpp" />
     <ClCompile Include="HBoxEditController.cpp" />
-    <ClCompile Include="iSpriteDataController.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
     <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />

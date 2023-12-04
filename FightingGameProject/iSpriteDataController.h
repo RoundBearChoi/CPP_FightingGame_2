@@ -1,11 +1,11 @@
 #pragma once
-#include "ControllerBase.h"
+#include "ControllerT.h"
 #include "SpriteEnum.h"
 #include "SpriteEnumString.h"
 
 namespace RB::Sprites
 {
-	class iSpriteDataController : public RB::Controllers::ControllerBase
+	class iSpriteDataController : public RB::Controllers::ControllerT<iSpriteDataController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -14,6 +14,4 @@ namespace RB::Sprites
 
 		virtual const std::string& GetString(SpriteEnum spriteEnum) = 0;
 	};
-
-	extern iSpriteDataController* SPRITE_DATA_CONTROLLER;
 }

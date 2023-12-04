@@ -220,9 +220,6 @@
     <ClCompile Include="HBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="iSpriteDataController.cpp">
-      <Filter>Source Files\Sprites</Filter>
-    </ClCompile>
     <ClCompile Include="HB.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>

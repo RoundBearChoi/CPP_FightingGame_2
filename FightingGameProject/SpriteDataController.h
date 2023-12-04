@@ -8,7 +8,7 @@ namespace RB::Sprites
 	class SpriteDataController : public iSpriteDataController
 	{
 	public:
-		SpriteDataController();
+		SpriteDataController() = default;
 		~SpriteDataController() override;
 
 	public:

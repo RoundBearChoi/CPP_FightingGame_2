@@ -1,5 +1,6 @@
 #pragma once
-#include "ControllerBase.h"
+#include "ControllerT.h"
+
 #include "HBoxDataList.h"
 #include "HBoxData.h"
 #include "HBoxType.h"
@@ -7,7 +8,7 @@
 
 namespace RB::HBox
 {
-	class iHBoxEditController : public RB::Controllers::ControllerBase
+	class iHBoxEditController : public RB::Controllers::ControllerT<iHBoxEditController> //public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;
@@ -19,6 +20,4 @@ namespace RB::HBox
 		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) = 0;
 		virtual RB::HBox::HBoxType GetHBoxType() = 0;
 	};
-
-	extern iHBoxEditController* HBOX_EDIT_CONTROLLER;
 }

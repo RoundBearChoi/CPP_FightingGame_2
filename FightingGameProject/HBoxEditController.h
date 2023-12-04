@@ -22,7 +22,7 @@ namespace RB::HBox
 	{
 	public:
 		HBoxEditController(RB::HBox::HBoxType boxType);
-		~HBoxEditController() override;
+		~HBoxEditController() override {};
 
 		void Init() override;
 		void OnUpdate() override;

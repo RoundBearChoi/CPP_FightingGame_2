@@ -43,7 +43,7 @@ namespace RB::HBox
 		{
 			std::string path;
 
-			RB::HBox::HBoxType boxType = RB::HBox::HBOX_EDIT_CONTROLLER->GetHBoxType();
+			RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
 
 			if (boxType == RB::HBox::HBoxType::HURT_BOX)
 			{
@@ -160,7 +160,7 @@ namespace RB::HBox
 
 	RB::HBox::HBoxDataList* MenuController::_getList()
 	{
-		RB::HBox::HBoxType boxType = RB::HBox::HBOX_EDIT_CONTROLLER->GetHBoxType();
+		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
 
 		RB::HBox::HBoxDataList* list = nullptr;
 

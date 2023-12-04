@@ -4,14 +4,7 @@ namespace RB::HBox
 {
 	HBoxEditController::HBoxEditController(RB::HBox::HBoxType boxType)
 	{
-		HBOX_EDIT_CONTROLLER = this;
-
 		_boxType = boxType;
-	}
-
-	HBoxEditController::~HBoxEditController()
-	{
-		HBOX_EDIT_CONTROLLER = nullptr;
 	}
 
 	void HBoxEditController::Init()

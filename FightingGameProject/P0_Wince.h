@@ -1,6 +1,7 @@
 #pragma once
 #include "PlayerState.h"
 
+#include "FixWincingStatusDuringState.h"
 #include "MoveHorizontalOnFixedUpdateCount.h"
 #include "TriggerIdleOnFixedUpdateCount.h"
 

@@ -4,7 +4,7 @@ namespace RB::States
 {
 	void ActiveStateMachines::OnEnd()
 	{
-		ResetID();
+		//ResetID();
 	}
 
 	//void ActiveStateMachines::AddStateMachine(iStateMachine* stateMachine)
@@ -28,15 +28,15 @@ namespace RB::States
 	//	return nullptr;
 	//}
 
-	void ActiveStateMachines::ResetID()
-	{
-		_cumulatedID = 0;
-	}
-
-	size_t ActiveStateMachines::GetID()
-	{
-		_cumulatedID++;
-
-		return _cumulatedID;
-	}
+	//void ActiveStateMachines::ResetID()
+	//{
+	//	_cumulatedID = 0;
+	//}
+	//
+	//size_t ActiveStateMachines::GetID()
+	//{
+	//	_cumulatedID++;
+	//
+	//	return _cumulatedID;
+	//}
 }

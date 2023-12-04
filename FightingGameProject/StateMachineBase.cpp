@@ -2,8 +2,13 @@
 
 namespace RB::States
 {
+	size_t StateMachineBase::stateMachinesCreated = 0;
+
 	StateMachineBase::StateMachineBase()
 	{
+		stateMachinesCreated++;
+		_stateMachineID = stateMachinesCreated;
+
 		std::cout << "constructing StateMachineBase" << std::endl;
 	}
 
@@ -21,7 +26,7 @@ namespace RB::States
 
 	void StateMachineBase::Init(iState* state)
 	{
-		SetID(RB::States::ActiveStateMachines::GetID());
+		//SetID(RB::States::ActiveStateMachines::GetID());
 		//RB::States::ActiveStateMachines::AddStateMachine(this);
 
 		_currentState = state;
@@ -79,10 +84,10 @@ namespace RB::States
 		_nextState = state;
 	}
 
-	void StateMachineBase::SetID(size_t ID)
-	{
-		_stateMachineID = ID;
-	}
+	//void StateMachineBase::SetID(size_t ID)
+	//{
+	//	_stateMachineID = ID;
+	//}
 
 	size_t StateMachineBase::GetID()
 	{

@@ -17,8 +17,8 @@ namespace RB::States
 	public:
 		//static void AddStateMachine(iStateMachine* stateMachine);
 		//static iStateMachine* GetStateMachine(size_t id);
-		static void ResetID();
-		static size_t GetID();
+		//static void ResetID();
+		//static size_t GetID();
 
 	private:
 		static inline size_t _cumulatedID = 0;

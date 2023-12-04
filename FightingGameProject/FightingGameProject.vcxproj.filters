@@ -271,9 +271,6 @@
     <ClCompile Include="GeneralHitStopController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
-    <ClCompile Include="iGeneralHitStopController.cpp">
-      <Filter>Source Files\Collisions</Filter>
-    </ClCompile>
     <ClCompile Include="Ani.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>

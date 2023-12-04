@@ -1,10 +1,10 @@
 #pragma once
 #include <cstdint>
-#include "ControllerBase.h"
+#include "ControllerT.h"
 
 namespace RB::Collisions
 {
-	class iGeneralHitStopController : public RB::Controllers::ControllerBase
+	class iGeneralHitStopController : public RB::Controllers::ControllerT<iGeneralHitStopController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -14,6 +14,4 @@ namespace RB::Collisions
 		virtual bool SkipFrame() = 0;
 		virtual void AddSkipFrames(uint32_t frames) = 0;
 	};
-
-	extern iGeneralHitStopController* GENERAL_HIT_STOP_CONTROLLER;
 }

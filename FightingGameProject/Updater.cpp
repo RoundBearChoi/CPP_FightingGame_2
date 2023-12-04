@@ -133,9 +133,9 @@ namespace RB::Updaters
 		{
 			bool skip = false;
 
-			if (RB::Collisions::GENERAL_HIT_STOP_CONTROLLER != nullptr)
+			if (RB::Collisions::iGeneralHitStopController::instance != nullptr)
 			{
-				if (RB::Collisions::GENERAL_HIT_STOP_CONTROLLER->SkipFrame())
+				if (RB::Collisions::iGeneralHitStopController::instance->SkipFrame())
 				{
 					std::cout << "skipping fixed update.." << std::endl;
 					skip = true;

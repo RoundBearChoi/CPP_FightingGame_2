@@ -2,16 +2,6 @@
 
 namespace RB::Collisions
 {
-	GeneralHitStopController::GeneralHitStopController()
-	{
-		GENERAL_HIT_STOP_CONTROLLER = this;
-	}
-
-	GeneralHitStopController::~GeneralHitStopController()
-	{
-		GENERAL_HIT_STOP_CONTROLLER = nullptr;
-	}
-
 	void GeneralHitStopController::Init()
 	{
 

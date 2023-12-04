@@ -82,9 +82,9 @@ namespace RB::PlayerStateComponents
 					{
 						target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::P0_Wince());
 
-						if (RB::Collisions::GENERAL_HIT_STOP_CONTROLLER != nullptr)
+						if (RB::Collisions::iGeneralHitStopController::instance != nullptr)
 						{
-							RB::Collisions::GENERAL_HIT_STOP_CONTROLLER->AddSkipFrames(2);
+							RB::Collisions::iGeneralHitStopController::instance->AddSkipFrames(3);
 						}
 					}
 

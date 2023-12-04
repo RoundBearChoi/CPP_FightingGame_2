@@ -6,8 +6,8 @@ namespace RB::Collisions
 	class GeneralHitStopController : public iGeneralHitStopController
 	{
 	public:
-		GeneralHitStopController();
-		~GeneralHitStopController() override;
+		GeneralHitStopController() = default;
+		~GeneralHitStopController() override {};
 
 		void Init() override;
 		void OnUpdate() override;

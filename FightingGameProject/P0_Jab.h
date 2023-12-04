@@ -5,6 +5,8 @@
 #include "DetectHit.h"
 #include "TriggerIdleOnAnimationEnd.h"
 
+#include "P0_Idle.h"
+
 namespace RB::PlayerStates
 {
 	class P0_Jab : public RB::PlayerStates::PlayerState

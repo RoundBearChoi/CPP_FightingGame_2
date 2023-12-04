@@ -1,7 +1,14 @@
 #include "TriggerIdleOnAnimationEnd.h"
 
+#include "P0_Idle.h"
+
 namespace RB::PlayerStateComponents
 {
+	TriggerIdleOnAnimationEnd::TriggerIdleOnAnimationEnd(RB::States::iState* nextState)
+	{
+		_nextState = nextState;
+	}
+
 	void TriggerIdleOnAnimationEnd::OnEnter()
 	{
 
@@ -38,7 +45,7 @@ namespace RB::PlayerStateComponents
 
 		if ((specs.mTotalSprites - 1) * specs.mSkipFixedUpdates <= updates)
 		{
-			player->GetStateMachine()->QueueNextState(new RB::PlayerStates::P0_Idle());
+			player->GetStateMachine()->QueueNextState(_nextState);
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace RB::PlayerStateComponents
 	class TriggerIdleOnAnimationEnd : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerIdleOnAnimationEnd() = default;
+		TriggerIdleOnAnimationEnd(RB::States::iState* nextState);
 		~TriggerIdleOnAnimationEnd() override {};
 
 	public:

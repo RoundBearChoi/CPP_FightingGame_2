@@ -319,6 +319,9 @@
     <ClCompile Include="FixWincingStatusDuringState.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="FixSpecialMoveStatusDuringState.cpp">
+      <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -719,6 +722,9 @@
     </ClInclude>
     <ClInclude Include="ControllerT.h">
       <Filter>Source Files\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="FixSpecialMoveStatusDuringState.h">
+      <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

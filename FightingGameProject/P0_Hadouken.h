@@ -1,5 +1,8 @@
 #pragma once
 #include "PlayerState.h"
+
+#include "FixSpecialMoveStatusDuringState.h"
+#include "ToggleInitiallyFacingRight.h"
 #include "TriggerIdleOnAnimationEnd.h"
 
 namespace RB::PlayerStates

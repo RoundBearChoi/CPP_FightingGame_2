@@ -263,6 +263,13 @@ namespace RB::Input
 			return;
 		}
 
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
+
+		if (player->IsInSpecialMoveStatus())
+		{
+			return;
+		}
+
 		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK)
 		{
 			RB::Input::SpecialMoveType specialMove = RB::Input::iSpecialMovesController::instance->GetSpecialMove(playerID);

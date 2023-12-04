@@ -2,8 +2,6 @@
 #include "PlayerState.h"
 #include "iPlayer.h"
 
-//#include "ActivePlayerStates.h"
-
 #include "FixDirectionDuringState.h"
 #include "TriggerJumpForward.h"
 #include "TriggerJumpUp.h"

@@ -4,8 +4,6 @@ namespace RB::PlayerStates
 {
 	void P0_FallDown::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_fall);
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
@@ -16,7 +14,7 @@ namespace RB::PlayerStates
 
 	void P0_FallDown::OnExit()
 	{
-		//ActivePlayerStates::RemovePlayerState(this);
+		ExitStateComponents();
 	}
 
 	void P0_FallDown::OnUpdate()

@@ -4,8 +4,6 @@ namespace RB::PlayerStates
 {
 	void P0_MoveBack::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		StandardInit(RB::Sprites::SpriteEnum::NONE);
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
@@ -18,7 +16,6 @@ namespace RB::PlayerStates
 	void P0_MoveBack::OnExit()
 	{
 		ExitStateComponents();
-		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_MoveBack::OnUpdate()

@@ -4,11 +4,7 @@ namespace RB::PlayerStates
 {
 	void P0_MoveForward::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_walk);
-
-		//_ownerPlayer->FixDirDuringState(false);
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpForward());
@@ -20,10 +16,7 @@ namespace RB::PlayerStates
 
 	void P0_MoveForward::OnExit()
 	{
-		//_ownerPlayer->FixDirDuringState(true);
-
 		ExitStateComponents();
-		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_MoveForward::OnUpdate()

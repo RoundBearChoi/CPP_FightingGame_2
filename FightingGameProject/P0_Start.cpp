@@ -5,8 +5,6 @@ namespace RB::PlayerStates
 {
 	void P0_Start::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		// no sprite
 
 		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(1);
@@ -15,7 +13,7 @@ namespace RB::PlayerStates
 
 	void P0_Start::OnExit()
 	{
-		//ActivePlayerStates::RemovePlayerState(this);
+
 	}
 
 	void P0_Start::OnUpdate()

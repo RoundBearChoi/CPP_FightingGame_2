@@ -4,8 +4,6 @@ namespace RB::PlayerStates
 {
 	void P0_JumpUp::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
@@ -17,7 +15,6 @@ namespace RB::PlayerStates
 	void P0_JumpUp::OnExit()
 	{
 		ExitStateComponents();
-		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_JumpUp::OnUpdate()

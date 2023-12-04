@@ -4,8 +4,6 @@ namespace RB::PlayerStates
 {
 	void P0_JumpForwardUp_1::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1);
 
 		//this is 2nd phase of jump, dir statys the same
@@ -20,7 +18,6 @@ namespace RB::PlayerStates
 	void P0_JumpForwardUp_1::OnExit()
 	{
 		ExitStateComponents();
-		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_JumpForwardUp_1::OnUpdate()

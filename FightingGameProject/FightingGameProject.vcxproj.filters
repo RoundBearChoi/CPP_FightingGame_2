@@ -196,9 +196,6 @@
     <ClCompile Include="MenuController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="ActivePlayerStates.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerState.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
@@ -577,9 +574,6 @@
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="PlayerState.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
-    <ClInclude Include="ActivePlayerStates.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="PlayerDebugController.h">

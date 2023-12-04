@@ -8,8 +8,6 @@
 
 #include "MoveDownOnFall.h"
 
-//#include "ActivePlayerStates.h"
-
 namespace RB::PlayerStates
 {
 	class P0_FallDown : public RB::PlayerStates::PlayerState

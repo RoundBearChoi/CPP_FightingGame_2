@@ -9,14 +9,12 @@ namespace RB::PlayerStates
 
 	void P0_Dummy::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		_manualAnimationUpdater.OnEnter(_spriteEnum);
 	}
 
 	void P0_Dummy::OnExit()
 	{
-		//ActivePlayerStates::RemovePlayerState(this);
+
 	}
 
 	void P0_Dummy::OnUpdate()

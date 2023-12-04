@@ -4,8 +4,6 @@ namespace RB::PlayerStates
 {
 	void P0_Jab::OnEnter()
 	{
-		//ActivePlayerStates::AddPlayerState(this);
-
 		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jab);
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
@@ -18,7 +16,6 @@ namespace RB::PlayerStates
 	void P0_Jab::OnExit()
 	{
 		ExitStateComponents();
-		//ActivePlayerStates::RemovePlayerState(this);
 	}
 
 	void P0_Jab::OnUpdate()

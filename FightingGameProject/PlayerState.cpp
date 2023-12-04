@@ -2,8 +2,29 @@
 
 namespace RB::PlayerStates
 {
+	std::vector<PlayerState*> PlayerState::currentPlayerStates;
+	size_t PlayerState::playerStateCreationCount = 0;
+
+	PlayerState::PlayerState()
+	{
+		playerStateCreationCount++;
+		_creationID = playerStateCreationCount;
+
+		currentPlayerStates.push_back(this);
+	}
+
 	PlayerState::~PlayerState()
 	{
+		for (int32_t i = currentPlayerStates.size() - 1; i >= 0; i--)
+		{
+			if (_creationID == currentPlayerStates[i]->GetCreationID())
+			{
+				currentPlayerStates[i] = nullptr;
+				currentPlayerStates.erase(currentPlayerStates.begin() + i);
+				break;
+			}
+		}	
+
 		for (size_t i = 0; i < _vecStateComponents.size(); i++)
 		{
 			delete _vecStateComponents[i];
@@ -37,5 +58,10 @@ namespace RB::PlayerStates
 		}
 
 		return _ownerPlayer->GetPlayerID();
+	}
+
+	size_t PlayerState::GetCreationID()
+	{
+		return _creationID;
 	}
 }

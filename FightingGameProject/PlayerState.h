@@ -1,4 +1,6 @@
 #pragma once
+#include <vector>
+
 #include "StateBase.h"
 
 #include "iPlayerController.h"
@@ -9,14 +11,21 @@ namespace RB::PlayerStates
 	class PlayerState : public RB::States::StateBase
 	{
 	public:
+		static std::vector<PlayerState*> currentPlayerStates;
+		static size_t playerStateCreationCount;
+
+	public:
+		PlayerState();
 		~PlayerState() override;
 
 		void StandardInit(RB::Sprites::SpriteEnum spriteEnum);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
 		RB::Players::PlayerID GetPlayerID();
+		size_t GetCreationID();
 
 	protected:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
+		size_t _creationID = 0;
 	};
 }

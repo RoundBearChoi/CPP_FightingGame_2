@@ -39,6 +39,8 @@ namespace RB::Players
 		virtual void SetWincingStatus(bool wincing) = 0;
 		virtual bool IsWincing() = 0;
 		virtual void FixDirDuringState(bool fix) = 0;
+		virtual void SetIsInSpecialMoveStatus(bool specialMove) = 0;
+		virtual bool IsInSpecialMoveStatus() = 0;
 
 	public:
 		virtual olc::vi2d GetPlayerBox() = 0;

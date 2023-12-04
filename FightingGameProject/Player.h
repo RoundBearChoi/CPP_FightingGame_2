@@ -3,13 +3,14 @@
 #include "olcPixelGameEngine.h"
 #include "Time.h"
 #include "StateMachineBase.h"
-#include "P0_Start.h"
-#include "PlayerCollider.h"
 #include "AABB.h"
 
 #include "iPlayerController.h"
 #include "iPlayer.h"
 #include "PlayerID.h"
+#include "PlayerCollider.h"
+
+#include "P0_Start.h"
 
 namespace RB::Players
 {
@@ -41,6 +42,8 @@ namespace RB::Players
 		void SetWincingStatus(bool wincing) override;
 		bool IsWincing() override;
 		void FixDirDuringState(bool fix) override;
+		void SetIsInSpecialMoveStatus(bool specialMove) override;
+		bool IsInSpecialMoveStatus() override;
 
 	public:
 		olc::vi2d GetPlayerBox() override;
@@ -56,5 +59,6 @@ namespace RB::Players
 		bool _initiallyFacingRight = false;
 		bool _isWincing = false;
 		bool _dirIsFixedDuringState = false;
+		bool _isInSpecialMoveState = false;
 	};
 }

@@ -161,6 +161,16 @@ namespace RB::Players
 		_dirIsFixedDuringState = fix;
 	}
 
+	void Player::SetIsInSpecialMoveStatus(bool specialMove)
+	{
+		_isInSpecialMoveState = specialMove;
+	}
+
+	bool Player::IsInSpecialMoveStatus()
+	{
+		return _isInSpecialMoveState;
+	}
+
 	olc::vi2d Player::GetPlayerBox()
 	{
 		return _playerCollider.GetPlayerBox();

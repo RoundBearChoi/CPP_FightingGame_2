@@ -4,6 +4,7 @@
 
 #include "ActivePlayerStates.h"
 
+#include "FixDirectionDuringState.h"
 #include "TriggerJumpUp.h"
 #include "WhileMovingBack.h"
 

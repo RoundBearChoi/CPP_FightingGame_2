@@ -8,8 +8,8 @@ namespace RB::Render
 	class VFXAnimationController : public RB::Render::iVFXAnimationController
 	{
 	public:
-		VFXAnimationController();
-		~VFXAnimationController() override;
+		VFXAnimationController() = default;
+		~VFXAnimationController() override {};
 
 	public:
 		void Init() override;

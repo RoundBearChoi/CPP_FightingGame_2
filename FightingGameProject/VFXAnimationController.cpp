@@ -2,16 +2,6 @@
 
 namespace RB::Render
 {
-    VFXAnimationController::VFXAnimationController()
-    {
-        VFX_ANIMATION_CONTROLLER = this;
-    }
-
-    VFXAnimationController::~VFXAnimationController()
-    {
-        VFX_ANIMATION_CONTROLLER = nullptr;
-    }
-
     void VFXAnimationController::Init()
     {
         _ani.Init();

@@ -1,12 +1,12 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "ControllerBase.h"
+#include "ControllerT.h"
 
 #include "SpriteEnum.h"
 
 namespace RB::Render
 {
-	class iVFXAnimationController : public RB::Controllers::ControllerBase
+	class iVFXAnimationController : public RB::Controllers::ControllerT<iVFXAnimationController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -15,6 +15,4 @@ namespace RB::Render
 
 		virtual void InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos) = 0;
 	};
-
-	extern iVFXAnimationController* VFX_ANIMATION_CONTROLLER;
 }

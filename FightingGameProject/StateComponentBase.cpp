@@ -2,6 +2,9 @@
 
 namespace RB::States
 {
+	/// <summary>
+	/// delete nextState pointer if it's not entered
+	/// </summary>
 	StateComponentBase::~StateComponentBase()
 	{
 		if (_nextState != nullptr)

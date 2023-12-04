@@ -19,13 +19,13 @@ namespace RB::PlayerStates
 		PlayerState();
 		~PlayerState() override;
 
-		void StandardInit(RB::Sprites::SpriteEnum spriteEnum);
+		RB::Players::iPlayer* GetPlayer();
+		//void StandardInit(RB::Sprites::SpriteEnum spriteEnum);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
-		RB::Players::PlayerID GetPlayerID();
+		//RB::Players::PlayerID GetPlayerID();
 		size_t GetCreationID();
 
 	protected:
-		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
 		size_t _creationID = 0;
 	};

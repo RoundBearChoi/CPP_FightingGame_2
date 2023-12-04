@@ -51,32 +51,31 @@ namespace RB::PlayerStates
 		_vecStateComponents.clear();
 	}
 
-	void PlayerState::StandardInit(RB::Sprites::SpriteEnum spriteEnum)
+	RB::Players::iPlayer* PlayerState::GetPlayer()
 	{
-		_spriteEnum = spriteEnum;
+		return RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
 
-		_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
+		return nullptr;
 	}
+
+	//void PlayerState::StandardInit(RB::Sprites::SpriteEnum spriteEnum)
+	//{
+	//	_spriteEnum = spriteEnum;
+	//
+	//	_ownerPlayer = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(_stateMachineID);
+	//}
 
 	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
 	{
 		return _spriteEnum;
 	}
 
-	RB::Players::PlayerID PlayerState::GetPlayerID()
-	{
-		if (RB::Players::PLAYER_CONTROLLER == nullptr)
-		{
-			return RB::Players::PlayerID::NONE;
-		}
-				
-		if (_ownerPlayer == nullptr)
-		{
-			std::cout << "no owner player" << std::endl;
-		}
-
-		return _ownerPlayer->GetPlayerID();
-	}
+	//RB::Players::PlayerID PlayerState::GetPlayerID()
+	//{
+	//	RB::Players::iPlayer* player = GetPlayer();
+	//
+	//	return player->GetPlayerID();
+	//}
 
 	size_t PlayerState::GetCreationID()
 	{

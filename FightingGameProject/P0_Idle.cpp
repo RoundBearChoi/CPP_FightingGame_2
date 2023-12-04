@@ -4,7 +4,8 @@ namespace RB::PlayerStates
 {
 	void P0_Idle::OnEnter()
 	{
-		StandardInit(RB::Sprites::SpriteEnum::fighter_0_idle);
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
+		//StandardInit(RB::Sprites::SpriteEnum::fighter_0_idle);
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpForward());

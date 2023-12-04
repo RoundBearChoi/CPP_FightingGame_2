@@ -4,9 +4,10 @@ namespace RB::PlayerStates
 {
 	void P0_JumpUp::OnEnter()
 	{
-		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_up);
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
+		//StandardInit(RB::Sprites::SpriteEnum::fighter_0_jump_up);
 
-		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(15, 28.0f, new P0_FallDown()));
 
 		EnterStateComponents();

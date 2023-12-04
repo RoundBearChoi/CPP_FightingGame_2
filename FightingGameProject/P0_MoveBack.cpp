@@ -4,7 +4,8 @@ namespace RB::PlayerStates
 {
 	void P0_MoveBack::OnEnter()
 	{
-		StandardInit(RB::Sprites::SpriteEnum::NONE);
+		_spriteEnum = RB::Sprites::SpriteEnum::NONE;
+		//StandardInit(RB::Sprites::SpriteEnum::NONE);
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpUp());

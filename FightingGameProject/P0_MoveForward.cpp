@@ -4,7 +4,8 @@ namespace RB::PlayerStates
 {
 	void P0_MoveForward::OnEnter()
 	{
-		StandardInit(RB::Sprites::SpriteEnum::fighter_0_walk);
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
+		//StandardInit(RB::Sprites::SpriteEnum::fighter_0_walk);
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJumpForward());

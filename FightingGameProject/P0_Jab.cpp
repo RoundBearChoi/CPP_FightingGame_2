@@ -4,9 +4,10 @@ namespace RB::PlayerStates
 {
 	void P0_Jab::OnEnter()
 	{
-		StandardInit(RB::Sprites::SpriteEnum::fighter_0_jab);
+		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
+		//StandardInit(RB::Sprites::SpriteEnum::fighter_0_jab);
 
-		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(_ownerPlayer->OtherPlayerIsOnRightSide()));
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());
 		AddStateComponent(new RB::PlayerStateComponents::TriggerIdleOnAnimationEnd());
 

@@ -1,14 +1,12 @@
 #pragma once
+#include "Time.h"
 #include "HBoxDataList.h"
 #include "AABB.h"
 #include "PlayerID.h"
-#include "Time.h"
-#include "HBoxType.h"
-
 #include "PlayerState.h"
 
-#include "iAnimationObj.h"
 
+#include "iAnimationObj.h"
 #include "iHBoxEditController.h"
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"

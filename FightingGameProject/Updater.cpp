@@ -106,7 +106,6 @@ namespace RB::Updaters
 	void Updater::Init()
 	{
 		bool firstQueueSuccessful = QueueUpdaterObj(new GameplayUpdater());
-		//bool firstQueueSuccessful = QueueUpdaterObj(new HurtBoxEditorUpdater());
 
 		if (!firstQueueSuccessful)
 		{

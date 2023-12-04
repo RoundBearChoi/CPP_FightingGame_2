@@ -41,7 +41,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetCurrentAnimationObj(playerID, spriteEnum);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
 
 		if (aniObj == nullptr)
 		{
@@ -82,7 +82,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetCurrentAnimationObj(playerID, spriteEnum);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
 
 		if (aniObj == nullptr)
 		{
@@ -154,7 +154,7 @@ namespace RB::HBox
 		}
 
 		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr ||
+			RB::Render::iPlayerAnimationController::instance == nullptr ||
 			RB::HBox::iMenuController::instance == nullptr ||
 			RB::Cam::iCamController::instance == nullptr)
 		{

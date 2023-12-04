@@ -1,10 +1,10 @@
 #pragma once
-#include "ControllerBase.h"
+#include "ControllerT.h"
 #include "iAnimationObj.h"
 
 namespace RB::Render
 {
-	class iPlayerAnimationController : public RB::Controllers::ControllerBase
+	class iPlayerAnimationController : public RB::Controllers::ControllerT<iPlayerAnimationController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -14,6 +14,4 @@ namespace RB::Render
 		virtual void DeleteAnimationObj(RB::Players::PlayerID playerID) = 0;
 		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) = 0;
 	};
-
-	extern iPlayerAnimationController* PLAYER_ANIMATION_CONTROLLER;
 }

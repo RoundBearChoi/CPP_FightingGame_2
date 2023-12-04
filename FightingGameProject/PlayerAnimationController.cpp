@@ -2,16 +2,6 @@
 
 namespace RB::Render
 {
-	PlayerAnimationController::PlayerAnimationController()
-	{
-		PLAYER_ANIMATION_CONTROLLER = this;
-	}
-
-	PlayerAnimationController::~PlayerAnimationController()
-	{
-		PLAYER_ANIMATION_CONTROLLER = nullptr;
-	}
-
 	void PlayerAnimationController::Init()
 	{
 		_ani.Init();

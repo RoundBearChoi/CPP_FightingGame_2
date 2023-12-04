@@ -12,8 +12,8 @@ namespace RB::Render
 	class PlayerAnimationController : public iPlayerAnimationController
 	{
 	public:
-		PlayerAnimationController();
-		~PlayerAnimationController() override;
+		PlayerAnimationController() = default;
+		~PlayerAnimationController() override {};
 
 	public:
 		void Init() override;

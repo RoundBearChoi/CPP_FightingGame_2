@@ -15,7 +15,7 @@ namespace RB::HBox
 		}
 
 		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr)
+			RB::Render::iPlayerAnimationController::instance == nullptr)
 		{
 			return;
 		}
@@ -119,7 +119,7 @@ namespace RB::HBox
 
 	int32_t MenuController::_GetCurrentAnimationFrame()
 	{
-		RB::Render::iAnimationObj* obj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
+		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
 
 		if (obj == nullptr)
 		{

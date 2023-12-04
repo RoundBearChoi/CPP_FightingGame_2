@@ -9,7 +9,7 @@ namespace RB::Render
 	void PlayerHBoxRenderer::OnUpdate()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Render::PLAYER_ANIMATION_CONTROLLER == nullptr)
+			RB::Render::iPlayerAnimationController::instance == nullptr)
 		{
 			return;
 		}
@@ -44,7 +44,7 @@ namespace RB::Render
 
 		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-		iAnimationObj* aniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetCurrentAnimationObj(playerID, spriteEnum);
+		iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
 		
 		if (aniObj == nullptr)
 		{

@@ -258,14 +258,14 @@ namespace RB::Input
 	/// </summary>
 	void InputController::_OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input)
 	{
-		if (RB::Input::SPECIAL_MOVES_CONTROLLER == nullptr)
+		if (RB::Input::iSpecialMovesController::instance == nullptr)
 		{
 			return;
 		}
 
 		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK)
 		{
-			RB::Input::SpecialMoveType specialMove = RB::Input::SPECIAL_MOVES_CONTROLLER->GetSpecialMove(playerID);
+			RB::Input::SpecialMoveType specialMove = RB::Input::iSpecialMovesController::instance->GetSpecialMove(playerID);
 
 			if (specialMove != SpecialMoveType::NONE)
 			{
@@ -488,7 +488,7 @@ namespace RB::Input
 
 		if (!vec.empty())
 		{
-			RB::States::iState* state = RB::Input::SPECIAL_MOVES_CONTROLLER->GetState(vec[0]);
+			RB::States::iState* state = RB::Input::iSpecialMovesController::instance->GetState(vec[0]);
 
 			RB::Players::iPlayer* player = RB::Players::PLAYER_CONTROLLER->GetPlayerOnID(playerID);
 

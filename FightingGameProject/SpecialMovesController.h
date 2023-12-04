@@ -13,7 +13,7 @@ namespace RB::Input
 	class SpecialMovesController : public iSpecialMovesController
 	{
 	public:
-		SpecialMovesController();
+		SpecialMovesController() = default;
 		~SpecialMovesController() override;
 
 	public:

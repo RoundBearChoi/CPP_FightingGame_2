@@ -316,9 +316,6 @@
     <ClCompile Include="GameFrame.cpp">
       <Filter>Source Files\RB</Filter>
     </ClCompile>
-    <ClCompile Include="iSpecialMovesController.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
     <ClCompile Include="SpecialMovesController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>

@@ -2,17 +2,10 @@
 
 namespace RB::Input
 {
-	SpecialMovesController::SpecialMovesController()
-	{
-		SPECIAL_MOVES_CONTROLLER = this;
-	}
-
 	SpecialMovesController::~SpecialMovesController()
 	{
 		_ClearSequences(RB::Players::PlayerID::PLAYER_1);
 		_ClearSequences(RB::Players::PlayerID::PLAYER_2);
-
-		SPECIAL_MOVES_CONTROLLER = nullptr;
 	}
 
 	void SpecialMovesController::Init()

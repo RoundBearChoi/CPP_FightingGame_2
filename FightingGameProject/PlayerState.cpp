@@ -5,6 +5,21 @@ namespace RB::PlayerStates
 	std::vector<PlayerState*> PlayerState::currentPlayerStates;
 	size_t PlayerState::playerStateCreationCount = 0;
 
+	PlayerState* PlayerState::GetPlayerState(RB::Players::PlayerID playerID)
+	{
+		for (size_t i = 0; i < currentPlayerStates.size(); i++)
+		{
+			RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(currentPlayerStates[i]->GetStateMachineID());
+
+			if (owner->GetPlayerID() == playerID)
+			{
+				return currentPlayerStates[i];
+			}
+		}
+
+		return nullptr;
+	}
+
 	PlayerState::PlayerState()
 	{
 		playerStateCreationCount++;

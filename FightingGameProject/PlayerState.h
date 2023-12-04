@@ -13,6 +13,7 @@ namespace RB::PlayerStates
 	public:
 		static std::vector<PlayerState*> currentPlayerStates;
 		static size_t playerStateCreationCount;
+		static PlayerState* GetPlayerState(RB::Players::PlayerID playerID);
 
 	public:
 		PlayerState();

@@ -9,7 +9,7 @@ namespace RB::Background
 	class BackgroundController : public iBackgroundController
 	{
 	public:
-		BackgroundController();
+		BackgroundController() = default;
 		~BackgroundController() override;
 
 	public:

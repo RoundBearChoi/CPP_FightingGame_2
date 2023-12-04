@@ -2,19 +2,12 @@
 
 namespace RB::Background
 {
-	BackgroundController::BackgroundController()
-	{
-		//BACKGROUND_CONTROLLER = this;
-	}
-
 	BackgroundController::~BackgroundController()
 	{
 		for (size_t i = 0; i < _vecBackgroundObjs.size(); i++)
 		{
 			delete _vecBackgroundObjs[i];
 		}
-
-		//BACKGROUND_CONTROLLER = nullptr;
 	}
 
 	void BackgroundController::Init()

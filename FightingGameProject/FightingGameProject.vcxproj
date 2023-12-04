@@ -175,7 +175,6 @@
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HBoxDataListPath.h" />
     <ClCompile Include="HBoxLoader.cpp" />
-    <ClCompile Include="iBackgroundController.cpp" />
     <ClCompile Include="iCamController.cpp" />
     <ClCompile Include="iHurtBoxDataController.cpp" />
     <ClCompile Include="HBoxEditController.cpp" />

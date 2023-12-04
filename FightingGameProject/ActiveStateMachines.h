@@ -15,8 +15,8 @@ namespace RB::States
 		static void OnEnd();
 
 	public:
-		static void AddStateMachine(iStateMachine* stateMachine);
-		static iStateMachine* GetStateMachine(size_t id);
+		//static void AddStateMachine(iStateMachine* stateMachine);
+		//static iStateMachine* GetStateMachine(size_t id);
 		static void ResetID();
 		static size_t GetID();
 

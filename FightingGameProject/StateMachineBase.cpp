@@ -22,7 +22,7 @@ namespace RB::States
 	void StateMachineBase::Init(iState* state)
 	{
 		SetID(RB::States::ActiveStateMachines::GetID());
-		RB::States::ActiveStateMachines::AddStateMachine(this);
+		//RB::States::ActiveStateMachines::AddStateMachine(this);
 
 		_currentState = state;
 		_currentState->SetStateMachineID(_stateMachineID);

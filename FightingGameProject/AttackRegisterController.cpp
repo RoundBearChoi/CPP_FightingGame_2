@@ -4,7 +4,7 @@ namespace RB::Collisions
 {
 	AttackRegisterController::AttackRegisterController()
 	{
-		SetHash(typeid(*this));
+		//SetHash(typeid(*this));
 
 		ATTACK_REGISTER_CONTROLLER = this;
 	}

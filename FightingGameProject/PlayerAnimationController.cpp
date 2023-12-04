@@ -4,7 +4,7 @@ namespace RB::Render
 {
 	PlayerAnimationController::PlayerAnimationController()
 	{
-		SetHash(typeid(*this));
+		//SetHash(typeid(*this));
 
 		PLAYER_ANIMATION_CONTROLLER = this;
 	}

@@ -16,7 +16,7 @@ namespace RB::HBox
 
 	void HurtBoxDataController::Init()
 	{
-		SetHash(typeid(*this));
+		//SetHash(typeid(*this));
 
 		_hb.Init();
 	}

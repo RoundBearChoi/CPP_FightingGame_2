@@ -8,8 +8,8 @@ namespace RB::Controllers
 		iController() = default;
 		virtual ~iController() = default;
 
-	public:
-		virtual size_t GetHash() = 0;
+	//public:
+	//	virtual size_t GetHash() = 0;
 
 	public:
 		virtual void Init() = 0;

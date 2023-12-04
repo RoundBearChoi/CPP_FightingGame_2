@@ -4,7 +4,7 @@ namespace RB::Collisions
 {
 	GeneralHitStopController::GeneralHitStopController()
 	{
-		SetHash(typeid(*this));
+		//SetHash(typeid(*this));
 
 		GENERAL_HIT_STOP_CONTROLLER = this;
 	}

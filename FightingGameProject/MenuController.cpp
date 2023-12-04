@@ -47,9 +47,9 @@ namespace RB::HBox
 
 			if (boxType == RB::HBox::HBoxType::HURT_BOX)
 			{
-				if (RB::HBox::HURTBOX_DATA_CONTROLLER != nullptr)
+				if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 				{
-					path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(_currentSpriteEnum);
+					path = RB::HBox::iHurtBoxDataController::instance->GetPath(_currentSpriteEnum);
 				}
 			}
 			else if (boxType == RB::HBox::HBoxType::HIT_BOX)
@@ -166,9 +166,9 @@ namespace RB::HBox
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			if (RB::HBox::HURTBOX_DATA_CONTROLLER != nullptr)
+			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				list = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(_currentSpriteEnum);
+				list = RB::HBox::iHurtBoxDataController::instance->GetDataList(_currentSpriteEnum);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)

@@ -55,9 +55,9 @@ namespace RB::HBox
 
 		if (boxType == HBoxType::HURT_BOX)
 		{
-			if (RB::HBox::HURTBOX_DATA_CONTROLLER != nullptr)
+			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+				dataList = RB::HBox::iHurtBoxDataController::instance->GetDataList(spriteEnum);
 			}
 		}
 		else if (boxType == HBoxType::HIT_BOX)
@@ -95,7 +95,7 @@ namespace RB::HBox
 		
 		if (_boxType == HBoxType::HURT_BOX)
 		{
-			dataList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(spriteEnum);
+			dataList = RB::HBox::iHurtBoxDataController::instance->GetDataList(spriteEnum);
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
@@ -140,7 +140,7 @@ namespace RB::HBox
 	{
 		if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			if (RB::HBox::HURTBOX_DATA_CONTROLLER == nullptr)
+			if (RB::HBox::iHurtBoxDataController::instance == nullptr)
 			{
 				return false;
 			}
@@ -313,7 +313,7 @@ namespace RB::HBox
 
 			if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 			{
-				path = RB::HBox::HURTBOX_DATA_CONTROLLER->GetPath(list->GetSpriteEnum());
+				path = RB::HBox::iHurtBoxDataController::instance->GetPath(list->GetSpriteEnum());
 			}
 			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 			{

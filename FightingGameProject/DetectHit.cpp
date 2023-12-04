@@ -32,7 +32,7 @@ namespace RB::PlayerStateComponents
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::PLAYER_ANIMATION_CONTROLLER->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteEnum);
 
 		RB::HBox::HBoxDataList* ownerList = RB::HBox::iHitBoxDataController::instance->GetDataList(ownerSpriteEnum);
-		RB::HBox::HBoxDataList* targetList = RB::HBox::HURTBOX_DATA_CONTROLLER->GetDataList(targetSpriteEnum);
+		RB::HBox::HBoxDataList* targetList = RB::HBox::iHurtBoxDataController::instance->GetDataList(targetSpriteEnum);
 
 		if (ownerList == nullptr || targetList == nullptr)
 		{

@@ -223,9 +223,6 @@
     <ClCompile Include="iCamController.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
-    <ClCompile Include="iHurtBoxDataController.cpp">
-      <Filter>Source Files\HBox</Filter>
-    </ClCompile>
     <ClCompile Include="iInputController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>

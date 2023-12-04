@@ -2,16 +2,6 @@
 
 namespace RB::Cam
 {
-	CamController::CamController()
-	{
-		CAM_CONTROLLER = this;
-	}
-
-	CamController::~CamController()
-	{
-		CAM_CONTROLLER = nullptr;
-	}
-
 	void CamController::Init()
 	{
 		_camObj.Init();

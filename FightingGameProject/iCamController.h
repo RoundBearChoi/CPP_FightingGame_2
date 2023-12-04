@@ -1,11 +1,11 @@
 #pragma once
-#include "ControllerBase.h"
+#include "ControllerT.h"
 
 #include "iCamObj.h"
 
 namespace RB::Cam
 {
-	class iCamController : public RB::Controllers::ControllerBase
+	class iCamController : public RB::Controllers::ControllerT<iCamController>
 	{
 	public:
 		virtual void Init() = 0;
@@ -16,6 +16,4 @@ namespace RB::Cam
 		virtual iCamObj* GetCamObj() = 0;
 		virtual void AllowManualControl(bool toggle) = 0;
 	};
-
-	extern iCamController* CAM_CONTROLLER;
 }

@@ -13,8 +13,8 @@ namespace RB::Cam
 	class CamController : public iCamController
 	{
 	public:
-		CamController();
-		~CamController() override;
+		CamController() = default;
+		~CamController() override {};
 
 	public:
 		void Init() override;

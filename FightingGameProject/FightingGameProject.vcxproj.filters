@@ -220,9 +220,6 @@
     <ClCompile Include="iPlayerController.cpp">
       <Filter>Source Files\Players</Filter>
     </ClCompile>
-    <ClCompile Include="iCamController.cpp">
-      <Filter>Source Files\Cam</Filter>
-    </ClCompile>
     <ClCompile Include="iInputController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>

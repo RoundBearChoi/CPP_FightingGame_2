@@ -50,7 +50,7 @@ namespace RB::Updaters
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerDebugController()));
 
-		RB::Cam::CAM_CONTROLLER->SetZoom(1.75f);
+		RB::Cam::iCamController::instance->SetZoom(1.75f);
 	}
 
 	void HitBoxEditorUpdater::OnUpdate()

@@ -9,7 +9,7 @@ namespace RB::Render
 
 	void Sprites::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
 	{
-		if (RB::Cam::CAM_CONTROLLER == nullptr)
+		if (RB::Cam::iCamController::instance == nullptr)
 		{
 			return;
 		}
@@ -61,7 +61,7 @@ namespace RB::Render
 		{
 			for (size_t i = 0; i < points.size(); i++)
 			{
-				points[i] = RB::Cam::CAM_CONTROLLER->GetCamObj()->GetRelativePosition(points[i]);
+				points[i] = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(points[i]);
 			}
 		}
 

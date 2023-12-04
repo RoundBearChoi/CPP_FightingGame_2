@@ -11,9 +11,12 @@ namespace RB::PlayerStates
 		{
 			RB::Players::iPlayer* owner = RB::Players::PLAYER_CONTROLLER->GetPlayerOnStateMachineID(currentPlayerStates[i]->GetStateMachineID());
 
-			if (owner->GetPlayerID() == playerID)
+			if (owner != nullptr)
 			{
-				return currentPlayerStates[i];
+				if (playerID == owner->GetPlayerID())
+				{
+					return currentPlayerStates[i];
+				}
 			}
 		}
 

@@ -4,8 +4,6 @@ namespace RB::Render
 {
 	PlayerDebugController::PlayerDebugController()
 	{
-		//SetHash(typeid(*this));
-
 		PLAYER_DEBUG_CONTROLLER = this;
 	}
 

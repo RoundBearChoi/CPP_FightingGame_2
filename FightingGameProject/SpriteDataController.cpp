@@ -4,8 +4,6 @@ namespace RB::Sprites
 {
 	SpriteDataController::SpriteDataController()
 	{
-		//SetHash(typeid(*this));
-
 		SPRITE_DATA_CONTROLLER = this;
 	}
 

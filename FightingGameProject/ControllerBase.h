@@ -18,10 +18,6 @@ namespace RB::Controllers
 		ControllerBase() = default;
 		virtual ~ControllerBase() override {}
 
-	//public:
-	//	virtual void SetHash(const type_info& ti);
-	//	virtual size_t GetHash() override;
-
 	public:
 		virtual void Init() override {};
 		virtual void OnUpdate() override {};

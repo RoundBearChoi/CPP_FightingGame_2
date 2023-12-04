@@ -4,8 +4,6 @@ namespace RB::Input
 {
 	SpecialMovesController::SpecialMovesController()
 	{
-		//SetHash(typeid(*this));
-
 		SPECIAL_MOVES_CONTROLLER = this;
 	}
 

@@ -4,8 +4,6 @@ namespace RB::Background
 {
 	BackgroundController::BackgroundController()
 	{
-		//SetHash(typeid(*this));
-
 		BACKGROUND_CONTROLLER = this;
 	}
 

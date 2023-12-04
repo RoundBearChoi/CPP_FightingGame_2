@@ -4,8 +4,6 @@ namespace RB::Cam
 {
 	CamController::CamController()
 	{
-		//SetHash(typeid(*this));
-
 		CAM_CONTROLLER = this;
 	}
 

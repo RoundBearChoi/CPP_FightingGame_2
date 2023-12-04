@@ -4,8 +4,6 @@ namespace RB::HBox
 {
 	MenuController::MenuController()
 	{
-		//SetHash(typeid(*this));
-
 		MENU_CONTROLLER = this;
 	}
 

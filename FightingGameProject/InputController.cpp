@@ -4,8 +4,6 @@ namespace RB::Input
 {
 	InputController::InputController()
 	{
-		//SetHash(typeid(*this));
-
 		INPUT_CONTROLLER = this;
 	}
 

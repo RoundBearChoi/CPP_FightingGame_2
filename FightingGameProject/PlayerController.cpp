@@ -4,8 +4,6 @@ namespace RB::Players
 {
 	PlayerController::PlayerController()
 	{
-		//SetHash(typeid(*this));
-
 		PLAYER_CONTROLLER = this;
 	}
 

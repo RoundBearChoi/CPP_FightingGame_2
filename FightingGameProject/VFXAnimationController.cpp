@@ -4,8 +4,6 @@ namespace RB::Render
 {
     VFXAnimationController::VFXAnimationController()
     {
-        //SetHash(typeid(*this));
-
         VFX_ANIMATION_CONTROLLER = this;
     }
 

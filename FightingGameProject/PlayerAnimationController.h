@@ -2,6 +2,7 @@
 
 #include "Ani.h"
 #include "JGetter.h"
+#include "StringToSpriteEnum.h"
 
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"

@@ -322,6 +322,9 @@
     <ClCompile Include="FixSpecialMoveStatusDuringState.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="StringToSpriteEnum.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -725,6 +728,9 @@
     </ClInclude>
     <ClInclude Include="FixSpecialMoveStatusDuringState.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="StringToSpriteEnum.h">
+      <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

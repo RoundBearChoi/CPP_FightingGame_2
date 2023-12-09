@@ -253,11 +253,11 @@ namespace RB::Render
 			file << "        \"mTotalSprites\" : " << specs.mTotalSprites << "," << std::endl;
 			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
 			file << "        \"mRenderSizeX\" : " << specs.mRenderSize.x << "," << std::endl;
-			file << "        \"mRenderSizeY\" : " << specs.mRenderSize.y << std::endl;
+			file << "        \"mRenderSizeY\" : " << specs.mRenderSize.y << "," << std::endl;
+			file << "        \"mSpriteEnum\" : " << RB::Sprites::GetString(specs.mSpriteEnum) << std::endl;
 			
 			//end of element(?)
 			file << "        }" << std::endl;
-
 
 			//end of whole obj
 			file << "}";

@@ -1,0 +1,13 @@
+{
+    "player0 animation specs":
+        {
+        "mX_TileCount" : 1,
+        "mY_TileCount" : 1,
+        "mTotalSprites" : 1,
+        "mSkipFixedUpdates" : 2,
+        "mRenderSizeX" : 71.5,
+        "mRenderSizeY" : 132.1,
+        "mSpriteEnum" : "fighter_0_wince",
+        "mPlayOnce" : 0
+        }
+}

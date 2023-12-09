@@ -96,16 +96,16 @@ namespace RB::Render
 		//
 		//_ani.LoadAnimation(jabSpecs, RB::Sprites::SpriteEnum::fighter_0_jab);
 
-		AnimationSpecs winceSpecs;
-		winceSpecs.mX_TileCount = 1;
-		winceSpecs.mY_TileCount = 1;
-		winceSpecs.mTotalSprites = 1;
-		winceSpecs.mSkipFixedUpdates = 2;
-		winceSpecs.mRenderSize = olc::vf2d{ 71.5f, 132.1f };
-		winceSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
-		winceSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
-
-		_ani.LoadAnimation(winceSpecs, RB::Sprites::SpriteEnum::fighter_0_wince);
+		//AnimationSpecs winceSpecs;
+		//winceSpecs.mX_TileCount = 1;
+		//winceSpecs.mY_TileCount = 1;
+		//winceSpecs.mTotalSprites = 1;
+		//winceSpecs.mSkipFixedUpdates = 2;
+		//winceSpecs.mRenderSize = olc::vf2d{ 71.5f, 132.1f };
+		//winceSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		//winceSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
+		//
+		//_ani.LoadAnimation(winceSpecs, RB::Sprites::SpriteEnum::fighter_0_wince);
 
 		AnimationSpecs hadoukenSpecs;
 		hadoukenSpecs.mX_TileCount = 13;
@@ -126,6 +126,7 @@ namespace RB::Render
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs", jumpForwardUp_1_Specs);
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_fall.aniSpecs", fallSpecs);
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs", jabSpecs);
+		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs", winceSpecs);
 
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_idle);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_walk);
@@ -134,6 +135,7 @@ namespace RB::Render
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_fall.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_fall);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jab);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_wince);
 	}
 
 	void PlayerAnimationController::OnUpdate()

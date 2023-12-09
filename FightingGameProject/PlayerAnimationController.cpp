@@ -121,6 +121,7 @@ namespace RB::Render
 		_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
 		_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.anispecs", idleSpecs);
+		_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.anispecs");
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -247,7 +248,7 @@ namespace RB::Render
 			file << "    \"" << name << "\":" << std::endl;
 
 			file << "        {" << std::endl;
-			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl;
+			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << std::endl; //<< "," << std::endl;
 			
 			//end of element(?)
 			file << "        }" << std::endl;
@@ -259,5 +260,18 @@ namespace RB::Render
 			file.flush();
 			file.close();
 		}
+	}
+
+	AnimationSpecs PlayerAnimationController::_LoadAnimationSpecs(std::string path)
+	{
+		std::string str = RB::JSON::JGetter::LoadJSONFile(path);
+
+		const char* arrChar = str.c_str();
+
+		struct json_value_s* root = json_parse(arrChar, strlen(arrChar));
+
+
+
+		return AnimationSpecs();
 	}
 }

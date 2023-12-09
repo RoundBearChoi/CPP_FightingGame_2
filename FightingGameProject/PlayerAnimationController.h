@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Ani.h"
+#include "JGetter.h"
 
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
@@ -28,6 +29,7 @@ namespace RB::Render
 		void _SetNewPlayerAnimationObjOnChange(RB::Players::iPlayer& player);
 		RB::Sprites::SpriteEnum _GetPlayerSpriteEnum(RB::Players::PlayerID playerID);
 		void _SaveAnimationSpecs(std::string path, AnimationSpecs specs);
+		AnimationSpecs _LoadAnimationSpecs(std::string path);
 
 	private:
 		Ani _ani;

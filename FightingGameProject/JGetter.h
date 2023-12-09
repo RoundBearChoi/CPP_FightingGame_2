@@ -58,9 +58,9 @@ namespace RB::JSON
 		static json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement)
 		{
 			struct json_object_s* obj = json_value_as_object(parentElement.value);
-			struct json_object_element_s* e0 = obj->start;
+			struct json_object_element_s* element = obj->start;
 
-			return e0;
+			return element;
 		}
 
 		static int32_t GetInt32_FromElement(const json_object_element_s& element)

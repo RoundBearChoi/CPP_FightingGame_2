@@ -271,9 +271,9 @@ namespace RB::Render
 		struct json_value_s* jRoot = json_parse(arrChar, strlen(arrChar));
 		struct json_object_s* jObj = json_value_as_object(jRoot);
 
-		struct json_object_element_s* wholeElement = RB::JSON::JGetter::GetElementNFromObj(*jObj, 0); //player0 animation specs
+		struct json_object_element_s* rootElement = RB::JSON::JGetter::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
-		struct json_object_element_s* e0 = RB::JSON::JGetter::GetElementInsideElement(*wholeElement); //mX_TileCount
+		struct json_object_element_s* e0 = RB::JSON::JGetter::GetElementInsideElement(*rootElement); //mX_TileCount
 		struct json_number_s* e0_value = json_value_as_number(e0->value);
 		int32_t xTileCount = RB::JSON::JGetter::GetInt32_FromElement(*e0);
 

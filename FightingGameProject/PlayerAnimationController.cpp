@@ -146,14 +146,14 @@ namespace RB::Render
 
 		if (file.is_open())
 		{
-			//start of whole obj
+			//start
 			file << "{" << std::endl;
 
-			//start of element(?)
+			//start of parent element
 			file << "    \"" << name << "\":" << std::endl;
 
 			file << "        {" << std::endl;
-			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl;
+			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl; //element inside element
 			file << "        \"mY_TileCount\" : " << specs.mY_TileCount << "," << std::endl;
 			file << "        \"mTotalSprites\" : " << specs.mTotalSprites << "," << std::endl;
 			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
@@ -162,10 +162,10 @@ namespace RB::Render
 			file << "        \"mSpriteEnum\" : " << RB::Sprites::GetString(specs.mSpriteEnum) << "," << std::endl;
 			file << "        \"mPlayOnce\" : " << (specs.mPlayOnce ? 1 : 0) << std::endl;
 			
-			//end of element(?)
+			//end of parent element
 			file << "        }" << std::endl;
 
-			//end of whole obj
+			//end
 			file << "}";
 
 			file.flush();

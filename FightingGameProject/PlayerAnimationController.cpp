@@ -268,9 +268,15 @@ namespace RB::Render
 
 		const char* arrChar = str.c_str();
 
-		struct json_value_s* root = json_parse(arrChar, strlen(arrChar));
+		struct json_value_s* jRoot = json_parse(arrChar, strlen(arrChar));
+		struct json_object_s* jObj = json_value_as_object(jRoot);
 
+		struct json_object_element_s* e0 = jObj->start;
+		struct json_string_s* e0_name = e0->name; //player0 animation specs
 
+		struct json_object_s* obj0 = json_value_as_object(e0->value);
+		struct json_object_element_s* e0_0 = obj0->start;
+		struct json_string_s* e0_0_name = e0_0->name; //mX_TileCount
 
 		return AnimationSpecs();
 	}

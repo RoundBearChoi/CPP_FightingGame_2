@@ -248,7 +248,8 @@ namespace RB::Render
 			file << "    \"" << name << "\":" << std::endl;
 
 			file << "        {" << std::endl;
-			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << std::endl; //<< "," << std::endl;
+			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl;
+			file << "        \"mY_TileCount\" : " << specs.mY_TileCount << std::endl; //<< "," << std::endl;
 			
 			//end of element(?)
 			file << "        }" << std::endl;
@@ -275,6 +276,9 @@ namespace RB::Render
 
 		struct json_object_element_s* e0 = RB::JSON::JGetter::GetElementInsideElement(*rootElement); //mX_TileCount
 		int32_t xTileCount = RB::JSON::JGetter::GetInt32_FromElement(*e0);
+
+		struct json_object_element_s* e1 = e0->next; //mY_TileCount
+		int32_t yTileCount = RB::JSON::JGetter::GetInt32_FromElement(*e1);
 
 		return AnimationSpecs();
 	}

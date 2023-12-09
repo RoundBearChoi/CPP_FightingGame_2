@@ -175,39 +175,39 @@ namespace RB::Render
 
 	AnimationSpecs PlayerAnimationController::_LoadAnimationSpecs(std::string path)
 	{
-		std::string str = RB::JSON::JGetter::LoadJSONFile(path);
+		std::string str = RB::JSON::LoadJSONFile(path);
 
 		const char* arrChar = str.c_str();
 
 		struct json_value_s* jRoot = json_parse(arrChar, strlen(arrChar));
 		struct json_object_s* jObj = json_value_as_object(jRoot);
 
-		struct json_object_element_s* rootElement = RB::JSON::JGetter::GetElementNFromObj(*jObj, 0); //player0 animation specs
+		struct json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
-		struct json_object_element_s* e0 = RB::JSON::JGetter::GetElementInsideElement(*rootElement); //mX_TileCount
-		int32_t xTileCount = RB::JSON::JGetter::GetInt32_FromElement(*e0);
+		struct json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //mX_TileCount
+		int32_t xTileCount = RB::JSON::GetInt32_FromElement(*e0);
 
 		struct json_object_element_s* e1 = e0->next; //mY_TileCount
-		int32_t yTileCount = RB::JSON::JGetter::GetInt32_FromElement(*e1);
+		int32_t yTileCount = RB::JSON::GetInt32_FromElement(*e1);
 
 		struct json_object_element_s* e2 = e1->next; //mTotalSprites
-		int32_t totalSprites = RB::JSON::JGetter::GetInt32_FromElement(*e2);
+		int32_t totalSprites = RB::JSON::GetInt32_FromElement(*e2);
 
 		struct json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
-		int32_t skipFixedUpdates = RB::JSON::JGetter::GetInt32_FromElement(*e3);
+		int32_t skipFixedUpdates = RB::JSON::GetInt32_FromElement(*e3);
 
 		struct json_object_element_s* e4 = e3->next; //mRenderSizeX
-		float_t renderSizeX = RB::JSON::JGetter::GetFloat_FromElement(*e4);
+		float_t renderSizeX = RB::JSON::GetFloat_FromElement(*e4);
 
 		struct json_object_element_s* e5 = e4->next; //mRenderSizeY
-		float_t renderSizeY = RB::JSON::JGetter::GetFloat_FromElement(*e5);
+		float_t renderSizeY = RB::JSON::GetFloat_FromElement(*e5);
 
 		struct json_object_element_s* e6 = e5->next; //mSpriteEnum
-		std::string spriteEnumStr = RB::JSON::JGetter::GetString_FromElement(*e6);
+		std::string spriteEnumStr = RB::JSON::GetString_FromElement(*e6);
 		RB::Sprites::SpriteEnum spriteEnum = RB::Sprites::GetEnum(spriteEnumStr);
 
 		struct json_object_element_s* e7 = e6->next; //mPlayOnce
-		int32_t playOnceInt = RB::JSON::JGetter::GetInt32_FromElement(*e7);
+		int32_t playOnceInt = RB::JSON::GetInt32_FromElement(*e7);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		AnimationSpecs specs;

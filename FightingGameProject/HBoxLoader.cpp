@@ -94,7 +94,7 @@ namespace RB::HBox
 
 	json_value_s* HBoxLoader::LoadRoot(std::string path)
 	{
-		std::string loaded = RB::JSON::JGetter::LoadJSONFile(path);
+		std::string loaded = RB::JSON::LoadJSONFile(path);
 
 		const char* json = loaded.c_str();
 
@@ -218,15 +218,15 @@ namespace RB::HBox
 			{
 				json_object_s* obj = json_value_as_object(element->value);
 
-				json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 0);
-				json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 1);
-				json_object_element_s* width_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 2);
-				json_object_element_s* height_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 3);
+				json_object_element_s* posX_Element = RB::JSON::GetElementNFromObj(*obj, 0);
+				json_object_element_s* posY_Element = RB::JSON::GetElementNFromObj(*obj, 1);
+				json_object_element_s* width_Element = RB::JSON::GetElementNFromObj(*obj, 2);
+				json_object_element_s* height_Element = RB::JSON::GetElementNFromObj(*obj, 3);
 
-				float_t x = RB::JSON::JGetter::GetFloat_FromElement(*posX_Element);
-				float_t y = RB::JSON::JGetter::GetFloat_FromElement(*posY_Element);
-				float_t width = RB::JSON::JGetter::GetFloat_FromElement(*width_Element);
-				float_t height = RB::JSON::JGetter::GetFloat_FromElement(*height_Element);
+				float_t x = RB::JSON::GetFloat_FromElement(*posX_Element);
+				float_t y = RB::JSON::GetFloat_FromElement(*posY_Element);
+				float_t width = RB::JSON::GetFloat_FromElement(*width_Element);
+				float_t height = RB::JSON::GetFloat_FromElement(*height_Element);
 
 				RB::Collisions::AABB aabb{ x, y, width, height };
 

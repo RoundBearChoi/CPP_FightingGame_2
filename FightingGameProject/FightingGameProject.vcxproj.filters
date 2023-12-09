@@ -325,6 +325,9 @@
     <ClCompile Include="StringToSpriteEnum.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="JGetter.cpp">
+      <Filter>Source Files\JSON</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">

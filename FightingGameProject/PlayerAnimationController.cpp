@@ -243,7 +243,15 @@ namespace RB::Render
 			//start of whole obj
 			file << "{" << std::endl;
 
+			//start of element(?)
 			file << "    \"" << name << "\":" << std::endl;
+
+			file << "        {" << std::endl;
+			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl;
+			
+			//end of element(?)
+			file << "        }" << std::endl;
+
 
 			//end of whole obj
 			file << "}";

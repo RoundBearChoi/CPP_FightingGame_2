@@ -119,6 +119,8 @@ namespace RB::Render
 		hadoukenSpecs.mPlayOnce = true;
 
 		_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
+
+		_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.anispecs", idleSpecs);
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -228,5 +230,26 @@ namespace RB::Render
 	RB::Sprites::SpriteEnum PlayerAnimationController::_GetPlayerSpriteEnum(RB::Players::PlayerID playerID)
 	{
 		return _ani.GetSpriteEnum(playerID);
+	}
+
+	void PlayerAnimationController::_SaveAnimationSpecs(std::string path, AnimationSpecs specs)
+	{
+		std::ofstream file(path);
+
+		std::string name = "player0 animation specs";
+
+		if (file.is_open())
+		{
+			//start of whole obj
+			file << "{" << std::endl;
+
+			file << "    \"" << name << "\":" << std::endl;
+
+			//end of whole obj
+			file << "}";
+
+			file.flush();
+			file.close();
+		}
 	}
 }

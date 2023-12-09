@@ -27,6 +27,7 @@ namespace RB::Render
 		void _SetFirstPlayerAnimations();
 		void _SetNewPlayerAnimationObjOnChange(RB::Players::iPlayer& player);
 		RB::Sprites::SpriteEnum _GetPlayerSpriteEnum(RB::Players::PlayerID playerID);
+		void _SaveAnimationSpecs(std::string path, AnimationSpecs specs);
 
 	private:
 		Ani _ani;

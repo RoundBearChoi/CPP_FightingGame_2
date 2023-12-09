@@ -34,7 +34,7 @@ namespace RB::JSON
 			return loadedStr;
 		}
 
-		static json_object_element_s* GetElementN(const json_object_s& obj, size_t index)
+		static json_object_element_s* GetElementNFromObj(const json_object_s& obj, size_t index)
 		{
 			json_object_element_s* element = obj.start;
 
@@ -55,7 +55,15 @@ namespace RB::JSON
 			return nullptr;
 		}
 
-		static int32_t GetInt_FromElement(const json_object_element_s& element)
+		static json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement)
+		{
+			struct json_object_s* obj = json_value_as_object(parentElement.value);
+			struct json_object_element_s* e0 = obj->start;
+
+			return e0;
+		}
+
+		static int32_t GetInt32_FromElement(const json_object_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);
 

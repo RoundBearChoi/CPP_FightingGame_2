@@ -218,10 +218,10 @@ namespace RB::HBox
 			{
 				json_object_s* obj = json_value_as_object(element->value);
 
-				json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementN(*obj, 0);
-				json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementN(*obj, 1);
-				json_object_element_s* width_Element = RB::JSON::JGetter::GetElementN(*obj, 2);
-				json_object_element_s* height_Element = RB::JSON::JGetter::GetElementN(*obj, 3);
+				json_object_element_s* posX_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 0);
+				json_object_element_s* posY_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 1);
+				json_object_element_s* width_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 2);
+				json_object_element_s* height_Element = RB::JSON::JGetter::GetElementNFromObj(*obj, 3);
 
 				float_t x = RB::JSON::JGetter::GetFloat_FromElement(*posX_Element);
 				float_t y = RB::JSON::JGetter::GetFloat_FromElement(*posY_Element);

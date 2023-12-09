@@ -6,7 +6,7 @@ namespace RB::Render
 	{
 		_ani.Init();
 
-		//sprites
+		//animations require loaded sprites first
 		_ani.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::fighter_0_idle);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::fighter_0_walk);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::fighter_0_jump_up);
@@ -17,7 +17,6 @@ namespace RB::Render
 		_ani.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::fighter_0_wince);
 		_ani.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
-		//animations (requires loaded sprites first)
 		//AnimationSpecs idleSpecs;
 		//idleSpecs.mX_TileCount = 9;
 		//idleSpecs.mY_TileCount = 1;

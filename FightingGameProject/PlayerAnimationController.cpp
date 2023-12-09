@@ -249,7 +249,9 @@ namespace RB::Render
 
 			file << "        {" << std::endl;
 			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl;
-			file << "        \"mY_TileCount\" : " << specs.mY_TileCount << std::endl; //<< "," << std::endl;
+			file << "        \"mY_TileCount\" : " << specs.mY_TileCount << "," << std::endl;
+			file << "        \"mTotalSprites\" : " << specs.mTotalSprites << "," << std::endl;
+			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << std::endl;
 			
 			//end of element(?)
 			file << "        }" << std::endl;
@@ -279,6 +281,12 @@ namespace RB::Render
 
 		struct json_object_element_s* e1 = e0->next; //mY_TileCount
 		int32_t yTileCount = RB::JSON::JGetter::GetInt32_FromElement(*e1);
+
+		struct json_object_element_s* e2 = e1->next; //mTotalSprites
+		int32_t totalSprites = RB::JSON::JGetter::GetInt32_FromElement(*e2);
+
+		struct json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
+		int32_t skipFixedUpdates = RB::JSON::JGetter::GetInt32_FromElement(*e3);
 
 		return AnimationSpecs();
 	}

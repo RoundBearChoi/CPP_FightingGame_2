@@ -74,27 +74,27 @@ namespace RB::Render
 		//
 		//_ani.LoadAnimation(jumpForwardUp_1_Specs, RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1);
 
-		AnimationSpecs fallSpecs;
-        fallSpecs.mX_TileCount = 3;
-		fallSpecs.mY_TileCount = 1;
-		fallSpecs.mTotalSprites = 3;
-		fallSpecs.mSkipFixedUpdates = 6;
-		fallSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
-		fallSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
-		fallSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
+		//AnimationSpecs fallSpecs;
+        //fallSpecs.mX_TileCount = 3;
+		//fallSpecs.mY_TileCount = 1;
+		//fallSpecs.mTotalSprites = 3;
+		//fallSpecs.mSkipFixedUpdates = 6;
+		//fallSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
+		//fallSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
+		//fallSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
+		//
+		//_ani.LoadAnimation(fallSpecs, RB::Sprites::SpriteEnum::fighter_0_fall);
 
-		_ani.LoadAnimation(fallSpecs, RB::Sprites::SpriteEnum::fighter_0_fall);
-
-		AnimationSpecs jabSpecs;
-		jabSpecs.mX_TileCount = 6;
-		jabSpecs.mY_TileCount = 1;
-		jabSpecs.mTotalSprites = 6;
-		jabSpecs.mSkipFixedUpdates = 2;
-		jabSpecs.mRenderSize = olc::vf2d{ 280.0f, 160.0f };
-		jabSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
-		jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
-
-		_ani.LoadAnimation(jabSpecs, RB::Sprites::SpriteEnum::fighter_0_jab);
+		//AnimationSpecs jabSpecs;
+		//jabSpecs.mX_TileCount = 6;
+		//jabSpecs.mY_TileCount = 1;
+		//jabSpecs.mTotalSprites = 6;
+		//jabSpecs.mSkipFixedUpdates = 2;
+		//jabSpecs.mRenderSize = olc::vf2d{ 280.0f, 160.0f };
+		//jabSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		//jabSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
+		//
+		//_ani.LoadAnimation(jabSpecs, RB::Sprites::SpriteEnum::fighter_0_jab);
 
 		AnimationSpecs winceSpecs;
 		winceSpecs.mX_TileCount = 1;
@@ -124,12 +124,16 @@ namespace RB::Render
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up.aniSpecs", jumpUpSpecs);
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs", jumpForwardUp_0_Specs);
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs", jumpForwardUp_1_Specs);
+		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_fall.aniSpecs", fallSpecs);
+		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs", jabSpecs);
 
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_idle);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_walk);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_up);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_0);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_fall.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_fall);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jab);
 	}
 
 	void PlayerAnimationController::OnUpdate()

@@ -107,17 +107,17 @@ namespace RB::Render
 		//
 		//_ani.LoadAnimation(winceSpecs, RB::Sprites::SpriteEnum::fighter_0_wince);
 
-		AnimationSpecs hadoukenSpecs;
-		hadoukenSpecs.mX_TileCount = 13;
-		hadoukenSpecs.mY_TileCount = 1;
-		hadoukenSpecs.mTotalSprites = 13;
-		hadoukenSpecs.mSkipFixedUpdates = 3;
-		hadoukenSpecs.mRenderSize = olc::vf2d{ 170.0f, 170.0f };
-		hadoukenSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
-		hadoukenSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_hadouken;
-		hadoukenSpecs.mPlayOnce = true;
-
-		_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
+		//AnimationSpecs hadoukenSpecs;
+		//hadoukenSpecs.mX_TileCount = 13;
+		//hadoukenSpecs.mY_TileCount = 1;
+		//hadoukenSpecs.mTotalSprites = 13;
+		//hadoukenSpecs.mSkipFixedUpdates = 3;
+		//hadoukenSpecs.mRenderSize = olc::vf2d{ 170.0f, 170.0f };
+		//hadoukenSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		//hadoukenSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_hadouken;
+		//hadoukenSpecs.mPlayOnce = true;
+		//
+		//_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs", idleSpecs);
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs", walkSpecs);
@@ -127,6 +127,7 @@ namespace RB::Render
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_fall.aniSpecs", fallSpecs);
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs", jabSpecs);
 		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs", winceSpecs);
+		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs", hadoukenSpecs);
 
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_idle);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_walk);
@@ -136,6 +137,7 @@ namespace RB::Render
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_fall.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_fall);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jab);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_wince);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_hadouken);
 	}
 
 	void PlayerAnimationController::OnUpdate()

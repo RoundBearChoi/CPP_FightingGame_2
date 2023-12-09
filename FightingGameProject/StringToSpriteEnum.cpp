@@ -12,6 +12,7 @@ namespace RB::Sprites
 		if (str._Equal("fighter_0_fall")) { return RB::Sprites::SpriteEnum::fighter_0_fall; }
 		if (str._Equal("fighter_0_jab")) { return RB::Sprites::SpriteEnum::fighter_0_jab; }
 		if (str._Equal("fighter_0_wince")) { return RB::Sprites::SpriteEnum::fighter_0_wince; }
+		if (str._Equal("fighter_0_hadouken")) { return RB::Sprites::SpriteEnum::fighter_0_hadouken; }
 
 		return RB::Sprites::SpriteEnum::NONE;
 	}
@@ -26,6 +27,7 @@ namespace RB::Sprites
 		if (spriteEnum == RB::Sprites::SpriteEnum::fighter_0_fall) { return "\"fighter_0_fall\""; }
 		if (spriteEnum == RB::Sprites::SpriteEnum::fighter_0_jab) { return "\"fighter_0_jab\""; }
 		if (spriteEnum == RB::Sprites::SpriteEnum::fighter_0_wince) { return "\"fighter_0_wince\""; }
+		if (spriteEnum == RB::Sprites::SpriteEnum::fighter_0_hadouken) { return "\"fighter_0_hadouken\""; }
 
 		return "NONE";
 	}

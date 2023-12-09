@@ -18,27 +18,27 @@ namespace RB::Render
 		_ani.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
 		//animations (requires loaded sprites first)
-		AnimationSpecs idleSpecs;
-		idleSpecs.mX_TileCount = 9;
-		idleSpecs.mY_TileCount = 1;
-		idleSpecs.mTotalSprites = 9;
-		idleSpecs.mSkipFixedUpdates = 3;
-		idleSpecs.mRenderSize = olc::vf2d{ 400.0, 225.0f };
-		idleSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
-		idleSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
+		//AnimationSpecs idleSpecs;
+		//idleSpecs.mX_TileCount = 9;
+		//idleSpecs.mY_TileCount = 1;
+		//idleSpecs.mTotalSprites = 9;
+		//idleSpecs.mSkipFixedUpdates = 3;
+		//idleSpecs.mRenderSize = olc::vf2d{ 400.0, 225.0f };
+		//idleSpecs.mRenderOffset = olc::vf2d{ 0.0f, 0.0f };
+		//idleSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
+		//
+		//_ani.LoadAnimation(idleSpecs, RB::Sprites::SpriteEnum::fighter_0_idle);
 
-		_ani.LoadAnimation(idleSpecs, RB::Sprites::SpriteEnum::fighter_0_idle);
-
-		AnimationSpecs walkSpecs;
-		walkSpecs.mX_TileCount = 10;
-		walkSpecs.mY_TileCount = 1;
-		walkSpecs.mTotalSprites = 10;
-		walkSpecs.mSkipFixedUpdates = 4;
-		walkSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
-		walkSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
-		walkSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
-
-		_ani.LoadAnimation(walkSpecs, RB::Sprites::SpriteEnum::fighter_0_walk);
+		//AnimationSpecs walkSpecs;
+		//walkSpecs.mX_TileCount = 10;
+		//walkSpecs.mY_TileCount = 1;
+		//walkSpecs.mTotalSprites = 10;
+		//walkSpecs.mSkipFixedUpdates = 4;
+		//walkSpecs.mRenderSize = olc::vf2d{ 372.0f, 248.0f };
+		//walkSpecs.mRenderOffset = olc::vf2d{ 14.0f, 0.0f };
+		//walkSpecs.mSpriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
+		//
+		//_ani.LoadAnimation(walkSpecs, RB::Sprites::SpriteEnum::fighter_0_walk);
 
 		AnimationSpecs jumpUpSpecs;
         jumpUpSpecs.mX_TileCount = 3;
@@ -120,8 +120,11 @@ namespace RB::Render
 
 		_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
-		_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs", idleSpecs);
-		_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs");
+		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs", idleSpecs);
+		//_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs", walkSpecs);
+
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_idle);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_walk);
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -254,7 +257,8 @@ namespace RB::Render
 			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
 			file << "        \"mRenderSizeX\" : " << specs.mRenderSize.x << "," << std::endl;
 			file << "        \"mRenderSizeY\" : " << specs.mRenderSize.y << "," << std::endl;
-			file << "        \"mSpriteEnum\" : " << RB::Sprites::GetString(specs.mSpriteEnum) << std::endl;
+			file << "        \"mSpriteEnum\" : " << RB::Sprites::GetString(specs.mSpriteEnum) << "," << std::endl;
+			file << "        \"mPlayOnce\" : " << (specs.mPlayOnce ? 1 : 0) << std::endl;
 			
 			//end of element(?)
 			file << "        }" << std::endl;
@@ -296,6 +300,24 @@ namespace RB::Render
 		struct json_object_element_s* e5 = e4->next; //mRenderSizeY
 		float_t renderSizeY = RB::JSON::JGetter::GetFloat_FromElement(*e5);
 
-		return AnimationSpecs();
+		struct json_object_element_s* e6 = e5->next; //mSpriteEnum
+		std::string spriteEnumStr = RB::JSON::JGetter::GetString_FromElement(*e6);
+		RB::Sprites::SpriteEnum spriteEnum = RB::Sprites::GetEnum(spriteEnumStr);
+
+		struct json_object_element_s* e7 = e6->next; //mPlayOnce
+		int32_t playOnceInt = RB::JSON::JGetter::GetInt32_FromElement(*e7);
+		bool playOnce = playOnceInt == 0 ? false : true;
+
+		AnimationSpecs specs;
+
+		specs.mX_TileCount = xTileCount;
+		specs.mY_TileCount = yTileCount;
+		specs.mTotalSprites = totalSprites;
+		specs.mSkipFixedUpdates = skipFixedUpdates;
+		specs.mRenderSize = olc::vf2d{ renderSizeX, renderSizeY };
+		specs.mSpriteEnum = spriteEnum;
+		specs.mPlayOnce = playOnce;
+
+		return specs;
 	}
 }

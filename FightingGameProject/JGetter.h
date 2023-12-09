@@ -87,6 +87,15 @@ namespace RB::JSON
 			return result;
 		}
 
+		static std::string GetString_FromElement(const json_object_element_s& element)
+		{
+			struct json_string_s* string = json_value_as_string(element.value);
+
+			std::string result = string->string;
+
+			return result;
+		}
+
 		static int32_t GetInt32_FromArrayElement(const json_array_element_s& element)
 		{
 			struct json_number_s* number = json_value_as_number(element.value);

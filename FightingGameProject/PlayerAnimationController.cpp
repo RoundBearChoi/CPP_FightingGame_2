@@ -120,8 +120,8 @@ namespace RB::Render
 
 		_ani.LoadAnimation(hadoukenSpecs, RB::Sprites::SpriteEnum::fighter_0_hadouken);
 
-		_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.anispecs", idleSpecs);
-		_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.anispecs");
+		_SaveAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs", idleSpecs);
+		_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs");
 	}
 
 	void PlayerAnimationController::OnUpdate()

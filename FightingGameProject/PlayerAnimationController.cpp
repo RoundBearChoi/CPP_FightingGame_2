@@ -251,7 +251,9 @@ namespace RB::Render
 			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl;
 			file << "        \"mY_TileCount\" : " << specs.mY_TileCount << "," << std::endl;
 			file << "        \"mTotalSprites\" : " << specs.mTotalSprites << "," << std::endl;
-			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << std::endl;
+			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
+			file << "        \"mRenderSizeX\" : " << specs.mRenderSize.x << "," << std::endl;
+			file << "        \"mRenderSizeY\" : " << specs.mRenderSize.y << std::endl;
 			
 			//end of element(?)
 			file << "        }" << std::endl;
@@ -287,6 +289,12 @@ namespace RB::Render
 
 		struct json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
 		int32_t skipFixedUpdates = RB::JSON::JGetter::GetInt32_FromElement(*e3);
+
+		struct json_object_element_s* e4 = e3->next; //mRenderSizeX
+		float_t renderSizeX = RB::JSON::JGetter::GetFloat_FromElement(*e4);
+
+		struct json_object_element_s* e5 = e4->next; //mRenderSizeY
+		float_t renderSizeY = RB::JSON::JGetter::GetFloat_FromElement(*e5);
 
 		return AnimationSpecs();
 	}

@@ -5,7 +5,7 @@
 #include "Ease.h"
 
 #include "iPlayer.h"
-#include "P0_FallDown.h"
+#include "P0_JumpUp_1.h"
 
 namespace RB::PlayerStateComponents
 {

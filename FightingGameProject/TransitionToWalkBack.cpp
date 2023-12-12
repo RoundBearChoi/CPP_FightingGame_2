@@ -1,13 +1,18 @@
-#include "TriggerMoveBack.h"
+#include "TransitionToWalkBack.h"
 
 namespace RB::PlayerStateComponents
 {
-	void TriggerMoveBack::OnEnter()
+	TransitionToWalkBack::TransitionToWalkBack(RB::States::iState* nextState)
+	{
+		_vecNextStates.push_back(nextState);
+	}
+
+	void TransitionToWalkBack::OnEnter()
 	{
 		_moveBackOnPress.SetStateMachineID(_state->GetStateMachineID());
 	}
 
-	void TriggerMoveBack::OnUpdate()
+	void TransitionToWalkBack::OnUpdate()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr)
 		{
@@ -27,7 +32,7 @@ namespace RB::PlayerStateComponents
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 
-			stateMachine->QueueNextState(new RB::PlayerStates::P0_MoveBack());
+			stateMachine->QueueNextState(_vecNextStates[0]); //new RB::PlayerStates::P0_MoveBack());
 		}
 	}
 }

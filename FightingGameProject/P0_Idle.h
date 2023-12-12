@@ -7,7 +7,7 @@
 #include "TriggerJumpUp.h"
 #include "TriggerJab.h"
 #include "TransitionToWalkForward.h"
-#include "TriggerMoveBack.h"
+#include "TransitionToWalkBack.h"
 
 namespace RB::PlayerStates
 {

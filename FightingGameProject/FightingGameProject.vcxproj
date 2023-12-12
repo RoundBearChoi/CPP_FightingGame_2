@@ -228,7 +228,7 @@
     <ClCompile Include="StateMachineBase.cpp" />
     <ClCompile Include="GameplayUpdater.cpp" />
     <ClCompile Include="Time.cpp" />
-    <ClCompile Include="TriggerMoveBack.cpp" />
+    <ClCompile Include="TransitionToWalkBack.cpp" />
     <ClCompile Include="TransitionToWalkForward.cpp" />
     <ClCompile Include="Updater.cpp" />
     <ClCompile Include="ZoomOnPlayers.cpp" />
@@ -364,7 +364,7 @@
     <ClInclude Include="GameplayUpdater.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="FixedTimer.h" />
-    <ClInclude Include="TriggerMoveBack.h" />
+    <ClInclude Include="TransitionToWalkBack.h" />
     <ClInclude Include="TransitionToWalkForward.h" />
     <ClInclude Include="TriggerOnFixedUpdateCount.h" />
     <ClInclude Include="Updater.h" />

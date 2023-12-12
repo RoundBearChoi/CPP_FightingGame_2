@@ -157,7 +157,7 @@
     <ClCompile Include="MoveBackOnPress.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerMoveBack.cpp">
+    <ClCompile Include="TransitionToWalkBack.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="WhileMovingBack.cpp">
@@ -477,7 +477,7 @@
     <ClInclude Include="MoveBackOnPress.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerMoveBack.h">
+    <ClInclude Include="TransitionToWalkBack.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="WhileMovingBack.h">

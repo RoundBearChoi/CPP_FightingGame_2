@@ -8,11 +8,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class TriggerMoveBack : public RB::States::StateComponentBase
+	class TransitionToWalkBack : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerMoveBack() = default;
-		~TriggerMoveBack() override {};
+		TransitionToWalkBack(RB::States::iState* nextState);
+		~TransitionToWalkBack() override {};
 
 	public:
 		void OnEnter() override;

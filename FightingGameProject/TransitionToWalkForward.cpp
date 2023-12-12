@@ -2,6 +2,11 @@
 
 namespace RB::PlayerStateComponents
 {
+	TransitionToWalkForward::TransitionToWalkForward(RB::States::iState* nextState)
+	{
+		_vecNextStates.push_back(nextState);
+	}
+
 	void TransitionToWalkForward::OnEnter()
 	{
 		_moveForwardOnPress.SetStateMachineID(_state->GetStateMachineID());
@@ -27,7 +32,7 @@ namespace RB::PlayerStateComponents
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 
-			stateMachine->QueueNextState(new RB::PlayerStates::P0_MoveForward());
+			stateMachine->QueueNextState(_vecNextStates[0]); //new RB::PlayerStates::P0_MoveForward());
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace RB::PlayerStateComponents
 	class TransitionToWalkForward : public RB::States::StateComponentBase
 	{
 	public:
-		TransitionToWalkForward() = default;
+		TransitionToWalkForward(RB::States::iState* nextState);
 		~TransitionToWalkForward() override {};
 		
 	public:

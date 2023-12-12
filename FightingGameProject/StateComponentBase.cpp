@@ -7,14 +7,28 @@ namespace RB::States
 	/// </summary>
 	StateComponentBase::~StateComponentBase()
 	{
-		if (_nextState != nullptr)
+		for (size_t i = 0; i < _vecNextStates.size(); i++)
 		{
-			if (!_nextState->Entered())
+			if (_vecNextStates[i] != nullptr)
 			{
-				delete _nextState;
-				_nextState = nullptr;
-			}
-		}
+				if (!_vecNextStates[i]->Entered())
+				{
+					delete _vecNextStates[i];
+					_vecNextStates[i] = nullptr;
+				}
+			};
+		};
+
+		_vecNextStates.clear();
+
+		//if (_nextState != nullptr)
+		//{
+		//	if (!_nextState->Entered())
+		//	{
+		//		delete _nextState;
+		//		_nextState = nullptr;
+		//	}
+		//}
 	}
 
 	void StateComponentBase::SetState(iState* state)

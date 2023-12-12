@@ -6,7 +6,8 @@ namespace RB::PlayerStateComponents
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
-		_nextState = nextState;
+		//_nextState = nextState;
+		_vecNextStates.push_back(nextState);
 	}
 
 	MoveUpOnJump::~MoveUpOnJump()
@@ -45,10 +46,12 @@ namespace RB::PlayerStateComponents
 		{
 			RB::States::iStateMachine* machine = player->GetStateMachine();
 
-			if (_nextState != nullptr)
-			{
-				machine->QueueNextState(_nextState);
-			}
+			machine->QueueNextState(_vecNextStates[0]);
+
+			//if (_nextState != nullptr)
+			//{
+			//	machine->QueueNextState(_nextState);
+			//}
 		}
 	}
 }

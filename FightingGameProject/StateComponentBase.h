@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include <cstdint>
 #include "iState.h"
 
@@ -24,7 +25,8 @@ namespace RB::States
 
 	protected:
 		iState* _state = nullptr;
-		iState* _nextState = nullptr;
+		//iState* _nextState = nullptr;
+		std::vector<iState*> _vecNextStates;
 		int32_t _fixedUpdateOnCount = -1;
 		int32_t _updateOnCount = -1;
 	};

@@ -11,10 +11,10 @@
 
 namespace RB::PlayerStates
 {
-	class P0_JumpUp : public RB::PlayerStates::PlayerState
+	class P0_JumpUp_0 : public RB::PlayerStates::PlayerState
 	{
 	public:
-		P0_JumpUp() = default;
+		P0_JumpUp_0() = default;
 
 	public:
 		void OnEnter() override;

@@ -1,8 +1,8 @@
-#include "P0_JumpUp.h"
+#include "P0_JumpUp_0.h"
 
 namespace RB::PlayerStates
 {
-	void P0_JumpUp::OnEnter()
+	void P0_JumpUp_0::OnEnter()
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
 
@@ -12,17 +12,17 @@ namespace RB::PlayerStates
 		EnterStateComponents();
 	}
 
-	void P0_JumpUp::OnExit()
+	void P0_JumpUp_0::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_JumpUp::OnUpdate()
+	void P0_JumpUp_0::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_JumpUp::OnFixedUpdate()
+	void P0_JumpUp_0::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

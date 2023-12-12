@@ -204,7 +204,7 @@
     <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="P0_FallDown.cpp" />
     <ClCompile Include="PlayerAnimationController.cpp" />
-    <ClCompile Include="P0_JumpUp.cpp" />
+    <ClCompile Include="P0_JumpUp_0.cpp" />
     <ClCompile Include="LineRenderer.cpp" />
     <ClCompile Include="AnimationRenderer.cpp" />
     <ClCompile Include="PlayerCollider.cpp" />
@@ -327,7 +327,7 @@
     <ClInclude Include="AnimationLoader.h" />
     <ClInclude Include="P0_FallDown.h" />
     <ClInclude Include="PlayerAnimationController.h" />
-    <ClInclude Include="P0_JumpUp.h" />
+    <ClInclude Include="P0_JumpUp_0.h" />
     <ClInclude Include="LineRenderer.h" />
     <ClInclude Include="AnimationRenderer.h" />
     <ClInclude Include="PlayerCollider.h" />

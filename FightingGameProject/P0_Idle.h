@@ -3,7 +3,7 @@
 #include "PlayerState.h"
 
 #include "FixDirectionDuringState.h"
-#include "TriggerJumpForward.h"
+#include "TransitionToJumpForward.h"
 #include "TransitionToJumpUp.h"
 #include "TriggerJab.h"
 #include "TransitionToWalkForward.h"

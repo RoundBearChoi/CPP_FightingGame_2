@@ -3,7 +3,7 @@
 #include "iPlayer.h"
 
 #include "FixDirectionDuringState.h"
-#include "TriggerJumpForward.h"
+#include "TransitionToJumpForward.h"
 #include "TransitionToJumpUp.h"
 #include "WhileMovingForward.h"
 

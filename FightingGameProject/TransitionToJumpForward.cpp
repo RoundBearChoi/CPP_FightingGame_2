@@ -1,13 +1,13 @@
-#include "TriggerJumpForward.h"
+#include "TransitionToJumpForward.h"
 
 namespace RB::PlayerStateComponents
 {
-	void TriggerJumpForward::OnEnter()
+	void TransitionToJumpForward::OnEnter()
 	{
 
 	}
 
-	void TriggerJumpForward::OnUpdate()
+	void TransitionToJumpForward::OnUpdate()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr ||
 			RB::Input::iInputController::instance == nullptr)

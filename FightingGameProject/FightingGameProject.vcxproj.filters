@@ -274,7 +274,7 @@
     <ClCompile Include="MoveDownOnFall.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerJumpForward.cpp">
+    <ClCompile Include="TransitionToJumpForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="P0_JumpForwardUp_0.cpp">
@@ -669,7 +669,7 @@
     <ClInclude Include="MoveDownOnFall.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerJumpForward.h">
+    <ClInclude Include="TransitionToJumpForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="P0_JumpForwardUp_0.h">

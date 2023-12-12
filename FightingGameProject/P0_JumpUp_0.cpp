@@ -7,7 +7,7 @@ namespace RB::PlayerStates
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up;
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
-		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(15, 28.0f, new P0_FallDown()));
+		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(15, 28.0f, new P0_JumpUp_1()));
 
 		EnterStateComponents();
 	}

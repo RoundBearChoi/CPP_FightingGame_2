@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStates
 {
-	void P0_FallDown::OnEnter()
+	void P0_JumpUp_1::OnEnter()
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_fall;
 
@@ -12,17 +12,17 @@ namespace RB::PlayerStates
 		EnterStateComponents();
 	}
 
-	void P0_FallDown::OnExit()
+	void P0_JumpUp_1::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_FallDown::OnUpdate()
+	void P0_JumpUp_1::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_FallDown::OnFixedUpdate()
+	void P0_JumpUp_1::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

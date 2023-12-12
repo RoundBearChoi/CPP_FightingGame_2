@@ -9,10 +9,10 @@
 
 namespace RB::PlayerStates
 {
-	class P0_MoveForward : public RB::PlayerStates::PlayerState
+	class P0_WalkForward : public RB::PlayerStates::PlayerState
 	{
 	public:
-		P0_MoveForward() = default;
+		P0_WalkForward() = default;
 
 	public:
 		void OnEnter() override;

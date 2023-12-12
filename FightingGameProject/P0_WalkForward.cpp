@@ -1,8 +1,8 @@
-#include "P0_MoveForward.h"
+#include "P0_WalkForward.h"
 
 namespace RB::PlayerStates
 {
-	void P0_MoveForward::OnEnter()
+	void P0_WalkForward::OnEnter()
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
 
@@ -14,17 +14,17 @@ namespace RB::PlayerStates
 		EnterStateComponents();
 	}
 
-	void P0_MoveForward::OnExit()
+	void P0_WalkForward::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_MoveForward::OnUpdate()
+	void P0_WalkForward::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_MoveForward::OnFixedUpdate()
+	void P0_WalkForward::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

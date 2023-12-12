@@ -91,7 +91,7 @@
     <ClCompile Include="P0_Idle.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
-    <ClCompile Include="P0_MoveForward.cpp">
+    <ClCompile Include="P0_WalkForward.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="InputController.cpp">
@@ -387,7 +387,7 @@
     <ClInclude Include="TriggerOnFixedUpdateCount.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
-    <ClInclude Include="P0_MoveForward.h">
+    <ClInclude Include="P0_WalkForward.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="InputController.h">

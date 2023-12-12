@@ -20,15 +20,6 @@ namespace RB::States
 		};
 
 		_vecNextStates.clear();
-
-		//if (_nextState != nullptr)
-		//{
-		//	if (!_nextState->Entered())
-		//	{
-		//		delete _nextState;
-		//		_nextState = nullptr;
-		//	}
-		//}
 	}
 
 	void StateComponentBase::SetState(iState* state)

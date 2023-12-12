@@ -4,7 +4,6 @@ namespace RB::PlayerStateComponents
 {
 	TriggerJab::TriggerJab(RB::States::iState* nextState)
 	{
-		//_nextState = nextState;
 		_vecNextStates.push_back(nextState);
 	}
 
@@ -41,7 +40,6 @@ namespace RB::PlayerStateComponents
 			obj->SetUsedStatus(true);
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();
-			//machine->QueueNextState(_nextState);
 			machine->QueueNextState(_vecNextStates[0]);
 
 			return;

@@ -6,7 +6,6 @@ namespace RB::PlayerStateComponents
 {
 	TransitionOnAnimationEnd::TransitionOnAnimationEnd(RB::States::iState* nextState)
 	{
-		//_nextState = nextState;
 		_vecNextStates.push_back(nextState);
 	}
 
@@ -46,7 +45,6 @@ namespace RB::PlayerStateComponents
 
 		if ((specs.mTotalSprites - 1) * specs.mSkipFixedUpdates <= updates)
 		{
-			//player->GetStateMachine()->QueueNextState(_nextState);
 			player->GetStateMachine()->QueueNextState(_vecNextStates[0]);
 		}
 	}

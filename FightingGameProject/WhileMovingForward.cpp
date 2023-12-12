@@ -80,7 +80,7 @@ namespace RB::PlayerStateComponents
 		if (_bMoveBack)
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
-			stateMachine->QueueNextState(_vecNextStates[1]); //new RB::PlayerStates::P0_MoveBack());
+			stateMachine->QueueNextState(_vecNextStates[1]); //transition to walk back
 
 			return;
 		}
@@ -88,7 +88,7 @@ namespace RB::PlayerStateComponents
 		if (!_bMoveForward)
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
-			stateMachine->QueueNextState(_vecNextStates[0]); //new RB::PlayerStates::P0_Idle());
+			stateMachine->QueueNextState(_vecNextStates[0]); //transition to idle
 
 			return;
 		}

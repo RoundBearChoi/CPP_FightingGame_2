@@ -13,7 +13,7 @@ namespace RB::PlayerStateComponents
 	class WhileMovingBack : public RB::States::StateComponentBase
 	{
 	public:
-		WhileMovingBack() = default;
+		WhileMovingBack(RB::States::iState* nextIdleState, RB::States::iState* nextWalkForwardState);
 		~WhileMovingBack() override {};
 
 	public:

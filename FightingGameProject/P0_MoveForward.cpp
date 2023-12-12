@@ -7,7 +7,7 @@ namespace RB::PlayerStates
 		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward());
+		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::P0_JumpForwardUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::P0_JumpUp()));
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
 

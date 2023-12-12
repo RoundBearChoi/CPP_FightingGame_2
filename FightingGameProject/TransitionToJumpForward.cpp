@@ -2,6 +2,11 @@
 
 namespace RB::PlayerStateComponents
 {
+	TransitionToJumpForward::TransitionToJumpForward(RB::States::iState* nextState)
+	{
+		_vecNextStates.push_back(nextState);
+	}
+
 	void TransitionToJumpForward::OnEnter()
 	{
 
@@ -38,7 +43,7 @@ namespace RB::PlayerStateComponents
 				jumpForwardInputObj->SetUsedStatus(true);
 
 				RB::States::iStateMachine* machine = player->GetStateMachine();
-				machine->QueueNextState(new RB::PlayerStates::P0_JumpForwardUp_0());
+				machine->QueueNextState(_vecNextStates[0]);
 			}
 		}
 	}

@@ -2,6 +2,12 @@
 
 namespace RB::PlayerStateComponents
 {
+	WhileMovingForward::WhileMovingForward(RB::States::iState* nextIdleState, RB::States::iState* nextWalkBackState)
+	{
+		_vecNextStates.push_back(nextIdleState);
+		_vecNextStates.push_back(nextWalkBackState);
+	}
+
 	void WhileMovingForward::OnEnter()
 	{
 		_moveForwardOnPress.SetStateMachineID(_state->GetStateMachineID());
@@ -74,7 +80,7 @@ namespace RB::PlayerStateComponents
 		if (_bMoveBack)
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
-			stateMachine->QueueNextState(new RB::PlayerStates::P0_MoveBack());
+			stateMachine->QueueNextState(_vecNextStates[1]); //new RB::PlayerStates::P0_MoveBack());
 
 			return;
 		}
@@ -82,7 +88,7 @@ namespace RB::PlayerStateComponents
 		if (!_bMoveForward)
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
-			stateMachine->QueueNextState(new RB::PlayerStates::P0_Idle());
+			stateMachine->QueueNextState(_vecNextStates[0]); //new RB::PlayerStates::P0_Idle());
 
 			return;
 		}

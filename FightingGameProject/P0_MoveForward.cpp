@@ -9,7 +9,7 @@ namespace RB::PlayerStates
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::P0_JumpForwardUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::P0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward());
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward(new RB::PlayerStates::P0_Idle(), new RB::PlayerStates::P0_MoveBack()));
 
 		EnterStateComponents();
 	}

@@ -163,7 +163,7 @@
     <ClCompile Include="WhileMovingBack.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerJumpUp.cpp">
+    <ClCompile Include="TransitionToJumpUp.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="HurtBoxEditorUpdater.cpp">
@@ -483,7 +483,7 @@
     <ClInclude Include="WhileMovingBack.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerJumpUp.h">
+    <ClInclude Include="TransitionToJumpUp.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="HurtBoxEditorUpdater.h">

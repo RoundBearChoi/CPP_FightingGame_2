@@ -1,13 +1,18 @@
-#include "TriggerJumpUp.h"
+#include "TransitionToJumpUp.h"
 
 namespace RB::PlayerStateComponents
 {
-	void TriggerJumpUp::OnEnter()
+	TransitionToJumpUp::TransitionToJumpUp(RB::States::iState* nextState)
+	{
+		_vecNextStates.push_back(nextState);
+	}
+
+	void TransitionToJumpUp::OnEnter()
 	{
 
 	}
 
-	void TriggerJumpUp::OnUpdate()
+	void TransitionToJumpUp::OnUpdate()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr ||
 			RB::Input::iInputController::instance == nullptr)
@@ -38,7 +43,7 @@ namespace RB::PlayerStateComponents
 				jumpPress->SetUsedStatus(true);
 
 				RB::States::iStateMachine* machine = player->GetStateMachine();
-				machine->QueueNextState(new RB::PlayerStates::P0_JumpUp());
+				machine->QueueNextState(_vecNextStates[0]); //new RB::PlayerStates::P0_JumpUp());
 
 				return;
 			}

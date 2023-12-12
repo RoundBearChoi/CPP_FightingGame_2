@@ -3,7 +3,7 @@
 #include "iPlayer.h"
 
 #include "FixDirectionDuringState.h"
-#include "TriggerJumpUp.h"
+#include "TransitionToJumpUp.h"
 #include "WhileMovingBack.h"
 
 namespace RB::PlayerStates

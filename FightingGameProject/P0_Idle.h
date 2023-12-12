@@ -4,7 +4,7 @@
 
 #include "FixDirectionDuringState.h"
 #include "TriggerJumpForward.h"
-#include "TriggerJumpUp.h"
+#include "TransitionToJumpUp.h"
 #include "TriggerJab.h"
 #include "TransitionToWalkForward.h"
 #include "TransitionToWalkBack.h"

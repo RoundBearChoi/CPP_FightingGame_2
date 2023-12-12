@@ -32,7 +32,7 @@ namespace RB::PlayerStateComponents
 		{
 			RB::States::iStateMachine* stateMachine = player->GetStateMachine();
 
-			stateMachine->QueueNextState(_vecNextStates[0]); //new RB::PlayerStates::P0_MoveBack());
+			stateMachine->QueueNextState(_vecNextStates[0]);
 		}
 	}
 }

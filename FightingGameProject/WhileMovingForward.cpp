@@ -60,6 +60,8 @@ namespace RB::PlayerStateComponents
 
 		if (_bMoveForward)
 		{
+			//RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+
 			int movement = 3;
 
 			if (player->OtherPlayerIsOnRightSide())

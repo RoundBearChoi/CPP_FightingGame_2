@@ -11,7 +11,7 @@ namespace RB::PlayerStates
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::P0_JumpUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::TriggerJab(new P0_Jab()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkForward(new RB::PlayerStates::P0_WalkForward()));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkBack(new RB::PlayerStates::P0_MoveBack()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkBack(new RB::PlayerStates::P0_WalkBack()));
 
 		EnterStateComponents();
 	}

@@ -8,10 +8,10 @@
 
 namespace RB::PlayerStates
 {
-	class P0_MoveBack : public RB::PlayerStates::PlayerState
+	class P0_WalkBack : public RB::PlayerStates::PlayerState
 	{
 	public:
-		P0_MoveBack() = default;
+		P0_WalkBack() = default;
 
 	public:
 		void OnEnter() override;

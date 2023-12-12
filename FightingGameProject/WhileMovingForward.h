@@ -3,7 +3,7 @@
 #include "MoveForwardOnPress.h"
 #include "MoveBackOnPress.h"
 #include "P0_Idle.h"
-#include "P0_MoveBack.h"
+#include "P0_WalkBack.h"
 
 #include "iPlayerController.h"
 #include "iPlayer.h"

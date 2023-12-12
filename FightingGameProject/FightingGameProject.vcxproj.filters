@@ -100,7 +100,7 @@
     <ClCompile Include="KeyBinding.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
-    <ClCompile Include="P0_MoveBack.cpp">
+    <ClCompile Include="P0_WalkBack.cpp">
       <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="CamController.cpp">
@@ -402,7 +402,7 @@
     <ClInclude Include="PlayerID.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>
-    <ClInclude Include="P0_MoveBack.h">
+    <ClInclude Include="P0_WalkBack.h">
       <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="CamController.h">

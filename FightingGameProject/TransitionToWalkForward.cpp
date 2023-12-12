@@ -1,13 +1,13 @@
-#include "TriggerMoveForward.h"
+#include "TransitionToWalkForward.h"
 
 namespace RB::PlayerStateComponents
 {
-	void TriggerMoveForward::OnEnter()
+	void TransitionToWalkForward::OnEnter()
 	{
 		_moveForwardOnPress.SetStateMachineID(_state->GetStateMachineID());
 	}
 
-	void TriggerMoveForward::OnUpdate()
+	void TransitionToWalkForward::OnUpdate()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr)
 		{

@@ -229,7 +229,7 @@
     <ClCompile Include="GameplayUpdater.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="TriggerMoveBack.cpp" />
-    <ClCompile Include="TriggerMoveForward.cpp" />
+    <ClCompile Include="TransitionToWalkForward.cpp" />
     <ClCompile Include="Updater.cpp" />
     <ClCompile Include="ZoomOnPlayers.cpp" />
   </ItemGroup>
@@ -365,7 +365,7 @@
     <ClInclude Include="Time.h" />
     <ClInclude Include="FixedTimer.h" />
     <ClInclude Include="TriggerMoveBack.h" />
-    <ClInclude Include="TriggerMoveForward.h" />
+    <ClInclude Include="TransitionToWalkForward.h" />
     <ClInclude Include="TriggerOnFixedUpdateCount.h" />
     <ClInclude Include="Updater.h" />
     <ClInclude Include="ZoomOnPlayers.h" />

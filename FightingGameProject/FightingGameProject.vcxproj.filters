@@ -145,7 +145,7 @@
     <ClCompile Include="StateComponentBase.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerMoveForward.cpp">
+    <ClCompile Include="TransitionToWalkForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="WhileMovingForward.cpp">
@@ -465,7 +465,7 @@
     <ClInclude Include="StateComponentBase.h">
       <Filter>Source Files\States</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerMoveForward.h">
+    <ClInclude Include="TransitionToWalkForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="WhileMovingForward.h">

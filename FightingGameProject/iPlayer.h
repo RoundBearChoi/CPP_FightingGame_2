@@ -3,7 +3,7 @@
 
 #include "AABB.h"
 #include "SpriteEnum.h"
-#include "PlayerType.h"
+#include "CharacterType.h"
 
 #include "iStateMachine.h"
 #include "iState.h"
@@ -25,7 +25,8 @@ namespace RB::Players
 
 	public:
 		virtual PlayerID GetPlayerID() = 0;
-		virtual PlayerType GetPlayerType() = 0;
+		virtual void SetCharacterType(CharacterType type) = 0;
+		virtual CharacterType GetCharacterType() = 0;
 		virtual int GetPlayerID_int() = 0;
 		virtual bool IsFacingRight() = 0;
 		virtual bool OtherPlayerIsOnRightSide() = 0;

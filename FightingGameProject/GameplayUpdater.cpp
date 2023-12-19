@@ -24,6 +24,8 @@ namespace RB::Updaters
 		RB::Players::PlayerController* playerController = new RB::Players::PlayerController();
 		playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::P0_Start(), olc::vi2d{-150, 0}, RB::Players::PlayerID::PLAYER_1);
 		playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::P0_Start(), olc::vi2d{150, 0}, RB::Players::PlayerID::PLAYER_2);
+		playerController->SetCharacterType(RB::Players::PlayerID::PLAYER_1, RB::Players::CharacterType::PLAYER_0);
+		playerController->SetCharacterType(RB::Players::PlayerID::PLAYER_2, RB::Players::CharacterType::PLAYER_0);
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerDebugController()));

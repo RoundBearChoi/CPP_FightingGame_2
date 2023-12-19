@@ -16,6 +16,7 @@ namespace RB::Players
 
 	public:
 		void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) override;
+		void SetCharacterType(PlayerID id, CharacterType type) override;
 
 	public:
 		iPlayer* GetPlayerOnIndex(size_t index) override;

@@ -43,6 +43,16 @@ namespace RB::Players
 		_vecPlayers.push_back(p);
 	}
 
+	void PlayerController::SetCharacterType(PlayerID id, CharacterType type)
+	{
+		iPlayer* p = GetPlayerOnID(id);
+
+		if (p != nullptr)
+		{
+			p->SetCharacterType(type);
+		}
+	}
+
 	iPlayer* PlayerController::GetPlayerOnIndex(size_t index)
 	{
 		if (index < _vecPlayers.size())

@@ -2,7 +2,7 @@
 
 namespace RB::Players
 {
-	enum class PlayerType
+	enum class CharacterType
 	{
 		NONE,
 

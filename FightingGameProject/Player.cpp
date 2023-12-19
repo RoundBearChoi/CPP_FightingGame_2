@@ -52,9 +52,14 @@ namespace RB::Players
 		return _playerID;
 	}
 
-	PlayerType Player::GetPlayerType()
+	void Player::SetCharacterType(CharacterType type)
 	{
-		return _playerType;
+		_characterType = type;
+	}
+
+	CharacterType Player::GetCharacterType()
+	{
+		return _characterType;
 	}
 
 	int Player::GetPlayerID_int()

@@ -19,7 +19,6 @@ namespace RB::Players
 
 	public:
 		virtual void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) = 0;
-		virtual void SetCharacterType(PlayerID id, CharacterType type) = 0;
 
 	public:
 		virtual iPlayer* GetPlayerOnIndex(size_t index) = 0;

@@ -79,7 +79,6 @@ namespace RB::Players
 	bool Player::IsFacingRight()
 	{
 		if (_dirIsFixedDuringState)
-		//if (_position.y < -0.1f)
 		{
 			return _initiallyFacingRight;
 		}

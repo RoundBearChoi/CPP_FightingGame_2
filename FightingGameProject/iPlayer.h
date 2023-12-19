@@ -4,11 +4,10 @@
 #include "AABB.h"
 #include "SpriteEnum.h"
 #include "CharacterType.h"
+#include "PlayerID.h"
 
 #include "iStateMachine.h"
 #include "iState.h"
-
-#include "PlayerID.h"
 
 namespace RB::Players
 {

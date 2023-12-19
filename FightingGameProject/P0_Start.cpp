@@ -1,7 +1,7 @@
 #include "P0_Start.h"
 #include "P0_Idle.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	void P0_Start::OnEnter()
 	{
@@ -38,6 +38,6 @@ namespace RB::PlayerStates
 	{
 		RB::States::iStateMachine* machine = GetPlayer()->GetStateMachine();
 
-		machine->QueueNextState(new RB::PlayerStates::P0_Idle());
+		machine->QueueNextState(new RB::PlayerStates::Aku::P0_Idle());
 	}
 }

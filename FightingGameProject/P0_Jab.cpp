@@ -1,6 +1,6 @@
 #include "P0_Jab.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	void P0_Jab::OnEnter()
 	{
@@ -8,7 +8,7 @@ namespace RB::PlayerStates
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::PlayerStates::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::PlayerStates::Aku::P0_Idle()));
 
 		EnterStateComponents();
 	}

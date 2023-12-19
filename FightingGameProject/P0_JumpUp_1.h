@@ -8,7 +8,7 @@
 
 #include "MoveDownOnFall.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_JumpUp_1 : public RB::PlayerStates::PlayerState
 	{

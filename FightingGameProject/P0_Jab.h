@@ -7,7 +7,7 @@
 
 #include "P0_Idle.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_Jab : public RB::PlayerStates::PlayerState
 	{

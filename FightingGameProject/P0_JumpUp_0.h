@@ -9,7 +9,7 @@
 #include "ToggleInitiallyFacingRight.h"
 #include "MoveUpOnJump.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_JumpUp_0 : public RB::PlayerStates::PlayerState
 	{

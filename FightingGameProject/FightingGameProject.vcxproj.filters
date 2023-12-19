@@ -59,6 +59,9 @@
     <Filter Include="Source Files\Input\Sequences">
       <UniqueIdentifier>{46bce2a1-6e1b-42f8-b5b7-b2d2b7bc4248}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PlayerStates\Aku">
+      <UniqueIdentifier>{cea6144c-a746-45d1-9634-899488a1935f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -85,23 +88,11 @@
     <ClCompile Include="Updater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
-    <ClCompile Include="P0_Start.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
-    <ClCompile Include="P0_Idle.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
-    <ClCompile Include="P0_WalkForward.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
     <ClCompile Include="InputController.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
     <ClCompile Include="KeyBinding.cpp">
       <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="P0_WalkBack.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="CamController.cpp">
       <Filter>Source Files\Cam</Filter>
@@ -123,12 +114,6 @@
     </ClCompile>
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Source Files\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="P0_JumpUp_0.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
-    <ClCompile Include="P0_JumpUp_1.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="AnimationLoader.cpp">
       <Filter>Source Files\Render</Filter>
@@ -181,17 +166,11 @@
     <ClCompile Include="ManualAnimationUpdater.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="P0_Dummy.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
     <ClCompile Include="SpriteDataController.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
     <ClCompile Include="MenuController.cpp">
       <Filter>Source Files\HBox</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="PlayerDebugController.cpp">
       <Filter>Source Files\Render</Filter>
@@ -226,9 +205,6 @@
     <ClCompile Include="HitBoxEditorUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
-    <ClCompile Include="P0_Jab.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
     <ClCompile Include="TriggerJab.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
@@ -243,9 +219,6 @@
     </ClCompile>
     <ClCompile Include="AttackRegisterController.cpp">
       <Filter>Source Files\Collisions</Filter>
-    </ClCompile>
-    <ClCompile Include="P0_Wince.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="TransitionOnFixedUpdateCount.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
@@ -277,12 +250,6 @@
     <ClCompile Include="TransitionToJumpForward.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="P0_JumpForwardUp_0.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
-    <ClCompile Include="P0_JumpForwardUp_1.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
     <ClCompile Include="MoveForwardOnJump_0.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
@@ -310,9 +277,6 @@
     <ClCompile Include="P0_Seq_Hadouken.cpp">
       <Filter>Source Files\Input\Sequences</Filter>
     </ClCompile>
-    <ClCompile Include="P0_Hadouken.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
     <ClCompile Include="FixDirectionDuringState.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
@@ -327,6 +291,45 @@
     </ClCompile>
     <ClCompile Include="JGetter.cpp">
       <Filter>Source Files\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_Dummy.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_Hadouken.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_Idle.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_Jab.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_JumpForwardUp_0.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_JumpForwardUp_1.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_JumpUp_0.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_JumpUp_1.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_Start.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_WalkBack.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_WalkForward.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="P0_Wince.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -378,17 +381,8 @@
     <ClInclude Include="SkipFixedUpdates.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
-    <ClInclude Include="P0_Start.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
-    <ClInclude Include="P0_Idle.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
     <ClInclude Include="TriggerOnFixedUpdateCount.h">
       <Filter>Source Files\Updaters</Filter>
-    </ClInclude>
-    <ClInclude Include="P0_WalkForward.h">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="InputController.h">
       <Filter>Source Files\Input</Filter>
@@ -401,9 +395,6 @@
     </ClInclude>
     <ClInclude Include="PlayerID.h">
       <Filter>Source Files\Players</Filter>
-    </ClInclude>
-    <ClInclude Include="P0_WalkBack.h">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="CamController.h">
       <Filter>Source Files\Cam</Filter>
@@ -437,12 +428,6 @@
     </ClInclude>
     <ClInclude Include="LineRenderer.h">
       <Filter>Source Files\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="P0_JumpUp_0.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
-    <ClInclude Include="P0_JumpUp_1.h">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="AnimationLoader.h">
       <Filter>Source Files\Render</Filter>
@@ -513,9 +498,6 @@
     <ClInclude Include="HBoxDataList.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="P0_Dummy.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
     <ClInclude Include="ManualAnimationUpdater.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
@@ -527,9 +509,6 @@
     </ClInclude>
     <ClInclude Include="MenuController.h">
       <Filter>Source Files\HBox</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerState.h">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="PlayerDebugController.h">
       <Filter>Source Files\Render</Filter>
@@ -591,9 +570,6 @@
     <ClInclude Include="HBoxType.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="P0_Jab.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
     <ClInclude Include="TriggerJab.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
@@ -620,9 +596,6 @@
     </ClInclude>
     <ClInclude Include="AttackRegister.h">
       <Filter>Source Files\Collisions</Filter>
-    </ClInclude>
-    <ClInclude Include="P0_Wince.h">
-      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="TransitionOnFixedUpdateCount.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
@@ -672,12 +645,6 @@
     <ClInclude Include="TransitionToJumpForward.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="P0_JumpForwardUp_0.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
-    <ClInclude Include="P0_JumpForwardUp_1.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
     <ClInclude Include="MoveForwardOnJump_0.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
@@ -717,9 +684,6 @@
     <ClInclude Include="P0_Seq_Hadouken.h">
       <Filter>Source Files\Input\Sequences</Filter>
     </ClInclude>
-    <ClInclude Include="P0_Hadouken.h">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClInclude>
     <ClInclude Include="FixDirectionDuringState.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
@@ -737,6 +701,45 @@
     </ClInclude>
     <ClInclude Include="CharacterType.h">
       <Filter>Source Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Dummy.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Hadouken.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Idle.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Jab.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_JumpForwardUp_0.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_JumpForwardUp_1.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_JumpUp_0.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_JumpUp_1.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Start.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_WalkBack.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_WalkForward.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Wince.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>Source Files\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

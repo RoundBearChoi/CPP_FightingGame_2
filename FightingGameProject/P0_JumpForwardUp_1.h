@@ -4,7 +4,7 @@
 #include "MoveDownOnFall.h"
 #include "MoveForwardOnJump_1.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_JumpForwardUp_1 : public RB::PlayerStates::PlayerState
 	{

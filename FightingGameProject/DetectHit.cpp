@@ -80,7 +80,7 @@ namespace RB::PlayerStateComponents
 
 					if (RB::Collisions::iAttackRegisterController::instance->GetRegisteredAttackCount(target->GetPlayerID()) <= 0)
 					{
-						target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::P0_Wince());
+						target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
 
 						if (RB::Collisions::iGeneralHitStopController::instance != nullptr)
 						{

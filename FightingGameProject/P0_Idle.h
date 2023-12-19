@@ -9,7 +9,7 @@
 #include "TransitionToWalkForward.h"
 #include "TransitionToWalkBack.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_Idle : public RB::PlayerStates::PlayerState
 	{

@@ -6,7 +6,7 @@
 #include "SkipFixedUpdates.h"
 #include "TriggerOnFixedUpdateCount.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_Start : public RB::PlayerStates::PlayerState
 	{

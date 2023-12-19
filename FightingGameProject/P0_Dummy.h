@@ -5,7 +5,7 @@
 
 #include "iHurtBoxDataController.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_Dummy : public RB::PlayerStates::PlayerState
 	{

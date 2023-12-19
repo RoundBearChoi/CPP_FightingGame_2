@@ -7,7 +7,7 @@
 
 #include "P0_JumpForwardUp_1.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_JumpForwardUp_0 : public RB::PlayerStates::PlayerState
 	{

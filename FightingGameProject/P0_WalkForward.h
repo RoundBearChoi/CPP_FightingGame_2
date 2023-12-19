@@ -7,7 +7,7 @@
 #include "TransitionToJumpUp.h"
 #include "WhileMovingForward.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_WalkForward : public RB::PlayerStates::PlayerState
 	{

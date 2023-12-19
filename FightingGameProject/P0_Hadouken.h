@@ -5,7 +5,7 @@
 #include "ToggleInitiallyFacingRight.h"
 #include "TransitionOnAnimationEnd.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_Hadouken : public RB::PlayerStates::PlayerState
 	{

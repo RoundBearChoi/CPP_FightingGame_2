@@ -1,6 +1,6 @@
 #include "P0_Dummy.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	P0_Dummy::P0_Dummy(Sprites::SpriteEnum startingSpriteEnum)
 	{

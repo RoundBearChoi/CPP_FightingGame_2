@@ -6,7 +6,7 @@
 #include "TransitionToJumpUp.h"
 #include "WhileMovingBack.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	class P0_WalkBack : public RB::PlayerStates::PlayerState
 	{

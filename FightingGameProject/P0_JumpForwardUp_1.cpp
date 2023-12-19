@@ -1,6 +1,6 @@
 #include "P0_JumpForwardUp_1.h"
 
-namespace RB::PlayerStates
+namespace RB::PlayerStates::Aku
 {
 	void P0_JumpForwardUp_1::OnEnter()
 	{

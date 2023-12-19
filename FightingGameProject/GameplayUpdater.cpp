@@ -28,6 +28,9 @@ namespace RB::Updaters
 		playerController->GetPlayerOnIndex(0)->SetPosition(olc::vi2d{ -150, 0 });
 		playerController->GetPlayerOnIndex(1)->SetPosition(olc::vi2d{ 150, 0 });
 
+		playerController->GetPlayerOnIndex(0)->SetCharacterType(RB::Players::CharacterType::PLAYER_0);
+		playerController->GetPlayerOnIndex(1)->SetCharacterType(RB::Players::CharacterType::PLAYER_0);
+
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerDebugController()));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));

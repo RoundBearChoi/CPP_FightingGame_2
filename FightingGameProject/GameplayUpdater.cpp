@@ -25,6 +25,9 @@ namespace RB::Updaters
 		playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::P0_Start(), olc::vi2d{-150, 0}, RB::Players::PlayerID::PLAYER_1);
 		playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::P0_Start(), olc::vi2d{150, 0}, RB::Players::PlayerID::PLAYER_2);
 
+		playerController->GetPlayerOnIndex(0)->SetPosition(olc::vi2d{ -150, 0 });
+		playerController->GetPlayerOnIndex(1)->SetPosition(olc::vi2d{ 150, 0 });
+
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerDebugController()));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));

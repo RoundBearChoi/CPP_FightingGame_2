@@ -22,7 +22,7 @@ namespace RB::Players
 		iPlayer* GetPlayerOnID(PlayerID id) override;
 		iPlayer* GetPlayerOnStateMachineID(size_t id) override;
 		iPlayer* GetOtherPlayer(iPlayer* currentPlayer) override;
-		void SetManualAnimationUpdate(PlayerID id, bool manual) override;
+		//void SetManualAnimationUpdate(PlayerID id, bool manual) override;
 
 	private:
 		std::vector<RB::Players::iPlayer*> _vecPlayers;

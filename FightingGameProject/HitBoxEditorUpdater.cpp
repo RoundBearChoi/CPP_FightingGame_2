@@ -35,7 +35,8 @@ namespace RB::Updaters
 			olc::vi2d{ 0, 0 },
 			RB::Players::PlayerID::PLAYER_1);
 
-		playerController->SetManualAnimationUpdate(RB::Players::PlayerID::PLAYER_1, true);
+		playerController->GetPlayerOnIndex(0)->SetPosition(olc::vi2d{ 50, 100 });
+		playerController->GetPlayerOnIndex(0)->SetManualAnimationUpdate(true);
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));

@@ -91,14 +91,4 @@ namespace RB::Players
 
 		return nullptr;
 	}
-
-	void PlayerController::SetManualAnimationUpdate(PlayerID id, bool manual)
-	{
-		iPlayer* p = GetPlayerOnID(id);
-
-		if (p != nullptr)
-		{
-			p->SetManualAnimationUpdate(manual);
-		}
-	}
 }

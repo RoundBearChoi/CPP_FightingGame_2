@@ -25,6 +25,6 @@ namespace RB::Players
 		virtual iPlayer* GetPlayerOnID(PlayerID id) = 0;
 		virtual iPlayer* GetPlayerOnStateMachineID(size_t id) = 0;
 		virtual iPlayer* GetOtherPlayer(iPlayer* currentPlayer) = 0;
-		virtual void SetManualAnimationUpdate(PlayerID id, bool manual) = 0;
+		//virtual void SetManualAnimationUpdate(PlayerID id, bool manual) = 0;
 	};
 }

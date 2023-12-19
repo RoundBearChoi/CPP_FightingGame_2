@@ -306,6 +306,7 @@
     <ClInclude Include="PlayerInputRenderer.h" />
     <ClInclude Include="PlayerPositionRenderer.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="PlayerType.h" />
     <ClInclude Include="SpecialMovesController.h" />
     <ClInclude Include="SpecialMoveSequenceBase.h" />
     <ClInclude Include="SpecialMoveType.h" />

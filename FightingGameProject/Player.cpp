@@ -52,6 +52,11 @@ namespace RB::Players
 		return _playerID;
 	}
 
+	PlayerType Player::GetPlayerType()
+	{
+		return _playerType;
+	}
+
 	int Player::GetPlayerID_int()
 	{
 		if (_playerID == RB::Players::PlayerID::PLAYER_1)

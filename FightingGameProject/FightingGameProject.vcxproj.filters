@@ -735,5 +735,8 @@
     <ClInclude Include="StringToSpriteEnum.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerType.h">
+      <Filter>Source Files\Players</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

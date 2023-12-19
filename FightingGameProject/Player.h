@@ -27,6 +27,7 @@ namespace RB::Players
 
 	public:
 		PlayerID GetPlayerID() override;
+		PlayerType GetPlayerType() override;
 		int GetPlayerID_int() override;
 		bool IsFacingRight() override;
 		bool OtherPlayerIsOnRightSide() override;
@@ -52,6 +53,7 @@ namespace RB::Players
 
 	protected:
 		PlayerID _playerID = PlayerID::NONE;
+		PlayerType _playerType = PlayerType::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;
 		olc::vi2d _position = { 0, 0 };

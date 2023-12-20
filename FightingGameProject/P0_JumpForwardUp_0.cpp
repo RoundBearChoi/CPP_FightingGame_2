@@ -9,7 +9,7 @@ namespace RB::PlayerStates::Aku
 		RB::Players::Specs::MoveSpecs moveSpecs = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(RB::Players::CharacterType::PLAYER_0);
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
-		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpUp_totalFrames, moveSpecs.mJumpUp_speedMultiplier, new P0_JumpForwardUp_1));
+		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(20, 22.0f, new P0_JumpForwardUp_1));
 		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump_0(20, 7.0f));
 
 		EnterStateComponents();

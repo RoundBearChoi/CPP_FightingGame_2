@@ -95,10 +95,18 @@ namespace RB::Players::Specs
 		struct json_object_element_s* e2 = e1->next; //jumpUp_speedMultiplier
 		float_t jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e2); 
 
+		struct json_object_element_s* e3 = e2->next; //jumpUp_Forward_totalFrames
+		int32_t jumpUp_Forward_totalFrames = RB::JSON::GetInt32_FromElement(*e3);
+
+		struct json_object_element_s* e4 = e3->next; //jumpUp_Forward_speedMultiplier
+		float_t jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*e4);
+
 		MoveSpecs specs;
 		specs.mCharacterType = ct;
 		specs.mJumpUp_totalFrames = jumpUp_totalFrames;
 		specs.mJumpUp_speedMultiplier = jumpUp_speedMultiplier;
+		specs.mJumpUp_Forward_totalFrames = jumpUp_Forward_totalFrames;
+		specs.mJumpUp_Forward_speedMultiplier = jumpUp_Forward_speedMultiplier;
 
 		_vecMoveSpecs.push_back(specs);
 

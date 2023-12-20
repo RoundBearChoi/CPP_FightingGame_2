@@ -3,6 +3,8 @@
         {
         "mCharacterType" : "PLAYER_0",
         "mJumpUp_totalFrames" : 15,
-        "mJumpUp_speedMultiplier" : 28.0
+        "mJumpUp_speedMultiplier" : 28.0,
+        "mJumpUp_Forward_totalFrames" : 20,
+        "mJumpUp_Forward_speedMultiplier" : 22.0 
         }
 }

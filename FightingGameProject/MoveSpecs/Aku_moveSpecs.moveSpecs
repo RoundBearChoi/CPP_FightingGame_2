@@ -1,5 +1,5 @@
 {
-    "Aku move specs":
+    "Aku moveSpecs":
         {
         "mCharacterType" : "PLAYER_0",
         "mJumpUp_totalFrames" : 15,

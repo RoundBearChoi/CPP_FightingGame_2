@@ -9,13 +9,6 @@ namespace RB::Players::Specs
 
 	void SpecsController::Init()
 	{
-		//MoveSpecs testSpecs;
-		//testSpecs.mCharacterType = RB::Players::CharacterType::PLAYER_0;
-		//testSpecs.mJumpUp_totalFrames = 15;
-		//testSpecs.mJumpUp_speedMultiplier = 28.0f;
-
-		//_SaveMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs", testSpecs);
-
 		_LoadMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs");
 	}
 
@@ -42,36 +35,6 @@ namespace RB::Players::Specs
 		std::cout << "no specs found" << std::endl;
 
 		return MoveSpecs(characterType);
-	}
-
-	void SpecsController::_SaveMoveSpecs(std::string path, MoveSpecs specs)
-	{
-		std::ofstream file(path);
-
-		std::string name = "Aku move specs";
-
-		if (file.is_open())
-		{
-			//start
-			file << "{" << std::endl;
-
-			//start of parent element
-			file << "    \"" << name << "\":" << std::endl;
-
-			file << "        {" << std::endl;
-			file << "        \"mCharacterType\" : " << RB::Players::GetString(specs.mCharacterType) << "," << std::endl;
-			file << "        \"mJumpUp_totalFrames\" : " << specs.mJumpUp_totalFrames << "," << std::endl;
-			file << "        \"mJumpUp_speedMultiplier\" : " << specs.mJumpUp_speedMultiplier << std::endl;
-
-			//end of parent element
-			file << "        }" << std::endl;
-
-			//end
-			file << "}";
-
-			file.flush();
-			file.close();
-		}
 	}
 
 	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path)

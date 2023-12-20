@@ -26,7 +26,6 @@ namespace RB::Players::Specs
 		MoveSpecs GetMoveSpecs(RB::Players::CharacterType characterType) override;
 
 	private:
-		void _SaveMoveSpecs(std::string path, MoveSpecs specs);
 		MoveSpecs _LoadMoveSpecs(std::string path);
 		std::vector<MoveSpecs> _vecMoveSpecs;
 	};

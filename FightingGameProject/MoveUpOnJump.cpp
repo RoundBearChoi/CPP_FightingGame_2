@@ -33,6 +33,7 @@ namespace RB::PlayerStateComponents
 		float_t result = amount * _multiplier;
 
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::CharacterType characterType = player->GetCharacterType();
 
 		//apply vertical up
 		if (_state->GetCumulatedFixedUpdates() < _totalFrames)

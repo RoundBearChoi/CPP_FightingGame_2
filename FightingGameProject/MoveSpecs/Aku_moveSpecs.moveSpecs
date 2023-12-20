@@ -1,0 +1,7 @@
+{
+    "Aku move specs":
+        {
+        "mJumpUp_totalFrames" : 1,
+        "mJumpUp_speedMultiplier" : 1.55
+        }
+}

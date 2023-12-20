@@ -9,7 +9,13 @@ namespace RB::Players::Specs
 
 	void SpecsController::Init()
 	{
-		//_SaveMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs", MoveSpecs());
+		MoveSpecs testSpecs;
+		testSpecs.mCharacterType = RB::Players::CharacterType::PLAYER_0;
+		testSpecs.mJumpUp_totalFrames = 10;
+		testSpecs.mJumpUp_speedMultiplier = 1.5f;
+
+		_SaveMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs", testSpecs);
+
 		_LoadMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs");
 	}
 
@@ -25,7 +31,7 @@ namespace RB::Players::Specs
 
 	MoveSpecs SpecsController::GetMoveSpecs(RB::Players::CharacterType characterType)
 	{
-		return MoveSpecs();
+		return MoveSpecs(characterType);
 	}
 
 	void SpecsController::_SaveMoveSpecs(std::string path, MoveSpecs specs)
@@ -43,6 +49,7 @@ namespace RB::Players::Specs
 			file << "    \"" << name << "\":" << std::endl;
 
 			file << "        {" << std::endl;
+			file << "        \"mCharacterType\" : " << RB::Players::GetString(specs.mCharacterType) << "," << std::endl;
 			file << "        \"mJumpUp_totalFrames\" : " << specs.mJumpUp_totalFrames << "," << std::endl;
 			file << "        \"mJumpUp_speedMultiplier\" : " << specs.mJumpUp_speedMultiplier << std::endl;
 
@@ -68,13 +75,18 @@ namespace RB::Players::Specs
 
 		struct json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //aku move specs
 
-		struct json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //jumpUp_totalFrames
-		int32_t jumpUp_totalFrames = RB::JSON::GetInt32_FromElement(*e0);
+		struct json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //mCharacterType
+		std::string strCharacterType = RB::JSON::GetString_FromElement(*e0);
+		RB::Players::CharacterType ct = RB::Players::GetEnum(strCharacterType);
 
-		struct json_object_element_s* e1 = e0->next; //jumpUp_speedMultiplier
-		float_t jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e1); 
+		struct json_object_element_s* e1 = e0->next; //jumpUp_totalFrames
+		int32_t jumpUp_totalFrames = RB::JSON::GetInt32_FromElement(*e1);
+
+		struct json_object_element_s* e2 = e1->next; //jumpUp_speedMultiplier
+		float_t jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e2); 
 
 		MoveSpecs specs;
+		specs.mCharacterType = ct;
 		specs.mJumpUp_totalFrames = jumpUp_totalFrames;
 		specs.mJumpUp_speedMultiplier = jumpUp_speedMultiplier;
 

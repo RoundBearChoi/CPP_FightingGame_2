@@ -1,8 +1,12 @@
 #pragma once
 
+#include "JGetter.h"
+
+#include "CharacterType.h"
+#include "StringToCharacterTypeEnum.h"
+
 #include "iSpecsController.h"
 
-#include "JGetter.h"
 
 namespace RB::Players::Specs
 {

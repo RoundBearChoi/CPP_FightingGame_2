@@ -1,7 +1,8 @@
 {
     "Aku move specs":
         {
-        "mJumpUp_totalFrames" : 1,
-        "mJumpUp_speedMultiplier" : 1.55
+        "mCharacterType" : "PLAYER_0",
+        "mJumpUp_totalFrames" : 10,
+        "mJumpUp_speedMultiplier" : 1.5
         }
 }

@@ -62,6 +62,9 @@
     <Filter Include="Source Files\PlayerStates\Aku">
       <UniqueIdentifier>{cea6144c-a746-45d1-9634-899488a1935f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Players\Specs">
+      <UniqueIdentifier>{5afbbd6f-a22b-4313-8a6c-d8d37109f175}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -330,6 +333,9 @@
     </ClCompile>
     <ClCompile Include="PlayerState.cpp">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecsController.cpp">
+      <Filter>Source Files\Players\Specs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -740,6 +746,12 @@
     </ClInclude>
     <ClInclude Include="PlayerState.h">
       <Filter>Source Files\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecsController.h">
+      <Filter>Source Files\Players\Specs</Filter>
+    </ClInclude>
+    <ClInclude Include="iSpecsController.h">
+      <Filter>Source Files\Players\Specs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

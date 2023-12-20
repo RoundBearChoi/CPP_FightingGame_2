@@ -187,6 +187,7 @@
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="SpecialMovesController.cpp" />
     <ClCompile Include="SpecialMoveSequenceBase.cpp" />
+    <ClCompile Include="SpecsController.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="StringToSpriteEnum.cpp" />
     <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="InputObj.h" />
     <ClInclude Include="iSpecialMovesController.h" />
     <ClInclude Include="iSpecialMoveSequence.h" />
+    <ClInclude Include="iSpecsController.h" />
     <ClInclude Include="iVFXAnimationController.h" />
     <ClInclude Include="MoveDownOnFall.h" />
     <ClInclude Include="MoveForwardOnJump_0.h" />
@@ -310,6 +312,7 @@
     <ClInclude Include="SpecialMovesController.h" />
     <ClInclude Include="SpecialMoveSequenceBase.h" />
     <ClInclude Include="SpecialMoveType.h" />
+    <ClInclude Include="SpecsController.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
     <ClInclude Include="StringToSpriteEnum.h" />

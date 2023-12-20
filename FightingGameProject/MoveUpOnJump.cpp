@@ -34,7 +34,6 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::CharacterType characterType = player->GetCharacterType();
-
 		RB::Players::Specs::MoveSpecs moveSpecs = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(player->GetCharacterType());
 
 		//apply vertical up

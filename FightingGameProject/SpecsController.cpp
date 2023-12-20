@@ -14,7 +14,7 @@ namespace RB::Players::Specs
 		testSpecs.mJumpUp_totalFrames = 10;
 		testSpecs.mJumpUp_speedMultiplier = 1.5f;
 
-		_SaveMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs", testSpecs);
+		//_SaveMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs", testSpecs);
 
 		_LoadMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs");
 	}
@@ -31,6 +31,16 @@ namespace RB::Players::Specs
 
 	MoveSpecs SpecsController::GetMoveSpecs(RB::Players::CharacterType characterType)
 	{
+		for (size_t i = 0; i < _vecMoveSpecs.size(); i++)
+		{
+			if (_vecMoveSpecs[i].mCharacterType == characterType)
+			{
+				return _vecMoveSpecs[i];
+			}
+		}
+
+		std::cout << "no specs found" << std::endl;
+
 		return MoveSpecs(characterType);
 	}
 
@@ -89,6 +99,8 @@ namespace RB::Players::Specs
 		specs.mCharacterType = ct;
 		specs.mJumpUp_totalFrames = jumpUp_totalFrames;
 		specs.mJumpUp_speedMultiplier = jumpUp_speedMultiplier;
+
+		_vecMoveSpecs.push_back(specs);
 
 		return specs;
 	}

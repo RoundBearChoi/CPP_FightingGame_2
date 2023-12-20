@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include "JGetter.h"
 
 #include "CharacterType.h"
@@ -27,5 +28,6 @@ namespace RB::Players::Specs
 	private:
 		void _SaveMoveSpecs(std::string path, MoveSpecs specs);
 		MoveSpecs _LoadMoveSpecs(std::string path);
+		std::vector<MoveSpecs> _vecMoveSpecs;
 	};
 }

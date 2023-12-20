@@ -45,14 +45,6 @@ namespace RB::Players::Specs
 			file << "        {" << std::endl;
 			file << "        \"mJumpUp_totalFrames\" : " << specs.mJumpUp_totalFrames << "," << std::endl;
 			file << "        \"mJumpUp_speedMultiplier\" : " << specs.mJumpUp_speedMultiplier << std::endl;
-			//file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl; //element inside element
-			//file << "        \"mY_TileCount\" : " << specs.mY_TileCount << "," << std::endl;
-			//file << "        \"mTotalSprites\" : " << specs.mTotalSprites << "," << std::endl;
-			//file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
-			//file << "        \"mRenderSizeX\" : " << specs.mRenderSize.x << "," << std::endl;
-			//file << "        \"mRenderSizeY\" : " << specs.mRenderSize.y << "," << std::endl;
-			//file << "        \"mSpriteEnum\" : " << RB::Sprites::GetString(specs.mSpriteEnum) << "," << std::endl;
-			//file << "        \"mPlayOnce\" : " << (specs.mPlayOnce ? 1 : 0) << std::endl;
 
 			//end of parent element
 			file << "        }" << std::endl;

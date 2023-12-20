@@ -18,6 +18,8 @@
 #include "GeneralHitStopController.h"
 #include "VFXAnimationController.h"
 
+#include "P0_Idle.h"
+
 namespace RB::Updaters
 {
 	class GameplayUpdater : public iUpdaterObj

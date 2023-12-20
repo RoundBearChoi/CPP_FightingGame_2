@@ -37,10 +37,11 @@ namespace RB::Players
 
 		iPlayer* p = player;
 
+		//gotta add first because Init involves OnEnter -> StateComponents -> player search
+		_vecPlayers.push_back(p);
+
 		p->Init(playerID, firstState);
 		p->SetPosition(startPos);
-
-		_vecPlayers.push_back(p);
 	}
 
 	iPlayer* PlayerController::GetPlayerOnIndex(size_t index)

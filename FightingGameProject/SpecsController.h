@@ -14,5 +14,8 @@ namespace RB::Players::Specs
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	public:
+		MoveSpecs GetMoveSpecs(RB::Players::CharacterType characterType) override;
 	};
 }

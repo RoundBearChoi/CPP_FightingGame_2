@@ -753,5 +753,8 @@
     <ClInclude Include="iSpecsController.h">
       <Filter>Source Files\Players\Specs</Filter>
     </ClInclude>
+    <ClInclude Include="MoveSpecs.h">
+      <Filter>Source Files\Players\Specs</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

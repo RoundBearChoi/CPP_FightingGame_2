@@ -21,4 +21,9 @@ namespace RB::Players::Specs
 	{
 
 	}
+
+	MoveSpecs SpecsController::GetMoveSpecs(RB::Players::CharacterType characterType)
+	{
+		return MoveSpecs();
+	}
 }

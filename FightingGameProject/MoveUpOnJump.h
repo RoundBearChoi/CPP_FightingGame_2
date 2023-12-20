@@ -7,6 +7,8 @@
 #include "iPlayer.h"
 #include "P0_JumpUp_1.h"
 
+#include "iSpecsController.h"
+
 namespace RB::PlayerStateComponents
 {
 	class MoveUpOnJump : public RB::States::StateComponentBase

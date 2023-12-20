@@ -52,16 +52,16 @@ namespace RB::Players::Specs
 		std::string strCharacterType = RB::JSON::GetString_FromElement(*e0);
 		RB::Players::CharacterType ct = RB::Players::GetEnum(strCharacterType);
 
-		struct json_object_element_s* e1 = e0->next; //jumpUp_totalFrames
+		struct json_object_element_s* e1 = e0->next;
 		int32_t jumpUp_totalFrames = RB::JSON::GetInt32_FromElement(*e1);
 
-		struct json_object_element_s* e2 = e1->next; //jumpUp_speedMultiplier
+		struct json_object_element_s* e2 = e1->next;
 		float_t jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e2); 
 
-		struct json_object_element_s* e3 = e2->next; //jumpUp_Forward_totalFrames
+		struct json_object_element_s* e3 = e2->next;
 		int32_t jumpUp_Forward_totalFrames = RB::JSON::GetInt32_FromElement(*e3);
 
-		struct json_object_element_s* e4 = e3->next; //jumpUp_Forward_speedMultiplier
+		struct json_object_element_s* e4 = e3->next;
 		float_t jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*e4);
 
 		MoveSpecs specs;

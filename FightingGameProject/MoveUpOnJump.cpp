@@ -26,15 +26,13 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+
 		//get vertical up
 		size_t frame = _state->GetCumulatedFixedUpdates();
 		float_t percentage = (float_t)frame / (float_t)_totalFrames;
 		float_t amount = RB::EaseEquations::Ease::EaseOutSine(percentage);
 		float_t result = amount * _multiplier;
-
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::CharacterType characterType = player->GetCharacterType();
-		RB::Players::Specs::MoveSpecs moveSpecs = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(player->GetCharacterType());
 
 		//apply vertical up
 		if (_state->GetCumulatedFixedUpdates() < _totalFrames)

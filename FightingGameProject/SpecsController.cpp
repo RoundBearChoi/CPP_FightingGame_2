@@ -9,10 +9,10 @@ namespace RB::Players::Specs
 
 	void SpecsController::Init()
 	{
-		MoveSpecs testSpecs;
-		testSpecs.mCharacterType = RB::Players::CharacterType::PLAYER_0;
-		testSpecs.mJumpUp_totalFrames = 10;
-		testSpecs.mJumpUp_speedMultiplier = 1.5f;
+		//MoveSpecs testSpecs;
+		//testSpecs.mCharacterType = RB::Players::CharacterType::PLAYER_0;
+		//testSpecs.mJumpUp_totalFrames = 15;
+		//testSpecs.mJumpUp_speedMultiplier = 28.0f;
 
 		//_SaveMoveSpecs("MoveSpecs/Aku_moveSpecs.moveSpecs", testSpecs);
 

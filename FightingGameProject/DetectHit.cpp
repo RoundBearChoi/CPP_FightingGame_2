@@ -71,6 +71,7 @@ namespace RB::PlayerStateComponents
 				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB, col))
 				{
 					//temp - decouple by using attackregister?
+
 					RB::Render::iVFXAnimationController::instance->InstantiateAnimation(RB::Sprites::SpriteEnum::vfx_hiteffect_0, col);
 
 					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;

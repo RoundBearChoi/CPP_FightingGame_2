@@ -37,7 +37,6 @@ namespace RB::PlayerStates
 		{
 			if (_creationID == currentPlayerStates[i]->GetCreationID())
 			{
-				currentPlayerStates[i] = nullptr;
 				currentPlayerStates.erase(currentPlayerStates.begin() + i);
 				break;
 			}

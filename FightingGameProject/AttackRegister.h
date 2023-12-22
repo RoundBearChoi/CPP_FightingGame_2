@@ -1,4 +1,5 @@
 #pragma once
+#include "olcPixelGameEngine.h"
 #include "iPlayer.h"
 
 namespace RB::Collisions
@@ -6,9 +7,10 @@ namespace RB::Collisions
 	class AttackRegister
 	{
 	public:
-		RB::Players::iPlayer* target = nullptr;
 		RB::Players::iPlayer* attacker = nullptr;
+		RB::Players::iPlayer* target = nullptr;
 
-		bool targetWasFacingRight = true;
+		olc::vf2d collisionPos = { 0.0f, 0.0f };
+		bool attackerWasFacingRightSide = true;
 	};
 }

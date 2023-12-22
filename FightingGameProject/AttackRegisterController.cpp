@@ -29,10 +29,10 @@ namespace RB::Collisions
 		}
 	}
 
-	void AttackRegisterController::ProcessHits()
-	{
-
-	}
+	//void AttackRegisterController::ProcessHits()
+	//{
+	//
+	//}
 
 	size_t AttackRegisterController::GetRegisteredAttackCount(RB::Players::PlayerID playerID)
 	{

@@ -17,7 +17,7 @@ namespace RB::Collisions
 
 	public:
 		void RegisterAttack(AttackRegister attackRegister) override;
-		void ProcessHits() override;
+		//void ProcessHits() override;
 		size_t GetRegisteredAttackCount(RB::Players::PlayerID playerID) override;
 
 	private:

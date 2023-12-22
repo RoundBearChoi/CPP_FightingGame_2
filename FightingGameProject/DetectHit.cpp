@@ -63,15 +63,13 @@ namespace RB::PlayerStateComponents
 				//get target AABB
 				RB::Collisions::AABB& targetAABB = targetData->GetAABB(j);
 				olc::vi2d targetPos = target->GetPosition();
-				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), owner->IsFacingRight()); //target->OtherPlayerIsOnRightSide());
+				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
 
 				//compare
 				olc::vf2d col;
 
 				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB, col))
 				{
-					//_col = col;
-
 					RB::Render::iVFXAnimationController::instance->InstantiateAnimation(RB::Sprites::SpriteEnum::vfx_hiteffect_0, col);
 
 					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;

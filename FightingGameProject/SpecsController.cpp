@@ -51,20 +51,20 @@ namespace RB::Players::Specs
 		struct json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //first element
 		int32_t walk_Forward_Speed = RB::JSON::GetInt32_FromElement(*e0);
 
-		struct json_object_element_s* e2 = e0->next;
-		int32_t walk_Back_Speed = RB::JSON::GetInt32_FromElement(*e2);
+		struct json_object_element_s* e1 = e0->next;
+		int32_t walk_Back_Speed = RB::JSON::GetInt32_FromElement(*e1);
+
+		struct json_object_element_s* e2 = e1->next;
+		int32_t jumpUp_totalFrames = RB::JSON::GetInt32_FromElement(*e2);
 
 		struct json_object_element_s* e3 = e2->next;
-		int32_t jumpUp_totalFrames = RB::JSON::GetInt32_FromElement(*e3);
+		float_t jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e3); 
 
 		struct json_object_element_s* e4 = e3->next;
-		float_t jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e4); 
+		int32_t jumpUp_Forward_totalFrames = RB::JSON::GetInt32_FromElement(*e4);
 
 		struct json_object_element_s* e5 = e4->next;
-		int32_t jumpUp_Forward_totalFrames = RB::JSON::GetInt32_FromElement(*e5);
-
-		struct json_object_element_s* e6 = e5->next;
-		float_t jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*e6);
+		float_t jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*e5);
 
 		MoveSpecs specs;
 		specs.mCharacterType = characterType;

@@ -1,28 +1,29 @@
-#include "TriggerJab.h"
+#include "TransitionOnInput.h"
 
 namespace RB::PlayerStateComponents
 {
-	TriggerJab::TriggerJab(RB::States::iState* nextState)
+	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input)
 	{
 		_vecNextStates.push_back(nextState);
+		_input = input;
 	}
 
-	TriggerJab::~TriggerJab()
+	TransitionOnInput::~TransitionOnInput()
 	{
 
 	}
 
-	void TriggerJab::OnEnter()
+	void TransitionOnInput::OnEnter()
 	{
 
 	}
 
-	void TriggerJab::OnExit()
+	void TransitionOnInput::OnExit()
 	{
 
 	}
 
-	void TriggerJab::OnUpdate()
+	void TransitionOnInput::OnUpdate()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr ||
 			RB::Input::iInputController::instance == nullptr)
@@ -33,7 +34,7 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(playerID, RB::Input::PlayerInput::ATTACK_WEAK_PUNCH);
+		RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(playerID, _input);
 
 		if (obj != nullptr)
 		{

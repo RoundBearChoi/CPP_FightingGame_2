@@ -194,7 +194,7 @@
     <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
     <ClCompile Include="TransitionOnFixedUpdateCount.cpp" />
     <ClCompile Include="TransitionOnAnimationEnd.cpp" />
-    <ClCompile Include="TriggerJab.cpp" />
+    <ClCompile Include="TransitionOnInput.cpp" />
     <ClCompile Include="TransitionToJumpForward.cpp" />
     <ClCompile Include="TransitionToJumpUp.cpp" />
     <ClCompile Include="VFXAnimationController.cpp" />
@@ -322,7 +322,7 @@
     <ClInclude Include="ToggleInitiallyFacingRight.h" />
     <ClInclude Include="TransitionOnFixedUpdateCount.h" />
     <ClInclude Include="TransitionOnAnimationEnd.h" />
-    <ClInclude Include="TriggerJab.h" />
+    <ClInclude Include="TransitionOnInput.h" />
     <ClInclude Include="TransitionToJumpForward.h" />
     <ClInclude Include="TransitionToJumpUp.h" />
     <ClInclude Include="VFXAnimationController.h" />

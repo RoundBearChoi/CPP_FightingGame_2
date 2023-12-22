@@ -8,15 +8,18 @@
 
 namespace RB::PlayerStateComponents
 {
-	class TriggerJab : public RB::States::StateComponentBase
+	class TransitionOnInput : public RB::States::StateComponentBase
 	{
 	public:
-		TriggerJab(RB::States::iState* nextState);
-		~TriggerJab() override;
+		TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input);
+		~TransitionOnInput() override;
 
 	public:
 		void OnEnter() override;
 		void OnExit() override;
 		void OnUpdate() override;
+
+	private:
+		RB::Input::PlayerInput _input = RB::Input::PlayerInput::NONE;
 	};
 }

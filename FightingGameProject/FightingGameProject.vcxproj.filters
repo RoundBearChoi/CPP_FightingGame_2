@@ -208,7 +208,7 @@
     <ClCompile Include="HitBoxEditorUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
-    <ClCompile Include="TriggerJab.cpp">
+    <ClCompile Include="TransitionOnInput.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="TransitionOnAnimationEnd.cpp">
@@ -579,7 +579,7 @@
     <ClInclude Include="HBoxType.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerJab.h">
+    <ClInclude Include="TransitionOnInput.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="TransitionOnAnimationEnd.h">

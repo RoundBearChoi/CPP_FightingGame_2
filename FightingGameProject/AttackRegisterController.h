@@ -16,12 +16,8 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 	public:
-		void RegisterAttack(AttackRegister attackRegister) override;
+		//void RegisterAttack(AttackRegister attackRegister) override;
 		//void ProcessHits() override;
-		size_t GetRegisteredAttackCount(RB::Players::PlayerID playerID) override;
-
-	private:
-		std::vector<AttackRegister> _vec_p1_hits_taken;
-		std::vector<AttackRegister> _vec_p2_hits_taken;
+		//size_t GetRegisteredAttackCount(RB::Players::PlayerID playerID) override;
 	};
 }

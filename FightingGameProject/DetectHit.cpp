@@ -76,14 +76,11 @@ namespace RB::PlayerStateComponents
 					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
 					std::cout << std::endl;
 
-					if (RB::Collisions::iAttackRegisterController::instance->GetRegisteredAttackCount(target->GetPlayerID()) <= 0)
-					{
-						target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
+					target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
 
-						if (RB::Collisions::iGeneralHitStopController::instance != nullptr)
-						{
-							RB::Collisions::iGeneralHitStopController::instance->AddSkipFrames(3);
-						}
+					if (RB::Collisions::iGeneralHitStopController::instance != nullptr)
+					{
+						RB::Collisions::iGeneralHitStopController::instance->AddSkipFrames(3);
 					}
 
 					return;

@@ -8,7 +8,7 @@ namespace RB::PlayerStates::Aku
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::Aku::P0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(new RB::PlayerStates::Aku::P0_Idle(), new RB::PlayerStates::Aku::P0_WalkBack()));
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(2, new RB::PlayerStates::Aku::P0_Idle(), new RB::PlayerStates::Aku::P0_WalkBack()));
 
 		EnterStateComponents();
 	}

@@ -13,7 +13,7 @@ namespace RB::PlayerStateComponents
 	class WhileMovingBack : public RB::States::StateComponentBase
 	{
 	public:
-		WhileMovingBack(RB::States::iState* nextIdleState, RB::States::iState* nextWalkForwardState);
+		WhileMovingBack(int32_t speed, RB::States::iState* nextIdleState, RB::States::iState* nextWalkForwardState);
 		~WhileMovingBack() override {};
 
 	public:
@@ -22,6 +22,7 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
+		int32_t _speed = 0;
 		MoveBackOnPress _moveBackOnPress;
 		MoveForwardOnPress _moveForwardOnPress;
 		bool _bMoveBack = false;

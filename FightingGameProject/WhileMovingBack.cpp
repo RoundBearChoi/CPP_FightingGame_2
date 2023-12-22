@@ -2,8 +2,9 @@
 
 namespace RB::PlayerStateComponents
 {
-	WhileMovingBack::WhileMovingBack(RB::States::iState* nextIdleState, RB::States::iState* nextWalkForwardState)
+	WhileMovingBack::WhileMovingBack(int32_t speed, RB::States::iState* nextIdleState, RB::States::iState* nextWalkForwardState)
 	{
+		_speed = speed;
 		_vecNextStates.push_back(nextIdleState);
 		_vecNextStates.push_back(nextWalkForwardState);
 	}
@@ -59,7 +60,7 @@ namespace RB::PlayerStateComponents
 
 		if (_bMoveBack)
 		{
-			int movement = 0;
+			int32_t movement = _speed;
 
 			if (player->OtherPlayerIsOnRightSide())
 			{

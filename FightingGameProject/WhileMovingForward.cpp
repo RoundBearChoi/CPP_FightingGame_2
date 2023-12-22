@@ -2,8 +2,9 @@
 
 namespace RB::PlayerStateComponents
 {
-	WhileMovingForward::WhileMovingForward(RB::States::iState* nextIdleState, RB::States::iState* nextWalkBackState)
+	WhileMovingForward::WhileMovingForward(int32_t speed, RB::States::iState* nextIdleState, RB::States::iState* nextWalkBackState)
 	{
+		_speed = speed;
 		_vecNextStates.push_back(nextIdleState);
 		_vecNextStates.push_back(nextWalkBackState);
 	}
@@ -60,9 +61,7 @@ namespace RB::PlayerStateComponents
 
 		if (_bMoveForward)
 		{
-			//RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-
-			int movement = 3;
+			int32_t movement = _speed;
 
 			if (player->OtherPlayerIsOnRightSide())
 			{

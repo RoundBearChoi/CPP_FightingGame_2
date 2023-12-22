@@ -4,7 +4,6 @@
 #include "JGetter.h"
 
 #include "CharacterType.h"
-#include "StringToCharacterTypeEnum.h"
 
 #include "iSpecsController.h"
 

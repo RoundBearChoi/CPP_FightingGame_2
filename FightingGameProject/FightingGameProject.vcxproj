@@ -189,7 +189,6 @@
     <ClCompile Include="SpecialMoveSequenceBase.cpp" />
     <ClCompile Include="SpecsController.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
-    <ClCompile Include="StringToCharacterTypeEnum.cpp" />
     <ClCompile Include="StringToSpriteEnum.cpp" />
     <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
     <ClCompile Include="TransitionOnFixedUpdateCount.cpp" />
@@ -317,7 +316,6 @@
     <ClInclude Include="SpecsController.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
-    <ClInclude Include="StringToCharacterTypeEnum.h" />
     <ClInclude Include="StringToSpriteEnum.h" />
     <ClInclude Include="ToggleInitiallyFacingRight.h" />
     <ClInclude Include="TransitionOnFixedUpdateCount.h" />

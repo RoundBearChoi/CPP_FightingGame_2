@@ -337,9 +337,6 @@
     <ClCompile Include="SpecsController.cpp">
       <Filter>Source Files\Players\Specs</Filter>
     </ClCompile>
-    <ClCompile Include="StringToCharacterTypeEnum.cpp">
-      <Filter>Source Files\Players</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -758,9 +755,6 @@
     </ClInclude>
     <ClInclude Include="MoveSpecs.h">
       <Filter>Source Files\Players\Specs</Filter>
-    </ClInclude>
-    <ClInclude Include="StringToCharacterTypeEnum.h">
-      <Filter>Source Files\Players</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

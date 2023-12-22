@@ -6,7 +6,7 @@ namespace RB::Players
 	{
 		NONE,
 
-		PLAYER_0, //temp aku
+		AKU, //temp aku
 
 		COUNT,
 	};

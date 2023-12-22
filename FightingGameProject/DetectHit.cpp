@@ -53,7 +53,7 @@ namespace RB::PlayerStateComponents
 			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
 
 			//skip if width or height is 0
-			if (ownerWorldAABB.GetWidthHeight().x <= 0.001 || ownerWorldAABB.GetWidthHeight().y <= 0.001f)
+			if (ownerWorldAABB.GetWidthHeight().x <= 0.001f || ownerWorldAABB.GetWidthHeight().y <= 0.001f)
 			{
 				continue;
 			}

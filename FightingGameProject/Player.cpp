@@ -76,6 +76,10 @@ namespace RB::Players
 		return 0;
 	}
 
+	/// <summary>
+	/// This is different from OtherPlayerIsOnRightSide
+	/// You can be facing right side while the enemy is on your left
+	/// </summary>
 	bool Player::IsFacingRight()
 	{
 		if (_dirIsFixedDuringState)

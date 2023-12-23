@@ -289,9 +289,6 @@
     <ClCompile Include="FixSpecialMoveStatusDuringState.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="StringToSpriteEnum.cpp">
-      <Filter>Source Files\Sprites</Filter>
-    </ClCompile>
     <ClCompile Include="JGetter.cpp">
       <Filter>Source Files\JSON</Filter>
     </ClCompile>
@@ -701,9 +698,6 @@
     </ClInclude>
     <ClInclude Include="FixSpecialMoveStatusDuringState.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="StringToSpriteEnum.h">
-      <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="CharacterType.h">
       <Filter>Source Files\Players</Filter>

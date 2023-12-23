@@ -159,7 +159,6 @@ namespace RB::Render
 			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
 			file << "        \"mRenderSizeX\" : " << specs.mRenderSize.x << "," << std::endl;
 			file << "        \"mRenderSizeY\" : " << specs.mRenderSize.y << "," << std::endl;
-			file << "        \"mSpriteEnum\" : " << RB::Sprites::GetString(specs.mSpriteEnum) << "," << std::endl;
 			file << "        \"mPlayOnce\" : " << (specs.mPlayOnce ? 1 : 0) << std::endl;
 			
 			//end of parent element

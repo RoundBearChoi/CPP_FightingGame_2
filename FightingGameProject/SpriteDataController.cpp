@@ -16,8 +16,8 @@ namespace RB::Sprites
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::NONE, "NONE"));
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_idle, "fighter_0_idle"));
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_walk, "fighter_0_walk"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_jump_up, "fighter_0_jump_up"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_fall, "fighter_0_fall"));
+		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_jump_up_0, "fighter_0_jump_up"));
+		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_jump_up_1, "fighter_0_fall"));
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_jab, "fighter_0_jab"));
 		_vecEnumStrings.push_back(new SpriteEnumString(SpriteEnum::fighter_0_wince, "fighter_0_wince"));
 	}

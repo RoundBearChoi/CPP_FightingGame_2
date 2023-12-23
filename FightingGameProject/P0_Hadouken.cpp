@@ -4,7 +4,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Hadouken::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_hadouken;
+		_spriteEnum = RB::Sprites::SpriteEnum::aku_hadouken;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixSpecialMoveStatusDuringState(true));
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));

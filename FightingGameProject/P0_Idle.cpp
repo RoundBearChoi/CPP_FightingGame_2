@@ -4,7 +4,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Idle::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_idle;
+		_spriteEnum = RB::Sprites::SpriteEnum::aku_idle;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::Aku::P0_JumpForwardUp_0()));

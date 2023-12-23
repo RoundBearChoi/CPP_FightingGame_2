@@ -4,7 +4,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Wince::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_wince;
+		_spriteEnum = RB::Sprites::SpriteEnum::aku_wince;
 
 		//GetPlayer()->SetWincingStatus(true);
 

@@ -4,7 +4,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_WalkForward::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_walk;
+		_spriteEnum = RB::Sprites::SpriteEnum::aku_walk;
 
 		RB::Players::Specs::MoveSpecs m = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(RB::Players::CharacterType::AKU);
 

@@ -4,7 +4,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Jab::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jab;
+		_spriteEnum = RB::Sprites::SpriteEnum::aku_0_jab;
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());

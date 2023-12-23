@@ -4,7 +4,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_JumpUp_1::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_up_1;
+		_spriteEnum = RB::Sprites::SpriteEnum::aku_jump_up_1;
 
 		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
 		AddStateComponent(new RB::PlayerStateComponents::MoveDownOnFall(20, 20.0f, new P0_Idle()));

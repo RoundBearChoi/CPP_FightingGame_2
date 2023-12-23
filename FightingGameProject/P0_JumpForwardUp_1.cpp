@@ -4,7 +4,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_JumpForwardUp_1::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1;
+		_spriteEnum = RB::Sprites::SpriteEnum::aku_jump_forward_up_1;
 
 		AddStateComponent(new RB::PlayerStateComponents::MoveDownOnFall(20, 21.0f, new P0_Idle()));
 		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump_1(20, 7.0f));

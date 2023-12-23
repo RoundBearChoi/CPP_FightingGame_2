@@ -25,15 +25,15 @@ namespace RB::Sprites
 		input_strong_punch,
 		input_strong_kick,
 
-		fighter_0_idle,
-		fighter_0_walk,
-		fighter_0_jump_up_0,
-		fighter_0_jump_up_1,
-		fighter_0_jump_forward_up_0, //up
-		fighter_0_jump_forward_up_1, //down
-		fighter_0_jab,
-		fighter_0_wince,
-		fighter_0_hadouken,
+		aku_idle,
+		aku_walk,
+		aku_jump_up_0,
+		aku_jump_up_1,
+		aku_jump_forward_up_0, //up
+		aku_jump_forward_up_1, //down
+		aku_0_jab,
+		aku_wince,
+		aku_hadouken,
 
 		background_1,
 		background_2,

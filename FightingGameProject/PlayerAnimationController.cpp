@@ -20,10 +20,10 @@ namespace RB::Render
 		//load specs from json files
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_idle);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_walk);
-		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_up_0);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_up_0);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_up_1);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_0);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_forward_up_1);
-		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_fall.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jump_up_1);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_jab);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_wince);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"), RB::Sprites::SpriteEnum::fighter_0_hadouken);

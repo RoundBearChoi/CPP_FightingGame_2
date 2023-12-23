@@ -7,7 +7,7 @@ namespace RB::PlayerStates::Aku
 		_spriteEnum = RB::Sprites::SpriteEnum::aku_hadouken;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixSpecialMoveStatusDuringState(true));
-		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight(GetPlayer()->OtherPlayerIsOnRightSide()));
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::PlayerStates::Aku::P0_Idle()));
 
 		EnterStateComponents();

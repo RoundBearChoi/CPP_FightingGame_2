@@ -8,7 +8,7 @@ namespace RB::PlayerStateComponents
 	class ToggleInitiallyFacingRight : public RB::States::StateComponentBase
 	{
 	public:
-		ToggleInitiallyFacingRight(bool isFacingRight);
+		ToggleInitiallyFacingRight() = default;
 		~ToggleInitiallyFacingRight() override = default;
 
 		void OnEnter() override;

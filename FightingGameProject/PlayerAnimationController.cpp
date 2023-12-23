@@ -202,12 +202,8 @@ namespace RB::Render
 		struct json_object_element_s* e5 = e4->next; //mRenderSizeY
 		float_t renderSizeY = RB::JSON::GetFloat_FromElement(*e5);
 
-		struct json_object_element_s* e6 = e5->next; //mSpriteEnum
-		std::string spriteEnumStr = RB::JSON::GetString_FromElement(*e6);
-		RB::Sprites::SpriteEnum spriteEnum = RB::Sprites::GetEnum(spriteEnumStr);
-
-		struct json_object_element_s* e7 = e6->next; //mPlayOnce
-		int32_t playOnceInt = RB::JSON::GetInt32_FromElement(*e7);
+		struct json_object_element_s* e6 = e5->next; //mPlayOnce
+		int32_t playOnceInt = RB::JSON::GetInt32_FromElement(*e6);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		AnimationSpecs specs;
@@ -217,7 +213,6 @@ namespace RB::Render
 		specs.mTotalSprites = totalSprites;
 		specs.mSkipFixedUpdates = skipFixedUpdates;
 		specs.mRenderSize = olc::vf2d{ renderSizeX, renderSizeY };
-		specs.mSpriteEnum = spriteEnum;
 		specs.mPlayOnce = playOnce;
 
 		return specs;

@@ -7,7 +7,6 @@
         "mSkipFixedUpdates" : 2,
         "mRenderSizeX" : 280,
         "mRenderSizeY" : 160,
-        "mSpriteEnum" : "fighter_0_jab",
         "mPlayOnce" : 0
         }
 }

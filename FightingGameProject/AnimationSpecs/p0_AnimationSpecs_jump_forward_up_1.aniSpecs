@@ -7,7 +7,6 @@
         "mSkipFixedUpdates" : 5,
         "mRenderSizeX" : 167,
         "mRenderSizeY" : 133,
-        "mSpriteEnum" : "fighter_0_jump_forward_up_1",
         "mPlayOnce" : 1
         }
 }

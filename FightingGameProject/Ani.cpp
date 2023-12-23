@@ -53,6 +53,7 @@ namespace RB::Render
 	void Ani::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		specs.mLoadedSprite = _sprites.GetLoadedSprite(spriteEnum);
+		specs.mSpriteEnum = spriteEnum;
 
 		_animationLoader.LoadAnimation(specs);
 	}

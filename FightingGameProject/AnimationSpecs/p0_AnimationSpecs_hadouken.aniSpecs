@@ -7,7 +7,6 @@
         "mSkipFixedUpdates" : 3,
         "mRenderSizeX" : 170,
         "mRenderSizeY" : 170,
-        "mSpriteEnum" : "fighter_0_hadouken",
         "mPlayOnce" : 1
         }
 }

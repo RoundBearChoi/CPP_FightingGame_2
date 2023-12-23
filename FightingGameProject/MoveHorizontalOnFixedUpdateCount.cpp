@@ -2,16 +2,16 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveHorizontalOnFixedUpdateCount::MoveHorizontalOnFixedUpdateCount(int32_t fixedUpdateOnCount, bool forward, int32_t move)
+	MoveHorizontalOnFixedUpdateCount::MoveHorizontalOnFixedUpdateCount(int32_t fixedUpdateOnCount, int32_t move)
 	{
 		_fixedUpdateOnCount = fixedUpdateOnCount;
-		_bForward = forward;
 		_moveAmount = move;
 	}
 
 	void MoveHorizontalOnFixedUpdateCount::OnEnter()
 	{
-
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		_otherPlayerIsOnRightSide = player->OtherPlayerIsOnRightSide();
 	}
 
 	void MoveHorizontalOnFixedUpdateCount::OnUpdate()
@@ -23,34 +23,17 @@ namespace RB::PlayerStateComponents
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		if (_moveAmount < 0)
-		{
-			_moveAmount *= -1;
-		}
+		int32_t move = _moveAmount;
 
-		if (player->OtherPlayerIsOnRightSide())
+		if (_otherPlayerIsOnRightSide)
 		{
-			if (_bForward)
-			{
-
-			}
-			else
-			{
-				_moveAmount *= -1;
-			}
+			//do nothing
 		}
 		else
 		{
-			if (_bForward)
-			{
-				_moveAmount *= -1;
-			}
-			else
-			{
-
-			}
+			move *= -1;
 		}
 
-		player->Move(olc::vi2d{ _moveAmount, 0 });
+		player->Move(olc::vi2d{ move, 0 });
 	}
 }

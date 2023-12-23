@@ -11,7 +11,10 @@ namespace RB::PlayerStateComponents
 	class MoveHorizontalOnFixedUpdateCount : public RB::States::StateComponentBase
 	{
 	public:
-		MoveHorizontalOnFixedUpdateCount(int32_t fixedUpdateOnCount, bool forward, int32_t move);
+		/// <summary>
+		/// positive is move forward, negative is move back
+		/// </summary>
+		MoveHorizontalOnFixedUpdateCount(int32_t fixedUpdateOnCount, int32_t move);
 		~MoveHorizontalOnFixedUpdateCount() = default;
 
 	public:
@@ -20,7 +23,8 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
-		bool _bForward = true;
+		//bool _bForward = true;
 		int32_t _moveAmount = 0;
+		bool _otherPlayerIsOnRightSide = true;
 	};
 }

@@ -19,8 +19,8 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		olc::vi2d GetPlayerBox();
-		bool IsColliding();
+		olc::vi2d GetPlayerBox() override;
+		bool IsColliding() override;
 
 	public:
 		void _InitPlayerColliderAABB();

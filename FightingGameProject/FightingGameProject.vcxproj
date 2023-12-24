@@ -180,6 +180,7 @@
     <ClCompile Include="P0_JumpForwardUp_0.cpp" />
     <ClCompile Include="P0_JumpForwardUp_1.cpp" />
     <ClCompile Include="P0_Wince.cpp" />
+    <ClCompile Include="PlayerBox.cpp" />
     <ClCompile Include="PlayerBoxRenderer.cpp" />
     <ClCompile Include="PlayerHBoxRenderer.cpp" />
     <ClCompile Include="PlayerInputRenderer.cpp" />
@@ -303,6 +304,7 @@
     <ClInclude Include="P0_JumpForwardUp_0.h" />
     <ClInclude Include="P0_JumpForwardUp_1.h" />
     <ClInclude Include="P0_Wince.h" />
+    <ClInclude Include="PlayerBox.h" />
     <ClInclude Include="PlayerBoxRenderer.h" />
     <ClInclude Include="PlayerHBoxRenderer.h" />
     <ClInclude Include="PlayerInputRenderer.h" />

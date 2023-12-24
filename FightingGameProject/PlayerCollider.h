@@ -7,6 +7,9 @@
 
 namespace RB::Players
 {
+	/// <summary>
+	/// playerBox is the size of the playerCollider
+	/// </summary>
 	class PlayerCollider
 	{
 	public:

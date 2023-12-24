@@ -41,7 +41,7 @@ namespace RB::Players
 		{
 			_isColliding = true;
 
-			ResolveCollision(other);
+			_ResolveCollision(other);
 		}
 		else
 		{
@@ -57,31 +57,6 @@ namespace RB::Players
 	bool PlayerCollider::IsColliding()
 	{
 		return _isColliding;
-	}
-
-	void PlayerCollider::ResolveCollision(iPlayer* otherPlayer)
-	{
-		int correction = 2;
-
-		olc::vi2d otherPlayerPos = otherPlayer->GetPosition();
-		olc::vi2d myPos = _player->GetPosition();
-
-		//if other player is in air and I'm on ground, I move away more quickly
-		if (otherPlayerPos.y < -0.01f && myPos.y > -0.01f)
-		{
-			correction *= 2;
-		}
-
-		if (myPos.x <= otherPlayerPos.x)
-		{
-			_player->Move(olc::vi2d{ -correction, 0 });
-			otherPlayer->Move(olc::vi2d{ correction, 0 });
-		}
-		else
-		{
-			_player->Move(olc::vi2d{ correction, 0 });
-			otherPlayer->Move(olc::vi2d{ -correction, 0 });
-		}
 	}
 
 	void PlayerCollider::_InitPlayerColliderAABB()
@@ -106,5 +81,30 @@ namespace RB::Players
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
 
 		return _aabb;
+	}
+
+	void PlayerCollider::_ResolveCollision(iPlayer* otherPlayer)
+	{
+		int correction = 2;
+
+		olc::vi2d otherPlayerPos = otherPlayer->GetPosition();
+		olc::vi2d myPos = _player->GetPosition();
+
+		//if other player is in air and I'm on ground, I move away more quickly
+		if (otherPlayerPos.y < -0.01f && myPos.y > -0.01f)
+		{
+			correction *= 2;
+		}
+
+		if (myPos.x <= otherPlayerPos.x)
+		{
+			_player->Move(olc::vi2d{ -correction, 0 });
+			otherPlayer->Move(olc::vi2d{ correction, 0 });
+		}
+		else
+		{
+			_player->Move(olc::vi2d{ correction, 0 });
+			otherPlayer->Move(olc::vi2d{ -correction, 0 });
+		}
 	}
 }

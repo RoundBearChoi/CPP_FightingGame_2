@@ -24,11 +24,11 @@ namespace RB::Players
 	public:
 		olc::vi2d GetPlayerBox();
 		bool IsColliding();
-		void ResolveCollision(iPlayer* otherPlayer);
 
 	public:
 		void _InitPlayerColliderAABB();
 		RB::Collisions::AABB& _UpdateAABBOnPlayerPos();
+		void _ResolveCollision(iPlayer* otherPlayer);
 
 	private:
 		iPlayer* _player = nullptr;

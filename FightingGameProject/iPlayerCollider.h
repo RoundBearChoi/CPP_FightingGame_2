@@ -16,7 +16,7 @@ namespace RB::Players
 		virtual void OnFixedUpdate() = 0;
 
 		virtual olc::vi2d GetPlayerBox() = 0;
-		virtual bool IsColliding() = 0;
+		virtual bool IsCollidingAgainstOtherPlayer() = 0;
 		virtual RB::Collisions::AABB& UpdateAABBOnPlayerPos() = 0;
 	};
 }

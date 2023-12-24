@@ -28,7 +28,7 @@ namespace RB::Render
 
 			olc::Pixel boxTint = olc::YELLOW;
 
-			if (player->GetPlayerCollider()->IsColliding())
+			if (player->GetPlayerCollider()->IsCollidingAgainstOtherPlayer())
 			{
 				boxTint = olc::BLUE;
 			}

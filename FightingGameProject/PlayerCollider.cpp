@@ -39,13 +39,13 @@ namespace RB::Players
 
 		if (myAABB.IsCollidingAgainst(otherAABB, col))
 		{
-			_isColliding = true;
+			_isCollidingAgainstOtherPlayer = true;
 
 			_ResolveCollision(other);
 		}
 		else
 		{
-			_isColliding = false;
+			_isCollidingAgainstOtherPlayer = false;
 		}
 	}
 
@@ -54,9 +54,9 @@ namespace RB::Players
 		return _playerBox;
 	}
 
-	bool PlayerCollider::IsColliding()
+	bool PlayerCollider::IsCollidingAgainstOtherPlayer()
 	{
-		return _isColliding;
+		return _isCollidingAgainstOtherPlayer;
 	}
 
 	RB::Collisions::AABB& PlayerCollider::UpdateAABBOnPlayerPos()

@@ -191,7 +191,7 @@ namespace RB::Players
 
 	RB::Collisions::AABB& Player::UpdateAABBOnPlayerPos()
 	{
-		return _playerCollider.UpdateAABBOnPlayerPos();
+		return _playerCollider._UpdateAABBOnPlayerPos();
 	}
 
 	bool Player::IsCollidingAgainstOtherPlayer()

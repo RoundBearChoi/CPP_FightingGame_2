@@ -6,7 +6,7 @@ namespace RB::Players
 	{
 		_player = owner;
 
-		InitPlayerColliderAABB();
+		_InitPlayerColliderAABB();
 	}
 
 	void PlayerCollider::OnUpdate()
@@ -33,7 +33,7 @@ namespace RB::Players
 		}
 
 		RB::Collisions::AABB otherAABB = other->UpdateAABBOnPlayerPos();
-		RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();
+		RB::Collisions::AABB myAABB = _UpdateAABBOnPlayerPos();
 
 		olc::vf2d col;
 
@@ -47,30 +47,6 @@ namespace RB::Players
 		{
 			_isColliding = false;
 		}
-	}
-
-	void PlayerCollider::InitPlayerColliderAABB()
-	{
-		olc::vi2d bottomCenter = _player->GetPosition();
-		olc::vi2d playerBox = _player->GetPlayerBox();
-		float halfWidth = playerBox.x * 0.5f;
-
-		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
-
-		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
-	}
-
-	RB::Collisions::AABB& PlayerCollider::UpdateAABBOnPlayerPos()
-	{
-		olc::vi2d bottomCenter = _player->GetPosition();
-		olc::vi2d playerBox = _player->GetPlayerBox();
-		float halfWidth = playerBox.x * 0.5f;
-
-		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
-
-		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
-
-		return _aabb;
 	}
 
 	olc::vi2d PlayerCollider::GetPlayerBox()
@@ -106,5 +82,29 @@ namespace RB::Players
 			_player->Move(olc::vi2d{ correction, 0 });
 			otherPlayer->Move(olc::vi2d{ -correction, 0 });
 		}
+	}
+
+	void PlayerCollider::_InitPlayerColliderAABB()
+	{
+		olc::vi2d bottomCenter = _player->GetPosition();
+		olc::vi2d playerBox = _player->GetPlayerBox();
+		float halfWidth = playerBox.x * 0.5f;
+
+		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
+
+		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
+	}
+
+	RB::Collisions::AABB& PlayerCollider::_UpdateAABBOnPlayerPos()
+	{
+		olc::vi2d bottomCenter = _player->GetPosition();
+		olc::vi2d playerBox = _player->GetPlayerBox();
+		float halfWidth = playerBox.x * 0.5f;
+
+		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
+
+		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
+
+		return _aabb;
 	}
 }

@@ -750,5 +750,8 @@
     <ClInclude Include="MoveSpecs.h">
       <Filter>Source Files\Players\Specs</Filter>
     </ClInclude>
+    <ClInclude Include="iPlayerCollider.h">
+      <Filter>Source Files\Players</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,7 +3,6 @@
 #include "AABB.h"
 
 #include "iPlayerCollider.h"
-#include "iPlayerController.h"
 
 namespace RB::Players
 {

@@ -1,6 +1,8 @@
 #pragma once
+
 #include "iPlayerCollider.h"
-#include "AABB.h"
+#include "iPlayer.h"
+#include "iPlayerController.h"
 
 namespace RB::Players
 {
@@ -14,17 +16,17 @@ namespace RB::Players
 		~PlayerCollider() = default;
 
 	public:
-		void Init(iPlayer* owner) override;
+		void Init(iPlayer* owner);
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
 	public:
 		olc::vi2d GetPlayerBox() override;
 		bool IsColliding() override;
+		RB::Collisions::AABB& UpdateAABBOnPlayerPos() override;
 
 	public:
 		void _InitPlayerColliderAABB();
-		RB::Collisions::AABB& _UpdateAABBOnPlayerPos();
 		void _ResolveCollision(iPlayer* otherPlayer);
 
 	private:

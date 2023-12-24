@@ -9,6 +9,7 @@
 #include "iPlayer.h"
 #include "PlayerID.h"
 #include "PlayerCollider.h"
+#include "iPlayerCollider.h"
 
 #include "P0_Start.h"
 
@@ -29,6 +30,7 @@ namespace RB::Players
 		PlayerID GetPlayerID() override;
 		void SetCharacterType(CharacterType type) override;
 		CharacterType GetCharacterType() override;
+		iPlayerCollider* GetPlayerCollider() override;
 		int GetPlayerID_int() override;
 		bool IsFacingRight() override;
 		bool OtherPlayerIsOnRightSide() override;
@@ -46,11 +48,6 @@ namespace RB::Players
 		void FixDirDuringState(bool fix) override;
 		void SetIsInSpecialMoveStatus(bool specialMove) override;
 		bool IsInSpecialMoveStatus() override;
-
-	public:
-		olc::vi2d GetPlayerBox() override;
-		RB::Collisions::AABB& UpdateAABBOnPlayerPos() override;
-		bool IsCollidingAgainstOtherPlayer() override;
 
 	protected:
 		PlayerID _playerID = PlayerID::NONE;

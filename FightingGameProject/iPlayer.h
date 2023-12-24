@@ -8,6 +8,7 @@
 
 #include "iStateMachine.h"
 #include "iState.h"
+#include "iPlayerCollider.h"
 
 namespace RB::Players
 {
@@ -26,6 +27,7 @@ namespace RB::Players
 		virtual PlayerID GetPlayerID() = 0;
 		virtual void SetCharacterType(CharacterType type) = 0;
 		virtual CharacterType GetCharacterType() = 0;
+		virtual iPlayerCollider* GetPlayerCollider() = 0;
 		virtual int GetPlayerID_int() = 0;
 		virtual bool IsFacingRight() = 0;
 		virtual bool OtherPlayerIsOnRightSide() = 0;
@@ -43,10 +45,5 @@ namespace RB::Players
 		virtual void FixDirDuringState(bool fix) = 0;
 		virtual void SetIsInSpecialMoveStatus(bool specialMove) = 0;
 		virtual bool IsInSpecialMoveStatus() = 0;
-
-	public:
-		virtual olc::vi2d GetPlayerBox() = 0;
-		virtual RB::Collisions::AABB& UpdateAABBOnPlayerPos() = 0;
-		virtual bool IsCollidingAgainstOtherPlayer() = 0;
 	};
 }

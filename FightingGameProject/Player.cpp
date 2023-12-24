@@ -7,6 +7,8 @@ namespace RB::Players
 		std::cout << "destroying player: " << static_cast<int>(_playerID) << std::endl;
 
 		delete _stateMachine;
+
+		_stateMachine = nullptr;
 	}
 
 	void Player::Init(PlayerID id, RB::States::iState* firstPlayerState)
@@ -60,6 +62,11 @@ namespace RB::Players
 	CharacterType Player::GetCharacterType()
 	{
 		return _characterType;
+	}
+
+	iPlayerCollider* Player::GetPlayerCollider()
+	{
+		return &_playerCollider;
 	}
 
 	int Player::GetPlayerID_int()
@@ -182,20 +189,5 @@ namespace RB::Players
 	bool Player::IsInSpecialMoveStatus()
 	{
 		return _isInSpecialMoveState;
-	}
-
-	olc::vi2d Player::GetPlayerBox()
-	{
-		return _playerCollider.GetPlayerBox();
-	}
-
-	RB::Collisions::AABB& Player::UpdateAABBOnPlayerPos()
-	{
-		return _playerCollider._UpdateAABBOnPlayerPos();
-	}
-
-	bool Player::IsCollidingAgainstOtherPlayer()
-	{
-		return _playerCollider.IsColliding();
 	}
 }

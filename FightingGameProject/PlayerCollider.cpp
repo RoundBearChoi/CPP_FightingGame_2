@@ -32,8 +32,8 @@ namespace RB::Players
 			return;
 		}
 
-		RB::Collisions::AABB otherAABB = other->UpdateAABBOnPlayerPos();
-		RB::Collisions::AABB myAABB = _UpdateAABBOnPlayerPos();
+		RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->UpdateAABBOnPlayerPos();
+		RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();
 
 		olc::vf2d col;
 
@@ -59,21 +59,10 @@ namespace RB::Players
 		return _isColliding;
 	}
 
-	void PlayerCollider::_InitPlayerColliderAABB()
+	RB::Collisions::AABB& PlayerCollider::UpdateAABBOnPlayerPos()
 	{
 		olc::vi2d bottomCenter = _player->GetPosition();
-		olc::vi2d playerBox = _player->GetPlayerBox();
-		float halfWidth = playerBox.x * 0.5f;
-
-		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
-
-		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
-	}
-
-	RB::Collisions::AABB& PlayerCollider::_UpdateAABBOnPlayerPos()
-	{
-		olc::vi2d bottomCenter = _player->GetPosition();
-		olc::vi2d playerBox = _player->GetPlayerBox();
+		olc::vi2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
 		float halfWidth = playerBox.x * 0.5f;
 
 		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
@@ -81,6 +70,17 @@ namespace RB::Players
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
 
 		return _aabb;
+	}
+
+	void PlayerCollider::_InitPlayerColliderAABB()
+	{
+		olc::vi2d bottomCenter = _player->GetPosition();
+		olc::vi2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
+		float halfWidth = playerBox.x * 0.5f;
+
+		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
+
+		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
 	}
 
 	void PlayerCollider::_ResolveCollision(iPlayer* otherPlayer)

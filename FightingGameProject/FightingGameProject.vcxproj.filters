@@ -334,9 +334,6 @@
     <ClCompile Include="SpecsController.cpp">
       <Filter>Source Files\Players\Specs</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerBox.cpp">
-      <Filter>Source Files\Players</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -752,9 +749,6 @@
     </ClInclude>
     <ClInclude Include="MoveSpecs.h">
       <Filter>Source Files\Players\Specs</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerBox.h">
-      <Filter>Source Files\Players</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

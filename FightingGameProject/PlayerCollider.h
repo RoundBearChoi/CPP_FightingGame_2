@@ -1,8 +1,6 @@
 #pragma once
-#include "olcPixelGameEngine.h"
-#include "AABB.h"
-
 #include "iPlayerCollider.h"
+#include "AABB.h"
 
 namespace RB::Players
 {

@@ -38,8 +38,6 @@ namespace RB::States
 		{
 			_currentState->OnUpdate();
 		}
-
-		_MakeTransition();
 	}
 
 	void StateMachineBase::OnFixedUpdate()
@@ -49,6 +47,8 @@ namespace RB::States
 			_currentState->OnFixedUpdate();
 			_currentState->AddCumulatedFixedUpdate();
 		}
+
+		_MakeTransition();
 	}
 
 	void StateMachineBase::QueueNextState(iState* state)

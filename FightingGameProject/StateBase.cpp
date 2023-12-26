@@ -4,9 +4,10 @@ namespace RB::States
 {
 	StateBase::~StateBase()
 	{
-		for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		for (int32_t i = 0; i < _vecStateComponents.size(); i++)
 		{
 			delete _vecStateComponents[i];
+			_vecStateComponents[i] = nullptr;
 		}
 
 		_vecStateComponents.clear();

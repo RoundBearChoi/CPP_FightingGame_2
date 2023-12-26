@@ -4,7 +4,7 @@
         "mX_TileCount" : 2,
         "mY_TileCount" : 1,
         "mTotalSprites" : 2,
-        "mSkipFixedUpdates" : 2,
+        "mSkipFixedUpdates" : 20,
         "mRenderSizeX" : 97,
         "mRenderSizeY" : 188,
         "mPlayOnce" : 1

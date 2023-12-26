@@ -29,7 +29,7 @@ namespace RB::Input
 			return false;
 		}
 
-		const std::vector<RB::Input::PlayerInput>& vec = _GetSequence(p->IsFacingRight());
+		const std::vector<RB::Input::PlayerInput>& sequence = _GetSequence(p->IsFacingRight());
 
 		for (size_t i = 0; i < RB::Input::iInputController::instance->GetTotalInputCount(playerID); i++)
 		{
@@ -42,16 +42,19 @@ namespace RB::Input
 
 			if (!obj->IsUsedAsSpecial())
 			{
-				if (obj->GetPlayerInputType() == vec[seqIndex])
+				if (sequence.size() > seqIndex)
 				{
-					vecCorrect.push_back(true);
-					vecCorrectObjs.push_back(obj);
-					seqIndex++;
+					if (obj->GetPlayerInputType() == sequence[seqIndex])
+					{
+						vecCorrect.push_back(true);
+						vecCorrectObjs.push_back(obj);
+						seqIndex++;
+					}
 				}
 			}
 		}
 
-		if (vecCorrect.size() == vec.size())
+		if (vecCorrect.size() == sequence.size())
 		{
 			for (size_t i = 0; i < vecCorrectObjs.size(); i++)
 			{

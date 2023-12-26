@@ -12,6 +12,7 @@ namespace RB::PlayerStates::Aku
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new P0_Jab(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkForward(new RB::PlayerStates::Aku::P0_WalkForward()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkBack(new RB::PlayerStates::Aku::P0_WalkBack()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new RB::PlayerStates::Aku::P0_Crouch(), RB::Input::PlayerInput::MOVE_DOWN));
 
 		EnterStateComponents();
 	}

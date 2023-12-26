@@ -51,6 +51,9 @@ namespace RB::States
 		_MakeTransition();
 	}
 
+	/// <summary>
+	/// do not use new here (use a state component instead)
+	/// </summary>
 	void StateMachineBase::QueueNextState(iState* state)
 	{
 		if (state == nullptr)

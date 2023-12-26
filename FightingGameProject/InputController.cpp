@@ -70,14 +70,15 @@ namespace RB::Input
 		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_1);
 		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_2);
 
-		for (size_t i = 0; i < _vecP1_InputObjs.size(); i++)
-		{
-			_vecP1_InputObjs[i]->OnFixedUpdate();
-		}
 
-		for (size_t i = 0; i < _vecP2_InputObjs.size(); i++)
+		for (auto i = _vecP1_InputObjs.begin(); i != _vecP1_InputObjs.end(); ++i)
 		{
-			_vecP2_InputObjs[i]->OnFixedUpdate();
+			(*i)->OnFixedUpdate();
+		}
+		
+		for (auto i = _vecP2_InputObjs.begin(); i != _vecP2_InputObjs.end(); ++i)
+		{
+			(*i)->OnFixedUpdate();
 		}
 	}
 

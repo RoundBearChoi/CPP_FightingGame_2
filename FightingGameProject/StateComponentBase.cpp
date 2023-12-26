@@ -7,7 +7,7 @@ namespace RB::States
 	/// </summary>
 	StateComponentBase::~StateComponentBase()
 	{
-		for (size_t i = 0; i < _vecNextStates.size(); i++)
+		for (int32_t i = _vecNextStates.size() - 1; i >= 0; i--)
 		{
 			if (_vecNextStates[i] != nullptr)
 			{
@@ -17,7 +17,7 @@ namespace RB::States
 					_vecNextStates[i] = nullptr;
 				}
 			};
-		};
+		}
 
 		_vecNextStates.clear();
 	}

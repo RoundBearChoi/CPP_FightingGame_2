@@ -21,6 +21,7 @@ namespace RB::States
 			_currentState->OnExit();
 
 			delete _currentState;
+			_currentState = nullptr;
 		}
 	}
 
@@ -66,6 +67,7 @@ namespace RB::States
 		else
 		{
 			delete state;
+			state = nullptr;
 		}
 	}
 
@@ -74,6 +76,7 @@ namespace RB::States
 		if (_nextState != nullptr)
 		{
 			delete _nextState;
+			_nextState = nullptr;
 		}
 
 		_currentState->SetTransitionStatus(true);
@@ -110,6 +113,8 @@ namespace RB::States
 
 			//clean up last so statecomponents don't delete next state
 			delete _currentState;
+			_currentState = nullptr;
+
 			_currentState = _nextState;
 			_nextState = nullptr;
 		}

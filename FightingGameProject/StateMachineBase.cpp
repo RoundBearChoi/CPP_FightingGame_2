@@ -65,11 +65,6 @@ namespace RB::States
 			_nextState = state;
 			_nextState->SetIsInQueue(true);
 		}
-		//else
-		//{
-		//	delete state;
-		//	state = nullptr;
-		//}
 	}
 
 	void StateMachineBase::OverrideNextState(RB::States::iState* state)
@@ -83,11 +78,6 @@ namespace RB::States
 		_currentState->SetIsTransitioning(false);
 
 		QueueNextState(state);
-
-		//_currentState->SetIsTransitioning(true);
-		//
-		//_nextState = state;
-		//_nextState->SetIsInQueue(true);
 	}
 
 	size_t StateMachineBase::GetID()

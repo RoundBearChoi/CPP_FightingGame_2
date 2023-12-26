@@ -7,31 +7,24 @@ namespace RB::PlayerStates::Aku
 	{
 		// no sprite
 
-		_triggerOnFixedUpdateCount.SetTargetFixedUpdate(1);
-		_triggerOnFixedUpdateCount.SetFunction(this, &P0_Start::TransitionToIdle);
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(0, new RB::PlayerStates::Aku::P0_Idle()));
+
+		EnterStateComponents();
 	}
 
 	void P0_Start::OnExit()
 	{
-
+		ExitStateComponents();
 	}
 
 	void P0_Start::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
-		{
-			return;
-		}
+		UpdateStateComponents();
 	}
 
 	void P0_Start::OnFixedUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
-		{
-			return;
-		}
-
-		_triggerOnFixedUpdateCount.OnFixedUpdate();
+		FixedUpdateStateComponents();
 	}
 
 	void P0_Start::TransitionToIdle()

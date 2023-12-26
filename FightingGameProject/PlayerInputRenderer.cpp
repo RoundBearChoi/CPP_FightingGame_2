@@ -50,7 +50,12 @@ namespace RB::Render
 				tint = olc::GREY;
 			}
 
-			if (inputObj->IsUsed())
+			if (inputObj->IsUsedAsMovement())
+			{
+				tint = olc::BLUE;
+			}
+
+			if (inputObj->IsUsedAsSpecial())
 			{
 				tint = olc::YELLOW;
 			}

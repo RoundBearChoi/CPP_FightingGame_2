@@ -2,11 +2,12 @@
 
 namespace RB::PlayerStateComponents
 {
-	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool flagUsedKey)
+	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool useAsSpecial, bool useAsMovement)
 	{
 		_vecNextStates.push_back(nextState);
 		_input = input;
-		_flagUsedKey = flagUsedKey;
+		_useAsSpecial = useAsSpecial;
+		_useAsMovement = useAsMovement;
 	}
 
 	TransitionOnInput::~TransitionOnInput()
@@ -35,16 +36,36 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
-		RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(playerID, _input);
-
-		if (obj != nullptr)
+		RB::Input::iInputObj* obj = nullptr;
+		
+		if (_useAsSpecial)
 		{
-			obj->SetUsedStatus(_flagUsedKey);
+			obj = RB::Input::iInputController::instance->GetUnused_Special_FIFO(playerID, _input);
+		}
+		else if (_useAsMovement)
+		{
+			obj = RB::Input::iInputController::instance->GetUnused_Movement_FIFO(playerID, _input);
+		}
+		
+		if (obj == nullptr)
+		{
+			return;
+		}
+
+		if (_useAsSpecial && !obj->IsUsedAsSpecial())
+		{
+			obj->SetUsedAsSpecial(true);
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();
 			machine->QueueNextState(_vecNextStates[0]);
+		}
 
-			return;
+		else if (_useAsMovement && !obj->IsUsedAsMovement())
+		{
+			obj->SetUsedAsMovement(true);
+
+			RB::States::iStateMachine* machine = player->GetStateMachine();
+			machine->QueueNextState(_vecNextStates[0]);
 		}
 	}
 }

@@ -131,7 +131,7 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	iInputObj* InputController::GetUnusedInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	iInputObj* InputController::GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -139,7 +139,25 @@ namespace RB::Input
 		{
 			if (vec[i]->GetPlayerInputType() == playerInput)
 			{
-				if (vec[i]->IsUsed() == false)
+				if (vec[i]->IsUsedAsSpecial() == false)
+				{
+					return vec[i];
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
+	iInputObj* InputController::GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	{
+		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
+
+		for (size_t i = 0; i < vec.size(); i++)
+		{
+			if (vec[i]->GetPlayerInputType() == playerInput)
+			{
+				if (vec[i]->IsUsedAsMovement() == false)
 				{
 					return vec[i];
 				}

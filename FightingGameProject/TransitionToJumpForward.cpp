@@ -28,19 +28,19 @@ namespace RB::PlayerStateComponents
 		if (player->OtherPlayerIsOnRightSide())
 		{
 			jumpForward = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 		}
 		else
 		{
 			jumpForward = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnusedInputObj_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 		}
 
 		if (jumpForward)
 		{
 			if (jumpForwardInputObj != nullptr)
 			{
-				jumpForwardInputObj->SetUsedStatus(true);
+				jumpForwardInputObj->SetUsedAsMovement(true);
 
 				RB::States::iStateMachine* machine = player->GetStateMachine();
 				machine->QueueNextState(_vecNextStates[0]);

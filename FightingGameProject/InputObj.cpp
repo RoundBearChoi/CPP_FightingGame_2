@@ -34,9 +34,14 @@ namespace RB::Input
 		_isReleased = released;
 	}
 
-	void InputObj::SetUsedStatus(bool used)
+	void InputObj::SetUsedAsSpecial(bool used)
 	{
-		_isUsed = used;
+		_usedAsSpecial = used;
+	}
+
+	void InputObj::SetUsedAsMovement(bool used)
+	{
+		_usedAsMovement = used;
 	}
 
 	bool InputObj::IsReleased()
@@ -44,9 +49,14 @@ namespace RB::Input
 		return _isReleased;
 	}
 
-	bool InputObj::IsUsed()
+	bool InputObj::IsUsedAsSpecial()
 	{
-		return _isUsed;
+		return _usedAsSpecial;
+	}
+
+	bool InputObj::IsUsedAsMovement()
+	{
+		return _usedAsMovement;
 	}
 
 	size_t InputObj::GetFixedUpdateCount()

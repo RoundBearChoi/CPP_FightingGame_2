@@ -15,9 +15,11 @@ namespace RB::Input
 
 		virtual PlayerInput GetPlayerInputType() = 0;
 		virtual void SetReleasedStatus(bool released) = 0;
-		virtual void SetUsedStatus(bool used) = 0;
+		virtual void SetUsedAsSpecial(bool used) = 0;
+		virtual void SetUsedAsMovement(bool used) = 0;
 		virtual bool IsReleased() = 0;
-		virtual bool IsUsed() = 0;
+		virtual bool IsUsedAsSpecial() = 0;
+		virtual bool IsUsedAsMovement() = 0;
 		virtual size_t GetFixedUpdateCount() = 0;
 		virtual size_t GetGameFrameCount() = 0;
 		virtual size_t GetGameFrameLoopCount() = 0;

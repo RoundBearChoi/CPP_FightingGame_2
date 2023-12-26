@@ -35,7 +35,7 @@ namespace RB::Input
 		{
 			RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetInputByIndex(playerID, i);
 
-			if (!obj->IsUsed())
+			if (!obj->IsUsedAsSpecial())
 			{
 				if (obj->GetPlayerInputType() == vec[seqIndex])
 				{
@@ -50,7 +50,7 @@ namespace RB::Input
 		{
 			for (size_t i = 0; i < vecCorrectObjs.size(); i++)
 			{
-				vecCorrectObjs[i]->SetUsedStatus(true);
+				vecCorrectObjs[i]->SetUsedAsSpecial(true);
 			}
 
 			return true;

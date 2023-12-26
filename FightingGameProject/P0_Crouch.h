@@ -2,6 +2,8 @@
 
 #include "PlayerState.h"
 
+#include "FixDirectionDuringState.h"
+
 namespace RB::PlayerStates::Aku
 {
 	class P0_Crouch : public RB::PlayerStates::PlayerState

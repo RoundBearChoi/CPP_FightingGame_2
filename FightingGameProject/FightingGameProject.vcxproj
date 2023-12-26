@@ -374,7 +374,6 @@
     <ClInclude Include="FixedTimer.h" />
     <ClInclude Include="TransitionToWalkBack.h" />
     <ClInclude Include="TransitionToWalkForward.h" />
-    <ClInclude Include="TriggerOnFixedUpdateCount.h" />
     <ClInclude Include="Updater.h" />
     <ClInclude Include="ZoomOnPlayers.h" />
   </ItemGroup>

@@ -390,9 +390,6 @@
     <ClInclude Include="SkipFixedUpdates.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
-    <ClInclude Include="TriggerOnFixedUpdateCount.h">
-      <Filter>Source Files\Updaters</Filter>
-    </ClInclude>
     <ClInclude Include="InputController.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>

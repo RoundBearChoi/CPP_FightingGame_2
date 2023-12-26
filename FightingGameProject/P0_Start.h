@@ -4,9 +4,6 @@
 #include "iPlayer.h"
 
 #include "SkipFixedUpdates.h"
-#include "TriggerOnFixedUpdateCount.h"
-
-#include "TransitionOnFixedUpdateCount.h"
 
 namespace RB::PlayerStates::Aku
 {
@@ -20,11 +17,5 @@ namespace RB::PlayerStates::Aku
 		void OnExit() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-
-	public:
-		void TransitionToIdle();
-
-	private:
-		Updaters::TriggerOnFixedUpdateCount<P0_Start> _triggerOnFixedUpdateCount;
 	};
 }

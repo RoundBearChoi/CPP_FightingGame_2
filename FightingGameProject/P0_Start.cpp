@@ -26,11 +26,4 @@ namespace RB::PlayerStates::Aku
 	{
 		FixedUpdateStateComponents();
 	}
-
-	void P0_Start::TransitionToIdle()
-	{
-		RB::States::iStateMachine* machine = GetPlayer()->GetStateMachine();
-
-		machine->QueueNextState(new RB::PlayerStates::Aku::P0_Idle());
-	}
 }

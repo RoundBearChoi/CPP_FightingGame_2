@@ -195,17 +195,6 @@ namespace RB::Input
 			}
 		}
 
-		//for (size_t i = 0; i < vec->size(); i++)
-		//{
-		//	if ((*vec)[i]->GetPlayerInputType() == playerInput)
-		//	{
-		//		if (!(*vec)[i]->IsReleased())
-		//		{
-		//			return true;
-		//		}
-		//	}
-		//}
-
 		return false;
 	}
 

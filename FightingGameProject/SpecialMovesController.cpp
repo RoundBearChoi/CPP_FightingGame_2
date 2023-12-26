@@ -29,11 +29,11 @@ namespace RB::Input
 	{
 		const std::vector<iSpecialMoveSequence*>& vec = _GetSequence(playerID);
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); i++)
 		{
-			if (vec[i]->IsMatching(playerID))
+			if ((*i)->IsMatching(playerID))
 			{
-				return vec[i]->GetSpecialMoveType();
+				return (*i)->GetSpecialMoveType();
 			}
 		}
 

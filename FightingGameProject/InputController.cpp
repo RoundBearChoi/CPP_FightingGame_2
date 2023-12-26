@@ -67,7 +67,6 @@ namespace RB::Input
 		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_1);
 		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_2);
 
-
 		for (auto i = _vecP1_InputObjs.begin(); i != _vecP1_InputObjs.end(); ++i)
 		{
 			(*i)->OnFixedUpdate();

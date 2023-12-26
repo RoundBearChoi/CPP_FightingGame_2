@@ -184,7 +184,8 @@ namespace RB::Input
 			return false;
 		}
 
-		for (auto i = vec->begin(); i != vec->end(); ++i)
+		//reverse iterate
+		for (auto i = vec->rbegin(); i != vec->rend(); ++i)
 		{
 			if ((*i)->GetPlayerInputType() == playerInput)
 			{

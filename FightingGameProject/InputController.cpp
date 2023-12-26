@@ -60,6 +60,9 @@ namespace RB::Input
 		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
 		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
 		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
+
+		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_1);
+		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	void InputController::OnFixedUpdate()
@@ -76,9 +79,6 @@ namespace RB::Input
 		{
 			(*i)->OnFixedUpdate();
 		}
-
-		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_1);
-		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	olc::HWButton InputController::GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
@@ -518,8 +518,6 @@ namespace RB::Input
 			RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
 			player->GetStateMachine()->OverrideNextState(state);
-
-			vec.erase(vec.begin());
 
 			//clear all (only trigger the first one because it's impossible to queue 2 special moves in a single update)
 			vec.clear();

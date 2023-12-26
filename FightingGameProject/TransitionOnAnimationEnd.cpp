@@ -43,7 +43,7 @@ namespace RB::PlayerStateComponents
 
 		size_t updates = state->GetCumulatedFixedUpdates();
 
-		if ((specs.mTotalSprites - 1) * specs.mSkipFixedUpdates <= updates)
+		if ((specs.mTotalSprites /* - 1*/) * specs.mSkipFixedUpdates <= updates)
 		{
 			player->GetStateMachine()->QueueNextState(_vecNextStates[0]);
 		}

@@ -51,7 +51,7 @@ namespace RB::Render
 
 	void AnimationObj::RecycleAnimationIndex()
 	{
-		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites - 1)
+		if (_currentIndex > _animationRenderer->GetAnimationSpecs().mTotalSprites - 1)
 		{
 			if (!_animationRenderer->GetAnimationSpecs().mPlayOnce)
 			{

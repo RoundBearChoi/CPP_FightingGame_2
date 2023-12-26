@@ -14,7 +14,7 @@ namespace RB::Render
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::aku_jump_up_1);
 		_ani.LoadSprite("PNG files/Aku/aku_jump_forward_up_0.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_0);
 		_ani.LoadSprite("PNG files/Aku/aku_jump_forward_up_1.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_1);
-		_ani.LoadSprite("PNG files/Aku/aku_weak_jab.png", RB::Sprites::SpriteEnum::aku_0_jab);
+		_ani.LoadSprite("PNG files/Aku/aku_jab.png", RB::Sprites::SpriteEnum::aku_0_jab);
 		_ani.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::aku_wince);
 		_ani.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteEnum::aku_hadouken);
 

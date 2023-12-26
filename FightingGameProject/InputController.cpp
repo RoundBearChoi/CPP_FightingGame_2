@@ -184,16 +184,27 @@ namespace RB::Input
 			return false;
 		}
 
-		for (size_t i = 0; i < vec->size(); i++)
+		for (auto i = vec->begin(); i != vec->end(); ++i)
 		{
-			if ((*vec)[i]->GetPlayerInputType() == playerInput)
+			if ((*i)->GetPlayerInputType() == playerInput)
 			{
-				if (!(*vec)[i]->IsReleased())
+				if (!(*i)->IsReleased())
 				{
 					return true;
 				}
 			}
 		}
+
+		//for (size_t i = 0; i < vec->size(); i++)
+		//{
+		//	if ((*vec)[i]->GetPlayerInputType() == playerInput)
+		//	{
+		//		if (!(*vec)[i]->IsReleased())
+		//		{
+		//			return true;
+		//		}
+		//	}
+		//}
 
 		return false;
 	}

@@ -22,14 +22,24 @@ namespace RB::States
 		return _stateMachineID;
 	}
 
-	void StateBase::SetTransitionStatus(bool status)
+	void StateBase::SetIsTransitioning(bool status)
 	{
 		_isTransitioning = status;
+	}
+
+	void StateBase::SetIsInQueue(bool status)
+	{
+		_isInQueue = status;
 	}
 
 	bool StateBase::IsTransitioning()
 	{
 		return _isTransitioning;
+	}
+
+	bool StateBase::IsInQueue()
+	{
+		return _isInQueue;
 	}
 
 	void StateBase::AddCumulatedFixedUpdate()
@@ -40,16 +50,6 @@ namespace RB::States
 	size_t StateBase::GetCumulatedFixedUpdates()
 	{
 		return _cumulatedFixedUpdates;
-	}
-
-	bool StateBase::Entered()
-	{
-		return _entered;
-	}
-
-	void StateBase::Entered(bool entered)
-	{
-		_entered = entered;
 	}
 
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)

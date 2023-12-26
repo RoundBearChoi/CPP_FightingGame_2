@@ -60,15 +60,16 @@ namespace RB::States
 
 		if (!_currentState->IsTransitioning())
 		{
-			_currentState->SetTransitionStatus(true);
+			_currentState->SetIsTransitioning(true);
 
 			_nextState = state;
+			_nextState->SetIsInQueue(true);
 		}
-		else
-		{
-			delete state;
-			state = nullptr;
-		}
+		//else
+		//{
+		//	delete state;
+		//	state = nullptr;
+		//}
 	}
 
 	void StateMachineBase::OverrideNextState(RB::States::iState* state)
@@ -79,7 +80,7 @@ namespace RB::States
 			_nextState = nullptr;
 		}
 
-		_currentState->SetTransitionStatus(true);
+		_currentState->SetIsTransitioning(true);
 
 		_nextState = state;
 	}
@@ -109,7 +110,6 @@ namespace RB::States
 			//enter next state
 			_nextState->SetStateMachineID(_stateMachineID);
 			_nextState->OnEnter();
-			_nextState->Entered(true);
 
 			//clean up last so statecomponents don't delete next state
 			delete _currentState;

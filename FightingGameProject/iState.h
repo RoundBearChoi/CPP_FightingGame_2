@@ -12,12 +12,12 @@ namespace RB::States
 	public:
 		virtual void SetStateMachineID(size_t id) = 0;
 		virtual size_t GetStateMachineID() = 0;
-		virtual void SetTransitionStatus(bool status) = 0;
+		virtual void SetIsTransitioning(bool status) = 0;
+		virtual void SetIsInQueue(bool status) = 0;
 		virtual bool IsTransitioning() = 0;
+		virtual bool IsInQueue() = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual size_t GetCumulatedFixedUpdates() = 0;
-		virtual bool Entered() = 0;
-		virtual void Entered(bool entered) = 0;
 
 	public:
 		virtual void OnEnter() = 0;

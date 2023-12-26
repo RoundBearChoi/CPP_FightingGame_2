@@ -14,12 +14,12 @@ namespace RB::States
 
 		virtual void SetStateMachineID(size_t id) override;
 		virtual size_t GetStateMachineID() override;
-		virtual void SetTransitionStatus(bool status) override;
+		virtual void SetIsTransitioning(bool status) override;
+		virtual void SetIsInQueue(bool status) override;
 		virtual bool IsTransitioning() override;
+		virtual bool IsInQueue() override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual size_t GetCumulatedFixedUpdates() override;
-		virtual bool Entered() override;
-		virtual void Entered(bool entered) override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);
@@ -38,7 +38,7 @@ namespace RB::States
 		size_t _stateMachineID = 0;
 		size_t _cumulatedFixedUpdates = 0;
 		bool _isTransitioning = false;
-		bool _entered = false;
+		bool _isInQueue = false;
 		std::vector<StateComponentBase*> _vecStateComponents;
 	};
 }

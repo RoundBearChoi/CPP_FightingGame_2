@@ -3,7 +3,7 @@
 namespace RB::States
 {
 	/// <summary>
-	/// delete nextState pointer if it's not entered
+	/// delete nextState pointer if it's not used
 	/// </summary>
 	StateComponentBase::~StateComponentBase()
 	{
@@ -11,7 +11,7 @@ namespace RB::States
 		{
 			if (_vecNextStates[i] != nullptr)
 			{
-				if (!_vecNextStates[i]->Entered())
+				if (_vecNextStates[i]->IsInQueue() == false)
 				{
 					delete _vecNextStates[i];
 					_vecNextStates[i] = nullptr;

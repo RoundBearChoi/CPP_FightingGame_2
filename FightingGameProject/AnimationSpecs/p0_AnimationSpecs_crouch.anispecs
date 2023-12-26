@@ -1,0 +1,12 @@
+{
+    "p0_AnimationSpecs_crouch":
+        {
+        "mX_TileCount" : 2,
+        "mY_TileCount" : 1,
+        "mTotalSprites" : 2,
+        "mSkipFixedUpdates" : 6,
+        "mRenderSizeX" : 400,
+        "mRenderSizeY" : 225,
+        "mPlayOnce" : 0
+        }
+}

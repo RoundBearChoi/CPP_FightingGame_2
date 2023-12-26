@@ -8,6 +8,7 @@ namespace RB::Render
 
 		//animations require loaded sprites first
 		_ani.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::aku_idle);
+		_ani.LoadSprite("PNG files/Aku/aku_crouch.png", RB::Sprites::SpriteEnum::aku_crouch);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::aku_walk);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::aku_jump_up_0);
 		_ani.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::aku_jump_up_1);
@@ -19,6 +20,7 @@ namespace RB::Render
 
 		//load specs from json files
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::aku_idle);
+		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"), RB::Sprites::SpriteEnum::aku_crouch);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::aku_walk);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_up_0);
 		_ani.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_up_1);

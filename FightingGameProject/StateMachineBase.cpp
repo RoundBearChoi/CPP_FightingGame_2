@@ -80,9 +80,14 @@ namespace RB::States
 			_nextState = nullptr;
 		}
 
-		_currentState->SetIsTransitioning(true);
+		_currentState->SetIsTransitioning(false);
 
-		_nextState = state;
+		QueueNextState(state);
+
+		//_currentState->SetIsTransitioning(true);
+		//
+		//_nextState = state;
+		//_nextState->SetIsInQueue(true);
 	}
 
 	size_t StateMachineBase::GetID()

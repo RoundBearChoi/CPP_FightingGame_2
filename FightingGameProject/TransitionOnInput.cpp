@@ -2,10 +2,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input)
+	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool flagUsedKey)
 	{
 		_vecNextStates.push_back(nextState);
 		_input = input;
+		_flagUsedKey = flagUsedKey;
 	}
 
 	TransitionOnInput::~TransitionOnInput()
@@ -38,7 +39,7 @@ namespace RB::PlayerStateComponents
 
 		if (obj != nullptr)
 		{
-			obj->SetUsedStatus(true);
+			obj->SetUsedStatus(_flagUsedKey);
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();
 			machine->QueueNextState(_vecNextStates[0]);

@@ -11,7 +11,7 @@ namespace RB::PlayerStateComponents
 	class TransitionOnInput : public RB::States::StateComponentBase
 	{
 	public:
-		TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input);
+		TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool flagUsedKey);
 		~TransitionOnInput() override;
 
 	public:
@@ -21,5 +21,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		RB::Input::PlayerInput _input = RB::Input::PlayerInput::NONE;
+		bool _flagUsedKey = true;
 	};
 }

@@ -35,6 +35,11 @@ namespace RB::Input
 		{
 			RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetInputByIndex(playerID, i);
 
+			if (obj == nullptr)
+			{
+				continue;
+			}
+
 			if (!obj->IsUsedAsSpecial())
 			{
 				if (obj->GetPlayerInputType() == vec[seqIndex])

@@ -43,6 +43,11 @@ namespace RB::Render
 		{
 			RB::Input::iInputObj* inputObj = RB::Input::iInputController::instance->GetInputByIndex(player->GetPlayerID(), i);
 
+			if (inputObj == nullptr)
+			{
+				continue;
+			}
+
 			olc::Pixel tint = olc::WHITE;
 
 			if (inputObj->IsReleased())

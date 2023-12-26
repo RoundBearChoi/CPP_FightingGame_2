@@ -334,6 +334,9 @@
     <ClCompile Include="SpecsController.cpp">
       <Filter>Source Files\Players\Specs</Filter>
     </ClCompile>
+    <ClCompile Include="P0_Crouch.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -752,6 +755,9 @@
     </ClInclude>
     <ClInclude Include="iPlayerCollider.h">
       <Filter>Source Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Crouch.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

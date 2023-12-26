@@ -26,6 +26,7 @@ namespace RB::Sprites
 		input_strong_kick,
 
 		aku_idle,
+		aku_crouch,
 		aku_walk,
 		aku_jump_up_0,
 		aku_jump_up_1,

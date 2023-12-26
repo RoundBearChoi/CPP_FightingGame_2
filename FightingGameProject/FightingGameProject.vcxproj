@@ -190,6 +190,7 @@
     <ClCompile Include="SpecialMoveSequenceBase.cpp" />
     <ClCompile Include="SpecsController.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
+    <ClCompile Include="StandUpOnRelease.cpp" />
     <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
     <ClCompile Include="TransitionOnFixedUpdateCount.cpp" />
     <ClCompile Include="TransitionOnAnimationEnd.cpp" />
@@ -318,6 +319,7 @@
     <ClInclude Include="SpecsController.h" />
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
+    <ClInclude Include="StandUpOnRelease.h" />
     <ClInclude Include="ToggleInitiallyFacingRight.h" />
     <ClInclude Include="TransitionOnFixedUpdateCount.h" />
     <ClInclude Include="TransitionOnAnimationEnd.h" />

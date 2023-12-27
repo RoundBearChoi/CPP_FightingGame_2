@@ -27,7 +27,7 @@ namespace RB::Render
 		virtual iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType) override;
 		virtual RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) override;
 		virtual void PushCurrentAnimation(iAnimationObj* animationObj) override;
-		virtual size_t GetCurrentAniCount() override;
+		virtual unsigned int GetCurrentAniCount() override;
 		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum) override;
 
 	protected:

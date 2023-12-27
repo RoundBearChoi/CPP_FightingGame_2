@@ -9,10 +9,16 @@ namespace RB::Render
 
 	Ani::~Ani()
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			delete _vecCurrentAnimations[i];
+			delete (*i);
+			(*i) = nullptr;
 		}
+
+		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		//{
+		//	delete _vecCurrentAnimations[i];
+		//}
 	}
 
 	void Ani::Init()
@@ -60,17 +66,30 @@ namespace RB::Render
 
 	void Ani::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
+			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
 			{
-				delete _vecCurrentAnimations[i];
+				delete (*i);
+				(*i) = nullptr;
 
-				_vecCurrentAnimations.erase(_vecCurrentAnimations.begin() + i);
+				_vecCurrentAnimations.erase(i);
 
 				return;
 			}
 		}
+
+		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		//{
+		//	if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
+		//	{
+		//		delete _vecCurrentAnimations[i];
+		//
+		//		_vecCurrentAnimations.erase(_vecCurrentAnimations.begin() + i);
+		//
+		//		return;
+		//	}
+		//}
 	}
 
 	void Ani::DeleteAnimationObj(size_t index)
@@ -86,16 +105,27 @@ namespace RB::Render
 
 	iAnimationObj* Ani::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
+			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
 			{
-				if (_vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
+				if ((*i)->GetAnimationSpecs().mSpriteEnum == spriteEnum)
 				{
-					return _vecCurrentAnimations[i];
+					return (*i);
 				}
 			}
 		}
+
+		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		//{
+		//	if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
+		//	{
+		//		if (_vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
+		//		{
+		//			return _vecCurrentAnimations[i];
+		//		}
+		//	}
+		//}
 
 		return nullptr;
 	}
@@ -125,15 +155,25 @@ namespace RB::Render
 
 	RB::Sprites::SpriteEnum Ani::GetSpriteEnum(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
+			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
 			{
-				RB::Sprites::SpriteEnum spriteEnum = _vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum;
+				RB::Sprites::SpriteEnum spriteEnum = (*i)->GetAnimationSpecs().mSpriteEnum;
 
 				return spriteEnum;
 			}
 		}
+
+		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		//{
+		//	if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
+		//	{
+		//		RB::Sprites::SpriteEnum spriteEnum = _vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum;
+		//
+		//		return spriteEnum;
+		//	}
+		//}
 
 		return RB::Sprites::SpriteEnum::NONE;
 	}
@@ -143,7 +183,7 @@ namespace RB::Render
 		_vecCurrentAnimations.push_back(animationObj);
 	}
 
-	size_t Ani::GetCurrentAniCount()
+	unsigned int Ani::GetCurrentAniCount()
 	{
 		return _vecCurrentAnimations.size();
 	}

@@ -39,7 +39,7 @@ namespace RB::HBox
 		void _SaveHBoxes_OnPress();
 
 	private:
-		size_t _selectedIndex = 0;
+		unsigned int _selectedIndex = 0;
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 	};
 }

@@ -26,11 +26,6 @@ namespace RB::HBox
 			return _vecHurtBoxData;
 		}
 
-		//unsigned int GetSize()
-		//{
-		//	return _vecHurtBoxData.size();
-		//}
-
 		/// <summary>
 		/// 0, 0 by default if no data found
 		/// </summary>

@@ -23,7 +23,7 @@ namespace RB::Render
 		virtual void DeleteAnimationObj(RB::Players::PlayerID playerID) = 0;
 		virtual void DeleteAnimationObj(unsigned int index) = 0;
 		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) = 0;
-		virtual iAnimationObj* GetCurrentAnimationObj(size_t index) = 0;
+		virtual iAnimationObj* GetCurrentAnimationObj(unsigned int index) = 0;
 		virtual iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType) = 0;
 		virtual RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) = 0;
 		virtual void PushCurrentAnimation(iAnimationObj* animationObj) = 0;

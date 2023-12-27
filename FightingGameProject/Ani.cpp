@@ -102,7 +102,7 @@ namespace RB::Render
 		return nullptr;
 	}
 
-	iAnimationObj* Ani::GetCurrentAnimationObj(size_t index)
+	iAnimationObj* Ani::GetCurrentAnimationObj(unsigned int index)
 	{
 		if (index < _vecCurrentAnimations.size())
 		{

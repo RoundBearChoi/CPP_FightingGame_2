@@ -1,5 +1,4 @@
 #pragma once
-#include <cmath>
 #include "olcPixelGameEngine.h"
 #include "SpriteEnum.h"
 #include "Sprites.h"

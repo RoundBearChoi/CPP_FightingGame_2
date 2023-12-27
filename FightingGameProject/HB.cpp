@@ -21,14 +21,6 @@ namespace RB::HBox
 			}
 		}
 
-		//for (size_t i = 0; i < _vecLists.size(); i++)
-		//{
-		//	if (_vecLists[i].GetSpriteEnum() == spriteEnum)
-		//	{
-		//		return &_vecLists[i];
-		//	}
-		//}
-
 		return nullptr;
 	}
 

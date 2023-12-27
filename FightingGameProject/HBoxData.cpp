@@ -15,7 +15,7 @@ namespace RB::HBox
 		return _frame;
 	}
 
-	size_t HBoxData::GetAABBCount()
+	unsigned int HBoxData::GetAABBCount()
 	{
 		return _vecAABB.size();
 	}

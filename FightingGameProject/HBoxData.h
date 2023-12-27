@@ -15,7 +15,7 @@ namespace RB::HBox
 
 	public:
 		size_t GetFrame();
-		size_t GetAABBCount();
+		unsigned int GetAABBCount();
 		RB::Collisions::AABB& GetAABB(size_t index);
 		const std::string& GetFrameName();
 

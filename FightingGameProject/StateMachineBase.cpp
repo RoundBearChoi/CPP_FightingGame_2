@@ -49,6 +49,7 @@ namespace RB::States
 
 	/// <summary>
 	/// do not use new here (ONLY use a StateComponent for this function)
+	/// for new, use OverrideNextState()
 	/// </summary>
 	void StateMachineBase::QueueNextState(iState* state)
 	{

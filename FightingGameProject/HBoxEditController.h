@@ -32,7 +32,7 @@ namespace RB::HBox
 
 	private:
 		bool _ControllersExist();
-		void _UpdateSelectedIndex_OnPress(size_t count);
+		void _UpdateSelectedIndex_OnPress(unsigned int count);
 		void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress();
 		void _EditAABB_OnPress(RB::Players::PlayerID playerID);

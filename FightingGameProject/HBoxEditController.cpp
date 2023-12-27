@@ -114,11 +114,11 @@ namespace RB::HBox
 
 	RB::Collisions::AABB* HBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
 	{
-		size_t count = data->GetAABBCount();
+		unsigned int count = data->GetAABBCount();
 
 		_UpdateSelectedIndex_OnPress(count);
 
-		for (size_t i = 0; i < count; i++)
+		for (unsigned int i = 0; i < count; i++)
 		{
 			if (i == _selectedIndex)
 			{
@@ -164,7 +164,7 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_UpdateSelectedIndex_OnPress(size_t count)
+	void HBoxEditController::_UpdateSelectedIndex_OnPress(unsigned int count)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
@@ -327,7 +327,7 @@ namespace RB::HBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				for (size_t f = 0; f < list->GetSize(); f++)
+				for (unsigned int f = 0; f < list->GetSize(); f++)
 				{
 					HBoxData* data = list->GetHBoxDataByFrame(f);
 					const std::string& frameName = data->GetFrameName();
@@ -335,7 +335,7 @@ namespace RB::HBox
 					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					for (size_t a = 0; a < data->GetAABBCount(); a++)
+					for (unsigned int a = 0; a < data->GetAABBCount(); a++)
 					{
 						RB::Collisions::AABB aabb = data->GetAABB(a);
 

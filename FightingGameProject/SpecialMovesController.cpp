@@ -57,10 +57,10 @@ namespace RB::Input
 	{
 		std::vector<iSpecialMoveSequence*>& vec = _GetSequence(playerID);
 
-		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		for (auto i = vec.begin(); i != vec.end(); i++)
 		{
-			delete vec[i];
-			vec[i] = nullptr;
+			delete (*i);
+			(*i) = nullptr;
 		}
 
 		vec.clear();

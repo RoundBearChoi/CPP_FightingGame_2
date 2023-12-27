@@ -12,7 +12,7 @@ namespace RB::Input
 	{
 		_totalInputTypes = static_cast<unsigned int>(PlayerInput::COUNT);
 
-		_vecKeyBindings.reserve((size_t)PlayerInput::COUNT);
+		_vecKeyBindings.reserve((unsigned int)PlayerInput::COUNT);
 
 		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, olc::W });
 		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, olc::S });
@@ -83,20 +83,35 @@ namespace RB::Input
 
 	olc::HWButton InputController::GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		for (size_t i = 0; i < _vecKeyBindings.size(); i++)
+		for (auto i = _vecKeyBindings.begin(); i != _vecKeyBindings.end(); ++i)
 		{
-			if (_vecKeyBindings[i].GetPlayerID() == playerID)
+			if ((*i).GetPlayerID() == playerID)
 			{
-				if (_vecKeyBindings[i].GetPlayerInput() == playerInput)
+				if ((*i).GetPlayerInput() == playerInput)
 				{
-					olc::Key key = _vecKeyBindings[i].GetKey();
-					
+					olc::Key key = (*i).GetKey();
+
 					olc::HWButton button = olc::Platform::ptrPGE->GetKey(key);
 
 					return button;
 				}
 			}
 		}
+
+		//for (size_t i = 0; i < _vecKeyBindings.size(); i++)
+		//{
+		//	if (_vecKeyBindings[i].GetPlayerID() == playerID)
+		//	{
+		//		if (_vecKeyBindings[i].GetPlayerInput() == playerInput)
+		//		{
+		//			olc::Key key = _vecKeyBindings[i].GetKey();
+		//			
+		//			olc::HWButton button = olc::Platform::ptrPGE->GetKey(key);
+		//
+		//			return button;
+		//		}
+		//	}
+		//}
 
 		return olc::HWButton();
 	}
@@ -105,13 +120,21 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); ++i)
 		{
-			if (vec[i]->GetPlayerInputType() == playerInput)
+			if ((*i)->GetPlayerInputType() == playerInput)
 			{
-				return vec[i];
+				return (*i);
 			}
 		}
+
+		//for (size_t i = 0; i < vec.size(); i++)
+		//{
+		//	if (vec[i]->GetPlayerInputType() == playerInput)
+		//	{
+		//		return vec[i];
+		//	}
+		//}
 
 		return nullptr;
 	}
@@ -135,16 +158,27 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); ++i)
 		{
-			if (vec[i]->GetPlayerInputType() == playerInput)
+			if ((*i)->GetPlayerInputType() == playerInput)
 			{
-				if (vec[i]->IsUsedAsSpecial() == false)
+				if ((*i)->IsUsedAsSpecial() == false)
 				{
-					return vec[i];
+					return (*i);
 				}
 			}
 		}
+
+		//for (size_t i = 0; i < vec.size(); i++)
+		//{
+		//	if (vec[i]->GetPlayerInputType() == playerInput)
+		//	{
+		//		if (vec[i]->IsUsedAsSpecial() == false)
+		//		{
+		//			return vec[i];
+		//		}
+		//	}
+		//}
 
 		return nullptr;
 	}
@@ -153,16 +187,27 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); ++i)
 		{
-			if (vec[i]->GetPlayerInputType() == playerInput)
+			if ((*i)->GetPlayerInputType() == playerInput)
 			{
-				if (vec[i]->IsUsedAsMovement() == false)
+				if ((*i)->IsUsedAsMovement() == false)
 				{
-					return vec[i];
+					return (*i);
 				}
 			}
 		}
+
+		//for (size_t i = 0; i < vec.size(); i++)
+		//{
+		//	if (vec[i]->GetPlayerInputType() == playerInput)
+		//	{
+		//		if (vec[i]->IsUsedAsMovement() == false)
+		//		{
+		//			return vec[i];
+		//		}
+		//	}
+		//}
 
 		return nullptr;
 	}
@@ -471,11 +516,17 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); ++i)
 		{
-			delete vec[i];
-			vec[i] = nullptr;
+			delete (*i);
+			(*i) = nullptr;
 		}
+
+		//for (size_t i = 0; i < vec.size(); i++)
+		//{
+		//	delete vec[i];
+		//	vec[i] = nullptr;
+		//}
 
 		vec.clear();
 	}

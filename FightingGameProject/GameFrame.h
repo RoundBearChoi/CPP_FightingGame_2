@@ -3,9 +3,9 @@
 
 namespace RB
 {
-	extern size_t gameFrameCount;
-	extern size_t gameFrameLoopCount;
-	extern size_t maxGameFrameCount;
+	extern unsigned int gameFrameCount;
+	extern unsigned gameFrameLoopCount;
+	extern unsigned maxGameFrameCount;
 
 	void AddGameFrame();
 }

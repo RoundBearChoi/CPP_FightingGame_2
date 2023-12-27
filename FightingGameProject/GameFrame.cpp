@@ -2,9 +2,9 @@
 
 namespace RB
 {
-	size_t gameFrameCount = 0;
-	size_t gameFrameLoopCount = 0;
-	size_t maxGameFrameCount = 0;
+	unsigned int gameFrameCount = 0;
+	unsigned int gameFrameLoopCount = 0;
+	unsigned int maxGameFrameCount = 0;
 
 	void AddGameFrame()
 	{

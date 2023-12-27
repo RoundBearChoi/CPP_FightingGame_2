@@ -32,11 +32,11 @@ namespace RB::HBox
 		/// only use during initialization (vector addresses)
 		/// </summary>
 		HBoxDataList LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
-		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const size_t frame);
-		std::string ParseName(const json_object_s& wholeObj, const size_t frame);
+		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
+		std::string ParseName(const json_object_s& wholeObj, const unsigned int frame);
 
 	public:
-		RB::Collisions::AABB GetAABB(const json_array_s& array, size_t index);
+		RB::Collisions::AABB GetAABB(const json_array_s& array, unsigned int index);
 		const RB::HBox::HBoxDataListPath& GetDataListPath(RB::Sprites::SpriteEnum spriteEnum) const;
 		
 

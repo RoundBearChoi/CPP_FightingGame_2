@@ -129,14 +129,12 @@ namespace RB::HBox
 
 		struct json_object_s* obj = json_value_as_object(root);
 
-		size_t length = obj->length;
-
 		std::vector<HBoxData> vecData;
-		vecData.reserve(length);
+		vecData.reserve(obj->length);
 
 		HBoxDataList resultSet{ spriteEnum };
 
-		for (size_t i = 0; i < length; i++)
+		for (unsigned int i = 0; i < obj->length; i++)
 		{
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);
@@ -151,11 +149,11 @@ namespace RB::HBox
 		return resultSet;
 	}
 
-	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const size_t frame)
+	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
-		size_t count = 0;
+		unsigned int count = 0;
 		
 		while (objE != nullptr)
 		{
@@ -166,7 +164,7 @@ namespace RB::HBox
 				std::vector<RB::Collisions::AABB> vec;
 				vec.reserve(arr->length);
 
-				for (size_t i = 0; i < arr->length; i++)
+				for (unsigned int i = 0; i < arr->length; i++)
 				{
 					RB::Collisions::AABB data = GetAABB(*arr, i);
 					vec.push_back(data);
@@ -182,11 +180,11 @@ namespace RB::HBox
 		return std::vector<RB::Collisions::AABB>{};
 	}
 
-	std::string HBoxLoader::ParseName(const json_object_s& wholeObj, const size_t frame)
+	std::string HBoxLoader::ParseName(const json_object_s& wholeObj, const unsigned int frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
-		size_t count = 0;
+		unsigned int count = 0;
 
 		while (objE != nullptr)
 		{
@@ -206,9 +204,9 @@ namespace RB::HBox
 		return "";
 	}
 
-	RB::Collisions::AABB HBoxLoader::GetAABB(const json_array_s& jArray, size_t index)
+	RB::Collisions::AABB HBoxLoader::GetAABB(const json_array_s& jArray, unsigned int index)
 	{
-		size_t count = 0;
+		unsigned int count = 0;
 
 		json_array_element_s* element = jArray.start;
 
@@ -245,11 +243,11 @@ namespace RB::HBox
 	{
 		const std::vector<HBoxDataListPath>& vec = _getVector();
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); i++)
 		{
-			if (vec[i].GetSpriteEnum() == spriteEnum)
+			if ((*i).GetSpriteEnum() == spriteEnum)
 			{
-				return vec[i];
+				return (*i);
 			}
 		}
 

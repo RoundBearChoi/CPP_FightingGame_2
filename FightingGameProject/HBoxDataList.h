@@ -21,7 +21,7 @@ namespace RB::HBox
 			_vecHurtBoxData.push_back(data);
 		}
 
-		size_t GetSize()
+		unsigned int GetSize()
 		{
 			return _vecHurtBoxData.size();
 		}
@@ -31,7 +31,7 @@ namespace RB::HBox
 		/// </summary>
 		/// <param name="frame"></param>
 		/// <returns></returns>
-		HBoxData* GetHBoxDataByFrame(size_t frame)
+		HBoxData* GetHBoxDataByFrame(unsigned int frame)
 		{
 			HBoxData* result = _FindHBoxDataByFrame(frame);
 
@@ -59,18 +59,18 @@ namespace RB::HBox
 		std::vector<HBoxData> _vecHurtBoxData;
 
 	private:
-		HBoxData* _FindHBoxDataByFrame(size_t frame)
+		HBoxData* _FindHBoxDataByFrame(unsigned int frame)
 		{
 			if (_vecHurtBoxData.empty())
 			{
 				return nullptr;
 			}
 
-			for (size_t i = 0; i < _vecHurtBoxData.size(); i++)
+			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
 			{
-				if (_vecHurtBoxData[i].GetFrame() == frame)
+				if ((*i).GetFrame() == frame)
 				{
-					return &_vecHurtBoxData[i];
+					return &(*i);
 				}
 			}
 

@@ -7,7 +7,7 @@ namespace RB::States
 	class StateMachineBase : public iStateMachine
 	{
 	public:
-		static size_t stateMachinesCreated;
+		static unsigned int stateMachinesCreated;
 
 	public:
 		StateMachineBase();
@@ -21,12 +21,12 @@ namespace RB::States
 	public:
 		virtual void QueueNextState(iState* state) override;
 		virtual void OverrideNextState(RB::States::iState* state) override;
-		virtual size_t GetID() override;
+		virtual unsigned int GetID() override;
 		virtual iState* GetCurrentState() override;
 		virtual bool IsTransitioning() override;
 
 	protected:
-		size_t _stateMachineID = 0;
+		unsigned int _stateMachineID = 0;
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
 

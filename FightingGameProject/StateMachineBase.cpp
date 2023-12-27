@@ -2,7 +2,7 @@
 
 namespace RB::States
 {
-	size_t StateMachineBase::stateMachinesCreated = 0;
+	unsigned int StateMachineBase::stateMachinesCreated = 0;
 
 	StateMachineBase::StateMachineBase()
 	{
@@ -83,7 +83,7 @@ namespace RB::States
 		QueueNextState(state);
 	}
 
-	size_t StateMachineBase::GetID()
+	unsigned int StateMachineBase::GetID()
 	{
 		return _stateMachineID;
 	}

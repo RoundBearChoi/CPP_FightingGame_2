@@ -69,8 +69,8 @@ namespace RB::Render
 	{
 		const AnimationSpecs& specs = _animationRenderer->GetAnimationSpecs();
 
-		uint32_t xTiles = specs.mX_TileCount;
-		uint32_t yTiles = specs.mY_TileCount;
+		unsigned int xTiles = specs.mX_TileCount;
+		unsigned int yTiles = specs.mY_TileCount;
 
 		olc::vf2d sourceSize = { 0.0f, 0.0f };
 		sourceSize.x = (float)specs.mLoadedSprite->GetSpriteSize().x / (float)xTiles;

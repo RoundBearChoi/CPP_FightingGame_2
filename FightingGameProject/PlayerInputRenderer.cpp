@@ -18,7 +18,7 @@ namespace RB::Render
 
 	}
 
-	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int32_t yPos)
+	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos)
 	{
 		if (RB::Players::iPlayerController::instance == nullptr)
 		{

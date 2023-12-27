@@ -20,6 +20,11 @@ namespace RB::HBox
 		return _vecAABB.size();
 	}
 
+	const std::vector<RB::Collisions::AABB>& HBoxData::GetVecAABBs()
+	{
+		return _vecAABB;
+	}
+
 	RB::Collisions::AABB& HBoxData::GetAABB(unsigned int index)
 	{
 		return _vecAABB[index];

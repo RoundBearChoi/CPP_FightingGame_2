@@ -80,17 +80,17 @@ namespace RB::States
 
 	void StateBase::ExitStateComponents()
 	{
-		for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			_vecStateComponents[i]->OnExit();
+			(*i)->OnExit();
 		}
 	}
 
 	void StateBase::UpdateStateComponents()
 	{
-		for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			_vecStateComponents[i]->OnUpdate();
+			(*i)->OnUpdate();
 
 			if (_isTransitioning)
 			{

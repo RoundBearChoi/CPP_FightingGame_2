@@ -23,7 +23,6 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
-		//bool _bForward = true;
 		int32_t _moveAmount = 0;
 		bool _otherPlayerIsOnRightSide = true;
 	};

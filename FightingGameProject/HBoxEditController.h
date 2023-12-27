@@ -32,14 +32,14 @@ namespace RB::HBox
 
 	private:
 		bool _ControllersExist();
-		void _UpdateSelectedIndex_OnPress(unsigned int count);
+		void _UpdateSelectedIndex_OnPress(RB::HBox::HBoxData* data);
 		void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress();
 		void _EditAABB_OnPress(RB::Players::PlayerID playerID);
 		void _SaveHBoxes_OnPress();
 
 	private:
-		unsigned int _selectedIndex = 0;
+		//unsigned int _selectedIndex = 0;
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 	};
 }

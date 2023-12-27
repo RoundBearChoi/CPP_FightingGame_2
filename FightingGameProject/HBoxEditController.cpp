@@ -114,21 +114,27 @@ namespace RB::HBox
 
 	RB::Collisions::AABB* HBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
 	{
-		unsigned int count = data->GetAABBCount();
+		_UpdateSelectedIndex_OnPress(data);
 
-		_UpdateSelectedIndex_OnPress(count);
+		RB::Collisions::AABB* aabb = data->GetSelectedAABB();
 
-		for (unsigned int i = 0; i < count; i++)
-		{
-			if (i == _selectedIndex)
-			{
-				RB::Collisions::AABB& aabb = data->GetAABB(i);
+		return aabb;
 
-				return &aabb;
-			}
-		}
-
-		return nullptr;
+		//unsigned int count = data->GetAABBCount();
+		//
+		//_UpdateSelectedIndex_OnPress(count);
+		//
+		//for (unsigned int i = 0; i < count; i++)
+		//{
+		//	if (i == _selectedIndex)
+		//	{
+		//		RB::Collisions::AABB& aabb = data->GetSelectedAABB(); //data->GetAABB(i);
+		//
+		//		return &aabb;
+		//	}
+		//}
+		//
+		//return nullptr;
 	}
 
 	RB::HBox::HBoxType HBoxEditController::GetHBoxType()
@@ -164,26 +170,29 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_UpdateSelectedIndex_OnPress(unsigned int count)
+	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::HBoxData* data)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
 
 		if (oButton.bPressed)
 		{
-			_selectedIndex--;
+			//_selectedIndex--;
+			data->UpSelection();
 		}
 
-		if (pButton.bPressed)
+		else if (pButton.bPressed)
 		{
-			_selectedIndex++;
+			//_selectedIndex++;
+			data->DownSelection();
 		}
 
-		if (_selectedIndex >= count)
-		{
-			_selectedIndex = 0;
-		}
+		//if (_selectedIndex >= count)
+		//{
+		//	_selectedIndex = 0;
+		//}
 	}
+
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
@@ -207,23 +216,25 @@ namespace RB::HBox
 	void HBoxEditController::_Add_Delete_AABB_OnPress()
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
-
+		
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
-
+		
 		if (insButton.bPressed)
 		{
 			data->AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
-
-			_selectedIndex = data->GetAABBCount() - 1;
+		
+			data->DownSelection();
+			//_selectedIndex = data->GetAABBCount() - 1;
 		}
-
+		
 		if (delButton.bPressed)
 		{
-			if (data->DeleteAABB(_selectedIndex))
-			{
-				_selectedIndex--;
-			}
+			data->DeleteSelectedAABB();
+			//if (data->DeleteAABB(_selectedIndex))
+			//{
+			//	_selectedIndex--;
+			//}
 		}
 	}
 

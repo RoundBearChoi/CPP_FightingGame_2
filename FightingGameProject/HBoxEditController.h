@@ -5,7 +5,6 @@
 #include "PlayerID.h"
 #include "PlayerState.h"
 
-
 #include "iAnimationObj.h"
 #include "iHBoxEditController.h"
 #include "iPlayerAnimationController.h"

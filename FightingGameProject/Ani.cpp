@@ -14,11 +14,6 @@ namespace RB::Render
 			delete (*i);
 			(*i) = nullptr;
 		}
-
-		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		//{
-		//	delete _vecCurrentAnimations[i];
-		//}
 	}
 
 	void Ani::Init()
@@ -78,18 +73,6 @@ namespace RB::Render
 				return;
 			}
 		}
-
-		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		//{
-		//	if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
-		//	{
-		//		delete _vecCurrentAnimations[i];
-		//
-		//		_vecCurrentAnimations.erase(_vecCurrentAnimations.begin() + i);
-		//
-		//		return;
-		//	}
-		//}
 	}
 
 	void Ani::DeleteAnimationObj(size_t index)
@@ -115,17 +98,6 @@ namespace RB::Render
 				}
 			}
 		}
-
-		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		//{
-		//	if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
-		//	{
-		//		if (_vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
-		//		{
-		//			return _vecCurrentAnimations[i];
-		//		}
-		//	}
-		//}
 
 		return nullptr;
 	}
@@ -164,16 +136,6 @@ namespace RB::Render
 				return spriteEnum;
 			}
 		}
-
-		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		//{
-		//	if (_vecCurrentAnimations[i]->GetPlayer()->GetPlayerID() == playerID)
-		//	{
-		//		RB::Sprites::SpriteEnum spriteEnum = _vecCurrentAnimations[i]->GetAnimationSpecs().mSpriteEnum;
-		//
-		//		return spriteEnum;
-		//	}
-		//}
 
 		return RB::Sprites::SpriteEnum::NONE;
 	}

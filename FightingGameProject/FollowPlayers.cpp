@@ -28,15 +28,15 @@ namespace RB::Cam
 			return;
 		}
 
-		int32_t p0_pos_x = p0->GetPosition().x;
-		int32_t p1_pos_x = p1->GetPosition().x;
-		int32_t xDir = p1_pos_x - p0_pos_x;
-		float_t mid = (float_t)xDir * 0.5f;
-		float_t result = ((float_t)p0_pos_x + mid) * _camObj->GetZoom();
+		int p0_pos_x = p0->GetPosition().x;
+		int p1_pos_x = p1->GetPosition().x;
+		int xDir = p1_pos_x - p0_pos_x;
+		float mid = (float)xDir * 0.5f;
+		float result = ((float)p0_pos_x + mid) * _camObj->GetZoom();
 
-		float_t curr = _camObj->GetPosition().x;
+		float curr = _camObj->GetPosition().x;
 
-		float_t xDist = result - curr;
+		float xDist = result - curr;
 		xDist = abs(xDist);
 
 		if (xDist < 1.0f)
@@ -44,7 +44,7 @@ namespace RB::Cam
 			xDist = 0.0f;
 		}
 
-		float_t percentage = xDist / _maxDist;
+		float percentage = xDist / _maxDist;
 
 		if (percentage < 0.0f)
 		{
@@ -56,7 +56,7 @@ namespace RB::Cam
 			percentage = 1.0f;
 		}
 
-		float_t ease = RB::EaseEquations::Ease::EaseOutCubic( 1.0f - percentage);
+		float ease = RB::EaseEquations::Ease::EaseOutCubic( 1.0f - percentage);
 
 		if (ease <= 0.125f)
 		{
@@ -70,7 +70,7 @@ namespace RB::Cam
 
 		//std::cout << ease << std::endl;
 
-		float_t lerped = std::lerp(curr, result, ease * 0.03f);
+		float lerped = std::lerp(curr, result, ease * 0.03f);
 
 		//y should be dynamic.. but for now
 		_camObj->SetPosition(olc::vf2d{ lerped, -200.0f });

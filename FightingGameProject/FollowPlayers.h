@@ -19,6 +19,6 @@ namespace RB::Cam
 
 	private:
 		iCamObj* _camObj = nullptr;
-		float_t _maxDist = 0.0f;
+		float _maxDist = 0.0f;
 	};
 }

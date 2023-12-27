@@ -9,11 +9,6 @@ namespace RB::Render
 			delete (*i);
 			(*i) = nullptr;
 		}
-
-		//for (size_t i = 0; i < _animationRenderer.size(); i++)
-		//{
-		//	delete _animationRenderer[i];
-		//}
 	}
 
 	void AnimationLoader::Init()
@@ -47,14 +42,6 @@ namespace RB::Render
 				return (*i);
 			}
 		}
-
-		//for (size_t i = 0; i < _animationRenderer.size(); i++)
-		//{
-		//	if (_animationRenderer[i]->GetAnimationSpecs().mSpriteEnum == spriteEnum)
-		//	{
-		//		return _animationRenderer[i];
-		//	}
-		//}
 
 		return nullptr;
 	}

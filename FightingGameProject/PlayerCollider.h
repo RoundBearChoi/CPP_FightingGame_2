@@ -34,6 +34,6 @@ namespace RB::Players
 		bool _isCollidingAgainstOtherPlayer = false;
 		olc::vi2d _playerBox = { 62, 124 }; //even numbers?
 		RB::Collisions::AABB _aabb{ 0, 0, 0, 0 };
-		float_t _bodyRatio[2]{ 0.0f, 0.0f };
+		float _bodyRatio[2]{ 0.0f, 0.0f };
 	};
 }

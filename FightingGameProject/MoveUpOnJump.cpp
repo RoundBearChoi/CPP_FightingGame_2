@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveUpOnJump::MoveUpOnJump(size_t totalFrames, float_t multiplier, RB::States::iState* nextState)
+	MoveUpOnJump::MoveUpOnJump(unsigned int totalFrames, float multiplier, RB::States::iState* nextState)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
@@ -29,10 +29,10 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		//get vertical up
-		size_t frame = _state->GetCumulatedFixedUpdates();
-		float_t percentage = (float_t)frame / (float_t)_totalFrames;
-		float_t amount = RB::EaseEquations::Ease::EaseOutSine(percentage);
-		float_t result = amount * _multiplier;
+		unsigned int frame = _state->GetCumulatedFixedUpdates();
+		float percentage = (float)frame / (float)_totalFrames;
+		float amount = RB::EaseEquations::Ease::EaseOutSine(percentage);
+		float result = amount * _multiplier;
 
 		//apply vertical up
 		if (_state->GetCumulatedFixedUpdates() < _totalFrames)

@@ -14,7 +14,7 @@ namespace RB::PlayerStateComponents
 	class MoveUpOnJump : public RB::States::StateComponentBase
 	{
 	public:
-		MoveUpOnJump(size_t totalFrames, float_t multiplier, RB::States::iState* nextState);
+		MoveUpOnJump(unsigned int totalFrames, float multiplier, RB::States::iState* nextState);
 		~MoveUpOnJump() override;
 
 	public:
@@ -22,7 +22,7 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
-		size_t _totalFrames = 0;
-		float_t _multiplier = 1.0f;
+		unsigned int _totalFrames = 0;
+		float _multiplier = 1.0f;
 	};
 }

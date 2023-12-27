@@ -52,8 +52,8 @@ namespace RB::Render
         {
             iAnimationObj* aniObj = _ani.GetCurrentAnimationObj(i);
 
-            int skipFixedUpdates = aniObj->GetAnimationSpecs().mSkipFixedUpdates;
-            int totalSprites = aniObj->GetAnimationSpecs().mTotalSprites;
+            unsigned int skipFixedUpdates = aniObj->GetAnimationSpecs().mSkipFixedUpdates;
+            unsigned int totalSprites = aniObj->GetAnimationSpecs().mTotalSprites;
 
             unsigned int totalFixedUpdates = aniObj->GetFixedUpdateCount();
 

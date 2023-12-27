@@ -131,9 +131,6 @@ namespace RB::Render
 	/// <summary>
 	/// raw pointer, make sure to delete
 	/// </summary>
-	/// <param name="player"></param>
-	/// <param name="playerSpriteEnum"></param>
-	/// <returns></returns>
 	iAnimationObj* Ani::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType)
 	{
 		iAnimationObj* animationObj = new AnimationObj(&player, _animationLoader.GetAnimationRenderer(playerSpriteEnum), pivotType);

@@ -37,7 +37,7 @@ namespace RB::Players
 		bool InitiallyFacingRight();
 		void InitiallyFacingRight(bool initiallyFacingRight);
 		RB::States::iStateMachine* GetStateMachine() override;
-		size_t GetStateMachineID() override;
+		unsigned int GetStateMachineID() override;
 		void Move(olc::vi2d moveAmount) override;
 		olc::vi2d GetPosition() override;
 		void SetPosition(olc::vi2d pos) override;

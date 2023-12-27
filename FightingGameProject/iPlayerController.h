@@ -21,7 +21,7 @@ namespace RB::Players
 		virtual void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) = 0;
 
 	public:
-		virtual iPlayer* GetPlayerOnIndex(size_t index) = 0;
+		virtual iPlayer* GetPlayerOnIndex(unsigned int index) = 0;
 		virtual iPlayer* GetPlayerOnID(PlayerID id) = 0;
 		virtual iPlayer* GetPlayerOnStateMachineID(size_t id) = 0;
 		virtual iPlayer* GetOtherPlayer(iPlayer* currentPlayer) = 0;

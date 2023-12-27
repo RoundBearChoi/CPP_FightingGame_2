@@ -12,14 +12,14 @@ namespace RB::States
 		StateBase() = default;
 		~StateBase() override;
 
-		virtual void SetStateMachineID(size_t id) override;
-		virtual size_t GetStateMachineID() override;
+		virtual void SetStateMachineID(unsigned int id) override;
+		virtual unsigned int GetStateMachineID() override;
 		virtual void SetIsTransitioning(bool status) override;
 		virtual void SetIsInQueue(bool status) override;
 		virtual bool IsTransitioning() override;
 		virtual bool IsInQueue() override;
 		virtual void AddCumulatedFixedUpdate() override;
-		virtual size_t GetCumulatedFixedUpdates() override;
+		virtual unsigned int GetCumulatedFixedUpdates() override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);
@@ -35,8 +35,8 @@ namespace RB::States
 		virtual void OnFixedUpdate() override {}
 
 	protected:
-		size_t _stateMachineID = 0;
-		size_t _cumulatedFixedUpdates = 0;
+		unsigned int _stateMachineID = 0;
+		unsigned int _cumulatedFixedUpdates = 0;
 		bool _isTransitioning = false;
 		bool _isInQueue = false;
 		std::vector<StateComponentBase*> _vecStateComponents;

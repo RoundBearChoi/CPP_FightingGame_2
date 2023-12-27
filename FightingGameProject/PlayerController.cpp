@@ -4,9 +4,10 @@ namespace RB::Players
 {
 	PlayerController::~PlayerController()
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			delete _vecPlayers[i];
+			delete (*i);
+			(*i) = nullptr;
 		}
 	}
 
@@ -17,17 +18,17 @@ namespace RB::Players
 
 	void PlayerController::OnUpdate()
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			_vecPlayers[i]->OnUpdate();
+			(*i)->OnUpdate();
 		}
 	}
 
 	void PlayerController::OnFixedUpdate()
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			_vecPlayers[i]->OnFixedUpdate();
+			(*i)->OnFixedUpdate();
 		}
 	}
 
@@ -44,7 +45,7 @@ namespace RB::Players
 		p->SetPosition(startPos);
 	}
 
-	iPlayer* PlayerController::GetPlayerOnIndex(size_t index)
+	iPlayer* PlayerController::GetPlayerOnIndex(unsigned int index)
 	{
 		if (index < _vecPlayers.size())
 		{
@@ -56,11 +57,11 @@ namespace RB::Players
 
 	iPlayer* PlayerController::GetPlayerOnID(PlayerID id)
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			if (_vecPlayers[i]->GetPlayerID() == id)
+			if ((*i)->GetPlayerID() == id)
 			{
-				return _vecPlayers[i];
+				return (*i);
 			}
 		}
 
@@ -69,11 +70,11 @@ namespace RB::Players
 
 	iPlayer* PlayerController::GetPlayerOnStateMachineID(size_t id)
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			if (_vecPlayers[i]->GetStateMachineID() == id)
+			if ((*i)->GetStateMachineID() == id)
 			{
-				return _vecPlayers[i];
+				return (*i);
 			}
 		}
 
@@ -82,11 +83,11 @@ namespace RB::Players
 
 	iPlayer* PlayerController::GetOtherPlayer(iPlayer* currentPlayer)
 	{
-		for (size_t i = 0; i < _vecPlayers.size(); i++)
+		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			if (_vecPlayers[i]->GetPlayerID() != currentPlayer->GetPlayerID())
+			if ((*i)->GetPlayerID() != currentPlayer->GetPlayerID())
 			{
-				return _vecPlayers[i];
+				return (*i);
 			}
 		}
 

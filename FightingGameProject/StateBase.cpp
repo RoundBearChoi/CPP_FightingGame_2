@@ -4,21 +4,27 @@ namespace RB::States
 {
 	StateBase::~StateBase()
 	{
-		for (int32_t i = 0; i < _vecStateComponents.size(); i++)
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			delete _vecStateComponents[i];
-			_vecStateComponents[i] = nullptr;
+			delete (*i);
+			(*i) = nullptr;
 		}
+
+		//for (int32_t i = 0; i < _vecStateComponents.size(); i++)
+		//{
+		//	delete _vecStateComponents[i];
+		//	_vecStateComponents[i] = nullptr;
+		//}
 
 		_vecStateComponents.clear();
 	}
 
-	void StateBase::SetStateMachineID(size_t id)
+	void StateBase::SetStateMachineID(unsigned int id)
 	{
 		_stateMachineID = id;
 	}
 
-	size_t StateBase::GetStateMachineID()
+	unsigned int StateBase::GetStateMachineID()
 	{
 		return _stateMachineID;
 	}
@@ -48,7 +54,7 @@ namespace RB::States
 		_cumulatedFixedUpdates++;
 	}
 
-	size_t StateBase::GetCumulatedFixedUpdates()
+	unsigned int StateBase::GetCumulatedFixedUpdates()
 	{
 		return _cumulatedFixedUpdates;
 	}
@@ -67,15 +73,25 @@ namespace RB::States
 
 	void StateBase::EnterStateComponents()
 	{
-		for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			_vecStateComponents[i]->OnEnter();
+			(*i)->OnEnter();
 
 			if (_isTransitioning)
 			{
 				break;
 			}
 		}
+
+		//for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		//{
+		//	_vecStateComponents[i]->OnEnter();
+		//
+		//	if (_isTransitioning)
+		//	{
+		//		break;
+		//	}
+		//}
 	}
 
 	void StateBase::ExitStateComponents()
@@ -101,9 +117,9 @@ namespace RB::States
 
 	void StateBase::FixedUpdateStateComponents()
 	{
-		for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			int32_t fixedUpdateOnCount = _vecStateComponents[i]->GetFixedUpdateOnCount();
+			int32_t fixedUpdateOnCount = (*i)->GetFixedUpdateOnCount();
 
 			if (fixedUpdateOnCount >= 0)
 			{
@@ -113,12 +129,32 @@ namespace RB::States
 				}
 			}
 
-			_vecStateComponents[i]->OnFixedUpdate();
+			(*i)->OnFixedUpdate();
 
 			if (_isTransitioning)
 			{
 				break;
 			}
 		}
+
+		//for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		//{
+		//	int32_t fixedUpdateOnCount = _vecStateComponents[i]->GetFixedUpdateOnCount();
+		//
+		//	if (fixedUpdateOnCount >= 0)
+		//	{
+		//		if (_cumulatedFixedUpdates != fixedUpdateOnCount)
+		//		{
+		//			continue;
+		//		}
+		//	}
+		//
+		//	_vecStateComponents[i]->OnFixedUpdate();
+		//
+		//	if (_isTransitioning)
+		//	{
+		//		break;
+		//	}
+		//}
 	}
 }

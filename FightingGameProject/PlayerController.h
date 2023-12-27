@@ -19,7 +19,7 @@ namespace RB::Players
 		void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) override;
 
 	public:
-		iPlayer* GetPlayerOnIndex(size_t index) override;
+		iPlayer* GetPlayerOnIndex(unsigned int index) override;
 		iPlayer* GetPlayerOnID(PlayerID id) override;
 		iPlayer* GetPlayerOnStateMachineID(size_t id) override;
 		iPlayer* GetOtherPlayer(iPlayer* currentPlayer) override;

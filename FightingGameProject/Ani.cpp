@@ -74,19 +74,6 @@ namespace RB::Render
 				++it;
 			}
 		}
-
-		//for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
-		//{
-		//	if ((*i)->GetPlayer()->GetPlayerID() == playerID)
-		//	{
-		//		delete (*i);
-		//		(*i) = nullptr;
-		//
-		//		_vecCurrentAnimations.erase(i);
-		//
-		//		return;
-		//	}
-		//}
 	}
 
 	void Ani::DeleteAnimationObj(unsigned int index)

@@ -80,11 +80,6 @@ namespace RB::Input
 		{
 			_vecSequence.push_back((*i));
 		}
-
-		//for (size_t i = 0; i < vec.size(); i++)
-		//{
-		//	_vecSequence.push_back(vec[i]);
-		//}
 	}
 
 	void SpecialMoveSequenceBase::_SetSequenceForRightSide(const std::vector<RB::Input::PlayerInput>& vec)
@@ -112,30 +107,6 @@ namespace RB::Input
 				_vecSequenceFromRightSide.push_back((*i));
 			}
 		}
-
-		//for (size_t i = 0; i < vec.size(); i++)
-		//{
-		//	if (vec[i] == PlayerInput::MOVE_LEFT)
-		//	{
-		//		_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_RIGHT);
-		//	}
-		//	else if (vec[i] == PlayerInput::MOVE_DOWN_LEFT)
-		//	{
-		//		_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_DOWN_RIGHT);
-		//	}
-		//	else if (vec[i] == PlayerInput::MOVE_RIGHT)
-		//	{
-		//		_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_LEFT);
-		//	}
-		//	else if (vec[i] == PlayerInput::MOVE_DOWN_RIGHT)
-		//	{
-		//		_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_DOWN_LEFT);
-		//	}
-		//	else
-		//	{
-		//		_vecSequenceFromRightSide.push_back(vec[i]);
-		//	}
-		//}
 	}
 
 	const std::vector<RB::Input::PlayerInput>& SpecialMoveSequenceBase::_GetSequence(bool playerIsFacingRight)

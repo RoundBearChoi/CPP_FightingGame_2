@@ -23,7 +23,7 @@ namespace RB::PlayerStateComponents
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		int32_t move = _moveAmount;
+		int move = _moveAmount;
 
 		if (_otherPlayerIsOnRightSide)
 		{

@@ -1,8 +1,5 @@
 #pragma once
-#include <cstdint>
 #include "StateComponentBase.h"
-
-#include "iPlayer.h"
 
 #include "iPlayerController.h"
 
@@ -23,7 +20,7 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
-		int32_t _moveAmount = 0;
+		int _moveAmount = 0;
 		bool _otherPlayerIsOnRightSide = true;
 	};
 }

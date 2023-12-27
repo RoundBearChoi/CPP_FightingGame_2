@@ -87,6 +87,18 @@ namespace RB::Render
 		}
 	}
 
+	std::vector<iAnimationObj*>::const_iterator Ani::DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it)
+	{
+		iAnimationObj* obj = (*it);
+
+		std::vector<iAnimationObj*>::iterator next = _vecCurrentAnimations.erase(it);
+
+		delete (obj);
+		obj = nullptr;
+
+		return next;
+	}
+
 	iAnimationObj* Ani::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
@@ -146,7 +158,7 @@ namespace RB::Render
 		_vecCurrentAnimations.push_back(animationObj);
 	}
 
-	std::vector<iAnimationObj*>& Ani::GetVecCurrentAnimations()
+	const std::vector<iAnimationObj*>& Ani::GetVecCurrentAnimations()
 	{
 		return _vecCurrentAnimations;
 	}

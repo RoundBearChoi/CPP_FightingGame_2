@@ -48,7 +48,7 @@ namespace RB::Render
     {
         auto& vec = _ani.GetVecCurrentAnimations();
 
-        auto it = vec.begin();
+        std::vector<iAnimationObj*>::const_iterator it = vec.begin();
 
         while (it != vec.end())
         {
@@ -59,10 +59,12 @@ namespace RB::Render
 
             if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
             {
-                delete (*it);
-                *it = nullptr;
+                //delete (*it);
+                //*it = nullptr;
                 
-                it = vec.erase(it);
+                it = _ani.DeleteAnimationObj(it);
+
+                //it = vec.erase(it);
             }
             else
             {

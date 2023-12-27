@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	TransitionOnFixedUpdateCount::TransitionOnFixedUpdateCount(int32_t fixedUpdateOnCount, RB::States::iState* nextState)
+	TransitionOnFixedUpdateCount::TransitionOnFixedUpdateCount(int fixedUpdateOnCount, RB::States::iState* nextState)
 	{
 		_fixedUpdateOnCount = fixedUpdateOnCount;
 		_vecNextStates.push_back(nextState);

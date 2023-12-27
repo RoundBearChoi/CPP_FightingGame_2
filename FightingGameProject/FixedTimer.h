@@ -1,5 +1,4 @@
 #pragma once
-#include <cstdint>
 #include "Time.h"
 
 namespace RB::Frames
@@ -61,7 +60,7 @@ namespace RB::Frames
 		//debug
 		float _accumulatedTime = 0.0f;
 		float _fullSecondCount = 0.0f;
-		int32_t _fixedUpdateCount = 0;
-		int32_t _fixedUpdateCountPerSec = 0;
+		int _fixedUpdateCount = 0;
+		int _fixedUpdateCountPerSec = 0;
 	};
 }

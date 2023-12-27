@@ -1,5 +1,4 @@
 #pragma once
-#include <cstdint>
 #include "StateComponentBase.h"
 
 #include "iPlayer.h"
@@ -12,7 +11,7 @@ namespace RB::PlayerStateComponents
 	class TransitionOnFixedUpdateCount : public RB::States::StateComponentBase
 	{
 	public:
-		TransitionOnFixedUpdateCount(int32_t fixedUpdateOnCount, RB::States::iState* nextState);
+		TransitionOnFixedUpdateCount(int fixedUpdateOnCount, RB::States::iState* nextState);
 		~TransitionOnFixedUpdateCount() override {};
 
 	public:

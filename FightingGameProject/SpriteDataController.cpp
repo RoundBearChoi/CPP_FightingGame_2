@@ -11,11 +11,6 @@ namespace RB::Sprites
 		}
 
 		_vecEnumStrings.clear();
-
-		//for (size_t i = 0; i < _vecEnumStrings.size(); i++)
-		//{
-		//	delete _vecEnumStrings[i];
-		//}
 	}
 
 	void SpriteDataController::Init()
@@ -49,14 +44,6 @@ namespace RB::Sprites
 				return (*i)->GetString();
 			}
 		}
-
-		//for (size_t i = 0; i < _vecEnumStrings.size(); i++)
-		//{
-		//	if (_vecEnumStrings[i]->GetEnum() == spriteEnum)
-		//	{
-		//		return _vecEnumStrings[i]->GetString();
-		//	}
-		//}
 
 		return _empty;
 	}

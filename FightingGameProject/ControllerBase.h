@@ -22,8 +22,5 @@ namespace RB::Controllers
 		virtual void Init() override {};
 		virtual void OnUpdate() override {};
 		virtual void OnFixedUpdate() override {};
-
-	protected:
-		size_t _hash = 0;
 	};
 }

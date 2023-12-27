@@ -37,9 +37,9 @@ namespace RB::Render
 			return;
 		}
 
-		size_t count = RB::Input::iInputController::instance->GetTotalInputCount(player->GetPlayerID());
+		auto vec = RB::Input::iInputController::instance->GetVecInputObjs(player->GetPlayerID());
 
-		for (size_t i = 0; i < count; i++)
+		for (size_t i = 0; i < vec.size(); i++)
 		{
 			RB::Input::iInputObj* inputObj = RB::Input::iInputController::instance->GetInputByIndex(player->GetPlayerID(), i);
 

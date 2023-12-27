@@ -199,18 +199,18 @@ namespace RB::Input
 		return false;
 	}
 
-	unsigned int InputController::GetTotalInputCount(RB::Players::PlayerID playerID)
+	const std::vector<iInputObj*>& InputController::GetVecInputObjs(RB::Players::PlayerID playerID)
 	{
 		if (playerID == RB::Players::PlayerID::PLAYER_1)
 		{
-			return _vecP1_InputObjs.size();
+			return _vecP1_InputObjs;
 		}
 		else if (playerID == RB::Players::PlayerID::PLAYER_2)
 		{
-			return _vecP2_InputObjs.size();
+			return _vecP2_InputObjs;
 		}
 
-		return 0;
+		return _vecNone_InputObjs;
 	}
 
 	iInputObj* InputController::GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index)

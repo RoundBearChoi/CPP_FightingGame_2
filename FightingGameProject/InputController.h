@@ -31,7 +31,7 @@ namespace RB::Input
 		iInputObj* GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		iInputObj* GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		unsigned int GetTotalInputCount(RB::Players::PlayerID playerID) override;
+		const std::vector<iInputObj*>& GetVecInputObjs(RB::Players::PlayerID playerID) override;
 		iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index) override;
 
 	private:

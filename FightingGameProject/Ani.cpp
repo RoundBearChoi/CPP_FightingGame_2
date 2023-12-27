@@ -23,27 +23,46 @@ namespace RB::Render
 
 	void Ani::OnFixedUpdate()
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			_vecCurrentAnimations[i]->OnFixedUpdate();
+			(*i)->OnFixedUpdate();
 		}
+
+		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		//{
+		//	_vecCurrentAnimations[i]->OnFixedUpdate();
+		//}
 	}
 
 	void Ani::OnUpdate()
 	{
-		for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			RB::Players::iPlayer* p = _vecCurrentAnimations[i]->GetPlayer();
+			RB::Players::iPlayer* p = (*i)->GetPlayer();
 
 			if (p != nullptr)
 			{
 				olc::vi2d pos = p->GetPosition();
 
-				_vecCurrentAnimations[i]->SetWorldPos(pos);
+				(*i)->SetWorldPos(pos);
 			}
 
-			_vecCurrentAnimations[i]->RenderAnimation();
+			(*i)->RenderAnimation();
 		}
+
+		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
+		//{
+		//	RB::Players::iPlayer* p = _vecCurrentAnimations[i]->GetPlayer();
+		//
+		//	if (p != nullptr)
+		//	{
+		//		olc::vi2d pos = p->GetPosition();
+		//
+		//		_vecCurrentAnimations[i]->SetWorldPos(pos);
+		//	}
+		//
+		//	_vecCurrentAnimations[i]->RenderAnimation();
+		//}
 	}
 
 	void Ani::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)

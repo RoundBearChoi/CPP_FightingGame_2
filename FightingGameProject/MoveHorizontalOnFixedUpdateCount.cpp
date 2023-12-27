@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveHorizontalOnFixedUpdateCount::MoveHorizontalOnFixedUpdateCount(int32_t fixedUpdateOnCount, int32_t move)
+	MoveHorizontalOnFixedUpdateCount::MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, int move)
 	{
 		_fixedUpdateOnCount = fixedUpdateOnCount;
 		_moveAmount = move;

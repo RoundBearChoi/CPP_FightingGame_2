@@ -11,7 +11,7 @@ namespace RB::PlayerStateComponents
 		/// <summary>
 		/// positive is move forward, negative is move back
 		/// </summary>
-		MoveHorizontalOnFixedUpdateCount(int32_t fixedUpdateOnCount, int32_t move);
+		MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, int move);
 		~MoveHorizontalOnFixedUpdateCount() = default;
 
 	public:

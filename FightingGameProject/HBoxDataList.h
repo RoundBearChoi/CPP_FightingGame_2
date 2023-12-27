@@ -21,10 +21,15 @@ namespace RB::HBox
 			_vecHurtBoxData.push_back(data);
 		}
 
-		unsigned int GetSize()
+		const std::vector<HBoxData>& GetVecHBoxData()
 		{
-			return _vecHurtBoxData.size();
+			return _vecHurtBoxData;
 		}
+
+		//unsigned int GetSize()
+		//{
+		//	return _vecHurtBoxData.size();
+		//}
 
 		/// <summary>
 		/// 0, 0 by default if no data found

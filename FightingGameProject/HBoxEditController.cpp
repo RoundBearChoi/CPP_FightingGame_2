@@ -327,7 +327,9 @@ namespace RB::HBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				for (unsigned int f = 0; f < list->GetSize(); f++)
+				const std::vector<HBoxData>& vec = list->GetVecHBoxData();
+
+				for (unsigned int f = 0; f < vec.size(); f++)
 				{
 					HBoxData* data = list->GetHBoxDataByFrame(f);
 					const std::string& frameName = data->GetFrameName();
@@ -355,7 +357,7 @@ namespace RB::HBox
 						}
 					}
 
-					if (f != list->GetSize() - 1)
+					if (f != vec.size() - 1)
 					{
 						file << "    ]," << std::endl << std::endl;
 					}

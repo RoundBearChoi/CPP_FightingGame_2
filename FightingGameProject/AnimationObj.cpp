@@ -111,7 +111,7 @@ namespace RB::Render
 		return _animationRenderer->GetAnimationSpecs();
 	}
 
-	int32_t AnimationObj::GetCurrentIndex()
+	unsigned int AnimationObj::GetCurrentIndex()
 	{
 		return _currentIndex;
 	}
@@ -156,7 +156,7 @@ namespace RB::Render
 		}
 	}
 
-	size_t AnimationObj::GetFixedUpdateCount()
+	unsigned int AnimationObj::GetFixedUpdateCount()
 	{
 		return _customFixedUpdate.GetTotalFixedUpdateCount();
 	}

@@ -28,16 +28,16 @@ namespace RB::Render
 		olc::vf2d GetRenderOffset() override;
 		RB::Players::iPlayer* GetPlayer() override;
 		const AnimationSpecs& GetAnimationSpecs() const override;
-		int32_t GetCurrentIndex() override;
+		unsigned int GetCurrentIndex() override;
 		void RenderAnimation() override;
 		void SetWorldPos(const olc::vf2d& pos) override;
-		size_t GetFixedUpdateCount() override;
+		unsigned int GetFixedUpdateCount() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
 		AnimationRenderer* _animationRenderer = nullptr;
 		RB::Sprites::PivotType _pivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
-		int32_t _currentIndex = 0;
+		unsigned int _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		olc::vf2d _worldPos = { 0, 0 };
 	};

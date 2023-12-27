@@ -18,9 +18,9 @@ namespace RB::Render
 		virtual olc::vf2d GetRenderOffset() = 0;
 		virtual RB::Players::iPlayer* GetPlayer() = 0;
 		virtual const AnimationSpecs& GetAnimationSpecs() const = 0;
-		virtual int32_t GetCurrentIndex() = 0;
+		virtual unsigned int GetCurrentIndex() = 0;
 		virtual void RenderAnimation() = 0;
 		virtual void SetWorldPos(const olc::vf2d& pos) = 0;
-		virtual size_t GetFixedUpdateCount() = 0;
+		virtual unsigned int GetFixedUpdateCount() = 0;
 	};
 }

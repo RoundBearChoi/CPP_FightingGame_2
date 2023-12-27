@@ -48,7 +48,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		int32_t currentIndex = aniObj->GetCurrentIndex();
+		int currentIndex = aniObj->GetCurrentIndex();
 
 		//can get either hurtbox or hitbox
 		RB::HBox::HBoxDataList* dataList = nullptr;
@@ -89,7 +89,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		int32_t currentIndex = aniObj->GetCurrentIndex();
+		int currentIndex = aniObj->GetCurrentIndex();
 
 		RB::HBox::HBoxDataList* dataList = nullptr;
 		
@@ -243,7 +243,7 @@ namespace RB::HBox
 		olc::HWButton aButton = olc::Platform::ptrPGE->GetKey(olc::A);
 		olc::HWButton dButton = olc::Platform::ptrPGE->GetKey(olc::D);
 
-		float_t moveAmount = 50.0f;
+		float moveAmount = 50.0f;
 
 		if (wButton.bHeld)
 		{
@@ -271,7 +271,7 @@ namespace RB::HBox
 		olc::HWButton hButton = olc::Platform::ptrPGE->GetKey(olc::H);
 		olc::HWButton kButton = olc::Platform::ptrPGE->GetKey(olc::K);
 
-		float_t sizeAmount = 40.0f;
+		float sizeAmount = 40.0f;
 
 		if (uButton.bHeld)
 		{

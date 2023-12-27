@@ -14,10 +14,5 @@ namespace RB::Collisions
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-
-	public:
-		//void RegisterAttack(AttackRegister attackRegister) override;
-		//void ProcessHits() override;
-		//size_t GetRegisteredAttackCount(RB::Players::PlayerID playerID) override;
 	};
 }

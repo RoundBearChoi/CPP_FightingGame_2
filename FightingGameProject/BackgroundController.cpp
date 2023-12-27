@@ -4,9 +4,10 @@ namespace RB::Background
 {
 	BackgroundController::~BackgroundController()
 	{
-		for (size_t i = 0; i < _vecBackgroundObjs.size(); i++)
+		for (auto i = _vecBackgroundObjs.begin(); i != _vecBackgroundObjs.end(); i++)
 		{
-			delete _vecBackgroundObjs[i];
+			delete (*i);
+			(*i) = nullptr;
 		}
 	}
 
@@ -24,17 +25,17 @@ namespace RB::Background
 
 	void BackgroundController::OnUpdate()
 	{
-		for (size_t i = 0; i < _vecBackgroundObjs.size(); i++)
+		for (auto i = _vecBackgroundObjs.begin(); i != _vecBackgroundObjs.end(); i++)
 		{
-			_vecBackgroundObjs[i]->OnUpdate();
+			(*i)->OnUpdate();
 		}
 	}
 
 	void BackgroundController::OnFixedUpdate()
 	{
-		for (size_t i = 0; i < _vecBackgroundObjs.size(); i++)
+		for (auto i = _vecBackgroundObjs.begin(); i != _vecBackgroundObjs.end(); i++)
 		{
-			_vecBackgroundObjs[i]->OnFixedUpdate();
+			(*i)->OnFixedUpdate();
 		}
 	}
 }

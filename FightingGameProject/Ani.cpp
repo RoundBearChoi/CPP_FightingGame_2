@@ -87,6 +87,9 @@ namespace RB::Render
 		}
 	}
 
+	/// <summary>
+	/// delete element, remove from vector, and return next iterator
+	/// </summary>
 	std::vector<iAnimationObj*>::const_iterator Ani::DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it)
 	{
 		iAnimationObj* obj = (*it);

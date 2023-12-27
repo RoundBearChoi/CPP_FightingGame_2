@@ -59,12 +59,7 @@ namespace RB::Render
 
             if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
             {
-                //delete (*it);
-                //*it = nullptr;
-                
                 it = _ani.DeleteAnimationObj(it);
-
-                //it = vec.erase(it);
             }
             else
             {

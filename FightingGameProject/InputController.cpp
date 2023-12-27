@@ -385,11 +385,11 @@ namespace RB::Input
 		{
 			const std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-			for (size_t i = 0; i < vec.size(); i++)
+			for (auto i = vec.begin(); i != vec.end(); ++i)
 			{
-				if (vec[i]->GetPlayerInputType() == resultInput)
+				if ((*i)->GetPlayerInputType() == resultInput)
 				{
-					vec[i]->SetReleasedStatus(true);
+					(*i)->SetReleasedStatus(true);
 				}
 			}
 		}

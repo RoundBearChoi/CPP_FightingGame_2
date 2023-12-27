@@ -10,12 +10,6 @@ namespace RB::States
 			(*i) = nullptr;
 		}
 
-		//for (int32_t i = 0; i < _vecStateComponents.size(); i++)
-		//{
-		//	delete _vecStateComponents[i];
-		//	_vecStateComponents[i] = nullptr;
-		//}
-
 		_vecStateComponents.clear();
 	}
 
@@ -82,16 +76,6 @@ namespace RB::States
 				break;
 			}
 		}
-
-		//for (size_t i = 0; i < _vecStateComponents.size(); i++)
-		//{
-		//	_vecStateComponents[i]->OnEnter();
-		//
-		//	if (_isTransitioning)
-		//	{
-		//		break;
-		//	}
-		//}
 	}
 
 	void StateBase::ExitStateComponents()
@@ -136,25 +120,5 @@ namespace RB::States
 				break;
 			}
 		}
-
-		//for (size_t i = 0; i < _vecStateComponents.size(); i++)
-		//{
-		//	int32_t fixedUpdateOnCount = _vecStateComponents[i]->GetFixedUpdateOnCount();
-		//
-		//	if (fixedUpdateOnCount >= 0)
-		//	{
-		//		if (_cumulatedFixedUpdates != fixedUpdateOnCount)
-		//		{
-		//			continue;
-		//		}
-		//	}
-		//
-		//	_vecStateComponents[i]->OnFixedUpdate();
-		//
-		//	if (_isTransitioning)
-		//	{
-		//		break;
-		//	}
-		//}
 	}
 }

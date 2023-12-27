@@ -11,14 +11,10 @@ namespace RB::States
 	{
 		stateCreationCount++;
 		_stateCreationID = stateCreationCount;
-
-		std::cout << "state created - creationID " << _stateCreationID << std::endl;
 	}
 
 	StateBase::~StateBase()
 	{
-		std::cout << "destroying state - creationID " << _stateCreationID << std::endl;
-
 		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
 			delete (*i);

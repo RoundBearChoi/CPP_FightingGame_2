@@ -8,14 +8,10 @@ namespace RB::States
 	{
 		stateMachinesCreated++;
 		_stateMachineID = stateMachinesCreated;
-
-		//std::cout << "constructing StateMachineBase" << std::endl;
 	}
 
 	StateMachineBase::~StateMachineBase()
 	{
-		//std::cout << "destroying StateMachineBase" << std::endl;
-
 		if (_currentState != nullptr)
 		{
 			_currentState->OnExit();
@@ -72,18 +68,13 @@ namespace RB::States
 
 	void StateMachineBase::OverrideNextState(RB::States::iState* state)
 	{
+		//assuming that the next state is set by a StateComponent
 		if (_nextState != nullptr)
 		{
-			std::cout << "deleting due to override - stateID " << _nextState->GetCreationID() << std::endl;
+			//std::cout << "deleting due to override - stateID " << _nextState->GetCreationID() << std::endl;
 
 			_currentState->DeleteNextState(_nextState->GetCreationID());
 		}
-
-		//if (_nextState != nullptr)
-		//{
-		//	delete _nextState;
-		//	_nextState = nullptr;
-		//}
 
 		_currentState->SetIsTransitioning(false);
 

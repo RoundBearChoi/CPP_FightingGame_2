@@ -12,12 +12,12 @@ namespace RB::Cam
 		_camPosition = pos;
 	}
 
-	void CamObj::SetXPosition(float_t x)
+	void CamObj::SetXPosition(float x)
 	{
 		_camPosition.x = x;
 	}
 
-	void CamObj::SetYPosition(float_t y)
+	void CamObj::SetYPosition(float y)
 	{
 		_camPosition.y = y;
 	}
@@ -32,20 +32,20 @@ namespace RB::Cam
 		return rel;
 	}
 
-	float_t CamObj::GetZoom()
+	float CamObj::GetZoom()
 	{
 		return _zoom;
 	}
 
-	void CamObj::SetZoom(float_t zoom)
+	void CamObj::SetZoom(float zoom)
 	{
 		_zoom = zoom;
 	}
 
 	void CamObj::Init()
 	{
-		_displayHalfWidth = (float_t)RB::displayWidth * 0.5f;
-		_displayHalfHeight = (float_t)RB::displayHeight * 0.5f;
+		_displayHalfWidth = (float)RB::displayWidth * 0.5f;
+		_displayHalfHeight = (float)RB::displayHeight * 0.5f;
 	}
 
 	void CamObj::ManualUpdate()

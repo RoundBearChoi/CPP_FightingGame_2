@@ -3,19 +3,18 @@
 namespace RB::PlayerStates
 {
 	std::vector<PlayerState*> PlayerState::currentPlayerStates;
-	//size_t PlayerState::playerStateCreationCount = 0;
 
 	PlayerState* PlayerState::GetPlayerState(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < currentPlayerStates.size(); i++)
+		for (auto i = currentPlayerStates.begin(); i != currentPlayerStates.end(); i++)
 		{
-			RB::Players::iPlayer* owner = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(currentPlayerStates[i]->GetStateMachineID());
+			RB::Players::iPlayer* owner = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
 
 			if (owner != nullptr)
 			{
 				if (playerID == owner->GetPlayerID())
 				{
-					return currentPlayerStates[i];
+					return (*i);
 				}
 			}
 		}
@@ -25,27 +24,24 @@ namespace RB::PlayerStates
 
 	PlayerState::PlayerState()
 	{
-		//playerStateCreationCount++;
-		//_creationID = playerStateCreationCount;
-
 		currentPlayerStates.push_back(this);
 	}
 
 	PlayerState::~PlayerState()
 	{
-		for (int32_t i = currentPlayerStates.size() - 1; i >= 0; i--)
+		for (auto i = currentPlayerStates.begin(); i != currentPlayerStates.end(); i++)
 		{
-			if (_stateCreationID == currentPlayerStates[i]->GetCreationID())
+			if ((*i) == this)
 			{
-				currentPlayerStates.erase(currentPlayerStates.begin() + i);
+				currentPlayerStates.erase(i);
 				break;
 			}
-		}	
+		}
 
-		for (size_t i = 0; i < _vecStateComponents.size(); i++)
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			delete _vecStateComponents[i];
-			_vecStateComponents[i] = nullptr;
+			delete (*i);
+			(*i) = nullptr;
 		}
 
 		_vecStateComponents.clear();

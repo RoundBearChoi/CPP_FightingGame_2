@@ -146,11 +146,6 @@ namespace RB::Render
 		_vecCurrentAnimations.push_back(animationObj);
 	}
 
-	//unsigned int Ani::GetCurrentAniCount()
-	//{
-	//	return _vecCurrentAnimations.size();
-	//}
-
 	std::vector<iAnimationObj*>& Ani::GetVecCurrentAnimations()
 	{
 		return _vecCurrentAnimations;

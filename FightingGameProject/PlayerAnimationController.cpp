@@ -64,7 +64,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		_ani.DeleteAnimationObj(playerID);
+		_ani.DeleteAnimationObjs(playerID);
 	}
 
 	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)

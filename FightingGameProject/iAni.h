@@ -20,8 +20,7 @@ namespace RB::Render
 
 		virtual void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum) = 0;
 		virtual void LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum) = 0; //requires sprite to be loaded first
-		virtual void DeleteAnimationObj(RB::Players::PlayerID playerID) = 0;
-		virtual void DeleteAnimationObj(unsigned int index) = 0;
+		virtual void DeleteAnimationObjs(RB::Players::PlayerID playerID) = 0;
 		virtual std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it) = 0;
 		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) = 0;
 		virtual iAnimationObj* GetCurrentAnimationObj(unsigned int index) = 0;

@@ -48,6 +48,9 @@ namespace RB::Render
 		_sprites.LoadSprite(path, spriteEnum);
 	}
 
+	/// <summary>
+	/// this function require sprites to be loaded first
+	/// </summary>
 	void Ani::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		specs.mLoadedSprite = _sprites.GetLoadedSprite(spriteEnum);
@@ -56,7 +59,7 @@ namespace RB::Render
 		_animationLoader.LoadAnimation(specs);
 	}
 
-	void Ani::DeleteAnimationObj(RB::Players::PlayerID playerID)
+	void Ani::DeleteAnimationObjs(RB::Players::PlayerID playerID)
 	{
 		auto it = _vecCurrentAnimations.begin();
 
@@ -73,17 +76,6 @@ namespace RB::Render
 			{
 				++it;
 			}
-		}
-	}
-
-	void Ani::DeleteAnimationObj(unsigned int index)
-	{
-		if (index < _vecCurrentAnimations.size())
-		{
-			delete _vecCurrentAnimations[index];
-			_vecCurrentAnimations[index] = nullptr;
-
-			_vecCurrentAnimations.erase(_vecCurrentAnimations.begin() + index);
 		}
 	}
 

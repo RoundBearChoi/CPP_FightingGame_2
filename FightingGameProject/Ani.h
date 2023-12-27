@@ -19,9 +19,8 @@ namespace RB::Render
 		virtual void OnUpdate() override;
 
 		virtual void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum) override;
-		virtual void LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum) override; //requires sprite to be loaded first
-		virtual void DeleteAnimationObj(RB::Players::PlayerID playerID) override;
-		virtual void DeleteAnimationObj(unsigned int index) override;
+		virtual void LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum) override;
+		virtual void DeleteAnimationObjs(RB::Players::PlayerID playerID) override;
 		virtual std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it) override;
 		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
 		virtual iAnimationObj* GetCurrentAnimationObj(unsigned int index) override;

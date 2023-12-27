@@ -42,10 +42,10 @@ namespace RB::PlayerStateComponents
 		RB::HBox::HBoxData* ownerData = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
 		RB::HBox::HBoxData* targetData = targetList->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 
-		size_t ownerAABBCount = ownerData->GetAABBCount();
-		size_t targetAABBCount = targetData->GetAABBCount();
+		unsigned int ownerAABBCount = ownerData->GetAABBCount();
+		unsigned int targetAABBCount = targetData->GetAABBCount();
 		
-		for (size_t i = 0; i < ownerAABBCount; i++)
+		for (unsigned int i = 0; i < ownerAABBCount; i++)
 		{
 			//get owner AABB
 			RB::Collisions::AABB& ownerAABB = ownerData->GetAABB(i);
@@ -58,7 +58,7 @@ namespace RB::PlayerStateComponents
 				continue;
 			}
 
-			for (size_t j = 0; j < targetAABBCount; j++)
+			for (unsigned int j = 0; j < targetAABBCount; j++)
 			{
 				//get target AABB
 				RB::Collisions::AABB& targetAABB = targetData->GetAABB(j);

@@ -73,11 +73,11 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
-	void StateBase::DeleteNextStates()
+	void StateBase::DeleteNextState(unsigned int creationID)
 	{
 		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			(*i)->DeleteNextStates();
+			(*i)->DeleteNextState(creationID);
 		}
 	}
 

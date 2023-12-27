@@ -16,7 +16,7 @@ namespace RB::PlayerStateComponents
 		void OnEnter() override;
 		void OnFixedUpdate() override;
 
-	private:
-		RB::States::iState* _nextState = nullptr;
+	//private:
+	//	RB::States::iState* _nextState = nullptr;
 	};
 }

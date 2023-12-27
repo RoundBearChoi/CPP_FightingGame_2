@@ -49,18 +49,40 @@ namespace RB::States
 
 	}
 
-	void StateComponentBase::DeleteNextStates()
+	void StateComponentBase::DeleteNextState(unsigned int creationID)
 	{
-		for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
+		auto it = _vecNextStates.begin();
+
+		while (it != _vecNextStates.end())
 		{
-			if ((*i) != nullptr)
+			if ((*it)->GetCreationID() == creationID)
 			{
-				delete (*i);
-				(*i) = nullptr;
+				delete (*it);
+				(*it) = nullptr;
+
+				it = _vecNextStates.erase(it);
+			}
+			else
+			{
+				++it;
 			}
 		}
 
-		_vecNextStates.clear();
+		//for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
+		//{
+		//	if ((*i) != nullptr)
+		//	{
+		//		if ((*i)->GetCreationID() == creationID)
+		//		{
+		//			delete (*i);
+		//			(*i) = nullptr;
+		//
+		//			_vecNextStates.erase(i);
+		//		}
+		//	}
+		//}
+		//
+		//_vecNextStates.clear();
 	}
 	
 	const int& StateComponentBase::GetFixedUpdateOnCount() const

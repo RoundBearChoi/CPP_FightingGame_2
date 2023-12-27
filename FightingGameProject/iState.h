@@ -19,7 +19,7 @@ namespace RB::States
 		virtual bool IsInQueue() = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual unsigned int GetCumulatedFixedUpdates() = 0;
-		virtual void DeleteNextStates() = 0;
+		virtual void DeleteNextState(unsigned int creationID) = 0;
 
 	public:
 		virtual void OnEnter() = 0;

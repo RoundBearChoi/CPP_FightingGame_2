@@ -4,7 +4,8 @@ namespace RB::PlayerStateComponents
 {
 	StandUpOnRelease::StandUpOnRelease(RB::States::iState* nextState)
 	{
-		_nextState = nextState;
+		_vecNextStates.push_back(nextState);
+		//_nextState = nextState;
 	}
 
 	void StandUpOnRelease::OnEnter()
@@ -37,6 +38,6 @@ namespace RB::PlayerStateComponents
 		}
 		
 		//if down is released, go to next state
-		player->GetStateMachine()->QueueNextState(_nextState);
+		player->GetStateMachine()->QueueNextState(_vecNextStates[0]);
 	}
 }

@@ -35,7 +35,7 @@ namespace RB::Cam
 		}
 	}
 
-	void CamController::SetZoom(float_t zoom)
+	void CamController::SetZoom(float zoom)
 	{
 		_camObj.SetZoom(zoom);
 	}

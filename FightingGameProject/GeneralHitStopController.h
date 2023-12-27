@@ -14,9 +14,9 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 		bool SkipFrame() override;
-		void AddSkipFrames(uint32_t frames);
+		void AddSkipFrames(int frames);
 
 	private:
-		uint32_t _skipFrames = 0;
+		int _skipFrames = 0;
 	};
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include <cstdint>
 #include "ControllerT.h"
 
 namespace RB::Collisions
@@ -12,6 +11,6 @@ namespace RB::Collisions
 		virtual void OnFixedUpdate() = 0;
 
 		virtual bool SkipFrame() = 0;
-		virtual void AddSkipFrames(uint32_t frames) = 0;
+		virtual void AddSkipFrames(int frames) = 0;
 	};
 }

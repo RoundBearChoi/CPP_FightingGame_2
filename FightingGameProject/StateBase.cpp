@@ -103,7 +103,7 @@ namespace RB::States
 	{
 		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
-			int32_t fixedUpdateOnCount = (*i)->GetFixedUpdateOnCount();
+			int fixedUpdateOnCount = (*i)->GetFixedUpdateOnCount();
 
 			if (fixedUpdateOnCount >= 0)
 			{

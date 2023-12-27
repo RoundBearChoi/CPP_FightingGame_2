@@ -7,16 +7,16 @@ namespace RB::States
 	/// </summary>
 	StateComponentBase::~StateComponentBase()
 	{
-		for (int32_t i = _vecNextStates.size() - 1; i >= 0; i--)
+		for (auto i = _vecNextStates.rbegin(); i != _vecNextStates.rend(); i++)
 		{
-			if (_vecNextStates[i] != nullptr)
+			if ((*i) != nullptr)
 			{
-				if (_vecNextStates[i]->IsInQueue() == false)
+				if ((*i)->IsInQueue() == false)
 				{
-					delete _vecNextStates[i];
-					_vecNextStates[i] = nullptr;
+					delete (*i);
+					(*i) = nullptr;
 				}
-			};
+			}
 		}
 
 		_vecNextStates.clear();
@@ -47,13 +47,8 @@ namespace RB::States
 
 	}
 	
-	const int32_t& StateComponentBase::GetFixedUpdateOnCount() const
+	const int& StateComponentBase::GetFixedUpdateOnCount() const
 	{
 		return _fixedUpdateOnCount;
-	}
-
-	const int32_t& StateComponentBase::GetUpdateOnCount() const
-	{
-		return _updateOnCount;
 	}
 }

@@ -73,6 +73,14 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
+	void StateBase::DeleteNextStates()
+	{
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
+		{
+			(*i)->DeleteNextStates();
+		}
+	}
+
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)
 	{
 		if (stateComponent == nullptr)

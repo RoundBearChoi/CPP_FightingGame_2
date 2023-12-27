@@ -48,6 +48,20 @@ namespace RB::States
 	{
 
 	}
+
+	void StateComponentBase::DeleteNextStates()
+	{
+		for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
+		{
+			if ((*i) != nullptr)
+			{
+				delete (*i);
+				(*i) = nullptr;
+			}
+		}
+
+		_vecNextStates.clear();
+	}
 	
 	const int& StateComponentBase::GetFixedUpdateOnCount() const
 	{

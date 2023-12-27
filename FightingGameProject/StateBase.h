@@ -24,6 +24,7 @@ namespace RB::States
 		virtual bool IsInQueue() override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual unsigned int GetCumulatedFixedUpdates() override;
+		virtual void DeleteNextStates() override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);

@@ -18,6 +18,7 @@ namespace RB::States
 		virtual void OnExit();
 		virtual void OnUpdate();
 		virtual void OnFixedUpdate();
+		virtual void DeleteNextStates();
 
 		const virtual int& GetFixedUpdateOnCount() const;
 

@@ -1,5 +1,4 @@
 #pragma once
-#include <cmath>
 #include "iCamObj.h"
 #include "iPlayerController.h"
 #include "Ease.h"

@@ -9,7 +9,7 @@ namespace RB::Collisions
 	public:
 		AABB() = default;
 
-		AABB(float_t bottomLeftX, float_t bottomLeftY, float_t width, float_t height)
+		AABB(float bottomLeftX, float bottomLeftY, float width, float height)
 		{
 			_bottomLeftX = bottomLeftX;
 			_bottomLeftY = bottomLeftY;
@@ -20,23 +20,23 @@ namespace RB::Collisions
 		~AABB() = default;
 
 	public:
-		void SetBottomLeft(float_t bottomLeftX, float_t bottomLeftY)
+		void SetBottomLeft(float bottomLeftX, float bottomLeftY)
 		{
 			_bottomLeftX = bottomLeftX;
 			_bottomLeftY = bottomLeftY;
 		}
 
-		void MoveX(float_t x)
+		void MoveX(float x)
 		{
 			_bottomLeftX += x;
 		}
 
-		void MoveY(float_t y)
+		void MoveY(float y)
 		{
 			_bottomLeftY += y;
 		}
 
-		void IncreaseWidth(float_t amount)
+		void IncreaseWidth(float amount)
 		{
 			_width += amount;
 
@@ -46,7 +46,7 @@ namespace RB::Collisions
 			}
 		}
 
-		void IncreaseHeight(float_t amount)
+		void IncreaseHeight(float amount)
 		{
 			_height += amount;
 
@@ -110,11 +110,11 @@ namespace RB::Collisions
 		/// <returns></returns>
 		olc::vf2d GetCollisionCenter(const AABB& other)
 		{
-			float_t minxX = std::max(_bottomLeftX, other._bottomLeftX);
-			float_t minY = std::min(_bottomLeftY, other._bottomLeftY);
+			float minxX = std::max(_bottomLeftX, other._bottomLeftX);
+			float minY = std::min(_bottomLeftY, other._bottomLeftY);
 
-			float_t maxX = std::min(_bottomLeftX + _width, other._bottomLeftX + other._width);
-			float_t maxY = std::max(_bottomLeftY - _height, other._bottomLeftY - other._height);
+			float maxX = std::min(_bottomLeftX + _width, other._bottomLeftX + other._width);
+			float maxY = std::max(_bottomLeftY - _height, other._bottomLeftY - other._height);
 
 			return { (minxX + maxX) * 0.5f, (minY + maxY) * 0.5f };
 		}
@@ -145,9 +145,9 @@ namespace RB::Collisions
 		}
 
 	private:
-		float_t _bottomLeftX = 0.0f;
-		float_t _bottomLeftY = 0.0f;
-		float_t _width = 0.0f;
-		float_t _height = 0.0f;
+		float _bottomLeftX = 0.0f;
+		float _bottomLeftY = 0.0f;
+		float _width = 0.0f;
+		float _height = 0.0f;
 	};
 }

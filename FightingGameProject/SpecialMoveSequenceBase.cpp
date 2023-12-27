@@ -33,28 +33,49 @@ namespace RB::Input
 
 		auto vec = RB::Input::iInputController::instance->GetVecInputObjs(playerID);
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); i++)
 		{
-			RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetInputByIndex(playerID, i);
-
-			if (obj == nullptr)
+			if ((*i) == nullptr)
 			{
 				continue;
 			}
 
-			if (!obj->IsUsedAsSpecial())
+			if (!(*i)->IsUsedAsSpecial())
 			{
 				if (sequence.size() > seqIndex)
 				{
-					if (obj->GetPlayerInputType() == sequence[seqIndex])
+					if ((*i)->GetPlayerInputType() == sequence[seqIndex])
 					{
 						vecCorrect.push_back(true);
-						vecCorrectObjs.push_back(obj);
+						vecCorrectObjs.push_back((*i));
 						seqIndex++;
 					}
 				}
 			}
 		}
+
+		//for (size_t i = 0; i < vec.size(); i++)
+		//{
+		//	RB::Input::iInputObj* obj = RB::Input::iInputController::instance->GetInputByIndex(playerID, i);
+		//
+		//	if (obj == nullptr)
+		//	{
+		//		continue;
+		//	}
+		//
+		//	if (!obj->IsUsedAsSpecial())
+		//	{
+		//		if (sequence.size() > seqIndex)
+		//		{
+		//			if (obj->GetPlayerInputType() == sequence[seqIndex])
+		//			{
+		//				vecCorrect.push_back(true);
+		//				vecCorrectObjs.push_back(obj);
+		//				seqIndex++;
+		//			}
+		//		}
+		//	}
+		//}
 
 		if (vecCorrect.size() == sequence.size())
 		{

@@ -39,6 +39,11 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
+		if (ownerAniObj == nullptr || targetAniObj == nullptr)
+		{
+			return;
+		}
+
 		RB::HBox::HBoxData* ownerData = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
 		RB::HBox::HBoxData* targetData = targetList->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 

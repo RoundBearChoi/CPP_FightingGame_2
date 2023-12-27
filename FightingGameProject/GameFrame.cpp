@@ -12,7 +12,7 @@ namespace RB
 
 		if (maxGameFrameCount == 0)
 		{
-			maxGameFrameCount = std::numeric_limits<size_t>::max();
+			maxGameFrameCount = std::numeric_limits<unsigned int>::max();
 		}
 
 		if (gameFrameCount == maxGameFrameCount)

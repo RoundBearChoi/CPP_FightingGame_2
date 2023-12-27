@@ -13,13 +13,21 @@ namespace RB::HBox
 
 	HBoxDataList* HB::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecLists.size(); i++)
+		for (auto i = _vecLists.begin(); i != _vecLists.end(); i++)
 		{
-			if (_vecLists[i].GetSpriteEnum() == spriteEnum)
+			if ((*i).GetSpriteEnum() == spriteEnum)
 			{
-				return &_vecLists[i];
+				return &(*i);
 			}
 		}
+
+		//for (size_t i = 0; i < _vecLists.size(); i++)
+		//{
+		//	if (_vecLists[i].GetSpriteEnum() == spriteEnum)
+		//	{
+		//		return &_vecLists[i];
+		//	}
+		//}
 
 		return nullptr;
 	}

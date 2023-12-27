@@ -1,5 +1,4 @@
 #pragma once
-#include <cstdint>
 
 namespace RB::Updaters
 {
@@ -38,15 +37,15 @@ namespace RB::Updaters
 			}
 		}
 
-		size_t GetTotalFixedUpdateCount()
+		unsigned int GetTotalFixedUpdateCount()
 		{
 			return _totalFrameCount;
 		}
 
 	private:
-		uint32_t _skipFrames = 0;
-		size_t _frameCount = 0;
-		size_t _totalFrameCount = 0;
+		unsigned int _skipFrames = 0;
+		unsigned int _frameCount = 0;
+		unsigned int _totalFrameCount = 0;
 		T* _obj = nullptr;
 		void (T::* _function)() = nullptr;
 	};

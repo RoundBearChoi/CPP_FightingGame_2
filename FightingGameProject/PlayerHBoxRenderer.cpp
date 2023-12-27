@@ -51,7 +51,7 @@ namespace RB::Render
 			return;
 		}
 		
-		int32_t currentIndex = aniObj->GetCurrentIndex();
+		int currentIndex = aniObj->GetCurrentIndex();
 
 		RB::HBox::HBoxDataList* dataList = nullptr;
 

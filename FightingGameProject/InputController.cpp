@@ -98,21 +98,6 @@ namespace RB::Input
 			}
 		}
 
-		//for (size_t i = 0; i < _vecKeyBindings.size(); i++)
-		//{
-		//	if (_vecKeyBindings[i].GetPlayerID() == playerID)
-		//	{
-		//		if (_vecKeyBindings[i].GetPlayerInput() == playerInput)
-		//		{
-		//			olc::Key key = _vecKeyBindings[i].GetKey();
-		//			
-		//			olc::HWButton button = olc::Platform::ptrPGE->GetKey(key);
-		//
-		//			return button;
-		//		}
-		//	}
-		//}
-
 		return olc::HWButton();
 	}
 
@@ -127,14 +112,6 @@ namespace RB::Input
 				return (*i);
 			}
 		}
-
-		//for (size_t i = 0; i < vec.size(); i++)
-		//{
-		//	if (vec[i]->GetPlayerInputType() == playerInput)
-		//	{
-		//		return vec[i];
-		//	}
-		//}
 
 		return nullptr;
 	}
@@ -169,17 +146,6 @@ namespace RB::Input
 			}
 		}
 
-		//for (size_t i = 0; i < vec.size(); i++)
-		//{
-		//	if (vec[i]->GetPlayerInputType() == playerInput)
-		//	{
-		//		if (vec[i]->IsUsedAsSpecial() == false)
-		//		{
-		//			return vec[i];
-		//		}
-		//	}
-		//}
-
 		return nullptr;
 	}
 
@@ -197,17 +163,6 @@ namespace RB::Input
 				}
 			}
 		}
-
-		//for (size_t i = 0; i < vec.size(); i++)
-		//{
-		//	if (vec[i]->GetPlayerInputType() == playerInput)
-		//	{
-		//		if (vec[i]->IsUsedAsMovement() == false)
-		//		{
-		//			return vec[i];
-		//		}
-		//	}
-		//}
 
 		return nullptr;
 	}
@@ -521,12 +476,6 @@ namespace RB::Input
 			delete (*i);
 			(*i) = nullptr;
 		}
-
-		//for (size_t i = 0; i < vec.size(); i++)
-		//{
-		//	delete vec[i];
-		//	vec[i] = nullptr;
-		//}
 
 		vec.clear();
 	}

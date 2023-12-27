@@ -31,7 +31,7 @@ namespace RB::Input
 
 		const std::vector<RB::Input::PlayerInput>& sequence = _GetSequence(p->IsFacingRight());
 
-		auto vec = RB::Input::iInputController::instance->GetVecInputObjs(playerID);
+		const auto vec = RB::Input::iInputController::instance->GetVecInputObjs(playerID);
 
 		for (auto i = vec.begin(); i != vec.end(); i++)
 		{

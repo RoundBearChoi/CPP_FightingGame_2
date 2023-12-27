@@ -26,8 +26,9 @@ namespace RB::Render
 		virtual iAnimationObj* GetCurrentAnimationObj(unsigned int index) = 0;
 		virtual iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType) = 0;
 		virtual RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) = 0;
-		virtual void PushCurrentAnimation(iAnimationObj* animationObj) = 0;
-		virtual unsigned int GetCurrentAniCount() = 0;
+		virtual void AddNewAnimation(iAnimationObj* animationObj) = 0;
+		//virtual unsigned int GetCurrentAniCount() = 0;
+		virtual std::vector<iAnimationObj*>& GetVecCurrentAnimations() = 0;
 		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum) = 0;
 	};
 }

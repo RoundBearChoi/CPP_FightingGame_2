@@ -29,7 +29,7 @@ namespace RB::Render
     {
         _ani.OnFixedUpdate();
         
-        _DeleteUsedAnimations();
+        _DeleteFinishedAnimations();
     }
 
     void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos)
@@ -41,26 +41,33 @@ namespace RB::Render
 
         animationObj->SetWorldPos(pos);
 
-        _ani.PushCurrentAnimation(animationObj);
+        _ani.AddNewAnimation(animationObj);
     }
 
-    void VFXAnimationController::_DeleteUsedAnimations()
+    void VFXAnimationController::_DeleteFinishedAnimations()
     {
-        int count = _ani.GetCurrentAniCount();
+        auto& vec = _ani.GetVecCurrentAnimations();
 
-        for (int i = count - 1; i >= 0; i--)
+        auto it = vec.begin();
+
+        while (it != vec.end())
         {
-            iAnimationObj* aniObj = _ani.GetCurrentAnimationObj(i);
+            unsigned int skipFixedUpdates = (*it)->GetAnimationSpecs().mSkipFixedUpdates;
+            unsigned int totalSprites = (*it)->GetAnimationSpecs().mTotalSprites;
 
-            unsigned int skipFixedUpdates = aniObj->GetAnimationSpecs().mSkipFixedUpdates;
-            unsigned int totalSprites = aniObj->GetAnimationSpecs().mTotalSprites;
-
-            unsigned int totalFixedUpdates = aniObj->GetFixedUpdateCount();
+            unsigned int totalFixedUpdates = (*it)->GetFixedUpdateCount();
 
             if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
             {
-                _ani.DeleteAnimationObj(i);
-			}
+                delete (*it);
+                *it = nullptr;
+                
+                it = vec.erase(it);
+            }
+            else
+            {
+                ++it;
+            }
         }
     }
 }

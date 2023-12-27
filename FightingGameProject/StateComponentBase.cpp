@@ -67,22 +67,6 @@ namespace RB::States
 				++it;
 			}
 		}
-
-		//for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
-		//{
-		//	if ((*i) != nullptr)
-		//	{
-		//		if ((*i)->GetCreationID() == creationID)
-		//		{
-		//			delete (*i);
-		//			(*i) = nullptr;
-		//
-		//			_vecNextStates.erase(i);
-		//		}
-		//	}
-		//}
-		//
-		//_vecNextStates.clear();
 	}
 	
 	const int& StateComponentBase::GetFixedUpdateOnCount() const

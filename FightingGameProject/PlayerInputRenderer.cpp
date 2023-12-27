@@ -37,7 +37,7 @@ namespace RB::Render
 			return;
 		}
 
-		auto vec = RB::Input::iInputController::instance->GetVecInputObjs(player->GetPlayerID());
+		const auto vec = RB::Input::iInputController::instance->GetVecInputObjs(player->GetPlayerID());
 
 		int count = 0;
 

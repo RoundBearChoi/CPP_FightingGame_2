@@ -9,6 +9,8 @@ namespace RB::Render
 			delete (*i);
 			(*i) = nullptr;
 		}
+
+		_vecCurrentAnimations.clear();
 	}
 
 	void Ani::Init()
@@ -56,18 +58,35 @@ namespace RB::Render
 
 	void Ani::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
+		auto it = _vecCurrentAnimations.begin();
+
+		while (it != _vecCurrentAnimations.end())
 		{
-			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
+			if ((*it)->GetPlayer()->GetPlayerID() == playerID)
 			{
-				delete (*i);
-				(*i) = nullptr;
+				delete (*it);
+				(*it) = nullptr;
 
-				_vecCurrentAnimations.erase(i);
-
-				return;
+				it = _vecCurrentAnimations.erase(it);
+			}
+			else
+			{
+				++it;
 			}
 		}
+
+		//for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
+		//{
+		//	if ((*i)->GetPlayer()->GetPlayerID() == playerID)
+		//	{
+		//		delete (*i);
+		//		(*i) = nullptr;
+		//
+		//		_vecCurrentAnimations.erase(i);
+		//
+		//		return;
+		//	}
+		//}
 	}
 
 	void Ani::DeleteAnimationObj(unsigned int index)
@@ -135,14 +154,19 @@ namespace RB::Render
 		return RB::Sprites::SpriteEnum::NONE;
 	}
 
-	void Ani::PushCurrentAnimation(iAnimationObj* animationObj)
+	void Ani::AddNewAnimation(iAnimationObj* animationObj)
 	{
 		_vecCurrentAnimations.push_back(animationObj);
 	}
 
-	unsigned int Ani::GetCurrentAniCount()
+	//unsigned int Ani::GetCurrentAniCount()
+	//{
+	//	return _vecCurrentAnimations.size();
+	//}
+
+	std::vector<iAnimationObj*>& Ani::GetVecCurrentAnimations()
 	{
-		return _vecCurrentAnimations.size();
+		return _vecCurrentAnimations;
 	}
 
 	AnimationRenderer* Ani::GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum)

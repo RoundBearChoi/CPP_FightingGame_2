@@ -79,7 +79,7 @@ namespace RB::Render
 			return;
 		}
 
-		if (_ani.GetCurrentAniCount() > 0)
+		if (_ani.GetVecCurrentAnimations().size() > 0)
 		{
 			return;
 		}
@@ -108,7 +108,7 @@ namespace RB::Render
 
 			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, RB::Sprites::PivotType::BOTTOM_CENTER);
 
-			_ani.PushCurrentAnimation(animationObj);
+			_ani.AddNewAnimation(animationObj);
 		}
 	}
 
@@ -131,7 +131,7 @@ namespace RB::Render
 
 			iAnimationObj* aniObj = _ani.InstantiateNewAnimationObj(player, playerSpriteEnum, RB::Sprites::PivotType::BOTTOM_CENTER);
 
-			_ani.PushCurrentAnimation(aniObj);
+			_ani.AddNewAnimation(aniObj);
 		}
 	}
 

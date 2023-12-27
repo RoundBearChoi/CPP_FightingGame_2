@@ -30,33 +30,33 @@ namespace RB::Render
 
 		screenPos = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
-		float_t x = (float_t)screenPos.x;
-		float_t y = (float_t)screenPos.y;
+		float x = (float)screenPos.x;
+		float y = (float)screenPos.y;
 
-		float_t zoom = RB::Cam::iCamController::instance->GetCamObj()->GetZoom();
+		float zoom = RB::Cam::iCamController::instance->GetCamObj()->GetZoom();
 
-		float_t width = renderSettings.mRenderSize.x * zoom;
-		float_t height = renderSettings.mRenderSize.y * zoom;
+		float width = renderSettings.mRenderSize.x * zoom;
+		float height = renderSettings.mRenderSize.y * zoom;
 
 		if (renderSettings.mFaceRight)
 		{
 			x += renderSettings.mRenderOffset.x * zoom;
 			y += renderSettings.mRenderOffset.y * zoom;
 
-			points[0] = { (float_t)x - (float_t)width / 2.0f, (float_t)y - (float_t)height };
-			points[1] = { (float_t)x - (float_t)width / 2.0f, (float_t)y };
-			points[2] = { (float_t)x + (float_t)width / 2.0f, (float_t)y };
-			points[3] = { (float_t)x + (float_t)width / 2.0f, (float_t)y - (float_t)height };
+			points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
+			points[1] = { (float)x - (float)width / 2.0f, (float)y };
+			points[2] = { (float)x + (float)width / 2.0f, (float)y };
+			points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
 		}
 		else
 		{
 			x -= renderSettings.mRenderOffset.x * zoom;
 			y += renderSettings.mRenderOffset.y * zoom;
 
-			points[0] = { (float_t)x + (float_t)width / 2.0f, (float_t)y - (float_t)height };
-			points[1] = { (float_t)x + (float_t)width / 2.0f, (float_t)y };
-			points[2] = { (float_t)x - (float_t)width / 2.0f, (float_t)y };
-			points[3] = { (float_t)x - (float_t)width / 2.0f, (float_t)y - (float_t)height };
+			points[0] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+			points[1] = { (float)x + (float)width / 2.0f, (float)y };
+			points[2] = { (float)x - (float)width / 2.0f, (float)y };
+			points[3] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
 		}
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);

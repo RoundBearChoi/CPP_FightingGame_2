@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveForwardOnJump_1::MoveForwardOnJump_1(size_t totalFrames, float_t multiplier)
+	MoveForwardOnJump_1::MoveForwardOnJump_1(unsigned int totalFrames, float multiplier)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
@@ -23,9 +23,9 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		//get move amount
-		size_t frame = _state->GetCumulatedFixedUpdates();
+		unsigned int frame = _state->GetCumulatedFixedUpdates();
 
-		float_t t = (float_t)frame / ((float_t)_totalFrames * 2.0f);
+		float t = (float)frame / ((float)_totalFrames * 2.0f);
 
 		//start from 0.5 (second half only)
 		t += 0.5f;
@@ -39,8 +39,8 @@ namespace RB::PlayerStateComponents
 			t = 1.0f;
 		}
 
-		float_t percentage = RB::EaseEquations::Ease::EaseOutCirc(t);
-		float_t result = percentage * _multiplier;
+		float percentage = RB::EaseEquations::Ease::EaseOutCirc(t);
+		float result = percentage * _multiplier;
 
 		if (!player->IsFacingRight())
 		{
@@ -48,6 +48,6 @@ namespace RB::PlayerStateComponents
 		}
 
 		//apply move
-		player->Move({ (int32_t)result, 0 });
+		player->Move({ (int)result, 0 });
 	}
 }

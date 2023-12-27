@@ -23,6 +23,6 @@ void operator delete(void* ptr)
 
     if (showAllocationCount)
     {
-        std::cout << "allocation count: " << numObjects << std::endl;;
+        //std::cout << "allocation count: " << numObjects << std::endl;;
     }
 }

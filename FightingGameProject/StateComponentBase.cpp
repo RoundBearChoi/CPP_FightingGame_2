@@ -11,6 +11,8 @@ namespace RB::States
 		{
 			if ((*i) != nullptr)
 			{
+				RB::States::iState* state = (*i);
+
 				if ((*i)->IsInQueue() == false)
 				{
 					delete (*i);

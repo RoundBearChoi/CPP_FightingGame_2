@@ -41,7 +41,7 @@ namespace RB::PlayerStateComponents
 
 		const RB::Render::AnimationSpecs& specs = aniObj->GetAnimationSpecs();
 
-		size_t updates = state->GetCumulatedFixedUpdates();
+		unsigned int updates = state->GetCumulatedFixedUpdates();
 
 		if ((specs.mTotalSprites /* - 1*/) * specs.mSkipFixedUpdates <= updates)
 		{

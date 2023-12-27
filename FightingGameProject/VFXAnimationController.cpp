@@ -46,16 +46,16 @@ namespace RB::Render
 
     void VFXAnimationController::_DeleteUsedAnimations()
     {
-        int32_t count = _ani.GetCurrentAniCount();
+        int count = _ani.GetCurrentAniCount();
 
-        for (int32_t i = count - 1; i >= 0; i--)
+        for (int i = count - 1; i >= 0; i--)
         {
             iAnimationObj* aniObj = _ani.GetCurrentAnimationObj(i);
 
-            int32_t skipFixedUpdates = aniObj->GetAnimationSpecs().mSkipFixedUpdates;
-            int32_t totalSprites = aniObj->GetAnimationSpecs().mTotalSprites;
+            int skipFixedUpdates = aniObj->GetAnimationSpecs().mSkipFixedUpdates;
+            int totalSprites = aniObj->GetAnimationSpecs().mTotalSprites;
 
-            size_t totalFixedUpdates = aniObj->GetFixedUpdateCount();
+            unsigned int totalFixedUpdates = aniObj->GetFixedUpdateCount();
 
             if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
             {

@@ -42,7 +42,7 @@ namespace RB::Render
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
-		for (size_t i = 0; i < 2; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			arr[i] = RB::Players::iPlayerController::instance->GetPlayerOnIndex(i);
 
@@ -86,7 +86,7 @@ namespace RB::Render
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
-		for (size_t i = 0; i < 2; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			arr[i] = RB::Players::iPlayerController::instance->GetPlayerOnIndex(i);
 

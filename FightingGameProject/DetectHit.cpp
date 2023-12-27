@@ -46,17 +46,14 @@ namespace RB::PlayerStateComponents
 
 		RB::HBox::HBoxData* ownerData = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
 		RB::HBox::HBoxData* targetData = targetList->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
-
-		//unsigned int ownerAABBCount = ownerData->GetAABBCount();
-		//unsigned int targetAABBCount = targetData->GetAABBCount();
 		
 		const auto& vecOwner = ownerData->GetVecAABBs();
 		const auto& vecTarget = targetData->GetVecAABBs();
 
-		for (auto i = vecOwner.begin(); i != vecOwner.end(); ++i) //unsigned int i = 0; i < ownerAABBCount; i++)
+		for (auto i = vecOwner.begin(); i != vecOwner.end(); ++i)
 		{
 			//get owner AABB
-			RB::Collisions::AABB ownerAABB = (*i); //ownerData->GetAABB(i);
+			RB::Collisions::AABB ownerAABB = (*i);
 			olc::vi2d ownerPos = owner->GetPosition();
 			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
 
@@ -66,10 +63,10 @@ namespace RB::PlayerStateComponents
 				continue;
 			}
 
-			for (auto j = vecTarget.begin(); j != vecTarget.end(); ++j) //unsigned int j = 0; j < targetAABBCount; j++)
+			for (auto j = vecTarget.begin(); j != vecTarget.end(); ++j)
 			{
 				//get target AABB
-				RB::Collisions::AABB targetAABB = (*j); //targetData->GetAABB(j);
+				RB::Collisions::AABB targetAABB = (*j);
 				olc::vi2d targetPos = target->GetPosition();
 				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
 

@@ -93,13 +93,11 @@ namespace RB::Render
 
 	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::HBoxData* data, olc::Pixel color)
 	{
-		//size_t count = data->GetAABBCount();
-
 		const auto& vec = data->GetVecAABBs();
 
-		for (auto i = vec.begin(); i != vec.end(); ++i) //size_t i = 0; i < count; i++)
+		for (auto i = vec.begin(); i != vec.end(); ++i) 
 		{
-			RB::Collisions::AABB aabb = (*i); // data->GetAABB(i);
+			RB::Collisions::AABB aabb = (*i);
 
 			if (aabb.GetWidthHeight().x <= 0.001f)
 			{

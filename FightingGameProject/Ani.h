@@ -11,7 +11,7 @@ namespace RB::Render
 	class Ani : public RB::Render::iAni
 	{
 	public:
-		Ani();
+		Ani() = default;
 		~Ani() override;
 
 		virtual void Init() override;

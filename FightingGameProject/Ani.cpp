@@ -2,11 +2,6 @@
 
 namespace RB::Render
 {
-	Ani::Ani()
-	{
-
-	}
-
 	Ani::~Ani()
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
@@ -27,11 +22,6 @@ namespace RB::Render
 		{
 			(*i)->OnFixedUpdate();
 		}
-
-		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		//{
-		//	_vecCurrentAnimations[i]->OnFixedUpdate();
-		//}
 	}
 
 	void Ani::OnUpdate()
@@ -49,20 +39,6 @@ namespace RB::Render
 
 			(*i)->RenderAnimation();
 		}
-
-		//for (size_t i = 0; i < _vecCurrentAnimations.size(); i++)
-		//{
-		//	RB::Players::iPlayer* p = _vecCurrentAnimations[i]->GetPlayer();
-		//
-		//	if (p != nullptr)
-		//	{
-		//		olc::vi2d pos = p->GetPosition();
-		//
-		//		_vecCurrentAnimations[i]->SetWorldPos(pos);
-		//	}
-		//
-		//	_vecCurrentAnimations[i]->RenderAnimation();
-		//}
 	}
 
 	void Ani::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)

@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <cstdint>
 #include "olcPixelGameEngine.h"
 
 #include "iPlayerController.h"
@@ -31,13 +30,13 @@ namespace RB::HBox
 		const std::string& _GetCurrentSpriteString();
 		const std::string& _GetFrameName();
 		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
-		int32_t _GetCurrentAnimationFrame();
-		size_t _GetAABBCount();
+		unsigned int _GetCurrentAnimationFrame();
+		unsigned int _GetAABBCount();
 		RB::HBox::HBoxDataList* _getList();
 
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::string _none = "none";
 		std::string _fileSaved = "File saved: ";
-		int32_t _notificationFrameCount = 0;
+		int _notificationFrameCount = 0;
 	};
 }

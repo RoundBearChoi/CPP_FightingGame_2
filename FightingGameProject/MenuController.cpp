@@ -117,7 +117,7 @@ namespace RB::HBox
 		return _currentSpriteEnum;
 	}
 
-	int32_t MenuController::_GetCurrentAnimationFrame()
+	unsigned int MenuController::_GetCurrentAnimationFrame()
 	{
 		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
 
@@ -129,7 +129,7 @@ namespace RB::HBox
 		return obj->GetCurrentIndex();
 	}
 
-	size_t MenuController::_GetAABBCount()
+	unsigned int MenuController::_GetAABBCount()
 	{
 		RB::HBox::HBoxDataList* list = _getList();
 

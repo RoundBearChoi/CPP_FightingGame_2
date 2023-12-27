@@ -12,7 +12,7 @@ namespace RB::PlayerStateComponents
 	{
 	public:
 		TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool useAsSpecial, bool useAsMovement);
-		~TransitionOnInput() override;
+		~TransitionOnInput() override {};
 
 	public:
 		void OnEnter() override;

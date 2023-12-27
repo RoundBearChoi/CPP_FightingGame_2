@@ -10,11 +10,6 @@ namespace RB::PlayerStateComponents
 		_useAsMovement = useAsMovement;
 	}
 
-	TransitionOnInput::~TransitionOnInput()
-	{
-
-	}
-
 	void TransitionOnInput::OnEnter()
 	{
 

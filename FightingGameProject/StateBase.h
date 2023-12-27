@@ -9,9 +9,13 @@ namespace RB::States
 	class StateBase : public iState
 	{
 	public:
-		StateBase() = default;
+		static unsigned int stateCreationCount;
+
+	public:
+		StateBase();
 		~StateBase() override;
 
+		virtual unsigned int GetCreationID() override;
 		virtual void SetStateMachineID(unsigned int id) override;
 		virtual unsigned int GetStateMachineID() override;
 		virtual void SetIsTransitioning(bool status) override;
@@ -35,6 +39,7 @@ namespace RB::States
 		virtual void OnFixedUpdate() override {}
 
 	protected:
+		unsigned int _stateCreationID = 0;
 		unsigned int _stateMachineID = 0;
 		unsigned int _cumulatedFixedUpdates = 0;
 		bool _isTransitioning = false;

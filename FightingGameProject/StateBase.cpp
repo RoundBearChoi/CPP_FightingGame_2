@@ -2,6 +2,17 @@
 
 namespace RB::States
 {
+	unsigned int StateBase::stateCreationCount = 0;
+
+	/// <summary>
+	/// ever state has unique creationID
+	/// </summary>
+	StateBase::StateBase()
+	{
+		stateCreationCount++;
+		_stateCreationID = stateCreationCount;
+	}
+
 	StateBase::~StateBase()
 	{
 		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
@@ -11,6 +22,11 @@ namespace RB::States
 		}
 
 		_vecStateComponents.clear();
+	}
+
+	unsigned int StateBase::GetCreationID()
+	{
+		return _stateCreationID;
 	}
 
 	void StateBase::SetStateMachineID(unsigned int id)

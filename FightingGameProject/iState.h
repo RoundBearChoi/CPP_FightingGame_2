@@ -10,6 +10,7 @@ namespace RB::States
 		virtual ~iState() = default;
 
 	public:
+		virtual unsigned int GetCreationID() = 0;
 		virtual void SetStateMachineID(unsigned int id) = 0;
 		virtual unsigned int GetStateMachineID() = 0;
 		virtual void SetIsTransitioning(bool status) = 0;

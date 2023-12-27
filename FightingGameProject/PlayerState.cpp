@@ -3,7 +3,7 @@
 namespace RB::PlayerStates
 {
 	std::vector<PlayerState*> PlayerState::currentPlayerStates;
-	size_t PlayerState::playerStateCreationCount = 0;
+	//size_t PlayerState::playerStateCreationCount = 0;
 
 	PlayerState* PlayerState::GetPlayerState(RB::Players::PlayerID playerID)
 	{
@@ -25,8 +25,8 @@ namespace RB::PlayerStates
 
 	PlayerState::PlayerState()
 	{
-		playerStateCreationCount++;
-		_creationID = playerStateCreationCount;
+		//playerStateCreationCount++;
+		//_creationID = playerStateCreationCount;
 
 		currentPlayerStates.push_back(this);
 	}
@@ -35,7 +35,7 @@ namespace RB::PlayerStates
 	{
 		for (int32_t i = currentPlayerStates.size() - 1; i >= 0; i--)
 		{
-			if (_creationID == currentPlayerStates[i]->GetCreationID())
+			if (_stateCreationID == currentPlayerStates[i]->GetCreationID())
 			{
 				currentPlayerStates.erase(currentPlayerStates.begin() + i);
 				break;
@@ -61,10 +61,5 @@ namespace RB::PlayerStates
 	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
 	{
 		return _spriteEnum;
-	}
-
-	size_t PlayerState::GetCreationID()
-	{
-		return _creationID;
 	}
 }

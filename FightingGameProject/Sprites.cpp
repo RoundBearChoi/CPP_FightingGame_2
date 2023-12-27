@@ -59,9 +59,9 @@ namespace RB::Render
 
 		if (useWorldSpace)
 		{
-			for (size_t i = 0; i < points.size(); i++)
+			for (auto i = points.begin(); i != points.end(); i++)
 			{
-				points[i] = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(points[i]);
+				*i = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(*i);
 			}
 		}
 

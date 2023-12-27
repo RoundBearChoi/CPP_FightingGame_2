@@ -5,7 +5,7 @@ namespace RB::PlayerStateComponents
 	/// <summary>
 	/// total frames to reach max fall speed
 	/// </summary>
-	MoveDownOnFall::MoveDownOnFall(size_t totalFrames, float_t multiplier, RB::States::iState* nextState)
+	MoveDownOnFall::MoveDownOnFall(unsigned int totalFrames, float multiplier, RB::States::iState* nextState)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
@@ -31,23 +31,23 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		size_t frame = _state->GetCumulatedFixedUpdates();
+		unsigned int frame = _state->GetCumulatedFixedUpdates();
 
 		//get vertical down
-		float_t t = (float_t)frame / (float_t)_totalFrames;
+		float t = (float)frame / (float)_totalFrames;
 
 		if (t >= 1.0f)
 		{
 			t = 1.0f;
 		}
 
-		float_t amount = 1.0f - RB::EaseEquations::Ease::EaseOutSine(t);
-		float_t result = amount * _multiplier;
+		float amount = 1.0f - RB::EaseEquations::Ease::EaseOutSine(t);
+		float result = amount * _multiplier;
 
-		int32_t y = player->GetPosition().y;
+		int y = player->GetPosition().y;
 
 		//transition to idle 1 frame before hitting ground
-		if ((float_t)y + result >= 0.0f)
+		if ((float)y + result >= 0.0f)
 		{
 			player->SetPosition({ player->GetPosition().x, 0 });
 

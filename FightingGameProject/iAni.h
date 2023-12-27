@@ -21,7 +21,7 @@ namespace RB::Render
 		virtual void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum) = 0;
 		virtual void LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum) = 0; //requires sprite to be loaded first
 		virtual void DeleteAnimationObj(RB::Players::PlayerID playerID) = 0;
-		virtual void DeleteAnimationObj(size_t index) = 0;
+		virtual void DeleteAnimationObj(unsigned int index) = 0;
 		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) = 0;
 		virtual iAnimationObj* GetCurrentAnimationObj(size_t index) = 0;
 		virtual iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType) = 0;

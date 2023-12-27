@@ -75,7 +75,7 @@ namespace RB::Render
 		}
 	}
 
-	void Ani::DeleteAnimationObj(size_t index)
+	void Ani::DeleteAnimationObj(unsigned int index)
 	{
 		if (index < _vecCurrentAnimations.size())
 		{

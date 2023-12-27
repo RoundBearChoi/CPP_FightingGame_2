@@ -4,10 +4,18 @@ namespace RB::Sprites
 {
 	SpriteLoader::~SpriteLoader()
 	{
-		for (size_t i = 0; i < _vecLoadedSprites.size(); i++)
+		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
 		{
-			delete _vecLoadedSprites[i];
+			delete (*i);
+			*i = nullptr;
 		}
+
+		_vecLoadedSprites.clear();
+
+		//for (size_t i = 0; i < _vecLoadedSprites.size(); i++)
+		//{
+		//	delete _vecLoadedSprites[i];
+		//}
 	}
 
 	LoadedSprite* SpriteLoader::LoadSprite(std::string path, SpriteEnum spriteEnum)
@@ -26,13 +34,21 @@ namespace RB::Sprites
 
 	LoadedSprite* SpriteLoader::GetLoadedSprite(SpriteEnum spriteEnum)
 	{
-		for (size_t i = 0; i < _vecLoadedSprites.size(); i++)
+		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
 		{
-			if (_vecLoadedSprites[i]->GetSpriteEnum() == spriteEnum)
+			if ((*i)->GetSpriteEnum() == spriteEnum)
 			{
-				return _vecLoadedSprites[i];
+				return (*i);
 			}
 		}
+
+		//for (size_t i = 0; i < _vecLoadedSprites.size(); i++)
+		//{
+		//	if (_vecLoadedSprites[i]->GetSpriteEnum() == spriteEnum)
+		//	{
+		//		return _vecLoadedSprites[i];
+		//	}
+		//}
 
 		return nullptr;
 	}

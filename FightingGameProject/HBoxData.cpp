@@ -10,7 +10,7 @@ namespace RB::HBox
 		_frame = _ParseFrame(frameName);
 	}
 
-	size_t HBoxData::GetFrame()
+	unsigned int HBoxData::GetFrame()
 	{
 		return _frame;
 	}

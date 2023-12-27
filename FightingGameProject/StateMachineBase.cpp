@@ -110,7 +110,6 @@ namespace RB::States
 			_nextState->OnEnter();
 
 			//clean up last so statecomponents don't delete next state
-			std::cout << "deleting current state - creation ID: " << _currentState->GetCreationID() << std::endl;
 			delete _currentState;
 			_currentState = nullptr;
 

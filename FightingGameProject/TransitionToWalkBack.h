@@ -12,7 +12,7 @@ namespace RB::PlayerStateComponents
 	{
 	public:
 		TransitionToWalkBack(RB::States::iState* nextState);
-		~TransitionToWalkBack() override {};
+		~TransitionToWalkBack() override;
 
 	public:
 		void OnEnter() override;

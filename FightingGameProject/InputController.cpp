@@ -128,14 +128,6 @@ namespace RB::Input
 			}
 		}
 
-		//for (int32_t i = vec.size() - 1; i >= 0; i--)
-		//{
-		//	if (vec[i]->GetPlayerInputType() == playerInput)
-		//	{
-		//		return vec[i];
-		//	}
-		//}
-
 		return nullptr;
 	}
 
@@ -347,24 +339,6 @@ namespace RB::Input
 				break;
 			}
 		}
-
-		//for (int32_t i = vec.size() - 1; i >= 0; i--)
-		//{
-		//	if (vec[i]->GetPlayerInputType() == input0)
-		//	{
-		//		obj0 = vec[i];
-		//	}
-		//	
-		//	if (vec[i]->GetPlayerInputType() == input1)
-		//	{
-		//		obj1 = vec[i];
-		//	}
-		//
-		//	if (obj0 != nullptr && obj1 != nullptr)
-		//	{
-		//		break;
-		//	}
-		//}
 
 		if (obj0 != nullptr && obj1 != nullptr)
 		{

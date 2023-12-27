@@ -23,7 +23,7 @@ namespace RB::Players
 	public:
 		virtual iPlayer* GetPlayerOnIndex(unsigned int index) = 0;
 		virtual iPlayer* GetPlayerOnID(PlayerID id) = 0;
-		virtual iPlayer* GetPlayerOnStateMachineID(size_t id) = 0;
+		virtual iPlayer* GetPlayerOnStateMachineID(unsigned int id) = 0;
 		virtual iPlayer* GetOtherPlayer(iPlayer* currentPlayer) = 0;
 	};
 }

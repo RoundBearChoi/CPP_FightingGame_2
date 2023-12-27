@@ -68,7 +68,7 @@ namespace RB::Players
 		return nullptr;
 	}
 
-	iPlayer* PlayerController::GetPlayerOnStateMachineID(size_t id)
+	iPlayer* PlayerController::GetPlayerOnStateMachineID(unsigned int id)
 	{
 		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{

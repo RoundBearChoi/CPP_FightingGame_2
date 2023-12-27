@@ -520,7 +520,7 @@ namespace RB::Input
 
 			player->GetStateMachine()->OverrideNextState(newState);
 
-			//clear all (only trigger the first one because it's impossible to queue 2 special moves in a single update)
+			//for now, clear all (only trigger the first one assuming it's impossible to queue 2 special moves in a single update)
 			vec.clear();
 		}
 	}

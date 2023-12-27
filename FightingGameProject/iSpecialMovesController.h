@@ -13,6 +13,6 @@ namespace RB::Input
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 		virtual RB::Input::SpecialMoveType GetSpecialMove(RB::Players::PlayerID playerID) = 0;
-		virtual RB::States::iState* GetState(RB::Input::SpecialMoveType specialMoveType) = 0;
+		virtual RB::States::iState* GetNewState(RB::Input::SpecialMoveType specialMoveType) = 0;
 	};
 }

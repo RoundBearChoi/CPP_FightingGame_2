@@ -71,8 +71,6 @@ namespace RB::States
 		//assuming that the next state is set by a StateComponent
 		if (_nextState != nullptr)
 		{
-			//std::cout << "deleting due to override - stateID " << _nextState->GetCreationID() << std::endl;
-
 			_currentState->DeleteNextState(_nextState->GetCreationID());
 		}
 

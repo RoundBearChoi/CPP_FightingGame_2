@@ -514,11 +514,11 @@ namespace RB::Input
 
 		if (!vec.empty())
 		{
-			RB::States::iState* state = RB::Input::iSpecialMovesController::instance->GetState(vec[0]);
+			RB::States::iState* newState = RB::Input::iSpecialMovesController::instance->GetNewState(vec[0]);
 
 			RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
-			player->GetStateMachine()->OverrideNextState(state);
+			player->GetStateMachine()->OverrideNextState(newState);
 
 			//clear all (only trigger the first one because it's impossible to queue 2 special moves in a single update)
 			vec.clear();

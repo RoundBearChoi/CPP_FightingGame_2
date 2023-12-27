@@ -21,7 +21,7 @@ namespace RB::Input
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 		RB::Input::SpecialMoveType GetSpecialMove(RB::Players::PlayerID playerID) override;
-		RB::States::iState* GetState(RB::Input::SpecialMoveType specialMoveType) override;
+		RB::States::iState* GetNewState(RB::Input::SpecialMoveType specialMoveType) override;
 
 	private:
 		void _ClearSequences(RB::Players::PlayerID playerID);

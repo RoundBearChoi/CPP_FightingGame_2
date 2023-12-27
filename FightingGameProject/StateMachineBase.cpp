@@ -66,9 +66,13 @@ namespace RB::States
 		}
 	}
 
+	/// <summary>
+	/// use when NOT getting next state from a StateComponent
+	/// </summary>
+	/// <param name="state"></param>
 	void StateMachineBase::OverrideNextState(RB::States::iState* state)
 	{
-		//assuming that the next state is set by a StateComponent
+		//deleting next state that is set by a StateComponent
 		if (_nextState != nullptr)
 		{
 			_currentState->DeleteNextState(_nextState->GetCreationID());

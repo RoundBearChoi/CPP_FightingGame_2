@@ -18,12 +18,12 @@ namespace RB::Cam
 		void OnFixedUpdate();
 
 	private:
-		float_t _GetMagSqBetweenPlayers();
-		void _AutoZoom(float_t playerDistSq);
+		float _GetMagSqBetweenPlayers();
+		void _AutoZoom(float playerDistSq);
 
 	private:
-		float_t _maxDist = 1600.0f;
-		float_t _minZoomOut = 0.5f;
-		float_t _maxZoomIn = 1.25f;
+		float _maxDist = 1600.0f;
+		float _minZoomOut = 0.5f;
+		float _maxZoomIn = 1.25f;
 	};
 }

@@ -39,34 +39,65 @@ namespace RB::Render
 
 		auto vec = RB::Input::iInputController::instance->GetVecInputObjs(player->GetPlayerID());
 
-		for (size_t i = 0; i < vec.size(); i++)
-		{
-			RB::Input::iInputObj* inputObj = RB::Input::iInputController::instance->GetInputByIndex(player->GetPlayerID(), i);
+		int count = 0;
 
-			if (inputObj == nullptr)
+		for (auto i = vec.begin(); i != vec.end(); i++)
+		{
+			if ((*i) == nullptr)
 			{
 				continue;
 			}
 
 			olc::Pixel tint = olc::WHITE;
 
-			if (inputObj->IsReleased())
+			if ((*i)->IsReleased())
 			{
 				tint = olc::GREY;
 			}
 
-			if (inputObj->IsUsedAsMovement())
+			if ((*i)->IsUsedAsMovement())
 			{
 				tint = olc::BLUE;
 			}
 
-			if (inputObj->IsUsedAsSpecial())
+			if ((*i)->IsUsedAsSpecial())
 			{
 				tint = olc::YELLOW;
 			}
 
-			_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), yPos), tint);
+			_RenderIcon(_GetSpriteEnum((*i)->GetPlayerInputType()), olc::vi2d(5 + (count * 30 + 5), yPos), tint);
+
+			count++;
 		}
+
+		//for (size_t i = 0; i < vec.size(); i++)
+		//{
+		//	RB::Input::iInputObj* inputObj = RB::Input::iInputController::instance->GetInputByIndex(player->GetPlayerID(), i);
+		//
+		//	if (inputObj == nullptr)
+		//	{
+		//		continue;
+		//	}
+		//
+		//	olc::Pixel tint = olc::WHITE;
+		//
+		//	if (inputObj->IsReleased())
+		//	{
+		//		tint = olc::GREY;
+		//	}
+		//
+		//	if (inputObj->IsUsedAsMovement())
+		//	{
+		//		tint = olc::BLUE;
+		//	}
+		//
+		//	if (inputObj->IsUsedAsSpecial())
+		//	{
+		//		tint = olc::YELLOW;
+		//	}
+		//
+		//	_RenderIcon(_GetSpriteEnum(inputObj->GetPlayerInputType()), olc::vi2d(5 + (i * 30 + 5), yPos), tint);
+		//}
 	}
 
 	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteEnum spriteEnum, olc::vi2d pos, olc::Pixel tint)

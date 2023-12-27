@@ -31,8 +31,8 @@ namespace RB::Input
 		iInputObj* GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		iInputObj* GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
 		bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		size_t GetTotalInputCount(RB::Players::PlayerID playerID) override;
-		iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, size_t index) override;
+		unsigned int GetTotalInputCount(RB::Players::PlayerID playerID) override;
+		iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index) override;
 
 	private:
 		void _UpdateInputBuffer(RB::Players::PlayerID playerID);
@@ -42,7 +42,7 @@ namespace RB::Input
 		void _AddDiagBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);
 		void _UpdateDiagBufferRelease(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);
 		void _DestroyOldBuffers(RB::Players::PlayerID playerID);
-		void _DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, size_t gameFrame, size_t gameFrameLoop);
+		void _DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, unsigned int gameFrame, unsigned int gameFrameLoop);
 		void _DestroyBuffer(RB::Players::PlayerID playerID, iInputObj* inputObj);
 		void _ClearAllBuffers(RB::Players::PlayerID playerID);
 		std::vector<iInputObj*>& _GetInputObjs(RB::Players::PlayerID playerID);
@@ -53,7 +53,7 @@ namespace RB::Input
 		std::vector<iInputObj*> _vecP1_InputObjs;
 		std::vector<iInputObj*> _vecP2_InputObjs;
 		std::vector<iInputObj*> _vecNone_InputObjs;
-		size_t _totalInputTypes = 0;
+		unsigned int _totalInputTypes = 0;
 		std::vector<SpecialMoveType> _vecP1_SpecialMoves;
 		std::vector<SpecialMoveType> _vecP2_SpecialMoves;
 		std::vector<SpecialMoveType> _vecNone_SpecialMoves;

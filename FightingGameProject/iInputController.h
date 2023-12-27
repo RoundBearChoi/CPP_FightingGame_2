@@ -22,7 +22,7 @@ namespace RB::Input
 		virtual iInputObj* GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual iInputObj* GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual size_t GetTotalInputCount(RB::Players::PlayerID playerID) = 0;
-		virtual iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, size_t index) = 0;
+		virtual unsigned int GetTotalInputCount(RB::Players::PlayerID playerID) = 0;
+		virtual iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index) = 0;
 	};
 }

@@ -10,7 +10,7 @@ namespace RB::Input
 
 	void InputController::Init()
 	{
-		_totalInputTypes = static_cast<int>(PlayerInput::COUNT);
+		_totalInputTypes = static_cast<unsigned int>(PlayerInput::COUNT);
 
 		_vecKeyBindings.reserve((size_t)PlayerInput::COUNT);
 
@@ -120,13 +120,21 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		for (auto i = vec.rbegin(); i != vec.rend(); ++i)
 		{
-			if (vec[i]->GetPlayerInputType() == playerInput)
+			if ((*i)->GetPlayerInputType() == playerInput)
 			{
-				return vec[i];
+				return (*i);
 			}
 		}
+
+		//for (int32_t i = vec.size() - 1; i >= 0; i--)
+		//{
+		//	if (vec[i]->GetPlayerInputType() == playerInput)
+		//	{
+		//		return vec[i];
+		//	}
+		//}
 
 		return nullptr;
 	}
@@ -199,7 +207,7 @@ namespace RB::Input
 		return false;
 	}
 
-	size_t InputController::GetTotalInputCount(RB::Players::PlayerID playerID)
+	unsigned int InputController::GetTotalInputCount(RB::Players::PlayerID playerID)
 	{
 		if (playerID == RB::Players::PlayerID::PLAYER_1)
 		{
@@ -213,7 +221,7 @@ namespace RB::Input
 		return 0;
 	}
 
-	iInputObj* InputController::GetInputByIndex(RB::Players::PlayerID playerID, size_t index)
+	iInputObj* InputController::GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -227,7 +235,7 @@ namespace RB::Input
 
 	void InputController::_UpdateInputBuffer(RB::Players::PlayerID playerID)
 	{
-		for (size_t i = 0; i < _totalInputTypes; i++)
+		for (unsigned int i = 0; i < _totalInputTypes; i++)
 		{
 			PlayerInput input = (PlayerInput)i;
 
@@ -322,16 +330,16 @@ namespace RB::Input
 		iInputObj* obj0 = nullptr;
 		iInputObj* obj1 = nullptr;
 
-		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		for (auto i = vec.rbegin(); i != vec.rend(); ++i)
 		{
-			if (vec[i]->GetPlayerInputType() == input0)
+			if ((*i)->GetPlayerInputType() == input0)
 			{
-				obj0 = vec[i];
+				obj0 = (*i);
 			}
-			
-			if (vec[i]->GetPlayerInputType() == input1)
+
+			if ((*i)->GetPlayerInputType() == input1)
 			{
-				obj1 = vec[i];
+				obj1 = (*i);
 			}
 
 			if (obj0 != nullptr && obj1 != nullptr)
@@ -339,6 +347,24 @@ namespace RB::Input
 				break;
 			}
 		}
+
+		//for (int32_t i = vec.size() - 1; i >= 0; i--)
+		//{
+		//	if (vec[i]->GetPlayerInputType() == input0)
+		//	{
+		//		obj0 = vec[i];
+		//	}
+		//	
+		//	if (vec[i]->GetPlayerInputType() == input1)
+		//	{
+		//		obj1 = vec[i];
+		//	}
+		//
+		//	if (obj0 != nullptr && obj1 != nullptr)
+		//	{
+		//		break;
+		//	}
+		//}
 
 		if (obj0 != nullptr && obj1 != nullptr)
 		{
@@ -399,7 +425,7 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		for (int i = vec.size() - 1; i >= 0; i--)
 		{
 			//only destroy when key is released
 			if (vec[i]->IsReleased())
@@ -420,11 +446,11 @@ namespace RB::Input
 	/// <summary>
 	/// erase all that matches
 	/// </summary>
-	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, size_t gameFrame, size_t gameFrameLoop)
+	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, unsigned int gameFrame, unsigned int gameFrameLoop)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		for (int i = vec.size() - 1; i >= 0; i--)
 		{
 			if (vec[i]->GetPlayerInputType() == playerInput)
 			{
@@ -448,7 +474,7 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (int32_t i = vec.size() - 1; i >= 0; i--)
+		for (int i = vec.size() - 1; i >= 0; i--)
 		{
 			if (vec[i]->GetPlayerInputType() == inputObj->GetPlayerInputType())
 			{

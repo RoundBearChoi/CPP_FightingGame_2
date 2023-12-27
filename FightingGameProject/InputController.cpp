@@ -295,7 +295,7 @@ namespace RB::Input
 
 			if (specialMove != SpecialMoveType::NONE)
 			{
-				std::vector<SpecialMoveType>& vec = _GetSpecialMoves(playerID);
+				std::vector<SpecialMoveType>& vec = _GetSpecialMovesInQueue(playerID);
 
 				vec.push_back(specialMove);
 			}
@@ -494,7 +494,7 @@ namespace RB::Input
 		return _vecNone_InputObjs;
 	}
 
-	std::vector<SpecialMoveType>& InputController::_GetSpecialMoves(RB::Players::PlayerID playerID)
+	std::vector<SpecialMoveType>& InputController::_GetSpecialMovesInQueue(RB::Players::PlayerID playerID)
 	{
 		if (playerID == RB::Players::PlayerID::PLAYER_1)
 		{
@@ -510,7 +510,7 @@ namespace RB::Input
 
 	void InputController::_TriggerSpecialMove(RB::Players::PlayerID playerID)
 	{
-		std::vector<SpecialMoveType>& vec = _GetSpecialMoves(playerID);
+		std::vector<SpecialMoveType>& vec = _GetSpecialMovesInQueue(playerID);
 
 		if (!vec.empty())
 		{

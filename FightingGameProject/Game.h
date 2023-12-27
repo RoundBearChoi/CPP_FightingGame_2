@@ -22,7 +22,7 @@ namespace RB
 		bool OnUserCreate() override
 		{
 			std::cout << std::endl;
-			std::cout << "OnUserCreate.." << std::endl;
+			//std::cout << "OnUserCreate.." << std::endl;
 
 			sAppName = "C++FightingGame2";
 		
@@ -44,8 +44,8 @@ namespace RB
 		{
 			showAllocationCount = true;
 
-			std::cout << std::endl;
-			std::cout << "destroying Game.." << std::endl;
+			//std::cout << std::endl;
+			//std::cout << "destroying Game.." << std::endl;
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override

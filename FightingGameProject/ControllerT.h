@@ -14,7 +14,7 @@ namespace RB::Controllers
         {
             instance = static_cast<T*>(this);
 
-            std::cout << "controller created" << std::endl;
+            //std::cout << "controller created" << std::endl;
         }
 
         ~ControllerT() override

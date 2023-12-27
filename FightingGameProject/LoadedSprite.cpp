@@ -9,12 +9,12 @@ namespace RB::Sprites
 		_decal = decal;
 		_spriteEnum = spriteEnum;
 
-		std::cout << "loaded sprite & decal: " << _path << " (spriteEnum " << static_cast<int>(_spriteEnum) << ")" << std::endl;
+		//std::cout << "loaded sprite & decal: " << _path << " (spriteEnum " << static_cast<int>(_spriteEnum) << ")" << std::endl;
 	}
 
 	LoadedSprite::~LoadedSprite()
 	{
-		std::cout << "destroying sprite & decal: " << _path << " (spriteEnum " << static_cast<int>(_spriteEnum) << ")" << std::endl;
+		//std::cout << "destroying sprite & decal: " << _path << " (spriteEnum " << static_cast<int>(_spriteEnum) << ")" << std::endl;
 
 		delete _sprite;
 		delete _decal;

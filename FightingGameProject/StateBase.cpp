@@ -11,6 +11,8 @@ namespace RB::States
 	{
 		stateCreationCount++;
 		_stateCreationID = stateCreationCount;
+
+		std::cout << "state created - creationID: " << _stateCreationID << std::endl;
 	}
 
 	StateBase::~StateBase()

@@ -4,12 +4,12 @@ namespace RB::Updaters
 {
 	Updater::Updater()
 	{
-		std::cout << "constructing Updater" << std::endl;
+		//std::cout << "constructing Updater" << std::endl;
 	}
 
 	Updater::~Updater()
 	{
-		std::cout << "destroying Updater" << std::endl;
+		//std::cout << "destroying Updater" << std::endl;
 
 		delete _updaterObj;
 	}

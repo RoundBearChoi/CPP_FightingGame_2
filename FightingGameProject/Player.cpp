@@ -4,7 +4,7 @@ namespace RB::Players
 {
 	Player::~Player()
 	{
-		std::cout << "destroying player: " << static_cast<int>(_playerID) << std::endl;
+		//std::cout << "destroying player: " << static_cast<int>(_playerID) << std::endl;
 
 		delete _stateMachine;
 
@@ -26,7 +26,7 @@ namespace RB::Players
 
 			_playerCollider.Init(this);
 
-			std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
+			//std::cout << "init player: " << static_cast<int>(_playerID) << std::endl;
 		}
 	}
 

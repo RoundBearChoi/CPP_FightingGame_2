@@ -4,8 +4,8 @@ namespace RB::JSON
 {
 	std::string LoadJSONFile(std::string jsonFilePath)
 	{
-		std::cout << std::endl;
-		std::cout << "loading " << jsonFilePath << ".." << std::endl;
+		//std::cout << std::endl;
+		//std::cout << "loading " << jsonFilePath << ".." << std::endl;
 
 		std::ifstream ifs(jsonFilePath);
 
@@ -13,11 +13,11 @@ namespace RB::JSON
 
 		if (loadedStr.empty())
 		{
-			std::cout << "file doesn't exist" << std::endl;
+			std::cout << "file doesn't exist: " << jsonFilePath << std::endl;
 		}
 		else
 		{
-			std::cout << loadedStr << std::endl;
+			//std::cout << loadedStr << std::endl;
 		}
 
 		loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());

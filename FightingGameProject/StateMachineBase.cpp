@@ -9,12 +9,12 @@ namespace RB::States
 		stateMachinesCreated++;
 		_stateMachineID = stateMachinesCreated;
 
-		std::cout << "constructing StateMachineBase" << std::endl;
+		//std::cout << "constructing StateMachineBase" << std::endl;
 	}
 
 	StateMachineBase::~StateMachineBase()
 	{
-		std::cout << "destroying StateMachineBase" << std::endl;
+		//std::cout << "destroying StateMachineBase" << std::endl;
 
 		if (_currentState != nullptr)
 		{

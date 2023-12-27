@@ -9,12 +9,12 @@ namespace RB::Frames
 	public:
 		FixedTimer()
 		{
-			std::cout << "constructing FixedTimer" << std::endl;
+			//std::cout << "constructing FixedTimer" << std::endl;
 		}
 
 		~FixedTimer()
 		{
-			std::cout << "destroying FixedTimer" << std::endl;
+			//std::cout << "destroying FixedTimer" << std::endl;
 		}
 
 	public:

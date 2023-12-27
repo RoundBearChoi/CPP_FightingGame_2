@@ -19,7 +19,7 @@ namespace RB::Background
 		void OnFixedUpdate();
 
 	private:
-		float_t _percentage = 0.0f;
+		float _percentage = 0.0f;
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
 		olc::vf2d _renderSize = { 0.0f ,0.0f };
 		olc::vf2d _position = { 0.0f, 0.0f };

@@ -42,7 +42,7 @@ namespace RB::Render
 		RecycleAnimationIndex();
 	}
 
-	void AnimationObj::ManualAddAnimationIndex(int32_t amount)
+	void AnimationObj::ManualAddAnimationIndex(unsigned int amount)
 	{
 		_currentIndex += amount;
 
@@ -86,7 +86,7 @@ namespace RB::Render
 		olc::vf2d sourcePos = { 0.0f, 0.0f };
 
 		sourcePos.x = (_currentIndex % specs.mX_TileCount) * sourceSize.x;
-		sourcePos.y = (int32_t)floor(_currentIndex / specs.mX_TileCount) * sourceSize.y;
+		sourcePos.y = (int)floor(_currentIndex / specs.mX_TileCount) * sourceSize.y;
 
 		return sourcePos;
 	}

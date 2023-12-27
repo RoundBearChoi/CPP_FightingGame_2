@@ -20,9 +20,9 @@ namespace RB::Input
 		virtual bool IsReleased() = 0;
 		virtual bool IsUsedAsSpecial() = 0;
 		virtual bool IsUsedAsMovement() = 0;
-		virtual size_t GetFixedUpdateCount() = 0;
-		virtual size_t GetGameFrameCount() = 0;
-		virtual size_t GetGameFrameLoopCount() = 0;
+		virtual unsigned int GetFixedUpdateCount() = 0;
+		virtual unsigned int GetGameFrameCount() = 0;
+		virtual unsigned int GetGameFrameLoopCount() = 0;
 		virtual bool IsPressedOnSameFrameAs(iInputObj* inputObj) = 0;
 		virtual bool IsPressedEarlierThan(iInputObj* inputObj) = 0;
 	};

@@ -74,6 +74,7 @@ namespace RB::States
 	{
 		if (_nextState != nullptr)
 		{
+			std::cout << "deleting due to override - stateID " << _nextState->GetCreationID() << std::endl;
 			delete _nextState;
 			_nextState = nullptr;
 		}

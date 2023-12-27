@@ -2,7 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	void MoveBackOnPress::SetStateMachineID(size_t id)
+	void MoveBackOnPress::SetStateMachineID(unsigned int id)
 	{
 		_stateMachineID = id;
 	}

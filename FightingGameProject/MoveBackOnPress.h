@@ -14,7 +14,7 @@ namespace RB::PlayerStateComponents
 		~MoveBackOnPress() = default;
 
 	public:
-		void SetStateMachineID(size_t id);
+		void SetStateMachineID(unsigned int id);
 		void OnUpdate();
 		bool ProcMoveBack();
 
@@ -23,7 +23,7 @@ namespace RB::PlayerStateComponents
 		bool _MoveBackPressed();
 
 	private:
-		size_t _stateMachineID = 0;
+		unsigned int _stateMachineID = 0;
 		olc::HWButton moveLeft;
 		olc::HWButton moveRight;
 		bool _bMoveBack = false;

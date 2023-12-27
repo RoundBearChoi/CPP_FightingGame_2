@@ -20,7 +20,7 @@ namespace RB::HBox
 		return _vecAABB.size();
 	}
 
-	RB::Collisions::AABB& HBoxData::GetAABB(size_t index)
+	RB::Collisions::AABB& HBoxData::GetAABB(unsigned int index)
 	{
 		return _vecAABB[index];
 	}
@@ -30,7 +30,7 @@ namespace RB::HBox
 		return _frameName;
 	}
 
-	void HBoxData::ReserveAABBCapacity(size_t size)
+	void HBoxData::ReserveAABBCapacity(unsigned int size)
 	{
 		_vecAABB.reserve(size);
 	}
@@ -46,7 +46,7 @@ namespace RB::HBox
 		_vecAABB.push_back(aabb);
 	}
 
-	bool HBoxData::DeleteAABB(size_t index)
+	bool HBoxData::DeleteAABB(unsigned int index)
 	{
 		if (index >= _vecAABB.size())
 		{
@@ -67,13 +67,13 @@ namespace RB::HBox
 		return true;
 	}
 
-	size_t HBoxData::_ParseFrame(const std::string& str)
+	unsigned int HBoxData::_ParseFrame(const std::string& str)
 	{
 		std::regex pattern("frame_");
 		std::string replacement = "";
 		std::string s = std::regex_replace(str, pattern, replacement);
 		std::stringstream stream(s);
-		size_t result;
+		unsigned int result;
 		stream >> result;
 		return result;
 	}

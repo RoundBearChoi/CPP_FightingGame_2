@@ -16,21 +16,21 @@ namespace RB::HBox
 	public:
 		size_t GetFrame();
 		unsigned int GetAABBCount();
-		RB::Collisions::AABB& GetAABB(size_t index);
+		RB::Collisions::AABB& GetAABB(unsigned int index);
 		const std::string& GetFrameName();
 
 	public:
-		void ReserveAABBCapacity(size_t size);
+		void ReserveAABBCapacity(unsigned int size);
 		void SetFrameNameAndParse(const std::string& name);
 		void AddAABB(RB::Collisions::AABB aabb);
-		bool DeleteAABB(size_t index);
+		bool DeleteAABB(unsigned int index);
 
 	private:
-		size_t _ParseFrame(const std::string& str);
+		unsigned int _ParseFrame(const std::string& str);
 
 	private:
 		std::string _frameName = "";
-		size_t _frame = 0;
+		unsigned int _frame = 0;
 		std::vector<RB::Collisions::AABB> _vecAABB;
 	};
 }

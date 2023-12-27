@@ -306,11 +306,11 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (size_t i = 0; i < vec.size(); i++)
+		for (auto i = vec.begin(); i != vec.end(); ++i)
 		{
-			if (vec[i]->GetPlayerInputType() == input)
+			if ((*i)->GetPlayerInputType() == input)
 			{
-				vec[i]->SetReleasedStatus(true);
+				(*i)->SetReleasedStatus(true);
 			}
 		}
 	}

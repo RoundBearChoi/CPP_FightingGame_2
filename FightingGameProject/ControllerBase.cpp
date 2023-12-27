@@ -18,26 +18,26 @@ namespace RB::Controllers
 
 	void ControllerBase::UpdateAll()
 	{
-		for (size_t i = 0; i < vecControllers.size(); i++)
+		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
 		{
-			vecControllers[i]->OnUpdate();
+			(*i)->OnUpdate();
 		}
 	}
 
 	void ControllerBase::FixedUpdateAll()
 	{
-		for (size_t i = 0; i < vecControllers.size(); i++)
+		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
 		{
-			vecControllers[i]->OnFixedUpdate();
+			(*i)->OnFixedUpdate();
 		}
 	}
 
 	void ControllerBase::OnEnd()
 	{
-		for (size_t i = 0; i < vecControllers.size(); i++)
+		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
 		{
-			delete vecControllers[i];
-			vecControllers[i] = nullptr;
+			delete (*i);
+			(*i) = nullptr;
 		}
 
 		vecControllers.clear();

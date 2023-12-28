@@ -119,22 +119,6 @@ namespace RB::HBox
 		RB::Collisions::AABB* aabb = data->GetSelectedAABB();
 
 		return aabb;
-
-		//unsigned int count = data->GetAABBCount();
-		//
-		//_UpdateSelectedIndex_OnPress(count);
-		//
-		//for (unsigned int i = 0; i < count; i++)
-		//{
-		//	if (i == _selectedIndex)
-		//	{
-		//		RB::Collisions::AABB& aabb = data->GetSelectedAABB(); //data->GetAABB(i);
-		//
-		//		return &aabb;
-		//	}
-		//}
-		//
-		//return nullptr;
 	}
 
 	RB::HBox::HBoxType HBoxEditController::GetHBoxType()
@@ -177,20 +161,13 @@ namespace RB::HBox
 
 		if (oButton.bPressed)
 		{
-			//_selectedIndex--;
 			data->UpSelection();
 		}
 
 		else if (pButton.bPressed)
 		{
-			//_selectedIndex++;
 			data->DownSelection();
 		}
-
-		//if (_selectedIndex >= count)
-		//{
-		//	_selectedIndex = 0;
-		//}
 	}
 
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
@@ -225,16 +202,11 @@ namespace RB::HBox
 			data->AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
 		
 			data->DownSelection();
-			//_selectedIndex = data->GetAABBCount() - 1;
 		}
 		
 		if (delButton.bPressed)
 		{
 			data->DeleteSelectedAABB();
-			//if (data->DeleteAABB(_selectedIndex))
-			//{
-			//	_selectedIndex--;
-			//}
 		}
 	}
 
@@ -344,8 +316,6 @@ namespace RB::HBox
 					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					//auto const& vec = data->GetVecAABBs();
-
 					for (auto i = data->GetVecAABBs().begin(); i != data->GetVecAABBs().end(); ++i)
 					{
 						RB::Collisions::AABB aabb = *i;
@@ -365,26 +335,6 @@ namespace RB::HBox
 							file << "        }" << std::endl;
 						}
 					}
-
-					//for (unsigned int a = 0; a < data->GetAABBCount(); a++)
-					//{
-					//	RB::Collisions::AABB aabb = data->GetAABB(a);
-					//
-					//	file << "        {" << std::endl;
-					//	file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
-					//	file << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
-					//	file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
-					//	file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
-					//
-					//	if (a != data->GetAABBCount() - 1)
-					//	{
-					//		file << "        }," << std::endl;
-					//	}
-					//	else
-					//	{
-					//		file << "        }" << std::endl;
-					//	}
-					//}
 
 					if (f != vec.size() - 1)
 					{

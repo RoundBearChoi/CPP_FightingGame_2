@@ -29,7 +29,7 @@ namespace RB::HBox
 		void SetFrameNameAndParse(const std::string& name);
 		void AddAABB(RB::Collisions::AABB aabb);
 		void DeleteSelectedAABB();
-		RB::Selector<RB::Collisions::AABB>* GetSelector();
+		RB::iSelector<RB::Collisions::AABB>* GetSelector();
 
 	private:
 		unsigned int _ParseFrame(const std::string& str);

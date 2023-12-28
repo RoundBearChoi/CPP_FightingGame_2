@@ -80,7 +80,7 @@ namespace RB::HBox
 		_selector.EraseSelected();
 	}
 
-	RB::Selector<RB::Collisions::AABB>* HBoxData::GetSelector()
+	RB::iSelector<RB::Collisions::AABB>* HBoxData::GetSelector()
 	{
 		return &_selector;
 	}

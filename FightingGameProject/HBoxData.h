@@ -21,8 +21,6 @@ namespace RB::HBox
 		void UpSelection();
 		void DownSelection();
 		const std::string& GetFrameName();
-
-	public:
 		void SetFrameNameAndParse(const std::string& name);
 		void DeleteSelectedAABB();
 		RB::iSelector<RB::Collisions::AABB>* GetSelector();

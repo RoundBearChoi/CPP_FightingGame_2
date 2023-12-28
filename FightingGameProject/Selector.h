@@ -115,7 +115,7 @@ namespace RB
 	private:
 		void _CycleSelector()
 		{
-			if (_iterator > _vec.begin())
+			if (_iterator < _vec.begin())
 			{
 				_iterator = _vec.end() - 1;
 			}

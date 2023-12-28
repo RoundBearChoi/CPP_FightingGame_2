@@ -134,7 +134,7 @@ namespace RB::HBox
 
 		struct json_object_s* obj = json_value_as_object(root);
 
-		HBoxDataList resultSet{ spriteEnum };
+		HBoxDataList dataList{ spriteEnum };
 
 		for (int i = 0; i < obj->length; i++)
 		{
@@ -142,13 +142,13 @@ namespace RB::HBox
 			std::string name = ParseName(*obj, i);
 
 			HBoxData data { name, vec};
-			resultSet.AddHBoxData(data);
+			dataList.AddHBoxData(data);
 		}
 
 		//make sure to free root after use
 		free(root);
 
-		return resultSet;
+		return dataList;
 	}
 
 	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)

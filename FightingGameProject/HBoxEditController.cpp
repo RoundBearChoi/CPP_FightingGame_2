@@ -152,12 +152,12 @@ namespace RB::HBox
 
 		if (oButton.bPressed)
 		{
-			data->UpSelection();
+			data->GetSelector()->SelectUp();
 		}
 
 		else if (pButton.bPressed)
 		{
-			data->DownSelection();
+			data->GetSelector()->SelectDown();
 		}
 	}
 
@@ -203,7 +203,7 @@ namespace RB::HBox
 		{
 			data->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
 		
-			data->DownSelection();
+			data->GetSelector()->SelectDown();// DownSelection();
 		}
 		
 		if (delButton.bPressed)

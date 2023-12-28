@@ -18,11 +18,8 @@ namespace RB::HBox
 
 	public:
 		unsigned int GetFrame();
-		void UpSelection();
-		void DownSelection();
 		const std::string& GetFrameName();
 		void SetFrameNameAndParse(const std::string& name);
-		//void DeleteSelectedAABB();
 		RB::iSelector<RB::Collisions::AABB>* GetSelector();
 
 	private:

@@ -28,16 +28,6 @@ namespace RB::HBox
 		return _frame;
 	}
 
-	void HBoxData::UpSelection()
-	{
-		_selector.SelectUp();
-	}
-
-	void HBoxData::DownSelection()
-	{
-		_selector.SelectDown();
-	}
-
 	const std::string& HBoxData::GetFrameName()
 	{
 		return _frameName;

@@ -110,9 +110,14 @@ namespace RB
 				return;
 			}
 
-			_iterator++;
-
-			_CycleSelector();
+			if (_iterator == _vec.end() - 1)
+			{
+				_iterator = _vec.begin();
+			}
+			else
+			{
+				_iterator++;
+			}
 		}
 
 		void SelectDown()
@@ -127,29 +132,17 @@ namespace RB
 				return;
 			}
 
-			_iterator--;
-
-			_CycleSelector();
-		}
-
-	private:
-		void _CycleSelector()
-		{
-			if (_vec.empty())
-			{
-				return;
-			}
-
-			if (_iterator < _vec.begin())
+			if (_iterator == _vec.begin())
 			{
 				_iterator = _vec.end() - 1;
 			}
-			else if (_iterator >= _vec.end())
+			else
 			{
-				_iterator = _vec.begin();
+				_iterator--;
 			}
 		}
 
+	private:
 		void _Refresh()
 		{
 			if (_vec.empty())

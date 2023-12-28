@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include <regex>
 #include "SpriteEnum.h"
 #include "AABB.h"
@@ -30,7 +29,6 @@ namespace RB::HBox
 	public:
 		void SetFrameNameAndParse(const std::string& name);
 		void AddAABB(RB::Collisions::AABB aabb);
-		//bool DeleteAABB(unsigned int index);
 		void DeleteSelectedAABB();
 		RB::Selector<RB::Collisions::AABB>* GetSelector();
 
@@ -40,9 +38,7 @@ namespace RB::HBox
 	private:
 		std::string _frameName = "";
 		unsigned int _frame = 0;
-		//std::vector<RB::Collisions::AABB> _vecAABB;
 		bool _selectionInitialized = false;
-		//std::vector<RB::Collisions::AABB>::iterator _selected;
 		RB::Selector<RB::Collisions::AABB> _selector;
 	};
 }

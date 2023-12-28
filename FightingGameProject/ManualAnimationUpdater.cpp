@@ -26,12 +26,12 @@ namespace RB::Render
 
 		if (up.bPressed)
 		{
-			aniObj->ManualAddAnimationIndex(1);
+			aniObj->ManualIncreaseAnimationIndex();
 		}
 
 		if (down.bPressed)
 		{
-			aniObj->ManualAddAnimationIndex(-1);
+			aniObj->ManualDecreaseAnimationIndex();
 		}
 	}
 

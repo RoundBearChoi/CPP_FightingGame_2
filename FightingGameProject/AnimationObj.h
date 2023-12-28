@@ -20,8 +20,9 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 		void UpdateAnimationIndex() override;
-		void ManualAddAnimationIndex(unsigned int amount) override;
-		void RecycleAnimationIndex() override;
+		void ManualIncreaseAnimationIndex() override;
+		void ManualDecreaseAnimationIndex() override;
+		void CycleAnimationIndex() override;
 		olc::vf2d GetSourceSize() override;
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize) override;
 		olc::vf2d GetRenderSize() override;

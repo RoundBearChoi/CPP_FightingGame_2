@@ -10,8 +10,9 @@ namespace RB::Render
 		virtual void OnFixedUpdate() = 0;
 
 		virtual void UpdateAnimationIndex() = 0;
-		virtual void ManualAddAnimationIndex(unsigned int amount) = 0;
-		virtual void RecycleAnimationIndex() = 0;
+		virtual void ManualIncreaseAnimationIndex() = 0;
+		virtual void ManualDecreaseAnimationIndex() = 0;
+		virtual void CycleAnimationIndex() = 0;
 		virtual olc::vf2d GetSourceSize() = 0;
 		virtual olc::vf2d GetSourcePos(olc::vf2d sourceSize) = 0;
 		virtual olc::vf2d GetRenderSize() = 0;

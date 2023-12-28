@@ -39,17 +39,34 @@ namespace RB::Render
 
 		_currentIndex++;
 
-		RecycleAnimationIndex();
+		CycleAnimationIndex();
 	}
 
-	void AnimationObj::ManualAddAnimationIndex(unsigned int amount)
+	void AnimationObj::ManualIncreaseAnimationIndex()
 	{
-		_currentIndex += amount;
-
-		RecycleAnimationIndex();
+		if (_currentIndex >= _animationRenderer->GetAnimationSpecs().mTotalSprites - 1)
+		{
+			_currentIndex = 0;
+		}
+		else
+		{
+			_currentIndex++;
+		}
 	}
 
-	void AnimationObj::RecycleAnimationIndex()
+	void AnimationObj::ManualDecreaseAnimationIndex()
+	{
+		if (_currentIndex <= 0)
+		{
+			_currentIndex = _animationRenderer->GetAnimationSpecs().mTotalSprites - 1;
+		}
+		else
+		{
+			_currentIndex--;
+		}
+	}
+
+	void AnimationObj::CycleAnimationIndex()
 	{
 		if (_currentIndex > _animationRenderer->GetAnimationSpecs().mTotalSprites - 1)
 		{
@@ -135,7 +152,7 @@ namespace RB::Render
 
 		if (_ownerPlayer != nullptr)
 		{
-			renderSettings.mFaceRight = _ownerPlayer->IsFacingRight(); //OtherPlayerIsOnRightSide();
+			renderSettings.mFaceRight = _ownerPlayer->IsFacingRight();
 		}
 		else
 		{

@@ -11,24 +11,17 @@ namespace RB::HBox
 
 	HBoxData::~HBoxData()
 	{
-		if (_selector != nullptr)
-		{
-			delete _selector;
-			_selector = nullptr;
-		}
+
 	}
 
 	void HBoxData::Init()
 	{
-		_selector = new Selector<RB::Collisions::AABB>(_vecAABB);
+		_selector.Init();
 	}
 
 	void HBoxData::OnFixedUpdate()
 	{
-		if (_selector != nullptr)
-		{
-			_selector->OnFixedUpdate();
-		}
+		_selector.OnFixedUpdate();
 	}
 
 	unsigned int HBoxData::GetFrame()
@@ -141,7 +134,7 @@ namespace RB::HBox
 
 	RB::Selector<RB::Collisions::AABB>* HBoxData::GetSelector()
 	{
-		return _selector;
+		return &_selector;
 	}
 
 	unsigned int HBoxData::_ParseFrame(const std::string& str)

@@ -43,6 +43,6 @@ namespace RB::HBox
 		std::vector<RB::Collisions::AABB> _vecAABB;
 		bool _selectionInitialized = false;
 		std::vector<RB::Collisions::AABB>::iterator _selected;
-		RB::Selector<RB::Collisions::AABB>* _selector = nullptr;
+		RB::Selector<RB::Collisions::AABB> _selector;
 	};
 }

@@ -7,9 +7,9 @@ namespace RB
 	class Selector
 	{
 	public:
-		Selector(std::vector<T>& vec)
+		Selector()
 		{
-			_vec = &vec;
+
 		}
 
 		~Selector()
@@ -18,6 +18,11 @@ namespace RB
 		}
 
 	public:
+		void Init()
+		{
+
+		}
+
 		void OnFixedUpdate()
 		{
 			//_fixedUpdated = true;
@@ -27,6 +32,5 @@ namespace RB
 		bool _fixedUpdated = false;
 		bool _initialized = false;
 		std::vector<T>::const_iterator _iterator;
-		std::vector<T>* _vec = nullptr;
 	};
 }

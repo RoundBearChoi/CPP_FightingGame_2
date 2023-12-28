@@ -66,7 +66,7 @@ namespace RB::HBox
 
 			if (data == nullptr)
 			{
-				auto const& vec = data->GetVecAABBs();
+				auto const& vec = data->GetSelector()->GetVector();// GetVecAABBs();
 
 				olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
 			}

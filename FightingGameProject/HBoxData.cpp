@@ -28,12 +28,12 @@ namespace RB::HBox
 		return _frame;
 	}
 
-	const std::vector<RB::Collisions::AABB>& HBoxData::GetVecAABBs()
-	{
-		const std::vector<RB::Collisions::AABB>& vec = _selector.GetVector();
-
-		return vec;
-	}
+	//const std::vector<RB::Collisions::AABB>& HBoxData::GetVecAABBs()
+	//{
+	//	const std::vector<RB::Collisions::AABB>& vec = _selector.GetVector();
+	//
+	//	return vec;
+	//}
 
 	RB::Collisions::AABB* HBoxData::GetSelectedAABB()
 	{

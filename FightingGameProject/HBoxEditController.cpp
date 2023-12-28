@@ -326,7 +326,7 @@ namespace RB::HBox
 					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					for (auto i = data->GetVecAABBs().begin(); i != data->GetVecAABBs().end(); ++i)
+					for (auto i = data->GetSelector()->GetVector().begin(); i != data->GetSelector()->GetVector().end(); ++i)
 					{
 						RB::Collisions::AABB aabb = *i;
 
@@ -336,7 +336,7 @@ namespace RB::HBox
 						file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
 						file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
 
-						if (i != data->GetVecAABBs().end() - 1)
+						if (i != data->GetSelector()->GetVector().end() - 1)
 						{
 							file << "        }," << std::endl;
 						}

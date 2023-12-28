@@ -57,7 +57,20 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(_GetAABBCount()), olc::YELLOW);
+
+		RB::HBox::HBoxDataList* list = _getList();
+
+		if (list != nullptr)
+		{
+			RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+
+			if (data == nullptr)
+			{
+				auto const& vec = data->GetVecAABBs();
+
+				olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
+			}
+		}
 	}
 
 	void MenuController::OnFixedUpdate()
@@ -129,24 +142,26 @@ namespace RB::HBox
 		return obj->GetCurrentIndex();
 	}
 
-	unsigned int MenuController::_GetAABBCount()
-	{
-		RB::HBox::HBoxDataList* list = _getList();
-
-		if (list == nullptr)
-		{
-			return 0;
-		}
-
-		RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
-
-		if (data == nullptr)
-		{
-			return 0;
-		}
-
-		return data->GetAABBCount();
-	}
+	//unsigned int MenuController::_GetAABBCount()
+	//{
+	//	RB::HBox::HBoxDataList* list = _getList();
+	//
+	//	if (list == nullptr)
+	//	{
+	//		return 0;
+	//	}
+	//
+	//	RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+	//
+	//	if (data == nullptr)
+	//	{
+	//		return 0;
+	//	}
+	//
+	//	auto const& vec = data->GetVecAABBs();
+	//
+	//	return vec.size();
+	//}
 
 	RB::HBox::HBoxDataList* MenuController::_getList()
 	{

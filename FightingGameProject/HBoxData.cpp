@@ -15,11 +15,6 @@ namespace RB::HBox
 		return _frame;
 	}
 
-	unsigned int HBoxData::GetAABBCount()
-	{
-		return _vecAABB.size();
-	}
-
 	const std::vector<RB::Collisions::AABB>& HBoxData::GetVecAABBs()
 	{
 		return _vecAABB;
@@ -79,6 +74,8 @@ namespace RB::HBox
 	void HBoxData::AddAABB(RB::Collisions::AABB aabb)
 	{
 		_vecAABB.push_back(aabb);
+
+		_selected = _vecAABB.end() - 1;
 	}
 
 	bool HBoxData::DeleteAABB(unsigned int index)

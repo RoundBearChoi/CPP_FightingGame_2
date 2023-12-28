@@ -15,7 +15,6 @@ namespace RB::HBox
 
 	public:
 		unsigned int GetFrame();
-		unsigned int GetAABBCount();
 		const std::vector<RB::Collisions::AABB>& GetVecAABBs();
 		RB::Collisions::AABB* GetSelectedAABB();
 		void UpSelection();

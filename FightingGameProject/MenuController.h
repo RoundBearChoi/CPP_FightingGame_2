@@ -31,7 +31,7 @@ namespace RB::HBox
 		const std::string& _GetFrameName();
 		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
 		unsigned int _GetCurrentAnimationFrame();
-		unsigned int _GetAABBCount();
+		//unsigned int _GetAABBCount();
 		RB::HBox::HBoxDataList* _getList();
 
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;

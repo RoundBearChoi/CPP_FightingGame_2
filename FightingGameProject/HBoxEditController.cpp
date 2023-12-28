@@ -344,9 +344,11 @@ namespace RB::HBox
 					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					for (unsigned int a = 0; a < data->GetAABBCount(); a++)
+					//auto const& vec = data->GetVecAABBs();
+
+					for (auto i = data->GetVecAABBs().begin(); i != data->GetVecAABBs().end(); ++i)
 					{
-						RB::Collisions::AABB aabb = data->GetAABB(a);
+						RB::Collisions::AABB aabb = *i;
 
 						file << "        {" << std::endl;
 						file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
@@ -354,7 +356,7 @@ namespace RB::HBox
 						file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
 						file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
 
-						if (a != data->GetAABBCount() - 1)
+						if (i != data->GetVecAABBs().end() - 1)
 						{
 							file << "        }," << std::endl;
 						}
@@ -363,6 +365,26 @@ namespace RB::HBox
 							file << "        }" << std::endl;
 						}
 					}
+
+					//for (unsigned int a = 0; a < data->GetAABBCount(); a++)
+					//{
+					//	RB::Collisions::AABB aabb = data->GetAABB(a);
+					//
+					//	file << "        {" << std::endl;
+					//	file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
+					//	file << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
+					//	file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
+					//	file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
+					//
+					//	if (a != data->GetAABBCount() - 1)
+					//	{
+					//		file << "        }," << std::endl;
+					//	}
+					//	else
+					//	{
+					//		file << "        }" << std::endl;
+					//	}
+					//}
 
 					if (f != vec.size() - 1)
 					{

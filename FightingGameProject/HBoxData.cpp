@@ -45,13 +45,6 @@ namespace RB::HBox
 		_selector.SelectDown();
 	}
 
-	RB::Collisions::AABB& HBoxData::GetAABB(unsigned int index)
-	{
-		RB::Collisions::AABB* aabb = _selector.GetByIndex(index);
-
-		return *aabb;
-	}
-
 	const std::string& HBoxData::GetFrameName()
 	{
 		return _frameName;

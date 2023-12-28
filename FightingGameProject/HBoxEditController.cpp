@@ -166,6 +166,11 @@ namespace RB::HBox
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
 		RB::Collisions::AABB* aabb = data->GetSelectedAABB();
 
+		if (aabb == nullptr)
+		{
+			return;
+		}
+
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
 		if (player == nullptr)

@@ -23,6 +23,11 @@ namespace RB
 			_Refresh();
 		}
 
+		const std::vector<T>& GetVector()
+		{
+			return _vec;
+		}
+
 		void PushBack(T t)
 		{
 			_vec.push_back(t);
@@ -48,7 +53,7 @@ namespace RB
 
 		T* GetSelected()
 		{
-			if (_vec.empty() == 0)
+			if (_vec.empty())
 			{
 				return nullptr;
 			}
@@ -79,8 +84,8 @@ namespace RB
 			{
 				return nullptr;
 			}
-
-			return *i;
+			
+			return &(*i);
 		}
 		
 		void SelectUp()
@@ -134,7 +139,7 @@ namespace RB
 		bool _fixedUpdated = false;
 		bool _initialized = false;
 		bool _refreshed = true;
-		std::vector<T>::const_iterator _iterator;
+		std::vector<T>::iterator _iterator;
 		std::vector<T> _vec;
 	};
 }

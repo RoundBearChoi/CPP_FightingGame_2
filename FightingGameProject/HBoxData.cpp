@@ -5,8 +5,13 @@ namespace RB::HBox
 	HBoxData::HBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
 	{
 		_frameName = frameName;
-		_vecAABB = vecAABB;
+		//_vecAABB = vecAABB;
 		_frame = _ParseFrame(frameName);
+
+		for (auto i = vecAABB.begin(); i != vecAABB.end(); i++)
+		{
+			_selector.PushBack(*i);
+		}
 	}
 
 	HBoxData::~HBoxData()
@@ -31,47 +36,63 @@ namespace RB::HBox
 
 	const std::vector<RB::Collisions::AABB>& HBoxData::GetVecAABBs()
 	{
-		return _vecAABB;
+		const std::vector<RB::Collisions::AABB>& vec = _selector.GetVector();
+
+		return vec;
+		
+		//return _vecAABB;
 	}
 
 	RB::Collisions::AABB* HBoxData::GetSelectedAABB()
 	{
-		if (!_selectionInitialized)
-		{
-			_selected = _vecAABB.begin();
-			_selectionInitialized = true;
-		}
+		RB::Collisions::AABB* aabb = _selector.GetSelected();
 
-		return &*_selected;
+		return aabb;
+
+		//if (!_selectionInitialized)
+		//{
+		//	_selected = _vecAABB.begin();
+		//	_selectionInitialized = true;
+		//}
+		//
+		//return &*_selected;
 	}
 
 	void HBoxData::UpSelection()
 	{
-		if (_selected == _vecAABB.end() - 1)
-		{
-			_selected = _vecAABB.begin();
-		}
-		else
-		{
-			_selected++;
-		}
+		_selector.SelectUp();
+
+		//if (_selected == _vecAABB.end() - 1)
+		//{
+		//	_selected = _vecAABB.begin();
+		//}
+		//else
+		//{
+		//	_selected++;
+		//}
 	}
 
 	void HBoxData::DownSelection()
 	{
-		if (_selected == _vecAABB.begin())
-		{
-			_selected = _vecAABB.end() - 1;
-		}
-		else
-		{
-			_selected--;
-		}
+		_selector.SelectDown();
+
+		//if (_selected == _vecAABB.begin())
+		//{
+		//	_selected = _vecAABB.end() - 1;
+		//}
+		//else
+		//{
+		//	_selected--;
+		//}
 	}
 
 	RB::Collisions::AABB& HBoxData::GetAABB(unsigned int index)
 	{
-		return _vecAABB[index];
+		RB::Collisions::AABB* aabb = _selector.GetByIndex(index);
+
+		return *aabb;
+
+		//return _vecAABB[index];
 	}
 
 	const std::string& HBoxData::GetFrameName()
@@ -87,49 +108,53 @@ namespace RB::HBox
 
 	void HBoxData::AddAABB(RB::Collisions::AABB aabb)
 	{
-		_vecAABB.push_back(aabb);
+		_selector.PushBack(aabb);
 
-		if (_selectionInitialized)
-		{
-			_selected = _vecAABB.end();
-		}
+		//_vecAABB.push_back(aabb);
+		//
+		//if (_selectionInitialized)
+		//{
+		//	_selected = _vecAABB.end();
+		//}
 	}
 
-	bool HBoxData::DeleteAABB(unsigned int index)
-	{
-		if (index >= _vecAABB.size())
-		{
-			return false;
-		}
-
-		if (_vecAABB.size() == 1)
-		{
-			RB::Collisions::AABB aabb{ 0, 0, 0, 0 };
-
-			_vecAABB[0].ForceAABB(aabb);
-
-			return false;
-		}
-
-		_vecAABB.erase(_vecAABB.begin() + index);
-
-		return true;
-	}
+	//bool HBoxData::DeleteAABB(unsigned int index)
+	//{
+	//	if (index >= _vecAABB.size())
+	//	{
+	//		return false;
+	//	}
+	//
+	//	if (_vecAABB.size() == 1)
+	//	{
+	//		RB::Collisions::AABB aabb{ 0, 0, 0, 0 };
+	//
+	//		_vecAABB[0].ForceAABB(aabb);
+	//
+	//		return false;
+	//	}
+	//
+	//	_vecAABB.erase(_vecAABB.begin() + index);
+	//
+	//	return true;
+	//}
 
 	void HBoxData::DeleteSelectedAABB()
 	{
-		if (_vecAABB.size() == 1)
-		{
-			RB::Collisions::AABB aabb{ 0, 0, 0, 0 };
+		_selector.EraseSelected();
 
-			_vecAABB[0].ForceAABB(aabb);
-
-			_selected = _vecAABB.begin();
-		}
-		else
-		{
-			_selected = _vecAABB.erase(_selected);
-		}
+		//if (_vecAABB.size() == 1)
+		//{
+		//	RB::Collisions::AABB aabb{ 0, 0, 0, 0 };
+		//
+		//	_vecAABB[0].ForceAABB(aabb);
+		//
+		//	_selected = _vecAABB.begin();
+		//}
+		//else
+		//{
+		//	_selected = _vecAABB.erase(_selected);
+		//}
 	}
 
 	RB::Selector<RB::Collisions::AABB>* HBoxData::GetSelector()

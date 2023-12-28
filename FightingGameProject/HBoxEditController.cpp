@@ -208,7 +208,7 @@ namespace RB::HBox
 		
 		if (delButton.bPressed)
 		{
-			data->DeleteSelectedAABB();
+			data->GetSelector()->EraseSelected();// DeleteSelectedAABB();
 		}
 	}
 

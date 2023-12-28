@@ -22,7 +22,7 @@ namespace RB::HBox
 		void DownSelection();
 		const std::string& GetFrameName();
 		void SetFrameNameAndParse(const std::string& name);
-		void DeleteSelectedAABB();
+		//void DeleteSelectedAABB();
 		RB::iSelector<RB::Collisions::AABB>* GetSelector();
 
 	private:

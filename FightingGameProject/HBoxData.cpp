@@ -49,10 +49,10 @@ namespace RB::HBox
 		_frame = _ParseFrame(name);
 	}
 
-	void HBoxData::DeleteSelectedAABB()
-	{
-		_selector.EraseSelected();
-	}
+	//void HBoxData::DeleteSelectedAABB()
+	//{
+	//	_selector.EraseSelected();
+	//}
 
 	RB::iSelector<RB::Collisions::AABB>* HBoxData::GetSelector()
 	{

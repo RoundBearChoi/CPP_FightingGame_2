@@ -57,6 +57,7 @@ namespace RB::HBox
 
 			_vecHurtBoxData.push_back(data);
 
+			//make sure to refresh iterators after making changes to the vector
 			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
 			{
 				(*i).GetSelector()->SetRefreshed(false);

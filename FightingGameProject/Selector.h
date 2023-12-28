@@ -1,10 +1,12 @@
 #pragma once
 #include <vector>
 
+#include "ISelector.h"
+
 namespace RB
 {
 	template<class T>
-	class Selector
+	class Selector : public ISelector<T>
 	{
 	public:
 		Selector()

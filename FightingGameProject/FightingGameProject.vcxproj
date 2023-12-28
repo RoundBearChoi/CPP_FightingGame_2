@@ -265,6 +265,7 @@
     <ClInclude Include="iInputObj.h" />
     <ClInclude Include="InputObj.h" />
     <ClInclude Include="iPlayerCollider.h" />
+    <ClInclude Include="ISelector.h" />
     <ClInclude Include="iSpecialMovesController.h" />
     <ClInclude Include="iSpecialMoveSequence.h" />
     <ClInclude Include="iSpecsController.h" />

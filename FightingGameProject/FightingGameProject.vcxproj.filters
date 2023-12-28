@@ -765,5 +765,8 @@
     <ClInclude Include="Selector.h">
       <Filter>Source Files\RB</Filter>
     </ClInclude>
+    <ClInclude Include="ISelector.h">
+      <Filter>Source Files\RB</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

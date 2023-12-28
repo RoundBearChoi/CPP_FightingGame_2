@@ -36,11 +36,13 @@ namespace RB::HBox
 
 		HBoxData* GetHBoxDataByFrame(unsigned int frame)
 		{
+			//failsafe
 			if (_vecHurtBoxData.empty())
 			{
 				return nullptr;
 			}
 
+			//exising data
 			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
 			{
 				if ((*i).GetFrame() == frame)
@@ -49,7 +51,18 @@ namespace RB::HBox
 				}
 			}
 
-			return nullptr;
+			//default data if no existing data
+			HBoxData data;
+			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
+
+			_vecHurtBoxData.push_back(data);
+
+			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
+			{
+				(*i).GetSelector()->SetRefreshed(false);
+			}
+
+			return &(*(_vecHurtBoxData.end() - 1));
 		}
 
 		RB::Sprites::SpriteEnum GetSpriteEnum()

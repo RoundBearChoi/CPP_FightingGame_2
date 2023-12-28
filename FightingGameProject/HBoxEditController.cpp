@@ -170,6 +170,11 @@ namespace RB::HBox
 			return;
 		}
 
+		if (data->GetSelector()->IsEmpty())
+		{
+			return;
+		}
+
 		RB::Collisions::AABB* aabb = data->GetSelector()->GetSelected();
 
 		if (aabb == nullptr)

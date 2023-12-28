@@ -144,6 +144,16 @@ namespace RB
 			}
 		}
 
+		bool IsEmpty() override
+		{
+			return _vec.empty();
+		}
+
+		void SetRefreshed(bool refreshed) override
+		{
+			_refreshed = refreshed;
+		}
+
 	private:
 		void _Refresh()
 		{

@@ -19,5 +19,7 @@ namespace RB
 		virtual T* GetByIndex(unsigned int index) = 0;
 		virtual void SelectUp() = 0;
 		virtual void SelectDown() = 0;
+		virtual bool IsEmpty() = 0;
+		virtual void SetRefreshed(bool refreshed) = 0;
 	};
 }

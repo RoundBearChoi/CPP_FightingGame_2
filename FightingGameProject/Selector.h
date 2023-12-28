@@ -37,6 +37,15 @@ namespace RB
 			_refreshed = false;
 		}
 
+		void EraseByIndex(unsigned int index)
+		{
+			auto i = _vec.begin() + index;
+
+			_iterator = _vec.erase(i);
+
+			_refreshed = false;
+		}
+
 		T* GetSelected()
 		{
 			if (_vec.empty() == 0)

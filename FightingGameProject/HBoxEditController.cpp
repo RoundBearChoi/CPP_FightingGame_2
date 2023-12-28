@@ -203,7 +203,7 @@ namespace RB::HBox
 		{
 			data->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
 		
-			data->GetSelector()->SelectDown();// DownSelection();
+			data->GetSelector()->SelectDown();
 		}
 		
 		if (delButton.bPressed)

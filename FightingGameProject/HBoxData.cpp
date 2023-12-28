@@ -23,6 +23,11 @@ namespace RB::HBox
 		_selector.OnFixedUpdate();
 	}
 
+	RB::iSelector<RB::Collisions::AABB>* HBoxData::GetSelector()
+	{
+		return &_selector;
+	}
+
 	unsigned int HBoxData::GetFrame()
 	{
 		return _frame;
@@ -37,11 +42,6 @@ namespace RB::HBox
 	{
 		_frameName = name;
 		_frame = _ParseFrame(name);
-	}
-
-	RB::iSelector<RB::Collisions::AABB>* HBoxData::GetSelector()
-	{
-		return &_selector;
 	}
 
 	unsigned int HBoxData::_ParseFrame(const std::string& str)

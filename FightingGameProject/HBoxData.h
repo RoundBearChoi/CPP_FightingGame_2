@@ -15,12 +15,12 @@ namespace RB::HBox
 
 	public:
 		void OnFixedUpdate();
+		RB::iSelector<RB::Collisions::AABB>* GetSelector();
 
 	public:
 		unsigned int GetFrame();
 		const std::string& GetFrameName();
 		void SetFrameNameAndParse(const std::string& name);
-		RB::iSelector<RB::Collisions::AABB>* GetSelector();
 
 	private:
 		unsigned int _ParseFrame(const std::string& str);

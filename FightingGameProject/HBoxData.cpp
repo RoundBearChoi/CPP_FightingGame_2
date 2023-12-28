@@ -28,13 +28,6 @@ namespace RB::HBox
 		return _frame;
 	}
 
-	//RB::Collisions::AABB* HBoxData::GetSelectedAABB()
-	//{
-	//	RB::Collisions::AABB* aabb = _selector.GetSelected();
-	//
-	//	return aabb;
-	//}
-
 	void HBoxData::UpSelection()
 	{
 		_selector.SelectUp();

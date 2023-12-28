@@ -170,7 +170,7 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::Collisions::AABB* aabb = data->GetSelector()->GetSelected();// GetSelectedAABB();
+		RB::Collisions::AABB* aabb = data->GetSelector()->GetSelected();
 
 		if (aabb == nullptr)
 		{
@@ -223,7 +223,7 @@ namespace RB::HBox
 
 		_UpdateSelectedIndex_OnPress(data);
 
-		RB::Collisions::AABB* aabb = data->GetSelector()->GetSelected();// GetSelectedAABB();
+		RB::Collisions::AABB* aabb = data->GetSelector()->GetSelected();
 
 		if (aabb == nullptr)
 		{

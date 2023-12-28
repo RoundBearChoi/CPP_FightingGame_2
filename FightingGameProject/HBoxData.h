@@ -3,6 +3,7 @@
 #include <regex>
 #include "SpriteEnum.h"
 #include "AABB.h"
+#include "Selector.h"
 
 namespace RB::HBox
 {
@@ -27,6 +28,7 @@ namespace RB::HBox
 		void AddAABB(RB::Collisions::AABB aabb);
 		bool DeleteAABB(unsigned int index);
 		void DeleteSelectedAABB();
+		RB::Selector<RB::Collisions::AABB>* GetSelector();
 
 	private:
 		unsigned int _ParseFrame(const std::string& str);
@@ -37,5 +39,6 @@ namespace RB::HBox
 		std::vector<RB::Collisions::AABB> _vecAABB;
 		bool _selectionInitialized = false;
 		std::vector<RB::Collisions::AABB>::iterator _selected;
+		RB::Selector<RB::Collisions::AABB> _selector;
 	};
 }

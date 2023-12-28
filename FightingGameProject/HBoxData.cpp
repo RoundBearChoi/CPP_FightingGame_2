@@ -118,6 +118,11 @@ namespace RB::HBox
 		}
 	}
 
+	RB::Selector<RB::Collisions::AABB>* HBoxData::GetSelector()
+	{
+		return &_selector;
+	}
+
 	unsigned int HBoxData::_ParseFrame(const std::string& str)
 	{
 		std::regex pattern("frame_");

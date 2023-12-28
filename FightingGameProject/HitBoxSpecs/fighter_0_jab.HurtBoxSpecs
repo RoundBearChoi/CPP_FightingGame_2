@@ -1,24 +1,4 @@
 {
-    "frame_0":
-    [
-        {
-        "posX" : 0,
-        "posY" : 0,
-        "width" : 0,
-        "height" : 0
-        }
-    ],
-
-    "frame_1":
-    [
-        {
-        "posX" : 0,
-        "posY" : 0,
-        "width" : 0,
-        "height" : 0
-        }
-    ],
-
     "frame_2":
     [
         {
@@ -36,26 +16,6 @@
         "posY" : -94.7757,
         "width" : 60.6198,
         "height" : 16.5805
-        }
-    ],
-
-    "frame_4":
-    [
-        {
-        "posX" : 0,
-        "posY" : 0,
-        "width" : 0,
-        "height" : 0
-        }
-    ],
-
-    "frame_5":
-    [
-        {
-        "posX" : 0,
-        "posY" : 0,
-        "width" : 0,
-        "height" : 0
         }
     ]
 }

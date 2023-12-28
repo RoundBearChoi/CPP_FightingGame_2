@@ -66,7 +66,7 @@ namespace RB::HBox
 
 			if (data == nullptr)
 			{
-				auto const& vec = data->GetSelector()->GetVector();// GetVecAABBs();
+				auto const& vec = data->GetSelector()->GetVector();
 
 				olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
 			}
@@ -141,27 +141,6 @@ namespace RB::HBox
 
 		return obj->GetCurrentIndex();
 	}
-
-	//unsigned int MenuController::_GetAABBCount()
-	//{
-	//	RB::HBox::HBoxDataList* list = _getList();
-	//
-	//	if (list == nullptr)
-	//	{
-	//		return 0;
-	//	}
-	//
-	//	RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
-	//
-	//	if (data == nullptr)
-	//	{
-	//		return 0;
-	//	}
-	//
-	//	auto const& vec = data->GetVecAABBs();
-	//
-	//	return vec.size();
-	//}
 
 	RB::HBox::HBoxDataList* MenuController::_getList()
 	{

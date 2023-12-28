@@ -93,7 +93,7 @@ namespace RB::Render
 
 	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::HBoxData* data, olc::Pixel color)
 	{
-		const auto& vec = data->GetSelector()->GetVector();// GetVecAABBs();
+		const auto& vec = data->GetSelector()->GetVector();
 
 		for (auto i = vec.begin(); i != vec.end(); ++i) 
 		{

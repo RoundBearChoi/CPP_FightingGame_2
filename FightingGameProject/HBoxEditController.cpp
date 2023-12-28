@@ -112,15 +112,6 @@ namespace RB::HBox
 		return data;
 	}
 
-	//RB::Collisions::AABB* HBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
-	//{
-	//	_UpdateSelectedIndex_OnPress(data);
-	//
-	//	RB::Collisions::AABB* aabb = data->GetSelectedAABB();
-	//
-	//	return aabb;
-	//}
-
 	RB::HBox::HBoxType HBoxEditController::GetHBoxType()
 	{
 		return _boxType;

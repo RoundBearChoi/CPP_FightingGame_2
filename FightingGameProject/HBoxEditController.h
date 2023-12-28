@@ -27,7 +27,6 @@ namespace RB::HBox
 
 		RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) override;
 		RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
-		//RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
 		RB::HBox::HBoxType GetHBoxType() override;
 
 	private:
@@ -39,7 +38,6 @@ namespace RB::HBox
 		void _SaveHBoxes_OnPress();
 
 	private:
-		//unsigned int _selectedIndex = 0;
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 	};
 }

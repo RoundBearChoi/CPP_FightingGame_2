@@ -75,7 +75,10 @@ namespace RB::HBox
 	{
 		_vecAABB.push_back(aabb);
 
-		_selected = _vecAABB.end();
+		if (_selectionInitialized)
+		{
+			_selected = _vecAABB.end();
+		}
 	}
 
 	bool HBoxData::DeleteAABB(unsigned int index)

@@ -207,7 +207,7 @@ namespace RB::HBox
 
 		_UpdateSelectedIndex_OnPress(data);
 
-		RB::Collisions::AABB* aabb = data->GetSelectedAABB(); //GetCurrentAABB(data);
+		RB::Collisions::AABB* aabb = data->GetSelectedAABB();
 
 		if (aabb == nullptr)
 		{

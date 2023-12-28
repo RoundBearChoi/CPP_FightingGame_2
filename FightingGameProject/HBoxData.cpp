@@ -18,11 +18,6 @@ namespace RB::HBox
 
 	}
 
-	void HBoxData::Init()
-	{
-
-	}
-
 	void HBoxData::OnFixedUpdate()
 	{
 		_selector.OnFixedUpdate();

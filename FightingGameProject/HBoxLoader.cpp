@@ -134,7 +134,7 @@ namespace RB::HBox
 
 		HBoxDataList resultSet{ spriteEnum };
 
-		for (unsigned int i = 0; i < obj->length; i++)
+		for (int i = 0; i < obj->length; i++)
 		{
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);

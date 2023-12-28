@@ -14,7 +14,6 @@ namespace RB::HBox
 		~HBoxData();
 
 	public:
-		void Init();
 		void OnFixedUpdate();
 
 	public:

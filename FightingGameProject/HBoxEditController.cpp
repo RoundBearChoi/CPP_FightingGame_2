@@ -164,6 +164,12 @@ namespace RB::HBox
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
+
+		if (data == nullptr)
+		{
+			return;
+		}
+
 		RB::Collisions::AABB* aabb = data->GetSelectedAABB();
 
 		if (aabb == nullptr)
@@ -209,6 +215,11 @@ namespace RB::HBox
 	void HBoxEditController::_EditAABB_OnPress(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
+
+		if (data == nullptr)
+		{
+			return;
+		}
 
 		_UpdateSelectedIndex_OnPress(data);
 

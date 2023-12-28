@@ -112,14 +112,14 @@ namespace RB::HBox
 		return data;
 	}
 
-	RB::Collisions::AABB* HBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
-	{
-		_UpdateSelectedIndex_OnPress(data);
-
-		RB::Collisions::AABB* aabb = data->GetSelectedAABB();
-
-		return aabb;
-	}
+	//RB::Collisions::AABB* HBoxEditController::GetCurrentAABB(RB::HBox::HBoxData* data)
+	//{
+	//	_UpdateSelectedIndex_OnPress(data);
+	//
+	//	RB::Collisions::AABB* aabb = data->GetSelectedAABB();
+	//
+	//	return aabb;
+	//}
 
 	RB::HBox::HBoxType HBoxEditController::GetHBoxType()
 	{
@@ -173,7 +173,7 @@ namespace RB::HBox
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
-		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
+		RB::Collisions::AABB* aabb = data->GetSelectedAABB();
 
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
 
@@ -213,7 +213,10 @@ namespace RB::HBox
 	void HBoxEditController::_EditAABB_OnPress(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
-		RB::Collisions::AABB* aabb = GetCurrentAABB(data);
+
+		_UpdateSelectedIndex_OnPress(data);
+
+		RB::Collisions::AABB* aabb = data->GetSelectedAABB(); //GetCurrentAABB(data);
 
 		if (aabb == nullptr)
 		{

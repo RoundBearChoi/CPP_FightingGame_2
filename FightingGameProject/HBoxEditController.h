@@ -27,7 +27,7 @@ namespace RB::HBox
 
 		RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) override;
 		RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
-		RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
+		//RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) override;
 		RB::HBox::HBoxType GetHBoxType() override;
 
 	private:

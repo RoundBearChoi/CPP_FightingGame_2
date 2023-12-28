@@ -17,7 +17,7 @@ namespace RB::HBox
 
 		virtual RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) = 0;
 		virtual RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID) = 0;
-		virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) = 0;
+		//virtual RB::Collisions::AABB* GetCurrentAABB(RB::HBox::HBoxData* data) = 0;
 		virtual RB::HBox::HBoxType GetHBoxType() = 0;
 	};
 }

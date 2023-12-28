@@ -34,40 +34,7 @@ namespace RB::HBox
 			return _vecHurtBoxData;
 		}
 
-		/// <summary>
-		/// 0, 0 by default if no data found
-		/// </summary>
-		/// <param name="frame"></param>
-		/// <returns></returns>
 		HBoxData* GetHBoxDataByFrame(unsigned int frame)
-		{
-			HBoxData* result = _FindHBoxDataByFrame(frame);
-
-			if (result != nullptr)
-			{
-				return result;
-			}
-
-			HBoxData data;
-			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
-			data.GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //width height size all 0
-			
-			_vecHurtBoxData.push_back(data);
-
-			return _FindHBoxDataByFrame(frame);
-		}
-
-		RB::Sprites::SpriteEnum GetSpriteEnum()
-		{
-			return _spriteEnum;
-		}
-
-	private:
-		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		std::vector<HBoxData> _vecHurtBoxData;
-
-	private:
-		HBoxData* _FindHBoxDataByFrame(unsigned int frame)
 		{
 			if (_vecHurtBoxData.empty())
 			{
@@ -84,5 +51,14 @@ namespace RB::HBox
 
 			return nullptr;
 		}
+
+		RB::Sprites::SpriteEnum GetSpriteEnum()
+		{
+			return _spriteEnum;
+		}
+
+	private:
+		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
+		std::vector<HBoxData> _vecHurtBoxData;
 	};
 }

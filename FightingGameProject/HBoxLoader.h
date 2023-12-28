@@ -24,13 +24,7 @@ namespace RB::HBox
 		void SaveSample();
 
 	public:
-		/// <summary>
-		/// make sure to free root after use
-		/// </summary>
 		json_value_s* LoadRoot(std::string path);
-		/// <summary>
-		/// only use during initialization (vector addresses)
-		/// </summary>
 		HBoxDataList LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
 		std::string ParseName(const json_object_s& wholeObj, const unsigned int frame);

@@ -60,17 +60,21 @@ namespace RB::HBox
 
 		RB::HBox::HBoxDataList* list = _getList();
 
-		if (list != nullptr)
+		if (list == nullptr)
 		{
-			RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
-
-			if (data == nullptr)
-			{
-				auto const& vec = data->GetSelector()->GetVector();
-
-				olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
-			}
+			return;
 		}
+
+		RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+
+		if (data == nullptr)
+		{
+			return;
+		}
+
+		auto const& vec = data->GetSelector()->GetVector();
+
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
 	}
 
 	void MenuController::OnFixedUpdate()

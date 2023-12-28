@@ -92,6 +92,9 @@ namespace RB::HBox
 		}
 	}
 
+	/// <summary>
+	/// make sure to free root after use
+	/// </summary>
 	json_value_s* HBoxLoader::LoadRoot(std::string path)
 	{
 		std::string loaded = RB::JSON::LoadJSONFile(path);
@@ -103,6 +106,9 @@ namespace RB::HBox
 		return root;
 	}
 
+	/// <summary>
+	/// only use during initialization (vector addresses)
+	/// </summary>
 	HBoxDataList HBoxLoader::LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
@@ -120,7 +126,6 @@ namespace RB::HBox
 
 			HBoxData data0;
 			data0.SetFrameNameAndParse("frame_0");
-			data0.GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //0, 0 by default
 
 			defaultSet.AddHBoxData(data0);
 
@@ -128,9 +133,6 @@ namespace RB::HBox
 		}
 
 		struct json_object_s* obj = json_value_as_object(root);
-
-		std::vector<HBoxData> vecData;
-		vecData.reserve(obj->length);
 
 		HBoxDataList resultSet{ spriteEnum };
 

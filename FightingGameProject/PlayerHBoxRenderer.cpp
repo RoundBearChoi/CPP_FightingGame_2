@@ -77,6 +77,11 @@ namespace RB::Render
 
 		RB::HBox::HBoxData* data = dataList->GetHBoxDataByFrame(currentIndex);
 
+		if (data == nullptr)
+		{
+			return;
+		}
+
 		olc::Pixel color = olc::RED;
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)

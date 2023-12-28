@@ -7,30 +7,26 @@ namespace RB
 	class Selector
 	{
 	public:
-		Selector() = default;
-		~Selector() = default;
+		Selector(std::vector<T>& vec)
+		{
+			_vec = &vec;
+		}
+
+		~Selector()
+		{
+
+		}
 
 	public:
 		void OnFixedUpdate()
 		{
-			_fixedUpdated = true;
-		}
-
-		void InitSelector_ToBegin(T begin)
-		{
-			_iterator = begin;
-			_selectorInitialized = true;
-		}
-
-		void InitSelector_ToRBegin(T rbegin)
-		{
-			_iterator = rbegin;
-			_selectorInitialized = true;
+			//_fixedUpdated = true;
 		}
 
 	private:
 		bool _fixedUpdated = false;
-		bool _selectorInitialized = false;
+		bool _initialized = false;
 		std::vector<T>::const_iterator _iterator;
+		std::vector<T>* _vec = nullptr;
 	};
 }

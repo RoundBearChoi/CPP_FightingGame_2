@@ -26,6 +26,8 @@ namespace RB::HBox
 
 		void AddHBoxData(HBoxData data)
 		{
+			data.Init();
+
 			_vecHurtBoxData.push_back(data);
 		}
 

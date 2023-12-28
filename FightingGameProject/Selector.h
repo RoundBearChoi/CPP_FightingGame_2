@@ -37,6 +37,11 @@ namespace RB
 
 		void EraseSelected()
 		{
+			if (_vec.empty())
+			{
+				return;
+			}
+
 			_iterator = _vec.erase(_iterator);
 
 			_refreshed = false;
@@ -44,6 +49,11 @@ namespace RB
 
 		void EraseByIndex(unsigned int index)
 		{
+			if (_vec.empty())
+			{
+				return;
+			}
+
 			auto i = _vec.begin() + index;
 
 			_iterator = _vec.erase(i);
@@ -90,6 +100,11 @@ namespace RB
 		
 		void SelectUp()
 		{
+			if (_vec.empty())
+			{
+				return;
+			}
+
 			if (!_refreshed)
 			{
 				return;
@@ -102,6 +117,11 @@ namespace RB
 
 		void SelectDown()
 		{
+			if (_vec.empty())
+			{
+				return;
+			}
+
 			if (!_refreshed)
 			{
 				return;
@@ -115,6 +135,11 @@ namespace RB
 	private:
 		void _CycleSelector()
 		{
+			if (_vec.empty())
+			{
+				return;
+			}
+
 			if (_iterator < _vec.begin())
 			{
 				_iterator = _vec.end() - 1;
@@ -127,6 +152,13 @@ namespace RB
 
 		void _Refresh()
 		{
+			if (_vec.empty())
+			{
+				_initialized = false;
+				_refreshed = false;
+				return;
+			}
+
 			if (!_refreshed)
 			{
 				_initialized = true;

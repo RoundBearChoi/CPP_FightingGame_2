@@ -5,10 +5,10 @@
 namespace RB
 {
 	template<class T>
-	class ISelector
+	class iSelector
 	{
 	public:
-		virtual ~ISelector() {}
+		virtual ~iSelector() {}
 
 		virtual void OnFixedUpdate() = 0;
 		virtual const std::vector<T>& GetVector() = 0;

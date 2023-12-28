@@ -1,12 +1,12 @@
 #pragma once
 #include <vector>
 
-#include "ISelector.h"
+#include "iSelector.h"
 
 namespace RB
 {
 	template<class T>
-	class Selector : public ISelector<T>
+	class Selector : public iSelector<T>
 	{
 	public:
 		Selector()
@@ -14,30 +14,30 @@ namespace RB
 
 		}
 
-		~Selector()
+		~Selector() override
 		{
 
 		}
 
 	public:
-		void OnFixedUpdate()
+		void OnFixedUpdate() override
 		{
 			_Refresh();
 		}
 
-		const std::vector<T>& GetVector()
+		const std::vector<T>& GetVector() override
 		{
 			return _vec;
 		}
 
-		void PushBack(T t)
+		void PushBack(T t) override
 		{
 			_vec.push_back(t);
 
 			_refreshed = false;
 		}
 
-		void EraseSelected()
+		void EraseSelected() override
 		{
 			if (_vec.empty())
 			{
@@ -49,7 +49,7 @@ namespace RB
 			_refreshed = false;
 		}
 
-		void EraseByIndex(unsigned int index)
+		void EraseByIndex(unsigned int index) override
 		{
 			if (_vec.empty())
 			{
@@ -63,7 +63,7 @@ namespace RB
 			_refreshed = false;
 		}
 
-		T* GetSelected()
+		T* GetSelected() override
 		{
 			if (_vec.empty())
 			{
@@ -78,7 +78,7 @@ namespace RB
 			return &(*_iterator);
 		}
 
-		T* GetByIndex(unsigned int index)
+		T* GetByIndex(unsigned int index) override
 		{
 			if (_vec.empty())
 			{
@@ -100,7 +100,7 @@ namespace RB
 			return &(*i);
 		}
 		
-		void SelectUp()
+		void SelectUp() override
 		{
 			if (_vec.empty())
 			{
@@ -122,7 +122,7 @@ namespace RB
 			}
 		}
 
-		void SelectDown()
+		void SelectDown() override
 		{
 			if (_vec.empty())
 			{

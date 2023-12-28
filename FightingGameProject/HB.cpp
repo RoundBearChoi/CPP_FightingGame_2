@@ -11,6 +11,14 @@ namespace RB::HBox
 		_vecLists.push_back(_loader.LoadDataList(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteEnum::aku_wince));
 	}
 
+	void HB::OnFixedUpdate()
+	{
+		for (auto i = _vecLists.begin(); i != _vecLists.end(); i++)
+		{
+			(*i).OnFixedUpdate();
+		}
+	}
+
 	HBoxDataList* HB::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (auto i = _vecLists.begin(); i != _vecLists.end(); i++)

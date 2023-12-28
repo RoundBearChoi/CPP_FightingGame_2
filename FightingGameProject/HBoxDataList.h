@@ -16,6 +16,14 @@ namespace RB::HBox
 		~HBoxDataList() = default;
 
 	public:
+		void OnFixedUpdate()
+		{
+			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
+			{
+				(*i).OnFixedUpdate();
+			}
+		}
+
 		void AddHBoxData(HBoxData data)
 		{
 			_vecHurtBoxData.push_back(data);

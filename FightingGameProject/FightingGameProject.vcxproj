@@ -186,7 +186,6 @@
     <ClCompile Include="PlayerInputRenderer.cpp" />
     <ClCompile Include="PlayerPositionRenderer.cpp" />
     <ClCompile Include="PlayerState.cpp" />
-    <ClCompile Include="Selector.cpp" />
     <ClCompile Include="SpecialMovesController.cpp" />
     <ClCompile Include="SpecialMoveSequenceBase.cpp" />
     <ClCompile Include="SpecsController.cpp" />

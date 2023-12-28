@@ -9,6 +9,8 @@ namespace RB::HBox
 	{
 	public:
 		void Init();
+		void OnFixedUpdate();
+
 		HBoxDataList* GetDataList(RB::Sprites::SpriteEnum spriteEnum);
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const;
 

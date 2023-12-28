@@ -10,6 +10,11 @@ namespace RB::HBox
 		_frame = _ParseFrame(frameName);
 	}
 
+	void HBoxData::OnFixedUpdate()
+	{
+		_selector.OnFixedUpdate();
+	}
+
 	unsigned int HBoxData::GetFrame()
 	{
 		return _frame;

@@ -15,6 +15,9 @@ namespace RB::HBox
 		~HBoxData() = default;
 
 	public:
+		void OnFixedUpdate();
+
+	public:
 		unsigned int GetFrame();
 		const std::vector<RB::Collisions::AABB>& GetVecAABBs();
 		RB::Collisions::AABB* GetSelectedAABB();

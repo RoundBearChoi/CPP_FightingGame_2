@@ -19,7 +19,7 @@ namespace RB::HBox
 
 	void HitBoxDataController::OnFixedUpdate()
 	{
-
+		_hb.OnFixedUpdate();
 	}
 
 	HBoxDataList* HitBoxDataController::GetDataList(RB::Sprites::SpriteEnum spriteEnum)

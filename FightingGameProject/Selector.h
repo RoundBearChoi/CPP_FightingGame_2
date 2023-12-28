@@ -11,9 +11,22 @@ namespace RB
 		~Selector() = default;
 
 	public:
-		void OnFixedUpdate();
-		void InitSelector_ToBegin(T begin);
-		void InitSelector_ToRBegin(T rbegin);
+		void OnFixedUpdate()
+		{
+			_fixedUpdated = true;
+		}
+
+		void InitSelector_ToBegin(T begin)
+		{
+			_iterator = begin;
+			_selectorInitialized = true;
+		}
+
+		void InitSelector_ToRBegin(T rbegin)
+		{
+			_iterator = rbegin;
+			_selectorInitialized = true;
+		}
 
 	private:
 		bool _fixedUpdated = false;

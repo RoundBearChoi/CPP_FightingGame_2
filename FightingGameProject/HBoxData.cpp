@@ -56,10 +56,10 @@ namespace RB::HBox
 		_frame = _ParseFrame(name);
 	}
 
-	void HBoxData::AddAABB(RB::Collisions::AABB aabb)
-	{
-		_selector.PushBack(aabb);
-	}
+	//void HBoxData::AddAABB(RB::Collisions::AABB aabb)
+	//{
+	//	_selector.PushBack(aabb);
+	//}
 
 	void HBoxData::DeleteSelectedAABB()
 	{

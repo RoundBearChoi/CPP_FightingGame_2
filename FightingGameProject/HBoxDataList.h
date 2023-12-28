@@ -50,7 +50,7 @@ namespace RB::HBox
 
 			HBoxData data;
 			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
-			data.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //width height size all 0
+			data.GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //width height size all 0
 			
 			_vecHurtBoxData.push_back(data);
 

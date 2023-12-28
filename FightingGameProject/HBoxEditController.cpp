@@ -201,7 +201,7 @@ namespace RB::HBox
 		
 		if (insButton.bPressed)
 		{
-			data->AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
+			data->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); // 0, 0 by default
 		
 			data->DownSelection();
 		}

@@ -120,7 +120,7 @@ namespace RB::HBox
 
 			HBoxData data0;
 			data0.SetFrameNameAndParse("frame_0");
-			data0.AddAABB(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //0, 0 by default
+			data0.GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 0.0f, 0.0f }); //0, 0 by default
 
 			defaultSet.AddHBoxData(data0);
 

@@ -428,46 +428,24 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (int i = vec.size() - 1; i >= 0; i--)
-		{
-			if (vec[i]->GetPlayerInputType() == playerInput)
-			{
-				if (vec[i]->GetGameFrameCount() == gameFrame && vec[i]->GetGameFrameLoopCount() == gameFrameLoop)
-				{
-					delete vec[i];
-					vec[i] = nullptr;
+		auto it = vec.begin();
 
-					std::vector<iInputObj*>::iterator it;
-					it = vec.begin();
-					vec.erase(it + i);
+		while (it != vec.end())
+		{
+			if ((*it)->GetPlayerInputType() == playerInput)
+			{
+				if ((*it)->GetGameFrameCount() == gameFrame && (*it)->GetGameFrameLoopCount() == gameFrameLoop)
+				{
+					delete (*it);
+					(*it) = nullptr;
+
+					it = vec.erase(it);
+
+					continue;
 				}
 			}
-		}
-	}
 
-	/// <summary>
-	/// erase just one
-	/// </summary>
-	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, iInputObj* inputObj)
-	{
-		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
-
-		for (int i = vec.size() - 1; i >= 0; i--)
-		{
-			if (vec[i]->GetPlayerInputType() == inputObj->GetPlayerInputType())
-			{
-				if (vec[i]->IsPressedOnSameFrameAs(inputObj))
-				{
-					delete vec[i];
-					vec[i] = nullptr;
-
-					std::vector<iInputObj*>::iterator it;
-					it = vec.begin();
-					vec.erase(it + i);
-
-					return;
-				}
-			}
+			it++;
 		}
 	}
 

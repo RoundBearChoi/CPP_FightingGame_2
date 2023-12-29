@@ -143,7 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ani.cpp" />
+    <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
@@ -239,7 +239,7 @@
   <ItemGroup>
     <ClInclude Include="AABB.h" />
     <ClInclude Include="AllocationCount.h" />
-    <ClInclude Include="Ani.h" />
+    <ClInclude Include="AnimationLoader.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="AttackRegister.h" />

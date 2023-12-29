@@ -229,7 +229,7 @@
     <ClCompile Include="GeneralHitStopController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
-    <ClCompile Include="Ani.cpp">
+    <ClCompile Include="AnimationLoader.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="VFXAnimationController.cpp">
@@ -615,7 +615,7 @@
     <ClInclude Include="iGeneralHitStopController.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
-    <ClInclude Include="Ani.h">
+    <ClInclude Include="AnimationLoader.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="VFXAnimationController.h">

@@ -22,6 +22,6 @@ namespace RB::Render
 		RB::Sprites::LoadedSprite* GetLoadedSprite(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
-		RB::Sprites::SpriteLoader _spriteLoader;
+		RB::Sprites::_SpriteLoader _spriteLoader;
 	};
 }

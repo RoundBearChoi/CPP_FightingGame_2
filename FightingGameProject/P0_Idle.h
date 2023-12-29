@@ -1,15 +1,5 @@
 #pragma once
-#include "olcPixelGameEngine.h"
 #include "PlayerState.h"
-
-#include "DoNotFixDirectionDuringState.h"
-#include "TransitionToJumpForward.h"
-#include "TransitionToJumpUp.h"
-#include "TransitionOnInput.h"
-#include "TransitionToWalkForward.h"
-#include "TransitionToWalkBack.h"
-
-#include "P0_Crouch.h"
 
 namespace RB::PlayerStates::Aku
 {

@@ -20,7 +20,7 @@ namespace RB::Render
 		~PlayerHBoxRenderer() = default;
 
 	public:
-		void Init(Sprites* sprites);
+		void Init(RB::Sprites::Sprites* sprites);
 		void OnUpdate();
 		void OnFixedUpdate();
 
@@ -30,6 +30,6 @@ namespace RB::Render
 	private:
 		void _Render(RB::Players::iPlayer* player, RB::HBox::HBox_Layer_0* L0, olc::Pixel color);
 
-		Sprites* _sprites = nullptr;
+		RB::Sprites::Sprites* _sprites = nullptr;
 	};
 }

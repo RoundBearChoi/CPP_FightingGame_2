@@ -1,6 +1,6 @@
 #include "Sprites.h"
 
-namespace RB::Render
+namespace RB::Sprites
 {
 	void Sprites::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
 	{

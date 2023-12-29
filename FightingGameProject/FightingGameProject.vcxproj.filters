@@ -106,9 +106,6 @@
     <ClCompile Include="_SpriteLoader.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="Sprites.cpp">
-      <Filter>Source Files\Render</Filter>
-    </ClCompile>
     <ClCompile Include="LoadedSprite.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
@@ -343,6 +340,9 @@
     <ClCompile Include="HBox_Layer_1.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
+    <ClCompile Include="Sprites.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -413,9 +413,6 @@
     </ClInclude>
     <ClInclude Include="_SpriteLoader.h">
       <Filter>Source Files\Sprites</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprites.h">
-      <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="LoadedSprite.h">
       <Filter>Source Files\Sprites</Filter>
@@ -767,6 +764,9 @@
     </ClInclude>
     <ClInclude Include="iSelector.h">
       <Filter>Source Files\RB</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites.h">
+      <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@
 
 #include "iCamController.h"
 
-namespace RB::Render
+namespace RB::Sprites
 {
 	class Sprites
 	{

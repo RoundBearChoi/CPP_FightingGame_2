@@ -16,7 +16,7 @@ namespace RB::Render
 		~PlayerPositionRenderer() = default;
 
 	public:
-		void Init(Sprites* spriteRenderer, LineRenderer* lineRenderer);
+		void Init(RB::Sprites::Sprites* spriteRenderer, LineRenderer* lineRenderer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
@@ -25,7 +25,7 @@ namespace RB::Render
 		void RenderBottomLeft(RB::Players::PlayerID playerID);
 
 	private:
-		Sprites* _spriteObj = nullptr;
+		RB::Sprites::Sprites* _spriteObj = nullptr;
 		LineRenderer* _lineRenderer = nullptr;
 	};
 }

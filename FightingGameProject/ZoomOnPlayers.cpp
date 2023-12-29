@@ -1,5 +1,10 @@
 #include "ZoomOnPlayers.h"
 
+#include "Ease.h"
+
+#include "iPlayerController.h"
+#include "iCamController.h"
+
 namespace RB::Cam
 {
 	void ZoomOnPlayers::Init()

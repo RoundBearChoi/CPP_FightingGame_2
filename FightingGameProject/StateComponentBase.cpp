@@ -2,11 +2,11 @@
 
 namespace RB::States
 {
-	/// <summary>
-	/// delete nextState pointer if it's not used
-	/// </summary>
 	StateComponentBase::~StateComponentBase()
 	{
+		//next states are deleted by state machine
+		//ie. PlayerState::ErasePreviousStates()
+
 		//for (auto i = _vecNextStates.rbegin(); i != _vecNextStates.rend(); i++)
 		//{
 		//	delete (*i);

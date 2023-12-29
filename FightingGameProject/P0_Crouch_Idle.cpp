@@ -1,5 +1,8 @@
 #include "P0_Crouch_Idle.h"
 
+#include "FixDirectionDuringState.h"
+#include "StandUpOnRelease.h"
+
 #include "P0_Idle.h"
 
 namespace RB::PlayerStates::Aku

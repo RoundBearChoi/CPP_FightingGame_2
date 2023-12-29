@@ -294,7 +294,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_SaveHBoxes_OnPress()
 	{
-		RB::HBox::HBox_Layer_1* list = GetCurrentL1(RB::Players::PlayerID::PLAYER_1, _boxType);
+		RB::HBox::HBox_Layer_1* L1 = GetCurrentL1(RB::Players::PlayerID::PLAYER_1, _boxType);
 
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 
@@ -307,11 +307,11 @@ namespace RB::HBox
 
 			if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 			{
-				path = RB::HBox::iHurtBoxDataController::instance->GetPath(list->GetSpriteEnum());
+				path = RB::HBox::iHurtBoxDataController::instance->GetPath(L1->GetSpriteEnum());
 			}
 			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 			{
-				path = RB::HBox::iHitBoxDataController::instance->GetPath(list->GetSpriteEnum());
+				path = RB::HBox::iHitBoxDataController::instance->GetPath(L1->GetSpriteEnum());
 			}
 
 			std::ofstream file(path);
@@ -321,17 +321,19 @@ namespace RB::HBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				const std::vector<HBox_Layer_0>& vecL0 = list->GetVecL0();
+				const auto& vecL0 = L1->GetVecL0();
 
-				for (unsigned int f = 0; f < vecL0.size(); f++)
+				for (auto i = vecL0.begin(); i != vecL0.end(); ++i)
 				{
-					HBox_Layer_0* L0 = list->GetHBoxDataByFrame(f);
+					HBox_Layer_0* L0 = (HBox_Layer_0*)&*i;
 					const std::string& frameName = L0->GetFrameName();
 
 					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					for (auto i = L0->GetSelector()->GetVector().begin(); i != L0->GetSelector()->GetVector().end(); ++i)
+					const auto& vecAABB = L0->GetSelector()->GetVector();
+
+					for (auto i = vecAABB.begin(); i != vecAABB.end(); ++i)
 					{
 						RB::Collisions::AABB aabb = *i;
 
@@ -351,7 +353,7 @@ namespace RB::HBox
 						}
 					}
 
-					if (f != vecL0.size() - 1)
+					if (i != vecL0.end() - 1)
 					{
 						file << "    ]," << std::endl << std::endl;
 					}

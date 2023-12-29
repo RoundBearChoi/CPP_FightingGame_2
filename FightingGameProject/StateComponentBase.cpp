@@ -50,7 +50,7 @@ namespace RB::States
 	{
 		for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
 		{
-			if ((*i)->ContainsState(stateID))
+			if ((*i)->ContainsState_Recursive(stateID))
 			{
 				return true;
 			}

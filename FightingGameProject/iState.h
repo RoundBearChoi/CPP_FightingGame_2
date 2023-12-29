@@ -18,7 +18,7 @@ namespace RB::States
 		virtual bool IsTransitioning() = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual unsigned int GetCumulatedFixedUpdates() = 0;
-		virtual bool ContainsState(unsigned int stateID) = 0;
+		virtual bool ContainsState_Recursive(unsigned int stateID) = 0;
 
 	public:
 		virtual void OnEnter() = 0;

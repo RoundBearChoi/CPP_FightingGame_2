@@ -84,7 +84,7 @@ namespace RB::PlayerStates
 				if ((*it)->GetStateID() != _stateCreationID)
 				{
 					// not in component
-					if (ContainsState((*it)->GetStateID()) == false)
+					if (ContainsState_Recursive((*it)->GetStateID()) == false)
 					{
 						RB::PlayerStates::PlayerState* playerState = (*it);
 

@@ -67,7 +67,7 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
-	bool StateBase::ContainsState(unsigned int stateID)
+	bool StateBase::ContainsState_Recursive(unsigned int stateID)
 	{
 		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{

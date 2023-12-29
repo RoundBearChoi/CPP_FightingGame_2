@@ -1,7 +1,7 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "SpriteEnum.h"
-#include "Sprites.h"
+#include "SpriteLoader.h"
 
 namespace RB::Background
 {

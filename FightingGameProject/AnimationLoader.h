@@ -2,7 +2,7 @@
 #include "iAnimationObj.h"
 #include "AnimationObj.h"
 
-#include "Sprites.h"
+#include "SpriteLoader.h"
 #include "_AnimationLoader.h"
 
 namespace RB::Render

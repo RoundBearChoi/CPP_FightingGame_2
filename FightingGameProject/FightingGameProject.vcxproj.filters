@@ -340,7 +340,7 @@
     <ClCompile Include="HBox_Layer_1.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="Sprites.cpp">
+    <ClCompile Include="SpriteLoader.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
     <ClCompile Include="P0_Crouch_Idle.cpp">
@@ -771,7 +771,7 @@
     <ClInclude Include="iSelector.h">
       <Filter>Source Files\RB</Filter>
     </ClInclude>
-    <ClInclude Include="Sprites.h">
+    <ClInclude Include="SpriteLoader.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="P0_Crouch_Idle.h">

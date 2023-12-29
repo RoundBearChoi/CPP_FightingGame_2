@@ -1,5 +1,5 @@
 #pragma once
-#include "Sprites.h"
+#include "SpriteLoader.h"
 #include "AABB.h"
 
 #include "HBoxType.h"

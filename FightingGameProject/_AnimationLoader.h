@@ -6,11 +6,11 @@
 
 namespace RB::Render
 {
-	class AnimationLoader
+	class _AnimationLoader
 	{
 		public:
-		AnimationLoader() = default;
-		~AnimationLoader();
+		_AnimationLoader() = default;
+		~_AnimationLoader();
 
 	public:
 		void Init();

@@ -1,5 +1,7 @@
 #include "HBox_Layer_0.h"
 
+#include <regex>
+
 namespace RB::HBox
 {
 	HBox_Layer_0::HBox_Layer_0(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)

@@ -70,7 +70,7 @@ namespace RB
 				return nullptr;
 			}
 
-			if (!_refreshed || !_initialized)
+			if (!_refreshed)
 			{
 				return nullptr;
 			}
@@ -85,7 +85,7 @@ namespace RB
 				return nullptr;
 			}
 
-			if (!_initialized || !_refreshed)
+			if (!_refreshed)
 			{
 				return nullptr;
 			}
@@ -159,14 +159,12 @@ namespace RB
 		{
 			if (_vec.empty())
 			{
-				_initialized = false;
 				_refreshed = false;
 				return;
 			}
 
 			if (!_refreshed)
 			{
-				_initialized = true;
 				_refreshed = true;
 				_iterator = _vec.end() - 1;
 			}
@@ -174,7 +172,6 @@ namespace RB
 
 	private:
 		bool _fixedUpdated = false;
-		bool _initialized = false;
 		bool _refreshed = true;
 		std::vector<T>::iterator _iterator;
 		std::vector<T> _vec;

@@ -29,6 +29,7 @@ namespace RB::PlayerStates
 
 	PlayerState::~PlayerState()
 	{
+		//remove self from current player states
 		for (auto i = currentPlayerStates.begin(); i != currentPlayerStates.end(); i++)
 		{
 			if ((*i) == this)
@@ -38,6 +39,7 @@ namespace RB::PlayerStates
 			}
 		}
 
+		//delete state components
 		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
 			delete (*i);

@@ -1,6 +1,9 @@
 #pragma once
 
+#include <vector>
+
 #include "SpecialMoveSequenceBase.h"
+#include "PlayerInput.h"
 
 namespace RB::Input::Sequences
 {

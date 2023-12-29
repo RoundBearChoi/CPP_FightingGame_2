@@ -1,5 +1,7 @@
 #include "SpriteLoader.h"
 
+#include "iCamController.h"
+
 namespace RB::Sprites
 {
 	void SpriteLoader::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)

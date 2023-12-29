@@ -1,12 +1,11 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "_SpriteLoader.h"
 #include "SpriteEnum.h"
 #include "LoadedSprite.h"
 #include "PivotType.h"
 
-#include "iCamController.h"
+#include "_SpriteLoader.h"
 
 namespace RB::Sprites
 {

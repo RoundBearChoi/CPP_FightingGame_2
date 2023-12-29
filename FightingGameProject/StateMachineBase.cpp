@@ -48,10 +48,6 @@ namespace RB::States
 		_MakeTransition();
 	}
 
-	/// <summary>
-	/// do not use new here (ONLY use a StateComponent for this function)
-	/// for new, use OverrideNextState()
-	/// </summary>
 	void StateMachineBase::QueueNextState(iState* state)
 	{
 		if (state == nullptr)
@@ -67,13 +63,9 @@ namespace RB::States
 		}
 	}
 
-	/// <summary>
-	/// use when NOT getting next state from a StateComponent
-	/// </summary>
-	/// <param name="state"></param>
 	void StateMachineBase::OverrideNextState(RB::States::iState* state)
 	{
-		//states that are in queue will be deleted by PlayerState::ClearRemainingStates()
+		//all past player states will be deleted by PlayerState::ErasePreviousStates()
 		_nextState = nullptr;
 
 		//reset status and queue

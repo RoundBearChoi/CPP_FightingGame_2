@@ -26,6 +26,7 @@ namespace RB::States
 		_currentState = state;
 		_currentState->SetStateMachineID(_stateMachineID);
 		_currentState->OnEnter();
+		_currentState->SetStateMachineIDs_Recursively();
 	}
 
 	void StateMachineBase::OnUpdate()
@@ -105,6 +106,7 @@ namespace RB::States
 			//enter next state
 			_nextState->SetStateMachineID(_stateMachineID);
 			_nextState->OnEnter();
+			_nextState->SetStateMachineIDs_Recursively();
 
 			_currentState = nullptr;
 			_currentState = _nextState;

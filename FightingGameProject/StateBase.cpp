@@ -39,6 +39,14 @@ namespace RB::States
 		return _stateMachineID;
 	}
 
+	void StateBase::SetStateMachineIDs_Recursively()
+	{
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
+		{
+			(*i)->SetStateMachineID(_stateMachineID);
+		}
+	}
+
 	void StateBase::SetIsTransitioning(bool status)
 	{
 		_isTransitioning = status;

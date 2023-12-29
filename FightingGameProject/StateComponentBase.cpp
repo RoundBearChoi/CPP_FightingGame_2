@@ -63,4 +63,12 @@ namespace RB::States
 
 		return false;
 	}
+	void StateComponentBase::SetStateMachineID(unsigned int id)
+	{
+		for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
+		{
+			(*i)->SetStateMachineID(id);
+			(*i)->SetStateMachineIDs_Recursively();
+		}
+	}
 }

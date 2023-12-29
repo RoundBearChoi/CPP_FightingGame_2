@@ -18,6 +18,7 @@ namespace RB::States
 		virtual unsigned int GetStateID() override;
 		virtual void SetStateMachineID(unsigned int id) override;
 		virtual unsigned int GetStateMachineID() override;
+		virtual void SetStateMachineIDs_Recursively() override;
 		virtual void SetIsTransitioning(bool status) override;
 		virtual bool IsTransitioning() override;
 		virtual void AddCumulatedFixedUpdate() override;

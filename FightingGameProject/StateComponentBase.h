@@ -21,6 +21,7 @@ namespace RB::States
 
 		const virtual int& GetFixedUpdateOnCount() const;
 		virtual bool ContainsState(unsigned int stateID);
+		virtual void SetStateMachineID(unsigned int id);
 
 	protected:
 		iState* _state = nullptr;

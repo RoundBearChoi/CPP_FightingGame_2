@@ -66,32 +66,18 @@ namespace RB::PlayerStates
 		}
 	}
 
+	/// <summary>
+	/// delete my states that are not part of the queue tree
+	/// </summary>
 	void PlayerState::ClearRemainingStates()
 	{
-		RB::Players::iPlayer* player = GetPlayer();
-
-		bool otherPlayerHasState = false;
-
-		if (player != nullptr)
-		{
-			RB::Players::iPlayer* otherPlayer = RB::Players::iPlayerController::instance->GetOtherPlayer(player);
-
-			if (otherPlayer != nullptr)
-			{
-				otherPlayerHasState = otherPlayer->GetStateMachine()->GetCurrentState()->ContainsState(_stateCreationID);
-			}
-		}
-		
-
-		
-
 		auto it = allPlayerStates.begin();
 
 		while(it != allPlayerStates.end())
 		{
 			unsigned int stateMachineID = (*it)->GetStateMachineID();
 
-			// same player (does not include states that have not yet entered state machine yet)
+			// same player
 			if (stateMachineID == _stateMachineID)
 			{
 				// different state
@@ -105,7 +91,6 @@ namespace RB::PlayerStates
 						it = allPlayerStates.erase(it);
 
 						delete playerState;
-						playerState = nullptr;
 
 						continue;
 					}
@@ -127,4 +112,26 @@ namespace RB::PlayerStates
 	{
 		return _spriteEnum;
 	}
+
+	//bool PlayerState::_OtherPlayerHasState(unsigned int stateID)
+	//{
+	//	RB::Players::iPlayer* player = GetPlayer();
+	//
+	//	if (player != nullptr)
+	//	{
+	//		RB::Players::iPlayer* otherPlayer = RB::Players::iPlayerController::instance->GetOtherPlayer(player);
+	//
+	//		if (otherPlayer != nullptr)
+	//		{
+	//			bool otherPlayerHasState = otherPlayer->GetStateMachine()->GetCurrentState()->ContainsState(_stateCreationID);
+	//
+	//			if (otherPlayerHasState)
+	//			{
+	//				return true;
+	//			}
+	//		}
+	//	}
+	//
+	//	return false;
+	//}
 }

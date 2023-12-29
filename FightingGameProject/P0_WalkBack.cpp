@@ -1,5 +1,12 @@
 #include "P0_WalkBack.h"
 
+#include "DoNotFixDirectionDuringState.h"
+#include "TransitionToJumpUp.h"
+#include "WhileMovingBack.h"
+
+#include "P0_JumpUp_0.h"
+#include "P0_Idle.h"
+
 namespace RB::PlayerStates::Aku
 {
 	void P0_WalkBack::OnEnter()

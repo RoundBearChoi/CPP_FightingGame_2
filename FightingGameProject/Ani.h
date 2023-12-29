@@ -31,7 +31,7 @@ namespace RB::Render
 
 	protected:
 		RB::Sprites::SpriteLoader _sprites;
-		_AnimationLoader _loader;
+		_AnimationLoader _aniLoader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
 	};
 }

@@ -1,7 +1,9 @@
 #pragma once
-
+#include <string>
 #include <vector>
+
 #include "_HBoxLoader.h"
+#include "HBox_Layer_1.h"
 
 namespace RB::HBox
 {

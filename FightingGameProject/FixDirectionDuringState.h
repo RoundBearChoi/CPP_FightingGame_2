@@ -5,18 +5,17 @@
 
 namespace RB::PlayerStateComponents
 {
-	class FixDirectionDuringState : public RB::States::StateComponentBase
+	class DoNotFixDirectionDuringState : public RB::States::StateComponentBase
 	{
 	public:
-		FixDirectionDuringState(bool fix);
-		~FixDirectionDuringState() override {};
+		DoNotFixDirectionDuringState() = default;
+		~DoNotFixDirectionDuringState() override {};
 
 	public:
 		void OnEnter() override;
 		void OnExit() override;
 
 	private:
-		bool _fix = false;
 		RB::Players::iPlayer* _player = nullptr;
 	};
 }

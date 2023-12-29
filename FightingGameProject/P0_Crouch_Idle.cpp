@@ -11,7 +11,7 @@ namespace RB::PlayerStates::Aku
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::aku_crouch_idle;
 
-		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
+		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::PlayerStates::Aku::P0_StandUp()));
 
 		EnterStateComponents();

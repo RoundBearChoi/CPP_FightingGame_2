@@ -8,7 +8,7 @@ namespace RB::PlayerStates::Aku
 
 		RB::Players::Specs::MoveSpecs m = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
-		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
+		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::Aku::P0_JumpForwardUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::Aku::P0_JumpUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward(m.mWalk_Forward_Speed, new RB::PlayerStates::Aku::P0_Idle(), new RB::PlayerStates::Aku::P0_WalkBack()));

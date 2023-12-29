@@ -2,20 +2,15 @@
 
 namespace RB::PlayerStateComponents
 {
-	FixDirectionDuringState::FixDirectionDuringState(bool fix)
-	{
-		_fix = fix;
-	}
-
-	void FixDirectionDuringState::OnEnter()
+	void DoNotFixDirectionDuringState::OnEnter()
 	{
 		_player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		_player->FixDirDuringState(_fix);
+		_player->FixDirDuringState(false);
 	}
 
-	void FixDirectionDuringState::OnExit()
+	void DoNotFixDirectionDuringState::OnExit()
 	{
-		_player->FixDirDuringState(!_fix);
+		_player->FixDirDuringState(true);
 	}
 }

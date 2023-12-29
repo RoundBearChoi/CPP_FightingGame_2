@@ -2,8 +2,8 @@
 #include <vector>
 
 #include "StateBase.h"
+#include "SpriteEnum.h"
 
-#include "iPlayerController.h"
 #include "iPlayer.h"
 
 namespace RB::PlayerStates

@@ -1,13 +1,8 @@
 #pragma once
-#include "olcPixelGameEngine.h"
+
 #include "StateComponentBase.h"
-#include "SpriteEnum.h"
-#include "Ease.h"
 
-#include "iPlayer.h"
-#include "P0_JumpUp_1.h"
-
-#include "iSpecsController.h"
+#include "iState.h"
 
 namespace RB::PlayerStateComponents
 {

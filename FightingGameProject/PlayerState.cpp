@@ -1,5 +1,7 @@
 #include "PlayerState.h"
 
+#include "iPlayerController.h"
+
 namespace RB::PlayerStates
 {
 	std::vector<PlayerState*> PlayerState::allPlayerStates;

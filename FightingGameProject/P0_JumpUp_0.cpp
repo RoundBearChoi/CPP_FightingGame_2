@@ -5,6 +5,8 @@
 
 #include "P0_JumpUp_1.h"
 
+#include "iSpecsController.h"
+
 namespace RB::PlayerStates::Aku
 {
 	void P0_JumpUp_0::OnEnter()

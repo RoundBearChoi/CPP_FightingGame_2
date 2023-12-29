@@ -1,5 +1,11 @@
 #include "P0_Hadouken.h"
 
+#include "FixSpecialMoveStatusDuringState.h"
+#include "MarkInitiallyFacingRight.h"
+#include "TransitionOnAnimationEnd.h"
+
+#include "P0_Idle.h"
+
 namespace RB::PlayerStates::Aku
 {
 	void P0_Hadouken::OnEnter()

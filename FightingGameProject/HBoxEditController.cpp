@@ -1,5 +1,7 @@
 #include "HBoxEditController.h"
 
+#include "iPlayerController.h"
+
 namespace RB::HBox
 {
 	HBoxEditController::HBoxEditController(RB::HBox::HBoxType boxType)

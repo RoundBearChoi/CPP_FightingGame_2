@@ -1,9 +1,6 @@
 #pragma once
 #include "PlayerState.h"
 
-#include "MoveDownOnFall.h"
-#include "MoveForwardOnJump_1.h"
-
 namespace RB::PlayerStates::Aku
 {
 	class P0_JumpForwardUp_1 : public RB::PlayerStates::PlayerState

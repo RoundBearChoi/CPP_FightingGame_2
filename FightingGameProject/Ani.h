@@ -1,5 +1,4 @@
 #pragma once
-#include "iAni.h"
 #include "iAnimationObj.h"
 #include "AnimationObj.h"
 
@@ -8,31 +7,31 @@
 
 namespace RB::Render
 {
-	class Ani : public RB::Render::iAni
+	class AnimationLoader
 	{
 	public:
-		Ani() = default;
-		~Ani() override;
+		AnimationLoader() = default;
+		~AnimationLoader();
 
-		virtual void Init() override;
-		virtual void OnFixedUpdate() override;
-		virtual void OnUpdate() override;
+		virtual void Init();
+		virtual void OnFixedUpdate();
+		virtual void OnUpdate();
 
-		virtual void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum) override;
-		virtual void LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum) override;
-		virtual void DeleteAnimationObjs(RB::Players::PlayerID playerID) override;
-		virtual std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it) override;
-		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum) override;
-		virtual iAnimationObj* GetCurrentAnimationObj(unsigned int index) override;
-		virtual iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType) override;
-		virtual RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID) override;
-		virtual void AddNewAnimation(iAnimationObj* animationObj) override;
-		virtual const std::vector<iAnimationObj*>& GetVecCurrentAnimations() override;
-		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum) override;
+		virtual void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum);
+		virtual void LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum);
+		virtual void DeleteAnimationObjs(RB::Players::PlayerID playerID);
+		virtual std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);
+		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum);
+		virtual iAnimationObj* GetCurrentAnimationObj(unsigned int index);
+		virtual iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType);
+		virtual RB::Sprites::SpriteEnum GetSpriteEnum(RB::Players::PlayerID playerID);
+		virtual void AddNewAnimation(iAnimationObj* animationObj);
+		virtual const std::vector<iAnimationObj*>& GetVecCurrentAnimations();
+		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum);
 
 	protected:
 		Sprites _sprites;
-		_AnimationLoader _animationLoader;
+		_AnimationLoader _loader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
 	};
 }

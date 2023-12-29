@@ -258,7 +258,6 @@
     <ClInclude Include="GameFrame.h" />
     <ClInclude Include="GeneralHitStopController.h" />
     <ClInclude Include="HitBoxDataController.h" />
-    <ClInclude Include="iAni.h" />
     <ClInclude Include="iAttackRegisterController.h" />
     <ClInclude Include="iGeneralHitStopController.h" />
     <ClInclude Include="iHBoxEditController.h" />

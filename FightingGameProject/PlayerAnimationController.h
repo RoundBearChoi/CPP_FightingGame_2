@@ -32,6 +32,6 @@ namespace RB::Render
 		AnimationSpecs _LoadAnimationSpecs(std::string path);
 
 	private:
-		Ani _ani;
+		AnimationLoader animationLoader;
 	};
 }

@@ -4,9 +4,9 @@ namespace RB::Render
 {
     void VFXAnimationController::Init()
     {
-        _ani.Init();
+        animationLoader.Init();
 
-        _ani.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteEnum::vfx_hiteffect_0);
+        animationLoader.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteEnum::vfx_hiteffect_0);
 
         AnimationSpecs hit0Specs;
         hit0Specs.mX_TileCount = 5;
@@ -17,36 +17,36 @@ namespace RB::Render
         hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, -6.0f };
         hit0Specs.mSpriteEnum = RB::Sprites::SpriteEnum::vfx_hiteffect_0;
 
-        _ani.LoadAnimation(hit0Specs, RB::Sprites::SpriteEnum::vfx_hiteffect_0);
+        animationLoader.LoadAnimation(hit0Specs, RB::Sprites::SpriteEnum::vfx_hiteffect_0);
     }
 
     void VFXAnimationController::OnUpdate()
     {
-        _ani.OnUpdate();
+        animationLoader.OnUpdate();
     }
 
     void VFXAnimationController::OnFixedUpdate()
     {
-        _ani.OnFixedUpdate();
+        animationLoader.OnFixedUpdate();
         
         _DeleteFinishedAnimations();
     }
 
     void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos)
     {
-        AnimationRenderer* aniRenderer = _ani.GetAnimationRenderer(spriteEnum);
+        AnimationRenderer* aniRenderer = animationLoader.GetAnimationRenderer(spriteEnum);
         
         //no owner player
         iAnimationObj* animationObj = new AnimationObj(nullptr, aniRenderer, RB::Sprites::PivotType::CENTER);
 
         animationObj->SetWorldPos(pos);
 
-        _ani.AddNewAnimation(animationObj);
+        animationLoader.AddNewAnimation(animationObj);
     }
 
     void VFXAnimationController::_DeleteFinishedAnimations()
     {
-        auto& vec = _ani.GetVecCurrentAnimations();
+        auto& vec = animationLoader.GetVecCurrentAnimations();
 
         std::vector<iAnimationObj*>::const_iterator it = vec.begin();
 
@@ -59,7 +59,7 @@ namespace RB::Render
 
             if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
             {
-                it = _ani.DeleteAnimationObj(it);
+                it = animationLoader.DeleteAnimationObj(it);
             }
             else
             {

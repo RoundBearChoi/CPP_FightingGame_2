@@ -1,5 +1,8 @@
 #include "SpecialMoveSequenceBase.h"
 
+#include "iPlayerController.h"
+#include "iInputController.h"
+
 namespace RB::Input
 {
 	SpecialMoveSequenceBase::~SpecialMoveSequenceBase()

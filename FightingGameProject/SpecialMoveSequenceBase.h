@@ -4,8 +4,8 @@
 
 #include "iSpecialMoveSequence.h"
 
-#include "iInputController.h"
-#include "iPlayerController.h"
+#include "PlayerID.h"
+#include "PlayerInput.h"
 
 namespace RB::Input
 {

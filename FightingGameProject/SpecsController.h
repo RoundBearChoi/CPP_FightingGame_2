@@ -1,8 +1,9 @@
 #pragma once
 
 #include <vector>
-#include "JGetter.h"
+#include <string>
 
+#include "MoveSpecs.h"
 #include "CharacterType.h"
 
 #include "iSpecsController.h"

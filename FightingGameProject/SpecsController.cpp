@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "JGetter.h"
+
 namespace RB::Players::Specs
 {
 	SpecsController::~SpecsController()

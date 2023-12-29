@@ -3,7 +3,7 @@
 #include "PlayerState.h"
 #include "iPlayer.h"
 
-#include "FixDirectionDuringState.h"
+#include "DoNotFixDirectionDuringState.h"
 #include "TransitionToJumpUp.h"
 #include "WhileMovingBack.h"
 

@@ -2,7 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "PlayerState.h"
 
-#include "FixDirectionDuringState.h"
+#include "DoNotFixDirectionDuringState.h"
 #include "TransitionToJumpForward.h"
 #include "TransitionToJumpUp.h"
 #include "TransitionOnInput.h"

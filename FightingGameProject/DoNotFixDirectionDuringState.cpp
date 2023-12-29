@@ -1,4 +1,4 @@
-#include "FixDirectionDuringState.h"
+#include "DoNotFixDirectionDuringState.h"
 
 namespace RB::PlayerStateComponents
 {

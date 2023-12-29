@@ -149,7 +149,7 @@
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
-    <ClCompile Include="FixDirectionDuringState.cpp" />
+    <ClCompile Include="DoNotFixDirectionDuringState.cpp" />
     <ClCompile Include="FixSpecialMoveStatusDuringState.cpp" />
     <ClCompile Include="FixWincingStatusDuringState.cpp" />
     <ClCompile Include="FollowPlayers.cpp" />
@@ -253,7 +253,7 @@
     <ClInclude Include="DetectHit.h" />
     <ClInclude Include="DisplaySize.h" />
     <ClInclude Include="Ease.h" />
-    <ClInclude Include="FixDirectionDuringState.h" />
+    <ClInclude Include="DoNotFixDirectionDuringState.h" />
     <ClInclude Include="FixSpecialMoveStatusDuringState.h" />
     <ClInclude Include="FixWincingStatusDuringState.h" />
     <ClInclude Include="FollowPlayers.h" />

@@ -277,7 +277,7 @@
     <ClCompile Include="P0_Seq_Hadouken.cpp">
       <Filter>Source Files\Input\Sequences</Filter>
     </ClCompile>
-    <ClCompile Include="FixDirectionDuringState.cpp">
+    <ClCompile Include="DoNotFixDirectionDuringState.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="FixWincingStatusDuringState.cpp">
@@ -693,7 +693,7 @@
     <ClInclude Include="P0_Seq_Hadouken.h">
       <Filter>Source Files\Input\Sequences</Filter>
     </ClInclude>
-    <ClInclude Include="FixDirectionDuringState.h">
+    <ClInclude Include="DoNotFixDirectionDuringState.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="FixWincingStatusDuringState.h">

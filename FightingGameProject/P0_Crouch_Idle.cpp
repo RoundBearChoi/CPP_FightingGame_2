@@ -3,7 +3,6 @@
 #include "FixDirectionDuringState.h"
 #include "StandUpOnRelease.h"
 
-//#include "P0_Idle.h"
 #include "P0_StandUp.h"
 
 namespace RB::PlayerStates::Aku

@@ -25,6 +25,6 @@ namespace RB::States
 		virtual void OnExit() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
-		virtual void ClearRemainingStates() = 0;
+		virtual void ErasePreviousStates() = 0;
 	};
 }

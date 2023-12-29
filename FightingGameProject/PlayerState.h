@@ -19,7 +19,7 @@ namespace RB::PlayerStates
 		PlayerState();
 		~PlayerState() override;
 
-		void ClearRemainingStates() override;
+		void ErasePreviousStates() override;
 
 	public:
 		RB::Players::iPlayer* GetPlayer();

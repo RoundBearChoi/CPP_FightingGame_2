@@ -67,9 +67,9 @@ namespace RB::PlayerStates
 	}
 
 	/// <summary>
-	/// delete my states that are not part of the queue tree
+	/// delete my previous states (that are not part of the queues)
 	/// </summary>
-	void PlayerState::ClearRemainingStates()
+	void PlayerState::ErasePreviousStates()
 	{
 		auto it = allPlayerStates.begin();
 

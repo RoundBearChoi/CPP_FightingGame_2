@@ -108,12 +108,11 @@ namespace RB::States
 			_nextState->OnEnter();
 			_nextState->SetStateMachineIDs_Recursively();
 
-			_currentState = nullptr;
 			_currentState = _nextState;
 			_nextState = nullptr;
 
-			//del player states in queue that are not used
-			_currentState->ClearRemainingStates();
+			//del prev states
+			_currentState->ErasePreviousStates();
 		}
 	}
 }

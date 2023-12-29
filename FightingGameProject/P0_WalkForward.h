@@ -1,14 +1,5 @@
 #pragma once
-#include "MoveSpecs.h"
 #include "PlayerState.h"
-#include "iPlayer.h"
-
-#include "DoNotFixDirectionDuringState.h"
-#include "TransitionToJumpForward.h"
-#include "TransitionToJumpUp.h"
-#include "WhileMovingForward.h"
-
-#include "iSpecsController.h"
 
 namespace RB::PlayerStates::Aku
 {

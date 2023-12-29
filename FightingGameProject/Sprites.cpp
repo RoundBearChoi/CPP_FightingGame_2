@@ -4,7 +4,7 @@ namespace RB::Render
 {
 	void Sprites::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		_spriteLoader.LoadSprite(path, spriteEnum);
+		_loader.LoadSprite(path, spriteEnum);
 	}
 
 	void Sprites::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
@@ -14,7 +14,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Sprites::LoadedSprite* loadedSprite = _spriteLoader.GetLoadedSprite(spriteEnum);
+		RB::Sprites::LoadedSprite* loadedSprite = _loader.GetLoadedSprite(spriteEnum);
 
 		olc::vf2d half = widthHeight * 0.5f;
 
@@ -73,6 +73,6 @@ namespace RB::Render
 
 	RB::Sprites::LoadedSprite* Sprites::GetLoadedSprite(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		return _spriteLoader.GetLoadedSprite(spriteEnum);
+		return _loader.GetLoadedSprite(spriteEnum);
 	}
 }

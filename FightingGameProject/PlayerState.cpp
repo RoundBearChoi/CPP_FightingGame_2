@@ -32,7 +32,7 @@ namespace RB::PlayerStates
 		//remove self from current player states
 		for (auto i = currentPlayerStates.begin(); i != currentPlayerStates.end(); i++)
 		{
-			if ((*i) == this)
+			if ((*i)->GetCreationID() == _stateCreationID)
 			{
 				currentPlayerStates.erase(i);
 				break;

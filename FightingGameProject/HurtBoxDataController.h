@@ -1,8 +1,12 @@
 #pragma once
 
-#include "HBox_Layer_2.h"
+#include <string>
 
 #include "iHurtBoxDataController.h"
+#include "HBox_Layer_1.h"
+#include "HBox_Layer_2.h"
+#include "SpriteEnum.h"
+
 
 namespace RB::HBox
 {

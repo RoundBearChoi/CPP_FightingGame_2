@@ -21,7 +21,7 @@ namespace RB::HBox
 		std::vector<HBox_Layer_1> _vecL1;
 
 		const std::string _none = "none";
-		std::string _dir = "AssignHBDataDirectory/";
+		std::string _dir = "HBDirectory/";
 		std::string _extention = ".HurtBoxSpecs";
 	};
 }

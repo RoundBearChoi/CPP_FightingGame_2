@@ -346,6 +346,9 @@
     <ClCompile Include="P0_Crouch_Idle.cpp">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
+    <ClCompile Include="P0_StandUp.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -772,6 +775,9 @@
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="P0_Crouch_Idle.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_StandUp.h">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClInclude>
   </ItemGroup>

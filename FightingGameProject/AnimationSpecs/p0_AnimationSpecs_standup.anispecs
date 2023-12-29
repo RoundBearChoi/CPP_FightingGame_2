@@ -1,9 +1,9 @@
 {
-    "p0_AnimationSpecs_crouch_idle":
+    "p0_AnimationSpecs_standup":
         {
-        "mX_TileCount" : 1,
+        "mX_TileCount" : 2,
         "mY_TileCount" : 1,
-        "mTotalSprites" : 1,
+        "mTotalSprites" : 2,
         "mSkipFixedUpdates" : 2,
         "mRenderSizeX" : 97,
         "mRenderSizeY" : 188,

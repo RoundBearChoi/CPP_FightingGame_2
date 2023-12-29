@@ -25,7 +25,7 @@ namespace RB::HBox
 
 	public:
 		json_value_s* LoadRoot(std::string path);
-		HBox_Layer_1 LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
+		HBox_Layer_1 Load_L1(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
 		std::string ParseName(const json_object_s& wholeObj, const unsigned int frame);
 

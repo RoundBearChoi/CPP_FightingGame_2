@@ -58,14 +58,14 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
 
-		RB::HBox::HBox_Layer_1* list = _getList();
+		RB::HBox::HBox_Layer_1* L1 = _Get_L1();
 
-		if (list == nullptr)
+		if (L1 == nullptr)
 		{
 			return;
 		}
 
-		RB::HBox::HBox_Layer_0* L0 = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBox_Layer_0* L0 = L1->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (L0 == nullptr)
 		{
@@ -101,14 +101,14 @@ namespace RB::HBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HBox::HBox_Layer_1* list = _getList();
+		RB::HBox::HBox_Layer_1* L1 = _Get_L1();
 		
-		if (list == nullptr)
+		if (L1 == nullptr)
 		{
 			return _none;
 		}
 
-		RB::HBox::HBox_Layer_0* L0 = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBox_Layer_0* L0 = L1->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (L0 == nullptr)
 		{
@@ -146,27 +146,27 @@ namespace RB::HBox
 		return obj->GetCurrentIndex();
 	}
 
-	RB::HBox::HBox_Layer_1* MenuController::_getList()
+	RB::HBox::HBox_Layer_1* MenuController::_Get_L1()
 	{
 		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
 
-		RB::HBox::HBox_Layer_1* list = nullptr;
+		RB::HBox::HBox_Layer_1* L1 = nullptr;
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				list = RB::HBox::iHurtBoxDataController::instance->GetDataList(_currentSpriteEnum);
+				L1 = RB::HBox::iHurtBoxDataController::instance->GetL1(_currentSpriteEnum);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				list = RB::HBox::iHitBoxDataController::instance->GetDataList(_currentSpriteEnum);
+				L1 = RB::HBox::iHitBoxDataController::instance->GetDataList(_currentSpriteEnum);
 			}
 		}
 
-		return list;
+		return L1;
 	}
 }

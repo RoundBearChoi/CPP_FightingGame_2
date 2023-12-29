@@ -24,7 +24,7 @@ namespace RB::HBox
 
 	HBox_Layer_1* HitBoxDataController::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		return _hb.GetDataList(spriteEnum);
+		return _hb.GetL1(spriteEnum);
 	}
 
 	const std::string& HitBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum) const

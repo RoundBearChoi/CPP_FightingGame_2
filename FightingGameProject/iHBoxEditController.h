@@ -15,7 +15,7 @@ namespace RB::HBox
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual RB::HBox::HBox_Layer_1* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) = 0;
+		virtual RB::HBox::HBox_Layer_1* GetCurrentL1(RB::Players::PlayerID playerID, HBoxType boxType) = 0;
 		virtual RB::HBox::HBox_Layer_0* GetCurrentHBoxData(RB::Players::PlayerID playerID) = 0;
 		virtual RB::HBox::HBoxType GetHBoxType() = 0;
 	};

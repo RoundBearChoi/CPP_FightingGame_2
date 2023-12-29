@@ -109,7 +109,7 @@ namespace RB::HBox
 	/// <summary>
 	/// only use during initialization (vector addresses)
 	/// </summary>
-	HBox_Layer_1 HBoxLoader::LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	HBox_Layer_1 HBoxLoader::Load_L1(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
 		if (GetDataListPath(spriteEnum).GetSpriteEnum() == RB::Sprites::SpriteEnum::NONE)
@@ -122,19 +122,19 @@ namespace RB::HBox
 
 		if (root == nullptr)
 		{
-			HBox_Layer_1 defaultSet{ spriteEnum };
+			HBox_Layer_1 defaultData{ spriteEnum };
 
 			HBox_Layer_0 L0;
 			L0.SetFrameNameAndParse("frame_0");
 
-			defaultSet.AddHBoxData(L0);
+			defaultData.AddHBoxData(L0);
 
-			return defaultSet;
+			return defaultData;
 		}
 
 		struct json_object_s* obj = json_value_as_object(root);
 
-		HBox_Layer_1 dataList{ spriteEnum };
+		HBox_Layer_1 L1{ spriteEnum };
 
 		for (int i = 0; i < obj->length; i++)
 		{
@@ -142,13 +142,13 @@ namespace RB::HBox
 			std::string name = ParseName(*obj, i);
 
 			HBox_Layer_0 L0 { name, vec};
-			dataList.AddHBoxData(L0);
+			L1.AddHBoxData(L0);
 		}
 
 		//make sure to free root after use
 		free(root);
 
-		return dataList;
+		return L1;
 	}
 
 	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)

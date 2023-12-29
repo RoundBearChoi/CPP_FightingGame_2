@@ -30,7 +30,7 @@ namespace RB::HBox
 
 	}
 
-	RB::HBox::HBox_Layer_1* HBoxEditController::GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType)
+	RB::HBox::HBox_Layer_1* HBoxEditController::GetCurrentL1(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
 
@@ -51,24 +51,24 @@ namespace RB::HBox
 		int currentIndex = aniObj->GetCurrentIndex();
 
 		//can get either hurtbox or hitbox
-		RB::HBox::HBox_Layer_1* dataList = nullptr;
+		RB::HBox::HBox_Layer_1* L1 = nullptr;
 
 		if (boxType == HBoxType::HURT_BOX)
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				dataList = RB::HBox::iHurtBoxDataController::instance->GetDataList(spriteEnum);
+				L1 = RB::HBox::iHurtBoxDataController::instance->GetL1(spriteEnum);
 			}
 		}
 		else if (boxType == HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				dataList = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
+				L1 = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
 			}
 		}
 
-		return dataList;
+		return L1;
 	}
 
 	RB::HBox::HBox_Layer_0* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
@@ -91,23 +91,23 @@ namespace RB::HBox
 
 		int currentIndex = aniObj->GetCurrentIndex();
 
-		RB::HBox::HBox_Layer_1* dataList = nullptr;
+		RB::HBox::HBox_Layer_1* L1 = nullptr;
 		
 		if (_boxType == HBoxType::HURT_BOX)
 		{
-			dataList = RB::HBox::iHurtBoxDataController::instance->GetDataList(spriteEnum);
+			L1 = RB::HBox::iHurtBoxDataController::instance->GetL1(spriteEnum);
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
-			dataList = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
+			L1 = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
 		}
 
-		if (dataList == nullptr)
+		if (L1 == nullptr)
 		{
 			return nullptr;
 		}
 
-		RB::HBox::HBox_Layer_0* data = dataList->GetHBoxDataByFrame(currentIndex);
+		RB::HBox::HBox_Layer_0* data = L1->GetHBoxDataByFrame(currentIndex);
 
 		return data;
 	}
@@ -294,7 +294,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_SaveHBoxes_OnPress()
 	{
-		RB::HBox::HBox_Layer_1* list = GetCurrentHBoxDataList(RB::Players::PlayerID::PLAYER_1, _boxType);
+		RB::HBox::HBox_Layer_1* list = GetCurrentL1(RB::Players::PlayerID::PLAYER_1, _boxType);
 
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 

@@ -155,7 +155,7 @@
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
-    <ClCompile Include="HBoxDataList.cpp" />
+    <ClCompile Include="HBox_Layer_1.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
     <ClCompile Include="JGetter.cpp" />
@@ -286,7 +286,7 @@
     <ClInclude Include="HitBoxEditorUpdater.h" />
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HBox_Layer_0.h" />
-    <ClInclude Include="HBoxDataList.h" />
+    <ClInclude Include="HBox_Layer_1.h" />
     <ClInclude Include="iBackgroundController.h" />
     <ClInclude Include="iCamController.h" />
     <ClInclude Include="iHurtBoxDataController.h" />

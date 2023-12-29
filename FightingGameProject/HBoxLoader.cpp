@@ -109,7 +109,7 @@ namespace RB::HBox
 	/// <summary>
 	/// only use during initialization (vector addresses)
 	/// </summary>
-	HBoxDataList HBoxLoader::LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	HBox_Layer_1 HBoxLoader::LoadDataList(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
 		if (GetDataListPath(spriteEnum).GetSpriteEnum() == RB::Sprites::SpriteEnum::NONE)
@@ -122,7 +122,7 @@ namespace RB::HBox
 
 		if (root == nullptr)
 		{
-			HBoxDataList defaultSet{ spriteEnum };
+			HBox_Layer_1 defaultSet{ spriteEnum };
 
 			HBox_Layer_0 L0;
 			L0.SetFrameNameAndParse("frame_0");
@@ -134,7 +134,7 @@ namespace RB::HBox
 
 		struct json_object_s* obj = json_value_as_object(root);
 
-		HBoxDataList dataList{ spriteEnum };
+		HBox_Layer_1 dataList{ spriteEnum };
 
 		for (int i = 0; i < obj->length; i++)
 		{

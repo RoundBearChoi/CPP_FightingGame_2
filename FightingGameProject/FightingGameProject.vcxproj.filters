@@ -340,7 +340,7 @@
     <ClCompile Include="StandUpOnRelease.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="HBoxDataList.cpp">
+    <ClCompile Include="HBox_Layer_1.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
   </ItemGroup>
@@ -504,7 +504,7 @@
     <ClInclude Include="HBox_Layer_0.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="HBoxDataList.h">
+    <ClInclude Include="HBox_Layer_1.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="ManualAnimationUpdater.h">

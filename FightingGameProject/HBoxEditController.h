@@ -1,6 +1,6 @@
 #pragma once
 #include "Time.h"
-#include "HBoxDataList.h"
+#include "HBox_Layer_1.h"
 #include "AABB.h"
 #include "PlayerID.h"
 #include "PlayerState.h"
@@ -25,7 +25,7 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) override;
+		RB::HBox::HBox_Layer_1* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) override;
 		RB::HBox::HBox_Layer_0* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxType GetHBoxType() override;
 

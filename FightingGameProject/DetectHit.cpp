@@ -31,8 +31,8 @@ namespace RB::PlayerStateComponents
 		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteEnum);
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteEnum);
 
-		RB::HBox::HBoxDataList* ownerList = RB::HBox::iHitBoxDataController::instance->GetDataList(ownerSpriteEnum);
-		RB::HBox::HBoxDataList* targetList = RB::HBox::iHurtBoxDataController::instance->GetDataList(targetSpriteEnum);
+		RB::HBox::HBox_Layer_1* ownerList = RB::HBox::iHitBoxDataController::instance->GetDataList(ownerSpriteEnum);
+		RB::HBox::HBox_Layer_1* targetList = RB::HBox::iHurtBoxDataController::instance->GetDataList(targetSpriteEnum);
 
 		if (ownerList == nullptr || targetList == nullptr)
 		{

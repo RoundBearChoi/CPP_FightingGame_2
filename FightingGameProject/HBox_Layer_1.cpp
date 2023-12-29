@@ -1,13 +1,13 @@
-#include "HBoxDataList.h"
+#include "HBox_Layer_1.h"
 
 namespace RB::HBox
 {
-	HBoxDataList::HBoxDataList(RB::Sprites::SpriteEnum spriteEnum)
+	HBox_Layer_1::HBox_Layer_1(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		_spriteEnum = spriteEnum;
 	}
 
-	void HBoxDataList::OnFixedUpdate()
+	void HBox_Layer_1::OnFixedUpdate()
 	{
 		for (auto i = _vecHB_L0.begin(); i != _vecHB_L0.end(); i++)
 		{
@@ -15,17 +15,17 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxDataList::AddHBoxData(HBox_Layer_0 data)
+	void HBox_Layer_1::AddHBoxData(HBox_Layer_0 data)
 	{
 		_vecHB_L0.push_back(data);
 	}
 
-	const std::vector<HBox_Layer_0>& HBoxDataList::GetVecL0()
+	const std::vector<HBox_Layer_0>& HBox_Layer_1::GetVecL0()
 	{
 		return _vecHB_L0;
 	}
 
-	HBox_Layer_0* HBoxDataList::GetHBoxDataByFrame(unsigned int frame)
+	HBox_Layer_0* HBox_Layer_1::GetHBoxDataByFrame(unsigned int frame)
 	{
 		//failsafe
 		if (_vecHB_L0.empty())
@@ -57,7 +57,7 @@ namespace RB::HBox
 		return &(*(_vecHB_L0.end() - 1));
 	}
 
-	RB::Sprites::SpriteEnum HBoxDataList::GetSpriteEnum()
+	RB::Sprites::SpriteEnum HBox_Layer_1::GetSpriteEnum()
 	{
 		return _spriteEnum;
 	}

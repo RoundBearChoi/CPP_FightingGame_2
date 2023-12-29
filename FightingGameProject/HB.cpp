@@ -19,7 +19,7 @@ namespace RB::HBox
 		}
 	}
 
-	HBoxDataList* HB::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
+	HBox_Layer_1* HB::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (auto i = _vecLists.begin(); i != _vecLists.end(); i++)
 		{

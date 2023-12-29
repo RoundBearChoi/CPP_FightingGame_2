@@ -11,14 +11,14 @@ namespace RB::HBox
 		void Init();
 		void OnFixedUpdate();
 
-		HBoxDataList* GetDataList(RB::Sprites::SpriteEnum spriteEnum);
+		HBox_Layer_1* GetDataList(RB::Sprites::SpriteEnum spriteEnum);
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const;
 
 		void PresetDir(std::string dir);
 
 	private:
 		HBoxLoader _loader;
-		std::vector<HBoxDataList> _vecLists;
+		std::vector<HBox_Layer_1> _vecLists;
 
 		const std::string _none = "none";
 		std::string _dir = "AssignHBDataDirectory/";

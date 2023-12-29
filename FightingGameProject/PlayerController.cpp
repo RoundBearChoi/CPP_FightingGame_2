@@ -1,5 +1,7 @@
 #include "PlayerController.h"
 
+#include "PlayerState.h" //erase all in the end
+
 namespace RB::Players
 {
 	PlayerController::~PlayerController()
@@ -9,6 +11,8 @@ namespace RB::Players
 			delete (*i);
 			(*i) = nullptr;
 		}
+
+		RB::PlayerStates::PlayerState::EraseAll();
 	}
 
 	void PlayerController::Init()

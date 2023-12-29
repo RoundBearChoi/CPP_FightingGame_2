@@ -2,11 +2,11 @@
 
 namespace RB::PlayerStates
 {
-	std::vector<PlayerState*> PlayerState::currentPlayerStates;
+	std::vector<PlayerState*> PlayerState::allPlayerStates;
 
 	PlayerState* PlayerState::GetPlayerState(RB::Players::PlayerID playerID)
 	{
-		for (auto i = currentPlayerStates.begin(); i != currentPlayerStates.end(); i++)
+		for (auto i = allPlayerStates.begin(); i != allPlayerStates.end(); i++)
 		{
 			RB::Players::iPlayer* owner = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
 
@@ -22,23 +22,30 @@ namespace RB::PlayerStates
 		return nullptr;
 	}
 
+	void PlayerState::EraseAll()
+	{
+		auto it = allPlayerStates.begin();
+
+		while (it != allPlayerStates.end())
+		{
+			RB::PlayerStates::PlayerState* playerState = (*it);
+
+			it = allPlayerStates.erase(it);
+
+			delete playerState;
+			playerState = nullptr;
+		}
+
+		allPlayerStates.clear();
+	}
+
 	PlayerState::PlayerState()
 	{
-		currentPlayerStates.push_back(this);
+		allPlayerStates.push_back(this);
 	}
 
 	PlayerState::~PlayerState()
 	{
-		//remove self from current player states
-		for (auto i = currentPlayerStates.begin(); i != currentPlayerStates.end(); i++)
-		{
-			if ((*i)->GetCreationID() == _stateCreationID)
-			{
-				currentPlayerStates.erase(i);
-				break;
-			}
-		}
-
 		//delete state components
 		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
 		{
@@ -47,23 +54,44 @@ namespace RB::PlayerStates
 		}
 
 		_vecStateComponents.clear();
+
+		//remove self from current player states
+		for (auto i = allPlayerStates.begin(); i != allPlayerStates.end(); i++)
+		{
+			if ((*i)->GetStateID() == _stateCreationID)
+			{
+				allPlayerStates.erase(i);
+				break;
+			}
+		}
 	}
 
 	void PlayerState::ClearRemainingStates()
 	{
-		auto it = currentPlayerStates.begin();
+		auto it = allPlayerStates.begin();
 
-		while(it != currentPlayerStates.end())
+		while(it != allPlayerStates.end())
 		{
-			if ((*it)->GetStateMachineID() == _stateMachineID)
-			{
-				if ((*it)->GetCreationID() != _stateCreationID)
-				{
-					delete (*it);
-					(*it) = nullptr;
-					it = currentPlayerStates.erase(it);
+			unsigned int stateMachineID = (*it)->GetStateMachineID();
 
-					continue;
+			// same player (does not include states that have not yet entered state machine yet)
+			if (stateMachineID == _stateMachineID)
+			{
+				// different state
+				if ((*it)->GetStateID() != _stateCreationID)
+				{
+					// not in component
+					if (ContainsState((*it)->GetStateID()) == false)
+					{
+						RB::PlayerStates::PlayerState* playerState = (*it);
+
+						it = allPlayerStates.erase(it);
+
+						delete playerState;
+						playerState = nullptr;
+
+						continue;
+					}
 				}
 			}
 
@@ -81,5 +109,18 @@ namespace RB::PlayerStates
 	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
 	{
 		return _spriteEnum;
+	}
+
+	bool PlayerState::ContainsState(unsigned int stateID)
+	{
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
+		{
+			if ((*i)->ContainsState(stateID))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

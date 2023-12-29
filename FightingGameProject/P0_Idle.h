@@ -17,6 +17,10 @@ namespace RB::PlayerStates::Aku
 	{
 	public:
 		P0_Idle() = default;
+		~P0_Idle()
+		{
+			std::cout << "deleting state: P0_Idle" << std::endl;
+		}
 
 	public:
 		void OnEnter() override;

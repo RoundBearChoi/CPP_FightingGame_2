@@ -63,7 +63,6 @@ namespace RB::States
 			_currentState->SetIsTransitioning(true);
 
 			_nextState = state;
-			_nextState->SetIsInQueue(true);
 		}
 	}
 
@@ -107,10 +106,7 @@ namespace RB::States
 			_nextState->SetStateMachineID(_stateMachineID);
 			_nextState->OnEnter();
 
-			//clean up last so statecomponents don't delete next state
-			delete _currentState;
 			_currentState = nullptr;
-
 			_currentState = _nextState;
 			_nextState = nullptr;
 

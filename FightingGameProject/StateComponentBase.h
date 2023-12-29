@@ -18,9 +18,9 @@ namespace RB::States
 		virtual void OnExit();
 		virtual void OnUpdate();
 		virtual void OnFixedUpdate();
-		virtual void DeleteNextState(unsigned int creationID);
 
 		const virtual int& GetFixedUpdateOnCount() const;
+		virtual bool ContainsState(unsigned int stateID);
 
 	protected:
 		iState* _state = nullptr;

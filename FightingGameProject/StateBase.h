@@ -15,16 +15,13 @@ namespace RB::States
 		StateBase();
 		~StateBase() override;
 
-		virtual unsigned int GetCreationID() override;
+		virtual unsigned int GetStateID() override;
 		virtual void SetStateMachineID(unsigned int id) override;
 		virtual unsigned int GetStateMachineID() override;
 		virtual void SetIsTransitioning(bool status) override;
-		virtual void SetIsInQueue(bool status) override;
 		virtual bool IsTransitioning() override;
-		virtual bool IsInQueue() override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual unsigned int GetCumulatedFixedUpdates() override;
-		virtual void DeleteNextState(unsigned int creationID) override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);
@@ -45,7 +42,6 @@ namespace RB::States
 		unsigned int _stateMachineID = 0;
 		unsigned int _cumulatedFixedUpdates = 0;
 		bool _isTransitioning = false;
-		bool _isInQueue = false;
 		std::vector<StateComponentBase*> _vecStateComponents;
 	};
 }

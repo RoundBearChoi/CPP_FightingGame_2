@@ -7,21 +7,13 @@ namespace RB::States
 	/// </summary>
 	StateComponentBase::~StateComponentBase()
 	{
-		for (auto i = _vecNextStates.rbegin(); i != _vecNextStates.rend(); i++)
-		{
-			if ((*i) != nullptr)
-			{
-				RB::States::iState* state = (*i);
-
-				if ((*i)->IsInQueue() == false)
-				{
-					delete (*i);
-					(*i) = nullptr;
-				}
-			}
-		}
-
-		_vecNextStates.clear();
+		//for (auto i = _vecNextStates.rbegin(); i != _vecNextStates.rend(); i++)
+		//{
+		//	delete (*i);
+		//	(*i) = nullptr;
+		//}
+		//
+		//_vecNextStates.clear();
 	}
 
 	void StateComponentBase::SetState(iState* state)
@@ -48,29 +40,22 @@ namespace RB::States
 	{
 
 	}
-
-	void StateComponentBase::DeleteNextState(unsigned int creationID)
-	{
-		auto it = _vecNextStates.begin();
-
-		while (it != _vecNextStates.end())
-		{
-			if ((*it)->GetCreationID() == creationID)
-			{
-				delete (*it);
-				(*it) = nullptr;
-
-				it = _vecNextStates.erase(it);
-			}
-			else
-			{
-				++it;
-			}
-		}
-	}
 	
 	const int& StateComponentBase::GetFixedUpdateOnCount() const
 	{
 		return _fixedUpdateOnCount;
+	}
+
+	bool StateComponentBase::ContainsState(unsigned int stateID)
+	{
+		for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
+		{
+			if ((*i)->GetStateID() == stateID)
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

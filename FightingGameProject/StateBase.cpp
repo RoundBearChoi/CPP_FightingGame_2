@@ -5,7 +5,7 @@ namespace RB::States
 	unsigned int StateBase::stateCreationCount = 0;
 
 	/// <summary>
-	/// ever state has unique creationID
+	/// ever state has stateID
 	/// </summary>
 	StateBase::StateBase()
 	{
@@ -24,7 +24,7 @@ namespace RB::States
 		_vecStateComponents.clear();
 	}
 
-	unsigned int StateBase::GetCreationID()
+	unsigned int StateBase::GetStateID()
 	{
 		return _stateCreationID;
 	}
@@ -44,19 +44,9 @@ namespace RB::States
 		_isTransitioning = status;
 	}
 
-	void StateBase::SetIsInQueue(bool status)
-	{
-		_isInQueue = status;
-	}
-
 	bool StateBase::IsTransitioning()
 	{
 		return _isTransitioning;
-	}
-
-	bool StateBase::IsInQueue()
-	{
-		return _isInQueue;
 	}
 
 	void StateBase::AddCumulatedFixedUpdate()
@@ -67,14 +57,6 @@ namespace RB::States
 	unsigned int StateBase::GetCumulatedFixedUpdates()
 	{
 		return _cumulatedFixedUpdates;
-	}
-
-	void StateBase::DeleteNextState(unsigned int creationID)
-	{
-		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
-		{
-			(*i)->DeleteNextState(creationID);
-		}
 	}
 
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)

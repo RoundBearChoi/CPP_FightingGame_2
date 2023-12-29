@@ -10,16 +10,13 @@ namespace RB::States
 		virtual ~iState() = default;
 
 	public:
-		virtual unsigned int GetCreationID() = 0;
+		virtual unsigned int GetStateID() = 0;
 		virtual void SetStateMachineID(unsigned int id) = 0;
 		virtual unsigned int GetStateMachineID() = 0;
 		virtual void SetIsTransitioning(bool status) = 0;
-		virtual void SetIsInQueue(bool status) = 0;
 		virtual bool IsTransitioning() = 0;
-		virtual bool IsInQueue() = 0;
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual unsigned int GetCumulatedFixedUpdates() = 0;
-		virtual void DeleteNextState(unsigned int creationID) = 0;
 
 	public:
 		virtual void OnEnter() = 0;

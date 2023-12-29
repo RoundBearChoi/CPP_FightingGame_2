@@ -1,8 +1,10 @@
 #pragma once
 
-#include "HBox_Layer_2.h"
+#include <string>
 
 #include "iHitBoxDataController.h"
+#include "HBox_Layer_1.h"
+#include "HBox_Layer_2.h"
 
 namespace RB::HBox
 {

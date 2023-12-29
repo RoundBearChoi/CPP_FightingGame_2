@@ -156,7 +156,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				L1 = RB::HBox::iHurtBoxDataController::instance->GetL1(_currentSpriteEnum);
+				L1 = RB::HBox::iHurtBoxDataController::instance->Get_L1(_currentSpriteEnum);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)

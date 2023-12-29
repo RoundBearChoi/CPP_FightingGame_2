@@ -59,7 +59,7 @@ namespace RB::Render
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				L1 = RB::HBox::iHurtBoxDataController::instance->GetL1(spriteEnum);
+				L1 = RB::HBox::iHurtBoxDataController::instance->Get_L1(spriteEnum);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)

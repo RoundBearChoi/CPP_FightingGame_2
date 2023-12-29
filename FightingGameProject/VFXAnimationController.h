@@ -22,6 +22,6 @@ namespace RB::Render
 		void _DeleteFinishedAnimations();
 
 	private:
-		AnimationLoader animationLoader;
+		AnimationLoader _animationLoader;
 	};
 }

@@ -4,31 +4,31 @@ namespace RB::Render
 {
 	void PlayerAnimationController::Init()
 	{
-		animationLoader.Init();
+		_animationLoader.Init();
 
 		//animations require loaded sprites first
-		animationLoader.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::aku_idle);
-		animationLoader.LoadSprite("PNG files/Aku/aku_crouch.png", RB::Sprites::SpriteEnum::aku_crouch);
-		animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::aku_walk);
-		animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::aku_jump_up_0);
-		animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::aku_jump_up_1);
-		animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_0.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_0);
-		animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_1.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_1);
-		animationLoader.LoadSprite("PNG files/Aku/aku_jab.png", RB::Sprites::SpriteEnum::aku_0_jab);
-		animationLoader.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::aku_wince);
-		animationLoader.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteEnum::aku_hadouken);
+		_animationLoader.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteEnum::aku_idle);
+		_animationLoader.LoadSprite("PNG files/Aku/aku_crouch.png", RB::Sprites::SpriteEnum::aku_crouch);
+		_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteEnum::aku_walk);
+		_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteEnum::aku_jump_up_0);
+		_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::aku_jump_up_1);
+		_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_0.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_0);
+		_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_1.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_1);
+		_animationLoader.LoadSprite("PNG files/Aku/aku_jab.png", RB::Sprites::SpriteEnum::aku_0_jab);
+		_animationLoader.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::aku_wince);
+		_animationLoader.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteEnum::aku_hadouken);
 
 		//load specs from json files
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::aku_idle);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"), RB::Sprites::SpriteEnum::aku_crouch);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::aku_walk);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_up_0);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_up_1);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_forward_up_0);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_forward_up_1);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::aku_0_jab);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"), RB::Sprites::SpriteEnum::aku_wince);
-		animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"), RB::Sprites::SpriteEnum::aku_hadouken);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteEnum::aku_idle);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"), RB::Sprites::SpriteEnum::aku_crouch);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteEnum::aku_walk);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_up_0);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_up_1);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_forward_up_0);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_forward_up_1);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::aku_0_jab);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"), RB::Sprites::SpriteEnum::aku_wince);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"), RB::Sprites::SpriteEnum::aku_hadouken);
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -54,22 +54,22 @@ namespace RB::Render
 			_SetNewPlayerAnimationObjOnChange(*arr[i]);
 		}
 
-		animationLoader.OnUpdate();
+		_animationLoader.OnUpdate();
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-		animationLoader.OnFixedUpdate();
+		_animationLoader.OnFixedUpdate();
 	}
 
 	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		animationLoader.DeleteAnimationObjs(playerID);
+		_animationLoader.DeleteAnimationObjs(playerID);
 	}
 
 	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		return animationLoader.GetCurrentAnimationObj(playerID, spriteEnum);
+		return _animationLoader.GetCurrentAnimationObj(playerID, spriteEnum);
 	}
 
 	void PlayerAnimationController::_SetFirstPlayerAnimations()
@@ -79,7 +79,7 @@ namespace RB::Render
 			return;
 		}
 
-		if (animationLoader.GetVecCurrentAnimations().size() > 0)
+		if (_animationLoader.GetVecCurrentAnimations().size() > 0)
 		{
 			return;
 		}
@@ -104,11 +104,11 @@ namespace RB::Render
 
 			RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
 
-			AnimationRenderer* aniRenderer = animationLoader.GetAnimationRenderer(spriteEnum);
+			AnimationRenderer* aniRenderer = _animationLoader.GetAnimationRenderer(spriteEnum);
 
 			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, RB::Sprites::PivotType::BOTTOM_CENTER);
 
-			animationLoader.AddNewAnimation(animationObj);
+			_animationLoader.AddNewAnimation(animationObj);
 		}
 	}
 
@@ -129,15 +129,15 @@ namespace RB::Render
 		{
 			DeleteAnimationObj(playerID);
 
-			iAnimationObj* aniObj = animationLoader.InstantiateNewAnimationObj(player, playerSpriteEnum, RB::Sprites::PivotType::BOTTOM_CENTER);
+			iAnimationObj* aniObj = _animationLoader.InstantiateNewAnimationObj(player, playerSpriteEnum, RB::Sprites::PivotType::BOTTOM_CENTER);
 
-			animationLoader.AddNewAnimation(aniObj);
+			_animationLoader.AddNewAnimation(aniObj);
 		}
 	}
 
 	RB::Sprites::SpriteEnum PlayerAnimationController::_GetPlayerSpriteEnum(RB::Players::PlayerID playerID)
 	{
-		return animationLoader.GetSpriteEnum(playerID);
+		return _animationLoader.GetSpriteEnum(playerID);
 	}
 
 	void PlayerAnimationController::_SaveAnimationSpecs(std::string path, AnimationSpecs specs)

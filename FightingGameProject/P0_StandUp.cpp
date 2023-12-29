@@ -1,6 +1,9 @@
 #include "P0_StandUp.h"
 
 #include "FixDirectionDuringState.h"
+#include "TransitionOnAnimationEnd.h"
+
+#include "P0_Idle.h"
 
 namespace RB::PlayerStates::Aku
 {
@@ -9,7 +12,7 @@ namespace RB::PlayerStates::Aku
 		_spriteEnum = RB::Sprites::SpriteEnum::aku_standup;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(true));
-		//AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::PlayerStates::Aku::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new P0_Idle()));
 
 		EnterStateComponents();
 	}

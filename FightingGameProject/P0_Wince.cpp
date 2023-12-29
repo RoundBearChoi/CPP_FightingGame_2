@@ -8,7 +8,7 @@ namespace RB::PlayerStates::Aku
 		_spriteEnum = RB::Sprites::SpriteEnum::aku_wince;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixWincingStatusDuringState(true));
-		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight());
+		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(1, 3)); //forward
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(2, -3)); //back

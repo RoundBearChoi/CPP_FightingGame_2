@@ -256,7 +256,7 @@
     <ClCompile Include="MoveForwardOnJump_1.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="ToggleInitiallyFacingRight.cpp">
+    <ClCompile Include="MarkInitiallyFacingRight.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
     <ClCompile Include="ZoomOnPlayers.cpp">
@@ -660,7 +660,7 @@
     <ClInclude Include="MoveForwardOnJump_1.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="ToggleInitiallyFacingRight.h">
+    <ClInclude Include="MarkInitiallyFacingRight.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
     <ClInclude Include="ZoomOnPlayers.h">

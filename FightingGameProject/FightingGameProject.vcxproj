@@ -194,7 +194,7 @@
     <ClCompile Include="SpecsController.cpp" />
     <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="StandUpOnRelease.cpp" />
-    <ClCompile Include="ToggleInitiallyFacingRight.cpp" />
+    <ClCompile Include="MarkInitiallyFacingRight.cpp" />
     <ClCompile Include="TransitionOnFixedUpdateCount.cpp" />
     <ClCompile Include="TransitionOnAnimationEnd.cpp" />
     <ClCompile Include="TransitionOnInput.cpp" />
@@ -326,7 +326,7 @@
     <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="SpriteEnumString.h" />
     <ClInclude Include="StandUpOnRelease.h" />
-    <ClInclude Include="ToggleInitiallyFacingRight.h" />
+    <ClInclude Include="MarkInitiallyFacingRight.h" />
     <ClInclude Include="TransitionOnFixedUpdateCount.h" />
     <ClInclude Include="TransitionOnAnimationEnd.h" />
     <ClInclude Include="TransitionOnInput.h" />

@@ -6,7 +6,7 @@
 #include "iPlayer.h"
 #include "PlayerID.h"
 
-#include "ToggleInitiallyFacingRight.h"
+#include "MarkInitiallyFacingRight.h"
 #include "MoveUpOnJump.h"
 
 namespace RB::PlayerStates::Aku

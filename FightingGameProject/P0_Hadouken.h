@@ -2,7 +2,7 @@
 #include "PlayerState.h"
 
 #include "FixSpecialMoveStatusDuringState.h"
-#include "ToggleInitiallyFacingRight.h"
+#include "MarkInitiallyFacingRight.h"
 #include "TransitionOnAnimationEnd.h"
 
 namespace RB::PlayerStates::Aku

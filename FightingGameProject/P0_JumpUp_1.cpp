@@ -6,7 +6,7 @@ namespace RB::PlayerStates::Aku
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::aku_jump_up_1;
 
-		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight());
+		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::MoveDownOnFall(20, 20.0f, new P0_Idle()));
 
 		EnterStateComponents();

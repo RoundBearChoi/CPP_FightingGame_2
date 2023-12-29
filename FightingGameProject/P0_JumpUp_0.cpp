@@ -8,7 +8,7 @@ namespace RB::PlayerStates::Aku
 
 		RB::Players::Specs::MoveSpecs moveSpecs = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
-		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight());
+		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpUp_totalFrames, moveSpecs.mJumpUp_speedMultiplier, new P0_JumpUp_1()));
 
 		EnterStateComponents();

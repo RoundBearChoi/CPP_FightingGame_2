@@ -5,11 +5,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class ToggleInitiallyFacingRight : public RB::States::StateComponentBase
+	class MarkInitiallyFacingRight : public RB::States::StateComponentBase
 	{
 	public:
-		ToggleInitiallyFacingRight() = default;
-		~ToggleInitiallyFacingRight() override = default;
+		MarkInitiallyFacingRight() = default;
+		~MarkInitiallyFacingRight() override = default;
 
 		void OnEnter() override;
 

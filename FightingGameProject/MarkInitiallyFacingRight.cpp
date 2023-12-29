@@ -1,8 +1,8 @@
-#include "ToggleInitiallyFacingRight.h"
+#include "MarkInitiallyFacingRight.h"
 
 namespace RB::PlayerStateComponents
 {
-	void ToggleInitiallyFacingRight::OnEnter()
+	void MarkInitiallyFacingRight::OnEnter()
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 

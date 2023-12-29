@@ -353,6 +353,7 @@ namespace RB::HBox
 						}
 					}
 
+					//no comma for last frame
 					if (i != vecL0.end() - 1)
 					{
 						file << "    ]," << std::endl << std::endl;

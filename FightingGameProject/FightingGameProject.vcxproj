@@ -155,6 +155,7 @@
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
+    <ClCompile Include="HBoxDataList.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
     <ClCompile Include="JGetter.cpp" />

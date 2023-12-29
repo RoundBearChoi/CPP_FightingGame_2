@@ -8,31 +8,13 @@ namespace RB::HBox
 	class HBoxDataList
 	{
 	public:
-		HBoxDataList(RB::Sprites::SpriteEnum spriteEnum)
-		{
-			_spriteEnum = spriteEnum;
-		}
-
+		HBoxDataList(RB::Sprites::SpriteEnum spriteEnum);
 		~HBoxDataList() = default;
 
 	public:
-		void OnFixedUpdate()
-		{
-			for (auto i = _vecHB_L0.begin(); i != _vecHB_L0.end(); i++)
-			{
-				(*i).OnFixedUpdate();
-			}
-		}
-
-		void AddHBoxData(HBox_Layer_0 data)
-		{
-			_vecHB_L0.push_back(data);
-		}
-
-		const std::vector<HBox_Layer_0>& GetVecHBoxData()
-		{
-			return _vecHB_L0;
-		}
+		void OnFixedUpdate();
+		void AddHBoxData(HBox_Layer_0 data);
+		const std::vector<HBox_Layer_0>& GetVecHBoxData();
 
 		HBox_Layer_0* GetHBoxDataByFrame(unsigned int frame)
 		{

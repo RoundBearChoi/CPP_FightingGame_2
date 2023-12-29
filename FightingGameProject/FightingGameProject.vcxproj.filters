@@ -340,6 +340,9 @@
     <ClCompile Include="StandUpOnRelease.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
+    <ClCompile Include="HBoxDataList.cpp">
+      <Filter>Source Files\HBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">

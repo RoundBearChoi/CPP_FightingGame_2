@@ -1,17 +1,14 @@
 #pragma once
-#include <iostream>
 #include "olcPixelGameEngine.h"
-#include "Time.h"
-#include "StateMachineBase.h"
-#include "AABB.h"
-
-#include "iPlayerController.h"
-#include "iPlayer.h"
+#include "CharacterType.h"
 #include "PlayerID.h"
+
 #include "PlayerCollider.h"
 #include "iPlayerCollider.h"
 
-#include "P0_Start.h"
+#include "iPlayer.h"
+#include "iState.h"
+#include "iStateMachine.h"
 
 namespace RB::Players
 {

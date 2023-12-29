@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "olcPixelGameEngine.h"
-#include "SpriteLoader.h"
+#include "_SpriteLoader.h"
 #include "SpriteEnum.h"
 #include "LoadedSprite.h"
 #include "PivotType.h"

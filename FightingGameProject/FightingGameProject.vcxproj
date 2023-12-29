@@ -225,7 +225,7 @@
     <ClCompile Include="P0_Idle.cpp" />
     <ClCompile Include="P0_WalkForward.cpp" />
     <ClCompile Include="P0_Start.cpp" />
-    <ClCompile Include="SpriteLoader.cpp" />
+    <ClCompile Include="_SpriteLoader.cpp" />
     <ClCompile Include="StateBase.cpp" />
     <ClCompile Include="StateComponentBase.cpp" />
     <ClCompile Include="StateMachineBase.cpp" />
@@ -367,7 +367,7 @@
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="P0_Start.h" />
     <ClInclude Include="SkipFixedUpdates.h" />
-    <ClInclude Include="SpriteLoader.h" />
+    <ClInclude Include="_SpriteLoader.h" />
     <ClInclude Include="StateBase.h" />
     <ClInclude Include="StateComponentBase.h" />
     <ClInclude Include="StateMachineBase.h" />

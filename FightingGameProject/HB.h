@@ -5,7 +5,7 @@
 
 namespace RB::HBox
 {
-	class HB
+	class HBox_Layer_2
 	{
 	public:
 		void Init();

@@ -163,7 +163,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				L1 = RB::HBox::iHitBoxDataController::instance->GetDataList(_currentSpriteEnum);
+				L1 = RB::HBox::iHitBoxDataController::instance->Get_L1(_currentSpriteEnum);
 			}
 		}
 

@@ -2,7 +2,7 @@
 
 namespace RB::HBox
 {
-	void HB::Init()
+	void HBox_Layer_2::Init()
 	{
 		//load every hbox datalist
 		_vecL1.push_back(_loader.Load_L1(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteEnum::aku_idle));
@@ -11,7 +11,7 @@ namespace RB::HBox
 		_vecL1.push_back(_loader.Load_L1(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteEnum::aku_wince));
 	}
 
-	void HB::OnFixedUpdate()
+	void HBox_Layer_2::OnFixedUpdate()
 	{
 		for (auto i = _vecL1.begin(); i != _vecL1.end(); i++)
 		{
@@ -19,14 +19,14 @@ namespace RB::HBox
 		}
 	}
 
-	void HB::SetDir(std::string dir)
+	void HBox_Layer_2::SetDir(std::string dir)
 	{
 		std::cout << std::endl;
 		std::cout << "presetting dir: " << dir << std::endl;
 		_dir = dir;
 	}
 
-	HBox_Layer_1* HB::GetL1(RB::Sprites::SpriteEnum spriteEnum)
+	HBox_Layer_1* HBox_Layer_2::GetL1(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (auto i = _vecL1.begin(); i != _vecL1.end(); i++)
 		{
@@ -39,7 +39,7 @@ namespace RB::HBox
 		return nullptr;
 	}
 
-	const std::string& HB::GetPath(RB::Sprites::SpriteEnum spriteEnum) const
+	const std::string& HBox_Layer_2::GetPath(RB::Sprites::SpriteEnum spriteEnum) const
 	{
 		const HBoxDataListPath& p = _loader.GetDataListPath(spriteEnum);
 

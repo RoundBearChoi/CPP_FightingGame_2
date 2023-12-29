@@ -64,7 +64,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				L1 = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
+				L1 = RB::HBox::iHitBoxDataController::instance->Get_L1(spriteEnum);
 			}
 		}
 
@@ -99,7 +99,7 @@ namespace RB::HBox
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
-			L1 = RB::HBox::iHitBoxDataController::instance->GetDataList(spriteEnum);
+			L1 = RB::HBox::iHitBoxDataController::instance->Get_L1(spriteEnum);
 		}
 
 		if (L1 == nullptr)

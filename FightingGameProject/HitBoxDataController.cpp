@@ -4,12 +4,12 @@ namespace RB::HBox
 {
 	HitBoxDataController::HitBoxDataController(std::string dir)
 	{
-		_hb.SetDir(dir);
+		_L2.SetDir(dir);
 	}
 
 	void HitBoxDataController::Init()
 	{
-		_hb.Init();
+		_L2.Init();
 	}
 
 	void HitBoxDataController::OnUpdate()
@@ -19,16 +19,16 @@ namespace RB::HBox
 
 	void HitBoxDataController::OnFixedUpdate()
 	{
-		_hb.OnFixedUpdate();
+		_L2.OnFixedUpdate();
 	}
 
-	HBox_Layer_1* HitBoxDataController::GetDataList(RB::Sprites::SpriteEnum spriteEnum)
+	HBox_Layer_1* HitBoxDataController::Get_L1(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		return _hb.GetL1(spriteEnum);
+		return _L2.GetL1(spriteEnum);
 	}
 
 	const std::string& HitBoxDataController::GetPath(RB::Sprites::SpriteEnum spriteEnum) const
 	{
-		return _hb.GetPath(spriteEnum);
+		return _L2.GetPath(spriteEnum);
 	}
 }

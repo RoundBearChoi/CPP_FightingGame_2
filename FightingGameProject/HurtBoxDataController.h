@@ -20,6 +20,6 @@ namespace RB::HBox
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const override;
 
 	private:
-		HB _hb;
+		HBox_Layer_2 _L2;
 	};
 }

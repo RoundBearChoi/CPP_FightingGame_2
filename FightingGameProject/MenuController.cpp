@@ -1,5 +1,14 @@
 #include "MenuController.h"
 
+#include "PlayerState.h"
+
+#include "iSpriteDataController.h"
+#include "iPlayerController.h"
+#include "iPlayerAnimationController.h"
+#include "iHBoxEditController.h"
+#include "iHurtBoxDataController.h"
+#include "iHitBoxDataController.h"
+
 namespace RB::HBox
 {
 	void MenuController::Init()

@@ -1,16 +1,10 @@
 #pragma once
-#include <iostream>
-#include "olcPixelGameEngine.h"
+#include <string>
 
-#include "iPlayerController.h"
 #include "iMenuController.h"
-#include "iPlayerAnimationController.h"
-#include "iSpriteDataController.h"
-#include "iHBoxEditController.h"
-#include "iHurtBoxDataController.h"
-#include "iHitBoxDataController.h"
+#include "SpriteEnum.h"
 
-#include "PlayerState.h"
+#include "HBox_Layer_1.h"
 
 namespace RB::HBox
 {
@@ -31,7 +25,6 @@ namespace RB::HBox
 		const std::string& _GetFrameName();
 		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
 		unsigned int _GetCurrentAnimationFrame();
-		//unsigned int _GetAABBCount();
 		RB::HBox::HBox_Layer_1* _Get_L1();
 
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;

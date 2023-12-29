@@ -165,6 +165,7 @@
     <ClCompile Include="MoveHorizontalOnFixedUpdateCount.cpp" />
     <ClCompile Include="MoveUpOnJump.cpp" />
     <ClCompile Include="P0_Crouch.cpp" />
+    <ClCompile Include="P0_Crouch_Idle.cpp" />
     <ClCompile Include="P0_Hadouken.cpp" />
     <ClCompile Include="P0_Seq_Hadouken.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
@@ -277,6 +278,7 @@
     <ClInclude Include="MoveSpecs.h" />
     <ClInclude Include="MoveUpOnJump.h" />
     <ClInclude Include="P0_Crouch.h" />
+    <ClInclude Include="P0_Crouch_Idle.h" />
     <ClInclude Include="P0_Hadouken.h" />
     <ClInclude Include="P0_Seq_Hadouken.h" />
     <ClInclude Include="P0_Jab.h" />

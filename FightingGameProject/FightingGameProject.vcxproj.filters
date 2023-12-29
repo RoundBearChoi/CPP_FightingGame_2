@@ -202,7 +202,7 @@
     <ClCompile Include="HBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HB.cpp">
+    <ClCompile Include="HBox_Layer_2.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="HitBoxEditorUpdater.cpp">
@@ -570,7 +570,7 @@
     <ClInclude Include="iSpriteDataController.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="HB.h">
+    <ClInclude Include="HBox_Layer_2.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="HitBoxEditorUpdater.h">

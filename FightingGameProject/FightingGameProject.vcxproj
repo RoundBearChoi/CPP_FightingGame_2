@@ -168,7 +168,7 @@
     <ClCompile Include="P0_Hadouken.cpp" />
     <ClCompile Include="P0_Seq_Hadouken.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
-    <ClCompile Include="HB.cpp" />
+    <ClCompile Include="HBox_Layer_2.cpp" />
     <ClCompile Include="HBox_Layer_0.cpp" />
     <ClCompile Include="HitBoxEditorUpdater.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
@@ -281,7 +281,7 @@
     <ClInclude Include="P0_Hadouken.h" />
     <ClInclude Include="P0_Seq_Hadouken.h" />
     <ClInclude Include="P0_Jab.h" />
-    <ClInclude Include="HB.h" />
+    <ClInclude Include="HBox_Layer_2.h" />
     <ClInclude Include="HBoxType.h" />
     <ClInclude Include="HitBoxEditorUpdater.h" />
     <ClInclude Include="HurtBoxDataController.h" />

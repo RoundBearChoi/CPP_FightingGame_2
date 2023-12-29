@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HB.h"
+#include "HBox_Layer_2.h"
 
 #include "iHitBoxDataController.h"
 

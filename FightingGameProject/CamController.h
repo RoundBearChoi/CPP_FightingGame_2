@@ -1,10 +1,7 @@
 #pragma once
-#include"olcPixelGameEngine.h"
 #include "CamObj.h"
-
-#include "iCamController.h"
 #include "iCamObj.h"
-
+#include "iCamController.h"
 #include "FollowPlayers.h"
 #include "ZoomOnPlayers.h"
 

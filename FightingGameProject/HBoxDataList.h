@@ -14,44 +14,9 @@ namespace RB::HBox
 	public:
 		void OnFixedUpdate();
 		void AddHBoxData(HBox_Layer_0 data);
-		const std::vector<HBox_Layer_0>& GetVecHBoxData();
-
-		HBox_Layer_0* GetHBoxDataByFrame(unsigned int frame)
-		{
-			//failsafe
-			if (_vecHB_L0.empty())
-			{
-				return nullptr;
-			}
-
-			//exising data
-			for (auto i = _vecHB_L0.begin(); i != _vecHB_L0.end(); i++)
-			{
-				if ((*i).GetFrame() == frame)
-				{
-					return &(*i);
-				}
-			}
-
-			//default data if no existing data
-			HBox_Layer_0 L0;
-			L0.SetFrameNameAndParse("frame_" + std::to_string(frame));
-
-			_vecHB_L0.push_back(L0);
-
-			//make sure to refresh iterators after making changes to the vector
-			for (auto i = _vecHB_L0.begin(); i != _vecHB_L0.end(); i++)
-			{
-				(*i).GetSelector()->SetRefreshed(false);
-			}
-
-			return &(*(_vecHB_L0.end() - 1));
-		}
-
-		RB::Sprites::SpriteEnum GetSpriteEnum()
-		{
-			return _spriteEnum;
-		}
+		const std::vector<HBox_Layer_0>& GetVecL0();
+		HBox_Layer_0* GetHBoxDataByFrame(unsigned int frame);
+		RB::Sprites::SpriteEnum GetSpriteEnum();
 
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;

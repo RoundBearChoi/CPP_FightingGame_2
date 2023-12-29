@@ -71,7 +71,7 @@ namespace RB::HBox
 		return dataList;
 	}
 
-	RB::HBox::HBoxData* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
+	RB::HBox::HBox_Layer_0* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
 
@@ -107,7 +107,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		RB::HBox::HBoxData* data = dataList->GetHBoxDataByFrame(currentIndex);
+		RB::HBox::HBox_Layer_0* data = dataList->GetHBoxDataByFrame(currentIndex);
 
 		return data;
 	}
@@ -145,37 +145,37 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::HBoxData* data)
+	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::HBox_Layer_0* L0)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
 
 		if (oButton.bPressed)
 		{
-			data->GetSelector()->SelectUp();
+			L0->GetSelector()->SelectUp();
 		}
 
 		else if (pButton.bPressed)
 		{
-			data->GetSelector()->SelectDown();
+			L0->GetSelector()->SelectDown();
 		}
 	}
 
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
-		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
+		RB::HBox::HBox_Layer_0* L0 = GetCurrentHBoxData(playerID);
 
-		if (data == nullptr)
+		if (L0 == nullptr)
 		{
 			return;
 		}
 
-		if (data->GetSelector()->IsEmpty())
+		if (L0->GetSelector()->IsEmpty())
 		{
 			return;
 		}
 
-		RB::Collisions::AABB* aabb = data->GetSelector()->GetSelected();
+		RB::Collisions::AABB* aabb = L0->GetSelector()->GetSelected();
 
 		if (aabb == nullptr)
 		{
@@ -199,36 +199,36 @@ namespace RB::HBox
 
 	void HBoxEditController::_Add_Delete_AABB_OnPress()
 	{
-		RB::HBox::HBoxData* data = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
+		RB::HBox::HBox_Layer_0* L0 = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
 		
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
 		
 		if (insButton.bPressed)
 		{
-			data->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
+			L0->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
 		
-			data->GetSelector()->SelectDown();
+			L0->GetSelector()->SelectDown();
 		}
 		
 		if (delButton.bPressed)
 		{
-			data->GetSelector()->EraseSelected();
+			L0->GetSelector()->EraseSelected();
 		}
 	}
 
 	void HBoxEditController::_EditAABB_OnPress(RB::Players::PlayerID playerID)
 	{
-		RB::HBox::HBoxData* data = GetCurrentHBoxData(playerID);
+		RB::HBox::HBox_Layer_0* L0 = GetCurrentHBoxData(playerID);
 
-		if (data == nullptr)
+		if (L0 == nullptr)
 		{
 			return;
 		}
 
-		_UpdateSelectedIndex_OnPress(data);
+		_UpdateSelectedIndex_OnPress(L0);
 
-		RB::Collisions::AABB* aabb = data->GetSelector()->GetSelected();
+		RB::Collisions::AABB* aabb = L0->GetSelector()->GetSelected();
 
 		if (aabb == nullptr)
 		{
@@ -321,17 +321,17 @@ namespace RB::HBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				const std::vector<HBoxData>& vec = list->GetVecHBoxData();
+				const std::vector<HBox_Layer_0>& vec = list->GetVecHBoxData();
 
 				for (unsigned int f = 0; f < vec.size(); f++)
 				{
-					HBoxData* data = list->GetHBoxDataByFrame(f);
-					const std::string& frameName = data->GetFrameName();
+					HBox_Layer_0* L0 = list->GetHBoxDataByFrame(f);
+					const std::string& frameName = L0->GetFrameName();
 
 					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					for (auto i = data->GetSelector()->GetVector().begin(); i != data->GetSelector()->GetVector().end(); ++i)
+					for (auto i = L0->GetSelector()->GetVector().begin(); i != L0->GetSelector()->GetVector().end(); ++i)
 					{
 						RB::Collisions::AABB aabb = *i;
 
@@ -341,7 +341,7 @@ namespace RB::HBox
 						file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
 						file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
 
-						if (i != data->GetSelector()->GetVector().end() - 1)
+						if (i != L0->GetSelector()->GetVector().end() - 1)
 						{
 							file << "        }," << std::endl;
 						}

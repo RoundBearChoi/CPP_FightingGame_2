@@ -75,9 +75,9 @@ namespace RB::Render
 			return;
 		}
 
-		RB::HBox::HBoxData* data = dataList->GetHBoxDataByFrame(currentIndex);
+		RB::HBox::HBox_Layer_0* L0 = dataList->GetHBoxDataByFrame(currentIndex);
 
-		if (data == nullptr)
+		if (L0 == nullptr)
 		{
 			return;
 		}
@@ -93,12 +93,12 @@ namespace RB::Render
 			color = olc::GREEN;
 		}
 
-		_Render(player, data, color);
+		_Render(player, L0, color);
 	}
 
-	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::HBoxData* data, olc::Pixel color)
+	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::HBox_Layer_0* L0, olc::Pixel color)
 	{
-		const auto& vec = data->GetSelector()->GetVector();
+		const auto& vec = L0->GetSelector()->GetVector();
 
 		for (auto i = vec.begin(); i != vec.end(); ++i) 
 		{

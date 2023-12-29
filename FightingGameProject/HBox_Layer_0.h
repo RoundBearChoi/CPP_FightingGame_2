@@ -6,12 +6,12 @@
 
 namespace RB::HBox
 {
-	class HBoxData
+	class HBox_Layer_0
 	{
 	public:
-		HBoxData() = default;
-		HBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
-		~HBoxData();
+		HBox_Layer_0() = default;
+		HBox_Layer_0(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
+		~HBox_Layer_0();
 
 	public:
 		void OnFixedUpdate();

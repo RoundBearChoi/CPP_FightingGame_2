@@ -26,12 +26,12 @@ namespace RB::HBox
 		void OnFixedUpdate() override;
 
 		RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) override;
-		RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
+		RB::HBox::HBox_Layer_0* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxType GetHBoxType() override;
 
 	private:
 		bool _ControllersExist();
-		void _UpdateSelectedIndex_OnPress(RB::HBox::HBoxData* data);
+		void _UpdateSelectedIndex_OnPress(RB::HBox::HBox_Layer_0* L0);
 		void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress();
 		void _EditAABB_OnPress(RB::Players::PlayerID playerID);

@@ -65,14 +65,14 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBox_Layer_0* L0 = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
-		if (data == nullptr)
+		if (L0 == nullptr)
 		{
 			return;
 		}
 
-		auto const& vec = data->GetSelector()->GetVector();
+		auto const& vec = L0->GetSelector()->GetVector();
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
 	}
@@ -108,14 +108,14 @@ namespace RB::HBox
 			return _none;
 		}
 
-		RB::HBox::HBoxData* data = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBox_Layer_0* L0 = list->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
-		if (data == nullptr)
+		if (L0 == nullptr)
 		{
 			return _none;
 		}
 
-		return data->GetFrameName();
+		return L0->GetFrameName();
 	}
 
 	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()

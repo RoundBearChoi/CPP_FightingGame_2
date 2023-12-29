@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "SpriteEnum.h"
-#include "HBoxData.h"
+#include "HBox_Layer_0.h"
 
 namespace RB::HBox
 {
@@ -18,32 +18,32 @@ namespace RB::HBox
 	public:
 		void OnFixedUpdate()
 		{
-			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
+			for (auto i = _vecHB_L0.begin(); i != _vecHB_L0.end(); i++)
 			{
 				(*i).OnFixedUpdate();
 			}
 		}
 
-		void AddHBoxData(HBoxData data)
+		void AddHBoxData(HBox_Layer_0 data)
 		{
-			_vecHurtBoxData.push_back(data);
+			_vecHB_L0.push_back(data);
 		}
 
-		const std::vector<HBoxData>& GetVecHBoxData()
+		const std::vector<HBox_Layer_0>& GetVecHBoxData()
 		{
-			return _vecHurtBoxData;
+			return _vecHB_L0;
 		}
 
-		HBoxData* GetHBoxDataByFrame(unsigned int frame)
+		HBox_Layer_0* GetHBoxDataByFrame(unsigned int frame)
 		{
 			//failsafe
-			if (_vecHurtBoxData.empty())
+			if (_vecHB_L0.empty())
 			{
 				return nullptr;
 			}
 
 			//exising data
-			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
+			for (auto i = _vecHB_L0.begin(); i != _vecHB_L0.end(); i++)
 			{
 				if ((*i).GetFrame() == frame)
 				{
@@ -52,18 +52,18 @@ namespace RB::HBox
 			}
 
 			//default data if no existing data
-			HBoxData data;
-			data.SetFrameNameAndParse("frame_" + std::to_string(frame));
+			HBox_Layer_0 L0;
+			L0.SetFrameNameAndParse("frame_" + std::to_string(frame));
 
-			_vecHurtBoxData.push_back(data);
+			_vecHB_L0.push_back(L0);
 
 			//make sure to refresh iterators after making changes to the vector
-			for (auto i = _vecHurtBoxData.begin(); i != _vecHurtBoxData.end(); i++)
+			for (auto i = _vecHB_L0.begin(); i != _vecHB_L0.end(); i++)
 			{
 				(*i).GetSelector()->SetRefreshed(false);
 			}
 
-			return &(*(_vecHurtBoxData.end() - 1));
+			return &(*(_vecHB_L0.end() - 1));
 		}
 
 		RB::Sprites::SpriteEnum GetSpriteEnum()
@@ -73,6 +73,6 @@ namespace RB::HBox
 
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		std::vector<HBoxData> _vecHurtBoxData;
+		std::vector<HBox_Layer_0> _vecHB_L0;
 	};
 }

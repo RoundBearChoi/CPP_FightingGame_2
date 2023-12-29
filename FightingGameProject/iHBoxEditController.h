@@ -2,7 +2,7 @@
 #include "ControllerT.h"
 
 #include "HBoxDataList.h"
-#include "HBoxData.h"
+#include "HBox_Layer_0.h"
 #include "HBoxType.h"
 #include "PlayerID.h"
 
@@ -16,7 +16,7 @@ namespace RB::HBox
 		virtual void OnFixedUpdate() = 0;
 
 		virtual RB::HBox::HBoxDataList* GetCurrentHBoxDataList(RB::Players::PlayerID playerID, HBoxType boxType) = 0;
-		virtual RB::HBox::HBoxData* GetCurrentHBoxData(RB::Players::PlayerID playerID) = 0;
+		virtual RB::HBox::HBox_Layer_0* GetCurrentHBoxData(RB::Players::PlayerID playerID) = 0;
 		virtual RB::HBox::HBoxType GetHBoxType() = 0;
 	};
 }

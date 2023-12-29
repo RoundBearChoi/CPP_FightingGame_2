@@ -187,7 +187,7 @@
     <ClCompile Include="PlayerHBoxRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="HBoxData.cpp">
+    <ClCompile Include="HBox_Layer_0.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="HBoxDataListPath.h">
@@ -498,7 +498,7 @@
     <ClInclude Include="JGetter.h">
       <Filter>Source Files\JSON</Filter>
     </ClInclude>
-    <ClInclude Include="HBoxData.h">
+    <ClInclude Include="HBox_Layer_0.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="HBoxDataList.h">

@@ -1,8 +1,8 @@
-#include "HBoxData.h"
+#include "HBox_Layer_0.h"
 
 namespace RB::HBox
 {
-	HBoxData::HBoxData(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
+	HBox_Layer_0::HBox_Layer_0(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
 	{
 		_frameName = frameName;
 		_frame = _ParseFrame(frameName);
@@ -13,38 +13,38 @@ namespace RB::HBox
 		}
 	}
 
-	HBoxData::~HBoxData()
+	HBox_Layer_0::~HBox_Layer_0()
 	{
 
 	}
 
-	void HBoxData::OnFixedUpdate()
+	void HBox_Layer_0::OnFixedUpdate()
 	{
 		_selector.OnFixedUpdate();
 	}
 
-	RB::iSelector<RB::Collisions::AABB>* HBoxData::GetSelector()
+	RB::iSelector<RB::Collisions::AABB>* HBox_Layer_0::GetSelector()
 	{
 		return &_selector;
 	}
 
-	unsigned int HBoxData::GetFrame()
+	unsigned int HBox_Layer_0::GetFrame()
 	{
 		return _frame;
 	}
 
-	const std::string& HBoxData::GetFrameName()
+	const std::string& HBox_Layer_0::GetFrameName()
 	{
 		return _frameName;
 	}
 
-	void HBoxData::SetFrameNameAndParse(const std::string& name)
+	void HBox_Layer_0::SetFrameNameAndParse(const std::string& name)
 	{
 		_frameName = name;
 		_frame = _ParseFrame(name);
 	}
 
-	unsigned int HBoxData::_ParseFrame(const std::string& str)
+	unsigned int HBox_Layer_0::_ParseFrame(const std::string& str)
 	{
 		std::regex pattern("frame_");
 		std::string replacement = "";

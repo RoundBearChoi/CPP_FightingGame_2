@@ -124,10 +124,10 @@ namespace RB::HBox
 		{
 			HBoxDataList defaultSet{ spriteEnum };
 
-			HBoxData data0;
-			data0.SetFrameNameAndParse("frame_0");
+			HBox_Layer_0 L0;
+			L0.SetFrameNameAndParse("frame_0");
 
-			defaultSet.AddHBoxData(data0);
+			defaultSet.AddHBoxData(L0);
 
 			return defaultSet;
 		}
@@ -141,8 +141,8 @@ namespace RB::HBox
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);
 
-			HBoxData data { name, vec};
-			dataList.AddHBoxData(data);
+			HBox_Layer_0 L0 { name, vec};
+			dataList.AddHBoxData(L0);
 		}
 
 		//make sure to free root after use

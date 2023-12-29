@@ -44,11 +44,11 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::HBox::HBoxData* ownerData = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
-		RB::HBox::HBoxData* targetData = targetList->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
+		RB::HBox::HBox_Layer_0* ownerHB_L0 = ownerList->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
+		RB::HBox::HBox_Layer_0* targetHB_L0 = targetList->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 		
-		const auto& vecOwner = ownerData->GetSelector()->GetVector();
-		const auto& vecTarget = targetData->GetSelector()->GetVector();
+		const auto& vecOwner = ownerHB_L0->GetSelector()->GetVector();
+		const auto& vecTarget = targetHB_L0->GetSelector()->GetVector();
 
 		for (auto i = vecOwner.begin(); i != vecOwner.end(); ++i)
 		{

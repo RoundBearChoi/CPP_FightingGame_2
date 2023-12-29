@@ -49,6 +49,11 @@ namespace RB::PlayerStates
 		_vecStateComponents.clear();
 	}
 
+	void PlayerState::ClearRemainingStates()
+	{
+
+	}
+
 	RB::Players::iPlayer* PlayerState::GetPlayer()
 	{
 		return RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_stateMachineID);

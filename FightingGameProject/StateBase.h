@@ -38,6 +38,7 @@ namespace RB::States
 		virtual void OnExit() override {}
 		virtual void OnUpdate() override {}
 		virtual void OnFixedUpdate() override {}
+		virtual void ClearRemainingStates() override {}
 
 	protected:
 		unsigned int _stateCreationID = 0;

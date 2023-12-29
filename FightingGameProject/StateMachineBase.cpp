@@ -116,6 +116,9 @@ namespace RB::States
 
 			_currentState = _nextState;
 			_nextState = nullptr;
+
+			//del player states in queue that are not used
+			_currentState->ClearRemainingStates();
 		}
 	}
 }

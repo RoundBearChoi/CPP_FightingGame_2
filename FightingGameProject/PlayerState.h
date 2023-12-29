@@ -18,8 +18,11 @@ namespace RB::PlayerStates
 		PlayerState();
 		~PlayerState() override;
 
+		void ClearRemainingStates() override;
+
 		RB::Players::iPlayer* GetPlayer();
 		RB::Sprites::SpriteEnum GetSpriteEnum();
+
 
 	protected:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;

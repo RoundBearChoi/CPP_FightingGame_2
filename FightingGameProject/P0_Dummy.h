@@ -1,9 +1,8 @@
 #pragma once
 #include "PlayerState.h"
-#include "ManualAnimationUpdater.h"
-#include "SpriteEnum.h"
 
-#include "iHurtBoxDataController.h"
+#include "SpriteEnum.h"
+#include "ManualAnimationUpdater.h"
 
 namespace RB::PlayerStates::Aku
 {

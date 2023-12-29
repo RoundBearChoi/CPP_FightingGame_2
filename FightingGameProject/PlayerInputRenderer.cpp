@@ -2,9 +2,9 @@
 
 namespace RB::Render
 {
-	void PlayerInputRenderer::Init(RB::Sprites::SpriteLoader* sprites)
+	void PlayerInputRenderer::Init(RB::Sprites::SpriteLoader* spriteLoader)
 	{
-		_sprites = sprites;
+		_spriteLoader = spriteLoader;
 	}
 
 	void PlayerInputRenderer::OnUpdate()
@@ -73,7 +73,7 @@ namespace RB::Render
 
 	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteEnum spriteEnum, olc::vi2d pos, olc::Pixel tint)
 	{
-		_sprites->RenderSprite(spriteEnum, olc::vi2d{ 25, 25 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
+		_spriteLoader->RenderSprite(spriteEnum, olc::vi2d{ 25, 25 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
 	}
 
 	RB::Sprites::SpriteEnum PlayerInputRenderer::_GetSpriteEnum(const RB::Input::PlayerInput& playerInput)

@@ -45,7 +45,7 @@ namespace RB::Render
 
 	void AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		_sprites.LoadSprite(path, spriteEnum);
+		_spriteLoader.LoadSprite(path, spriteEnum);
 	}
 
 	/// <summary>
@@ -53,7 +53,7 @@ namespace RB::Render
 	/// </summary>
 	void AnimationLoader::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum)
 	{
-		specs.mLoadedSprite = _sprites.GetLoadedSprite(spriteEnum);
+		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(spriteEnum);
 		specs.mSpriteEnum = spriteEnum;
 
 		_aniLoader.LoadAnimation(specs);

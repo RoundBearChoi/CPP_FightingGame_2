@@ -4,26 +4,26 @@ namespace RB::Render
 {
 	void PlayerDebugController::Init()
 	{
-		_sprites.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
-		_sprites.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteEnum::white_sq_tr80);
+		_spriteLoader.LoadSprite("PNG files/DebugElements/x_white.png", RB::Sprites::SpriteEnum::x_white);
+		_spriteLoader.LoadSprite("PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteEnum::white_sq_tr80);
 
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_up.png", RB::Sprites::SpriteEnum::input_arrow_up);
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_down.png", RB::Sprites::SpriteEnum::input_arrow_down);
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_left.png", RB::Sprites::SpriteEnum::input_arrow_left);
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_right.png", RB::Sprites::SpriteEnum::input_arrow_right);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_up.png", RB::Sprites::SpriteEnum::input_arrow_up);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_down.png", RB::Sprites::SpriteEnum::input_arrow_down);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_left.png", RB::Sprites::SpriteEnum::input_arrow_left);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_right.png", RB::Sprites::SpriteEnum::input_arrow_right);
 
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_up_left.png", RB::Sprites::SpriteEnum::input_arrow_up_left);
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_up_right.png", RB::Sprites::SpriteEnum::input_arrow_up_right);
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_down_left.png", RB::Sprites::SpriteEnum::input_arrow_down_left);
-		_sprites.LoadSprite("PNG files/InputIcons/arrow_down_right.png", RB::Sprites::SpriteEnum::input_arrow_down_right);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_up_left.png", RB::Sprites::SpriteEnum::input_arrow_up_left);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_up_right.png", RB::Sprites::SpriteEnum::input_arrow_up_right);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_down_left.png", RB::Sprites::SpriteEnum::input_arrow_down_left);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_down_right.png", RB::Sprites::SpriteEnum::input_arrow_down_right);
 
-		_sprites.LoadSprite("PNG files/InputIcons/weak_punch.png", RB::Sprites::SpriteEnum::input_weak_punch);
-		_sprites.LoadSprite("PNG files/InputIcons/weak_kick.png", RB::Sprites::SpriteEnum::input_weak_kick);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/weak_punch.png", RB::Sprites::SpriteEnum::input_weak_punch);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/weak_kick.png", RB::Sprites::SpriteEnum::input_weak_kick);
 
-		_playerBoxRenderer.Init(&_sprites);
-		_playerHBoxRenderer.Init(&_sprites);
-		_playerPositionRenderer.Init(&_sprites, &_lineRenderer);
-		_playerInputRenderer.Init(&_sprites);
+		_playerBoxRenderer.Init(&_spriteLoader);
+		_playerHBoxRenderer.Init(&_spriteLoader);
+		_playerPositionRenderer.Init(&_spriteLoader, &_lineRenderer);
+		_playerInputRenderer.Init(&_spriteLoader);
 	}
 
 	void PlayerDebugController::OnUpdate()

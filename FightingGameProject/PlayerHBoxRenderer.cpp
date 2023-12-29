@@ -2,9 +2,9 @@
 
 namespace RB::Render
 {
-    void PlayerHBoxRenderer::Init(RB::Sprites::SpriteLoader* sprites)
+    void PlayerHBoxRenderer::Init(RB::Sprites::SpriteLoader* spriteLoader)
 	{
-		_sprites = sprites;
+		_spriteLoader = spriteLoader;
 	}
 	void PlayerHBoxRenderer::OnUpdate()
 	{
@@ -118,7 +118,7 @@ namespace RB::Render
 			{
 				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
 
-				_sprites->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_LEFT);
+				_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_LEFT);
 			}
 			else
 			{
@@ -126,7 +126,7 @@ namespace RB::Render
 				bottomleft.x *= -1.0f;
 				olc::vf2d pos = bottomleft + player->GetPosition();
 
-				_sprites->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT);
+				_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT);
 			}
 		}
 	}

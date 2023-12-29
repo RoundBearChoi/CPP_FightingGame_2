@@ -1,11 +1,5 @@
 #pragma once
-#include "olcPixelGameEngine.h"
 #include "PlayerState.h"
-
-#include "DetectHit.h"
-#include "TransitionOnAnimationEnd.h"
-
-#include "P0_Idle.h"
 
 namespace RB::PlayerStates::Aku
 {

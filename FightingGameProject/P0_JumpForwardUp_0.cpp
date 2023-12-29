@@ -1,5 +1,13 @@
 #include "P0_JumpForwardUp_0.h"
 
+#include "iSpecsController.h"
+
+#include "MarkInitiallyFacingRight.h"
+#include "MoveUpOnJump.h"
+#include "MoveForwardOnJump_0.h"
+
+#include "P0_JumpForwardUp_1.h"
+
 namespace RB::PlayerStates::Aku
 {
 	void P0_JumpForwardUp_0::OnEnter()

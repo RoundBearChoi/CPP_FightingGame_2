@@ -1,10 +1,6 @@
 #pragma once
 #include "PlayerState.h"
 
-#include "FixWincingStatusDuringState.h"
-#include "MoveHorizontalOnFixedUpdateCount.h"
-#include "TransitionOnFixedUpdateCount.h"
-
 namespace RB::PlayerStates::Aku
 {
 	class P0_Wince : public RB::PlayerStates::PlayerState

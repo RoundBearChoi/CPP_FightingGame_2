@@ -1,14 +1,6 @@
 #pragma once
 #include "PlayerState.h"
 
-#include "MarkInitiallyFacingRight.h"
-#include "MoveUpOnJump.h"
-#include "MoveForwardOnJump_0.h"
-
-#include "P0_JumpForwardUp_1.h"
-
-#include "iSpecsController.h"
-
 namespace RB::PlayerStates::Aku
 {
 	class P0_JumpForwardUp_0 : public RB::PlayerStates::PlayerState

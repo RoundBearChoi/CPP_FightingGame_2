@@ -1,13 +1,5 @@
 #pragma once
-#include <iostream>
-#include "olcPixelGameEngine.h"
-
 #include "PlayerState.h"
-#include "iPlayer.h"
-#include "PlayerID.h"
-
-#include "MarkInitiallyFacingRight.h"
-#include "MoveUpOnJump.h"
 
 namespace RB::PlayerStates::Aku
 {

@@ -1,6 +1,7 @@
 #include "P0_Crouch.h"
 
-#include "FixDirectionDuringState.h"
+//#include "FixDirectionDuringState.h"
+#include "ToggleInitiallyFacingRight.h"
 #include "TransitionOnAnimationEnd.h"
 
 #include "P0_Crouch_Idle.h"
@@ -11,7 +12,7 @@ namespace RB::PlayerStates::Aku
 	{
 		_spriteEnum = RB::Sprites::SpriteEnum::aku_crouch;
 
-		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
+		AddStateComponent(new RB::PlayerStateComponents::ToggleInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::PlayerStates::Aku::P0_Crouch_Idle()));
 
 		EnterStateComponents();

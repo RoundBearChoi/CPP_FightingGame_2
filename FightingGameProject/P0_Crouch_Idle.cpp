@@ -3,7 +3,8 @@
 #include "FixDirectionDuringState.h"
 #include "StandUpOnRelease.h"
 
-#include "P0_Idle.h"
+//#include "P0_Idle.h"
+#include "P0_StandUp.h"
 
 namespace RB::PlayerStates::Aku
 {
@@ -12,7 +13,7 @@ namespace RB::PlayerStates::Aku
 		_spriteEnum = RB::Sprites::SpriteEnum::aku_crouch_idle;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixDirectionDuringState(false));
-		AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::PlayerStates::Aku::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::PlayerStates::Aku::P0_StandUp()));
 
 		EnterStateComponents();
 	}

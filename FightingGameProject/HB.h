@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "HBoxLoader.h"
+#include "_HBoxLoader.h"
 
 namespace RB::HBox
 {
@@ -16,7 +16,7 @@ namespace RB::HBox
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const;
 
 	private:
-		HBoxLoader _loader;
+		_HBoxLoader _loader;
 		std::vector<HBox_Layer_1> _vecL1;
 
 		const std::string _none = "none";

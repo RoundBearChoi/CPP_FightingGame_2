@@ -13,11 +13,11 @@
 
 namespace RB::HBox
 {
-	class HBoxLoader
+	class _HBoxLoader
 	{
 	public:
-		HBoxLoader() = default;
-		~HBoxLoader() = default;
+		_HBoxLoader() = default;
+		~_HBoxLoader() = default;
 
 	public:
 		void InitSample(std::string path);

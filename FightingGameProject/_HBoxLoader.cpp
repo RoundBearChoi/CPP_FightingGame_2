@@ -1,15 +1,15 @@
-#include "HBoxLoader.h"
+#include "_HBoxLoader.h"
 
 namespace RB::HBox
 {
-	void HBoxLoader::InitSample(std::string path)
+	void _HBoxLoader::InitSample(std::string path)
 	{
 		_samplePath = path;
 
 		SaveSample();
 	}
 
-	void HBoxLoader::SaveSample()
+	void _HBoxLoader::SaveSample()
 	{
 		std::ofstream file(_samplePath);
 
@@ -95,7 +95,7 @@ namespace RB::HBox
 	/// <summary>
 	/// make sure to free root after use
 	/// </summary>
-	json_value_s* HBoxLoader::LoadRoot(std::string path)
+	json_value_s* _HBoxLoader::LoadRoot(std::string path)
 	{
 		std::string loaded = RB::JSON::LoadJSONFile(path);
 
@@ -109,7 +109,7 @@ namespace RB::HBox
 	/// <summary>
 	/// only use during initialization (vector addresses)
 	/// </summary>
-	HBox_Layer_1 HBoxLoader::Load_L1(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	HBox_Layer_1 _HBoxLoader::Load_L1(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
 	{
 		//save path - spriteEnum
 		if (GetDataListPath(spriteEnum).GetSpriteEnum() == RB::Sprites::SpriteEnum::NONE)
@@ -151,7 +151,7 @@ namespace RB::HBox
 		return L1;
 	}
 
-	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)
+	std::vector<RB::Collisions::AABB> _HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -182,7 +182,7 @@ namespace RB::HBox
 		return std::vector<RB::Collisions::AABB>{};
 	}
 
-	std::string HBoxLoader::ParseName(const json_object_s& wholeObj, const unsigned int frame)
+	std::string _HBoxLoader::ParseName(const json_object_s& wholeObj, const unsigned int frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -206,7 +206,7 @@ namespace RB::HBox
 		return "";
 	}
 
-	RB::Collisions::AABB HBoxLoader::GetAABB(const json_array_s& jArray, unsigned int index)
+	RB::Collisions::AABB _HBoxLoader::GetAABB(const json_array_s& jArray, unsigned int index)
 	{
 		unsigned int count = 0;
 
@@ -241,7 +241,7 @@ namespace RB::HBox
 		return RB::Collisions::AABB();
 	}
 
-	const RB::HBox::HBoxDataListPath& HBoxLoader::GetDataListPath(RB::Sprites::SpriteEnum spriteEnum) const
+	const RB::HBox::HBoxDataListPath& _HBoxLoader::GetDataListPath(RB::Sprites::SpriteEnum spriteEnum) const
 	{
 		const std::vector<HBoxDataListPath>& vec = _getVector();
 

@@ -3,7 +3,7 @@
 #include "AABB.h"
 
 #include "Selector.h"
-#include "ISelector.h"
+#include "iSelector.h"
 
 namespace RB::HBox
 {

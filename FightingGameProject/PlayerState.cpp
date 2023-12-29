@@ -51,7 +51,24 @@ namespace RB::PlayerStates
 
 	void PlayerState::ClearRemainingStates()
 	{
+		auto it = currentPlayerStates.begin();
 
+		while(it != currentPlayerStates.end())
+		{
+			if ((*it)->GetStateMachineID() == _stateMachineID)
+			{
+				if ((*it)->GetCreationID() != _stateCreationID)
+				{
+					delete (*it);
+					(*it) = nullptr;
+					it = currentPlayerStates.erase(it);
+
+					continue;
+				}
+			}
+
+			it++;
+		}
 	}
 
 	RB::Players::iPlayer* PlayerState::GetPlayer()

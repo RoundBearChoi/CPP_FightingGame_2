@@ -73,14 +73,11 @@ namespace RB::States
 	/// <param name="state"></param>
 	void StateMachineBase::OverrideNextState(RB::States::iState* state)
 	{
-		//deleting next state that is set by a StateComponent
-		if (_nextState != nullptr)
-		{
-			_currentState->DeleteNextState(_nextState->GetCreationID());
-		}
+		//states that are in queue will be deleted by PlayerState::ClearRemainingStates()
+		_nextState = nullptr;
 
+		//reset status and queue
 		_currentState->SetIsTransitioning(false);
-
 		QueueNextState(state);
 	}
 

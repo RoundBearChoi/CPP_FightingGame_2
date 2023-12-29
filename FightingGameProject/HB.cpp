@@ -19,6 +19,13 @@ namespace RB::HBox
 		}
 	}
 
+	void HB::SetDir(std::string dir)
+	{
+		std::cout << std::endl;
+		std::cout << "presetting dir: " << dir << std::endl;
+		_dir = dir;
+	}
+
 	HBox_Layer_1* HB::GetL1(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (auto i = _vecL1.begin(); i != _vecL1.end(); i++)
@@ -41,12 +48,5 @@ namespace RB::HBox
 		const std::string& str = p.GetPath();
 
 		return str;
-	}
-
-	void HB::PresetDir(std::string dir)
-	{
-		std::cout << std::endl;
-		std::cout << "presetting dir: " << dir << std::endl;
-		_dir = dir;
 	}
 }

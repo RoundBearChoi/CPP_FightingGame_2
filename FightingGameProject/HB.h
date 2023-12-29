@@ -11,10 +11,9 @@ namespace RB::HBox
 		void Init();
 		void OnFixedUpdate();
 
+		void SetDir(std::string dir);
 		HBox_Layer_1* GetL1(RB::Sprites::SpriteEnum spriteEnum);
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const;
-
-		void PresetDir(std::string dir);
 
 	private:
 		HBoxLoader _loader;

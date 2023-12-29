@@ -4,7 +4,7 @@ namespace RB::HBox
 {
 	HurtBoxDataController::HurtBoxDataController(std::string dir)
 	{
-		_hb.PresetDir(dir);
+		_hb.SetDir(dir);
 	}
 
 	void HurtBoxDataController::Init()

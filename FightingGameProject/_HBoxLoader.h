@@ -1,13 +1,7 @@
 #pragma once
-#include <iostream>
-#include <fstream>
-#include <cassert>
-#include <sstream>
 #include <vector>
 #include "json.h"
-#include "JGetter.h"
-#include "AABB.h"
-#include "HBox_Layer_0.h"
+
 #include "HBox_Layer_1.h"
 #include "HBoxDataListPath.h"
 

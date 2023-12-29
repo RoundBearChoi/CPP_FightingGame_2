@@ -1,5 +1,15 @@
 #include "_HBoxLoader.h"
 
+#include <iostream>
+#include <fstream>
+#include <cassert>
+#include <sstream>
+
+#include "JGetter.h"
+
+#include "AABB.h"
+#include "HBox_Layer_0.h"
+
 namespace RB::HBox
 {
 	void _HBoxLoader::InitSample(std::string path)

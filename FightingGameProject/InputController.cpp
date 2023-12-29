@@ -399,21 +399,25 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		for (int i = vec.size() - 1; i >= 0; i--)
+		auto it = vec.begin();
+
+		while (it != vec.end())
 		{
 			//only destroy when key is released
-			if (vec[i]->IsReleased())
+			if ((*it)->IsReleased())
 			{
-				if (vec[i]->GetFixedUpdateCount() >= 60)
+				if ((*it)->GetFixedUpdateCount() >= 60)
 				{
-					delete vec[i];
-					vec[i] = nullptr;
+					delete (*it);
+					(*it) = nullptr;
 
-					std::vector<iInputObj*>::iterator it;
-					it = vec.begin();
-					vec.erase(it + i);
+					it = vec.erase(it);
+
+					continue;
 				}
 			}
+
+			it++;
 		}
 	}
 

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "PlayerInput.h"
+
 #include "iInputObj.h"
 
 namespace RB::Input

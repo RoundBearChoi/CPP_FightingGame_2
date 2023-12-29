@@ -1,7 +1,6 @@
 #pragma once
+
 #include "iCamObj.h"
-#include "iPlayerController.h"
-#include "Ease.h"
 
 namespace RB::Cam
 {

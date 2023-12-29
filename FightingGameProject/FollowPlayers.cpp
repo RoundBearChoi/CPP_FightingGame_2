@@ -1,5 +1,9 @@
 #include "FollowPlayers.h"
 
+#include "Ease.h"
+
+#include "iPlayerController.h"
+
 namespace RB::Cam
 {
 	void FollowPlayers::Init(iCamObj* cam)

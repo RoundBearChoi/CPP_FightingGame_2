@@ -1,6 +1,14 @@
 #include "HBoxEditController.h"
 
+#include "PlayerState.h"
+#include "Time.h"
+
 #include "iPlayerController.h"
+#include "iPlayerAnimationController.h"
+#include "iHurtBoxDataController.h"
+#include "iHitBoxDataController.h"
+#include "iMenuController.h"
+#include "iCamController.h"
 
 namespace RB::HBox
 {

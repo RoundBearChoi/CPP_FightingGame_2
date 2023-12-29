@@ -1,17 +1,9 @@
 #pragma once
-#include "Time.h"
-#include "HBox_Layer_1.h"
-#include "AABB.h"
-#include "PlayerID.h"
-#include "PlayerState.h"
-
-#include "iAnimationObj.h"
 #include "iHBoxEditController.h"
-#include "iPlayerAnimationController.h"
-#include "iHurtBoxDataController.h"
-#include "iHitBoxDataController.h"
-#include "iCamController.h"
-#include "iMenuController.h"
+#include "HBoxType.h"
+#include "HBox_Layer_0.h"
+#include "HBox_Layer_1.h"
+#include "PlayerID.h"
 
 namespace RB::HBox
 {

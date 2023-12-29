@@ -24,7 +24,6 @@ namespace RB::PlayerStates
 	public:
 		RB::Players::iPlayer* GetPlayer();
 		RB::Sprites::SpriteEnum GetSpriteEnum();
-		bool ContainsState(unsigned int stateID);
 
 	protected:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;

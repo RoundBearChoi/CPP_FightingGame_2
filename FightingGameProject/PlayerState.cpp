@@ -68,6 +68,23 @@ namespace RB::PlayerStates
 
 	void PlayerState::ClearRemainingStates()
 	{
+		RB::Players::iPlayer* player = GetPlayer();
+
+		bool otherPlayerHasState = false;
+
+		if (player != nullptr)
+		{
+			RB::Players::iPlayer* otherPlayer = RB::Players::iPlayerController::instance->GetOtherPlayer(player);
+
+			if (otherPlayer != nullptr)
+			{
+				otherPlayerHasState = otherPlayer->GetStateMachine()->GetCurrentState()->ContainsState(_stateCreationID);
+			}
+		}
+		
+
+		
+
 		auto it = allPlayerStates.begin();
 
 		while(it != allPlayerStates.end())
@@ -109,18 +126,5 @@ namespace RB::PlayerStates
 	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
 	{
 		return _spriteEnum;
-	}
-
-	bool PlayerState::ContainsState(unsigned int stateID)
-	{
-		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
-		{
-			if ((*i)->ContainsState(stateID))
-			{
-				return true;
-			}
-		}
-
-		return false;
 	}
 }

@@ -59,6 +59,19 @@ namespace RB::States
 		return _cumulatedFixedUpdates;
 	}
 
+	bool StateBase::ContainsState(unsigned int stateID)
+	{
+		for (auto i = _vecStateComponents.begin(); i != _vecStateComponents.end(); i++)
+		{
+			if ((*i)->ContainsState(stateID))
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)
 	{
 		if (stateComponent == nullptr)

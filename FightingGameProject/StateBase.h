@@ -22,6 +22,7 @@ namespace RB::States
 		virtual bool IsTransitioning() override;
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual unsigned int GetCumulatedFixedUpdates() override;
+		virtual bool ContainsState(unsigned int stateID) override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);

@@ -50,6 +50,11 @@ namespace RB::States
 	{
 		for (auto i = _vecNextStates.begin(); i != _vecNextStates.end(); i++)
 		{
+			if ((*i)->ContainsState(stateID))
+			{
+				return true;
+			}
+
 			if ((*i)->GetStateID() == stateID)
 			{
 				return true;

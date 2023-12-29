@@ -1,5 +1,11 @@
 #include "CamObj.h"
 
+#include "DisplaySize.h"
+#include "Time.h"
+#include "PlayerID.h"
+
+#include "iInputController.h"
+
 namespace RB::Cam
 {
 	olc::vf2d CamObj::GetPosition()

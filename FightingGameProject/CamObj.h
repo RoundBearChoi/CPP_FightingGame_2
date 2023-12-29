@@ -1,11 +1,6 @@
 #pragma once
-#include <iostream>
 #include "olcPixelGameEngine.h"
-#include "Time.h"
-#include "DisplaySize.h"
-
 #include "iCamObj.h"
-#include "iInputController.h"
 
 namespace RB::Cam
 {

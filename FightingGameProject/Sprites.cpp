@@ -2,12 +2,12 @@
 
 namespace RB::Sprites
 {
-	void Sprites::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
+	void SpriteLoader::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
 	{
 		_loader.LoadSprite(path, spriteEnum);
 	}
 
-	void Sprites::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
+	void SpriteLoader::RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
 	{
 		if (RB::Cam::iCamController::instance == nullptr)
 		{
@@ -71,7 +71,7 @@ namespace RB::Sprites
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, sprite->Size(), tint);
 	}
 
-	RB::Sprites::LoadedSprite* Sprites::GetLoadedSprite(RB::Sprites::SpriteEnum spriteEnum)
+	RB::Sprites::LoadedSprite* SpriteLoader::GetLoadedSprite(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		return _loader.GetLoadedSprite(spriteEnum);
 	}

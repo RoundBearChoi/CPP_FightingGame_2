@@ -14,7 +14,7 @@ namespace RB::Render
 		PlayerInputRenderer() = default;
 		~PlayerInputRenderer() = default;
 
-		void Init(RB::Sprites::Sprites* sprites);
+		void Init(RB::Sprites::SpriteLoader* sprites);
 		void OnUpdate();
 		void OnFixedUpdate();
 
@@ -23,6 +23,6 @@ namespace RB::Render
 		void _RenderIcon(RB::Sprites::SpriteEnum spriteEnum, olc::vi2d pos, olc::Pixel tint);
 		RB::Sprites::SpriteEnum _GetSpriteEnum(const RB::Input::PlayerInput& playerInput);
 
-		RB::Sprites::Sprites* _sprites = nullptr;
+		RB::Sprites::SpriteLoader* _sprites = nullptr;
 	};
 }

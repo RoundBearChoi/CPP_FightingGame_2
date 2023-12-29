@@ -30,7 +30,7 @@ namespace RB::Render
 		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum);
 
 	protected:
-		RB::Sprites::Sprites _sprites;
+		RB::Sprites::SpriteLoader _sprites;
 		_AnimationLoader _loader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
 	};

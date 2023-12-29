@@ -1,5 +1,7 @@
 #include "BackgroundObj.h"
 
+#include "iCamController.h"
+
 namespace RB::Background
 {
 	BackgroundObj::BackgroundObj(std::string path, RB::Sprites::SpriteEnum spriteEnum, float percentage)

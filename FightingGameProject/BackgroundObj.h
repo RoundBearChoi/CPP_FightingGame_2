@@ -3,8 +3,6 @@
 #include "SpriteEnum.h"
 #include "Sprites.h"
 
-#include "iCamController.h"
-
 namespace RB::Background
 {
 	class BackgroundObj

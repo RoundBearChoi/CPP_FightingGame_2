@@ -1,16 +1,10 @@
 #pragma once
-#include <iostream>
+
 #include "KeyBinding.h"
-#include "GameFrame.h"
+#include "SpecialMoveType.h"
 
 #include "iInputController.h"
 #include "iInputObj.h"
-#include "InputObj.h"
-
-#include "iPlayerController.h"
-
-#include "iSpecialMovesController.h"
-#include "SpecialMoveType.h"
 
 namespace RB::Input
 {

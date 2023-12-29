@@ -1,5 +1,11 @@
 #include "InputController.h"
 
+#include "InputObj.h"
+#include "GameFrame.h"
+
+#include "iSpecialMovesController.h"
+#include "iPlayerController.h"
+
 namespace RB::Input
 {
 	InputController::~InputController()

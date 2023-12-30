@@ -54,7 +54,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Collisions::AABB& aabb = player->GetPlayerCollider()->GetAABB(); //UpdateAABBOnPlayerPos();
+		RB::Collisions::AABB& aabb = player->GetPlayerCollider()->GetAABB();
 
 		_lineRenderer->RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
 	}

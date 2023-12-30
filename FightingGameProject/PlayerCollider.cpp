@@ -20,35 +20,6 @@ namespace RB::Players
 		UpdateAABBOnPlayerPos();
 
 		_ResolveCollision();
-
-		//if (RB::Players::iPlayerController::instance == nullptr)
-		//{
-		//	return;
-		//}
-		//
-		//PlayerID myID = _player->GetPlayerID();
-		//iPlayer* other = RB::Players::iPlayerController::instance->GetOtherPlayer(_player);
-		//
-		//if (other == nullptr)
-		//{
-		//	return;
-		//}
-		//
-		//RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->GetAABB();
-		//RB::Collisions::AABB myAABB = _aabb;
-		//
-		//olc::vf2d col;
-		//
-		//if (myAABB.IsCollidingAgainst(otherAABB, col))
-		//{
-		//	_isCollidingAgainstOtherPlayer = true;
-		//
-		//	_MovePlayers(other);
-		//}
-		//else
-		//{
-		//	_isCollidingAgainstOtherPlayer = false;
-		//}
 	}
 
 	olc::vi2d PlayerCollider::GetPlayerBox()

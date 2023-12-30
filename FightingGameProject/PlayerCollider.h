@@ -30,7 +30,7 @@ namespace RB::Players
 		RB::Collisions::AABB& GetAABB() override;
 
 	private:
-		RB::Collisions::AABB& _UpdateAABBOnPlayerPos();
+		void _UpdateAABBOnPlayerPos();
 		void _ResolveCollision();
 		void _MovePlayers(iPlayer* otherPlayer);
 

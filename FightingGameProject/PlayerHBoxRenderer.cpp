@@ -1,5 +1,13 @@
 #include "PlayerHBoxRenderer.h"
 
+#include "PlayerState.h"
+#include "Loaded_HB_Data.h"
+
+#include "iPlayerController.h"
+#include "iPlayerAnimationController.h"
+#include "iHurtBoxDataController.h"
+#include "iHitBoxDataController.h"
+
 namespace RB::Render
 {
     void PlayerHBoxRenderer::Init(RB::Sprites::SpriteLoader* spriteLoader)

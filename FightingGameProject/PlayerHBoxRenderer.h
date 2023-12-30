@@ -1,15 +1,9 @@
 #pragma once
 #include "SpriteLoader.h"
-#include "AABB.h"
-
+#include "AABB_Set.h"
 #include "HBoxType.h"
 
-#include "iHurtBoxDataController.h"
-#include "iHitBoxDataController.h"
-#include "iPlayerAnimationController.h"
-#include "iPlayerController.h"
-
-#include "PlayerState.h"
+#include "iPlayer.h"
 
 namespace RB::Render
 {

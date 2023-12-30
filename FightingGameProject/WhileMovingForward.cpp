@@ -1,5 +1,8 @@
 #include "WhileMovingForward.h"
 
+#include "iStateMachine.h"
+#include "iPlayerController.h"
+
 namespace RB::PlayerStateComponents
 {
 	WhileMovingForward::WhileMovingForward(int speed, RB::States::iState* nextIdleState, RB::States::iState* nextWalkBackState)

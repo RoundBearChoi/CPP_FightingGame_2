@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "SpriteEnum.h"
-#include "PlayerBoxSpecs.h"
+#include "LoadedPlayerBoxSpecs.h"
 
 namespace RB::Collisions
 {
@@ -18,6 +18,6 @@ namespace RB::Collisions
 		void LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
-		std::vector<PlayerBoxSpecs> _vecSpecs;
+		std::vector<LoadedPlayerBoxSpecs> _vecLoadedSpecs;
 	};
 }

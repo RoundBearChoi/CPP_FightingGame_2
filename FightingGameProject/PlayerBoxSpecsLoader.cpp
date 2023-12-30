@@ -1,6 +1,7 @@
 #include "PlayerBoxSpecsLoader.h"
 
 #include "JGetter.h"
+#include "PlayerBoxSpecs.h"
 
 namespace RB::Collisions
 {
@@ -13,7 +14,7 @@ namespace RB::Collisions
 		json_object_s* jObj = json_value_as_object(root);
 
 		json_object_element_s* element = jObj->start;
-		
+
 		while (element != nullptr)
 		{
 			unsigned int frame = RB::JSON::ParseFrame(element->name->string);
@@ -53,7 +54,11 @@ namespace RB::Collisions
 			specs.mHeight = height;
 			specs.mSpriteType = spriteEnum;
 
-			_vecSpecs.push_back(specs);
+			//LoadedPlayerBoxSpecs loadedSpecs;
+			//loadedSpecs.Add(specs);
+			//loadedSpecs.SetSpriteType(spriteEnum);
+			//
+			//_vecLoadedSpecs.push_back(loadedSpecs);
 
 			element = element->next;
 		}

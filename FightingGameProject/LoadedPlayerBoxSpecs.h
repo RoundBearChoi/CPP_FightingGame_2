@@ -14,7 +14,10 @@ namespace RB::Collisions
 		~LoadedPlayerBoxSpecs() = default;
 
 	public:
+		void Add(PlayerBoxSpecs specs);
+		void SetSpriteType(RB::Sprites::SpriteEnum spriteType);
 		RB::Sprites::SpriteEnum GetSpriteType();
+		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType);
 
 	private:
 		std::vector<PlayerBoxSpecs> _vecSpecs;

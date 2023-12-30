@@ -67,14 +67,14 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
 
-		RB::HBox::Loaded_HB_Data* L1 = _GetHBData();
+		RB::HBox::Loaded_HB_Data* data = _GetHBData();
 
-		if (L1 == nullptr)
+		if (data == nullptr)
 		{
 			return;
 		}
 
-		RB::HBox::HBox_Layer_0* L0 = L1->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBox_Layer_0* L0 = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (L0 == nullptr)
 		{
@@ -110,14 +110,14 @@ namespace RB::HBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HBox::Loaded_HB_Data* L1 = _GetHBData();
+		RB::HBox::Loaded_HB_Data* data = _GetHBData();
 		
-		if (L1 == nullptr)
+		if (data == nullptr)
 		{
 			return _none;
 		}
 
-		RB::HBox::HBox_Layer_0* L0 = L1->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::HBox_Layer_0* L0 = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (L0 == nullptr)
 		{

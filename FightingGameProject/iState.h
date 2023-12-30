@@ -1,5 +1,4 @@
 #pragma once
-#include "SpriteEnum.h"
 
 namespace RB::States
 {

@@ -2,8 +2,7 @@
 
 #include "StateComponentBase.h"
 
-#include "iInputController.h"
-#include "iPlayerController.h"
+#include "iState.h"
 
 namespace RB::PlayerStateComponents
 {
@@ -15,8 +14,5 @@ namespace RB::PlayerStateComponents
 	public:
 		void OnEnter() override;
 		void OnFixedUpdate() override;
-
-	//private:
-	//	RB::States::iState* _nextState = nullptr;
 	};
 }

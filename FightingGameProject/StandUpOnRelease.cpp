@@ -1,11 +1,13 @@
 #include "StandUpOnRelease.h"
 
+#include "iPlayerController.h"
+#include "iInputController.h"
+
 namespace RB::PlayerStateComponents
 {
 	StandUpOnRelease::StandUpOnRelease(RB::States::iState* nextState)
 	{
 		_vecNextStates.push_back(nextState);
-		//_nextState = nextState;
 	}
 
 	void StandUpOnRelease::OnEnter()

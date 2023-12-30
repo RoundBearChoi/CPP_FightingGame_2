@@ -81,6 +81,8 @@ namespace RB::Players::Specs
 
 		_vecMoveSpecs.push_back(specs);
 
+		free(jRoot);
+
 		return specs;
 	}
 }

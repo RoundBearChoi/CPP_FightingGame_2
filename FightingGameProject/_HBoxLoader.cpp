@@ -128,8 +128,10 @@ namespace RB::HBox
 		}
 
 		//load
-		json_value_s* root = LoadRoot(path);
+		std::string loadedJson = RB::JSON::LoadJSONFile(path);
+		json_value_s* root = json_parse(loadedJson.c_str(), loadedJson.length());
 
+		//if failed to load, return default data
 		if (root == nullptr)
 		{
 			Loaded_HB_Data defaultData{ spriteEnum };
@@ -142,6 +144,7 @@ namespace RB::HBox
 			return defaultData;
 		}
 
+		//read
 		struct json_object_s* obj = json_value_as_object(root);
 
 		Loaded_HB_Data data{ spriteEnum };

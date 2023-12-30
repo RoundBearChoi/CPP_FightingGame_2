@@ -8,6 +8,6 @@ namespace RB::Collisions
 	{
 		std::string loaded = RB::JSON::LoadJSONFile(path);
 
-
+		json_value_s* root = json_parse(loaded.c_str(), loaded.length());
 	}
 }

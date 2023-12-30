@@ -1,5 +1,9 @@
 #include "MoveDownOnFall.h"
 
+#include "Ease.h"
+
+#include "iPlayerController.h"
+
 namespace RB::PlayerStateComponents
 {
 	/// <summary>

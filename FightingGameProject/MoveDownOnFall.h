@@ -1,11 +1,8 @@
 #pragma once
-#include "olcPixelGameEngine.h"
+
 #include "StateComponentBase.h"
-#include "Ease.h"
 
-#include "iPlayerController.h"
-
-#include "P0_Idle.h"
+#include "iState.h"
 
 namespace RB::PlayerStateComponents
 {

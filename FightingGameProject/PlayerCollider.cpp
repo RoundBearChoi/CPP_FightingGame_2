@@ -72,6 +72,7 @@ namespace RB::Players
 		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
 
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
+		_aabb.SetWidthHeight((float)playerBox.x, (float)playerBox.y);
 
 		return _aabb;
 	}
@@ -83,13 +84,13 @@ namespace RB::Players
 
 	void PlayerCollider::_InitPlayerColliderAABB()
 	{
-		olc::vi2d bottomCenter = _player->GetPosition();
-		olc::vi2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
-		float halfWidth = playerBox.x * 0.5f;
-
-		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
-
-		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
+		//olc::vi2d bottomCenter = _player->GetPosition();
+		//olc::vi2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
+		//float halfWidth = playerBox.x * 0.5f;
+		//
+		//olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
+		//
+		//_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
 	}
 
 	void PlayerCollider::_ResolveCollision()

@@ -26,6 +26,12 @@ namespace RB::Collisions
 			_bottomLeftY = bottomLeftY;
 		}
 
+		void SetWidthHeight(float width, float height)
+		{
+			_width = width;
+			_height = height;
+		}
+
 		void MoveX(float x)
 		{
 			_bottomLeftX += x;

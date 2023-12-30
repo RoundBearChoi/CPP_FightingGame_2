@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "PlayerBoxSpecs.h"
-#include "SpriteEnum.h"
+#include "CharacterType.h"
 
 namespace RB::Collisions
 {
@@ -15,12 +15,12 @@ namespace RB::Collisions
 
 	public:
 		void Add(PlayerBoxSpecs specs);
-		void SetSpriteType(RB::Sprites::SpriteEnum spriteType);
-		RB::Sprites::SpriteEnum GetSpriteType();
+		void SetCharacterType(RB::Players::CharacterType characterType);
+		RB::Players::CharacterType GetCharacterType();
 		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType);
 
 	private:
 		std::vector<PlayerBoxSpecs> _vecSpecs;
-		RB::Sprites::SpriteEnum _spriteType = RB::Sprites::SpriteEnum::NONE;
+		RB::Players::CharacterType _characterType = RB::Players::CharacterType::NONE;
 	};
 }

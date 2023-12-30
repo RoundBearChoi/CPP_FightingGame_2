@@ -7,14 +7,14 @@ namespace RB::Collisions
 		_vecSpecs.push_back(specs);
 	}
 
-	void LoadedPlayerBoxSpecs::SetSpriteType(RB::Sprites::SpriteEnum spriteType)
+	void LoadedPlayerBoxSpecs::SetCharacterType(RB::Players::CharacterType characterType)
 	{
-		_spriteType = spriteType;
+		_characterType = characterType;
 	}
 
-	RB::Sprites::SpriteEnum LoadedPlayerBoxSpecs::GetSpriteType()
+	RB::Players::CharacterType LoadedPlayerBoxSpecs::GetCharacterType()
 	{
-		return _spriteType;
+		return _characterType;
 	}
 
 	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecs(RB::Sprites::SpriteEnum spriteType)

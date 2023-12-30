@@ -5,7 +5,7 @@
 
 namespace RB::Collisions
 {
-	void PlayerBoxSpecsLoader::LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteEnum)
+	void PlayerBoxSpecsLoader::LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType)
 	{
 		std::string loaded = RB::JSON::LoadJSONFile(path);
 
@@ -52,9 +52,9 @@ namespace RB::Collisions
 			specs.mOffsetY = offsetY;
 			specs.mWidth = width;
 			specs.mHeight = height;
-			specs.mSpriteType = spriteEnum;
+			specs.mSpriteType = spriteType;
 
-			LoadedPlayerBoxSpecs* loadedSpecs = GetLoadedSpecs(spriteEnum);
+			LoadedPlayerBoxSpecs* loadedSpecs = GetLoadedSpecs(characterType);
 
 			if (loadedSpecs != nullptr)
 			{
@@ -64,6 +64,7 @@ namespace RB::Collisions
 			{
 				LoadedPlayerBoxSpecs newLoadedSpecs;
 				newLoadedSpecs.Add(specs);
+				newLoadedSpecs.SetCharacterType(characterType);
 				_vecLoadedSpecs.push_back(newLoadedSpecs);
 			}
 
@@ -73,11 +74,11 @@ namespace RB::Collisions
 		free(root);
 	}
 
-	LoadedPlayerBoxSpecs* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Sprites::SpriteEnum spriteEnum)
+	LoadedPlayerBoxSpecs* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Players::CharacterType characterType)
 	{
 		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)
 		{
-			if (i->GetSpriteType() == spriteEnum)
+			if (i->GetCharacterType() == characterType)
 			{
 				return &(*i);
 			}

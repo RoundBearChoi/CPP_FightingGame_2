@@ -1,8 +1,6 @@
 #pragma once
 #include "StateComponentBase.h"
 
-#include "iPlayerController.h"
-
 namespace RB::PlayerStateComponents
 {
 	class MoveHorizontalOnFixedUpdateCount : public RB::States::StateComponentBase

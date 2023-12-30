@@ -1,5 +1,9 @@
 #include "MoveHorizontalOnFixedUpdateCount.h"
 
+#include "olcPixelGameEngine.h"
+
+#include "iPlayerController.h"
+
 namespace RB::PlayerStateComponents
 {
 	MoveHorizontalOnFixedUpdateCount::MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, int move)

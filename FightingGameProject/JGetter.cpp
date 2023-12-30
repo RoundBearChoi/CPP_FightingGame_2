@@ -91,19 +91,19 @@ namespace RB::JSON
 		return result;
 	}
 
-	int32_t GetInt32_FromArrayElement(const json_array_element_s& element)
+	int GetInt_FromArrayElement(const json_array_element_s& element)
 	{
 		struct json_number_s* number = json_value_as_number(element.value);
 
 		std::stringstream stream;
 		stream << number->number;
-		int32_t result = 0;
+		int result = 0;
 		stream >> result;
 
 		return result;
 	}
 
-	float_t GetFloat_FromArrayElement(const json_array_element_s& element)
+	float GetFloat_FromArrayElement(const json_array_element_s& element)
 	{
 		struct json_number_s* number = json_value_as_number(element.value);
 

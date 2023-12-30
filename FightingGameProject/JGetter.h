@@ -12,6 +12,6 @@ namespace RB::JSON
 	int GetInt_FromElement(const json_object_element_s& element);
 	float GetFloat_FromElement(const json_object_element_s& element);
 	std::string GetString_FromElement(const json_object_element_s& element);
-	int32_t GetInt32_FromArrayElement(const json_array_element_s& element);
-	float_t GetFloat_FromArrayElement(const json_array_element_s& element);
+	int GetInt_FromArrayElement(const json_array_element_s& element);
+	float GetFloat_FromArrayElement(const json_array_element_s& element);
 }

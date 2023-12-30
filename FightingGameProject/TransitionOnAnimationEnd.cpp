@@ -1,5 +1,10 @@
 #include "TransitionOnAnimationEnd.h"
 
+#include "AnimationSpecs.h"
+
+#include "iPlayerController.h"
+#include "iPlayerAnimationController.h"
+
 #include "P0_Idle.h"
 
 namespace RB::PlayerStateComponents

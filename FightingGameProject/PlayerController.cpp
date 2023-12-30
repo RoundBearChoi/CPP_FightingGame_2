@@ -34,9 +34,12 @@ namespace RB::Players
 		{
 			for (auto j = RB::PlayerStates::PlayerState::allPlayerStates.begin(); j != RB::PlayerStates::PlayerState::allPlayerStates.end(); j++)
 			{
-				if ((*j)->GetStateID() == (*i)->GetStateMachine()->GetCurrentState()->GetStateID())
+				if ((*j)->GetStateMachineID() != 0)
 				{
-					(*j)->UpdatePlayerBox();
+					if ((*j)->GetStateID() == (*i)->GetStateMachine()->GetCurrentState()->GetStateID())
+					{
+						(*j)->UpdatePlayerBox();
+					}
 				}
 			}
 

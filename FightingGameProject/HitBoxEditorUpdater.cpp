@@ -34,7 +34,6 @@ namespace RB::Updaters
 			olc::vi2d{ 50, 100 },
 			RB::Players::PlayerID::PLAYER_1);
 
-		//dummyP->SetPosition(olc::vi2d{ 50, 100 });
 		dummyP->SetManualAnimationUpdate(true);
 
 		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());

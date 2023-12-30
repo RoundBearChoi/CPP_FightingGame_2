@@ -1,0 +1,25 @@
+{
+    "frame_0":
+    [
+        {
+        "offsetX" : 0,
+        "offsetY" : 0,
+        "width" : 67.4293,
+        "height" : 14.6671
+        }
+    ],
+
+    "frame_1":
+    [
+        {
+        "offsetX" : 0,
+        "offsetY" : 0,
+        "width" : 61.1848,
+        "height" : 13.0873
+        }
+    ],
+
+    "frame_2":
+    [
+    ]
+}

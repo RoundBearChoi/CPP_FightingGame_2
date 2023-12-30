@@ -226,6 +226,8 @@ namespace RB::Render
 		specs.mRenderSize = olc::vf2d{ renderSizeX, renderSizeY };
 		specs.mPlayOnce = playOnce;
 
+		free(jRoot);
+
 		return specs;
 	}
 }

@@ -32,6 +32,14 @@ namespace RB::Players
 	{
 		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
+			for (auto j = RB::PlayerStates::PlayerState::allPlayerStates.begin(); j != RB::PlayerStates::PlayerState::allPlayerStates.end(); j++)
+			{
+				if ((*j)->GetStateID() == (*i)->GetStateMachine()->GetCurrentState()->GetStateID())
+				{
+					(*j)->UpdatePlayerBox();
+				}
+			}
+
 			(*i)->OnFixedUpdate();
 		}
 	}

@@ -8,6 +8,7 @@
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
 #include "PlayerAnimationController.h"
+#include "PlayerBoxDataController.h"
 #include "MenuController.h"
 #include "HurtBoxDataController.h"
 #include "HitBoxDataController.h"
@@ -43,6 +44,7 @@ namespace RB::Updaters
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
+		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Collisions::PlayerBoxDataController()));
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Sprites::SpriteDataController()));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));

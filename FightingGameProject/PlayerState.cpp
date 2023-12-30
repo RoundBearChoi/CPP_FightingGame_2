@@ -1,5 +1,7 @@
 #include "PlayerState.h"
 
+#include <iostream>
+
 #include "iPlayerController.h"
 #include "iPlayerBoxDataController.h"
 
@@ -118,7 +120,11 @@ namespace RB::PlayerStates
 
 	void PlayerState::UpdatePlayerBox()
 	{
-		RB::Collisions::LoadedPlayerBoxSpecs* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedSpecs(GetPlayer()->GetCharacterType());
+		RB::Players::iPlayer* player = GetPlayer();
+
+		RB::Players::CharacterType characterType = player->GetCharacterType();
+
+		RB::Collisions::LoadedPlayerBoxSpecs* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedSpecs(characterType);
 
 		if (loaded == nullptr)
 		{

@@ -1,7 +1,5 @@
 #include "HurtBoxEditorUpdater.h"
 
-#include <iostream>
-
 #include "iController.h"
 
 #include "InputController.h"
@@ -10,8 +8,10 @@
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
 #include "PlayerAnimationController.h"
+#include "PlayerBoxDataController.h"
 #include "MenuController.h"
 #include "HurtBoxDataController.h"
+#include "HitBoxDataController.h"
 #include "HBoxEditController.h"
 
 #include "Player.h"
@@ -44,6 +44,7 @@ namespace RB::Updaters
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
+		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Collisions::PlayerBoxDataController()));
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Sprites::SpriteDataController()));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));

@@ -43,7 +43,6 @@ namespace RB::PlayerStates::Aku
 
 	void P0_Idle::OnFixedUpdate()
 	{
-		UpdatePlayerBox();
 		FixedUpdateStateComponents();
 	}
 }

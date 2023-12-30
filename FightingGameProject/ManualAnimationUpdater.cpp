@@ -1,5 +1,7 @@
 #include "ManualAnimationUpdater.h"
 
+#include "iPlayerAnimationController.h"
+
 namespace RB::Render
 {
 	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteEnum spriteEnum)

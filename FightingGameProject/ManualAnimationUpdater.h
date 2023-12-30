@@ -1,8 +1,6 @@
 #pragma once
 #include "SpriteEnum.h"
 
-#include "iPlayerAnimationController.h"
-
 namespace RB::Render
 {
 	class ManualAnimationUpdater

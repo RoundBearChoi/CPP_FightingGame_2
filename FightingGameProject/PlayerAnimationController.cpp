@@ -187,11 +187,9 @@ namespace RB::Render
 	AnimationSpecs PlayerAnimationController::_LoadAnimationSpecs(std::string path)
 	{
 		std::string str = RB::JSON::LoadJSONFile(path);
+		json_value_s* root = json_parse(str.c_str(), str.size());
 
-		const char* arrChar = str.c_str();
-
-		json_value_s* jRoot = json_parse(arrChar, strlen(arrChar));
-		json_object_s* jObj = json_value_as_object(jRoot);
+		json_object_s* jObj = json_value_as_object(root);
 
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
@@ -226,7 +224,7 @@ namespace RB::Render
 		specs.mRenderSize = olc::vf2d{ renderSizeX, renderSizeY };
 		specs.mPlayOnce = playOnce;
 
-		free(jRoot);
+		free(root);
 
 		return specs;
 	}

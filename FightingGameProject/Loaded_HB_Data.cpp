@@ -20,7 +20,7 @@ namespace RB::HBox
 		_vec_AABB_Sets.push_back(data);
 	}
 
-	const std::vector<AABB_Set>& Loaded_HB_Data::GetAABBs()
+	const std::vector<AABB_Set>& Loaded_HB_Data::Get_AABB_Sets()
 	{
 		return _vec_AABB_Sets;
 	}

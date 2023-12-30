@@ -14,7 +14,7 @@ namespace RB::HBox
 	public:
 		void OnFixedUpdate();
 		void AddSet(AABB_Set data);
-		const std::vector<AABB_Set>& GetAABBs();
+		const std::vector<AABB_Set>& Get_AABB_Sets();
 		AABB_Set* GetHBoxDataByFrame(unsigned int frame);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
 

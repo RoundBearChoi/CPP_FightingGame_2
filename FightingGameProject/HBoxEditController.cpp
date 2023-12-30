@@ -331,17 +331,17 @@ namespace RB::HBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				const auto& vecL0 = data->GetAABBs();
+				const auto& vec_AABB_Sets = data->Get_AABB_Sets();
 
-				for (auto i = vecL0.begin(); i != vecL0.end(); ++i)
+				for (auto i = vec_AABB_Sets.begin(); i != vec_AABB_Sets.end(); ++i)
 				{
-					AABB_Set* L0 = (AABB_Set*)&*i;
-					const std::string& frameName = L0->GetFrameName();
+					AABB_Set* AABBs = (AABB_Set*)&*i;
+					const std::string& frameName = AABBs->GetFrameName();
 
 					file << "    \"" << frameName << "\":" << std::endl;
 					file << "    [" << std::endl;
 
-					const auto& vecAABB = L0->GetSelector()->GetVector();
+					const auto& vecAABB = AABBs->GetSelector()->GetVector();
 
 					for (auto i = vecAABB.begin(); i != vecAABB.end(); ++i)
 					{
@@ -353,7 +353,7 @@ namespace RB::HBox
 						file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
 						file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
 
-						if (i != L0->GetSelector()->GetVector().end() - 1)
+						if (i != AABBs->GetSelector()->GetVector().end() - 1)
 						{
 							file << "        }," << std::endl;
 						}
@@ -364,7 +364,7 @@ namespace RB::HBox
 					}
 
 					//no comma for last frame
-					if (i != vecL0.end() - 1)
+					if (i != vec_AABB_Sets.end() - 1)
 					{
 						file << "    ]," << std::endl << std::endl;
 					}

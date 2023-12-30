@@ -44,36 +44,36 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::HBox::AABB_Set* ownerHB_L0 = ownerData->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
-		RB::HBox::AABB_Set* targetHB_L0 = targetData->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
+		RB::HBox::AABB_Set* ownerAABBs = ownerData->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
+		RB::HBox::AABB_Set* targetAABBs = targetData->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 		
-		const auto& vecOwner = ownerHB_L0->GetSelector()->GetVector();
-		const auto& vecTarget = targetHB_L0->GetSelector()->GetVector();
+		const auto& vec_Owner_AABB_Sets = ownerAABBs->GetSelector()->GetVector();
+		const auto& vec_Target_AABB_Sets = targetAABBs->GetSelector()->GetVector();
 
-		for (auto i = vecOwner.begin(); i != vecOwner.end(); ++i)
+		for (auto i = vec_Owner_AABB_Sets.begin(); i != vec_Owner_AABB_Sets.end(); ++i)
 		{
 			//get owner AABB
-			RB::Collisions::AABB ownerAABB = (*i);
+			RB::Collisions::AABB ownerBox = (*i);
 			olc::vi2d ownerPos = owner->GetPosition();
-			RB::Collisions::AABB ownerWorldAABB = ownerAABB.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
+			RB::Collisions::AABB ownerBox_WorldPos = ownerBox.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
 
 			//skip if width or height is 0
-			if (ownerWorldAABB.GetWidthHeight().x <= 0.001f || ownerWorldAABB.GetWidthHeight().y <= 0.001f)
+			if (ownerBox_WorldPos.GetWidthHeight().x <= 0.001f || ownerBox_WorldPos.GetWidthHeight().y <= 0.001f)
 			{
 				continue;
 			}
 
-			for (auto j = vecTarget.begin(); j != vecTarget.end(); ++j)
+			for (auto j = vec_Target_AABB_Sets.begin(); j != vec_Target_AABB_Sets.end(); ++j)
 			{
 				//get target AABB
-				RB::Collisions::AABB targetAABB = (*j);
+				RB::Collisions::AABB targetBox = (*j);
 				olc::vi2d targetPos = target->GetPosition();
-				RB::Collisions::AABB targetWorldAABB = targetAABB.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
+				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
 
 				//compare
 				olc::vf2d col;
 
-				if (ownerWorldAABB.IsCollidingAgainst(targetWorldAABB, col))
+				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
 					//temp - decouple by using attackregister?
 

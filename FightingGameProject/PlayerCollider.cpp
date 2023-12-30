@@ -34,8 +34,6 @@ namespace RB::Players
 			return;
 		}
 
-		//RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->UpdateAABBOnPlayerPos();
-		//RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();
 		RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->GetAABB();
 		RB::Collisions::AABB myAABB = _aabb;
 

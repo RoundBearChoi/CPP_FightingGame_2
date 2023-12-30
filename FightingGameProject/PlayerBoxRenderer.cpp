@@ -1,5 +1,7 @@
 #include "PlayerBoxRenderer.h"
 
+#include "iPlayerController.h"
+
 namespace RB::Render
 {
     void PlayerBoxRenderer::Init(RB::Sprites::SpriteLoader* spriteLoader)

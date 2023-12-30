@@ -1,8 +1,6 @@
 #pragma once
 #include "SpriteLoader.h"
 
-#include "iPlayerController.h"
-
 namespace RB::Render
 {
 	class PlayerBoxRenderer

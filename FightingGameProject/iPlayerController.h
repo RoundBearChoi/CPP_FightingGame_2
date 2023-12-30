@@ -17,7 +17,7 @@ namespace RB::Players
 		virtual void OnFixedUpdate() = 0;
 
 	public:
-		virtual void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) = 0;
+		virtual iPlayer* AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) = 0;
 
 	public:
 		virtual iPlayer* GetPlayerOnIndex(unsigned int index) = 0;

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "olcPixelGameEngine.h"
+
+#include "iPlayer.h"
 #include "iPlayerController.h"
 
 namespace RB::Players
@@ -16,7 +19,7 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		void AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) override;
+		iPlayer* AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) override;
 
 	public:
 		iPlayer* GetPlayerOnIndex(unsigned int index) override;

@@ -47,7 +47,7 @@ namespace RB::Players
 		}
 	}
 
-	void PlayerController::AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID)
+	iPlayer* PlayerController::AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID)
 	{
 		_vecPlayers.reserve(2);
 
@@ -58,6 +58,8 @@ namespace RB::Players
 
 		p->Init(playerID, firstState);
 		p->SetPosition(startPos);
+
+		return p;
 	}
 
 	iPlayer* PlayerController::GetPlayerOnIndex(unsigned int index)

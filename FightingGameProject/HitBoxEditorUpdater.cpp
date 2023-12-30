@@ -34,13 +34,13 @@ namespace RB::Updaters
 	{
 		RB::Players::PlayerController* playerController = new RB::Players::PlayerController();
 
-		playerController->AddPlayer(new RB::Players::Player,
+		RB::Players::iPlayer* dummyP = playerController->AddPlayer(new RB::Players::Player,
 			new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteEnum::aku_0_jab), //set starting sprite enum
 			olc::vi2d{ 0, 0 },
 			RB::Players::PlayerID::PLAYER_1);
 
-		playerController->GetPlayerOnIndex(0)->SetPosition(olc::vi2d{ 50, 100 });
-		playerController->GetPlayerOnIndex(0)->SetManualAnimationUpdate(true);
+		dummyP->SetPosition(olc::vi2d{ 50, 100 });
+		dummyP->SetManualAnimationUpdate(true);
 
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
 		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));

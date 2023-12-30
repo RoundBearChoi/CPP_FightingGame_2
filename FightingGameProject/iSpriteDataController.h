@@ -1,7 +1,7 @@
 #pragma once
+#include <string>
 #include "ControllerT.h"
 #include "SpriteEnum.h"
-#include "SpriteEnumString.h"
 
 namespace RB::Sprites
 {

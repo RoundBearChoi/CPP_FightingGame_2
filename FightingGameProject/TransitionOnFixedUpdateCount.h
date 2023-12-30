@@ -1,10 +1,7 @@
 #pragma once
 #include "StateComponentBase.h"
 
-#include "iPlayer.h"
-#include "P0_Idle.h"
-
-#include "iPlayerController.h"
+#include "iState.h"
 
 namespace RB::PlayerStateComponents
 {

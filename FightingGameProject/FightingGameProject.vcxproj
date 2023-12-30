@@ -175,6 +175,7 @@
     <ClCompile Include="HurtBoxDataController.cpp" />
     <ClCompile Include="HBoxDataListPath.h" />
     <ClCompile Include="P0_StandUp.cpp" />
+    <ClCompile Include="PlayerBoxDataController.cpp" />
     <ClCompile Include="_HBoxLoader.cpp" />
     <ClCompile Include="HBoxEditController.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
@@ -266,6 +267,7 @@
     <ClInclude Include="iHitBoxDataController.h" />
     <ClInclude Include="iInputObj.h" />
     <ClInclude Include="InputObj.h" />
+    <ClInclude Include="iPlayerBoxDataController.h" />
     <ClInclude Include="iPlayerCollider.h" />
     <ClInclude Include="iSelector.h" />
     <ClInclude Include="iSpecialMovesController.h" />
@@ -304,6 +306,7 @@
     <ClInclude Include="json.h" />
     <ClInclude Include="jsonExample.h" />
     <ClInclude Include="P0_StandUp.h" />
+    <ClInclude Include="PlayerBoxDataController.h" />
     <ClInclude Include="_HBoxLoader.h" />
     <ClInclude Include="ManualAnimationUpdater.h" />
     <ClInclude Include="MenuController.h" />

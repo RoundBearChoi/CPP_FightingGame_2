@@ -349,6 +349,9 @@
     <ClCompile Include="P0_StandUp.cpp">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerBoxDataController.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -779,6 +782,12 @@
     </ClInclude>
     <ClInclude Include="P0_StandUp.h">
       <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBoxDataController.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="iPlayerBoxDataController.h">
+      <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

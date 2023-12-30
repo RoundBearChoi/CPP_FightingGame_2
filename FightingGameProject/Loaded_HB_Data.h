@@ -13,7 +13,7 @@ namespace RB::HBox
 
 	public:
 		void OnFixedUpdate();
-		void AddHBoxData(HBox_Layer_0 data);
+		void AddSet(HBox_Layer_0 data);
 		const std::vector<HBox_Layer_0>& GetVecL0();
 		HBox_Layer_0* GetHBoxDataByFrame(unsigned int frame);
 		RB::Sprites::SpriteEnum GetSpriteEnum();

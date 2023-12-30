@@ -5,10 +5,10 @@ namespace RB::HBox
 	void HB_Loader::Init()
 	{
 		//load every hbox datalist
-		_vecL1.push_back(_loader.Load_L1(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteEnum::aku_idle));
-		_vecL1.push_back(_loader.Load_L1(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteEnum::aku_walk));
-		_vecL1.push_back(_loader.Load_L1(_dir + "fighter_0_jab" + _extention, RB::Sprites::SpriteEnum::aku_0_jab));
-		_vecL1.push_back(_loader.Load_L1(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteEnum::aku_wince));
+		_vecL1.push_back(_loader.Load(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteEnum::aku_idle));
+		_vecL1.push_back(_loader.Load(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteEnum::aku_walk));
+		_vecL1.push_back(_loader.Load(_dir + "fighter_0_jab" + _extention, RB::Sprites::SpriteEnum::aku_0_jab));
+		_vecL1.push_back(_loader.Load(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteEnum::aku_wince));
 	}
 
 	void HB_Loader::OnFixedUpdate()
@@ -26,7 +26,7 @@ namespace RB::HBox
 		_dir = dir;
 	}
 
-	Loaded_HB_Data* HB_Loader::GetL1(RB::Sprites::SpriteEnum spriteEnum)
+	Loaded_HB_Data* HB_Loader::GetData(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		for (auto i = _vecL1.begin(); i != _vecL1.end(); i++)
 		{

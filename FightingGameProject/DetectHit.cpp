@@ -31,10 +31,10 @@ namespace RB::PlayerStateComponents
 		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteEnum);
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteEnum);
 
-		RB::HBox::Loaded_HB_Data* ownerHB_L1 = RB::HBox::iHitBoxDataController::instance->Get_L1(ownerSpriteEnum);
-		RB::HBox::Loaded_HB_Data* targetHB_L1 = RB::HBox::iHurtBoxDataController::instance->Get_L1(targetSpriteEnum);
+		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iHitBoxDataController::instance->Get_L1(ownerSpriteEnum);
+		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iHurtBoxDataController::instance->Get_L1(targetSpriteEnum);
 
-		if (ownerHB_L1 == nullptr || targetHB_L1 == nullptr)
+		if (ownerData == nullptr || targetData == nullptr)
 		{
 			return;
 		}
@@ -44,8 +44,8 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::HBox::HBox_Layer_0* ownerHB_L0 = ownerHB_L1->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
-		RB::HBox::HBox_Layer_0* targetHB_L0 = targetHB_L1->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
+		RB::HBox::HBox_Layer_0* ownerHB_L0 = ownerData->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
+		RB::HBox::HBox_Layer_0* targetHB_L0 = targetData->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 		
 		const auto& vecOwner = ownerHB_L0->GetSelector()->GetVector();
 		const auto& vecTarget = targetHB_L0->GetSelector()->GetVector();

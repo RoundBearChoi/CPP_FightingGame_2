@@ -15,7 +15,7 @@ namespace RB::HBox
 		}
 	}
 
-	void Loaded_HB_Data::AddHBoxData(HBox_Layer_0 data)
+	void Loaded_HB_Data::AddSet(HBox_Layer_0 data)
 	{
 		_vecHB_L0.push_back(data);
 	}

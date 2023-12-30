@@ -14,7 +14,7 @@ namespace RB::HBox
 		void OnFixedUpdate();
 
 		void SetDir(std::string dir);
-		Loaded_HB_Data* GetL1(RB::Sprites::SpriteEnum spriteEnum);
+		Loaded_HB_Data* GetData(RB::Sprites::SpriteEnum spriteEnum);
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const;
 
 	private:

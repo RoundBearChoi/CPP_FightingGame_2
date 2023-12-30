@@ -1,9 +1,8 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "AnimationRenderer.h"
-#include "SpriteEnum.h"
+
 #include "SkipFixedUpdates.h"
-#include "AnimationRenderSettings.h"
+#include "AnimationRenderer.h"
 
 #include "iAnimationObj.h"
 #include "iPlayer.h"

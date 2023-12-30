@@ -45,6 +45,16 @@ namespace RB::Collisions
 			float width = RB::JSON::GetFloat_FromElement(*e2);
 			float height = RB::JSON::GetFloat_FromElement(*e3);
 		
+			PlayerBoxSpecs specs;
+			specs.mFrame = frame;
+			specs.mOffsetX = offsetX;
+			specs.mOffsetY = offsetY;
+			specs.mWidth = width;
+			specs.mHeight = height;
+			specs.mSpriteType = spriteEnum;
+
+			_vecSpecs.push_back(specs);
+
 			element = element->next;
 		}
 

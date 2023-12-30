@@ -795,5 +795,8 @@
     <ClInclude Include="PlayerBoxSpecsLoader.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerBoxSpecs.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

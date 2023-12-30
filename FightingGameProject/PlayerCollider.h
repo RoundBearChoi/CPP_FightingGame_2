@@ -28,6 +28,7 @@ namespace RB::Players
 		olc::vi2d GetPlayerBox() override;
 		bool IsCollidingAgainstOtherPlayer() override;
 		RB::Collisions::AABB& UpdateAABBOnPlayerPos() override;
+		RB::Collisions::AABB& GetAABB() override;
 
 	public:
 		void _InitPlayerColliderAABB();

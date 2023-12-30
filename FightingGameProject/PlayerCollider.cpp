@@ -32,8 +32,12 @@ namespace RB::Players
 			return;
 		}
 
-		RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->UpdateAABBOnPlayerPos();
-		RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();
+		UpdateAABBOnPlayerPos();
+
+		//RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->UpdateAABBOnPlayerPos();
+		//RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();
+		RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->GetAABB();
+		RB::Collisions::AABB myAABB = _aabb;
 
 		olc::vf2d col;
 
@@ -69,6 +73,11 @@ namespace RB::Players
 
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
 
+		return _aabb;
+	}
+
+	RB::Collisions::AABB& PlayerCollider::GetAABB()
+	{
 		return _aabb;
 	}
 

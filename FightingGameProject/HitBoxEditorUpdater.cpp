@@ -29,12 +29,12 @@ namespace RB::Updaters
 	{
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 
-		RB::Players::iPlayer* dummyP = playerController->AddPlayer(new RB::Players::Player(),
+		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player(),
 			new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteEnum::aku_0_jab), //set starting sprite enum
 			olc::vi2d{ 50, 100 },
 			RB::Players::PlayerID::PLAYER_1);
 
-		dummyP->SetManualAnimationUpdate(true);
+		p0->SetManualAnimationUpdate(true);
 
 		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>(new RB::Collisions::PlayerBoxDataController());

@@ -355,6 +355,9 @@
     <ClCompile Include="PlayerBoxSpecsLoader.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
+    <ClCompile Include="LoadedPlayerBoxSpecs.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -796,6 +799,9 @@
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
     <ClInclude Include="PlayerBoxSpecs.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadedPlayerBoxSpecs.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>

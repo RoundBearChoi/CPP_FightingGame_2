@@ -155,6 +155,7 @@
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
+    <ClCompile Include="LoadedPlayerBoxSpecs.cpp" />
     <ClCompile Include="Loaded_HB_Data.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
@@ -275,6 +276,7 @@
     <ClInclude Include="iSpecialMoveSequence.h" />
     <ClInclude Include="iSpecsController.h" />
     <ClInclude Include="iVFXAnimationController.h" />
+    <ClInclude Include="LoadedPlayerBoxSpecs.h" />
     <ClInclude Include="MoveDownOnFall.h" />
     <ClInclude Include="MoveForwardOnJump_0.h" />
     <ClInclude Include="MoveForwardOnJump_1.h" />

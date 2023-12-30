@@ -134,10 +134,10 @@ namespace RB::HBox
 		{
 			Loaded_HB_Data defaultData{ spriteEnum };
 
-			AABB_Set L0;
-			L0.SetFrameNameAndParse("frame_0");
+			AABB_Set emptyAABBs;
+			emptyAABBs.SetFrameNameAndParse("frame_0");
 
-			defaultData.AddSet(L0);
+			defaultData.AddSet(emptyAABBs);
 
 			return defaultData;
 		}
@@ -151,8 +151,8 @@ namespace RB::HBox
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);
 
-			AABB_Set L0 { name, vec};
-			data.AddSet(L0);
+			AABB_Set AABBs { name, vec};
+			data.AddSet(AABBs);
 		}
 
 		//make sure to free root after use

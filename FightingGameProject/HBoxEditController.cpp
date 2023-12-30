@@ -331,7 +331,7 @@ namespace RB::HBox
 				//start of whole obj
 				file << "{" << std::endl;
 
-				const auto& vecL0 = data->GetVecL0();
+				const auto& vecL0 = data->GetAABBs();
 
 				for (auto i = vecL0.begin(); i != vecL0.end(); ++i)
 				{

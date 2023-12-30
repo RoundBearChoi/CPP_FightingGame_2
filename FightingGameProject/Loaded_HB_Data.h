@@ -14,12 +14,12 @@ namespace RB::HBox
 	public:
 		void OnFixedUpdate();
 		void AddSet(AABB_Set data);
-		const std::vector<AABB_Set>& GetVecL0();
+		const std::vector<AABB_Set>& GetAABBs();
 		AABB_Set* GetHBoxDataByFrame(unsigned int frame);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
 
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		std::vector<AABB_Set> _vecHB_L0;
+		std::vector<AABB_Set> _vec_AABB_Sets;
 	};
 }

@@ -23,7 +23,7 @@ namespace RB::HBox
 
 	private:
 		bool _ControllersExist();
-		void _UpdateSelectedIndex_OnPress(RB::HBox::AABB_Set* L0);
+		void _UpdateSelectedIndex_OnPress(RB::HBox::AABB_Set* AABBs);
 		void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress();
 		void _EditAABB_OnPress(RB::Players::PlayerID playerID);

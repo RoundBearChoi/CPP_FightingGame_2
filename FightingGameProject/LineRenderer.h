@@ -1,8 +1,5 @@
 #pragma once
-#include <iostream>
 #include "olcPixelGameEngine.h"
-
-#include "iCamController.h"
 
 namespace RB::Render
 {

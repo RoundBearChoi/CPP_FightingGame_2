@@ -17,7 +17,7 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::HBox::Loaded_HB_Data* GetCurrentL1(RB::Players::PlayerID playerID, HBoxType boxType) override;
+		RB::HBox::Loaded_HB_Data* GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType) override;
 		RB::HBox::HBox_Layer_0* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxType GetHBoxType() override;
 

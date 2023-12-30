@@ -1,5 +1,7 @@
 #include "GameFrame.h"
 
+#include <iostream>
+
 namespace RB
 {
 	unsigned int gameFrameCount = 0;

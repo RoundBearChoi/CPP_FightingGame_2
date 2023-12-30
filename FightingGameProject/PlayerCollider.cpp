@@ -21,34 +21,36 @@ namespace RB::Players
 	{
 		UpdateAABBOnPlayerPos();
 
-		if (RB::Players::iPlayerController::instance == nullptr)
-		{
-			return;
-		}
+		_ResolveCollision();
 
-		PlayerID myID = _player->GetPlayerID();
-		iPlayer* other = RB::Players::iPlayerController::instance->GetOtherPlayer(_player);
-
-		if (other == nullptr)
-		{
-			return;
-		}
-
-		RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->GetAABB();
-		RB::Collisions::AABB myAABB = _aabb;
-
-		olc::vf2d col;
-
-		if (myAABB.IsCollidingAgainst(otherAABB, col))
-		{
-			_isCollidingAgainstOtherPlayer = true;
-
-			_MovePlayers(other);
-		}
-		else
-		{
-			_isCollidingAgainstOtherPlayer = false;
-		}
+		//if (RB::Players::iPlayerController::instance == nullptr)
+		//{
+		//	return;
+		//}
+		//
+		//PlayerID myID = _player->GetPlayerID();
+		//iPlayer* other = RB::Players::iPlayerController::instance->GetOtherPlayer(_player);
+		//
+		//if (other == nullptr)
+		//{
+		//	return;
+		//}
+		//
+		//RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->GetAABB();
+		//RB::Collisions::AABB myAABB = _aabb;
+		//
+		//olc::vf2d col;
+		//
+		//if (myAABB.IsCollidingAgainst(otherAABB, col))
+		//{
+		//	_isCollidingAgainstOtherPlayer = true;
+		//
+		//	_MovePlayers(other);
+		//}
+		//else
+		//{
+		//	_isCollidingAgainstOtherPlayer = false;
+		//}
 	}
 
 	olc::vi2d PlayerCollider::GetPlayerBox()
@@ -88,6 +90,38 @@ namespace RB::Players
 		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
 
 		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
+	}
+
+	void PlayerCollider::_ResolveCollision()
+	{
+		if (RB::Players::iPlayerController::instance == nullptr)
+		{
+			return;
+		}
+
+		PlayerID myID = _player->GetPlayerID();
+		iPlayer* other = RB::Players::iPlayerController::instance->GetOtherPlayer(_player);
+
+		if (other == nullptr)
+		{
+			return;
+		}
+
+		RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->GetAABB();
+		RB::Collisions::AABB myAABB = _aabb;
+
+		olc::vf2d col;
+
+		if (myAABB.IsCollidingAgainst(otherAABB, col))
+		{
+			_isCollidingAgainstOtherPlayer = true;
+
+			_MovePlayers(other);
+		}
+		else
+		{
+			_isCollidingAgainstOtherPlayer = false;
+		}
 	}
 
 	void PlayerCollider::_MovePlayers(iPlayer* otherPlayer)

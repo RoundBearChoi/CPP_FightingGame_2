@@ -32,6 +32,7 @@ namespace RB::Players
 
 	public:
 		void _InitPlayerColliderAABB();
+		void _ResolveCollision();
 		void _MovePlayers(iPlayer* otherPlayer);
 
 	private:

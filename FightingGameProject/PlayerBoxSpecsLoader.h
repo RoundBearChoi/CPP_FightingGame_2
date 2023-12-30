@@ -16,6 +16,7 @@ namespace RB::Collisions
 
 	public:
 		void LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteEnum);
+		LoadedPlayerBoxSpecs* GetLoadedSpecs(RB::Sprites::SpriteEnum spriteEnum);
 
 	private:
 		std::vector<LoadedPlayerBoxSpecs> _vecLoadedSpecs;

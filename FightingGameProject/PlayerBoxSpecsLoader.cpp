@@ -54,15 +54,35 @@ namespace RB::Collisions
 			specs.mHeight = height;
 			specs.mSpriteType = spriteEnum;
 
-			//LoadedPlayerBoxSpecs loadedSpecs;
-			//loadedSpecs.Add(specs);
-			//loadedSpecs.SetSpriteType(spriteEnum);
-			//
-			//_vecLoadedSpecs.push_back(loadedSpecs);
+			LoadedPlayerBoxSpecs* loadedSpecs = GetLoadedSpecs(spriteEnum);
+
+			if (loadedSpecs != nullptr)
+			{
+				loadedSpecs->Add(specs);
+			}
+			else
+			{
+				LoadedPlayerBoxSpecs newLoadedSpecs;
+				newLoadedSpecs.Add(specs);
+				_vecLoadedSpecs.push_back(newLoadedSpecs);
+			}
 
 			element = element->next;
 		}
 
 		free(root);
+	}
+
+	LoadedPlayerBoxSpecs* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Sprites::SpriteEnum spriteEnum)
+	{
+		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)
+		{
+			if (i->GetSpriteType() == spriteEnum)
+			{
+				return &(*i);
+			}
+		}
+
+		return nullptr;
 	}
 }

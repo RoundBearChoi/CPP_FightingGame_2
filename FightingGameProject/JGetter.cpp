@@ -70,13 +70,13 @@ namespace RB::JSON
 		return result;
 	}
 
-	float_t GetFloat_FromElement(const json_object_element_s& element)
+	float GetFloat_FromElement(const json_object_element_s& element)
 	{
 		struct json_number_s* number = json_value_as_number(element.value);
 
 		std::stringstream stream;
 		stream << number->number;
-		float_t result = 0.0f;
+		float result = 0.0f;
 		stream >> result;
 
 		return result;

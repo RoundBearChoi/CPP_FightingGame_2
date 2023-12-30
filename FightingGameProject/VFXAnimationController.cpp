@@ -1,5 +1,7 @@
 #include "VFXAnimationController.h"
 
+#include "AnimationObj.h"
+
 namespace RB::Render
 {
     void VFXAnimationController::Init()

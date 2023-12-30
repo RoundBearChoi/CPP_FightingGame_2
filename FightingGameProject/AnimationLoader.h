@@ -1,9 +1,10 @@
 #pragma once
-#include "iAnimationObj.h"
-#include "AnimationObj.h"
+#include <string>
 
 #include "SpriteLoader.h"
 #include "_AnimationLoader.h"
+
+#include "iAnimationObj.h"
 
 namespace RB::Render
 {

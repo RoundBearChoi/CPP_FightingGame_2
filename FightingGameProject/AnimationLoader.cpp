@@ -1,5 +1,7 @@
 #include "AnimationLoader.h"
 
+#include "AnimationObj.h"
+
 namespace RB::Render
 {
 	AnimationLoader::~AnimationLoader()

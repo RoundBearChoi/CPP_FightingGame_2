@@ -1,5 +1,7 @@
 #include "PlayerAnimationController.h"
 
+#include "AnimationObj.h"
+
 namespace RB::Render
 {
 	void PlayerAnimationController::Init()

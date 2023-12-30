@@ -190,30 +190,30 @@ namespace RB::Render
 
 		const char* arrChar = str.c_str();
 
-		struct json_value_s* jRoot = json_parse(arrChar, strlen(arrChar));
-		struct json_object_s* jObj = json_value_as_object(jRoot);
+		json_value_s* jRoot = json_parse(arrChar, strlen(arrChar));
+		json_object_s* jObj = json_value_as_object(jRoot);
 
-		struct json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
+		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
-		struct json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //mX_TileCount
+		json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //mX_TileCount
 		int xTileCount = RB::JSON::GetInt_FromElement(*e0);
 
-		struct json_object_element_s* e1 = e0->next; //mY_TileCount
+		json_object_element_s* e1 = e0->next; //mY_TileCount
 		int yTileCount = RB::JSON::GetInt_FromElement(*e1);
 
-		struct json_object_element_s* e2 = e1->next; //mTotalSprites
+		json_object_element_s* e2 = e1->next; //mTotalSprites
 		int totalSprites = RB::JSON::GetInt_FromElement(*e2);
 
-		struct json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
+		json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
 		int skipFixedUpdates = RB::JSON::GetInt_FromElement(*e3);
 
-		struct json_object_element_s* e4 = e3->next; //mRenderSizeX
+		json_object_element_s* e4 = e3->next; //mRenderSizeX
 		float renderSizeX = RB::JSON::GetFloat_FromElement(*e4);
 
-		struct json_object_element_s* e5 = e4->next; //mRenderSizeY
+		json_object_element_s* e5 = e4->next; //mRenderSizeY
 		float renderSizeY = RB::JSON::GetFloat_FromElement(*e5);
 
-		struct json_object_element_s* e6 = e5->next; //mPlayOnce
+		json_object_element_s* e6 = e5->next; //mPlayOnce
 		int playOnceInt = RB::JSON::GetInt_FromElement(*e6);
 		bool playOnce = playOnceInt == 0 ? false : true;
 

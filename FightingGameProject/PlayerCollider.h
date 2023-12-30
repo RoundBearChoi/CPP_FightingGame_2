@@ -27,11 +27,10 @@ namespace RB::Players
 	public:
 		olc::vi2d GetPlayerBox() override;
 		bool IsCollidingAgainstOtherPlayer() override;
-		RB::Collisions::AABB& UpdateAABBOnPlayerPos() override;
+		RB::Collisions::AABB& UpdateAABBOnPlayerPos();
 		RB::Collisions::AABB& GetAABB() override;
 
 	public:
-		void _InitPlayerColliderAABB();
 		void _ResolveCollision();
 		void _MovePlayers(iPlayer* otherPlayer);
 

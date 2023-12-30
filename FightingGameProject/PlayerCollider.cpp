@@ -5,8 +5,6 @@ namespace RB::Players
 	void PlayerCollider::Init(iPlayer* owner)
 	{
 		_player = owner;
-
-		_InitPlayerColliderAABB();
 	}
 
 	void PlayerCollider::OnUpdate()
@@ -82,17 +80,6 @@ namespace RB::Players
 		return _aabb;
 	}
 
-	void PlayerCollider::_InitPlayerColliderAABB()
-	{
-		//olc::vi2d bottomCenter = _player->GetPosition();
-		//olc::vi2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
-		//float halfWidth = playerBox.x * 0.5f;
-		//
-		//olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
-		//
-		//_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
-	}
-
 	void PlayerCollider::_ResolveCollision()
 	{
 		if (RB::Players::iPlayerController::instance == nullptr)
@@ -108,8 +95,8 @@ namespace RB::Players
 			return;
 		}
 
-		RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->GetAABB();
-		RB::Collisions::AABB myAABB = _aabb;
+		RB::Collisions::AABB& otherAABB = other->GetPlayerCollider()->GetAABB();
+		RB::Collisions::AABB& myAABB = _aabb;
 
 		olc::vf2d col;
 

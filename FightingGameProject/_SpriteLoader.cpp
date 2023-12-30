@@ -1,5 +1,7 @@
 #include "_SpriteLoader.h"
 
+#include <filesystem>
+
 namespace RB::Sprites
 {
 	_SpriteLoader::~_SpriteLoader()

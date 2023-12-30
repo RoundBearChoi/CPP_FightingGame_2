@@ -53,15 +53,15 @@ namespace RB::JSON
 
 	json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement)
 	{
-		struct json_object_s* obj = json_value_as_object(parentElement.value);
-		struct json_object_element_s* element = obj->start;
+		json_object_s* obj = json_value_as_object(parentElement.value);
+		json_object_element_s* element = obj->start;
 
 		return element;
 	}
 
 	int GetInt_FromElement(const json_object_element_s& element)
 	{
-		struct json_number_s* number = json_value_as_number(element.value);
+		json_number_s* number = json_value_as_number(element.value);
 
 		std::stringstream stream;
 		stream << number->number;
@@ -73,7 +73,7 @@ namespace RB::JSON
 
 	float GetFloat_FromElement(const json_object_element_s& element)
 	{
-		struct json_number_s* number = json_value_as_number(element.value);
+		json_number_s* number = json_value_as_number(element.value);
 
 		std::stringstream stream;
 		stream << number->number;
@@ -85,7 +85,7 @@ namespace RB::JSON
 
 	std::string GetString_FromElement(const json_object_element_s& element)
 	{
-		struct json_string_s* string = json_value_as_string(element.value);
+		json_string_s* string = json_value_as_string(element.value);
 
 		std::string result = string->string;
 

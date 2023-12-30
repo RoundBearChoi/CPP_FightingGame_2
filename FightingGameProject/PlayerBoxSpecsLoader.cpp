@@ -18,9 +18,9 @@ namespace RB::Collisions
 		{
 			unsigned int frame = RB::JSON::ParseFrame(element->name->string);
 			
-			//json_object_s* obj = json_value_as_object(element->value);
-			//
-			//json_object_element_s* e0 = RB::JSON::GetElementNFromObj(*obj, 0);
+			//json_array_s* arr = json_value_as_array(element->value);
+			//json_array_element_s* e = arr->start;
+			//json_object_s* obj0 = json_value_as_object(e->value);
 		
 			element = element->next;
 		}

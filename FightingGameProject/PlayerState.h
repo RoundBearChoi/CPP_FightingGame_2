@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-
 #include "StateBase.h"
 #include "SpriteEnum.h"
 

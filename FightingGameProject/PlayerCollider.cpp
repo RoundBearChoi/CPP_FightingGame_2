@@ -19,6 +19,8 @@ namespace RB::Players
 
 	void PlayerCollider::OnFixedUpdate()
 	{
+		UpdateAABBOnPlayerPos();
+
 		if (RB::Players::iPlayerController::instance == nullptr)
 		{
 			return;
@@ -31,8 +33,6 @@ namespace RB::Players
 		{
 			return;
 		}
-
-		UpdateAABBOnPlayerPos();
 
 		//RB::Collisions::AABB otherAABB = other->GetPlayerCollider()->UpdateAABBOnPlayerPos();
 		//RB::Collisions::AABB myAABB = UpdateAABBOnPlayerPos();

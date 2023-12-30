@@ -65,6 +65,7 @@ namespace RB::Collisions
 				LoadedPlayerBoxSpecs newLoadedSpecs;
 				newLoadedSpecs.Add(specs);
 				newLoadedSpecs.SetCharacterType(characterType);
+
 				_vecLoadedSpecs.push_back(newLoadedSpecs);
 			}
 

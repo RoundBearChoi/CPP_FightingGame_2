@@ -1,11 +1,8 @@
 #pragma once
-#include "olcPixelGameEngine.h"
-#include "AABB.h"
 
+#include "PlayerID.h"
 #include "SpriteLoader.h"
 #include "LineRenderer.h"
-
-#include "iPlayerController.h"
 
 namespace RB::Render
 {

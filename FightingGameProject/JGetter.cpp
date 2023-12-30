@@ -58,13 +58,13 @@ namespace RB::JSON
 		return element;
 	}
 
-	int32_t GetInt32_FromElement(const json_object_element_s& element)
+	int GetInt_FromElement(const json_object_element_s& element)
 	{
 		struct json_number_s* number = json_value_as_number(element.value);
 
 		std::stringstream stream;
 		stream << number->number;
-		int32_t result = 0;
+		int result = 0;
 		stream >> result;
 
 		return result;

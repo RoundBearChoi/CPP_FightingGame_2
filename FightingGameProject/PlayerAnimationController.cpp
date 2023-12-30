@@ -190,16 +190,16 @@ namespace RB::Render
 		struct json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
 		struct json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //mX_TileCount
-		int xTileCount = RB::JSON::GetInt32_FromElement(*e0);
+		int xTileCount = RB::JSON::GetInt_FromElement(*e0);
 
 		struct json_object_element_s* e1 = e0->next; //mY_TileCount
-		int yTileCount = RB::JSON::GetInt32_FromElement(*e1);
+		int yTileCount = RB::JSON::GetInt_FromElement(*e1);
 
 		struct json_object_element_s* e2 = e1->next; //mTotalSprites
-		int totalSprites = RB::JSON::GetInt32_FromElement(*e2);
+		int totalSprites = RB::JSON::GetInt_FromElement(*e2);
 
 		struct json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
-		int skipFixedUpdates = RB::JSON::GetInt32_FromElement(*e3);
+		int skipFixedUpdates = RB::JSON::GetInt_FromElement(*e3);
 
 		struct json_object_element_s* e4 = e3->next; //mRenderSizeX
 		float renderSizeX = RB::JSON::GetFloat_FromElement(*e4);
@@ -208,7 +208,7 @@ namespace RB::Render
 		float renderSizeY = RB::JSON::GetFloat_FromElement(*e5);
 
 		struct json_object_element_s* e6 = e5->next; //mPlayOnce
-		int playOnceInt = RB::JSON::GetInt32_FromElement(*e6);
+		int playOnceInt = RB::JSON::GetInt_FromElement(*e6);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		AnimationSpecs specs;

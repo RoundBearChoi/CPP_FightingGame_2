@@ -1,5 +1,15 @@
 #include "DetectHit.h"
 
+#include "PlayerState.h"
+#include "iPlayerController.h"
+#include "iPlayerAnimationController.h"
+#include "iVFXAnimationController.h"
+#include "iHitBoxDataController.h"
+#include "iHurtBoxDataController.h"
+#include "iGeneralHitStopController.h"
+
+#include "P0_Wince.h"
+
 namespace RB::PlayerStateComponents
 {
 	void DetectHit::OnEnter()

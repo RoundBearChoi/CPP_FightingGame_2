@@ -1,5 +1,9 @@
 #include "MoveForwardOnJump_1.h"
 
+#include "Ease.h"
+
+#include "iPlayerController.h"
+
 namespace RB::PlayerStateComponents
 {
 	MoveForwardOnJump_1::MoveForwardOnJump_1(unsigned int totalFrames, float multiplier)

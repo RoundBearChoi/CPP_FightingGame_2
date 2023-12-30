@@ -118,6 +118,18 @@ namespace RB::PlayerStates
 
 	void PlayerState::UpdatePlayerBox()
 	{
-		//RB::Collisions::LoadedPlayerBoxSpecs* loadedSpecs = RB::Collisions::iPlayerBoxDataController::instance->GetPlayerBoxSpecs(_characterType);
+		RB::Collisions::LoadedPlayerBoxSpecs* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedSpecs(GetPlayer()->GetCharacterType());
+
+		if (loaded == nullptr)
+		{
+			return;
+		}
+
+		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecsOnFrame(_spriteEnum, _cumulatedFixedUpdates);
+
+		if (specs == nullptr)
+		{
+			return;
+		}
 	}
 }

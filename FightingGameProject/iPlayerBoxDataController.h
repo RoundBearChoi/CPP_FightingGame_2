@@ -14,6 +14,6 @@ namespace RB::Collisions
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual LoadedPlayerBoxSpecs* GetPlayerBoxSpecs(RB::Players::CharacterType characterType) = 0;
+		virtual LoadedPlayerBoxSpecs* GetLoadedSpecs(RB::Players::CharacterType characterType) = 0;
 	};
 }

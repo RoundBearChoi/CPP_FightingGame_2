@@ -29,7 +29,7 @@ namespace RB::Updaters
 	{
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 
-		RB::Players::iPlayer* dummyP = playerController->AddPlayer(new RB::Players::Player,
+		RB::Players::iPlayer* dummyP = playerController->AddPlayer(new RB::Players::Player(),
 			new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteEnum::aku_0_jab), //set starting sprite enum
 			olc::vi2d{ 0, 0 },
 			RB::Players::PlayerID::PLAYER_1);
@@ -63,4 +63,3 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }
-

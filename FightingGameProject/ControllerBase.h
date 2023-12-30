@@ -33,5 +33,3 @@ namespace RB::Controllers
 		virtual void OnFixedUpdate() override {};
 	};
 }
-
-

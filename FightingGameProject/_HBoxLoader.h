@@ -18,7 +18,6 @@ namespace RB::HBox
 		void SaveSample();
 
 	public:
-		json_value_s* LoadRoot(std::string path);
 		Loaded_HB_Data Load(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
 		std::string ParseName(const json_object_s& wholeObj, const unsigned int frame);

@@ -103,20 +103,6 @@ namespace RB::HBox
 	}
 
 	/// <summary>
-	/// make sure to free root after use
-	/// </summary>
-	json_value_s* _HBoxLoader::LoadRoot(std::string path)
-	{
-		std::string loaded = RB::JSON::LoadJSONFile(path);
-
-		const char* json = loaded.c_str();
-
-		struct json_value_s* root = json_parse(json, strlen(json));
-
-		return root;
-	}
-
-	/// <summary>
 	/// only use during initialization (vector addresses)
 	/// </summary>
 	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)

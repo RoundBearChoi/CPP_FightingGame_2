@@ -118,6 +118,6 @@ namespace RB::PlayerStates
 
 	void PlayerState::UpdatePlayerBox()
 	{
-
+		//RB::Collisions::LoadedPlayerBoxSpecs* loadedSpecs = RB::Collisions::iPlayerBoxDataController::instance->GetPlayerBoxSpecs(_characterType);
 	}
 }

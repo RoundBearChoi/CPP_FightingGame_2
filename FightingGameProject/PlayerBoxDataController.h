@@ -1,6 +1,7 @@
 #pragma once
 
 #include "PlayerBoxSpecsLoader.h"
+#include "CharacterType.h"
 
 #include "iPlayerBoxDataController.h"
 
@@ -16,6 +17,8 @@ namespace RB::Collisions
 			void Init() override;
 			void OnUpdate() override;
 			void OnFixedUpdate() override;
+
+			LoadedPlayerBoxSpecs* GetPlayerBoxSpecs(RB::Players::CharacterType characterType) override;
 
 	private:
 		PlayerBoxSpecsLoader _playerBoxSpecsLoader;

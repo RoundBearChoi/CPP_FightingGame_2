@@ -1,10 +1,9 @@
 #pragma once
 #include "StateComponentBase.h"
-#include "MoveForwardOnPress.h"
-#include "P0_WalkForward.h"
 
-#include "iPlayerController.h"
-#include "iPlayer.h"
+#include "MoveForwardOnPress.h"
+
+#include "iState.h"
 
 namespace RB::PlayerStateComponents
 {

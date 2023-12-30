@@ -10,6 +10,7 @@
 #include "P0_Jab.h"
 #include "P0_JumpForwardUp_0.h"
 #include "P0_JumpUp_0.h"
+#include "P0_WalkForward.h"
 #include "P0_WalkBack.h"
 #include "P0_Crouch.h"
 

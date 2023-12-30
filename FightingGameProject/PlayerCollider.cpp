@@ -17,7 +17,7 @@ namespace RB::Players
 
 	void PlayerCollider::OnFixedUpdate()
 	{
-		UpdateAABBOnPlayerPos();
+		_UpdateAABBOnPlayerPos();
 
 		_ResolveCollision();
 	}
@@ -32,7 +32,12 @@ namespace RB::Players
 		return _isCollidingAgainstOtherPlayer;
 	}
 
-	RB::Collisions::AABB& PlayerCollider::UpdateAABBOnPlayerPos()
+	RB::Collisions::AABB& PlayerCollider::GetAABB()
+	{
+		return _aabb;
+	}
+
+	RB::Collisions::AABB& PlayerCollider::_UpdateAABBOnPlayerPos()
 	{
 		olc::vi2d bottomCenter = _player->GetPosition();
 		olc::vi2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
@@ -43,11 +48,6 @@ namespace RB::Players
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
 		_aabb.SetWidthHeight((float)playerBox.x, (float)playerBox.y);
 
-		return _aabb;
-	}
-
-	RB::Collisions::AABB& PlayerCollider::GetAABB()
-	{
 		return _aabb;
 	}
 

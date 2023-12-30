@@ -1,7 +1,6 @@
 #include "HitBoxEditorUpdater.h"
 
-#include "Player.h"
-#include "P0_Dummy.h"
+#include "iController.h"
 
 #include "InputController.h"
 #include "SpriteDataController.h"
@@ -13,6 +12,10 @@
 #include "HurtBoxDataController.h"
 #include "HitBoxDataController.h"
 #include "HBoxEditController.h"
+
+#include "Player.h"
+
+#include "P0_Dummy.h"
 
 namespace RB::Updaters
 {

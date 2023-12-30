@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
 #include "iStateMachine.h"
+#include "iState.h"
 
 namespace RB::States
 {

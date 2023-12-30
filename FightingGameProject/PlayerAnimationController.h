@@ -1,12 +1,10 @@
 #pragma once
 
 #include "AnimationLoader.h"
-#include "JGetter.h"
+#include "SpriteEnum.h"
 
-#include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
-
-#include "PlayerState.h"
+#include "iAnimationObj.h"
 
 namespace RB::Render
 {

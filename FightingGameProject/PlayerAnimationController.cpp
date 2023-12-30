@@ -1,6 +1,10 @@
 #include "PlayerAnimationController.h"
 
 #include "AnimationObj.h"
+#include "PlayerState.h"
+#include "JGetter.h"
+
+#include "iPlayerController.h"
 
 namespace RB::Render
 {

@@ -2,8 +2,8 @@
     "frame_0":
     [
         {
-        "offsetX" : 0,
-        "offsetY" : 0,
+        "offsetX" : 5.5,
+        "offsetY" : 6.6,
         "width" : 67.4293,
         "height" : 14.6671
         }
@@ -12,8 +12,8 @@
     "frame_1":
     [
         {
-        "offsetX" : 0,
-        "offsetY" : 0,
+        "offsetX" : 7.7,
+        "offsetY" : 8.8,
         "width" : 61.1848,
         "height" : 13.0873
         }

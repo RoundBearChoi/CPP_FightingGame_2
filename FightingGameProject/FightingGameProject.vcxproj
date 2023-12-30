@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABB.cpp" />
     <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />

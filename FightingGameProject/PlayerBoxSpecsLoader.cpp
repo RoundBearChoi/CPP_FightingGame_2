@@ -16,7 +16,8 @@ namespace RB::Collisions
 
 		while (element != nullptr)
 		{
-
+			unsigned int frame = RB::JSON::ParseFrame(element->name->string);
+			//RB::JSON::ParseFrame()
 
 			element = element->next;
 		}

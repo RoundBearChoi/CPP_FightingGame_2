@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <regex>
 
 namespace RB::JSON
 {
@@ -112,6 +113,17 @@ namespace RB::JSON
 		float result = 0.0f;
 		stream >> result;
 
+		return result;
+	}
+
+	unsigned int ParseFrame(const std::string& str)
+	{
+		std::regex pattern("frame_");
+		std::string replacement = "";
+		std::string s = std::regex_replace(str, pattern, replacement);
+		std::stringstream stream(s);
+		unsigned int result;
+		stream >> result;
 		return result;
 	}
 }

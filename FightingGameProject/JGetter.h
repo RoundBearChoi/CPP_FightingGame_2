@@ -14,4 +14,6 @@ namespace RB::JSON
 	std::string GetString_FromElement(const json_object_element_s& element);
 	int GetInt_FromArrayElement(const json_array_element_s& element);
 	float GetFloat_FromArrayElement(const json_array_element_s& element);
+
+	unsigned int ParseFrame(const std::string& str);
 }

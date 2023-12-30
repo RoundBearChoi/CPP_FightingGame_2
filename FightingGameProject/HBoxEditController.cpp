@@ -155,19 +155,19 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::AABB_Set* L0)
+	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::AABB_Set* AABBs)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
 
 		if (oButton.bPressed)
 		{
-			L0->GetSelector()->SelectUp();
+			AABBs->GetSelector()->SelectUp();
 		}
 
 		else if (pButton.bPressed)
 		{
-			L0->GetSelector()->SelectDown();
+			AABBs->GetSelector()->SelectDown();
 		}
 	}
 

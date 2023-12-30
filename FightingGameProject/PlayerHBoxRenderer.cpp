@@ -75,9 +75,9 @@ namespace RB::Render
 			return;
 		}
 
-		RB::HBox::AABB_Set* L0 = data->GetHBoxDataByFrame(currentIndex);
+		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(currentIndex);
 
-		if (L0 == nullptr)
+		if (AABBs == nullptr)
 		{
 			return;
 		}
@@ -93,12 +93,12 @@ namespace RB::Render
 			color = olc::GREEN;
 		}
 
-		_Render(player, L0, color);
+		_Render(player, AABBs, color);
 	}
 
-	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* L0, olc::Pixel color)
+	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* AABBs, olc::Pixel color)
 	{
-		const auto& vec = L0->GetSelector()->GetVector();
+		const auto& vec = AABBs->GetSelector()->GetVector();
 
 		for (auto i = vec.begin(); i != vec.end(); ++i) 
 		{

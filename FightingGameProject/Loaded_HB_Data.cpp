@@ -43,10 +43,10 @@ namespace RB::HBox
 		}
 
 		//default data if no existing data
-		AABB_Set L0;
-		L0.SetFrameNameAndParse("frame_" + std::to_string(frame));
+		AABB_Set s;
+		s.SetFrameNameAndParse("frame_" + std::to_string(frame));
 
-		_vec_AABB_Sets.push_back(L0);
+		_vec_AABB_Sets.push_back(s);
 
 		//make sure to refresh iterators after making changes to the vector
 		for (auto i = _vec_AABB_Sets.begin(); i != _vec_AABB_Sets.end(); i++)

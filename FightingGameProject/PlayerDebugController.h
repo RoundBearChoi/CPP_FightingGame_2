@@ -1,12 +1,11 @@
 #pragma once
 
-#include "SpriteLoader.h"
-#include "LineRenderer.h"
-
-#include "PlayerHBoxRenderer.h"
-#include "PlayerBoxRenderer.h"
-#include "PlayerPositionRenderer.h"
 #include "PlayerInputRenderer.h"
+#include "PlayerPositionRenderer.h"
+#include "PlayerBoxRenderer.h"
+#include "PlayerHBoxRenderer.h"
+#include "LineRenderer.h"
+#include "SpriteLoader.h"
 
 #include "iPlayerDebugController.h"
 

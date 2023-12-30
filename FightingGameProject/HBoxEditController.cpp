@@ -67,14 +67,14 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHurtBoxDataController::instance->Get_L1(spriteEnum);
+				data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteEnum);
 			}
 		}
 		else if (boxType == HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHitBoxDataController::instance->Get_L1(spriteEnum);
+				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteEnum);
 			}
 		}
 
@@ -105,11 +105,11 @@ namespace RB::HBox
 		
 		if (_boxType == HBoxType::HURT_BOX)
 		{
-			data = RB::HBox::iHurtBoxDataController::instance->Get_L1(spriteEnum);
+			data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteEnum);
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
-			data = RB::HBox::iHitBoxDataController::instance->Get_L1(spriteEnum);
+			data = RB::HBox::iHitBoxDataController::instance->GetData(spriteEnum);
 		}
 
 		if (data == nullptr)

@@ -5,15 +5,15 @@ namespace RB::HBox
 	void HB_Loader::Init()
 	{
 		//load every hbox datalist
-		_vecL1.push_back(_loader.Load(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteEnum::aku_idle));
-		_vecL1.push_back(_loader.Load(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteEnum::aku_walk));
-		_vecL1.push_back(_loader.Load(_dir + "fighter_0_jab" + _extention, RB::Sprites::SpriteEnum::aku_0_jab));
-		_vecL1.push_back(_loader.Load(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteEnum::aku_wince));
+		_vecData.push_back(_loader.Load(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteEnum::aku_idle));
+		_vecData.push_back(_loader.Load(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteEnum::aku_walk));
+		_vecData.push_back(_loader.Load(_dir + "fighter_0_jab" + _extention, RB::Sprites::SpriteEnum::aku_0_jab));
+		_vecData.push_back(_loader.Load(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteEnum::aku_wince));
 	}
 
 	void HB_Loader::OnFixedUpdate()
 	{
-		for (auto i = _vecL1.begin(); i != _vecL1.end(); i++)
+		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
 		{
 			(*i).OnFixedUpdate();
 		}
@@ -28,7 +28,7 @@ namespace RB::HBox
 
 	Loaded_HB_Data* HB_Loader::GetData(RB::Sprites::SpriteEnum spriteEnum)
 	{
-		for (auto i = _vecL1.begin(); i != _vecL1.end(); i++)
+		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
 		{
 			if ((*i).GetSpriteEnum() == spriteEnum)
 			{

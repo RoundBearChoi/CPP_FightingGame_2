@@ -22,7 +22,7 @@ namespace RB::HBox
 		_hbLoader.OnFixedUpdate();
 	}
 
-	Loaded_HB_Data* HurtBoxDataController::Get_L1(RB::Sprites::SpriteEnum spriteEnum)
+	Loaded_HB_Data* HurtBoxDataController::GetData(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		return _hbLoader.GetData(spriteEnum);
 	}

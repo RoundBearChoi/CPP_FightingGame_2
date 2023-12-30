@@ -19,7 +19,7 @@ namespace RB::HBox
 
 	private:
 		_HBoxLoader _loader;
-		std::vector<Loaded_HB_Data> _vecL1;
+		std::vector<Loaded_HB_Data> _vecData;
 
 		const std::string _none = "none";
 		std::string _dir = "HBDirectory/";

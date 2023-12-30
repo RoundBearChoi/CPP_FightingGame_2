@@ -53,29 +53,29 @@ namespace RB::Render
 		
 		int currentIndex = aniObj->GetCurrentIndex();
 
-		RB::HBox::Loaded_HB_Data* L1 = nullptr;
+		RB::HBox::Loaded_HB_Data* data = nullptr;
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				L1 = RB::HBox::iHurtBoxDataController::instance->Get_L1(spriteEnum);
+				data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteEnum);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				L1 = RB::HBox::iHitBoxDataController::instance->Get_L1(spriteEnum);
+				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteEnum);
 			}
 		}
 
-		if (L1 == nullptr)
+		if (data == nullptr)
 		{
 			return;
 		}
 
-		RB::HBox::HBox_Layer_0* L0 = L1->GetHBoxDataByFrame(currentIndex);
+		RB::HBox::HBox_Layer_0* L0 = data->GetHBoxDataByFrame(currentIndex);
 
 		if (L0 == nullptr)
 		{

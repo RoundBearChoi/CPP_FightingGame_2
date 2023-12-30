@@ -173,21 +173,21 @@ namespace RB::HBox
 
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
-		RB::HBox::AABB_Set* L0 = GetCurrentHBoxData(playerID);
+		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
 
-		if (L0 == nullptr)
+		if (AABBs == nullptr)
 		{
 			return;
 		}
 
-		if (L0->GetSelector()->IsEmpty())
+		if (AABBs->GetSelector()->IsEmpty())
 		{
 			return;
 		}
 
-		RB::Collisions::AABB* aabb = L0->GetSelector()->GetSelected();
+		RB::Collisions::AABB* box = AABBs->GetSelector()->GetSelected();
 
-		if (aabb == nullptr)
+		if (box == nullptr)
 		{
 			return;
 		}
@@ -199,7 +199,7 @@ namespace RB::HBox
 			return;
 		}
 
-		olc::vf2d pos = player->GetPosition() + aabb->GetBottomLeft();
+		olc::vf2d pos = player->GetPosition() + box->GetBottomLeft();
 
 		olc::vf2d relPos = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{ 1, -1 };
 
@@ -209,38 +209,38 @@ namespace RB::HBox
 
 	void HBoxEditController::_Add_Delete_AABB_OnPress()
 	{
-		RB::HBox::AABB_Set* L0 = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
+		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
 		
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
 		
 		if (insButton.bPressed)
 		{
-			L0->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
+			AABBs->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
 		
-			L0->GetSelector()->SelectDown();
+			AABBs->GetSelector()->SelectDown();
 		}
 		
 		if (delButton.bPressed)
 		{
-			L0->GetSelector()->EraseSelected();
+			AABBs->GetSelector()->EraseSelected();
 		}
 	}
 
 	void HBoxEditController::_EditAABB_OnPress(RB::Players::PlayerID playerID)
 	{
-		RB::HBox::AABB_Set* L0 = GetCurrentHBoxData(playerID);
+		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
 
-		if (L0 == nullptr)
+		if (AABBs == nullptr)
 		{
 			return;
 		}
 
-		_UpdateSelectedIndex_OnPress(L0);
+		_UpdateSelectedIndex_OnPress(AABBs);
 
-		RB::Collisions::AABB* aabb = L0->GetSelector()->GetSelected();
+		RB::Collisions::AABB* box = AABBs->GetSelector()->GetSelected();
 
-		if (aabb == nullptr)
+		if (box == nullptr)
 		{
 			return;
 		}
@@ -255,22 +255,22 @@ namespace RB::HBox
 
 		if (wButton.bHeld)
 		{
-			aabb->MoveY(-moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveY(-moveAmount * RB::Frames::Time::GetDeltaTime());
 		}
 
 		if (sButton.bHeld)
 		{
-			aabb->MoveY(moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveY(moveAmount * RB::Frames::Time::GetDeltaTime());
 		}
 
 		if (aButton.bHeld)
 		{
-			aabb->MoveX(-moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveX(-moveAmount * RB::Frames::Time::GetDeltaTime());
 		}
 
 		if (dButton.bHeld)
 		{
-			aabb->MoveX(moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveX(moveAmount * RB::Frames::Time::GetDeltaTime());
 		}
 
 		olc::HWButton uButton = olc::Platform::ptrPGE->GetKey(olc::U);
@@ -283,22 +283,22 @@ namespace RB::HBox
 
 		if (uButton.bHeld)
 		{
-			aabb->IncreaseHeight(sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseHeight(sizeAmount * RB::Frames::Time::GetDeltaTime());
 		}
 
 		if (jButton.bHeld)
 		{
-			aabb->IncreaseHeight(-sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseHeight(-sizeAmount * RB::Frames::Time::GetDeltaTime());
 		}
 
 		if (hButton.bHeld)
 		{
-			aabb->IncreaseWidth(-sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseWidth(-sizeAmount * RB::Frames::Time::GetDeltaTime());
 		}
 
 		if (kButton.bHeld)
 		{
-			aabb->IncreaseWidth(sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseWidth(sizeAmount * RB::Frames::Time::GetDeltaTime());
 		}
 	}
 

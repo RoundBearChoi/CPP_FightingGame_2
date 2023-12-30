@@ -20,11 +20,6 @@
 
 namespace RB::Updaters
 {
-	HitBoxEditorUpdater::HitBoxEditorUpdater()
-	{
-
-	}
-
 	HitBoxEditorUpdater::~HitBoxEditorUpdater()
 	{
 		RB::Controllers::ControllerBase::OnEnd();

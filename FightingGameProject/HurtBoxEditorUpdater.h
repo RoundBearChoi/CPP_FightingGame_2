@@ -6,7 +6,7 @@ namespace RB::Updaters
 	class HurtBoxEditorUpdater : public iUpdaterObj
 	{
 		public:
-			HurtBoxEditorUpdater();
+			HurtBoxEditorUpdater() = default;
 			~HurtBoxEditorUpdater() override;
 
 			void Init();
@@ -14,4 +14,3 @@ namespace RB::Updaters
 			void OnFixedUpdate();
 	};
 }
-

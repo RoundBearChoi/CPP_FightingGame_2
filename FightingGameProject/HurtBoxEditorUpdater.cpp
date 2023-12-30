@@ -20,11 +20,6 @@
 
 namespace RB::Updaters
 {
-	HurtBoxEditorUpdater::HurtBoxEditorUpdater()
-	{
-
-	}
-
 	HurtBoxEditorUpdater::~HurtBoxEditorUpdater()
 	{
 		RB::Controllers::ControllerBase::OnEnd();

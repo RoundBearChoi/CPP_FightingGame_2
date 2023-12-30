@@ -6,7 +6,7 @@ namespace RB::Updaters
 	class HitBoxEditorUpdater : public iUpdaterObj
 	{
 	public:
-		HitBoxEditorUpdater();
+		HitBoxEditorUpdater() = default;
 		~HitBoxEditorUpdater() override;
 
 		void Init();
@@ -14,4 +14,3 @@ namespace RB::Updaters
 		void OnFixedUpdate();
 	};
 }
-

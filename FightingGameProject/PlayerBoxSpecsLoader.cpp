@@ -16,6 +16,8 @@ namespace RB::Collisions
 
 		while (element != nullptr)
 		{
+
+
 			element = element->next;
 		}
 

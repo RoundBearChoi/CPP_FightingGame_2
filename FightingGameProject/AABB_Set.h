@@ -7,12 +7,12 @@
 
 namespace RB::HBox
 {
-	class HBox_Layer_0
+	class AABB_Set
 	{
 	public:
-		HBox_Layer_0() = default;
-		HBox_Layer_0(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
-		~HBox_Layer_0();
+		AABB_Set() = default;
+		AABB_Set(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
+		~AABB_Set();
 
 	public:
 		void OnFixedUpdate();

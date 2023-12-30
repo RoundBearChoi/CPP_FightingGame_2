@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "SpriteEnum.h"
-#include "HBox_Layer_0.h"
+#include "AABB_Set.h"
 
 namespace RB::HBox
 {
@@ -13,13 +13,13 @@ namespace RB::HBox
 
 	public:
 		void OnFixedUpdate();
-		void AddSet(HBox_Layer_0 data);
-		const std::vector<HBox_Layer_0>& GetVecL0();
-		HBox_Layer_0* GetHBoxDataByFrame(unsigned int frame);
+		void AddSet(AABB_Set data);
+		const std::vector<AABB_Set>& GetVecL0();
+		AABB_Set* GetHBoxDataByFrame(unsigned int frame);
 		RB::Sprites::SpriteEnum GetSpriteEnum();
 
 	private:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
-		std::vector<HBox_Layer_0> _vecHB_L0;
+		std::vector<AABB_Set> _vecHB_L0;
 	};
 }

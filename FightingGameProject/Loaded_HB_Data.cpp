@@ -15,17 +15,17 @@ namespace RB::HBox
 		}
 	}
 
-	void Loaded_HB_Data::AddSet(HBox_Layer_0 data)
+	void Loaded_HB_Data::AddSet(AABB_Set data)
 	{
 		_vecHB_L0.push_back(data);
 	}
 
-	const std::vector<HBox_Layer_0>& Loaded_HB_Data::GetVecL0()
+	const std::vector<AABB_Set>& Loaded_HB_Data::GetVecL0()
 	{
 		return _vecHB_L0;
 	}
 
-	HBox_Layer_0* Loaded_HB_Data::GetHBoxDataByFrame(unsigned int frame)
+	AABB_Set* Loaded_HB_Data::GetHBoxDataByFrame(unsigned int frame)
 	{
 		//failsafe
 		if (_vecHB_L0.empty())
@@ -43,7 +43,7 @@ namespace RB::HBox
 		}
 
 		//default data if no existing data
-		HBox_Layer_0 L0;
+		AABB_Set L0;
 		L0.SetFrameNameAndParse("frame_" + std::to_string(frame));
 
 		_vecHB_L0.push_back(L0);

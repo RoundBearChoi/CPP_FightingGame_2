@@ -28,7 +28,7 @@ namespace RB::Render
 		void RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType);
 
 	private:
-		void _Render(RB::Players::iPlayer* player, RB::HBox::HBox_Layer_0* L0, olc::Pixel color);
+		void _Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* L0, olc::Pixel color);
 
 		RB::Sprites::SpriteLoader* _spriteLoader = nullptr;
 	};

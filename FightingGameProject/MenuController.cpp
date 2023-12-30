@@ -74,7 +74,7 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBox_Layer_0* L0 = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::AABB_Set* L0 = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (L0 == nullptr)
 		{
@@ -117,7 +117,7 @@ namespace RB::HBox
 			return _none;
 		}
 
-		RB::HBox::HBox_Layer_0* L0 = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::AABB_Set* L0 = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
 
 		if (L0 == nullptr)
 		{

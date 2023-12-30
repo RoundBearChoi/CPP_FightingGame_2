@@ -8,7 +8,7 @@
 #include "JGetter.h"
 
 #include "AABB.h"
-#include "HBox_Layer_0.h"
+#include "AABB_Set.h"
 
 namespace RB::HBox
 {
@@ -134,7 +134,7 @@ namespace RB::HBox
 		{
 			Loaded_HB_Data defaultData{ spriteEnum };
 
-			HBox_Layer_0 L0;
+			AABB_Set L0;
 			L0.SetFrameNameAndParse("frame_0");
 
 			defaultData.AddSet(L0);
@@ -151,7 +151,7 @@ namespace RB::HBox
 			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);
 
-			HBox_Layer_0 L0 { name, vec};
+			AABB_Set L0 { name, vec};
 			data.AddSet(L0);
 		}
 

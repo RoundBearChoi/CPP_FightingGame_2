@@ -81,7 +81,7 @@ namespace RB::HBox
 		return data;
 	}
 
-	RB::HBox::HBox_Layer_0* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
+	RB::HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
 
@@ -117,7 +117,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		RB::HBox::HBox_Layer_0* AABBs = data->GetHBoxDataByFrame(currentIndex);
+		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(currentIndex);
 
 		return AABBs;
 	}
@@ -155,7 +155,7 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::HBox_Layer_0* L0)
+	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::AABB_Set* L0)
 	{
 		olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
 		olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
@@ -173,7 +173,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
-		RB::HBox::HBox_Layer_0* L0 = GetCurrentHBoxData(playerID);
+		RB::HBox::AABB_Set* L0 = GetCurrentHBoxData(playerID);
 
 		if (L0 == nullptr)
 		{
@@ -209,7 +209,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_Add_Delete_AABB_OnPress()
 	{
-		RB::HBox::HBox_Layer_0* L0 = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
+		RB::HBox::AABB_Set* L0 = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
 		
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
@@ -229,7 +229,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_EditAABB_OnPress(RB::Players::PlayerID playerID)
 	{
-		RB::HBox::HBox_Layer_0* L0 = GetCurrentHBoxData(playerID);
+		RB::HBox::AABB_Set* L0 = GetCurrentHBoxData(playerID);
 
 		if (L0 == nullptr)
 		{
@@ -335,7 +335,7 @@ namespace RB::HBox
 
 				for (auto i = vecL0.begin(); i != vecL0.end(); ++i)
 				{
-					HBox_Layer_0* L0 = (HBox_Layer_0*)&*i;
+					AABB_Set* L0 = (AABB_Set*)&*i;
 					const std::string& frameName = L0->GetFrameName();
 
 					file << "    \"" << frameName << "\":" << std::endl;

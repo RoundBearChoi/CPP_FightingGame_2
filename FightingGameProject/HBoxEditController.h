@@ -1,7 +1,7 @@
 #pragma once
 #include "iHBoxEditController.h"
 #include "HBoxType.h"
-#include "HBox_Layer_0.h"
+#include "AABB_Set.h"
 #include "Loaded_HB_Data.h"
 #include "PlayerID.h"
 
@@ -18,12 +18,12 @@ namespace RB::HBox
 		void OnFixedUpdate() override;
 
 		RB::HBox::Loaded_HB_Data* GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType) override;
-		RB::HBox::HBox_Layer_0* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
+		RB::HBox::AABB_Set* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxType GetHBoxType() override;
 
 	private:
 		bool _ControllersExist();
-		void _UpdateSelectedIndex_OnPress(RB::HBox::HBox_Layer_0* L0);
+		void _UpdateSelectedIndex_OnPress(RB::HBox::AABB_Set* L0);
 		void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress();
 		void _EditAABB_OnPress(RB::Players::PlayerID playerID);

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "PlayerBoxSpecsLoader.h"
+
 #include "iPlayerBoxDataController.h"
 
 namespace RB::Collisions
@@ -14,5 +16,8 @@ namespace RB::Collisions
 			void Init() override;
 			void OnUpdate() override;
 			void OnFixedUpdate() override;
+
+	private:
+		PlayerBoxSpecsLoader _playerBoxSpecsLoader;
 	};
 }

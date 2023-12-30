@@ -1,5 +1,7 @@
 #include "StateBase.h"
 
+#include <iostream>
+
 namespace RB::States
 {
 	unsigned int StateBase::stateCreationCount = 0;

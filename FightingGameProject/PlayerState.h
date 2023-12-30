@@ -23,6 +23,7 @@ namespace RB::PlayerStates
 	public:
 		RB::Players::iPlayer* GetPlayer();
 		RB::Sprites::SpriteEnum GetSpriteEnum();
+		void UpdatePlayerBox();
 
 	protected:
 		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;

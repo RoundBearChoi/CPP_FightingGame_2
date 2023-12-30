@@ -17,14 +17,19 @@ namespace RB::Collisions
 		return _characterType;
 	}
 
-	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecs(RB::Sprites::SpriteEnum spriteType)
+	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
 			if (i->mSpriteType == spriteType)
 			{
-				return &(*i);
+				if (i->mFrame == frame)
+				{
+					return &(*i);
+				}
 			}
 		}
+
+		return nullptr;
 	}
 }

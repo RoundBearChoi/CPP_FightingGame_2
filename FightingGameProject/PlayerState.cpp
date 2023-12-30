@@ -1,6 +1,7 @@
 #include "PlayerState.h"
 
 #include "iPlayerController.h"
+#include "iPlayerBoxDataController.h"
 
 namespace RB::PlayerStates
 {
@@ -115,25 +116,8 @@ namespace RB::PlayerStates
 		return _spriteEnum;
 	}
 
-	//bool PlayerState::_OtherPlayerHasState(unsigned int stateID)
-	//{
-	//	RB::Players::iPlayer* player = GetPlayer();
-	//
-	//	if (player != nullptr)
-	//	{
-	//		RB::Players::iPlayer* otherPlayer = RB::Players::iPlayerController::instance->GetOtherPlayer(player);
-	//
-	//		if (otherPlayer != nullptr)
-	//		{
-	//			bool otherPlayerHasState = otherPlayer->GetStateMachine()->GetCurrentState()->ContainsState(_stateCreationID);
-	//
-	//			if (otherPlayerHasState)
-	//			{
-	//				return true;
-	//			}
-	//		}
-	//	}
-	//
-	//	return false;
-	//}
+	void PlayerState::UpdatePlayerBox()
+	{
+
+	}
 }

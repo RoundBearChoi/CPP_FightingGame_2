@@ -43,7 +43,7 @@ namespace RB::Players
 		{
 			_isCollidingAgainstOtherPlayer = true;
 
-			_ResolveCollision(other);
+			_MovePlayers(other);
 		}
 		else
 		{
@@ -90,7 +90,7 @@ namespace RB::Players
 		_aabb = RB::Collisions::AABB{ (float)bottomLeft.x, (float)bottomLeft.y, (float)playerBox.x, (float)playerBox.y };
 	}
 
-	void PlayerCollider::_ResolveCollision(iPlayer* otherPlayer)
+	void PlayerCollider::_MovePlayers(iPlayer* otherPlayer)
 	{
 		int correction = 2;
 

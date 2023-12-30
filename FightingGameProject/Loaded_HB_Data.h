@@ -5,11 +5,11 @@
 
 namespace RB::HBox
 {
-	class HBox_Layer_1
+	class Loaded_HB_Data
 	{
 	public:
-		HBox_Layer_1(RB::Sprites::SpriteEnum spriteEnum);
-		~HBox_Layer_1() = default;
+		Loaded_HB_Data(RB::Sprites::SpriteEnum spriteEnum);
+		~Loaded_HB_Data() = default;
 
 	public:
 		void OnFixedUpdate();

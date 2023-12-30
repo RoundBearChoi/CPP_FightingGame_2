@@ -155,7 +155,7 @@
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
-    <ClCompile Include="HBox_Layer_1.cpp" />
+    <ClCompile Include="Loaded_HB_Data.cpp" />
     <ClCompile Include="HitBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
     <ClCompile Include="JGetter.cpp" />
@@ -169,7 +169,7 @@
     <ClCompile Include="P0_Hadouken.cpp" />
     <ClCompile Include="P0_Seq_Hadouken.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
-    <ClCompile Include="HBox_Layer_2.cpp" />
+    <ClCompile Include="HB_Loader.cpp" />
     <ClCompile Include="HBox_Layer_0.cpp" />
     <ClCompile Include="HitBoxEditorUpdater.cpp" />
     <ClCompile Include="HurtBoxDataController.cpp" />
@@ -283,12 +283,12 @@
     <ClInclude Include="P0_Hadouken.h" />
     <ClInclude Include="P0_Seq_Hadouken.h" />
     <ClInclude Include="P0_Jab.h" />
-    <ClInclude Include="HBox_Layer_2.h" />
+    <ClInclude Include="HB_Loader.h" />
     <ClInclude Include="HBoxType.h" />
     <ClInclude Include="HitBoxEditorUpdater.h" />
     <ClInclude Include="HurtBoxDataController.h" />
     <ClInclude Include="HBox_Layer_0.h" />
-    <ClInclude Include="HBox_Layer_1.h" />
+    <ClInclude Include="Loaded_HB_Data.h" />
     <ClInclude Include="iBackgroundController.h" />
     <ClInclude Include="iCamController.h" />
     <ClInclude Include="iHurtBoxDataController.h" />

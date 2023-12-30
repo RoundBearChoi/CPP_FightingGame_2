@@ -1,7 +1,7 @@
 #pragma once
 #include "ControllerT.h"
 
-#include "HBox_Layer_1.h"
+#include "Loaded_HB_Data.h"
 
 namespace RB::HBox
 {
@@ -12,7 +12,7 @@ namespace RB::HBox
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual HBox_Layer_1* Get_L1(RB::Sprites::SpriteEnum spriteEnum) = 0;
+		virtual Loaded_HB_Data* Get_L1(RB::Sprites::SpriteEnum spriteEnum) = 0;
 		virtual const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const = 0;
 	};
 }

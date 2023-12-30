@@ -40,7 +40,7 @@ namespace RB::HBox
 
 	}
 
-	RB::HBox::HBox_Layer_1* HBoxEditController::GetCurrentL1(RB::Players::PlayerID playerID, HBoxType boxType)
+	RB::HBox::Loaded_HB_Data* HBoxEditController::GetCurrentL1(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
 
@@ -61,7 +61,7 @@ namespace RB::HBox
 		int currentIndex = aniObj->GetCurrentIndex();
 
 		//can get either hurtbox or hitbox
-		RB::HBox::HBox_Layer_1* L1 = nullptr;
+		RB::HBox::Loaded_HB_Data* L1 = nullptr;
 
 		if (boxType == HBoxType::HURT_BOX)
 		{
@@ -101,7 +101,7 @@ namespace RB::HBox
 
 		int currentIndex = aniObj->GetCurrentIndex();
 
-		RB::HBox::HBox_Layer_1* L1 = nullptr;
+		RB::HBox::Loaded_HB_Data* L1 = nullptr;
 		
 		if (_boxType == HBoxType::HURT_BOX)
 		{
@@ -304,7 +304,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_SaveHBoxes_OnPress()
 	{
-		RB::HBox::HBox_Layer_1* L1 = GetCurrentL1(RB::Players::PlayerID::PLAYER_1, _boxType);
+		RB::HBox::Loaded_HB_Data* L1 = GetCurrentL1(RB::Players::PlayerID::PLAYER_1, _boxType);
 
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 

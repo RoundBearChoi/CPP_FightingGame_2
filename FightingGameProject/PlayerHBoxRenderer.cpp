@@ -53,7 +53,7 @@ namespace RB::Render
 		
 		int currentIndex = aniObj->GetCurrentIndex();
 
-		RB::HBox::HBox_Layer_1* L1 = nullptr;
+		RB::HBox::Loaded_HB_Data* L1 = nullptr;
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{

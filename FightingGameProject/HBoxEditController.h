@@ -2,7 +2,7 @@
 #include "iHBoxEditController.h"
 #include "HBoxType.h"
 #include "HBox_Layer_0.h"
-#include "HBox_Layer_1.h"
+#include "Loaded_HB_Data.h"
 #include "PlayerID.h"
 
 namespace RB::HBox
@@ -17,7 +17,7 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::HBox::HBox_Layer_1* GetCurrentL1(RB::Players::PlayerID playerID, HBoxType boxType) override;
+		RB::HBox::Loaded_HB_Data* GetCurrentL1(RB::Players::PlayerID playerID, HBoxType boxType) override;
 		RB::HBox::HBox_Layer_0* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
 		RB::HBox::HBoxType GetHBoxType() override;
 

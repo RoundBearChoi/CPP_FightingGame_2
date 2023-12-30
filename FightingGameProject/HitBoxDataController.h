@@ -3,8 +3,8 @@
 #include <string>
 
 #include "iHitBoxDataController.h"
-#include "HBox_Layer_1.h"
-#include "HBox_Layer_2.h"
+#include "Loaded_HB_Data.h"
+#include "HB_Loader.h"
 
 namespace RB::HBox
 {
@@ -18,10 +18,10 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		HBox_Layer_1* Get_L1(RB::Sprites::SpriteEnum spriteEnum) override;
+		Loaded_HB_Data* Get_L1(RB::Sprites::SpriteEnum spriteEnum) override;
 		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const override;
 
 	private:
-		HBox_Layer_2 _L2;
+		HB_Loader _hbLoader;
 	};
 }

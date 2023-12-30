@@ -199,7 +199,7 @@
     <ClCompile Include="HBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HBox_Layer_2.cpp">
+    <ClCompile Include="HB_Loader.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="HitBoxEditorUpdater.cpp">
@@ -337,7 +337,7 @@
     <ClCompile Include="StandUpOnRelease.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="HBox_Layer_1.cpp">
+    <ClCompile Include="Loaded_HB_Data.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="SpriteLoader.cpp">
@@ -507,7 +507,7 @@
     <ClInclude Include="HBox_Layer_0.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="HBox_Layer_1.h">
+    <ClInclude Include="Loaded_HB_Data.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="ManualAnimationUpdater.h">
@@ -573,7 +573,7 @@
     <ClInclude Include="iSpriteDataController.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="HBox_Layer_2.h">
+    <ClInclude Include="HB_Loader.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="HitBoxEditorUpdater.h">

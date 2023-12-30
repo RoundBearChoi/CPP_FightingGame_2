@@ -67,7 +67,7 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
 
-		RB::HBox::HBox_Layer_1* L1 = _Get_L1();
+		RB::HBox::Loaded_HB_Data* L1 = _Get_L1();
 
 		if (L1 == nullptr)
 		{
@@ -110,7 +110,7 @@ namespace RB::HBox
 
 	const std::string& MenuController::_GetFrameName()
 	{
-		RB::HBox::HBox_Layer_1* L1 = _Get_L1();
+		RB::HBox::Loaded_HB_Data* L1 = _Get_L1();
 		
 		if (L1 == nullptr)
 		{
@@ -155,11 +155,11 @@ namespace RB::HBox
 		return obj->GetCurrentIndex();
 	}
 
-	RB::HBox::HBox_Layer_1* MenuController::_Get_L1()
+	RB::HBox::Loaded_HB_Data* MenuController::_Get_L1()
 	{
 		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
 
-		RB::HBox::HBox_Layer_1* L1 = nullptr;
+		RB::HBox::Loaded_HB_Data* L1 = nullptr;
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{

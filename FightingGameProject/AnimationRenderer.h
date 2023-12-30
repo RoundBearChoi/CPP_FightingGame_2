@@ -1,11 +1,6 @@
 #pragma once
-#include <iostream>
-#include "olcPixelGameEngine.h"
-#include "SpriteEnum.h"
 #include "AnimationRenderSettings.h"
 #include "AnimationSpecs.h"
-
-#include "iCamController.h"
 
 namespace RB::Render
 {

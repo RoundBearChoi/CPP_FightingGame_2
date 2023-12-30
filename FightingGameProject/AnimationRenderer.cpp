@@ -1,5 +1,7 @@
 #include "AnimationRenderer.h"
 
+#include "iCamController.h"
+
 namespace RB::Render
 {
 	AnimationRenderer::AnimationRenderer(AnimationSpecs specs)

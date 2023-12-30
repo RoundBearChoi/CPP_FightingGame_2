@@ -44,30 +44,28 @@ namespace RB::Players::Specs
 	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType)
 	{
 		std::string str = RB::JSON::LoadJSONFile(path);
+		json_value_s* jRoot = json_parse(str.c_str(), str.length());
 
-		const char* arrChar = str.c_str();
+		json_object_s* jObj = json_value_as_object(jRoot);
 
-		struct json_value_s* jRoot = json_parse(arrChar, strlen(arrChar));
-		struct json_object_s* jObj = json_value_as_object(jRoot);
+		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
 
-		struct json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //aku move specs
-
-		struct json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //first element
+		json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //first element
 		int walk_Forward_Speed = RB::JSON::GetInt_FromElement(*e0);
 
-		struct json_object_element_s* e1 = e0->next;
+		json_object_element_s* e1 = e0->next;
 		int walk_Back_Speed = RB::JSON::GetInt_FromElement(*e1);
 
-		struct json_object_element_s* e2 = e1->next;
+		json_object_element_s* e2 = e1->next;
 		int jumpUp_totalFrames = RB::JSON::GetInt_FromElement(*e2);
 
-		struct json_object_element_s* e3 = e2->next;
+		json_object_element_s* e3 = e2->next;
 		float jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e3); 
 
-		struct json_object_element_s* e4 = e3->next;
+		json_object_element_s* e4 = e3->next;
 		int jumpUp_Forward_totalFrames = RB::JSON::GetInt_FromElement(*e4);
 
-		struct json_object_element_s* e5 = e4->next;
+		json_object_element_s* e5 = e4->next;
 		float jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*e5);
 
 		MoveSpecs specs;

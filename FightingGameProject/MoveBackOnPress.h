@@ -1,10 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 
-#include "iPlayerController.h"
-#include "iPlayer.h"
-#include "iInputController.h"
-
 namespace RB::PlayerStateComponents
 {
 	class MoveBackOnPress

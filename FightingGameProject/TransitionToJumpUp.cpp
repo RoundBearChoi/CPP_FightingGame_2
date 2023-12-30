@@ -1,5 +1,8 @@
 #include "TransitionToJumpUp.h"
 
+#include "iPlayerController.h"
+#include "iInputController.h"
+
 namespace RB::PlayerStateComponents
 {
 	TransitionToJumpUp::TransitionToJumpUp(RB::States::iState* nextState)

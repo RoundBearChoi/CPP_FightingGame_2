@@ -12,6 +12,13 @@ namespace RB::Collisions
 
 		json_object_s* jObj = json_value_as_object(root);
 
+		json_object_element_s* element = RB::JSON::GetElementNFromObj(*jObj, 0);
+
+		while (element != nullptr)
+		{
+			element = element->next;
+		}
+
 		free(root);
 	}
 }

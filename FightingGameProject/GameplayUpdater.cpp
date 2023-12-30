@@ -39,11 +39,14 @@ namespace RB::Updaters
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::Aku::P0_Idle(), olc::vi2d{ -150, 0 }, RB::Players::PlayerID::PLAYER_1);
 		RB::Players::iPlayer* p1 = playerController->AddPlayer(new RB::Players::Player(), new RB::PlayerStates::Aku::P0_Idle(), olc::vi2d{ 150, 0 }, RB::Players::PlayerID::PLAYER_2);
 
-		p0->SetPosition(olc::vi2d{ -150, 0 });
-		p1->SetPosition(olc::vi2d{ 150, 0 });
+		//p0->SetPosition(olc::vi2d{ -150, 0 });
+		//p1->SetPosition(olc::vi2d{ 150, 0 });
 
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p1->SetCharacterType(RB::Players::CharacterType::AKU);
+
+		p0->SetManualAnimationUpdate(false);
+		p1->SetManualAnimationUpdate(false);
 
 		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
 		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());

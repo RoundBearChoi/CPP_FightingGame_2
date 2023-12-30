@@ -31,10 +31,10 @@ namespace RB::Updaters
 
 		RB::Players::iPlayer* dummyP = playerController->AddPlayer(new RB::Players::Player(),
 			new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteEnum::aku_0_jab), //set starting sprite enum
-			olc::vi2d{ 0, 0 },
+			olc::vi2d{ 50, 100 },
 			RB::Players::PlayerID::PLAYER_1);
 
-		dummyP->SetPosition(olc::vi2d{ 50, 100 });
+		//dummyP->SetPosition(olc::vi2d{ 50, 100 });
 		dummyP->SetManualAnimationUpdate(true);
 
 		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());

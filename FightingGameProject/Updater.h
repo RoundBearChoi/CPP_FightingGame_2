@@ -1,13 +1,6 @@
 #pragma once
-#include <iostream>
-#include <assert.h>
-#include "olcPixelGameEngine.h"
-#include "iUpdaterObj.h"
-#include "GameplayUpdater.h"
-#include "HurtBoxEditorUpdater.h"
-#include "HitBoxEditorUpdater.h"
 
-#include "iGeneralHitStopController.h"
+#include "iUpdaterObj.h"
 
 namespace RB::Updaters
 {

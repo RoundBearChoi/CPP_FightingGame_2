@@ -8,7 +8,17 @@ namespace RB::Controllers
 	{
 	public:
 		static std::vector<iController*> vecControllers;
-		static void AddController(iController* controller);
+
+		template <typename T>
+		static T* AddController(iController* controller)
+		{
+			controller->Init();
+
+			vecControllers.push_back(controller);
+
+			return (T*)controller;
+		}
+
 		static void UpdateAll();
 		static void FixedUpdateAll();
 		static void OnEnd();
@@ -23,3 +33,5 @@ namespace RB::Controllers
 		virtual void OnFixedUpdate() override {};
 	};
 }
+
+

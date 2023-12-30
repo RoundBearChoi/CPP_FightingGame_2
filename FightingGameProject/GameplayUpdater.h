@@ -14,3 +14,4 @@ namespace RB::Updaters
 		void OnFixedUpdate() override;
 	};
 }
+

@@ -42,19 +42,19 @@ namespace RB::Updaters
 		dummyP->SetPosition(olc::vi2d{ 50, 100 });
 		dummyP->SetManualAnimationUpdate(true);
 
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(playerController));
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerAnimationController()));
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Collisions::PlayerBoxDataController()));
+		RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>((playerController));
+		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>((new RB::Render::PlayerAnimationController()));
+		RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>((new RB::Collisions::PlayerBoxDataController()));
 
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Sprites::SpriteDataController()));
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Input::InputController()));
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Cam::CamController()));
+		RB::Controllers::ControllerBase::AddController<RB::Sprites::SpriteDataController>((new RB::Sprites::SpriteDataController()));
+		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>((new RB::Input::InputController()));
+		RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>((new RB::Cam::CamController()));
 
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::HBox::MenuController()));
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/")));
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HURT_BOX)));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::MenuController>((new RB::HBox::MenuController()));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::HurtBoxDataController>((new RB::HBox::HurtBoxDataController("HurtBoxSpecs/")));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>((new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HURT_BOX)));
 
-		RB::Controllers::ControllerBase::AddController((RB::Controllers::iController*)(new RB::Render::PlayerDebugController()));
+		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>((new RB::Render::PlayerDebugController()));
 
 		RB::Cam::iCamController::instance->SetZoom(1.75f);
 	}
@@ -69,3 +69,4 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }
+

@@ -9,12 +9,15 @@ namespace RB::Controllers
 		//std::cout << "destroying controller base" << std::endl;
 	}
 
-	void ControllerBase::AddController(iController* controller)
-	{
-		controller->Init();
-
-		vecControllers.push_back(controller);
-	}
+	//template <typename T>
+	//T ControllerBase::AddController(iController* controller)
+	//{
+	//	controller->Init();
+	//
+	//	vecControllers.push_back(controller);
+	//
+	//	return (T)controller;
+	//}
 
 	void ControllerBase::UpdateAll()
 	{
@@ -43,3 +46,4 @@ namespace RB::Controllers
 		vecControllers.clear();
 	}
 }
+

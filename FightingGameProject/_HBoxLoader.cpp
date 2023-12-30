@@ -131,7 +131,7 @@ namespace RB::HBox
 		}
 
 		//read
-		struct json_object_s* obj = json_value_as_object(root);
+		json_object_s* obj = json_value_as_object(root);
 
 		Loaded_HB_Data data{ spriteEnum };
 

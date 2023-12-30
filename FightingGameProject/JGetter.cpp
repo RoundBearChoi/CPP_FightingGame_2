@@ -92,29 +92,29 @@ namespace RB::JSON
 		return result;
 	}
 
-	int GetInt_FromArrayElement(const json_array_element_s& element)
-	{
-		struct json_number_s* number = json_value_as_number(element.value);
-
-		std::stringstream stream;
-		stream << number->number;
-		int result = 0;
-		stream >> result;
-
-		return result;
-	}
-
-	float GetFloat_FromArrayElement(const json_array_element_s& element)
-	{
-		struct json_number_s* number = json_value_as_number(element.value);
-
-		std::stringstream stream;
-		stream << number->number;
-		float result = 0.0f;
-		stream >> result;
-
-		return result;
-	}
+	//int GetInt_FromArrayElement(const json_array_element_s& element)
+	//{
+	//	struct json_number_s* number = json_value_as_number(element.value);
+	//
+	//	std::stringstream stream;
+	//	stream << number->number;
+	//	int result = 0;
+	//	stream >> result;
+	//
+	//	return result;
+	//}
+	//
+	//float GetFloat_FromArrayElement(const json_array_element_s& element)
+	//{
+	//	struct json_number_s* number = json_value_as_number(element.value);
+	//
+	//	std::stringstream stream;
+	//	stream << number->number;
+	//	float result = 0.0f;
+	//	stream >> result;
+	//
+	//	return result;
+	//}
 
 	unsigned int ParseFrame(const std::string& str)
 	{

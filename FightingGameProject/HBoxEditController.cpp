@@ -31,8 +31,8 @@ namespace RB::HBox
 
 		_SaveHBoxes_OnPress();
 		_Add_Delete_AABB_OnPress();
-		_RenderCircleOnAABB(RB::Players::PlayerID::PLAYER_1);
 		_EditAABB_OnPress(RB::Players::PlayerID::PLAYER_1);
+		_RenderCircleOnAABB(RB::Players::PlayerID::PLAYER_1);
 	}
 
 	void HBoxEditController::OnFixedUpdate()

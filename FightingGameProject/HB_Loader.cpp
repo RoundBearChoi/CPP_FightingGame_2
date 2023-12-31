@@ -19,6 +19,14 @@ namespace RB::HBox
 		}
 	}
 
+	void HB_Loader::OnUpdate()
+	{
+		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
+		{
+			(*i).OnUpdate();
+		}
+	}
+
 	void HB_Loader::SetDir(std::string dir)
 	{
 		std::cout << std::endl;

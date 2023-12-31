@@ -22,6 +22,11 @@ namespace RB
 			_Refresh();
 		}
 
+		void OnUpdate() override
+		{
+
+		}
+
 		const std::vector<T>& GetVector() override
 		{
 			return _vec;

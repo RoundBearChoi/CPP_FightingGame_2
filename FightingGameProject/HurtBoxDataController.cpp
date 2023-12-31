@@ -14,7 +14,7 @@ namespace RB::HBox
 
 	void HurtBoxDataController::OnUpdate()
 	{
-
+		_hbLoader.OnUpdate();
 	}
 
 	void HurtBoxDataController::OnFixedUpdate()

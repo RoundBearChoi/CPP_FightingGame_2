@@ -11,6 +11,7 @@ namespace RB
 		virtual ~iSelector() {}
 
 		virtual void OnFixedUpdate() = 0;
+		virtual void OnUpdate() = 0;
 		virtual const std::vector<T>& GetVector() = 0;
 		virtual void PushBack(T t) = 0;
 		virtual void EraseSelected() = 0;

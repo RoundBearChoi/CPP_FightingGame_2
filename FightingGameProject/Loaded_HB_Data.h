@@ -13,6 +13,7 @@ namespace RB::HBox
 
 	public:
 		void OnFixedUpdate();
+		void OnUpdate();
 		void AddSet(AABB_Set data);
 		const std::vector<AABB_Set>& Get_AABB_Sets();
 		AABB_Set* GetHBoxDataByFrame(unsigned int frame);

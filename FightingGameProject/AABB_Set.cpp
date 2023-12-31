@@ -25,6 +25,11 @@ namespace RB::HBox
 		_selector.OnFixedUpdate();
 	}
 
+	void AABB_Set::OnUpdate()
+	{
+		_selector.OnUpdate();
+	}
+
 	RB::iSelector<RB::Collisions::AABB>* AABB_Set::GetSelector()
 	{
 		return &_selector;

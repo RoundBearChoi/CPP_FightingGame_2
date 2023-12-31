@@ -15,6 +15,14 @@ namespace RB::HBox
 		}
 	}
 
+	void Loaded_HB_Data::OnUpdate()
+	{
+		for (auto i = _vec_AABB_Sets.begin(); i != _vec_AABB_Sets.end(); i++)
+		{
+			(*i).OnUpdate();
+		}
+	}
+
 	void Loaded_HB_Data::AddSet(AABB_Set data)
 	{
 		_vec_AABB_Sets.push_back(data);

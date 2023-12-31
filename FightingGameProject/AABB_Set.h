@@ -16,6 +16,7 @@ namespace RB::HBox
 
 	public:
 		void OnFixedUpdate();
+		void OnUpdate();
 		RB::iSelector<RB::Collisions::AABB>* GetSelector();
 
 	public:

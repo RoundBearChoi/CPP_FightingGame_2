@@ -12,6 +12,7 @@ namespace RB::HBox
 	public:
 		void Init();
 		void OnFixedUpdate();
+		void OnUpdate();
 
 		void SetDir(std::string dir);
 		Loaded_HB_Data* GetData(RB::Sprites::SpriteEnum spriteEnum);

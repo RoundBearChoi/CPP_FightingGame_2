@@ -14,7 +14,7 @@ namespace RB::HBox
 
 	void HitBoxDataController::OnUpdate()
 	{
-
+		_hbLoader.OnUpdate();
 	}
 
 	void HitBoxDataController::OnFixedUpdate()

@@ -23,9 +23,6 @@ namespace RB::HBox
 		const std::string& GetFrameName();
 		void SetFrameNameAndParse(const std::string& name);
 
-	//private:
-	//	unsigned int _ParseFrame(const std::string& str);
-
 	private:
 		std::string _frameName = "";
 		unsigned int _frame = 0;

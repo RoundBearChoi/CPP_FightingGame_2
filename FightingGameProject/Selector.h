@@ -9,10 +9,7 @@ namespace RB
 	class Selector : public iSelector<T>
 	{
 	public:
-		Selector()
-		{
-
-		}
+		Selector() = default;
 
 		~Selector() override
 		{

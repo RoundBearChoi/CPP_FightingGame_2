@@ -1,6 +1,8 @@
 #pragma once
 
 #include "SpriteEnum.h"
+#include "Selector.h"
+#include "PlayerBox.h"
 
 namespace RB::Collisions
 {
@@ -11,11 +13,13 @@ namespace RB::Collisions
 		~PlayerBoxSpecs() = default;
 
 	public:
-		unsigned int mFrame = 0;
-		float mOffsetX = 0.0f;
-		float mOffsetY = 0.0f;
-		float mWidth = 0.0f;
-		float mHeight = 0.0f;
-		RB::Sprites::SpriteEnum mSpriteType = RB::Sprites::SpriteEnum::NONE;
+		void SetSpriteType(RB::Sprites::SpriteEnum spriteEnum);
+		RB::Sprites::SpriteEnum GetSpriteType();
+		RB::Selector<PlayerBox>* GetSelector();
+		bool BoxExists(unsigned int frame, PlayerBox& box);
+
+	private:
+		RB::Selector<PlayerBox> _selector;
+		RB::Sprites::SpriteEnum _spriteType = RB::Sprites::SpriteEnum::NONE;
 	};
 }

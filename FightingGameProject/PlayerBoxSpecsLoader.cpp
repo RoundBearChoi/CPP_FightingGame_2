@@ -46,27 +46,48 @@ namespace RB::Collisions
 			float width = RB::JSON::GetFloat_FromElement(*e2);
 			float height = RB::JSON::GetFloat_FromElement(*e3);
 		
-			PlayerBoxSpecs specs;
-			specs.mFrame = frame;
-			specs.mOffsetX = offsetX;
-			specs.mOffsetY = offsetY;
-			specs.mWidth = width;
-			specs.mHeight = height;
-			specs.mSpriteType = spriteType;
+			PlayerBox newBox;
+			newBox.mFrame = frame;
+			newBox.mOffsetX = offsetX;
+			newBox.mOffsetY = offsetY;
+			newBox.mWidth = width;
+			newBox.mHeight = height;
+
+			PlayerBoxSpecs newBoxSpecs;
+			newBoxSpecs.SetSpriteType(spriteType);
+			newBoxSpecs.GetSelector()->PushBack(newBox);
 
 			LoadedPlayerBoxSpecs* loadedSpecs = GetLoadedSpecs(characterType);
 
-			if (loadedSpecs != nullptr)
+			//new specs if not found
+			if (loadedSpecs == nullptr)
 			{
-				loadedSpecs->Add(specs);
+				LoadedPlayerBoxSpecs newLoadedPlayerBoxSpecs;
+				newLoadedPlayerBoxSpecs.SetCharacterType(characterType);
+
+				newLoadedPlayerBoxSpecs.Add(newBoxSpecs);
+
+				_vecLoadedSpecs.push_back(newLoadedPlayerBoxSpecs);
 			}
 			else
 			{
-				LoadedPlayerBoxSpecs newLoadedSpecs;
-				newLoadedSpecs.Add(specs);
-				newLoadedSpecs.SetCharacterType(characterType);
+				RB::Collisions::PlayerBoxSpecs* boxSpecs = loadedSpecs->GetSpecs(spriteType);
 
-				_vecLoadedSpecs.push_back(newLoadedSpecs);
+				if (boxSpecs != nullptr)
+				{
+					if (boxSpecs->BoxExists(frame, newBox))
+					{
+						//do nothing if frame already exists
+					}
+					else
+					{
+						boxSpecs->GetSelector()->PushBack(newBox);
+					}
+				}
+				else
+				{
+					loadedSpecs->Add(newBoxSpecs);
+				}
 			}
 
 			element = element->next;

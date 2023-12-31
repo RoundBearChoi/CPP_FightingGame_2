@@ -361,6 +361,9 @@
     <ClCompile Include="AABB.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerBoxSpecs.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -802,6 +805,9 @@
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
     <ClInclude Include="LoadedPlayerBoxSpecs.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBox.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>

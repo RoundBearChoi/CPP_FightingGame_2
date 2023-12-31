@@ -17,7 +17,8 @@ namespace RB::Collisions
 		void Add(PlayerBoxSpecs specs);
 		void SetCharacterType(RB::Players::CharacterType characterType);
 		RB::Players::CharacterType GetCharacterType();
-		PlayerBoxSpecs* GetSpecsOnFrame(RB::Sprites::SpriteEnum spriteType, unsigned int frame);
+		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType);
+		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame);
 
 	private:
 		std::vector<PlayerBoxSpecs> _vecSpecs;

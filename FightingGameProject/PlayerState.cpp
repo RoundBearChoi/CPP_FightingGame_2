@@ -131,7 +131,7 @@ namespace RB::PlayerStates
 			return;
 		}
 
-		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecsOnFrame(_spriteEnum, _cumulatedFixedUpdates);
+		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_spriteEnum, _cumulatedFixedUpdates);
 
 		if (specs == nullptr)
 		{

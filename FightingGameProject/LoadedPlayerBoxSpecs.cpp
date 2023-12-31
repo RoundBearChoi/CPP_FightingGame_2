@@ -17,17 +17,43 @@ namespace RB::Collisions
 		return _characterType;
 	}
 
-	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecsOnFrame(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
+	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecs(RB::Sprites::SpriteEnum spriteType)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
-			if (i->mSpriteType == spriteType)
+			if (i->GetSpriteType() == spriteType)
 			{
-				if (i->mFrame == frame)
+				return &(*i);
+			}
+		}
+
+		return nullptr;
+	}
+
+	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
+	{
+		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
+		{
+			if (i->GetSpriteType() == spriteType)
+			{
+				const auto& vec = i->GetSelector()->GetVector();
+
+				for (auto j = vec.begin(); j != vec.end(); j++)
 				{
-					return &(*i);
+					if (j->mFrame == frame)
+					{
+						return &(*i);
+					}
 				}
 			}
+
+			//if (i->_spriteType == spriteType)
+			//{
+			//	if (i->mFrame == frame)
+			//	{
+			//		return &(*i);
+			//	}
+			//}
 		}
 
 		return nullptr;

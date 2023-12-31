@@ -87,7 +87,7 @@ namespace RB::Collisions
 				}
 				else
 				{
-					//add new specs if data is found but no existing spriteType specs
+					//add new specs if data is found but no existing specs for the spriteType
 					loadedData->Add(newSpecs);
 				}
 			}

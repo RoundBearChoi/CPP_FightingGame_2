@@ -124,7 +124,7 @@ namespace RB::PlayerStates
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
-		RB::Collisions::LoadedPlayerBoxSpecs* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedSpecs(characterType);
+		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedData(characterType);
 
 		if (loaded == nullptr)
 		{

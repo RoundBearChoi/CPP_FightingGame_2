@@ -53,40 +53,40 @@ namespace RB::Collisions
 			newBox.mWidth = width;
 			newBox.mHeight = height;
 
-			PlayerBoxSpecs newBoxSpecs;
-			newBoxSpecs.SetSpriteType(spriteType);
-			newBoxSpecs.GetSelector()->PushBack(newBox);
+			PlayerBoxSpecs newSpecs;
+			newSpecs.SetSpriteType(spriteType);
+			newSpecs.GetSelector()->PushBack(newBox);
 
-			LoadedPlayerBoxSpecs* loadedSpecs = GetLoadedSpecs(characterType);
+			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 
 			//new specs if not found
-			if (loadedSpecs == nullptr)
+			if (loadedData == nullptr)
 			{
-				LoadedPlayerBoxSpecs newLoadedPlayerBoxSpecs;
-				newLoadedPlayerBoxSpecs.SetCharacterType(characterType);
+				LoadedPlayerBoxData newData;
+				newData.SetCharacterType(characterType);
 
-				newLoadedPlayerBoxSpecs.Add(newBoxSpecs);
+				newData.Add(newSpecs);
 
-				_vecLoadedSpecs.push_back(newLoadedPlayerBoxSpecs);
+				_vecLoadedSpecs.push_back(newData);
 			}
 			else
 			{
-				RB::Collisions::PlayerBoxSpecs* boxSpecs = loadedSpecs->GetSpecs(spriteType);
+				RB::Collisions::PlayerBoxSpecs* existingSpecs = loadedData->GetSpecs(spriteType);
 
-				if (boxSpecs != nullptr)
+				if (existingSpecs != nullptr)
 				{
-					if (boxSpecs->BoxExists(frame, newBox))
+					if (existingSpecs->BoxExists(frame, newBox))
 					{
 						//do nothing if frame already exists
 					}
 					else
 					{
-						boxSpecs->GetSelector()->PushBack(newBox);
+						existingSpecs->GetSelector()->PushBack(newBox);
 					}
 				}
 				else
 				{
-					loadedSpecs->Add(newBoxSpecs);
+					loadedData->Add(newSpecs);
 				}
 			}
 
@@ -96,7 +96,7 @@ namespace RB::Collisions
 		free(root);
 	}
 
-	LoadedPlayerBoxSpecs* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Players::CharacterType characterType)
+	LoadedPlayerBoxData* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Players::CharacterType characterType)
 	{
 		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)
 		{

@@ -7,11 +7,11 @@
 
 namespace RB::Collisions
 {
-	class LoadedPlayerBoxSpecs
+	class LoadedPlayerBoxData
 	{
 	public:
-		LoadedPlayerBoxSpecs() = default;
-		~LoadedPlayerBoxSpecs() = default;
+		LoadedPlayerBoxData() = default;
+		~LoadedPlayerBoxData() = default;
 
 	public:
 		void Add(PlayerBoxSpecs specs);

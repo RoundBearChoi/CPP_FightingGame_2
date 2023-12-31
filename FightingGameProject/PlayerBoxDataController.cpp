@@ -23,7 +23,7 @@ namespace RB::Collisions
 
 	}
 
-	LoadedPlayerBoxSpecs* PlayerBoxDataController::GetLoadedSpecs(RB::Players::CharacterType characterType)
+	LoadedPlayerBoxData* PlayerBoxDataController::GetLoadedData(RB::Players::CharacterType characterType)
 	{
 		return _playerBoxSpecsLoader.GetLoadedSpecs(characterType);
 	}

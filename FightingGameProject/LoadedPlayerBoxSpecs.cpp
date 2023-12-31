@@ -2,22 +2,22 @@
 
 namespace RB::Collisions
 {
-	void LoadedPlayerBoxSpecs::Add(PlayerBoxSpecs specs)
+	void LoadedPlayerBoxData::Add(PlayerBoxSpecs specs)
 	{
 		_vecSpecs.push_back(specs);
 	}
 
-	void LoadedPlayerBoxSpecs::SetCharacterType(RB::Players::CharacterType characterType)
+	void LoadedPlayerBoxData::SetCharacterType(RB::Players::CharacterType characterType)
 	{
 		_characterType = characterType;
 	}
 
-	RB::Players::CharacterType LoadedPlayerBoxSpecs::GetCharacterType()
+	RB::Players::CharacterType LoadedPlayerBoxData::GetCharacterType()
 	{
 		return _characterType;
 	}
 
-	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecs(RB::Sprites::SpriteEnum spriteType)
+	PlayerBoxSpecs* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteEnum spriteType)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
@@ -30,7 +30,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	PlayerBoxSpecs* LoadedPlayerBoxSpecs::GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
+	PlayerBoxSpecs* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{

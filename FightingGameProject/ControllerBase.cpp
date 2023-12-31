@@ -2,12 +2,7 @@
 
 namespace RB::Controllers
 {
-	std::vector<iController*> ControllerBase::vecControllers;
-
-	ControllerBase::~ControllerBase()
-	{
-		//std::cout << "destroying controller base" << std::endl;
-	}
+	std::vector<ControllerBase*> ControllerBase::vecControllers;
 
 	void ControllerBase::UpdateAll()
 	{

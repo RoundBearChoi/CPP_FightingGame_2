@@ -1,16 +1,15 @@
 #pragma once
 #include <vector>
-#include "iController.h"
 
 namespace RB::Controllers
 {
-	class ControllerBase : public iController
+	class ControllerBase
 	{
 	public:
-		static std::vector<iController*> vecControllers;
+		static std::vector<ControllerBase*> vecControllers;
 
 		template <typename T>
-		static T* AddController(iController* controller)
+		static T* AddController(ControllerBase* controller)
 		{
 			controller->Init();
 
@@ -25,11 +24,11 @@ namespace RB::Controllers
 
 	public:
 		ControllerBase() = default;
-		virtual ~ControllerBase() override;
+		virtual ~ControllerBase() {};
 
 	public:
-		virtual void Init() override {};
-		virtual void OnUpdate() override {};
-		virtual void OnFixedUpdate() override {};
+		virtual void Init() {};
+		virtual void OnUpdate() {};
+		virtual void OnFixedUpdate() {};
 	};
 }

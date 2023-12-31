@@ -155,22 +155,6 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_UpdateSelectedIndex_OnPress(RB::HBox::AABB_Set* AABBs)
-	{
-		//olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
-		//olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
-		//
-		//if (oButton.bPressed)
-		//{
-		//	AABBs->GetSelector()->SelectUp();
-		//}
-		//
-		//else if (pButton.bPressed)
-		//{
-		//	AABBs->GetSelector()->SelectDown();
-		//}
-	}
-
 	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
@@ -235,8 +219,6 @@ namespace RB::HBox
 		{
 			return;
 		}
-
-		_UpdateSelectedIndex_OnPress(AABBs);
 
 		RB::Collisions::AABB* box = AABBs->GetSelector()->GetSelected();
 

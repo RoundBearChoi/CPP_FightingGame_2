@@ -54,7 +54,6 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Sprites::SpriteDataController>(new RB::Sprites::SpriteDataController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::SpecialMovesController>(new RB::Input::SpecialMovesController());
-		RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());
 
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HurtBoxDataController>(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("HitBoxSpecs/"));
@@ -63,7 +62,8 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::GeneralHitStopController>(new RB::Collisions::GeneralHitStopController());
 		RB::Controllers::ControllerBase::AddController<RB::Render::VFXAnimationController>(new RB::Render::VFXAnimationController());
 
-		RB::Cam::iCamController::instance->AllowManualControl(false);
+		RB::Cam::CamController* camController = RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());
+		camController->AllowManualControl(false);
 	}
 
 	void GameplayUpdater::OnUpdate()

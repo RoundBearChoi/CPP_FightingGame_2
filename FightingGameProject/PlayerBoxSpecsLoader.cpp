@@ -59,7 +59,7 @@ namespace RB::Collisions
 
 			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 
-			//new specs if not found
+			//new data if not found
 			if (loadedData == nullptr)
 			{
 				LoadedPlayerBoxData newData;
@@ -81,11 +81,13 @@ namespace RB::Collisions
 					}
 					else
 					{
+						//only add if frame doesn't exist
 						existingSpecs->GetSelector()->PushBack(newBox);
 					}
 				}
 				else
 				{
+					//add new specs if data is found but no existing spriteType specs
 					loadedData->Add(newSpecs);
 				}
 			}

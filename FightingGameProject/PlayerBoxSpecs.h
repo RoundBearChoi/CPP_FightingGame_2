@@ -15,7 +15,7 @@ namespace RB::Collisions
 	public:
 		void SetSpriteType(RB::Sprites::SpriteEnum spriteEnum);
 		RB::Sprites::SpriteEnum GetSpriteType();
-		RB::Selector<PlayerBox>* GetSelector();
+		RB::iSelector<PlayerBox>* GetSelector();
 		bool BoxExists(unsigned int frame, PlayerBox& box);
 
 	private:

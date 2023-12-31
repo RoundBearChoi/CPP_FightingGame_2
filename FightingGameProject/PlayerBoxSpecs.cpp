@@ -1,5 +1,7 @@
 #include "PlayerBoxSpecs.h"
 
+#include "iSelector.h"
+
 namespace RB::Collisions
 {
 	void PlayerBoxSpecs::SetSpriteType(RB::Sprites::SpriteEnum spriteEnum)
@@ -12,7 +14,7 @@ namespace RB::Collisions
 		return _spriteType;
 	}
 
-	RB::Selector<PlayerBox>* PlayerBoxSpecs::GetSelector()
+	RB::iSelector<PlayerBox>* PlayerBoxSpecs::GetSelector()
 	{
 		return &_selector;
 	}
@@ -28,7 +30,6 @@ namespace RB::Collisions
 			if (i->mFrame == frame)
 			{
 				box = *i;
-				//PlayerBox box = *i;
 				return true;
 			}
 		}

@@ -47,17 +47,13 @@ namespace RB::Players
 		}
 	}
 
-	iPlayer* PlayerController::AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID)
+	iPlayer* PlayerController::AddPlayer(iPlayer* player)
 	{
 		_vecPlayers.reserve(2);
 
 		iPlayer* p = player;
 
-		//gotta add first because Init involves OnEnter -> StateComponents -> player search
 		_vecPlayers.push_back(p);
-
-		p->Init(playerID, firstState);
-		p->SetPosition(startPos);
 
 		return p;
 	}

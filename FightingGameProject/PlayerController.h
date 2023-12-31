@@ -19,7 +19,7 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		iPlayer* AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) override;
+		iPlayer* AddPlayer(iPlayer* player) override;
 
 	public:
 		iPlayer* GetPlayerOnIndex(unsigned int index) override;

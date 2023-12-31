@@ -4,7 +4,6 @@
 #include "ControllerT.h"
 
 #include "iPlayer.h"
-#include "iState.h"
 #include "PlayerID.h"
 
 namespace RB::Players
@@ -17,7 +16,7 @@ namespace RB::Players
 		virtual void OnFixedUpdate() = 0;
 
 	public:
-		virtual iPlayer* AddPlayer(iPlayer* player, RB::States::iState* firstState, olc::vi2d startPos, PlayerID playerID) = 0;
+		virtual iPlayer* AddPlayer(iPlayer* player) = 0;
 
 	public:
 		virtual iPlayer* GetPlayerOnIndex(unsigned int index) = 0;

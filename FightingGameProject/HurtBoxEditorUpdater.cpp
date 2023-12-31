@@ -26,7 +26,6 @@ namespace RB::Updaters
 	void HurtBoxEditorUpdater::Init()
 	{
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
-
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteEnum::aku_idle));

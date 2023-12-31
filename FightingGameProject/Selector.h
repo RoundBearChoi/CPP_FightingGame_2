@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 
+#include "olcPixelGameEngine.h"
+
 #include "iSelector.h"
 
 namespace RB
@@ -24,7 +26,18 @@ namespace RB
 
 		void OnUpdate() override
 		{
+			olc::HWButton oButton = olc::Platform::ptrPGE->GetKey(olc::O);
+			olc::HWButton pButton = olc::Platform::ptrPGE->GetKey(olc::P);
 
+			if (oButton.bPressed)
+			{
+				SelectUp();
+			}
+
+			else if (pButton.bPressed)
+			{
+				SelectDown();
+			}
 		}
 
 		const std::vector<T>& GetVector() override

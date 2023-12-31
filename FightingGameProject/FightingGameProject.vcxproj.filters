@@ -355,7 +355,7 @@
     <ClCompile Include="PlayerBoxSpecsLoader.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
-    <ClCompile Include="LoadedPlayerBoxSpecs.cpp">
+    <ClCompile Include="LoadedPlayerBoxData.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
     <ClCompile Include="AABB.cpp">
@@ -804,7 +804,7 @@
     <ClInclude Include="PlayerBoxSpecs.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
-    <ClInclude Include="LoadedPlayerBoxSpecs.h">
+    <ClInclude Include="LoadedPlayerBoxData.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
     <ClInclude Include="PlayerBox.h">

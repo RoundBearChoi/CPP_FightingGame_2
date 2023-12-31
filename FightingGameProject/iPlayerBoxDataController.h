@@ -2,7 +2,7 @@
 
 #include "ControllerT.h"
 
-#include "LoadedPlayerBoxSpecs.h"
+#include "LoadedPlayerBoxData.h"
 #include "CharacterType.h"
 
 namespace RB::Collisions

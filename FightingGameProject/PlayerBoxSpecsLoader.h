@@ -5,7 +5,7 @@
 
 #include "CharacterType.h"
 #include "SpriteEnum.h"
-#include "LoadedPlayerBoxSpecs.h"
+#include "LoadedPlayerBoxData.h"
 
 namespace RB::Collisions
 {

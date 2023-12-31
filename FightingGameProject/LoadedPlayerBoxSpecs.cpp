@@ -46,14 +46,6 @@ namespace RB::Collisions
 					}
 				}
 			}
-
-			//if (i->_spriteType == spriteType)
-			//{
-			//	if (i->mFrame == frame)
-			//	{
-			//		return &(*i);
-			//	}
-			//}
 		}
 
 		return nullptr;

@@ -360,7 +360,6 @@
     <ClInclude Include="iCamObj.h" />
     <ClInclude Include="PivotType.h" />
     <ClInclude Include="SpriteEnum.h" />
-    <ClInclude Include="iController.h" />
     <ClInclude Include="InputController.h" />
     <ClInclude Include="iPlayer.h" />
     <ClInclude Include="iState.h" />

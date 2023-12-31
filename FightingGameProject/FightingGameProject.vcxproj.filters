@@ -372,9 +372,6 @@
     <ClInclude Include="PlayerController.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>
-    <ClInclude Include="iController.h">
-      <Filter>Source Files\Controllers</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Source Files\Players</Filter>
     </ClInclude>

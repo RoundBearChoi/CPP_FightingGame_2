@@ -183,7 +183,7 @@
     <ClCompile Include="_HBoxLoader.cpp" />
     <ClCompile Include="HBoxEditController.cpp" />
     <ClCompile Include="ManualAnimationUpdater.cpp" />
-    <ClCompile Include="MenuController.cpp" />
+    <ClCompile Include="HBMenuController.cpp" />
     <ClCompile Include="HurtBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Dummy.cpp" />
     <ClCompile Include="P0_JumpForwardUp_0.cpp" />
@@ -317,7 +317,7 @@
     <ClInclude Include="PlayerBoxSpecsLoader.h" />
     <ClInclude Include="_HBoxLoader.h" />
     <ClInclude Include="ManualAnimationUpdater.h" />
-    <ClInclude Include="MenuController.h" />
+    <ClInclude Include="HBMenuController.h" />
     <ClInclude Include="HurtBoxEditorUpdater.h" />
     <ClInclude Include="P0_Dummy.h" />
     <ClInclude Include="P0_JumpForwardUp_0.h" />

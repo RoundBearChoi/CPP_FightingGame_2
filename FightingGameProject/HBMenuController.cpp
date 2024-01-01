@@ -1,4 +1,4 @@
-#include "MenuController.h"
+#include "HBMenuController.h"
 
 #include "PlayerState.h"
 
@@ -11,12 +11,12 @@
 
 namespace RB::HBox
 {
-	void MenuController::Init()
+	void HBMenuController::Init()
 	{
 
 	}
 
-	void MenuController::OnUpdate()
+	void HBMenuController::OnUpdate()
 	{
 		if (RB::Sprites::iSpriteDataController::instance == nullptr)
 		{
@@ -86,7 +86,7 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
 	}
 
-	void MenuController::OnFixedUpdate()
+	void HBMenuController::OnFixedUpdate()
 	{
 		if (_notificationFrameCount > 0)
 		{
@@ -94,12 +94,12 @@ namespace RB::HBox
 		}
 	}
 
-	void MenuController::ShowNotification()
+	void HBMenuController::ShowNotification()
 	{
 		_notificationFrameCount = 120;
 	}
 
-	const std::string& MenuController::_GetCurrentSpriteString()
+	const std::string& HBMenuController::_GetCurrentSpriteString()
 	{
 		RB::Sprites::SpriteEnum se = _GetCurrentSpriteEnum();
 
@@ -108,7 +108,7 @@ namespace RB::HBox
 		return str;
 	}
 
-	const std::string& MenuController::_GetFrameName()
+	const std::string& HBMenuController::_GetFrameName()
 	{
 		RB::HBox::Loaded_HB_Data* data = _GetHBData();
 		
@@ -127,7 +127,7 @@ namespace RB::HBox
 		return AABBs->GetFrameName();
 	}
 
-	RB::Sprites::SpriteEnum MenuController::_GetCurrentSpriteEnum()
+	RB::Sprites::SpriteEnum HBMenuController::_GetCurrentSpriteEnum()
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
@@ -143,7 +143,7 @@ namespace RB::HBox
 		return _currentSpriteEnum;
 	}
 
-	unsigned int MenuController::_GetCurrentAnimationFrame()
+	unsigned int HBMenuController::_GetCurrentAnimationFrame()
 	{
 		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
 
@@ -155,7 +155,7 @@ namespace RB::HBox
 		return obj->GetCurrentIndex();
 	}
 
-	RB::HBox::Loaded_HB_Data* MenuController::_GetHBData()
+	RB::HBox::Loaded_HB_Data* HBMenuController::_GetHBData()
 	{
 		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
 

@@ -7,7 +7,7 @@
 #include "PlayerDebugController.h"
 #include "PlayerAnimationController.h"
 #include "PlayerBoxDataController.h"
-#include "MenuController.h"
+#include "HBMenuController.h"
 #include "HurtBoxDataController.h"
 #include "HitBoxDataController.h"
 #include "HBoxEditController.h"
@@ -39,7 +39,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Sprites::SpriteDataController>(new RB::Sprites::SpriteDataController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 
-		RB::Controllers::ControllerBase::AddController<RB::HBox::MenuController>(new RB::HBox::MenuController());
+		RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("HitBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HIT_BOX));
 

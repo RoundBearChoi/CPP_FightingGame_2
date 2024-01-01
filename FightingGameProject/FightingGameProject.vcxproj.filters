@@ -169,7 +169,7 @@
     <ClCompile Include="SpriteDataController.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="MenuController.cpp">
+    <ClCompile Include="HBMenuController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="PlayerDebugController.cpp">
@@ -531,7 +531,7 @@
     <ClInclude Include="SpriteDataController.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="MenuController.h">
+    <ClInclude Include="HBMenuController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="PlayerDebugController.h">

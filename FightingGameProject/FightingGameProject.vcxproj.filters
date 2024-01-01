@@ -570,7 +570,7 @@
     <ClInclude Include="HBoxEditController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="iMenuController.h">
+    <ClInclude Include="iHBMenuController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="iPlayerAnimationController.h">

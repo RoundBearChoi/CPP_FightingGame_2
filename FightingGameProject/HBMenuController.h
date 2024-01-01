@@ -1,14 +1,14 @@
 #pragma once
 #include <string>
 
-#include "iMenuController.h"
+#include "iHBMenuController.h"
 #include "SpriteEnum.h"
 
 #include "Loaded_HB_Data.h"
 
 namespace RB::HBox
 {
-	class HBMenuController : public iMenuController
+	class HBMenuController : public iHBMenuController
 	{
 	public:
 		HBMenuController() = default;

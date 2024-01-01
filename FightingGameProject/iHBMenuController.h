@@ -3,7 +3,7 @@
 
 namespace RB::HBox
 {
-	class iMenuController : public RB::Controllers::ControllerT<iMenuController>
+	class iHBMenuController : public RB::Controllers::ControllerT<iHBMenuController>
 	{
 	public:
 		virtual void Init() = 0;

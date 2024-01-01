@@ -301,7 +301,7 @@
     <ClInclude Include="iHurtBoxDataController.h" />
     <ClInclude Include="HBoxEditController.h" />
     <ClInclude Include="iInputController.h" />
-    <ClInclude Include="iMenuController.h" />
+    <ClInclude Include="iHBMenuController.h" />
     <ClInclude Include="iPlayerAnimationController.h" />
     <ClInclude Include="iAnimationObj.h" />
     <ClInclude Include="iPlayerController.h" />

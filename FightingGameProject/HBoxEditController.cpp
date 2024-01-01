@@ -7,7 +7,7 @@
 #include "iPlayerAnimationController.h"
 #include "iHurtBoxDataController.h"
 #include "iHitBoxDataController.h"
-#include "iMenuController.h"
+#include "iHBMenuController.h"
 #include "iCamController.h"
 
 namespace RB::HBox
@@ -146,7 +146,7 @@ namespace RB::HBox
 
 		if (RB::Players::iPlayerController::instance == nullptr ||
 			RB::Render::iPlayerAnimationController::instance == nullptr ||
-			RB::HBox::iMenuController::instance == nullptr ||
+			RB::HBox::iHBMenuController::instance == nullptr ||
 			RB::Cam::iCamController::instance == nullptr)
 		{
 			return false;
@@ -363,7 +363,7 @@ namespace RB::HBox
 				file.close();
 			}
 
-			RB::HBox::iMenuController::instance->ShowNotification();
+			RB::HBox::iHBMenuController::instance->ShowNotification();
 		}
 	}
 }

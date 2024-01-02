@@ -29,6 +29,8 @@ namespace RB::HBox
 			return;
 		}
 
+		_ShowSavedNotification();
+
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "HBoxEditor", olc::WHITE, 2);
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);
@@ -38,29 +40,6 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data (saves the entire set)", olc::WHITE);
 
-		if (_notification.GetFrameCount() > 0)
-		{
-			RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
-
-			if (boxType == RB::HBox::HBoxType::HURT_BOX)
-			{
-				if (RB::HBox::iHurtBoxDataController::instance != nullptr)
-				{
-					const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_currentSpriteEnum);
-					_notification.OnUpdate("File saved: " + path);
-				}
-			}
-			else if (boxType == RB::HBox::HBoxType::HIT_BOX)
-			{
-				if (RB::HBox::iHitBoxDataController::instance != nullptr)
-				{
-					const std::string& path = RB::HBox::iHitBoxDataController::instance->GetPath(_currentSpriteEnum);
-					_notification.OnUpdate("File saved: " + path);
-				}
-			}
-		}
-		
-		//debug
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + _GetCurrentSpriteString(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
@@ -172,5 +151,32 @@ namespace RB::HBox
 		}
 
 		return data;
+	}
+
+	void HBMenuController::_ShowSavedNotification()
+	{
+		if (_notification.GetFrameCount() == 0)
+		{
+			return;
+		}
+
+		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
+
+		if (boxType == RB::HBox::HBoxType::HURT_BOX)
+		{
+			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
+			{
+				const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_currentSpriteEnum);
+				_notification.OnUpdate("File saved: " + path);
+			}
+		}
+		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		{
+			if (RB::HBox::iHitBoxDataController::instance != nullptr)
+			{
+				const std::string& path = RB::HBox::iHitBoxDataController::instance->GetPath(_currentSpriteEnum);
+				_notification.OnUpdate("File saved: " + path);
+			}
+		}
 	}
 }

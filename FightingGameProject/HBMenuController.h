@@ -28,6 +28,7 @@ namespace RB::HBox
 		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
 		unsigned int _GetCurrentAnimationFrame();
 		RB::HBox::Loaded_HB_Data* _GetHBData();
+		void _ShowSavedNotification();
 
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::string _none = "none";

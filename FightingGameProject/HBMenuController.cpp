@@ -38,28 +38,23 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data (saves the entire set)", olc::WHITE);
 
-		if (_notificationFrameCount > 0)
+		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
+
+		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			std::string path;
-
-			RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
-
-			if (boxType == RB::HBox::HBoxType::HURT_BOX)
+			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				if (RB::HBox::iHurtBoxDataController::instance != nullptr)
-				{
-					path = RB::HBox::iHurtBoxDataController::instance->GetPath(_currentSpriteEnum);
-				}
+				const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_currentSpriteEnum);
+				_notification.OnUpdate(path);
 			}
-			else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		}
+		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		{
+			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				if (RB::HBox::iHitBoxDataController::instance != nullptr)
-				{
-					path = RB::HBox::iHitBoxDataController::instance->GetPath(_currentSpriteEnum);
-				}
+				const std::string& path = RB::HBox::iHitBoxDataController::instance->GetPath(_currentSpriteEnum);
+				_notification.OnUpdate(path);
 			}
-
-			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, _fileSaved + path, olc::GREEN);
 		}
 
 		//debug
@@ -88,15 +83,12 @@ namespace RB::HBox
 
 	void HBMenuController::OnFixedUpdate()
 	{
-		if (_notificationFrameCount > 0)
-		{
-			_notificationFrameCount--;
-		}
+		_notification.OnFixedUpdate();
 	}
 
 	void HBMenuController::ShowNotification()
 	{
-		_notificationFrameCount = 120;
+		_notification.ShowNotification(120);
 	}
 
 	const std::string& HBMenuController::_GetCurrentSpriteString()

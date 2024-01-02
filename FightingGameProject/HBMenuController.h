@@ -1,9 +1,11 @@
 #pragma once
 #include <string>
 
-#include "iHBMenuController.h"
 #include "SpriteEnum.h"
 
+#include "iHBMenuController.h"
+
+#include "Notification.h"
 #include "Loaded_HB_Data.h"
 
 namespace RB::HBox
@@ -29,7 +31,6 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::string _none = "none";
-		std::string _fileSaved = "File saved: ";
-		int _notificationFrameCount = 0;
+		RB::Render::Notification _notification;
 	};
 }

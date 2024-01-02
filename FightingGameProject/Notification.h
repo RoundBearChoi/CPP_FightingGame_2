@@ -15,10 +15,10 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	public:
-		void ShowNotification(unsigned int frameCount);
+		unsigned int GetFrameCount();
+		void AddFrameCount(unsigned int frameCount);
 
 	private:
-		std::string _fileSaved = "File saved: ";
-		int _notificationFrameCount = 0;
+		int _frameCount = 0;
 	};
 }

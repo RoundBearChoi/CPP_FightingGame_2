@@ -149,5 +149,7 @@ namespace RB::PlayerStates
 		}
 
 		const auto& box = specs->GetBox(animationIndex);
+
+		player->GetPlayerCollider()->SetPlayerBox(box);
 	}
 }

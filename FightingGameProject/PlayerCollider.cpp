@@ -30,10 +30,12 @@ namespace RB::Players
 		return olc::vf2d{ _pBox.mWidth, _pBox.mHeight };
 	}
 
-	void PlayerCollider::SetPlayerBox(olc::vf2d widthHeight)
+	void PlayerCollider::SetPlayerBox(const RB::Collisions::PlayerBox& box)
 	{
-		_pBox.mWidth = widthHeight.x;
-		_pBox.mHeight = widthHeight.y;
+		_pBox.mOffsetX = box.mOffsetX;
+		_pBox.mOffsetX = box.mOffsetY;
+		_pBox.mWidth = box.mWidth;
+		_pBox.mHeight = box.mHeight;
 	}
 
 	bool PlayerCollider::IsCollidingAgainstOtherPlayer()

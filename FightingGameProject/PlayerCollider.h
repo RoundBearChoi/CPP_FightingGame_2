@@ -27,7 +27,7 @@ namespace RB::Players
 
 	public:
 		olc::vf2d GetPlayerBox() override;
-		void SetPlayerBox(olc::vf2d widthHeight) override;
+		void SetPlayerBox(const RB::Collisions::PlayerBox& box) override;
 		bool IsCollidingAgainstOtherPlayer() override;
 		const RB::Collisions::AABB& GetAABB() override;
 		RB::Collisions::AABB* GetAABB_ptr() override;
@@ -40,7 +40,6 @@ namespace RB::Players
 	private:
 		iPlayer* _player = nullptr;
 		bool _isCollidingAgainstOtherPlayer = false;
-		//olc::vi2d _playerBox = { 62, 124 }; //even numbers?
 		RB::Collisions::PlayerBox _pBox;
 		RB::Collisions::AABB _aabb{ 0, 0, 0, 0 };
 		float _bodyRatio[2]{ 0.0f, 0.0f };

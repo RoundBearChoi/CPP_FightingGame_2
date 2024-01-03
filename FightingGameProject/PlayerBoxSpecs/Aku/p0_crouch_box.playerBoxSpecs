@@ -2,10 +2,10 @@
     "frame_0":
     [
         {
-        "offsetX" : 3.3,
-        "offsetY" : 3.4,
-        "width" : 100,
-        "height" : 100
+        "offsetX" : 0,
+        "offsetY" : 0,
+        "width" : 62,
+        "height" : 99
         }
     ]
 }

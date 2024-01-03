@@ -29,9 +29,9 @@ namespace RB::Cam
 		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::instance->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
 		RB::Players::iPlayer* p2 = RB::Players::iPlayerController::instance->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
-		olc::vi2d p1_pos = p1->GetPosition();
-		olc::vi2d p2_pos = p2->GetPosition();
-		olc::vf2d dist = (olc::vf2d)p2_pos - (olc::vf2d)p1_pos;
+		olc::vf2d p1_pos = p1->GetPosition();
+		olc::vf2d p2_pos = p2->GetPosition();
+		olc::vf2d dist = p2_pos - p1_pos;
 
 		float mag2 = dist.mag2(); //mag2 is mag * mag
 		float mag = dist.mag();

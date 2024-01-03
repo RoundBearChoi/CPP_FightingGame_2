@@ -185,7 +185,7 @@ namespace RB::HBox
 
 		olc::vf2d pos = player->GetPosition() + box->GetBottomLeft();
 
-		olc::vf2d relPos = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(pos) + olc::vi2d{ 1, -1 };
+		olc::vf2d relPos = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(pos) + olc::vf2d{ 1.0, -1.0 };
 
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);

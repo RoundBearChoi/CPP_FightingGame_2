@@ -40,9 +40,9 @@ namespace RB::Render
 			return;
 		}
 
-		olc::vi2d playerPos = player->GetPosition();
+		olc::vf2d playerPos = player->GetPosition();
 
-		_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vi2d{ 13, 13 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+		_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vf2d{ 13.0, 13.0 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
 	}
 
 	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PlayerID playerID)
@@ -57,6 +57,6 @@ namespace RB::Render
 		RB::Collisions::AABB* aabb = player->GetPlayerCollider()->GetAABB_ptr();
 		olc::vf2d bottomLeft = aabb->GetBottomLeft();
 
-		_lineRenderer->RenderLine(bottomLeft - olc::vi2d{ 15, 0 }, bottomLeft, olc::RED);
+		_lineRenderer->RenderLine(bottomLeft - olc::vf2d{ 15.0, 0.0 }, bottomLeft, olc::RED);
 	}
 }

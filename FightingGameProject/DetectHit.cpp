@@ -64,7 +64,6 @@ namespace RB::PlayerStateComponents
 		{
 			//get owner AABB
 			RB::Collisions::AABB ownerBox = (*i);
-			olc::vi2d ownerPos = owner->GetPosition();
 			RB::Collisions::AABB ownerBox_WorldPos = ownerBox.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
 
 			//skip if width or height is 0
@@ -77,7 +76,6 @@ namespace RB::PlayerStateComponents
 			{
 				//get target AABB
 				RB::Collisions::AABB targetBox = (*j);
-				olc::vi2d targetPos = target->GetPosition();
 				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
 
 				//compare

@@ -97,7 +97,7 @@ namespace RB::Players
 
 	void PlayerCollider::_MovePlayers(iPlayer* otherPlayer)
 	{
-		float correction = 2.0;
+		float correction = 2.5;
 
 		olc::vf2d otherPlayerPos = otherPlayer->GetPosition();
 		olc::vf2d myPos = _player->GetPosition();

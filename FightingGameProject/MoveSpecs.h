@@ -13,8 +13,8 @@ namespace RB::Players::Specs
 	public:
 		RB::Players::CharacterType mCharacterType = RB::Players::CharacterType::NONE;
 
-		int					mWalk_Forward_Speed = 0;
-		int					mWalk_Back_Speed = 0;
+		float				mWalk_Forward_Speed = 0;
+		float				mWalk_Back_Speed = 0;
 		unsigned int		mJumpUp_totalFrames = 0;
 		float				mJumpUp_speedMultiplier = 0.0f;
 		unsigned int		mJumpUp_Forward_totalFrames = 0;

@@ -35,9 +35,9 @@ namespace RB::Players
 		void InitiallyFacingRight(bool initiallyFacingRight);
 		RB::States::iStateMachine* GetStateMachine() override;
 		unsigned int GetStateMachineID() override;
-		void Move(olc::vi2d moveAmount) override;
-		olc::vi2d GetPosition() override;
-		void SetPosition(olc::vi2d pos) override;
+		void Move(olc::vf2d moveAmount) override;
+		olc::vf2d GetPosition() override;
+		void SetPosition(olc::vf2d pos) override;
 		void SetManualAnimationUpdate(bool manual) override;
 		bool ManualAnimationUpdate() override;
 		void SetWincingStatus(bool wincing) override;
@@ -51,7 +51,7 @@ namespace RB::Players
 		CharacterType _characterType = CharacterType::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;
-		olc::vi2d _position = { 0, 0 };
+		olc::vf2d _position = { 0.0f, 0.0f };
 		bool _manualAnimationUpdate = false;
 		bool _initiallyFacingRight = false;
 		bool _isWincing = false;

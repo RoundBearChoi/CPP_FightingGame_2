@@ -5,7 +5,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	WhileMovingForward::WhileMovingForward(int speed, RB::States::iState* nextIdleState, RB::States::iState* nextWalkBackState)
+	WhileMovingForward::WhileMovingForward(float speed, RB::States::iState* nextIdleState, RB::States::iState* nextWalkBackState)
 	{
 		_speed = speed;
 		_vecNextStates.push_back(nextIdleState);
@@ -64,7 +64,7 @@ namespace RB::PlayerStateComponents
 
 		if (_bMoveForward)
 		{
-			int movement = _speed;
+			float movement = _speed;
 
 			if (player->OtherPlayerIsOnRightSide())
 			{
@@ -76,7 +76,7 @@ namespace RB::PlayerStateComponents
 				movement *= -1;
 			}
 
-			player->Move(olc::vi2d{ movement, 0 });
+			player->Move(olc::vf2d{ movement, 0 });
 
 			return;
 		}

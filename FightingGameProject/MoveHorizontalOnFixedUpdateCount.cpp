@@ -6,7 +6,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveHorizontalOnFixedUpdateCount::MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, int move)
+	MoveHorizontalOnFixedUpdateCount::MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, float move)
 	{
 		_fixedUpdateOnCount = fixedUpdateOnCount;
 		_moveAmount = move;
@@ -27,7 +27,7 @@ namespace RB::PlayerStateComponents
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		int move = _moveAmount;
+		float move = _moveAmount;
 
 		if (_otherPlayerIsOnRightSide)
 		{
@@ -38,6 +38,6 @@ namespace RB::PlayerStateComponents
 			move *= -1;
 		}
 
-		player->Move(olc::vi2d{ move, 0 });
+		player->Move(olc::vf2d{ move, 0 });
 	}
 }

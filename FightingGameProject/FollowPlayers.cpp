@@ -32,11 +32,11 @@ namespace RB::Cam
 			return;
 		}
 
-		int p0_pos_x = p0->GetPosition().x;
-		int p1_pos_x = p1->GetPosition().x;
-		int xDir = p1_pos_x - p0_pos_x;
-		float mid = (float)xDir * 0.5f;
-		float result = ((float)p0_pos_x + mid) * _camObj->GetZoom();
+		float p0_pos_x = p0->GetPosition().x;
+		float p1_pos_x = p1->GetPosition().x;
+		float xDir = p1_pos_x - p0_pos_x;
+		float mid = xDir * 0.5f;
+		float result = (p0_pos_x + mid) * _camObj->GetZoom();
 
 		float curr = _camObj->GetPosition().x;
 

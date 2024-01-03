@@ -143,17 +143,17 @@ namespace RB::Players
 		return _stateMachine->GetID();
 	}
 
-	void Player::Move(olc::vi2d moveAmount)
+	void Player::Move(olc::vf2d moveAmount)
 	{
 		_position += moveAmount;
 	}
 
-	olc::vi2d Player::GetPosition()
+	olc::vf2d Player::GetPosition()
 	{
 		return _position;
 	}
 
-	void Player::SetPosition(olc::vi2d pos)
+	void Player::SetPosition(olc::vf2d pos)
 	{
 		_position = pos;
 	}

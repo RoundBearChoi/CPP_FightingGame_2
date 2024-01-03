@@ -49,6 +49,6 @@ namespace RB::PlayerStateComponents
 		}
 
 		//apply move
-		player->Move({ (int)result, 0 });
+		player->Move({ result, 0.0f });
 	}
 }

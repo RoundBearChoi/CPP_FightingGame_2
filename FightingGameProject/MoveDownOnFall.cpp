@@ -48,12 +48,12 @@ namespace RB::PlayerStateComponents
 		float amount = 1.0f - RB::EaseEquations::Ease::EaseOutSine(t);
 		float result = amount * _multiplier;
 
-		int y = player->GetPosition().y;
+		float y = player->GetPosition().y;
 
 		//transition to idle 1 frame before hitting ground
-		if ((float)y + result >= 0.0f)
+		if (y + result >= 0.0f)
 		{
-			player->SetPosition({ player->GetPosition().x, 0 });
+			player->SetPosition({ player->GetPosition().x, 0.0f });
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();
 			

@@ -97,26 +97,26 @@ namespace RB::Players
 
 	void PlayerCollider::_MovePlayers(iPlayer* otherPlayer)
 	{
-		int correction = 2;
+		float correction = 2.0;
 
-		olc::vi2d otherPlayerPos = otherPlayer->GetPosition();
-		olc::vi2d myPos = _player->GetPosition();
+		olc::vf2d otherPlayerPos = otherPlayer->GetPosition();
+		olc::vf2d myPos = _player->GetPosition();
 
 		//if other player is in air and I'm on ground, I move away more quickly
 		if (otherPlayerPos.y < -0.01f && myPos.y > -0.01f)
 		{
-			correction *= 2;
+			correction *= 2.0f;
 		}
 
 		if (myPos.x <= otherPlayerPos.x)
 		{
-			_player->Move(olc::vi2d{ -correction, 0 });
-			otherPlayer->Move(olc::vi2d{ correction, 0 });
+			_player->Move(olc::vf2d{ -correction, 0.0f });
+			otherPlayer->Move(olc::vf2d{ correction, 0.0f });
 		}
 		else
 		{
-			_player->Move(olc::vi2d{ correction, 0 });
-			otherPlayer->Move(olc::vi2d{ -correction, 0 });
+			_player->Move(olc::vf2d{ correction, 0.0f });
+			otherPlayer->Move(olc::vf2d{ -correction, 0.0f });
 		}
 	}
 }

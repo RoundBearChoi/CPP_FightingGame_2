@@ -32,9 +32,9 @@ namespace RB::Players
 		virtual void InitiallyFacingRight(bool facingRight) = 0;
 		virtual unsigned int GetStateMachineID() = 0;
 		virtual RB::States::iStateMachine* GetStateMachine() = 0;
-		virtual void Move(olc::vi2d moveAmount) = 0;
-		virtual olc::vi2d GetPosition() = 0;
-		virtual void SetPosition(olc::vi2d pos) = 0;
+		virtual void Move(olc::vf2d moveAmount) = 0;
+		virtual olc::vf2d GetPosition() = 0;
+		virtual void SetPosition(olc::vf2d pos) = 0;
 		virtual void SetManualAnimationUpdate(bool manual) = 0;
 		virtual bool ManualAnimationUpdate() = 0;
 		virtual void SetWincingStatus(bool wincing) = 0;

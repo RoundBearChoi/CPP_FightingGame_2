@@ -9,7 +9,7 @@ namespace RB::PlayerStateComponents
 		/// <summary>
 		/// positive is move forward, negative is move back
 		/// </summary>
-		MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, int move);
+		MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, float move);
 		~MoveHorizontalOnFixedUpdateCount() = default;
 
 	public:
@@ -18,7 +18,7 @@ namespace RB::PlayerStateComponents
 		void OnFixedUpdate() override;
 
 	private:
-		int _moveAmount = 0;
+		float _moveAmount = 0.0f;
 		bool _otherPlayerIsOnRightSide = true;
 	};
 }

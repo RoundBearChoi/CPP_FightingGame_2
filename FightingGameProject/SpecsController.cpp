@@ -51,10 +51,10 @@ namespace RB::Players::Specs
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
 
 		json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //first element
-		int walk_Forward_Speed = RB::JSON::GetInt_FromElement(*e0);
+		float walk_Forward_Speed = RB::JSON::GetFloat_FromElement(*e0);
 
 		json_object_element_s* e1 = e0->next;
-		int walk_Back_Speed = RB::JSON::GetInt_FromElement(*e1);
+		float walk_Back_Speed = RB::JSON::GetFloat_FromElement(*e1);
 
 		json_object_element_s* e2 = e1->next;
 		int jumpUp_totalFrames = RB::JSON::GetInt_FromElement(*e2);

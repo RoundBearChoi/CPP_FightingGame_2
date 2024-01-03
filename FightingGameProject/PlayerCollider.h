@@ -6,6 +6,7 @@
 #include "iPlayer.h"
 #include "iPlayerController.h"
 
+#include "PlayerBox.h"
 #include "AABB.h"
 
 namespace RB::Players
@@ -38,6 +39,7 @@ namespace RB::Players
 		iPlayer* _player = nullptr;
 		bool _isCollidingAgainstOtherPlayer = false;
 		olc::vi2d _playerBox = { 62, 124 }; //even numbers?
+		RB::Collisions::PlayerBox _pBox;
 		RB::Collisions::AABB _aabb{ 0, 0, 0, 0 };
 		float _bodyRatio[2]{ 0.0f, 0.0f };
 	};

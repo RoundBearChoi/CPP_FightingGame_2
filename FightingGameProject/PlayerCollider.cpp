@@ -53,14 +53,14 @@ namespace RB::Players
 
 	void PlayerCollider::_UpdateAABBOnPlayerPos()
 	{
-		olc::vi2d bottomCenter = _player->GetPosition();
-		olc::vi2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
+		olc::vf2d bottomCenter = _player->GetPosition();
+		olc::vf2d playerBox = _player->GetPlayerCollider()->GetPlayerBox();
 		float halfWidth = playerBox.x * 0.5f;
 
 		olc::vf2d bottomLeft = bottomCenter - olc::vf2d{ halfWidth, 0.0f };
 
 		_aabb.SetBottomLeft(bottomLeft.x, bottomLeft.y);
-		_aabb.SetWidthHeight((float)playerBox.x, (float)playerBox.y);
+		_aabb.SetWidthHeight(playerBox.x, playerBox.y);
 	}
 
 	void PlayerCollider::_ResolveCollision()

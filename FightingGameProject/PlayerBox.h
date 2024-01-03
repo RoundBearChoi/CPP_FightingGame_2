@@ -6,6 +6,16 @@ namespace RB::Collisions
 	{
 	public:
 		PlayerBox() = default;
+
+		PlayerBox(unsigned int frame, float offsetX, float offsetY, float width, float height)
+		{
+			mFrame = frame;
+			mOffsetX = offsetX;
+			mOffsetY = offsetY;
+			mWidth = width;
+			mHeight = height;
+		}
+
 		~PlayerBox() = default;
 
 	public:

@@ -4,6 +4,7 @@
 
 #include "iPlayerController.h"
 #include "iPlayerBoxDataController.h"
+#include "iPlayerAnimationController.h"
 
 namespace RB::PlayerStates
 {
@@ -131,11 +132,22 @@ namespace RB::PlayerStates
 			return;
 		}
 
-		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_spriteEnum, _cumulatedFixedUpdates);
+		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteEnum);
+
+		if (iAniObj == nullptr)
+		{
+			return;
+		}
+
+		unsigned int animationIndex = iAniObj->GetCurrentIndex();
+
+		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_spriteEnum, animationIndex);
 
 		if (specs == nullptr)
 		{
 			return;
 		}
+
+		const auto& box = specs->GetBox(animationIndex);
 	}
 }

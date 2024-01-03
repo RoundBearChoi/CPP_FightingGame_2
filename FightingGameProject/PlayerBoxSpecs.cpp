@@ -36,4 +36,21 @@ namespace RB::Collisions
 
 		return false;
 	}
+
+	const RB::Collisions::PlayerBox& PlayerBoxSpecs::GetBox(unsigned int frame)
+	{
+		const auto& vec = GetSelector()->GetVector();
+
+		auto it = vec.begin();
+
+		for (auto i = vec.begin(); i != vec.end(); i++)
+		{
+			if (i->mFrame == frame)
+			{
+				return *i;
+			}
+		}
+
+		return _emptyBox;
+	}
 }

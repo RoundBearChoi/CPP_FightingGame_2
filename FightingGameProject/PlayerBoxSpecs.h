@@ -17,9 +17,11 @@ namespace RB::Collisions
 		RB::Sprites::SpriteEnum GetSpriteType();
 		RB::iSelector<PlayerBox>* GetSelector();
 		bool BoxExists(unsigned int frame, PlayerBox& box);
+		const RB::Collisions::PlayerBox& GetBox(unsigned int frame);
 
 	private:
 		RB::Selector<PlayerBox> _selector;
 		RB::Sprites::SpriteEnum _spriteType = RB::Sprites::SpriteEnum::NONE;
+		const RB::Collisions::PlayerBox _emptyBox{ 0, 0.0f, 0.0f, 0.0f, 0.0f };
 	};
 }

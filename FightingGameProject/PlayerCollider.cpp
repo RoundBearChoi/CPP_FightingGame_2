@@ -5,6 +5,9 @@ namespace RB::Players
 	void PlayerCollider::Init(iPlayer* owner)
 	{
 		_player = owner;
+
+		_pBox.mWidth = 62.0f;
+		_pBox.mHeight = 124.0f;
 	}
 
 	void PlayerCollider::OnUpdate()
@@ -22,9 +25,15 @@ namespace RB::Players
 		_ResolveCollision();
 	}
 
-	olc::vi2d PlayerCollider::GetPlayerBox()
+	olc::vf2d PlayerCollider::GetPlayerBox()
 	{
-		return _playerBox;
+		return olc::vf2d{ _pBox.mWidth, _pBox.mHeight };
+	}
+
+	void PlayerCollider::SetPlayerBox(olc::vf2d widthHeight)
+	{
+		_pBox.mWidth = widthHeight.x;
+		_pBox.mHeight = widthHeight.y;
 	}
 
 	bool PlayerCollider::IsCollidingAgainstOtherPlayer()

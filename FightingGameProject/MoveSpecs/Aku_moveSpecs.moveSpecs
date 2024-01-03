@@ -1,8 +1,8 @@
 {
     "Aku moveSpecs":
         {
-        "mWalk_Forward_Speed" : 3,
-        "mWalk_Back_Speed" : 2,
+        "mWalk_Forward_Speed" : 3.2,
+        "mWalk_Back_Speed" : 2.2,
         "mJumpUp_totalFrames" : 15,
         "mJumpUp_speedMultiplier" : 28.0,
         "mJumpUp_Forward_totalFrames" : 20,

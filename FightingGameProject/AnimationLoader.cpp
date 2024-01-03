@@ -36,7 +36,7 @@ namespace RB::Render
 
 			if (p != nullptr)
 			{
-				olc::vi2d pos = p->GetPosition();
+				olc::vf2d pos = p->GetPosition();
 
 				(*i)->SetWorldPos(pos);
 			}

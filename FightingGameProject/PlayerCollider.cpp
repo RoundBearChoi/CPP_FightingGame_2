@@ -41,9 +41,14 @@ namespace RB::Players
 		return _isCollidingAgainstOtherPlayer;
 	}
 
-	RB::Collisions::AABB& PlayerCollider::GetAABB()
+	const RB::Collisions::AABB& PlayerCollider::GetAABB()
 	{
 		return _aabb;
+	}
+
+	RB::Collisions::AABB* PlayerCollider::GetAABB_ptr()
+	{
+		return &_aabb;
 	}
 
 	void PlayerCollider::_UpdateAABBOnPlayerPos()
@@ -73,12 +78,12 @@ namespace RB::Players
 			return;
 		}
 
-		RB::Collisions::AABB& otherAABB = other->GetPlayerCollider()->GetAABB();
-		RB::Collisions::AABB& myAABB = _aabb;
+		RB::Collisions::AABB* otherAABB = other->GetPlayerCollider()->GetAABB_ptr();
+		RB::Collisions::AABB* myAABB = &_aabb;
 
 		olc::vf2d col;
 
-		if (myAABB.IsCollidingAgainst(otherAABB, col))
+		if (myAABB->IsCollidingAgainst(*otherAABB, col))
 		{
 			_isCollidingAgainstOtherPlayer = true;
 

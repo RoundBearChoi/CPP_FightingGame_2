@@ -18,6 +18,7 @@ namespace RB::Players
 		virtual olc::vf2d GetPlayerBox() = 0;
 		virtual void SetPlayerBox(olc::vf2d widthHeight) = 0;
 		virtual bool IsCollidingAgainstOtherPlayer() = 0;
-		virtual RB::Collisions::AABB& GetAABB() = 0;
+		virtual const RB::Collisions::AABB& GetAABB() = 0;
+		virtual RB::Collisions::AABB* GetAABB_ptr() = 0;
 	};
 }

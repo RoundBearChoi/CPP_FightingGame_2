@@ -29,7 +29,8 @@ namespace RB::Players
 		olc::vf2d GetPlayerBox() override;
 		void SetPlayerBox(olc::vf2d widthHeight) override;
 		bool IsCollidingAgainstOtherPlayer() override;
-		RB::Collisions::AABB& GetAABB() override;
+		const RB::Collisions::AABB& GetAABB() override;
+		RB::Collisions::AABB* GetAABB_ptr() override;
 
 	private:
 		void _UpdateAABBOnPlayerPos();

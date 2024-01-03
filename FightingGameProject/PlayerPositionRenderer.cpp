@@ -54,8 +54,9 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Collisions::AABB& aabb = player->GetPlayerCollider()->GetAABB();
+		RB::Collisions::AABB* aabb = player->GetPlayerCollider()->GetAABB_ptr();
+		olc::vf2d bottomLeft = aabb->GetBottomLeft();
 
-		_lineRenderer->RenderLine(aabb.GetBottomLeft() - olc::vi2d{ 15, 0 }, aabb.GetBottomLeft(), olc::RED);
+		_lineRenderer->RenderLine(bottomLeft - olc::vi2d{ 15, 0 }, bottomLeft, olc::RED);
 	}
 }

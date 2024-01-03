@@ -4,7 +4,7 @@
 
 namespace RB::Render
 {
-	void LineRenderer::RenderLine(olc::vf2d p1, olc::vf2d p2, olc::Pixel tint)
+	void LineRenderer::RenderLine(const olc::vf2d& p1, const olc::vf2d& p2, olc::Pixel tint)
 	{
 		if (RB::Cam::iCamController::instance == nullptr)
 		{

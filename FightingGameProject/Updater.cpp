@@ -6,6 +6,7 @@
 #include "olcPixelGameEngine.h"
 
 #include "GameplayUpdater.h"
+#include "PlayerBoxEditorUpdater.h"
 #include "HitBoxEditorUpdater.h"
 #include "HurtBoxEditorUpdater.h"
 
@@ -76,6 +77,7 @@ namespace RB::Updaters
 	{
 		olc::HWButton f11 = olc::Platform::ptrPGE->GetKey(olc::Key::F11);
 
+		olc::HWButton f6 = olc::Platform::ptrPGE->GetKey(olc::Key::F6);
 		olc::HWButton f7 = olc::Platform::ptrPGE->GetKey(olc::Key::F7);
 		olc::HWButton f8 = olc::Platform::ptrPGE->GetKey(olc::Key::F8);
 
@@ -87,6 +89,14 @@ namespace RB::Updaters
 			}
 		}
 		
+		if (f6.bPressed)
+		{
+			if (QueueUpdaterObj(new PlayerBoxEditorUpdater()))
+			{
+				return;
+			}
+		}
+
 		if (f7.bPressed)
 		{
 			if (QueueUpdaterObj(new HitBoxEditorUpdater()))

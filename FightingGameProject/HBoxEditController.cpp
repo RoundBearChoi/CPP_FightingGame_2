@@ -32,7 +32,7 @@ namespace RB::HBox
 		_SaveHBoxes_OnPress();
 		_Add_Delete_AABB_OnPress();
 		_EditAABB_OnPress(RB::Players::PlayerID::PLAYER_1);
-		_RenderCircleOnAABB(RB::Players::PlayerID::PLAYER_1);
+		_RenderCircleOnHBox(RB::Players::PlayerID::PLAYER_1);
 	}
 
 	void HBoxEditController::OnFixedUpdate()
@@ -155,7 +155,7 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_RenderCircleOnAABB(RB::Players::PlayerID playerID)
+	void HBoxEditController::_RenderCircleOnHBox(RB::Players::PlayerID playerID)
 	{
 		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
 

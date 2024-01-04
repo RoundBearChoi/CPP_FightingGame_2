@@ -24,7 +24,7 @@ namespace RB::HBox
 
 	private:
 		bool _ControllersExist();
-		void _RenderCircleOnAABB(RB::Players::PlayerID playerID);
+		void _RenderCircleOnHBox(RB::Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress();
 		void _EditAABB_OnPress(RB::Players::PlayerID playerID);
 		void _SaveHBoxes_OnPress();

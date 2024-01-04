@@ -41,4 +41,9 @@ namespace RB::Render
 		_playerPositionRenderer.OnFixedUpdate();
 		_playerInputRenderer.OnFixedUpdate();
 	}
+
+	void PlayerDebugController::RenderPlayerBox(bool render)
+	{
+		_playerBoxRenderer.RenderPlayerBox(render);
+	}
 }

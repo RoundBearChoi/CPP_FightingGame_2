@@ -22,6 +22,8 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
+		void RenderPlayerBox(bool render) override;
+
 	private:
 		RB::Sprites::SpriteLoader _spriteLoader;
 		RB::Render::LineRenderer _lineRenderer;

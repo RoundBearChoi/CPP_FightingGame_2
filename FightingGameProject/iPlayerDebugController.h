@@ -9,5 +9,7 @@ namespace RB::Render
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
+
+		virtual void RenderPlayerBox(bool render) = 0;
 	};
 }

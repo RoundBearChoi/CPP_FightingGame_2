@@ -16,6 +16,11 @@ namespace RB::Render
 			return;
 		}
 
+		if (!_renderPlayerBox)
+		{
+			return;
+		}
+
 		for (int i = 0; i < 2; i++)
 		{
 			RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(i);
@@ -42,5 +47,10 @@ namespace RB::Render
 	void PlayerBoxRenderer::OnFixedUpdate()
 	{
 
+	}
+
+	void PlayerBoxRenderer::RenderPlayerBox(bool render)
+	{
+		_renderPlayerBox = render;
 	}
 }

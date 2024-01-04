@@ -14,7 +14,10 @@ namespace RB::Render
 		void OnUpdate();
 		void OnFixedUpdate();
 
+		void RenderPlayerBox(bool render);
+
 	private:
 		RB::Sprites::SpriteLoader* _spriteLoader = nullptr;
+		bool _renderPlayerBox = true;
 	};
 }

@@ -4,6 +4,7 @@
 #include "AABB_Set.h"
 #include "Loaded_HB_Data.h"
 #include "PlayerID.h"
+#include "CircleRenderer.h"
 
 namespace RB::HBox
 {
@@ -30,5 +31,6 @@ namespace RB::HBox
 
 	private:
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
+		RB::Render::CircleRenderer _circleRenderer;
 	};
 }

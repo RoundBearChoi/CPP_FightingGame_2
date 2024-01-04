@@ -148,6 +148,7 @@
     <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
+    <ClCompile Include="CircleRenderer.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
     <ClCompile Include="DoNotFixDirectionDuringState.cpp" />
@@ -256,6 +257,7 @@
     <ClInclude Include="AttackRegisterController.h" />
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
+    <ClInclude Include="CircleRenderer.h" />
     <ClInclude Include="ControllerBase.h" />
     <ClInclude Include="ControllerT.h" />
     <ClInclude Include="DetectHit.h" />

@@ -373,6 +373,9 @@
     <ClCompile Include="PlayerBoxEditController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
+    <ClCompile Include="CircleRenderer.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -830,6 +833,9 @@
     </ClInclude>
     <ClInclude Include="iPlayerBoxEditController.h">
       <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleRenderer.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -119,7 +119,7 @@ namespace RB::PlayerStates
 		return _spriteEnum;
 	}
 
-	void PlayerState::UpdatePlayerBox()
+	void PlayerState::AutoUpdatePlayerBox()
 	{
 		RB::Players::iPlayer* player = GetPlayer();
 

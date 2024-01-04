@@ -38,7 +38,7 @@ namespace RB::Players
 				{
 					if ((*j)->GetStateID() == (*i)->GetStateMachine()->GetCurrentState()->GetStateID())
 					{
-						(*j)->UpdatePlayerBox();
+						(*j)->AutoUpdatePlayerBox();
 					}
 				}
 			}

@@ -367,6 +367,9 @@
     <ClCompile Include="Notification.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerBoxEditorUpdater.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -815,6 +818,9 @@
     </ClInclude>
     <ClInclude Include="Notification.h">
       <Filter>Source Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBoxEditorUpdater.h">
+      <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

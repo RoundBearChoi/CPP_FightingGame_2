@@ -179,6 +179,7 @@
     <ClCompile Include="HBoxDataListPath.h" />
     <ClCompile Include="P0_StandUp.cpp" />
     <ClCompile Include="PlayerBoxDataController.cpp" />
+    <ClCompile Include="PlayerBoxEditorUpdater.cpp" />
     <ClCompile Include="PlayerBoxSpecs.cpp" />
     <ClCompile Include="PlayerBoxSpecsLoader.cpp" />
     <ClCompile Include="_HBoxLoader.cpp" />
@@ -315,6 +316,7 @@
     <ClInclude Include="P0_StandUp.h" />
     <ClInclude Include="PlayerBox.h" />
     <ClInclude Include="PlayerBoxDataController.h" />
+    <ClInclude Include="PlayerBoxEditorUpdater.h" />
     <ClInclude Include="PlayerBoxSpecs.h" />
     <ClInclude Include="PlayerBoxSpecsLoader.h" />
     <ClInclude Include="_HBoxLoader.h" />

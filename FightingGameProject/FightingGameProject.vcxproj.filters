@@ -370,6 +370,9 @@
     <ClCompile Include="PlayerBoxEditorUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerBoxEditController.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -821,6 +824,12 @@
     </ClInclude>
     <ClInclude Include="PlayerBoxEditorUpdater.h">
       <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBoxEditController.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="iPlayerBoxEditController.h">
+      <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

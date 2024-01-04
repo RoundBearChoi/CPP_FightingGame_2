@@ -9,6 +9,7 @@
 #include "PlayerDebugController.h"
 #include "SpriteDataController.h"
 #include "InputController.h"
+#include "PlayerBoxEditController.h"
 
 #include "Player.h"
 
@@ -35,6 +36,8 @@ namespace RB::Updaters
 
 		RB::Controllers::ControllerBase::AddController<RB::Sprites::SpriteDataController>(new RB::Sprites::SpriteDataController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
+
+		RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxEditController>(new RB::Collisions::PlayerBoxEditController());
 
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
 

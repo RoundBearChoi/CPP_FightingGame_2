@@ -86,7 +86,9 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Collisions::PlayerBox* currentBox)
 	{
+		PlayerBoxSpecs* specs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
 
+		
 	}
 
 	void PlayerBoxEditController::_SaveOnPress()

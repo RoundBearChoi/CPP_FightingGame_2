@@ -30,6 +30,5 @@ namespace RB::Collisions
 	void PlayerBoxDataController::AddSpecs(PlayerBox box, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType)
 	{
 		_playerBoxSpecsLoader.AddSpecs(box, spriteType, characterType);
-		_playerBoxSpecsLoader.RefreshInterators();
 	}
 }

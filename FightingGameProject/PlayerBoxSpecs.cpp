@@ -23,11 +23,6 @@ namespace RB::Collisions
 		_selector.OnFixedUpdate();
 	}
 
-	void PlayerBoxSpecs::SetSpriteType(RB::Sprites::SpriteEnum spriteEnum)
-	{
-		_spriteType = spriteEnum;
-	}
-
 	void PlayerBoxSpecs::AddBox(PlayerBox box)
 	{
 		GetSelector()->PushBack(box);

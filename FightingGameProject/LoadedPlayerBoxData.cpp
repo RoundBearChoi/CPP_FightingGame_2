@@ -28,11 +28,6 @@ namespace RB::Collisions
 		RefreshIterators();
 	}
 
-	//void LoadedPlayerBoxData::SetCharacterType(RB::Players::CharacterType characterType)
-	//{
-	//	_characterType = characterType;
-	//}
-
 	RB::Players::CharacterType LoadedPlayerBoxData::GetCharacterType()
 	{
 		return _characterType;

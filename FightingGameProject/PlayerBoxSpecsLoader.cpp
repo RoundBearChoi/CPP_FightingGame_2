@@ -62,17 +62,6 @@ namespace RB::Collisions
 			float offsetY = RB::JSON::GetFloat_FromElement(*e1);
 			float width = RB::JSON::GetFloat_FromElement(*e2);
 			float height = RB::JSON::GetFloat_FromElement(*e3);
-		
-			//PlayerBox newBox;
-			//newBox.mFrame = frame;
-			//newBox.mOffsetX = offsetX;
-			//newBox.mOffsetY = offsetY;
-			//newBox.mWidth = width;
-			//newBox.mHeight = height;
-
-			//PlayerBoxSpecs newSpecs;
-			//newSpecs.SetSpriteType(spriteType);
-			//newSpecs.GetSelector()->PushBack(PlayerBox(frame, offsetX, offsetY, width, height));
 
 			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 
@@ -140,9 +129,6 @@ namespace RB::Collisions
 
 			if (existingSpecs == nullptr)
 			{
-				//PlayerBoxSpecs newSpecs;
-				//newSpecs.SetSpriteType(spriteType);
-				//newSpecs.AddBox(box);
 				loaded->Add(PlayerBoxSpecs(spriteType, box));
 			}
 			else

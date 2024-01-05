@@ -5,6 +5,7 @@
 #include "iPlayerController.h"
 #include "iPlayerBoxDataController.h"
 #include "iPlayerAnimationController.h"
+#include "iPlayerDebugController.h"
 
 namespace RB::Collisions
 {
@@ -16,6 +17,15 @@ namespace RB::Collisions
 	void PlayerBoxEditController::OnUpdate()
 	{
 		PlayerBox* currentBox = _GetPlayerBox(RB::Players::PlayerID::PLAYER_1);
+
+		if (currentBox == nullptr)
+		{
+			RB::Render::iPlayerDebugController::instance->RenderPlayerBox(false);
+		}
+		else
+		{
+			RB::Render::iPlayerDebugController::instance->RenderPlayerBox(true);
+		}
 	}
 
 	void PlayerBoxEditController::OnFixedUpdate()

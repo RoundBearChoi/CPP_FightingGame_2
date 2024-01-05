@@ -132,7 +132,7 @@ namespace RB::Collisions
 			}
 			else
 			{
-				int test = 0;
+				existingSpecs->AddBox(box);
 			}
 		}
 	}

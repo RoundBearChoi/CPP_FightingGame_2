@@ -17,8 +17,6 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::OnUpdate()
 	{
-		//PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
-		//PlayerBox* currentBox = currentSpecs->GetBox_ptr(_GetCurrentFrame(RB::Players::PlayerID::PLAYER_1));
 		PlayerBox* currentBox = _GetCurrentBox(RB::Players::PlayerID::PLAYER_1);
 
 		if (currentBox == nullptr)
@@ -97,7 +95,7 @@ namespace RB::Collisions
 		{
 			if (currentSpecs == nullptr)
 			{
-				RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(PlayerBox(0, 0.0f, 0.0f, 62.0f, 124.0f), _GetCurrentSpriteType(id), RB::Players::iPlayerController::instance->GetPlayerOnID(id)->GetCharacterType());
+				RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), _GetCurrentSpriteType(id), RB::Players::iPlayerController::instance->GetPlayerOnID(id)->GetCharacterType());
 			}
 		}
 

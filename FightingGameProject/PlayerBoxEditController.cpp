@@ -141,23 +141,9 @@ namespace RB::Collisions
 			return nullptr;
 		}
 	
-		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
+		RB::Collisions::PlayerBox* box = loaded->GetSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
 	
-		if (specs == nullptr)
-		{
-			return nullptr;
-		}
-	
-		auto* box = specs->GetBox_ptr(_GetCurrentFrame(id));
-	
-		if (box != nullptr)
-		{
-			return box;
-		}
-		else
-		{
-			return nullptr;
-		}
+		return box;
 	}
 
 	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(RB::Players::PlayerID id)
@@ -178,7 +164,7 @@ namespace RB::Collisions
 			return nullptr;
 		}
 
-		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
+		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_GetCurrentSpriteType(id));
 
 		return specs;
 	}

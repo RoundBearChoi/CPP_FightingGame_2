@@ -2,6 +2,7 @@
 
 #include <vector>
 
+#include "PlayerBox.h"
 #include "PlayerBoxSpecs.h"
 #include "CharacterType.h"
 
@@ -20,7 +21,7 @@ namespace RB::Collisions
 		void SetCharacterType(RB::Players::CharacterType characterType);
 		RB::Players::CharacterType GetCharacterType();
 		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType);
-		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame);
+		PlayerBox* GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame);
 		void EraseSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame);
 		void RefreshIterators();
 

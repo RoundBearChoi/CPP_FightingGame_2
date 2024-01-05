@@ -146,15 +146,13 @@ namespace RB::PlayerStates
 
 		unsigned int animationIndex = iAniObj->GetCurrentIndex();
 
-		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_spriteEnum, animationIndex);
+		RB::Collisions::PlayerBox* box = loaded->GetSpecs(_spriteEnum, animationIndex);
 
-		if (specs == nullptr)
+		if (box == nullptr)
 		{
 			return;
 		}
 
-		const auto& box = specs->GetBox(animationIndex);
-
-		player->GetPlayerCollider()->SetPlayerBox(box);
+		player->GetPlayerCollider()->SetPlayerBox(*box);
 	}
 }

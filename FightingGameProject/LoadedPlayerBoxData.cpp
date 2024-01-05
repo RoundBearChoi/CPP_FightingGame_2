@@ -40,19 +40,19 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	PlayerBoxSpecs* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
+	PlayerBox* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
 			if (i->GetSpriteType() == spriteType)
 			{
-				const auto& vec = i->GetSelector()->GetVector();
+				auto* vec = i->GetSelector()->GetVector_ptr();
 
-				for (auto j = vec.begin(); j != vec.end(); j++)
+				for (auto j = vec->begin(); j != vec->end(); j++)
 				{
 					if (j->mFrame == frame)
 					{
-						return &(*i);
+						return &(*j);
 					}
 				}
 			}

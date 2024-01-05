@@ -37,9 +37,9 @@ namespace RB::Collisions
 
 	}
 
-	void PlayerBoxEditController::_UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* box)
+	void PlayerBoxEditController::_UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* currentBox)
 	{
-		if (box == nullptr)
+		if (currentBox == nullptr)
 		{
 			return;
 		}
@@ -54,33 +54,38 @@ namespace RB::Collisions
 
 		if (uButton.bHeld)
 		{
-			box->mHeight += sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mHeight += sizeAmount * RB::Frames::Time::GetDeltaTime();
 		}
 
 		if (jButton.bHeld)
 		{
-			box->mHeight -= sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mHeight -= sizeAmount * RB::Frames::Time::GetDeltaTime();
 		}
 
 		if (hButton.bHeld)
 		{
-			box->mWidth -= sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mWidth -= sizeAmount * RB::Frames::Time::GetDeltaTime();
 		}
 
 		if (kButton.bHeld)
 		{
-			box->mWidth += sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mWidth += sizeAmount * RB::Frames::Time::GetDeltaTime();
 		}
 
-		if (box->mHeight <= 0.0f)
+		if (currentBox->mHeight <= 0.0f)
 		{
-			box->mHeight = 0.0f;
+			currentBox->mHeight = 0.0f;
 		}
 
-		if (box->mWidth <= 0.0f)
+		if (currentBox->mWidth <= 0.0f)
 		{
-			box->mWidth = 0.0f;
+			currentBox->mWidth = 0.0f;
 		}
+	}
+
+	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Collisions::PlayerBox* currentBox)
+	{
+
 	}
 
 	void PlayerBoxEditController::_SaveOnPress()

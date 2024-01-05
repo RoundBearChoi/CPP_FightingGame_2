@@ -19,7 +19,8 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 	private:
-		void _UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* box);
+		void _UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* currentBox);
+		void _AddDeleteBoxOnPress(RB::Collisions::PlayerBox* currentBox);
 		void _SaveOnPress();
 
 	private:

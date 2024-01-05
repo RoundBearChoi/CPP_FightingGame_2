@@ -21,10 +21,9 @@ namespace RB::Collisions
 
 		if (root == nullptr)
 		{
-			int nodata = 0;
 			//LoadedPlayerBoxData newData;
 			//newData.SetCharacterType(characterType);
-			//_vecLoadedSpecs.push_back(newData);
+			//_vecLoadedSpecs.push_back();
 
 			return;
 		}

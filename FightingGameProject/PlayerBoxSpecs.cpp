@@ -14,6 +14,11 @@ namespace RB::Collisions
 		_spriteType = spriteEnum;
 	}
 
+	void PlayerBoxSpecs::AddBox(PlayerBox box)
+	{
+		GetSelector()->PushBack(box);
+	}
+
 	RB::Sprites::SpriteEnum PlayerBoxSpecs::GetSpriteType()
 	{
 		return _spriteType;
@@ -69,10 +74,5 @@ namespace RB::Collisions
 		}
 
 		return nullptr;
-	}
-
-	void PlayerBoxSpecs::AddBox(PlayerBox box)
-	{
-		GetSelector()->PushBack(box);
 	}
 }

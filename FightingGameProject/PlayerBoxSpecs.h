@@ -16,12 +16,12 @@ namespace RB::Collisions
 		void OnFixedUpdate();
 
 		void SetSpriteType(RB::Sprites::SpriteEnum spriteEnum);
+		void AddBox(PlayerBox box);
 		RB::Sprites::SpriteEnum GetSpriteType();
 		RB::iSelector<PlayerBox>* GetSelector();
 		bool BoxExists(unsigned int frame);
 		const RB::Collisions::PlayerBox& GetBox(unsigned int frame);
 		RB::Collisions::PlayerBox* GetBox_ptr(unsigned int frame);
-		void AddBox(PlayerBox box);
 
 	private:
 		RB::Selector<PlayerBox> _selector;

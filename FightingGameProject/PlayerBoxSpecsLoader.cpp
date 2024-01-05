@@ -22,6 +22,9 @@ namespace RB::Collisions
 		if (root == nullptr)
 		{
 			int nodata = 0;
+			//LoadedPlayerBoxData newData;
+			//newData.SetCharacterType(characterType);
+			//_vecLoadedSpecs.push_back(newData);
 
 			return;
 		}
@@ -79,9 +82,7 @@ namespace RB::Collisions
 			{
 				LoadedPlayerBoxData newData;
 				newData.SetCharacterType(characterType);
-
 				newData.Add(newSpecs);
-
 				_vecLoadedSpecs.push_back(newData);
 			}
 			else

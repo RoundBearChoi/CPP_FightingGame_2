@@ -1,6 +1,7 @@
 #include "PlayerBoxEditController.h"
 
 #include "PlayerState.h"
+#include "Time.h"
 
 #include "iPlayerController.h"
 #include "iPlayerBoxDataController.h"
@@ -42,7 +43,43 @@ namespace RB::Collisions
 			return;
 		}
 
+		olc::HWButton uButton = olc::Platform::ptrPGE->GetKey(olc::U);
+		olc::HWButton jButton = olc::Platform::ptrPGE->GetKey(olc::J);
 
+		olc::HWButton hButton = olc::Platform::ptrPGE->GetKey(olc::H);
+		olc::HWButton kButton = olc::Platform::ptrPGE->GetKey(olc::K);
+
+		float sizeAmount = 40.0f;
+
+		if (uButton.bHeld)
+		{
+			box->mHeight += sizeAmount * RB::Frames::Time::GetDeltaTime();
+		}
+
+		if (jButton.bHeld)
+		{
+			box->mHeight -= sizeAmount * RB::Frames::Time::GetDeltaTime();
+		}
+
+		if (hButton.bHeld)
+		{
+			box->mWidth -= sizeAmount * RB::Frames::Time::GetDeltaTime();
+		}
+
+		if (kButton.bHeld)
+		{
+			box->mWidth += sizeAmount * RB::Frames::Time::GetDeltaTime();
+		}
+
+		if (box->mHeight <= 0.0f)
+		{
+			box->mHeight = 0.0f;
+		}
+
+		if (box->mWidth <= 0.0f)
+		{
+			box->mWidth = 0.0f;
+		}
 	}
 
 	PlayerBox* PlayerBoxEditController::_GetPlayerBox(RB::Players::PlayerID id)

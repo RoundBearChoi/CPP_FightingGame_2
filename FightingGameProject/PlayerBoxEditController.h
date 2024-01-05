@@ -29,6 +29,6 @@ namespace RB::Collisions
 		PlayerBox* _GetCurrentBox(RB::Players::PlayerID id);
 		PlayerBoxSpecs* _GetCurrentSpecs(RB::Players::PlayerID id);
 		RB::Sprites::SpriteEnum _GetCurrentSpriteType(RB::Players::PlayerID id);
-		
+		unsigned int _GetCurrentFrame(RB::Players::PlayerID id);
 	};
 }

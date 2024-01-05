@@ -19,7 +19,6 @@ namespace RB::Collisions
 			void OnFixedUpdate() override;
 
 			LoadedPlayerBoxData* GetLoadedData(RB::Players::CharacterType characterType) override;
-			PlayerBoxSpecs* AddSpecs(RB::Collisions::PlayerBoxSpecs specs) override;
 
 	private:
 		PlayerBoxSpecsLoader _playerBoxSpecsLoader;

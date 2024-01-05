@@ -29,6 +29,7 @@ namespace RB::Collisions
 		}
 
 		_UpdateBoxSizeOnPress(currentBox);
+		_AddDeleteBoxOnPress(currentBox);
 		_SaveOnPress();
 	}
 

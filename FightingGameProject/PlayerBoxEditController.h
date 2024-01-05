@@ -3,6 +3,7 @@
 #include "iPlayerBoxEditController.h"
 
 #include "PlayerBox.h"
+#include "PlayerBoxSpecs.h"
 #include "PlayerID.h"
 
 namespace RB::Collisions
@@ -24,6 +25,7 @@ namespace RB::Collisions
 		void _SaveOnPress();
 
 	private:
-		PlayerBox* _GetPlayerBox(RB::Players::PlayerID id);
+		PlayerBox* _GetCurrentBox(RB::Players::PlayerID id);
+		PlayerBoxSpecs* _GetCurrentSpecs(RB::Players::PlayerID id);
 	};
 }

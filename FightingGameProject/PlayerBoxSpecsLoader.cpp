@@ -113,19 +113,24 @@ namespace RB::Collisions
 
 	void PlayerBoxSpecsLoader::AddSpecs(PlayerBox box, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType)
 	{
-		LoadedPlayerBoxData* existing = GetLoadedSpecs(characterType);
+		LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
 
-		if (existing == nullptr)
+		if (loaded == nullptr)
 		{
-			//RB::Sprites::SpriteEnum spriteType = specs.GetSpriteType();
-			//
-			//LoadedPlayerBoxData newData;
-			//newData.SetCharacterType(characterType);
-			//newData.Add(specs);
+
 		}
 		else
 		{
-			//existing->GetSpecs(specs->GetSpriteType(), )
+			PlayerBoxSpecs* existingSpecs = loaded->GetSpecs(spriteType);
+
+			if (existingSpecs == nullptr)
+			{
+
+			}
+			else
+			{
+				int test = 0;
+			}
 		}
 	}
 }

@@ -4,11 +4,6 @@
 
 namespace RB::Render
 {
-	void Notification::Init()
-	{
-
-	}
-
 	void Notification::OnUpdate(const std::string& message)
 	{
 		if (_frameCount > 0)

@@ -16,6 +16,7 @@ namespace RB::Collisions
 		~LoadedPlayerBoxData() = default;
 
 	public:
+		void OnUpdate();
 		void OnFixedUpdate();
 
 	public:

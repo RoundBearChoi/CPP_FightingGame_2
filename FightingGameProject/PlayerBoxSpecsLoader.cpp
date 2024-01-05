@@ -5,6 +5,14 @@
 
 namespace RB::Collisions
 {
+	void PlayerBoxSpecsLoader::OnUpdate()
+	{
+		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)
+		{
+			i->OnUpdate();
+		}
+	}
+
 	void PlayerBoxSpecsLoader::OnFixedUpdate()
 	{
 		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)

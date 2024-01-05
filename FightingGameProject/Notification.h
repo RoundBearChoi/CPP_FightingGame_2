@@ -10,7 +10,6 @@ namespace RB::Render
 		Notification() = default;
 		~Notification() = default;
 
-		void Init();
 		void OnUpdate(const std::string& message);
 		void OnFixedUpdate();
 

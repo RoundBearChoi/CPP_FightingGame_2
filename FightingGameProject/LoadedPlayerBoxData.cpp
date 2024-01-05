@@ -13,6 +13,14 @@ namespace RB::Collisions
 		Add(specs);
 	}
 
+	void LoadedPlayerBoxData::OnUpdate()
+	{
+		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
+		{
+			i->OnUpdate();
+		}
+	}
+
 	void LoadedPlayerBoxData::OnFixedUpdate()
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)

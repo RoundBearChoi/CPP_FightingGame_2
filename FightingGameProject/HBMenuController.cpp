@@ -13,7 +13,7 @@ namespace RB::HBox
 {
 	void HBMenuController::Init()
 	{
-		_notification.Init();
+
 	}
 
 	void HBMenuController::OnUpdate()

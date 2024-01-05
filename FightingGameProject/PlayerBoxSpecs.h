@@ -5,6 +5,7 @@
 #include "SpriteEnum.h"
 #include "Selector.h"
 #include "PlayerBox.h"
+#include "Notification.h"
 
 namespace RB::Collisions
 {
@@ -16,6 +17,7 @@ namespace RB::Collisions
 		~PlayerBoxSpecs() = default;
 
 	public:
+		void OnUpdate();
 		void OnFixedUpdate();
 
 	public:
@@ -32,5 +34,6 @@ namespace RB::Collisions
 		RB::Selector<PlayerBox> _selector;
 		RB::Sprites::SpriteEnum _spriteType = RB::Sprites::SpriteEnum::NONE;
 		const RB::Collisions::PlayerBox _emptyBox{ 0, 0.0f, 0.0f, 0.0f, 0.0f };
+		RB::Render::Notification _notification;
 	};
 }

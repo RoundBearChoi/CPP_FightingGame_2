@@ -18,6 +18,12 @@ namespace RB::Collisions
 		_selector.PushBack(box);
 	}
 
+	void PlayerBoxSpecs::OnUpdate()
+	{
+		_notification.OnUpdate("File saved: " + _path);
+		_selector.OnUpdate();
+	}
+
 	void PlayerBoxSpecs::OnFixedUpdate()
 	{
 		_selector.OnFixedUpdate();

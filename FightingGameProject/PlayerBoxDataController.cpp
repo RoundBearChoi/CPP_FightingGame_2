@@ -15,7 +15,7 @@ namespace RB::Collisions
 
 	void PlayerBoxDataController::OnUpdate()
 	{
-
+		_playerBoxSpecsLoader.OnUpdate();
 	}
 
 	void PlayerBoxDataController::OnFixedUpdate()

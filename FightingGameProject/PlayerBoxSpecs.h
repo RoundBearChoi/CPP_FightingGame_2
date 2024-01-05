@@ -11,6 +11,7 @@ namespace RB::Collisions
 	class PlayerBoxSpecs
 	{
 	public:
+		PlayerBoxSpecs(std::string path, RB::Sprites::SpriteEnum spriteType);
 		PlayerBoxSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, PlayerBox box);
 		~PlayerBoxSpecs() = default;
 

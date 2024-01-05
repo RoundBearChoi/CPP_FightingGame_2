@@ -29,7 +29,7 @@ namespace RB::Collisions
 			}
 			else
 			{
-				//loaded->Add(PlayerBoxSpecs(path, spriteType, PlayerBox(0, 0.0f, 0.0f, 0.0f, 0.0f)));
+				loaded->Add(PlayerBoxSpecs(path, spriteType));
 			}
 
 			return;

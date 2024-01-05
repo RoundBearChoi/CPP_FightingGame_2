@@ -99,7 +99,16 @@ namespace RB::Collisions
 			}
 			else
 			{
-				//do nothing for now (only 1 PlayerBox per sprite)
+				PlayerBox* existingBox = currentSpecs->GetBox_ptr(_GetCurrentFrame(id));
+
+				if (existingBox == nullptr)
+				{
+					currentSpecs->AddBox(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f));
+				}
+				else
+				{
+					//do nothing - only one box per sprite for now
+				}
 			}
 		}
 

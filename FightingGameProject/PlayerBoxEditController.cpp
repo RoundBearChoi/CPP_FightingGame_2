@@ -97,6 +97,10 @@ namespace RB::Collisions
 			{
 				RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), _GetCurrentSpriteType(id), RB::Players::iPlayerController::instance->GetPlayerOnID(id)->GetCharacterType());
 			}
+			else
+			{
+				//do nothing for now (only 1 PlayerBox per sprite)
+			}
 		}
 
 		if (delButton.bPressed)

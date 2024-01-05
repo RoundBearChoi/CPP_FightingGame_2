@@ -125,7 +125,10 @@ namespace RB::Collisions
 
 			if (existingSpecs == nullptr)
 			{
-
+				PlayerBoxSpecs newSpecs;
+				newSpecs.SetSpriteType(spriteType);
+				newSpecs.AddBox(box);
+				loaded->Add(newSpecs);
 			}
 			else
 			{

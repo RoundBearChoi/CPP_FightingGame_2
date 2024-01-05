@@ -93,7 +93,12 @@ namespace RB::Collisions
 
 		if (insButton.bPressed)
 		{
-
+			if (currentSpecs == nullptr)
+			{
+				PlayerBoxSpecs newSpecs;
+				newSpecs.SetSpriteType(_GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+				newSpecs.AddBox(PlayerBox(0, 0.0f, 0.0f, 62.0f, 124.0f));
+			}
 		}
 
 		if (delButton.bPressed)

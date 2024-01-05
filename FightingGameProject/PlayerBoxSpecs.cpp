@@ -66,4 +66,9 @@ namespace RB::Collisions
 
 		return nullptr;
 	}
+
+	void PlayerBoxSpecs::AddBox(PlayerBox box)
+	{
+		GetSelector()->PushBack(box);
+	}
 }

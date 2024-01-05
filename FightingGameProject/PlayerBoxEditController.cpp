@@ -93,11 +93,13 @@ namespace RB::Collisions
 
 		if (insButton.bPressed)
 		{
-			int test = 0;
-
 			if (currentSpecs == nullptr)
 			{
-				
+				PlayerBoxSpecs newSpecs;
+				RB::Sprites::SpriteEnum spriteEnum = _GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
+				newSpecs.SetSpriteType(spriteEnum);
+
+				RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(newSpecs);
 			}
 		}
 
@@ -130,14 +132,7 @@ namespace RB::Collisions
 			return nullptr;
 		}
 
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(id);
-
-		if (state == nullptr)
-		{
-			return nullptr;
-		}
-
-		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteEnum spriteEnum = _GetCurrentSpriteType(id);
 
 		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(id, spriteEnum);
 
@@ -185,14 +180,7 @@ namespace RB::Collisions
 			return nullptr;
 		}
 
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(id);
-
-		if (state == nullptr)
-		{
-			return nullptr;
-		}
-
-		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteEnum spriteEnum = _GetCurrentSpriteType(id);
 
 		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(id, spriteEnum);
 
@@ -206,5 +194,19 @@ namespace RB::Collisions
 		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(spriteEnum, animationIndex);
 
 		return specs;
+	}
+
+	RB::Sprites::SpriteEnum PlayerBoxEditController::_GetCurrentSpriteType(RB::Players::PlayerID id)
+	{
+		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(id);
+
+		if (state == nullptr)
+		{
+			return RB::Sprites::SpriteEnum::NONE;
+		}
+
+		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+
+		return spriteEnum;
 	}
 }

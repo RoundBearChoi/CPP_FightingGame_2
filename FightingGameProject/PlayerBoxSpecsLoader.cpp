@@ -110,4 +110,9 @@ namespace RB::Collisions
 
 		return nullptr;
 	}
+
+	void PlayerBoxSpecsLoader::AddSpecs(RB::Collisions::PlayerBoxSpecs specs)
+	{
+
+	}
 }

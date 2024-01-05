@@ -26,4 +26,9 @@ namespace RB::Collisions
 	{
 		return _playerBoxSpecsLoader.GetLoadedSpecs(characterType);
 	}
+
+	void PlayerBoxDataController::AddSpecs(RB::Collisions::PlayerBoxSpecs specs)
+	{
+		_playerBoxSpecsLoader.AddSpecs(specs);
+	}
 }

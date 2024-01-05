@@ -5,6 +5,7 @@
 #include "PlayerBox.h"
 #include "PlayerBoxSpecs.h"
 #include "PlayerID.h"
+#include "SpriteEnum.h"
 
 namespace RB::Collisions
 {
@@ -27,5 +28,6 @@ namespace RB::Collisions
 	private:
 		PlayerBox* _GetCurrentBox(RB::Players::PlayerID id);
 		PlayerBoxSpecs* _GetCurrentSpecs(RB::Players::PlayerID id);
+		RB::Sprites::SpriteEnum _GetCurrentSpriteType(RB::Players::PlayerID id);
 	};
 }

@@ -4,6 +4,7 @@
 
 #include "LoadedPlayerBoxData.h"
 #include "CharacterType.h"
+#include "PlayerBoxSpecs.h"
 
 namespace RB::Collisions
 {
@@ -15,5 +16,6 @@ namespace RB::Collisions
 		virtual void OnFixedUpdate() = 0;
 
 		virtual LoadedPlayerBoxData* GetLoadedData(RB::Players::CharacterType characterType) = 0;
+		virtual void AddSpecs(RB::Collisions::PlayerBoxSpecs specs) = 0;
 	};
 }

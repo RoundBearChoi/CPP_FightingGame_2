@@ -19,6 +19,9 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 	private:
+		void _UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* box);
+
+	private:
 		PlayerBox* _GetPlayerBox(RB::Players::PlayerID id);
 	};
 }

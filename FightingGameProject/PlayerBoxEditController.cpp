@@ -26,10 +26,22 @@ namespace RB::Collisions
 		{
 			RB::Render::iPlayerDebugController::instance->RenderPlayerBox(true);
 		}
+
+		_UpdateBoxSizeOnPress(currentBox);
 	}
 
 	void PlayerBoxEditController::OnFixedUpdate()
 	{
+
+	}
+
+	void PlayerBoxEditController::_UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* box)
+	{
+		if (box == nullptr)
+		{
+			return;
+		}
+
 
 	}
 

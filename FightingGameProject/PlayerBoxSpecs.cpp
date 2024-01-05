@@ -15,7 +15,7 @@ namespace RB::Collisions
 		_path = path;
 		_spriteType = spriteType;
 
-		GetSelector()->PushBack(box);
+		_selector.PushBack(box);
 	}
 
 	void PlayerBoxSpecs::OnFixedUpdate()
@@ -40,7 +40,7 @@ namespace RB::Collisions
 
 	bool PlayerBoxSpecs::BoxExists(unsigned int frame)
 	{
-		const auto& vec = GetSelector()->GetVector();
+		const auto& vec = _selector.GetVector();
 
 		auto it = vec.begin();
 
@@ -57,7 +57,7 @@ namespace RB::Collisions
 
 	const RB::Collisions::PlayerBox& PlayerBoxSpecs::GetBox(unsigned int frame)
 	{
-		const auto& vec = GetSelector()->GetVector();
+		const auto& vec = _selector.GetVector();
 
 		for (auto i = vec.begin(); i != vec.end(); i++)
 		{
@@ -72,7 +72,7 @@ namespace RB::Collisions
 
 	RB::Collisions::PlayerBox* PlayerBoxSpecs::GetBox_ptr(unsigned int frame)
 	{
-		auto* vec = GetSelector()->GetVector_ptr();
+		auto* vec = _selector.GetVector_ptr();
 
 		for (auto i = vec->begin(); i != vec->end(); i++)
 		{
@@ -83,5 +83,16 @@ namespace RB::Collisions
 		}
 
 		return nullptr;
+	}
+
+	void PlayerBoxSpecs::Save()
+	{
+		if (_path.empty())
+		{
+			//maybe use a temporary location
+			return;
+		}
+
+
 	}
 }

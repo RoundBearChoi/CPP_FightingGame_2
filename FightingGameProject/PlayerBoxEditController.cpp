@@ -129,7 +129,19 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::_SaveOnPress()
 	{
+		olc::HWButton enter = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 
+		if (enter.bPressed)
+		{
+			PlayerBoxSpecs* specs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
+
+			if (specs == nullptr)
+			{
+				return;
+			}
+
+			specs->Save();
+		}
 	}
 
 	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)

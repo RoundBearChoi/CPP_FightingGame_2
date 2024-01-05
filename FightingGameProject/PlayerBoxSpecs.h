@@ -25,6 +25,7 @@ namespace RB::Collisions
 		bool BoxExists(unsigned int frame);
 		const RB::Collisions::PlayerBox& GetBox(unsigned int frame);
 		RB::Collisions::PlayerBox* GetBox_ptr(unsigned int frame);
+		void Save();
 
 	private:
 		std::string _path = "";

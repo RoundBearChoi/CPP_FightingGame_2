@@ -93,6 +93,39 @@ namespace RB::Collisions
 			return;
 		}
 
+		std::ofstream file(_path);
 
+		if (file.is_open())
+		{
+			auto* vec = _selector.GetVector_ptr();
+
+			file << "{" << std::endl;
+
+			for (auto i = vec->begin(); i != vec->end(); i++)
+			{
+				file << "    \"frame_" << i->mFrame << "\":" << std::endl;
+				file << "    [" << std::endl;
+				file << "        {" << std::endl;
+				file << "        \"offsetX\" : " << i->mOffsetX << "," << std::endl;
+				file << "        \"offsetY\" : " << i->mOffsetY << "," << std::endl;
+				file << "        \"width\" : " << i->mWidth << "," << std::endl;
+				file << "        \"height\" : " << i->mHeight << std::endl;
+				file << "        }" << std::endl;
+
+				if (i != vec->end() - 1)
+				{
+					file << "    ]," << std::endl << std::endl;
+				}
+				else
+				{
+					file << "    ]" << std::endl;
+				}
+			}
+
+			file << "}";
+
+			file.flush();
+			file.close();
+		}
 	}
 }

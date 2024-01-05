@@ -5,7 +5,17 @@
         "offsetX" : 0,
         "offsetY" : 0,
         "width" : 62,
-        "height" : 99
+        "height" : 125.086
+        }
+    ],
+
+    "frame_1":
+    [
+        {
+        "offsetX" : 0,
+        "offsetY" : 0,
+        "width" : 62,
+        "height" : 100.149
         }
     ]
 }

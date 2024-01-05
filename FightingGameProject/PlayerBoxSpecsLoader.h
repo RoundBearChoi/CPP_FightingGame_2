@@ -19,7 +19,7 @@ namespace RB::Collisions
 	public:
 		void LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType);
 		LoadedPlayerBoxData* GetLoadedSpecs(RB::Players::CharacterType characterType);
-		void AddSpecs(RB::Collisions::PlayerBoxSpecs specs);
+		PlayerBoxSpecs* AddSpecs(RB::Collisions::PlayerBoxSpecs specs);
 
 	private:
 		std::vector<LoadedPlayerBoxData> _vecLoadedSpecs;

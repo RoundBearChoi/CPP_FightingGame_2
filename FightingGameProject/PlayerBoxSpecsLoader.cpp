@@ -111,8 +111,10 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	void PlayerBoxSpecsLoader::AddSpecs(RB::Collisions::PlayerBoxSpecs specs)
+	PlayerBoxSpecs* PlayerBoxSpecsLoader::AddSpecs(RB::Collisions::PlayerBoxSpecs specs)
 	{
+		return nullptr;
 
+		//_vecLoadedSpecs.push_back(specs);
 	}
 }

@@ -93,13 +93,14 @@ namespace RB::Collisions
 
 		if (insButton.bPressed)
 		{
+			//add new specs if not found
 			if (currentSpecs == nullptr)
 			{
 				PlayerBoxSpecs newSpecs;
 				RB::Sprites::SpriteEnum spriteEnum = _GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
 				newSpecs.SetSpriteType(spriteEnum);
 
-				RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(newSpecs);
+				currentSpecs = RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(newSpecs);
 			}
 		}
 

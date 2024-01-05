@@ -4,6 +4,12 @@
 
 namespace RB::Collisions
 {
+	PlayerBoxSpecs::PlayerBoxSpecs(RB::Sprites::SpriteEnum spriteType, PlayerBox box)
+	{
+		_spriteType = spriteType;
+		GetSelector()->PushBack(box);
+	}
+
 	void PlayerBoxSpecs::OnFixedUpdate()
 	{
 		_selector.OnFixedUpdate();

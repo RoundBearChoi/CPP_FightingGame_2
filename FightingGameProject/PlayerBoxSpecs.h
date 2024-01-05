@@ -9,7 +9,8 @@ namespace RB::Collisions
 	class PlayerBoxSpecs
 	{
 	public:
-		PlayerBoxSpecs() = default;
+		//PlayerBoxSpecs() = default;
+		PlayerBoxSpecs(RB::Sprites::SpriteEnum spriteType, PlayerBox box);
 		~PlayerBoxSpecs() = default;
 
 	public:

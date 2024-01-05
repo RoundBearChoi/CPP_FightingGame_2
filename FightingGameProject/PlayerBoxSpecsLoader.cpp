@@ -70,9 +70,9 @@ namespace RB::Collisions
 			//newBox.mWidth = width;
 			//newBox.mHeight = height;
 
-			PlayerBoxSpecs newSpecs;
-			newSpecs.SetSpriteType(spriteType);
-			newSpecs.GetSelector()->PushBack(PlayerBox(frame, offsetX, offsetY, width, height));
+			//PlayerBoxSpecs newSpecs;
+			//newSpecs.SetSpriteType(spriteType);
+			//newSpecs.GetSelector()->PushBack(PlayerBox(frame, offsetX, offsetY, width, height));
 
 			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 
@@ -81,7 +81,7 @@ namespace RB::Collisions
 			{
 				LoadedPlayerBoxData newData;
 				newData.SetCharacterType(characterType);
-				newData.Add(newSpecs);
+				newData.Add(PlayerBoxSpecs(spriteType, PlayerBox(frame, offsetX, offsetY, width, height)));
 				_vecLoadedSpecs.push_back(newData);
 			}
 			else
@@ -103,7 +103,7 @@ namespace RB::Collisions
 				else
 				{
 					//add new specs if data is found but no existing specs for the spriteType
-					loadedData->Add(newSpecs);
+					loadedData->Add(PlayerBoxSpecs(spriteType, PlayerBox(frame, offsetX, offsetY, width, height)));
 				}
 			}
 
@@ -140,10 +140,10 @@ namespace RB::Collisions
 
 			if (existingSpecs == nullptr)
 			{
-				PlayerBoxSpecs newSpecs;
-				newSpecs.SetSpriteType(spriteType);
-				newSpecs.AddBox(box);
-				loaded->Add(newSpecs);
+				//PlayerBoxSpecs newSpecs;
+				//newSpecs.SetSpriteType(spriteType);
+				//newSpecs.AddBox(box);
+				loaded->Add(PlayerBoxSpecs(spriteType, box));
 			}
 			else
 			{

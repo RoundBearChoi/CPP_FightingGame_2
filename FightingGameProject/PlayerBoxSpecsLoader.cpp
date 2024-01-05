@@ -19,6 +19,13 @@ namespace RB::Collisions
 
 		json_value_s* root = json_parse(loaded.c_str(), loaded.length());
 
+		if (root == nullptr)
+		{
+			int nodata = 0;
+
+			return;
+		}
+
 		json_object_s* jObj = json_value_as_object(root);
 
 		json_object_element_s* element = jObj->start;

@@ -17,6 +17,7 @@ namespace RB::Collisions
 	public:
 		void OnFixedUpdate();
 
+	public:
 		void Add(PlayerBoxSpecs specs);
 		void SetCharacterType(RB::Players::CharacterType characterType);
 		RB::Players::CharacterType GetCharacterType();
@@ -26,7 +27,6 @@ namespace RB::Collisions
 		void RefreshIterators();
 
 	private:
-
 		std::vector<PlayerBoxSpecs> _vecSpecs;
 		RB::Players::CharacterType _characterType = RB::Players::CharacterType::NONE;
 	};

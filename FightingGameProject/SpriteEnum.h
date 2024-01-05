@@ -34,7 +34,7 @@ namespace RB::Sprites
 		aku_jump_up_1,
 		aku_jump_forward_up_0, //up
 		aku_jump_forward_up_1, //down
-		aku_0_jab,
+		aku_jab,
 		aku_wince,
 		aku_hadouken,
 

@@ -22,7 +22,7 @@ namespace RB::Render
 		_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteEnum::aku_jump_up_1);
 		_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_0.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_0);
 		_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_1.png", RB::Sprites::SpriteEnum::aku_jump_forward_up_1);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_jab.png", RB::Sprites::SpriteEnum::aku_0_jab);
+		_animationLoader.LoadSprite("PNG files/Aku/aku_jab.png", RB::Sprites::SpriteEnum::aku_jab);
 		_animationLoader.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteEnum::aku_wince);
 		_animationLoader.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteEnum::aku_hadouken);
 
@@ -36,7 +36,7 @@ namespace RB::Render
 		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_up_1);
 		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_forward_up_0);
 		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"), RB::Sprites::SpriteEnum::aku_jump_forward_up_1);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::aku_0_jab);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteEnum::aku_jab);
 		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"), RB::Sprites::SpriteEnum::aku_wince);
 		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"), RB::Sprites::SpriteEnum::aku_hadouken);
 	}

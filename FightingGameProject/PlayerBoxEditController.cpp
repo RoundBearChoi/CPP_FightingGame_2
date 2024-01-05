@@ -105,7 +105,15 @@ namespace RB::Collisions
 
 		if (delButton.bPressed)
 		{
+			if (currentSpecs == nullptr)
+			{
+				//nothing to delete	
+			}
+			else
+			{
+				RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedData(_GetCharacterType(id));
 
+			}
 		}
 	}
 
@@ -172,6 +180,15 @@ namespace RB::Collisions
 		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
 
 		return specs;
+	}
+
+	RB::Players::CharacterType PlayerBoxEditController::_GetCharacterType(RB::Players::PlayerID id)
+	{
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(id);
+
+		RB::Players::CharacterType characterType = player->GetCharacterType();
+
+		return characterType;
 	}
 
 	RB::Sprites::SpriteEnum PlayerBoxEditController::_GetCurrentSpriteType(RB::Players::PlayerID id)

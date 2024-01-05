@@ -67,13 +67,14 @@ namespace RB::Collisions
 		{
 			if (i->GetSpriteType() == spriteType)
 			{
-				const auto& vec = i->GetSelector()->GetVector();
+				auto* vec = i->GetSelector()->GetVector_ptr();
 
-				for (auto j = vec.begin(); j != vec.end(); j++)
+				for (auto j = vec->begin(); j != vec->end(); j++)
 				{
 					if (j->mFrame == frame)
 					{
-						i->GetSelector()->EraseSelected();
+						vec->erase(j);
+
 						return;
 					}
 				}

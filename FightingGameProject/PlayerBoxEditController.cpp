@@ -113,6 +113,7 @@ namespace RB::Collisions
 			{
 				RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedData(_GetCharacterType(id));
 				loaded->EraseSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
+				loaded->RefreshIterators();
 			}
 		}
 	}

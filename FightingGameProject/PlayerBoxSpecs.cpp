@@ -24,7 +24,7 @@ namespace RB::Collisions
 		return &_selector;
 	}
 
-	bool PlayerBoxSpecs::BoxExists(unsigned int frame, PlayerBox& box)
+	bool PlayerBoxSpecs::BoxExists(unsigned int frame)
 	{
 		const auto& vec = GetSelector()->GetVector();
 
@@ -34,7 +34,6 @@ namespace RB::Collisions
 		{
 			if (i->mFrame == frame)
 			{
-				box = *i;
 				return true;
 			}
 		}

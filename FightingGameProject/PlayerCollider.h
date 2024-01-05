@@ -40,7 +40,7 @@ namespace RB::Players
 	private:
 		iPlayer* _player = nullptr;
 		bool _isCollidingAgainstOtherPlayer = false;
-		RB::Collisions::PlayerBox _pBox;
+		RB::Collisions::PlayerBox _playerBox{ 0, 0.0f, 0.0f, 0.0f, 0.0f };
 		RB::Collisions::AABB _aabb{ 0, 0, 0, 0 };
 		float _bodyRatio[2]{ 0.0f, 0.0f };
 	};

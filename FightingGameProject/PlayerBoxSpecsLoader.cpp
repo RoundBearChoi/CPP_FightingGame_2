@@ -64,16 +64,16 @@ namespace RB::Collisions
 			float width = RB::JSON::GetFloat_FromElement(*e2);
 			float height = RB::JSON::GetFloat_FromElement(*e3);
 		
-			PlayerBox newBox;
-			newBox.mFrame = frame;
-			newBox.mOffsetX = offsetX;
-			newBox.mOffsetY = offsetY;
-			newBox.mWidth = width;
-			newBox.mHeight = height;
+			//PlayerBox newBox;
+			//newBox.mFrame = frame;
+			//newBox.mOffsetX = offsetX;
+			//newBox.mOffsetY = offsetY;
+			//newBox.mWidth = width;
+			//newBox.mHeight = height;
 
 			PlayerBoxSpecs newSpecs;
 			newSpecs.SetSpriteType(spriteType);
-			newSpecs.GetSelector()->PushBack(newBox);
+			newSpecs.GetSelector()->PushBack(PlayerBox(frame, offsetX, offsetY, width, height));
 
 			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 
@@ -91,14 +91,14 @@ namespace RB::Collisions
 
 				if (existingSpecs != nullptr)
 				{
-					if (existingSpecs->BoxExists(frame, newBox))
+					if (existingSpecs->BoxExists(frame))
 					{
 						//do nothing if frame already exists
 					}
 					else
 					{
 						//only add if frame doesn't exist
-						existingSpecs->GetSelector()->PushBack(newBox);
+						existingSpecs->GetSelector()->PushBack(PlayerBox(frame, offsetX, offsetY, width, height));
 					}
 				}
 				else

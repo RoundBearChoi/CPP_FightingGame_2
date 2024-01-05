@@ -6,8 +6,8 @@ namespace RB::Players
 	{
 		_player = owner;
 
-		_pBox.mWidth = 62.0f;
-		_pBox.mHeight = 124.0f;
+		_playerBox.mWidth = 62.0f;
+		_playerBox.mHeight = 124.0f;
 	}
 
 	void PlayerCollider::OnUpdate()
@@ -27,15 +27,15 @@ namespace RB::Players
 
 	olc::vf2d PlayerCollider::GetPlayerBox()
 	{
-		return olc::vf2d{ _pBox.mWidth, _pBox.mHeight };
+		return olc::vf2d{ _playerBox.mWidth, _playerBox.mHeight };
 	}
 
 	void PlayerCollider::SetPlayerBox(const RB::Collisions::PlayerBox& box)
 	{
-		_pBox.mOffsetX = box.mOffsetX;
-		_pBox.mOffsetX = box.mOffsetY;
-		_pBox.mWidth = box.mWidth;
-		_pBox.mHeight = box.mHeight;
+		_playerBox.mOffsetX = box.mOffsetX;
+		_playerBox.mOffsetX = box.mOffsetY;
+		_playerBox.mWidth = box.mWidth;
+		_playerBox.mHeight = box.mHeight;
 	}
 
 	bool PlayerCollider::IsCollidingAgainstOtherPlayer()

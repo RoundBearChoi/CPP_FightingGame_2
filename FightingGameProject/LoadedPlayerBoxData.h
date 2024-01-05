@@ -14,6 +14,8 @@ namespace RB::Collisions
 		~LoadedPlayerBoxData() = default;
 
 	public:
+		void OnFixedUpdate();
+
 		void Add(PlayerBoxSpecs specs);
 		void SetCharacterType(RB::Players::CharacterType characterType);
 		RB::Players::CharacterType GetCharacterType();

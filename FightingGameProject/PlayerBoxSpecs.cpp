@@ -4,6 +4,11 @@
 
 namespace RB::Collisions
 {
+	void PlayerBoxSpecs::OnFixedUpdate()
+	{
+		_selector.OnFixedUpdate();
+	}
+
 	void PlayerBoxSpecs::SetSpriteType(RB::Sprites::SpriteEnum spriteEnum)
 	{
 		_spriteType = spriteEnum;

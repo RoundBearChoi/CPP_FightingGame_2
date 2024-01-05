@@ -5,6 +5,14 @@
 
 namespace RB::Collisions
 {
+	void PlayerBoxSpecsLoader::OnFixedUpdate()
+	{
+		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)
+		{
+			i->OnFixedUpdate();
+		}
+	}
+
 	void PlayerBoxSpecsLoader::LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType)
 	{
 		std::string loaded = RB::JSON::LoadJSONFile(path);

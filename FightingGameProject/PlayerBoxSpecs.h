@@ -13,6 +13,8 @@ namespace RB::Collisions
 		~PlayerBoxSpecs() = default;
 
 	public:
+		void OnFixedUpdate();
+
 		void SetSpriteType(RB::Sprites::SpriteEnum spriteEnum);
 		RB::Sprites::SpriteEnum GetSpriteType();
 		RB::iSelector<PlayerBox>* GetSelector();

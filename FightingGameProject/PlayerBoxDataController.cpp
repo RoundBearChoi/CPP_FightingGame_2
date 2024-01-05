@@ -19,7 +19,7 @@ namespace RB::Collisions
 
 	void PlayerBoxDataController::OnFixedUpdate()
 	{
-
+		_playerBoxSpecsLoader.OnFixedUpdate();
 	}
 
 	LoadedPlayerBoxData* PlayerBoxDataController::GetLoadedData(RB::Players::CharacterType characterType)

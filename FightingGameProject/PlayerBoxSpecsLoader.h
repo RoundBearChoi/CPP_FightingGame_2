@@ -17,6 +17,8 @@ namespace RB::Collisions
 		~PlayerBoxSpecsLoader() = default;
 
 	public:
+		void OnFixedUpdate();
+
 		void LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType);
 		LoadedPlayerBoxData* GetLoadedSpecs(RB::Players::CharacterType characterType);
 		void AddSpecs(PlayerBox box, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType);

@@ -19,6 +19,7 @@ namespace RB::Collisions
 
 		json_value_s* root = json_parse(loaded.c_str(), loaded.length());
 
+		//file doesn't exist
 		if (root == nullptr)
 		{
 			LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
@@ -39,6 +40,24 @@ namespace RB::Collisions
 
 		json_object_element_s* element = jObj->start;
 
+		//file exists but no data
+		if (element == nullptr)
+		{
+			LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
+
+			if (loaded == nullptr)
+			{
+				_vecLoadedSpecs.push_back(LoadedPlayerBoxData(characterType));
+			}
+			else
+			{
+				loaded->Add(PlayerBoxSpecs(path, spriteType));
+			}
+
+			return;
+		}
+
+		//normal file
 		while (element != nullptr)
 		{
 			unsigned int frame = RB::JSON::ParseFrame(element->name->string);

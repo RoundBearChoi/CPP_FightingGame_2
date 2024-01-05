@@ -86,9 +86,25 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Collisions::PlayerBox* currentBox)
 	{
-		PlayerBoxSpecs* specs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
+		PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
 
-		
+		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
+		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
+
+		if (insButton.bPressed)
+		{
+			int test = 0;
+
+			if (currentSpecs == nullptr)
+			{
+				
+			}
+		}
+
+		if (delButton.bPressed)
+		{
+
+		}
 	}
 
 	void PlayerBoxEditController::_SaveOnPress()

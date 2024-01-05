@@ -20,6 +20,7 @@ namespace RB::Collisions
 
 	private:
 		void _UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* box);
+		void _SaveOnPress();
 
 	private:
 		PlayerBox* _GetPlayerBox(RB::Players::PlayerID id);

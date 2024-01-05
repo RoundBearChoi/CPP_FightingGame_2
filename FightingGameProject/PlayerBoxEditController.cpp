@@ -29,6 +29,7 @@ namespace RB::Collisions
 		}
 
 		_UpdateBoxSizeOnPress(currentBox);
+		_SaveOnPress();
 	}
 
 	void PlayerBoxEditController::OnFixedUpdate()
@@ -80,6 +81,11 @@ namespace RB::Collisions
 		{
 			box->mWidth = 0.0f;
 		}
+	}
+
+	void PlayerBoxEditController::_SaveOnPress()
+	{
+
 	}
 
 	PlayerBox* PlayerBoxEditController::_GetPlayerBox(RB::Players::PlayerID id)

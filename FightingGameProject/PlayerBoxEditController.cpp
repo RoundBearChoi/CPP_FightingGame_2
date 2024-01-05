@@ -29,7 +29,7 @@ namespace RB::Collisions
 		}
 
 		_UpdateBoxSizeOnPress(currentBox);
-		_AddDeleteBoxOnPress(currentBox);
+		_AddDeleteBoxOnPress(RB::Players::PlayerID::PLAYER_1);
 		_SaveOnPress();
 	}
 
@@ -84,7 +84,7 @@ namespace RB::Collisions
 		}
 	}
 
-	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Collisions::PlayerBox* currentBox)
+	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Players::PlayerID id)
 	{
 		PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
 
@@ -95,9 +95,7 @@ namespace RB::Collisions
 		{
 			if (currentSpecs == nullptr)
 			{
-				PlayerBoxSpecs newSpecs;
-				newSpecs.SetSpriteType(_GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
-				newSpecs.AddBox(PlayerBox(0, 0.0f, 0.0f, 62.0f, 124.0f));
+				RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(PlayerBox(0, 0.0f, 0.0f, 62.0f, 124.0f), _GetCurrentSpriteType(id), RB::Players::iPlayerController::instance->GetPlayerOnID(id)->GetCharacterType());
 			}
 		}
 

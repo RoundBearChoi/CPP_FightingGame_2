@@ -22,7 +22,7 @@ namespace RB::Collisions
 
 	private:
 		void _UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* currentBox);
-		void _AddDeleteBoxOnPress(RB::Collisions::PlayerBox* currentBox);
+		void _AddDeleteBoxOnPress(RB::Players::PlayerID id);
 		void _SaveOnPress();
 
 	private:

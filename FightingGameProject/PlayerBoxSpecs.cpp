@@ -4,8 +4,9 @@
 
 namespace RB::Collisions
 {
-	PlayerBoxSpecs::PlayerBoxSpecs(RB::Sprites::SpriteEnum spriteType, PlayerBox box)
+	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, PlayerBox box)
 	{
+		_path = path;
 		_spriteType = spriteType;
 		GetSelector()->PushBack(box);
 	}

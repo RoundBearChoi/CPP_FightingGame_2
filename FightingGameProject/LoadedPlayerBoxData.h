@@ -20,7 +20,7 @@ namespace RB::Collisions
 
 	public:
 		void Add(PlayerBoxSpecs specs);
-		void SetCharacterType(RB::Players::CharacterType characterType);
+		//void SetCharacterType(RB::Players::CharacterType characterType);
 		RB::Players::CharacterType GetCharacterType();
 		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType);
 		PlayerBox* GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame);

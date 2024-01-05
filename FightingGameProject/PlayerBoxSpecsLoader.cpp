@@ -21,9 +21,16 @@ namespace RB::Collisions
 
 		if (root == nullptr)
 		{
-			//LoadedPlayerBoxData newData;
-			//newData.SetCharacterType(characterType);
-			//_vecLoadedSpecs.push_back();
+			LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
+
+			if (loaded == nullptr)
+			{
+				_vecLoadedSpecs.push_back(LoadedPlayerBoxData(characterType));
+			}
+			else
+			{
+				//loaded->Add(PlayerBoxSpecs(path, spriteType, PlayerBox(0, 0.0f, 0.0f, 0.0f, 0.0f)));
+			}
 
 			return;
 		}

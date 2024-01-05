@@ -15,7 +15,7 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::OnUpdate()
 	{
-
+		PlayerBox* currentBox = _GetPlayerBox(RB::Players::PlayerID::PLAYER_1);
 	}
 
 	void PlayerBoxEditController::OnFixedUpdate()

@@ -11,7 +11,8 @@ namespace RB::Collisions
 	class LoadedPlayerBoxData
 	{
 	public:
-		LoadedPlayerBoxData() = default;
+		LoadedPlayerBoxData(RB::Players::CharacterType characterType);
+		LoadedPlayerBoxData(RB::Players::CharacterType characterType, PlayerBoxSpecs specs);
 		~LoadedPlayerBoxData() = default;
 
 	public:

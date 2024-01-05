@@ -2,6 +2,17 @@
 
 namespace RB::Collisions
 {
+	LoadedPlayerBoxData::LoadedPlayerBoxData(RB::Players::CharacterType characterType)
+	{
+		_characterType = characterType;
+	}
+
+	LoadedPlayerBoxData::LoadedPlayerBoxData(RB::Players::CharacterType characterType, PlayerBoxSpecs specs)
+	{
+		_characterType = characterType;
+		Add(specs);
+	}
+
 	void LoadedPlayerBoxData::OnFixedUpdate()
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)

@@ -68,10 +68,9 @@ namespace RB::Collisions
 			//new data if not found
 			if (loadedData == nullptr)
 			{
-				LoadedPlayerBoxData newData;
-				newData.SetCharacterType(characterType);
-				newData.Add(PlayerBoxSpecs(path, spriteType, PlayerBox(frame, offsetX, offsetY, width, height)));
-				_vecLoadedSpecs.push_back(newData);
+				//LoadedPlayerBoxData newData(characterType);
+				//newData.Add(PlayerBoxSpecs(path, spriteType, PlayerBox(frame, offsetX, offsetY, width, height)));
+				_vecLoadedSpecs.push_back(LoadedPlayerBoxData(characterType, PlayerBoxSpecs(path, spriteType, PlayerBox(frame, offsetX, offsetY, width, height))));
 			}
 			else
 			{

@@ -13,6 +13,7 @@ namespace RB
 		virtual void OnFixedUpdate() = 0;
 		virtual void OnUpdate() = 0;
 		virtual const std::vector<T>& GetVector() = 0;
+		virtual std::vector<T>* GetVector_ptr() = 0;
 		virtual void PushBack(T t) = 0;
 		virtual void EraseSelected() = 0;
 		virtual void EraseByIndex(unsigned int index) = 0;

@@ -41,8 +41,6 @@ namespace RB::Collisions
 	{
 		const auto& vec = GetSelector()->GetVector();
 
-		auto it = vec.begin();
-
 		for (auto i = vec.begin(); i != vec.end(); i++)
 		{
 			if (i->mFrame == frame)
@@ -52,5 +50,20 @@ namespace RB::Collisions
 		}
 
 		return _emptyBox;
+	}
+
+	RB::Collisions::PlayerBox* PlayerBoxSpecs::GetBox_ptr(unsigned int frame)
+	{
+		auto* vec = GetSelector()->GetVector_ptr();
+
+		for (auto i = vec->begin(); i != vec->end(); i++)
+		{
+			if (i->mFrame == frame)
+			{
+				return &(*i);
+			}
+		}
+
+		return nullptr;
 	}
 }

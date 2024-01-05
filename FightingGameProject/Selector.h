@@ -45,6 +45,11 @@ namespace RB
 			return _vec;
 		}
 
+		std::vector<T>* GetVector_ptr() override
+		{
+			return &_vec;
+		}
+
 		void PushBack(T t) override
 		{
 			_vec.push_back(t);

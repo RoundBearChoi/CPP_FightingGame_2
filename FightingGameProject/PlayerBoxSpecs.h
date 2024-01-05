@@ -18,6 +18,7 @@ namespace RB::Collisions
 		RB::iSelector<PlayerBox>* GetSelector();
 		bool BoxExists(unsigned int frame, PlayerBox& box);
 		const RB::Collisions::PlayerBox& GetBox(unsigned int frame);
+		RB::Collisions::PlayerBox* GetBox_ptr(unsigned int frame);
 
 	private:
 		RB::Selector<PlayerBox> _selector;

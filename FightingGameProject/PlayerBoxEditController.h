@@ -25,6 +25,7 @@ namespace RB::Collisions
 		void _UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* currentBox);
 		void _AddDeleteBoxOnPress(RB::Players::PlayerID id);
 		void _SaveOnPress();
+		void _ShowMenu();
 
 	private:
 		PlayerBox* _GetCurrentBox(RB::Players::PlayerID id);

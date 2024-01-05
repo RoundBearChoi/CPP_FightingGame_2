@@ -7,6 +7,7 @@
 #include "iPlayerBoxDataController.h"
 #include "iPlayerAnimationController.h"
 #include "iPlayerDebugController.h"
+#include "iSpriteDataController.h"
 
 namespace RB::Collisions
 {
@@ -17,6 +18,8 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::OnUpdate()
 	{
+		_ShowMenu();
+
 		PlayerBox* currentBox = _GetCurrentBox(RB::Players::PlayerID::PLAYER_1);
 
 		if (currentBox == nullptr)
@@ -142,6 +145,21 @@ namespace RB::Collisions
 
 			specs->Save();
 		}
+	}
+
+	void PlayerBoxEditController::_ShowMenu()
+	{
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "PlayerBoxEditor", olc::WHITE, 2);
+
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 100 }, "Ins, Del : create/delete box", olc::WHITE);
+
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data", olc::WHITE);
+
+		const std::string& str = RB::Sprites::iSpriteDataController::instance->GetString(_GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + str, olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW);
 	}
 
 	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)

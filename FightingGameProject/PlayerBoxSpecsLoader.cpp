@@ -136,4 +136,12 @@ namespace RB::Collisions
 			}
 		}
 	}
+
+	void PlayerBoxSpecsLoader::RefreshInterators()
+	{
+		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)
+		{
+			i->RefreshIterators();
+		}
+	}
 }

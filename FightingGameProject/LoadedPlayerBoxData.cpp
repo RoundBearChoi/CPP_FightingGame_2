@@ -6,7 +6,7 @@ namespace RB::Collisions
 	{
 		_vecSpecs.push_back(specs);
 
-		_RefreshIterators();
+		RefreshIterators();
 	}
 
 	void LoadedPlayerBoxData::SetCharacterType(RB::Players::CharacterType characterType)
@@ -73,7 +73,7 @@ namespace RB::Collisions
 		}
 	}
 
-	void LoadedPlayerBoxData::_RefreshIterators()
+	void LoadedPlayerBoxData::RefreshIterators()
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{

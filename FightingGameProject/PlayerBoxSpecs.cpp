@@ -26,6 +26,7 @@ namespace RB::Collisions
 
 	void PlayerBoxSpecs::OnFixedUpdate()
 	{
+		_notification.OnFixedUpdate();
 		_selector.OnFixedUpdate();
 	}
 
@@ -132,6 +133,8 @@ namespace RB::Collisions
 
 			file.flush();
 			file.close();
+
+			_notification.AddFrameCount(120);
 		}
 	}
 }

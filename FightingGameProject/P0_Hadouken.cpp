@@ -10,7 +10,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Hadouken::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::aku_hadouken;
+		_spriteEnum = RB::Sprites::SpriteType::aku_hadouken;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixSpecialMoveStatusDuringState(true));
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());

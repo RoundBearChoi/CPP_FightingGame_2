@@ -19,7 +19,7 @@ namespace RB::Collisions
 			void OnFixedUpdate() override;
 
 			LoadedPlayerBoxData* GetLoadedData(RB::Players::CharacterType characterType) override;
-			void AddSpecs(PlayerBox box, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType) override;
+			void AddSpecs(PlayerBox box, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType) override;
 
 	private:
 		PlayerBoxSpecsLoader _playerBoxSpecsLoader;

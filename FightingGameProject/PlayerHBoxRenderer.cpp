@@ -50,7 +50,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
 
 		iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
 		
@@ -126,7 +126,7 @@ namespace RB::Render
 			{
 				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
 
-				_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_LEFT);
+				_spriteLoader->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_LEFT);
 			}
 			else
 			{
@@ -134,7 +134,7 @@ namespace RB::Render
 				bottomleft.x *= -1.0f;
 				olc::vf2d pos = bottomleft + player->GetPosition();
 
-				_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT);
+				_spriteLoader->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT);
 			}
 		}
 	}

@@ -12,8 +12,8 @@ namespace RB::Collisions
 	class PlayerBoxSpecs
 	{
 	public:
-		PlayerBoxSpecs(std::string path, RB::Sprites::SpriteEnum spriteType);
-		PlayerBoxSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, PlayerBox box);
+		PlayerBoxSpecs(std::string path, RB::Sprites::SpriteType spriteType);
+		PlayerBoxSpecs(std::string path, RB::Sprites::SpriteType spriteType, PlayerBox box);
 		~PlayerBoxSpecs() = default;
 
 	public:
@@ -22,7 +22,7 @@ namespace RB::Collisions
 
 	public:
 		void AddBox(PlayerBox box);
-		RB::Sprites::SpriteEnum GetSpriteType();
+		RB::Sprites::SpriteType GetSpriteType();
 		RB::iSelector<PlayerBox>* GetSelector();
 		bool BoxExists(unsigned int frame);
 		const RB::Collisions::PlayerBox& GetBox(unsigned int frame);
@@ -32,7 +32,7 @@ namespace RB::Collisions
 	private:
 		std::string _path = "";
 		RB::Selector<PlayerBox> _selector;
-		RB::Sprites::SpriteEnum _spriteType = RB::Sprites::SpriteEnum::NONE;
+		RB::Sprites::SpriteType _spriteType = RB::Sprites::SpriteType::NONE;
 		const RB::Collisions::PlayerBox _emptyBox{ 0, 0.0f, 0.0f, 0.0f, 0.0f };
 		RB::Render::Notification _notification;
 	};

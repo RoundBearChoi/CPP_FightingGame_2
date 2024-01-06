@@ -7,18 +7,18 @@ namespace RB::Sprites
 	class SpriteEnumString
 	{
 	public:
-		SpriteEnumString(SpriteEnum spriteEnum, std::string string)
+		SpriteEnumString(SpriteType spriteEnum, std::string string)
 		{
 			_spriteEnum = spriteEnum;
 			_string = string;
 		}
 
 	public:
-		SpriteEnum GetEnum() { return _spriteEnum; }
+		SpriteType GetEnum() { return _spriteEnum; }
 		const std::string& GetString() { return _string; }
 
 	private:
-		SpriteEnum _spriteEnum = SpriteEnum::NONE;
+		SpriteType _spriteEnum = SpriteType::NONE;
 		std::string _string = "NONE";
 	};
 }

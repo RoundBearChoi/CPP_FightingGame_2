@@ -15,7 +15,7 @@ namespace RB::Sprites
 		_vecLoadedSprites.clear();
 	}
 
-	LoadedSprite* _SpriteLoader::LoadSprite(std::string path, SpriteEnum spriteEnum)
+	LoadedSprite* _SpriteLoader::LoadSprite(std::string path, SpriteType spriteEnum)
 	{
 		std::replace(path.begin(), path.end(), '\\', '/'); //convert directory separators
  
@@ -29,7 +29,7 @@ namespace RB::Sprites
 		return loadedSprite;
 	}
 
-	LoadedSprite* _SpriteLoader::GetLoadedSprite(SpriteEnum spriteEnum)
+	LoadedSprite* _SpriteLoader::GetLoadedSprite(SpriteType spriteEnum)
 	{
 		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
 		{

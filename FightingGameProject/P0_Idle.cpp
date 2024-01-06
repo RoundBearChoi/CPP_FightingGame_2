@@ -18,7 +18,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Idle::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::aku_idle;
+		_spriteEnum = RB::Sprites::SpriteType::aku_idle;
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::Aku::P0_JumpForwardUp_0()));

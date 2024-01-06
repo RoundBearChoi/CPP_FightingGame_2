@@ -24,7 +24,7 @@ namespace RB::HBox
 
 	private:
 		const std::string& _GetFrameName();
-		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
+		RB::Sprites::SpriteType _GetCurrentSpriteEnum();
 		unsigned int _GetCurrentAnimationFrame();
 		RB::HBox::Loaded_HB_Data* _GetHBData();
 		void _ShowSavedNotification();

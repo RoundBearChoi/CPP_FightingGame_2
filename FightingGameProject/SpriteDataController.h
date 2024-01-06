@@ -18,7 +18,7 @@ namespace RB::Sprites
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		const std::string& GetString(SpriteEnum spriteEnum) override;
+		const std::string& GetString(SpriteType spriteEnum) override;
 
 	private:
 		std::vector<SpriteEnumString*> _vecEnumStrings;

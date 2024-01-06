@@ -22,9 +22,9 @@ namespace RB::Collisions
 	public:
 		void Add(PlayerBoxSpecs specs);
 		RB::Players::CharacterType GetCharacterType();
-		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteEnum spriteType);
-		PlayerBox* GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame);
-		void EraseSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame);
+		PlayerBoxSpecs* GetSpecs(RB::Sprites::SpriteType spriteType);
+		PlayerBox* GetSpecs(RB::Sprites::SpriteType spriteType, unsigned int frame);
+		void EraseSpecs(RB::Sprites::SpriteType spriteType, unsigned int frame);
 		void RefreshIterators();
 
 	private:

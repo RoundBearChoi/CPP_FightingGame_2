@@ -13,7 +13,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_WalkBack::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::NONE;
+		_spriteEnum = RB::Sprites::SpriteType::NONE;
 
 		RB::Players::Specs::MoveSpecs m = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(RB::Players::CharacterType::AKU);
 

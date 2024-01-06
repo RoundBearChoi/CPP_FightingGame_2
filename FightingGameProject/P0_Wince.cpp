@@ -11,7 +11,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Wince::OnEnter()
 	{
-		_spriteEnum = RB::Sprites::SpriteEnum::aku_wince;
+		_spriteEnum = RB::Sprites::SpriteType::aku_wince;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixWincingStatusDuringState(true));
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());

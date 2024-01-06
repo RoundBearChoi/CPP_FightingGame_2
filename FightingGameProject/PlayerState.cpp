@@ -114,7 +114,7 @@ namespace RB::PlayerStates
 		return nullptr;
 	}
 
-	RB::Sprites::SpriteEnum PlayerState::GetSpriteEnum()
+	RB::Sprites::SpriteType PlayerState::GetSpriteEnum()
 	{
 		return _spriteEnum;
 	}

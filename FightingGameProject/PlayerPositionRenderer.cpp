@@ -42,7 +42,7 @@ namespace RB::Render
 
 		olc::vf2d playerPos = player->GetPosition();
 
-		_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::x_white, olc::vf2d{ 13.0, 13.0 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
+		_spriteLoader->RenderSprite(RB::Sprites::SpriteType::x_white, olc::vf2d{ 13.0, 13.0 }, playerPos, olc::RED, RB::Sprites::PivotType::CENTER);
 	}
 
 	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PlayerID playerID)

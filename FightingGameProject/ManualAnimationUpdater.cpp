@@ -4,7 +4,7 @@
 
 namespace RB::Render
 {
-	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteEnum spriteEnum)
+	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteType spriteEnum)
 	{
 		_spriteEnum = spriteEnum;
 	}

@@ -21,7 +21,7 @@ namespace RB::Collisions
 		}
 	}
 
-	void PlayerBoxSpecsLoader::LoadSpecs(std::string path, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType)
+	void PlayerBoxSpecsLoader::LoadSpecs(std::string path, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)
 	{
 		std::string loaded = RB::JSON::LoadJSONFile(path);
 
@@ -146,7 +146,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	void PlayerBoxSpecsLoader::AddSpecs(PlayerBox box, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType)
+	void PlayerBoxSpecsLoader::AddSpecs(PlayerBox box, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)
 	{
 		LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
 

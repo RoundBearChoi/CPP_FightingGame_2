@@ -15,9 +15,9 @@ namespace RB::Sprites
 		~SpriteLoader() = default;
 
 	public:
-		void LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum);
-		void RenderSprite(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace = true);
-		RB::Sprites::LoadedSprite* GetLoadedSprite(RB::Sprites::SpriteEnum spriteEnum);
+		void LoadSprite(std::string path, RB::Sprites::SpriteType spriteEnum);
+		void RenderSprite(RB::Sprites::SpriteType spriteEnum, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace = true);
+		RB::Sprites::LoadedSprite* GetLoadedSprite(RB::Sprites::SpriteType spriteEnum);
 
 	private:
 		RB::Sprites::_SpriteLoader _loader;

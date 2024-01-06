@@ -49,7 +49,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
 
 		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
 
@@ -90,7 +90,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		RB::Sprites::SpriteEnum spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
 
 		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
 

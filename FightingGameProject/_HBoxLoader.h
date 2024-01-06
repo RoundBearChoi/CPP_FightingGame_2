@@ -18,13 +18,13 @@ namespace RB::HBox
 		void SaveSample();
 
 	public:
-		Loaded_HB_Data Load(const std::string path, const RB::Sprites::SpriteEnum spriteEnum);
+		Loaded_HB_Data Load(const std::string path, const RB::Sprites::SpriteType spriteEnum);
 		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
 		std::string ParseName(const json_object_s& wholeObj, const unsigned int frame);
 
 	public:
 		RB::Collisions::AABB GetAABB(const json_array_s& array, unsigned int index);
-		const RB::HBox::HBoxDataListPath& GetDataListPath(RB::Sprites::SpriteEnum spriteEnum) const;
+		const RB::HBox::HBoxDataListPath& GetDataListPath(RB::Sprites::SpriteType spriteEnum) const;
 		
 
 	private:
@@ -32,6 +32,6 @@ namespace RB::HBox
 		const std::vector<HBoxDataListPath>& _getVector() const { return _vecLists; }
 		std::string _samplePath;
 
-		const HBoxDataListPath _none = { "none", RB::Sprites::SpriteEnum::NONE };
+		const HBoxDataListPath _none = { "none", RB::Sprites::SpriteType::NONE };
 	};
 }

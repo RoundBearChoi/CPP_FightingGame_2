@@ -105,10 +105,10 @@ namespace RB::HBox
 	/// <summary>
 	/// only use during initialization (vector addresses)
 	/// </summary>
-	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteEnum spriteEnum)
+	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteEnum)
 	{
 		//save path - spriteEnum
-		if (GetDataListPath(spriteEnum).GetSpriteEnum() == RB::Sprites::SpriteEnum::NONE)
+		if (GetDataListPath(spriteEnum).GetSpriteEnum() == RB::Sprites::SpriteType::NONE)
 		{
 			_vecLists.push_back(HBoxDataListPath{ path, spriteEnum });
 		}
@@ -240,7 +240,7 @@ namespace RB::HBox
 		return RB::Collisions::AABB();
 	}
 
-	const RB::HBox::HBoxDataListPath& _HBoxLoader::GetDataListPath(RB::Sprites::SpriteEnum spriteEnum) const
+	const RB::HBox::HBoxDataListPath& _HBoxLoader::GetDataListPath(RB::Sprites::SpriteType spriteEnum) const
 	{
 		const std::vector<HBoxDataListPath>& vec = _getVector();
 

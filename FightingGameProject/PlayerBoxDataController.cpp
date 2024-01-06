@@ -6,11 +6,11 @@ namespace RB::Collisions
 {
 	void PlayerBoxDataController::Init()
 	{
-		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/box_none_test.playerBoxSpecs", RB::Sprites::SpriteEnum::NONE, RB::Players::CharacterType::NONE);
+		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/box_none_test.playerBoxSpecs", RB::Sprites::SpriteType::NONE, RB::Players::CharacterType::NONE);
 
-		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_idle_box.playerBoxSpecs", RB::Sprites::SpriteEnum::aku_idle, RB::Players::CharacterType::AKU);
-		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_crouch_box.playerBoxSpecs", RB::Sprites::SpriteEnum::aku_crouch, RB::Players::CharacterType::AKU);
-		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_jab_box.playerBoxSpecs", RB::Sprites::SpriteEnum::aku_jab, RB::Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_idle_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_idle, RB::Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_crouch_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_crouch, RB::Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_jab_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_jab, RB::Players::CharacterType::AKU);
 	}
 
 	void PlayerBoxDataController::OnUpdate()
@@ -28,7 +28,7 @@ namespace RB::Collisions
 		return _playerBoxSpecsLoader.GetLoadedSpecs(characterType);
 	}
 
-	void PlayerBoxDataController::AddSpecs(PlayerBox box, RB::Sprites::SpriteEnum spriteType, RB::Players::CharacterType characterType)
+	void PlayerBoxDataController::AddSpecs(PlayerBox box, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)
 	{
 		_playerBoxSpecsLoader.AddSpecs(box, spriteType, characterType);
 	}

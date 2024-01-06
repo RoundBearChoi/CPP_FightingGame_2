@@ -45,7 +45,7 @@ namespace RB::Render
 		}
 	}
 
-	void AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteEnum spriteEnum)
+	void AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteEnum)
 	{
 		_spriteLoader.LoadSprite(path, spriteEnum);
 	}
@@ -53,7 +53,7 @@ namespace RB::Render
 	/// <summary>
 	/// this function require sprites to be loaded first
 	/// </summary>
-	void AnimationLoader::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteEnum spriteEnum)
+	void AnimationLoader::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteType spriteEnum)
 	{
 		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(spriteEnum);
 		specs.mSpriteEnum = spriteEnum;
@@ -96,7 +96,7 @@ namespace RB::Render
 		return next;
 	}
 
-	iAnimationObj* AnimationLoader::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteEnum spriteEnum)
+	iAnimationObj* AnimationLoader::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteEnum)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -125,26 +125,26 @@ namespace RB::Render
 	/// <summary>
 	/// raw pointer, make sure to delete
 	/// </summary>
-	iAnimationObj* AnimationLoader::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteEnum playerSpriteEnum, RB::Sprites::PivotType pivotType)
+	iAnimationObj* AnimationLoader::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType playerSpriteEnum, RB::Sprites::PivotType pivotType)
 	{
 		iAnimationObj* animationObj = new AnimationObj(&player, _aniLoader.GetAnimationRenderer(playerSpriteEnum), pivotType);
 
 		return animationObj;
 	}
 
-	RB::Sprites::SpriteEnum AnimationLoader::GetSpriteEnum(RB::Players::PlayerID playerID)
+	RB::Sprites::SpriteType AnimationLoader::GetSpriteEnum(RB::Players::PlayerID playerID)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
 			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
 			{
-				RB::Sprites::SpriteEnum spriteEnum = (*i)->GetAnimationSpecs().mSpriteEnum;
+				RB::Sprites::SpriteType spriteEnum = (*i)->GetAnimationSpecs().mSpriteEnum;
 
 				return spriteEnum;
 			}
 		}
 
-		return RB::Sprites::SpriteEnum::NONE;
+		return RB::Sprites::SpriteType::NONE;
 	}
 
 	void AnimationLoader::AddNewAnimation(iAnimationObj* animationObj)
@@ -157,7 +157,7 @@ namespace RB::Render
 		return _vecCurrentAnimations;
 	}
 
-	AnimationRenderer* AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteEnum spriteEnum)
+	AnimationRenderer* AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteEnum)
 	{
 		return _aniLoader.GetAnimationRenderer(spriteEnum);
 	}

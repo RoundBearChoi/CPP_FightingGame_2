@@ -41,7 +41,7 @@ namespace RB::Collisions
 		return _characterType;
 	}
 
-	PlayerBoxSpecs* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteEnum spriteType)
+	PlayerBoxSpecs* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
@@ -54,7 +54,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	PlayerBox* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
+	PlayerBox* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteType spriteType, unsigned int frame)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
@@ -75,7 +75,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	void LoadedPlayerBoxData::EraseSpecs(RB::Sprites::SpriteEnum spriteType, unsigned int frame)
+	void LoadedPlayerBoxData::EraseSpecs(RB::Sprites::SpriteType spriteType, unsigned int frame)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{

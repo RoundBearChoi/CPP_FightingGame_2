@@ -4,7 +4,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	P0_Dummy::P0_Dummy(Sprites::SpriteEnum startingSpriteEnum)
+	P0_Dummy::P0_Dummy(Sprites::SpriteType startingSpriteEnum)
 	{
 		_spriteEnum = startingSpriteEnum;
 	}

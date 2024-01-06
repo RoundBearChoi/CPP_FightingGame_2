@@ -13,6 +13,6 @@ namespace RB::Render
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual void InstantiateAnimation(RB::Sprites::SpriteEnum spriteEnum, olc::vf2d pos) = 0;
+		virtual void InstantiateAnimation(RB::Sprites::SpriteType spriteEnum, olc::vf2d pos) = 0;
 	};
 }

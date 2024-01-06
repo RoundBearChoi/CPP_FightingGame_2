@@ -40,7 +40,7 @@ namespace RB::Render
 				boxTint = olc::BLUE;
 			}
 
-			_spriteLoader->RenderSprite(RB::Sprites::SpriteEnum::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
+			_spriteLoader->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, playerBox, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER);
 		}
 	}
 

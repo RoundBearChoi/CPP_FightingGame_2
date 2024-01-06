@@ -8,7 +8,7 @@ namespace RB::HBox
 	class Loaded_HB_Data
 	{
 	public:
-		Loaded_HB_Data(RB::Sprites::SpriteEnum spriteEnum);
+		Loaded_HB_Data(RB::Sprites::SpriteType spriteEnum);
 		~Loaded_HB_Data() = default;
 
 	public:
@@ -17,10 +17,10 @@ namespace RB::HBox
 		void AddSet(AABB_Set data);
 		const std::vector<AABB_Set>& Get_AABB_Sets();
 		AABB_Set* GetHBoxDataByFrame(unsigned int frame);
-		RB::Sprites::SpriteEnum GetSpriteEnum();
+		RB::Sprites::SpriteType GetSpriteEnum();
 
 	private:
-		RB::Sprites::SpriteEnum _spriteEnum = RB::Sprites::SpriteEnum::NONE;
+		RB::Sprites::SpriteType _spriteEnum = RB::Sprites::SpriteType::NONE;
 		std::vector<AABB_Set> _vec_AABB_Sets;
 	};
 }

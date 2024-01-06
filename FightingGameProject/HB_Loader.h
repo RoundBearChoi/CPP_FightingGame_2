@@ -15,8 +15,8 @@ namespace RB::HBox
 		void OnUpdate();
 
 		void SetDir(std::string dir);
-		Loaded_HB_Data* GetData(RB::Sprites::SpriteEnum spriteEnum);
-		const std::string& GetPath(RB::Sprites::SpriteEnum spriteEnum) const;
+		Loaded_HB_Data* GetData(RB::Sprites::SpriteType spriteEnum);
+		const std::string& GetPath(RB::Sprites::SpriteType spriteEnum) const;
 
 	private:
 		_HBoxLoader _loader;

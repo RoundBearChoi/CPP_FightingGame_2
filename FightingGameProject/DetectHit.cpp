@@ -35,8 +35,8 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::Sprites::SpriteEnum ownerSpriteEnum = ownerState->GetSpriteEnum();
-		RB::Sprites::SpriteEnum targetSpriteEnum = enemyState->GetSpriteEnum();
+		RB::Sprites::SpriteType ownerSpriteEnum = ownerState->GetSpriteEnum();
+		RB::Sprites::SpriteType targetSpriteEnum = enemyState->GetSpriteEnum();
 		
 		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteEnum);
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteEnum);
@@ -85,7 +85,7 @@ namespace RB::PlayerStateComponents
 				{
 					//temp - decouple by using attackregister?
 
-					RB::Render::iVFXAnimationController::instance->InstantiateAnimation(RB::Sprites::SpriteEnum::vfx_hiteffect_0, col);
+					RB::Render::iVFXAnimationController::instance->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, col);
 
 					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;

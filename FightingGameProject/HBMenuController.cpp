@@ -91,14 +91,14 @@ namespace RB::HBox
 		return AABBs->GetFrameName();
 	}
 
-	RB::Sprites::SpriteEnum HBMenuController::_GetCurrentSpriteEnum()
+	RB::Sprites::SpriteType HBMenuController::_GetCurrentSpriteEnum()
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)
 		{
-			return RB::Sprites::SpriteEnum::NONE;
+			return RB::Sprites::SpriteType::NONE;
 		}
 
 		state->GetSpriteEnum();
@@ -107,7 +107,7 @@ namespace RB::HBox
 
 	unsigned int HBMenuController::_GetCurrentAnimationFrame()
 	{
-		RB::Sprites::SpriteEnum spriteType = _GetCurrentSpriteEnum();
+		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteEnum();
 
 		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, spriteType);
 

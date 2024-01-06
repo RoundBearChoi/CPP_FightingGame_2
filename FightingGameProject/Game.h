@@ -42,8 +42,7 @@ namespace RB
 
 		~Game()
 		{
-			showAllocationCount = true;
-
+			showAllocCount = true;
 			//std::cout << std::endl;
 			//std::cout << "destroying Game.." << std::endl;
 		}

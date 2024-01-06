@@ -1,5 +1,5 @@
 #pragma once
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 namespace RB::Render
 {

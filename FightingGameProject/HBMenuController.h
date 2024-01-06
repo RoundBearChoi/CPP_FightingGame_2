@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 #include "iHBMenuController.h"
 

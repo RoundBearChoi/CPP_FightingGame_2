@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 #include "LoadedSprite.h"
 
 namespace RB::Sprites

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "AnimationLoader.h"
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 #include "iPlayerAnimationController.h"
 #include "iAnimationObj.h"

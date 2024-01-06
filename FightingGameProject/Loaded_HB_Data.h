@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 #include "AABB_Set.h"
 
 namespace RB::HBox

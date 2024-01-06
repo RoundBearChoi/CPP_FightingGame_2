@@ -1,7 +1,7 @@
 #pragma once
 #include "PlayerState.h"
 
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 #include "ManualAnimationUpdater.h"
 
 namespace RB::PlayerStates::Aku

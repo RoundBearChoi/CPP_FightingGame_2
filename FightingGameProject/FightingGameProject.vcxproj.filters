@@ -447,7 +447,7 @@
     <ClInclude Include="LoadedSprite.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteEnum.h">
+    <ClInclude Include="SpriteType.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="PivotType.h">

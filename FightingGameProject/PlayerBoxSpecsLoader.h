@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "CharacterType.h"
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 #include "LoadedPlayerBoxData.h"
 #include "PlayerBoxSpecs.h"
 

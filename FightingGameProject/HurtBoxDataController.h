@@ -5,7 +5,7 @@
 #include "iHurtBoxDataController.h"
 #include "Loaded_HB_Data.h"
 #include "HB_Loader.h"
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 
 namespace RB::HBox

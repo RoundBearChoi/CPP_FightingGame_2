@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "StateBase.h"
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 #include "iPlayer.h"
 

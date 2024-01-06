@@ -2,7 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "ControllerT.h"
 
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 namespace RB::Render
 {

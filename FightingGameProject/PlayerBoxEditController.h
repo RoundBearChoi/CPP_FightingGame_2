@@ -5,7 +5,7 @@
 #include "PlayerBox.h"
 #include "PlayerBoxSpecs.h"
 #include "PlayerID.h"
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 #include "CharacterType.h"
 
 namespace RB::Collisions

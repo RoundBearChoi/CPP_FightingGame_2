@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 namespace RB::HBox
 {

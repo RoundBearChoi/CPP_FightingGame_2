@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 #include "AnimationRenderer.h"
 #include "AnimationSpecs.h"
 

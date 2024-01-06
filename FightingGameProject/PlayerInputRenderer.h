@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SpriteLoader.h"
-#include "SpriteEnum.h"
+#include "SpriteType.h"
 
 #include "iPlayerController.h"
 #include "iInputController.h"

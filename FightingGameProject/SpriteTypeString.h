@@ -4,10 +4,10 @@
 
 namespace RB::Sprites
 {
-	class SpriteEnumString
+	class SpriteTypeString
 	{
 	public:
-		SpriteEnumString(SpriteType spriteEnum, std::string string)
+		SpriteTypeString(SpriteType spriteEnum, std::string string)
 		{
 			_spriteEnum = spriteEnum;
 			_string = string;

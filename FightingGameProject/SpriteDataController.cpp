@@ -16,14 +16,14 @@ namespace RB::Sprites
 	void SpriteDataController::Init()
 	{
 		_vecEnumStrings.reserve((size_t)SpriteType::COUNT);
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::NONE, "NONE"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::aku_idle, "fighter_0_idle"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::aku_crouch, "fighter_0_crouch"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::aku_walk, "fighter_0_walk"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::aku_jump_up_0, "fighter_0_jump_up"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::aku_jump_up_1, "fighter_0_fall"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::aku_jab, "fighter_0_jab"));
-		_vecEnumStrings.push_back(new SpriteEnumString(SpriteType::aku_wince, "fighter_0_wince"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::NONE, "NONE"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_idle, "fighter_0_idle"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_crouch, "fighter_0_crouch"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_walk, "fighter_0_walk"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_jump_up_0, "fighter_0_jump_up"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_jump_up_1, "fighter_0_fall"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_jab, "fighter_0_jab"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_wince, "fighter_0_wince"));
 	}
 
 	void SpriteDataController::OnUpdate()

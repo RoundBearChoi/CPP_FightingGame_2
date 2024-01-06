@@ -537,7 +537,7 @@
     <ClInclude Include="ManualAnimationUpdater.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteEnumString.h">
+    <ClInclude Include="SpriteTypeString.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="SpriteDataController.h">

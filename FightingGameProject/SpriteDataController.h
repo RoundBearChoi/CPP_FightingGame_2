@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-#include "SpriteEnumString.h"
+#include "SpriteTypeString.h"
 
 #include "iSpriteDataController.h"
 
@@ -21,7 +21,7 @@ namespace RB::Sprites
 		const std::string& GetString(SpriteType spriteEnum) override;
 
 	private:
-		std::vector<SpriteEnumString*> _vecEnumStrings;
+		std::vector<SpriteTypeString*> _vecEnumStrings;
 		std::string _empty = "EMPTY";
 	};
 }

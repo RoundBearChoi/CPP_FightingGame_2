@@ -73,15 +73,6 @@ namespace RB::HBox
 		_notification.AddFrameCount(120);
 	}
 
-	//const std::string& HBMenuController::_GetCurrentSpriteString()
-	//{
-	//	RB::Sprites::SpriteEnum se = _GetCurrentSpriteEnum();
-	//
-	//	const std::string& str = RB::Sprites::iSpriteDataController::instance->GetString(se);
-	//
-	//	return str;
-	//}
-
 	const std::string& HBMenuController::_GetFrameName()
 	{
 		RB::HBox::Loaded_HB_Data* data = _GetHBData();

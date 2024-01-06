@@ -20,8 +20,8 @@ namespace RB::Render
 
 	private:
 		void _RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos);
-		void _RenderIcon(RB::Sprites::SpriteType spriteEnum, olc::vi2d pos, olc::Pixel tint);
-		RB::Sprites::SpriteType _GetSpriteEnum(const RB::Input::PlayerInput& playerInput);
+		void _RenderIcon(RB::Sprites::SpriteType spriteType, olc::vi2d pos, olc::Pixel tint);
+		RB::Sprites::SpriteType _GetSpriteType(const RB::Input::PlayerInput& playerInput);
 
 		RB::Sprites::SpriteLoader* _spriteLoader = nullptr;
 	};

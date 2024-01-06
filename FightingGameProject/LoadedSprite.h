@@ -7,20 +7,20 @@ namespace RB::Sprites
 	class LoadedSprite
 	{
 	public:
-		LoadedSprite(std::string path, olc::Sprite* sprite, olc::Decal* decal, SpriteType spriteEnum);
+		LoadedSprite(std::string path, olc::Sprite* sprite, olc::Decal* decal, SpriteType spriteType);
 		~LoadedSprite();
 
 	public:
 		const std::string& GetPath() const;
 		olc::Sprite* GetSprite();
 		olc::Decal* GetDecal();
-		SpriteType GetSpriteEnum();
+		SpriteType GetSpriteType();
 		olc::vi2d GetSpriteSize();
 
 	private:
 		std::string _path = "NONE";
 		olc::Sprite* _sprite = nullptr;
 		olc::Decal* _decal = nullptr;
-		SpriteType _spriteEnum = SpriteType::NONE;
+		SpriteType _spriteType = SpriteType::NONE;
 	};
 }

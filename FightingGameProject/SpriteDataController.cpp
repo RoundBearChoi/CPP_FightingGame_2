@@ -36,11 +36,11 @@ namespace RB::Sprites
 
 	}
 
-	const std::string& SpriteDataController::GetString(SpriteType spriteEnum)
+	const std::string& SpriteDataController::GetString(SpriteType spriteType)
 	{
 		for (auto i = _vecEnumStrings.begin(); i != _vecEnumStrings.end(); i++)
 		{
-			if ((*i)->GetEnum() == spriteEnum)
+			if ((*i)->GetEnum() == spriteType)
 			{
 				return (*i)->GetString();
 			}

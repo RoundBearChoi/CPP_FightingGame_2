@@ -114,9 +114,9 @@ namespace RB::PlayerStates
 		return nullptr;
 	}
 
-	RB::Sprites::SpriteType PlayerState::GetSpriteEnum()
+	RB::Sprites::SpriteType PlayerState::GetSpriteType()
 	{
-		return _spriteEnum;
+		return _spriteType;
 	}
 
 	void PlayerState::AutoUpdatePlayerBox()
@@ -137,7 +137,7 @@ namespace RB::PlayerStates
 			return;
 		}
 
-		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteEnum);
+		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
 
 		if (iAniObj == nullptr)
 		{
@@ -146,7 +146,7 @@ namespace RB::PlayerStates
 
 		unsigned int animationIndex = iAniObj->GetCurrentIndex();
 
-		RB::Collisions::PlayerBox* box = loaded->GetSpecs(_spriteEnum, animationIndex);
+		RB::Collisions::PlayerBox* box = loaded->GetSpecs(_spriteType, animationIndex);
 
 		if (box == nullptr)
 		{

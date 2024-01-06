@@ -105,12 +105,12 @@ namespace RB::HBox
 	/// <summary>
 	/// only use during initialization (vector addresses)
 	/// </summary>
-	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteEnum)
+	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType)
 	{
-		//save path - spriteEnum
-		if (GetDataListPath(spriteEnum).GetSpriteEnum() == RB::Sprites::SpriteType::NONE)
+		//save path - spriteType
+		if (GetDataListPath(spriteType).GetSpriteType() == RB::Sprites::SpriteType::NONE)
 		{
-			_vecLists.push_back(HBoxDataListPath{ path, spriteEnum });
+			_vecLists.push_back(HBoxDataListPath{ path, spriteType });
 		}
 
 		//load
@@ -120,7 +120,7 @@ namespace RB::HBox
 		//if failed to load, return default data
 		if (root == nullptr)
 		{
-			Loaded_HB_Data defaultData{ spriteEnum };
+			Loaded_HB_Data defaultData{ spriteType };
 
 			AABB_Set emptyAABBs;
 			emptyAABBs.SetFrameNameAndParse("frame_0");
@@ -133,7 +133,7 @@ namespace RB::HBox
 		//read
 		json_object_s* obj = json_value_as_object(root);
 
-		Loaded_HB_Data data{ spriteEnum };
+		Loaded_HB_Data data{ spriteType };
 
 		for (int i = 0; i < obj->length; i++)
 		{
@@ -240,13 +240,13 @@ namespace RB::HBox
 		return RB::Collisions::AABB();
 	}
 
-	const RB::HBox::HBoxDataListPath& _HBoxLoader::GetDataListPath(RB::Sprites::SpriteType spriteEnum) const
+	const RB::HBox::HBoxDataListPath& _HBoxLoader::GetDataListPath(RB::Sprites::SpriteType spriteType) const
 	{
 		const std::vector<HBoxDataListPath>& vec = _getVector();
 
 		for (auto i = vec.begin(); i != vec.end(); i++)
 		{
-			if ((*i).GetSpriteEnum() == spriteEnum)
+			if ((*i).GetSpriteType() == spriteType)
 			{
 				return (*i);
 			}

@@ -19,6 +19,6 @@ namespace RB::Render
 		olc::vf2d mRenderOffset = { 0.0f, 0.0f };
 		RB::Sprites::LoadedSprite* mLoadedSprite = nullptr;
 		bool mPlayOnce = false;
-		RB::Sprites::SpriteType mSpriteEnum = RB::Sprites::SpriteType::NONE;
+		RB::Sprites::SpriteType mSpriteType = RB::Sprites::SpriteType::NONE;
 	};
 }

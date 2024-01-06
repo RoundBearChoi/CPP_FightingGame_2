@@ -35,14 +35,14 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::Sprites::SpriteType ownerSpriteEnum = ownerState->GetSpriteEnum();
-		RB::Sprites::SpriteType targetSpriteEnum = enemyState->GetSpriteEnum();
+		RB::Sprites::SpriteType ownerSpriteType = ownerState->GetSpriteType();
+		RB::Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
 		
-		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteEnum);
-		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteEnum);
+		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteType);
+		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
-		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iHitBoxDataController::instance->GetData(ownerSpriteEnum);
-		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iHurtBoxDataController::instance->GetData(targetSpriteEnum);
+		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iHitBoxDataController::instance->GetData(ownerSpriteType);
+		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iHurtBoxDataController::instance->GetData(targetSpriteType);
 
 		if (ownerData == nullptr || targetData == nullptr)
 		{

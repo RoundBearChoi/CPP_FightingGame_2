@@ -34,11 +34,11 @@ namespace RB::HBox
 		_dir = dir;
 	}
 
-	Loaded_HB_Data* HB_Loader::GetData(RB::Sprites::SpriteType spriteEnum)
+	Loaded_HB_Data* HB_Loader::GetData(RB::Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
 		{
-			if ((*i).GetSpriteEnum() == spriteEnum)
+			if ((*i).GetSpriteType() == spriteType)
 			{
 				return &(*i);
 			}
@@ -47,9 +47,9 @@ namespace RB::HBox
 		return nullptr;
 	}
 
-	const std::string& HB_Loader::GetPath(RB::Sprites::SpriteType spriteEnum) const
+	const std::string& HB_Loader::GetPath(RB::Sprites::SpriteType spriteType) const
 	{
-		const HBoxDataListPath& p = _loader.GetDataListPath(spriteEnum);
+		const HBoxDataListPath& p = _loader.GetDataListPath(spriteType);
 
 		return p.GetPath();
 

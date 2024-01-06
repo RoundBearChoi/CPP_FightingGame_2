@@ -17,7 +17,7 @@ namespace RB::Render
         hit0Specs.mSkipFixedUpdates = 2;
         hit0Specs.mRenderSize = olc::vf2d{ 73.6f, 76.8f };
         hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, -6.0f };
-        hit0Specs.mSpriteEnum = RB::Sprites::SpriteType::vfx_hiteffect_0;
+        hit0Specs.mSpriteType = RB::Sprites::SpriteType::vfx_hiteffect_0;
 
         _animationLoader.LoadAnimation(hit0Specs, RB::Sprites::SpriteType::vfx_hiteffect_0);
     }
@@ -34,9 +34,9 @@ namespace RB::Render
         _DeleteFinishedAnimations();
     }
 
-    void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteEnum, olc::vf2d pos)
+    void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos)
     {
-        AnimationRenderer* aniRenderer = _animationLoader.GetAnimationRenderer(spriteEnum);
+        AnimationRenderer* aniRenderer = _animationLoader.GetAnimationRenderer(spriteType);
         
         //no owner player
         iAnimationObj* animationObj = new AnimationObj(nullptr, aniRenderer, RB::Sprites::PivotType::CENTER);

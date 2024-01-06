@@ -91,7 +91,7 @@ namespace RB::HBox
 		return AABBs->GetFrameName();
 	}
 
-	RB::Sprites::SpriteType HBMenuController::_GetCurrentSpriteEnum()
+	RB::Sprites::SpriteType HBMenuController::_GetCurrentSpriteType()
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
@@ -101,13 +101,13 @@ namespace RB::HBox
 			return RB::Sprites::SpriteType::NONE;
 		}
 
-		state->GetSpriteEnum();
-		return state->GetSpriteEnum();
+		state->GetSpriteType();
+		return state->GetSpriteType();
 	}
 
 	unsigned int HBMenuController::_GetCurrentAnimationFrame()
 	{
-		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteEnum();
+		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType();
 
 		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, spriteType);
 
@@ -129,14 +129,14 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHurtBoxDataController::instance->GetData(_GetCurrentSpriteEnum());
+				data = RB::HBox::iHurtBoxDataController::instance->GetData(_GetCurrentSpriteType());
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHitBoxDataController::instance->GetData(_GetCurrentSpriteEnum());
+				data = RB::HBox::iHitBoxDataController::instance->GetData(_GetCurrentSpriteType());
 			}
 		}
 
@@ -156,7 +156,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_GetCurrentSpriteEnum());
+				const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_GetCurrentSpriteType());
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}
@@ -164,7 +164,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				const std::string& path = RB::HBox::iHitBoxDataController::instance->GetPath(_GetCurrentSpriteEnum());
+				const std::string& path = RB::HBox::iHitBoxDataController::instance->GetPath(_GetCurrentSpriteType());
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

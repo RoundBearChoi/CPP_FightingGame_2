@@ -45,18 +45,18 @@ namespace RB::Render
 		}
 	}
 
-	void AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteEnum)
+	void AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
-		_spriteLoader.LoadSprite(path, spriteEnum);
+		_spriteLoader.LoadSprite(path, spriteType);
 	}
 
 	/// <summary>
 	/// this function require sprites to be loaded first
 	/// </summary>
-	void AnimationLoader::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteType spriteEnum)
+	void AnimationLoader::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteType spriteType)
 	{
-		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(spriteEnum);
-		specs.mSpriteEnum = spriteEnum;
+		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(spriteType);
+		specs.mSpriteType = spriteType;
 
 		_aniLoader.LoadAnimation(specs);
 	}
@@ -96,13 +96,13 @@ namespace RB::Render
 		return next;
 	}
 
-	iAnimationObj* AnimationLoader::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteEnum)
+	iAnimationObj* AnimationLoader::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
 			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
 			{
-				if ((*i)->GetAnimationSpecs().mSpriteEnum == spriteEnum)
+				if ((*i)->GetAnimationSpecs().mSpriteType == spriteType)
 				{
 					return (*i);
 				}
@@ -125,22 +125,22 @@ namespace RB::Render
 	/// <summary>
 	/// raw pointer, make sure to delete
 	/// </summary>
-	iAnimationObj* AnimationLoader::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType playerSpriteEnum, RB::Sprites::PivotType pivotType)
+	iAnimationObj* AnimationLoader::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType)
 	{
-		iAnimationObj* animationObj = new AnimationObj(&player, _aniLoader.GetAnimationRenderer(playerSpriteEnum), pivotType);
+		iAnimationObj* animationObj = new AnimationObj(&player, _aniLoader.GetAnimationRenderer(spriteType), pivotType);
 
 		return animationObj;
 	}
 
-	RB::Sprites::SpriteType AnimationLoader::GetSpriteEnum(RB::Players::PlayerID playerID)
+	RB::Sprites::SpriteType AnimationLoader::GetSpriteType(RB::Players::PlayerID playerID)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
 			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
 			{
-				RB::Sprites::SpriteType spriteEnum = (*i)->GetAnimationSpecs().mSpriteEnum;
+				RB::Sprites::SpriteType spriteType = (*i)->GetAnimationSpecs().mSpriteType;
 
-				return spriteEnum;
+				return spriteType;
 			}
 		}
 
@@ -157,8 +157,8 @@ namespace RB::Render
 		return _vecCurrentAnimations;
 	}
 
-	AnimationRenderer* AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteEnum)
+	AnimationRenderer* AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
 	{
-		return _aniLoader.GetAnimationRenderer(spriteEnum);
+		return _aniLoader.GetAnimationRenderer(spriteType);
 	}
 }

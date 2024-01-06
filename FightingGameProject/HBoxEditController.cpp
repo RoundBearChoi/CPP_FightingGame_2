@@ -49,9 +49,9 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -67,14 +67,14 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteEnum);
+				data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteType);
 			}
 		}
 		else if (boxType == HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteEnum);
+				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteType);
 			}
 		}
 
@@ -90,9 +90,9 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -105,11 +105,11 @@ namespace RB::HBox
 		
 		if (_boxType == HBoxType::HURT_BOX)
 		{
-			data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteEnum);
+			data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteType);
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
-			data = RB::HBox::iHitBoxDataController::instance->GetData(spriteEnum);
+			data = RB::HBox::iHitBoxDataController::instance->GetData(spriteType);
 		}
 
 		if (data == nullptr)
@@ -296,11 +296,11 @@ namespace RB::HBox
 
 			if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 			{
-				path = RB::HBox::iHurtBoxDataController::instance->GetPath(data->GetSpriteEnum());
+				path = RB::HBox::iHurtBoxDataController::instance->GetPath(data->GetSpriteType());
 			}
 			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 			{
-				path = RB::HBox::iHitBoxDataController::instance->GetPath(data->GetSpriteEnum());
+				path = RB::HBox::iHitBoxDataController::instance->GetPath(data->GetSpriteType());
 			}
 
 			std::ofstream file(path);

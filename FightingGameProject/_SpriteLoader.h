@@ -12,8 +12,8 @@ namespace RB::Sprites
 		~_SpriteLoader();
 
 	public:
-		LoadedSprite* LoadSprite(std::string path, SpriteType spriteEnum);
-		LoadedSprite* GetLoadedSprite(SpriteType spriteEnum);
+		LoadedSprite* LoadSprite(std::string path, SpriteType spriteType);
+		LoadedSprite* GetLoadedSprite(SpriteType spriteType);
 
 	private:
 		std::vector<LoadedSprite*> _vecLoadedSprites;

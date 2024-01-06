@@ -4,9 +4,9 @@
 
 namespace RB::Render
 {
-	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteType spriteEnum)
+	void ManualAnimationUpdater::OnEnter(RB::Sprites::SpriteType spriteType)
 	{
-		_spriteEnum = spriteEnum;
+		_spriteType = spriteType;
 	}
 
 	void ManualAnimationUpdater::OnUpdate()
@@ -16,7 +16,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteEnum);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteType);
 
 		if (aniObj == nullptr)
 		{

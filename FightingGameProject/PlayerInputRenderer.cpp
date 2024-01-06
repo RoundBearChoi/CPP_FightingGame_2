@@ -65,18 +65,18 @@ namespace RB::Render
 				tint = olc::YELLOW;
 			}
 
-			_RenderIcon(_GetSpriteEnum((*i)->GetPlayerInputType()), olc::vi2d(5 + (count * 30 + 5), yPos), tint);
+			_RenderIcon(_GetSpriteType((*i)->GetPlayerInputType()), olc::vi2d(5 + (count * 30 + 5), yPos), tint);
 
 			count++;
 		}
 	}
 
-	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteType spriteEnum, olc::vi2d pos, olc::Pixel tint)
+	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteType spriteType, olc::vi2d pos, olc::Pixel tint)
 	{
-		_spriteLoader->RenderSprite(spriteEnum, olc::vi2d{ 25, 25 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
+		_spriteLoader->RenderSprite(spriteType, olc::vi2d{ 25, 25 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
 	}
 
-	RB::Sprites::SpriteType PlayerInputRenderer::_GetSpriteEnum(const RB::Input::PlayerInput& playerInput)
+	RB::Sprites::SpriteType PlayerInputRenderer::_GetSpriteType(const RB::Input::PlayerInput& playerInput)
 	{
 		if (playerInput == RB::Input::PlayerInput::MOVE_UP) { return RB::Sprites::SpriteType::input_arrow_up; }
 		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN) { return RB::Sprites::SpriteType::input_arrow_down; }

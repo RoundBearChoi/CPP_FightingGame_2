@@ -226,16 +226,16 @@ namespace RB::Collisions
 			return RB::Sprites::SpriteType::NONE;
 		}
 
-		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		return spriteEnum;
+		return spriteType;
 	}
 
 	unsigned int PlayerBoxEditController::_GetCurrentFrame(RB::Players::PlayerID id)
 	{
-		RB::Sprites::SpriteType spriteEnum = _GetCurrentSpriteType(id);
+		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType(id);
 
-		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(id, spriteEnum);
+		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(id, spriteType);
 
 		if (iAniObj == nullptr)
 		{

@@ -12,6 +12,6 @@ namespace RB::Sprites
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual const std::string& GetString(SpriteType spriteEnum) = 0;
+		virtual const std::string& GetString(SpriteType spriteType) = 0;
 	};
 }

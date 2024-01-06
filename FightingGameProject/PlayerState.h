@@ -22,10 +22,10 @@ namespace RB::PlayerStates
 
 	public:
 		RB::Players::iPlayer* GetPlayer();
-		RB::Sprites::SpriteType GetSpriteEnum();
+		RB::Sprites::SpriteType GetSpriteType();
 		void AutoUpdatePlayerBox();
 
 	protected:
-		RB::Sprites::SpriteType _spriteEnum = RB::Sprites::SpriteType::NONE;
+		RB::Sprites::SpriteType _spriteType = RB::Sprites::SpriteType::NONE;
 	};
 }

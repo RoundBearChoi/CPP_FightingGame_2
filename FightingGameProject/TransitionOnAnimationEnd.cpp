@@ -35,9 +35,9 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(player->GetPlayerID(), spriteEnum);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(player->GetPlayerID(), spriteType);
 
 		if (aniObj == nullptr)
 		{

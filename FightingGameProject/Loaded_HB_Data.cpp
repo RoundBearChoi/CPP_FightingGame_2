@@ -2,9 +2,9 @@
 
 namespace RB::HBox
 {
-	Loaded_HB_Data::Loaded_HB_Data(RB::Sprites::SpriteType spriteEnum)
+	Loaded_HB_Data::Loaded_HB_Data(RB::Sprites::SpriteType spriteType)
 	{
-		_spriteEnum = spriteEnum;
+		_spriteType = spriteType;
 	}
 
 	void Loaded_HB_Data::OnFixedUpdate()
@@ -65,8 +65,8 @@ namespace RB::HBox
 		return &(*(_vec_AABB_Sets.end() - 1));
 	}
 
-	RB::Sprites::SpriteType Loaded_HB_Data::GetSpriteEnum()
+	RB::Sprites::SpriteType Loaded_HB_Data::GetSpriteType()
 	{
-		return _spriteEnum;
+		return _spriteType;
 	}
 }

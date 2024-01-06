@@ -9,7 +9,7 @@ namespace RB::PlayerStates::Aku
 	class P0_Dummy : public RB::PlayerStates::PlayerState
 	{
 	public:
-		P0_Dummy(Sprites::SpriteType startingSpriteEnum);
+		P0_Dummy(Sprites::SpriteType startingSpriteType);
 
 	public:
 		void OnEnter() override;

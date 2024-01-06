@@ -22,13 +22,13 @@ namespace RB::HBox
 		_hbLoader.OnFixedUpdate();
 	}
 
-	Loaded_HB_Data* HitBoxDataController::GetData(RB::Sprites::SpriteType spriteEnum)
+	Loaded_HB_Data* HitBoxDataController::GetData(RB::Sprites::SpriteType spriteType)
 	{
-		return _hbLoader.GetData(spriteEnum);
+		return _hbLoader.GetData(spriteType);
 	}
 
-	const std::string& HitBoxDataController::GetPath(RB::Sprites::SpriteType spriteEnum) const
+	const std::string& HitBoxDataController::GetPath(RB::Sprites::SpriteType spriteType) const
 	{
-		return _hbLoader.GetPath(spriteEnum);
+		return _hbLoader.GetPath(spriteType);
 	}
 }

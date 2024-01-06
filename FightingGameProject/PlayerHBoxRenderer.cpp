@@ -50,9 +50,9 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteEnum);
+		iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteType);
 		
 		if (aniObj == nullptr)
 		{
@@ -67,14 +67,14 @@ namespace RB::Render
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteEnum);
+				data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteType);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteEnum);
+				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteType);
 			}
 		}
 

@@ -4,14 +4,14 @@
 
 namespace RB::PlayerStates::Aku
 {
-	P0_Dummy::P0_Dummy(Sprites::SpriteType startingSpriteEnum)
+	P0_Dummy::P0_Dummy(Sprites::SpriteType startingSpriteType)
 	{
-		_spriteEnum = startingSpriteEnum;
+		_spriteType = startingSpriteType;
 	}
 
 	void P0_Dummy::OnEnter()
 	{
-		_manualAnimationUpdater.OnEnter(_spriteEnum);
+		_manualAnimationUpdater.OnEnter(_spriteType);
 	}
 
 	void P0_Dummy::OnExit()

@@ -7,10 +7,10 @@ namespace RB::HBox
 	class HBoxDataListPath
 	{
 	public:
-		HBoxDataListPath(std::string path, RB::Sprites::SpriteType spriteEnum)
+		HBoxDataListPath(std::string path, RB::Sprites::SpriteType spriteType)
 		{
 			_path = path;
-			_spriteEnum = spriteEnum;
+			_spriteType = spriteType;
 		}
 
 		~HBoxDataListPath() = default;
@@ -21,13 +21,13 @@ namespace RB::HBox
 			return _path;
 		}
 		
-		const RB::Sprites::SpriteType& GetSpriteEnum() const
+		const RB::Sprites::SpriteType& GetSpriteType() const
 		{
-			return _spriteEnum;
+			return _spriteType;
 		}
 
 	private:
 		std::string _path = "";
-		RB::Sprites::SpriteType _spriteEnum = RB::Sprites::SpriteType::NONE;
+		RB::Sprites::SpriteType _spriteType = RB::Sprites::SpriteType::NONE;
 	};
 }

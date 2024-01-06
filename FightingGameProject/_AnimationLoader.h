@@ -15,7 +15,7 @@ namespace RB::Render
 	public:
 		void Init();
 		void LoadAnimation(AnimationSpecs specs);
-		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteEnum);
+		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
 
 	private:
 		std::vector<AnimationRenderer*> _animationRenderer;

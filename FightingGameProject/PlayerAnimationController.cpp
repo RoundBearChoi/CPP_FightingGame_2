@@ -77,9 +77,9 @@ namespace RB::Render
 		_animationLoader.DeleteAnimationObjs(playerID);
 	}
 
-	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteEnum)
+	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType)
 	{
-		return _animationLoader.GetCurrentAnimationObj(playerID, spriteEnum);
+		return _animationLoader.GetCurrentAnimationObj(playerID, spriteType);
 	}
 
 	void PlayerAnimationController::_SetFirstPlayerAnimations()
@@ -112,9 +112,9 @@ namespace RB::Render
 				continue;
 			}
 
-			RB::Sprites::SpriteType spriteEnum = state->GetSpriteEnum();
+			RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-			AnimationRenderer* aniRenderer = _animationLoader.GetAnimationRenderer(spriteEnum);
+			AnimationRenderer* aniRenderer = _animationLoader.GetAnimationRenderer(spriteType);
 
 			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, RB::Sprites::PivotType::BOTTOM_CENTER);
 
@@ -131,23 +131,23 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Sprites::SpriteType playerSpriteEnum = state->GetSpriteEnum();
+		RB::Sprites::SpriteType playerSpriteType = state->GetSpriteType();
 		RB::Players::PlayerID playerID = player.GetPlayerID();
-		RB::Sprites::SpriteType animationSpriteEnum = _GetPlayerSpriteEnum(playerID);
+		RB::Sprites::SpriteType animationSpriteType = _GetPlayerSpriteType(playerID);
 
-		if (playerSpriteEnum != animationSpriteEnum)
+		if (playerSpriteType != animationSpriteType)
 		{
 			DeleteAnimationObj(playerID);
 
-			iAnimationObj* aniObj = _animationLoader.InstantiateNewAnimationObj(player, playerSpriteEnum, RB::Sprites::PivotType::BOTTOM_CENTER);
+			iAnimationObj* aniObj = _animationLoader.InstantiateNewAnimationObj(player, playerSpriteType, RB::Sprites::PivotType::BOTTOM_CENTER);
 
 			_animationLoader.AddNewAnimation(aniObj);
 		}
 	}
 
-	RB::Sprites::SpriteType PlayerAnimationController::_GetPlayerSpriteEnum(RB::Players::PlayerID playerID)
+	RB::Sprites::SpriteType PlayerAnimationController::_GetPlayerSpriteType(RB::Players::PlayerID playerID)
 	{
-		return _animationLoader.GetSpriteEnum(playerID);
+		return _animationLoader.GetSpriteType(playerID);
 	}
 
 	void PlayerAnimationController::_SaveAnimationSpecs(std::string path, AnimationSpecs specs)

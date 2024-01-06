@@ -108,18 +108,18 @@ namespace RB::HBox
 
 		if (state == nullptr)
 		{
-			return _currentSpriteEnum;
+			return RB::Sprites::SpriteEnum::NONE;
 		}
 
 		state->GetSpriteEnum();
-		_currentSpriteEnum = state->GetSpriteEnum();
-
-		return _currentSpriteEnum;
+		return state->GetSpriteEnum();
 	}
 
 	unsigned int HBMenuController::_GetCurrentAnimationFrame()
 	{
-		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _currentSpriteEnum);
+		RB::Sprites::SpriteEnum spriteType = _GetCurrentSpriteEnum();
+
+		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, spriteType);
 
 		if (obj == nullptr)
 		{
@@ -139,14 +139,14 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHurtBoxDataController::instance->GetData(_currentSpriteEnum);
+				data = RB::HBox::iHurtBoxDataController::instance->GetData(_GetCurrentSpriteEnum());
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHitBoxDataController::instance->GetData(_currentSpriteEnum);
+				data = RB::HBox::iHitBoxDataController::instance->GetData(_GetCurrentSpriteEnum());
 			}
 		}
 
@@ -166,7 +166,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
 			{
-				const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_currentSpriteEnum);
+				const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_GetCurrentSpriteEnum());
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}
@@ -174,7 +174,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iHitBoxDataController::instance != nullptr)
 			{
-				const std::string& path = RB::HBox::iHitBoxDataController::instance->GetPath(_currentSpriteEnum);
+				const std::string& path = RB::HBox::iHitBoxDataController::instance->GetPath(_GetCurrentSpriteEnum());
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

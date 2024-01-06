@@ -30,7 +30,7 @@ namespace RB::HBox
 		RB::HBox::Loaded_HB_Data* _GetHBData();
 		void _ShowSavedNotification();
 
-		RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
+		//RB::Sprites::SpriteEnum _currentSpriteEnum = RB::Sprites::SpriteEnum::NONE;
 		std::string _none = "none";
 		RB::Render::Notification _notification;
 	};

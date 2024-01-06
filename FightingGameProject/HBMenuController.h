@@ -23,7 +23,7 @@ namespace RB::HBox
 		void ShowNotification() override;
 
 	private:
-		const std::string& _GetCurrentSpriteString();
+		//const std::string& _GetCurrentSpriteString();
 		const std::string& _GetFrameName();
 		RB::Sprites::SpriteEnum _GetCurrentSpriteEnum();
 		unsigned int _GetCurrentAnimationFrame();

@@ -24,6 +24,6 @@ namespace RB::HBox
 
 		const std::string _none = "none";
 		std::string _dir = "HBDirectory/";
-		std::string _extention = ".HurtBoxSpecs";
+		std::string _extention = ".HBoxSpecs";
 	};
 }

@@ -22,8 +22,8 @@ namespace RB::Render
 			return;
 		}
 
-		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::HURT_BOX);
-		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::HURT_BOX);
+		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::TARGET_BOX);
+		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::TARGET_BOX);
 
 		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::HIT_BOX);
 		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::HIT_BOX);
@@ -63,7 +63,7 @@ namespace RB::Render
 
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 
-		if (boxType == RB::HBox::HBoxType::HURT_BOX)
+		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
 			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
 			{
@@ -92,7 +92,7 @@ namespace RB::Render
 
 		olc::Pixel color = olc::RED;
 
-		if (boxType == RB::HBox::HBoxType::HURT_BOX)
+		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
 			color = olc::MAGENTA;
 		}

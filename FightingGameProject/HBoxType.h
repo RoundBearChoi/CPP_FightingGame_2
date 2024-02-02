@@ -6,7 +6,7 @@ namespace RB::HBox
 	{
 		NONE,
 
-		HURT_BOX,
+		TARGET_BOX,
 		HIT_BOX,
 	};
 }

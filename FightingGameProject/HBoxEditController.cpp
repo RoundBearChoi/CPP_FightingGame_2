@@ -63,7 +63,7 @@ namespace RB::HBox
 		//can get either hurtbox or hitbox
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 
-		if (boxType == HBoxType::HURT_BOX)
+		if (boxType == HBoxType::TARGET_BOX)
 		{
 			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
 			{
@@ -103,7 +103,7 @@ namespace RB::HBox
 
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 		
-		if (_boxType == HBoxType::HURT_BOX)
+		if (_boxType == HBoxType::TARGET_BOX)
 		{
 			data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
 		}
@@ -129,7 +129,7 @@ namespace RB::HBox
 
 	bool HBoxEditController::_ControllersExist()
 	{
-		if (_boxType == RB::HBox::HBoxType::HURT_BOX)
+		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
 			if (RB::HBox::iTargetBoxDataController::instance == nullptr)
 			{
@@ -294,7 +294,7 @@ namespace RB::HBox
 
 			std::string path;
 
-			if (_boxType == RB::HBox::HBoxType::HURT_BOX)
+			if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 			{
 				path = RB::HBox::iTargetBoxDataController::instance->GetPath(data->GetSpriteType());
 			}

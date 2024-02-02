@@ -125,7 +125,7 @@ namespace RB::HBox
 
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 
-		if (boxType == RB::HBox::HBoxType::HURT_BOX)
+		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
 			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
 			{
@@ -152,7 +152,7 @@ namespace RB::HBox
 
 		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
 
-		if (boxType == RB::HBox::HBoxType::HURT_BOX)
+		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
 			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
 			{

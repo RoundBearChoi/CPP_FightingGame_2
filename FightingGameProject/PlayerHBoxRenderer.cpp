@@ -122,7 +122,7 @@ namespace RB::Render
 				continue;
 			}
 
-			if (player->OtherPlayerIsOnRightSide())
+			if (player->IsFacingRight())
 			{
 				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
 

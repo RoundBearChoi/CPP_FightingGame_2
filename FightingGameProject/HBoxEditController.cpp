@@ -6,7 +6,7 @@
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iTargetBoxDataController.h"
-#include "iHitBoxDataController.h"
+#include "iAttackBoxDataController.h"
 #include "iHBMenuController.h"
 #include "iCamController.h"
 
@@ -72,9 +72,9 @@ namespace RB::HBox
 		}
 		else if (boxType == HBoxType::HIT_BOX)
 		{
-			if (RB::HBox::iHitBoxDataController::instance != nullptr)
+			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteType);
+				data = RB::HBox::iAttackBoxDataController::instance->GetData(spriteType);
 			}
 		}
 
@@ -109,7 +109,7 @@ namespace RB::HBox
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
-			data = RB::HBox::iHitBoxDataController::instance->GetData(spriteType);
+			data = RB::HBox::iAttackBoxDataController::instance->GetData(spriteType);
 		}
 
 		if (data == nullptr)
@@ -138,7 +138,7 @@ namespace RB::HBox
 		}
 		else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
-			if (RB::HBox::iHitBoxDataController::instance == nullptr)
+			if (RB::HBox::iAttackBoxDataController::instance == nullptr)
 			{
 				return false;
 			}
@@ -300,7 +300,7 @@ namespace RB::HBox
 			}
 			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 			{
-				path = RB::HBox::iHitBoxDataController::instance->GetPath(data->GetSpriteType());
+				path = RB::HBox::iAttackBoxDataController::instance->GetPath(data->GetSpriteType());
 			}
 
 			std::ofstream file(path);

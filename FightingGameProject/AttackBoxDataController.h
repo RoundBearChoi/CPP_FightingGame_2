@@ -2,13 +2,13 @@
 
 #include <string>
 
-#include "iHitBoxDataController.h"
+#include "iAttackBoxDataController.h"
 #include "Loaded_HB_Data.h"
 #include "HB_Loader.h"
 
 namespace RB::HBox
 {
-	class AttackBoxDataController : public iHitBoxDataController
+	class AttackBoxDataController : public iAttackBoxDataController
 	{
 	public:
 		AttackBoxDataController(std::string dir);

@@ -615,7 +615,7 @@
     <ClInclude Include="AttackBoxDataController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="iHitBoxDataController.h">
+    <ClInclude Include="iAttackBoxDataController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="iHBoxEditController.h">

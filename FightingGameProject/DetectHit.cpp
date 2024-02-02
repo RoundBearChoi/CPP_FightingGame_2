@@ -4,7 +4,7 @@
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iVFXAnimationController.h"
-#include "iHitBoxDataController.h"
+#include "iAttackBoxDataController.h"
 #include "iTargetBoxDataController.h"
 #include "iGeneralHitStopController.h"
 
@@ -41,7 +41,7 @@ namespace RB::PlayerStateComponents
 		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteType);
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
-		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iHitBoxDataController::instance->GetData(ownerSpriteType);
+		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iAttackBoxDataController::instance->GetData(ownerSpriteType);
 		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iTargetBoxDataController::instance->GetData(targetSpriteType);
 
 		if (ownerData == nullptr || targetData == nullptr)

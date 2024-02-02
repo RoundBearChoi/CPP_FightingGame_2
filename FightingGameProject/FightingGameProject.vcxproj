@@ -273,7 +273,7 @@
     <ClInclude Include="iAttackRegisterController.h" />
     <ClInclude Include="iGeneralHitStopController.h" />
     <ClInclude Include="iHBoxEditController.h" />
-    <ClInclude Include="iHitBoxDataController.h" />
+    <ClInclude Include="iAttackBoxDataController.h" />
     <ClInclude Include="iInputObj.h" />
     <ClInclude Include="InputObj.h" />
     <ClInclude Include="iPlayerBoxDataController.h" />

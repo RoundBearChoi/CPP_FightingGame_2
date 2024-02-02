@@ -6,7 +6,7 @@
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iTargetBoxDataController.h"
-#include "iHitBoxDataController.h"
+#include "iAttackBoxDataController.h"
 
 namespace RB::Render
 {
@@ -72,9 +72,9 @@ namespace RB::Render
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
 		{
-			if (RB::HBox::iHitBoxDataController::instance != nullptr)
+			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHitBoxDataController::instance->GetData(spriteType);
+				data = RB::HBox::iAttackBoxDataController::instance->GetData(spriteType);
 			}
 		}
 

@@ -176,7 +176,7 @@
     <ClCompile Include="HB_Loader.cpp" />
     <ClCompile Include="AABB_Set.cpp" />
     <ClCompile Include="HitBoxEditorUpdater.cpp" />
-    <ClCompile Include="HurtBoxDataController.cpp" />
+    <ClCompile Include="TargetBoxDataController.cpp" />
     <ClCompile Include="HBoxDataListPath.h" />
     <ClCompile Include="P0_StandUp.cpp" />
     <ClCompile Include="PlayerBoxDataController.cpp" />
@@ -300,7 +300,7 @@
     <ClInclude Include="HB_Loader.h" />
     <ClInclude Include="HBoxType.h" />
     <ClInclude Include="HitBoxEditorUpdater.h" />
-    <ClInclude Include="HurtBoxDataController.h" />
+    <ClInclude Include="TargetBoxDataController.h" />
     <ClInclude Include="AABB_Set.h" />
     <ClInclude Include="Loaded_HB_Data.h" />
     <ClInclude Include="iBackgroundController.h" />

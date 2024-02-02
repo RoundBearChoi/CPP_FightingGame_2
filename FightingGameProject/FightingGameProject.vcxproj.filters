@@ -160,7 +160,7 @@
     <ClCompile Include="_HBoxLoader.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HurtBoxDataController.cpp">
+    <ClCompile Include="TargetBoxDataController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="ManualAnimationUpdater.cpp">
@@ -522,7 +522,7 @@
     <ClInclude Include="_HBoxLoader.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="HurtBoxDataController.h">
+    <ClInclude Include="TargetBoxDataController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="JGetter.h">

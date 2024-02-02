@@ -8,7 +8,7 @@
 #include "PlayerAnimationController.h"
 #include "PlayerBoxDataController.h"
 #include "HBMenuController.h"
-#include "HurtBoxDataController.h"
+#include "TargetBoxDataController.h"
 #include "HitBoxDataController.h"
 #include "HBoxEditController.h"
 
@@ -40,11 +40,10 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
-		RB::Controllers::ControllerBase::AddController<RB::HBox::HurtBoxDataController>(new RB::HBox::HurtBoxDataController("TargetBoxSpecs/"));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::TargetBoxDataController>(new RB::HBox::TargetBoxDataController("TargetBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HURT_BOX));
 
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
-		//playerDebugController->RenderPlayerBox(false);
 
 		RB::Cam::CamController* camController = RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());
 		camController->SetZoom(1.75f);

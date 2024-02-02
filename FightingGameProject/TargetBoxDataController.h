@@ -10,11 +10,11 @@
 
 namespace RB::HBox
 {
-	class HurtBoxDataController : public iHurtBoxDataController
+	class TargetBoxDataController : public iHurtBoxDataController
 	{
 	public:
-		HurtBoxDataController(std::string dir);
-		~HurtBoxDataController() override {};
+		TargetBoxDataController(std::string dir);
+		~TargetBoxDataController() override {};
 
 		void Init() override;
 		void OnUpdate() override;

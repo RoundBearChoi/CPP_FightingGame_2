@@ -8,7 +8,7 @@
 #include "PlayerAnimationController.h"
 #include "PlayerBoxDataController.h"
 #include "HBMenuController.h"
-#include "HurtBoxDataController.h"
+#include "TargetBoxDataController.h"
 #include "HitBoxDataController.h"
 #include "HBoxEditController.h"
 

@@ -10,7 +10,7 @@
 #include "InputController.h"
 #include "SpecialMovesController.h"
 #include "CamController.h"
-#include "HurtBoxDataController.h"
+#include "TargetBoxDataController.h"
 #include "HitBoxDataController.h"
 #include "AttackRegisterController.h"
 #include "GeneralHitStopController.h"
@@ -55,7 +55,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::SpecialMovesController>(new RB::Input::SpecialMovesController());
 
-		RB::Controllers::ControllerBase::AddController<RB::HBox::HurtBoxDataController>(new RB::HBox::HurtBoxDataController("TargetBoxSpecs/"));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::TargetBoxDataController>(new RB::HBox::TargetBoxDataController("TargetBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("HitBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::AttackRegisterController>(new RB::Collisions::AttackRegisterController());
 

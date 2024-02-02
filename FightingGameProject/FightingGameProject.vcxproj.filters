@@ -151,7 +151,7 @@
     <ClCompile Include="TransitionToJumpUp.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="HurtBoxEditorUpdater.cpp">
+    <ClCompile Include="TargetBoxEditorUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
     <ClCompile Include="ControllerBase.cpp">
@@ -507,7 +507,7 @@
     <ClInclude Include="TransitionToJumpUp.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="HurtBoxEditorUpdater.h">
+    <ClInclude Include="TargetBoxEditorUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="ControllerBase.h">

@@ -3,11 +3,11 @@
 
 namespace RB::Updaters
 {
-	class HitBoxEditorUpdater : public iUpdaterObj
+	class AttackBoxEditorUpdater : public iUpdaterObj
 	{
 	public:
-		HitBoxEditorUpdater() = default;
-		~HitBoxEditorUpdater() override;
+		AttackBoxEditorUpdater() = default;
+		~AttackBoxEditorUpdater() override;
 
 		void Init();
 		void OnUpdate();

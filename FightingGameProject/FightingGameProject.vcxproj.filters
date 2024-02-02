@@ -202,7 +202,7 @@
     <ClCompile Include="HB_Loader.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HitBoxEditorUpdater.cpp">
+    <ClCompile Include="AttackBoxEditorUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
     <ClCompile Include="TransitionOnInput.cpp">
@@ -600,7 +600,7 @@
     <ClInclude Include="HB_Loader.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
-    <ClInclude Include="HitBoxEditorUpdater.h">
+    <ClInclude Include="AttackBoxEditorUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="HBoxType.h">

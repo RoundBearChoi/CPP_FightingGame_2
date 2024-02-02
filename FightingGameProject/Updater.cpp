@@ -7,7 +7,7 @@
 
 #include "GameplayUpdater.h"
 #include "PlayerBoxEditorUpdater.h"
-#include "HitBoxEditorUpdater.h"
+#include "AttackBoxEditorUpdater.h"
 #include "TargetBoxEditorUpdater.h"
 
 #include "iGeneralHitStopController.h"
@@ -99,7 +99,7 @@ namespace RB::Updaters
 
 		if (f7.bPressed)
 		{
-			if (QueueUpdaterObj(new HitBoxEditorUpdater()))
+			if (QueueUpdaterObj(new AttackBoxEditorUpdater()))
 			{
 				return;
 			}

@@ -1,4 +1,4 @@
-#include "HitBoxEditorUpdater.h"
+#include "AttackBoxEditorUpdater.h"
 
 #include "InputController.h"
 #include "SpriteDataController.h"
@@ -18,12 +18,12 @@
 
 namespace RB::Updaters
 {
-	HitBoxEditorUpdater::~HitBoxEditorUpdater()
+	AttackBoxEditorUpdater::~AttackBoxEditorUpdater()
 	{
 		RB::Controllers::ControllerBase::OnEnd();
 	}
 
-	void HitBoxEditorUpdater::Init()
+	void AttackBoxEditorUpdater::Init()
 	{
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
@@ -50,12 +50,12 @@ namespace RB::Updaters
 		camController->SetZoom(1.75f);
 	}
 
-	void HitBoxEditorUpdater::OnUpdate()
+	void AttackBoxEditorUpdater::OnUpdate()
 	{
 		RB::Controllers::ControllerBase::UpdateAll();
 	}
 
-	void HitBoxEditorUpdater::OnFixedUpdate()
+	void AttackBoxEditorUpdater::OnFixedUpdate()
 	{
 		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}

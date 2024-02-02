@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "iHurtBoxDataController.h"
+#include "iTargetBoxDataController.h"
 #include "Loaded_HB_Data.h"
 #include "HB_Loader.h"
 #include "SpriteType.h"
@@ -10,7 +10,7 @@
 
 namespace RB::HBox
 {
-	class TargetBoxDataController : public iHurtBoxDataController
+	class TargetBoxDataController : public iTargetBoxDataController
 	{
 	public:
 		TargetBoxDataController(std::string dir);

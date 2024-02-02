@@ -305,7 +305,7 @@
     <ClInclude Include="Loaded_HB_Data.h" />
     <ClInclude Include="iBackgroundController.h" />
     <ClInclude Include="iCamController.h" />
-    <ClInclude Include="iHurtBoxDataController.h" />
+    <ClInclude Include="iTargetBoxDataController.h" />
     <ClInclude Include="HBoxEditController.h" />
     <ClInclude Include="iInputController.h" />
     <ClInclude Include="iHBMenuController.h" />

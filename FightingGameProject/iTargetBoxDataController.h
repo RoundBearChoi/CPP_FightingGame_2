@@ -5,7 +5,7 @@
 
 namespace RB::HBox
 {
-	class iHurtBoxDataController : public RB::Controllers::ControllerT<iHurtBoxDataController>
+	class iTargetBoxDataController : public RB::Controllers::ControllerT<iTargetBoxDataController>
 	{
 	public:
 		virtual void Init() = 0;

@@ -5,7 +5,7 @@
 
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
-#include "iHurtBoxDataController.h"
+#include "iTargetBoxDataController.h"
 #include "iHitBoxDataController.h"
 #include "iHBMenuController.h"
 #include "iCamController.h"
@@ -65,9 +65,9 @@ namespace RB::HBox
 
 		if (boxType == HBoxType::HURT_BOX)
 		{
-			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
+			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteType);
+				data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
 			}
 		}
 		else if (boxType == HBoxType::HIT_BOX)
@@ -105,7 +105,7 @@ namespace RB::HBox
 		
 		if (_boxType == HBoxType::HURT_BOX)
 		{
-			data = RB::HBox::iHurtBoxDataController::instance->GetData(spriteType);
+			data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
 		}
 		else if (_boxType == HBoxType::HIT_BOX)
 		{
@@ -131,7 +131,7 @@ namespace RB::HBox
 	{
 		if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			if (RB::HBox::iHurtBoxDataController::instance == nullptr)
+			if (RB::HBox::iTargetBoxDataController::instance == nullptr)
 			{
 				return false;
 			}
@@ -296,7 +296,7 @@ namespace RB::HBox
 
 			if (_boxType == RB::HBox::HBoxType::HURT_BOX)
 			{
-				path = RB::HBox::iHurtBoxDataController::instance->GetPath(data->GetSpriteType());
+				path = RB::HBox::iTargetBoxDataController::instance->GetPath(data->GetSpriteType());
 			}
 			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
 			{

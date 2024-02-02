@@ -573,7 +573,7 @@
     <ClInclude Include="iCamController.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
-    <ClInclude Include="iHurtBoxDataController.h">
+    <ClInclude Include="iTargetBoxDataController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="iInputController.h">

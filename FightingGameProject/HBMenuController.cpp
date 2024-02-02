@@ -6,7 +6,7 @@
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iHBoxEditController.h"
-#include "iHurtBoxDataController.h"
+#include "iTargetBoxDataController.h"
 #include "iHitBoxDataController.h"
 
 namespace RB::HBox
@@ -127,9 +127,9 @@ namespace RB::HBox
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
+			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
 			{
-				data = RB::HBox::iHurtBoxDataController::instance->GetData(_GetCurrentSpriteType());
+				data = RB::HBox::iTargetBoxDataController::instance->GetData(_GetCurrentSpriteType());
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
@@ -154,9 +154,9 @@ namespace RB::HBox
 
 		if (boxType == RB::HBox::HBoxType::HURT_BOX)
 		{
-			if (RB::HBox::iHurtBoxDataController::instance != nullptr)
+			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
 			{
-				const std::string& path = RB::HBox::iHurtBoxDataController::instance->GetPath(_GetCurrentSpriteType());
+				const std::string& path = RB::HBox::iTargetBoxDataController::instance->GetPath(_GetCurrentSpriteType());
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

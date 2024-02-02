@@ -132,7 +132,7 @@ namespace RB::HBox
 				data = RB::HBox::iTargetBoxDataController::instance->GetData(_GetCurrentSpriteType());
 			}
 		}
-		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
 			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
 			{
@@ -160,7 +160,7 @@ namespace RB::HBox
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}
-		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
 			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
 			{

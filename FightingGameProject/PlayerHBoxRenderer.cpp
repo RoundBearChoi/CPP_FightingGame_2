@@ -25,8 +25,8 @@ namespace RB::Render
 		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::TARGET_BOX);
 		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::TARGET_BOX);
 
-		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::HIT_BOX);
-		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::HIT_BOX);
+		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::ATTACK_BOX);
+		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::ATTACK_BOX);
 	}
 
 	void PlayerHBoxRenderer::OnFixedUpdate()
@@ -70,7 +70,7 @@ namespace RB::Render
 				data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
 			}
 		}
-		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
 			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
 			{
@@ -96,7 +96,7 @@ namespace RB::Render
 		{
 			color = olc::MAGENTA;
 		}
-		else if (boxType == RB::HBox::HBoxType::HIT_BOX)
+		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
 			color = olc::GREEN;
 		}

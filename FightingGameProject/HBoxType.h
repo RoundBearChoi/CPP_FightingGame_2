@@ -7,6 +7,6 @@ namespace RB::HBox
 		NONE,
 
 		TARGET_BOX,
-		HIT_BOX,
+		ATTACK_BOX,
 	};
 }

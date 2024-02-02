@@ -70,7 +70,7 @@ namespace RB::HBox
 				data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
 			}
 		}
-		else if (boxType == HBoxType::HIT_BOX)
+		else if (boxType == HBoxType::ATTACK_BOX)
 		{
 			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
 			{
@@ -107,7 +107,7 @@ namespace RB::HBox
 		{
 			data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
 		}
-		else if (_boxType == HBoxType::HIT_BOX)
+		else if (_boxType == HBoxType::ATTACK_BOX)
 		{
 			data = RB::HBox::iAttackBoxDataController::instance->GetData(spriteType);
 		}
@@ -136,7 +136,7 @@ namespace RB::HBox
 				return false;
 			}
 		}
-		else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
+		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
 			if (RB::HBox::iAttackBoxDataController::instance == nullptr)
 			{
@@ -298,7 +298,7 @@ namespace RB::HBox
 			{
 				path = RB::HBox::iTargetBoxDataController::instance->GetPath(data->GetSpriteType());
 			}
-			else if (_boxType == RB::HBox::HBoxType::HIT_BOX)
+			else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 			{
 				path = RB::HBox::iAttackBoxDataController::instance->GetPath(data->GetSpriteType());
 			}

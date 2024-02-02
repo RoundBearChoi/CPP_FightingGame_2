@@ -9,7 +9,7 @@
 #include "PlayerBoxDataController.h"
 #include "HBMenuController.h"
 #include "TargetBoxDataController.h"
-#include "HitBoxDataController.h"
+#include "AttackBoxDataController.h"
 #include "HBoxEditController.h"
 
 #include "Player.h"
@@ -40,7 +40,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
-		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("AttackBoxSpecs/"));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::AttackBoxDataController>(new RB::HBox::AttackBoxDataController("AttackBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HIT_BOX));
 
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());

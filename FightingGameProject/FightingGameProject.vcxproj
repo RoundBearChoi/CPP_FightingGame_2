@@ -159,7 +159,7 @@
     <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="LoadedPlayerBoxData.cpp" />
     <ClCompile Include="Loaded_HB_Data.cpp" />
-    <ClCompile Include="HitBoxDataController.cpp" />
+    <ClCompile Include="AttackBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
     <ClCompile Include="JGetter.cpp" />
     <ClCompile Include="MoveDownOnFall.cpp" />
@@ -269,7 +269,7 @@
     <ClInclude Include="FollowPlayers.h" />
     <ClInclude Include="GameFrame.h" />
     <ClInclude Include="GeneralHitStopController.h" />
-    <ClInclude Include="HitBoxDataController.h" />
+    <ClInclude Include="AttackBoxDataController.h" />
     <ClInclude Include="iAttackRegisterController.h" />
     <ClInclude Include="iGeneralHitStopController.h" />
     <ClInclude Include="iHBoxEditController.h" />

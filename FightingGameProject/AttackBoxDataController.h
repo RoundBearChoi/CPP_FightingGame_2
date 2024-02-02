@@ -8,11 +8,11 @@
 
 namespace RB::HBox
 {
-	class HitBoxDataController : public iHitBoxDataController
+	class AttackBoxDataController : public iHitBoxDataController
 	{
 	public:
-		HitBoxDataController(std::string dir);
-		~HitBoxDataController() override {};
+		AttackBoxDataController(std::string dir);
+		~AttackBoxDataController() override {};
 
 		void Init() override;
 		void OnUpdate() override;

@@ -9,7 +9,7 @@
 #include "PlayerBoxDataController.h"
 #include "HBMenuController.h"
 #include "TargetBoxDataController.h"
-#include "HitBoxDataController.h"
+#include "AttackBoxDataController.h"
 #include "HBoxEditController.h"
 
 #include "Player.h"

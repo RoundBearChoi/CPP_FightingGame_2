@@ -211,7 +211,7 @@
     <ClCompile Include="TransitionOnAnimationEnd.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="HitBoxDataController.cpp">
+    <ClCompile Include="AttackBoxDataController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="DetectHit.cpp">
@@ -612,7 +612,7 @@
     <ClInclude Include="TransitionOnAnimationEnd.h">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClInclude>
-    <ClInclude Include="HitBoxDataController.h">
+    <ClInclude Include="AttackBoxDataController.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="iHitBoxDataController.h">

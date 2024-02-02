@@ -60,7 +60,7 @@ namespace RB::HBox
 
 		int currentIndex = aniObj->GetCurrentIndex();
 
-		//can get either hurtbox or hitbox
+		//can get either targetbox or attackbox
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 
 		if (boxType == HBoxType::TARGET_BOX)
@@ -290,7 +290,7 @@ namespace RB::HBox
 		if (enterButton.bPressed)
 		{
 			std::cout << std::endl;
-			std::cout << "saving hurtbox set" << std::endl;
+			std::cout << "saving hbox set" << std::endl;
 
 			std::string path;
 

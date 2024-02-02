@@ -56,7 +56,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Input::SpecialMovesController>(new RB::Input::SpecialMovesController());
 
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HurtBoxDataController>(new RB::HBox::HurtBoxDataController("HurtBoxSpecs/"));
-		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("HitBoxSpecs/"));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("TargetBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::AttackRegisterController>(new RB::Collisions::AttackRegisterController());
 
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::GeneralHitStopController>(new RB::Collisions::GeneralHitStopController());

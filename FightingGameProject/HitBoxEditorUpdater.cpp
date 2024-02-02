@@ -40,7 +40,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
-		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("HitBoxSpecs/"));
+		RB::Controllers::ControllerBase::AddController<RB::HBox::HitBoxDataController>(new RB::HBox::HitBoxDataController("TargetBoxSpecs/"));
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::HIT_BOX));
 
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());

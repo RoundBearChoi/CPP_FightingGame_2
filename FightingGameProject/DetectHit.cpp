@@ -90,6 +90,8 @@ namespace RB::PlayerStateComponents
 					reg.attacker = owner;
 					reg.target = target;
 					reg.collisionPoint = col;
+					reg.attackerSpriteType = ownerSpriteType;
+					reg.targetIsOnRightSide = owner->OtherPlayerIsOnRightSide();
 
 					RB::Collisions::iAttackRegisterController::instance->RegisterAttack(reg);
 

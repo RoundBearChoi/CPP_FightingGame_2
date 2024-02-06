@@ -28,10 +28,6 @@ namespace RB::Collisions
 	{
 		RB::Render::iVFXAnimationController::instance->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, reg.collisionPoint);
 
-		//std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
-		//std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
-		//std::cout << std::endl;
-
 		reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
 
 		if (RB::Collisions::iGeneralHitStopController::instance != nullptr)

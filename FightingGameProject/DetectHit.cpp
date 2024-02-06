@@ -87,6 +87,7 @@ namespace RB::PlayerStateComponents
 					//temp - decouple by using attackregister?
 
 					RB::Collisions::AttackRegister reg;
+					reg.attacker = owner;
 					reg.target = target;
 					reg.collisionPoint = col;
 

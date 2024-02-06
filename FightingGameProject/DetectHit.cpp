@@ -3,10 +3,11 @@
 #include "PlayerState.h"
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
-#include "iVFXAnimationController.h"
+//#include "iVFXAnimationController.h"
 #include "iAttackBoxDataController.h"
 #include "iTargetBoxDataController.h"
-#include "iGeneralHitStopController.h"
+//#include "iGeneralHitStopController.h"
+#include "iAttackRegisterController.h"
 
 #include "P0_Wince.h"
 
@@ -85,18 +86,15 @@ namespace RB::PlayerStateComponents
 				{
 					//temp - decouple by using attackregister?
 
-					RB::Render::iVFXAnimationController::instance->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, col);
+					RB::Collisions::AttackRegister reg;
+					reg.target = target;
+					reg.collisionPoint = col;
 
-					std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
-					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
-					std::cout << std::endl;
+					RB::Collisions::iAttackRegisterController::instance->RegisterAttack(reg);
 
-					target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
-
-					if (RB::Collisions::iGeneralHitStopController::instance != nullptr)
-					{
-						RB::Collisions::iGeneralHitStopController::instance->AddSkipFrames(3);
-					}
+					//std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+					//std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
+					//std::cout << std::endl;
 
 					return;
 				}

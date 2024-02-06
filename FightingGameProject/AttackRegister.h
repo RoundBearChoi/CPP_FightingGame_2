@@ -10,7 +10,7 @@ namespace RB::Collisions
 		RB::Players::iPlayer* attacker = nullptr;
 		RB::Players::iPlayer* target = nullptr;
 
-		olc::vf2d collisionPos = { 0.0f, 0.0f };
+		olc::vf2d collisionPoint = { 0.0f, 0.0f };
 		bool targetIsOnRightSide = true;
 	};
 }

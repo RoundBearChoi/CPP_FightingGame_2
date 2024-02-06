@@ -14,5 +14,7 @@ namespace RB::Collisions
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+		void RegisterAttack(AttackRegister reg) override;
 	};
 }

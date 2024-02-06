@@ -11,5 +11,7 @@ namespace RB::Collisions
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
+
+		virtual void RegisterAttack(AttackRegister reg) = 0;
 	};
 }

@@ -84,8 +84,6 @@ namespace RB::PlayerStateComponents
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
-					//temp - decouple by using attackregister?
-
 					RB::Collisions::AttackRegister reg;
 					reg.attacker = owner;
 					reg.target = target;

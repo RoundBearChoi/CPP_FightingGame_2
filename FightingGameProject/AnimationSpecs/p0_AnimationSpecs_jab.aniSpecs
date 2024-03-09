@@ -1,7 +1,7 @@
 {
     "p0_AnimationSpecs_jab":
         {
-        "file_path" : "testing",
+        "png_file_path" : "testing",
         "sprite_enum" : "enter_enum_string",
         "mX_TileCount" : 6,
         "mY_TileCount" : 1,

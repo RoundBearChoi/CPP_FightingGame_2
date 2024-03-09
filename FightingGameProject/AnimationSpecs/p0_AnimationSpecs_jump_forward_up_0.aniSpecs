@@ -1,7 +1,7 @@
 {
     "p0_AnimationSpecs_jump_forward_up_0":
         {
-        "file_path" : "testing",
+        "png_file_path" : "testing",
         "sprite_enum" : "enter_enum_string",
         "mX_TileCount" : 4,
         "mY_TileCount" : 1,

@@ -28,7 +28,10 @@ namespace RB::Sprites
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_wince, "fighter_0_wince"));
 
 
-		
+		TESTING_CLASS t0 = TESTING_CLASS::_from_string("NONE");
+		TESTING_CLASS t1 = TESTING_CLASS::_from_string("x_white");
+		TESTING_CLASS t2 = TESTING_CLASS::_from_string("white_sq_tr80");
+		//TESTING_CLASS t3 = TESTING_CLASS::_from_string("some_invalid_string");
 	}
 
 	void SpriteDataController::OnUpdate()

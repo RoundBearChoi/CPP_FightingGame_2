@@ -5,10 +5,12 @@
 
 BETTER_ENUM
 (
-	Word,
-	int,
-	Hello,
-	World
+	TESTING_CLASS, int,
+
+	NONE = 0,
+	
+	x_white,
+	white_sq_tr80
 )
 
 namespace RB::Sprites

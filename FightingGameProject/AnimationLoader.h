@@ -19,7 +19,7 @@ namespace RB::Render
 		virtual void OnUpdate();
 
 		virtual void LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
-		virtual void LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteType spriteType);
+		virtual void LoadAnimation(AnimationSpecs specs);
 		virtual void DeleteAnimationObjs(RB::Players::PlayerID playerID);
 		virtual std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);
 		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType);

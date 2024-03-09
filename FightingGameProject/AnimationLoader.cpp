@@ -53,10 +53,10 @@ namespace RB::Render
 	/// <summary>
 	/// this function require sprites to be loaded first
 	/// </summary>
-	void AnimationLoader::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteType spriteType)
+	void AnimationLoader::LoadAnimation(AnimationSpecs specs)
 	{
 		//should probably check if loaded sprite exists..
-		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(spriteType);
+		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(specs.mSpriteType);
 
 		_aniLoader.LoadAnimation(specs);
 	}

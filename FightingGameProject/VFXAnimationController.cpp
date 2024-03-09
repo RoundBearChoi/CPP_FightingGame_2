@@ -19,7 +19,7 @@ namespace RB::Render
         hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, -6.0f };
         hit0Specs.mSpriteType = RB::Sprites::SpriteType::vfx_hiteffect_0;
 
-        _animationLoader.LoadAnimation(hit0Specs, RB::Sprites::SpriteType::vfx_hiteffect_0);
+        _animationLoader.LoadAnimation(hit0Specs);
     }
 
     void VFXAnimationController::OnUpdate()

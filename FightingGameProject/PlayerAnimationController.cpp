@@ -27,18 +27,18 @@ namespace RB::Render
 		//_animationLoader.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteType::aku_hadouken);
 
 		//load specs from json files
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteType::aku_idle);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"), RB::Sprites::SpriteType::aku_crouch);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch_idle.aniSpecs"), RB::Sprites::SpriteType::aku_crouch_idle);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_standup.aniSpecs"), RB::Sprites::SpriteType::aku_standup);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"), RB::Sprites::SpriteType::aku_walk);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"), RB::Sprites::SpriteType::aku_jump_up_0);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"), RB::Sprites::SpriteType::aku_jump_up_1);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"), RB::Sprites::SpriteType::aku_jump_forward_up_0);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"), RB::Sprites::SpriteType::aku_jump_forward_up_1);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"), RB::Sprites::SpriteType::aku_jab);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"), RB::Sprites::SpriteType::aku_wince);
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"), RB::Sprites::SpriteType::aku_hadouken);
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch_idle.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_standup.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"));
+		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"));
 	}
 
 	void PlayerAnimationController::OnUpdate()

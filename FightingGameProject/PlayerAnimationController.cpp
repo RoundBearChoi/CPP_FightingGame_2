@@ -221,10 +221,10 @@ namespace RB::Render
 		int playOnceInt = RB::JSON::GetInt_FromElement(*e6);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
-		//IMPORTANT: load sprites first
+		//load sprites first
 		//_animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 
-		//should also check if loaded sprite is null..
+		//should probably check if loaded sprite is null..
 
 		AnimationSpecs specs;
 

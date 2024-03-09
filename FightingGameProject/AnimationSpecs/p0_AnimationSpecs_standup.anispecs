@@ -2,6 +2,7 @@
     "p0_AnimationSpecs_standup":
         {
         "file_path" : "testing",
+        "sprite_enum" : "enter_enum_string",
         "mX_TileCount" : 2,
         "mY_TileCount" : 1,
         "mTotalSprites" : 2,

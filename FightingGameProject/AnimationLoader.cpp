@@ -2,6 +2,8 @@
 
 #include "AnimationObj.h"
 
+#include <cassert>
+
 namespace RB::Render
 {
 	AnimationLoader::~AnimationLoader()
@@ -45,9 +47,18 @@ namespace RB::Render
 		}
 	}
 
-	void AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
+	bool AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
-		_spriteLoader.LoadSprite(path, spriteType);
+		RB::Sprites::LoadedSprite* loaded = _spriteLoader.LoadSprite(path, spriteType);
+
+		if (loaded == nullptr)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 
 	/// <summary>
@@ -55,8 +66,9 @@ namespace RB::Render
 	/// </summary>
 	void AnimationLoader::LoadAnimation(AnimationSpecs specs)
 	{
-		//should probably check if loaded sprite exists..
 		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(specs.mSpriteType);
+
+		assert(specs.mLoadedSprite != nullptr);
 
 		_aniLoader.LoadAnimation(specs);
 	}

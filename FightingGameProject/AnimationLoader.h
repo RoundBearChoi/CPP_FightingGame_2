@@ -18,7 +18,7 @@ namespace RB::Render
 		virtual void OnFixedUpdate();
 		virtual void OnUpdate();
 
-		virtual void LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
+		virtual bool LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
 		virtual void LoadAnimation(AnimationSpecs specs);
 		virtual void DeleteAnimationObjs(RB::Players::PlayerID playerID);
 		virtual std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);

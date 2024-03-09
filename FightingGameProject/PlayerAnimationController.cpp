@@ -6,6 +6,8 @@
 
 #include "iPlayerController.h"
 
+#include <cassert>
+
 namespace RB::Render
 {
 	void PlayerAnimationController::Init()
@@ -207,9 +209,10 @@ namespace RB::Render
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first
-		 _animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
-
-		//should probably check if loaded sprite is null..
+		bool loadedSprite = _animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
+		
+		//loaded sprites must match
+		assert(loadedSprite);
 
 		AnimationSpecs specs;
 

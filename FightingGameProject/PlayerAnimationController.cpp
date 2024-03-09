@@ -14,18 +14,18 @@ namespace RB::Render
 	{
 		_animationLoader.Init();
 
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch_idle.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_standup.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"));
-		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch_idle.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_standup.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"));
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -171,7 +171,7 @@ namespace RB::Render
 		}
 	}
 
-	AnimationSpecs PlayerAnimationController::_LoadAnimationSpecs(std::string path)
+	AnimationSpecs PlayerAnimationController::_GetAnimationSpecs(std::string path)
 	{
 		std::string str = RB::JSON::LoadJSONFile(path);
 		json_value_s* root = json_parse(str.c_str(), str.size());

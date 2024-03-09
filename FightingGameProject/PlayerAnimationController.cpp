@@ -234,6 +234,7 @@ namespace RB::Render
 		specs.mSkipFixedUpdates = skipFixedUpdates;
 		specs.mRenderSize = olc::vf2d{ renderSizeX, renderSizeY };
 		specs.mPlayOnce = playOnce;
+		specs.mSpriteType = RB::Sprites::SpriteType::_from_string(strEnum.c_str());
 
 		free(root);
 

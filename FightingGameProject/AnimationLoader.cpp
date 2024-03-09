@@ -55,6 +55,7 @@ namespace RB::Render
 	/// </summary>
 	void AnimationLoader::LoadAnimation(AnimationSpecs specs, RB::Sprites::SpriteType spriteType)
 	{
+		//should probably check if loaded sprite exists..
 		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(spriteType);
 		specs.mSpriteType = spriteType;
 

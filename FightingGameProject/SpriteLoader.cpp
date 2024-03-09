@@ -4,9 +4,9 @@
 
 namespace RB::Sprites
 {
-	void SpriteLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
+	LoadedSprite* SpriteLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
-		_loader.LoadSprite(path, spriteType);
+		return _loader.LoadSprite(path, spriteType);
 	}
 
 	void SpriteLoader::RenderSprite(RB::Sprites::SpriteType spriteType, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)

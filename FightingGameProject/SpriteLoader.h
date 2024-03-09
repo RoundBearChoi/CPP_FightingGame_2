@@ -16,7 +16,7 @@ namespace RB::Sprites
 		~SpriteLoader() = default;
 
 	public:
-		void LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
+		LoadedSprite* LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
 		void RenderSprite(RB::Sprites::SpriteType spriteType, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace = true);
 		RB::Sprites::LoadedSprite* GetLoadedSprite(RB::Sprites::SpriteType spriteType);
 

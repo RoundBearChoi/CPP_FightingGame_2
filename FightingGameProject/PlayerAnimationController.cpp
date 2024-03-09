@@ -224,6 +224,8 @@ namespace RB::Render
 		//IMPORTANT: load sprites first
 		//_animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 
+		//should also check if loaded sprite is null..
+
 		AnimationSpecs specs;
 
 		specs.mX_TileCount = xTileCount;

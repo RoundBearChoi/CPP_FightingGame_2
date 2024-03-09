@@ -837,5 +837,8 @@
     <ClInclude Include="CircleRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

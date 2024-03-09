@@ -26,6 +26,9 @@ namespace RB::Sprites
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_jump_up_1, "fighter_0_fall"));
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_jab, "fighter_0_jab"));
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_wince, "fighter_0_wince"));
+
+
+		
 	}
 
 	void SpriteDataController::OnUpdate()

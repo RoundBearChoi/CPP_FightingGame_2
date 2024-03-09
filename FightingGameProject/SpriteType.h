@@ -1,5 +1,16 @@
 #pragma once
 
+//#include <iostream>
+#include "enum.h"
+
+BETTER_ENUM
+(
+	Word,
+	int,
+	Hello,
+	World
+)
+
 namespace RB::Sprites
 {
 	enum class SpriteType

@@ -135,7 +135,7 @@ namespace RB::Render
 
 	void AnimationObj::RenderAnimation()
 	{
-		if (_animationRenderer->GetAnimationSpecs().mSpriteType == RB::Sprites::SpriteType::NONE)
+		if (_animationRenderer->GetAnimationSpecs().mSpriteType._value == RB::Sprites::SpriteType::NONE)
 		{
 			return;
 		}

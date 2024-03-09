@@ -20,7 +20,7 @@ namespace RB::Render
 
 	void _AnimationLoader::LoadAnimation(AnimationSpecs specs)
 	{
-		if (specs.mSpriteType != RB::Sprites::SpriteType::NONE && specs.mLoadedSprite == nullptr)
+		if (specs.mSpriteType._value != RB::Sprites::SpriteType::NONE && specs.mLoadedSprite == nullptr)
 		{
 			std::cout << std::endl;
 			std::cout << "WARNING: LoadedSprite* is null" << std::endl;

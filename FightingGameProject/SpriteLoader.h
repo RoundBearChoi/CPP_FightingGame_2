@@ -1,5 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include "enum.h"
 #include "SpriteType.h"
 #include "LoadedSprite.h"
 #include "PivotType.h"

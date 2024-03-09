@@ -108,7 +108,7 @@ namespace RB::HBox
 	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType)
 	{
 		//save path - spriteType
-		if (GetDataListPath(spriteType).GetSpriteType() == RB::Sprites::SpriteType::NONE)
+		if (GetDataListPath(spriteType).GetSpriteType()._value == RB::Sprites::SpriteType::NONE)
 		{
 			_vecLists.push_back(HBoxDataListPath{ path, spriteType });
 		}

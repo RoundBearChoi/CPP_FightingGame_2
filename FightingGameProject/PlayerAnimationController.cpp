@@ -193,7 +193,10 @@ namespace RB::Render
 
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
-		json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //mX_TileCount
+		json_object_element_s* pngPath = RB::JSON::GetElementInsideElement(*rootElement); //mX_TileCount
+		std::string strPath = RB::JSON::GetString_FromElement(*pngPath);
+
+		json_object_element_s* e0 = pngPath->next; //mX_TileCount
 		int xTileCount = RB::JSON::GetInt_FromElement(*e0);
 
 		json_object_element_s* e1 = e0->next; //mY_TileCount

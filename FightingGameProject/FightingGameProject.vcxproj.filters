@@ -838,7 +838,7 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="enum.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\RB</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -193,10 +193,10 @@ namespace RB::Render
 
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
-		json_object_element_s* pngPath = RB::JSON::GetElementInsideElement(*rootElement);
+		json_object_element_s* pngPath = RB::JSON::GetElementInsideElement(*rootElement); //png path
 		std::string strPath = RB::JSON::GetString_FromElement(*pngPath);
 
-		json_object_element_s* se = pngPath->next;
+		json_object_element_s* se = pngPath->next; //sprite type enum in string
 		std::string strEnum = RB::JSON::GetString_FromElement(*se);
 
 		json_object_element_s* e0 = se->next; //mX_TileCount
@@ -220,6 +220,9 @@ namespace RB::Render
 		json_object_element_s* e6 = e5->next; //mPlayOnce
 		int playOnceInt = RB::JSON::GetInt_FromElement(*e6);
 		bool playOnce = playOnceInt == 0 ? false : true;
+
+		//IMPORTANT: load sprites first
+		//_animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 
 		AnimationSpecs specs;
 

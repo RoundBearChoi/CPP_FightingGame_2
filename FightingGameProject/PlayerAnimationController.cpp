@@ -13,18 +13,18 @@ namespace RB::Render
 		_animationLoader.Init();
 
 		//animations require loaded sprites first
-		_animationLoader.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteType::aku_idle);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_crouch.png", RB::Sprites::SpriteType::aku_crouch);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_crouch_idle.png", RB::Sprites::SpriteType::aku_crouch_idle);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_standup.png", RB::Sprites::SpriteType::aku_standup);
-		_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteType::aku_walk);
-		_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteType::aku_jump_up_0);
-		_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteType::aku_jump_up_1);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_0.png", RB::Sprites::SpriteType::aku_jump_forward_up_0);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_1.png", RB::Sprites::SpriteType::aku_jump_forward_up_1);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_jab.png", RB::Sprites::SpriteType::aku_jab);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteType::aku_wince);
-		_animationLoader.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteType::aku_hadouken);
+		//_animationLoader.LoadSprite("PNG files/StickFigures/test_fight_pose_2.png", RB::Sprites::SpriteType::aku_idle);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_crouch.png", RB::Sprites::SpriteType::aku_crouch);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_crouch_idle.png", RB::Sprites::SpriteType::aku_crouch_idle);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_standup.png", RB::Sprites::SpriteType::aku_standup);
+		//_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Run.png", RB::Sprites::SpriteType::aku_walk);
+		//_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Jump.png", RB::Sprites::SpriteType::aku_jump_up_0);
+		//_animationLoader.LoadSprite("PNG files/FreeKnight_v1/_Fall.png", RB::Sprites::SpriteType::aku_jump_up_1);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_0.png", RB::Sprites::SpriteType::aku_jump_forward_up_0);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_jump_forward_up_1.png", RB::Sprites::SpriteType::aku_jump_forward_up_1);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_jab.png", RB::Sprites::SpriteType::aku_jab);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_wince.png", RB::Sprites::SpriteType::aku_wince);
+		//_animationLoader.LoadSprite("PNG files/Aku/aku_hadouken.png", RB::Sprites::SpriteType::aku_hadouken);
 
 		//load specs from json files
 		_animationLoader.LoadAnimation(_LoadAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"), RB::Sprites::SpriteType::aku_idle);
@@ -222,7 +222,7 @@ namespace RB::Render
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first
-		//_animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
+		 _animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 
 		//should probably check if loaded sprite is null..
 

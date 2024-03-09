@@ -1,8 +1,8 @@
 {
     "p0_AnimationSpecs_idle":
         {
-        "png_file_path" : "testing",
-        "sprite_enum" : "enter_enum_string",
+        "png_file_path" : "PNG files/StickFigures/test_fight_pose_2.png",
+        "sprite_enum" : "aku_idle",
         "mX_TileCount" : 9,
         "mY_TileCount" : 1,
         "mTotalSprites" : 9,

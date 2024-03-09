@@ -1,8 +1,8 @@
 {
     "p0_AnimationSpecs_jab":
         {
-        "png_file_path" : "testing",
-        "sprite_enum" : "enter_enum_string",
+        "png_file_path" : "PNG files/Aku/aku_jab.png",
+        "sprite_enum" : "aku_jab",
         "mX_TileCount" : 6,
         "mY_TileCount" : 1,
         "mTotalSprites" : 6,

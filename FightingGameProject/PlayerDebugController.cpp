@@ -21,6 +21,7 @@ namespace RB::Render
 		_spriteLoader.LoadSprite("PNG files/InputIcons/strong_punch.png", RB::Sprites::SpriteType::input_strong_punch);
 
 		_spriteLoader.LoadSprite("PNG files/InputIcons/weak_kick.png", RB::Sprites::SpriteType::input_weak_kick);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/strong_kick.png", RB::Sprites::SpriteType::input_strong_kick);
 
 		_playerBoxRenderer.Init(&_spriteLoader);
 		_playerHBoxRenderer.Init(&_spriteLoader);

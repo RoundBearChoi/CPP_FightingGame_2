@@ -18,6 +18,8 @@ namespace RB::Render
 		_spriteLoader.LoadSprite("PNG files/InputIcons/arrow_down_right.png", RB::Sprites::SpriteType::input_arrow_down_right);
 
 		_spriteLoader.LoadSprite("PNG files/InputIcons/weak_punch.png", RB::Sprites::SpriteType::input_weak_punch);
+		_spriteLoader.LoadSprite("PNG files/InputIcons/strong_punch.png", RB::Sprites::SpriteType::input_strong_punch);
+
 		_spriteLoader.LoadSprite("PNG files/InputIcons/weak_kick.png", RB::Sprites::SpriteType::input_weak_kick);
 
 		_playerBoxRenderer.Init(&_spriteLoader);

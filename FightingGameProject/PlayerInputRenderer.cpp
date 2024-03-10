@@ -89,7 +89,10 @@ namespace RB::Render
 		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN_RIGHT) { return RB::Sprites::SpriteType::input_arrow_down_right; }
 
 		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH) { return RB::Sprites::SpriteType::input_weak_punch; }
+		else if (playerInput == RB::Input::PlayerInput::ATTACK_STRONG_PUNCH) { return RB::Sprites::SpriteType::input_strong_punch; }
+
 		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_KICK) { return RB::Sprites::SpriteType::input_weak_kick; }
+		else if (playerInput == RB::Input::PlayerInput::ATTACK_STRONG_KICK) { return RB::Sprites::SpriteType::input_strong_kick; }
 
 		return RB::Sprites::SpriteType::NONE;
 	}

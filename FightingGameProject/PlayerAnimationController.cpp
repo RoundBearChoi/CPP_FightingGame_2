@@ -211,7 +211,6 @@ namespace RB::Render
 		//load sprites first
 		bool loadedSprite = _animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 		
-		//loaded sprites must match
 		assert(loadedSprite);
 
 		AnimationSpecs specs;

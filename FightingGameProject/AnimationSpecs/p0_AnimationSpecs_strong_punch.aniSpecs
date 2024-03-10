@@ -1,0 +1,14 @@
+{
+    "p0_AnimationSpecs_strong_punch":
+        {
+        "png_file_path" : "PNG files/Aku/aku_strong_punch.png",
+        "sprite_enum" : "aku_strong_punch",
+        "mX_TileCount" : 11,
+        "mY_TileCount" : 1,
+        "mTotalSprites" : 11,
+        "mSkipFixedUpdates" : 2,
+        "mRenderSizeX" : 280,
+        "mRenderSizeY" : 160,
+        "mPlayOnce" : 0
+        }
+}

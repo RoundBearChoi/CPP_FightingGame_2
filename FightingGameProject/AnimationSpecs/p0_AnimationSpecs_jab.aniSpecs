@@ -9,6 +9,6 @@
         "mSkipFixedUpdates" : 2,
         "mRenderSizeX" : 280,
         "mRenderSizeY" : 160,
-        "mPlayOnce" : 0
+        "mPlayOnce" : 1
         }
 }

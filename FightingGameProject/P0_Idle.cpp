@@ -8,6 +8,7 @@
 #include "TransitionToWalkBack.h"
 
 #include "P0_Jab.h"
+#include "P0_Strong_Punch.h"
 #include "P0_JumpForwardUp_0.h"
 #include "P0_JumpUp_0.h"
 #include "P0_WalkForward.h"
@@ -23,6 +24,7 @@ namespace RB::PlayerStates::Aku
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::Aku::P0_JumpForwardUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::Aku::P0_JumpUp_0()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new P0_Strong_Punch(), RB::Input::PlayerInput::ATTACK_STRONG_PUNCH, true, false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new P0_Jab(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH, true, false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkForward(new RB::PlayerStates::Aku::P0_WalkForward()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkBack(new RB::PlayerStates::Aku::P0_WalkBack()));

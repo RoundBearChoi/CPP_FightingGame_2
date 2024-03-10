@@ -176,6 +176,7 @@
     <ClCompile Include="HB_Loader.cpp" />
     <ClCompile Include="AABB_Set.cpp" />
     <ClCompile Include="AttackBoxEditorUpdater.cpp" />
+    <ClCompile Include="P0_Strong_Punch.cpp" />
     <ClCompile Include="TargetBoxDataController.cpp" />
     <ClCompile Include="HBoxDataListPath.h" />
     <ClCompile Include="P0_StandUp.cpp" />
@@ -301,6 +302,7 @@
     <ClInclude Include="HB_Loader.h" />
     <ClInclude Include="HBoxType.h" />
     <ClInclude Include="AttackBoxEditorUpdater.h" />
+    <ClInclude Include="P0_Strong_Punch.h" />
     <ClInclude Include="TargetBoxDataController.h" />
     <ClInclude Include="AABB_Set.h" />
     <ClInclude Include="Loaded_HB_Data.h" />

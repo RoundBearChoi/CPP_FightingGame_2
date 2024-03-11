@@ -25,6 +25,7 @@ namespace RB::Render
 		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"));
 		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"));
 		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_punch.aniSpecs"));
+		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_kick.aniSpecs"));
 		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"));
 		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"));
 	}

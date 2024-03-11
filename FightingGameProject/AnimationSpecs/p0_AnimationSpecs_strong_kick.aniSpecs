@@ -1,0 +1,14 @@
+{
+    "p0_AnimationSpecs_strong_kick":
+        {
+        "png_file_path" : "PNG files/Aku/aku_strong_kick.png",
+        "sprite_enum" : "aku_strong_kick",
+        "mX_TileCount" : 10,
+        "mY_TileCount" : 1,
+        "mTotalSprites" : 10,
+        "mSkipFixedUpdates" : 3,
+        "mRenderSizeX" : 164,
+        "mRenderSizeY" : 189,
+        "mPlayOnce" : 1
+        }
+}

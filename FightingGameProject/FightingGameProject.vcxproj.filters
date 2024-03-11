@@ -379,6 +379,9 @@
     <ClCompile Include="P0_Strong_Punch.cpp">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
+    <ClCompile Include="P0_Strong_Kick.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -844,6 +847,9 @@
       <Filter>Source Files\RB</Filter>
     </ClInclude>
     <ClInclude Include="P0_Strong_Punch.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Strong_Kick.h">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClInclude>
   </ItemGroup>

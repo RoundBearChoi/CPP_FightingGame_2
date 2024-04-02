@@ -29,8 +29,7 @@ namespace RB::Updaters
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 
-		SpriteTypeLoader spriteTypeLoader;
-		RB::Sprites::SpriteType spriteType = spriteTypeLoader.LoadSpriteType("EditorSettings/AttackBoxSettings.editorSettings");
+		RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType("EditorSettings/AttackBoxSettings.editorSettings");
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(spriteType));
 		p0->SetPosition(olc::vf2d{ 50.0f, 100.0f });

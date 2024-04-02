@@ -383,7 +383,7 @@
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
     <ClCompile Include="SpriteTypeLoader.cpp">
-      <Filter>Source Files\Updaters</Filter>
+      <Filter>Source Files\Sprites</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -856,7 +856,7 @@
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClInclude>
     <ClInclude Include="SpriteTypeLoader.h">
-      <Filter>Source Files\Updaters</Filter>
+      <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

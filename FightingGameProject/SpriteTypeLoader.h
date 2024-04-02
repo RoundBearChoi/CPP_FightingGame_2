@@ -4,11 +4,7 @@
 
 #include "SpriteType.h"
 
-namespace RB::Updaters
+namespace RB::Sprites
 {
-	class SpriteTypeLoader
-	{
-	public:
-		RB::Sprites::SpriteType LoadSpriteType(std::string _path);
-	};
+	RB::Sprites::SpriteType LoadSpriteType(const std::string& path);
 }

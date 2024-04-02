@@ -2,9 +2,9 @@
 
 #include "JGetter.h"
 
-namespace RB::Updaters
+namespace RB::Sprites
 {
-	RB::Sprites::SpriteType SpriteTypeLoader::LoadSpriteType(std::string path)
+	RB::Sprites::SpriteType LoadSpriteType(const std::string& path)
 	{
 		std::string str = RB::JSON::LoadJSONFile(path);
 		json_value_s* root = json_parse(str.c_str(), str.size());

@@ -14,8 +14,11 @@ namespace RB::Updaters
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
 
 		json_object_element_s* spriteEnumElement = RB::JSON::GetElementInsideElement(*rootElement); //get sprite enum string
+
 		std::string spriteEnumStr = RB::JSON::GetString_FromElement(*spriteEnumElement);
 
-		return RB::Sprites::SpriteType::NONE;
+		RB::Sprites::SpriteType loadedSpriteType = RB::Sprites::SpriteType::_from_string(spriteEnumStr.c_str());
+
+		return loadedSpriteType;
 	}
 }

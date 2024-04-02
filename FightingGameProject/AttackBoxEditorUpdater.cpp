@@ -32,7 +32,7 @@ namespace RB::Updaters
 		SpriteTypeLoader spriteTypeLoader;
 		RB::Sprites::SpriteType spriteType = spriteTypeLoader.LoadSpriteType("EditorSettings/AttackBoxSettings.editorSettings");
 
-		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteType::aku_jab));
+		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(spriteType));
 		p0->SetPosition(olc::vf2d{ 50.0f, 100.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);

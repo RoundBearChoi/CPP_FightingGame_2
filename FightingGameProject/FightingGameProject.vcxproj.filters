@@ -382,6 +382,9 @@
     <ClCompile Include="P0_Strong_Kick.cpp">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteTypeLoader.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -851,6 +854,9 @@
     </ClInclude>
     <ClInclude Include="P0_Strong_Kick.h">
       <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteTypeLoader.h">
+      <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

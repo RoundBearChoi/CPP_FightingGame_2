@@ -11,6 +11,7 @@
 #include "TargetBoxDataController.h"
 #include "AttackBoxDataController.h"
 #include "HBoxEditController.h"
+#include "SpriteTypeLoader.h"
 
 #include "Player.h"
 
@@ -28,6 +29,9 @@ namespace RB::Updaters
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 
+		SpriteTypeLoader spLoader;
+		RB::Sprites::SpriteType spriteType = spLoader.LoadSpriteType("path");
+
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteType::aku_jab));
 		p0->SetPosition(olc::vf2d{ 50.0f, 100.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
@@ -44,7 +48,6 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(RB::HBox::HBoxType::ATTACK_BOX));
 
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
-		//playerDebugController->RenderPlayerBox(false);
 
 		RB::Cam::CamController* camController = RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());
 		camController->SetZoom(1.75f);

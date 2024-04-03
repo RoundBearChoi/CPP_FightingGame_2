@@ -1,7 +1,7 @@
 {
     "AttackBoxEditorSettings":
         {
-        "sprite enum" : "aku_jab",
+        "sprite enum" : "aku_strong_punch",
         "other shit" : "shit"
         }
 }

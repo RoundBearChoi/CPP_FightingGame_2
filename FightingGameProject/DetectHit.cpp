@@ -3,10 +3,8 @@
 #include "PlayerState.h"
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
-//#include "iVFXAnimationController.h"
 #include "iAttackBoxDataController.h"
 #include "iTargetBoxDataController.h"
-//#include "iGeneralHitStopController.h"
 #include "iAttackRegisterController.h"
 
 #include "P0_Wince.h"

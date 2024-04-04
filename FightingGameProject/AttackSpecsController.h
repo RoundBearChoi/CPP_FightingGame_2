@@ -13,5 +13,7 @@ namespace RB::Collisions
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+		RB::Collisions::AttackSpecs GetAttackSpecs(RB::Sprites::SpriteType spriteType) override;
 	};
 }

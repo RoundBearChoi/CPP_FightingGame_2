@@ -1,6 +1,9 @@
 #pragma once
 #include "ControllerT.h"
 
+#include "AttackSpecs.h"
+#include "SpriteType.h"
+
 namespace RB::Collisions
 {
 	class iAttackSpecsController : public RB::Controllers::ControllerT<iAttackSpecsController>
@@ -9,5 +12,7 @@ namespace RB::Collisions
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
+
+		virtual RB::Collisions::AttackSpecs GetAttackSpecs(RB::Sprites::SpriteType spriteType) = 0;
 	};
 }

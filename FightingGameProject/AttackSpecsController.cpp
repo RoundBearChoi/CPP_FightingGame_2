@@ -16,4 +16,11 @@ namespace RB::Collisions
 	{
 
 	}
+
+	RB::Collisions::AttackSpecs AttackSpecsController::GetAttackSpecs(RB::Sprites::SpriteType spriteType)
+	{
+
+
+		return RB::Collisions::AttackSpecs();
+	}
 }

@@ -14,6 +14,7 @@
 #include "AttackBoxDataController.h"
 #include "AttackRegisterController.h"
 #include "GeneralHitStopController.h"
+#include "AttackSpecsController.h"
 #include "VFXAnimationController.h"
 
 #include "Player.h"
@@ -60,6 +61,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::AttackRegisterController>(new RB::Collisions::AttackRegisterController());
 
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::GeneralHitStopController>(new RB::Collisions::GeneralHitStopController());
+		RB::Controllers::ControllerBase::AddController<RB::Collisions::AttackSpecsController>(new RB::Collisions::AttackSpecsController());
 		RB::Controllers::ControllerBase::AddController<RB::Render::VFXAnimationController>(new RB::Render::VFXAnimationController());
 
 		RB::Cam::CamController* camController = RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());

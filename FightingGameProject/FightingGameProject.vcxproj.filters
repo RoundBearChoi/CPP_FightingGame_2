@@ -385,6 +385,9 @@
     <ClCompile Include="SpriteTypeLoader.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="AttackSpecsController.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -857,6 +860,18 @@
     </ClInclude>
     <ClInclude Include="SpriteTypeLoader.h">
       <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackSpecsController.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="iAttackSpecsController.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackSpecs.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackStrengthType.h">
+      <Filter>Source Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

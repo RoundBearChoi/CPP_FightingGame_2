@@ -146,6 +146,7 @@
     <ClCompile Include="AABB.cpp" />
     <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="AttackRegisterController.cpp" />
+    <ClCompile Include="AttackSpecsController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="CircleRenderer.cpp" />
@@ -258,6 +259,9 @@
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="AttackRegister.h" />
     <ClInclude Include="AttackRegisterController.h" />
+    <ClInclude Include="AttackSpecs.h" />
+    <ClInclude Include="AttackSpecsController.h" />
+    <ClInclude Include="AttackStrengthType.h" />
     <ClInclude Include="BackgroundController.h" />
     <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="CircleRenderer.h" />
@@ -275,6 +279,7 @@
     <ClInclude Include="GeneralHitStopController.h" />
     <ClInclude Include="AttackBoxDataController.h" />
     <ClInclude Include="iAttackRegisterController.h" />
+    <ClInclude Include="iAttackSpecsController.h" />
     <ClInclude Include="iGeneralHitStopController.h" />
     <ClInclude Include="iHBoxEditController.h" />
     <ClInclude Include="iAttackBoxDataController.h" />

@@ -5,7 +5,7 @@
 namespace RB::Collisions
 {
 	BETTER_ENUM
-	{
+	(
 		AttackStrengthType, int,
 
 		NONE = 0,
@@ -14,5 +14,5 @@ namespace RB::Collisions
 		STRONG,
 
 		COUNT
-	};
+	)
 }

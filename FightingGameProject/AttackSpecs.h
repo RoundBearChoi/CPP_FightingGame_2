@@ -12,7 +12,7 @@ namespace RB::Collisions
 			~AttackSpecs() = default;
 
 			RB::Sprites::SpriteType mSpriteType = RB::Sprites::SpriteType::NONE;
-			AttackStrengthType mAttackStrengthType = RB::AttackStrengthType::NONE;
+			RB::Collisions::AttackStrengthType mAttackStrengthType = RB::Collisions::AttackStrengthType::NONE;
 			int mDamage = 0;
 	};
 }

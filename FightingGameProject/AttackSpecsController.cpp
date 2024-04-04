@@ -4,7 +4,7 @@ namespace RB::Collisions
 {
 	void AttackSpecsController::Init()
 	{
-
+		_LoadAttackSpecs();
 	}
 
 	void AttackSpecsController::OnUpdate()
@@ -22,5 +22,10 @@ namespace RB::Collisions
 
 
 		return RB::Collisions::AttackSpecs();
+	}
+
+	void AttackSpecsController::_LoadAttackSpecs()
+	{
+
 	}
 }

@@ -15,5 +15,8 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 		RB::Collisions::AttackSpecs GetAttackSpecs(RB::Sprites::SpriteType spriteType) override;
+
+	private:
+		void _LoadAttackSpecs();
 	};
 }

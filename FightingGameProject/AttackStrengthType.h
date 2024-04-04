@@ -13,6 +13,6 @@ namespace RB::Collisions
 		WEAK,
 		STRONG,
 
-		COUNT,
+		COUNT
 	};
 }

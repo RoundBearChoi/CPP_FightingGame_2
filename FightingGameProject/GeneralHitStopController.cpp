@@ -36,6 +36,13 @@ namespace RB::Collisions
 
 	void GeneralHitStopController::AddSkipFrames(int frames)
 	{
-		_skipFrames += frames;
+		if (frames <= 0)
+		{
+			return;
+		}
+		else
+		{
+			_skipFrames += frames;
+		}
 	}
 }

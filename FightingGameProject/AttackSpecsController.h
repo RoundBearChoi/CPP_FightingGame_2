@@ -20,6 +20,6 @@ namespace RB::Collisions
 
 	private:
 		void _LoadAttackSpecs();
-		void _Load(std::string path, RB::Sprites::SpriteType spriteType);
+		void _Load(const std::string& path, RB::Sprites::SpriteType spriteType);
 	};
 }

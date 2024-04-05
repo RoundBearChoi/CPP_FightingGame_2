@@ -51,6 +51,10 @@ namespace RB::Collisions
 		json_object_element_s* hitStop = damage->next; //hit stop
 		int hitStopValue = RB::JSON::GetInt_FromElement(*hitStop);
 
-		int n = 0;
+		AttackSpecs attackSpecs;
+		attackSpecs.mSpriteType = spriteType;
+		attackSpecs.mAttackStrengthType = attackStrengthType;
+		attackSpecs.mDamage = damageValue;
+		attackSpecs.mHitStop = hitStopValue;
 	}
 }

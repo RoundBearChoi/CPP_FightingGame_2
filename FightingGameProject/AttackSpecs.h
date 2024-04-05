@@ -14,6 +14,6 @@ namespace RB::Collisions
 			RB::Sprites::SpriteType mSpriteType = RB::Sprites::SpriteType::NONE;
 			RB::Collisions::AttackStrengthType mAttackStrengthType = RB::Collisions::AttackStrengthType::NONE;
 			int mDamage = 0;
-			int mSkipFrames = 0;
+			int mHitStop = 0;
 	};
 }

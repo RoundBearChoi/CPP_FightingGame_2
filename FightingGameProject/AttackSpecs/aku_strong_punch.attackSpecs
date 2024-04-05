@@ -2,7 +2,7 @@
     "aku_strong_punch":
         {
         "attack strength stype" : "STRONG",
-        "damage" : 10,
+        "damage" : 20,
         "hitstop frames" : 3
         }
 }

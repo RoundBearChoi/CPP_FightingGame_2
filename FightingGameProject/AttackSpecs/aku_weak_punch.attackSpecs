@@ -2,7 +2,7 @@
     "aku_weak_punch":
         {
         "attack strength stype" : "WEAK",
-        "damage" : 20,
+        "damage" : 10,
         "hitstop frames" : 3
         }
 }

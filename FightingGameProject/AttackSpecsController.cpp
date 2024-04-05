@@ -19,11 +19,30 @@ namespace RB::Collisions
 
 	}
 
-	RB::Collisions::AttackSpecs AttackSpecsController::GetAttackSpecs(RB::Sprites::SpriteType spriteType)
+	const RB::Collisions::AttackSpecs& AttackSpecsController::GetAttackSpecs(RB::Sprites::SpriteType spriteType)
 	{
+		for (int i = 0; i < _vecAttackSpecs.size(); i++)
+		{
+			if (_vecAttackSpecs[i].mSpriteType._value == spriteType._value)
+			{
+				return _vecAttackSpecs[i];
+			}
+		}
 
+		return _defaultAttackSpecs;
+	}
 
-		return RB::Collisions::AttackSpecs();
+	bool AttackSpecsController::ContainsAttackSpecs(RB::Sprites::SpriteType spriteType)
+	{
+		for (int i = 0; i < _vecAttackSpecs.size(); i++)
+		{
+			if (_vecAttackSpecs[i].mSpriteType._value == spriteType._value)
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	void AttackSpecsController::_LoadAttackSpecs()
@@ -56,5 +75,10 @@ namespace RB::Collisions
 		attackSpecs.mAttackStrengthType = attackStrengthType;
 		attackSpecs.mDamage = damageValue;
 		attackSpecs.mHitStop = hitStopValue;
+
+		if (!ContainsAttackSpecs(spriteType))
+		{
+			_vecAttackSpecs.push_back(attackSpecs);
+		}
 	}
 }

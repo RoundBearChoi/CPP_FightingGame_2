@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "iAttackSpecsController.h"
 
 #include "SpriteType.h"
@@ -16,10 +18,15 @@ namespace RB::Collisions
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::Collisions::AttackSpecs GetAttackSpecs(RB::Sprites::SpriteType spriteType) override;
+		const RB::Collisions::AttackSpecs& GetAttackSpecs(RB::Sprites::SpriteType spriteType) override;
+		bool ContainsAttackSpecs(RB::Sprites::SpriteType spriteType) override;
 
 	private:
 		void _LoadAttackSpecs();
 		void _Load(const std::string& path, RB::Sprites::SpriteType spriteType);
+
+	private:
+		std::vector<RB::Collisions::AttackSpecs> _vecAttackSpecs;
+		RB::Collisions::AttackSpecs _defaultAttackSpecs;
 	};
 }

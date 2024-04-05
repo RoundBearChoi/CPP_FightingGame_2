@@ -1,0 +1,7 @@
+{
+    "aku_weak_punch":
+        {
+        "attack strength stype" : "weak",
+        "damage" : 10
+        }
+}

@@ -28,4 +28,9 @@ namespace RB::Collisions
 	{
 
 	}
+
+	void AttackSpecsController::_Load(std::string path, RB::Sprites::SpriteType spriteType)
+	{
+
+	}
 }

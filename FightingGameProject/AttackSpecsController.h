@@ -2,6 +2,8 @@
 
 #include "iAttackSpecsController.h"
 
+#include "SpriteType.h"
+
 namespace RB::Collisions
 {
 	class AttackSpecsController : public iAttackSpecsController
@@ -18,5 +20,6 @@ namespace RB::Collisions
 
 	private:
 		void _LoadAttackSpecs();
+		void _Load(std::string path, RB::Sprites::SpriteType spriteType);
 	};
 }

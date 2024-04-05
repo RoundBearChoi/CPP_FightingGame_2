@@ -30,7 +30,7 @@ namespace RB::Collisions
 	{
 		RB::Render::iVFXAnimationController::instance->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, reg.collisionPoint);
 
-		RB::Collisions::AttackSpecs attackSpecs = RB::Collisions::iAttackSpecsController::instance->GetAttackSpecs(reg.attackerSpriteType);
+		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::instance->GetAttackSpecs(reg.attackerSpriteType);
 
 		reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
 

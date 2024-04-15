@@ -22,12 +22,12 @@ namespace RB::Background
 
 	void BackgroundObj::OnUpdate()
 	{
-		if (RB::Cam::iCamController::instance == nullptr)
+		if (RB::Cam::iCamController::Get() == nullptr)
 		{
 			return;
 		}
 
-		float offsetX = _position.x + (RB::Cam::iCamController::instance->GetCamObj()->GetPosition().x * _percentage);
+		float offsetX = _position.x + (RB::Cam::iCamController::Get()->GetCamObj()->GetPosition().x * _percentage);
 
 		//background horizontal tile
 		for (int i = 0; i < 4; i++)

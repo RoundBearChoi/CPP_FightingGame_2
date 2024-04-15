@@ -23,8 +23,8 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnFixedUpdate()
 	{
-		RB::Players::iPlayer* owner = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::iPlayer* target = RB::Players::iPlayerController::instance->GetOtherPlayer(owner);
+		RB::Players::iPlayer* owner = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(owner);
 
 		RB::PlayerStates::PlayerState* ownerState = RB::PlayerStates::PlayerState::GetPlayerState(owner->GetPlayerID());
 		RB::PlayerStates::PlayerState* enemyState = RB::PlayerStates::PlayerState::GetPlayerState(target->GetPlayerID());
@@ -37,11 +37,11 @@ namespace RB::PlayerStateComponents
 		RB::Sprites::SpriteType ownerSpriteType = ownerState->GetSpriteType();
 		RB::Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
 		
-		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteType);
-		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
+		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteType);
+		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
-		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iAttackBoxDataController::instance->GetData(ownerSpriteType);
-		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iTargetBoxDataController::instance->GetData(targetSpriteType);
+		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iAttackBoxDataController::Get()->GetData(ownerSpriteType);
+		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iTargetBoxDataController::Get()->GetData(targetSpriteType);
 
 		if (ownerData == nullptr || targetData == nullptr)
 		{
@@ -89,7 +89,7 @@ namespace RB::PlayerStateComponents
 					reg.attackerSpriteType = ownerSpriteType;
 					reg.targetIsOnRightSide = owner->OtherPlayerIsOnRightSide();
 
-					RB::Collisions::iAttackRegisterController::instance->RegisterAttack(reg);
+					RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 
 					//std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 					//std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;

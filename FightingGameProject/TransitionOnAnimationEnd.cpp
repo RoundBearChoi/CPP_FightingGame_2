@@ -21,12 +21,12 @@ namespace RB::PlayerStateComponents
 
 	void TransitionOnAnimationEnd::OnFixedUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
 
@@ -37,7 +37,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(player->GetPlayerID(), spriteType);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(player->GetPlayerID(), spriteType);
 
 		if (aniObj == nullptr)
 		{

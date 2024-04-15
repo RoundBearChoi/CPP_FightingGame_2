@@ -17,26 +17,26 @@ namespace RB::PlayerStateComponents
 
 	void TransitionToJumpForward::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Input::iInputController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr ||
+			RB::Input::iInputController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		bool jumpForward = false;
 		RB::Input::iInputObj* jumpForwardInputObj = nullptr;
 
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			jumpForward = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForward = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForwardInputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 		}
 		else
 		{
-			jumpForward = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-			jumpForwardInputObj = RB::Input::iInputController::instance->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForward = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForwardInputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 		}
 
 		if (jumpForward)

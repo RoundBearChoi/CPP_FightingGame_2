@@ -16,8 +16,8 @@ namespace RB::Render
 	}
 	void PlayerHBoxRenderer::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Render::iPlayerAnimationController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr ||
+			RB::Render::iPlayerAnimationController::Get() == nullptr)
 		{
 			return;
 		}
@@ -36,7 +36,7 @@ namespace RB::Render
 
 	void PlayerHBoxRenderer::RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 		
 		if (player == nullptr)
 		{
@@ -52,7 +52,7 @@ namespace RB::Render
 
 		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteType);
+		iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(playerID, spriteType);
 		
 		if (aniObj == nullptr)
 		{
@@ -65,16 +65,16 @@ namespace RB::Render
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
+			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
+				data = RB::HBox::iTargetBoxDataController::Get()->GetData(spriteType);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
+			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iAttackBoxDataController::instance->GetData(spriteType);
+				data = RB::HBox::iAttackBoxDataController::Get()->GetData(spriteType);
 			}
 		}
 

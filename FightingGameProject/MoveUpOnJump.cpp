@@ -25,12 +25,12 @@ namespace RB::PlayerStateComponents
 
 	void MoveUpOnJump::OnFixedUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		//get vertical up
 		unsigned int frame = _state->GetCumulatedFixedUpdates();

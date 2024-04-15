@@ -14,7 +14,7 @@ namespace RB::PlayerStates
 	{
 		for (auto i = allPlayerStates.begin(); i != allPlayerStates.end(); i++)
 		{
-			RB::Players::iPlayer* owner = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
+			RB::Players::iPlayer* owner = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
 
 			if (owner != nullptr)
 			{
@@ -109,7 +109,7 @@ namespace RB::PlayerStates
 
 	RB::Players::iPlayer* PlayerState::GetPlayer()
 	{
-		return RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_stateMachineID);
+		return RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_stateMachineID);
 
 		return nullptr;
 	}
@@ -125,19 +125,19 @@ namespace RB::PlayerStates
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
-		if (RB::Collisions::iPlayerBoxDataController::instance == nullptr)
+		if (RB::Collisions::iPlayerBoxDataController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedData(characterType);
+		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(characterType);
 
 		if (loaded == nullptr)
 		{
 			return;
 		}
 
-		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
+		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
 
 		if (iAniObj == nullptr)
 		{

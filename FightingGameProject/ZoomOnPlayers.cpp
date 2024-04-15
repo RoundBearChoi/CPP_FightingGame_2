@@ -21,13 +21,13 @@ namespace RB::Cam
 
 	float ZoomOnPlayers::_GetMagSqBetweenPlayers()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return 0.0f;
 		}
 
-		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::instance->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = RB::Players::iPlayerController::instance->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
 		olc::vf2d p1_pos = p1->GetPosition();
 		olc::vf2d p2_pos = p2->GetPosition();
@@ -42,7 +42,7 @@ namespace RB::Cam
 
 	void ZoomOnPlayers::_AutoZoom(float playerDistSq)
 	{
-		if (RB::Cam::iCamController::instance == nullptr)
+		if (RB::Cam::iCamController::Get() == nullptr)
 		{
 			return;
 		}
@@ -65,6 +65,6 @@ namespace RB::Cam
 			zoom = _minZoomOut;
 		}
 
-		RB::Cam::iCamController::instance->SetZoom(zoom);
+		RB::Cam::iCamController::Get()->SetZoom(zoom);
 	}
 }

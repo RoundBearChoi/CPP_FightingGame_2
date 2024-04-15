@@ -18,13 +18,13 @@ namespace RB::HBox
 
 	void HBMenuController::OnUpdate()
 	{
-		if (RB::Sprites::iSpriteDataController::instance == nullptr)
+		if (RB::Sprites::iSpriteDataController::Get() == nullptr)
 		{
 			return;
 		}
 
-		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Render::iPlayerAnimationController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr ||
+			RB::Render::iPlayerAnimationController::Get() == nullptr)
 		{
 			return;
 		}
@@ -93,7 +93,7 @@ namespace RB::HBox
 
 	RB::Sprites::SpriteType HBMenuController::_GetCurrentSpriteType()
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(0);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(0);
 		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)
@@ -109,7 +109,7 @@ namespace RB::HBox
 	{
 		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType();
 
-		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, spriteType);
+		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, spriteType);
 
 		if (obj == nullptr)
 		{
@@ -121,22 +121,22 @@ namespace RB::HBox
 
 	RB::HBox::Loaded_HB_Data* HBMenuController::_GetHBData()
 	{
-		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
+		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::Get()->GetHBoxType();
 
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
+			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iTargetBoxDataController::instance->GetData(_GetCurrentSpriteType());
+				data = RB::HBox::iTargetBoxDataController::Get()->GetData(_GetCurrentSpriteType());
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
+			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iAttackBoxDataController::instance->GetData(_GetCurrentSpriteType());
+				data = RB::HBox::iAttackBoxDataController::Get()->GetData(_GetCurrentSpriteType());
 			}
 		}
 
@@ -150,21 +150,21 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::instance->GetHBoxType();
+		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::Get()->GetHBoxType();
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
+			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
 			{
-				const std::string& path = RB::HBox::iTargetBoxDataController::instance->GetPath(_GetCurrentSpriteType());
+				const std::string& path = RB::HBox::iTargetBoxDataController::Get()->GetPath(_GetCurrentSpriteType());
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
+			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
 			{
-				const std::string& path = RB::HBox::iAttackBoxDataController::instance->GetPath(_GetCurrentSpriteType());
+				const std::string& path = RB::HBox::iAttackBoxDataController::Get()->GetPath(_GetCurrentSpriteType());
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

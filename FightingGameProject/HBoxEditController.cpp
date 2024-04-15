@@ -51,7 +51,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteType);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -65,16 +65,16 @@ namespace RB::HBox
 
 		if (boxType == HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::instance != nullptr)
+			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
+				data = RB::HBox::iTargetBoxDataController::Get()->GetData(spriteType);
 			}
 		}
 		else if (boxType == HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::instance != nullptr)
+			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iAttackBoxDataController::instance->GetData(spriteType);
+				data = RB::HBox::iAttackBoxDataController::Get()->GetData(spriteType);
 			}
 		}
 
@@ -92,7 +92,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(playerID, spriteType);
+		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -105,11 +105,11 @@ namespace RB::HBox
 		
 		if (_boxType == HBoxType::TARGET_BOX)
 		{
-			data = RB::HBox::iTargetBoxDataController::instance->GetData(spriteType);
+			data = RB::HBox::iTargetBoxDataController::Get()->GetData(spriteType);
 		}
 		else if (_boxType == HBoxType::ATTACK_BOX)
 		{
-			data = RB::HBox::iAttackBoxDataController::instance->GetData(spriteType);
+			data = RB::HBox::iAttackBoxDataController::Get()->GetData(spriteType);
 		}
 
 		if (data == nullptr)
@@ -131,23 +131,23 @@ namespace RB::HBox
 	{
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::instance == nullptr)
+			if (RB::HBox::iTargetBoxDataController::Get() == nullptr)
 			{
 				return false;
 			}
 		}
 		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::instance == nullptr)
+			if (RB::HBox::iAttackBoxDataController::Get() == nullptr)
 			{
 				return false;
 			}
 		}
 
-		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Render::iPlayerAnimationController::instance == nullptr ||
-			RB::HBox::iHBMenuController::instance == nullptr ||
-			RB::Cam::iCamController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr ||
+			RB::Render::iPlayerAnimationController::Get() == nullptr ||
+			RB::HBox::iHBMenuController::Get() == nullptr ||
+			RB::Cam::iCamController::Get() == nullptr)
 		{
 			return false;
 		}
@@ -176,7 +176,7 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{
@@ -296,11 +296,11 @@ namespace RB::HBox
 
 			if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 			{
-				path = RB::HBox::iTargetBoxDataController::instance->GetPath(data->GetSpriteType());
+				path = RB::HBox::iTargetBoxDataController::Get()->GetPath(data->GetSpriteType());
 			}
 			else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 			{
-				path = RB::HBox::iAttackBoxDataController::instance->GetPath(data->GetSpriteType());
+				path = RB::HBox::iAttackBoxDataController::Get()->GetPath(data->GetSpriteType());
 			}
 
 			std::ofstream file(path);
@@ -360,7 +360,7 @@ namespace RB::HBox
 				file.close();
 			}
 
-			RB::HBox::iHBMenuController::instance->ShowNotification();
+			RB::HBox::iHBMenuController::Get()->ShowNotification();
 		}
 	}
 }

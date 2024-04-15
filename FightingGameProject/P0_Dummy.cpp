@@ -21,7 +21,7 @@ namespace RB::PlayerStates::Aku
 
 	void P0_Dummy::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}

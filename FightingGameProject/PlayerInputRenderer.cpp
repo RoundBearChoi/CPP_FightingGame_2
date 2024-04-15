@@ -20,24 +20,24 @@ namespace RB::Render
 
 	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos)
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
 
-		if (RB::Input::iInputController::instance == nullptr)
+		if (RB::Input::iInputController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{
 			return;
 		}
 
-		const auto vec = RB::Input::iInputController::instance->GetVecInputObjs(player->GetPlayerID());
+		const auto vec = RB::Input::iInputController::Get()->GetVecInputObjs(player->GetPlayerID());
 
 		int count = 0;
 

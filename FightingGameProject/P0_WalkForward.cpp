@@ -18,7 +18,7 @@ namespace RB::PlayerStates::Aku
 	{
 		_spriteType = RB::Sprites::SpriteType::aku_walk;
 
-		RB::Players::Specs::MoveSpecs m = RB::Players::Specs::iSpecsController::instance->GetMoveSpecs(RB::Players::CharacterType::AKU);
+		RB::Players::Specs::MoveSpecs m = RB::Players::Specs::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::Aku::P0_JumpForwardUp_0()));

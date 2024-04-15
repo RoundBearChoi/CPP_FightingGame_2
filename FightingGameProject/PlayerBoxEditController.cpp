@@ -24,11 +24,11 @@ namespace RB::Collisions
 
 		if (currentBox == nullptr)
 		{
-			RB::Render::iPlayerDebugController::instance->RenderPlayerBox(false);
+			RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(false);
 		}
 		else
 		{
-			RB::Render::iPlayerDebugController::instance->RenderPlayerBox(true);
+			RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(true);
 		}
 
 		_UpdateBoxSizeOnPress(currentBox);
@@ -98,7 +98,7 @@ namespace RB::Collisions
 		{
 			if (currentSpecs == nullptr)
 			{
-				RB::Collisions::iPlayerBoxDataController::instance->AddSpecs(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), _GetCurrentSpriteType(id), RB::Players::iPlayerController::instance->GetPlayerOnID(id)->GetCharacterType());
+				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), _GetCurrentSpriteType(id), RB::Players::iPlayerController::Get()->GetPlayerOnID(id)->GetCharacterType());
 			}
 			else
 			{
@@ -123,7 +123,7 @@ namespace RB::Collisions
 			}
 			else
 			{
-				RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedData(_GetCharacterType(id));
+				RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(_GetCharacterType(id));
 				loaded->EraseSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
 				loaded->RefreshIterators();
 			}
@@ -157,23 +157,23 @@ namespace RB::Collisions
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data", olc::WHITE);
 
-		const std::string& str = RB::Sprites::iSpriteDataController::instance->GetString(_GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+		const std::string& str = RB::Sprites::iSpriteDataController::Get()->GetString(_GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + str, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW);
 	}
 
 	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(id);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
 	
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 	
-		if (RB::Collisions::iPlayerBoxDataController::instance == nullptr)
+		if (RB::Collisions::iPlayerBoxDataController::Get() == nullptr)
 		{
 			return nullptr;
 		}
 	
-		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedData(characterType);
+		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(characterType);
 	
 		if (loaded == nullptr)
 		{
@@ -187,16 +187,16 @@ namespace RB::Collisions
 
 	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(RB::Players::PlayerID id)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(id);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
-		if (RB::Collisions::iPlayerBoxDataController::instance == nullptr)
+		if (RB::Collisions::iPlayerBoxDataController::Get() == nullptr)
 		{
 			return nullptr;
 		}
 
-		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::instance->GetLoadedData(characterType);
+		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(characterType);
 
 		if (loaded == nullptr)
 		{
@@ -210,7 +210,7 @@ namespace RB::Collisions
 
 	RB::Players::CharacterType PlayerBoxEditController::_GetCharacterType(RB::Players::PlayerID id)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(id);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
@@ -235,7 +235,7 @@ namespace RB::Collisions
 	{
 		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType(id);
 
-		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::instance->GetCurrentAnimationObj(id, spriteType);
+		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(id, spriteType);
 
 		if (iAniObj == nullptr)
 		{

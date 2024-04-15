@@ -12,7 +12,7 @@ namespace RB::Players
 
 	void PlayerCollider::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
@@ -67,13 +67,13 @@ namespace RB::Players
 
 	void PlayerCollider::_ResolveCollision()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
 
 		PlayerID myID = _player->GetPlayerID();
-		iPlayer* other = RB::Players::iPlayerController::instance->GetOtherPlayer(_player);
+		iPlayer* other = RB::Players::iPlayerController::Get()->GetOtherPlayer(_player);
 
 		if (other == nullptr)
 		{

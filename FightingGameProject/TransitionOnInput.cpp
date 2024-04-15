@@ -25,24 +25,24 @@ namespace RB::PlayerStateComponents
 
 	void TransitionOnInput::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr ||
-			RB::Input::iInputController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr ||
+			RB::Input::iInputController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerID playerID = player->GetPlayerID();
 
 		RB::Input::iInputObj* obj = nullptr;
 		
 		if (_useAsSpecial)
 		{
-			obj = RB::Input::iInputController::instance->GetUnused_Special_FIFO(playerID, _input);
+			obj = RB::Input::iInputController::Get()->GetUnused_Special_FIFO(playerID, _input);
 		}
 		else if (_useAsMovement)
 		{
-			obj = RB::Input::iInputController::instance->GetUnused_Movement_FIFO(playerID, _input);
+			obj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(playerID, _input);
 		}
 		
 		if (obj == nullptr)

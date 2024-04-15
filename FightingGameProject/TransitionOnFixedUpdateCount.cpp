@@ -21,7 +21,7 @@ namespace RB::PlayerStateComponents
 
 	void TransitionOnFixedUpdateCount::OnFixedUpdate()
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		player->GetStateMachine()->QueueNextState(_vecNextStates[0]);
 	}

@@ -17,21 +17,21 @@ namespace RB::PlayerStateComponents
 
 	void StandUpOnRelease::OnFixedUpdate()
 	{
-		if (RB::Input::iInputController::instance == nullptr)
+		if (RB::Input::iInputController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		if (player == nullptr)
 		{
 			return;
 		}
 
-		bool down = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN);
-		bool downLeft = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_LEFT);
-		bool downRight = RB::Input::iInputController::instance->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_RIGHT);
+		bool down = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN);
+		bool downLeft = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_LEFT);
+		bool downRight = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_RIGHT);
 
 		//do nothing if down is held (including diag)
 		if (down || downLeft || downRight)

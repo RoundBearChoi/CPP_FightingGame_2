@@ -21,7 +21,7 @@ namespace RB::Render
 			return;
 		}
 
-		if (RB::Cam::iCamController::instance == nullptr)
+		if (RB::Cam::iCamController::Get() == nullptr)
 		{
 			return;
 		}
@@ -30,12 +30,12 @@ namespace RB::Render
 
 		olc::vf2d screenPos = renderSettings.mWorldPos;
 
-		screenPos = RB::Cam::iCamController::instance->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
+		screenPos = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
 		float x = (float)screenPos.x;
 		float y = (float)screenPos.y;
 
-		float zoom = RB::Cam::iCamController::instance->GetCamObj()->GetZoom();
+		float zoom = RB::Cam::iCamController::Get()->GetCamObj()->GetZoom();
 
 		float width = renderSettings.mRenderSize.x * zoom;
 		float height = renderSettings.mRenderSize.y * zoom;

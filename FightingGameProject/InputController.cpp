@@ -289,12 +289,12 @@ namespace RB::Input
 	/// </summary>
 	void InputController::_OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input)
 	{
-		if (RB::Input::iSpecialMovesController::instance == nullptr)
+		if (RB::Input::iSpecialMovesController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 
 		if (player->IsInSpecialMoveStatus())
 		{
@@ -304,7 +304,7 @@ namespace RB::Input
 		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK ||
 			input == PlayerInput::ATTACK_STRONG_PUNCH || input == PlayerInput::ATTACK_STRONG_KICK)
 		{
-			RB::Input::SpecialMoveType specialMove = RB::Input::iSpecialMovesController::instance->GetSpecialMove(playerID);
+			RB::Input::SpecialMoveType specialMove = RB::Input::iSpecialMovesController::Get()->GetSpecialMove(playerID);
 
 			if (specialMove != SpecialMoveType::NONE)
 			{
@@ -509,9 +509,9 @@ namespace RB::Input
 
 		if (!vec.empty())
 		{
-			RB::States::iState* newState = RB::Input::iSpecialMovesController::instance->GetNewState(vec[0]);
+			RB::States::iState* newState = RB::Input::iSpecialMovesController::Get()->GetNewState(vec[0]);
 
-			RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnID(playerID);
+			RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 
 			player->GetStateMachine()->OverrideNextState(newState);
 

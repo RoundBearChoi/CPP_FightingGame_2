@@ -8,7 +8,10 @@ namespace RB::Controllers
     class ControllerT : public ControllerBase
     {
     public:
-        static T* instance;
+        static T* Get()
+        {
+            return instance;
+        }
 
         ControllerT()
         {
@@ -21,7 +24,12 @@ namespace RB::Controllers
         {
             instance = nullptr;
         }
+
+    private:
+        static T* instance;
     };
+
+
 
     template <class T> T* ControllerT<T>::instance = nullptr;
 }

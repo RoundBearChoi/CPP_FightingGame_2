@@ -19,12 +19,12 @@ namespace RB::PlayerStateComponents
 
 	void MoveForwardOnJump_0::OnFixedUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		//get move amount (t is from 0 to 0.5, first half only)
 		unsigned int frame = _state->GetCumulatedFixedUpdates();

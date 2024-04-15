@@ -11,7 +11,7 @@ namespace RB::Render
 
 	void PlayerBoxRenderer::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::instance == nullptr)
+		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
@@ -23,7 +23,7 @@ namespace RB::Render
 
 		for (int i = 0; i < 2; i++)
 		{
-			RB::Players::iPlayer* player = RB::Players::iPlayerController::instance->GetPlayerOnIndex(i);
+			RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(i);
 
 			if (player == nullptr)
 			{

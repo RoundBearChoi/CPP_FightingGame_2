@@ -22,6 +22,11 @@ namespace RB::Controllers
 
 	void ControllerBase::OnEnd()
 	{
+		DeleteAllControllers();
+	}
+
+	void ControllerBase::DeleteAllControllers()
+	{
 		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
 		{
 			delete (*i);

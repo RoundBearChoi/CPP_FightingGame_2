@@ -1,4 +1,5 @@
 #pragma once
+//#include <iostream>
 
 #include "ControllerBase.h"
 
@@ -10,6 +11,11 @@ namespace RB::Controllers
     public:
         static T* Get()
         {
+            if (instance == nullptr)
+            {
+                //std::cout << "creating new controller" << std::endl;
+            }
+
             return instance;
         }
 

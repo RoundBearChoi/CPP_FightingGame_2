@@ -10,31 +10,29 @@ namespace RB::Controllers
     public:
         static T* Get()
         {
-            if (instance == nullptr)
+            if (_instance == nullptr)
             {
                 //std::cout << "creating new controller" << std::endl;
             }
 
-            return instance;
+            return _instance;
         }
 
         ControllerT()
         {
-            instance = static_cast<T*>(this);
+            _instance = static_cast<T*>(this);
 
             //std::cout << "controller created" << std::endl;
         }
 
         ~ControllerT() override
         {
-            instance = nullptr;
+            _instance = nullptr;
         }
 
     private:
-        static T* instance;
+        static T* _instance;
     };
 
-
-
-    template <class T> T* ControllerT<T>::instance = nullptr;
+    template <class T> T* ControllerT<T>::_instance = nullptr;
 }

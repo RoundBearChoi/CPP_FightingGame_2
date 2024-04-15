@@ -25,7 +25,7 @@ namespace RB::Updaters
 {
 	GameplayUpdater::~GameplayUpdater()
 	{
-		RB::Controllers::ControllerBase::OnEnd();
+		RB::Controllers::ControllerBase::DestroyAllControllers();
 	}
 
 	void GameplayUpdater::Init()

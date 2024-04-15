@@ -17,8 +17,9 @@ namespace RB::Updaters
 {
 	PlayerBoxEditorUpdater::~PlayerBoxEditorUpdater()
 	{
-		RB::Controllers::ControllerBase::OnEnd();
+		RB::Controllers::ControllerBase::DestroyAllControllers();
 	}
+
 	void PlayerBoxEditorUpdater::Init()
 	{
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());

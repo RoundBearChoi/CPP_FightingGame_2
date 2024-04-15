@@ -20,8 +20,7 @@ namespace RB::Controllers
 
 		static void UpdateAll();
 		static void FixedUpdateAll();
-		static void OnEnd();
-		static void DeleteAllControllers();
+		static void DestroyAllControllers();
 
 	public:
 		ControllerBase() = default;

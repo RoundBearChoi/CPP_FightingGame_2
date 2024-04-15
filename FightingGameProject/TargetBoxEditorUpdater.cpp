@@ -21,7 +21,7 @@ namespace RB::Updaters
 {
 	TargetBoxEditorUpdater::~TargetBoxEditorUpdater()
 	{
-		RB::Controllers::ControllerBase::OnEnd();
+		RB::Controllers::ControllerBase::DestroyAllControllers();
 	}
 
 	void TargetBoxEditorUpdater::Init()

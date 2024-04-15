@@ -21,7 +21,7 @@ namespace RB::Updaters
 {
 	AttackBoxEditorUpdater::~AttackBoxEditorUpdater()
 	{
-		RB::Controllers::ControllerBase::OnEnd();
+		RB::Controllers::ControllerBase::DestroyAllControllers();
 	}
 
 	void AttackBoxEditorUpdater::Init()

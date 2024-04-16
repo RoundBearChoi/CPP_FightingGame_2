@@ -27,7 +27,7 @@ namespace RB::PlayerStates::Aku
 		//AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(8, -5)); //back
 		//AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(9, 0));
 
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(20, new RB::PlayerStates::Aku::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(21, new RB::PlayerStates::Aku::P0_Idle()));
 
 		EnterStateComponents();
 	}

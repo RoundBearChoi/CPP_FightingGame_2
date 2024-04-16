@@ -1,0 +1,14 @@
+{
+    "p0_AnimationSpecs_strong_wince":
+        {
+        "png_file_path" : "PNG files/Aku/aku_strong_wince.png",
+        "sprite_enum" : "aku_strong_wince",
+        "mX_TileCount" : 4,
+        "mY_TileCount" : 1,
+        "mTotalSprites" : 4,
+        "mSkipFixedUpdates" : 1,
+        "mRenderSizeX" : 125,
+        "mRenderSizeY" : 137,
+        "mPlayOnce" : 1
+        }
+}

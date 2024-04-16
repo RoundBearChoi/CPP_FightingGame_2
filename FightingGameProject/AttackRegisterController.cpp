@@ -3,7 +3,8 @@
 #include "SpriteType.h"
 
 #include "AttackSpecs.h"
-#include "P0_Wince.h"
+#include "P0_Wince.h" //temp
+#include "P0_Strong_Wince.h" //temp
 
 #include "iAttackSpecsController.h"
 #include "iVFXAnimationController.h"
@@ -33,6 +34,7 @@ namespace RB::Collisions
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
 		reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
+		//reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Strong_Wince());
 
 		if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
 		{

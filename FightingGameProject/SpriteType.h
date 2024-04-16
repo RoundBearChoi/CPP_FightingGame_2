@@ -42,6 +42,7 @@ namespace RB::Sprites
 		aku_strong_punch,
 		aku_strong_kick,
 		aku_wince,
+		aku_strong_wince,
 		aku_hadouken,
 
 		background_1,

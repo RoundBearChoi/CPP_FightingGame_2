@@ -388,6 +388,9 @@
     <ClCompile Include="AttackSpecsController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
+    <ClCompile Include="P0_Strong_Wince.cpp">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -872,6 +875,9 @@
     </ClInclude>
     <ClInclude Include="AttackStrengthType.h">
       <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="P0_Strong_Wince.h">
+      <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

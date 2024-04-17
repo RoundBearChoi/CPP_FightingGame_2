@@ -70,15 +70,21 @@ namespace RB::Collisions
 		json_object_element_s* hitStop = damage->next; //hit stop
 		int hitStopValue = RB::JSON::GetInt_FromElement(*hitStop);
 
+		json_object_element_s* minFixedUpdates = hitStop->next; //min fixed updates
+		int minFixedUpdatesValue = RB::JSON::GetInt_FromElement(*minFixedUpdates);
+
 		AttackSpecs attackSpecs;
 		attackSpecs.mSpriteType = spriteType;
 		attackSpecs.mAttackStrengthType = attackStrengthType;
 		attackSpecs.mDamage = damageValue;
 		attackSpecs.mHitStop = hitStopValue;
+		attackSpecs.mMinimumFixedUpdatesSinceHit = minFixedUpdatesValue;
 
 		if (!ContainsAttackSpecs(spriteType))
 		{
 			_vecAttackSpecs.push_back(attackSpecs);
 		}
+
+		free(root);
 	}
 }

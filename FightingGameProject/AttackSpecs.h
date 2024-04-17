@@ -15,5 +15,6 @@ namespace RB::Collisions
 			RB::Collisions::AttackStrengthType mAttackStrengthType = RB::Collisions::AttackStrengthType::NONE;
 			int mDamage = 0;
 			int mHitStop = 0;
+			int mMinimumFixedUpdatesSinceHit = 0;
 	};
 }

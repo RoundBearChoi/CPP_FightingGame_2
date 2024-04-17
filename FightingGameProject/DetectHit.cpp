@@ -85,8 +85,10 @@ namespace RB::PlayerStateComponents
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
+					//check max hit count
 					const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(ownerSpriteType);
 
+					//register attack
 					RB::Collisions::AttackRegister reg;
 					reg.attacker = owner;
 					reg.target = target;

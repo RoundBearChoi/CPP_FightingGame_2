@@ -13,5 +13,12 @@ namespace RB::PlayerStateComponents
 		void OnEnter() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+	private:
+		void _ProcessHit();
+		void _AddFixedUpdatesSinceLastHit();
+
+		int _hits = 0;
+		int _fixedUpdatesSinceLastHit = 0;
 	};
 }

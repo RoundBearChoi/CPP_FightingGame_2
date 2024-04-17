@@ -26,6 +26,11 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::OnFixedUpdate()
 	{
+		_ProcessHit();
+		_AddFixedUpdatesSinceLastHit();
+	}
+	void DetectHit::_ProcessHit()
+	{
 		RB::Players::iPlayer* owner = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(owner);
 
@@ -39,7 +44,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Sprites::SpriteType ownerSpriteType = ownerState->GetSpriteType();
 		RB::Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
-		
+
 		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteType);
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
@@ -58,7 +63,7 @@ namespace RB::PlayerStateComponents
 
 		RB::HBox::AABB_Set* ownerAABBs = ownerData->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
 		RB::HBox::AABB_Set* targetAABBs = targetData->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
-		
+
 		const auto& vec_Owner_AABB_Sets = ownerAABBs->GetSelector()->GetVector();
 		const auto& vec_Target_AABB_Sets = targetAABBs->GetSelector()->GetVector();
 
@@ -98,14 +103,27 @@ namespace RB::PlayerStateComponents
 
 					RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 
-					std::cout << "attacker update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+					_hits++;
+					_fixedUpdatesSinceLastHit = 0;
+
+					std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+					std::cout << "fixedupdates since last hit: " << _fixedUpdatesSinceLastHit << std::endl;
 					//std::cout << "target update count: " << enemyState->GetCumulatedFixedUpdates() << std::endl;
+					std::cout << "hit count: " << _hits << std::endl;
 					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
 					std::cout << std::endl;
 
 					return;
 				}
 			}
+		}
+	}
+
+	void DetectHit::_AddFixedUpdatesSinceLastHit()
+	{
+		if (_hits > 0)
+		{
+			_fixedUpdatesSinceLastHit++;
 		}
 	}
 }

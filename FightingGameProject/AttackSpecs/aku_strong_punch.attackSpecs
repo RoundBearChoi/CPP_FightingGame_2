@@ -3,6 +3,6 @@
         {
         "attack strength stype" : "STRONG",
         "damage" : 20,
-        "hitstop frames" : 3
+        "hitstop frames" : 5
         }
 }

@@ -1,11 +1,14 @@
 #include "DetectHit.h"
 
+#include "AttackSpecs.h"
+
 #include "PlayerState.h"
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iAttackBoxDataController.h"
 #include "iTargetBoxDataController.h"
 #include "iAttackRegisterController.h"
+#include "iAttackSpecsController.h"
 
 #include "P0_Wince.h"
 
@@ -82,6 +85,8 @@ namespace RB::PlayerStateComponents
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
+					const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(ownerSpriteType);
+
 					RB::Collisions::AttackRegister reg;
 					reg.attacker = owner;
 					reg.target = target;

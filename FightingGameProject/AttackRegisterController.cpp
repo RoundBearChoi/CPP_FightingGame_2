@@ -44,7 +44,7 @@ namespace RB::Collisions
 
 		if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
 		{
-			RB::Collisions::iGeneralHitStopController::Get()->AddSkipFrames(3);
+			RB::Collisions::iGeneralHitStopController::Get()->AddSkipFrames(attackSpecs.mHitStop);
 		}
 	}
 }

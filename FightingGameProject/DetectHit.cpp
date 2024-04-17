@@ -93,25 +93,28 @@ namespace RB::PlayerStateComponents
 					//check max hit count
 					const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(ownerSpriteType);
 
-					//register attack
-					RB::Collisions::AttackRegister reg;
-					reg.attacker = owner;
-					reg.target = target;
-					reg.collisionPoint = col;
-					reg.attackerSpriteType = ownerSpriteType;
-					reg.targetIsOnRightSide = owner->OtherPlayerIsOnRightSide();
+					if (_hits == 0 || _fixedUpdatesSinceLastHit > attackSpecs.mMinimumFixedUpdatesSinceHit)
+					{
+						//register attack
+						RB::Collisions::AttackRegister reg;
+						reg.attacker = owner;
+						reg.target = target;
+						reg.collisionPoint = col;
+						reg.attackerSpriteType = ownerSpriteType;
+						reg.targetIsOnRightSide = owner->OtherPlayerIsOnRightSide();
 
-					RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
+						RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 
-					_hits++;
-					_fixedUpdatesSinceLastHit = 0;
+						_hits++;
+						_fixedUpdatesSinceLastHit = 0;
 
-					std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
-					std::cout << "fixedupdates since last hit: " << _fixedUpdatesSinceLastHit << std::endl;
-					//std::cout << "target update count: " << enemyState->GetCumulatedFixedUpdates() << std::endl;
-					std::cout << "hit count: " << _hits << std::endl;
-					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
-					std::cout << std::endl;
+						std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+						std::cout << "fixedupdates since last hit: " << _fixedUpdatesSinceLastHit << std::endl;
+						//std::cout << "target update count: " << enemyState->GetCumulatedFixedUpdates() << std::endl;
+						std::cout << "hit count: " << _hits << std::endl;
+						std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
+						std::cout << std::endl;
+					}
 
 					return;
 				}

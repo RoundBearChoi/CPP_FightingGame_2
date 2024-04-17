@@ -91,9 +91,10 @@ namespace RB::PlayerStateComponents
 
 					RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 
-					//std::cout << "update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
-					//std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
-					//std::cout << std::endl;
+					std::cout << "attacker update count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+					std::cout << "target update count: " << enemyState->GetCumulatedFixedUpdates() << std::endl;
+					std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
+					std::cout << std::endl;
 
 					return;
 				}

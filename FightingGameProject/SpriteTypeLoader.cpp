@@ -19,6 +19,8 @@ namespace RB::Sprites
 
 		RB::Sprites::SpriteType loadedSpriteType = RB::Sprites::SpriteType::_from_string(spriteEnumStr.c_str());
 
+		free(root);
+
 		return loadedSpriteType;
 	}
 }

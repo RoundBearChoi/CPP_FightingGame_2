@@ -16,5 +16,6 @@ namespace RB::Collisions
 			int mDamage = 0;
 			int mHitStop = 0;
 			int mMinimumFixedUpdatesSinceHit = 0;
+			int mMaxHits = 0;
 	};
 }

@@ -73,12 +73,16 @@ namespace RB::Collisions
 		json_object_element_s* minFixedUpdates = hitStop->next; //min fixed updates
 		int minFixedUpdatesValue = RB::JSON::GetInt_FromElement(*minFixedUpdates);
 
+		json_object_element_s* maxHits = minFixedUpdates->next; //max hits
+		int maxHitsValue = RB::JSON::GetInt_FromElement(*maxHits);
+
 		AttackSpecs attackSpecs;
 		attackSpecs.mSpriteType = spriteType;
 		attackSpecs.mAttackStrengthType = attackStrengthType;
 		attackSpecs.mDamage = damageValue;
 		attackSpecs.mHitStop = hitStopValue;
 		attackSpecs.mMinimumFixedUpdatesSinceHit = minFixedUpdatesValue;
+		attackSpecs.mMaxHits = maxHitsValue;
 
 		if (!ContainsAttackSpecs(spriteType))
 		{

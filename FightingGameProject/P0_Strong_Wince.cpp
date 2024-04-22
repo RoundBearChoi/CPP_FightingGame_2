@@ -17,31 +17,31 @@ namespace RB::PlayerStates::Aku
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, 0));
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(1, -3)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(1, -5)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(2, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(3, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(4, 0));
 		//AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(5, 0));
 		//AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(6, 0));
 		//AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(7, 0));
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(5, 3)); //forward
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(6, -3)); //back
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(7, 3)); //forward
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(8, -3)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(5, 5)); //forward
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(6, -7)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(7, 5)); //forward
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(8, -7)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(9, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(10, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(11, 0));
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(12, -3)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(12, -4)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(13, -8)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(14, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(15, -8)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(16, -8)); //back
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(17, -4)); //back
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(18, -4)); //back
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(19, -4)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(17, -5)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(18, -5)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(19, -5)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(20, 0));
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(21, -3)); //back
-		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(22, -3)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(21, -4)); //back
+		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(22, -4)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(23, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(24, 0));
 

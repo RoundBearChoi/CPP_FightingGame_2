@@ -4,7 +4,7 @@
         "attack strength stype" : "WEAK",
         "damage" : 10,
         "hitstop frames" : 3,
-        "minimum fixed updates since last hit": 8,
+        "minimum fixed updates since last hit": 10,
         "max hits" : 2
         }
 }

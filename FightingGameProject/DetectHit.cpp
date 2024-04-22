@@ -95,7 +95,10 @@ namespace RB::PlayerStateComponents
 
 					if (_hits == 0 || _fixedUpdatesSinceLastHit > attackSpecs.mMinimumFixedUpdatesSinceHit)
 					{
-						_RegisterHit(owner, target, col, ownerSpriteType);
+						if (_hits <= attackSpecs.mMaxHits)
+						{
+							_RegisterHit(owner, target, col, ownerSpriteType);
+						}
 					}
 
 					return;

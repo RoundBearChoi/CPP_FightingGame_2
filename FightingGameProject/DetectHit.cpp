@@ -111,7 +111,7 @@ namespace RB::PlayerStateComponents
 	{
 		//get attack collision y type
 		float targetBottomY = target->GetPosition().y;
-		float targetPlayerColliderHeight = target->GetPlayerCollider()->GetPlayerBox().y; //targetBox.GetWidthHeight().y;
+		float targetPlayerColliderHeight = target->GetPlayerCollider()->GetPlayerBox().y;
 
 		//register attack
 		RB::Collisions::AttackRegister reg;

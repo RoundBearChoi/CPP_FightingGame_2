@@ -90,6 +90,7 @@ namespace RB::PlayerStateComponents
 
 				//get target hit pos
 				float targetBottomY = target->GetPosition().y;
+				float targetPlayerColliderHeight = targetBox.GetWidthHeight().y;
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{

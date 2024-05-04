@@ -88,10 +88,6 @@ namespace RB::PlayerStateComponents
 				//compare
 				olc::vf2d col;
 
-				//get target hit pos
-				float targetBottomY = target->GetPosition().y;
-				float targetPlayerColliderHeight = targetBox.GetWidthHeight().y;
-
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
 					//check max hit count
@@ -113,6 +109,10 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::_RegisterHit(RB::Players::iPlayer* owner, RB::Players::iPlayer* target, olc::vf2d collisionPoint, RB::Sprites::SpriteType ownerSpriteType)
 	{
+		//get attack collision y type
+		float targetBottomY = target->GetPosition().y;
+		float targetPlayerColliderHeight = target->GetPlayerCollider()->GetPlayerBox().y; //targetBox.GetWidthHeight().y;
+
 		//register attack
 		RB::Collisions::AttackRegister reg;
 		reg.attacker = owner;

@@ -258,6 +258,7 @@
     <ClInclude Include="AnimationLoader.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
+    <ClInclude Include="AttackCollisionYType.h" />
     <ClInclude Include="AttackRegister.h" />
     <ClInclude Include="AttackRegisterController.h" />
     <ClInclude Include="AttackSpecs.h" />

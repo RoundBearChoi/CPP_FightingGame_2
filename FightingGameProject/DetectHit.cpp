@@ -88,6 +88,9 @@ namespace RB::PlayerStateComponents
 				//compare
 				olc::vf2d col;
 
+				//get target hit pos
+				float targetBottomY = target->GetPosition().y;
+
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
 					//check max hit count

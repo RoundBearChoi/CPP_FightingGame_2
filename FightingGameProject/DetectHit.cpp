@@ -29,7 +29,27 @@ namespace RB::PlayerStateComponents
 		_ProcessHit();
 		_AddFixedUpdatesSinceLastHit();
 	}
+
 	void DetectHit::_ProcessHit()
+	{
+		RB::Collisions::CollisionResult collisionResult;
+
+		if (_HitDetected(collisionResult))
+		{
+			//check max hit count
+			const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(collisionResult.mOwnerSpriteType);
+
+			if (_hits == 0 || _fixedUpdatesSinceLastHit > attackSpecs.mMinimumFixedUpdatesSinceHit)
+			{
+				if (_hits <= attackSpecs.mMaxHits)
+				{
+					_RegisterHit(collisionResult.mOwner, collisionResult.mTarget, collisionResult.mCollisionPoint, collisionResult.mOwnerSpriteType);
+				}
+			}
+		}
+	}
+
+	bool DetectHit::_HitDetected(RB::Collisions::CollisionResult& collisionResult)
 	{
 		RB::Players::iPlayer* owner = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(owner);
@@ -39,7 +59,7 @@ namespace RB::PlayerStateComponents
 
 		if (ownerState == nullptr || enemyState == nullptr)
 		{
-			return;
+			return false;
 		}
 
 		RB::Sprites::SpriteType ownerSpriteType = ownerState->GetSpriteType();
@@ -53,12 +73,12 @@ namespace RB::PlayerStateComponents
 
 		if (ownerData == nullptr || targetData == nullptr)
 		{
-			return;
+			return false;
 		}
 
 		if (ownerAniObj == nullptr || targetAniObj == nullptr)
 		{
-			return;
+			return false;
 		}
 
 		RB::HBox::AABB_Set* ownerAABBs = ownerData->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
@@ -90,21 +110,17 @@ namespace RB::PlayerStateComponents
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
-					//check max hit count
-					const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(ownerSpriteType);
+					collisionResult.mOwner = owner;
+					collisionResult.mTarget = target;
+					collisionResult.mCollisionPoint = col;
+					collisionResult.mOwnerSpriteType = ownerSpriteType;
 
-					if (_hits == 0 || _fixedUpdatesSinceLastHit > attackSpecs.mMinimumFixedUpdatesSinceHit)
-					{
-						if (_hits <= attackSpecs.mMaxHits)
-						{
-							_RegisterHit(owner, target, col, ownerSpriteType);
-						}
-					}
-
-					return;
+					return true;
 				}
 			}
 		}
+
+		return false;
 	}
 
 	void DetectHit::_RegisterHit(RB::Players::iPlayer* owner, RB::Players::iPlayer* target, olc::vf2d& collisionPoint, RB::Sprites::SpriteType ownerSpriteType)

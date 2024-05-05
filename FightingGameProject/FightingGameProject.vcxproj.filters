@@ -882,5 +882,8 @@
     <ClInclude Include="AttackCollisionYType.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionResult.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

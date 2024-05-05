@@ -8,6 +8,6 @@ namespace RB::Collisions
 		
 		HEAD,
 		BODY,
-		LEGS,
+		LEG,
 	};
 }

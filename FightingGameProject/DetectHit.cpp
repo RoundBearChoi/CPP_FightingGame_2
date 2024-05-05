@@ -107,12 +107,8 @@ namespace RB::PlayerStateComponents
 		}
 	}
 
-	void DetectHit::_RegisterHit(RB::Players::iPlayer* owner, RB::Players::iPlayer* target, olc::vf2d collisionPoint, RB::Sprites::SpriteType ownerSpriteType)
+	void DetectHit::_RegisterHit(RB::Players::iPlayer* owner, RB::Players::iPlayer* target, olc::vf2d& collisionPoint, RB::Sprites::SpriteType ownerSpriteType)
 	{
-		//get attack collision y type
-		float targetBottomY = target->GetPosition().y;
-		float targetPlayerColliderHeight = target->GetPlayerCollider()->GetPlayerBox().y;
-
 		//register attack
 		RB::Collisions::AttackRegister reg;
 		reg.attacker = owner;
@@ -120,6 +116,7 @@ namespace RB::PlayerStateComponents
 		reg.collisionPoint = collisionPoint;
 		reg.attackerSpriteType = ownerSpriteType;
 		reg.targetIsOnRightSide = owner->OtherPlayerIsOnRightSide();
+		reg.attackCollisionYType = _GetAttackCollisionYType(target, collisionPoint);
 
 		RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 
@@ -139,5 +136,32 @@ namespace RB::PlayerStateComponents
 		{
 			_fixedUpdatesSinceLastHit++;
 		}
+	}
+
+	RB::Collisions::AttackCollisionYType DetectHit::_GetAttackCollisionYType(RB::Players::iPlayer* target, olc::vf2d& collisionPoint)
+	{
+		//get attack collision y type
+		float targetBottomY = target->GetPosition().y;
+		float targetPlayerColliderHeight = target->GetPlayerCollider()->GetPlayerBox().y;
+		float targetTopY = targetBottomY - targetPlayerColliderHeight; //up y is negative
+
+		float oneThird = targetPlayerColliderHeight * 0.3f;
+
+		RB::Collisions::AttackCollisionYType yType = RB::Collisions::AttackCollisionYType::NONE;
+
+		if (collisionPoint.y <= targetTopY + oneThird)
+		{
+			yType = RB::Collisions::AttackCollisionYType::HEAD;
+		}
+		else if (collisionPoint.y <= targetTopY + (oneThird * 2.0f))
+		{
+			yType = RB::Collisions::AttackCollisionYType::BODY;
+		}
+		else
+		{
+			yType = RB::Collisions::AttackCollisionYType::LEG;
+		}
+
+		return yType;
 	}
 }

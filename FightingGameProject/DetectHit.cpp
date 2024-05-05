@@ -43,7 +43,7 @@ namespace RB::PlayerStateComponents
 			{
 				if (_hits <= attackSpecs.mMaxHits)
 				{
-					_RegisterHit(collisionResult.mOwner, collisionResult.mTarget, collisionResult.mCollisionPoint, collisionResult.mOwnerSpriteType);
+					_RegisterHit(collisionResult);
 				}
 			}
 		}
@@ -123,16 +123,16 @@ namespace RB::PlayerStateComponents
 		return false;
 	}
 
-	void DetectHit::_RegisterHit(RB::Players::iPlayer* owner, RB::Players::iPlayer* target, olc::vf2d& collisionPoint, RB::Sprites::SpriteType ownerSpriteType)
+	void DetectHit::_RegisterHit(RB::Collisions::CollisionResult& collisionResult)
 	{
 		//register attack
 		RB::Collisions::AttackRegister reg;
-		reg.attacker = owner;
-		reg.target = target;
-		reg.collisionPoint = collisionPoint;
-		reg.attackerSpriteType = ownerSpriteType;
-		reg.targetIsOnRightSide = owner->OtherPlayerIsOnRightSide();
-		reg.attackCollisionYType = _GetAttackCollisionYType(target, collisionPoint);
+		reg.attacker = collisionResult.mOwner;
+		reg.target = collisionResult.mTarget;
+		reg.collisionPoint = collisionResult.mCollisionPoint;
+		reg.attackerSpriteType = collisionResult.mOwnerSpriteType;
+		reg.targetIsOnRightSide = collisionResult.mOwner->OtherPlayerIsOnRightSide();
+		reg.attackCollisionYType = _GetAttackCollisionYType(collisionResult.mTarget, collisionResult.mCollisionPoint);
 
 		RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 
@@ -142,7 +142,7 @@ namespace RB::PlayerStateComponents
 		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 		std::cout << "fixedupdates since last hit: " << _fixedUpdatesSinceLastHit << std::endl;
 		std::cout << "hit count: " << _hits << std::endl;
-		std::cout << "player " << owner->GetPlayerID_int() << " hit player " << target->GetPlayerID_int() << std::endl;
+		std::cout << "player " << collisionResult.mOwner->GetPlayerID_int() << " hit player " << collisionResult.mTarget->GetPlayerID_int() << std::endl;
 		std::cout << std::endl;
 	}
 

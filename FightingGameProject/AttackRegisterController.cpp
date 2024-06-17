@@ -33,6 +33,8 @@ namespace RB::Collisions
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
+		//transition target animation
+
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 		{
 			reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Strong_Wince());
@@ -41,6 +43,8 @@ namespace RB::Collisions
 		{
 			reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
 		}
+
+		//hitstop
 
 		if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
 		{

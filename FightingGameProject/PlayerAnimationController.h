@@ -2,7 +2,6 @@
 
 #include "AnimationLoader.h"
 #include "SpriteType.h"
-#include "AnimationContainer.h"
 
 #include "iPlayerAnimationController.h"
 #include "iAnimationObj.h"
@@ -32,6 +31,5 @@ namespace RB::Render
 
 	private:
 		AnimationLoader _animationLoader;
-		AnimationContainer _animationContainer;
 	};
 }

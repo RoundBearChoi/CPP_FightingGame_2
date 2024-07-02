@@ -19,7 +19,7 @@ namespace RB::Render
 
 	void AnimationLoader::Init()
 	{
-		_aniLoader.Init();
+		_animationRendererLoader.Init();
 	}
 
 	void AnimationLoader::OnFixedUpdate()
@@ -70,7 +70,7 @@ namespace RB::Render
 
 		assert(specs.mLoadedSprite != nullptr);
 
-		_aniLoader.LoadAnimation(specs);
+		_animationRendererLoader.LoadAnimationRenderer(specs);
 	}
 
 	void AnimationLoader::DeleteAnimationObjs(RB::Players::PlayerID playerID)
@@ -139,7 +139,7 @@ namespace RB::Render
 	/// </summary>
 	iAnimationObj* AnimationLoader::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType)
 	{
-		iAnimationObj* animationObj = new AnimationObj(&player, _aniLoader.GetAnimationRenderer(spriteType), pivotType);
+		iAnimationObj* animationObj = new AnimationObj(&player, _animationRendererLoader.GetAnimationRenderer(spriteType), pivotType);
 
 		return animationObj;
 	}
@@ -171,6 +171,6 @@ namespace RB::Render
 
 	AnimationRenderer* AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
 	{
-		return _aniLoader.GetAnimationRenderer(spriteType);
+		return _animationRendererLoader.GetAnimationRenderer(spriteType);
 	}
 }

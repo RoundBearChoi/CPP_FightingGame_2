@@ -144,7 +144,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AABB.cpp" />
-    <ClCompile Include="AnimationContainer.cpp" />
     <ClCompile Include="AnimationLoader.cpp" />
     <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="AttackSpecsController.cpp" />
@@ -256,7 +255,6 @@
   <ItemGroup>
     <ClInclude Include="AABB.h" />
     <ClInclude Include="AllocationCount.h" />
-    <ClInclude Include="AnimationContainer.h" />
     <ClInclude Include="AnimationLoader.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />

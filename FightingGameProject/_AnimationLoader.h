@@ -6,15 +6,15 @@
 
 namespace RB::Render
 {
-	class _AnimationLoader
+	class _AnimationRendererLoader
 	{
 		public:
-		_AnimationLoader() = default;
-		~_AnimationLoader();
+		_AnimationRendererLoader() = default;
+		~_AnimationRendererLoader();
 
 	public:
 		void Init();
-		void LoadAnimation(AnimationSpecs specs);
+		void LoadAnimationRenderer(AnimationSpecs specs);
 		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
 
 	private:

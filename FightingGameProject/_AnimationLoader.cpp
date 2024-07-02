@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-	_AnimationLoader::~_AnimationLoader()
+	_AnimationRendererLoader::~_AnimationRendererLoader()
 	{
 		for (auto i = _animationRenderer.begin(); i != _animationRenderer.end(); i++)
 		{
@@ -11,14 +11,14 @@ namespace RB::Render
 		}
 	}
 
-	void _AnimationLoader::Init()
+	void _AnimationRendererLoader::Init()
 	{
 		//NONE by default (will render nothing)
 		AnimationSpecs none;
-		LoadAnimation(none);
+		LoadAnimationRenderer(none);
 	}
 
-	void _AnimationLoader::LoadAnimation(AnimationSpecs specs)
+	void _AnimationRendererLoader::LoadAnimationRenderer(AnimationSpecs specs)
 	{
 		if (specs.mSpriteType._value != RB::Sprites::SpriteType::NONE && specs.mLoadedSprite == nullptr)
 		{
@@ -33,7 +33,7 @@ namespace RB::Render
 		}
 	}
 
-	AnimationRenderer* _AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
+	AnimationRenderer* _AnimationRendererLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
 	{
 		for (auto i = _animationRenderer.begin(); i != _animationRenderer.end(); i++)
 		{

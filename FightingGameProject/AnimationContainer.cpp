@@ -73,6 +73,7 @@ namespace RB::Render
 
 	/// <summary>
 	/// this function require sprites to be loaded first
+	/// an "animation" is just a sprite (spritesheet) with more data
 	/// </summary>
 	void AnimationContainer::LoadAnimation(AnimationSpecs specs)
 	{

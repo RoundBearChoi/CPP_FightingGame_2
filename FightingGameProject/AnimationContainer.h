@@ -31,8 +31,8 @@ namespace RB::Render
 		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
 
 	protected:
+		std::vector<iAnimationObj*> _vecCurrentAnimations; // current running animations
 		RB::Sprites::SpriteContainer _spriteContainer;
-		std::vector<iAnimationObj*> _vecCurrentAnimations;
-		std::vector<AnimationRenderer*> _vecAnimationRenderers;
+		std::vector<AnimationRenderer*> _vecAnimationRenderers; // all loaded animations
 	};
 }

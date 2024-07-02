@@ -4,8 +4,7 @@
 #include "SpriteType.h"
 #include "LoadedSprite.h"
 #include "PivotType.h"
-
-#include "_SpriteLoader.h"
+#include "SpriteLoader.h"
 
 namespace RB::Sprites
 {

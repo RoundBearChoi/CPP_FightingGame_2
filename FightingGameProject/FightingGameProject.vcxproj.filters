@@ -103,7 +103,7 @@
     <ClCompile Include="CamObj.cpp">
       <Filter>Source Files\Cam</Filter>
     </ClCompile>
-    <ClCompile Include="_SpriteLoader.cpp">
+    <ClCompile Include="SpriteLoader.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
     <ClCompile Include="LoadedSprite.cpp">
@@ -456,7 +456,7 @@
     <ClInclude Include="CamObj.h">
       <Filter>Source Files\Cam</Filter>
     </ClInclude>
-    <ClInclude Include="_SpriteLoader.h">
+    <ClInclude Include="SpriteLoader.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="LoadedSprite.h">

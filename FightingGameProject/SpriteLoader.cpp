@@ -1,4 +1,4 @@
-#include "_SpriteLoader.h"
+#include "SpriteLoader.h"
 
 #include <filesystem>
 

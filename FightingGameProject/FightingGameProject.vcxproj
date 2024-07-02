@@ -220,7 +220,6 @@
     <ClCompile Include="MoveBackOnPress.cpp" />
     <ClCompile Include="MoveForwardOnPress.cpp" />
     <ClCompile Include="AnimationObj.cpp" />
-    <ClCompile Include="AnimationRendererLoader.cpp" />
     <ClCompile Include="P0_JumpUp_1.cpp" />
     <ClCompile Include="PlayerAnimationController.cpp" />
     <ClCompile Include="P0_JumpUp_0.cpp" />
@@ -374,7 +373,6 @@
     <ClInclude Include="MoveBackOnPress.h" />
     <ClInclude Include="MoveForwardOnPress.h" />
     <ClInclude Include="AnimationObj.h" />
-    <ClInclude Include="AnimationRendererLoader.h" />
     <ClInclude Include="P0_JumpUp_1.h" />
     <ClInclude Include="PlayerAnimationController.h" />
     <ClInclude Include="P0_JumpUp_0.h" />

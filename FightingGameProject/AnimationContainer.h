@@ -2,7 +2,7 @@
 #include <string>
 
 #include "SpriteContainer.h"
-#include "AnimationRendererLoader.h"
+#include "AnimationRenderer.h"
 
 #include "iAnimationObj.h"
 
@@ -14,25 +14,24 @@ namespace RB::Render
 		AnimationContainer() = default;
 		~AnimationContainer();
 
-		virtual void Init();
-		virtual void OnFixedUpdate();
-		virtual void OnUpdate();
+		void Init();
+		void OnFixedUpdate();
+		void OnUpdate();
 
-		virtual bool LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
-		virtual void LoadAnimation(AnimationSpecs specs);
-		virtual void DeleteAnimationObjs(RB::Players::PlayerID playerID);
-		virtual std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);
-		virtual iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType);
-		virtual iAnimationObj* GetCurrentAnimationObj(unsigned int index);
-		virtual iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType);
-		virtual RB::Sprites::SpriteType GetSpriteType(RB::Players::PlayerID playerID);
-		virtual void AddNewAnimation(iAnimationObj* animationObj);
-		virtual const std::vector<iAnimationObj*>& GetVecCurrentAnimations();
-		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
+		bool LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
+		void LoadAnimation(AnimationSpecs specs);
+		void DeleteAnimationObjs(RB::Players::PlayerID playerID);
+		std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);
+		iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType);
+		iAnimationObj* GetCurrentAnimationObj(unsigned int index);
+		iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType);
+		RB::Sprites::SpriteType GetSpriteType(RB::Players::PlayerID playerID);
+		void AddNewAnimation(iAnimationObj* animationObj);
+		const std::vector<iAnimationObj*>& GetVecCurrentAnimations();
+		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
 
 	protected:
 		RB::Sprites::SpriteContainer _spriteContainer;
-		AnimationRendererLoader _animationRendererLoader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
 		std::vector<AnimationRenderer*> _vecAnimationRenderers;
 	};

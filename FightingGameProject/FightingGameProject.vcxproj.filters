@@ -115,9 +115,6 @@
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationRendererLoader.cpp">
-      <Filter>Source Files\Render</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerAnimationController.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
@@ -478,9 +475,6 @@
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
     <ClInclude Include="LineRenderer.h">
-      <Filter>Source Files\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimationRendererLoader.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAnimationController.h">

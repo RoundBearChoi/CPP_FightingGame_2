@@ -27,7 +27,9 @@ namespace RB::Render
 
 	void AnimationContainer::Init()
 	{
-		_animationRendererLoader.Init();
+		// an empty renderer (render nothing) in case a sprite animation is missing
+		AnimationSpecs none;
+		_vecAnimationRenderers.push_back(new AnimationRenderer(none));
 	}
 
 	void AnimationContainer::OnFixedUpdate()
@@ -78,7 +80,7 @@ namespace RB::Render
 
 		assert(specs.mLoadedSprite != nullptr);
 
-		AnimationRenderer* renderer = new AnimationRenderer(specs); //_animationRendererLoader.LoadAnimationRenderer(specs);
+		AnimationRenderer* renderer = new AnimationRenderer(specs);
 
 		_vecAnimationRenderers.push_back(renderer);
 	}

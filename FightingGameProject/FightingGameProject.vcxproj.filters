@@ -115,7 +115,7 @@
     <ClCompile Include="LineRenderer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="_AnimationLoader.cpp">
+    <ClCompile Include="AnimationRendererLoader.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="PlayerAnimationController.cpp">
@@ -229,7 +229,7 @@
     <ClCompile Include="GeneralHitStopController.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationLoader.cpp">
+    <ClCompile Include="AnimationContainer.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
     <ClCompile Include="VFXAnimationController.cpp">
@@ -480,7 +480,7 @@
     <ClInclude Include="LineRenderer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="_AnimationLoader.h">
+    <ClInclude Include="AnimationRendererLoader.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAnimationController.h">
@@ -660,7 +660,7 @@
     <ClInclude Include="iGeneralHitStopController.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationLoader.h">
+    <ClInclude Include="AnimationContainer.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="VFXAnimationController.h">

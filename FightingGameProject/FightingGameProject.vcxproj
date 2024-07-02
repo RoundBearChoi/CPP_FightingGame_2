@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AABB.cpp" />
-    <ClCompile Include="AnimationLoader.cpp" />
+    <ClCompile Include="AnimationContainer.cpp" />
     <ClCompile Include="AttackRegisterController.cpp" />
     <ClCompile Include="AttackSpecsController.cpp" />
     <ClCompile Include="BackgroundController.cpp" />
@@ -220,7 +220,7 @@
     <ClCompile Include="MoveBackOnPress.cpp" />
     <ClCompile Include="MoveForwardOnPress.cpp" />
     <ClCompile Include="AnimationObj.cpp" />
-    <ClCompile Include="_AnimationLoader.cpp" />
+    <ClCompile Include="AnimationRendererLoader.cpp" />
     <ClCompile Include="P0_JumpUp_1.cpp" />
     <ClCompile Include="PlayerAnimationController.cpp" />
     <ClCompile Include="P0_JumpUp_0.cpp" />
@@ -255,7 +255,7 @@
   <ItemGroup>
     <ClInclude Include="AABB.h" />
     <ClInclude Include="AllocationCount.h" />
-    <ClInclude Include="AnimationLoader.h" />
+    <ClInclude Include="AnimationContainer.h" />
     <ClInclude Include="AnimationRenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="AttackCollisionYType.h" />
@@ -374,7 +374,7 @@
     <ClInclude Include="MoveBackOnPress.h" />
     <ClInclude Include="MoveForwardOnPress.h" />
     <ClInclude Include="AnimationObj.h" />
-    <ClInclude Include="_AnimationLoader.h" />
+    <ClInclude Include="AnimationRendererLoader.h" />
     <ClInclude Include="P0_JumpUp_1.h" />
     <ClInclude Include="PlayerAnimationController.h" />
     <ClInclude Include="P0_JumpUp_0.h" />

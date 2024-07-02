@@ -2,7 +2,7 @@
 #include <string>
 
 #include "SpriteLoader.h"
-#include "_AnimationLoader.h"
+#include "AnimationRendererLoader.h"
 
 #include "iAnimationObj.h"
 
@@ -32,7 +32,7 @@ namespace RB::Render
 
 	protected:
 		RB::Sprites::SpriteLoader _spriteLoader;
-		_AnimationRendererLoader _animationRendererLoader;
+		AnimationRendererLoader _animationRendererLoader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
 	};
 }

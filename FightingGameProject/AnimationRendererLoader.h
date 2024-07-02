@@ -14,7 +14,6 @@ namespace RB::Render
 
 	public:
 		void Init();
-		AnimationRenderer* LoadAnimationRenderer(AnimationSpecs specs);
-		//AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
+		//AnimationRenderer* LoadAnimationRenderer(AnimationSpecs specs);
 	};
 }

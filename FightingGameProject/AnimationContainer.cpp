@@ -78,7 +78,7 @@ namespace RB::Render
 
 		assert(specs.mLoadedSprite != nullptr);
 
-		AnimationRenderer* renderer = _animationRendererLoader.LoadAnimationRenderer(specs);
+		AnimationRenderer* renderer = new AnimationRenderer(specs); //_animationRendererLoader.LoadAnimationRenderer(specs);
 
 		_vecAnimationRenderers.push_back(renderer);
 	}
@@ -192,7 +192,5 @@ namespace RB::Render
 		}
 
 		return nullptr;
-
-		//return _animationRendererLoader.GetAnimationRenderer(spriteType);
 	}
 }

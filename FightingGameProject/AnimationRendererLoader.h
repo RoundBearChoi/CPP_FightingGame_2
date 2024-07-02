@@ -18,6 +18,6 @@ namespace RB::Render
 		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
 
 	private:
-		std::vector<AnimationRenderer*> _animationRenderer;
+		std::vector<AnimationRenderer*> _animationRenderers;
 	};
 }

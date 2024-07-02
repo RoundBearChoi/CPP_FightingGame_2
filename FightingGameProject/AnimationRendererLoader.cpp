@@ -4,7 +4,7 @@ namespace RB::Render
 {
 	AnimationRendererLoader::~AnimationRendererLoader()
 	{
-		for (auto i = _animationRenderer.begin(); i != _animationRenderer.end(); i++)
+		for (auto i = _animationRenderers.begin(); i != _animationRenderers.end(); i++)
 		{
 			delete (*i);
 			(*i) = nullptr;
@@ -29,13 +29,13 @@ namespace RB::Render
 		{
 			AnimationRenderer* loaded = new AnimationRenderer(specs);
 
-			_animationRenderer.push_back(loaded);
+			_animationRenderers.push_back(loaded);
 		}
 	}
 
 	AnimationRenderer* AnimationRendererLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
 	{
-		for (auto i = _animationRenderer.begin(); i != _animationRenderer.end(); i++)
+		for (auto i = _animationRenderers.begin(); i != _animationRenderers.end(); i++)
 		{
 			if ((*i)->GetAnimationSpecs().mSpriteType == spriteType)
 			{

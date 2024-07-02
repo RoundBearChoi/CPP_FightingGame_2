@@ -14,7 +14,7 @@ namespace RB::Render
 		return _animationSpecs;
 	}
 
-	void AnimationRenderer::RenderAnimation(const AnimationRenderSettings& renderSettings)
+	void AnimationRenderer::RenderAnimation(const RenderSettings& renderSettings)
 	{
 		if (_animationSpecs.mSpriteType._value == RB::Sprites::SpriteType::NONE)
 		{

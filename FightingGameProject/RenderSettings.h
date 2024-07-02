@@ -4,11 +4,11 @@
 
 namespace RB::Render
 {
-	class AnimationRenderSettings
+	class RenderSettings
 	{
 	public:
-		AnimationRenderSettings() = default;
-		~AnimationRenderSettings() = default;
+		RenderSettings() = default;
+		~RenderSettings() = default;
 
 	public:
 		unsigned int mCurrentIndex = 0;

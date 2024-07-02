@@ -1,5 +1,5 @@
 #pragma once
-#include "AnimationRenderSettings.h"
+#include "RenderSettings.h"
 #include "AnimationSpecs.h"
 
 namespace RB::Render
@@ -12,7 +12,7 @@ namespace RB::Render
 
 	public:
 		const AnimationSpecs& GetAnimationSpecs();
-		void RenderAnimation(const AnimationRenderSettings& animationRenderSettings);
+		void RenderAnimation(const RenderSettings& renderSettings);
 
 	private:
 		AnimationSpecs _animationSpecs;

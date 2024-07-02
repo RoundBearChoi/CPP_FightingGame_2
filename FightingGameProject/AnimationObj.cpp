@@ -140,7 +140,7 @@ namespace RB::Render
 			return;
 		}
 
-		AnimationRenderSettings renderSettings;
+		RenderSettings renderSettings;
 
 		renderSettings.mWorldPos = _worldPos;
 		renderSettings.mCurrentIndex = _currentIndex;

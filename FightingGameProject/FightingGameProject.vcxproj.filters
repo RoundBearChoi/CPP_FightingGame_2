@@ -492,7 +492,7 @@
     <ClInclude Include="AnimationObj.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationRenderSettings.h">
+    <ClInclude Include="RenderSettings.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="AnimationSpecs.h">

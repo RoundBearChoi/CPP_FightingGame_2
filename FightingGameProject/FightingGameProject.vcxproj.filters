@@ -391,6 +391,9 @@
     <ClCompile Include="P0_Strong_Wince.cpp">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
+    <ClCompile Include="AnimationContainer.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -884,6 +887,9 @@
     </ClInclude>
     <ClInclude Include="CollisionResult.h">
       <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationContainer.h">
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

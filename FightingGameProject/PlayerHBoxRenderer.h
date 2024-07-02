@@ -1,5 +1,5 @@
 #pragma once
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 #include "AABB_Set.h"
 #include "HBoxType.h"
 
@@ -14,7 +14,7 @@ namespace RB::Render
 		~PlayerHBoxRenderer() = default;
 
 	public:
-		void Init(RB::Sprites::SpriteLoader* spriteLoader);
+		void Init(RB::Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
@@ -24,6 +24,6 @@ namespace RB::Render
 	private:
 		void _Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* AABBs, olc::Pixel color);
 
-		RB::Sprites::SpriteLoader* _spriteLoader = nullptr;
+		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
 	};
 }

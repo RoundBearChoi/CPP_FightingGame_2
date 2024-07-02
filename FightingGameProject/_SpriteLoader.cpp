@@ -4,7 +4,7 @@
 
 namespace RB::Sprites
 {
-	_SpriteLoader::~_SpriteLoader()
+	SpriteLoader::~SpriteLoader()
 	{
 		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
 		{
@@ -15,7 +15,7 @@ namespace RB::Sprites
 		_vecLoadedSprites.clear();
 	}
 
-	LoadedSprite* _SpriteLoader::LoadSprite(std::string path, SpriteType spriteType)
+	LoadedSprite* SpriteLoader::LoadSprite(std::string path, SpriteType spriteType)
 	{
 		std::replace(path.begin(), path.end(), '\\', '/'); //convert directory separators
  
@@ -29,7 +29,7 @@ namespace RB::Sprites
 		return loadedSprite;
 	}
 
-	LoadedSprite* _SpriteLoader::GetLoadedSprite(SpriteType spriteType)
+	LoadedSprite* SpriteLoader::GetLoadedSprite(SpriteType spriteType)
 	{
 		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
 		{

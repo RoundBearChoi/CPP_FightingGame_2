@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 #include "AnimationRendererLoader.h"
 
 #include "iAnimationObj.h"
@@ -31,7 +31,7 @@ namespace RB::Render
 		virtual AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
 
 	protected:
-		RB::Sprites::SpriteLoader _spriteLoader;
+		RB::Sprites::SpriteContainer _spriteContainer;
 		AnimationRendererLoader _animationRendererLoader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
 	};

@@ -5,11 +5,11 @@
 
 namespace RB::Sprites
 {
-	class _SpriteLoader
+	class SpriteLoader
 	{
 	public:
-		_SpriteLoader() = default;
-		~_SpriteLoader();
+		SpriteLoader() = default;
+		~SpriteLoader();
 
 	public:
 		LoadedSprite* LoadSprite(std::string path, SpriteType spriteType);

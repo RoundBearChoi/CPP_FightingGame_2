@@ -9,11 +9,11 @@
 
 namespace RB::Sprites
 {
-	class SpriteLoader
+	class SpriteContainer
 	{
 	public:
-		SpriteLoader() = default;
-		~SpriteLoader() = default;
+		SpriteContainer() = default;
+		~SpriteContainer() = default;
 
 	public:
 		LoadedSprite* LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
@@ -21,6 +21,6 @@ namespace RB::Sprites
 		RB::Sprites::LoadedSprite* GetLoadedSprite(RB::Sprites::SpriteType spriteType);
 
 	private:
-		RB::Sprites::_SpriteLoader _loader;
+		RB::Sprites::SpriteLoader _loader;
 	};
 }

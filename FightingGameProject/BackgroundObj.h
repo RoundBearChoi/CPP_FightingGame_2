@@ -1,7 +1,7 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "SpriteType.h"
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 
 namespace RB::Background
 {
@@ -20,6 +20,6 @@ namespace RB::Background
 		RB::Sprites::SpriteType _spriteType = RB::Sprites::SpriteType::NONE;
 		olc::vf2d _renderSize = { 0.0f ,0.0f };
 		olc::vf2d _position = { 0.0f, 0.0f };
-		RB::Sprites::SpriteLoader _spriteLoader;
+		RB::Sprites::SpriteContainer _spriteContainer;
 	};
 }

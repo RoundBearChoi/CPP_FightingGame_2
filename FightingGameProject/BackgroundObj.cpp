@@ -12,7 +12,7 @@ namespace RB::Background
 		_spriteType = spriteType;
 		_percentage = percentage;
 
-		_spriteLoader.LoadSprite(path, spriteType);
+		_spriteContainer.LoadSprite(path, spriteType);
 	}
 
 	void BackgroundObj::Init()
@@ -32,7 +32,7 @@ namespace RB::Background
 		//background horizontal tile
 		for (int i = 0; i < 4; i++)
 		{
-			_spriteLoader.RenderSprite(_spriteType, _renderSize, olc::vf2d{ offsetX + (_renderSize.x * i), _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT);
+			_spriteContainer.RenderSprite(_spriteType, _renderSize, olc::vf2d{ offsetX + (_renderSize.x * i), _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT);
 		}
 	}
 

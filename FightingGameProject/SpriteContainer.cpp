@@ -1,15 +1,15 @@
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 
 #include "iCamController.h"
 
 namespace RB::Sprites
 {
-	LoadedSprite* SpriteLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
+	LoadedSprite* SpriteContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
 		return _loader.LoadSprite(path, spriteType);
 	}
 
-	void SpriteLoader::RenderSprite(RB::Sprites::SpriteType spriteType, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
+	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
 	{
 		if (RB::Cam::iCamController::Get() == nullptr)
 		{
@@ -73,7 +73,7 @@ namespace RB::Sprites
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, sprite->Size(), tint);
 	}
 
-	RB::Sprites::LoadedSprite* SpriteLoader::GetLoadedSprite(RB::Sprites::SpriteType spriteType)
+	RB::Sprites::LoadedSprite* SpriteContainer::GetLoadedSprite(RB::Sprites::SpriteType spriteType)
 	{
 		return _loader.GetLoadedSprite(spriteType);
 	}

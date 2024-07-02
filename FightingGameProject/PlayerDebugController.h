@@ -5,7 +5,7 @@
 #include "PlayerBoxRenderer.h"
 #include "PlayerHBoxRenderer.h"
 #include "LineRenderer.h"
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 
 #include "iPlayerDebugController.h"
 
@@ -25,7 +25,7 @@ namespace RB::Render
 		void RenderPlayerBox(bool render) override;
 
 	private:
-		RB::Sprites::SpriteLoader _spriteLoader;
+		RB::Sprites::SpriteContainer _spriteContainer;
 		RB::Render::LineRenderer _lineRenderer;
 
 	private:

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerID.h"
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 #include "LineRenderer.h"
 
 namespace RB::Render
@@ -13,7 +13,7 @@ namespace RB::Render
 		~PlayerPositionRenderer() = default;
 
 	public:
-		void Init(RB::Sprites::SpriteLoader* spriteLoader, LineRenderer* lineRenderer);
+		void Init(RB::Sprites::SpriteContainer* spriteContainer, LineRenderer* lineRenderer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
@@ -22,7 +22,7 @@ namespace RB::Render
 		void RenderBottomLeft(RB::Players::PlayerID playerID);
 
 	private:
-		RB::Sprites::SpriteLoader* _spriteLoader = nullptr;
+		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
 		LineRenderer* _lineRenderer = nullptr;
 	};
 }

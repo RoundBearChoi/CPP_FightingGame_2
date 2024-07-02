@@ -340,7 +340,7 @@
     <ClCompile Include="Loaded_HB_Data.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteLoader.cpp">
+    <ClCompile Include="SpriteContainer.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
     <ClCompile Include="P0_Crouch_Idle.cpp">
@@ -810,7 +810,7 @@
     <ClInclude Include="iSelector.h">
       <Filter>Source Files\RB</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteLoader.h">
+    <ClInclude Include="SpriteContainer.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="P0_Crouch_Idle.h">

@@ -1,5 +1,5 @@
 #pragma once
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 
 namespace RB::Render
 {
@@ -10,14 +10,14 @@ namespace RB::Render
 		~PlayerBoxRenderer() = default;
 
 	public:
-		void Init(RB::Sprites::SpriteLoader* spriteLoader);
+		void Init(RB::Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 		void RenderPlayerBox(bool render);
 
 	private:
-		RB::Sprites::SpriteLoader* _spriteLoader = nullptr;
+		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
 		bool _renderPlayerBox = true;
 	};
 }

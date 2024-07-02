@@ -49,7 +49,7 @@ namespace RB::Render
 
 	bool AnimationContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
-		RB::Sprites::LoadedSprite* loaded = _spriteLoader.LoadSprite(path, spriteType);
+		RB::Sprites::LoadedSprite* loaded = _spriteContainer.LoadSprite(path, spriteType);
 
 		if (loaded == nullptr)
 		{
@@ -66,7 +66,7 @@ namespace RB::Render
 	/// </summary>
 	void AnimationContainer::LoadAnimation(AnimationSpecs specs)
 	{
-		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(specs.mSpriteType);
+		specs.mLoadedSprite = _spriteContainer.GetLoadedSprite(specs.mSpriteType);
 
 		assert(specs.mLoadedSprite != nullptr);
 

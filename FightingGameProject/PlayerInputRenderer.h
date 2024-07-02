@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SpriteLoader.h"
+#include "SpriteContainer.h"
 #include "SpriteType.h"
 
 #include "iPlayerController.h"
@@ -14,7 +14,7 @@ namespace RB::Render
 		PlayerInputRenderer() = default;
 		~PlayerInputRenderer() = default;
 
-		void Init(RB::Sprites::SpriteLoader* spriteLoader);
+		void Init(RB::Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
@@ -23,6 +23,6 @@ namespace RB::Render
 		void _RenderIcon(RB::Sprites::SpriteType spriteType, olc::vi2d pos, olc::Pixel tint);
 		RB::Sprites::SpriteType _GetSpriteType(const RB::Input::PlayerInput& playerInput);
 
-		RB::Sprites::SpriteLoader* _spriteLoader = nullptr;
+		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
 	};
 }

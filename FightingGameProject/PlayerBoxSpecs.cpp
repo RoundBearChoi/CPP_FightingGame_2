@@ -96,7 +96,10 @@ namespace RB::Collisions
 	{
 		if (_path.empty())
 		{
-			//maybe use a temporary location
+			std::cout << std::endl;
+			std::cout << "missing path for spriteType: " << _spriteType._to_string() << std::endl;
+			std::cout << "can't save data. make sure data is loaded first" << std::endl;
+
 			return;
 		}
 

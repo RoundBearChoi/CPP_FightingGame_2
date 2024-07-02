@@ -10,6 +10,7 @@ namespace RB::Collisions
 
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_idle_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_idle, RB::Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_crouch_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_crouch, RB::Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_crouch_idle_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_crouch_idle, RB::Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_standup_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_standup, RB::Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_jab_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_jab, RB::Players::CharacterType::AKU);
 	}

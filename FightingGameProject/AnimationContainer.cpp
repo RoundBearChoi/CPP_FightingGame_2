@@ -15,6 +15,14 @@ namespace RB::Render
 		}
 
 		_vecCurrentAnimations.clear();
+
+		for (auto i = _vecAnimationRenderers.begin(); i != _vecAnimationRenderers.end(); i++)
+		{
+			delete (*i);
+			(*i) = nullptr;
+		}
+
+		_vecAnimationRenderers.clear();
 	}
 
 	void AnimationContainer::Init()
@@ -70,7 +78,9 @@ namespace RB::Render
 
 		assert(specs.mLoadedSprite != nullptr);
 
-		_animationRendererLoader.LoadAnimationRenderer(specs);
+		AnimationRenderer* renderer = _animationRendererLoader.LoadAnimationRenderer(specs);
+
+		_vecAnimationRenderers.push_back(renderer);
 	}
 
 	void AnimationContainer::DeleteAnimationObjs(RB::Players::PlayerID playerID)
@@ -139,7 +149,9 @@ namespace RB::Render
 	/// </summary>
 	iAnimationObj* AnimationContainer::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType)
 	{
-		iAnimationObj* animationObj = new AnimationObj(&player, _animationRendererLoader.GetAnimationRenderer(spriteType), pivotType);
+		AnimationRenderer* renderer = GetAnimationRenderer(spriteType);
+
+		iAnimationObj* animationObj = new AnimationObj(&player, renderer, pivotType);
 
 		return animationObj;
 	}
@@ -171,6 +183,16 @@ namespace RB::Render
 
 	AnimationRenderer* AnimationContainer::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
 	{
-		return _animationRendererLoader.GetAnimationRenderer(spriteType);
+		for (auto i = _vecAnimationRenderers.begin(); i != _vecAnimationRenderers.end(); i++)
+		{
+			if ((*i)->GetAnimationSpecs().mSpriteType == spriteType)
+			{
+				return (*i);
+			}
+		}
+
+		return nullptr;
+
+		//return _animationRendererLoader.GetAnimationRenderer(spriteType);
 	}
 }

@@ -4,21 +4,21 @@ namespace RB::Render
 {
 	AnimationRendererLoader::~AnimationRendererLoader()
 	{
-		for (auto i = _animationRenderers.begin(); i != _animationRenderers.end(); i++)
-		{
-			delete (*i);
-			(*i) = nullptr;
-		}
+		//for (auto i = _animationRenderers.begin(); i != _animationRenderers.end(); i++)
+		//{
+		//	delete (*i);
+		//	(*i) = nullptr;
+		//}
 	}
 
 	void AnimationRendererLoader::Init()
 	{
 		//NONE by default (will render nothing)
-		AnimationSpecs none;
-		LoadAnimationRenderer(none);
+		//AnimationSpecs none;
+		//LoadAnimationRenderer(none);
 	}
 
-	void AnimationRendererLoader::LoadAnimationRenderer(AnimationSpecs specs)
+	AnimationRenderer* AnimationRendererLoader::LoadAnimationRenderer(AnimationSpecs specs)
 	{
 		if (specs.mSpriteType._value != RB::Sprites::SpriteType::NONE && specs.mLoadedSprite == nullptr)
 		{
@@ -29,20 +29,24 @@ namespace RB::Render
 		{
 			AnimationRenderer* loaded = new AnimationRenderer(specs);
 
-			_animationRenderers.push_back(loaded);
-		}
-	}
+			//_animationRenderers.push_back(loaded);
 
-	AnimationRenderer* AnimationRendererLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
-	{
-		for (auto i = _animationRenderers.begin(); i != _animationRenderers.end(); i++)
-		{
-			if ((*i)->GetAnimationSpecs().mSpriteType == spriteType)
-			{
-				return (*i);
-			}
+			return loaded;
 		}
 
 		return nullptr;
 	}
+
+	//AnimationRenderer* AnimationRendererLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
+	//{
+	//	for (auto i = _animationRenderers.begin(); i != _animationRenderers.end(); i++)
+	//	{
+	//		if ((*i)->GetAnimationSpecs().mSpriteType == spriteType)
+	//		{
+	//			return (*i);
+	//		}
+	//	}
+	//
+	//	return nullptr;
+	//}
 }

@@ -14,10 +14,7 @@ namespace RB::Render
 
 	public:
 		void Init();
-		void LoadAnimationRenderer(AnimationSpecs specs);
-		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
-
-	private:
-		std::vector<AnimationRenderer*> _animationRenderers;
+		AnimationRenderer* LoadAnimationRenderer(AnimationSpecs specs);
+		//AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
 	};
 }

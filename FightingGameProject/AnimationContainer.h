@@ -34,5 +34,6 @@ namespace RB::Render
 		RB::Sprites::SpriteContainer _spriteContainer;
 		AnimationRendererLoader _animationRendererLoader;
 		std::vector<iAnimationObj*> _vecCurrentAnimations;
+		std::vector<AnimationRenderer*> _vecAnimationRenderers;
 	};
 }

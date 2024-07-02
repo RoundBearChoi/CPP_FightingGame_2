@@ -6,13 +6,7 @@ namespace RB::Sprites
 {
 	SpriteLoader::~SpriteLoader()
 	{
-		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
-		{
-			delete (*i);
-			*i = nullptr;
-		}
 
-		_vecLoadedSprites.clear();
 	}
 
 	LoadedSprite* SpriteLoader::LoadSprite(std::string path, SpriteType spriteType)
@@ -24,21 +18,6 @@ namespace RB::Sprites
 
 		LoadedSprite* loadedSprite = new LoadedSprite(path, sprite, decal, spriteType);
 
-		_vecLoadedSprites.push_back(loadedSprite);
-
 		return loadedSprite;
-	}
-
-	LoadedSprite* SpriteLoader::GetLoadedSprite(SpriteType spriteType)
-	{
-		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
-		{
-			if ((*i)->GetSpriteType() == spriteType)
-			{
-				return (*i);
-			}
-		}
-
-		return nullptr;
 	}
 }

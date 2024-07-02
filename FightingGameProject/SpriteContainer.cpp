@@ -4,9 +4,24 @@
 
 namespace RB::Sprites
 {
+	SpriteContainer::~SpriteContainer()
+	{
+		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
+		{
+			delete (*i);
+			*i = nullptr;
+		}
+
+		_vecLoadedSprites.clear();
+	}
+
 	LoadedSprite* SpriteContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
-		return _loader.LoadSprite(path, spriteType);
+		LoadedSprite* loaded = _loader.LoadSprite(path, spriteType);
+
+		_vecLoadedSprites.push_back(loaded);
+
+		return loaded;
 	}
 
 	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
@@ -16,7 +31,7 @@ namespace RB::Sprites
 			return;
 		}
 
-		RB::Sprites::LoadedSprite* loadedSprite = _loader.GetLoadedSprite(spriteType);
+		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType); //_loader.GetLoadedSprite(spriteType);
 
 		olc::vf2d half = widthHeight * 0.5f;
 
@@ -75,6 +90,14 @@ namespace RB::Sprites
 
 	RB::Sprites::LoadedSprite* SpriteContainer::GetLoadedSprite(RB::Sprites::SpriteType spriteType)
 	{
-		return _loader.GetLoadedSprite(spriteType);
+		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
+		{
+			if ((*i)->GetSpriteType() == spriteType)
+			{
+				return (*i);
+			}
+		}
+
+		return nullptr;
 	}
 }

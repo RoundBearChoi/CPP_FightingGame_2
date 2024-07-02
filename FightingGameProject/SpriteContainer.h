@@ -12,7 +12,7 @@ namespace RB::Sprites
 	{
 	public:
 		SpriteContainer() = default;
-		~SpriteContainer() = default;
+		~SpriteContainer();
 
 	public:
 		LoadedSprite* LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
@@ -21,5 +21,6 @@ namespace RB::Sprites
 
 	private:
 		RB::Sprites::SpriteLoader _loader;
+		std::vector<LoadedSprite*> _vecLoadedSprites;
 	};
 }

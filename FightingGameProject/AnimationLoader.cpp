@@ -6,7 +6,7 @@
 
 namespace RB::Render
 {
-	AnimationLoader::~AnimationLoader()
+	AnimationContainer::~AnimationContainer()
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -17,12 +17,12 @@ namespace RB::Render
 		_vecCurrentAnimations.clear();
 	}
 
-	void AnimationLoader::Init()
+	void AnimationContainer::Init()
 	{
 		_animationRendererLoader.Init();
 	}
 
-	void AnimationLoader::OnFixedUpdate()
+	void AnimationContainer::OnFixedUpdate()
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -30,7 +30,7 @@ namespace RB::Render
 		}
 	}
 
-	void AnimationLoader::OnUpdate()
+	void AnimationContainer::OnUpdate()
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -47,7 +47,7 @@ namespace RB::Render
 		}
 	}
 
-	bool AnimationLoader::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
+	bool AnimationContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
 		RB::Sprites::LoadedSprite* loaded = _spriteLoader.LoadSprite(path, spriteType);
 
@@ -64,7 +64,7 @@ namespace RB::Render
 	/// <summary>
 	/// this function require sprites to be loaded first
 	/// </summary>
-	void AnimationLoader::LoadAnimation(AnimationSpecs specs)
+	void AnimationContainer::LoadAnimation(AnimationSpecs specs)
 	{
 		specs.mLoadedSprite = _spriteLoader.GetLoadedSprite(specs.mSpriteType);
 
@@ -73,7 +73,7 @@ namespace RB::Render
 		_animationRendererLoader.LoadAnimationRenderer(specs);
 	}
 
-	void AnimationLoader::DeleteAnimationObjs(RB::Players::PlayerID playerID)
+	void AnimationContainer::DeleteAnimationObjs(RB::Players::PlayerID playerID)
 	{
 		auto it = _vecCurrentAnimations.begin();
 
@@ -96,7 +96,7 @@ namespace RB::Render
 	/// <summary>
 	/// delete element, remove from vector, and return next iterator
 	/// </summary>
-	std::vector<iAnimationObj*>::const_iterator AnimationLoader::DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it)
+	std::vector<iAnimationObj*>::const_iterator AnimationContainer::DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it)
 	{
 		iAnimationObj* obj = (*it);
 
@@ -108,7 +108,7 @@ namespace RB::Render
 		return next;
 	}
 
-	iAnimationObj* AnimationLoader::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType)
+	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -124,7 +124,7 @@ namespace RB::Render
 		return nullptr;
 	}
 
-	iAnimationObj* AnimationLoader::GetCurrentAnimationObj(unsigned int index)
+	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(unsigned int index)
 	{
 		if (index < _vecCurrentAnimations.size())
 		{
@@ -137,14 +137,14 @@ namespace RB::Render
 	/// <summary>
 	/// raw pointer, make sure to delete
 	/// </summary>
-	iAnimationObj* AnimationLoader::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType)
+	iAnimationObj* AnimationContainer::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType)
 	{
 		iAnimationObj* animationObj = new AnimationObj(&player, _animationRendererLoader.GetAnimationRenderer(spriteType), pivotType);
 
 		return animationObj;
 	}
 
-	RB::Sprites::SpriteType AnimationLoader::GetSpriteType(RB::Players::PlayerID playerID)
+	RB::Sprites::SpriteType AnimationContainer::GetSpriteType(RB::Players::PlayerID playerID)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -159,17 +159,17 @@ namespace RB::Render
 		return RB::Sprites::SpriteType::NONE;
 	}
 
-	void AnimationLoader::AddNewAnimation(iAnimationObj* animationObj)
+	void AnimationContainer::AddNewAnimation(iAnimationObj* animationObj)
 	{
 		_vecCurrentAnimations.push_back(animationObj);
 	}
 
-	const std::vector<iAnimationObj*>& AnimationLoader::GetVecCurrentAnimations()
+	const std::vector<iAnimationObj*>& AnimationContainer::GetVecCurrentAnimations()
 	{
 		return _vecCurrentAnimations;
 	}
 
-	AnimationRenderer* AnimationLoader::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
+	AnimationRenderer* AnimationContainer::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
 	{
 		return _animationRendererLoader.GetAnimationRenderer(spriteType);
 	}

@@ -30,6 +30,6 @@ namespace RB::Render
 		AnimationSpecs _GetAnimationSpecs(std::string path);
 
 	private:
-		AnimationLoader _animationLoader;
+		AnimationContainer _animationContainer;
 	};
 }

@@ -6,9 +6,9 @@ namespace RB::Render
 {
     void VFXAnimationController::Init()
     {
-        _animationLoader.Init();
+        _animationContainer.Init();
 
-        _animationLoader.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
+        _animationContainer.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
 
         AnimationSpecs hit0Specs;
         hit0Specs.mX_TileCount = 5;
@@ -19,36 +19,36 @@ namespace RB::Render
         hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, -6.0f };
         hit0Specs.mSpriteType = RB::Sprites::SpriteType::vfx_hiteffect_0;
 
-        _animationLoader.LoadAnimation(hit0Specs);
+        _animationContainer.LoadAnimation(hit0Specs);
     }
 
     void VFXAnimationController::OnUpdate()
     {
-        _animationLoader.OnUpdate();
+        _animationContainer.OnUpdate();
     }
 
     void VFXAnimationController::OnFixedUpdate()
     {
-        _animationLoader.OnFixedUpdate();
+        _animationContainer.OnFixedUpdate();
         
         _DeleteFinishedAnimations();
     }
 
     void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos)
     {
-        AnimationRenderer* aniRenderer = _animationLoader.GetAnimationRenderer(spriteType);
+        AnimationRenderer* aniRenderer = _animationContainer.GetAnimationRenderer(spriteType);
         
         //no owner player
         iAnimationObj* animationObj = new AnimationObj(nullptr, aniRenderer, RB::Sprites::PivotType::CENTER);
 
         animationObj->SetWorldPos(pos);
 
-        _animationLoader.AddNewAnimation(animationObj);
+        _animationContainer.AddNewAnimation(animationObj);
     }
 
     void VFXAnimationController::_DeleteFinishedAnimations()
     {
-        auto& vec = _animationLoader.GetVecCurrentAnimations();
+        auto& vec = _animationContainer.GetVecCurrentAnimations();
 
         std::vector<iAnimationObj*>::const_iterator it = vec.begin();
 
@@ -61,7 +61,7 @@ namespace RB::Render
 
             if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
             {
-                it = _animationLoader.DeleteAnimationObj(it);
+                it = _animationContainer.DeleteAnimationObj(it);
             }
             else
             {

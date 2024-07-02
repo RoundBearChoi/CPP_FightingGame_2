@@ -12,23 +12,23 @@ namespace RB::Render
 {
 	void PlayerAnimationController::Init()
 	{
-		_animationLoader.Init();
+		_animationContainer.Init();
 
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch_idle.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_standup.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_punch.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_kick.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_wince.aniSpecs"));
-		_animationLoader.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch_idle.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_standup.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_punch.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_kick.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_wince.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"));
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -54,22 +54,22 @@ namespace RB::Render
 			_SetNewPlayerAnimationObjOnChange(*arr[i]);
 		}
 
-		_animationLoader.OnUpdate();
+		_animationContainer.OnUpdate();
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()
 	{
-		_animationLoader.OnFixedUpdate();
+		_animationContainer.OnFixedUpdate();
 	}
 
 	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PlayerID playerID)
 	{
-		_animationLoader.DeleteAnimationObjs(playerID);
+		_animationContainer.DeleteAnimationObjs(playerID);
 	}
 
 	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType)
 	{
-		return _animationLoader.GetCurrentAnimationObj(playerID, spriteType);
+		return _animationContainer.GetCurrentAnimationObj(playerID, spriteType);
 	}
 
 	void PlayerAnimationController::_SetFirstPlayerAnimations()
@@ -79,7 +79,7 @@ namespace RB::Render
 			return;
 		}
 
-		if (_animationLoader.GetVecCurrentAnimations().size() > 0)
+		if (_animationContainer.GetVecCurrentAnimations().size() > 0)
 		{
 			return;
 		}
@@ -104,11 +104,11 @@ namespace RB::Render
 
 			RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-			AnimationRenderer* aniRenderer = _animationLoader.GetAnimationRenderer(spriteType);
+			AnimationRenderer* aniRenderer = _animationContainer.GetAnimationRenderer(spriteType);
 
 			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, RB::Sprites::PivotType::BOTTOM_CENTER);
 
-			_animationLoader.AddNewAnimation(animationObj);
+			_animationContainer.AddNewAnimation(animationObj);
 		}
 	}
 
@@ -129,15 +129,15 @@ namespace RB::Render
 		{
 			DeleteAnimationObj(playerID);
 
-			iAnimationObj* aniObj = _animationLoader.InstantiateNewAnimationObj(player, playerSpriteType, RB::Sprites::PivotType::BOTTOM_CENTER);
+			iAnimationObj* aniObj = _animationContainer.InstantiateNewAnimationObj(player, playerSpriteType, RB::Sprites::PivotType::BOTTOM_CENTER);
 
-			_animationLoader.AddNewAnimation(aniObj);
+			_animationContainer.AddNewAnimation(aniObj);
 		}
 	}
 
 	RB::Sprites::SpriteType PlayerAnimationController::_GetPlayerSpriteType(RB::Players::PlayerID playerID)
 	{
-		return _animationLoader.GetSpriteType(playerID);
+		return _animationContainer.GetSpriteType(playerID);
 	}
 
 	void PlayerAnimationController::_SaveAnimationSpecs(std::string path, AnimationSpecs specs)
@@ -212,7 +212,7 @@ namespace RB::Render
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first
-		bool loadedSprite = _animationLoader.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
+		bool loadedSprite = _animationContainer.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 		
 		assert(loadedSprite);
 

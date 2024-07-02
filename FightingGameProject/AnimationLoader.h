@@ -8,11 +8,11 @@
 
 namespace RB::Render
 {
-	class AnimationLoader
+	class AnimationContainer
 	{
 	public:
-		AnimationLoader() = default;
-		~AnimationLoader();
+		AnimationContainer() = default;
+		~AnimationContainer();
 
 		virtual void Init();
 		virtual void OnFixedUpdate();

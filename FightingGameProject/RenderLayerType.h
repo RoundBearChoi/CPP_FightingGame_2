@@ -5,9 +5,8 @@ namespace RB::Render
 {
 	enum class RenderLayerType : uint8_t
 	{
-		DEFAULT_FOREGROUND = 0,
+		FOREGROUND = 0,	// for debug that's drawn on top of characters, use this layer
 
-		DEBUG_ON_TOP_OF_CHARACTERS,
 		CHARACTERS,
 		DEBUG_BENEATH_CHARACTERS,
 		BACKGROUND,

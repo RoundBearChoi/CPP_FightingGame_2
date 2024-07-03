@@ -43,9 +43,9 @@ namespace RB::Sprites
 		aku_jump_forward_up_1, //down
 
 		fighter_0_jab,
+		fighter_0_wince,
 		aku_strong_punch,
 		aku_strong_kick,
-		aku_wince,
 		aku_strong_wince,
 		aku_hadouken,
 

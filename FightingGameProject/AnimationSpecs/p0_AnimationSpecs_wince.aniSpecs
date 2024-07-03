@@ -1,8 +1,8 @@
 {
     "p0_AnimationSpecs_wince":
         {
-        "png_file_path" : "PNG files/Aku/aku_wince.png",
-        "sprite_enum" : "aku_wince",
+        "png_file_path" : "PNG files/Aku/fighter_0_wince.png",
+        "sprite_enum" : "fighter_0_wince",
         "mX_TileCount" : 1,
         "mY_TileCount" : 1,
         "mTotalSprites" : 1,

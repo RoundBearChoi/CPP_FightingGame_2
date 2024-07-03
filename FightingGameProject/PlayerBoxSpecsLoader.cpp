@@ -21,8 +21,17 @@ namespace RB::Collisions
 		}
 	}
 
-	void PlayerBoxSpecsLoader::LoadSpecs(std::string path, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)
+	std::string PlayerBoxSpecsLoader::GetPath(RB::Sprites::SpriteType spriteType)
 	{
+		std::string spriteName = spriteType._to_string();
+
+		return "PlayerBoxSpecs/Aku/" + spriteName + ".playerBoxSpecs";
+	}
+
+	void PlayerBoxSpecsLoader::LoadSpecs(RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)
+	{
+		std::string path = GetPath(spriteType);
+
 		std::string loaded = RB::JSON::LoadJSONFile(path);
 
 		json_value_s* root = json_parse(loaded.c_str(), loaded.length());

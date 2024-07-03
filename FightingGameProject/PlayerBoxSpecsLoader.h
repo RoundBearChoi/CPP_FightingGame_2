@@ -20,7 +20,8 @@ namespace RB::Collisions
 		void OnUpdate();
 		void OnFixedUpdate();
 
-		void LoadSpecs(std::string path, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType);
+		std::string GetPath(RB::Sprites::SpriteType spriteType);
+		void LoadSpecs(RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType);
 		LoadedPlayerBoxData* GetLoadedSpecs(RB::Players::CharacterType characterType);
 		void AddSpecs(PlayerBox box, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType);
 

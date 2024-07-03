@@ -9,7 +9,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Strong_Kick::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::aku_strong_kick;
+		_spriteType = RB::Sprites::SpriteType::fighter_0_strong_kick;
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		//AddStateComponent(new RB::PlayerStateComponents::DetectHit());

@@ -34,16 +34,12 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
-		// render everything on target layer
-		olc::Renderer::ptrPGE->SetDrawTarget(static_cast<uint8_t>(RB::Render::RenderLayerType::DECALS));
+		SetTargetLayer(RenderLayerType::DECALS);
 
 		_SetFirstPlayerAnimations();
 		_ChangePlayerAnimations();
 
 		_animationContainer.OnUpdate();
-
-		// reset layer
-		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()

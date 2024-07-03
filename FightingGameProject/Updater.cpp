@@ -145,6 +145,9 @@ namespace RB::Updaters
 		
 		UpdateQueue();
 		MakeUpdaterTransition();
+
+		// reset layer after every custom DrawTarget happened during update
+		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
 
 	void Updater::OnFixedUpdate()

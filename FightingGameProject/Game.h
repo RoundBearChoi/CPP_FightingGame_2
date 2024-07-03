@@ -21,14 +21,14 @@ namespace RB
 
 		void _CreateLayers()
 		{
-			auto& layers = olc::Renderer::ptrPGE->GetLayers();
-
-			while (layers.size() < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT))
+			while (olc::Renderer::ptrPGE->GetLayers().size() < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT))
 			{
 				olc::Renderer::ptrPGE->CreateLayer();
 
-				olc::Renderer::ptrPGE->GetLayers()[layers.size() - 1].bShow = true;
-				olc::Renderer::ptrPGE->GetLayers()[layers.size() - 1].bUpdate = true;
+				auto& layers = olc::Renderer::ptrPGE->GetLayers();
+
+				layers[layers.size() - 1].bShow = true;
+				layers[layers.size() - 1].bUpdate = true;
 			}
 		}
 

@@ -33,7 +33,7 @@ namespace RB::Sprites
 
 		fighter_0_idle,
 		fighter_0_crouch,
-		aku_crouch_idle,
+		fighter_0_crouch_idle,
 		aku_standup,
 		aku_walk,
 		aku_jump_up_0,

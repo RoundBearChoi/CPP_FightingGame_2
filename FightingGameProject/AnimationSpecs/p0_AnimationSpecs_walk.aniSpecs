@@ -1,8 +1,8 @@
 {
     "p0_AnimationSpecs_walk":
         {
-        "png_file_path" : "PNG files/FreeKnight_v1/_Run.png",
-        "sprite_enum" : "aku_walk",
+        "png_file_path" : "PNG files/Aku/fighter_0_walk.png",
+        "sprite_enum" : "fighter_0_walk",
         "mX_TileCount" : 10,
         "mY_TileCount" : 1,
         "mTotalSprites" : 10,

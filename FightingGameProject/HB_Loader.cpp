@@ -7,7 +7,7 @@ namespace RB::HBox
 		//load every hbox datalist
 		//temp - doing it manually for now..
 		_vecData.push_back(_loader.Load(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteType::fighter_0_idle));
-		_vecData.push_back(_loader.Load(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteType::aku_walk));
+		_vecData.push_back(_loader.Load(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteType::fighter_0_walk));
 		_vecData.push_back(_loader.Load(_dir + "fighter_0_jab" + _extention, RB::Sprites::SpriteType::aku_jab));
 		_vecData.push_back(_loader.Load(_dir + "fighter_0_strong_punch" + _extention, RB::Sprites::SpriteType::aku_strong_punch));
 		_vecData.push_back(_loader.Load(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteType::aku_wince));

@@ -16,7 +16,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_WalkForward::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::aku_walk;
+		_spriteType = RB::Sprites::SpriteType::fighter_0_walk;
 
 		RB::Players::Specs::MoveSpecs m = RB::Players::Specs::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
 

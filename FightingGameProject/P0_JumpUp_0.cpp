@@ -11,7 +11,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_JumpUp_0::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::aku_jump_up_0;
+		_spriteType = RB::Sprites::SpriteType::fighter_0_jump_up;
 
 		RB::Players::Specs::MoveSpecs moveSpecs = RB::Players::Specs::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
 

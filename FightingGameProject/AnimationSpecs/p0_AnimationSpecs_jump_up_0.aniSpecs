@@ -1,8 +1,8 @@
 {
     "p0_AnimationSpecs_jump_up_0":
         {
-        "png_file_path" : "PNG files/FreeKnight_v1/_Jump.png",
-        "sprite_enum" : "aku_jump_up_0",
+        "png_file_path" : "PNG files/Aku/fighter_0_jump_up.png",
+        "sprite_enum" : "fighter_0_jump_up",
         "mX_TileCount" : 3,
         "mY_TileCount" : 1,
         "mTotalSprites" : 3,

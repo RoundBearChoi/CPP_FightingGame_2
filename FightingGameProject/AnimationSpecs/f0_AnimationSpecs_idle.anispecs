@@ -1,7 +1,6 @@
 {
     "fighter_0_idle":
         {
-        "png_file_path" : "PNG files/Aku/fighter_0_idle.png",
         "sprite_enum" : "fighter_0_idle",
         "mX_TileCount" : 9,
         "mY_TileCount" : 1,

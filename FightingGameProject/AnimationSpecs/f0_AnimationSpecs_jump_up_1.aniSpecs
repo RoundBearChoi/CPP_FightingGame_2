@@ -1,7 +1,6 @@
 {
     "fighter_0_fall":
         {
-        "png_file_path" : "PNG files/Aku/fighter_0_fall.png",
         "sprite_enum" : "fighter_0_fall",
         "mX_TileCount" : 3,
         "mY_TileCount" : 1,

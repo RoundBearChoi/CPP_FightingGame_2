@@ -190,10 +190,10 @@ namespace RB::Render
 
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
-		json_object_element_s* pngPath = RB::JSON::GetElementInsideElement(*rootElement); //png path
-		std::string strPath = RB::JSON::GetString_FromElement(*pngPath);
+		//json_object_element_s* pngPath = RB::JSON::GetElementInsideElement(*rootElement); //png path
+		//std::string strPath = RB::JSON::GetString_FromElement(*pngPath);
 
-		json_object_element_s* se = pngPath->next; //sprite type enum in string
+		json_object_element_s* se = RB::JSON::GetElementInsideElement(*rootElement); //sprite type enum in string
 		std::string strEnum = RB::JSON::GetString_FromElement(*se);
 
 		json_object_element_s* e0 = se->next; //mX_TileCount
@@ -219,7 +219,7 @@ namespace RB::Render
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first
-		bool loadedSprite = _animationContainer.LoadSprite(strPath, RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
+		bool loadedSprite = _animationContainer.LoadSprite("PNG files/Aku/" + strEnum + ".png", RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 		
 		assert(loadedSprite);
 

@@ -1,7 +1,6 @@
 {
     "fighter_0_jab":
         {
-        "png_file_path" : "PNG files/Aku/fighter_0_jab.png",
         "sprite_enum" : "fighter_0_jab",
         "mX_TileCount" : 6,
         "mY_TileCount" : 1,

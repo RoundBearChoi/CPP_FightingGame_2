@@ -1,7 +1,6 @@
 {
     "fighter_0_jump_up":
         {
-        "png_file_path" : "PNG files/Aku/fighter_0_jump_up.png",
         "sprite_enum" : "fighter_0_jump_up",
         "mX_TileCount" : 3,
         "mY_TileCount" : 1,

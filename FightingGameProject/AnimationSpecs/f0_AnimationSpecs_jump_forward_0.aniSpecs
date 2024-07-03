@@ -1,7 +1,6 @@
 {
     "fighter_0_jump_forward_0":
         {
-        "png_file_path" : "PNG files/Aku/fighter_0_jump_forward_0.png",
         "sprite_enum" : "fighter_0_jump_forward_0",
         "mX_TileCount" : 4,
         "mY_TileCount" : 1,

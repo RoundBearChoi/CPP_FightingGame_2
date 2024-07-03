@@ -10,7 +10,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Jab::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::aku_jab;
+		_spriteType = RB::Sprites::SpriteType::fighter_0_jab;
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());

@@ -29,6 +29,8 @@ namespace RB::Sprites
 		input_strong_punch,
 		input_strong_kick,
 
+		FIGHTER_SPRITES_START,
+
 		aku_idle,
 		aku_crouch,
 		aku_crouch_idle,
@@ -44,6 +46,8 @@ namespace RB::Sprites
 		aku_wince,
 		aku_strong_wince,
 		aku_hadouken,
+
+		FIGHTER_SPRITES_END,
 
 		background_1,
 		background_2,

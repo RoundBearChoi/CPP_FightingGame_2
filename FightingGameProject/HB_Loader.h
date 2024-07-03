@@ -4,6 +4,7 @@
 
 #include "_HBoxLoader.h"
 #include "Loaded_HB_Data.h"
+#include "SpriteType.h"
 
 namespace RB::HBox
 {
@@ -19,6 +20,8 @@ namespace RB::HBox
 		const std::string& GetPath(RB::Sprites::SpriteType spriteType) const;
 
 	private:
+		std::string _CreatePath(RB::Sprites::SpriteType spriteType);
+
 		_HBoxLoader _loader;
 		std::vector<Loaded_HB_Data> _vecData;
 

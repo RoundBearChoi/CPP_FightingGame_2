@@ -5,13 +5,12 @@ namespace RB::HBox
 	void HB_Loader::Init()
 	{
 		//load every hbox datalist
-		//temp - doing it manually for now..
-		_vecData.push_back(_loader.Load(_dir + "fighter_0_idle" + _extention, RB::Sprites::SpriteType::fighter_0_idle));
-		_vecData.push_back(_loader.Load(_dir + "fighter_0_walk" + _extention, RB::Sprites::SpriteType::fighter_0_walk));
-		_vecData.push_back(_loader.Load(_dir + "fighter_0_jab" + _extention, RB::Sprites::SpriteType::fighter_0_jab));
-		_vecData.push_back(_loader.Load(_dir + "fighter_0_strong_punch" + _extention, RB::Sprites::SpriteType::fighter_0_strong_punch));
-		_vecData.push_back(_loader.Load(_dir + "fighter_0_wince" + _extention, RB::Sprites::SpriteType::fighter_0_wince));
-		_vecData.push_back(_loader.Load(_dir + "fighter_0_strong_wince" + _extention, RB::Sprites::SpriteType::fighter_0_strong_wince));
+		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_idle), RB::Sprites::SpriteType::fighter_0_idle));
+		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_walk), RB::Sprites::SpriteType::fighter_0_walk));
+		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_jab), RB::Sprites::SpriteType::fighter_0_jab));
+		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_strong_punch), RB::Sprites::SpriteType::fighter_0_strong_punch));
+		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_wince), RB::Sprites::SpriteType::fighter_0_wince));
+		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_strong_wince), RB::Sprites::SpriteType::fighter_0_strong_wince));
 	}
 
 	void HB_Loader::OnFixedUpdate()
@@ -59,5 +58,11 @@ namespace RB::HBox
 		const std::string& str = p.GetPath();
 
 		return str;
+	}
+
+	std::string HB_Loader::_CreatePath(RB::Sprites::SpriteType spriteType)
+	{
+		std::string str = spriteType._to_string();
+		return _dir + str + _extention;
 	}
 }

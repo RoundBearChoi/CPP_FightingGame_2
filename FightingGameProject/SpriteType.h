@@ -37,7 +37,8 @@ namespace RB::Sprites
 		fighter_0_standup,
 		fighter_0_walk,
 		fighter_0_jump_up,
-		aku_jump_up_1,
+		fighter_0_fall,
+
 		aku_jump_forward_up_0, //up
 		aku_jump_forward_up_1, //down
 		aku_jab,

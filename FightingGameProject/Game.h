@@ -19,18 +19,8 @@ namespace RB
 		RB::Updaters::Updater _updater;
 		RB::Frames::FixedTimer _timer;
 
-	public:
-		bool OnUserCreate() override
+		void _CreateLayers()
 		{
-			sAppName = "C++FightingGame2";
-		
-			_updater.Init();
-
-			RB::Frames::Time::ResetFixedDeltaTime();
-
-			RB::JSON::example{}.example1();
-
-			// create x amount of layers
 			auto& layers = olc::Renderer::ptrPGE->GetLayers();
 
 			while (layers.size() < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT))
@@ -40,21 +30,9 @@ namespace RB
 				olc::Renderer::ptrPGE->GetLayers()[layers.size() - 1].bShow = true;
 				olc::Renderer::ptrPGE->GetLayers()[layers.size() - 1].bUpdate = true;
 			}
-
-			return true;
 		}
 
-		bool OnUserDestroy() override
-		{
-			return true;
-		}
-
-		~Game()
-		{
-			showAllocCount = true;
-		}
-
-		bool OnUserUpdate(float fElapsedTime) override
+		void _ClearLayers()
 		{
 			// clear all layers with blank pixels (except top layer)
 			for (int i = static_cast<uint8_t>(RB::Render::RenderLayerType::FOREGROUND); i < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT); i++)
@@ -73,8 +51,38 @@ namespace RB
 					}
 				}
 			}
+		}
 
-			// game update
+	public:
+		bool OnUserCreate() override
+		{
+			sAppName = "C++FightingGame2";
+		
+			_updater.Init();
+
+			RB::Frames::Time::ResetFixedDeltaTime();
+
+			RB::JSON::example{}.example1();
+
+			_CreateLayers();
+
+			return true;
+		}
+
+		bool OnUserDestroy() override
+		{
+			return true;
+		}
+
+		~Game()
+		{
+			showAllocCount = true;
+		}
+
+		bool OnUserUpdate(float fElapsedTime) override
+		{
+			_ClearLayers();
+
 			RB::Frames::Time::SetDeltaTime(fElapsedTime);
 			RB::Frames::Time::AddFixedDeltaTime();
 

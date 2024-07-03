@@ -2,6 +2,7 @@
 
 #include "PlayerBoxSpecsLoader.h"
 #include "CharacterType.h"
+#include "SpriteType.h"
 
 #include "iPlayerBoxDataController.h"
 
@@ -20,6 +21,8 @@ namespace RB::Collisions
 
 			LoadedPlayerBoxData* GetLoadedData(RB::Players::CharacterType characterType) override;
 			void AddSpecs(PlayerBox box, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType) override;
+
+			std::string GetPath(RB::Sprites::SpriteType spriteType);
 
 	private:
 		PlayerBoxSpecsLoader _playerBoxSpecsLoader;

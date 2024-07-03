@@ -1,8 +1,8 @@
 {
     "p0_AnimationSpecs_standup":
         {
-        "png_file_path" : "PNG files/Aku/aku_standup.png",
-        "sprite_enum" : "aku_standup",
+        "png_file_path" : "PNG files/Aku/fighter_0_standup.png",
+        "sprite_enum" : "fighter_0_standup",
         "mX_TileCount" : 2,
         "mY_TileCount" : 1,
         "mTotalSprites" : 2,

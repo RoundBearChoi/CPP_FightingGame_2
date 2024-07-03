@@ -8,7 +8,7 @@ namespace RB::Collisions
 	{
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/box_none_test.playerBoxSpecs", RB::Sprites::SpriteType::NONE, RB::Players::CharacterType::NONE);
 
-		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_idle_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_idle, RB::Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_idle_box.playerBoxSpecs", RB::Sprites::SpriteType::fighter_0_idle, RB::Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_crouch_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_crouch, RB::Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_crouch_idle_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_crouch_idle, RB::Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs("PlayerBoxSpecs/Aku/p0_standup_box.playerBoxSpecs", RB::Sprites::SpriteType::aku_standup, RB::Players::CharacterType::AKU);

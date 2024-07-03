@@ -31,7 +31,7 @@ namespace RB::Sprites
 
 		FIGHTER_SPRITES_START,
 
-		aku_idle,
+		fighter_0_idle,
 		aku_crouch,
 		aku_crouch_idle,
 		aku_standup,

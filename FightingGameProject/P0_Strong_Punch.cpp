@@ -10,7 +10,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Strong_Punch::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::aku_strong_punch;
+		_spriteType = RB::Sprites::SpriteType::fighter_0_strong_punch;
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());

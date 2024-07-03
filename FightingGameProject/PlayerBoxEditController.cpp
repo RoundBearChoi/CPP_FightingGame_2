@@ -157,7 +157,8 @@ namespace RB::Collisions
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data", olc::WHITE);
 
-		const std::string& str = RB::Sprites::iSpriteDataController::Get()->GetString(_GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
+		std::string str = spriteType._to_string();
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + str, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW);
 	}

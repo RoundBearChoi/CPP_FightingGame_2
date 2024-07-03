@@ -1,8 +1,6 @@
 #pragma once
 #include <vector>
 
-#include "SpriteTypeString.h"
-
 #include "iSpriteDataController.h"
 
 namespace RB::Sprites
@@ -18,10 +16,7 @@ namespace RB::Sprites
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		const std::string& GetString(SpriteType spriteType) override;
-
 	private:
-		std::vector<SpriteTypeString*> _vecEnumStrings;
 		std::string _empty = "EMPTY";
 	};
 }

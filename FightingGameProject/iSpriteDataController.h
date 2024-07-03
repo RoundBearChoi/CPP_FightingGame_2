@@ -11,7 +11,5 @@ namespace RB::Sprites
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
-
-		virtual const std::string& GetString(SpriteType spriteType) = 0;
 	};
 }

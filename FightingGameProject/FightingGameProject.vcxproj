@@ -360,7 +360,6 @@
     <ClInclude Include="SpecialMoveType.h" />
     <ClInclude Include="SpecsController.h" />
     <ClInclude Include="SpriteDataController.h" />
-    <ClInclude Include="SpriteTypeString.h" />
     <ClInclude Include="StandUpOnRelease.h" />
     <ClInclude Include="MarkInitiallyFacingRight.h" />
     <ClInclude Include="TransitionOnFixedUpdateCount.h" />

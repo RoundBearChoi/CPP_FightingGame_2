@@ -18,7 +18,7 @@ namespace RB::Sprites
 		_vecEnumStrings.reserve((size_t)SpriteType::COUNT);
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::NONE, "NONE"));
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::fighter_0_idle, "fighter_0_idle"));
-		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_crouch, "fighter_0_crouch"));
+		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::fighter_0_crouch, "fighter_0_crouch"));
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_crouch_idle, "fighter_0_crouch_idle"));
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_standup, "fighter_0_standup"));
 		_vecEnumStrings.push_back(new SpriteTypeString(SpriteType::aku_walk, "fighter_0_walk"));

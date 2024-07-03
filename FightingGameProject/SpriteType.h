@@ -32,7 +32,7 @@ namespace RB::Sprites
 		FIGHTER_SPRITES_START,
 
 		fighter_0_idle,
-		aku_crouch,
+		fighter_0_crouch,
 		aku_crouch_idle,
 		aku_standup,
 		aku_walk,

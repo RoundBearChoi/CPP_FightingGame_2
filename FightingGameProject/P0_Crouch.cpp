@@ -9,7 +9,7 @@ namespace RB::PlayerStates::Aku
 {
 	void P0_Crouch::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::aku_crouch;
+		_spriteType = RB::Sprites::SpriteType::fighter_0_crouch;
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::PlayerStates::Aku::P0_Crouch_Idle()));

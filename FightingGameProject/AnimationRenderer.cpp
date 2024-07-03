@@ -62,5 +62,7 @@ namespace RB::Render
 		}
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
+
+		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
 }

@@ -20,7 +20,6 @@ namespace RB::Render
 	{
 		olc::vf2d relPos = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(_pos) + olc::vf2d{ 1.0, -1.0 };
 
-		olc::Renderer::ptrPGE->DrawCircle(relPos, 3, olc::WHITE);
 		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
 	}
 

@@ -879,5 +879,8 @@
     <ClInclude Include="CollisionResult.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
+    <ClInclude Include="RenderLayerType.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

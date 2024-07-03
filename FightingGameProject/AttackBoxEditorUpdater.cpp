@@ -1,7 +1,6 @@
 #include "AttackBoxEditorUpdater.h"
 
 #include "InputController.h"
-#include "SpriteDataController.h"
 #include "CamController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
@@ -39,7 +38,6 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>(new RB::Collisions::PlayerBoxDataController());
 
-		RB::Controllers::ControllerBase::AddController<RB::Sprites::SpriteDataController>(new RB::Sprites::SpriteDataController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());

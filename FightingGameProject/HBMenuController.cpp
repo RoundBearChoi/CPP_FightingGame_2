@@ -2,7 +2,6 @@
 
 #include "PlayerState.h"
 
-#include "iSpriteDataController.h"
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iHBoxEditController.h"
@@ -18,11 +17,6 @@ namespace RB::HBox
 
 	void HBMenuController::OnUpdate()
 	{
-		if (RB::Sprites::iSpriteDataController::Get() == nullptr)
-		{
-			return;
-		}
-
 		if (RB::Players::iPlayerController::Get() == nullptr ||
 			RB::Render::iPlayerAnimationController::Get() == nullptr)
 		{

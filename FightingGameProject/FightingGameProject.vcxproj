@@ -206,7 +206,6 @@
     <ClCompile Include="SpecialMovesController.cpp" />
     <ClCompile Include="SpecialMoveSequenceBase.cpp" />
     <ClCompile Include="SpecsController.cpp" />
-    <ClCompile Include="SpriteDataController.cpp" />
     <ClCompile Include="StandUpOnRelease.cpp" />
     <ClCompile Include="MarkInitiallyFacingRight.cpp" />
     <ClCompile Include="TransitionOnFixedUpdateCount.cpp" />
@@ -329,7 +328,6 @@
     <ClInclude Include="iAnimationObj.h" />
     <ClInclude Include="iPlayerController.h" />
     <ClInclude Include="iPlayerDebugController.h" />
-    <ClInclude Include="iSpriteDataController.h" />
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="jsonExample.h" />
@@ -359,7 +357,6 @@
     <ClInclude Include="SpecialMoveSequenceBase.h" />
     <ClInclude Include="SpecialMoveType.h" />
     <ClInclude Include="SpecsController.h" />
-    <ClInclude Include="SpriteDataController.h" />
     <ClInclude Include="StandUpOnRelease.h" />
     <ClInclude Include="MarkInitiallyFacingRight.h" />
     <ClInclude Include="TransitionOnFixedUpdateCount.h" />

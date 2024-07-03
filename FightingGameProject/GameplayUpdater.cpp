@@ -6,7 +6,6 @@
 #include "PlayerAnimationController.h"
 #include "PlayerBoxDataController.h"
 #include "SpecsController.h"
-#include "SpriteDataController.h"
 #include "InputController.h"
 #include "SpecialMovesController.h"
 #include "CamController.h"
@@ -52,7 +51,6 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>(new RB::Collisions::PlayerBoxDataController());
 		RB::Controllers::ControllerBase::AddController<RB::Players::Specs::SpecsController>((new RB::Players::Specs::SpecsController()));
 
-		RB::Controllers::ControllerBase::AddController<RB::Sprites::SpriteDataController>(new RB::Sprites::SpriteDataController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::SpecialMovesController>(new RB::Input::SpecialMovesController());
 

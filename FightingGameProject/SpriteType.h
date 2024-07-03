@@ -29,13 +29,14 @@ namespace RB::Sprites
 		input_strong_punch,
 		input_strong_kick,
 
-		FIGHTER_SPRITES_START,
+		FIGHTER_0_SPRITES_START,
 
 		fighter_0_idle,
 		fighter_0_crouch,
 		fighter_0_crouch_idle,
 		fighter_0_standup,
 		fighter_0_walk,
+
 		fighter_0_jump_up,
 		fighter_0_fall,
 
@@ -43,13 +44,15 @@ namespace RB::Sprites
 		fighter_0_jump_forward_1, //down
 
 		fighter_0_jab,
-		fighter_0_wince,
 		fighter_0_strong_punch,
 		fighter_0_strong_kick,
+		
+		fighter_0_wince,
 		fighter_0_strong_wince,
+		
 		fighter_0_hadouken,
 
-		FIGHTER_SPRITES_END,
+		FIGHTER_0_SPRITES_END,
 
 		background_1,
 		background_2,

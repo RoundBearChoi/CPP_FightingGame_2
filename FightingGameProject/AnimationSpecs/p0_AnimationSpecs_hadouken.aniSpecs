@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_hadouken":
+    "fighter_0_hadouken":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_hadouken.png",
         "sprite_enum" : "fighter_0_hadouken",

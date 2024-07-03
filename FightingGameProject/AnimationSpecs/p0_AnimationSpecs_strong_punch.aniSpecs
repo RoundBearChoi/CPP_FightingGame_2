@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_strong_punch":
+    "fighter_0_strong_punch":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_strong_punch.png",
         "sprite_enum" : "fighter_0_strong_punch",

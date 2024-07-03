@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_wince":
+    "fighter_0_wince":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_wince.png",
         "sprite_enum" : "fighter_0_wince",

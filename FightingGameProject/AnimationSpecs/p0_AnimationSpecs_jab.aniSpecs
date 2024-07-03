@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_jab":
+    "fighter_0_jab":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_jab.png",
         "sprite_enum" : "fighter_0_jab",

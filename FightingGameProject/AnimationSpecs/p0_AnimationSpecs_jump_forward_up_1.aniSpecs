@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_jump_forward_up_1":
+    "fighter_0_jump_forward_1":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_jump_forward_1.png",
         "sprite_enum" : "fighter_0_jump_forward_1",

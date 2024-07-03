@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_crouch":
+    "fighter_0_crouch":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_crouch.png",
         "sprite_enum" : "fighter_0_crouch",

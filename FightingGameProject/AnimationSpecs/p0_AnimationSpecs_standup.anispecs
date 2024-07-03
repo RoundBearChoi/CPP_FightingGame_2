@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_standup":
+    "fighter_0_standup":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_standup.png",
         "sprite_enum" : "fighter_0_standup",

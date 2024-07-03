@@ -1,5 +1,5 @@
 {
-    "p0_AnimationSpecs_walk":
+    "fighter_0_walk":
         {
         "png_file_path" : "PNG files/Aku/fighter_0_walk.png",
         "sprite_enum" : "fighter_0_walk",

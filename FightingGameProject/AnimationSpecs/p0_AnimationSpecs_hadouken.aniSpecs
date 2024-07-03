@@ -1,8 +1,8 @@
 {
     "p0_AnimationSpecs_hadouken":
         {
-        "png_file_path" : "PNG files/Aku/aku_hadouken.png",
-        "sprite_enum" : "aku_hadouken",
+        "png_file_path" : "PNG files/Aku/fighter_0_hadouken.png",
+        "sprite_enum" : "fighter_0_hadouken",
         "mX_TileCount" : 13,
         "mY_TileCount" : 1,
         "mTotalSprites" : 13,

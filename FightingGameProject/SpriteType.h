@@ -46,7 +46,7 @@ namespace RB::Sprites
 		fighter_0_wince,
 		aku_strong_punch,
 		aku_strong_kick,
-		aku_strong_wince,
+		fighter_0_strong_wince,
 		fighter_0_hadouken,
 
 		FIGHTER_SPRITES_END,

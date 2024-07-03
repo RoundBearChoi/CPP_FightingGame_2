@@ -8,6 +8,7 @@
 #include "Time.h"
 #include "FixedTimer.h"
 #include "DisplaySize.h"
+#include "RenderLayerType.h"
 #include "jsonExample.h"
 
 namespace RB
@@ -21,9 +22,6 @@ namespace RB
 	public:
 		bool OnUserCreate() override
 		{
-			std::cout << std::endl;
-			//std::cout << "OnUserCreate.." << std::endl;
-
 			sAppName = "C++FightingGame2";
 		
 			_updater.Init();
@@ -43,16 +41,40 @@ namespace RB
 		~Game()
 		{
 			showAllocCount = true;
-			//std::cout << std::endl;
-			//std::cout << "destroying Game.." << std::endl;
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
+			auto& layers = olc::Renderer::ptrPGE->GetLayers();
+
+			while (layers.size() < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT))
+			{
+				olc::Renderer::ptrPGE->CreateLayer();
+
+				olc::Renderer::ptrPGE->GetLayers()[layers.size() - 1].bShow = true;
+				olc::Renderer::ptrPGE->GetLayers()[layers.size() - 1].bUpdate = true;
+			}
+
+			// clear all layers with blank pixels (except top layer)
+			for (int i = 1; i < layers.size(); i++)
+			{
+				if (i == layers.size() - 1)
+				{
+					olc::Renderer::ptrPGE->SetDrawTarget(i);
+					Clear(olc::Pixel{ 20, 20, 20 });
+				}
+				else
+				{
+					olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
+					olc::Renderer::ptrPGE->Clear(olc::BLANK);
+				}
+			}
+
+			// reset
+			olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
+
 			RB::Frames::Time::SetDeltaTime(fElapsedTime);
 			RB::Frames::Time::AddFixedDeltaTime();
-
-			Clear(olc::Pixel{ 20, 20, 20});
 
 			_updater.OnUpdate();
 			RB::AddGameFrame();

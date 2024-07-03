@@ -16,11 +16,11 @@ namespace RB::Render
 
 	}
 
-	void CircleRenderer::Render()
+	void CircleRenderer::Render(int radius)
 	{
 		olc::vf2d relPos = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(_pos) + olc::vf2d{ 1.0, -1.0 };
 
-		olc::Renderer::ptrPGE->DrawCircle(relPos, 4, olc::WHITE);
+		olc::Renderer::ptrPGE->DrawCircle(relPos, radius, olc::WHITE);
 	}
 
 	void CircleRenderer::SetPos(olc::vf2d pos)

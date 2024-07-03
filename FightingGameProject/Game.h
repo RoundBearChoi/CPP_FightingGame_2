@@ -45,6 +45,7 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
+			// create x amount of layers
 			auto& layers = olc::Renderer::ptrPGE->GetLayers();
 
 			while (layers.size() < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT))
@@ -56,23 +57,24 @@ namespace RB
 			}
 
 			// clear all layers with blank pixels (except top layer)
-			for (int i = 1; i < layers.size(); i++)
+			for (int i = static_cast<uint8_t>(RB::Render::RenderLayerType::FOREGROUND); i < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT); i++)
 			{
-				if (i == layers.size() - 1)
+				if (i == static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT) - 1)
 				{
 					olc::Renderer::ptrPGE->SetDrawTarget(i);
-					Clear(olc::Pixel{ 20, 20, 20 });
+					olc::Renderer::ptrPGE->Clear({ 20, 20, 20 });
 				}
 				else
 				{
-					olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
+					olc::Renderer::ptrPGE->SetDrawTarget(i);
 					olc::Renderer::ptrPGE->Clear(olc::BLANK);
 				}
 			}
 
-			// reset
+			// reset target layer to default
 			olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 
+			// game update
 			RB::Frames::Time::SetDeltaTime(fElapsedTime);
 			RB::Frames::Time::AddFixedDeltaTime();
 

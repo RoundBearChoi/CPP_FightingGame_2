@@ -3,6 +3,7 @@
 #include "AnimationObj.h"
 #include "PlayerState.h"
 #include "JGetter.h"
+#include "RenderLayerType.h"
 
 #include "iPlayerController.h"
 
@@ -33,6 +34,9 @@ namespace RB::Render
 
 	void PlayerAnimationController::OnUpdate()
 	{
+		// render everything on target layer
+		olc::Renderer::ptrPGE->SetDrawTarget(static_cast<uint8_t>(RB::Render::RenderLayerType::DECALS));
+
 		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
@@ -55,6 +59,9 @@ namespace RB::Render
 		}
 
 		_animationContainer.OnUpdate();
+
+		// reset layer
+		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()

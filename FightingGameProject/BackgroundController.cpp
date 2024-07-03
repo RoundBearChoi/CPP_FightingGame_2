@@ -1,5 +1,7 @@
 #include "BackgroundController.h"
 
+#include "RenderLayerType.h"
+
 namespace RB::Background
 {
 	BackgroundController::~BackgroundController()
@@ -25,10 +27,16 @@ namespace RB::Background
 
 	void BackgroundController::OnUpdate()
 	{
+		// render everything on target layer
+		olc::Renderer::ptrPGE->SetDrawTarget(static_cast<uint8_t>(RB::Render::RenderLayerType::DECALS));
+
 		for (auto i = _vecBackgroundObjs.begin(); i != _vecBackgroundObjs.end(); i++)
 		{
 			(*i)->OnUpdate();
 		}
+
+		// reset render layer
+		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
 
 	void BackgroundController::OnFixedUpdate()

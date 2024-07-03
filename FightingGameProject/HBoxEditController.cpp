@@ -185,7 +185,8 @@ namespace RB::HBox
 
 		olc::vf2d pos = player->GetPosition() + box->GetBottomLeft();
 		_circleRenderer.SetPos(pos);
-		_circleRenderer.Render();
+		_circleRenderer.Render(3);
+		_circleRenderer.Render(4);
 	}
 
 	void HBoxEditController::_Add_Delete_AABB_OnPress()

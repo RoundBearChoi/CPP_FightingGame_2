@@ -12,7 +12,7 @@ namespace RB::Render
 
 		void Init();
 		void OnFixedUpdate();
-		void Render();
+		void Render(int radius);
 
 	public:
 		void SetPos(olc::vf2d pos);

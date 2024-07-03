@@ -15,21 +15,21 @@ namespace RB::Render
 	{
 		_animationContainer.Init();
 
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_idle.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_crouch_idle.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_standup.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_walk.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_0.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_up_1.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_0.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jump_forward_up_1.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_jab.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_punch.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_kick.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_wince.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_strong_wince.aniSpecs"));
-		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/p0_AnimationSpecs_hadouken.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_crouch.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_crouch_idle.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_hadouken.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_idle.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_jab.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_jump_forward_0.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_jump_forward_1.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_jump_up_0.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_jump_up_1.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_standup.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_strong_kick.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_strong_punch.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_strong_wince.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_walk.aniSpecs"));
+		_animationContainer.LoadAnimation(_GetAnimationSpecs("AnimationSpecs/f0_AnimationSpecs_wince.aniSpecs"));
 	}
 
 	void PlayerAnimationController::OnUpdate()

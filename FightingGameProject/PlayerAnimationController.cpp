@@ -37,26 +37,8 @@ namespace RB::Render
 		// render everything on target layer
 		olc::Renderer::ptrPGE->SetDrawTarget(static_cast<uint8_t>(RB::Render::RenderLayerType::DECALS));
 
-		if (RB::Players::iPlayerController::Get() == nullptr)
-		{
-			return;
-		}
-
 		_SetFirstPlayerAnimations();
-
-		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
-
-		for (int i = 0; i < 2; i++)
-		{
-			arr[i] = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(i);
-
-			if (arr[i] == nullptr)
-			{
-				continue;
-			}
-
-			_SetNewPlayerAnimationObjOnChange(*arr[i]);
-		}
+		_ChangePlayerAnimations();
 
 		_animationContainer.OnUpdate();
 
@@ -116,6 +98,28 @@ namespace RB::Render
 			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, RB::Sprites::PivotType::BOTTOM_CENTER);
 
 			_animationContainer.AddNewAnimation(animationObj);
+		}
+	}
+
+	void PlayerAnimationController::_ChangePlayerAnimations()
+	{
+		if (RB::Players::iPlayerController::Get() == nullptr)
+		{
+			return;
+		}
+
+		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
+
+		for (int i = 0; i < 2; i++)
+		{
+			arr[i] = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(i);
+
+			if (arr[i] == nullptr)
+			{
+				continue;
+			}
+
+			_SetNewPlayerAnimationObjOnChange(*arr[i]);
 		}
 	}
 

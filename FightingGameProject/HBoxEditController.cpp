@@ -1,5 +1,7 @@
 #include "HBoxEditController.h"
 
+#include <fstream>
+
 #include "PlayerState.h"
 #include "Time.h"
 
@@ -421,6 +423,26 @@ namespace RB::HBox
 			std::cout << std::endl;
 			std::cout << "current sprite: " << currentSpriteType._to_string() << std::endl;
 			std::cout << "next sprite: " << nextSpriteType._to_string() << std::endl;
+
+			std::string path = "";
+
+			if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+			{
+				path = "EditorSettings/AttackBoxSettings.editorSettings";
+			}
+			else if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+			{
+				path = "EditorSettings/TargetBoxSettings.editorSettings";
+			}
+
+			std::ofstream file(path);
+
+			//if (file.is_open()) {
+			//	file << "{" << std::endl;
+			//	file << "AttackBoxEditorSettings":
+			//	file << nextSpriteType._to_string();
+			//	file.close();
+			//}
 		}
 	}
 }

@@ -28,6 +28,7 @@ namespace RB::HBox
 		void _Add_Delete_AABB_OnPress();
 		void _EditAABB_OnPress(RB::Players::PlayerID playerID);
 		void _SaveHBoxes_OnPress();
+		void _CycleAnimations_OnPress();
 
 	private:
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;

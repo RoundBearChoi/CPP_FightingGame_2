@@ -29,9 +29,11 @@ namespace RB::HBox
 			return;
 		}
 
-		_SaveHBoxes_OnPress();
 		_Add_Delete_AABB_OnPress();
 		_EditAABB_OnPress(RB::Players::PlayerID::PLAYER_1);
+		_SaveHBoxes_OnPress();
+		_CycleAnimations_OnPress();
+
 		_RenderCircleOnHBox(RB::Players::PlayerID::PLAYER_1);
 	}
 
@@ -362,6 +364,54 @@ namespace RB::HBox
 			}
 
 			RB::HBox::iHBMenuController::Get()->ShowNotification();
+		}
+	}
+
+	void HBoxEditController::_CycleAnimations_OnPress()
+	{
+		olc::HWButton home = olc::Platform::ptrPGE->GetKey(olc::HOME);
+		olc::HWButton end = olc::Platform::ptrPGE->GetKey(olc::END);
+
+		bool upCycle = false;
+		bool downCycle = false;
+
+		if (home.bPressed)
+		{
+			upCycle = true;
+		}
+
+		if (end.bPressed)
+		{
+			downCycle = true;
+		}
+
+		RB::Sprites::SpriteType currentSpriteType = RB::Sprites::SpriteType::NONE;
+		RB::Sprites::SpriteType nextSpriteType = RB::Sprites::SpriteType::NONE;
+
+		if (upCycle || downCycle)
+		{
+			// get current sprite type
+			RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(0);
+			RB::PlayerStates::PlayerState* ownerState = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
+
+			currentSpriteType = ownerState->GetSpriteType();
+		}
+
+		if (upCycle)
+		{
+			nextSpriteType._value = currentSpriteType._value + 1;
+		}
+
+		if (downCycle)
+		{
+			nextSpriteType._value = currentSpriteType._value - 1;
+		}
+
+		if (upCycle || downCycle)
+		{
+			std::cout << std::endl;
+			std::cout << "current sprite: " << currentSpriteType._to_string() << std::endl;
+			std::cout << "next sprite: " << nextSpriteType._to_string() << std::endl;
 		}
 	}
 }

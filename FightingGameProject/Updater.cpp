@@ -16,13 +16,11 @@ namespace RB::Updaters
 {
 	Updater::Updater()
 	{
-		//std::cout << "constructing Updater" << std::endl;
+		
 	}
 
 	Updater::~Updater()
 	{
-		//std::cout << "destroying Updater" << std::endl;
-
 		delete _updaterObj;
 	}
 
@@ -43,9 +41,6 @@ namespace RB::Updaters
 		{
 			_updaterObj->Init();
 		}
-
-		// pointer to current updater
-		ptrCurrentUpdater = this;
 	}
 
 	bool Updater::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
@@ -142,6 +137,8 @@ namespace RB::Updaters
 
 			assert(firstQueueSuccessful);
 		}
+
+		//RB::Updaters::ptrCurrentUpdater = this;
 	}
 
 	void Updater::OnUpdate()

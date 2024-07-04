@@ -4,6 +4,7 @@
 
 #include "PlayerState.h"
 #include "Time.h"
+#include "GlobalUpdater.h"
 
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
@@ -11,6 +12,7 @@
 #include "iAttackBoxDataController.h"
 #include "iHBMenuController.h"
 #include "iCamController.h"
+#include "iUpdater.h"
 
 namespace RB::HBox
 {
@@ -41,7 +43,10 @@ namespace RB::HBox
 
 	void HBoxEditController::OnFixedUpdate()
 	{
-
+		if (_reload == true)
+		{
+			RB::Updaters::ptrCurrentUpdater->QueueTargetBoxEditorUpdater();
+		}
 	}
 
 	RB::HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType)
@@ -449,8 +454,8 @@ namespace RB::HBox
 				file.close();
 			}
 
-			// reload updater
-
+			// reload updater later in fixed update
+			_reload = true;
 		}
 	}
 }

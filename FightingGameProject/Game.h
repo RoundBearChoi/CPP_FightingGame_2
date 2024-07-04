@@ -9,6 +9,8 @@
 #include "FixedTimer.h"
 #include "DisplaySize.h"
 #include "RenderLayerType.h"
+#include "GlobalUpdater.h"
+
 #include "jsonExample.h"
 
 namespace RB
@@ -16,7 +18,7 @@ namespace RB
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		RB::Updaters::Updater _updater;
+		RB::Updaters::Updater* _updater = nullptr;
 		RB::Frames::FixedTimer _timer;
 
 		void _CreateLayers()
@@ -58,7 +60,11 @@ namespace RB
 		{
 			sAppName = "C++FightingGame2";
 		
-			_updater.Init();
+			_updater = new RB::Updaters::Updater();
+
+			RB::Updaters::ptrCurrentUpdater = _updater;
+
+			_updater->Init();
 
 			RB::Frames::Time::ResetFixedDeltaTime();
 
@@ -71,6 +77,8 @@ namespace RB
 
 		bool OnUserDestroy() override
 		{
+			delete _updater;
+
 			return true;
 		}
 
@@ -86,12 +94,12 @@ namespace RB
 			RB::Frames::Time::SetDeltaTime(fElapsedTime);
 			RB::Frames::Time::AddFixedDeltaTime();
 
-			_updater.OnUpdate();
+			_updater->OnUpdate();
 			RB::AddGameFrame();
 
 			if (_timer.DoFixedUpdate())
 			{
-				_updater.OnFixedUpdate();
+				_updater->OnFixedUpdate();
 
 				RB::Frames::Time::ResetFixedDeltaTime();
 			}

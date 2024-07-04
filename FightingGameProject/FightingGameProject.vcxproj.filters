@@ -385,6 +385,9 @@
     <ClCompile Include="P0_Strong_Wince.cpp">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
+    <ClCompile Include="GlobalUpdater.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -871,6 +874,9 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="iUpdater.h">
+      <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalUpdater.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>

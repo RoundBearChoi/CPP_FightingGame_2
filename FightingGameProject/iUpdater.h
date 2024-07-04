@@ -7,6 +7,4 @@ namespace RB::Updaters
 	public:
 		virtual bool QueueTargetBoxEditorUpdater() = 0;
 	};
-
-	static iUpdater* ptrCurrentUpdater;
 }

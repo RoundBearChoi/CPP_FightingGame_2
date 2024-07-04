@@ -1,10 +1,11 @@
 #pragma once
-#include "iHBoxEditController.h"
 #include "HBoxType.h"
 #include "AABB_Set.h"
 #include "Loaded_HB_Data.h"
 #include "PlayerID.h"
 #include "CircleRenderer.h"
+
+#include "iHBoxEditController.h"
 
 namespace RB::HBox
 {
@@ -33,5 +34,6 @@ namespace RB::HBox
 	private:
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 		RB::Render::CircleRenderer _circleRenderer;
+		bool _reload = false;
 	};
 }

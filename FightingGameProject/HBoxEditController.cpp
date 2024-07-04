@@ -43,10 +43,7 @@ namespace RB::HBox
 
 	void HBoxEditController::OnFixedUpdate()
 	{
-		if (_reload == true)
-		{
-			RB::Updaters::ptrCurrentUpdater->QueueTargetBoxEditorUpdater();
-		}
+
 	}
 
 	RB::HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType)
@@ -454,8 +451,18 @@ namespace RB::HBox
 				file.close();
 			}
 
-			// reload updater later in fixed update
-			_reload = true;
+			// reload updater
+			if (upCycle || downCycle)
+			{
+				if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+				{
+					RB::Updaters::ptrCurrentUpdater->QueueAttackBoxEditorUpdater();
+				}
+				else if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+				{
+					RB::Updaters::ptrCurrentUpdater->QueueTargetBoxEditorUpdater();
+				}
+			}
 		}
 	}
 }

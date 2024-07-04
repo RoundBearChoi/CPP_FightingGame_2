@@ -71,6 +71,11 @@ namespace RB::Updaters
 		return true;
 	}
 
+	bool Updater::QueueAttackBoxEditorUpdater()
+	{
+		return QueueUpdaterObj(new AttackBoxEditorUpdater());
+	}
+
 	bool Updater::QueueTargetBoxEditorUpdater()
 	{
 		return QueueUpdaterObj(new TargetBoxEditorUpdater());

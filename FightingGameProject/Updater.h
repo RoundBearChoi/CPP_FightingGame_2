@@ -12,6 +12,7 @@ namespace RB::Updaters
 		~Updater();
 
 	public:
+		bool QueueAttackBoxEditorUpdater() override;
 		bool QueueTargetBoxEditorUpdater() override;
 
 	public:

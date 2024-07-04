@@ -181,9 +181,6 @@
     <ClCompile Include="AABB_Set.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HBoxDataListPath.h">
-      <Filter>Source Files\HBox</Filter>
-    </ClCompile>
     <ClCompile Include="BackgroundObj.cpp">
       <Filter>Source Files\Background</Filter>
     </ClCompile>

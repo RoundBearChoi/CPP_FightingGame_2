@@ -2,9 +2,10 @@
 
 namespace RB::HBox
 {
-	Loaded_HB_Data::Loaded_HB_Data(RB::Sprites::SpriteType spriteType)
+	Loaded_HB_Data::Loaded_HB_Data(RB::Sprites::SpriteType spriteType, HBoxType boxType)
 	{
 		_spriteType = spriteType;
+		_boxType = boxType;
 	}
 
 	void Loaded_HB_Data::OnFixedUpdate()

@@ -34,6 +34,5 @@ namespace RB::HBox
 	private:
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 		RB::Render::CircleRenderer _circleRenderer;
-		bool _reload = false;
 	};
 }

@@ -2,13 +2,14 @@
 #include <vector>
 #include "SpriteType.h"
 #include "AABB_Set.h"
+#include "HBoxType.h"
 
 namespace RB::HBox
 {
 	class Loaded_HB_Data
 	{
 	public:
-		Loaded_HB_Data(RB::Sprites::SpriteType spriteType);
+		Loaded_HB_Data(RB::Sprites::SpriteType spriteType, HBoxType boxType);
 		~Loaded_HB_Data() = default;
 
 	public:
@@ -22,5 +23,6 @@ namespace RB::HBox
 	private:
 		RB::Sprites::SpriteType _spriteType = RB::Sprites::SpriteType::NONE;
 		std::vector<AABB_Set> _vec_AABB_Sets;
+		HBoxType _boxType = HBoxType::NONE;
 	};
 }

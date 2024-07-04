@@ -4,7 +4,7 @@ namespace RB::HBox
 {
 	AttackBoxDataController::AttackBoxDataController(std::string dir)
 	{
-		_hbContainer.SetDir(dir);
+		_hbContainer.SetDir(dir, HBoxType::ATTACK_BOX);
 	}
 
 	void AttackBoxDataController::Init()
@@ -27,7 +27,7 @@ namespace RB::HBox
 		return _hbContainer.GetData(spriteType);
 	}
 
-	const std::string& AttackBoxDataController::GetPath(RB::Sprites::SpriteType spriteType) const
+	std::string AttackBoxDataController::GetPath(RB::Sprites::SpriteType spriteType)
 	{
 		return _hbContainer.GetPath(spriteType);
 	}

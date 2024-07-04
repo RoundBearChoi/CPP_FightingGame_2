@@ -21,7 +21,7 @@ namespace RB::HBox
 		void OnFixedUpdate() override;
 
 		Loaded_HB_Data* GetData(RB::Sprites::SpriteType spriteType) override;
-		const std::string& GetPath(RB::Sprites::SpriteType spriteType) const override;
+		std::string GetPath(RB::Sprites::SpriteType spriteType) override;
 
 	private:
 		HB_Container _hbContainer;

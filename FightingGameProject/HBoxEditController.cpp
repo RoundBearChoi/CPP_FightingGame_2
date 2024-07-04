@@ -437,12 +437,17 @@ namespace RB::HBox
 
 			std::ofstream file(path);
 
-			//if (file.is_open()) {
-			//	file << "{" << std::endl;
-			//	file << "AttackBoxEditorSettings":
-			//	file << nextSpriteType._to_string();
-			//	file.close();
-			//}
+			if (file.is_open()) {
+				file << "{" << std::endl;
+				file << "\"AttackBoxEditorSettings\":" << std::endl;
+				file << "        {" << std::endl;
+				file << "            \"sprite enum\" : \"" << nextSpriteType << "\"," << std::endl;
+				file << "            \"other shit\" : \"shit\"" << std::endl;
+				file << "        }" << std::endl;
+				file << "}" << std::endl;
+
+				file.close();
+			}
 		}
 	}
 }

@@ -1,7 +1,7 @@
 {
 "AttackBoxEditorSettings":
         {
-            "sprite enum" : "fighter_0_jump_forward_1",
+            "sprite enum" : "fighter_0_idle",
             "other shit" : "shit"
         }
 }

@@ -34,8 +34,10 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data (saves the entire set)", olc::WHITE);
 
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
+		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType();
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
 
 		RB::HBox::Loaded_HB_Data* data = _GetHBData();
 
@@ -53,7 +55,7 @@ namespace RB::HBox
 
 		auto const& vec = AABBs->GetSelector()->GetVector();
 
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 340 }, "AABB count: " + std::to_string(vec.size()), olc::YELLOW);
 	}
 
 	void HBMenuController::OnFixedUpdate()

@@ -385,6 +385,9 @@
     <ClCompile Include="CurrentUpdater.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
+    <ClCompile Include="HBoxEditorUpdaterBase.cpp">
+      <Filter>Source Files\Updaters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -874,6 +877,9 @@
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="CurrentUpdater.h">
+      <Filter>Source Files\Updaters</Filter>
+    </ClInclude>
+    <ClInclude Include="HBoxEditorUpdaterBase.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
   </ItemGroup>

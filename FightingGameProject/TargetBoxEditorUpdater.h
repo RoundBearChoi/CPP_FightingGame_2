@@ -1,16 +1,18 @@
 #pragma once
-#include "iUpdaterObj.h"
+
+#include "HBoxEditorUpdaterBase.h"
+
 
 namespace RB::Updaters
 {
-	class TargetBoxEditorUpdater : public iUpdaterObj
+	class TargetBoxEditorUpdater : public HBoxEditorUpdaterBase
 	{
 		public:
-			TargetBoxEditorUpdater() = default;
-			~TargetBoxEditorUpdater() override;
+			TargetBoxEditorUpdater();
+			~TargetBoxEditorUpdater() = default;
 
-			void Init();
-			void OnUpdate();
-			void OnFixedUpdate();
+			//void Init();
+			//void OnUpdate();
+			//void OnFixedUpdate();
 	};
 }

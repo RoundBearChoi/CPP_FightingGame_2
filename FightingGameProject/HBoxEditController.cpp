@@ -448,6 +448,9 @@ namespace RB::HBox
 
 				file.close();
 			}
+
+			// reload updater
+
 		}
 	}
 }

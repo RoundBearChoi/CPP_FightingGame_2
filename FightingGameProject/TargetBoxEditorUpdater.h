@@ -10,9 +10,5 @@ namespace RB::Updaters
 		public:
 			TargetBoxEditorUpdater();
 			~TargetBoxEditorUpdater() = default;
-
-			//void Init();
-			//void OnUpdate();
-			//void OnFixedUpdate();
 	};
 }

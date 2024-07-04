@@ -193,7 +193,7 @@
     <ClCompile Include="HBoxEditController.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
-    <ClCompile Include="HB_Loader.cpp">
+    <ClCompile Include="HB_Container.cpp">
       <Filter>Source Files\HBox</Filter>
     </ClCompile>
     <ClCompile Include="AttackBoxEditorUpdater.cpp">
@@ -597,7 +597,7 @@
     <ClInclude Include="iPlayerDebugController.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="HB_Loader.h">
+    <ClInclude Include="HB_Container.h">
       <Filter>Source Files\HBox</Filter>
     </ClInclude>
     <ClInclude Include="AttackBoxEditorUpdater.h">

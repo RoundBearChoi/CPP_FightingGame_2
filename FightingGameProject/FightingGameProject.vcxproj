@@ -175,7 +175,7 @@
     <ClCompile Include="P0_Hadouken.cpp" />
     <ClCompile Include="P0_Seq_Hadouken.cpp" />
     <ClCompile Include="P0_Jab.cpp" />
-    <ClCompile Include="HB_Loader.cpp" />
+    <ClCompile Include="HB_Container.cpp" />
     <ClCompile Include="AABB_Set.cpp" />
     <ClCompile Include="AttackBoxEditorUpdater.cpp" />
     <ClCompile Include="P0_Strong_Kick.cpp" />
@@ -311,7 +311,7 @@
     <ClInclude Include="P0_Hadouken.h" />
     <ClInclude Include="P0_Seq_Hadouken.h" />
     <ClInclude Include="P0_Jab.h" />
-    <ClInclude Include="HB_Loader.h" />
+    <ClInclude Include="HB_Container.h" />
     <ClInclude Include="HBoxType.h" />
     <ClInclude Include="AttackBoxEditorUpdater.h" />
     <ClInclude Include="P0_Strong_Kick.h" />

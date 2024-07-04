@@ -4,7 +4,7 @@
 
 #include "iAttackBoxDataController.h"
 #include "Loaded_HB_Data.h"
-#include "HB_Loader.h"
+#include "HB_Container.h"
 
 namespace RB::HBox
 {

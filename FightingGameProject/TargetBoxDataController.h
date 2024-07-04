@@ -4,7 +4,7 @@
 
 #include "iTargetBoxDataController.h"
 #include "Loaded_HB_Data.h"
-#include "HB_Loader.h"
+#include "HB_Container.h"
 #include "SpriteType.h"
 
 

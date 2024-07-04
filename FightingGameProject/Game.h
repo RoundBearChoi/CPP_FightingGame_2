@@ -9,7 +9,7 @@
 #include "FixedTimer.h"
 #include "DisplaySize.h"
 #include "RenderLayerType.h"
-#include "GlobalUpdater.h"
+#include "CurrentUpdater.h"
 
 #include "jsonExample.h"
 

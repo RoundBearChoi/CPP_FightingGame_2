@@ -4,7 +4,7 @@
 
 #include "PlayerState.h"
 #include "Time.h"
-#include "GlobalUpdater.h"
+#include "CurrentUpdater.h"
 
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"

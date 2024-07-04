@@ -158,7 +158,7 @@
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
-    <ClCompile Include="GlobalUpdater.cpp" />
+    <ClCompile Include="CurrentUpdater.cpp" />
     <ClCompile Include="LoadedPlayerBoxData.cpp" />
     <ClCompile Include="Loaded_HB_Data.cpp" />
     <ClCompile Include="AttackBoxDataController.cpp" />
@@ -255,7 +255,7 @@
     <ClInclude Include="AABB.h" />
     <ClInclude Include="AllocationCount.h" />
     <ClInclude Include="AnimationContainer.h" />
-    <ClInclude Include="GlobalUpdater.h" />
+    <ClInclude Include="CurrentUpdater.h" />
     <ClInclude Include="iUpdater.h" />
     <ClInclude Include="RenderLayerType.h" />
     <ClInclude Include="RenderSettings.h" />

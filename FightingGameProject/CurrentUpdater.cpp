@@ -1,4 +1,4 @@
-#include "GlobalUpdater.h"
+#include "CurrentUpdater.h"
 
 namespace RB::Updaters
 {

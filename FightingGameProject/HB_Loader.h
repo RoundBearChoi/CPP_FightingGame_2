@@ -8,7 +8,7 @@
 
 namespace RB::HBox
 {
-	class HB_Loader
+	class HB_Container
 	{
 	public:
 		void Init();

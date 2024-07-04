@@ -24,6 +24,6 @@ namespace RB::HBox
 		const std::string& GetPath(RB::Sprites::SpriteType spriteType) const override;
 
 	private:
-		HB_Loader _hbLoader;
+		HB_Container _hbContainer;
 	};
 }

@@ -2,7 +2,7 @@
 
 namespace RB::HBox
 {
-	void HB_Loader::Init()
+	void HB_Container::Init()
 	{
 		//load every hbox datalist
 		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_idle), RB::Sprites::SpriteType::fighter_0_idle));
@@ -13,7 +13,7 @@ namespace RB::HBox
 		_vecData.push_back(_loader.Load(_CreatePath(RB::Sprites::SpriteType::fighter_0_strong_wince), RB::Sprites::SpriteType::fighter_0_strong_wince));
 	}
 
-	void HB_Loader::OnFixedUpdate()
+	void HB_Container::OnFixedUpdate()
 	{
 		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
 		{
@@ -21,7 +21,7 @@ namespace RB::HBox
 		}
 	}
 
-	void HB_Loader::OnUpdate()
+	void HB_Container::OnUpdate()
 	{
 		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
 		{
@@ -29,14 +29,14 @@ namespace RB::HBox
 		}
 	}
 
-	void HB_Loader::SetDir(std::string dir)
+	void HB_Container::SetDir(std::string dir)
 	{
 		std::cout << std::endl;
 		std::cout << "presetting dir: " << dir << std::endl;
 		_dir = dir;
 	}
 
-	Loaded_HB_Data* HB_Loader::GetData(RB::Sprites::SpriteType spriteType)
+	Loaded_HB_Data* HB_Container::GetData(RB::Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
 		{
@@ -49,7 +49,7 @@ namespace RB::HBox
 		return nullptr;
 	}
 
-	const std::string& HB_Loader::GetPath(RB::Sprites::SpriteType spriteType) const
+	const std::string& HB_Container::GetPath(RB::Sprites::SpriteType spriteType) const
 	{
 		const HBoxDataListPath& p = _loader.GetDataListPath(spriteType);
 
@@ -60,7 +60,7 @@ namespace RB::HBox
 		return str;
 	}
 
-	std::string HB_Loader::_CreatePath(RB::Sprites::SpriteType spriteType)
+	std::string HB_Container::_CreatePath(RB::Sprites::SpriteType spriteType)
 	{
 		std::string str = spriteType._to_string();
 		return _dir + str + _extention;

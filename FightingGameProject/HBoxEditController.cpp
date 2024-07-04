@@ -399,12 +399,21 @@ namespace RB::HBox
 
 		if (upCycle)
 		{
-			nextSpriteType._value = currentSpriteType._value + 1;
+			nextSpriteType._value = currentSpriteType + 1;
 		}
 
 		if (downCycle)
 		{
-			nextSpriteType._value = currentSpriteType._value - 1;
+			nextSpriteType._value = currentSpriteType - 1;
+		}
+
+		if (nextSpriteType._value >= RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END)
+		{
+			nextSpriteType._value = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1;
+		}
+		else if (nextSpriteType._value <= RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START)
+		{
+			nextSpriteType._value = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END - 1;
 		}
 
 		if (upCycle || downCycle)

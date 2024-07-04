@@ -1,14 +1,18 @@
 #pragma once
 
+#include "iUpdater.h"
 #include "iUpdaterObj.h"
 
 namespace RB::Updaters
 {
-	class Updater
+	class Updater : public iUpdater
 	{
 	public:
 		Updater();
 		~Updater();
+
+	public:
+		bool QueueTargetBoxEditorUpdater() override;
 
 	public:
 		void SetUpdaterObj(iUpdaterObj* updaterObj);

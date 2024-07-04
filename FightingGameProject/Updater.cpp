@@ -28,7 +28,7 @@ namespace RB::Updaters
 
 	void Updater::SetUpdaterObj(iUpdaterObj* updaterObj)
 	{
-		//delete previous updater obj
+		// delete previous updater obj
 		if (_updaterObj != nullptr)
 		{
 			delete _updaterObj;
@@ -36,13 +36,16 @@ namespace RB::Updaters
 			_updaterObj = nullptr;
 		}
 
-		//set new updater obj
+		// set new updater obj
 		_updaterObj = updaterObj;
 
 		if (_updaterObj != nullptr)
 		{
 			_updaterObj->Init();
 		}
+
+		// pointer to current updater
+		ptrCurrentUpdater = this;
 	}
 
 	bool Updater::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
@@ -71,6 +74,11 @@ namespace RB::Updaters
 		_nextUpdaterObj = nextUpdaterObj;
 
 		return true;
+	}
+
+	bool Updater::QueueTargetBoxEditorUpdater()
+	{
+		return QueueUpdaterObj(new TargetBoxEditorUpdater());
 	}
 
 	void Updater::UpdateQueue()
@@ -107,7 +115,7 @@ namespace RB::Updaters
 
 		if (f8.bPressed)
 		{
-			if (QueueUpdaterObj(new TargetBoxEditorUpdater()))
+			if (QueueTargetBoxEditorUpdater())
 			{
 				return;
 			}

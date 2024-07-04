@@ -27,7 +27,6 @@ namespace RB::Updaters
 	{
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
-
 		RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(spriteType));
@@ -37,8 +36,6 @@ namespace RB::Updaters
 
 		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>(new RB::Collisions::PlayerBoxDataController());
-
-		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
@@ -53,7 +50,7 @@ namespace RB::Updaters
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(_boxType));
 
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
-
+		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 		RB::Cam::CamController* camController = RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());
 		camController->SetZoom(1.75f);
 	}

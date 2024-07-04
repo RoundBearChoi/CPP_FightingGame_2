@@ -2,7 +2,6 @@
 
 #include "HBoxEditorUpdaterBase.h"
 
-
 namespace RB::Updaters
 {
 	class TargetBoxEditorUpdater : public HBoxEditorUpdaterBase

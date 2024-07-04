@@ -107,7 +107,7 @@ namespace RB::Updaters
 
 		if (f7.bPressed)
 		{
-			if (QueueUpdaterObj(new AttackBoxEditorUpdater()))
+			if (QueueAttackBoxEditorUpdater())
 			{
 				return;
 			}

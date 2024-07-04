@@ -1,7 +1,6 @@
 #pragma once
 
 #include "iUpdaterObj.h"
-
 #include "string"
 
 #include "HBoxType.h"

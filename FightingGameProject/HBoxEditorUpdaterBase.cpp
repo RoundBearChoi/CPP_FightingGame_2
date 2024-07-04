@@ -28,7 +28,7 @@ namespace RB::Updaters
 		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 
-		RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);//RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType("EditorSettings/TargetBoxSettings.editorSettings");
+		RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(spriteType));
 		p0->SetPosition(olc::vf2d{ 50.0f, 100.0f });
@@ -40,8 +40,16 @@ namespace RB::Updaters
 
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 
+		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+		{
+			RB::Controllers::ControllerBase::AddController<RB::HBox::TargetBoxDataController>(new RB::HBox::TargetBoxDataController(_specsPath));
+		}
+		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+		{
+			RB::Controllers::ControllerBase::AddController<RB::HBox::AttackBoxDataController>(new RB::HBox::AttackBoxDataController(_specsPath));
+		}
+
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
-		RB::Controllers::ControllerBase::AddController<RB::HBox::TargetBoxDataController>(new RB::HBox::TargetBoxDataController(_specsPath));
 		RB::Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(_boxType));
 
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());

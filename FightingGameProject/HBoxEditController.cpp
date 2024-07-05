@@ -109,6 +109,7 @@ namespace RB::HBox
 
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 		
+		// return existing data
 		if (_boxType == HBoxType::TARGET_BOX)
 		{
 			data = RB::HBox::iTargetBoxDataController::Get()->GetData(spriteType);
@@ -118,9 +119,19 @@ namespace RB::HBox
 			data = RB::HBox::iAttackBoxDataController::Get()->GetData(spriteType);
 		}
 
+		// create new when data doesn't exist
 		if (data == nullptr)
 		{
-			return nullptr;
+			if (_boxType == HBoxType::TARGET_BOX)
+			{
+				data = RB::HBox::iTargetBoxDataController::Get()->CreateData(spriteType);
+			}
+			else if (_boxType == HBoxType::ATTACK_BOX)
+			{
+				data = RB::HBox::iAttackBoxDataController::Get()->CreateData(spriteType);
+			}
+
+			return nullptr; // shouldn't reach here..
 		}
 
 		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(currentIndex);
@@ -204,12 +215,19 @@ namespace RB::HBox
 		
 		if (insButton.bPressed)
 		{
-			AABBs->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
-		
-			AABBs->GetSelector()->SelectDown();
+			if (AABBs != nullptr)
+			{
+				AABBs->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
+
+				AABBs->GetSelector()->SelectDown();
+			}
+			else
+			{
+
+			}
 		}
 		
-		if (delButton.bPressed)
+		if (delButton.bPressed && AABBs != nullptr)
 		{
 			AABBs->GetSelector()->EraseSelected();
 		}

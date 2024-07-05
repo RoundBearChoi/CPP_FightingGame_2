@@ -4,6 +4,12 @@
 
 namespace RB::HBox
 {
+	AABB_Set::AABB_Set(std::string frameName)
+	{
+		_frameName = frameName;
+		_frame = RB::JSON::ParseFrame(frameName);
+	}
+
 	AABB_Set::AABB_Set(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
 	{
 		_frameName = frameName;

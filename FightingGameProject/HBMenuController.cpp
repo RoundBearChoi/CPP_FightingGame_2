@@ -81,7 +81,11 @@ namespace RB::HBox
 
 		if (AABBs == nullptr)
 		{
-			return _none;
+			// create empty set
+			data->AddSet(AABB_Set{ "frame_0" });
+
+			AABBs = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+			//return _none;
 		}
 
 		return AABBs->GetFrameName();

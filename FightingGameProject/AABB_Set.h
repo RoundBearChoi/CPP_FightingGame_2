@@ -11,6 +11,7 @@ namespace RB::HBox
 	{
 	public:
 		AABB_Set() = default;
+		AABB_Set(std::string frameName);
 		AABB_Set(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
 		~AABB_Set();
 

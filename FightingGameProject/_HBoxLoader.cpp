@@ -114,7 +114,7 @@ namespace RB::HBox
 		//if failed to load, return default data
 		if (root == nullptr)
 		{
-			Loaded_HB_Data defaultData{ spriteType, HBoxType::NONE };
+			Loaded_HB_Data defaultData{ spriteType, boxType };
 
 			AABB_Set emptyAABBs;
 			emptyAABBs.SetFrameNameAndParse("frame_0");

@@ -1,0 +1,10 @@
+{
+    "aku_strong_kick":
+        {
+        "attack strength stype" : "STRONG",
+        "damage" : 20,
+        "hitstop frames" : 5,
+        "minimum fixed updates since last hit": 10,
+        "max hits" : 5
+        }
+}

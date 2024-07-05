@@ -13,6 +13,7 @@ namespace RB::HBox
 		virtual void OnFixedUpdate() = 0;
 
 		virtual Loaded_HB_Data* GetData(RB::Sprites::SpriteType spriteType) = 0;
+		virtual Loaded_HB_Data* CreateData(RB::Sprites::SpriteType spriteType) = 0;
 		virtual std::string GetPath(RB::Sprites::SpriteType spriteType) = 0;
 	};
 }

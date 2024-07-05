@@ -27,6 +27,11 @@ namespace RB::HBox
 		return _hbContainer.GetData(spriteType);
 	}
 
+	Loaded_HB_Data* AttackBoxDataController::CreateData(RB::Sprites::SpriteType spriteType)
+	{
+		return _hbContainer.CreateData(spriteType);
+	}
+
 	std::string AttackBoxDataController::GetPath(RB::Sprites::SpriteType spriteType)
 	{
 		return _hbContainer.GetPath(spriteType);

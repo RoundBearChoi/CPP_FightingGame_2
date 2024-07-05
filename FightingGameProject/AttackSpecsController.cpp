@@ -47,9 +47,9 @@ namespace RB::Collisions
 
 	void AttackSpecsController::_LoadAttackSpecs()
 	{
-		_Load(/*"AttackSpecs/aku_weak_punch.attackSpecs",*/ RB::Sprites::SpriteType::fighter_0_jab);
-		_Load(/*"AttackSpecs/aku_strong_punch.attackSpecs",*/ RB::Sprites::SpriteType::fighter_0_strong_punch);
-		_Load(/*"AttackSpecs/aku_strong_kick.attackSpecs",*/ RB::Sprites::SpriteType::fighter_0_strong_kick);
+		_Load(RB::Sprites::SpriteType::fighter_0_jab);
+		_Load(RB::Sprites::SpriteType::fighter_0_strong_punch);
+		_Load(RB::Sprites::SpriteType::fighter_0_strong_kick);
 	}
 
 	void AttackSpecsController::_Load(RB::Sprites::SpriteType spriteType)

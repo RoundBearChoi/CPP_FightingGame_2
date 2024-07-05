@@ -23,7 +23,7 @@ namespace RB::Collisions
 
 	private:
 		void _LoadAttackSpecs();
-		void _Load(const std::string& path, RB::Sprites::SpriteType spriteType);
+		void _Load(RB::Sprites::SpriteType spriteType);
 
 	private:
 		std::vector<RB::Collisions::AttackSpecs> _vecAttackSpecs;

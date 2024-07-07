@@ -4,7 +4,6 @@
 #include "iPlayer.h"
 #include "olcPixelGameEngine.h"
 #include "SpriteType.h"
-#include "AttackCollisionYType.h"
 #include "CollisionResult.h"
 
 namespace RB::PlayerStateComponents
@@ -25,7 +24,6 @@ namespace RB::PlayerStateComponents
 		bool _HitDetected(RB::Collisions::CollisionResult& collisionResult);
 		void _RegisterHit(RB::Collisions::CollisionResult& collisionResult);
 		void _AddFixedUpdatesSinceLastHit();
-		RB::Collisions::AttackCollisionYType _GetAttackCollisionYType(RB::Players::iPlayer* target, olc::vf2d& collisionPoint);
 
 		int _hits = 0;
 		int _fixedUpdatesSinceLastHit = 0;

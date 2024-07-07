@@ -1,5 +1,7 @@
 #include "DetectHit.h"
 
+#include <string>
+
 #include "AttackSpecs.h"
 
 #include "PlayerState.h"
@@ -115,6 +117,24 @@ namespace RB::PlayerStateComponents
 					collisionResult.mCollisionPoint = col;
 					collisionResult.mAttackerSpriteType = ownerSpriteType;
 
+					float* targetParts = target->GetPlayerCollider()->GetBodyParts();
+					
+					float part0y = targetParts[0];
+					float part1y = targetParts[1];
+
+					if (col.y > part0y)
+					{
+						collisionResult.mCollisionType = RB::Collisions::CollisionType::LEGS;
+					}
+					else if (col.y < part1y)
+					{
+						collisionResult.mCollisionType = RB::Collisions::CollisionType::HEAD;
+					}
+					else
+					{
+						collisionResult.mCollisionType = RB::Collisions::CollisionType::BODY;
+					}
+
 					return true;
 				}
 			}
@@ -132,18 +152,20 @@ namespace RB::PlayerStateComponents
 		reg.collisionPoint = collisionResult.mCollisionPoint;
 		reg.attackerSpriteType = collisionResult.mAttackerSpriteType;
 		reg.targetIsOnRightSide = collisionResult.mAttacker->OtherPlayerIsOnRightSide();
-		reg.attackCollisionYType = _GetAttackCollisionYType(collisionResult.mTarget, collisionResult.mCollisionPoint);
 
 		RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 
 		_hits++;
 		_fixedUpdatesSinceLastHit = 0;
 
-		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
-		std::cout << "fixedupdates since last hit: " << _fixedUpdatesSinceLastHit << std::endl;
-		std::cout << "hit count: " << _hits << std::endl;
-		std::cout << "player " << collisionResult.mAttacker->GetPlayerID_int() << " hit player " << collisionResult.mTarget->GetPlayerID_int() << std::endl;
 		std::cout << std::endl;
+		std::string strAttackerSprite = collisionResult.mAttackerSpriteType._to_string();
+		std::cout << "attacker spriteType: " << strAttackerSprite << std::endl;
+		std::cout << "attackerID: " << reg.attacker->GetPlayerID_int() << std::endl;
+		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+		std::cout << "hit count: " << _hits << std::endl;
+		//std::cout << "player " << collisionResult.mAttacker->GetPlayerID_int() << " hit player " << collisionResult.mTarget->GetPlayerID_int() << std::endl;
+		std::cout << "collisionType: " << std::to_string((int)collisionResult.mCollisionType) << std::endl;
 	}
 
 	void DetectHit::_AddFixedUpdatesSinceLastHit()
@@ -152,32 +174,5 @@ namespace RB::PlayerStateComponents
 		{
 			_fixedUpdatesSinceLastHit++;
 		}
-	}
-
-	RB::Collisions::AttackCollisionYType DetectHit::_GetAttackCollisionYType(RB::Players::iPlayer* target, olc::vf2d& collisionPoint)
-	{
-		//get attack collision y type
-		float targetBottomY = target->GetPosition().y;
-		float targetPlayerColliderHeight = target->GetPlayerCollider()->GetPlayerBox().y;
-		float targetTopY = targetBottomY - targetPlayerColliderHeight; //up y is negative
-
-		float oneThird = targetPlayerColliderHeight * 0.3f;
-
-		RB::Collisions::AttackCollisionYType yType = RB::Collisions::AttackCollisionYType::NONE;
-
-		if (collisionPoint.y <= targetTopY + oneThird)
-		{
-			yType = RB::Collisions::AttackCollisionYType::HEAD;
-		}
-		else if (collisionPoint.y <= targetTopY + (oneThird * 2.0f))
-		{
-			yType = RB::Collisions::AttackCollisionYType::BODY;
-		}
-		else
-		{
-			yType = RB::Collisions::AttackCollisionYType::LEG;
-		}
-
-		return yType;
 	}
 }

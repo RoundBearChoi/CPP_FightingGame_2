@@ -1,7 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "SpriteType.h"
-#include "AttackCollisionYType.h"
 
 #include "iPlayer.h"
 
@@ -17,6 +16,5 @@ namespace RB::Collisions
 
 		olc::vf2d collisionPoint = { 0.0f, 0.0f };
 		bool targetIsOnRightSide = true;
-		RB::Collisions::AttackCollisionYType attackCollisionYType = RB::Collisions::AttackCollisionYType::NONE;
 	};
 }

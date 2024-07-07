@@ -864,9 +864,6 @@
     <ClInclude Include="P0_Strong_Wince.h">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClInclude>
-    <ClInclude Include="AttackCollisionYType.h">
-      <Filter>Source Files\Collisions</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionResult.h">
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>

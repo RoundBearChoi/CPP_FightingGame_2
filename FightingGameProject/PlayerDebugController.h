@@ -25,7 +25,7 @@ namespace RB::Render
 		void RenderPlayerBox(bool render) override;
 
 	private:
-		void _RenderBodyParts();
+		void _RenderBodyParts(RB::Players::PlayerID id);
 
 	private:
 		RB::Sprites::SpriteContainer _spriteContainer;

@@ -1,5 +1,7 @@
 #include "PlayerDebugController.h"
 
+#include "iCamController.h"
+
 namespace RB::Render
 {
 	void PlayerDebugController::Init()
@@ -36,7 +38,8 @@ namespace RB::Render
 		_playerPositionRenderer.OnUpdate();
 		_playerInputRenderer.OnUpdate();
 
-		_RenderBodyParts();
+		_RenderBodyParts(RB::Players::PlayerID::PLAYER_1);
+		_RenderBodyParts(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
@@ -52,22 +55,38 @@ namespace RB::Render
 		_playerBoxRenderer.RenderPlayerBox(render);
 	}
 
-	void PlayerDebugController::_RenderBodyParts()
+	void PlayerDebugController::_RenderBodyParts(RB::Players::PlayerID id)
 	{
 		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
 
-		RB::Players::iPlayerCollider* col1 = p1->GetPlayerCollider();
-		RB::Players::iPlayerCollider* col2 = p2->GetPlayerCollider();
+		if (player == nullptr)
+		{
+			return;
+		}
 
-		float* b1 = col1->GetBodyParts();
+		RB::Players::iPlayerCollider* col = player->GetPlayerCollider();
+
+		float* parts = col->GetBodyParts();
 		
-		float lowerBody = b1[0];
-		float upperBody = b1[1];
+		//float lowerBody = parts[0];
+		//float upperBody = parts[1];
+
+		olc::vf2d relLowerBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[0]});
+		olc::vi2d intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };
+
+		olc::vf2d relUpperBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[1]});
+		olc::vi2d intUpperBody = { int(round(relUpperBody.x)), int(round(relUpperBody.y)) };
+
+		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
+
+		int lineHalfLength = 50;
+
+		olc::Renderer::ptrPGE->DrawLine(intLowerBody - olc::vi2d{ lineHalfLength, 0 }, intLowerBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
+		olc::Renderer::ptrPGE->DrawLine(intUpperBody - olc::vi2d{ lineHalfLength, 0 }, intUpperBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
 	}
 }

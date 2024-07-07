@@ -19,18 +19,12 @@ namespace RB::Players
 
 	void PlayerCollider::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr)
-		{
-			return;
-		}
 
-		//temp
-		_UpdateBodyParts();
 	}
 
 	void PlayerCollider::OnFixedUpdate()
 	{
-		
+		_UpdateBodyParts();
 
 		_UpdateAABBOnPlayerPos();
 
@@ -152,6 +146,7 @@ namespace RB::Players
 		_bodyParts[0] = lowerBodyY;
 		_bodyParts[1] = upperBodyY;
 
+		/*
 		olc::vf2d relLowerBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ pos.x, _bodyParts[0] });
 		olc::vi2d intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };
 
@@ -164,5 +159,6 @@ namespace RB::Players
 
 		olc::Renderer::ptrPGE->DrawLine(intLowerBody - olc::vi2d{ lineHalfLength, 0 }, intLowerBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
 		olc::Renderer::ptrPGE->DrawLine(intUpperBody - olc::vi2d{ lineHalfLength, 0 }, intUpperBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
+		*/
 	}
 }

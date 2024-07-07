@@ -21,5 +21,6 @@ namespace RB::Players
 		virtual bool IsCollidingAgainstOtherPlayer() = 0;
 		virtual const RB::Collisions::AABB& GetAABB() = 0;
 		virtual RB::Collisions::AABB* GetAABB_ptr() = 0;
+		virtual float* GetBodyParts() = 0;
 	};
 }

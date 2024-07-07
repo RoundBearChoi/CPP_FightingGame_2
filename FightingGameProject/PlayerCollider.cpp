@@ -65,6 +65,11 @@ namespace RB::Players
 		return &_aabb;
 	}
 
+	float* PlayerCollider::GetBodyParts()
+	{
+		return _bodyParts;
+	}
+
 	void PlayerCollider::_UpdateAABBOnPlayerPos()
 	{
 		olc::vf2d bottomCenter = _player->GetPosition();

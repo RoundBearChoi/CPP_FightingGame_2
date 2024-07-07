@@ -35,6 +35,8 @@ namespace RB::Render
 		_playerHBoxRenderer.OnUpdate();
 		_playerPositionRenderer.OnUpdate();
 		_playerInputRenderer.OnUpdate();
+
+		_RenderBodyParts();
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
@@ -48,5 +50,24 @@ namespace RB::Render
 	void PlayerDebugController::RenderPlayerBox(bool render)
 	{
 		_playerBoxRenderer.RenderPlayerBox(render);
+	}
+
+	void PlayerDebugController::_RenderBodyParts()
+	{
+		if (RB::Players::iPlayerController::Get() == nullptr)
+		{
+			return;
+		}
+
+		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+
+		RB::Players::iPlayerCollider* col1 = p1->GetPlayerCollider();
+		RB::Players::iPlayerCollider* col2 = p2->GetPlayerCollider();
+
+		float* b1 = col1->GetBodyParts();
+		
+		float lowerBody = b1[0];
+		float upperBody = b1[1];
 	}
 }

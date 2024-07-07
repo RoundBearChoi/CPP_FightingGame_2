@@ -31,6 +31,7 @@ namespace RB::Players
 		bool IsCollidingAgainstOtherPlayer() override;
 		const RB::Collisions::AABB& GetAABB() override;
 		RB::Collisions::AABB* GetAABB_ptr() override;
+		float* GetBodyParts() override;
 
 	private:
 		void _UpdateAABBOnPlayerPos();

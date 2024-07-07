@@ -37,7 +37,7 @@ namespace RB::PlayerStateComponents
 		if (_HitDetected(collisionResult))
 		{
 			//check max hit count
-			const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(collisionResult.mOwnerSpriteType);
+			const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(collisionResult.mAttackerSpriteType);
 
 			if (_hits == 0 || _fixedUpdatesSinceLastHit > attackSpecs.mMinimumFixedUpdatesSinceHit)
 			{
@@ -110,10 +110,10 @@ namespace RB::PlayerStateComponents
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
-					collisionResult.mOwner = owner;
+					collisionResult.mAttacker = owner;
 					collisionResult.mTarget = target;
 					collisionResult.mCollisionPoint = col;
-					collisionResult.mOwnerSpriteType = ownerSpriteType;
+					collisionResult.mAttackerSpriteType = ownerSpriteType;
 
 					return true;
 				}
@@ -127,11 +127,11 @@ namespace RB::PlayerStateComponents
 	{
 		//register attack
 		RB::Collisions::AttackRegister reg;
-		reg.attacker = collisionResult.mOwner;
+		reg.attacker = collisionResult.mAttacker;
 		reg.target = collisionResult.mTarget;
 		reg.collisionPoint = collisionResult.mCollisionPoint;
-		reg.attackerSpriteType = collisionResult.mOwnerSpriteType;
-		reg.targetIsOnRightSide = collisionResult.mOwner->OtherPlayerIsOnRightSide();
+		reg.attackerSpriteType = collisionResult.mAttackerSpriteType;
+		reg.targetIsOnRightSide = collisionResult.mAttacker->OtherPlayerIsOnRightSide();
 		reg.attackCollisionYType = _GetAttackCollisionYType(collisionResult.mTarget, collisionResult.mCollisionPoint);
 
 		RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
@@ -142,7 +142,7 @@ namespace RB::PlayerStateComponents
 		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 		std::cout << "fixedupdates since last hit: " << _fixedUpdatesSinceLastHit << std::endl;
 		std::cout << "hit count: " << _hits << std::endl;
-		std::cout << "player " << collisionResult.mOwner->GetPlayerID_int() << " hit player " << collisionResult.mTarget->GetPlayerID_int() << std::endl;
+		std::cout << "player " << collisionResult.mAttacker->GetPlayerID_int() << " hit player " << collisionResult.mTarget->GetPlayerID_int() << std::endl;
 		std::cout << std::endl;
 	}
 

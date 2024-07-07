@@ -1,8 +1,8 @@
 #pragma once
 
 #include "iUpdaterObj.h"
-#include "string"
 
+#include "string"
 #include "HBoxType.h"
 
 namespace RB::Updaters

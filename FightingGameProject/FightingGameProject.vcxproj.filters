@@ -882,5 +882,8 @@
     <ClInclude Include="HBoxEditorUpdaterBase.h">
       <Filter>Source Files\Updaters</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionType.h">
+      <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

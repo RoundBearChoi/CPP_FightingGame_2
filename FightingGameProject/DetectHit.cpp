@@ -164,7 +164,6 @@ namespace RB::PlayerStateComponents
 		std::cout << "attackerID: " << reg.attacker->GetPlayerID_int() << std::endl;
 		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 		std::cout << "hit count: " << _hits << std::endl;
-		//std::cout << "player " << collisionResult.mAttacker->GetPlayerID_int() << " hit player " << collisionResult.mTarget->GetPlayerID_int() << std::endl;
 		std::cout << "collisionType: " << std::to_string((int)collisionResult.mCollisionType) << std::endl;
 	}
 

@@ -72,9 +72,6 @@ namespace RB::Render
 		RB::Players::iPlayerCollider* col = player->GetPlayerCollider();
 
 		float* parts = col->GetBodyParts();
-		
-		//float lowerBody = parts[0];
-		//float upperBody = parts[1];
 
 		olc::vf2d relLowerBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[0]});
 		olc::vi2d intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };

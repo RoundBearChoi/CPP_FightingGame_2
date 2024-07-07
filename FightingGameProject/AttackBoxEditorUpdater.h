@@ -6,8 +6,8 @@ namespace RB::Updaters
 {
 	class AttackBoxEditorUpdater : public HBoxEditorUpdaterBase
 	{
-		public:
-			AttackBoxEditorUpdater();
-			~AttackBoxEditorUpdater() = default;
+	public:
+		AttackBoxEditorUpdater();
+		~AttackBoxEditorUpdater() = default;
 	};
 }

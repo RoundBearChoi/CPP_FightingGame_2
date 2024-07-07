@@ -21,6 +21,7 @@ namespace RB::HBox
 		void OnFixedUpdate() override;
 
 		void ShowNotification() override;
+		void SetPageTitle(std::string title) override;
 
 	private:
 		const std::string& _GetFrameName();
@@ -30,6 +31,7 @@ namespace RB::HBox
 		void _ShowSavedNotification();
 
 		std::string _none = "none";
+		std::string _pageTitle = "HBoxEditor";
 		RB::Render::Notification _notification;
 	};
 }

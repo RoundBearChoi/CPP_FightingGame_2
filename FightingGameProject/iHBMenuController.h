@@ -11,5 +11,6 @@ namespace RB::HBox
 		virtual void OnFixedUpdate() = 0;
 
 		virtual void ShowNotification() = 0;
+		virtual void SetPageTitle(std::string title) = 0;
 	};
 }

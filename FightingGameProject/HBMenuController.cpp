@@ -25,7 +25,7 @@ namespace RB::HBox
 
 		_ShowSavedNotification();
 
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "HBoxEditor", olc::WHITE, 2);
+		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, _pageTitle, olc::WHITE, 2);
 
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 100 }, "Ins, Del : create/delete box", olc::WHITE);
@@ -66,6 +66,11 @@ namespace RB::HBox
 	void HBMenuController::ShowNotification()
 	{
 		_notification.AddFrameCount(120);
+	}
+
+	void HBMenuController::SetPageTitle(std::string title)
+	{
+		_pageTitle = title;
 	}
 
 	const std::string& HBMenuController::_GetFrameName()

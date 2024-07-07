@@ -1,5 +1,9 @@
 #include "PlayerCollider.h"
 
+#include <cmath>
+
+#include "iCamController.h"
+
 namespace RB::Players
 {
 	void PlayerCollider::Init(iPlayer* owner)
@@ -8,6 +12,9 @@ namespace RB::Players
 
 		_playerBox.mWidth = 62.0f;
 		_playerBox.mHeight = 124.0f;
+
+		_bodyRatio[0] = 0.3f;
+		_bodyRatio[1] = 0.8f;
 	}
 
 	void PlayerCollider::OnUpdate()
@@ -16,10 +23,15 @@ namespace RB::Players
 		{
 			return;
 		}
+
+		//temp
+		_UpdateBodyParts();
 	}
 
 	void PlayerCollider::OnFixedUpdate()
 	{
+		
+
 		_UpdateAABBOnPlayerPos();
 
 		_ResolveCollision();
@@ -120,5 +132,32 @@ namespace RB::Players
 			_player->Move(olc::vf2d{ correction, 0.0f });
 			otherPlayer->Move(olc::vf2d{ -correction, 0.0f });
 		}
+	}
+
+	void PlayerCollider::_UpdateBodyParts()
+	{
+		olc::vf2d pos = _player->GetPosition();
+
+		float lowerBodyLength = _playerBox.mHeight * _bodyRatio[0];
+		float lowerBodyY = std::round(pos.y - lowerBodyLength);
+
+		float upperBodyLength = _playerBox.mHeight * _bodyRatio[1];
+		float upperBodyY = std::round(pos.y - upperBodyLength);
+
+		_bodyParts[0] = lowerBodyY;
+		_bodyParts[1] = upperBodyY;
+
+		olc::vf2d relLowerBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ pos.x, _bodyParts[0] });
+		olc::vi2d intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };
+
+		olc::vf2d relUpperBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ pos.x, _bodyParts[1] });
+		olc::vi2d intUpperBody = { int(round(relUpperBody.x)), int(round(relUpperBody.y)) };
+
+		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
+
+		int lineHalfLength = 50;
+
+		olc::Renderer::ptrPGE->DrawLine(intLowerBody - olc::vi2d{ lineHalfLength, 0 }, intLowerBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
+		olc::Renderer::ptrPGE->DrawLine(intUpperBody - olc::vi2d{ lineHalfLength, 0 }, intUpperBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
 	}
 }

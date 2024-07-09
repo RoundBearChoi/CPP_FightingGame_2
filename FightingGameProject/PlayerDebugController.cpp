@@ -81,7 +81,7 @@ namespace RB::Render
 
 		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 
-		int lineHalfLength = 50;
+		int lineHalfLength = 30;
 
 		olc::Renderer::ptrPGE->DrawLine(intLowerBody - olc::vi2d{ lineHalfLength, 0 }, intLowerBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
 		olc::Renderer::ptrPGE->DrawLine(intUpperBody - olc::vi2d{ lineHalfLength, 0 }, intUpperBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);

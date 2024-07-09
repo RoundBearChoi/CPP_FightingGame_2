@@ -164,11 +164,6 @@ namespace RB::Collisions
 		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
-
-		//RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
-		//std::string str = spriteType._to_string();
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + str, olc::YELLOW);
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW);
 	}
 
 	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)

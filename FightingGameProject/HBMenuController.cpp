@@ -1,7 +1,9 @@
 #include "HBMenuController.h"
 
 #include "PlayerState.h"
+
 #include "GetCurrentSpriteType.h"
+#include "GetCurrentAnimationFrame.h"
 
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
@@ -37,7 +39,7 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
-		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW, { 0.6f,0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 140 }, "FrameName: " + _GetFrameName(), olc::YELLOW, { 0.6f, 0.6f });
 
 		RB::HBox::Loaded_HB_Data* data = _GetHBData();
@@ -47,7 +49,7 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1));
 
 		if (AABBs == nullptr)
 		{
@@ -83,32 +85,18 @@ namespace RB::HBox
 			return _none;
 		}
 
-		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1));
 
 		if (AABBs == nullptr)
 		{
 			// create empty set
 			data->AddSet(AABB_Set{ "frame_0" });
 
-			AABBs = data->GetHBoxDataByFrame(_GetCurrentAnimationFrame());
+			AABBs = data->GetHBoxDataByFrame(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1));
 			//return _none;
 		}
 
 		return AABBs->GetFrameName();
-	}
-
-	unsigned int HBMenuController::_GetCurrentAnimationFrame()
-	{
-		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
-
-		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, spriteType);
-
-		if (obj == nullptr)
-		{
-			return 0;
-		}
-
-		return obj->GetCurrentIndex();
 	}
 
 	RB::HBox::Loaded_HB_Data* HBMenuController::_GetHBData()

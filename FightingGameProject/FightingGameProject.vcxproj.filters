@@ -394,6 +394,9 @@
     <ClCompile Include="GetCurrentSpriteType.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="GetCurrentAnimationFrame.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -889,6 +892,9 @@
       <Filter>Source Files\Collisions</Filter>
     </ClInclude>
     <ClInclude Include="GetCurrentSpriteType.h">
+      <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="GetCurrentAnimationFrame.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>

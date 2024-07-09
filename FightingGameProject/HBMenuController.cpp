@@ -27,25 +27,16 @@ namespace RB::HBox
 
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 30 }, _pageTitle, olc::GREEN, { 1.2f, 1.2f });
 
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 50 }, "PgUp, PgDown : prev/next frame", olc::WHITE, { 0.6f, 0.6f });
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 100 }, "Ins, Del : create/delete box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 60 }, "Ins, Del : create/delete box", olc::WHITE, { 0.6f, 0.6f });
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 120 }, "O, P : prev/next box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 70 }, "O, P : prev/next box", olc::WHITE, {0.6f, 0.6f});
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 140 }, "WASD : move box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 80 }, "WASD : move box", olc::WHITE, { 0.6f, 0.6f });
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data (saves the entire set)", olc::WHITE);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
 		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType();
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 300 }, "animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW, { 0.6f,0.6f });
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 320 }, "FrameName: " + _GetFrameName(), olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 140 }, "FrameName: " + _GetFrameName(), olc::YELLOW, { 0.6f, 0.6f });
 
 		RB::HBox::Loaded_HB_Data* data = _GetHBData();

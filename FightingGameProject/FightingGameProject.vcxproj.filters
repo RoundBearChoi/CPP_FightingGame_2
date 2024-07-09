@@ -388,6 +388,9 @@
     <ClCompile Include="HBoxEditorUpdaterBase.cpp">
       <Filter>Source Files\Updaters</Filter>
     </ClCompile>
+    <ClCompile Include="DisplaySize.cpp">
+      <Filter>Source Files\RB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">

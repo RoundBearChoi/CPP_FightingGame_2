@@ -152,6 +152,7 @@
     <ClCompile Include="CircleRenderer.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
     <ClCompile Include="DetectHit.cpp" />
+    <ClCompile Include="DisplaySize.cpp" />
     <ClCompile Include="DoNotFixDirectionDuringState.cpp" />
     <ClCompile Include="FixSpecialMoveStatusDuringState.cpp" />
     <ClCompile Include="FixWincingStatusDuringState.cpp" />

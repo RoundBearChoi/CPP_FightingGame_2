@@ -2,6 +2,7 @@
 
 #include "PlayerState.h"
 #include "Time.h"
+#include "GetCurrentSpriteType.h"
 
 #include "iPlayerController.h"
 #include "iPlayerBoxDataController.h"
@@ -93,11 +94,13 @@ namespace RB::Collisions
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
 
+		RB::Sprites::SpriteType currSpriteType = RB::Sprites::GetCurrentSpriteType(id);
+
 		if (insButton.bPressed)
 		{
 			if (currentSpecs == nullptr)
 			{
-				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), _GetCurrentSpriteType(id), RB::Players::iPlayerController::Get()->GetPlayerOnID(id)->GetCharacterType());
+				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, RB::Players::iPlayerController::Get()->GetPlayerOnID(id)->GetCharacterType());
 			}
 			else
 			{
@@ -123,7 +126,7 @@ namespace RB::Collisions
 			else
 			{
 				RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(_GetCharacterType(id));
-				loaded->EraseSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
+				loaded->EraseSpecs(RB::Sprites::GetCurrentSpriteType(id), _GetCurrentFrame(id));
 				loaded->RefreshIterators();
 			}
 		}
@@ -148,7 +151,6 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::_ShowMenu()
 	{
-		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "PlayerBoxEditor", olc::WHITE, 2);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 30 }, "PlayerBoxEditor", olc::GREEN, { 1.2f, 1.2f });
 
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 50 }, "PgUp, PgDown : prev/next frame", olc::WHITE, { 0.6f, 0.6f });
@@ -157,7 +159,7 @@ namespace RB::Collisions
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
-		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
+		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
 		std::string str = spriteType._to_string();
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + str, olc::YELLOW);
 		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW);
@@ -181,7 +183,7 @@ namespace RB::Collisions
 			return nullptr;
 		}
 	
-		RB::Collisions::PlayerBox* box = loaded->GetSpecs(_GetCurrentSpriteType(id), _GetCurrentFrame(id));
+		RB::Collisions::PlayerBox* box = loaded->GetSpecs(RB::Sprites::GetCurrentSpriteType(id), _GetCurrentFrame(id));
 	
 		return box;
 	}
@@ -204,7 +206,7 @@ namespace RB::Collisions
 			return nullptr;
 		}
 
-		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(_GetCurrentSpriteType(id));
+		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(RB::Sprites::GetCurrentSpriteType(id));
 
 		return specs;
 	}
@@ -218,23 +220,23 @@ namespace RB::Collisions
 		return characterType;
 	}
 
-	RB::Sprites::SpriteType PlayerBoxEditController::_GetCurrentSpriteType(RB::Players::PlayerID id)
-	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(id);
-
-		if (state == nullptr)
-		{
-			return RB::Sprites::SpriteType::NONE;
-		}
-
-		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
-
-		return spriteType;
-	}
+	//RB::Sprites::SpriteType PlayerBoxEditController::_GetCurrentSpriteType(RB::Players::PlayerID id)
+	//{
+	//	RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(id);
+	//
+	//	if (state == nullptr)
+	//	{
+	//		return RB::Sprites::SpriteType::NONE;
+	//	}
+	//
+	//	RB::Sprites::SpriteType spriteType = state->GetSpriteType();
+	//
+	//	return spriteType;
+	//}
 
 	unsigned int PlayerBoxEditController::_GetCurrentFrame(RB::Players::PlayerID id)
 	{
-		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType(id);
+		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(id);
 
 		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(id, spriteType);
 

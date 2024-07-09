@@ -54,7 +54,7 @@ namespace RB::Updaters
 		RB::Render::PlayerDebugController* playerDebugController = RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 		RB::Cam::CamController* camController = RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());
-		camController->SetZoom(1.75f);
+		camController->SetZoom(1.0f);
 	}
 
 	void HBoxEditorUpdaterBase::OnUpdate()

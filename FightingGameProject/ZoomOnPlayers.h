@@ -5,7 +5,7 @@ namespace RB::Cam
 	class ZoomOnPlayers
 	{
 	public:
-		ZoomOnPlayers() = default;
+		ZoomOnPlayers();
 		~ZoomOnPlayers() = default;
 
 	public:
@@ -17,8 +17,8 @@ namespace RB::Cam
 		void _AutoZoom(float playerDistSq);
 
 	private:
-		float _maxDist = 1600.0f;
-		float _minZoomOut = 0.5f;
-		float _maxZoomIn = 1.25f;
+		float _maxPlayerDist = 0.0f;
+		float _maxZoomOut = 0.0f;
+		float _maxZoomIn = 0.0f;
 	};
 }

@@ -3,6 +3,6 @@
 namespace RB
 {
 	//global variables
-	static int displayWidth = 854;
-	static int displayHeight = 480;
+	static int displayWidth = 512;
+	static int displayHeight = 240;
 }

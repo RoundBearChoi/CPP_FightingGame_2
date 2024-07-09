@@ -9,7 +9,7 @@ namespace RB::Cam
 	void FollowPlayers::Init(iCamObj* cam)
 	{
 		_camObj = cam;
-		_maxDist = 50.0f;
+		_maxDist = 80.0f;
 	}
 
 	void FollowPlayers::OnUpdate()
@@ -77,6 +77,6 @@ namespace RB::Cam
 		float lerped = std::lerp(curr, result, ease * 0.03f);
 
 		//y should be dynamic.. but for now
-		_camObj->SetPosition(olc::vf2d{ lerped, -200.0f });
+		_camObj->SetPosition(olc::vf2d{ lerped, -115.0f });
 	}
 }

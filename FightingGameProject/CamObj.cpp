@@ -111,9 +111,9 @@ namespace RB::Cam
 			_zoom -= RB::Frames::Time::GetDeltaTime() * _zoomSpeed;
 		}
 
-		if (_zoom < 0.01f)
+		if (_zoom < 0.0001f)
 		{
-			_zoom = 0.01f;
+			_zoom = 0.0001f;
 		}
 	}
 

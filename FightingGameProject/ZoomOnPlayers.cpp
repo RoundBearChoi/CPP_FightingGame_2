@@ -7,6 +7,12 @@
 
 namespace RB::Cam
 {
+	ZoomOnPlayers::ZoomOnPlayers()
+	{
+		_maxPlayerDist = 2000.0f;
+		_maxZoomOut = 0.2f;
+		_maxZoomIn = 0.6f;
+	}
 	void ZoomOnPlayers::Init()
 	{
 
@@ -47,22 +53,22 @@ namespace RB::Cam
 			return;
 		}
 
-		float maxSq = _maxDist * _maxDist;
+		float maxSq = _maxPlayerDist * _maxPlayerDist;
 
 		if (playerDistSq >= maxSq)
 		{
 			playerDistSq = maxSq;
 		}
 
-		float t = /*1.0f -*/ (playerDistSq / maxSq);
+		float t = playerDistSq / maxSq;
 
 		float result = RB::EaseEquations::Ease::EaseOutSine(t);
 
 		float zoom = _maxZoomIn * result;
 
-		if (zoom <= _minZoomOut)
+		if (zoom <= _maxZoomOut)
 		{
-			zoom = _minZoomOut;
+			zoom = _maxZoomOut;
 		}
 
 		RB::Cam::iCamController::Get()->SetZoom(zoom);

@@ -109,7 +109,7 @@ namespace RB
 
 		void Run()
 		{
-			if (Construct(displayWidth, displayHeight, 1, 1))
+			if (Construct(displayWidth, displayHeight, 1, 1, false, false, false))
 			{
 				Start();
 			}

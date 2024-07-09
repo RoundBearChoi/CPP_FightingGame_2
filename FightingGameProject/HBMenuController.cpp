@@ -97,20 +97,6 @@ namespace RB::HBox
 		return AABBs->GetFrameName();
 	}
 
-	//RB::Sprites::SpriteType HBMenuController::_GetCurrentSpriteType()
-	//{
-	//	RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(0);
-	//	RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
-	//
-	//	if (state == nullptr)
-	//	{
-	//		return RB::Sprites::SpriteType::NONE;
-	//	}
-	//
-	//	state->GetSpriteType();
-	//	return state->GetSpriteType();
-	//}
-
 	unsigned int HBMenuController::_GetCurrentAnimationFrame()
 	{
 		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);

@@ -51,7 +51,8 @@ namespace RB::Frames
 
 		void ShowFixedUpdateCount()
 		{
-			olc::Renderer::ptrPGE->DrawString({3, 3}, "FixedUpdate Count: " + std::to_string(_fixedUpdateCountPerSec), olc::WHITE);
+			//olc::Renderer::ptrPGE->DrawString({1, 1}, "FixedUpdate Count: " + std::to_string(_fixedUpdateCountPerSec), olc::WHITE);
+			olc::Renderer::ptrPGE->DrawStringDecal({ 3, 3 }, "FixedUpdate Count: " + std::to_string(_fixedUpdateCountPerSec), olc::WHITE, { 0.7f, 0.7f });
 		}
 
 	private:

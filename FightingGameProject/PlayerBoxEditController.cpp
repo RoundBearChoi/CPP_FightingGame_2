@@ -2,7 +2,9 @@
 
 #include "PlayerState.h"
 #include "Time.h"
+
 #include "GetCurrentSpriteType.h"
+#include "GetCurrentAnimationFrame.h"
 
 #include "iPlayerController.h"
 #include "iPlayerBoxDataController.h"
@@ -100,15 +102,15 @@ namespace RB::Collisions
 		{
 			if (currentSpecs == nullptr)
 			{
-				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, RB::Players::iPlayerController::Get()->GetPlayerOnID(id)->GetCharacterType());
+				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, RB::Players::iPlayerController::Get()->GetPlayerOnID(id)->GetCharacterType());
 			}
 			else
 			{
-				PlayerBox* existingBox = currentSpecs->GetBox_ptr(_GetCurrentFrame(id));
+				PlayerBox* existingBox = currentSpecs->GetBox_ptr(RB::Sprites::GetCurrentAnimationFrame(id));
 
 				if (existingBox == nullptr)
 				{
-					currentSpecs->AddBox(PlayerBox(_GetCurrentFrame(id), 0.0f, 0.0f, 62.0f, 124.0f));
+					currentSpecs->AddBox(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f));
 				}
 				else
 				{
@@ -126,7 +128,7 @@ namespace RB::Collisions
 			else
 			{
 				RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(_GetCharacterType(id));
-				loaded->EraseSpecs(RB::Sprites::GetCurrentSpriteType(id), _GetCurrentFrame(id));
+				loaded->EraseSpecs(RB::Sprites::GetCurrentSpriteType(id), RB::Sprites::GetCurrentAnimationFrame(id));
 				loaded->RefreshIterators();
 			}
 		}
@@ -160,9 +162,13 @@ namespace RB::Collisions
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
 		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
-		std::string str = spriteType._to_string();
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + str, olc::YELLOW);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(_GetCurrentFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW);
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
+
+		//RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
+		//std::string str = spriteType._to_string();
+		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 260 }, "current animation: " + str, olc::YELLOW);
+		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 280 }, "current animation frame: " + std::to_string(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW);
 	}
 
 	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)
@@ -183,7 +189,7 @@ namespace RB::Collisions
 			return nullptr;
 		}
 	
-		RB::Collisions::PlayerBox* box = loaded->GetSpecs(RB::Sprites::GetCurrentSpriteType(id), _GetCurrentFrame(id));
+		RB::Collisions::PlayerBox* box = loaded->GetSpecs(RB::Sprites::GetCurrentSpriteType(id), RB::Sprites::GetCurrentAnimationFrame(id));
 	
 		return box;
 	}
@@ -218,21 +224,5 @@ namespace RB::Collisions
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
 		return characterType;
-	}
-
-	unsigned int PlayerBoxEditController::_GetCurrentFrame(RB::Players::PlayerID id)
-	{
-		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(id);
-
-		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(id, spriteType);
-
-		if (iAniObj == nullptr)
-		{
-			return 0;
-		}
-
-		unsigned int animationIndex = iAniObj->GetCurrentIndex();
-
-		return animationIndex;
 	}
 }

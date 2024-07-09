@@ -148,13 +148,14 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::_ShowMenu()
 	{
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "PlayerBoxEditor", olc::WHITE, 2);
+		//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 320, 20 }, "PlayerBoxEditor", olc::WHITE, 2);
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 30 }, "PlayerBoxEditor", olc::GREEN, { 1.2f, 1.2f });
 
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 80 }, "PgUp, PgDown : prev/next frame", olc::WHITE);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 100 }, "Ins, Del : create/delete box", olc::WHITE);
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 50 }, "PgUp, PgDown : prev/next frame", olc::WHITE, { 0.6f, 0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 60 }, "Ins, Del : create/delete box", olc::WHITE, { 0.6f, 0.6f });
 
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 160 }, "UHJK : enlarge/shrink box", olc::WHITE);
-		olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 180 }, "ENTER : save data", olc::WHITE);
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
 		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
 		std::string str = spriteType._to_string();

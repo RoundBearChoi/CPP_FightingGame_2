@@ -1,6 +1,7 @@
 #include "HBMenuController.h"
 
 #include "PlayerState.h"
+#include "GetCurrentSpriteType.h"
 
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
@@ -34,7 +35,7 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
-		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType();
+		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(_GetCurrentAnimationFrame()), olc::YELLOW, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 140 }, "FrameName: " + _GetFrameName(), olc::YELLOW, { 0.6f, 0.6f });
@@ -96,23 +97,23 @@ namespace RB::HBox
 		return AABBs->GetFrameName();
 	}
 
-	RB::Sprites::SpriteType HBMenuController::_GetCurrentSpriteType()
-	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(0);
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
-
-		if (state == nullptr)
-		{
-			return RB::Sprites::SpriteType::NONE;
-		}
-
-		state->GetSpriteType();
-		return state->GetSpriteType();
-	}
+	//RB::Sprites::SpriteType HBMenuController::_GetCurrentSpriteType()
+	//{
+	//	RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(0);
+	//	RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
+	//
+	//	if (state == nullptr)
+	//	{
+	//		return RB::Sprites::SpriteType::NONE;
+	//	}
+	//
+	//	state->GetSpriteType();
+	//	return state->GetSpriteType();
+	//}
 
 	unsigned int HBMenuController::_GetCurrentAnimationFrame()
 	{
-		RB::Sprites::SpriteType spriteType = _GetCurrentSpriteType();
+		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
 
 		RB::Render::iAnimationObj* obj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, spriteType);
 
@@ -134,14 +135,14 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iTargetBoxDataController::Get()->GetData(_GetCurrentSpriteType());
+				data = RB::HBox::iTargetBoxDataController::Get()->GetData(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
 			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
 			{
-				data = RB::HBox::iAttackBoxDataController::Get()->GetData(_GetCurrentSpriteType());
+				data = RB::HBox::iAttackBoxDataController::Get()->GetData(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
 			}
 		}
 
@@ -161,7 +162,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
 			{
-				const std::string& path = RB::HBox::iTargetBoxDataController::Get()->GetPath(_GetCurrentSpriteType());
+				const std::string& path = RB::HBox::iTargetBoxDataController::Get()->GetPath(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}
@@ -169,7 +170,7 @@ namespace RB::HBox
 		{
 			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
 			{
-				const std::string& path = RB::HBox::iAttackBoxDataController::Get()->GetPath(_GetCurrentSpriteType());
+				const std::string& path = RB::HBox::iAttackBoxDataController::Get()->GetPath(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

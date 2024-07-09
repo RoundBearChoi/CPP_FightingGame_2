@@ -160,6 +160,7 @@
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="CurrentUpdater.cpp" />
+    <ClCompile Include="GetCurrentSpriteType.cpp" />
     <ClCompile Include="HBoxEditorUpdaterBase.cpp" />
     <ClCompile Include="LoadedPlayerBoxData.cpp" />
     <ClCompile Include="Loaded_HB_Data.cpp" />
@@ -258,6 +259,7 @@
     <ClInclude Include="AnimationContainer.h" />
     <ClInclude Include="CollisionType.h" />
     <ClInclude Include="CurrentUpdater.h" />
+    <ClInclude Include="GetCurrentSpriteType.h" />
     <ClInclude Include="HBoxEditorUpdaterBase.h" />
     <ClInclude Include="iUpdater.h" />
     <ClInclude Include="RenderLayerType.h" />

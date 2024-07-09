@@ -391,6 +391,9 @@
     <ClCompile Include="DisplaySize.cpp">
       <Filter>Source Files\RB</Filter>
     </ClCompile>
+    <ClCompile Include="GetCurrentSpriteType.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -884,6 +887,9 @@
     </ClInclude>
     <ClInclude Include="CollisionType.h">
       <Filter>Source Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="GetCurrentSpriteType.h">
+      <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

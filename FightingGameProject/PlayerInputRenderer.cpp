@@ -9,8 +9,8 @@ namespace RB::Render
 
 	void PlayerInputRenderer::OnUpdate()
 	{
-		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 50);
-		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 100);
+		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 30);
+		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 60);
 	}
 
 	void PlayerInputRenderer::OnFixedUpdate()
@@ -65,7 +65,7 @@ namespace RB::Render
 				tint = olc::YELLOW;
 			}
 
-			_RenderIcon(_GetSpriteType((*i)->GetPlayerInputType()), olc::vi2d(5 + (count * 30 + 5), yPos), tint);
+			_RenderIcon(_GetSpriteType((*i)->GetPlayerInputType()), olc::vi2d(5 + (count * 21 + 3), yPos), tint);
 
 			count++;
 		}
@@ -73,7 +73,7 @@ namespace RB::Render
 
 	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteType spriteType, olc::vi2d pos, olc::Pixel tint)
 	{
-		_spriteContainer->RenderSprite(spriteType, olc::vi2d{ 25, 25 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
+		_spriteContainer->RenderSprite(spriteType, olc::vi2d{ 17, 17 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
 	}
 
 	RB::Sprites::SpriteType PlayerInputRenderer::_GetSpriteType(const RB::Input::PlayerInput& playerInput)

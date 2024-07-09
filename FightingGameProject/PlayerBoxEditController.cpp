@@ -220,20 +220,6 @@ namespace RB::Collisions
 		return characterType;
 	}
 
-	//RB::Sprites::SpriteType PlayerBoxEditController::_GetCurrentSpriteType(RB::Players::PlayerID id)
-	//{
-	//	RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(id);
-	//
-	//	if (state == nullptr)
-	//	{
-	//		return RB::Sprites::SpriteType::NONE;
-	//	}
-	//
-	//	RB::Sprites::SpriteType spriteType = state->GetSpriteType();
-	//
-	//	return spriteType;
-	//}
-
 	unsigned int PlayerBoxEditController::_GetCurrentFrame(RB::Players::PlayerID id)
 	{
 		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(id);

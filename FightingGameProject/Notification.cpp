@@ -8,7 +8,8 @@ namespace RB::Render
 	{
 		if (_frameCount > 0)
 		{
-			olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, message, olc::GREEN);
+			//olc::Renderer::ptrPGE->DrawString(olc::vi2d{ 10, 200 }, message, olc::GREEN);
+			olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 170 }, message, olc::GREEN, { 0.85f, 0.85f });
 		}
 	}
 

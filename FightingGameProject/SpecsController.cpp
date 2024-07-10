@@ -45,28 +45,29 @@ namespace RB::Players::Specs
 	{
 		std::string str = RB::JSON::LoadJSONFile(path);
 		json_value_s* jRoot = json_parse(str.c_str(), str.length());
-
 		json_object_s* jObj = json_value_as_object(jRoot);
 
-		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
+		std::vector<json_object_element_s*> vecAll = RB::JSON::GetAllElements(jObj);
 
-		json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //first element
-		float walk_Forward_Speed = RB::JSON::GetFloat_FromElement(*e0);
+		//json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
 
-		json_object_element_s* e1 = e0->next;
-		float walk_Back_Speed = RB::JSON::GetFloat_FromElement(*e1);
+		//json_object_element_s* e0 = RB::JSON::GetElementInsideElement(*rootElement); //first element
+		float walk_Forward_Speed = RB::JSON::GetFloat_FromElement(*vecAll[0]);
 
-		json_object_element_s* e2 = e1->next;
-		int jumpUp_totalFrames = RB::JSON::GetInt_FromElement(*e2);
+		//json_object_element_s* e1 = e0->next;
+		float walk_Back_Speed = RB::JSON::GetFloat_FromElement(*vecAll[1]);
 
-		json_object_element_s* e3 = e2->next;
-		float jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*e3); 
+		//json_object_element_s* e2 = e1->next;
+		int jumpUp_totalFrames = RB::JSON::GetInt_FromElement(*vecAll[2]);
 
-		json_object_element_s* e4 = e3->next;
-		int jumpUp_Forward_totalFrames = RB::JSON::GetInt_FromElement(*e4);
+		//json_object_element_s* e3 = e2->next;
+		float jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*vecAll[3]);
 
-		json_object_element_s* e5 = e4->next;
-		float jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*e5);
+		//json_object_element_s* e4 = e3->next;
+		int jumpUp_Forward_totalFrames = RB::JSON::GetInt_FromElement(*vecAll[4]);
+
+		//json_object_element_s* e5 = e4->next;
+		float jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*vecAll[5]);
 
 		MoveSpecs specs;
 		specs.mCharacterType = characterType;

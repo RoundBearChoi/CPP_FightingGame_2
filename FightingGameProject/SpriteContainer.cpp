@@ -31,7 +31,7 @@ namespace RB::Sprites
 			return;
 		}
 
-		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType); //_loader.GetLoadedSprite(spriteType);
+		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType);
 
 		olc::vf2d half = widthHeight * 0.5f;
 

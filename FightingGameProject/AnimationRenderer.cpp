@@ -2,6 +2,8 @@
 
 #include "iCamController.h"
 
+#include "GetQuadOnPivot.h"
+
 namespace RB::Render
 {
 	AnimationRenderer::AnimationRenderer(AnimationSpecs specs)
@@ -41,6 +43,9 @@ namespace RB::Render
 		float height = renderSettings.mRenderSize.y * zoom;
 
 		// this is assuming every pivot on an animation obj is on bottom center
+		//std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(RB::Sprites::PivotType::BOTTOM_CENTER, width, height, { x, y });
+		//points = flip(points) if !mFaceRight
+
 		if (renderSettings.mFaceRight)
 		{
 			x += renderSettings.mRenderOffset.x * zoom;

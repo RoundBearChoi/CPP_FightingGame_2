@@ -7,13 +7,13 @@
 
 namespace RB::JSON
 {
-	std::string LoadJSONFile(std::string jsonFilePath);
-	json_object_element_s* GetElementNFromObj(const json_object_s& obj, size_t index);
-	json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement);
-	int GetInt_FromElement(const json_object_element_s& element);
-	float GetFloat_FromElement(const json_object_element_s& element);
-	std::string GetString_FromElement(const json_object_element_s& element);
-	std::vector<json_object_element_s*> GetAllElements(json_object_s* jObj);
+	extern std::string LoadJSONFile(std::string jsonFilePath);
+	extern json_object_element_s* GetElementNFromObj(const json_object_s& obj, size_t index);
+	extern json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement);
+	extern int GetInt_FromElement(const json_object_element_s& element);
+	extern float GetFloat_FromElement(const json_object_element_s& element);
+	extern std::string GetString_FromElement(const json_object_element_s& element);
+	extern std::vector<json_object_element_s*> GetAllElements(json_object_s* jObj);
 
-	unsigned int ParseFrame(const std::string& str);
+	extern unsigned int ParseFrame(const std::string& str);
 }

@@ -26,9 +26,9 @@ namespace RB::Sprites
 		return loaded;
 	}
 
-	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
+	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool isWorldSpace)
 	{
-		if (RB::Cam::iCamController::Get() == nullptr && useWorldSpace)
+		if (RB::Cam::iCamController::Get() == nullptr && isWorldSpace)
 		{
 			return;
 		}
@@ -37,7 +37,7 @@ namespace RB::Sprites
 
 		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(pivotType, width, height, pos);
 
-		if (useWorldSpace)
+		if (isWorldSpace)
 		{
 			for (auto i = points.begin(); i != points.end(); i++)
 			{

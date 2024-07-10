@@ -28,7 +28,7 @@ namespace RB::Render
 		void _SetNewPlayerAnimationObjOnChange(RB::Players::iPlayer& player);
 		RB::Sprites::SpriteType _GetPlayerSpriteType(RB::Players::PlayerID playerID);
 		void _SaveAnimationSpecs(std::string path, AnimationSpecs specs);
-		AnimationSpecs _GetAnimationSpecs(std::string path);
+		AnimationSpecs _LoadAnimationSpecsFromJSON(std::string path);
 
 	private:
 		AnimationContainer _animationContainer;

@@ -28,7 +28,7 @@ namespace RB::Sprites
 
 	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
 	{
-		if (RB::Cam::iCamController::Get() == nullptr)
+		if (RB::Cam::iCamController::Get() == nullptr && useWorldSpace)
 		{
 			return;
 		}

@@ -6,7 +6,6 @@ namespace RB::Background
 {
 	BackgroundObj::BackgroundObj(std::string path, RB::Sprites::SpriteType spriteType, float percentage)
 	{
-		//_renderSize = olc::vf2d{ 1152.0f, 736.0f };
 		_imageWidth = 288;
 		_imageHeight = 184;
 		_renderScale = 4.0f;

@@ -3,7 +3,7 @@
 	olcPixelGameEngine.h
 
 	+-------------------------------------------------------------+
-	|           OneLoneCoder Pixel Game Engine v2.23              |
+	|           OneLoneCoder Pixel Game Engine v2.25              |
 	|  "What do you need? Pixels... Lots of Pixels..." - javidx9  |
 	+-------------------------------------------------------------+
 
@@ -193,11 +193,11 @@
 	Special thanks to my Patreons too - I wont name you on here, but I've
 	certainly enjoyed my tea and flapjacks :D
 
-
+	- In Memory of SaladinAkara 25.06.2023 -
 
 	Author
 	~~~~~~
-	David Barr, aka javidx9, (c) OneLoneCoder 2018, 2019, 2020, 2021, 2022
+	David Barr, aka javidx9, (c) OneLoneCoder 2018, 2019, 2020, 2021, 2022, 2023, 2024
 */
 #pragma endregion
 
@@ -318,6 +318,8 @@
 	2.22: = Fix typo on dragged file buffers for unicode builds
 	2.23: Fixed Emscripten host sizing errors - Thanks Moros
 		  Fixed v2d_generic.clamp() function
+	2.24: Fix FillTexturedTriangle() to remove const-ref
+	2.25: +DrawPolygonDecal(pos, tex, w, col)
 
 	!! Apple Platforms will not see these updates immediately - Sorry, I dont have a mac to test... !!
 	!!   Volunteers willing to help appreciated, though PRs are manually integrated with credit     !!
@@ -397,7 +399,7 @@ int main()
 #include <cstring>
 #pragma endregion
 
-#define PGE_VER 223
+#define PGE_VER 225
 
 // O------------------------------------------------------------------------------O
 // | COMPILER CONFIGURATION ODDITIES                                              |
@@ -578,6 +580,7 @@ namespace olc
 	// O------------------------------------------------------------------------------O
 	// | olc::Pixel - Represents a 32-Bit RGBA colour                                 |
 	// O------------------------------------------------------------------------------O
+#if !defined(OLC_IGNORE_PIXEL)
 	struct Pixel
 	{
 		union
@@ -623,7 +626,7 @@ namespace olc
 		BLUE(0, 0, 255), DARK_BLUE(0, 0, 128), VERY_DARK_BLUE(0, 0, 64),
 		MAGENTA(255, 0, 255), DARK_MAGENTA(128, 0, 128), VERY_DARK_MAGENTA(64, 0, 64),
 		WHITE(255, 255, 255), BLACK(0, 0, 0), BLANK(0, 0, 0, 0);
-
+#endif
 	// Thanks to scripticuk and others for updating the key maps
 	// NOTE: The GLUT platform will need updating, open to contributions ;)
 	enum Key
@@ -865,7 +868,6 @@ namespace olc
 		STENCIL,
 		ILLUMINATE,
 		WIREFRAME,
-		MODEL3D,
 	};
 
 	enum class DecalStructure
@@ -906,10 +908,12 @@ namespace olc
 		std::vector<olc::vf2d> pos;
 		std::vector<olc::vf2d> uv;
 		std::vector<float> w;
+		std::vector<float> z;
 		std::vector<olc::Pixel> tint;
 		olc::DecalMode mode = olc::DecalMode::NORMAL;
 		olc::DecalStructure structure = olc::DecalStructure::FAN;
 		uint32_t points = 0;
+		bool depth = false;
 	};
 
 	struct LayerDesc
@@ -1102,7 +1106,7 @@ namespace olc
 		void FillTriangle(int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, Pixel p = olc::WHITE);
 		void FillTriangle(const olc::vi2d& pos1, const olc::vi2d& pos2, const olc::vi2d& pos3, Pixel p = olc::WHITE);
 		// Fill a textured and coloured triangle
-		void FillTexturedTriangle(const std::vector<olc::vf2d>& vPoints, std::vector<olc::vf2d> vTex, std::vector<olc::Pixel> vColour, olc::Sprite* sprTex);
+		void FillTexturedTriangle(std::vector<olc::vf2d> vPoints, std::vector<olc::vf2d> vTex, std::vector<olc::Pixel> vColour, olc::Sprite* sprTex);
 		void FillTexturedPolygon(const std::vector<olc::vf2d>& vPoints, const std::vector<olc::vf2d>& vTex, const std::vector<olc::Pixel>& vColour, olc::Sprite* sprTex, olc::DecalStructure structure = olc::DecalStructure::LIST);
 		// Draws an entire sprite at location (x,y)
 		void DrawSprite(int32_t x, int32_t y, Sprite* sprite, uint32_t scale = 1, uint8_t flip = olc::Sprite::NONE);
@@ -1154,6 +1158,8 @@ namespace olc
 		void DrawPolygonDecal(olc::Decal* decal, const std::vector<olc::vf2d>& pos, const std::vector<float>& depth, const std::vector<olc::vf2d>& uv, const olc::Pixel tint = olc::WHITE);
 		void DrawPolygonDecal(olc::Decal* decal, const std::vector<olc::vf2d>& pos, const std::vector<olc::vf2d>& uv, const std::vector<olc::Pixel>& tint);
 		void DrawPolygonDecal(olc::Decal* decal, const std::vector<olc::vf2d>& pos, const std::vector<olc::vf2d>& uv, const std::vector<olc::Pixel>& colours, const olc::Pixel tint);
+		void DrawPolygonDecal(olc::Decal* decal, const std::vector<olc::vf2d>& pos, const std::vector<float>& depth, const std::vector<olc::vf2d>& uv, const std::vector<olc::Pixel>& colours, const olc::Pixel tint);
+
 		// Draws a line in Decal Space
 		void DrawLineDecal(const olc::vf2d& pos1, const olc::vf2d& pos2, Pixel p = olc::WHITE);
 		void DrawRotatedStringDecal(const olc::vf2d& pos, const std::string& sText, const float fAngle, const olc::vf2d& center = { 0.0f, 0.0f }, const olc::Pixel col = olc::WHITE, const olc::vf2d& scale = { 1.0f, 1.0f });
@@ -1203,6 +1209,7 @@ namespace olc
 
 		// Draws a vector of vertices, interprted as individual triangles
 		void LW3D_DrawTriangles(olc::Decal* decal, const std::vector<std::array<float, 3>>& pos, const std::vector<olc::vf2d>& tex, const std::vector<olc::Pixel>& col);
+		void LW3D_DrawWarpedDecal(olc::Decal* decal, const std::vector<std::array<float, 3>>& pos, const olc::Pixel& tint);
 
 		void LW3D_ModelTranslate(const float x, const float y, const float z);
 
@@ -1472,6 +1479,7 @@ namespace olc
 	// O------------------------------------------------------------------------------O
 	// | olc::Pixel IMPLEMENTATION                                                    |
 	// O------------------------------------------------------------------------------O
+#if !defined(OLC_IGNORE_PIXEL)
 	Pixel::Pixel()
 	{
 		r = 0; g = 0; b = 0; a = nDefaultAlpha;
@@ -1596,7 +1604,7 @@ namespace olc
 	{
 		return (p2 * t) + p1 * (1.0f - t);
 	}
-
+#endif
 	// O------------------------------------------------------------------------------O
 	// | olc::Sprite IMPLEMENTATION                                                   |
 	// O------------------------------------------------------------------------------O
@@ -1865,7 +1873,7 @@ namespace olc
 		auto read = [&decoded, &pos](char* dst, size_t size) {
 			memcpy((void*)dst, (const void*)(decoded.data() + pos), size);
 			pos += size;
-		};
+			};
 
 		auto get = [&read]() -> int { char c; read(&c, 1); return c; };
 
@@ -1940,7 +1948,7 @@ namespace olc
 			size_t sizeNow = stream.size();
 			stream.resize(sizeNow + size);
 			memcpy(stream.data() + sizeNow, data, size);
-		};
+			};
 
 		// Iterate through map
 		write((char*)&nMapSize, sizeof(uint32_t));
@@ -2293,8 +2301,8 @@ namespace olc
 		auto rol = [&](void) { pattern = (pattern << 1) | (pattern >> 31); return pattern & 1; };
 
 		olc::vi2d p1(x1, y1), p2(x2, y2);
-		//if (!ClipLineToScreen(p1, p2))
-		//	return;
+		if (!ClipLineToScreen(p1, p2))
+			return;
 		x1 = p1.x; y1 = p1.y;
 		x2 = p2.x; y2 = p2.y;
 
@@ -2428,10 +2436,10 @@ namespace olc
 			int d = 3 - 2 * radius;
 
 			auto drawline = [&](int sx, int ex, int y)
-			{
-				for (int x = sx; x <= ex; x++)
-					Draw(x, y, p);
-			};
+				{
+					for (int x = sx; x <= ex; x++)
+						Draw(x, y, p);
+				};
 
 			while (y0 >= x0)
 			{
@@ -2490,12 +2498,12 @@ namespace olc
 		// https://en.wikipedia.org/wiki/Cohen%E2%80%93Sutherland_algorithm
 		static constexpr int SEG_I = 0b0000, SEG_L = 0b0001, SEG_R = 0b0010, SEG_B = 0b0100, SEG_T = 0b1000;
 		auto Segment = [&vScreenSize = vScreenSize](const olc::vi2d& v)
-		{
-			int i = SEG_I;
-			if (v.x < 0) i |= SEG_L; else if (v.x > vScreenSize.x) i |= SEG_R;
-			if (v.y < 0) i |= SEG_B; else if (v.y > vScreenSize.y) i |= SEG_T;
-			return i;
-		};
+			{
+				int i = SEG_I;
+				if (v.x < 0) i |= SEG_L; else if (v.x > vScreenSize.x) i |= SEG_R;
+				if (v.y < 0) i |= SEG_B; else if (v.y > vScreenSize.y) i |= SEG_T;
+				return i;
+			};
 
 		int s1 = Segment(in_p1), s2 = Segment(in_p2);
 
@@ -2635,7 +2643,7 @@ namespace olc
 			if (maxx < t1x) maxx = t1x;
 			if (maxx < t2x) maxx = t2x;
 			drawline(minx, maxx, y);    // Draw line from min to max points found on the y
-										// Now increase y
+			// Now increase y
 			if (!changed1) t1x += signx1;
 			t1x += t1xp;
 			if (!changed2) t2x += signx2;
@@ -2702,7 +2710,7 @@ namespace olc
 		}
 	}
 
-	void PixelGameEngine::FillTexturedTriangle(const std::vector<olc::vf2d>& vPoints, std::vector<olc::vf2d> vTex, std::vector<olc::Pixel> vColour, olc::Sprite* sprTex)
+	void PixelGameEngine::FillTexturedTriangle(std::vector<olc::vf2d> vPoints, std::vector<olc::vf2d> vTex, std::vector<olc::Pixel> vColour, olc::Sprite* sprTex)
 	{
 		olc::vi2d p1 = vPoints[0];
 		olc::vi2d p2 = vPoints[1];
@@ -3126,7 +3134,28 @@ namespace olc
 			di.pos[i] = { (pos[i].x * vInvScreenSize.x) * 2.0f - 1.0f, ((pos[i].y * vInvScreenSize.y) * 2.0f - 1.0f) * -1.0f };
 			di.uv[i] = uv[i];
 			di.tint[i] = tint;
-			di.w[i] = 1.0f;
+			di.w[i] = depth[i];
+		}
+		di.mode = nDecalMode;
+		di.structure = nDecalStructure;
+		vLayers[nTargetLayer].vecDecalInstance.push_back(di);
+	}
+
+	void PixelGameEngine::DrawPolygonDecal(olc::Decal* decal, const std::vector<olc::vf2d>& pos, const std::vector<float>& depth, const std::vector<olc::vf2d>& uv, const std::vector<olc::Pixel>& colours, const olc::Pixel tint)
+	{
+		DecalInstance di;
+		di.decal = decal;
+		di.points = uint32_t(pos.size());
+		di.pos.resize(di.points);
+		di.uv.resize(di.points);
+		di.w.resize(di.points);
+		di.tint.resize(di.points);
+		for (uint32_t i = 0; i < di.points; i++)
+		{
+			di.pos[i] = { (pos[i].x * vInvScreenSize.x) * 2.0f - 1.0f, ((pos[i].y * vInvScreenSize.y) * 2.0f - 1.0f) * -1.0f };
+			di.uv[i] = uv[i];
+			di.tint[i] = colours[i] * tint;
+			di.w[i] = depth[i];
 		}
 		di.mode = nDecalMode;
 		di.structure = nDecalStructure;
@@ -3143,16 +3172,63 @@ namespace olc
 		di.pos.resize(di.points);
 		di.uv.resize(di.points);
 		di.w.resize(di.points);
+		di.z.resize(di.points);
 		di.tint.resize(di.points);
 		for (uint32_t i = 0; i < di.points; i++)
 		{
 			di.pos[i] = { pos[i][0], pos[i][1] };
 			di.w[i] = pos[i][2];
+			di.z[i] = pos[i][2];
 			di.uv[i] = tex[i];
 			di.tint[i] = col[i];
 		}
-		di.mode = DecalMode::MODEL3D;
+		di.mode = nDecalMode;
+		di.structure = DecalStructure::LIST;
+		di.depth = true;
 		vLayers[nTargetLayer].vecDecalInstance.push_back(di);
+	}
+
+	void PixelGameEngine::LW3D_DrawWarpedDecal(olc::Decal* decal, const std::vector<std::array<float, 3>>& pos, const olc::Pixel& tint)
+	{
+		// Thanks Nathan Reed, a brilliant article explaining whats going on here
+		// http://www.reedbeta.com/blog/quadrilateral-interpolation-part-1/
+		DecalInstance di;
+		di.points = 4;
+		di.decal = decal;
+		di.tint = { tint, tint, tint, tint };
+		di.w = { 1, 1, 1, 1 };
+		di.z = { 1, 1, 1, 1 };
+		di.pos.resize(4);
+		di.uv = { { 0.0f, 0.0f}, {0.0f, 1.0f}, {1.0f, 1.0f}, {1.0f, 0.0f} };
+		olc::vf2d center;
+		float rd = ((pos[2][0] - pos[0][0]) * (pos[3][1] - pos[1][1]) - (pos[3][0] - pos[1][0]) * (pos[2][1] - pos[0][1]));
+		if (rd != 0)
+		{
+			rd = 1.0f / rd;
+			float rn = ((pos[3][0] - pos[1][0]) * (pos[0][1] - pos[1][1]) - (pos[3][1] - pos[1][1]) * (pos[0][0] - pos[1][0])) * rd;
+			float sn = ((pos[2][0] - pos[0][0]) * (pos[0][1] - pos[1][1]) - (pos[2][1] - pos[0][1]) * (pos[0][0] - pos[1][0])) * rd;
+			if (!(rn < 0.f || rn > 1.f || sn < 0.f || sn > 1.f))
+			{
+				center.x = pos[0][0] + rn * (pos[2][0] - pos[0][0]);
+				center.y = pos[0][1] + rn * (pos[2][1] - pos[0][1]);
+			}
+			float d[4];
+			for (int i = 0; i < 4; i++)
+				d[i] = std::sqrt((pos[i][0] - center.x) * (pos[i][0] - center.x) + (pos[i][1] - center.y) * (pos[i][1] - center.y));
+
+			for (int i = 0; i < 4; i++)
+			{
+				float q = d[i] == 0.0f ? 1.0f : (d[i] + d[(i + 2) & 3]) / d[(i + 2) & 3];
+				di.uv[i] *= q;
+				di.w[i] *= q;
+				di.z[i] = pos[i][2];
+				di.pos[i] = { (pos[i][0] * vInvScreenSize.x) * 2.0f - 1.0f, ((pos[i][1] * vInvScreenSize.y) * 2.0f - 1.0f) * -1.0f };
+			}
+			di.mode = nDecalMode;
+			di.structure = nDecalStructure;
+			di.depth = true;
+			vLayers[nTargetLayer].vecDecalInstance.push_back(di);
+		}
 	}
 #endif
 
@@ -3667,26 +3743,26 @@ namespace olc
 		}
 
 		auto TypeCharacter = [&](const char c)
-		{
-			if (c >= 32 && c < 127)
 			{
-				sConsoleLines[vConsoleCursor.y].append(1, c);
-				vConsoleCursor.x++;
-			}
+				if (c >= 32 && c < 127)
+				{
+					sConsoleLines[vConsoleCursor.y].append(1, c);
+					vConsoleCursor.x++;
+				}
 
-			if (c == '\n' || vConsoleCursor.x >= vConsoleSize.x)
-			{
-				vConsoleCursor.y++; vConsoleCursor.x = 0;
-			}
+				if (c == '\n' || vConsoleCursor.x >= vConsoleSize.x)
+				{
+					vConsoleCursor.y++; vConsoleCursor.x = 0;
+				}
 
-			if (vConsoleCursor.y >= vConsoleSize.y)
-			{
-				vConsoleCursor.y = vConsoleSize.y - 1;
-				for (size_t i = 1; i < vConsoleSize.y; i++)
-					sConsoleLines[i - 1] = sConsoleLines[i];
-				sConsoleLines[vConsoleCursor.y].clear();
-			}
-		};
+				if (vConsoleCursor.y >= vConsoleSize.y)
+				{
+					vConsoleCursor.y = vConsoleSize.y - 1;
+					for (size_t i = 1; i < vConsoleSize.y; i++)
+						sConsoleLines[i - 1] = sConsoleLines[i];
+					sConsoleLines[vConsoleCursor.y].clear();
+				}
+			};
 
 		// Empty out "std::cout", parsing as we go
 		while (ssConsoleOutput.rdbuf()->sgetc() != -1)
@@ -4020,27 +4096,27 @@ namespace olc
 
 		// Compare hardware input states from previous frame
 		auto ScanHardware = [&](HWButton* pKeys, bool* pStateOld, bool* pStateNew, uint32_t nKeyCount)
-		{
-			for (uint32_t i = 0; i < nKeyCount; i++)
 			{
-				pKeys[i].bPressed = false;
-				pKeys[i].bReleased = false;
-				if (pStateNew[i] != pStateOld[i])
+				for (uint32_t i = 0; i < nKeyCount; i++)
 				{
-					if (pStateNew[i])
+					pKeys[i].bPressed = false;
+					pKeys[i].bReleased = false;
+					if (pStateNew[i] != pStateOld[i])
 					{
-						pKeys[i].bPressed = !pKeys[i].bHeld;
-						pKeys[i].bHeld = true;
+						if (pStateNew[i])
+						{
+							pKeys[i].bPressed = !pKeys[i].bHeld;
+							pKeys[i].bHeld = true;
+						}
+						else
+						{
+							pKeys[i].bReleased = true;
+							pKeys[i].bHeld = false;
+						}
 					}
-					else
-					{
-						pKeys[i].bReleased = true;
-						pKeys[i].bHeld = false;
-					}
+					pStateOld[i] = pStateNew[i];
 				}
-				pStateOld[i] = pStateNew[i];
-			}
-		};
+			};
 
 		ScanHardware(pKeyboardState, pKeyOldState, pKeyNewState, 256);
 		ScanHardware(pMouseState, pMouseOldState, pMouseNewState, nMouseButtons);
@@ -4550,7 +4626,6 @@ namespace olc
 				switch (mode)
 				{
 				case olc::DecalMode::NORMAL:
-				case olc::DecalMode::MODEL3D:
 					glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 					break;
 				case olc::DecalMode::ADDITIVE:
@@ -4598,59 +4673,36 @@ namespace olc
 			else
 				glBindTexture(GL_TEXTURE_2D, decal.decal->id);
 
-			if (nDecalMode == DecalMode::MODEL3D)
+			if (decal.depth)
 			{
-#ifdef OLC_ENABLE_EXPERIMENTAL
-				glMatrixMode(GL_PROJECTION); glPushMatrix();
-				glMatrixMode(GL_MODELVIEW);  glPushMatrix();
-
 				glEnable(GL_DEPTH_TEST);
-				glMatrixMode(GL_PROJECTION);
-				glLoadIdentity();
-				glFrustum(-1.0f, 1.0f, -1.0f, 1.0f, 1, 1000);
+			}
 
-#pragma comment (lib, "winmm.lib")
+			if (nDecalMode == DecalMode::WIREFRAME)
+				glBegin(GL_LINE_LOOP);
+			else
+			{
+				if (decal.structure == olc::DecalStructure::FAN)
+					glBegin(GL_TRIANGLE_FAN);
+				else if (decal.structure == olc::DecalStructure::STRIP)
+					glBegin(GL_TRIANGLE_STRIP);
+				else if (decal.structure == olc::DecalStructure::LIST)
+					glBegin(GL_TRIANGLES);
+			}
 
-				glMatrixMode(GL_MODELVIEW);
-				glLoadIdentity();
-				glTranslatef(0, -40, -200);
-				glRotatef(float(clock()) * 0.1f, 1, 0, 0);
-				glRotatef(float(clock()) * 0.1f * 2, 0, 1, 0);
-				glEnable(GL_BLEND);
-				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-				glBegin(GL_TRIANGLES);
-
+			if (decal.depth)
+			{
 
 				// Render as 3D Spatial Entity
 				for (uint32_t n = 0; n < decal.points; n++)
 				{
 					glColor4ub(decal.tint[n].r, decal.tint[n].g, decal.tint[n].b, decal.tint[n].a);
-					glTexCoord2f(decal.uv[n].x, decal.uv[n].y);
-					glVertex3f(decal.pos[n].x, decal.pos[n].y, decal.w[n]);
+					glTexCoord4f(decal.uv[n].x, decal.uv[n].y, 0.0f, decal.w[n]);
+					glVertex3f(decal.pos[n].x, decal.pos[n].y, decal.z[n]);
 				}
-
-				glEnd();
-
-				glMatrixMode(GL_PROJECTION); glPopMatrix();
-				glMatrixMode(GL_MODELVIEW);  glPopMatrix();
-				glDisable(GL_DEPTH_TEST);
-#endif
 			}
 			else
 			{
-				if (nDecalMode == DecalMode::WIREFRAME)
-					glBegin(GL_LINE_LOOP);
-				else
-				{
-					if (decal.structure == olc::DecalStructure::FAN)
-						glBegin(GL_TRIANGLE_FAN);
-					else if (decal.structure == olc::DecalStructure::STRIP)
-						glBegin(GL_TRIANGLE_STRIP);
-					else if (decal.structure == olc::DecalStructure::LIST)
-						glBegin(GL_TRIANGLES);
-				}
-
 				// Render as 2D Spatial entity
 				for (uint32_t n = 0; n < decal.points; n++)
 				{
@@ -4658,12 +4710,15 @@ namespace olc
 					glTexCoord4f(decal.uv[n].x, decal.uv[n].y, 0.0f, decal.w[n]);
 					glVertex2f(decal.pos[n].x, decal.pos[n].y);
 				}
-
-				glEnd();
 			}
 
+			glEnd();
 
-			//glDisable(GL_DEPTH_TEST);
+			if (decal.depth)
+			{
+				glDisable(GL_DEPTH_TEST);
+			}
+
 		}
 
 		uint32_t CreateTexture(const uint32_t width, const uint32_t height, const bool filtered, const bool clamp) override
@@ -5441,48 +5496,48 @@ namespace olc
 			png_infop info;
 
 			auto loadPNG = [&]()
-			{
-				png_read_info(png, info);
-				png_byte color_type;
-				png_byte bit_depth;
-				png_bytep* row_pointers;
-				spr->width = png_get_image_width(png, info);
-				spr->height = png_get_image_height(png, info);
-				color_type = png_get_color_type(png, info);
-				bit_depth = png_get_bit_depth(png, info);
-				if (bit_depth == 16) png_set_strip_16(png);
-				if (color_type == PNG_COLOR_TYPE_PALETTE) png_set_palette_to_rgb(png);
-				if (color_type == PNG_COLOR_TYPE_GRAY && bit_depth < 8)	png_set_expand_gray_1_2_4_to_8(png);
-				if (png_get_valid(png, info, PNG_INFO_tRNS)) png_set_tRNS_to_alpha(png);
-				if (color_type == PNG_COLOR_TYPE_RGB || color_type == PNG_COLOR_TYPE_GRAY || color_type == PNG_COLOR_TYPE_PALETTE)
-					png_set_filler(png, 0xFF, PNG_FILLER_AFTER);
-				if (color_type == PNG_COLOR_TYPE_GRAY || color_type == PNG_COLOR_TYPE_GRAY_ALPHA)
-					png_set_gray_to_rgb(png);
-				png_read_update_info(png, info);
-				row_pointers = (png_bytep*)malloc(sizeof(png_bytep) * spr->height);
-				for (int y = 0; y < spr->height; y++) {
-					row_pointers[y] = (png_byte*)malloc(png_get_rowbytes(png, info));
-				}
-				png_read_image(png, row_pointers);
-				////////////////////////////////////////////////////////////////////////////
-				// Create sprite array
-				spr->pColData.resize(spr->width * spr->height);
-				// Iterate through image rows, converting into sprite format
-				for (int y = 0; y < spr->height; y++)
 				{
-					png_bytep row = row_pointers[y];
-					for (int x = 0; x < spr->width; x++)
-					{
-						png_bytep px = &(row[x * 4]);
-						spr->SetPixel(x, y, Pixel(px[0], px[1], px[2], px[3]));
+					png_read_info(png, info);
+					png_byte color_type;
+					png_byte bit_depth;
+					png_bytep* row_pointers;
+					spr->width = png_get_image_width(png, info);
+					spr->height = png_get_image_height(png, info);
+					color_type = png_get_color_type(png, info);
+					bit_depth = png_get_bit_depth(png, info);
+					if (bit_depth == 16) png_set_strip_16(png);
+					if (color_type == PNG_COLOR_TYPE_PALETTE) png_set_palette_to_rgb(png);
+					if (color_type == PNG_COLOR_TYPE_GRAY && bit_depth < 8)	png_set_expand_gray_1_2_4_to_8(png);
+					if (png_get_valid(png, info, PNG_INFO_tRNS)) png_set_tRNS_to_alpha(png);
+					if (color_type == PNG_COLOR_TYPE_RGB || color_type == PNG_COLOR_TYPE_GRAY || color_type == PNG_COLOR_TYPE_PALETTE)
+						png_set_filler(png, 0xFF, PNG_FILLER_AFTER);
+					if (color_type == PNG_COLOR_TYPE_GRAY || color_type == PNG_COLOR_TYPE_GRAY_ALPHA)
+						png_set_gray_to_rgb(png);
+					png_read_update_info(png, info);
+					row_pointers = (png_bytep*)malloc(sizeof(png_bytep) * spr->height);
+					for (int y = 0; y < spr->height; y++) {
+						row_pointers[y] = (png_byte*)malloc(png_get_rowbytes(png, info));
 					}
-				}
+					png_read_image(png, row_pointers);
+					////////////////////////////////////////////////////////////////////////////
+					// Create sprite array
+					spr->pColData.resize(spr->width * spr->height);
+					// Iterate through image rows, converting into sprite format
+					for (int y = 0; y < spr->height; y++)
+					{
+						png_bytep row = row_pointers[y];
+						for (int x = 0; x < spr->width; x++)
+						{
+							png_bytep px = &(row[x * 4]);
+							spr->SetPixel(x, y, Pixel(px[0], px[1], px[2], px[3]));
+						}
+					}
 
-				for (int y = 0; y < spr->height; y++) // Thanks maksym33
-					free(row_pointers[y]);
-				free(row_pointers);
-				png_destroy_read_struct(&png, &info, nullptr);
-			};
+					for (int y = 0; y < spr->height; y++) // Thanks maksym33
+						free(row_pointers[y]);
+					free(row_pointers);
+					png_destroy_read_struct(&png, &info, nullptr);
+				};
 
 			png = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
 			if (!png) goto fail_load;
@@ -6278,7 +6333,7 @@ namespace olc {
 
 			auto mouseMoveCall = [](int x, int y) -> void {
 				ptrPGE->olc_UpdateMouse(x, y);
-			};
+				};
 
 			glutMotionFunc(mouseMoveCall);
 			glutPassiveMotionFunc(mouseMoveCall);
@@ -6590,7 +6645,7 @@ namespace olc
 
 					}, vWindowSize.x, vWindowSize.y); // Fullscreen and Resize Observers
 #pragma warning restore format
-				return olc::rcode::OK;
+			return olc::rcode::OK;
 		}
 
 		// Interface PGE's UpdateWindowSize, for use in Javascript

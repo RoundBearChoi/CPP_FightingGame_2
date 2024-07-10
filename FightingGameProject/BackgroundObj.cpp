@@ -32,7 +32,7 @@ namespace RB::Background
 		//background horizontal tile
 		for (int i = 0; i < 4; i++)
 		{
-			_spriteContainer.RenderSprite(_spriteType, _renderSize, olc::vf2d{ offsetX + (_renderSize.x * i), _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT, true);
+			_spriteContainer.RenderSprite(_spriteType, _renderSize.x, _renderSize.y, olc::vf2d{ offsetX + (_renderSize.x * i), _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT, true);
 		}
 	}
 

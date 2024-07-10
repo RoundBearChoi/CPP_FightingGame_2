@@ -26,7 +26,7 @@ namespace RB::Sprites
 		return loaded;
 	}
 
-	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, olc::vf2d widthHeight, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
+	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool useWorldSpace)
 	{
 		if (RB::Cam::iCamController::Get() == nullptr)
 		{
@@ -35,48 +35,7 @@ namespace RB::Sprites
 
 		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType);
 
-		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(pivotType, widthHeight.x, widthHeight.y, pos);
-
-		//olc::vf2d half = widthHeight * 0.5f;
-		//
-		//std::array<olc::vf2d, 4> points;
-		//
-		//if (pivotType == RB::Sprites::PivotType::CENTER)
-		//{
-		//	points = {
-		//		olc::vf2d{ pos.x - half.x, pos.y - half.y },
-		//		olc::vf2d{ pos.x - half.x, pos.y + half.y },
-		//		olc::vf2d{ pos.x + half.x, pos.y + half.y },
-		//		olc::vf2d{ pos.x + half.x, pos.y - half.y },
-		//	};
-		//}
-		//else if (pivotType == RB::Sprites::PivotType::BOTTOM_CENTER)
-		//{
-		//	points = {
-		//		olc::vf2d{ pos.x - half.x, pos.y - widthHeight.y },
-		//		olc::vf2d{ pos.x - half.x, pos.y },
-		//		olc::vf2d{ pos.x + half.x, pos.y },
-		//		olc::vf2d{ pos.x + half.x, pos.y - widthHeight.y },
-		//	};
-		//}
-		//else if (pivotType == RB::Sprites::PivotType::BOTTOM_LEFT)
-		//{
-        //    points = {
-		//		olc::vf2d{ pos.x, pos.y - widthHeight.y },
-		//		olc::vf2d{ pos.x, pos.y },
-		//		olc::vf2d{ pos.x + widthHeight.x, pos.y },
-		//		olc::vf2d{ pos.x + widthHeight.x, pos.y - widthHeight.y },
-		//	};
-		//}
-		//else if (pivotType == RB::Sprites::PivotType::BOTTOM_RIGHT)
-		//{
-		//	points = {
-		//		olc::vf2d{ pos.x - widthHeight.x, pos.y - widthHeight.y },
-		//		olc::vf2d{ pos.x - widthHeight.x, pos.y },
-		//		olc::vf2d{ pos.x, pos.y },
-		//		olc::vf2d{ pos.x, pos.y - widthHeight.y },
-		//	};
-		//}
+		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(pivotType, width, height, pos);
 
 		if (useWorldSpace)
 		{

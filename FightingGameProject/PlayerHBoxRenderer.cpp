@@ -126,7 +126,7 @@ namespace RB::Render
 			{
 				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
 
-				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_LEFT, true);
+				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_LEFT, true);
 			}
 			else
 			{
@@ -134,7 +134,7 @@ namespace RB::Render
 				bottomleft.x *= -1.0f;
 				olc::vf2d pos = bottomleft + player->GetPosition();
 
-				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight(), pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT, true);
+				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT, true);
 			}
 		}
 	}

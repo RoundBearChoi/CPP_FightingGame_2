@@ -73,7 +73,7 @@ namespace RB::Render
 
 	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteType spriteType, olc::vi2d pos, olc::Pixel tint)
 	{
-		_spriteContainer->RenderSprite(spriteType, olc::vi2d{ 17, 17 }, pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
+		_spriteContainer->RenderSprite(spriteType, 17, 17 , pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
 	}
 
 	RB::Sprites::SpriteType PlayerInputRenderer::_GetSpriteType(const RB::Input::PlayerInput& playerInput)

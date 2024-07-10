@@ -1,5 +1,7 @@
 #include "SpriteContainer.h"
 
+#include "GetPosOnPivot.h"
+
 #include "iCamController.h"
 
 namespace RB::Sprites
@@ -33,46 +35,48 @@ namespace RB::Sprites
 
 		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType);
 
-		olc::vf2d half = widthHeight * 0.5f;
+		std::array<olc::vf2d, 4> points = RB::Sprites::GetPosOnPivot(pivotType, widthHeight.x, widthHeight.y, pos);
 
-		std::array<olc::vf2d, 4> points;
-
-		if (pivotType == RB::Sprites::PivotType::CENTER)
-		{
-			points = {
-				olc::vf2d{ pos.x - half.x, pos.y - half.y },
-				olc::vf2d{ pos.x - half.x, pos.y + half.y },
-				olc::vf2d{ pos.x + half.x, pos.y + half.y },
-				olc::vf2d{ pos.x + half.x, pos.y - half.y },
-			};
-		}
-		else if (pivotType == RB::Sprites::PivotType::BOTTOM_CENTER)
-		{
-			points = {
-				olc::vf2d{ pos.x - half.x, pos.y - widthHeight.y },
-				olc::vf2d{ pos.x - half.x, pos.y },
-				olc::vf2d{ pos.x + half.x, pos.y },
-				olc::vf2d{ pos.x + half.x, pos.y - widthHeight.y },
-			};
-		}
-		else if (pivotType == RB::Sprites::PivotType::BOTTOM_LEFT)
-		{
-            points = {
-				olc::vf2d{ pos.x, pos.y - widthHeight.y },
-				olc::vf2d{ pos.x, pos.y },
-				olc::vf2d{ pos.x + widthHeight.x, pos.y },
-				olc::vf2d{ pos.x + widthHeight.x, pos.y - widthHeight.y },
-			};
-		}
-		else if (pivotType == RB::Sprites::PivotType::BOTTOM_RIGHT)
-		{
-			points = {
-				olc::vf2d{ pos.x - widthHeight.x, pos.y - widthHeight.y },
-				olc::vf2d{ pos.x - widthHeight.x, pos.y },
-				olc::vf2d{ pos.x, pos.y },
-				olc::vf2d{ pos.x, pos.y - widthHeight.y },
-			};
-		}
+		//olc::vf2d half = widthHeight * 0.5f;
+		//
+		//std::array<olc::vf2d, 4> points;
+		//
+		//if (pivotType == RB::Sprites::PivotType::CENTER)
+		//{
+		//	points = {
+		//		olc::vf2d{ pos.x - half.x, pos.y - half.y },
+		//		olc::vf2d{ pos.x - half.x, pos.y + half.y },
+		//		olc::vf2d{ pos.x + half.x, pos.y + half.y },
+		//		olc::vf2d{ pos.x + half.x, pos.y - half.y },
+		//	};
+		//}
+		//else if (pivotType == RB::Sprites::PivotType::BOTTOM_CENTER)
+		//{
+		//	points = {
+		//		olc::vf2d{ pos.x - half.x, pos.y - widthHeight.y },
+		//		olc::vf2d{ pos.x - half.x, pos.y },
+		//		olc::vf2d{ pos.x + half.x, pos.y },
+		//		olc::vf2d{ pos.x + half.x, pos.y - widthHeight.y },
+		//	};
+		//}
+		//else if (pivotType == RB::Sprites::PivotType::BOTTOM_LEFT)
+		//{
+        //    points = {
+		//		olc::vf2d{ pos.x, pos.y - widthHeight.y },
+		//		olc::vf2d{ pos.x, pos.y },
+		//		olc::vf2d{ pos.x + widthHeight.x, pos.y },
+		//		olc::vf2d{ pos.x + widthHeight.x, pos.y - widthHeight.y },
+		//	};
+		//}
+		//else if (pivotType == RB::Sprites::PivotType::BOTTOM_RIGHT)
+		//{
+		//	points = {
+		//		olc::vf2d{ pos.x - widthHeight.x, pos.y - widthHeight.y },
+		//		olc::vf2d{ pos.x - widthHeight.x, pos.y },
+		//		olc::vf2d{ pos.x, pos.y },
+		//		olc::vf2d{ pos.x, pos.y - widthHeight.y },
+		//	};
+		//}
 
 		if (useWorldSpace)
 		{

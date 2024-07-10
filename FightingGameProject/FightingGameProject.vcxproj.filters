@@ -397,6 +397,9 @@
     <ClCompile Include="GetCurrentAnimationFrame.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="GetPosOnPivot.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -895,6 +898,9 @@
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="GetCurrentAnimationFrame.h">
+      <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="GetPosOnPivot.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>

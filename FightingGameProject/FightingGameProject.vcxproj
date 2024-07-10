@@ -156,6 +156,7 @@
     <ClCompile Include="DoNotFixDirectionDuringState.cpp" />
     <ClCompile Include="FixSpecialMoveStatusDuringState.cpp" />
     <ClCompile Include="FixWincingStatusDuringState.cpp" />
+    <ClCompile Include="FlipQuad.cpp" />
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
@@ -261,6 +262,7 @@
     <ClInclude Include="AnimationContainer.h" />
     <ClInclude Include="CollisionType.h" />
     <ClInclude Include="CurrentUpdater.h" />
+    <ClInclude Include="FlipQuad.h" />
     <ClInclude Include="GetCurrentAnimationFrame.h" />
     <ClInclude Include="GetCurrentSpriteType.h" />
     <ClInclude Include="HBoxEditorUpdaterBase.h" />

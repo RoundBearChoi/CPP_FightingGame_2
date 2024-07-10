@@ -168,10 +168,10 @@ namespace RB::Render
 
 		// default render pivot is bottom center, so making adjustments (temp)
 		// quad points should be calculated in void AnimationRenderer::RenderAnimation(const RenderSettings& renderSettings)
-		if (_pivotType == RB::Sprites::PivotType::CENTER)
-		{
-			_worldPos.y += GetRenderSize().y * 0.5f;
-		}
+		//if (_pivotType == RB::Sprites::PivotType::CENTER)
+		//{
+		//	_worldPos.y += GetRenderSize().y * 0.5f;
+		//}
 	}
 
 	unsigned int AnimationObj::GetFixedUpdateCount()

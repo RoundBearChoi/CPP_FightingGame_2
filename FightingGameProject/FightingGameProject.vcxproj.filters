@@ -400,6 +400,9 @@
     <ClCompile Include="GetQuadOnPivot.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="FlipQuad.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -901,6 +904,9 @@
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
     <ClInclude Include="GetQuadOnPivot.h">
+      <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="FlipQuad.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,6 +3,7 @@
 #include "iCamController.h"
 
 #include "GetQuadOnPivot.h"
+#include "FlipQuad.h"
 
 namespace RB::Render
 {
@@ -28,7 +29,7 @@ namespace RB::Render
 			return;
 		}
 
-		std::array<olc::vf2d, 4> points;
+		//std::array<olc::vf2d, 4> points;
 
 		olc::vf2d screenPos = renderSettings.mWorldPos;
 
@@ -42,30 +43,38 @@ namespace RB::Render
 		float width = renderSettings.mRenderSize.x * zoom;
 		float height = renderSettings.mRenderSize.y * zoom;
 
-		// this is assuming every pivot on an animation obj is on bottom center
-		//std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(RB::Sprites::PivotType::BOTTOM_CENTER, width, height, { x, y });
-		//points = flip(points) if !mFaceRight
+		// get quads
+		x += renderSettings.mRenderOffset.x * zoom;
+		y += renderSettings.mRenderOffset.y * zoom;
 
-		if (renderSettings.mFaceRight)
+		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(renderSettings.mPivotType, width, height, { x, y });
+
+		// flip
+		if (!renderSettings.mFaceRight)
 		{
-			x += renderSettings.mRenderOffset.x * zoom;
-			y += renderSettings.mRenderOffset.y * zoom;
-
-			points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
-			points[1] = { (float)x - (float)width / 2.0f, (float)y };
-			points[2] = { (float)x + (float)width / 2.0f, (float)y };
-			points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+			points = RB::Sprites::FlipQuad(renderSettings.mPivotType, points);
 		}
-		else
-		{
-			x -= renderSettings.mRenderOffset.x * zoom;
-			y += renderSettings.mRenderOffset.y * zoom;
 
-			points[0] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
-			points[1] = { (float)x + (float)width / 2.0f, (float)y };
-			points[2] = { (float)x - (float)width / 2.0f, (float)y };
-			points[3] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
-		}
+		//if (renderSettings.mFaceRight)
+		//{
+		//	x += renderSettings.mRenderOffset.x * zoom;
+		//	y += renderSettings.mRenderOffset.y * zoom;
+		//
+		//	points[0] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
+		//	points[1] = { (float)x - (float)width / 2.0f, (float)y };
+		//	points[2] = { (float)x + (float)width / 2.0f, (float)y };
+		//	points[3] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+		//}
+		//else
+		//{
+		//	x -= renderSettings.mRenderOffset.x * zoom;
+		//	y += renderSettings.mRenderOffset.y * zoom;
+		//
+		//	points[0] = { (float)x + (float)width / 2.0f, (float)y - (float)height };
+		//	points[1] = { (float)x + (float)width / 2.0f, (float)y };
+		//	points[2] = { (float)x - (float)width / 2.0f, (float)y };
+		//	points[3] = { (float)x - (float)width / 2.0f, (float)y - (float)height };
+		//}
 
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
 

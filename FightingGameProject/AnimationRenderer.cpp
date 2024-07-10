@@ -30,10 +30,10 @@ namespace RB::Render
 		}
 
 		// get screen space x, y, width, height
-		olc::vf2d worldPos = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
+		olc::vf2d rel = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
-		float x = (float)worldPos.x;
-		float y = (float)worldPos.y;
+		float x = (float)rel.x;
+		float y = (float)rel.y;
 
 		float zoom = RB::Cam::iCamController::Get()->GetCamObj()->GetZoom();
 

@@ -183,7 +183,6 @@ namespace RB::Render
 	{
 		std::string str = RB::JSON::LoadJSONFile(path);
 		json_value_s* root = json_parse(str.c_str(), str.size());
-
 		json_object_s* jObj = json_value_as_object(root);
 
 		std::vector<json_object_element_s*> vecAll = RB::JSON::GetAllElements(jObj);

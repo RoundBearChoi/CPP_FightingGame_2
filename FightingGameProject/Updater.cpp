@@ -150,7 +150,7 @@ namespace RB::Updaters
 		{
 			_updaterObj->OnUpdate();
 
-			// reset layer after every custom DrawTarget happened during update
+			// reset layer after any custom DrawTarget happened during update
 			olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 		}
 		

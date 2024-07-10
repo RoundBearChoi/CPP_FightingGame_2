@@ -40,6 +40,7 @@ namespace RB::Render
 		float width = renderSettings.mRenderSize.x * zoom;
 		float height = renderSettings.mRenderSize.y * zoom;
 
+		// this is assuming every pivot on an animation obj is on bottom center
 		if (renderSettings.mFaceRight)
 		{
 			x += renderSettings.mRenderOffset.x * zoom;

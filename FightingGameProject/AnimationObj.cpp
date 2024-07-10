@@ -113,6 +113,11 @@ namespace RB::Render
 		return _animationRenderer->GetAnimationSpecs().mRenderSize;
 	}
 
+	float AnimationObj::GetRenderScale()
+	{
+		return _animationRenderer->GetAnimationSpecs().mRenderScale;
+	}
+
 	olc::vf2d AnimationObj::GetRenderOffset()
 	{
 		return _animationRenderer->GetAnimationSpecs().mRenderOffset;
@@ -148,6 +153,7 @@ namespace RB::Render
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderSize = GetRenderSize();
+		renderSettings.mRenderScale = GetRenderScale();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)

@@ -14,6 +14,7 @@ namespace RB::Render
 		virtual void ManualDecreaseAnimationIndex() = 0;
 		virtual void CycleAnimationIndex() = 0;
 		virtual olc::vf2d GetSourceSize() = 0;
+		virtual float GetRenderScale() = 0;
 		virtual olc::vf2d GetSourcePos(olc::vf2d sourceSize) = 0;
 		virtual olc::vf2d GetRenderSize() = 0;
 		virtual olc::vf2d GetRenderOffset() = 0;

@@ -17,6 +17,7 @@ namespace RB::Render
 		unsigned int mSkipFixedUpdates = 0;
 		olc::vf2d mRenderSize = { 0.0f, 0.0f };
 		olc::vf2d mRenderOffset = { 0.0f, 0.0f };
+		float mRenderScale = 0.0f;
 		RB::Sprites::LoadedSprite* mLoadedSprite = nullptr;
 		bool mPlayOnce = false;
 		RB::Sprites::SpriteType mSpriteType = RB::Sprites::SpriteType::NONE;

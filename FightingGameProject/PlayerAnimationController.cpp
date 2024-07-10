@@ -211,8 +211,11 @@ namespace RB::Render
 		json_object_element_s* e5 = e4->next; //mRenderSizeY
 		float renderSizeY = RB::JSON::GetFloat_FromElement(*e5);
 
-		json_object_element_s* e6 = e5->next; //mPlayOnce
-		int playOnceInt = RB::JSON::GetInt_FromElement(*e6);
+		json_object_element_s* e6 = e5->next;
+		float renderScale = RB::JSON::GetFloat_FromElement(*e6);
+
+		json_object_element_s* e7 = e6->next; //mPlayOnce
+		int playOnceInt = RB::JSON::GetInt_FromElement(*e7);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first
@@ -227,6 +230,7 @@ namespace RB::Render
 		specs.mTotalSprites = totalSprites;
 		specs.mSkipFixedUpdates = skipFixedUpdates;
 		specs.mRenderSize = olc::vf2d{ renderSizeX, renderSizeY };
+		specs.mRenderScale = renderScale;
 		specs.mPlayOnce = playOnce;
 		specs.mSpriteType = RB::Sprites::SpriteType::_from_string(strEnum.c_str());
 

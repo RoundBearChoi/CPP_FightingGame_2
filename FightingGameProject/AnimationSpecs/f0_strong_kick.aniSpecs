@@ -8,6 +8,7 @@
         "mSkipFixedUpdates" : 3,
         "mRenderSizeX" : 198,
         "mRenderSizeY" : 190,
+        "mRenderScale" : 1.7,
         "mPlayOnce" : 1
         }
 }

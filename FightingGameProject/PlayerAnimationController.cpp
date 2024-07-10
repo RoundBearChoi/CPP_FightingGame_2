@@ -190,9 +190,6 @@ namespace RB::Render
 
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
 
-		//json_object_element_s* pngPath = RB::JSON::GetElementInsideElement(*rootElement); //png path
-		//std::string strPath = RB::JSON::GetString_FromElement(*pngPath);
-
 		json_object_element_s* se = RB::JSON::GetElementInsideElement(*rootElement); //sprite type enum in string
 		std::string strEnum = RB::JSON::GetString_FromElement(*se);
 

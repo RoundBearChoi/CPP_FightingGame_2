@@ -186,28 +186,15 @@ namespace RB::Render
 
 		json_object_s* jObj = json_value_as_object(root);
 
-		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0); //player0 animation specs
+		std::vector<json_object_element_s*> vecAll = RB::JSON::GetAllElements(jObj);
 
-		json_object_element_s* se = RB::JSON::GetElementInsideElement(*rootElement); //sprite type enum in string
-		std::string strEnum = RB::JSON::GetString_FromElement(*se);
-
-		json_object_element_s* e0 = se->next; //mX_TileCount
-		int xTileCount = RB::JSON::GetInt_FromElement(*e0);
-
-		json_object_element_s* e1 = e0->next; //mY_TileCount
-		int yTileCount = RB::JSON::GetInt_FromElement(*e1);
-
-		json_object_element_s* e2 = e1->next; //mTotalSprites
-		int totalSprites = RB::JSON::GetInt_FromElement(*e2);
-
-		json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
-		int skipFixedUpdates = RB::JSON::GetInt_FromElement(*e3);
-
-		json_object_element_s* e4 = e3->next;
-		float renderScale = RB::JSON::GetFloat_FromElement(*e4);
-
-		json_object_element_s* e5 = e4->next; //mPlayOnce
-		int playOnceInt = RB::JSON::GetInt_FromElement(*e5);
+		std::string strEnum = RB::JSON::GetString_FromElement(*vecAll[0]);
+		int xTileCount = RB::JSON::GetInt_FromElement(*vecAll[1]);
+		int yTileCount = RB::JSON::GetInt_FromElement(*vecAll[2]);
+		int totalSprites = RB::JSON::GetInt_FromElement(*vecAll[3]);
+		int skipFixedUpdates = RB::JSON::GetInt_FromElement(*vecAll[4]);
+		float renderScale = RB::JSON::GetFloat_FromElement(*vecAll[5]);
+		int playOnceInt = RB::JSON::GetInt_FromElement(*vecAll[6]);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first

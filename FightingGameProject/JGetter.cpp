@@ -92,6 +92,31 @@ namespace RB::JSON
 		return result;
 	}
 
+	/// <summary>
+	/// assuming there's 1 root element and a bunch of elements inside that
+	/// </summary>
+	std::vector<json_object_element_s*> GetAllElements(json_object_s* jObj)
+	{
+		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
+
+		std::vector<json_object_element_s*> vecElements;
+
+		if (rootElement == nullptr)
+		{
+			return vecElements;
+		}
+
+		json_object_element_s* element = RB::JSON::GetElementInsideElement(*rootElement);
+
+		while (element != nullptr)
+		{
+			vecElements.push_back(element);
+			element = element->next;
+		}
+
+		return vecElements;
+	}
+
 	unsigned int ParseFrame(const std::string& str)
 	{
 		std::regex pattern("frame_");

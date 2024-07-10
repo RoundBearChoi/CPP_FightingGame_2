@@ -60,26 +60,27 @@ namespace RB::Collisions
 
 		std::string str = RB::JSON::LoadJSONFile(path);
 		json_value_s* root = json_parse(str.c_str(), str.size());
-
 		json_object_s* jObj = json_value_as_object(root);
 
-		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
+		std::vector<json_object_element_s*> vecAll = RB::JSON::GetAllElements(jObj);
 
-		json_object_element_s* strengthType = RB::JSON::GetElementInsideElement(*rootElement); //strength type
-		std::string strStrengthType = RB::JSON::GetString_FromElement(*strengthType);
+		//json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
+
+		//json_object_element_s* strengthType = RB::JSON::GetElementInsideElement(*rootElement); //strength type
+		std::string strStrengthType = RB::JSON::GetString_FromElement(*vecAll[0]);
 		RB::Collisions::AttackStrengthType attackStrengthType = RB::Collisions::AttackStrengthType::_from_string(strStrengthType.c_str());
 
-		json_object_element_s* damage = strengthType->next; //damage
-		int damageValue = RB::JSON::GetInt_FromElement(*damage);
+		//json_object_element_s* damage = strengthType->next; //damage
+		int damageValue = RB::JSON::GetInt_FromElement(*vecAll[1]);
 
-		json_object_element_s* hitStop = damage->next; //hit stop
-		int hitStopValue = RB::JSON::GetInt_FromElement(*hitStop);
+		//json_object_element_s* hitStop = damage->next; //hit stop
+		int hitStopValue = RB::JSON::GetInt_FromElement(*vecAll[2]);
 
-		json_object_element_s* minFixedUpdates = hitStop->next; //min fixed updates
-		int minFixedUpdatesValue = RB::JSON::GetInt_FromElement(*minFixedUpdates);
+		//json_object_element_s* minFixedUpdates = hitStop->next; //min fixed updates
+		int minFixedUpdatesValue = RB::JSON::GetInt_FromElement(*vecAll[3]);
 
-		json_object_element_s* maxHits = minFixedUpdates->next; //max hits
-		int maxHitsValue = RB::JSON::GetInt_FromElement(*maxHits);
+		//json_object_element_s* maxHits = minFixedUpdates->next; //max hits
+		int maxHitsValue = RB::JSON::GetInt_FromElement(*vecAll[4]);
 
 		AttackSpecs attackSpecs;
 		attackSpecs.mSpriteType = spriteType;

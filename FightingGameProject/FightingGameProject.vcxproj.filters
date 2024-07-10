@@ -397,7 +397,7 @@
     <ClCompile Include="GetCurrentAnimationFrame.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="GetPosOnPivot.cpp">
+    <ClCompile Include="GetQuadOnPivot.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
   </ItemGroup>
@@ -900,7 +900,7 @@
     <ClInclude Include="GetCurrentAnimationFrame.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="GetPosOnPivot.h">
+    <ClInclude Include="GetQuadOnPivot.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>

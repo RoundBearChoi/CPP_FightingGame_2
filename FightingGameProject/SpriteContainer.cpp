@@ -1,6 +1,6 @@
 #include "SpriteContainer.h"
 
-#include "GetPosOnPivot.h"
+#include "GetQuadOnPivot.h"
 
 #include "iCamController.h"
 
@@ -35,7 +35,7 @@ namespace RB::Sprites
 
 		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType);
 
-		std::array<olc::vf2d, 4> points = RB::Sprites::GetPosOnPivot(pivotType, widthHeight.x, widthHeight.y, pos);
+		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(pivotType, widthHeight.x, widthHeight.y, pos);
 
 		//olc::vf2d half = widthHeight * 0.5f;
 		//

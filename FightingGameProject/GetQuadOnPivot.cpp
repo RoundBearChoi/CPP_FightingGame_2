@@ -1,6 +1,6 @@
-#include "GetPosOnPivot.h"
+#include "GetQuadOnPivot.h"
 
-std::array<olc::vf2d, 4> RB::Sprites::GetPosOnPivot(PivotType pivotType, float width, float height, olc::vf2d pos)
+std::array<olc::vf2d, 4> RB::Sprites::GetQuadOnPivot(PivotType pivotType, float width, float height, olc::vf2d pos)
 {
 	float halfWidth = width * 0.5f;
 	float halfHeight = height * 0.5f;

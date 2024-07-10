@@ -166,8 +166,6 @@ namespace RB::Render
 			file << "        \"mY_TileCount\" : " << specs.mY_TileCount << "," << std::endl;
 			file << "        \"mTotalSprites\" : " << specs.mTotalSprites << "," << std::endl;
 			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
-			file << "        \"mRenderSizeX\" : " << specs.mRenderSize.x << "," << std::endl;
-			file << "        \"mRenderSizeY\" : " << specs.mRenderSize.y << "," << std::endl;
 			file << "        \"mPlayOnce\" : " << (specs.mPlayOnce ? 1 : 0) << std::endl;
 			
 			//end of parent element
@@ -205,17 +203,11 @@ namespace RB::Render
 		json_object_element_s* e3 = e2->next; //mSkipFixedUpdates
 		int skipFixedUpdates = RB::JSON::GetInt_FromElement(*e3);
 
-		json_object_element_s* e4 = e3->next; //mRenderSizeX
-		float renderSizeX = RB::JSON::GetFloat_FromElement(*e4);
+		json_object_element_s* e4 = e3->next;
+		float renderScale = RB::JSON::GetFloat_FromElement(*e4);
 
-		json_object_element_s* e5 = e4->next; //mRenderSizeY
-		float renderSizeY = RB::JSON::GetFloat_FromElement(*e5);
-
-		json_object_element_s* e6 = e5->next;
-		float renderScale = RB::JSON::GetFloat_FromElement(*e6);
-
-		json_object_element_s* e7 = e6->next; //mPlayOnce
-		int playOnceInt = RB::JSON::GetInt_FromElement(*e7);
+		json_object_element_s* e5 = e4->next; //mPlayOnce
+		int playOnceInt = RB::JSON::GetInt_FromElement(*e5);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first
@@ -229,7 +221,6 @@ namespace RB::Render
 		specs.mY_TileCount = yTileCount;
 		specs.mTotalSprites = totalSprites;
 		specs.mSkipFixedUpdates = skipFixedUpdates;
-		specs.mRenderSize = olc::vf2d{ renderSizeX, renderSizeY };
 		specs.mRenderScale = renderScale;
 		specs.mPlayOnce = playOnce;
 		specs.mSpriteType = RB::Sprites::SpriteType::_from_string(strEnum.c_str());

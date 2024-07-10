@@ -108,11 +108,6 @@ namespace RB::Render
 		return sourcePos;
 	}
 
-	olc::vf2d AnimationObj::GetRenderSize()
-	{
-		return _animationRenderer->GetAnimationSpecs().mRenderSize;
-	}
-
 	float AnimationObj::GetRenderScale()
 	{
 		return _animationRenderer->GetAnimationSpecs().mRenderScale;
@@ -152,7 +147,6 @@ namespace RB::Render
 		renderSettings.mPivotType = _pivotType;
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
-		renderSettings.mRenderSize = GetRenderSize();
 		renderSettings.mRenderScale = GetRenderScale();
 		renderSettings.mRenderOffset = GetRenderOffset();
 

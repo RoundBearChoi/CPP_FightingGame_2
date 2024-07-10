@@ -15,8 +15,8 @@ namespace RB::Render
         hit0Specs.mY_TileCount = 1;
         hit0Specs.mTotalSprites = 5;
         hit0Specs.mSkipFixedUpdates = 2;
-        hit0Specs.mRenderSize = olc::vf2d{ 73.6f, 76.8f };
         hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, -6.0f };
+        hit0Specs.mRenderScale = 0.15f;
         hit0Specs.mSpriteType = RB::Sprites::SpriteType::vfx_hiteffect_0;
 
         _animationContainer.LoadAnimation(hit0Specs);

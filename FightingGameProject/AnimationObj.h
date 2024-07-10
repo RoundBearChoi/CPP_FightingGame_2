@@ -24,7 +24,6 @@ namespace RB::Render
 		void CycleAnimationIndex() override;
 		olc::vf2d GetSourceSize() override;
 		olc::vf2d GetSourcePos(olc::vf2d sourceSize) override;
-		olc::vf2d GetRenderSize() override;
 		float GetRenderScale() override;
 		olc::vf2d GetRenderOffset() override;
 		RB::Players::iPlayer* GetPlayer() override;

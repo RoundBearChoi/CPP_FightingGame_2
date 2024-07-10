@@ -16,7 +16,6 @@ namespace RB::Render
 		virtual olc::vf2d GetSourceSize() = 0;
 		virtual float GetRenderScale() = 0;
 		virtual olc::vf2d GetSourcePos(olc::vf2d sourceSize) = 0;
-		virtual olc::vf2d GetRenderSize() = 0;
 		virtual olc::vf2d GetRenderOffset() = 0;
 		virtual RB::Players::iPlayer* GetPlayer() = 0;
 		virtual const AnimationSpecs& GetAnimationSpecs() const = 0;

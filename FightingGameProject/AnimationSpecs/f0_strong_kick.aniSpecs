@@ -6,8 +6,6 @@
         "mY_TileCount" : 1,
         "mTotalSprites" : 10,
         "mSkipFixedUpdates" : 3,
-        "mRenderSizeX" : 198,
-        "mRenderSizeY" : 190,
         "mRenderScale" : 1.7,
         "mPlayOnce" : 1
         }

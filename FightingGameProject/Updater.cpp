@@ -142,8 +142,6 @@ namespace RB::Updaters
 
 			assert(firstQueueSuccessful);
 		}
-
-		//RB::Updaters::ptrCurrentUpdater = this;
 	}
 
 	void Updater::OnUpdate()

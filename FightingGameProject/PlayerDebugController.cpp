@@ -1,5 +1,7 @@
 #include "PlayerDebugController.h"
 
+#include "RenderLayerType.h"
+
 #include "iCamController.h"
 
 namespace RB::Render
@@ -33,6 +35,8 @@ namespace RB::Render
 
 	void PlayerDebugController::OnUpdate()
 	{
+		SetTargetLayer(RB::Render::RenderLayerType::DECALS);
+
 		_playerBoxRenderer.OnUpdate();
 		_playerHBoxRenderer.OnUpdate();
 		_playerPositionRenderer.OnUpdate();
@@ -78,8 +82,6 @@ namespace RB::Render
 
 		olc::vf2d relUpperBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[1]});
 		olc::vi2d intUpperBody = { int(round(relUpperBody.x)), int(round(relUpperBody.y)) };
-
-		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 
 		int lineHalfLength = 30;
 

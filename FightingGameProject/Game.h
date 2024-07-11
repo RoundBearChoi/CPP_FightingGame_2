@@ -61,6 +61,7 @@ namespace RB
 			RB::Frames::Time::AddFixedDeltaTime();
 
 			_updater->OnUpdate();
+
 			RB::AddGameFrame();
 
 			if (_timer.DoFixedUpdate())

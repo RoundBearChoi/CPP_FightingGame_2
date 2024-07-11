@@ -17,4 +17,6 @@ namespace RB::Render
 
 
 	void SetTargetLayer(RenderLayerType layerType);
+	void CreateLayers();
+	void ClearLayers();
 }

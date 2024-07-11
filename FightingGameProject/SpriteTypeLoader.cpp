@@ -13,7 +13,7 @@ namespace RB::Sprites
 
 		RB::JSON::Parser parser;
 		parser.LoadJSON(path);
-		json_object_s* jObj = parser.GetObj(0);
+		auto jObj = parser.GetObj(0);
 
 		auto element = RB::JSON::Parser::GetElement(*jObj, 0); //RB::JSON::GetElementNFromObj(*jObj, 0);
 

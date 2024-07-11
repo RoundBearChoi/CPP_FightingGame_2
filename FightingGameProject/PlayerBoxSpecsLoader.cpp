@@ -54,7 +54,7 @@ namespace RB::Collisions
 			return;
 		}
 
-		json_object_s* jObj = parser.GetObj(0);
+		auto jObj = parser.GetObj(0);
 
 		json_object_element_s* element = jObj->start;
 

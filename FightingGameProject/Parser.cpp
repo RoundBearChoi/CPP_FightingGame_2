@@ -43,7 +43,7 @@ namespace RB::JSON
 		return root;
 	}
 
-	json_object_s* Parser::GetObj(int index)
+	const json_object_s* Parser::GetObj(int index)
 	{
 		if (_vecLoadedRoots.size() > index)
 		{

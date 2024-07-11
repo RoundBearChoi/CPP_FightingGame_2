@@ -14,7 +14,7 @@ namespace RB::JSON
 
 	public:
 		json_value_s* LoadJSON(std::string path);
-		json_object_s* GetObj(int index);
+		const json_object_s* GetObj(int index);
 		bool RootExists(int index);
 
 	public:

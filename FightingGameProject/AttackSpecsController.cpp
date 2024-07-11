@@ -65,7 +65,7 @@ namespace RB::Collisions
 
 		RB::JSON::Parser parser;
 		parser.LoadJSON(path);
-		json_object_s* jObj = parser.GetObj(0);
+		auto jObj = parser.GetObj(0);
 
 		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);

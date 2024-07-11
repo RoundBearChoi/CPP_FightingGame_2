@@ -129,7 +129,7 @@ namespace RB::HBox
 		}
 
 		//read
-		json_object_s* obj = parser.GetObj(0); //json_value_as_object(root);
+		auto obj = parser.GetObj(0); //json_value_as_object(root);
 
 		Loaded_HB_Data data{ spriteType, boxType };
 

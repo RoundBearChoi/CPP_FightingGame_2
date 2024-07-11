@@ -186,7 +186,7 @@ namespace RB::Render
 		RB::JSON::Parser parser;
 
 		parser.LoadJSON(path);
-		json_object_s* jObj = parser.GetObj(0);
+		auto jObj = parser.GetObj(0);
 
 		//std::string str = RB::JSON::LoadJSONFile(path);
 		//json_value_s* root = json_parse(str.c_str(), str.size());

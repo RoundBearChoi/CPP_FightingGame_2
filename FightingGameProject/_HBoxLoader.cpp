@@ -213,10 +213,10 @@ namespace RB::HBox
 				auto width_Element = RB::JSON::Parser::GetElement(*obj, 2); //RB::JSON::GetElementNFromObj(*obj, 2);
 				auto height_Element = RB::JSON::Parser::GetElement(*obj, 3); //RB::JSON::GetElementNFromObj(*obj, 3);
 
-				float x = RB::JSON::GetFloat_FromElement(*posX_Element);
-				float y = RB::JSON::GetFloat_FromElement(*posY_Element);
-				float width = RB::JSON::GetFloat_FromElement(*width_Element);
-				float height = RB::JSON::GetFloat_FromElement(*height_Element);
+				float x = RB::JSON::Parser::GetFloat_FromElement(*posX_Element);
+				float y = RB::JSON::Parser::GetFloat_FromElement(*posY_Element);
+				float width = RB::JSON::Parser::GetFloat_FromElement(*width_Element);
+				float height = RB::JSON::Parser::GetFloat_FromElement(*height_Element);
 
 				RB::Collisions::AABB aabb{ x, y, width, height };
 

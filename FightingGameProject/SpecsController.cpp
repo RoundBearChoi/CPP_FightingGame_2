@@ -52,12 +52,12 @@ namespace RB::Players::Specs
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
 		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
 
-		float walk_Forward_Speed = RB::JSON::GetFloat_FromElement(*vecAll[0]);
-		float walk_Back_Speed = RB::JSON::GetFloat_FromElement(*vecAll[1]);
-		int jumpUp_totalFrames = RB::JSON::GetInt_FromElement(*vecAll[2]);
-		float jumpUp_speedMultiplier = RB::JSON::GetFloat_FromElement(*vecAll[3]);
-		int jumpUp_Forward_totalFrames = RB::JSON::GetInt_FromElement(*vecAll[4]);
-		float jumpUp_Forward_speedMultiplier = RB::JSON::GetFloat_FromElement(*vecAll[5]);
+		float walk_Forward_Speed = RB::JSON::Parser::GetFloat_FromElement(*vecAll[0]);
+		float walk_Back_Speed = RB::JSON::Parser::GetFloat_FromElement(*vecAll[1]);
+		int jumpUp_totalFrames = RB::JSON::Parser::GetInt_FromElement(*vecAll[2]);
+		float jumpUp_speedMultiplier = RB::JSON::Parser::GetFloat_FromElement(*vecAll[3]);
+		int jumpUp_Forward_totalFrames = RB::JSON::Parser::GetInt_FromElement(*vecAll[4]);
+		float jumpUp_Forward_speedMultiplier = RB::JSON::Parser::GetFloat_FromElement(*vecAll[5]);
 
 		MoveSpecs specs;
 		specs.mCharacterType = characterType;

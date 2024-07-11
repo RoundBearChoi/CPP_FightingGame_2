@@ -22,6 +22,9 @@ namespace RB::JSON
 		static const json_object_element_s* GetElement(const json_object_element_s& element, int index);
 		static const std::vector<const json_object_element_s*> GetAllElements(const json_object_element_s& element);
 		static int ParseFrame(std::string str);
+		static int GetInt_FromElement(const json_object_element_s& element);
+		static float GetFloat_FromElement(const json_object_element_s& element);
+		static std::string GetString_FromElement(const json_object_element_s& element);
 	private:
 		std::vector<json_value_s*> _vecLoadedRoots;
 	};

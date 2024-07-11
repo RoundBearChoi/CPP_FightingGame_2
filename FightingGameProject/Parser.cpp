@@ -152,4 +152,37 @@ namespace RB::JSON
 		stream >> result;
 		return result;
 	}
+
+	int Parser::GetInt_FromElement(const json_object_element_s& element)
+	{
+		json_number_s* number = json_value_as_number(element.value);
+
+		std::stringstream stream;
+		stream << number->number;
+		int result = 0;
+		stream >> result;
+
+		return result;
+	}
+
+	float Parser::GetFloat_FromElement(const json_object_element_s& element)
+	{
+		json_number_s* number = json_value_as_number(element.value);
+
+		std::stringstream stream;
+		stream << number->number;
+		float result = 0.0f;
+		stream >> result;
+
+		return result;
+	}
+
+	std::string Parser::GetString_FromElement(const json_object_element_s& element)
+	{
+		json_string_s* string = json_value_as_string(element.value);
+
+		std::string result = string->string;
+
+		return result;
+	}
 }

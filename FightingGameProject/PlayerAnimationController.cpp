@@ -192,13 +192,13 @@ namespace RB::Render
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
 		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
 
-		std::string strEnum = RB::JSON::GetString_FromElement(*vecAll[0]);
-		int xTileCount = RB::JSON::GetInt_FromElement(*vecAll[1]);
-		int yTileCount = RB::JSON::GetInt_FromElement(*vecAll[2]);
-		int totalSprites = RB::JSON::GetInt_FromElement(*vecAll[3]);
-		int skipFixedUpdates = RB::JSON::GetInt_FromElement(*vecAll[4]);
-		float renderScale = RB::JSON::GetFloat_FromElement(*vecAll[5]);
-		int playOnceInt = RB::JSON::GetInt_FromElement(*vecAll[6]);
+		std::string strEnum = RB::JSON::Parser::GetString_FromElement(*vecAll[0]);
+		int xTileCount = RB::JSON::Parser::GetInt_FromElement(*vecAll[1]);
+		int yTileCount = RB::JSON::Parser::GetInt_FromElement(*vecAll[2]);
+		int totalSprites = RB::JSON::Parser::GetInt_FromElement(*vecAll[3]);
+		int skipFixedUpdates = RB::JSON::Parser::GetInt_FromElement(*vecAll[4]);
+		float renderScale = RB::JSON::Parser::GetFloat_FromElement(*vecAll[5]);
+		int playOnceInt = RB::JSON::Parser::GetInt_FromElement(*vecAll[6]);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first

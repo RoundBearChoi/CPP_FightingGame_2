@@ -102,10 +102,10 @@ namespace RB::Collisions
 			json_object_element_s* e2 = e1->next;
 			json_object_element_s* e3 = e2->next;
 
-			float offsetX = RB::JSON::GetFloat_FromElement(*e0);
-			float offsetY = RB::JSON::GetFloat_FromElement(*e1);
-			float width = RB::JSON::GetFloat_FromElement(*e2);
-			float height = RB::JSON::GetFloat_FromElement(*e3);
+			float offsetX = RB::JSON::Parser::GetFloat_FromElement(*e0);
+			float offsetY = RB::JSON::Parser::GetFloat_FromElement(*e1);
+			float width = RB::JSON::Parser::GetFloat_FromElement(*e2);
+			float height = RB::JSON::Parser::GetFloat_FromElement(*e3);
 
 			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 

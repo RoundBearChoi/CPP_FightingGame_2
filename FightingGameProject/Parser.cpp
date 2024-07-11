@@ -53,4 +53,19 @@ namespace RB::JSON
 
 		return nullptr;
 	}
+
+	bool Parser::RootExists(int index)
+	{
+		if (index >= _vecLoadedRoots.size())
+		{
+			return false;
+		}
+
+		if (_vecLoadedRoots[index] != nullptr)
+		{
+			return true;
+		}
+
+		return false;
+	}
 }

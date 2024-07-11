@@ -1,6 +1,7 @@
 #include "PlayerBoxSpecsLoader.h"
 
 #include "JGetter.h"
+#include "Parser.h"
 #include "PlayerBoxSpecs.h"
 
 namespace RB::Collisions
@@ -32,12 +33,16 @@ namespace RB::Collisions
 	{
 		std::string path = GetPath(spriteType);
 
-		std::string loaded = RB::JSON::LoadJSONFile(path);
+		RB::JSON::Parser parser;
 
-		json_value_s* root = json_parse(loaded.c_str(), loaded.length());
+		parser.LoadJSON(path);
+
+		//std::string loaded = RB::JSON::LoadJSONFile(path);
+		//
+		//json_value_s* root = json_parse(loaded.c_str(), loaded.length());
 
 		//file doesn't exist
-		if (root == nullptr)
+		if (!parser.RootExists(0))
 		{
 			LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
 
@@ -53,7 +58,7 @@ namespace RB::Collisions
 			return;
 		}
 
-		json_object_s* jObj = json_value_as_object(root);
+		json_object_s* jObj = parser.GetObj(0); //json_value_as_object(root);
 
 		json_object_element_s* element = jObj->start;
 
@@ -139,7 +144,7 @@ namespace RB::Collisions
 			element = element->next;
 		}
 
-		free(root);
+		//free(root);
 	}
 
 	LoadedPlayerBoxData* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Players::CharacterType characterType)

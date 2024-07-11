@@ -111,10 +111,6 @@ namespace RB::HBox
 		RB::JSON::Parser parser;
 		parser.LoadJSON(path);
 
-		//load
-		//std::string loadedJson = RB::JSON::LoadJSONFile(path);
-		//json_value_s* root = json_parse(loadedJson.c_str(), loadedJson.length());
-
 		//if failed to load, return default data
 		if (!parser.RootExists(0))
 		{
@@ -129,7 +125,7 @@ namespace RB::HBox
 		}
 
 		//read
-		auto obj = parser.GetObj(0); //json_value_as_object(root);
+		auto obj = parser.GetObj(0);
 
 		Loaded_HB_Data data{ spriteType, boxType };
 
@@ -141,9 +137,6 @@ namespace RB::HBox
 			AABB_Set AABBs { name, vec};
 			data.AddSet(AABBs);
 		}
-
-		//make sure to free root after use
-		//free(root);
 
 		return data;
 	}

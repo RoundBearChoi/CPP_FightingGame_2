@@ -59,18 +59,13 @@ namespace RB::Collisions
 		fileName += ".attackSpecs";
 		std::string path = "AttackSpecs/" + fileName;
 
-		//std::string str = RB::JSON::LoadJSONFile(path);
-		//json_value_s* root = json_parse(str.c_str(), str.size());
-		//json_object_s* jObj = json_value_as_object(root);
-
 		RB::JSON::Parser parser;
 		parser.LoadJSON(path);
-		auto jObj = parser.GetObj(0);
 
+		auto jObj = parser.GetObj(0);
 		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
-
-		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);// RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
+		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
 
 		std::string strStrengthType = RB::JSON::GetString_FromElement(*vecAll[0]);
 		int damageValue = RB::JSON::GetInt_FromElement(*vecAll[1]);
@@ -92,7 +87,5 @@ namespace RB::Collisions
 		{
 			_vecAttackSpecs.push_back(attackSpecs);
 		}
-
-		//free(root);
 	}
 }

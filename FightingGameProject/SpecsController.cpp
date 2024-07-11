@@ -44,18 +44,13 @@ namespace RB::Players::Specs
 
 	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType)
 	{
-		//std::string str = RB::JSON::LoadJSONFile(path);
-		//json_value_s* jRoot = json_parse(str.c_str(), str.length());
-		//json_object_s* jObj = json_value_as_object(jRoot);
-
 		RB::JSON::Parser parser;
 		parser.LoadJSON(path);
-		auto jObj = parser.GetObj(0);
 
+		auto jObj = parser.GetObj(0);
 		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
-
-		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement); //RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
+		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
 
 		float walk_Forward_Speed = RB::JSON::GetFloat_FromElement(*vecAll[0]);
 		float walk_Back_Speed = RB::JSON::GetFloat_FromElement(*vecAll[1]);
@@ -74,8 +69,6 @@ namespace RB::Players::Specs
 		specs.mJumpUp_Forward_speedMultiplier = jumpUp_Forward_speedMultiplier;
 
 		_vecMoveSpecs.push_back(specs);
-
-		//free(jRoot);
 
 		return specs;
 	}

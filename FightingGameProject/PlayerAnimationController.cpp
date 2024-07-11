@@ -192,7 +192,7 @@ namespace RB::Render
 		//json_value_s* root = json_parse(str.c_str(), str.size());
 		//json_object_s* jObj = json_value_as_object(root);
 
-		std::vector<json_object_element_s*> vecAll = RB::JSON::GetAllElements(jObj);
+		std::vector<json_object_element_s*> vecAll = RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
 
 		std::string strEnum = RB::JSON::GetString_FromElement(*vecAll[0]);
 		int xTileCount = RB::JSON::GetInt_FromElement(*vecAll[1]);

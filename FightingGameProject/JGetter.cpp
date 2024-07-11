@@ -5,6 +5,8 @@
 #include <sstream>
 #include <regex>
 
+#include "Parser.h"
+
 namespace RB::JSON
 {
 	//std::string LoadJSONFile(std::string jsonFilePath)
@@ -31,26 +33,26 @@ namespace RB::JSON
 	//	return loadedStr;
 	//}
 
-	json_object_element_s* GetElementNFromObj(const json_object_s& obj, size_t index)
-	{
-		json_object_element_s* element = obj.start;
-
-		size_t count = 0;
-
-		while (element != nullptr)
-		{
-			if (count == index)
-			{
-				return element;
-			}
-
-			element = element->next;
-
-			count++;
-		}
-
-		return nullptr;
-	}
+	//json_object_element_s* GetElementNFromObj(const json_object_s& obj, size_t index)
+	//{
+	//	json_object_element_s* element = obj.start;
+	//
+	//	size_t count = 0;
+	//
+	//	while (element != nullptr)
+	//	{
+	//		if (count == index)
+	//		{
+	//			return element;
+	//		}
+	//
+	//		element = element->next;
+	//
+	//		count++;
+	//	}
+	//
+	//	return nullptr;
+	//}
 
 	json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement)
 	{
@@ -98,7 +100,7 @@ namespace RB::JSON
 	/// </summary>
 	std::vector<json_object_element_s*> GetAllElements(json_object_s* jObj)
 	{
-		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
+		json_object_element_s* rootElement = RB::JSON::Parser::GetElement(*jObj, 0); //RB::JSON::GetElementNFromObj(*jObj, 0);
 
 		std::vector<json_object_element_s*> vecElements;
 

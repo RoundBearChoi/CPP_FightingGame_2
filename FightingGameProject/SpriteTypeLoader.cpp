@@ -1,15 +1,19 @@
 #include "SpriteTypeLoader.h"
 
 #include "JGetter.h"
+#include "Parser.h"
 
 namespace RB::Sprites
 {
 	RB::Sprites::SpriteType LoadSpriteType(const std::string& path)
 	{
-		std::string str = RB::JSON::LoadJSONFile(path);
-		json_value_s* root = json_parse(str.c_str(), str.size());
+		//std::string str = RB::JSON::LoadJSONFile(path);
+		//json_value_s* root = json_parse(str.c_str(), str.size());
+		//json_object_s* jObj = json_value_as_object(root);
 
-		json_object_s* jObj = json_value_as_object(root);
+		RB::JSON::Parser parser;
+		parser.LoadJSON(path);
+		json_object_s* jObj = parser.GetObj(0);
 
 		json_object_element_s* rootElement = RB::JSON::GetElementNFromObj(*jObj, 0);
 
@@ -19,7 +23,7 @@ namespace RB::Sprites
 
 		RB::Sprites::SpriteType loadedSpriteType = RB::Sprites::SpriteType::_from_string(spriteEnumStr.c_str());
 
-		free(root);
+		//free(root);
 
 		return loadedSpriteType;
 	}

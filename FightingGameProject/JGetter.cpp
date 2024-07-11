@@ -9,59 +9,6 @@
 
 namespace RB::JSON
 {
-	//std::string LoadJSONFile(std::string jsonFilePath)
-	//{
-	//	//std::cout << std::endl;
-	//	//std::cout << "loading " << jsonFilePath << ".." << std::endl;
-	//
-	//	std::ifstream ifs(jsonFilePath);
-	//
-	//	std::string loadedStr((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
-	//
-	//	if (loadedStr.empty())
-	//	{
-	//		std::cout << std::endl;
-	//		std::cout << "file doesn't exist: " << jsonFilePath << std::endl;
-	//	}
-	//	else
-	//	{
-	//		//std::cout << loadedStr << std::endl;
-	//	}
-	//
-	//	loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
-	//
-	//	return loadedStr;
-	//}
-
-	//json_object_element_s* GetElementNFromObj(const json_object_s& obj, size_t index)
-	//{
-	//	json_object_element_s* element = obj.start;
-	//
-	//	size_t count = 0;
-	//
-	//	while (element != nullptr)
-	//	{
-	//		if (count == index)
-	//		{
-	//			return element;
-	//		}
-	//
-	//		element = element->next;
-	//
-	//		count++;
-	//	}
-	//
-	//	return nullptr;
-	//}
-
-	//json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement)
-	//{
-	//	json_object_s* obj = json_value_as_object(parentElement.value);
-	//	json_object_element_s* element = obj->start;
-	//
-	//	return element;
-	//}
-
 	int GetInt_FromElement(const json_object_element_s& element)
 	{
 		json_number_s* number = json_value_as_number(element.value);
@@ -100,7 +47,7 @@ namespace RB::JSON
 	/// </summary>
 	std::vector<json_object_element_s*> GetAllElements(json_object_s* jObj)
 	{
-		json_object_element_s* rootElement = RB::JSON::Parser::GetElement(*jObj, 0); //RB::JSON::GetElementNFromObj(*jObj, 0);
+		json_object_element_s* rootElement = RB::JSON::Parser::GetElement(*jObj, 0);
 
 		std::vector<json_object_element_s*> vecElements;
 
@@ -109,7 +56,7 @@ namespace RB::JSON
 			return vecElements;
 		}
 
-		json_object_element_s* e = RB::JSON::Parser::GetElement(*rootElement, 0); //RB::JSON::GetElementInsideElement(*rootElement);
+		json_object_element_s* e = RB::JSON::Parser::GetElement(*rootElement, 0);
 
 		while (e != nullptr)
 		{

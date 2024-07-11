@@ -348,7 +348,6 @@
     <ClInclude Include="iPlayerDebugController.h" />
     <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />
-    <ClInclude Include="jsonExample.h" />
     <ClInclude Include="P0_StandUp.h" />
     <ClInclude Include="PlayerBox.h" />
     <ClInclude Include="PlayerBoxDataController.h" />

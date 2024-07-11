@@ -17,7 +17,7 @@ namespace RB::Sprites
 
 		json_object_element_s* rootElement = RB::JSON::Parser::GetElement(*jObj, 0); //RB::JSON::GetElementNFromObj(*jObj, 0);
 
-		json_object_element_s* spriteEnumElement = RB::JSON::GetElementInsideElement(*rootElement); //get sprite enum string
+		json_object_element_s* spriteEnumElement = RB::JSON::Parser::GetElement(*rootElement, 0); //RB::JSON::GetElementInsideElement(*rootElement); //get sprite enum string
 
 		std::string spriteEnumStr = RB::JSON::GetString_FromElement(*spriteEnumElement);
 

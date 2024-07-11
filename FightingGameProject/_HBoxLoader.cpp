@@ -6,6 +6,7 @@
 #include <sstream>
 
 #include "JGetter.h"
+#include "Parser.h"
 
 #include "AABB.h"
 #include "AABB_Set.h"
@@ -107,12 +108,15 @@ namespace RB::HBox
 	/// </summary>
 	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType)
 	{
+		RB::JSON::Parser parser;
+		parser.LoadJSON(path);
+
 		//load
-		std::string loadedJson = RB::JSON::LoadJSONFile(path);
-		json_value_s* root = json_parse(loadedJson.c_str(), loadedJson.length());
+		//std::string loadedJson = RB::JSON::LoadJSONFile(path);
+		//json_value_s* root = json_parse(loadedJson.c_str(), loadedJson.length());
 
 		//if failed to load, return default data
-		if (root == nullptr)
+		if (!parser.RootExists(0))
 		{
 			Loaded_HB_Data defaultData{ spriteType, boxType };
 
@@ -125,7 +129,7 @@ namespace RB::HBox
 		}
 
 		//read
-		json_object_s* obj = json_value_as_object(root);
+		json_object_s* obj = parser.GetObj(0); //json_value_as_object(root);
 
 		Loaded_HB_Data data{ spriteType, boxType };
 
@@ -139,7 +143,7 @@ namespace RB::HBox
 		}
 
 		//make sure to free root after use
-		free(root);
+		//free(root);
 
 		return data;
 	}

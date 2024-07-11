@@ -1,4 +1,4 @@
-#include "Parser.h"
+#include "JParser.h"
 
 #include <iostream>
 #include <fstream>
@@ -7,7 +7,7 @@
 
 namespace RB::JSON
 {
-	Parser::~Parser()
+	JParser::~JParser()
 	{
 		for (int i = 0; i < _vecLoadedRoots.size(); i++)
 		{
@@ -17,7 +17,7 @@ namespace RB::JSON
 		_vecLoadedRoots.clear();
 	}
 
-	const json_value_s* Parser::LoadJSON(std::string path)
+	const json_value_s* JParser::LoadJSON(std::string path)
 	{
 		std::ifstream ifs(path);
 
@@ -45,7 +45,7 @@ namespace RB::JSON
 		return root;
 	}
 
-	const json_object_s* Parser::GetObj(int index)
+	const json_object_s* JParser::GetObj(int index)
 	{
 		if (_vecLoadedRoots.size() > index)
 		{
@@ -56,7 +56,7 @@ namespace RB::JSON
 		return nullptr;
 	}
 
-	bool Parser::RootExists(int index)
+	bool JParser::RootExists(int index)
 	{
 		if (index >= _vecLoadedRoots.size())
 		{
@@ -74,7 +74,7 @@ namespace RB::JSON
 	/// <summary>
 	/// get element inside object
 	/// </summary>
-	const json_object_element_s* Parser::GetElement(const json_object_s& obj, int index)
+	const json_object_element_s* JParser::GetElement(const json_object_s& obj, int index)
 	{
 		json_object_element_s* element = obj.start;
 
@@ -98,7 +98,7 @@ namespace RB::JSON
 	/// <summary>
 	/// get element inside element
 	/// </summary>
-	const json_object_element_s* Parser::GetElement(const json_object_element_s& element, int index)
+	const json_object_element_s* JParser::GetElement(const json_object_element_s& element, int index)
 	{
 		json_object_s* obj = json_value_as_object(element.value);
 
@@ -121,7 +121,7 @@ namespace RB::JSON
 		return nullptr;
 	}
 
-	const std::vector<const json_object_element_s*> Parser::GetAllElements(const json_object_element_s& element)
+	const std::vector<const json_object_element_s*> JParser::GetAllElements(const json_object_element_s& element)
 	{
 		std::vector<const json_object_element_s*> vecElements;
 
@@ -142,7 +142,7 @@ namespace RB::JSON
 		return vecElements;
 	}
 
-	int Parser::ParseFrame(std::string str)
+	int JParser::ParseFrame(std::string str)
 	{
 		std::regex pattern("frame_");
 		std::string replacement = "";
@@ -153,7 +153,7 @@ namespace RB::JSON
 		return result;
 	}
 
-	int Parser::GetInt_FromElement(const json_object_element_s& element)
+	int JParser::GetInt_FromElement(const json_object_element_s& element)
 	{
 		json_number_s* number = json_value_as_number(element.value);
 
@@ -165,7 +165,7 @@ namespace RB::JSON
 		return result;
 	}
 
-	float Parser::GetFloat_FromElement(const json_object_element_s& element)
+	float JParser::GetFloat_FromElement(const json_object_element_s& element)
 	{
 		json_number_s* number = json_value_as_number(element.value);
 
@@ -177,7 +177,7 @@ namespace RB::JSON
 		return result;
 	}
 
-	std::string Parser::GetString_FromElement(const json_object_element_s& element)
+	std::string JParser::GetString_FromElement(const json_object_element_s& element)
 	{
 		json_string_s* string = json_value_as_string(element.value);
 

@@ -4,7 +4,7 @@
 
 #include "AnimationObj.h"
 #include "PlayerState.h"
-#include "Parser.h"
+#include "JParser.h"
 #include "RenderLayerType.h"
 
 #include "iPlayerController.h"
@@ -182,22 +182,22 @@ namespace RB::Render
 
 	AnimationSpecs PlayerAnimationController::_LoadAnimationSpecsFromJSON(std::string path)
 	{
-		RB::JSON::Parser parser;
+		RB::JSON::JParser parser;
 
 		parser.LoadJSON(path);
 
 		auto obj = parser.GetObj(0);
-		auto element = RB::JSON::Parser::GetElement(*obj, 0);
-		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
-		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
+		auto element = RB::JSON::JParser::GetElement(*obj, 0);
+		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
+		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
 
-		std::string strEnum = RB::JSON::Parser::GetString_FromElement(*vecAll[0]);
-		int xTileCount = RB::JSON::Parser::GetInt_FromElement(*vecAll[1]);
-		int yTileCount = RB::JSON::Parser::GetInt_FromElement(*vecAll[2]);
-		int totalSprites = RB::JSON::Parser::GetInt_FromElement(*vecAll[3]);
-		int skipFixedUpdates = RB::JSON::Parser::GetInt_FromElement(*vecAll[4]);
-		float renderScale = RB::JSON::Parser::GetFloat_FromElement(*vecAll[5]);
-		int playOnceInt = RB::JSON::Parser::GetInt_FromElement(*vecAll[6]);
+		std::string strEnum = RB::JSON::JParser::GetString_FromElement(*vecAll[0]);
+		int xTileCount = RB::JSON::JParser::GetInt_FromElement(*vecAll[1]);
+		int yTileCount = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
+		int totalSprites = RB::JSON::JParser::GetInt_FromElement(*vecAll[3]);
+		int skipFixedUpdates = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
+		float renderScale = RB::JSON::JParser::GetFloat_FromElement(*vecAll[5]);
+		int playOnceInt = RB::JSON::JParser::GetInt_FromElement(*vecAll[6]);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		//load sprites first

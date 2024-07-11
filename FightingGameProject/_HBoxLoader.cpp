@@ -5,7 +5,7 @@
 #include <cassert>
 #include <sstream>
 
-#include "Parser.h"
+#include "JParser.h"
 
 #include "AABB.h"
 #include "AABB_Set.h"
@@ -107,7 +107,7 @@ namespace RB::HBox
 	/// </summary>
 	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType)
 	{
-		RB::JSON::Parser parser;
+		RB::JSON::JParser parser;
 		parser.LoadJSON(path);
 
 		//if failed to load, return default data
@@ -207,15 +207,15 @@ namespace RB::HBox
 			{
 				json_object_s* obj = json_value_as_object(element->value);
 
-				auto posX_Element = RB::JSON::Parser::GetElement(*obj, 0); //RB::JSON::GetElementNFromObj(*obj, 0);
-				auto posY_Element = RB::JSON::Parser::GetElement(*obj, 1); //RB::JSON::GetElementNFromObj(*obj, 1);
-				auto width_Element = RB::JSON::Parser::GetElement(*obj, 2); //RB::JSON::GetElementNFromObj(*obj, 2);
-				auto height_Element = RB::JSON::Parser::GetElement(*obj, 3); //RB::JSON::GetElementNFromObj(*obj, 3);
+				auto posX_Element = RB::JSON::JParser::GetElement(*obj, 0); //RB::JSON::GetElementNFromObj(*obj, 0);
+				auto posY_Element = RB::JSON::JParser::GetElement(*obj, 1); //RB::JSON::GetElementNFromObj(*obj, 1);
+				auto width_Element = RB::JSON::JParser::GetElement(*obj, 2); //RB::JSON::GetElementNFromObj(*obj, 2);
+				auto height_Element = RB::JSON::JParser::GetElement(*obj, 3); //RB::JSON::GetElementNFromObj(*obj, 3);
 
-				float x = RB::JSON::Parser::GetFloat_FromElement(*posX_Element);
-				float y = RB::JSON::Parser::GetFloat_FromElement(*posY_Element);
-				float width = RB::JSON::Parser::GetFloat_FromElement(*width_Element);
-				float height = RB::JSON::Parser::GetFloat_FromElement(*height_Element);
+				float x = RB::JSON::JParser::GetFloat_FromElement(*posX_Element);
+				float y = RB::JSON::JParser::GetFloat_FromElement(*posY_Element);
+				float width = RB::JSON::JParser::GetFloat_FromElement(*width_Element);
+				float height = RB::JSON::JParser::GetFloat_FromElement(*height_Element);
 
 				RB::Collisions::AABB aabb{ x, y, width, height };
 

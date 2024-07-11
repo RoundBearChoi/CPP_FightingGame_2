@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "Parser.h"
+#include "JParser.h"
 
 namespace RB::Players::Specs
 {
@@ -43,20 +43,20 @@ namespace RB::Players::Specs
 
 	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType)
 	{
-		RB::JSON::Parser parser;
+		RB::JSON::JParser parser;
 		parser.LoadJSON(path);
 
 		auto jObj = parser.GetObj(0);
-		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
-		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
-		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
+		auto element = RB::JSON::JParser::GetElement(*jObj, 0);
+		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
+		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
 
-		float walk_Forward_Speed = RB::JSON::Parser::GetFloat_FromElement(*vecAll[0]);
-		float walk_Back_Speed = RB::JSON::Parser::GetFloat_FromElement(*vecAll[1]);
-		int jumpUp_totalFrames = RB::JSON::Parser::GetInt_FromElement(*vecAll[2]);
-		float jumpUp_speedMultiplier = RB::JSON::Parser::GetFloat_FromElement(*vecAll[3]);
-		int jumpUp_Forward_totalFrames = RB::JSON::Parser::GetInt_FromElement(*vecAll[4]);
-		float jumpUp_Forward_speedMultiplier = RB::JSON::Parser::GetFloat_FromElement(*vecAll[5]);
+		float walk_Forward_Speed = RB::JSON::JParser::GetFloat_FromElement(*vecAll[0]);
+		float walk_Back_Speed = RB::JSON::JParser::GetFloat_FromElement(*vecAll[1]);
+		int jumpUp_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
+		float jumpUp_speedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[3]);
+		int jumpUp_Forward_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
+		float jumpUp_Forward_speedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[5]);
 
 		MoveSpecs specs;
 		specs.mCharacterType = characterType;

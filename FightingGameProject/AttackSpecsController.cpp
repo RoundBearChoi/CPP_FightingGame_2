@@ -1,6 +1,6 @@
 #include "AttackSpecsController.h"
 
-#include "Parser.h"
+#include "JParser.h"
 
 namespace RB::Collisions
 {
@@ -58,19 +58,19 @@ namespace RB::Collisions
 		fileName += ".attackSpecs";
 		std::string path = "AttackSpecs/" + fileName;
 
-		RB::JSON::Parser parser;
+		RB::JSON::JParser parser;
 		parser.LoadJSON(path);
 
 		auto jObj = parser.GetObj(0);
-		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
-		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
-		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
+		auto element = RB::JSON::JParser::GetElement(*jObj, 0);
+		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
+		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
 
-		std::string strStrengthType = RB::JSON::Parser::GetString_FromElement(*vecAll[0]);
-		int damageValue = RB::JSON::Parser::GetInt_FromElement(*vecAll[1]);
-		int hitStopValue = RB::JSON::Parser::GetInt_FromElement(*vecAll[2]);
-		int minFixedUpdatesValue = RB::JSON::Parser::GetInt_FromElement(*vecAll[3]);
-		int maxHitsValue = RB::JSON::Parser::GetInt_FromElement(*vecAll[4]);
+		std::string strStrengthType = RB::JSON::JParser::GetString_FromElement(*vecAll[0]);
+		int damageValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[1]);
+		int hitStopValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
+		int minFixedUpdatesValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[3]);
+		int maxHitsValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
 
 		RB::Collisions::AttackStrengthType attackStrengthType = RB::Collisions::AttackStrengthType::_from_string(strStrengthType.c_str());
 

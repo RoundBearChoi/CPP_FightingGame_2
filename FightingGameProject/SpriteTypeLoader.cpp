@@ -1,19 +1,19 @@
 #include "SpriteTypeLoader.h"
 
-#include "Parser.h"
+#include "JParser.h"
 
 namespace RB::Sprites
 {
 	RB::Sprites::SpriteType LoadSpriteType(const std::string& path)
 	{
-		RB::JSON::Parser parser;
+		RB::JSON::JParser parser;
 		parser.LoadJSON(path);
 
 		auto jObj = parser.GetObj(0);
-		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
-		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
+		auto element = RB::JSON::JParser::GetElement(*jObj, 0);
+		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
 
-		std::string spriteEnumStr = RB::JSON::Parser::GetString_FromElement(*subElement);
+		std::string spriteEnumStr = RB::JSON::JParser::GetString_FromElement(*subElement);
 
 		RB::Sprites::SpriteType loadedSpriteType = RB::Sprites::SpriteType::_from_string(spriteEnumStr.c_str());
 

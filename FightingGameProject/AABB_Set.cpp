@@ -1,19 +1,19 @@
 #include "AABB_Set.h"
 
-#include "Parser.h"
+#include "JParser.h"
 
 namespace RB::HBox
 {
 	AABB_Set::AABB_Set(std::string frameName)
 	{
 		_frameName = frameName;
-		_frame = RB::JSON::Parser::ParseFrame(frameName);
+		_frame = RB::JSON::JParser::ParseFrame(frameName);
 	}
 
 	AABB_Set::AABB_Set(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
 	{
 		_frameName = frameName;
-		_frame = RB::JSON::Parser::ParseFrame(frameName);
+		_frame = RB::JSON::JParser::ParseFrame(frameName);
 
 		for (auto i = vecAABB.begin(); i != vecAABB.end(); i++)
 		{
@@ -54,6 +54,6 @@ namespace RB::HBox
 	void AABB_Set::SetFrameNameAndParse(const std::string& name)
 	{
 		_frameName = name;
-		_frame = RB::JSON::Parser::ParseFrame(name);
+		_frame = RB::JSON::JParser::ParseFrame(name);
 	}
 }

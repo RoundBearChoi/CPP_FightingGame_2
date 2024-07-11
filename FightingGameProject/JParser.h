@@ -7,10 +7,10 @@
 
 namespace RB::JSON
 {
-	class Parser
+	class JParser
 	{
 	public:
-		~Parser();
+		~JParser();
 
 	public:
 		const json_value_s* LoadJSON(std::string path);

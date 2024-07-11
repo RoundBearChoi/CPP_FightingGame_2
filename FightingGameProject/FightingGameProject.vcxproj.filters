@@ -406,7 +406,7 @@
     <ClCompile Include="RenderLayerType.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="Parser.cpp">
+    <ClCompile Include="JParser.cpp">
       <Filter>Source Files\JSON</Filter>
     </ClCompile>
   </ItemGroup>
@@ -912,7 +912,7 @@
     <ClInclude Include="GameSettings.h">
       <Filter>Source Files\RB</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
+    <ClInclude Include="JParser.h">
       <Filter>Source Files\JSON</Filter>
     </ClInclude>
   </ItemGroup>

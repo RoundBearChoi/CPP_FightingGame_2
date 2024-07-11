@@ -187,7 +187,7 @@
     <ClCompile Include="P0_Strong_Punch.cpp" />
     <ClCompile Include="P0_Strong_Wince.cpp" />
     <ClCompile Include="GetQuadOnPivot.cpp" />
-    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="JParser.cpp" />
     <ClCompile Include="RenderLayerType.cpp" />
     <ClCompile Include="SpriteTypeLoader.cpp" />
     <ClCompile Include="TargetBoxDataController.cpp" />
@@ -271,7 +271,7 @@
     <ClInclude Include="HBoxEditorUpdaterBase.h" />
     <ClInclude Include="iUpdater.h" />
     <ClInclude Include="GetQuadOnPivot.h" />
-    <ClInclude Include="Parser.h" />
+    <ClInclude Include="JParser.h" />
     <ClInclude Include="RenderLayerType.h" />
     <ClInclude Include="RenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />

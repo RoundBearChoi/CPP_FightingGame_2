@@ -11,8 +11,6 @@
 #include "RenderLayerType.h"
 #include "CurrentUpdater.h"
 
-#include "jsonExample.h"
-
 namespace RB
 {
 	class Game : public olc::PixelGameEngine
@@ -33,8 +31,6 @@ namespace RB
 			_updater->Init();
 
 			RB::Frames::Time::ResetFixedDeltaTime();
-
-			RB::JSON::example{}.example1();
 
 			RB::Render::CreateLayers();
 

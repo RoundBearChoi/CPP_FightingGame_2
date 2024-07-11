@@ -6,6 +6,7 @@
 
 #include "P0_JumpUp_0.h"
 #include "P0_Idle.h"
+#include "P0_WalkForward.h"
 
 #include "iSpecsController.h"
 
@@ -19,7 +20,7 @@ namespace RB::PlayerStates::Aku
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::Aku::P0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::PlayerStates::Aku::P0_Idle(), new RB::PlayerStates::Aku::P0_WalkBack()));
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::PlayerStates::Aku::P0_Idle(), new RB::PlayerStates::Aku::P0_WalkForward()));
 
 		EnterStateComponents();
 	}

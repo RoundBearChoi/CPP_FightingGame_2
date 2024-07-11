@@ -37,10 +37,6 @@ namespace RB::Collisions
 
 		parser.LoadJSON(path);
 
-		//std::string loaded = RB::JSON::LoadJSONFile(path);
-		//
-		//json_value_s* root = json_parse(loaded.c_str(), loaded.length());
-
 		//file doesn't exist
 		if (!parser.RootExists(0))
 		{
@@ -58,7 +54,7 @@ namespace RB::Collisions
 			return;
 		}
 
-		json_object_s* jObj = parser.GetObj(0); //json_value_as_object(root);
+		json_object_s* jObj = parser.GetObj(0);
 
 		json_object_element_s* element = jObj->start;
 
@@ -143,8 +139,6 @@ namespace RB::Collisions
 
 			element = element->next;
 		}
-
-		//free(root);
 	}
 
 	LoadedPlayerBoxData* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Players::CharacterType characterType)

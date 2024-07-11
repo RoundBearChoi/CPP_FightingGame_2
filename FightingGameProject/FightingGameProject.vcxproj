@@ -159,6 +159,7 @@
     <ClCompile Include="FlipQuad.cpp" />
     <ClCompile Include="FollowPlayers.cpp" />
     <ClCompile Include="GameFrame.cpp" />
+    <ClCompile Include="GameSettings.cpp" />
     <ClCompile Include="GeneralHitStopController.cpp" />
     <ClCompile Include="CurrentUpdater.cpp" />
     <ClCompile Include="GetCurrentAnimationFrame.cpp" />
@@ -187,6 +188,7 @@
     <ClCompile Include="P0_Strong_Punch.cpp" />
     <ClCompile Include="P0_Strong_Wince.cpp" />
     <ClCompile Include="GetQuadOnPivot.cpp" />
+    <ClCompile Include="RenderLayerType.cpp" />
     <ClCompile Include="SpriteTypeLoader.cpp" />
     <ClCompile Include="TargetBoxDataController.cpp" />
     <ClCompile Include="P0_StandUp.cpp" />
@@ -263,6 +265,7 @@
     <ClInclude Include="CollisionType.h" />
     <ClInclude Include="CurrentUpdater.h" />
     <ClInclude Include="FlipQuad.h" />
+    <ClInclude Include="GameSettings.h" />
     <ClInclude Include="GetCurrentAnimationFrame.h" />
     <ClInclude Include="GetCurrentSpriteType.h" />
     <ClInclude Include="HBoxEditorUpdaterBase.h" />

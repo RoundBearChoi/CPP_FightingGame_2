@@ -403,6 +403,12 @@
     <ClCompile Include="FlipQuad.cpp">
       <Filter>Source Files\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="GameSettings.cpp">
+      <Filter>Source Files\RB</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderLayerType.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -908,6 +914,9 @@
     </ClInclude>
     <ClInclude Include="FlipQuad.h">
       <Filter>Source Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSettings.h">
+      <Filter>Source Files\RB</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

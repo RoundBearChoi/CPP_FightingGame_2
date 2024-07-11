@@ -15,7 +15,7 @@ namespace RB::JSON
 		_vecLoadedRoots.clear();
 	}
 
-	json_value_s* Parser::LoadJSON(std::string path)
+	const json_value_s* Parser::LoadJSON(std::string path)
 	{
 		std::ifstream ifs(path);
 
@@ -119,7 +119,7 @@ namespace RB::JSON
 		return nullptr;
 	}
 
-	std::vector<const json_object_element_s*> Parser::GetAllElements_FIXED(const json_object_element_s& element)
+	const std::vector<const json_object_element_s*> Parser::GetAllElements_FIXED(const json_object_element_s& element)
 	{
 		std::vector<const json_object_element_s*> vecElements;
 

@@ -151,7 +151,6 @@
     <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="CircleRenderer.cpp" />
     <ClCompile Include="ControllerBase.cpp" />
-    <ClCompile Include="custom.cpp" />
     <ClCompile Include="DetectHit.cpp" />
     <ClCompile Include="DisplaySize.cpp" />
     <ClCompile Include="DoNotFixDirectionDuringState.cpp" />

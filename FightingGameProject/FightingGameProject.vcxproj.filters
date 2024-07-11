@@ -409,9 +409,6 @@
     <ClCompile Include="JParser.cpp">
       <Filter>Source Files\JSON</Filter>
     </ClCompile>
-    <ClCompile Include="custom.cpp">
-      <Filter>Source Files\RB</Filter>
-    </ClCompile>
     <ClCompile Include="RenderTimer.cpp">
       <Filter>Source Files\Frames</Filter>
     </ClCompile>

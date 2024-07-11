@@ -21,7 +21,7 @@ namespace RB::JSON
 		static json_object_element_s* GetElement(const json_object_s& obj, int index);
 		static json_object_element_s* GetElement(const json_object_element_s& element, int index);
 		static std::vector<json_object_element_s*> GetAllElements(const json_object_s& jObj);
-		static std::vector<json_object_element_s*> GetAllElements_FIXED(json_object_element_s& jObj);
+		static std::vector<const json_object_element_s*> GetAllElements_FIXED(const json_object_element_s& jObj);
 
 	private:
 		std::vector<json_value_s*> _vecLoadedRoots;

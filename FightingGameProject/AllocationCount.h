@@ -27,10 +27,12 @@ void operator delete(void* ptr)
     {
         if (onlyShowZeroCount && numObjects != 0)
         {
-            return;
+            // do nothing
         }
-
-        std::cout << "allocation count: " << numObjects << std::endl;;
+        else
+        {
+            std::cout << "allocation count: " << numObjects << std::endl;;
+        }
     }
 }
 

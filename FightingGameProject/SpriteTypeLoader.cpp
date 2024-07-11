@@ -15,11 +15,11 @@ namespace RB::Sprites
 		parser.LoadJSON(path);
 		json_object_s* jObj = parser.GetObj(0);
 
-		json_object_element_s* rootElement = RB::JSON::Parser::GetElement(*jObj, 0); //RB::JSON::GetElementNFromObj(*jObj, 0);
+		json_object_element_s* element = RB::JSON::Parser::GetElement(*jObj, 0); //RB::JSON::GetElementNFromObj(*jObj, 0);
 
-		json_object_element_s* spriteEnumElement = RB::JSON::Parser::GetElement(*rootElement, 0); //RB::JSON::GetElementInsideElement(*rootElement); //get sprite enum string
+		json_object_element_s* subElement = RB::JSON::Parser::GetElement(*element, 0); //RB::JSON::GetElementInsideElement(*rootElement); //get sprite enum string
 
-		std::string spriteEnumStr = RB::JSON::GetString_FromElement(*spriteEnumElement);
+		std::string spriteEnumStr = RB::JSON::GetString_FromElement(*subElement);
 
 		RB::Sprites::SpriteType loadedSpriteType = RB::Sprites::SpriteType::_from_string(spriteEnumStr.c_str());
 

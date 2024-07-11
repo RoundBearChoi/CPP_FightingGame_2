@@ -186,10 +186,10 @@ namespace RB::Render
 		RB::JSON::Parser parser;
 
 		parser.LoadJSON(path);
+
 		auto obj = parser.GetObj(0);
 		auto element = RB::JSON::Parser::GetElement(*obj, 0);
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
-
 		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);
 
 		std::string strEnum = RB::JSON::GetString_FromElement(*vecAll[0]);

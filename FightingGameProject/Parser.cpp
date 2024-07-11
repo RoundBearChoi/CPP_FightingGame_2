@@ -119,28 +119,6 @@ namespace RB::JSON
 		return nullptr;
 	}
 
-	//std::vector<json_object_element_s*> Parser::GetAllElements(const json_object_s& jObj)
-	//{
-	//	json_object_element_s* rootElement = RB::JSON::Parser::GetElement(jObj, 0);
-	//
-	//	std::vector<json_object_element_s*> vecElements;
-	//
-	//	if (rootElement == nullptr)
-	//	{
-	//		return vecElements;
-	//	}
-	//
-	//	json_object_element_s* e = RB::JSON::Parser::GetElement(*rootElement, 0);
-	//
-	//	while (e != nullptr)
-	//	{
-	//		vecElements.push_back(e);
-	//		e = e->next;
-	//	}
-	//
-	//	return vecElements;
-	//}
-
 	std::vector<const json_object_element_s*> Parser::GetAllElements_FIXED(const json_object_element_s& element)
 	{
 		std::vector<const json_object_element_s*> vecElements;

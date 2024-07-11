@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <regex>
+#include <sstream>
 
 namespace RB::JSON
 {
@@ -138,5 +140,16 @@ namespace RB::JSON
 		}
 
 		return vecElements;
+	}
+
+	int Parser::ParseFrame(std::string str)
+	{
+		std::regex pattern("frame_");
+		std::string replacement = "";
+		std::string s = std::regex_replace(str, pattern, replacement);
+		std::stringstream stream(s);
+		unsigned int result;
+		stream >> result;
+		return result;
 	}
 }

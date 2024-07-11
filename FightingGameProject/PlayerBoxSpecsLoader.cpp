@@ -78,7 +78,7 @@ namespace RB::Collisions
 		//normal file
 		while (element != nullptr)
 		{
-			unsigned int frame = RB::JSON::ParseFrame(element->name->string);
+			unsigned int frame = RB::JSON::Parser::ParseFrame(element->name->string);
 			
 			json_array_s* arr = json_value_as_array(element->value);
 

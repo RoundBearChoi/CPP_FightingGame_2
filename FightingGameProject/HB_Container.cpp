@@ -32,8 +32,9 @@ namespace RB::HBox
 
 	void HB_Container::SetDir(std::string dir, HBoxType boxType)
 	{
-		std::cout << std::endl;
-		std::cout << "presetting dir: " << dir << std::endl;
+		//std::cout << std::endl;
+		//std::cout << "presetting dir: " << dir << std::endl;
+
 		_dir = dir;
 		_boxType = boxType;
 	}

@@ -54,13 +54,13 @@ namespace RB::JSON
 	//	return nullptr;
 	//}
 
-	json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement)
-	{
-		json_object_s* obj = json_value_as_object(parentElement.value);
-		json_object_element_s* element = obj->start;
-
-		return element;
-	}
+	//json_object_element_s* GetElementInsideElement(const json_object_element_s& parentElement)
+	//{
+	//	json_object_s* obj = json_value_as_object(parentElement.value);
+	//	json_object_element_s* element = obj->start;
+	//
+	//	return element;
+	//}
 
 	int GetInt_FromElement(const json_object_element_s& element)
 	{
@@ -109,12 +109,12 @@ namespace RB::JSON
 			return vecElements;
 		}
 
-		json_object_element_s* element = RB::JSON::GetElementInsideElement(*rootElement);
+		json_object_element_s* e = RB::JSON::Parser::GetElement(*rootElement, 0); //RB::JSON::GetElementInsideElement(*rootElement);
 
-		while (element != nullptr)
+		while (e != nullptr)
 		{
-			vecElements.push_back(element);
-			element = element->next;
+			vecElements.push_back(e);
+			e = e->next;
 		}
 
 		return vecElements;

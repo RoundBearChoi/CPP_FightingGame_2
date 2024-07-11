@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "JGetter.h"
+#include "Parser.h"
 
 namespace RB::Players::Specs
 {
@@ -43,9 +44,13 @@ namespace RB::Players::Specs
 
 	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType)
 	{
-		std::string str = RB::JSON::LoadJSONFile(path);
-		json_value_s* jRoot = json_parse(str.c_str(), str.length());
-		json_object_s* jObj = json_value_as_object(jRoot);
+		//std::string str = RB::JSON::LoadJSONFile(path);
+		//json_value_s* jRoot = json_parse(str.c_str(), str.length());
+		//json_object_s* jObj = json_value_as_object(jRoot);
+
+		RB::JSON::Parser parser;
+		parser.LoadJSON(path);
+		json_object_s* jObj = parser.GetObj(0);
 
 		std::vector<json_object_element_s*> vecAll = RB::JSON::GetAllElements(jObj);
 
@@ -67,7 +72,7 @@ namespace RB::Players::Specs
 
 		_vecMoveSpecs.push_back(specs);
 
-		free(jRoot);
+		//free(jRoot);
 
 		return specs;
 	}

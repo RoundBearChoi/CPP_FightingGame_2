@@ -169,7 +169,6 @@
     <ClCompile Include="Loaded_HB_Data.cpp" />
     <ClCompile Include="AttackBoxDataController.cpp" />
     <ClCompile Include="InputObj.cpp" />
-    <ClCompile Include="JGetter.cpp" />
     <ClCompile Include="MoveDownOnFall.cpp" />
     <ClCompile Include="MoveForwardOnJump_0.cpp" />
     <ClCompile Include="MoveForwardOnJump_1.cpp" />
@@ -346,7 +345,6 @@
     <ClInclude Include="iAnimationObj.h" />
     <ClInclude Include="iPlayerController.h" />
     <ClInclude Include="iPlayerDebugController.h" />
-    <ClInclude Include="JGetter.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="P0_StandUp.h" />
     <ClInclude Include="PlayerBox.h" />

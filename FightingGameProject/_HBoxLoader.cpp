@@ -5,7 +5,6 @@
 #include <cassert>
 #include <sstream>
 
-#include "JGetter.h"
 #include "Parser.h"
 
 #include "AABB.h"

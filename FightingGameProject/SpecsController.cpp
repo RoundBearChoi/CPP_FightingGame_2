@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-#include "JGetter.h"
 #include "Parser.h"
 
 namespace RB::Players::Specs

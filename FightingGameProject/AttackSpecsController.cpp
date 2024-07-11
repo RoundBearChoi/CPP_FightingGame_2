@@ -1,6 +1,5 @@
 #include "AttackSpecsController.h"
 
-#include "JGetter.h"
 #include "Parser.h"
 
 namespace RB::Collisions

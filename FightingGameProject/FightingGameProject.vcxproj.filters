@@ -277,9 +277,6 @@
     <ClCompile Include="FixSpecialMoveStatusDuringState.cpp">
       <Filter>Source Files\PlayerStateComponents</Filter>
     </ClCompile>
-    <ClCompile Include="JGetter.cpp">
-      <Filter>Source Files\JSON</Filter>
-    </ClCompile>
     <ClCompile Include="P0_Dummy.cpp">
       <Filter>Source Files\PlayerStates\Aku</Filter>
     </ClCompile>
@@ -554,9 +551,6 @@
     </ClInclude>
     <ClInclude Include="TargetBoxDataController.h">
       <Filter>Source Files\HBox</Filter>
-    </ClInclude>
-    <ClInclude Include="JGetter.h">
-      <Filter>Source Files\JSON</Filter>
     </ClInclude>
     <ClInclude Include="AABB_Set.h">
       <Filter>Source Files\HBox</Filter>

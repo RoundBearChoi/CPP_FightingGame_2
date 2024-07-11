@@ -1,6 +1,5 @@
 #include "PlayerBoxSpecsLoader.h"
 
-#include "JGetter.h"
 #include "Parser.h"
 #include "PlayerBoxSpecs.h"
 

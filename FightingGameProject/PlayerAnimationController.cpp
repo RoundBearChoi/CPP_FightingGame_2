@@ -4,7 +4,6 @@
 
 #include "AnimationObj.h"
 #include "PlayerState.h"
-#include "JGetter.h"
 #include "Parser.h"
 #include "RenderLayerType.h"
 

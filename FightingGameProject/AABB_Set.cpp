@@ -1,6 +1,5 @@
 #include "AABB_Set.h"
 
-#include "JGetter.h"
 #include "Parser.h"
 
 namespace RB::HBox

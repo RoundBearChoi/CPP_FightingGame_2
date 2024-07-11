@@ -1,6 +1,5 @@
 #include "SpriteTypeLoader.h"
 
-#include "JGetter.h"
 #include "Parser.h"
 
 namespace RB::Sprites

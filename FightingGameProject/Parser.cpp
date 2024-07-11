@@ -68,4 +68,25 @@ namespace RB::JSON
 
 		return false;
 	}
+
+	json_object_element_s* Parser::GetElement(const json_object_s& obj, int index)
+	{
+		json_object_element_s* element = obj.start;
+
+		size_t count = 0;
+
+		while (element != nullptr)
+		{
+			if (count == index)
+			{
+				return element;
+			}
+
+			element = element->next;
+
+			count++;
+		}
+
+		return nullptr;
+	}
 }

@@ -9,8 +9,8 @@ namespace RB::Render
 
 	void PlayerInputRenderer::OnUpdate()
 	{
-		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 30);
-		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 60);
+		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 45);
+		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 70);
 	}
 
 	void PlayerInputRenderer::OnFixedUpdate()

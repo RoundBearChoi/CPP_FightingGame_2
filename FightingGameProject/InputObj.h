@@ -9,7 +9,7 @@ namespace RB::Input
 	class InputObj : public iInputObj
 	{
 	public:
-		InputObj(PlayerInput playerInput, unsigned int gameFrame, unsigned int gameFrameLoop);
+		InputObj(PlayerInput playerInput, unsigned int gameFrame);
 		~InputObj() override;
 
 		void OnUpdate() override;
@@ -24,13 +24,11 @@ namespace RB::Input
 		bool IsUsedAsMovement() override;
 		unsigned int GetFixedUpdateCount() override;
 		unsigned int GetGameFrameCount() override;
-		unsigned int GetGameFrameLoopCount() override;
 		bool IsPressedOnSameFrameAs(iInputObj* iObj) override;
 		bool IsPressedEarlierThan(iInputObj* iObj) override;
 
 	private:
 		unsigned int _gameFrameCount = 0;
-		unsigned int _gameFrameLoopCount = 0;
 		unsigned int _fixedUpdateCount = 0;
 		PlayerInput _playerInput = PlayerInput::NONE;
 		bool _isReleased = false;

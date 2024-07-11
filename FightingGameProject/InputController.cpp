@@ -282,7 +282,7 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		iInputObj* newObj = new InputObj(input, RB::gameFrameCount, RB::gameFrameLoopCount);
+		iInputObj* newObj = new InputObj(input, RB::gameFrameCount);
 
 		vec.push_back(newObj);
 
@@ -377,18 +377,18 @@ namespace RB::Input
 				//destroy both
 				if (obj0->IsPressedOnSameFrameAs(obj1))
 				{
-					_DestroyBuffer(playerID, obj0->GetPlayerInputType(), obj0->GetGameFrameCount(), obj0->GetGameFrameLoopCount());
-					_DestroyBuffer(playerID, obj1->GetPlayerInputType(), obj1->GetGameFrameCount(), obj1->GetGameFrameLoopCount());
+					_DestroyBuffer(playerID, obj0->GetPlayerInputType(), obj0->GetGameFrameCount());
+					_DestroyBuffer(playerID, obj1->GetPlayerInputType(), obj1->GetGameFrameCount());
 				}
 				//destroy the latter
 				else if (obj0->IsPressedEarlierThan(obj1))
 				{
-					_DestroyBuffer(playerID, obj1->GetPlayerInputType(), obj1->GetGameFrameCount(), obj1->GetGameFrameLoopCount());
+					_DestroyBuffer(playerID, obj1->GetPlayerInputType(), obj1->GetGameFrameCount());
 				}
 				//destroy the latter
 				else
 				{
-					_DestroyBuffer(playerID, obj0->GetPlayerInputType(), obj0->GetGameFrameCount(), obj0->GetGameFrameLoopCount());
+					_DestroyBuffer(playerID, obj0->GetPlayerInputType(), obj0->GetGameFrameCount());
 				}
 			}
 		}
@@ -442,7 +442,7 @@ namespace RB::Input
 	/// <summary>
 	/// erase all that matches
 	/// </summary>
-	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, unsigned int gameFrame, unsigned int gameFrameLoop)
+	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, unsigned int gameFrame)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -452,7 +452,7 @@ namespace RB::Input
 		{
 			if ((*it)->GetPlayerInputType() == playerInput)
 			{
-				if ((*it)->GetGameFrameCount() == gameFrame && (*it)->GetGameFrameLoopCount() == gameFrameLoop)
+				if ((*it)->GetGameFrameCount() == gameFrame)
 				{
 					delete (*it);
 					(*it) = nullptr;

@@ -62,6 +62,8 @@ namespace RB
 				_updater->OnFixedUpdate();
 
 				RB::Frames::Time::ResetFixedDeltaTime();
+
+				RB::AddGameFrame();
 			}
 
 			RB::Render::ClearLayers();
@@ -71,8 +73,6 @@ namespace RB
 
 			_updater->OnUpdate();
 			_renderTimer.OnUpdate();
-
-			RB::AddGameFrame();
 
 			return true;
 		}

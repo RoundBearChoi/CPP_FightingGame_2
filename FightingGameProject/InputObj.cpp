@@ -2,11 +2,10 @@
 
 namespace RB::Input
 {
-	InputObj::InputObj(PlayerInput playerInput, unsigned int gameFrame, unsigned int gameFrameLoop)
+	InputObj::InputObj(PlayerInput playerInput, unsigned int gameFrame)
 	{
 		_playerInput = playerInput;
 		_gameFrameCount = gameFrame;
-		_gameFrameLoopCount = gameFrameLoop;
 	}
 
 	InputObj::~InputObj()
@@ -69,14 +68,9 @@ namespace RB::Input
 		return _gameFrameCount;
 	}
 
-	unsigned int InputObj::GetGameFrameLoopCount()
-	{
-		return _gameFrameLoopCount;
-	}
-
 	bool InputObj::IsPressedOnSameFrameAs(iInputObj* iObj)
 	{
-		if (_gameFrameCount == iObj->GetGameFrameCount() && _gameFrameLoopCount == iObj->GetGameFrameLoopCount())
+		if (_gameFrameCount == iObj->GetGameFrameCount())
 		{
 			return true;
 		}
@@ -86,14 +80,7 @@ namespace RB::Input
 
 	bool InputObj::IsPressedEarlierThan(iInputObj* iObj)
 	{
-		if (_gameFrameLoopCount == iObj->GetGameFrameLoopCount())
-		{
-			if (_gameFrameCount < iObj->GetGameFrameCount())
-			{
-				return true;
-			}
-		}
-		else if (_gameFrameLoopCount < iObj->GetGameFrameLoopCount())
+		if (_gameFrameCount < iObj->GetGameFrameCount())
 		{
 			return true;
 		}

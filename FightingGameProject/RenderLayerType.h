@@ -8,7 +8,7 @@ namespace RB::Render
 {
 	enum class RenderLayerType : uint8_t
 	{
-		FOREGROUND = 0,
+		DEFAULT_FOREGROUND = 0,
 
 		DECALS,
 

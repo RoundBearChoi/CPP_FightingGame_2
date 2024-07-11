@@ -42,8 +42,6 @@ namespace RB::Render
 			return;
 		}
 
-		SetTargetLayer(RB::Render::RenderLayerType::DECALS);
-
 		_playerBoxRenderer.OnUpdate();
 		_playerHBoxRenderer.OnUpdate();
 		_playerPositionRenderer.OnUpdate();

@@ -4,6 +4,8 @@
 
 #include "iCamController.h"
 
+#include "GameSettings.h"
+
 namespace RB::Render
 {
 	void PlayerDebugController::Init()
@@ -35,6 +37,11 @@ namespace RB::Render
 
 	void PlayerDebugController::OnUpdate()
 	{
+		if (!RB::showDebugRenders)
+		{
+			return;
+		}
+
 		SetTargetLayer(RB::Render::RenderLayerType::DECALS);
 
 		_playerBoxRenderer.OnUpdate();
@@ -48,6 +55,11 @@ namespace RB::Render
 
 	void PlayerDebugController::OnFixedUpdate()
 	{
+		if (!RB::showDebugRenders)
+		{
+			return;
+		}
+
 		_playerBoxRenderer.OnFixedUpdate();
 		_playerHBoxRenderer.OnFixedUpdate();
 		_playerPositionRenderer.OnFixedUpdate();

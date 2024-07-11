@@ -46,9 +46,16 @@ namespace RB::Render
 
 	void ClearLayers()
 	{
+		int count = olc::Renderer::ptrPGE->GetLayers().size();
+
 		// clear all layers with blank pixels (except top layer)
 		for (int i = static_cast<uint8_t>(RB::Render::RenderLayerType::FOREGROUND); i < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT); i++)
 		{
+			if (i >= count)
+			{
+				continue;
+			}
+
 			if (olc::Renderer::ptrPGE->GetLayers()[i].bShow)
 			{
 				if (i == static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT) - 1)

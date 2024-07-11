@@ -140,4 +140,24 @@ namespace RB::JSON
 
 		return vecElements;
 	}
+
+	std::vector<const json_object_element_s*> Parser::GetAllElements_FIXED(const json_object_element_s& element)
+	{
+		std::vector<const json_object_element_s*> vecElements;
+
+		const json_object_element_s* e = &element;
+
+		if (e == nullptr)
+		{
+			return vecElements;
+		}
+
+		while (e != nullptr)
+		{
+			vecElements.push_back(e);
+			e = e->next;
+		}
+
+		return vecElements;
+	}
 }

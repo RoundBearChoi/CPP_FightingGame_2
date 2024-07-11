@@ -18,6 +18,7 @@ namespace RB::JSON
 
 		if (loadedStr.empty())
 		{
+			std::cout << std::endl;
 			std::cout << "file doesn't exist: " << jsonFilePath << std::endl;
 		}
 		else

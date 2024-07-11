@@ -21,12 +21,13 @@ namespace RB::JSON
 
 		std::string str((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
 
-		std::cout << std::endl;
-		std::cout << "loading JSON at path: " << path << std::endl;
+		//std::cout << std::endl;
+		//std::cout << "loading JSON at path: " << path << std::endl;
 
 		if (str.empty())
 		{
-			std::cout << "file doesn't exist: " << path << std::endl;
+			std::cout << std::endl;
+			std::cout << "failed to load json.. file doesn't exist: " << path << std::endl;
 		}
 		else
 		{

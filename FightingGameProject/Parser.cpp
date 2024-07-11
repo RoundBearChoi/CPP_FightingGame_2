@@ -119,7 +119,7 @@ namespace RB::JSON
 		return nullptr;
 	}
 
-	const std::vector<const json_object_element_s*> Parser::GetAllElements_FIXED(const json_object_element_s& element)
+	const std::vector<const json_object_element_s*> Parser::GetAllElements(const json_object_element_s& element)
 	{
 		std::vector<const json_object_element_s*> vecElements;
 

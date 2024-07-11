@@ -70,7 +70,7 @@ namespace RB::Collisions
 		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
 
-		auto vecAll = RB::JSON::Parser::GetAllElements_FIXED(*subElement);// RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
+		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement);// RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
 
 		std::string strStrengthType = RB::JSON::GetString_FromElement(*vecAll[0]);
 		int damageValue = RB::JSON::GetInt_FromElement(*vecAll[1]);

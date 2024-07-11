@@ -195,7 +195,7 @@ namespace RB::Render
 		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
 		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
 
-		auto vecAll = RB::JSON::Parser::GetAllElements_FIXED(*subElement); //RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
+		auto vecAll = RB::JSON::Parser::GetAllElements(*subElement); //RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
 
 		std::string strEnum = RB::JSON::GetString_FromElement(*vecAll[0]);
 		int xTileCount = RB::JSON::GetInt_FromElement(*vecAll[1]);

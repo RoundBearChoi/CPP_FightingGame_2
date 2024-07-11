@@ -215,10 +215,10 @@ namespace RB::HBox
 			{
 				json_object_s* obj = json_value_as_object(element->value);
 
-				json_object_element_s* posX_Element = RB::JSON::Parser::GetElement(*obj, 0); //RB::JSON::GetElementNFromObj(*obj, 0);
-				json_object_element_s* posY_Element = RB::JSON::Parser::GetElement(*obj, 1); //RB::JSON::GetElementNFromObj(*obj, 1);
-				json_object_element_s* width_Element = RB::JSON::Parser::GetElement(*obj, 2); //RB::JSON::GetElementNFromObj(*obj, 2);
-				json_object_element_s* height_Element = RB::JSON::Parser::GetElement(*obj, 3); //RB::JSON::GetElementNFromObj(*obj, 3);
+				auto posX_Element = RB::JSON::Parser::GetElement(*obj, 0); //RB::JSON::GetElementNFromObj(*obj, 0);
+				auto posY_Element = RB::JSON::Parser::GetElement(*obj, 1); //RB::JSON::GetElementNFromObj(*obj, 1);
+				auto width_Element = RB::JSON::Parser::GetElement(*obj, 2); //RB::JSON::GetElementNFromObj(*obj, 2);
+				auto height_Element = RB::JSON::Parser::GetElement(*obj, 3); //RB::JSON::GetElementNFromObj(*obj, 3);
 
 				float x = RB::JSON::GetFloat_FromElement(*posX_Element);
 				float y = RB::JSON::GetFloat_FromElement(*posY_Element);

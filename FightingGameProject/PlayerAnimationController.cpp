@@ -192,8 +192,8 @@ namespace RB::Render
 		//json_value_s* root = json_parse(str.c_str(), str.size());
 		//json_object_s* jObj = json_value_as_object(root);
 
-		json_object_element_s* element = RB::JSON::Parser::GetElement(*jObj, 0);
-		json_object_element_s* subElement = RB::JSON::Parser::GetElement(*element, 0);
+		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
+		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
 
 		auto vecAll = RB::JSON::Parser::GetAllElements_FIXED(*subElement); //RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
 

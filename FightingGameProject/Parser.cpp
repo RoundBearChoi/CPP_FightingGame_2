@@ -72,7 +72,7 @@ namespace RB::JSON
 	/// <summary>
 	/// get element inside object
 	/// </summary>
-	json_object_element_s* Parser::GetElement(const json_object_s& obj, int index)
+	const json_object_element_s* Parser::GetElement(const json_object_s& obj, int index)
 	{
 		json_object_element_s* element = obj.start;
 
@@ -96,11 +96,11 @@ namespace RB::JSON
 	/// <summary>
 	/// get element inside element
 	/// </summary>
-	json_object_element_s* Parser::GetElement(const json_object_element_s& element, int index)
+	const json_object_element_s* Parser::GetElement(const json_object_element_s& element, int index)
 	{
 		json_object_s* obj = json_value_as_object(element.value);
 
-		json_object_element_s* subElement = GetElement(*obj, 0);
+		auto subElement = GetElement(*obj, 0);
 
 		int count = 0;
 

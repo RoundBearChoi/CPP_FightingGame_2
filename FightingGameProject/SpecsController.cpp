@@ -52,8 +52,8 @@ namespace RB::Players::Specs
 		parser.LoadJSON(path);
 		json_object_s* jObj = parser.GetObj(0);
 
-		json_object_element_s* element = RB::JSON::Parser::GetElement(*jObj, 0);
-		json_object_element_s* subElement = RB::JSON::Parser::GetElement(*element, 0);
+		auto element = RB::JSON::Parser::GetElement(*jObj, 0);
+		auto subElement = RB::JSON::Parser::GetElement(*element, 0);
 
 		auto vecAll = RB::JSON::Parser::GetAllElements_FIXED(*subElement); //RB::JSON::Parser::GetAllElements(*jObj); //RB::JSON::GetAllElements(jObj);
 

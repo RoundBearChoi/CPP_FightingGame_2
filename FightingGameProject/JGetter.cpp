@@ -7,29 +7,29 @@
 
 namespace RB::JSON
 {
-	std::string LoadJSONFile(std::string jsonFilePath)
-	{
-		//std::cout << std::endl;
-		//std::cout << "loading " << jsonFilePath << ".." << std::endl;
-
-		std::ifstream ifs(jsonFilePath);
-
-		std::string loadedStr((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
-
-		if (loadedStr.empty())
-		{
-			std::cout << std::endl;
-			std::cout << "file doesn't exist: " << jsonFilePath << std::endl;
-		}
-		else
-		{
-			//std::cout << loadedStr << std::endl;
-		}
-
-		loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
-
-		return loadedStr;
-	}
+	//std::string LoadJSONFile(std::string jsonFilePath)
+	//{
+	//	//std::cout << std::endl;
+	//	//std::cout << "loading " << jsonFilePath << ".." << std::endl;
+	//
+	//	std::ifstream ifs(jsonFilePath);
+	//
+	//	std::string loadedStr((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+	//
+	//	if (loadedStr.empty())
+	//	{
+	//		std::cout << std::endl;
+	//		std::cout << "file doesn't exist: " << jsonFilePath << std::endl;
+	//	}
+	//	else
+	//	{
+	//		//std::cout << loadedStr << std::endl;
+	//	}
+	//
+	//	loadedStr.erase(std::remove(loadedStr.begin(), loadedStr.end(), '\n'), loadedStr.cend());
+	//
+	//	return loadedStr;
+	//}
 
 	json_object_element_s* GetElementNFromObj(const json_object_s& obj, size_t index)
 	{

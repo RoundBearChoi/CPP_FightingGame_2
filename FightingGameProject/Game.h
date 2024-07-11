@@ -55,19 +55,19 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			RB::Render::ClearLayers();
-
-			RB::Frames::Time::SetDeltaTime(fElapsedTime);
-			RB::Frames::Time::AddFixedDeltaTime();
-
-			_updater->OnUpdate();
-
 			if (_timer.DoFixedUpdate())
 			{
 				_updater->OnFixedUpdate();
 
 				RB::Frames::Time::ResetFixedDeltaTime();
 			}
+
+			RB::Render::ClearLayers();
+
+			RB::Frames::Time::SetDeltaTime(fElapsedTime);
+			RB::Frames::Time::AddFixedDeltaTime();
+
+			_updater->OnUpdate();
 
 			RB::AddGameFrame();
 

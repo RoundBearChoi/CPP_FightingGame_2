@@ -8,6 +8,8 @@ namespace RB::Render
     {
         _animationContainer.Init();
 
+        //_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_wince.aniSpecs"));
+
         _animationContainer.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
 
         AnimationSpecs hit0Specs;

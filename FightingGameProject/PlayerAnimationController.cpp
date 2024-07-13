@@ -6,6 +6,7 @@
 #include "PlayerState.h"
 #include "JParser.h"
 #include "RenderLayerType.h"
+#include "LoadAnimationSpecs.h"
 
 #include "iPlayerController.h"
 
@@ -16,21 +17,21 @@ namespace RB::Render
 	{
 		_animationContainer.Init();
 
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_crouch.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_crouch_idle.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_hadouken.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_idle.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jab.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_forward_0.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_forward_1.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_up_0.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_up_1.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_standup.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_strong_kick.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_strong_punch.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_strong_wince.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_walk.aniSpecs"));
-		_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_wince.aniSpecs"));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_crouch.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_crouch_idle.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_hadouken.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_idle.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jab.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_forward_0.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_forward_1.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_up_0.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_jump_up_1.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_standup.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_strong_kick.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_strong_punch.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_strong_wince.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_walk.aniSpecs", _animationContainer));
+		_animationContainer.LoadAnimation(RB::Render::LoadAnimationSpecsFromJSON("AnimationSpecs/f0_wince.aniSpecs", _animationContainer));
 	}
 
 	void PlayerAnimationController::OnUpdate()
@@ -178,43 +179,5 @@ namespace RB::Render
 			file.flush();
 			file.close();
 		}
-	}
-
-	AnimationSpecs PlayerAnimationController::_LoadAnimationSpecsFromJSON(std::string path)
-	{
-		RB::JSON::JParser parser;
-
-		parser.LoadJSON(path);
-
-		auto obj = parser.GetObj(0);
-		auto element = RB::JSON::JParser::GetElement(*obj, 0);
-		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
-		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
-
-		std::string strEnum = RB::JSON::JParser::GetString_FromElement(*vecAll[0]);
-		int xTileCount = RB::JSON::JParser::GetInt_FromElement(*vecAll[1]);
-		int yTileCount = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
-		int totalSprites = RB::JSON::JParser::GetInt_FromElement(*vecAll[3]);
-		int skipFixedUpdates = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
-		float renderScale = RB::JSON::JParser::GetFloat_FromElement(*vecAll[5]);
-		int playOnceInt = RB::JSON::JParser::GetInt_FromElement(*vecAll[6]);
-		bool playOnce = playOnceInt == 0 ? false : true;
-
-		//load sprites first
-		bool loadedSprite = _animationContainer.LoadSprite("PNG files/Aku/" + strEnum + ".png", RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
-		
-		assert(loadedSprite);
-
-		AnimationSpecs specs;
-
-		specs.mX_TileCount = xTileCount;
-		specs.mY_TileCount = yTileCount;
-		specs.mTotalSprites = totalSprites;
-		specs.mSkipFixedUpdates = skipFixedUpdates;
-		specs.mRenderScale = renderScale;
-		specs.mPlayOnce = playOnce;
-		specs.mSpriteType = RB::Sprites::SpriteType::_from_string(strEnum.c_str());
-
-		return specs;
 	}
 }

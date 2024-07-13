@@ -190,6 +190,7 @@
     <ClCompile Include="JParser.cpp" />
     <ClCompile Include="RenderLayerType.cpp" />
     <ClCompile Include="RenderTimer.cpp" />
+    <ClCompile Include="SizeChangeObj.cpp" />
     <ClCompile Include="SpriteTypeLoader.cpp" />
     <ClCompile Include="TargetBoxDataController.cpp" />
     <ClCompile Include="P0_StandUp.cpp" />
@@ -333,6 +334,7 @@
     <ClInclude Include="P0_Strong_Punch.h" />
     <ClInclude Include="P0_Strong_Wince.h" />
     <ClInclude Include="RenderTimer.h" />
+    <ClInclude Include="SizeChangeObj.h" />
     <ClInclude Include="SpriteTypeLoader.h" />
     <ClInclude Include="TargetBoxDataController.h" />
     <ClInclude Include="AABB_Set.h" />

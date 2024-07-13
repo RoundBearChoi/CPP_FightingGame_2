@@ -12,6 +12,11 @@ namespace RB::Render
 		_animationSpecs = specs;
 	}
 
+	void AnimationRenderer::OnFixedUpdate()
+	{
+
+	}
+
 	const AnimationSpecs& AnimationRenderer::GetAnimationSpecs()
 	{
 		return _animationSpecs;

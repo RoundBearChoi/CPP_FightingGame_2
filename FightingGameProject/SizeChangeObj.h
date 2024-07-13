@@ -17,10 +17,11 @@ namespace RB::Render
 		SizeChangeObj(int totalFrames, SizeChangeType sizeChangeType);
 
 		void OnFixedUpdate();
+		bool DoDelete();
 
 	private:
 		int _totalFrames = 0;
 		SizeChangeType _sizeChangeType = SizeChangeType::NONE;
-		int _ProcessedFrames = 0;
+		int _processedFrames = 0;
 	};
 }

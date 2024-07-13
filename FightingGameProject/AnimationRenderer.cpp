@@ -14,7 +14,15 @@ namespace RB::Render
 
 	void AnimationRenderer::OnFixedUpdate()
 	{
+		if (_vecSizeChangeObjs.size() >= 1)
+		{
+			_vecSizeChangeObjs[0].OnFixedUpdate();
 
+			if (_vecSizeChangeObjs[0].DoDelete())
+			{
+				_vecSizeChangeObjs.erase(_vecSizeChangeObjs.begin());
+			}
+		}
 	}
 
 	const AnimationSpecs& AnimationRenderer::GetAnimationSpecs()

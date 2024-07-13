@@ -14,7 +14,10 @@ namespace RB::Render
 
 	void AnimationObj::OnFixedUpdate()
 	{
-		_customFixedUpdate.DoFixedUpdate();
+		if (_customFixedUpdate.DoFixedUpdate())
+		{
+			_animationRenderer->OnFixedUpdate();
+		}
 	}
 
 	void AnimationObj::UpdateAnimationIndex()

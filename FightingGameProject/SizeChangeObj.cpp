@@ -11,5 +11,19 @@ namespace RB::Render
 	void SizeChangeObj::OnFixedUpdate()
 	{
 
+
+		_processedFrames++;
+	}
+
+	bool SizeChangeObj::DoDelete()
+	{
+		if (_processedFrames >= _totalFrames)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

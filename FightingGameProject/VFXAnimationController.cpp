@@ -10,7 +10,9 @@ namespace RB::Render
 
         _animationContainer.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
         
-        _animationContainer.LoadAnimation("AnimationSpecs/vfx_hiteffect_0.aniSpecs");
+        AnimationRenderer* renderer = _animationContainer.LoadAnimation("AnimationSpecs/vfx_hiteffect_0.aniSpecs");
+
+        //renderer->AddSizeChangeObj({ 3, SizeChangeType::LINEAR, 2 });
     }
 
     void VFXAnimationController::OnUpdate()

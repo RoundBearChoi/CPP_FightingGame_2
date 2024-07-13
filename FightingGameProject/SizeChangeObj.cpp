@@ -1,5 +1,8 @@
 #include "SizeChangeObj.h"
 
+#include <iostream>
+#include <string>
+
 namespace RB::Render
 {
 	SizeChangeObj::SizeChangeObj(int totalFrames, SizeChangeType sizeChangeType, float totalSizeChangeMultiplier)
@@ -11,7 +14,7 @@ namespace RB::Render
 
 	void SizeChangeObj::OnFixedUpdate()
 	{
-
+		std::cout << "processing sizeChange.. " << std::to_string(_processedFrames) << std::endl;
 
 		_processedFrames++;
 	}
@@ -20,6 +23,7 @@ namespace RB::Render
 	{
 		if (_processedFrames >= _totalFrames)
 		{
+			std::cout << "deleting.." << std::endl;
 			return true;
 		}
 		else

@@ -10,9 +10,7 @@ namespace RB::Render
 
         _animationContainer.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
         
-        AnimationRenderer* renderer = _animationContainer.LoadAnimation("AnimationSpecs/vfx_hiteffect_0.aniSpecs");
-
-        //renderer->AddSizeChangeObj({ 3, SizeChangeType::LINEAR, 2 });
+        _animationContainer.LoadAnimation("AnimationSpecs/vfx_hiteffect_0.aniSpecs");
     }
 
     void VFXAnimationController::OnUpdate()
@@ -27,7 +25,7 @@ namespace RB::Render
         _DeleteFinishedAnimations();
     }
 
-    void VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos)
+    iAnimationObj* VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos)
     {
         AnimationRenderer* aniRenderer = _animationContainer.GetAnimationRenderer(spriteType);
         
@@ -37,6 +35,8 @@ namespace RB::Render
         animationObj->SetWorldPos(pos);
 
         _animationContainer.AddNewAnimation(animationObj);
+
+        return animationObj;
     }
 
     void VFXAnimationController::_DeleteFinishedAnimations()

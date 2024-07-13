@@ -16,7 +16,7 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		void InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos) override;
+		iAnimationObj* InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos) override;
 
 	private:
 		void _DeleteFinishedAnimations();

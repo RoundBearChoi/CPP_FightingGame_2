@@ -2,6 +2,6 @@
 
 namespace RB
 {
-	bool allowMultipleLayers = true;
+	bool allowMultipleLayers = false;
 	bool showDebugRenders = true;
 }

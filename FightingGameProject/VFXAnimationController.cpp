@@ -8,20 +8,9 @@ namespace RB::Render
     {
         _animationContainer.Init();
 
-        //_animationContainer.LoadAnimation(_LoadAnimationSpecsFromJSON("AnimationSpecs/f0_wince.aniSpecs"));
-
         _animationContainer.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
-
-        AnimationSpecs hit0Specs;
-        hit0Specs.mX_TileCount = 5;
-        hit0Specs.mY_TileCount = 1;
-        hit0Specs.mTotalSprites = 5;
-        hit0Specs.mSkipFixedUpdates = 2;
-        hit0Specs.mRenderOffset = olc::vf2d{ 0.0f, -6.0f };
-        hit0Specs.mRenderScale = 0.15f;
-        hit0Specs.mSpriteType = RB::Sprites::SpriteType::vfx_hiteffect_0;
-
-        _animationContainer.LoadAnimation(hit0Specs);
+        
+        _animationContainer.LoadAnimation("AnimationSpecs/vfx_hiteffect_0.aniSpecs");
     }
 
     void VFXAnimationController::OnUpdate()

@@ -415,9 +415,6 @@
     <ClCompile Include="SizeChangeObj.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="LoadAnimationSpecs.cpp">
-      <Filter>Source Files\Render</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -928,9 +925,6 @@
       <Filter>Source Files\Frames</Filter>
     </ClInclude>
     <ClInclude Include="SizeChangeObj.h">
-      <Filter>Source Files\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadAnimationSpecs.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>

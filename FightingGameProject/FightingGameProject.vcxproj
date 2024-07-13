@@ -165,7 +165,6 @@
     <ClCompile Include="GetCurrentAnimationFrame.cpp" />
     <ClCompile Include="GetCurrentSpriteType.cpp" />
     <ClCompile Include="HBoxEditorUpdaterBase.cpp" />
-    <ClCompile Include="LoadAnimationSpecs.cpp" />
     <ClCompile Include="LoadedPlayerBoxData.cpp" />
     <ClCompile Include="Loaded_HB_Data.cpp" />
     <ClCompile Include="AttackBoxDataController.cpp" />
@@ -275,7 +274,6 @@
     <ClInclude Include="iUpdater.h" />
     <ClInclude Include="GetQuadOnPivot.h" />
     <ClInclude Include="JParser.h" />
-    <ClInclude Include="LoadAnimationSpecs.h" />
     <ClInclude Include="RenderLayerType.h" />
     <ClInclude Include="RenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />

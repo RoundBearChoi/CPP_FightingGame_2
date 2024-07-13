@@ -14,7 +14,7 @@ namespace RB::Render
 	class SizeChangeObj
 	{
 	public:
-		SizeChangeObj(int totalFrames, SizeChangeType sizeChangeType);
+		SizeChangeObj(int totalFrames, SizeChangeType sizeChangeType, float totalSizeChangeMultiplier);
 
 		void OnFixedUpdate();
 		bool DoDelete();
@@ -22,6 +22,7 @@ namespace RB::Render
 	private:
 		int _totalFrames = 0;
 		SizeChangeType _sizeChangeType = SizeChangeType::NONE;
+		float _totalSizeChangeMultiplier = 1.0f;
 		int _processedFrames = 0;
 	};
 }

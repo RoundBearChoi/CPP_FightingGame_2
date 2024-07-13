@@ -2,10 +2,11 @@
 
 namespace RB::Render
 {
-	SizeChangeObj::SizeChangeObj(int totalFrames, SizeChangeType sizeChangeType)
+	SizeChangeObj::SizeChangeObj(int totalFrames, SizeChangeType sizeChangeType, float totalSizeChangeMultiplier)
 	{
 		_totalFrames = totalFrames;
 		_sizeChangeType = sizeChangeType;
+		_totalSizeChangeMultiplier = totalSizeChangeMultiplier;
 	}
 
 	void SizeChangeObj::OnFixedUpdate()

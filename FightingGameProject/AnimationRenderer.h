@@ -20,6 +20,7 @@ namespace RB::Render
 	public:
 		const AnimationSpecs& GetAnimationSpecs();
 		void RenderAnimation(const RenderSettings& renderSettings);
+		void AddSizeChangeObj(SizeChangeObj obj);
 
 	private:
 		std::vector<SizeChangeObj> _vecSizeChangeObjs;

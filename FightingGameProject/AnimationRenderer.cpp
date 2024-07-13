@@ -70,4 +70,9 @@ namespace RB::Render
 
 		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
+
+	void AnimationRenderer::AddSizeChangeObj(SizeChangeObj obj)
+	{
+		_vecSizeChangeObjs.push_back(obj);
+	}
 }

@@ -14,7 +14,7 @@ namespace RB::Render
 
 	void SizeChangeObj::OnFixedUpdate()
 	{
-		std::cout << "processing sizeChange.. " << std::to_string(_processedFrames) << std::endl;
+		//std::cout << "processing sizeChange.. " << std::to_string(_processedFrames) << std::endl;
 
 		_processedFrames++;
 	}
@@ -23,7 +23,7 @@ namespace RB::Render
 	{
 		if (_processedFrames >= _totalFrames)
 		{
-			std::cout << "deleting.." << std::endl;
+			//std::cout << "deleting.." << std::endl;
 			return true;
 		}
 		else

@@ -3,10 +3,13 @@
 #include "SpriteType.h"
 
 #include "AttackSpecs.h"
+#include "SizeChangeObj.h"
+
 #include "P0_Wince.h" //temp
 #include "P0_Strong_Wince.h" //temp
 
 #include "iAttackSpecsController.h"
+#include "iAnimationObj.h"
 #include "iVFXAnimationController.h"
 #include "iGeneralHitStopController.h"
 
@@ -30,7 +33,7 @@ namespace RB::Collisions
 	void AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
 		RB::Render::iAnimationObj* he0 = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, reg.collisionPoint);
-
+		he0->AddSizeChangeObj({ 5, RB::Render::SizeChangeType::LINEAR, 2.0f });
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 

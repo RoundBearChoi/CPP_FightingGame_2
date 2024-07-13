@@ -17,6 +17,17 @@ namespace RB::Render
 		_customFixedUpdate.DoFixedUpdate();
 
 		_animationRenderer->OnFixedUpdate();
+
+		// update one at a time
+		if (_vecSizeChangeObjs.size() >= 1)
+		{
+			_vecSizeChangeObjs[0].OnFixedUpdate();
+
+			if (_vecSizeChangeObjs[0].DoDelete())
+			{
+				_vecSizeChangeObjs.erase(_vecSizeChangeObjs.begin());
+			}
+		}
 	}
 
 	void AnimationObj::UpdateAnimationIndex()
@@ -172,5 +183,10 @@ namespace RB::Render
 	unsigned int AnimationObj::GetFixedUpdateCount()
 	{
 		return _customFixedUpdate.GetTotalFixedUpdateCount();
+	}
+
+	void AnimationObj::AddSizeChangeObj(SizeChangeObj obj)
+	{
+		_vecSizeChangeObjs.push_back(obj);
 	}
 }

@@ -21,19 +21,23 @@ namespace RB::Updaters
 			_function = function;
 		}
 
-		void OnFixedUpdate()
+		bool DoFixedUpdate()
 		{
 			_totalFrameCount++;
 
 			if (_frameCount < _skipFrames)
 			{
 				_frameCount++;
+
+				return false;
 			}
 			else
 			{
 				_frameCount = 0;
 
 				(_obj->*_function)();
+
+				return true;
 			}
 		}
 

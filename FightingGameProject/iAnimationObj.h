@@ -27,6 +27,6 @@ namespace RB::Render
 		virtual void SetWorldPos(const olc::vf2d& pos) = 0;
 		virtual unsigned int GetFixedUpdateCount() = 0;
 		virtual void AddSizeChangeObj(SizeChangeObj obj) = 0;
-		virtual float GetRenderSizeMultiplier() = 0;
+		virtual float GetRenderScaleMultiplier() = 0;
 	};
 }

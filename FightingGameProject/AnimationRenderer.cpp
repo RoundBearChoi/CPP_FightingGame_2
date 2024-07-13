@@ -53,8 +53,8 @@ namespace RB::Render
 		x += renderSettings.mRenderOffset.x * zoom;
 		y += renderSettings.mRenderOffset.y * zoom;
 
-		float width = renderSettings.mSourceSize.x * renderSettings.mRenderScale * renderSettings.mRenderSizeMultiplier * zoom;
-		float height = renderSettings.mSourceSize.y * renderSettings.mRenderScale * renderSettings.mRenderSizeMultiplier * zoom;
+		float width = renderSettings.mSourceSize.x * renderSettings.mRenderScale * renderSettings.mRenderScaleMultiplier * zoom;
+		float height = renderSettings.mSourceSize.y * renderSettings.mRenderScale * renderSettings.mRenderScaleMultiplier * zoom;
 
 		// get quads
 		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(renderSettings.mPivotType, width, height, { x, y });

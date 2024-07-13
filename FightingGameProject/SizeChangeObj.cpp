@@ -32,7 +32,7 @@ namespace RB::Render
 		}
 	}
 
-	float SizeChangeObj::GetRenderSizeMultiplier()
+	float SizeChangeObj::GetRenderScaleMultiplier()
 	{
 		// temp
 		return 3.0f;

@@ -161,7 +161,7 @@ namespace RB::Render
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderScale = GetRenderScale();
-		renderSettings.mRenderSizeMultiplier = GetRenderSizeMultiplier();
+		renderSettings.mRenderScaleMultiplier = GetRenderScaleMultiplier();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)
@@ -191,7 +191,7 @@ namespace RB::Render
 		_vecSizeChangeObjs.push_back(obj);
 	}
 
-	float AnimationObj::GetRenderSizeMultiplier()
+	float AnimationObj::GetRenderScaleMultiplier()
 	{
 		if (_vecSizeChangeObjs.size() == 0)
 		{
@@ -199,7 +199,7 @@ namespace RB::Render
 		}
 		else
 		{
-			float m = _vecSizeChangeObjs[0].GetRenderSizeMultiplier();
+			float m = _vecSizeChangeObjs[0].GetRenderScaleMultiplier();
 			return m;
 		}
 	}

@@ -36,6 +36,7 @@ namespace RB::Render
 		void SetWorldPos(const olc::vf2d& pos) override;
 		unsigned int GetFixedUpdateCount() override;
 		void AddSizeChangeObj(SizeChangeObj obj) override;
+		float GetRenderSizeMultiplier() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;

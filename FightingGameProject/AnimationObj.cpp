@@ -161,6 +161,7 @@ namespace RB::Render
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderScale = GetRenderScale();
+		renderSettings.mRenderSizeMultiplier = GetRenderSizeMultiplier();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)
@@ -188,5 +189,18 @@ namespace RB::Render
 	void AnimationObj::AddSizeChangeObj(SizeChangeObj obj)
 	{
 		_vecSizeChangeObjs.push_back(obj);
+	}
+
+	float AnimationObj::GetRenderSizeMultiplier()
+	{
+		if (_vecSizeChangeObjs.size() == 0)
+		{
+			return 1.0f;
+		}
+		else
+		{
+			float m = _vecSizeChangeObjs[0].GetRenderSizeMultiplier();
+			return m;
+		}
 	}
 }

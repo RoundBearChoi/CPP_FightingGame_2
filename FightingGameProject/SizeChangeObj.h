@@ -18,6 +18,7 @@ namespace RB::Render
 
 		void OnFixedUpdate();
 		bool DoDelete();
+		float GetRenderSizeMultiplier();
 
 	private:
 		int _totalFrames = 0;

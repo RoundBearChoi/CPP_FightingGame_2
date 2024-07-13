@@ -31,4 +31,10 @@ namespace RB::Render
 			return false;
 		}
 	}
+
+	float SizeChangeObj::GetRenderSizeMultiplier()
+	{
+		// temp
+		return 3.0f;
+	}
 }

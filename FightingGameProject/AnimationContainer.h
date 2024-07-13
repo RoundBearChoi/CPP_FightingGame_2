@@ -22,7 +22,7 @@ namespace RB::Render
 		AnimationSpecs LoadAnimationSpecsFromJSON(std::string path);
 		bool LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
 		void LoadAnimation(AnimationSpecs specs);
-		void LoadAnimation(std::string specsPath);
+		AnimationRenderer* LoadAnimation(std::string specsPath);
 		void DeleteAnimationObjs(RB::Players::PlayerID playerID);
 		std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);
 		iAnimationObj* GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType);

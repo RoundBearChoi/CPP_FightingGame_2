@@ -126,7 +126,7 @@ namespace RB::Render
 	/// this function require sprites to be loaded first
 	/// an "animation" is just a sprite (spritesheet) with more data
 	/// </summary>
-	void AnimationContainer::LoadAnimation(std::string specsPath)
+	AnimationRenderer* AnimationContainer::LoadAnimation(std::string specsPath)
 	{
 		AnimationSpecs specs = LoadAnimationSpecsFromJSON(specsPath);
 
@@ -137,6 +137,8 @@ namespace RB::Render
 		AnimationRenderer* renderer = new AnimationRenderer(specs);
 
 		_vecAnimationRenderers.push_back(renderer);
+
+		return renderer;
 	}
 
 	void AnimationContainer::DeleteAnimationObjs(RB::Players::PlayerID playerID)

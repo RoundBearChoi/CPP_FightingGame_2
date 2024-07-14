@@ -8,7 +8,7 @@
 
 size_t numObjects = 0;
 bool showAllocCount = false;
-bool onlyShowZeroCount = true;
+bool onlyShowZeroCount = false;
 
 void* operator new(std::size_t size)
 {

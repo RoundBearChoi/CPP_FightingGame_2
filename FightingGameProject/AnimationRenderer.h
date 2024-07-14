@@ -4,7 +4,6 @@
 
 #include "RenderSettings.h"
 #include "AnimationSpecs.h"
-//#include "SizeChangeObj.h"
 
 namespace RB::Render
 {
@@ -20,10 +19,8 @@ namespace RB::Render
 	public:
 		const AnimationSpecs& GetAnimationSpecs();
 		void RenderAnimation(const RenderSettings& renderSettings);
-		//void AddSizeChangeObj(SizeChangeObj obj);
 
 	private:
-		//std::vector<SizeChangeObj> _vecSizeChangeObjs;
 		AnimationSpecs _animationSpecs;
 	};
 }

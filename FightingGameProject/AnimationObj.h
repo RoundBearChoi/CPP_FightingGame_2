@@ -5,7 +5,7 @@
 
 #include "SkipFixedUpdates.h"
 #include "AnimationRenderer.h"
-#include "SizeChangeObj.h"
+#include "RenderScaleMultiplierObj.h"
 
 #include "iAnimationObj.h"
 #include "iPlayer.h"
@@ -35,7 +35,7 @@ namespace RB::Render
 		void RenderAnimation() override;
 		void SetWorldPos(const olc::vf2d& pos) override;
 		unsigned int GetFixedUpdateCount() override;
-		void AddSizeChangeObj(SizeChangeObj obj) override;
+		void AddMultiplierObj(RenderScaleMultiplierObj obj) override;
 		float GetRenderScaleMultiplier() override;
 
 	private:
@@ -45,6 +45,7 @@ namespace RB::Render
 		unsigned int _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		olc::vf2d _worldPos = { 0, 0 };
-		std::vector<SizeChangeObj> _vecSizeChangeObjs;
+		std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
+		float _lastRenderScaleMultiplier = 1.0f;
 	};
 }

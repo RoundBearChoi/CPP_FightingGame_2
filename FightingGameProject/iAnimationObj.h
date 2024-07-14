@@ -3,7 +3,7 @@
 #include "iPlayer.h"
 
 #include "AnimationSpecs.h"
-#include "SizeChangeObj.h"
+#include "RenderScaleMultiplierObj.h"
 
 namespace RB::Render
 {
@@ -26,7 +26,7 @@ namespace RB::Render
 		virtual void RenderAnimation() = 0;
 		virtual void SetWorldPos(const olc::vf2d& pos) = 0;
 		virtual unsigned int GetFixedUpdateCount() = 0;
-		virtual void AddSizeChangeObj(SizeChangeObj obj) = 0;
+		virtual void AddMultiplierObj(RenderScaleMultiplierObj obj) = 0;
 		virtual float GetRenderScaleMultiplier() = 0;
 	};
 }

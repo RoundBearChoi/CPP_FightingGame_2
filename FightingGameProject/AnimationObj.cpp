@@ -19,13 +19,13 @@ namespace RB::Render
 		_animationRenderer->OnFixedUpdate();
 
 		// update one at a time
-		if (_vecSizeChangeObjs.size() >= 1)
+		if (_vecMultiplierObjs.size() >= 1)
 		{
-			_vecSizeChangeObjs[0].OnFixedUpdate();
+			_vecMultiplierObjs[0].OnFixedUpdate();
 
-			if (_vecSizeChangeObjs[0].DoDelete())
+			if (_vecMultiplierObjs[0].DoDelete())
 			{
-				_vecSizeChangeObjs.erase(_vecSizeChangeObjs.begin());
+				_vecMultiplierObjs.erase(_vecMultiplierObjs.begin());
 			}
 		}
 	}
@@ -186,20 +186,20 @@ namespace RB::Render
 		return _customFixedUpdate.GetTotalFixedUpdateCount();
 	}
 
-	void AnimationObj::AddSizeChangeObj(SizeChangeObj obj)
+	void AnimationObj::AddMultiplierObj(RenderScaleMultiplierObj obj)
 	{
-		_vecSizeChangeObjs.push_back(obj);
+		_vecMultiplierObjs.push_back(obj);
 	}
 
 	float AnimationObj::GetRenderScaleMultiplier()
 	{
-		if (_vecSizeChangeObjs.size() == 0)
+		if (_vecMultiplierObjs.size() == 0)
 		{
 			return 1.0f;
 		}
 		else
 		{
-			float m = _vecSizeChangeObjs[0].GetRenderScaleMultiplier();
+			float m = _vecMultiplierObjs[0].GetRenderScaleMultiplier();
 			return m;
 		}
 	}

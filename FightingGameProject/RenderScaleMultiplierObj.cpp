@@ -1,25 +1,25 @@
-#include "SizeChangeObj.h"
+#include "RenderScaleMultiplierObj.h"
 
 #include <iostream>
 #include <string>
 
 namespace RB::Render
 {
-	SizeChangeObj::SizeChangeObj(int totalFrames, SizeChangeType sizeChangeType, float totalSizeChangeMultiplier)
+	RenderScaleMultiplierObj::RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier)
 	{
 		_totalFrames = totalFrames;
-		_sizeChangeType = sizeChangeType;
-		_totalSizeChangeMultiplier = totalSizeChangeMultiplier;
+		_multiplierType = multiplierType;
+		_totalMultiplier = totalMultiplier;
 	}
 
-	void SizeChangeObj::OnFixedUpdate()
+	void RenderScaleMultiplierObj::OnFixedUpdate()
 	{
 		//std::cout << "processing sizeChange.. " << std::to_string(_processedFrames) << std::endl;
 
 		_processedFrames++;
 	}
 
-	bool SizeChangeObj::DoDelete()
+	bool RenderScaleMultiplierObj::DoDelete()
 	{
 		if (_processedFrames >= _totalFrames)
 		{
@@ -32,7 +32,7 @@ namespace RB::Render
 		}
 	}
 
-	float SizeChangeObj::GetRenderScaleMultiplier()
+	float RenderScaleMultiplierObj::GetRenderScaleMultiplier()
 	{
 		// temp
 		return 3.0f;

@@ -412,7 +412,7 @@
     <ClCompile Include="RenderTimer.cpp">
       <Filter>Source Files\Frames</Filter>
     </ClCompile>
-    <ClCompile Include="SizeChangeObj.cpp">
+    <ClCompile Include="RenderScaleMultiplierObj.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
   </ItemGroup>
@@ -924,7 +924,7 @@
     <ClInclude Include="RenderTimer.h">
       <Filter>Source Files\Frames</Filter>
     </ClInclude>
-    <ClInclude Include="SizeChangeObj.h">
+    <ClInclude Include="RenderScaleMultiplierObj.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
   </ItemGroup>

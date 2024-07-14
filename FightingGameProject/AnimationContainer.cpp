@@ -78,10 +78,6 @@ namespace RB::Render
 		int playOnceInt = RB::JSON::JParser::GetInt_FromElement(*vecAll[6]);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
-		RB::Sprites::LoadedSprite* loaded = _spriteContainer.GetLoadedSprite(RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
-
-		assert(loaded != nullptr);
-
 		AnimationSpecs specs;
 
 		specs.mX_TileCount = xTileCount;

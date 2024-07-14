@@ -11,8 +11,11 @@ namespace RB::Render
 		_animationRenderer = animationRenderer;
 		_pivotType = pivotType;
 
-		_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
-		_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
+		if (_animationRenderer != nullptr)
+		{
+			_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
+			_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
+		}
 	}
 
 	AnimationObj::~AnimationObj()
@@ -146,7 +149,14 @@ namespace RB::Render
 
 	const AnimationSpecs& AnimationObj::GetAnimationSpecs() const
 	{
-		return _animationRenderer->GetAnimationSpecs();
+		if (_animationRenderer != nullptr)
+		{
+			return _animationRenderer->GetAnimationSpecs();
+		}
+		else
+		{
+			return _emptySpecs;
+		}
 	}
 
 	unsigned int AnimationObj::GetCurrentIndex()
@@ -156,6 +166,11 @@ namespace RB::Render
 
 	void AnimationObj::RenderAnimation()
 	{
+		if (_animationRenderer == nullptr)
+		{
+			return;
+		}
+
 		if (_animationRenderer->GetAnimationSpecs().mSpriteType._value == RB::Sprites::SpriteType::NONE)
 		{
 			return;

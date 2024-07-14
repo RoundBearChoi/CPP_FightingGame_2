@@ -3,8 +3,6 @@
 #include "AnimationObj.h"
 #include "JParser.h"
 
-#include <cassert>
-
 namespace RB::Render
 {
 	AnimationContainer::~AnimationContainer()
@@ -65,6 +63,12 @@ namespace RB::Render
 		parser.LoadJSON(path);
 
 		auto obj = parser.GetObj(0);
+
+		if (obj == nullptr)
+		{
+			return AnimationSpecs{};
+		}
+
 		auto element = RB::JSON::JParser::GetElement(*obj, 0);
 		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
 		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
@@ -106,13 +110,18 @@ namespace RB::Render
 
 		specs.mLoadedSprite = _spriteContainer.GetLoadedSprite(specs.mSpriteType);
 
-		assert(specs.mLoadedSprite != nullptr);
+		if (specs.mLoadedSprite != nullptr)
+		{
+			AnimationRenderer* renderer = new AnimationRenderer(specs);
 
-		AnimationRenderer* renderer = new AnimationRenderer(specs);
+			_vecAnimationRenderers.push_back(renderer);
 
-		_vecAnimationRenderers.push_back(renderer);
-
-		return renderer;
+			return renderer;
+		}
+		else
+		{
+			return nullptr;
+		}
 	}
 
 	void AnimationContainer::DeleteAnimationObjs(RB::Players::PlayerID playerID)
@@ -192,11 +201,14 @@ namespace RB::Render
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
+			if ((*i) != nullptr)
 			{
-				RB::Sprites::SpriteType spriteType = (*i)->GetAnimationSpecs().mSpriteType;
+				if ((*i)->GetPlayer()->GetPlayerID() == playerID)
+				{
+					RB::Sprites::SpriteType spriteType = (*i)->GetAnimationSpecs().mSpriteType;
 
-				return spriteType;
+					return spriteType;
+				}
 			}
 		}
 

@@ -8,9 +8,9 @@ namespace RB::Render
     {
         _animationContainer.Init();
 
-        //_animationContainer.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
+        _animationContainer.LoadSprite("PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
         
-        //_animationContainer.LoadAnimation("AnimationSpecs/vfx_hiteffect_0.aniSpecs");
+        _animationContainer.LoadAnimation("AnimationSpecs/vfx_hiteffect_0.aniSpecs");
     }
 
     void VFXAnimationController::OnUpdate()

@@ -49,8 +49,11 @@ namespace RB::JSON
 	{
 		if (_vecLoadedRoots.size() > index)
 		{
-			json_object_s* jObj = json_value_as_object(_vecLoadedRoots[index]);
-			return jObj;
+			if (_vecLoadedRoots[index] != nullptr)
+			{
+				json_object_s* jObj = json_value_as_object(_vecLoadedRoots[index]);
+				return jObj;
+			}
 		}
 
 		return nullptr;

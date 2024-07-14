@@ -49,5 +49,6 @@ namespace RB::Render
 		olc::vf2d _worldPos = { 0, 0 };
 		std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
 		float _lastRenderScaleMultiplier = 1.0f;
+		AnimationSpecs _emptySpecs;
 	};
 }

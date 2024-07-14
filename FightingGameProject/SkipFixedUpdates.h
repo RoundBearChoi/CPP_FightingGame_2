@@ -35,8 +35,11 @@ namespace RB::Updaters
 			{
 				_frameCount = 0;
 
-				(_obj->*_function)();
-
+				if (_obj != nullptr)
+				{
+					(_obj->*_function)();
+				}
+				
 				return true;
 			}
 		}

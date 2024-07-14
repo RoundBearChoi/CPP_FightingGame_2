@@ -21,9 +21,16 @@ namespace RB::Sprites
 	{
 		LoadedSprite* loaded = _loader.LoadSprite(path, spriteType);
 
-		_vecLoadedSprites.push_back(loaded);
+		if (loaded != nullptr)
+		{
+			_vecLoadedSprites.push_back(loaded);
 
-		return loaded;
+			return loaded;
+		}
+		else
+		{
+			return nullptr;
+		}
 	}
 
 	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool isWorldSpace)

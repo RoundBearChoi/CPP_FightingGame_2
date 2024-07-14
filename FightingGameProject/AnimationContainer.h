@@ -21,7 +21,6 @@ namespace RB::Render
 	public:
 		AnimationSpecs LoadAnimationSpecsFromJSON(std::string path);
 		bool LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
-		//void LoadAnimation(AnimationSpecs specs);
 		AnimationRenderer* LoadAnimation(std::string specsPath);
 		void DeleteAnimationObjs(RB::Players::PlayerID playerID);
 		std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);

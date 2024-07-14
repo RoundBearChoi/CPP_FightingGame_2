@@ -35,7 +35,7 @@ namespace RB::Render
 		void RenderAnimation() override;
 		void SetWorldPos(const olc::vf2d& pos) override;
 		unsigned int GetFixedUpdateCount() override;
-		void AddMultiplierObj(RenderScaleMultiplierObj obj) override;
+		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) override;
 		float GetRenderScaleMultiplier() override;
 
 	private:

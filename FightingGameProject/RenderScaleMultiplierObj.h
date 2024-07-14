@@ -14,6 +14,7 @@ namespace RB::Render
 		RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier);
 
 		void OnFixedUpdate();
+		void SetOwner(iAnimationObj* owner);
 		bool DoDelete();
 		float GetRenderScaleMultiplier();
 
@@ -22,5 +23,6 @@ namespace RB::Render
 		RenderScaleMultiplierType _multiplierType = RenderScaleMultiplierType::NONE;
 		float _totalMultiplier = 1.0f;
 		int _processedFrames = 0;
+		iAnimationObj* _owner = nullptr;
 	};
 }

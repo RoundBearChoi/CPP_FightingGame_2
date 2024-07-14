@@ -33,7 +33,7 @@ namespace RB::Collisions
 	void AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
 		RB::Render::iAnimationObj* he0 = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, reg.collisionPoint);
-		he0->AddMultiplierObj({ 50, RB::Render::RenderScaleMultiplierType::LINEAR, 1.0f });
+		he0->AddRenderScaleMultiplierObj({ 50, RB::Render::RenderScaleMultiplierType::LINEAR, 1.0f });
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 

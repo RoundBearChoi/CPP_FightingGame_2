@@ -19,6 +19,11 @@ namespace RB::Render
 		_processedFrames++;
 	}
 
+	void RenderScaleMultiplierObj::SetOwner(iAnimationObj* owner)
+	{
+		_owner = owner;
+	}
+
 	bool RenderScaleMultiplierObj::DoDelete()
 	{
 		if (_processedFrames >= _totalFrames)

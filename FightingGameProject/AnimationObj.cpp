@@ -186,8 +186,10 @@ namespace RB::Render
 		return _customFixedUpdate.GetTotalFixedUpdateCount();
 	}
 
-	void AnimationObj::AddMultiplierObj(RenderScaleMultiplierObj obj)
+	void AnimationObj::AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj)
 	{
+		obj.SetOwner(this);
+
 		_vecMultiplierObjs.push_back(obj);
 	}
 

@@ -16,7 +16,7 @@ namespace RB::Render
 	{
 	public:
 		AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, RB::Sprites::PivotType pivotType);
-		~AnimationObj() = default;
+		~AnimationObj();
 
 	public:
 		void OnFixedUpdate() override;

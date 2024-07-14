@@ -4,12 +4,19 @@ namespace RB::Render
 {
 	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, RB::Sprites::PivotType pivotType)
 	{
+		std::cout << "constructing AnimationObj: " << animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << owner->GetPlayerID_int() << std::endl;
+
 		_ownerPlayer = owner;
 		_animationRenderer = animationRenderer;
 		_pivotType = pivotType;
 
 		_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
 		_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
+	}
+
+	AnimationObj::~AnimationObj()
+	{
+		std::cout << "destructing AnimationObj: " << _animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << _ownerPlayer->GetPlayerID_int() << std::endl;
 	}
 
 	void AnimationObj::OnFixedUpdate()

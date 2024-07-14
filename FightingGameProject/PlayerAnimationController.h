@@ -12,7 +12,7 @@ namespace RB::Render
 	{
 	public:
 		PlayerAnimationController() = default;
-		~PlayerAnimationController() override {};
+		~PlayerAnimationController() override;
 
 	public:
 		void Init() override;

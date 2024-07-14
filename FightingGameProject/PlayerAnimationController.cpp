@@ -11,18 +11,24 @@
 
 namespace RB::Render
 {
+	PlayerAnimationController::~PlayerAnimationController()
+	{
+		//std::cout << "destructing PlayerAnimationController.." << std::endl;
+	}
+
 	void PlayerAnimationController::Init()
 	{
 		_animationContainer.Init();
 
 		_animationContainer.LoadSprite("PNG files/Aku/fighter_0_idle.png", RB::Sprites::SpriteType::fighter_0_idle);
+		_animationContainer.LoadSprite("PNG files/Aku/fighter_0_jab.png", RB::Sprites::SpriteType::fighter_0_jab);
 		_animationContainer.LoadSprite("PNG files/Aku/fighter_0_walk.png", RB::Sprites::SpriteType::fighter_0_walk);
 
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_crouch.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_crouch_idle.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_hadouken.aniSpecs");
 		_animationContainer.LoadAnimation("AnimationSpecs/f0_idle.aniSpecs");
-		//_animationContainer.LoadAnimation("AnimationSpecs/f0_jab.aniSpecs");
+		_animationContainer.LoadAnimation("AnimationSpecs/f0_jab.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_jump_forward_0.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_jump_forward_1.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_jump_up_0.aniSpecs");

@@ -111,16 +111,16 @@ namespace RB::Render
 	}
 
 	//temp..
-	void AnimationContainer::LoadAnimation(AnimationSpecs specs)
-	{
-		specs.mLoadedSprite = _spriteContainer.GetLoadedSprite(specs.mSpriteType);
-
-		assert(specs.mLoadedSprite != nullptr);
-
-		AnimationRenderer* renderer = new AnimationRenderer(specs);
-
-		_vecAnimationRenderers.push_back(renderer);
-	}
+	//void AnimationContainer::LoadAnimation(AnimationSpecs specs)
+	//{
+	//	specs.mLoadedSprite = _spriteContainer.GetLoadedSprite(specs.mSpriteType);
+	//
+	//	assert(specs.mLoadedSprite != nullptr);
+	//
+	//	AnimationRenderer* renderer = new AnimationRenderer(specs);
+	//
+	//	_vecAnimationRenderers.push_back(renderer);
+	//}
 
 	/// <summary>
 	/// this function require sprites to be loaded first

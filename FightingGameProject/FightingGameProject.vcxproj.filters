@@ -927,5 +927,8 @@
     <ClInclude Include="RenderScaleMultiplierObj.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
+    <ClInclude Include="RenderScaleMultiplierType.h">
+      <Filter>Source Files\Render</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

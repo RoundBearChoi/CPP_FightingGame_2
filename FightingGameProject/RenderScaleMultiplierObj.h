@@ -1,18 +1,11 @@
 #pragma once
 
+#include "RenderScaleMultiplierType.h"
+
 #include "iAnimationObj.h"
 
 namespace RB::Render
 {
-	enum class RenderScaleMultiplierType
-	{
-		NONE,
-
-		LINEAR,
-		
-		COUNT,
-	};
-
 	class iAnimationObj; // forward declare
 
 	class RenderScaleMultiplierObj

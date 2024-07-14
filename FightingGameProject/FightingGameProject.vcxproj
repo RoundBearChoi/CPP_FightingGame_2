@@ -275,6 +275,7 @@
     <ClInclude Include="GetQuadOnPivot.h" />
     <ClInclude Include="JParser.h" />
     <ClInclude Include="RenderLayerType.h" />
+    <ClInclude Include="RenderScaleMultiplierType.h" />
     <ClInclude Include="RenderSettings.h" />
     <ClInclude Include="AnimationSpecs.h" />
     <ClInclude Include="AttackRegister.h" />

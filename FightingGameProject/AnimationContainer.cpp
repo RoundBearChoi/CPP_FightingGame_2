@@ -95,18 +95,9 @@ namespace RB::Render
 		return specs;
 	}
 
-	bool AnimationContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
+	RB::Sprites::LoadedSprite* AnimationContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
-		RB::Sprites::LoadedSprite* loaded = _spriteContainer.LoadSprite(path, spriteType);
-
-		if (loaded == nullptr)
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
+		return _spriteContainer.LoadSprite(path, spriteType);
 	}
 
 	/// <summary>

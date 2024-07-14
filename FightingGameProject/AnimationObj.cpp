@@ -4,9 +4,10 @@ namespace RB::Render
 {
 	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, RB::Sprites::PivotType pivotType)
 	{
-		std::cout << "constructing AnimationObj: " << animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << owner->GetPlayerID_int() << std::endl;
+		//std::cout << "constructing AnimationObj: " << animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << owner->GetPlayerID_int() << std::endl;
 
 		_ownerPlayer = owner;
+		//_ownerPlayerID = owner->GetPlayerID_int();
 		_animationRenderer = animationRenderer;
 		_pivotType = pivotType;
 
@@ -16,7 +17,7 @@ namespace RB::Render
 
 	AnimationObj::~AnimationObj()
 	{
-		std::cout << "destructing AnimationObj: " << _animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << _ownerPlayer->GetPlayerID_int() << std::endl;
+		//std::cout << " - destructing AnimationObj: " << _animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << _ownerPlayerID << std::endl;
 	}
 
 	void AnimationObj::OnFixedUpdate()

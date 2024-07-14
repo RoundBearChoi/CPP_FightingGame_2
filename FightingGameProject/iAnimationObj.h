@@ -12,6 +12,8 @@ namespace RB::Render
 	class iAnimationObj
 	{
 	public:
+		virtual ~iAnimationObj() = default;
+
 		virtual void OnFixedUpdate() = 0;
 
 		virtual void UpdateAnimationIndex() = 0;

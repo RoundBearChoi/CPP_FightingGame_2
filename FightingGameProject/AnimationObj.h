@@ -16,7 +16,7 @@ namespace RB::Render
 	{
 	public:
 		AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, RB::Sprites::PivotType pivotType);
-		~AnimationObj();
+		~AnimationObj() override;
 
 	public:
 		void OnFixedUpdate() override;
@@ -41,6 +41,7 @@ namespace RB::Render
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
+		//int _ownerPlayerID = 0;
 		AnimationRenderer* _animationRenderer = nullptr;
 		RB::Sprites::PivotType _pivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		unsigned int _currentIndex = 0;

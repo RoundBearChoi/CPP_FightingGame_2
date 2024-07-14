@@ -173,6 +173,8 @@ namespace RB::Render
 			renderSettings.mFaceRight = true;
 		}
 
+		_lastRenderScale = renderSettings.mRenderScale * renderSettings.mRenderScaleMultiplier;
+
 		_animationRenderer->RenderAnimation(renderSettings);
 	}
 
@@ -204,5 +206,10 @@ namespace RB::Render
 			float m = _vecMultiplierObjs[0].GetRenderScaleMultiplier();
 			return m;
 		}
+	}
+
+	float AnimationObj::GetLastRenderScale()
+	{
+		return _lastRenderScale;
 	}
 }

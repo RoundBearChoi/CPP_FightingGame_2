@@ -37,6 +37,7 @@ namespace RB::Render
 		unsigned int GetFixedUpdateCount() override;
 		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) override;
 		float GetRenderScaleMultiplier() override;
+		float GetLastRenderScale() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
@@ -46,6 +47,6 @@ namespace RB::Render
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		olc::vf2d _worldPos = { 0, 0 };
 		std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
-		float _lastRenderScaleMultiplier = 1.0f;
+		float _lastRenderScale = 1.0f;
 	};
 }

@@ -30,5 +30,6 @@ namespace RB::Render
 		virtual unsigned int GetFixedUpdateCount() = 0;
 		virtual void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) = 0;
 		virtual float GetRenderScaleMultiplier() = 0;
+		virtual float GetLastRenderScale() = 0;
 	};
 }

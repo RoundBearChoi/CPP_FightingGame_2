@@ -1,5 +1,7 @@
 #pragma once
 
+#include "iAnimationObj.h"
+
 namespace RB::Render
 {
 	enum class RenderScaleMultiplierType
@@ -10,6 +12,8 @@ namespace RB::Render
 		
 		COUNT,
 	};
+
+	class iAnimationObj; // forward declare
 
 	class RenderScaleMultiplierObj
 	{

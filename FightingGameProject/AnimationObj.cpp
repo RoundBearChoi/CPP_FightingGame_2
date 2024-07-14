@@ -7,7 +7,6 @@ namespace RB::Render
 		//std::cout << "constructing AnimationObj: " << animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << owner->GetPlayerID_int() << std::endl;
 
 		_ownerPlayer = owner;
-		//_ownerPlayerID = owner->GetPlayerID_int();
 		_animationRenderer = animationRenderer;
 		_pivotType = pivotType;
 

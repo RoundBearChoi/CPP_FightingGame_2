@@ -16,6 +16,7 @@ namespace RB::Render
 		_animationContainer.Init();
 
 		_animationContainer.LoadSprite("PNG files/Aku/fighter_0_idle.png", RB::Sprites::SpriteType::fighter_0_idle);
+		_animationContainer.LoadSprite("PNG files/Aku/fighter_0_walk.png", RB::Sprites::SpriteType::fighter_0_walk);
 
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_crouch.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_crouch_idle.aniSpecs");
@@ -30,7 +31,7 @@ namespace RB::Render
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_strong_kick.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_strong_punch.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_strong_wince.aniSpecs");
-		//_animationContainer.LoadAnimation("AnimationSpecs/f0_walk.aniSpecs");
+		_animationContainer.LoadAnimation("AnimationSpecs/f0_walk.aniSpecs");
 		//_animationContainer.LoadAnimation("AnimationSpecs/f0_wince.aniSpecs");
 	}
 

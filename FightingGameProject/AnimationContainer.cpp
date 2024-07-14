@@ -78,10 +78,9 @@ namespace RB::Render
 		int playOnceInt = RB::JSON::JParser::GetInt_FromElement(*vecAll[6]);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
-		//load sprites first
-		bool loadedSprite = LoadSprite("PNG files/Aku/" + strEnum + ".png", RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
+		RB::Sprites::LoadedSprite* loaded = _spriteContainer.GetLoadedSprite(RB::Sprites::SpriteType::_from_string(strEnum.c_str()));
 
-		assert(loadedSprite);
+		assert(loaded != nullptr);
 
 		AnimationSpecs specs;
 

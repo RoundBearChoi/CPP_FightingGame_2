@@ -16,6 +16,11 @@ namespace RB::Render
 	{
 		//std::cout << "processing sizeChange.. " << std::to_string(_processedFrames) << std::endl;
 
+		if (_start == 0.0f && _end == 0.0f)
+		{
+			SetStartAndEnd();
+		}
+
 		_processedFrames++;
 	}
 
@@ -39,7 +44,26 @@ namespace RB::Render
 
 	float RenderScaleMultiplierObj::GetRenderScaleMultiplier()
 	{
+		if (_multiplierType == RenderScaleMultiplierType::LINEAR)
+		{
+			float oneFrame = _totalMultiplier / _totalFrames;
+
+			float result = oneFrame * _processedFrames + 1;
+
+			return result;
+		}
+
 		// temp
-		return 3.0f;
+		return 1.0f;
+	}
+
+	void RenderScaleMultiplierObj::SetStartAndEnd()
+	{
+		float current = _owner->GetLastRenderScale();
+
+		_start = current;
+		_end = current * _totalMultiplier;
+
+
 	}
 }

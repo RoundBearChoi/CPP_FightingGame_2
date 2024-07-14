@@ -17,6 +17,7 @@ namespace RB::Render
 		void SetOwner(iAnimationObj* owner);
 		bool DoDelete();
 		float GetRenderScaleMultiplier();
+		void SetStartAndEnd();
 
 	private:
 		int _totalFrames = 0;
@@ -24,5 +25,7 @@ namespace RB::Render
 		float _totalMultiplier = 1.0f;
 		int _processedFrames = 0;
 		iAnimationObj* _owner = nullptr;
+		float _start = 0.0f;
+		float _end = 0.0f;
 	};
 }

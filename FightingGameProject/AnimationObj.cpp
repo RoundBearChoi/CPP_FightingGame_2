@@ -160,8 +160,8 @@ namespace RB::Render
 		renderSettings.mPivotType = _pivotType;
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
-		renderSettings.mRenderScale = GetRenderScale();
-		renderSettings.mRenderScaleMultiplier = GetRenderScaleMultiplier();
+		renderSettings.mRenderScale = GetRenderScale() * GetRenderScaleMultiplier();
+		//renderSettings.mRenderScaleMultiplier = GetRenderScaleMultiplier();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)
@@ -173,7 +173,7 @@ namespace RB::Render
 			renderSettings.mFaceRight = true;
 		}
 
-		_lastRenderScale = renderSettings.mRenderScale * renderSettings.mRenderScaleMultiplier;
+		_lastRenderScale = renderSettings.mRenderScale; //*renderSettings.mRenderScaleMultiplier;
 
 		_animationRenderer->RenderAnimation(renderSettings);
 	}

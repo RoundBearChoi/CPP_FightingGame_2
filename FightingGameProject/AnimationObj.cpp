@@ -161,7 +161,6 @@ namespace RB::Render
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderScale = GetRenderScale() * GetRenderScaleMultiplier();
-		//renderSettings.mRenderScaleMultiplier = GetRenderScaleMultiplier();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)
@@ -172,8 +171,6 @@ namespace RB::Render
 		{
 			renderSettings.mFaceRight = true;
 		}
-
-		_lastRenderScale = renderSettings.mRenderScale; //*renderSettings.mRenderScaleMultiplier;
 
 		_animationRenderer->RenderAnimation(renderSettings);
 	}
@@ -199,17 +196,20 @@ namespace RB::Render
 	{
 		if (_vecMultiplierObjs.size() == 0)
 		{
-			return 1.0f;
+			return _lastRenderScaleMultiplier; //1.0f;
 		}
 		else
 		{
 			float m = _vecMultiplierObjs[0].GetRenderScaleMultiplier();
+
+			_lastRenderScaleMultiplier = m;
+
 			return m;
 		}
 	}
 
 	float AnimationObj::GetLastRenderScale()
 	{
-		return _lastRenderScale;
+		return _lastRenderScaleMultiplier;
 	}
 }

@@ -47,6 +47,6 @@ namespace RB::Render
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		olc::vf2d _worldPos = { 0, 0 };
 		std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
-		float _lastRenderScale = 1.0f;
+		float _lastRenderScaleMultiplier = 1.0f;
 	};
 }

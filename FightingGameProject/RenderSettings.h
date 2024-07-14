@@ -1,5 +1,7 @@
 #pragma once
+
 #include "olcPixelGameEngine.h"
+
 #include "PivotType.h"
 
 namespace RB::Render

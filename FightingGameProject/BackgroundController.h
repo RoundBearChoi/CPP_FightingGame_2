@@ -1,5 +1,7 @@
 #pragma once
+
 #include <vector>
+
 #include "BackgroundObj.h"
 
 #include "iBackgroundController.h"

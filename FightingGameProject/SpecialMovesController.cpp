@@ -1,10 +1,5 @@
 #include "SpecialMovesController.h"
 
-#include "PlayerInput.h"
-
-#include "P0_Seq_Hadouken.h"
-#include "P0_Hadouken.h"
-
 namespace RB::Input
 {
 	SpecialMovesController::~SpecialMovesController()

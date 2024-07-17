@@ -1,9 +1,15 @@
 #pragma once
+
 #include <vector>
+#include <iostream>
+
 #include "StateBase.h"
 #include "SpriteType.h"
 
 #include "iPlayer.h"
+#include "iPlayerController.h"
+#include "iPlayerBoxDataController.h"
+#include "iPlayerAnimationController.h"
 
 namespace RB::PlayerStates
 {

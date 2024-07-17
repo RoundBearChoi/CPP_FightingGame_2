@@ -2,5 +2,5 @@
 
 namespace RB::Updaters
 {
-	iUpdater* RB::Updaters::ptrCurrentUpdater = nullptr;
+	iUpdater* ptrCurrentUpdater = nullptr;
 }

@@ -1,5 +1,10 @@
 #pragma once
+
 #include "PlayerState.h"
+#include "MarkInitiallyFacingRight.h"
+#include "TransitionOnAnimationEnd.h"
+
+#include "P0_Idle.h"
 
 namespace RB::PlayerStates::Aku
 {

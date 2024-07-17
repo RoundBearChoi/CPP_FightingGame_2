@@ -1,10 +1,5 @@
 #include "P0_JumpForwardUp_1.h"
 
-#include "MoveDownOnFall.h"
-#include "MoveForwardOnJump_1.h"
-
-#include "P0_Idle.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_JumpForwardUp_1::OnEnter()

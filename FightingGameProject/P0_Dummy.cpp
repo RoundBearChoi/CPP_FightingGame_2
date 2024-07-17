@@ -1,7 +1,5 @@
 #include "P0_Dummy.h"
 
-#include "iPlayerController.h"
-
 namespace RB::PlayerStates::Aku
 {
 	P0_Dummy::P0_Dummy(Sprites::SpriteType startingSpriteType)

@@ -1,9 +1,5 @@
 #include "P0_Start.h"
 
-#include "TransitionOnFixedUpdateCount.h"
-
-#include "P0_Idle.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_Start::OnEnter()

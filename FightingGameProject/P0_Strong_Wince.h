@@ -1,5 +1,12 @@
 #pragma once
+
 #include "PlayerState.h"
+#include "FixWincingStatusDuringState.h"
+#include "MarkInitiallyFacingRight.h"
+#include "MoveHorizontalOnFixedUpdateCount.h"
+#include "TransitionOnFixedUpdateCount.h"
+
+#include "P0_Idle.h"
 
 namespace RB::PlayerStates::Aku
 {

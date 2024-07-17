@@ -1,10 +1,5 @@
 #include "P0_StandUp.h"
 
-#include "MarkInitiallyFacingRight.h"
-#include "TransitionOnAnimationEnd.h"
-
-#include "P0_Idle.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_StandUp::OnEnter()

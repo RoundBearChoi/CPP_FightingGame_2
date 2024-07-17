@@ -1,8 +1,10 @@
 #pragma once
-#include "PlayerState.h"
 
+#include "PlayerState.h"
 #include "SpriteType.h"
 #include "ManualAnimationUpdater.h"
+
+#include "iPlayerController.h"
 
 namespace RB::PlayerStates::Aku
 {

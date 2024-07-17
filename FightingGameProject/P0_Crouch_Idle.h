@@ -1,5 +1,10 @@
 #pragma once
+
 #include "PlayerState.h"
+#include "DoNotFixDirectionDuringState.h"
+#include "StandUpOnRelease.h"
+
+#include "P0_StandUp.h"
 
 namespace RB::PlayerStates::Aku
 {

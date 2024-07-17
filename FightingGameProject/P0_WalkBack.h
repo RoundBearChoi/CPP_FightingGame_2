@@ -1,5 +1,15 @@
 #pragma once
+
 #include "PlayerState.h"
+#include "DoNotFixDirectionDuringState.h"
+#include "TransitionToJumpUp.h"
+#include "WhileMovingBack.h"
+
+#include "iSpecsController.h"
+
+#include "P0_JumpUp_0.h"
+#include "P0_Idle.h"
+#include "P0_WalkForward.h"
 
 namespace RB::PlayerStates::Aku
 {

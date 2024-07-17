@@ -1,12 +1,5 @@
 #include "P0_Wince.h"
 
-#include "FixWincingStatusDuringState.h"
-#include "MarkInitiallyFacingRight.h"
-#include "MoveHorizontalOnFixedUpdateCount.h"
-#include "TransitionOnFixedUpdateCount.h"
-
-#include "P0_Idle.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_Wince::OnEnter()

@@ -1,11 +1,5 @@
 #include "P0_Strong_Punch.h"
 
-#include "MarkInitiallyFacingRight.h"
-#include "DetectHit.h"
-#include "TransitionOnAnimationEnd.h"
-
-#include "P0_Idle.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_Strong_Punch::OnEnter()

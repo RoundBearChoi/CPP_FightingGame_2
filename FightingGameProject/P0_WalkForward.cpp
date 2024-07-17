@@ -1,17 +1,5 @@
 #include "P0_WalkForward.h"
 
-#include "DoNotFixDirectionDuringState.h"
-#include "TransitionToJumpForward.h"
-#include "TransitionToJumpUp.h"
-#include "WhileMovingForward.h"
-
-#include "P0_JumpForwardUp_0.h"
-#include "P0_JumpUp_0.h"
-#include "P0_Idle.h"
-#include "P0_WalkBack.h"
-
-#include "iSpecsController.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_WalkForward::OnEnter()

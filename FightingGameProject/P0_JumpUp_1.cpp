@@ -1,10 +1,5 @@
 #include "P0_JumpUp_1.h"
 
-#include "MarkInitiallyFacingRight.h"
-#include "MoveDownOnFall.h"
-
-#include "P0_Idle.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_JumpUp_1::OnEnter()

@@ -1,10 +1,5 @@
 #include "P0_Crouch.h"
 
-#include "MarkInitiallyFacingRight.h"
-#include "TransitionOnAnimationEnd.h"
-
-#include "P0_Crouch_Idle.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_Crouch::OnEnter()

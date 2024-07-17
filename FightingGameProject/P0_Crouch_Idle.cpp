@@ -1,10 +1,5 @@
 #include "P0_Crouch_Idle.h"
 
-#include "DoNotFixDirectionDuringState.h"
-#include "StandUpOnRelease.h"
-
-#include "P0_StandUp.h"
-
 namespace RB::PlayerStates::Aku
 {
 	void P0_Crouch_Idle::OnEnter()

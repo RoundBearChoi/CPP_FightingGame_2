@@ -15,6 +15,12 @@ namespace RB
 
         }
 
+        // Additional constructor with int parameters
+        Vector2(int x, int y) : x(static_cast<float>(std::round(x))), y(static_cast<float>(std::round(y)))
+        {
+
+        }
+
         // Addition
         Vector2 operator+(const Vector2& other) const 
         {
@@ -56,6 +62,16 @@ namespace RB
         {
             float magnitude = Magnitude();
             return Vector2(x / magnitude, y / magnitude);
+        }
+
+        int GetIntX()
+        {
+            return static_cast<int>(std::round(x));
+        }
+
+        int GetIntY()
+        {
+            return static_cast<int>(std::round(y));
         }
     };
 }

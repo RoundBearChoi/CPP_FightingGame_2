@@ -1,16 +1,5 @@
 #include "HBMenuController.h"
 
-#include "PlayerState.h"
-
-#include "GetCurrentSpriteType.h"
-#include "GetCurrentAnimationFrame.h"
-
-#include "iPlayerController.h"
-#include "iPlayerAnimationController.h"
-#include "iHBoxEditController.h"
-#include "iTargetBoxDataController.h"
-#include "iAttackBoxDataController.h"
-
 namespace RB::HBox
 {
 	void HBMenuController::Init()

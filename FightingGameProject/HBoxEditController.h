@@ -1,10 +1,24 @@
 #pragma once
+
+#include <fstream>
+
+#include "Time.h"
+#include "Vector2.h"
+#include "PlayerID.h"
+#include "PlayerState.h"
+#include "CurrentUpdater.h"
 #include "HBoxType.h"
 #include "AABB_Set.h"
 #include "Loaded_HB_Data.h"
-#include "PlayerID.h"
 #include "CircleRenderer.h"
 
+#include "iUpdater.h"
+#include "iPlayerController.h"
+#include "iPlayerAnimationController.h"
+#include "iTargetBoxDataController.h"
+#include "iAttackBoxDataController.h"
+#include "iHBMenuController.h"
+#include "iCamController.h"
 #include "iHBoxEditController.h"
 
 namespace RB::HBox

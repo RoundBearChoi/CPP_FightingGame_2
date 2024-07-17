@@ -1,20 +1,5 @@
 #include "HBoxEditController.h"
 
-#include <fstream>
-
-#include "Vector2.h"
-#include "Time.h"
-#include "PlayerState.h"
-#include "CurrentUpdater.h"
-
-#include "iPlayerController.h"
-#include "iPlayerAnimationController.h"
-#include "iTargetBoxDataController.h"
-#include "iAttackBoxDataController.h"
-#include "iHBMenuController.h"
-#include "iCamController.h"
-#include "iUpdater.h"
-
 namespace RB::HBox
 {
 	HBoxEditController::HBoxEditController(RB::HBox::HBoxType boxType)

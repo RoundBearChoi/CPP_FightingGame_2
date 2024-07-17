@@ -1,7 +1,5 @@
 #include "ControllerBase.h"
 
-#include "olcPixelGameEngine.h"
-
 namespace RB::Controllers
 {
 	std::vector<ControllerBase*> ControllerBase::vecControllers;

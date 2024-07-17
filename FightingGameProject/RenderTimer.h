@@ -1,5 +1,9 @@
 #pragma once
 
+#include "olcPixelGameEngine.h"
+
+#include "Time.h"
+
 namespace RB::Frames
 {
 	class RenderTimer

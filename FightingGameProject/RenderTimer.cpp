@@ -1,9 +1,5 @@
 #include "RenderTimer.h"
 
-#include "olcPixelGameEngine.h"
-
-#include "Time.h"
-
 namespace RB::Frames
 {
 	void RenderTimer::OnUpdate()

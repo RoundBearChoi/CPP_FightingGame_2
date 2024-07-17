@@ -1,11 +1,14 @@
 #pragma once
 
-#include "iPlayerCollider.h"
-#include "iPlayer.h"
-#include "iPlayerController.h"
+#include <cmath>
 
-#include "PlayerBox.h"
 #include "AABB.h"
+#include "PlayerBox.h"
+
+#include "iPlayer.h"
+#include "iPlayerCollider.h"
+#include "iPlayerController.h"
+#include "iCamController.h"
 
 namespace RB::Players
 {

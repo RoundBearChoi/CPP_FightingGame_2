@@ -2,12 +2,13 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 
+#include "JParser.h"
 #include "MoveSpecs.h"
 #include "CharacterType.h"
 
 #include "iSpecsController.h"
-
 
 namespace RB::Players::Specs
 {

@@ -1,9 +1,5 @@
 #include "SpecsController.h"
 
-#include <iostream>
-
-#include "JParser.h"
-
 namespace RB::Players::Specs
 {
 	SpecsController::~SpecsController()

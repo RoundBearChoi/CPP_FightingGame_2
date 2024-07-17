@@ -1,9 +1,5 @@
 #include "PlayerCollider.h"
 
-#include <cmath>
-
-#include "iCamController.h"
-
 namespace RB::Players
 {
 	void PlayerCollider::Init(iPlayer* owner)

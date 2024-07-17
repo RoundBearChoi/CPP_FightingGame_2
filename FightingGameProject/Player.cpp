@@ -1,7 +1,5 @@
 #include "Player.h"
 
-#include "StateMachineBase.h"
-
 namespace RB::Players
 {
 	Player::~Player()

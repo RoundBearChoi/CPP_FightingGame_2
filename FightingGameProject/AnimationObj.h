@@ -1,9 +1,8 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
-
 #include <vector>
 
+#include "Vector2.h"
 #include "SkipFixedUpdates.h"
 #include "AnimationRenderer.h"
 #include "RenderScaleMultiplierObj.h"
@@ -26,15 +25,15 @@ namespace RB::Render
 		void ManualIncreaseAnimationIndex() override;
 		void ManualDecreaseAnimationIndex() override;
 		void CycleAnimationIndex() override;
-		olc::vf2d GetSourceSize() override;
-		olc::vf2d GetSourcePos(olc::vf2d sourceSize) override;
+		RB::Vector2 GetSourceSize() override;
+		RB::Vector2 GetSourcePos(RB::Vector2 sourceSize) override;
 		float GetRenderScale() override;
-		olc::vf2d GetRenderOffset() override;
+		RB::Vector2 GetRenderOffset() override;
 		RB::Players::iPlayer* GetPlayer() override;
 		const AnimationSpecs& GetAnimationSpecs() const override;
 		unsigned int GetCurrentIndex() override;
 		void RenderAnimation() override;
-		void SetWorldPos(const olc::vf2d& pos) override;
+		void SetWorldPos(const RB::Vector2& pos) override;
 		unsigned int GetFixedUpdateCount() override;
 		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) override;
 		float GetRenderScaleMultiplier() override;
@@ -47,7 +46,7 @@ namespace RB::Render
 		RB::Sprites::PivotType _pivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		unsigned int _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
-		olc::vf2d _worldPos = { 0, 0 };
+		RB::Vector2 _worldPos = { 0, 0 };
 		std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
 		float _lastRenderScaleMultiplier = 1.0f;
 		AnimationSpecs _emptySpecs;

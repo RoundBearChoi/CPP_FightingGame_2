@@ -1,5 +1,6 @@
 #pragma once
-#include "olcPixelGameEngine.h"
+
+#include "Vector2.h"
 
 namespace RB::Collisions
 {
@@ -17,12 +18,12 @@ namespace RB::Collisions
 		void MoveY(float y);
 		void IncreaseWidth(float amount);
 		void IncreaseHeight(float amount);
-		olc::vf2d GetCenter();
-		olc::vf2d GetBottomLeft();
-		olc::vf2d GetWidthHeight();
-		bool IsCollidingAgainst(const AABB& other, olc::vf2d& collisionCenter);
-		olc::vf2d GetCollisionCenter(const AABB& other);
-		AABB GetWorldPos(const olc::vf2d& playerPos, const bool& otherPlayerIsOnRightSide);
+		RB::Vector2 GetCenter();
+		RB::Vector2 GetBottomLeft();
+		RB::Vector2 GetWidthHeight();
+		bool IsCollidingAgainst(const AABB& other, RB::Vector2& collisionCenter);
+		RB::Vector2 GetCollisionCenter(const AABB& other);
+		AABB GetWorldPos(const RB::Vector2& playerPos, const bool& otherPlayerIsOnRightSide);
 		void ForceAABB(AABB& aabb);
 
 	private:

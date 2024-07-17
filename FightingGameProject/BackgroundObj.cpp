@@ -9,7 +9,7 @@ namespace RB::Background
 		_imageWidth = 288;
 		_imageHeight = 184;
 		_renderScale = 4.0f;
-		_position = olc::vf2d{ _imageWidth * _renderScale * 2.0f * -1.0f, 16.0f };
+		_position = { _imageWidth * _renderScale * 2.0f * -1.0f, 16.0f };
 
 		_spriteType = spriteType;
 		_percentage = percentage;
@@ -34,7 +34,14 @@ namespace RB::Background
 		//background horizontal tile
 		for (int i = 0; i < 4; i++)
 		{
-			_spriteContainer.RenderSprite(_spriteType, _imageWidth * _renderScale, _imageHeight * _renderScale, olc::vf2d{ offsetX + (_imageWidth * _renderScale * i), _position.y }, olc::WHITE, RB::Sprites::PivotType::BOTTOM_LEFT, true);
+			_spriteContainer.RenderSprite(
+				_spriteType,
+				_imageWidth * _renderScale,
+				_imageHeight * _renderScale,
+				RB::Vector2{ offsetX + (_imageWidth * _renderScale * i), _position.y },
+				olc::WHITE,
+				RB::Sprites::PivotType::BOTTOM_LEFT,
+				true);
 		}
 	}
 

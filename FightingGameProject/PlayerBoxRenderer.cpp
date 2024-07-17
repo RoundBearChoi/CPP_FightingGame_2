@@ -1,5 +1,9 @@
 #include "PlayerBoxRenderer.h"
 
+#include "olcPixelGameEngine.h"
+
+#include "Vector2.h"
+
 #include "iPlayerController.h"
 
 namespace RB::Render
@@ -30,8 +34,8 @@ namespace RB::Render
 				continue;
 			}
 
-			olc::vf2d playerBox = player->GetPlayerCollider()->GetPlayerBox();
-			olc::vi2d playerPos = player->GetPosition();
+			RB::Vector2 playerBox = player->GetPlayerCollider()->GetPlayerBox();
+			RB::Vector2 playerPos = player->GetPosition();
 
 			olc::Pixel boxTint = olc::YELLOW;
 

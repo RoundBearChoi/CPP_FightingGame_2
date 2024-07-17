@@ -1,4 +1,7 @@
 #pragma once
+
+#include "olcPixelGameEngine.h"
+
 #include "SpriteContainer.h"
 #include "AABB_Set.h"
 #include "HBoxType.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "Vector2.h"
 
 namespace RB::Render
 {
@@ -15,9 +15,9 @@ namespace RB::Render
 		void Render(int radius);
 
 	public:
-		void SetPos(olc::vf2d pos);
+		void SetPos(RB::Vector2 pos);
 
 	private:
-		olc::vf2d _pos = { 0.0f, 0.0f };
+		RB::Vector2 _pos = { 0.0f, 0.0f };
 	};
 }

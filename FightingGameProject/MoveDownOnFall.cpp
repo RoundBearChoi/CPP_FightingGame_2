@@ -1,6 +1,7 @@
 #include "MoveDownOnFall.h"
 
 #include "Ease.h"
+#include "Vector2.h"
 
 #include "iPlayerController.h"
 
@@ -63,7 +64,7 @@ namespace RB::PlayerStateComponents
 		//keep falling
 		else
 		{
-			player->Move(olc::vf2d{ 0.0f, result });
+			player->Move(RB::Vector2{ 0.0f, result });
 		}
 	}
 }

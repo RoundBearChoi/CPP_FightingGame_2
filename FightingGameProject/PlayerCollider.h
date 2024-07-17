@@ -1,7 +1,5 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
-
 #include "iPlayerCollider.h"
 #include "iPlayer.h"
 #include "iPlayerController.h"
@@ -26,7 +24,7 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		olc::vf2d GetPlayerBox() override;
+		RB::Vector2 GetPlayerBox() override;
 		void SetPlayerBox(const RB::Collisions::PlayerBox& box) override;
 		bool IsCollidingAgainstOtherPlayer() override;
 		const RB::Collisions::AABB& GetAABB() override;

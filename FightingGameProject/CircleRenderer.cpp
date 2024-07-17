@@ -18,12 +18,14 @@ namespace RB::Render
 
 	void CircleRenderer::Render(int radius)
 	{
-		olc::vf2d relPos = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(_pos) + olc::vf2d{ 1.0, -1.0 };
+		RB::Vector2 relPos = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(_pos) + RB::Vector2{ 1.0f, -1.0f };
 
-		olc::Renderer::ptrPGE->DrawCircle(relPos, radius, olc::WHITE);
+		olc::Renderer::ptrPGE->DrawCircle(
+			olc::vi2d{ relPos.GetIntX(), relPos.GetIntY() },
+			radius, olc::WHITE);
 	}
 
-	void CircleRenderer::SetPos(olc::vf2d pos)
+	void CircleRenderer::SetPos(RB::Vector2 pos)
 	{
 		_pos = pos;
 	}

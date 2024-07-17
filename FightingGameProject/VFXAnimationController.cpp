@@ -25,7 +25,7 @@ namespace RB::Render
         _DeleteFinishedAnimations();
     }
 
-    iAnimationObj* VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos)
+    iAnimationObj* VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, RB::Vector2 pos)
     {
         AnimationRenderer* aniRenderer = _animationContainer.GetAnimationRenderer(spriteType);
         

@@ -108,7 +108,7 @@ namespace RB::PlayerStateComponents
 				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
 
 				//compare
-				olc::vf2d col;
+				RB::Vector2 col;
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{

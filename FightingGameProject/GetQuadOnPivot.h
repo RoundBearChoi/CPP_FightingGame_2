@@ -2,11 +2,10 @@
 
 #include <array>
 
-#include "olcPixelGameEngine.h"
-
+#include "Vector2.h"
 #include "PivotType.h"
 
 namespace RB::Sprites
 {
-	extern std::array<olc::vf2d, 4> GetQuadOnPivot(PivotType pivotType, float width, float height, olc::vf2d pos);
+	extern std::array<RB::Vector2, 4> GetQuadOnPivot(PivotType pivotType, float width, float height, RB::Vector2 pos);
 }

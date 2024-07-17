@@ -17,7 +17,7 @@ namespace RB::Players
 	{
 		if (firstPlayerState == nullptr)
 		{
-			std::cout << "WARNING: firstPlayerState is nullptr" << std::endl;
+			//std::cout << "WARNING: firstPlayerState is nullptr" << std::endl;
 		}
 		else
 		{
@@ -143,17 +143,17 @@ namespace RB::Players
 		return _stateMachine->GetID();
 	}
 
-	void Player::Move(olc::vf2d moveAmount)
+	void Player::Move(RB::Vector2 moveAmount)
 	{
 		_position += moveAmount;
 	}
 
-	olc::vf2d Player::GetPosition()
+	RB::Vector2 Player::GetPosition()
 	{
 		return _position;
 	}
 
-	void Player::SetPosition(olc::vf2d pos)
+	void Player::SetPosition(RB::Vector2 pos)
 	{
 		_position = pos;
 	}

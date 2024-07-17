@@ -1,6 +1,5 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
 #include "AABB.h"
 #include "PlayerBox.h"
 
@@ -16,7 +15,7 @@ namespace RB::Players
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual olc::vf2d GetPlayerBox() = 0;
+		virtual RB::Vector2 GetPlayerBox() = 0;
 		virtual void SetPlayerBox(const RB::Collisions::PlayerBox& box) = 0;
 		virtual bool IsCollidingAgainstOtherPlayer() = 0;
 		virtual const RB::Collisions::AABB& GetAABB() = 0;

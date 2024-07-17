@@ -1,9 +1,12 @@
 #include "AnimationRenderer.h"
 
-#include "iCamController.h"
+#include "olcPixelGameEngine.h"
 
+#include "Vector2.h"
 #include "GetQuadOnPivot.h"
 #include "FlipQuad.h"
+
+#include "iCamController.h"
 
 namespace RB::Render
 {
@@ -35,7 +38,7 @@ namespace RB::Render
 		}
 
 		// get screen space x, y, width, height
-		olc::vf2d rel = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
+		RB::Vector2 rel = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
 		float x = (float)rel.x;
 		float y = (float)rel.y;
@@ -49,7 +52,7 @@ namespace RB::Render
 		float height = renderSettings.mSourceSize.y * renderSettings.mRenderScale * zoom;
 
 		// get quads
-		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(renderSettings.mPivotType, width, height, { x, y });
+		std::array<RB::Vector2, 4> points = RB::Sprites::GetQuadOnPivot(renderSettings.mPivotType, width, height, { x, y });
 
 		// flip if necessary
 		if (!renderSettings.mFaceRight)
@@ -57,9 +60,21 @@ namespace RB::Render
 			points = RB::Sprites::FlipQuad(renderSettings.mPivotType, points);
 		}
 
-		// render
-		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(_animationSpecs.mLoadedSprite->GetDecal(), points, renderSettings.mSourcePos, renderSettings.mSourceSize);
+		// convert to vf2d
+		std::array<olc::vf2d, 4> arrVF2D;
 
-		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
+		for (int i = 0; i < points.size(); i++)
+		{
+			arrVF2D[i] = { points[i].x, points[i].y };
+		}
+
+		// render
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(
+			_animationSpecs.mLoadedSprite->GetDecal(),
+			arrVF2D,
+			olc::vf2d{ renderSettings.mSourcePos.x, renderSettings.mSourcePos.y },
+			olc::vf2d{ renderSettings.mSourceSize.x, renderSettings.mSourceSize.y });
+
+		//olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
 }

@@ -1,5 +1,6 @@
 #include "FollowPlayers.h"
 
+#include "Vector2.h"
 #include "Ease.h"
 
 #include "iPlayerController.h"
@@ -77,6 +78,6 @@ namespace RB::Cam
 		float lerped = std::lerp(curr, result, ease * 0.03f);
 
 		//y should be dynamic.. but for now
-		_camObj->SetPosition(olc::vf2d{ lerped, -115.0f });
+		_camObj->SetPosition(RB::Vector2{ lerped, -115.0f });
 	}
 }

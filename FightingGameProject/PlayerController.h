@@ -1,7 +1,5 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
-
 #include "iPlayer.h"
 #include "iPlayerController.h"
 

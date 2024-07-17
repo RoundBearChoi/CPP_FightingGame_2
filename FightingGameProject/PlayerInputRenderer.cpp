@@ -65,13 +65,13 @@ namespace RB::Render
 				tint = olc::YELLOW;
 			}
 
-			_RenderIcon(_GetSpriteType((*i)->GetPlayerInputType()), olc::vi2d(5 + (count * 21 + 3), yPos), tint);
+			_RenderIcon(_GetSpriteType((*i)->GetPlayerInputType()), RB::Vector2(5 + (count * 21 + 3), yPos), tint);
 
 			count++;
 		}
 	}
 
-	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteType spriteType, olc::vi2d pos, olc::Pixel tint)
+	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteType spriteType, RB::Vector2 pos, olc::Pixel tint)
 	{
 		_spriteContainer->RenderSprite(spriteType, 17, 17 , pos, tint, RB::Sprites::PivotType::BOTTOM_LEFT, false);
 	}

@@ -2,9 +2,9 @@
 
 namespace RB::Sprites
 {
-	std::array<olc::vf2d, 4> FlipQuad(RB::Sprites::PivotType pivotType, std::array<olc::vf2d, 4> arr)
+	std::array<RB::Vector2, 4> FlipQuad(RB::Sprites::PivotType pivotType, std::array<RB::Vector2, 4> arr)
 	{
-		std::array<olc::vf2d, 4> flipped;
+		std::array<RB::Vector2, 4> flipped;
 
 		if (pivotType == RB::Sprites::PivotType::BOTTOM_CENTER || pivotType == RB::Sprites::PivotType::CENTER)
 		{

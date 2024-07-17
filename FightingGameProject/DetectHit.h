@@ -1,10 +1,11 @@
 #pragma once
+
 #include "StateComponentBase.h"
 
-#include "iPlayer.h"
-#include "olcPixelGameEngine.h"
 #include "SpriteType.h"
 #include "CollisionResult.h"
+
+#include "iPlayer.h"
 
 namespace RB::PlayerStateComponents
 {

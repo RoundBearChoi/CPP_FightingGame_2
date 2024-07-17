@@ -1,4 +1,6 @@
 #pragma once
+
+#include "Vector2.h"
 #include "olcPixelGameEngine.h"
 
 namespace RB::Render
@@ -10,6 +12,6 @@ namespace RB::Render
 		~LineRenderer() = default;
 
 	public:
-		void RenderLine(const olc::vf2d& p1, const olc::vf2d& p2, olc::Pixel tint);
+		void RenderLine(const RB::Vector2& p1, const RB::Vector2& p2, olc::Pixel tint);
 	};
 }

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "olcPixelGameEngine.h"
+
+#include "Vector2.h"
 #include "SpriteContainer.h"
 #include "SpriteType.h"
 
@@ -20,7 +23,7 @@ namespace RB::Render
 
 	private:
 		void _RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos);
-		void _RenderIcon(RB::Sprites::SpriteType spriteType, olc::vi2d pos, olc::Pixel tint);
+		void _RenderIcon(RB::Sprites::SpriteType spriteType, RB::Vector2 pos, olc::Pixel tint);
 		RB::Sprites::SpriteType _GetSpriteType(const RB::Input::PlayerInput& playerInput);
 
 		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;

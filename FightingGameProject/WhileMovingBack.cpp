@@ -1,5 +1,7 @@
 #include "WhileMovingBack.h"
 
+#include "Vector2.h"
+
 #include "iPlayerController.h"
 
 namespace RB::PlayerStateComponents
@@ -73,7 +75,7 @@ namespace RB::PlayerStateComponents
 				movement = 2;
 			}
 
-			player->Move(olc::vf2d{ movement, 0 });
+			player->Move(RB::Vector2{ movement, 0.0f });
 
 			return;
 		}

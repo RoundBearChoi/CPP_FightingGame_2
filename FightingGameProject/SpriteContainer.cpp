@@ -33,7 +33,7 @@ namespace RB::Sprites
 		}
 	}
 
-	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, olc::vf2d pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool isWorldSpace)
+	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool isWorldSpace)
 	{
 		if (RB::Cam::iCamController::Get() == nullptr && isWorldSpace)
 		{
@@ -42,7 +42,7 @@ namespace RB::Sprites
 
 		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType);
 
-		std::array<olc::vf2d, 4> points = RB::Sprites::GetQuadOnPivot(pivotType, width, height, pos);
+		std::array<RB::Vector2, 4> points = RB::Sprites::GetQuadOnPivot(pivotType, width, height, pos);
 
 		if (isWorldSpace)
 		{
@@ -52,10 +52,24 @@ namespace RB::Sprites
 			}
 		}
 
+		std::array<olc::vf2d, 4> arrVF2D;
+		
+		for (int i = 0; i < points.size(); i++)
+		{
+			arrVF2D[i] = { points[i].x, points[i].y };
+		}
+
 		olc::Decal* decal = loadedSprite->GetDecal();
 		olc::Sprite* sprite = loadedSprite->GetSprite();
 
-		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(decal, points, { 0, 0 }, sprite->Size(), tint);
+		olc::vf2d size = { (float)(sprite->Size().x), (float)(sprite->Size().y) };
+
+		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(
+			decal,
+			arrVF2D,
+			{ 0.0f, 0.0f },
+			size, //sprite->Size(),
+			tint);
 	}
 
 	RB::Sprites::LoadedSprite* SpriteContainer::GetLoadedSprite(RB::Sprites::SpriteType spriteType)

@@ -1,5 +1,7 @@
 #include "PlayerBoxEditorUpdater.h"
 
+#include "Vector2.h"
+
 #include "PlayerController.h"
 #include "PlayerAnimationController.h"
 #include "PlayerBoxDataController.h"
@@ -25,7 +27,7 @@ namespace RB::Updaters
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(RB::Sprites::SpriteType::fighter_0_standup));
-		p0->SetPosition(olc::vf2d{ 50.0f, 100.0f });
+		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
 

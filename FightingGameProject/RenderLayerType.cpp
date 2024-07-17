@@ -1,5 +1,7 @@
 #include "RenderLayerType.h"
 
+#include "olcPixelGameEngine.h"
+
 #include "GameSettings.h"
 
 namespace RB::Render

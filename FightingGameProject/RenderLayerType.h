@@ -2,8 +2,6 @@
 
 #include <cstdint>
 
-#include "olcPixelGameEngine.h"
-
 namespace RB::Render
 {
 	enum class RenderLayerType : uint8_t

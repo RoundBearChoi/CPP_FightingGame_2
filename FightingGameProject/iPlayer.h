@@ -1,5 +1,4 @@
 #pragma once
-#include "olcPixelGameEngine.h"
 
 #include "CharacterType.h"
 #include "PlayerID.h"
@@ -32,9 +31,9 @@ namespace RB::Players
 		virtual void InitiallyFacingRight(bool facingRight) = 0;
 		virtual unsigned int GetStateMachineID() = 0;
 		virtual RB::States::iStateMachine* GetStateMachine() = 0;
-		virtual void Move(olc::vf2d moveAmount) = 0;
-		virtual olc::vf2d GetPosition() = 0;
-		virtual void SetPosition(olc::vf2d pos) = 0;
+		virtual void Move(RB::Vector2 moveAmount) = 0;
+		virtual RB::Vector2 GetPosition() = 0;
+		virtual void SetPosition(RB::Vector2 pos) = 0;
 		virtual void SetManualAnimationUpdate(bool manual) = 0;
 		virtual bool ManualAnimationUpdate() = 0;
 		virtual void SetWincingStatus(bool wincing) = 0;

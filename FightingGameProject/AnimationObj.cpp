@@ -105,25 +105,25 @@ namespace RB::Render
 		}
 	}
 
-	olc::vf2d AnimationObj::GetSourceSize()
+	RB::Vector2 AnimationObj::GetSourceSize()
 	{
 		const AnimationSpecs& specs = _animationRenderer->GetAnimationSpecs();
 
 		unsigned int xTiles = specs.mX_TileCount;
 		unsigned int yTiles = specs.mY_TileCount;
 
-		olc::vf2d sourceSize = { 0.0f, 0.0f };
+		RB::Vector2 sourceSize = { 0.0f, 0.0f };
 		sourceSize.x = (float)specs.mLoadedSprite->GetSpriteSize().x / (float)xTiles;
 		sourceSize.y = (float)specs.mLoadedSprite->GetSpriteSize().y / (float)yTiles;
 
 		return sourceSize;
 	}
 
-	olc::vf2d AnimationObj::GetSourcePos(olc::vf2d sourceSize)
+	RB::Vector2 AnimationObj::GetSourcePos(RB::Vector2 sourceSize)
 	{
 		const AnimationSpecs& specs = _animationRenderer->GetAnimationSpecs();
 
-		olc::vf2d sourcePos = { 0.0f, 0.0f };
+		RB::Vector2 sourcePos = { 0.0f, 0.0f };
 
 		sourcePos.x = (_currentIndex % specs.mX_TileCount) * sourceSize.x;
 		sourcePos.y = (int)floor(_currentIndex / specs.mX_TileCount) * sourceSize.y;
@@ -136,7 +136,7 @@ namespace RB::Render
 		return _animationRenderer->GetAnimationSpecs().mRenderScale;
 	}
 
-	olc::vf2d AnimationObj::GetRenderOffset()
+	RB::Vector2 AnimationObj::GetRenderOffset()
 	{
 		return _animationRenderer->GetAnimationSpecs().mRenderOffset;
 	}
@@ -197,7 +197,7 @@ namespace RB::Render
 		_animationRenderer->RenderAnimation(renderSettings);
 	}
 
-	void AnimationObj::SetWorldPos(const olc::vf2d& pos)
+	void AnimationObj::SetWorldPos(const RB::Vector2& pos)
 	{
 		_worldPos = pos;
 	}

@@ -1,10 +1,12 @@
 #include "PlayerDebugController.h"
 
+#include "olcPixelGameEngine.h"
+
+#include "Vector2.h"
 #include "RenderLayerType.h"
+#include "GameSettings.h"
 
 #include "iCamController.h"
-
-#include "GameSettings.h"
 
 namespace RB::Render
 {
@@ -87,15 +89,22 @@ namespace RB::Render
 
 		float* parts = col->GetBodyParts();
 
-		olc::vf2d relLowerBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[0]});
-		olc::vi2d intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };
+		RB::Vector2 relLowerBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[0]});
+		//RB::Vector2 intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };
 
-		olc::vf2d relUpperBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[1]});
-		olc::vi2d intUpperBody = { int(round(relUpperBody.x)), int(round(relUpperBody.y)) };
+		RB::Vector2 relUpperBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[1]});
+		//RB::Vector2 intUpperBody = { int(round(relUpperBody.x)), int(round(relUpperBody.y)) };
 
 		int lineHalfLength = 30;
 
-		olc::Renderer::ptrPGE->DrawLine(intLowerBody - olc::vi2d{ lineHalfLength, 0 }, intLowerBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
-		olc::Renderer::ptrPGE->DrawLine(intUpperBody - olc::vi2d{ lineHalfLength, 0 }, intUpperBody + olc::vi2d{ lineHalfLength, 0 }, olc::RED);
+		olc::Renderer::ptrPGE->DrawLine(
+			olc::vi2d{ relLowerBody.GetIntX(), relLowerBody.GetIntY() } - olc::vi2d{ lineHalfLength, 0 },
+			olc::vi2d{ relLowerBody.GetIntX(), relLowerBody.GetIntY() } + olc::vi2d{ lineHalfLength, 0 },
+			olc::RED);
+
+		olc::Renderer::ptrPGE->DrawLine(
+			olc::vi2d{ relUpperBody.GetIntX(), relUpperBody.GetIntY() } - olc::vi2d{ lineHalfLength, 0 },
+			olc::vi2d{ relUpperBody.GetIntX(), relUpperBody.GetIntY() } + olc::vi2d{ lineHalfLength, 0 },
+			olc::RED);
 	}
 }

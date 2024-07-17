@@ -41,7 +41,7 @@ namespace RB::PlayerStateComponents
 		//apply vertical up
 		if (_state->GetCumulatedFixedUpdates() < _totalFrames)
 		{
-			player->Move(olc::vf2d{ 0.0f, -result });
+			player->Move(RB::Vector2{ 0.0f, -result });
 		}
 
 		//next state

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "iUpdaterObj.h"
 
 namespace RB::Updaters

@@ -1,6 +1,8 @@
 #pragma once
-#include "olcPixelGameEngine.h"
+
 #include "iCamObj.h"
+
+#include "Vector2.h"
 
 namespace RB::Cam
 {
@@ -10,11 +12,11 @@ namespace RB::Cam
 		CamObj() = default;
 		~CamObj() = default;
 
-		olc::vf2d GetPosition() override;
-		void SetPosition(olc::vf2d pos) override;
+		RB::Vector2 GetPosition() override;
+		void SetPosition(RB::Vector2 pos) override;
 		void SetXPosition(float x) override;
 		void SetYPosition(float y) override;
-		olc::vf2d GetRelativePosition(olc::vf2d pos) override;
+		RB::Vector2 GetRelativePosition(RB::Vector2 pos) override;
 		float GetZoom() override;
 		void SetZoom(float zoom) override;
 
@@ -23,7 +25,7 @@ namespace RB::Cam
 		void ManualFixedUpdate();
 
 	private:
-		olc::vf2d _camPosition = { 0.0f, 0.0f };
+		RB::Vector2 _camPosition = { 0.0f, 0.0f };
 		float _displayHalfWidth = 0.0f;
 		float _displayHalfHeight = 0.0f;
 		float _zoom = 1.0f;

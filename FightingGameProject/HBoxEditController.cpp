@@ -2,8 +2,9 @@
 
 #include <fstream>
 
-#include "PlayerState.h"
+#include "Vector2.h"
 #include "Time.h"
+#include "PlayerState.h"
 #include "CurrentUpdater.h"
 
 #include "iPlayerController.h"
@@ -200,7 +201,7 @@ namespace RB::HBox
 			return;
 		}
 
-		olc::vf2d pos = player->GetPosition() + box->GetBottomLeft();
+		RB::Vector2 pos = player->GetPosition() + box->GetBottomLeft();
 		_circleRenderer.SetPos(pos);
 		_circleRenderer.Render(2);
 		_circleRenderer.Render(3);

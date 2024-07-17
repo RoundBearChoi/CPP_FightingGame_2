@@ -1,5 +1,7 @@
 #include "HBoxEditorUpdaterBase.h"
 
+#include "Vector2.h"
+
 #include "InputController.h"
 #include "CamController.h"
 #include "PlayerController.h"
@@ -30,7 +32,7 @@ namespace RB::Updaters
 		RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Dummy(spriteType));
-		p0->SetPosition(olc::vf2d{ 50.0f, 100.0f });
+		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
 

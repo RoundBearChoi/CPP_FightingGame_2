@@ -1,7 +1,6 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
-
+#include "Vector2.h"
 #include "SpriteType.h"
 #include "SpriteContainer.h"
 
@@ -23,7 +22,7 @@ namespace RB::Background
 		float _imageWidth = 0.0f;
 		float _imageHeight = 0.0f;
 		float _renderScale = 1.0f;
-		olc::vf2d _position = { 0.0f, 0.0f };
+		RB::Vector2 _position = { 0.0f, 0.0f };
 		RB::Sprites::SpriteContainer _spriteContainer;
 	};
 }

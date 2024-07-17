@@ -8,12 +8,12 @@
 
 namespace RB::Cam
 {
-	olc::vf2d CamObj::GetPosition()
+	RB::Vector2 CamObj::GetPosition()
 	{
 		return _camPosition;
 	}
 
-	void CamObj::SetPosition(olc::vf2d pos)
+	void CamObj::SetPosition(RB::Vector2 pos)
 	{
 		_camPosition = pos;
 	}
@@ -28,9 +28,9 @@ namespace RB::Cam
 		_camPosition.y = y;
 	}
 
-	olc::vf2d CamObj::GetRelativePosition(olc::vf2d pos)
+	RB::Vector2 CamObj::GetRelativePosition(RB::Vector2 pos)
 	{
-		olc::vf2d rel = (pos * _zoom) - _camPosition;
+		RB::Vector2 rel = (pos * _zoom) - _camPosition;
 
 		rel.x += _displayHalfWidth;
 		rel.y += _displayHalfHeight;

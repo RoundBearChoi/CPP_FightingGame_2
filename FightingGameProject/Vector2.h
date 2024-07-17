@@ -27,6 +27,14 @@ namespace RB
             return Vector2(x + other.x, y + other.y);
         }
 
+        // In-place addition
+        Vector2& operator+=(const Vector2& other)
+        {
+            x += other.x;
+            y += other.y;
+            return *this;
+        }
+
         // Subtraction
         Vector2 operator-(const Vector2& other) const
         {
@@ -55,6 +63,12 @@ namespace RB
         float Magnitude() const
         {
             return std::sqrt(x * x + y * y);
+        }
+
+        // Magnitude squared (length squared)
+        float MagnitudeSquared() const
+        {
+            return x * x + y * y;
         }
 
         // Normalize

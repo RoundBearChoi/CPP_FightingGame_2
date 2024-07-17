@@ -1,5 +1,7 @@
 #include "GameplayUpdater.h"
 
+#include "Vector2.h"
+
 #include "BackgroundController.h"
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
@@ -37,12 +39,12 @@ namespace RB::Updaters
 		RB::Players::iPlayer* p1 = playerController->AddPlayer(new RB::Players::Player());
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::PlayerStates::Aku::P0_Idle());
-		p0->SetPosition(olc::vf2d{ -150.0f, 0.0f });
+		p0->SetPosition(RB::Vector2{ -150.0f, 0.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(false);
 
 		p1->Init(RB::Players::PlayerID::PLAYER_2, new RB::PlayerStates::Aku::P0_Idle());
-		p1->SetPosition(olc::vf2d{ 150.0f, 0.0f });
+		p1->SetPosition(RB::Vector2{ 150.0f, 0.0f });
 		p1->SetCharacterType(RB::Players::CharacterType::AKU);
 		p1->SetManualAnimationUpdate(false);
 

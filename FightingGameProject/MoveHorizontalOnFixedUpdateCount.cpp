@@ -1,6 +1,6 @@
 #include "MoveHorizontalOnFixedUpdateCount.h"
 
-#include "olcPixelGameEngine.h"
+#include "Vector2.h"
 
 #include "iPlayerController.h"
 
@@ -35,9 +35,9 @@ namespace RB::PlayerStateComponents
 		}
 		else
 		{
-			move *= -1;
+			move *= -1.0f;
 		}
 
-		player->Move(olc::vf2d{ move, 0 });
+		player->Move(RB::Vector2{ move, 0.0f });
 	}
 }

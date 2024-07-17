@@ -1,5 +1,7 @@
 #include "PlayerHBoxRenderer.h"
 
+#include "Vector2.h"
+
 #include "PlayerState.h"
 #include "Loaded_HB_Data.h"
 
@@ -124,15 +126,15 @@ namespace RB::Render
 
 			if (player->IsFacingRight())
 			{
-				olc::vf2d pos = aabb.GetBottomLeft() + player->GetPosition();
+				RB::Vector2 pos = aabb.GetBottomLeft() + player->GetPosition();
 
 				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_LEFT, true);
 			}
 			else
 			{
-				olc::vf2d bottomleft = aabb.GetBottomLeft();
+				RB::Vector2 bottomleft = aabb.GetBottomLeft();
 				bottomleft.x *= -1.0f;
-				olc::vf2d pos = bottomleft + player->GetPosition();
+				RB::Vector2 pos = bottomleft + player->GetPosition();
 
 				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT, true);
 			}

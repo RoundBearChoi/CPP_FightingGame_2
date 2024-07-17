@@ -1,6 +1,7 @@
 #include "PlayerPositionRenderer.h"
 
 #include "AABB.h"
+#include "Vector2.h"
 
 #include "iPlayerController.h"
 
@@ -40,7 +41,7 @@ namespace RB::Render
 			return;
 		}
 
-		olc::vf2d playerPos = player->GetPosition();
+		RB::Vector2 playerPos = player->GetPosition();
 
 		_spriteContainer->RenderSprite(RB::Sprites::SpriteType::x_white, 13, 13, playerPos, olc::RED, RB::Sprites::PivotType::CENTER, true);
 	}
@@ -55,8 +56,8 @@ namespace RB::Render
 		}
 
 		RB::Collisions::AABB* aabb = player->GetPlayerCollider()->GetAABB_ptr();
-		olc::vf2d bottomLeft = aabb->GetBottomLeft();
+		RB::Vector2 bottomLeft = aabb->GetBottomLeft();
 
-		_lineRenderer->RenderLine(bottomLeft - olc::vf2d{ 15.0, 0.0 }, bottomLeft, olc::RED);
+		_lineRenderer->RenderLine(bottomLeft - RB::Vector2{ 15.0f, 0.0f }, bottomLeft, olc::RED);
 	}
 }

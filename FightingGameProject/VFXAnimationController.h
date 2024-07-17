@@ -1,6 +1,8 @@
 #pragma once
+
 #include "iVFXAnimationController.h"
 
+#include "Vector2.h"
 #include "AnimationContainer.h"
 
 namespace RB::Render
@@ -16,7 +18,7 @@ namespace RB::Render
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		iAnimationObj* InstantiateAnimation(RB::Sprites::SpriteType spriteType, olc::vf2d pos) override;
+		iAnimationObj* InstantiateAnimation(RB::Sprites::SpriteType spriteType, RB::Vector2 pos) override;
 
 	private:
 		void _DeleteFinishedAnimations();

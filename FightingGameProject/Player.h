@@ -31,8 +31,8 @@ namespace RB::Players
 		int GetPlayerID_int() override;
 		bool IsFacingRight() override;
 		bool OtherPlayerIsOnRightSide() override;
-		bool InitiallyFacingRight();
-		void InitiallyFacingRight(bool initiallyFacingRight);
+		bool InitiallyFacingRight() override;
+		void InitiallyFacingRight(bool initiallyFacingRight) override;
 		RB::States::iStateMachine* GetStateMachine() override;
 		unsigned int GetStateMachineID() override;
 		void Move(RB::Vector2 moveAmount) override;

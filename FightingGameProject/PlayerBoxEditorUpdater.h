@@ -23,8 +23,8 @@ namespace RB::Updaters
 		PlayerBoxEditorUpdater() = default;
 		~PlayerBoxEditorUpdater() override;
 
-		void Init();
-		void OnUpdate();
-		void OnFixedUpdate();
+		void Init() override;
+		void OnUpdate() override;
+		void OnFixedUpdate() override;
 	};
 }

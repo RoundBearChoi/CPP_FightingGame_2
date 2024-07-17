@@ -270,6 +270,7 @@
     <ClInclude Include="GetCurrentAnimationFrame.h" />
     <ClInclude Include="GetCurrentSpriteType.h" />
     <ClInclude Include="HBoxEditorUpdaterBase.h" />
+    <ClInclude Include="iSelector.h" />
     <ClInclude Include="iUpdater.h" />
     <ClInclude Include="GetQuadOnPivot.h" />
     <ClInclude Include="JParser.h" />
@@ -309,7 +310,6 @@
     <ClInclude Include="iPlayerBoxDataController.h" />
     <ClInclude Include="iPlayerBoxEditController.h" />
     <ClInclude Include="iPlayerCollider.h" />
-    <ClInclude Include="iSelector.h" />
     <ClInclude Include="iSpecialMovesController.h" />
     <ClInclude Include="iSpecialMoveSequence.h" />
     <ClInclude Include="iSpecsController.h" />

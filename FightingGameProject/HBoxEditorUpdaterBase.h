@@ -29,9 +29,9 @@ namespace RB::Updaters
 		HBoxEditorUpdaterBase() = default;
 		~HBoxEditorUpdaterBase() override;
 
-		void Init();
-		void OnUpdate();
-		void OnFixedUpdate();
+		void Init() override;
+		void OnUpdate() override;
+		void OnFixedUpdate() override;
 
 	protected:
 		std::string _settingsPath = "";

@@ -810,9 +810,6 @@
     <ClInclude Include="Selector.h">
       <Filter>Source Files\RB</Filter>
     </ClInclude>
-    <ClInclude Include="iSelector.h">
-      <Filter>Source Files\RB</Filter>
-    </ClInclude>
     <ClInclude Include="SpriteContainer.h">
       <Filter>Source Files\Sprites</Filter>
     </ClInclude>
@@ -928,6 +925,9 @@
       <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
+      <Filter>Source Files\RB</Filter>
+    </ClInclude>
+    <ClInclude Include="iSelector.h">
       <Filter>Source Files\RB</Filter>
     </ClInclude>
   </ItemGroup>

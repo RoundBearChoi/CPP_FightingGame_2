@@ -1,4 +1,5 @@
 #pragma once
+
 #include "iGeneralHitStopController.h"
 
 namespace RB::Collisions
@@ -14,7 +15,7 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 		bool SkipFrame() override;
-		void AddSkipFrames(int frames);
+		void AddSkipFrames(int frames) override;
 
 	private:
 		int _skipFrames = 0;

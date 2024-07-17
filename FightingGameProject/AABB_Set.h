@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AABB.h"
+#include "JParser.h"
 
 #include "Selector.h"
 #include "iSelector.h"

@@ -1,7 +1,5 @@
 #include "AABB_Set.h"
 
-#include "JParser.h"
-
 namespace RB::HBox
 {
 	AABB_Set::AABB_Set(std::string frameName)

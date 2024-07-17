@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "JParser.h"
 #include "SpriteContainer.h"
 #include "AnimationRenderer.h"
 

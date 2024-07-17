@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "olcPixelGameEngine.h"
+
 namespace RB::Render
 {
 	class Notification

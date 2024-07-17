@@ -1,7 +1,5 @@
 #include "AnimationContainer.h"
 
-#include "AnimationObj.h"
-
 namespace RB::Render
 {
 	AnimationContainer::~AnimationContainer()

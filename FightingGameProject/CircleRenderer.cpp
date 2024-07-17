@@ -1,9 +1,5 @@
 #include "CircleRenderer.h"
 
-#include "olcPixelGameEngine.h"
-
-#include "iCamController.h"
-
 namespace RB::Render
 {
 	void CircleRenderer::Init()

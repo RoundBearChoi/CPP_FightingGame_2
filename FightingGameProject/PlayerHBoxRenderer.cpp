@@ -1,15 +1,5 @@
 #include "PlayerHBoxRenderer.h"
 
-#include "Vector2.h"
-
-#include "PlayerState.h"
-#include "Loaded_HB_Data.h"
-
-#include "iPlayerController.h"
-#include "iPlayerAnimationController.h"
-#include "iTargetBoxDataController.h"
-#include "iAttackBoxDataController.h"
-
 namespace RB::Render
 {
     void PlayerHBoxRenderer::Init(RB::Sprites::SpriteContainer* spriteContainer)

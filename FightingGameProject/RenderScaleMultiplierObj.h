@@ -1,5 +1,8 @@
 #pragma once
 
+#include <iostream>
+#include <string>
+
 #include "RenderScaleMultiplierType.h"
 
 #include "iAnimationObj.h"

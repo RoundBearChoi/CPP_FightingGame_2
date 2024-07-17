@@ -1,13 +1,5 @@
 #include "AnimationRenderer.h"
 
-#include "olcPixelGameEngine.h"
-
-#include "Vector2.h"
-#include "GetQuadOnPivot.h"
-#include "FlipQuad.h"
-
-#include "iCamController.h"
-
 namespace RB::Render
 {
 	AnimationRenderer::AnimationRenderer(AnimationSpecs specs)

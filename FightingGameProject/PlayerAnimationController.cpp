@@ -1,14 +1,5 @@
 #include "PlayerAnimationController.h"
 
-#include <cassert>
-
-#include "AnimationObj.h"
-#include "PlayerState.h"
-#include "JParser.h"
-#include "RenderLayerType.h"
-
-#include "iPlayerController.h"
-
 namespace RB::Render
 {
 	PlayerAnimationController::~PlayerAnimationController()

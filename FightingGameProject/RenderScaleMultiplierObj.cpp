@@ -1,8 +1,5 @@
 #include "RenderScaleMultiplierObj.h"
 
-#include <iostream>
-#include <string>
-
 namespace RB::Render
 {
 	RenderScaleMultiplierObj::RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier)

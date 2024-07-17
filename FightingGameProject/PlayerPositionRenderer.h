@@ -1,8 +1,12 @@
 #pragma once
 
+#include "AABB.h"
+#include "Vector2.h"
 #include "PlayerID.h"
 #include "SpriteContainer.h"
 #include "LineRenderer.h"
+
+#include "iPlayerController.h"
 
 namespace RB::Render
 {

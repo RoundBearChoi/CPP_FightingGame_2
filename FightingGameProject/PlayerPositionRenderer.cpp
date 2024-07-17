@@ -1,10 +1,5 @@
 #include "PlayerPositionRenderer.h"
 
-#include "AABB.h"
-#include "Vector2.h"
-
-#include "iPlayerController.h"
-
 namespace RB::Render
 {
 	void PlayerPositionRenderer::Init(RB::Sprites::SpriteContainer* spriteContainer, LineRenderer* lineRenderer)

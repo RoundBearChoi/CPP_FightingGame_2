@@ -1,5 +1,8 @@
 #pragma once
+
 #include "SpriteType.h"
+
+#include "iPlayerAnimationController.h"
 
 namespace RB::Render
 {

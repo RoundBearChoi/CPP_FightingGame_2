@@ -1,11 +1,5 @@
 #include "PlayerBoxRenderer.h"
 
-#include "olcPixelGameEngine.h"
-
-#include "Vector2.h"
-
-#include "iPlayerController.h"
-
 namespace RB::Render
 {
     void PlayerBoxRenderer::Init(RB::Sprites::SpriteContainer* spriteContainer)

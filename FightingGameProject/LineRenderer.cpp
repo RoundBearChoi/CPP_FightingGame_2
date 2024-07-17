@@ -1,7 +1,5 @@
 #include "LineRenderer.h"
 
-#include "iCamController.h"
-
 namespace RB::Render
 {
 	void LineRenderer::RenderLine(const RB::Vector2& p1, const RB::Vector2& p2, olc::Pixel tint)

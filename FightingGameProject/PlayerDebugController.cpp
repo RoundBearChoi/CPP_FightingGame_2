@@ -1,13 +1,5 @@
 #include "PlayerDebugController.h"
 
-#include "olcPixelGameEngine.h"
-
-#include "Vector2.h"
-#include "RenderLayerType.h"
-#include "GameSettings.h"
-
-#include "iCamController.h"
-
 namespace RB::Render
 {
 	void PlayerDebugController::Init()

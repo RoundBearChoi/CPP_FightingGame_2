@@ -1,6 +1,10 @@
 #pragma once
 
+#include "olcPixelGameEngine.h"
+
 #include "Vector2.h"
+
+#include "iCamController.h"
 
 namespace RB::Render
 {

@@ -1,7 +1,5 @@
 #include "Notification.h"
 
-#include "olcPixelGameEngine.h"
-
 namespace RB::Render
 {
 	void Notification::OnUpdate(const std::string& message)

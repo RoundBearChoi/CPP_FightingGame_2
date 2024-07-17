@@ -1,27 +1,5 @@
 #include "GameplayUpdater.h"
 
-#include "Vector2.h"
-
-#include "BackgroundController.h"
-#include "PlayerController.h"
-#include "PlayerDebugController.h"
-#include "PlayerAnimationController.h"
-#include "PlayerBoxDataController.h"
-#include "SpecsController.h"
-#include "InputController.h"
-#include "SpecialMovesController.h"
-#include "CamController.h"
-#include "TargetBoxDataController.h"
-#include "AttackBoxDataController.h"
-#include "AttackRegisterController.h"
-#include "GeneralHitStopController.h"
-#include "AttackSpecsController.h"
-#include "VFXAnimationController.h"
-
-#include "Player.h"
-
-#include "P0_Idle.h"
-
 namespace RB::Updaters
 {
 	GameplayUpdater::~GameplayUpdater()

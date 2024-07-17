@@ -1,9 +1,25 @@
 #pragma once
 
-#include "iUpdaterObj.h"
-
+#include "Vector2.h"
+#include "Player.h"
 #include "string"
 #include "HBoxType.h"
+
+#include "InputController.h"
+#include "CamController.h"
+#include "PlayerController.h"
+#include "PlayerDebugController.h"
+#include "PlayerAnimationController.h"
+#include "PlayerBoxDataController.h"
+#include "HBMenuController.h"
+#include "TargetBoxDataController.h"
+#include "AttackBoxDataController.h"
+#include "HBoxEditController.h"
+#include "SpriteTypeLoader.h"
+
+#include "iUpdaterObj.h"
+
+#include "P0_Dummy.h"
 
 namespace RB::Updaters
 {

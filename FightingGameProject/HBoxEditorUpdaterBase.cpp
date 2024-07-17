@@ -1,23 +1,5 @@
 #include "HBoxEditorUpdaterBase.h"
 
-#include "Vector2.h"
-
-#include "InputController.h"
-#include "CamController.h"
-#include "PlayerController.h"
-#include "PlayerDebugController.h"
-#include "PlayerAnimationController.h"
-#include "PlayerBoxDataController.h"
-#include "HBMenuController.h"
-#include "TargetBoxDataController.h"
-#include "AttackBoxDataController.h"
-#include "HBoxEditController.h"
-#include "SpriteTypeLoader.h"
-
-#include "Player.h"
-
-#include "P0_Dummy.h"
-
 namespace RB::Updaters
 {
 	HBoxEditorUpdaterBase::~HBoxEditorUpdaterBase()

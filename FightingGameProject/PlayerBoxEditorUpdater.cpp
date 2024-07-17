@@ -1,19 +1,5 @@
 #include "PlayerBoxEditorUpdater.h"
 
-#include "Vector2.h"
-
-#include "PlayerController.h"
-#include "PlayerAnimationController.h"
-#include "PlayerBoxDataController.h"
-#include "CamController.h"
-#include "PlayerDebugController.h"
-#include "InputController.h"
-#include "PlayerBoxEditController.h"
-
-#include "Player.h"
-
-#include "P0_Dummy.h"
-
 namespace RB::Updaters
 {
 	PlayerBoxEditorUpdater::~PlayerBoxEditorUpdater()

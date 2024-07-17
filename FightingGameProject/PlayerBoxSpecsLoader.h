@@ -3,10 +3,11 @@
 #include <string>
 #include <vector>
 
+#include "JParser.h"
+#include "PlayerBoxSpecs.h"
 #include "CharacterType.h"
 #include "SpriteType.h"
 #include "LoadedPlayerBoxData.h"
-#include "PlayerBoxSpecs.h"
 
 namespace RB::Collisions
 {

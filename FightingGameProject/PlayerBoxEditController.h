@@ -1,12 +1,21 @@
 #pragma once
 
-#include "iPlayerBoxEditController.h"
-
+#include "Time.h"
+#include "PlayerID.h"
 #include "PlayerBox.h"
 #include "PlayerBoxSpecs.h"
-#include "PlayerID.h"
+#include "PlayerState.h"
 #include "SpriteType.h"
 #include "CharacterType.h"
+
+#include "GetCurrentSpriteType.h"
+#include "GetCurrentAnimationFrame.h"
+
+#include "iPlayerController.h"
+#include "iPlayerBoxDataController.h"
+#include "iPlayerAnimationController.h"
+#include "iPlayerDebugController.h"
+#include "iPlayerBoxEditController.h"
 
 namespace RB::Collisions
 {

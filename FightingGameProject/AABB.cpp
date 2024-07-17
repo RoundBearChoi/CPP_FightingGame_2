@@ -1,7 +1,5 @@
 #include "AABB.h"
 
-#include <algorithm>
-
 namespace RB::Collisions
 {
 	AABB::AABB(float bottomLeftX, float bottomLeftY, float width, float height)

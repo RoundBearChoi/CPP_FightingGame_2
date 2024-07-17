@@ -1,8 +1,5 @@
 #include "PlayerBoxSpecsLoader.h"
 
-#include "JParser.h"
-#include "PlayerBoxSpecs.h"
-
 namespace RB::Collisions
 {
 	void PlayerBoxSpecsLoader::OnUpdate()

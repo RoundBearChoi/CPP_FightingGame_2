@@ -1,7 +1,5 @@
 #include "PlayerBoxDataController.h"
 
-#include "CharacterType.h"
-
 namespace RB::Collisions
 {
 	void PlayerBoxDataController::Init()

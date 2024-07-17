@@ -1,7 +1,5 @@
 #include "PlayerBoxSpecs.h"
 
-#include "iSelector.h"
-
 namespace RB::Collisions
 {
 	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, RB::Sprites::SpriteType spriteType)

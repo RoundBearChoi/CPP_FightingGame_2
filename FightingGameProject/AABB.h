@@ -1,5 +1,7 @@
 #pragma once
 
+#include <algorithm>
+
 #include "Vector2.h"
 
 namespace RB::Collisions

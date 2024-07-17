@@ -1,18 +1,5 @@
 #include "AttackRegisterController.h"
 
-#include "SpriteType.h"
-
-#include "AttackSpecs.h"
-#include "RenderScaleMultiplierObj.h"
-
-#include "P0_Wince.h" //temp
-#include "P0_Strong_Wince.h" //temp
-
-#include "iAttackSpecsController.h"
-#include "iAnimationObj.h"
-#include "iVFXAnimationController.h"
-#include "iGeneralHitStopController.h"
-
 namespace RB::Collisions
 {
 	void AttackRegisterController::Init()

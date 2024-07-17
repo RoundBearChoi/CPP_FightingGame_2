@@ -2,10 +2,12 @@
 
 #include <string>
 
-#include "SpriteType.h"
 #include "Selector.h"
+#include "SpriteType.h"
 #include "PlayerBox.h"
 #include "Notification.h"
+
+#include "iSelector.h"
 
 namespace RB::Collisions
 {

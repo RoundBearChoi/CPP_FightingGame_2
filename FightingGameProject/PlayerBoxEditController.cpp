@@ -1,16 +1,5 @@
 #include "PlayerBoxEditController.h"
 
-#include "PlayerState.h"
-#include "Time.h"
-
-#include "GetCurrentSpriteType.h"
-#include "GetCurrentAnimationFrame.h"
-
-#include "iPlayerController.h"
-#include "iPlayerBoxDataController.h"
-#include "iPlayerAnimationController.h"
-#include "iPlayerDebugController.h"
-
 namespace RB::Collisions
 {
 	void PlayerBoxEditController::Init()

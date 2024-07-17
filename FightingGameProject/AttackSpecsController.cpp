@@ -1,7 +1,5 @@
 #include "AttackSpecsController.h"
 
-#include "JParser.h"
-
 namespace RB::Collisions
 {
 	void AttackSpecsController::Init()

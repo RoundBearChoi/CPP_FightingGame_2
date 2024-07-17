@@ -1,5 +1,8 @@
 #pragma once
+
+#include <iostream>
 #include <vector>
+
 #include "StateComponentBase.h"
 
 namespace RB::States

@@ -1,5 +1,7 @@
 #pragma once
+
 #include <vector>
+#include <filesystem>
 
 #include "SpriteType.h"
 #include "LoadedSprite.h"

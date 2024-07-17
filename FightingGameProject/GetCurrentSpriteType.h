@@ -1,6 +1,8 @@
 #pragma once
+
 #include "SpriteType.h"
 #include "PlayerID.h"
+#include "PlayerState.h"
 
 namespace RB::Sprites
 {

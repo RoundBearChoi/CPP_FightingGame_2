@@ -1,9 +1,5 @@
 #include "SpriteContainer.h"
 
-#include "GetQuadOnPivot.h"
-
-#include "iCamController.h"
-
 namespace RB::Sprites
 {
 	SpriteContainer::~SpriteContainer()

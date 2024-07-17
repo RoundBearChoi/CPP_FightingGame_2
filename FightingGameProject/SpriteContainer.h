@@ -6,6 +6,9 @@
 #include "LoadedSprite.h"
 #include "PivotType.h"
 #include "SpriteLoader.h"
+#include "GetQuadOnPivot.h"
+
+#include "iCamController.h"
 
 namespace RB::Sprites
 {

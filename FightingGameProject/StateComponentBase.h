@@ -1,5 +1,7 @@
 #pragma once
+
 #include <vector>
+
 #include "iState.h"
 
 namespace RB::States

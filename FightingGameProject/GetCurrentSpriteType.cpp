@@ -1,7 +1,5 @@
 #include "GetCurrentSpriteType.h"
 
-#include "PlayerState.h"
-
 namespace RB::Sprites
 {
 	SpriteType GetCurrentSpriteType(RB::Players::PlayerID id)

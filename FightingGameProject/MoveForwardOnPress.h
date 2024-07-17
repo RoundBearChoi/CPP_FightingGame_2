@@ -2,6 +2,9 @@
 
 #include "olcPixelGameEngine.h"
 
+#include "iPlayerController.h"
+#include "iInputController.h"
+
 namespace RB::PlayerStateComponents
 {
 	class MoveForwardOnPress

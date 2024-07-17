@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Ease.h"
 #include "StateComponentBase.h"
 
 #include "iState.h"
+#include "iPlayerController.h"
 
 namespace RB::PlayerStateComponents
 {

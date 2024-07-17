@@ -1,7 +1,5 @@
 #include "DoNotFixDirectionDuringState.h"
 
-#include "iPlayerController.h"
-
 namespace RB::PlayerStateComponents
 {
 	void DoNotFixDirectionDuringState::OnEnter()

@@ -1,5 +1,9 @@
 #pragma once
+
+#include "Vector2.h"
 #include "StateComponentBase.h"
+
+#include "iPlayerController.h"
 
 namespace RB::PlayerStateComponents
 {

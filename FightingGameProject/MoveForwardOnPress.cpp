@@ -1,8 +1,5 @@
 #include "MoveForwardOnPress.h"
 
-#include "iPlayerController.h"
-#include "iInputController.h"
-
 namespace RB::PlayerStateComponents
 {
 	void MoveForwardOnPress::SetStateMachineID(unsigned int id)

@@ -1,8 +1,5 @@
 #include "TransitionOnInput.h"
 
-#include "iPlayerController.h"
-#include "iInputController.h"
-
 namespace RB::PlayerStateComponents
 {
 	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool useAsSpecial, bool useAsMovement)

@@ -1,9 +1,5 @@
 #include "MoveUpOnJump.h"
 
-#include "Ease.h"
-
-#include "iPlayerController.h"
-
 namespace RB::PlayerStateComponents
 {
 	MoveUpOnJump::MoveUpOnJump(unsigned int totalFrames, float multiplier, RB::States::iState* nextState)

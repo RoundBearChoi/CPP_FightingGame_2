@@ -1,7 +1,5 @@
 #include "FixSpecialMoveStatusDuringState.h"
 
-#include "iPlayerController.h"
-
 namespace RB::PlayerStateComponents
 {
 	FixSpecialMoveStatusDuringState::FixSpecialMoveStatusDuringState(bool fix)

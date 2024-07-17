@@ -1,7 +1,5 @@
 #include "FixWincingStatusDuringState.h"
 
-#include "iPlayerController.h"
-
 namespace RB::PlayerStateComponents
 {
 	FixWincingStatusDuringState::FixWincingStatusDuringState(bool fix)

@@ -1,8 +1,5 @@
 #include "TransitionToJumpForward.h"
 
-#include "iPlayerController.h"
-#include "iInputController.h"
-
 namespace RB::PlayerStateComponents
 {
 	TransitionToJumpForward::TransitionToJumpForward(RB::States::iState* nextState)

@@ -1,8 +1,5 @@
 #include "TransitionToWalkForward.h"
 
-#include "iStateMachine.h"
-#include "iPlayerController.h"
-
 namespace RB::PlayerStateComponents
 {
 	TransitionToWalkForward::TransitionToWalkForward(RB::States::iState* nextState)

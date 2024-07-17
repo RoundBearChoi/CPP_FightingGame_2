@@ -1,7 +1,5 @@
 #include "MarkInitiallyFacingRight.h"
 
-#include "iPlayerController.h"
-
 namespace RB::PlayerStateComponents
 {
 	void MarkInitiallyFacingRight::OnEnter()

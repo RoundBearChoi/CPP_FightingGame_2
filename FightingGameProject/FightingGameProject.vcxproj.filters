@@ -930,5 +930,8 @@
     <ClInclude Include="RenderScaleMultiplierType.h">
       <Filter>Source Files\Render</Filter>
     </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Source Files\RB</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

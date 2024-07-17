@@ -358,6 +358,7 @@
     <ClInclude Include="PlayerBoxEditorUpdater.h" />
     <ClInclude Include="PlayerBoxSpecs.h" />
     <ClInclude Include="PlayerBoxSpecsLoader.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="_HBoxLoader.h" />
     <ClInclude Include="ManualAnimationUpdater.h" />
     <ClInclude Include="HBMenuController.h" />

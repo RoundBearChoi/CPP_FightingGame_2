@@ -4,6 +4,8 @@
 #include "SpriteType.h"
 #include "SpriteContainer.h"
 
+#include "iCamController.h"
+
 namespace RB::Background
 {
 	class BackgroundObj

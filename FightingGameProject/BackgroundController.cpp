@@ -1,7 +1,5 @@
 #include "BackgroundController.h"
 
-#include "RenderLayerType.h"
-
 namespace RB::Background
 {
 	BackgroundController::~BackgroundController()

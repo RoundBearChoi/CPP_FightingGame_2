@@ -1,5 +1,11 @@
 #pragma once
 
+#include "Vector2.h"
+#include "Ease.h"
+
+#include "iPlayerController.h"
+#include "iCamController.h"
+
 namespace RB::Cam
 {
 	class ZoomOnPlayers

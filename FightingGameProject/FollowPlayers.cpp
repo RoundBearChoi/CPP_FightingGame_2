@@ -1,10 +1,5 @@
 #include "FollowPlayers.h"
 
-#include "Vector2.h"
-#include "Ease.h"
-
-#include "iPlayerController.h"
-
 namespace RB::Cam
 {
 	void FollowPlayers::Init(iCamObj* cam)

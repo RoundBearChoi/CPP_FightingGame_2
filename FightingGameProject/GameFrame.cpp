@@ -1,7 +1,5 @@
 #include "GameFrame.h"
 
-#include <limits>
-
 namespace RB
 {
 	unsigned int gameFrameCount = 0;

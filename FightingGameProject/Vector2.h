@@ -61,15 +61,16 @@ namespace RB
         Vector2 Normalize() const
         {
             float magnitude = Magnitude();
+
             return Vector2(x / magnitude, y / magnitude);
         }
 
-        int GetIntX()
+        int GetIntX() const
         {
             return static_cast<int>(std::round(x));
         }
 
-        int GetIntY()
+        int GetIntY() const
         {
             return static_cast<int>(std::round(y));
         }

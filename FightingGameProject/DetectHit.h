@@ -1,11 +1,22 @@
 #pragma once
 
-#include "StateComponentBase.h"
+#include <string>
 
 #include "SpriteType.h"
+#include "AttackSpecs.h"
+#include "PlayerState.h"
 #include "CollisionResult.h"
+#include "StateComponentBase.h"
 
 #include "iPlayer.h"
+#include "iPlayerController.h"
+#include "iPlayerAnimationController.h"
+#include "iTargetBoxDataController.h"
+#include "iAttackBoxDataController.h"
+#include "iAttackRegisterController.h"
+#include "iAttackSpecsController.h"
+
+#include "P0_Wince.h"
 
 namespace RB::PlayerStateComponents
 {

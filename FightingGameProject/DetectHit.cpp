@@ -1,19 +1,5 @@
 #include "DetectHit.h"
 
-#include <string>
-
-#include "AttackSpecs.h"
-
-#include "PlayerState.h"
-#include "iPlayerController.h"
-#include "iPlayerAnimationController.h"
-#include "iAttackBoxDataController.h"
-#include "iTargetBoxDataController.h"
-#include "iAttackRegisterController.h"
-#include "iAttackSpecsController.h"
-
-#include "P0_Wince.h"
-
 namespace RB::PlayerStateComponents
 {
 	void DetectHit::OnEnter()

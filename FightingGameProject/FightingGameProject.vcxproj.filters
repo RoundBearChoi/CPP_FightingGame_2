@@ -406,9 +406,6 @@
     <ClCompile Include="RenderLayerType.cpp">
       <Filter>Source Files\Render</Filter>
     </ClCompile>
-    <ClCompile Include="JParser.cpp">
-      <Filter>Source Files\JSON</Filter>
-    </ClCompile>
     <ClCompile Include="RenderTimer.cpp">
       <Filter>Source Files\Frames</Filter>
     </ClCompile>

@@ -1,15 +1,5 @@
 #include "_HBoxLoader.h"
 
-#include <iostream>
-#include <fstream>
-#include <cassert>
-#include <sstream>
-
-#include "JParser.h"
-
-#include "AABB.h"
-#include "AABB_Set.h"
-
 namespace RB::HBox
 {
 	void _HBoxLoader::InitSample(std::string path)

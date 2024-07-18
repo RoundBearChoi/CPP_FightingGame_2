@@ -194,7 +194,8 @@ namespace RB
 	private:
 		bool _fixedUpdated = false;
 		bool _refreshed = true;
-		std::vector<T>::iterator _iterator;
+
+		typename std::vector<T>::iterator _iterator;
 		std::vector<T> _vec;
 	};
 }

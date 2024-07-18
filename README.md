@@ -46,7 +46,9 @@ If you can't run it, delete everything in the folder and try rebuilding.
 > cmake -G "Visual Studio 17 2022" -A x64 ../CMakeLists.txt
 
 <br>
-![built_sln](Screenshots/building_sln_file.png)
+
+![build_sln](Screenshots/building_sln_file.png)
+
 <br>
 
 # License (OLC-3)

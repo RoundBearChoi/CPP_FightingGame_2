@@ -6,7 +6,7 @@ https://youtube.com/roundbeargames
 
 <br>
 
-# Windows build (Clang)
+# Windows 10 (Clang)
 
 Assuming you're familiar with CMake and have Git, MinGW, Clang installed..
 ```

@@ -4,14 +4,14 @@ Indie game developer from South Korea
 <br>
 https://youtube.com/roundbeargames
 
-<br>
-
-# Windows build (clang/clang++)
-
+# Windows build (Clang)
+Assuming you're familiar with CMake..
 ```
 set CXX=C:/msys64/mingw64/bin/clang++
 set CC=C:/msys64/mingw64/bin/clang
-
+```
+*I'm using [MSYS2](https://www.msys2.org/). Your path to Clang might be different. Pls edit accordingly*
+```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
 cd CPP_FightingGame_2
 
@@ -20,31 +20,6 @@ cd build
 cmake -G "Ninja" ..
 ninja
 ```
-
-Assuming you're familar with CMake..
-> 
-<br>
-
-<br>
-> 
-<br>
-> 
-<br>
-> 
-<br>
-> 
-
-<br>
-
-# Getting Started (Windows)
-
-1. Download ZIP or clone repository
-
-2. Open FightingGameProject.sln (I'm using Visual Studio 2022 Community)
-
-    https://visualstudio.microsoft.com/downloads
-    
-<br>
 
 # License (OLC-3)
 

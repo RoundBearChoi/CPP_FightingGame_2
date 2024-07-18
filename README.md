@@ -37,6 +37,18 @@ ninja
 
 <br>
 
+# Windows 10 (MSVC)
+
+I've already built a .sln file under VisualStudioProject folder. (I'm running Visual Studio 2022)
+<br>
+If you can't run it, delete everything in the folder and try rebuilding.
+<br>
+> cmake -G "Visual Studio 17 2022" -A x64 ../CMakeLists.txt
+
+<br>
+![built_sln](Screenshots/building_sln_file.png)
+<br>
+
 # License (OLC-3)
 
 This project uses olcPixelGameEngine by OneLoneCoder

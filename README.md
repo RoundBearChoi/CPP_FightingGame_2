@@ -39,7 +39,9 @@ ninja
 
 # Windows 10 (MSVC)
 
-I already built a .sln file under VisualStudioProject folder. (I'm running Visual Studio 2022)
+I already built a .sln file under VisualStudioProject folder.
+<br>
+(I'm running Visual Studio 2022)
 <br>
 If you can't run it, delete everything in the folder and try rebuilding.
 <br>

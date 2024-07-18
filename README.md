@@ -21,9 +21,12 @@ cmake -G "Ninja" ..
 ninja
 ```
 <br>
-<br>
 
 ![successful build](Screenshots/successful_build_clang.png)
+
+<br>
+
+![build folder](Screenshots/build_folder.png)
 
 # License (OLC-3)
 

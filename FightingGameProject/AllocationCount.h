@@ -1,5 +1,12 @@
 #pragma once
 
+#ifdef __clang__
+#include <new>
+#define NOEXCEPT _GLIBCXX_USE_NOEXCEPT
+#else
+#define NOEXCEPT
+#endif
+
 #include <iostream>
 
 #define ALLOC_COUNT true
@@ -17,7 +24,7 @@ void* operator new(std::size_t size)
     return std::malloc(size);
 }
 
-void operator delete(void* ptr)
+void operator delete(void* ptr) NOEXCEPT
 {
     --numObjects;
 

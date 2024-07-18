@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #ifdef __clang__
 #include <new>
 #define NOEXCEPT _GLIBCXX_USE_NOEXCEPT
@@ -7,10 +9,7 @@
 #define NOEXCEPT
 #endif
 
-#include <iostream>
-
 #define ALLOC_COUNT true
-
 #if ALLOC_COUNT
 
 size_t numObjects = 0;

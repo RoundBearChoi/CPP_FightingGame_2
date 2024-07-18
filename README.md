@@ -33,7 +33,7 @@ ninja
 
 <br>
 
-![built](Screenshots/run_exe_file.png)
+![running_clang](Screenshots/run_exe_file.png)
 
 <br>
 

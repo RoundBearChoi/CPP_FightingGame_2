@@ -54,7 +54,7 @@ namespace RB::Collisions
 	{
 		std::string fileName = spriteType._to_string();
 		fileName += ".attackSpecs";
-		std::string path = "AttackSpecs/" + fileName;
+		std::string path = "../AttackSpecs/" + fileName;
 
 		RB::JSON::JParser parser;
 		parser.LoadJSON(path);

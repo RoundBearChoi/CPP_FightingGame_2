@@ -28,6 +28,8 @@ ninja
 
 ![built](Screenshots/run_exe_file.png)
 
+<br>
+
 # License (OLC-3)
 
 This project uses olcPixelGameEngine by OneLoneCoder

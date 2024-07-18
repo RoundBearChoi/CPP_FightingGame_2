@@ -9,13 +9,12 @@ https://youtube.com/roundbeargames
 # Windows 10 (Clang)
 
 Assuming you're familiar with CMake and have Git, MinGW, Clang installed..
+*I'm using [MSYS2](https://www.msys2.org/). Your path to Clang might be different. Pls edit accordingly*
+
 ```
 set CXX=C:/msys64/mingw64/bin/clang++
 set CC=C:/msys64/mingw64/bin/clang
 ```
-*I'm using [MSYS2](https://www.msys2.org/). Your path to Clang might be different. Pls edit accordingly*
-
-<br>
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
@@ -23,6 +22,7 @@ cd CPP_FightingGame_2
 
 mkdir build
 cd build
+
 cmake -G "Ninja" ..
 ninja
 ```

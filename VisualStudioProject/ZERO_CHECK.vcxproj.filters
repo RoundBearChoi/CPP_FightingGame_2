@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\rbmsi\CPP_FightingGame_2\VisualStudioProject\CMakeFiles\8dee7954327fecb85ca1d2ce3f353a25\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{7225FCBA-35BF-3C71-90D0-A72D8326E06F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

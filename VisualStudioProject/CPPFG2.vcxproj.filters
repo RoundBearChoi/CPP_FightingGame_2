@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AABB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AABB_Set.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AnimationContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AnimationObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AnimationRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AttackBoxDataController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AttackBoxEditorUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AttackRegisterController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\AttackSpecsController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\BackgroundController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\BackgroundObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\CamController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\CamObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\CircleRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\ControllerBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\CurrentUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\DetectHit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\DisplaySize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\DoNotFixDirectionDuringState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\FixSpecialMoveStatusDuringState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\FixWincingStatusDuringState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\FlipQuad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\FollowPlayers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\GameFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\GameSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\GameplayUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\GeneralHitStopController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\GetCurrentAnimationFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\GetCurrentSpriteType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\GetQuadOnPivot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\HBMenuController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\HB_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\HBoxEditController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\HBoxEditorUpdaterBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\InputController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\InputObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\KeyBinding.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\LineRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\LoadedPlayerBoxData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\LoadedSprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\Loaded_HB_Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\ManualAnimationUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MarkInitiallyFacingRight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MoveBackOnPress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MoveDownOnFall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MoveForwardOnJump_0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MoveForwardOnJump_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MoveForwardOnPress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MoveHorizontalOnFixedUpdateCount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\MoveUpOnJump.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\Notification.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Crouch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Crouch_Idle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Dummy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Hadouken.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Idle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Jab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_JumpForwardUp_0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_JumpForwardUp_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_JumpUp_0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_JumpUp_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Seq_Hadouken.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_StandUp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Start.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Strong_Kick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Strong_Punch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Strong_Wince.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_WalkBack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_WalkForward.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\P0_Wince.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerAnimationController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerBoxDataController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerBoxEditController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerBoxEditorUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerBoxRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerBoxSpecs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerBoxSpecsLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerCollider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerDebugController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerHBoxRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerInputRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerPositionRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\PlayerState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\RenderLayerType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\RenderScaleMultiplierObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\RenderTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\SpecialMoveSequenceBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\SpecialMovesController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\SpecsController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\SpriteContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\SpriteLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\SpriteTypeLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\StandUpOnRelease.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\StateBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\StateComponentBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\StateMachineBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TargetBoxDataController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TargetBoxEditorUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TransitionOnAnimationEnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TransitionOnFixedUpdateCount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TransitionOnInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TransitionToJumpForward.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TransitionToJumpUp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TransitionToWalkBack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\TransitionToWalkForward.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\Updater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\VFXAnimationController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\WhileMovingBack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\WhileMovingForward.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\ZoomOnPlayers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\_HBoxLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\iController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\rbmsi\CPP_FightingGame_2\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\rbmsi\CPP_FightingGame_2\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{317BA95E-7AA1-34A5-AAA9-F7A171BFAAF3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

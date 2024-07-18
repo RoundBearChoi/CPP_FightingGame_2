@@ -8,4 +8,4 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(CPPFG2 ${SOURCES})
 
-target_link_libraries(CPPFG2 user32 gdi32 opengl32 Shlwapi stdc++fs gdiplus dwmapi)
+target_link_libraries(CPPFG2 user32 gdi32 opengl32 Shlwapi gdiplus dwmapi)

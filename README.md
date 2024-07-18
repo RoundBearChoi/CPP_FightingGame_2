@@ -5,7 +5,7 @@ Indie game developer from South Korea
 https://youtube.com/roundbeargames
 
 # Windows build (Clang)
-Assuming you're familiar with CMake..
+Assuming you're familiar with CMake and have Git, MinGW, Clang installed..
 ```
 set CXX=C:/msys64/mingw64/bin/clang++
 set CC=C:/msys64/mingw64/bin/clang
@@ -20,6 +20,7 @@ cd build
 cmake -G "Ninja" ..
 ninja
 ```
+![successful build](Screenshots/successful_build_clang.png)
 
 # License (OLC-3)
 

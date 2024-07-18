@@ -12,7 +12,7 @@ Assuming you're familiar with CMake and have Git, MinGW, Ninja, Clang installed.
 <br><br>
 *I'm using [MSYS2](https://www.msys2.org/). Your linkers might be different.*
 <br>
-*Pls edit paths and CMakeLists.txt accordingly.*
+*Pls edit paths accordingly.*
 <br>
 
 ```

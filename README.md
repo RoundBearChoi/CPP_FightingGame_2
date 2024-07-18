@@ -9,8 +9,11 @@ https://youtube.com/roundbeargames
 # Windows 10 (Clang)
 
 Assuming you're familiar with CMake and have Git, MinGW, Ninja, Clang installed..
+<br><br>
+*I'm using [MSYS2](https://www.msys2.org/). Your path to Clang might be different.*
 <br>
-*I'm using [MSYS2](https://www.msys2.org/). Your path to Clang might be different. Pls edit accordingly.*
+*Pls edit path and CMakeLists.txt accordingly.*
+<br>
 
 ```
 set CXX=C:/msys64/mingw64/bin/clang++

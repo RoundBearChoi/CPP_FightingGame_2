@@ -20,6 +20,8 @@ cd build
 cmake -G "Ninja" ..
 ninja
 ```
+Screenshot of a successful build..
+<br>
 ![successful build](Screenshots/successful_build_clang.png)
 
 # License (OLC-3)

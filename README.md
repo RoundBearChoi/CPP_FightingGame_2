@@ -10,11 +10,9 @@ https://youtube.com/roundbeargames
 
 Assuming you're familiar with CMake and have Git, MinGW, Ninja, Clang installed..
 <br><br>
-<span style="color:red;">
 *I'm using [MSYS2](https://www.msys2.org/). Your linkers might be different.*
 <br>
 *Pls edit paths and CMakeLists.txt accordingly.*
-</span>
 <br>
 
 ```

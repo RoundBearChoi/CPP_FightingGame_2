@@ -15,7 +15,7 @@ namespace RB::Render
 		{
 			RB::Sprites::SpriteType spriteType = RB::Sprites::SpriteType::_from_index(i);
 			std::string str = spriteType._to_string();
-			std::string path = "../PNG files/Aku/" + str + ".png";
+			std::string path = "../resource/PNG files/Aku/" + str + ".png";
 			_animationContainer.LoadSprite(path, spriteType);
 		}
 
@@ -23,7 +23,7 @@ namespace RB::Render
 		{
 			RB::Sprites::SpriteType spriteType = RB::Sprites::SpriteType::_from_index(i);
 			std::string str = spriteType._to_string();
-			std::string path = "../AnimationSpecs/" + str + ".aniSpecs";
+			std::string path = "../resource/AnimationSpecs/" + str + ".aniSpecs";
 			_animationContainer.LoadAnimation(path);
 		}
 	}

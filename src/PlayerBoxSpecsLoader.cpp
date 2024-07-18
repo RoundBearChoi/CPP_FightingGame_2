@@ -22,7 +22,7 @@ namespace RB::Collisions
 	{
 		std::string spriteName = spriteType._to_string();
 
-		return "../PlayerBoxSpecs/Aku/" + spriteName + ".playerBoxSpecs";
+		return "../resource/PlayerBoxSpecs/Aku/" + spriteName + ".playerBoxSpecs";
 	}
 
 	void PlayerBoxSpecsLoader::LoadSpecs(RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)

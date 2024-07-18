@@ -434,11 +434,11 @@ namespace RB::HBox
 
 			if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 			{
-				path = "../EditorSettings/AttackBoxSettings.editorSettings";
+				path = "../resource/EditorSettings/AttackBoxSettings.editorSettings";
 			}
 			else if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 			{
-				path = "../EditorSettings/TargetBoxSettings.editorSettings";
+				path = "../resource/EditorSettings/TargetBoxSettings.editorSettings";
 			}
 
 			std::ofstream file(path);

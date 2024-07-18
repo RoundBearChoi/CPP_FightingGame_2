@@ -20,9 +20,13 @@ namespace RB::Updaters
 	{
 	public:
 		Updater();
-		~Updater();
+		~Updater() override;
 
 	public:
+		void Init() override;
+		void OnUpdate() override;
+		void OnFixedUpdate() override;
+
 		bool QueueAttackBoxEditorUpdater() override;
 		bool QueueTargetBoxEditorUpdater() override;
 
@@ -31,11 +35,6 @@ namespace RB::Updaters
 		bool QueueUpdaterObj(iUpdaterObj* updaterObj);
 		void UpdateQueue();
 		void MakeUpdaterTransition();
-
-	public:
-		void Init();
-		void OnUpdate();
-		void OnFixedUpdate();
 
 	private:
 		bool _updaterIsQueued = false;

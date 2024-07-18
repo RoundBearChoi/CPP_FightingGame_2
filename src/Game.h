@@ -20,7 +20,7 @@ namespace RB
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		RB::Updaters::Updater* _updater = nullptr;
+		RB::Updaters::iUpdater* _updater = nullptr;
 		RB::Frames::FixedTimer _timer;
 		RB::Frames::RenderTimer _renderTimer;
 

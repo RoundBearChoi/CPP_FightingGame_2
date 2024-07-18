@@ -12,6 +12,62 @@ namespace RB::Updaters
 		delete _updaterObj;
 	}
 
+	void Updater::Init()
+	{
+		bool firstQueueSuccessful = QueueUpdaterObj(new GameplayUpdater());
+
+		if (!firstQueueSuccessful)
+		{
+			std::cout << "first updater queue failed.. aborting.." << std::endl;
+
+			assert(firstQueueSuccessful);
+		}
+	}
+
+	void Updater::OnUpdate()
+	{
+		if (!_updaterIsQueued)
+		{
+			_updaterObj->OnUpdate();
+		}
+		
+		UpdateQueue();
+		MakeUpdaterTransition();
+	}
+
+	void Updater::OnFixedUpdate()
+	{
+		if (!_updaterIsQueued)
+		{
+			bool skip = false;
+
+			if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
+			{
+				if (RB::Collisions::iGeneralHitStopController::Get()->SkipFrame())
+				{
+					//std::cout << "skipping fixed update.." << std::endl;
+
+					skip = true;
+				}
+			}
+
+			if (!skip)
+			{
+				_updaterObj->OnFixedUpdate();
+			}
+		}
+	}
+
+	bool Updater::QueueAttackBoxEditorUpdater()
+	{
+		return QueueUpdaterObj(new AttackBoxEditorUpdater());
+	}
+
+	bool Updater::QueueTargetBoxEditorUpdater()
+	{
+		return QueueUpdaterObj(new TargetBoxEditorUpdater());
+	}
+	
 	void Updater::SetUpdaterObj(iUpdaterObj* updaterObj)
 	{
 		// delete previous updater obj
@@ -57,16 +113,6 @@ namespace RB::Updaters
 		_nextUpdaterObj = nextUpdaterObj;
 
 		return true;
-	}
-
-	bool Updater::QueueAttackBoxEditorUpdater()
-	{
-		return QueueUpdaterObj(new AttackBoxEditorUpdater());
-	}
-
-	bool Updater::QueueTargetBoxEditorUpdater()
-	{
-		return QueueUpdaterObj(new TargetBoxEditorUpdater());
 	}
 
 	void Updater::UpdateQueue()
@@ -117,52 +163,6 @@ namespace RB::Updaters
 			_updaterIsQueued = false;
 
 			SetUpdaterObj(_nextUpdaterObj);
-		}
-	}
-
-	void Updater::Init()
-	{
-		bool firstQueueSuccessful = QueueUpdaterObj(new GameplayUpdater());
-
-		if (!firstQueueSuccessful)
-		{
-			std::cout << "first updater queue failed.. aborting.." << std::endl;
-
-			assert(firstQueueSuccessful);
-		}
-	}
-
-	void Updater::OnUpdate()
-	{
-		if (!_updaterIsQueued)
-		{
-			_updaterObj->OnUpdate();
-		}
-		
-		UpdateQueue();
-		MakeUpdaterTransition();
-	}
-
-	void Updater::OnFixedUpdate()
-	{
-		if (!_updaterIsQueued)
-		{
-			bool skip = false;
-
-			if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
-			{
-				if (RB::Collisions::iGeneralHitStopController::Get()->SkipFrame())
-				{
-					//std::cout << "skipping fixed update.." << std::endl;
-
-					skip = true;
-				}
-			}
-
-			if (!skip)
-			{
-				_updaterObj->OnFixedUpdate();
-			}
 		}
 	}
 }

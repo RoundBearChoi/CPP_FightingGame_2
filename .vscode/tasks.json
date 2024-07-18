@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "CMake Configure",
+            "command": "cmake",
+            "args": [
+                "-G",
+                "Ninja",
+                "-DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/clang++.exe",
+                "-DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/clang.exe",
+                "-B",
+                "${workspaceFolder}/build",
+                "-S",
+                "${workspaceFolder}"
+            ],
+            "group": "build",
+            "detail": "Configure the project with CMake"
+        },
+        {
+            "type": "shell",
+            "label": "CMake Build",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build"
+            ],
+            "dependsOn": ["CMake Configure"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "source": "clang",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        }
+    ]
+}

@@ -29,11 +29,11 @@ ninja
 ```
 <br>
 
-![successful build](Screenshots/successful_build_clang.png)
+![successful build](screenshots/successful_build_clang.png)
 
 <br>
 
-![running_clang](Screenshots/run_exe_file.png)
+![running_clang](screenshots/run_exe_file.png)
 
 <br>
 
@@ -50,7 +50,7 @@ cmake -G "Visual Studio 17 2022" -A x64 ../CMakeLists.txt
 ```
 <br>
 
-![build_sln](Screenshots/building_sln_file.png)
+![build_sln](screenshots/building_sln_file.png)
 
 <br>
 

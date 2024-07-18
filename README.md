@@ -6,6 +6,36 @@ https://youtube.com/roundbeargames
 
 <br>
 
+# Windows build (clang/clang++)
+
+```
+set CXX=C:/msys64/mingw64/bin/clang++
+set CC=C:/msys64/mingw64/bin/clang
+
+git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
+cd CPP_FightingGame_2
+
+mkdir build
+cd build
+cmake -G "Ninja" ..
+ninja
+```
+
+Assuming you're familar with CMake..
+> 
+<br>
+
+<br>
+> 
+<br>
+> 
+<br>
+> 
+<br>
+> 
+
+<br>
+
 # Getting Started (Windows)
 
 1. Download ZIP or clone repository

@@ -45,8 +45,9 @@ I already built a .sln file under VisualStudioProject folder.
 <br>
 If you can't run it, delete everything in the VisualStudioProject folder and try rebuilding.
 <br>
-> cmake -G "Visual Studio 17 2022" -A x64 ../CMakeLists.txt
-
+```
+cmake -G "Visual Studio 17 2022" -A x64 ../CMakeLists.txt
+```
 <br>
 
 ![build_sln](Screenshots/building_sln_file.png)

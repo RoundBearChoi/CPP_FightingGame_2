@@ -12,7 +12,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "miDebuggerPath": "C:/msys64/mingw64/bin/lldb",
+            "miDebuggerPath": "C:/msys64/mingw64/bin/lldb.exe",
             "preLaunchTask": "CMake Build",
             "setupCommands": [
                 {

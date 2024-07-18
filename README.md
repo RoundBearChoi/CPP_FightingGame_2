@@ -26,7 +26,7 @@ ninja
 
 <br>
 
-![build folder](Screenshots/build_folder.png)
+![built](Screenshots/run_exe_file.png)
 
 # License (OLC-3)
 

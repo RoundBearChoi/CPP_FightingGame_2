@@ -361,10 +361,11 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# CMake files
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-CPPFightingGame
-CMakeFiles/
+# CMake build
 /build
+visual_studio_project/cmake_install.cmake
+visual_studio_project/CMakeCache.txt
+
+# VS 2022 build
+/visual_studio_project/CMakeFiles
+visual_studio_project/build.ninja

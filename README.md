@@ -6,7 +6,7 @@ https://youtube.com/roundbeargames
 
 <br>
 
-# Windows 10 (Clang)
+# Windows 10 build
 
 You should already be familiar with CMake.
 <br>
@@ -31,6 +31,8 @@ Make sure to add path for the packages.
 <br>
 
 Clone repository and build.
+<br>
+(if you look at my CMakeLists.txt you'll see that I'm using Clang)
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2

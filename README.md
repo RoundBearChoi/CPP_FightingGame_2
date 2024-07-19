@@ -9,14 +9,18 @@ https://youtube.com/roundbeargames
 # Windows 10 (Clang)
 
 You should already be familiar with CMake.
-<br><br>
-*I'm using [MSYS2](https://www.msys2.org/). Your linkers might be different. Pls edit paths accordingly.*
 <br>
-
+I'm using [MSYS2](https://www.msys2.org/) to install these packages. 
+<br>
 ```
-set CXX=C:/msys64/mingw64/bin/clang++
-set CC=C:/msys64/mingw64/bin/clang
+pacman -Syu
+pacman -Su
+pacman -S mingw-w64-x86_64-clang
+pacman -S mingw-w64-x86_64-cmake
+pacman -S mingw-w64-x86_64-ninja
 ```
+<br>
+Clone repository and build
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
@@ -28,9 +32,6 @@ cd build
 cmake -G "Ninja" ..
 ninja
 ```
-<br>
-
-![successful build](screenshots/successful_build_clang.png)
 
 <br>
 

@@ -10,3 +10,4 @@ cmake -G "Ninja" ..
 ninja
 
 cmake -G "Visual Studio 17 2022" -A x64 ../CMakeLists.txt
+cmake -G "Visual Studio 17 2022 Win64" -A x64 ../CMakeLists.txt

@@ -10,7 +10,7 @@ https://youtube.com/roundbeargames
 
 You should already be familiar with CMake.
 <br>
-I'm using [MSYS2](https://www.msys2.org/) to install these packages. 
+I'm using [MSYS2](https://www.msys2.org/) to install packages. 
 <br>
 ```
 pacman -Syu

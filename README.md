@@ -20,7 +20,12 @@ pacman -S mingw-w64-x86_64-cmake
 pacman -S mingw-w64-x86_64-ninja
 ```
 <br>
-Clone repository and build
+Make sure to add path for the packages.
+
+![system_path](screenshots/system_path_new.png)
+
+<br>
+Clone repository and build.
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2

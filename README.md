@@ -6,7 +6,7 @@ https://youtube.com/roundbeargames
 
 <br>
 
-# Windows 10 build
+# Windows 10 Build
 
 You should already be familiar with CMake.
 <br>

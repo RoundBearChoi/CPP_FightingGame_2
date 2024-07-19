@@ -8,11 +8,9 @@ https://youtube.com/roundbeargames
 
 # Windows 10 (Clang)
 
-Assuming you're familiar with CMake and have Git, MinGW, Ninja, Clang installed..
+You should already be familiar with CMake.
 <br><br>
-*I'm using [MSYS2](https://www.msys2.org/). Your linkers might be different.*
-<br>
-*Pls edit paths accordingly.*
+*I'm using [MSYS2](https://www.msys2.org/). Your linkers might be different. Pls edit paths accordingly.*
 <br>
 
 ```

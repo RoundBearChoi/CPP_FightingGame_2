@@ -2,10 +2,10 @@
 #include <string>
 #include <vector>
 
-#include "HBoxLoader.h"
-#include "Loaded_HB_Data.h"
-#include "SpriteType.h"
-#include "HBoxType.h"
+#include "../HBoxLoader.h"
+#include "../Loaded_HB_Data.h"
+#include "../SpriteType.h"
+#include "../HBoxType.h"
 
 namespace RB::HBox
 {

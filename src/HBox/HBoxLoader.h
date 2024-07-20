@@ -3,9 +3,10 @@
 #include <vector>
 #include <cassert>
 
-#include "AABB.h"
-#include "Loaded_HB_Data.h"
-#include "HBox/HBoxType.h"
+#include "HBoxType.h"
+
+#include "../AABB.h"
+#include "../Loaded_HB_Data.h"
 
 namespace RB::HBox
 {

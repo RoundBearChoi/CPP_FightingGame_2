@@ -1,15 +1,9 @@
 #pragma once
 
 #include <vector>
-#include <iostream>
-#include <fstream>
 #include <cassert>
-#include <sstream>
-
-#include "JParser.h"
 
 #include "AABB.h"
-#include "AABB_Set.h"
 #include "Loaded_HB_Data.h"
 #include "HBoxType.h"
 

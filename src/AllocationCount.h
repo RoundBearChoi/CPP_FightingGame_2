@@ -4,10 +4,14 @@
 
 #ifdef __clang__
 #include <new>
-#define NOEXCEPT _GLIBCXX_USE_NOEXCEPT
+#define NOEXCEPT noexcept
 #else
-#define NOEXCEPT
+#include <new>
+#define NOEXCEPT _GLIBCXX_USE_NOEXCEPT
 #endif
+
+// Rest of your code...
+
 
 #define ALLOC_COUNT true
 #if ALLOC_COUNT

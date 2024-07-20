@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Lerp.h"
 #include "Vector2.h"
 #include "Ease.h"
 

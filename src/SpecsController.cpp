@@ -34,7 +34,7 @@ namespace RB::Players::Specs
 
 		std::cout << "no specs found" << std::endl;
 
-		return MoveSpecs(characterType);
+		return MoveSpecs{ characterType };
 	}
 
 	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType)

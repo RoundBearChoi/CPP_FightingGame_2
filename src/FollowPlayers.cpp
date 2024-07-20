@@ -70,7 +70,7 @@ namespace RB::Cam
 
 		//std::cout << ease << std::endl;
 
-		float lerped = std::lerp(curr, result, ease * 0.03f);
+		float lerped = RB::Lerp(curr, result, ease * 0.03f); //std::lerp(curr, result, ease * 0.03f);
 
 		//y should be dynamic.. but for now
 		_camObj->SetPosition(RB::Vector2{ lerped, -115.0f });

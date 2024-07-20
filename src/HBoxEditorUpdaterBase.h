@@ -11,7 +11,7 @@
 #include "PlayerDebugController.h"
 #include "PlayerAnimationController.h"
 #include "PlayerBoxDataController.h"
-#include "HBMenuController.h"
+#include "HBox/HBMenuController.h"
 #include "TargetBoxDataController.h"
 #include "HBox/AttackBoxDataController.h"
 #include "HBoxEditController.h"

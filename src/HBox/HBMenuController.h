@@ -1,20 +1,20 @@
 #pragma once
 #include <string>
 
-#include "SpriteType.h"
-#include "PlayerState.h"
-#include "Notification.h"
-#include "Loaded_HB_Data.h"
+#include "../SpriteType.h"
+#include "../PlayerState.h"
+#include "../Notification.h"
+#include "../Loaded_HB_Data.h"
 
-#include "GetCurrentSpriteType.h"
-#include "GetCurrentAnimationFrame.h"
+#include "../GetCurrentSpriteType.h"
+#include "../GetCurrentAnimationFrame.h"
 
-#include "iHBMenuController.h"
-#include "iPlayerController.h"
-#include "iPlayerAnimationController.h"
-#include "iHBoxEditController.h"
-#include "iTargetBoxDataController.h"
-#include "iAttackBoxDataController.h"
+#include "../iHBMenuController.h"
+#include "../iPlayerController.h"
+#include "../iPlayerAnimationController.h"
+#include "../iHBoxEditController.h"
+#include "../iTargetBoxDataController.h"
+#include "../iAttackBoxDataController.h"
 
 namespace RB::HBox
 {

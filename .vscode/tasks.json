@@ -8,8 +8,8 @@
             "args": [
                 "-G",
                 "Ninja",
-                "-DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/clang++.exe",
-                "-DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/clang.exe",
+                "-DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/g++.exe",
+                "-DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/gcc.exe",
                 "-B",
                 "${workspaceFolder}/build",
                 "-S",
@@ -33,7 +33,7 @@
             },
             "problemMatcher": {
                 "base": "$gcc",
-                "source": "clang",
+                "source": "gcc",
                 "fileLocation": ["relative", "${workspaceFolder}"],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",

@@ -2,34 +2,34 @@
 
 #if ALLOC_COUNT
 
-size_t numObjects = 0;
-bool showAllocCount = false;
-bool onlyShowZeroCount = true;
+    size_t numObjects = 0;
+    bool showAllocCount = false;
+    bool onlyShowZeroCount = true;
 
-void* operator new(std::size_t size)
-{
-    ++numObjects;
-
-    return std::malloc(size);
-}
-
-void operator delete(void* ptr) NOEXCEPT
-{
-    --numObjects;
-
-    std::free(ptr);
-
-    if (showAllocCount)
+    void* operator new(std::size_t size)
     {
-        if (onlyShowZeroCount && numObjects != 0)
+        ++numObjects;
+
+        return std::malloc(size);
+    }
+
+    void operator delete(void* ptr) NOEXCEPT
+    {
+        --numObjects;
+
+        std::free(ptr);
+
+        if (showAllocCount)
         {
-            // do nothing
-        }
-        else
-        {
-            std::cout << "allocation count: " << numObjects << std::endl;;
+            if (onlyShowZeroCount && numObjects != 0)
+            {
+                // do nothing
+            }
+            else
+            {
+                std::cout << "allocation count: " << numObjects << std::endl;;
+            }
         }
     }
-}
 
 #endif

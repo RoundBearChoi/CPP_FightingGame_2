@@ -1,6 +1,8 @@
 {
     "version": "2.0.0",
     "tasks": [
+
+        // configure cmake
         {
             "type": "shell",
             "label": "CMake Configure",
@@ -8,16 +10,13 @@
             "args": [
                 "-G",
                 "Ninja",
-                "-DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/g++.exe",
-                "-DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/gcc.exe",
-                "-B",
-                "${workspaceFolder}/build",
-                "-S",
-                "${workspaceFolder}"
+                "-B", "${workspaceFolder}/build",
+                "-S", "${workspaceFolder}"
             ],
-            "group": "build",
-            "detail": "Configure the project with CMake"
+            "group": "build"
         },
+
+        // build
         {
             "type": "shell",
             "label": "CMake Build",
@@ -43,6 +42,19 @@
                     "severity": 4,
                     "message": 5
                 }
+            }
+        },
+
+        // run
+        {
+            "label": "run exe",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}/build && CPPFG2.exe",
+            //"cwd": "${workspaceFolder}/build",
+            "dependsOn": ["CMake Build"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
             }
         }
     ]

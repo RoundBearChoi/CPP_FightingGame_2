@@ -5,9 +5,12 @@
 #ifdef __clang__
     #include <new>
     #define NOEXCEPT noexcept
-#else
+#elif __GNUC__
     #include <new>
     #define NOEXCEPT _GLIBCXX_USE_NOEXCEPT
+#else
+    #define NOEXCEPT
+
 #endif
 
 #define ALLOC_COUNT true

@@ -1,0 +1,7 @@
+[
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": "run exe"
+    }
+]

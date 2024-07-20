@@ -7,11 +7,9 @@ https://youtube.com/roundbeargames
 <br>
 
 # Windows 10 Build
+- Install packages
+<br> *I'm using [MSYS2](https://www.msys2.org/)*
 
-You should already be familiar with CMake.
-<br>
-I'm using [MSYS2](https://www.msys2.org/) to install packages. 
-<br>
 ```
 pacman -Syu
 pacman -Su
@@ -22,7 +20,7 @@ pacman -S mingw-w64-x86_64-gcc
 
 <br>
 
-Make sure to add path for the packages.
+- Add path for the packages
 <br>
 
 ![system_path](screenshots/system_path_new.png)
@@ -30,9 +28,8 @@ Make sure to add path for the packages.
 <br>
 <br>
 
-Clone repository and build.
-<br>
-*If you look at my CMakeLists.txt you'll see that I'm using GCC.*
+- Clone repository and build
+<br> *If you look at my CMakeLists.txt you'll see that I'm using GCC.*
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2

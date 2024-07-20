@@ -2,6 +2,7 @@
 #include <string>
 
 #include "iAttackBoxDataController.h"
+#include "iHBMenuController.h"
 
 #include "../SpriteType.h"
 #include "../PlayerState.h"
@@ -11,7 +12,6 @@
 #include "../GetCurrentSpriteType.h"
 #include "../GetCurrentAnimationFrame.h"
 
-#include "../iHBMenuController.h"
 #include "../iPlayerController.h"
 #include "../iPlayerAnimationController.h"
 #include "../iHBoxEditController.h"

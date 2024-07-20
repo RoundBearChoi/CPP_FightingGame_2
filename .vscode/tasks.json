@@ -50,7 +50,6 @@
             "label": "run exe",
             "type": "shell",
             "command": "cd ${workspaceFolder}/build && CPPFG2.exe",
-            //"cwd": "${workspaceFolder}/build",
             "dependsOn": ["CMake Build"],
             "group": {
                 "kind": "test",

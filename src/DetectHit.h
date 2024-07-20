@@ -12,7 +12,7 @@
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iTargetBoxDataController.h"
-#include "iAttackBoxDataController.h"
+#include "HBox/iAttackBoxDataController.h"
 #include "iAttackRegisterController.h"
 #include "iAttackSpecsController.h"
 

@@ -3,17 +3,18 @@
 #include "olcPixelGameEngine.h"
 
 #include "Vector2.h"
-#include "HBox/AABB_Set.h"
-#include "HBox/HBoxType.h"
 #include "SpriteContainer.h"
 #include "PlayerState.h"
 #include "Loaded_HB_Data.h"
+
+#include "HBox/AABB_Set.h"
+#include "HBox/HBoxType.h"
+#include "HBox/iAttackBoxDataController.h"
 
 #include "iPlayer.h"
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
 #include "iTargetBoxDataController.h"
-#include "iAttackBoxDataController.h"
 
 namespace RB::Render
 {

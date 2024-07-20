@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+#include "iAttackBoxDataController.h"
+
 #include "../SpriteType.h"
 #include "../PlayerState.h"
 #include "../Notification.h"
@@ -14,7 +16,6 @@
 #include "../iPlayerAnimationController.h"
 #include "../iHBoxEditController.h"
 #include "../iTargetBoxDataController.h"
-#include "../iAttackBoxDataController.h"
 
 namespace RB::HBox
 {

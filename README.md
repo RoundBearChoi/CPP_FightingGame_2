@@ -29,7 +29,7 @@ pacman -S mingw-w64-x86_64-gcc
 <br>
 
 - Clone repository and build
-<br> *If you look at my CMakeLists.txt you'll see that I'm using GCC.*
+<br> *If you look at my CMakeLists.txt you'll see that I'm using GCC*
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2

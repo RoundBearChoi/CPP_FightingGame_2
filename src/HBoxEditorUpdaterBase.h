@@ -14,7 +14,7 @@
 #include "HBox/HBMenuController.h"
 #include "TargetBoxDataController.h"
 #include "HBox/AttackBoxDataController.h"
-#include "HBoxEditController.h"
+#include "HBox/HBoxEditController.h"
 #include "SpriteTypeLoader.h"
 
 #include "iUpdaterObj.h"

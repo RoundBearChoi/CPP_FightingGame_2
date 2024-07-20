@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-#include "_HBoxLoader.h"
+#include "HBoxLoader.h"
 #include "Loaded_HB_Data.h"
 #include "SpriteType.h"
 #include "HBoxType.h"
@@ -23,7 +23,7 @@ namespace RB::HBox
 		std::string GetPath(RB::Sprites::SpriteType spriteType);
 
 	private:
-		_HBoxLoader _loader;
+		HBoxLoader _loader;
 		std::vector<Loaded_HB_Data> _vecData;
 
 		const std::string _none = "none";

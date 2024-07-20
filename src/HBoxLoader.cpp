@@ -1,15 +1,15 @@
-#include "_HBoxLoader.h"
+#include "HBoxLoader.h"
 
 namespace RB::HBox
 {
-	void _HBoxLoader::InitSample(std::string path)
+	void HBoxLoader::InitSample(std::string path)
 	{
 		_samplePath = path;
 
 		SaveSample();
 	}
 
-	void _HBoxLoader::SaveSample()
+	void HBoxLoader::SaveSample()
 	{
 		std::ofstream file(_samplePath);
 
@@ -95,7 +95,7 @@ namespace RB::HBox
 	/// <summary>
 	/// only use during initialization (vector addresses)
 	/// </summary>
-	Loaded_HB_Data _HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType)
+	Loaded_HB_Data HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType)
 	{
 		RB::JSON::JParser parser;
 		parser.LoadJSON(path);
@@ -130,7 +130,7 @@ namespace RB::HBox
 		return data;
 	}
 
-	std::vector<RB::Collisions::AABB> _HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)
+	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -161,7 +161,7 @@ namespace RB::HBox
 		return std::vector<RB::Collisions::AABB>{};
 	}
 
-	std::string _HBoxLoader::ParseName(const json_object_s& wholeObj, const unsigned int frame)
+	std::string HBoxLoader::ParseName(const json_object_s& wholeObj, const unsigned int frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -185,7 +185,7 @@ namespace RB::HBox
 		return "";
 	}
 
-	RB::Collisions::AABB _HBoxLoader::GetAABB(const json_array_s& jArray, unsigned int index)
+	RB::Collisions::AABB HBoxLoader::GetAABB(const json_array_s& jArray, unsigned int index)
 	{
 		unsigned int count = 0;
 

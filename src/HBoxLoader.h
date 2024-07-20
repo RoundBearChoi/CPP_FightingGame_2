@@ -5,7 +5,7 @@
 
 #include "AABB.h"
 #include "Loaded_HB_Data.h"
-#include "HBoxType.h"
+#include "HBox/HBoxType.h"
 
 namespace RB::HBox
 {

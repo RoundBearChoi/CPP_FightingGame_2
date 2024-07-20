@@ -2,7 +2,7 @@
 #include <vector>
 #include "SpriteType.h"
 #include "HBox/AABB_Set.h"
-#include "HBoxType.h"
+#include "HBox/HBoxType.h"
 
 namespace RB::HBox
 {

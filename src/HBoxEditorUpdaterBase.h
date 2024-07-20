@@ -3,7 +3,7 @@
 #include "Vector2.h"
 #include "Player.h"
 #include "string"
-#include "HBoxType.h"
+#include "HBox/HBoxType.h"
 
 #include "InputController.h"
 #include "CamController.h"

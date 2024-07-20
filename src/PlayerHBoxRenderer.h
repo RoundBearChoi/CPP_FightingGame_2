@@ -4,7 +4,7 @@
 
 #include "Vector2.h"
 #include "HBox/AABB_Set.h"
-#include "HBoxType.h"
+#include "HBox/HBoxType.h"
 #include "SpriteContainer.h"
 #include "PlayerState.h"
 #include "Loaded_HB_Data.h"

@@ -15,7 +15,6 @@ I'm using [MSYS2](https://www.msys2.org/) to install packages.
 ```
 pacman -Syu
 pacman -Su
-pacman -S mingw-w64-x86_64-clang
 pacman -S mingw-w64-x86_64-cmake
 pacman -S mingw-w64-x86_64-ninja
 ```
@@ -32,7 +31,7 @@ Make sure to add path for the packages.
 
 Clone repository and build.
 <br>
-(if you look at my CMakeLists.txt you'll see that I'm using Clang)
+*If you look at my CMakeLists.txt you'll see that I'm using GCC.*
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2

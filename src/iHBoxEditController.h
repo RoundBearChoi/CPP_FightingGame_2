@@ -2,7 +2,7 @@
 #include "ControllerT.h"
 
 #include "Loaded_HB_Data.h"
-#include "AABB_Set.h"
+#include "HBox/AABB_Set.h"
 #include "HBoxType.h"
 #include "PlayerID.h"
 

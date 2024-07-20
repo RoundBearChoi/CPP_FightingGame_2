@@ -1,10 +1,10 @@
 #pragma once
 
-#include "AABB.h"
-#include "JParser.h"
-#include "Selector.h"
+#include "../AABB.h"
+#include "../JParser.h"
+#include "../Selector.h"
 
-#include "iSelector.h"
+#include "../iSelector.h"
 
 namespace RB::HBox
 {

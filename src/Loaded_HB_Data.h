@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "SpriteType.h"
-#include "AABB_Set.h"
+#include "HBox/AABB_Set.h"
 #include "HBoxType.h"
 
 namespace RB::HBox

@@ -8,7 +8,7 @@
 #include "PlayerState.h"
 #include "CurrentUpdater.h"
 #include "HBoxType.h"
-#include "AABB_Set.h"
+#include "HBox/AABB_Set.h"
 #include "Loaded_HB_Data.h"
 #include "CircleRenderer.h"
 

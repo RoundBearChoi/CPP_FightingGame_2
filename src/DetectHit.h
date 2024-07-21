@@ -14,7 +14,7 @@
 #include "HBox/iTargetBoxDataController.h"
 #include "HBox/iAttackBoxDataController.h"
 #include "Collisions/iAttackRegisterController.h"
-#include "iAttackSpecsController.h"
+#include "Collisions/iAttackSpecsController.h"
 
 #include "P0_Wince.h"
 

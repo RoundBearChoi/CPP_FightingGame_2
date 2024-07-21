@@ -9,7 +9,7 @@
 #include "../P0_Wince.h" //temp
 #include "../P0_Strong_Wince.h" //temp
 
-#include "../iAttackSpecsController.h"
+#include "../Collisions/iAttackSpecsController.h"
 #include "../iAnimationObj.h"
 #include "../iVFXAnimationController.h"
 #include "../iGeneralHitStopController.h"

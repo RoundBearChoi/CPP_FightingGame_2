@@ -12,7 +12,7 @@
 #include "GetCurrentAnimationFrame.h"
 
 #include "iPlayerController.h"
-#include "iPlayerBoxDataController.h"
+#include "Collisions/iPlayerBoxDataController.h"
 #include "iPlayerAnimationController.h"
 #include "iPlayerDebugController.h"
 #include "iPlayerBoxEditController.h"

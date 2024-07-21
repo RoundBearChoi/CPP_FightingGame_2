@@ -8,7 +8,7 @@
 
 #include "iPlayer.h"
 #include "iPlayerController.h"
-#include "iPlayerBoxDataController.h"
+#include "Collisions/iPlayerBoxDataController.h"
 #include "iPlayerAnimationController.h"
 
 namespace RB::PlayerStates

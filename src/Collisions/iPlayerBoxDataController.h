@@ -1,10 +1,9 @@
 #pragma once
 
-#include "ControllerT.h"
-
-#include "LoadedPlayerBoxData.h"
-#include "CharacterType.h"
-#include "SpriteType.h"
+#include "../ControllerT.h"
+#include "../LoadedPlayerBoxData.h"
+#include "../CharacterType.h"
+#include "../SpriteType.h"
 
 namespace RB::Collisions
 {

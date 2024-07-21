@@ -1,8 +1,8 @@
 #pragma once
 
-#include "SpriteType.h"
+#include "../SpriteType.h"
 
-#include "iPlayer.h"
+#include "../iPlayer.h"
 
 namespace RB::Collisions
 {

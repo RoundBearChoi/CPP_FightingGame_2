@@ -1,7 +1,8 @@
 #pragma once
+
 #include "ControllerT.h"
 
-#include "AttackRegister.h"
+#include "Collisions/AttackRegister.h"
 
 namespace RB::Collisions
 {

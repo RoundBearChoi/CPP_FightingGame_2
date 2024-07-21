@@ -16,7 +16,7 @@
 #include "HBox/AttackBoxDataController.h"
 #include "Collisions/AttackRegisterController.h"
 #include "GeneralHitStopController.h"
-#include "AttackSpecsController.h"
+#include "Collisions/AttackSpecsController.h"
 #include "VFXAnimationController.h"
 
 #include "iUpdaterObj.h"

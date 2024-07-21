@@ -2,10 +2,10 @@
 
 #include <vector>
 
-#include "JParser.h"
-#include "SpriteType.h"
+#include "../JParser.h"
+#include "../SpriteType.h"
 
-#include "iAttackSpecsController.h"
+#include "../iAttackSpecsController.h"
 
 namespace RB::Collisions
 {

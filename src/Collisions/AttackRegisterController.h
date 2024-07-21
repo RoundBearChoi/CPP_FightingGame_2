@@ -2,18 +2,20 @@
 
 #include <vector>
 
+#include "AttackSpecs.h"
+
+#include "iAttackSpecsController.h"
+#include "iAttackRegisterController.h"
+#include "iGeneralHitStopController.h"
+
 #include "../SpriteType.h"
-#include "../Collisions/AttackSpecs.h"
 #include "../RenderScaleMultiplierObj.h"
 
 #include "../P0_Wince.h" //temp
 #include "../P0_Strong_Wince.h" //temp
 
-#include "../Collisions/iAttackSpecsController.h"
 #include "../iAnimationObj.h"
 #include "../iVFXAnimationController.h"
-#include "../Collisions/iGeneralHitStopController.h"
-#include "../Collisions/iAttackRegisterController.h"
 
 namespace RB::Collisions
 {

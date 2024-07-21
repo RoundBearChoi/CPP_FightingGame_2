@@ -1,7 +1,8 @@
 #pragma once
 
+#include "CollisionType.h"
+
 #include "../SpriteType.h"
-#include "../Collisions/CollisionType.h"
 
 #include "../iPlayer.h"
 

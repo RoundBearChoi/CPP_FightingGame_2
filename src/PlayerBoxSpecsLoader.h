@@ -7,7 +7,7 @@
 #include "PlayerBoxSpecs.h"
 #include "CharacterType.h"
 #include "SpriteType.h"
-#include "LoadedPlayerBoxData.h"
+#include "Collisions/LoadedPlayerBoxData.h"
 
 namespace RB::Collisions
 {

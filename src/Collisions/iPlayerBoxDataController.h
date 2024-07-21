@@ -1,7 +1,8 @@
 #pragma once
 
+#include "LoadedPlayerBoxData.h"
+
 #include "../ControllerT.h"
-#include "../LoadedPlayerBoxData.h"
 #include "../CharacterType.h"
 #include "../SpriteType.h"
 

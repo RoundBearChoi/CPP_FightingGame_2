@@ -5,7 +5,7 @@
 #include "SpriteType.h"
 #include "Collisions/AttackSpecs.h"
 #include "PlayerState.h"
-#include "CollisionResult.h"
+#include "Collisions/CollisionResult.h"
 #include "StateComponentBase.h"
 
 #include "iPlayer.h"

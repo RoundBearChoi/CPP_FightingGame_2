@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "JParser.h"
-#include "PlayerBoxSpecs.h"
+#include "Collisions/PlayerBoxSpecs.h"
 #include "CharacterType.h"
 #include "SpriteType.h"
 #include "Collisions/LoadedPlayerBoxData.h"

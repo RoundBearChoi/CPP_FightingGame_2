@@ -3,8 +3,8 @@
 #include <vector>
 
 #include "PlayerBox.h"
+#include "PlayerBoxSpecs.h"
 
-#include "../PlayerBoxSpecs.h"
 #include "../CharacterType.h"
 
 namespace RB::Collisions

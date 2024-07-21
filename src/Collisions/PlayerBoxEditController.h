@@ -1,13 +1,13 @@
 #pragma once
 
 #include "PlayerBox.h"
+#include "PlayerBoxSpecs.h"
 
 #include "iPlayerBoxDataController.h"
 #include "iPlayerBoxEditController.h"
 
 #include "../Time.h"
 #include "../PlayerID.h"
-#include "../PlayerBoxSpecs.h"
 #include "../PlayerState.h"
 #include "../SpriteType.h"
 #include "../CharacterType.h"

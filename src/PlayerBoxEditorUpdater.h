@@ -9,7 +9,7 @@
 #include "CamController.h"
 #include "PlayerDebugController.h"
 #include "InputController.h"
-#include "PlayerBoxEditController.h"
+#include "Collisions/PlayerBoxEditController.h"
 
 #include "iUpdaterObj.h"
 

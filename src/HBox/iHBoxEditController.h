@@ -2,9 +2,9 @@
 
 #include "AABB_Set.h"
 #include "HBoxType.h"
+#include "Loaded_HB_Data.h"
 
 #include "../ControllerT.h"
-#include "../Loaded_HB_Data.h"
 #include "../PlayerID.h"
 
 namespace RB::HBox

@@ -1,7 +1,8 @@
 #pragma once
 
+#include "Loaded_HB_Data.h"
+
 #include "../ControllerT.h"
-#include "../Loaded_HB_Data.h"
 
 namespace RB::HBox
 {

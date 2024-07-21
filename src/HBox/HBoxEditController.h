@@ -9,15 +9,15 @@
 #include "iHBMenuController.h"
 #include "iHBoxEditController.h"
 #include "iTargetBoxDataController.h"
+#include "Loaded_HB_Data.h"
 
 #include "../Time.h"
 #include "../Vector2.h"
 #include "../PlayerID.h"
 #include "../PlayerState.h"
 #include "../CurrentUpdater.h"
-#include "../Loaded_HB_Data.h"
-#include "../CircleRenderer.h"
 
+#include "../CircleRenderer.h"
 #include "../iUpdater.h"
 #include "../iPlayerController.h"
 #include "../iPlayerAnimationController.h"

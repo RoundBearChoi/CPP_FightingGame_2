@@ -4,8 +4,8 @@
 
 #include "HBoxType.h"
 #include "HBoxLoader.h"
+#include "Loaded_HB_Data.h"
 
-#include "../Loaded_HB_Data.h"
 #include "../SpriteType.h"
 
 namespace RB::HBox

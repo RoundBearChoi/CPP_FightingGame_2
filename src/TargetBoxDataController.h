@@ -3,7 +3,7 @@
 #include <string>
 
 #include "HBox/iTargetBoxDataController.h"
-#include "Loaded_HB_Data.h"
+#include "HBox/Loaded_HB_Data.h"
 #include "HBox/HB_Container.h"
 #include "SpriteType.h"
 

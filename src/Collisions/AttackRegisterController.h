@@ -12,7 +12,7 @@
 #include "../Collisions/iAttackSpecsController.h"
 #include "../iAnimationObj.h"
 #include "../iVFXAnimationController.h"
-#include "../iGeneralHitStopController.h"
+#include "../Collisions/iGeneralHitStopController.h"
 #include "../Collisions/iAttackRegisterController.h"
 
 namespace RB::Collisions

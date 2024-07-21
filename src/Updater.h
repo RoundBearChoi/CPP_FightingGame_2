@@ -12,7 +12,7 @@
 
 #include "iUpdater.h"
 #include "iUpdaterObj.h"
-#include "iGeneralHitStopController.h"
+#include "Collisions/iGeneralHitStopController.h"
 
 namespace RB::Updaters
 {

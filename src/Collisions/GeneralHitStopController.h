@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../iGeneralHitStopController.h"
+#include "../Collisions/iGeneralHitStopController.h"
 
 namespace RB::Collisions
 {

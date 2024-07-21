@@ -14,7 +14,7 @@
 #include "CamController.h"
 #include "HBox/TargetBoxDataController.h"
 #include "HBox/AttackBoxDataController.h"
-#include "AttackRegisterController.h"
+#include "Collisions/AttackRegisterController.h"
 #include "GeneralHitStopController.h"
 #include "AttackSpecsController.h"
 #include "VFXAnimationController.h"

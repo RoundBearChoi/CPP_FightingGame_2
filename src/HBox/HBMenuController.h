@@ -1,11 +1,12 @@
 #pragma once
 #include <string>
 
+#include "Loaded_HB_Data.h"
+
 #include "iAttackBoxDataController.h"
 #include "iHBMenuController.h"
 #include "iHBoxEditController.h"
 #include "iTargetBoxDataController.h"
-#include "Loaded_HB_Data.h"
 
 #include "../SpriteType.h"
 #include "../PlayerState.h"

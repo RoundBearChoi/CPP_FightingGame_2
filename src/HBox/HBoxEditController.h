@@ -4,12 +4,12 @@
 
 #include "HBoxType.h"
 #include "AABB_Set.h"
+#include "Loaded_HB_Data.h"
 
 #include "iAttackBoxDataController.h"
 #include "iHBMenuController.h"
 #include "iHBoxEditController.h"
 #include "iTargetBoxDataController.h"
-#include "Loaded_HB_Data.h"
 
 #include "../Time.h"
 #include "../Vector2.h"

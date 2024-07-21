@@ -4,9 +4,9 @@
 #include <cassert>
 
 #include "HBoxType.h"
+#include "Loaded_HB_Data.h"
 
 #include "../AABB.h"
-#include "Loaded_HB_Data.h"
 
 namespace RB::HBox
 {

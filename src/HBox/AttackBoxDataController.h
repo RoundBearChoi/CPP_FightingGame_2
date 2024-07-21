@@ -3,8 +3,9 @@
 #include <string>
 
 #include "HB_Container.h"
-#include "iAttackBoxDataController.h"
 #include "Loaded_HB_Data.h"
+
+#include "iAttackBoxDataController.h"
 
 #include "../SpriteType.h"
 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../SpriteType.h"
-
 #include "../iPlayer.h"
 
 namespace RB::Collisions

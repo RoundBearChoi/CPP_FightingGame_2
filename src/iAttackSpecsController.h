@@ -1,7 +1,7 @@
 #pragma once
 #include "ControllerT.h"
 
-#include "AttackSpecs.h"
+#include "Collisions/AttackSpecs.h"
 #include "SpriteType.h"
 
 namespace RB::Collisions

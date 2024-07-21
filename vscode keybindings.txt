@@ -3,5 +3,9 @@
         "key": "ctrl+shift+b",
         "command": "workbench.action.tasks.runTask",
         "args": "run exe"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "workbench.action.closeAllEditors"
     }
 ]

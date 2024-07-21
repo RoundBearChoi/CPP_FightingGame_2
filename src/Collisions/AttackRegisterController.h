@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "../SpriteType.h"
-#include "../AttackSpecs.h"
+#include "../Collisions/AttackSpecs.h"
 #include "../RenderScaleMultiplierObj.h"
 
 #include "../P0_Wince.h" //temp

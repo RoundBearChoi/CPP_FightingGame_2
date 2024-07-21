@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SpriteType.h"
-#include "AttackStrengthType.h"
+#include "../SpriteType.h"
+#include "../AttackStrengthType.h"
 
 namespace RB::Collisions
 {

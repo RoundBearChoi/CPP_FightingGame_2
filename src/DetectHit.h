@@ -3,7 +3,7 @@
 #include <string>
 
 #include "SpriteType.h"
-#include "AttackSpecs.h"
+#include "Collisions/AttackSpecs.h"
 #include "PlayerState.h"
 #include "CollisionResult.h"
 #include "StateComponentBase.h"

@@ -11,7 +11,7 @@
 #include "iPlayer.h"
 #include "iPlayerController.h"
 #include "iPlayerAnimationController.h"
-#include "iTargetBoxDataController.h"
+#include "HBox/iTargetBoxDataController.h"
 #include "HBox/iAttackBoxDataController.h"
 #include "iAttackRegisterController.h"
 #include "iAttackSpecsController.h"

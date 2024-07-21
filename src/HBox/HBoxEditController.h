@@ -8,6 +8,7 @@
 #include "iAttackBoxDataController.h"
 #include "iHBMenuController.h"
 #include "iHBoxEditController.h"
+#include "iTargetBoxDataController.h"
 
 #include "../Time.h"
 #include "../Vector2.h"
@@ -20,7 +21,6 @@
 #include "../iUpdater.h"
 #include "../iPlayerController.h"
 #include "../iPlayerAnimationController.h"
-#include "../iTargetBoxDataController.h"
 #include "../iCamController.h"
 
 namespace RB::HBox

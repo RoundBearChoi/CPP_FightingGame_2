@@ -4,6 +4,7 @@
 #include "iAttackBoxDataController.h"
 #include "iHBMenuController.h"
 #include "iHBoxEditController.h"
+#include "iTargetBoxDataController.h"
 
 #include "../SpriteType.h"
 #include "../PlayerState.h"
@@ -15,7 +16,6 @@
 
 #include "../iPlayerController.h"
 #include "../iPlayerAnimationController.h"
-#include "../iTargetBoxDataController.h"
 
 namespace RB::HBox
 {

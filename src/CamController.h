@@ -1,9 +1,10 @@
 #pragma once
+
 #include "CamObj.h"
-#include "iCamObj.h"
-#include "iCamController.h"
 #include "FollowPlayers.h"
 #include "ZoomOnPlayers.h"
+
+#include "iCamController.h"
 
 namespace RB::Cam
 {

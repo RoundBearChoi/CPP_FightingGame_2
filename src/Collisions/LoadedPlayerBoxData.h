@@ -2,7 +2,8 @@
 
 #include <vector>
 
-#include "../PlayerBox.h"
+#include "PlayerBox.h"
+
 #include "../PlayerBoxSpecs.h"
 #include "../CharacterType.h"
 

@@ -2,7 +2,7 @@
 
 #include "Time.h"
 #include "PlayerID.h"
-#include "PlayerBox.h"
+#include "Collisions/PlayerBox.h"
 #include "PlayerBoxSpecs.h"
 #include "PlayerState.h"
 #include "SpriteType.h"

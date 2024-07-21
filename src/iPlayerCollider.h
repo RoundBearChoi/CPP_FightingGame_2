@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Collisions/AABB.h"
-#include "PlayerBox.h"
+#include "Collisions/PlayerBox.h"
 
 namespace RB::Players
 {

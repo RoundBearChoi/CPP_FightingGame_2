@@ -6,7 +6,7 @@
 #include "HBoxType.h"
 #include "Loaded_HB_Data.h"
 
-#include "../AABB.h"
+#include "../Collisions/AABB.h"
 
 namespace RB::HBox
 {

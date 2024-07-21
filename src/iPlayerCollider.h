@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AABB.h"
+#include "Collisions/AABB.h"
 #include "PlayerBox.h"
 
 namespace RB::Players

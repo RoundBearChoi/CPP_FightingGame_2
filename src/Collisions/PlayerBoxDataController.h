@@ -1,8 +1,9 @@
 #pragma once
 
+#include "PlayerBoxSpecsLoader.h"
+
 #include "iPlayerBoxDataController.h"
 
-#include "../PlayerBoxSpecsLoader.h"
 #include "../CharacterType.h"
 #include "../SpriteType.h"
 #include "../CharacterType.h"

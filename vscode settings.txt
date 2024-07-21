@@ -11,5 +11,6 @@
     "workbench.iconTheme": "Monokai Classic Icons",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "explorer.confirmDragAndDrop": false,
-    "C_Cpp.intelliSenseEngine": "disabled"
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "editor.cursorStyle": "block"
 }

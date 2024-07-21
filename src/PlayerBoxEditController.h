@@ -15,7 +15,7 @@
 #include "Collisions/iPlayerBoxDataController.h"
 #include "iPlayerAnimationController.h"
 #include "iPlayerDebugController.h"
-#include "iPlayerBoxEditController.h"
+#include "Collisions/iPlayerBoxEditController.h"
 
 namespace RB::Collisions
 {

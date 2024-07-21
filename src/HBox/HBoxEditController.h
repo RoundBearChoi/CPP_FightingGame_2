@@ -4,8 +4,10 @@
 
 #include "HBoxType.h"
 #include "AABB_Set.h"
+
 #include "iAttackBoxDataController.h"
 #include "iHBMenuController.h"
+#include "iHBoxEditController.h"
 
 #include "../Time.h"
 #include "../Vector2.h"
@@ -20,7 +22,6 @@
 #include "../iPlayerAnimationController.h"
 #include "../iTargetBoxDataController.h"
 #include "../iCamController.h"
-#include "../iHBoxEditController.h"
 
 namespace RB::HBox
 {

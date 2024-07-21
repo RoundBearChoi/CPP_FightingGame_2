@@ -1,10 +1,11 @@
 #pragma once
-#include "ControllerT.h"
 
-#include "Loaded_HB_Data.h"
-#include "HBox/AABB_Set.h"
-#include "HBox/HBoxType.h"
-#include "PlayerID.h"
+#include "AABB_Set.h"
+#include "HBoxType.h"
+
+#include "../ControllerT.h"
+#include "../Loaded_HB_Data.h"
+#include "../PlayerID.h"
 
 namespace RB::HBox
 {

@@ -13,7 +13,7 @@
 #include "iPlayerAnimationController.h"
 #include "HBox/iTargetBoxDataController.h"
 #include "HBox/iAttackBoxDataController.h"
-#include "iAttackRegisterController.h"
+#include "Collisions/iAttackRegisterController.h"
 #include "iAttackSpecsController.h"
 
 #include "P0_Wince.h"

@@ -13,7 +13,7 @@
 #include "../iAnimationObj.h"
 #include "../iVFXAnimationController.h"
 #include "../iGeneralHitStopController.h"
-#include "../iAttackRegisterController.h"
+#include "../Collisions/iAttackRegisterController.h"
 
 namespace RB::Collisions
 {

@@ -12,7 +12,7 @@
 #include "InputController.h"
 #include "SpecialMovesController.h"
 #include "CamController.h"
-#include "TargetBoxDataController.h"
+#include "HBox/TargetBoxDataController.h"
 #include "HBox/AttackBoxDataController.h"
 #include "AttackRegisterController.h"
 #include "GeneralHitStopController.h"

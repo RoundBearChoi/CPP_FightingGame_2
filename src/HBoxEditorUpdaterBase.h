@@ -12,7 +12,7 @@
 #include "PlayerAnimationController.h"
 #include "PlayerBoxDataController.h"
 #include "HBox/HBMenuController.h"
-#include "TargetBoxDataController.h"
+#include "HBox/TargetBoxDataController.h"
 #include "HBox/AttackBoxDataController.h"
 #include "HBox/HBoxEditController.h"
 #include "SpriteTypeLoader.h"

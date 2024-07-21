@@ -10,7 +10,7 @@
 #include "PlayerController.h"
 #include "PlayerDebugController.h"
 #include "PlayerAnimationController.h"
-#include "PlayerBoxDataController.h"
+#include "Collisions/PlayerBoxDataController.h"
 #include "HBox/HBMenuController.h"
 #include "HBox/TargetBoxDataController.h"
 #include "HBox/AttackBoxDataController.h"

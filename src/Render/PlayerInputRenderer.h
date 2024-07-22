@@ -1,13 +1,13 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "Vector2.h"
-#include "SpriteContainer.h"
-#include "SpriteType.h"
+#include "../Vector2.h"
+#include "../SpriteContainer.h"
+#include "../SpriteType.h"
 
-#include "iPlayerController.h"
-#include "iInputController.h"
+#include "../iPlayerController.h"
+#include "../iInputController.h"
 
 namespace RB::Render
 {

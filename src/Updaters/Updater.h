@@ -3,16 +3,17 @@
 #include <iostream>
 #include <assert.h>
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "Updaters/GameplayUpdater.h"
-#include "Updaters/PlayerBoxEditorUpdater.h"
-#include "Updaters/AttackBoxEditorUpdater.h"
-#include "Updaters/TargetBoxEditorUpdater.h"
+#include "GameplayUpdater.h"
+#include "PlayerBoxEditorUpdater.h"
+#include "AttackBoxEditorUpdater.h"
+#include "TargetBoxEditorUpdater.h"
 
-#include "Updaters/iUpdater.h"
-#include "Updaters/iUpdaterObj.h"
-#include "Collisions/iGeneralHitStopController.h"
+#include "iUpdater.h"
+#include "iUpdaterObj.h"
+
+#include "../Collisions/iGeneralHitStopController.h"
 
 namespace RB::Updaters
 {

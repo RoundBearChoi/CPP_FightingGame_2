@@ -4,7 +4,7 @@
 
 #include "Vector2.h"
 #include "GameSettings.h"
-#include "LineRenderer.h"
+#include "Render/LineRenderer.h"
 #include "SpriteContainer.h"
 #include "RenderLayerType.h"
 #include "PlayerInputRenderer.h"

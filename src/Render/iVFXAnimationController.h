@@ -1,11 +1,10 @@
 #pragma once
 
-#include "ControllerT.h"
+#include "iAnimationObj.h"
 
-#include "Vector2.h"
-#include "SpriteType.h"
-
-#include "Render/iAnimationObj.h"
+#include "../ControllerT.h"
+#include "../Vector2.h"
+#include "../SpriteType.h"
 
 namespace RB::Render
 {

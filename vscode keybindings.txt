@@ -7,5 +7,32 @@
     {
         "key": "ctrl+shift+c",
         "command": "workbench.action.closeAllEditors"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+oem_5",
+        "command": "workbench.action.closePanel"
+    },
+    {
+        "key": "ctrl+oem_5",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "shift+f12",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "f12",
+        "command": "editor.action.revealDefinition"
     }
 ]

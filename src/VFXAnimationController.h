@@ -4,7 +4,7 @@
 #include "Render/AnimationObj.h"
 #include "Render/AnimationContainer.h"
 
-#include "iVFXAnimationController.h"
+#include "Render/iVFXAnimationController.h"
 
 namespace RB::Render
 {

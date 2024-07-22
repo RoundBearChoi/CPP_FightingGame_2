@@ -17,7 +17,7 @@
 #include "../PlayerState.h"
 #include "../CurrentUpdater.h"
 
-#include "../CircleRenderer.h"
+#include "../Render/CircleRenderer.h"
 #include "../iUpdater.h"
 #include "../iPlayerController.h"
 #include "../iPlayerAnimationController.h"

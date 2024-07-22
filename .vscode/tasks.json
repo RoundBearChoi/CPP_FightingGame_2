@@ -32,8 +32,7 @@
             },
             "problemMatcher": {
                 "base": "$gcc",
-                "source": "gcc",
-                "fileLocation": ["relative", "${workspaceFolder}"],
+                "fileLocation": ["absolute"],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 1,

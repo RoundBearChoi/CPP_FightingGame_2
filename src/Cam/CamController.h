@@ -1,6 +1,7 @@
 #pragma once
 
-#include "../CamObj.h"
+#include "CamObj.h"
+
 #include "../FollowPlayers.h"
 #include "../ZoomOnPlayers.h"
 

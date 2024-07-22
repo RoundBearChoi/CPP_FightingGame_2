@@ -10,7 +10,7 @@
 #include "Render/AnimationContainer.h"
 
 #include "Render/iAnimationObj.h"
-#include "iPlayerAnimationController.h"
+#include "Render/iPlayerAnimationController.h"
 #include "iPlayerController.h"
 
 namespace RB::Render

@@ -20,7 +20,7 @@
 #include "../Render/CircleRenderer.h"
 #include "../iUpdater.h"
 #include "../iPlayerController.h"
-#include "../iPlayerAnimationController.h"
+#include "../Render/iPlayerAnimationController.h"
 #include "../iCamController.h"
 
 namespace RB::HBox

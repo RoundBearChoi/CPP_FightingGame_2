@@ -4,7 +4,7 @@
 #include "SpriteType.h"
 #include "GetCurrentSpriteType.h"
 
-#include "iPlayerAnimationController.h"
+#include "Render/iPlayerAnimationController.h"
 #include "Render/iAnimationObj.h"
 
 namespace RB::Sprites

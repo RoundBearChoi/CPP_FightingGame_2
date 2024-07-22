@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ControllerT.h"
+#include "iAnimationObj.h"
 
-#include "Render/iAnimationObj.h"
+#include "../ControllerT.h"
 
 namespace RB::Render
 {

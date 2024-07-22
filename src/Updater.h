@@ -7,7 +7,7 @@
 
 #include "GameplayUpdater.h"
 #include "PlayerBoxEditorUpdater.h"
-#include "AttackBoxEditorUpdater.h"
+#include "Updaters/AttackBoxEditorUpdater.h"
 #include "TargetBoxEditorUpdater.h"
 
 #include "iUpdater.h"

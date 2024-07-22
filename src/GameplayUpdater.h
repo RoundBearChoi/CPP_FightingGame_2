@@ -17,7 +17,7 @@
 #include "Collisions/AttackRegisterController.h"
 #include "Collisions/GeneralHitStopController.h"
 #include "Collisions/AttackSpecsController.h"
-#include "VFXAnimationController.h"
+#include "Render/VFXAnimationController.h"
 
 #include "iUpdaterObj.h"
 

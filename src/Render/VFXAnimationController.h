@@ -1,10 +1,11 @@
 #pragma once
 
-#include "Vector2.h"
-#include "Render/AnimationObj.h"
-#include "Render/AnimationContainer.h"
+#include "AnimationObj.h"
+#include "AnimationContainer.h"
 
-#include "Render/iVFXAnimationController.h"
+#include "iVFXAnimationController.h"
+
+#include "../Vector2.h"
 
 namespace RB::Render
 {

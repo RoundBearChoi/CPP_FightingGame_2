@@ -4,10 +4,11 @@
 
 #include "../olcPixelGameEngine.h"
 
+#include "AnimationSpecs.h"
+
 #include "../Vector2.h"
 #include "../FlipQuad.h"
 #include "../RenderSettings.h"
-#include "../AnimationSpecs.h"
 #include "../GetQuadOnPivot.h"
 
 #include "../iCamController.h"

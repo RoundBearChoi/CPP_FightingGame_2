@@ -2,7 +2,7 @@
 
 #include "iPlayer.h"
 
-#include "AnimationSpecs.h"
+#include "Render/AnimationSpecs.h"
 #include "RenderScaleMultiplierObj.h"
 
 namespace RB::Render

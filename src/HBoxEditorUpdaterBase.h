@@ -8,7 +8,7 @@
 #include "InputController.h"
 #include "CamController.h"
 #include "PlayerController.h"
-#include "PlayerDebugController.h"
+#include "Render/PlayerDebugController.h"
 #include "Render/PlayerAnimationController.h"
 #include "Collisions/PlayerBoxDataController.h"
 #include "HBox/HBMenuController.h"

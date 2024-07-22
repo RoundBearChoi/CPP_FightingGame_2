@@ -1,19 +1,21 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "Vector2.h"
-#include "GameSettings.h"
-#include "Render/LineRenderer.h"
-#include "SpriteContainer.h"
-#include "RenderLayerType.h"
-#include "PlayerInputRenderer.h"
-#include "PlayerPositionRenderer.h"
-#include "Render/PlayerBoxRenderer.h"
-#include "PlayerHBoxRenderer.h"
+#include "LineRenderer.h"
+#include "PlayerBoxRenderer.h"
 
-#include "Render/iPlayerDebugController.h"
-#include "iCamController.h"
+#include "iPlayerDebugController.h"
+
+#include "../Vector2.h"
+#include "../GameSettings.h"
+#include "../SpriteContainer.h"
+#include "../RenderLayerType.h"
+#include "../PlayerInputRenderer.h"
+#include "../PlayerPositionRenderer.h"
+#include "../PlayerHBoxRenderer.h"
+
+#include "../iCamController.h"
 
 namespace RB::Render
 {

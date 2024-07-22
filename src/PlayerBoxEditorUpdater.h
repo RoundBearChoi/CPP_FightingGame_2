@@ -7,7 +7,7 @@
 #include "Render/PlayerAnimationController.h"
 #include "Collisions/PlayerBoxDataController.h"
 #include "CamController.h"
-#include "PlayerDebugController.h"
+#include "Render/PlayerDebugController.h"
 #include "InputController.h"
 #include "Collisions/PlayerBoxEditController.h"
 

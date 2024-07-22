@@ -1,5 +1,7 @@
 #pragma once
 
+#include "iUpdaterObj.h"
+
 #include "../Vector2.h"
 #include "../Player.h"
 
@@ -18,8 +20,6 @@
 #include "../Collisions/GeneralHitStopController.h"
 #include "../Collisions/AttackSpecsController.h"
 #include "../Render/VFXAnimationController.h"
-
-#include "../iUpdaterObj.h"
 
 #include "../P0_Idle.h"
 

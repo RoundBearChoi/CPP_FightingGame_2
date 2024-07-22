@@ -11,7 +11,7 @@
 #include "InputController.h"
 #include "Collisions/PlayerBoxEditController.h"
 
-#include "iUpdaterObj.h"
+#include "Updaters/iUpdaterObj.h"
 
 #include "P0_Dummy.h"
 

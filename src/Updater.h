@@ -11,7 +11,7 @@
 #include "TargetBoxEditorUpdater.h"
 
 #include "Updaters/iUpdater.h"
-#include "iUpdaterObj.h"
+#include "Updaters/iUpdaterObj.h"
 #include "Collisions/iGeneralHitStopController.h"
 
 namespace RB::Updaters

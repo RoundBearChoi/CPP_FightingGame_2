@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "iUpdaterObj.h"
+
 #include "../Vector2.h"
 #include "../Player.h"
 #include "../HBox/HBoxType.h"
@@ -17,8 +19,6 @@
 #include "../HBox/AttackBoxDataController.h"
 #include "../HBox/HBoxEditController.h"
 #include "../SpriteTypeLoader.h"
-
-#include "../iUpdaterObj.h"
 
 #include "../P0_Dummy.h"
 

@@ -2,16 +2,17 @@
 
 #include <cassert>
 
-#include "JParser.h"
-#include "SpriteType.h"
-#include "Render/AnimationObj.h"
-#include "PlayerState.h"
-#include "RenderLayerType.h"
-#include "Render/AnimationContainer.h"
+#include "AnimationObj.h"
+#include "AnimationContainer.h"
+#include "iAnimationObj.h"
+#include "iPlayerAnimationController.h"
 
-#include "Render/iAnimationObj.h"
-#include "Render/iPlayerAnimationController.h"
-#include "iPlayerController.h"
+#include "../JParser.h"
+#include "../SpriteType.h"
+#include "../PlayerState.h"
+#include "../RenderLayerType.h"
+
+#include "../iPlayerController.h"
 
 namespace RB::Render
 {

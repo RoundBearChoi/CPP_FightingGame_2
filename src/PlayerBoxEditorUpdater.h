@@ -4,7 +4,7 @@
 #include "Player.h"
 
 #include "PlayerController.h"
-#include "PlayerAnimationController.h"
+#include "Render/PlayerAnimationController.h"
 #include "Collisions/PlayerBoxDataController.h"
 #include "CamController.h"
 #include "PlayerDebugController.h"

@@ -6,7 +6,7 @@
 #include "PlayerController.h"
 #include "BackgroundController.h"
 #include "PlayerDebugController.h"
-#include "PlayerAnimationController.h"
+#include "Render/PlayerAnimationController.h"
 #include "Collisions/PlayerBoxDataController.h"
 #include "SpecsController.h"
 #include "InputController.h"

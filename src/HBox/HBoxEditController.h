@@ -15,7 +15,7 @@
 #include "../Vector2.h"
 #include "../PlayerID.h"
 #include "../PlayerState.h"
-#include "../CurrentUpdater.h"
+#include "../Updaters/CurrentUpdater.h"
 
 #include "../Render/CircleRenderer.h"
 #include "../iUpdater.h"

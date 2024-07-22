@@ -13,7 +13,7 @@
 #include "RenderTimer.h"
 #include "DisplaySize.h"
 #include "Render/RenderLayerType.h"
-#include "CurrentUpdater.h"
+#include "Updaters/CurrentUpdater.h"
 
 namespace RB
 {

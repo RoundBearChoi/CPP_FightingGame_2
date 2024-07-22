@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../HBoxEditorUpdaterBase.h"
+#include "HBoxEditorUpdaterBase.h"
 
 namespace RB::Updaters
 {

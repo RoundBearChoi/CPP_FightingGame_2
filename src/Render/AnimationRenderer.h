@@ -5,10 +5,10 @@
 #include "../olcPixelGameEngine.h"
 
 #include "AnimationSpecs.h"
+#include "RenderSettings.h"
 
 #include "../Vector2.h"
 #include "../FlipQuad.h"
-#include "../RenderSettings.h"
 #include "../GetQuadOnPivot.h"
 
 #include "../iCamController.h"

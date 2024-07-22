@@ -9,7 +9,7 @@
 #include "RenderLayerType.h"
 #include "PlayerInputRenderer.h"
 #include "PlayerPositionRenderer.h"
-#include "PlayerBoxRenderer.h"
+#include "Render/PlayerBoxRenderer.h"
 #include "PlayerHBoxRenderer.h"
 
 #include "Render/iPlayerDebugController.h"

@@ -26,21 +26,10 @@
                 "${workspaceFolder}/build"
             ],
             "dependsOn": ["CMake Configure"],
-            "group": {
+            "group":
+            {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": {
-                "base": "$gcc",
-                "fileLocation": ["absolute"],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
             }
         },
 
@@ -50,7 +39,8 @@
             "type": "shell",
             "command": "cd ${workspaceFolder}/build && CPPFG2.exe",
             "dependsOn": ["CMake Build"],
-            "group": {
+            "group":
+            {
                 "kind": "test",
                 "isDefault": true
             }

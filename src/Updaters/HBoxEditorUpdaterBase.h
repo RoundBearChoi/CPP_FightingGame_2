@@ -9,7 +9,7 @@
 #include "../HBox/HBoxType.h"
 
 #include "../InputController.h"
-#include "../CamController.h"
+#include "../Cam/CamController.h"
 #include "../PlayerController.h"
 #include "../Render/PlayerDebugController.h"
 #include "../Render/PlayerAnimationController.h"

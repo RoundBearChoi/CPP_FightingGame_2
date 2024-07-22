@@ -13,7 +13,7 @@
 #include "../SpecsController.h"
 #include "../InputController.h"
 #include "../SpecialMovesController.h"
-#include "../CamController.h"
+#include "../Cam/CamController.h"
 #include "../HBox/TargetBoxDataController.h"
 #include "../HBox/AttackBoxDataController.h"
 #include "../Collisions/AttackRegisterController.h"

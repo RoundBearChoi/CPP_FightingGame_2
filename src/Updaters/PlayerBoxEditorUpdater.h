@@ -8,7 +8,7 @@
 #include "../PlayerController.h"
 #include "../Render/PlayerAnimationController.h"
 #include "../Collisions/PlayerBoxDataController.h"
-#include "../CamController.h"
+#include "../Cam/CamController.h"
 #include "../Render/PlayerDebugController.h"
 #include "../InputController.h"
 #include "../Collisions/PlayerBoxEditController.h"

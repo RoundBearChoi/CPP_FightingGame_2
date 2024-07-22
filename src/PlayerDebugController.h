@@ -12,7 +12,7 @@
 #include "PlayerBoxRenderer.h"
 #include "PlayerHBoxRenderer.h"
 
-#include "iPlayerDebugController.h"
+#include "Render/iPlayerDebugController.h"
 #include "iCamController.h"
 
 namespace RB::Render

@@ -4,7 +4,7 @@
 
 #include "JParser.h"
 #include "SpriteType.h"
-#include "AnimationObj.h"
+#include "Render/AnimationObj.h"
 #include "PlayerState.h"
 #include "RenderLayerType.h"
 #include "Render/AnimationContainer.h"

@@ -2,13 +2,13 @@
 
 #include <vector>
 
-#include "Vector2.h"
-#include "SkipFixedUpdates.h"
-#include "AnimationRenderer.h"
-#include "RenderScaleMultiplierObj.h"
+#include "../Vector2.h"
+#include "../SkipFixedUpdates.h"
+#include "../AnimationRenderer.h"
+#include "../RenderScaleMultiplierObj.h"
 
-#include "iAnimationObj.h"
-#include "iPlayer.h"
+#include "../iAnimationObj.h"
+#include "../iPlayer.h"
 
 namespace RB::Render
 {

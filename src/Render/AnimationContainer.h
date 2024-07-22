@@ -3,7 +3,7 @@
 #include <string>
 
 #include "../JParser.h"
-#include "../AnimationObj.h"
+#include "../Render/AnimationObj.h"
 #include "../SpriteContainer.h"
 #include "../AnimationRenderer.h"
 

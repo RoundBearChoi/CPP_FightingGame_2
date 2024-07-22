@@ -1,12 +1,13 @@
 #pragma once
 
-#include "Collisions/AABB.h"
-#include "Vector2.h"
-#include "PlayerID.h"
-#include "SpriteContainer.h"
-#include "Render/LineRenderer.h"
+#include "LineRenderer.h"
 
-#include "iPlayerController.h"
+#include "../Collisions/AABB.h"
+#include "../Vector2.h"
+#include "../PlayerID.h"
+#include "../SpriteContainer.h"
+
+#include "../iPlayerController.h"
 
 namespace RB::Render
 {

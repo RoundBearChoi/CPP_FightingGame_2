@@ -8,7 +8,7 @@
 #include "iAnimationObj.h"
 
 #include "../Vector2.h"
-#include "../SkipFixedUpdates.h"
+#include "../Updaters/SkipFixedUpdates.h"
 
 #include "../iPlayer.h"
 

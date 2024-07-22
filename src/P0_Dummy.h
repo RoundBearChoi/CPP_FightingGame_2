@@ -2,7 +2,7 @@
 
 #include "PlayerState.h"
 #include "SpriteType.h"
-#include "ManualAnimationUpdater.h"
+#include "Render/ManualAnimationUpdater.h"
 
 #include "iPlayerController.h"
 

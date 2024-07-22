@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "BackgroundObj.h"
-#include "RenderLayerType.h"
+#include "Render/RenderLayerType.h"
 
 #include "iBackgroundController.h"
 

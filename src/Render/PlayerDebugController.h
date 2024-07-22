@@ -7,13 +7,13 @@
 #include "PlayerHBoxRenderer.h"
 #include "PlayerInputRenderer.h"
 #include "PlayerPositionRenderer.h"
+#include "RenderLayerType.h"
 
 #include "iPlayerDebugController.h"
 
 #include "../Vector2.h"
 #include "../GameSettings.h"
 #include "../SpriteContainer.h"
-#include "../RenderLayerType.h"
 
 #include "../iCamController.h"
 

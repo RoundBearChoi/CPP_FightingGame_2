@@ -2,9 +2,9 @@
 
 #include <cstdint>
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "GameSettings.h"
+#include "../GameSettings.h"
 
 namespace RB::Render
 {

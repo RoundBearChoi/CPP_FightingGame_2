@@ -4,13 +4,14 @@
 
 #include "AnimationObj.h"
 #include "AnimationContainer.h"
+#include "RenderLayerType.h"
+
 #include "iAnimationObj.h"
 #include "iPlayerAnimationController.h"
 
 #include "../JParser.h"
 #include "../SpriteType.h"
 #include "../PlayerState.h"
-#include "../RenderLayerType.h"
 
 #include "../iPlayerController.h"
 

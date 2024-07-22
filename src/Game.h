@@ -12,7 +12,7 @@
 #include "FixedTimer.h"
 #include "RenderTimer.h"
 #include "DisplaySize.h"
-#include "RenderLayerType.h"
+#include "Render/RenderLayerType.h"
 #include "CurrentUpdater.h"
 
 namespace RB

@@ -1,10 +1,11 @@
 #pragma once
 
-#include "Vector2.h"
-#include "Ease.h"
+#include "iCamController.h"
 
-#include "iPlayerController.h"
-#include "Cam/iCamController.h"
+#include "../Vector2.h"
+#include "../Ease.h"
+
+#include "../iPlayerController.h"
 
 namespace RB::Cam
 {

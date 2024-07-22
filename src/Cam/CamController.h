@@ -2,10 +2,9 @@
 
 #include "CamObj.h"
 #include "FollowPlayers.h"
+#include "ZoomOnPlayers.h"
 
 #include "iCamController.h"
-
-#include "../ZoomOnPlayers.h"
 
 namespace RB::Cam
 {

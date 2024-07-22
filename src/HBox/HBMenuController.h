@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 #include "Loaded_HB_Data.h"
@@ -10,7 +11,7 @@
 
 #include "../SpriteType.h"
 #include "../PlayerState.h"
-#include "../Notification.h"
+#include "../Render/Notification.h"
 
 #include "../GetCurrentSpriteType.h"
 #include "../GetCurrentAnimationFrame.h"

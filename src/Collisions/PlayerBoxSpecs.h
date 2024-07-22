@@ -6,7 +6,7 @@
 
 #include "../Selector.h"
 #include "../SpriteType.h"
-#include "../Notification.h"
+#include "../Render/Notification.h"
 
 #include "../iSelector.h"
 

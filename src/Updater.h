@@ -10,7 +10,7 @@
 #include "Updaters/AttackBoxEditorUpdater.h"
 #include "TargetBoxEditorUpdater.h"
 
-#include "iUpdater.h"
+#include "Updaters/iUpdater.h"
 #include "iUpdaterObj.h"
 #include "Collisions/iGeneralHitStopController.h"
 

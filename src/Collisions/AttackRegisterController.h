@@ -9,7 +9,7 @@
 #include "iGeneralHitStopController.h"
 
 #include "../SpriteType.h"
-#include "../RenderScaleMultiplierObj.h"
+#include "../Render/RenderScaleMultiplierObj.h"
 
 #include "../P0_Wince.h" //temp
 #include "../P0_Strong_Wince.h" //temp

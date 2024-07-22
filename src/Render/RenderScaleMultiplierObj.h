@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string>
 
-#include "RenderScaleMultiplierType.h"
+#include "iAnimationObj.h"
 
-#include "Render/iAnimationObj.h"
+#include "../RenderScaleMultiplierType.h"
 
 namespace RB::Render
 {

@@ -1,8 +1,7 @@
 #pragma once
 
 #include "AnimationSpecs.h"
-
-#include "../RenderScaleMultiplierObj.h"
+#include "RenderScaleMultiplierObj.h"
 
 #include "../iPlayer.h"
 

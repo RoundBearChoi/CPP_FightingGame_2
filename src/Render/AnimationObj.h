@@ -3,12 +3,12 @@
 #include <vector>
 
 #include "AnimationRenderer.h"
+#include "RenderScaleMultiplierObj.h"
 
 #include "iAnimationObj.h"
 
 #include "../Vector2.h"
 #include "../SkipFixedUpdates.h"
-#include "../RenderScaleMultiplierObj.h"
 
 #include "../iPlayer.h"
 

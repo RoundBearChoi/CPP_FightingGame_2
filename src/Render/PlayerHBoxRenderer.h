@@ -1,20 +1,21 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "Vector2.h"
-#include "SpriteContainer.h"
-#include "PlayerState.h"
+#include "iPlayerAnimationController.h"
 
-#include "HBox/Loaded_HB_Data.h"
-#include "HBox/AABB_Set.h"
-#include "HBox/HBoxType.h"
-#include "HBox/iAttackBoxDataController.h"
-#include "HBox/iTargetBoxDataController.h"
+#include "../Vector2.h"
+#include "../SpriteContainer.h"
+#include "../PlayerState.h"
 
-#include "iPlayer.h"
-#include "iPlayerController.h"
-#include "Render/iPlayerAnimationController.h"
+#include "../HBox/Loaded_HB_Data.h"
+#include "../HBox/AABB_Set.h"
+#include "../HBox/HBoxType.h"
+#include "../HBox/iAttackBoxDataController.h"
+#include "../HBox/iTargetBoxDataController.h"
+
+#include "../iPlayer.h"
+#include "../iPlayerController.h"
 
 namespace RB::Render
 {

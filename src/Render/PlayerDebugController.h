@@ -4,6 +4,7 @@
 
 #include "LineRenderer.h"
 #include "PlayerBoxRenderer.h"
+#include "PlayerHBoxRenderer.h"
 
 #include "iPlayerDebugController.h"
 
@@ -13,7 +14,6 @@
 #include "../RenderLayerType.h"
 #include "../PlayerInputRenderer.h"
 #include "../PlayerPositionRenderer.h"
-#include "../PlayerHBoxRenderer.h"
 
 #include "../iCamController.h"
 

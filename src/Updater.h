@@ -6,7 +6,7 @@
 #include "olcPixelGameEngine.h"
 
 #include "Updaters/GameplayUpdater.h"
-#include "PlayerBoxEditorUpdater.h"
+#include "Updaters/PlayerBoxEditorUpdater.h"
 #include "Updaters/AttackBoxEditorUpdater.h"
 #include "TargetBoxEditorUpdater.h"
 

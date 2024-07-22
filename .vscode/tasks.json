@@ -30,6 +30,11 @@
             {
                 "kind": "build",
                 "isDefault": true
+            },
+            "problemMatcher":
+            {
+                "base": "$gcc",
+                "fileLocation": "absolute"
             }
         },
 

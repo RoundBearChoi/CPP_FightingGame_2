@@ -8,7 +8,7 @@
 #include "SpriteLoader.h"
 #include "GetQuadOnPivot.h"
 
-#include "iCamController.h"
+#include "Cam/iCamController.h"
 
 namespace RB::Sprites
 {

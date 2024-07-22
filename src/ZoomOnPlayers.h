@@ -4,7 +4,7 @@
 #include "Ease.h"
 
 #include "iPlayerController.h"
-#include "iCamController.h"
+#include "Cam/iCamController.h"
 
 namespace RB::Cam
 {

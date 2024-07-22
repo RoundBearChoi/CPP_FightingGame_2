@@ -15,7 +15,7 @@
 #include "../GameSettings.h"
 #include "../SpriteContainer.h"
 
-#include "../iCamController.h"
+#include "../Cam/iCamController.h"
 
 namespace RB::Render
 {

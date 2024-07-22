@@ -21,7 +21,7 @@
 #include "../Updaters/iUpdater.h"
 #include "../iPlayerController.h"
 #include "../Render/iPlayerAnimationController.h"
-#include "../iCamController.h"
+#include "../Cam/iCamController.h"
 
 namespace RB::HBox
 {

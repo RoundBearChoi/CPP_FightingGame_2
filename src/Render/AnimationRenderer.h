@@ -11,7 +11,7 @@
 #include "../FlipQuad.h"
 #include "../GetQuadOnPivot.h"
 
-#include "../iCamController.h"
+#include "../Cam/iCamController.h"
 
 namespace RB::Render
 {

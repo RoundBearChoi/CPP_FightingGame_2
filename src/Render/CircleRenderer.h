@@ -4,7 +4,7 @@
 
 #include "../Vector2.h"
 
-#include "../iCamController.h"
+#include "../Cam/iCamController.h"
 
 namespace RB::Render
 {

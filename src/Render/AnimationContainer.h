@@ -5,9 +5,10 @@
 #include "AnimationObj.h"
 #include "AnimationRenderer.h"
 
+#include "iAnimationObj.h"
+
 #include "../JParser.h"
 #include "../SpriteContainer.h"
-#include "../iAnimationObj.h"
 
 namespace RB::Render
 {

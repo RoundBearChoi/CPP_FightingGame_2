@@ -9,7 +9,7 @@
 #include "RenderLayerType.h"
 #include "Render/AnimationContainer.h"
 
-#include "iAnimationObj.h"
+#include "Render/iAnimationObj.h"
 #include "iPlayerAnimationController.h"
 #include "iPlayerController.h"
 

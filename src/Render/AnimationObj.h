@@ -4,11 +4,12 @@
 
 #include "AnimationRenderer.h"
 
+#include "iAnimationObj.h"
+
 #include "../Vector2.h"
 #include "../SkipFixedUpdates.h"
 #include "../RenderScaleMultiplierObj.h"
 
-#include "../iAnimationObj.h"
 #include "../iPlayer.h"
 
 namespace RB::Render

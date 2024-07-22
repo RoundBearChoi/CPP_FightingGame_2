@@ -14,7 +14,7 @@
 #include "../P0_Wince.h" //temp
 #include "../P0_Strong_Wince.h" //temp
 
-#include "../iAnimationObj.h"
+#include "../Render/iAnimationObj.h"
 #include "../iVFXAnimationController.h"
 
 namespace RB::Collisions

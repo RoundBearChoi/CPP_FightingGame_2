@@ -1,9 +1,10 @@
 #pragma once
 
-#include "iPlayer.h"
+#include "AnimationSpecs.h"
 
-#include "Render/AnimationSpecs.h"
-#include "RenderScaleMultiplierObj.h"
+#include "../RenderScaleMultiplierObj.h"
+
+#include "../iPlayer.h"
 
 namespace RB::Render
 {

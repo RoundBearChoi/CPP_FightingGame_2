@@ -5,7 +5,7 @@
 
 #include "RenderScaleMultiplierType.h"
 
-#include "iAnimationObj.h"
+#include "Render/iAnimationObj.h"
 
 namespace RB::Render
 {

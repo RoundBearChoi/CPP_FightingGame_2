@@ -7,7 +7,7 @@
     "clangd.fallbackFlags": [
         "-std=c++17"
     ],
-    "workbench.colorTheme": "Gerry Dark",
+    "workbench.colorTheme": "Peacock (rainglow)",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "explorer.confirmDragAndDrop": false,
     "C_Cpp.intelliSenseEngine": "disabled",

@@ -2,7 +2,7 @@
 
 #include "PlayerStateComponents/DetectHit.h"
 #include "PlayerState.h"
-#include "MarkInitiallyFacingRight.h"
+#include "PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "TransitionOnAnimationEnd.h"
 
 #include "P0_Idle.h"

@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Players/PlayerState.h"
-#include "PlayerStateComponents/MoveUpOnJump.h"
-#include "PlayerStateComponents/MarkInitiallyFacingRight.h"
+#include "../Players/PlayerState.h"
+#include "../PlayerStateComponents/MoveUpOnJump.h"
+#include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
 
-#include "Players/iSpecsController.h"
+#include "../Players/iSpecsController.h"
 
-#include "P0_JumpUp_1.h"
+#include "../P0_JumpUp_1.h"
 
 namespace RB::Fighter_0_States
 {

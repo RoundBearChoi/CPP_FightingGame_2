@@ -9,7 +9,7 @@
 #include "Players/iSpecsController.h"
 
 #include "Fighter_0_States/P0_JumpForwardUp_0.h"
-#include "P0_JumpUp_0.h"
+#include "Fighter_0_States/P0_JumpUp_0.h"
 #include "Fighter_0_States/P0_Idle.h"
 #include "P0_WalkBack.h"
 

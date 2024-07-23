@@ -3,7 +3,7 @@
 #include "Players/PlayerState.h"
 #include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
 #include "PlayerStateComponents/TransitionToJumpForward.h"
-#include "TransitionToJumpUp.h"
+#include "PlayerStateComponents/TransitionToJumpUp.h"
 #include "PlayerStateComponents/TransitionOnInput.h"
 #include "TransitionToWalkForward.h"
 #include "TransitionToWalkBack.h"

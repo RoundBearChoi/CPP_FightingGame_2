@@ -2,7 +2,7 @@
 
 #include "Players/PlayerState.h"
 #include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
-#include "TransitionToJumpUp.h"
+#include "PlayerStateComponents/TransitionToJumpUp.h"
 #include "WhileMovingBack.h"
 
 #include "iSpecsController.h"

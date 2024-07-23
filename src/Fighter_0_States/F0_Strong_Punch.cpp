@@ -1,8 +1,8 @@
-#include "P0_Strong_Punch.h"
+#include "F0_Strong_Punch.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_Strong_Punch::OnEnter()
+	void F0_Strong_Punch::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_strong_punch;
 
@@ -13,17 +13,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void P0_Strong_Punch::OnExit()
+	void F0_Strong_Punch::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_Strong_Punch::OnUpdate()
+	void F0_Strong_Punch::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_Strong_Punch::OnFixedUpdate()
+	void F0_Strong_Punch::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

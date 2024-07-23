@@ -5,7 +5,7 @@
 #include "MoveBackOnPress.h"
 #include "MoveForwardOnPress.h"
 
-#include "iPlayerController.h"
+#include "Players/iPlayerController.h"
 #include "iState.h"
 
 namespace RB::PlayerStateComponents

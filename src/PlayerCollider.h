@@ -8,7 +8,7 @@
 #include "Collisions/PlayerBox.h"
 
 #include "Players/iPlayerCollider.h"
-#include "iPlayerController.h"
+#include "Players/iPlayerController.h"
 #include "Cam/iCamController.h"
 
 namespace RB::Players

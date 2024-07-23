@@ -15,7 +15,7 @@
 #include "../HBox/iTargetBoxDataController.h"
 
 #include "../Players/iPlayer.h"
-#include "../iPlayerController.h"
+#include "../Players/iPlayerController.h"
 
 namespace RB::Render
 {

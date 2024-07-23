@@ -4,7 +4,7 @@
 #include "SpriteType.h"
 #include "Render/ManualAnimationUpdater.h"
 
-#include "iPlayerController.h"
+#include "Players/iPlayerController.h"
 
 namespace RB::PlayerStates::Aku
 {

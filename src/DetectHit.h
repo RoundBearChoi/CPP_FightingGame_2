@@ -9,7 +9,7 @@
 #include "StateComponentBase.h"
 
 #include "Players/iPlayer.h"
-#include "iPlayerController.h"
+#include "Players/iPlayerController.h"
 #include "Render/iPlayerAnimationController.h"
 #include "HBox/iTargetBoxDataController.h"
 #include "HBox/iAttackBoxDataController.h"

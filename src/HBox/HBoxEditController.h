@@ -19,7 +19,7 @@
 
 #include "../Render/CircleRenderer.h"
 #include "../Updaters/iUpdater.h"
-#include "../iPlayerController.h"
+#include "../Players/iPlayerController.h"
 #include "../Render/iPlayerAnimationController.h"
 #include "../Cam/iCamController.h"
 

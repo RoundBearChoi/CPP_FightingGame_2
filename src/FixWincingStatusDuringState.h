@@ -4,7 +4,7 @@
 
 #include "StateComponentBase.h"
 
-#include "iPlayerController.h"
+#include "Players/iPlayerController.h"
 
 
 namespace RB::PlayerStateComponents

@@ -16,7 +16,7 @@
 #include "../GetCurrentSpriteType.h"
 #include "../GetCurrentAnimationFrame.h"
 
-#include "../iPlayerController.h"
+#include "../Players/iPlayerController.h"
 #include "../Render/iPlayerAnimationController.h"
 
 namespace RB::HBox

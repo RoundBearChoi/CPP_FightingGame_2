@@ -8,7 +8,7 @@
 #include "../PlayerStateComponents/TransitionToWalkForward.h"
 #include "../PlayerStateComponents/TransitionToWalkBack.h"
 
-#include "../P0_Jab.h"
+#include "P0_Jab.h"
 #include "../P0_Strong_Punch.h"
 #include "../P0_Strong_Kick.h"
 #include "../P0_JumpUp_0.h"

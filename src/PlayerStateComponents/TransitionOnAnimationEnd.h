@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../StateComponentBase.h"
+#include "../States/StateComponentBase.h"
 #include "../Render/AnimationSpecs.h"
 #include "../Players/PlayerState.h"
 

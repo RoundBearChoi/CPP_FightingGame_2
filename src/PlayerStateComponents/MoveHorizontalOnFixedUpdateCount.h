@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Vector2.h"
-#include "../StateComponentBase.h"
+#include "../States/StateComponentBase.h"
 
 #include "../Players/iPlayerController.h"
 

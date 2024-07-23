@@ -6,7 +6,7 @@
 #include "../Collisions/AttackSpecs.h"
 #include "../Players/PlayerState.h"
 #include "../Collisions/CollisionResult.h"
-#include "../StateComponentBase.h"
+#include "../States/StateComponentBase.h"
 
 #include "../Players/iPlayer.h"
 #include "../Players/iPlayerController.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Vector2.h"
-#include "../StateComponentBase.h"
+#include "../States/StateComponentBase.h"
 #include "../PlayerStateComponents/MoveBackOnPress.h"
 #include "../PlayerStateComponents/MoveForwardOnPress.h"
 

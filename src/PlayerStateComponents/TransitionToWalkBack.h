@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../StateComponentBase.h"
+#include "../States/StateComponentBase.h"
 #include "../PlayerStateComponents/MoveBackOnPress.h"
 
 #include "../States/iState.h"

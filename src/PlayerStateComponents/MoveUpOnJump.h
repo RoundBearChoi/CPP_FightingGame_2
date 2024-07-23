@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Ease.h"
-#include "../StateComponentBase.h"
+#include "../States/StateComponentBase.h"
 
 #include "../States/iState.h"
 #include "../Players/iPlayerController.h"

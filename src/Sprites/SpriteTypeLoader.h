@@ -2,8 +2,9 @@
 
 #include <string>
 
-#include "JParser.h"
-#include "Sprites/SpriteType.h"
+#include "SpriteType.h"
+
+#include "../JParser.h"
 
 namespace RB::Sprites
 {

@@ -18,7 +18,7 @@
 #include "../HBox/TargetBoxDataController.h"
 #include "../HBox/AttackBoxDataController.h"
 #include "../HBox/HBoxEditController.h"
-#include "../SpriteTypeLoader.h"
+#include "../Sprites/SpriteTypeLoader.h"
 
 #include "../P0_Dummy.h"
 

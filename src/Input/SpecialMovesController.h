@@ -2,16 +2,17 @@
 
 #include <vector>
 
-#include "SpecialMoveType.h"
-#include "Players/PlayerID.h"
-#include "Input/PlayerInput.h"
+#include "PlayerInput.h"
+#include "P0_Seq_Hadouken.h"
 
-#include "Input/P0_Seq_Hadouken.h"
-#include "P0_Hadouken.h"
+#include "iSpecialMoveSequence.h"
+#include "iSpecialMovesController.h"
 
-#include "States/iState.h"
-#include "Input/iSpecialMoveSequence.h"
-#include "Input/iSpecialMovesController.h"
+#include "../SpecialMoveType.h"
+#include "../Players/PlayerID.h"
+#include "../P0_Hadouken.h"
+
+#include "../States/iState.h"
 
 namespace RB::Input
 {

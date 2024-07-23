@@ -1,9 +1,10 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "Players/iPlayerController.h"
-#include "iInputController.h"
+#include "../Players/iPlayerController.h"
+
+#include "../iInputController.h"
 
 namespace RB::PlayerStateComponents
 {

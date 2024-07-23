@@ -2,9 +2,10 @@
 
 #include "../olcPixelGameEngine.h"
 
+#include "PlayerInput.h"
+
 #include "../Controllers/ControllerT.h"
 #include "../Players/PlayerID.h"
-#include "../PlayerInput.h"
 
 #include "iInputObj.h"
 

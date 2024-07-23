@@ -4,7 +4,7 @@
 
 #include "SpecialMoveType.h"
 #include "Players/PlayerID.h"
-#include "PlayerInput.h"
+#include "Input/PlayerInput.h"
 
 #include "Input/P0_Seq_Hadouken.h"
 #include "P0_Hadouken.h"

@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "Players/PlayerID.h"
-#include "PlayerInput.h"
+#include "Input/PlayerInput.h"
 
 #include "Players/iPlayerController.h"
 #include "Input/iSpecialMoveSequence.h"

@@ -2,7 +2,8 @@
 
 #include "../olcPixelGameEngine.h"
 
-#include "../PlayerInput.h"
+#include "PlayerInput.h"
+
 #include "../Players/PlayerID.h"
 
 namespace RB::Input

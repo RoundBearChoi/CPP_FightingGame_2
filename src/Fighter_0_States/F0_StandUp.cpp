@@ -1,8 +1,8 @@
-#include "P0_StandUp.h"
+#include "F0_StandUp.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_StandUp::OnEnter()
+	void F0_StandUp::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_standup;
 
@@ -12,18 +12,18 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void P0_StandUp::OnExit()
+	void F0_StandUp::OnExit()
 	{
 		ExitStateComponents();
 
 	}
 
-	void P0_StandUp::OnUpdate()
+	void F0_StandUp::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_StandUp::OnFixedUpdate()
+	void F0_StandUp::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

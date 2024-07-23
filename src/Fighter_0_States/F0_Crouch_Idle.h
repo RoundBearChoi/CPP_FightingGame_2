@@ -4,7 +4,7 @@
 #include "../PlayerStateComponents/DoNotFixDirectionDuringState.h"
 #include "../PlayerStateComponents/StandUpOnRelease.h"
 
-#include "P0_StandUp.h"
+#include "F0_StandUp.h"
 
 namespace RB::Fighter_0_States
 {

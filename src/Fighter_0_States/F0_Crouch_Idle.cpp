@@ -7,7 +7,7 @@ namespace RB::Fighter_0_States
 		_spriteType = RB::Sprites::SpriteType::fighter_0_crouch_idle;
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
-		AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::Fighter_0_States::P0_StandUp()));
+		AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::Fighter_0_States::F0_StandUp()));
 
 		EnterStateComponents();
 	}

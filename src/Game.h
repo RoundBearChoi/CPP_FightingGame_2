@@ -1,4 +1,5 @@
 #pragma once
+
 #define OLC_PGE_APPLICATION 0
 
 #include <iostream>
@@ -7,13 +8,14 @@
 
 #include "AllocationCount.h"
 #include "GameFrame.h"
-#include "Updaters/Updater.h"
 #include "Time.h"
 #include "FixedTimer.h"
 #include "RenderTimer.h"
 #include "DisplaySize.h"
+
 #include "Render/RenderLayerType.h"
 #include "Updaters/CurrentUpdater.h"
+#include "Updaters/Updater.h"
 
 namespace RB
 {

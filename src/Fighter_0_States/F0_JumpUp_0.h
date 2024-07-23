@@ -6,7 +6,7 @@
 
 #include "../Players/iSpecsController.h"
 
-#include "P0_JumpUp_1.h"
+#include "F0_JumpUp_1.h"
 
 namespace RB::Fighter_0_States
 {

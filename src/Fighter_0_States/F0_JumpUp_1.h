@@ -8,10 +8,10 @@
 
 namespace RB::Fighter_0_States
 {
-	class P0_JumpUp_1 : public RB::Players::PlayerState
+	class F0_JumpUp_1 : public RB::Players::PlayerState
 	{
 	public:
-		P0_JumpUp_1() = default;
+		F0_JumpUp_1() = default;
 
 	public:
 		void OnEnter() override;

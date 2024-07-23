@@ -20,7 +20,7 @@
 #include "../HBox/HBoxEditController.h"
 #include "../Sprites/SpriteTypeLoader.h"
 
-#include "../P0_Dummy.h"
+#include "../Fighter_0_States/P0_Dummy.h"
 
 namespace RB::Updaters
 {

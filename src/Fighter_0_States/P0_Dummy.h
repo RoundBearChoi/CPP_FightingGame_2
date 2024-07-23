@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Players/PlayerState.h"
-#include "Sprites/SpriteType.h"
-#include "Render/ManualAnimationUpdater.h"
+#include "../Players/PlayerState.h"
+#include "../Sprites/SpriteType.h"
+#include "../Render/ManualAnimationUpdater.h"
 
-#include "Players/iPlayerController.h"
+#include "../Players/iPlayerController.h"
 
 namespace RB::Fighter_0_States
 {

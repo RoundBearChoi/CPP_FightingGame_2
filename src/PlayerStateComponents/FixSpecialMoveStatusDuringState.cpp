@@ -11,11 +11,12 @@ namespace RB::PlayerStateComponents
 	{
 		_player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		_player->SetWincingStatus(_fix);
+		// should be fixed to set special move status..
+		//_player->SetWincingStatus(_fix);
 	}
 
 	void FixSpecialMoveStatusDuringState::OnExit()
 	{
-		_player->SetWincingStatus(!_fix);
+		//_player->SetWincingStatus(!_fix);
 	}
 }

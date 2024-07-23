@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerState.h"
-#include "FixSpecialMoveStatusDuringState.h"
+#include "PlayerStateComponents/FixSpecialMoveStatusDuringState.h"
 #include "MarkInitiallyFacingRight.h"
 #include "TransitionOnAnimationEnd.h"
 

@@ -8,7 +8,7 @@
 #include "RenderSettings.h"
 
 #include "../Vector2.h"
-#include "../FlipQuad.h"
+#include "../Sprites/FlipQuad.h"
 #include "../GetQuadOnPivot.h"
 
 #include "../Cam/iCamController.h"

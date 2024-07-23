@@ -1,12 +1,13 @@
 #pragma once
 
 #include "Players/CharacterType.h"
+#include "Players/iPlayer.h"
+
 #include "PlayerID.h"
 #include "PlayerCollider.h"
 #include "StateMachineBase.h"
 
 #include "iPlayerCollider.h"
-#include "iPlayer.h"
 #include "iState.h"
 #include "iStateMachine.h"
 

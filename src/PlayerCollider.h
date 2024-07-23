@@ -2,10 +2,11 @@
 
 #include <cmath>
 
+#include "Players/iPlayer.h"
+
 #include "Collisions/AABB.h"
 #include "Collisions/PlayerBox.h"
 
-#include "iPlayer.h"
 #include "iPlayerCollider.h"
 #include "iPlayerController.h"
 #include "Cam/iCamController.h"

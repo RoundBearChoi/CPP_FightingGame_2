@@ -4,7 +4,7 @@
 
 #include "../SpriteType.h"
 
-#include "../iPlayer.h"
+#include "../Players/iPlayer.h"
 
 namespace RB::Collisions
 {

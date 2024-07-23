@@ -10,7 +10,7 @@
 #include "../Vector2.h"
 #include "../Updaters/SkipFixedUpdates.h"
 
-#include "../iPlayer.h"
+#include "../Players/iPlayer.h"
 
 namespace RB::Render
 {

@@ -3,7 +3,7 @@
 #include "AnimationSpecs.h"
 #include "RenderScaleMultiplierObj.h"
 
-#include "../iPlayer.h"
+#include "../Players/iPlayer.h"
 
 namespace RB::Render
 {

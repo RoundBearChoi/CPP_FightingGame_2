@@ -1,8 +1,9 @@
 #pragma once
 
+#include "Players/iPlayer.h"
+
 #include "ControllerT.h"
 
-#include "iPlayer.h"
 #include "PlayerID.h"
 
 namespace RB::Players

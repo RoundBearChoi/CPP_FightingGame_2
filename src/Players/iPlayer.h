@@ -1,10 +1,11 @@
 #pragma once
 
-#include "Players/CharacterType.h"
-#include "PlayerID.h"
+#include "CharacterType.h"
 
-#include "iStateMachine.h"
-#include "iPlayerCollider.h"
+#include "../PlayerID.h"
+
+#include "../iStateMachine.h"
+#include "../iPlayerCollider.h"
 
 namespace RB::Players
 {

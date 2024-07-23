@@ -8,7 +8,7 @@
 #include "Collisions/CollisionResult.h"
 #include "StateComponentBase.h"
 
-#include "iPlayer.h"
+#include "Players/iPlayer.h"
 #include "iPlayerController.h"
 #include "Render/iPlayerAnimationController.h"
 #include "HBox/iTargetBoxDataController.h"

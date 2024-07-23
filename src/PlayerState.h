@@ -3,10 +3,11 @@
 #include <vector>
 #include <iostream>
 
+#include "Players/iPlayer.h"
+
 #include "StateBase.h"
 #include "SpriteType.h"
 
-#include "iPlayer.h"
 #include "iPlayerController.h"
 #include "Collisions/iPlayerBoxDataController.h"
 #include "Render/iPlayerAnimationController.h"

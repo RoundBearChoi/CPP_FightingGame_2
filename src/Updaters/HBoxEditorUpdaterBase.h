@@ -5,7 +5,7 @@
 #include "iUpdaterObj.h"
 
 #include "../Vector2.h"
-#include "../Player.h"
+#include "../Players/Player.h"
 #include "../HBox/HBoxType.h"
 
 #include "../InputController.h"

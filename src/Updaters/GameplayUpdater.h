@@ -3,7 +3,7 @@
 #include "iUpdaterObj.h"
 
 #include "../Vector2.h"
-#include "../Player.h"
+#include "../Players/Player.h"
 
 #include "../PlayerController.h"
 #include "../Background/BackgroundController.h"

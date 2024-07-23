@@ -2,12 +2,14 @@
 
 #include <vector>
 
-#include "Players/PlayerID.h"
-#include "Input/PlayerInput.h"
+#include "PlayerInput.h"
 
-#include "Players/iPlayerController.h"
-#include "Input/iSpecialMoveSequence.h"
-#include "Input/iInputController.h"
+#include "iSpecialMoveSequence.h"
+#include "iInputController.h"
+
+#include "../Players/PlayerID.h"
+
+#include "../Players/iPlayerController.h"
 
 namespace RB::Input
 {

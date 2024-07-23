@@ -3,7 +3,7 @@
 #include "PlayerState.h"
 #include "PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "MoveUpOnJump.h"
-#include "MoveForwardOnJump_0.h"
+#include "PlayerStateComponents/MoveForwardOnJump_0.h"
 
 #include "iSpecsController.h"
 

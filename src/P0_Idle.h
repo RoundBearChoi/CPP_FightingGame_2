@@ -4,7 +4,7 @@
 #include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
 #include "TransitionToJumpForward.h"
 #include "TransitionToJumpUp.h"
-#include "TransitionOnInput.h"
+#include "PlayerStateComponents/TransitionOnInput.h"
 #include "TransitionToWalkForward.h"
 #include "TransitionToWalkBack.h"
 

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "PlayerInput.h"
-#include "StateComponentBase.h"
+#include "../PlayerInput.h"
+#include "../StateComponentBase.h"
 
-#include "iState.h"
-#include "Players/iPlayerController.h"
-#include "iInputController.h"
+#include "../iState.h"
+#include "../Players/iPlayerController.h"
+#include "../iInputController.h"
 
 namespace RB::PlayerStateComponents
 {

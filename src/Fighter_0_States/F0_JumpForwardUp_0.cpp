@@ -9,7 +9,7 @@ namespace RB::Fighter_0_States
 		RB::Players::MoveSpecs moveSpecs = RB::Players::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
-		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpUp_Forward_totalFrames, moveSpecs.mJumpUp_Forward_speedMultiplier, new P0_JumpForwardUp_1));
+		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpUp_Forward_totalFrames, moveSpecs.mJumpUp_Forward_speedMultiplier, new F0_JumpForwardUp_1));
 		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump_0(20, 7.0f));
 
 		EnterStateComponents();

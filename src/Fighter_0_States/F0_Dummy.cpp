@@ -1,23 +1,23 @@
-#include "P0_Dummy.h"
+#include "F0_Dummy.h"
 
 namespace RB::Fighter_0_States
 {
-	P0_Dummy::P0_Dummy(Sprites::SpriteType startingSpriteType)
+	F0_Dummy::F0_Dummy(Sprites::SpriteType startingSpriteType)
 	{
 		_spriteType = startingSpriteType;
 	}
 
-	void P0_Dummy::OnEnter()
+	void F0_Dummy::OnEnter()
 	{
 		_manualAnimationUpdater.OnEnter(_spriteType);
 	}
 
-	void P0_Dummy::OnExit()
+	void F0_Dummy::OnExit()
 	{
 
 	}
 
-	void P0_Dummy::OnUpdate()
+	void F0_Dummy::OnUpdate()
 	{
 		if (RB::Players::iPlayerController::Get() == nullptr)
 		{
@@ -27,7 +27,7 @@ namespace RB::Fighter_0_States
 		_manualAnimationUpdater.OnUpdate();
 	}
 
-	void P0_Dummy::OnFixedUpdate()
+	void F0_Dummy::OnFixedUpdate()
 	{
 		_manualAnimationUpdater.OnFixedUpdate();
 	}

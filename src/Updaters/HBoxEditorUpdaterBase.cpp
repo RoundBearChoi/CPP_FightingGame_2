@@ -13,7 +13,7 @@ namespace RB::Updaters
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 		RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
 
-		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::P0_Dummy(spriteType));
+		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Dummy(spriteType));
 		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);

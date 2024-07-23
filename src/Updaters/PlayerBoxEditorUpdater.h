@@ -13,7 +13,7 @@
 #include "../Input/InputController.h"
 #include "../Collisions/PlayerBoxEditController.h"
 
-#include "../Fighter_0_States/P0_Dummy.h"
+#include "../Fighter_0_States/F0_Dummy.h"
 
 namespace RB::Updaters
 {

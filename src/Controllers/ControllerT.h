@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Controllers/ControllerBase.h"
+#include "ControllerBase.h"
 
 namespace RB::Controllers
 {

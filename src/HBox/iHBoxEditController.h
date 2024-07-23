@@ -4,7 +4,7 @@
 #include "HBoxType.h"
 #include "Loaded_HB_Data.h"
 
-#include "../ControllerT.h"
+#include "../Controllers/ControllerT.h"
 #include "../Players/PlayerID.h"
 
 namespace RB::HBox

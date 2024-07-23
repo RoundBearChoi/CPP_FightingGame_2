@@ -1,9 +1,8 @@
 #pragma once
 
-#include "ControllerT.h"
-
 #include "olcPixelGameEngine.h"
 
+#include "Controllers/ControllerT.h"
 #include "Players/PlayerID.h"
 #include "PlayerInput.h"
 

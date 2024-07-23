@@ -1,7 +1,9 @@
 #pragma once
-#include "ControllerT.h"
+
+#include "Controllers/ControllerT.h"
 #include "SpecialMoveType.h"
 #include "Players/PlayerID.h"
+
 #include "iState.h"
 
 namespace RB::Input

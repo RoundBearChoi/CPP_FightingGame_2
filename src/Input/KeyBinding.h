@@ -1,9 +1,9 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "PlayerInput.h"
-#include "Players/PlayerID.h"
+#include "../PlayerInput.h"
+#include "../Players/PlayerID.h"
 
 namespace RB::Input
 {

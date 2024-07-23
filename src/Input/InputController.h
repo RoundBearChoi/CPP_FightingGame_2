@@ -1,12 +1,12 @@
 #pragma once
 
 #include "InputObj.h"
+#include "KeyBinding.h"
 
 #include "iInputController.h"
 #include "iSpecialMovesController.h"
 
 #include "../GameFrame.h"
-#include "../KeyBinding.h"
 #include "../SpecialMoveType.h"
 
 #include "../Players/iPlayerController.h"

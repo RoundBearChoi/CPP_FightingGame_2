@@ -5,7 +5,7 @@
 #include "../Vector2.h"
 #include "../Players/Player.h"
 
-#include "../PlayerController.h"
+#include "../Players/PlayerController.h"
 #include "../Background/BackgroundController.h"
 #include "../Render/PlayerDebugController.h"
 #include "../Render/PlayerAnimationController.h"

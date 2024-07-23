@@ -4,7 +4,7 @@
 #include "../Render/AnimationSpecs.h"
 #include "../Players/PlayerState.h"
 
-#include "../iState.h"
+#include "../States/iState.h"
 #include "../Players/iPlayerController.h"
 #include "../Render/iPlayerAnimationController.h"
 

@@ -8,7 +8,7 @@
 
 #include "../StateMachineBase.h"
 
-#include "../iState.h"
+#include "../States/iState.h"
 #include "../iStateMachine.h"
 
 namespace RB::Players

@@ -9,7 +9,7 @@
 #include "P0_Seq_Hadouken.h"
 #include "P0_Hadouken.h"
 
-#include "iState.h"
+#include "States/iState.h"
 #include "iSpecialMoveSequence.h"
 #include "iSpecialMovesController.h"
 

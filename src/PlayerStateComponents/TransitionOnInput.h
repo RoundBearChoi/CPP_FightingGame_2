@@ -3,7 +3,7 @@
 #include "../PlayerInput.h"
 #include "../StateComponentBase.h"
 
-#include "../iState.h"
+#include "../States/iState.h"
 #include "../Players/iPlayerController.h"
 #include "../iInputController.h"
 

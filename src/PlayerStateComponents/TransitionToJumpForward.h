@@ -4,7 +4,7 @@
 
 #include "../Players/iPlayerController.h"
 #include "../iInputController.h"
-#include "../iState.h"
+#include "../States/iState.h"
 
 namespace RB::PlayerStateComponents
 {

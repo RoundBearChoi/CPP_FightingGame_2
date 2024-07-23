@@ -5,7 +5,7 @@
 #include "../PlayerStateComponents/MoveForwardOnPress.h"
 #include "../PlayerStateComponents/MoveBackOnPress.h"
 
-#include "../iState.h"
+#include "../States/iState.h"
 #include "../iStateMachine.h"
 #include "../Players/iPlayerController.h"
 

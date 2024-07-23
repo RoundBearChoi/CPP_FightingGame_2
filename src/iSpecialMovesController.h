@@ -4,7 +4,7 @@
 #include "SpecialMoveType.h"
 #include "Players/PlayerID.h"
 
-#include "iState.h"
+#include "States/iState.h"
 
 namespace RB::Input
 {

@@ -10,7 +10,7 @@
 #include "iSpecialMovesController.h"
 
 #include "../Players/PlayerID.h"
-#include "../P0_Hadouken.h"
+#include "../Fighter_0_States/P0_Hadouken.h"
 
 #include "../States/iState.h"
 

@@ -3,12 +3,12 @@
 #include <vector>
 
 #include "PlayerInput.h"
+#include "SpecialMoveType.h"
 #include "P0_Seq_Hadouken.h"
 
 #include "iSpecialMoveSequence.h"
 #include "iSpecialMovesController.h"
 
-#include "../SpecialMoveType.h"
 #include "../Players/PlayerID.h"
 #include "../P0_Hadouken.h"
 

@@ -1,7 +1,8 @@
 #pragma once
 
+#include "SpecialMoveType.h"
+
 #include "../Controllers/ControllerT.h"
-#include "../SpecialMoveType.h"
 #include "../Players/PlayerID.h"
 
 #include "../States/iState.h"

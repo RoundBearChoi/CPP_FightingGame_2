@@ -2,10 +2,10 @@
 
 #include <vector>
 
-#include "BackgroundObj.h"
-#include "Render/RenderLayerType.h"
+#include "../BackgroundObj.h"
+#include "../Render/RenderLayerType.h"
 
-#include "iBackgroundController.h"
+#include "../iBackgroundController.h"
 
 namespace RB::Background
 {

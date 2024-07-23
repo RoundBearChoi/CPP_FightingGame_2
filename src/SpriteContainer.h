@@ -6,7 +6,7 @@
 #include "LoadedSprite.h"
 #include "PivotType.h"
 #include "SpriteLoader.h"
-#include "GetQuadOnPivot.h"
+#include "Sprites/GetQuadOnPivot.h"
 
 #include "Cam/iCamController.h"
 

@@ -9,7 +9,7 @@
 
 #include "../Vector2.h"
 #include "../Sprites/FlipQuad.h"
-#include "../GetQuadOnPivot.h"
+#include "../Sprites/GetQuadOnPivot.h"
 
 #include "../Cam/iCamController.h"
 

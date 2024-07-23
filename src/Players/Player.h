@@ -6,10 +6,7 @@
 
 #include "iPlayer.h"
 
-#include "../StateMachineBase.h"
-
-#include "../States/iState.h"
-#include "../States/iStateMachine.h"
+#include "../States/StateMachineBase.h"
 
 namespace RB::Players
 {

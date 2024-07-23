@@ -1,7 +1,7 @@
 #pragma once
 
-#include "States/iStateMachine.h"
-#include "States/iState.h"
+#include "iStateMachine.h"
+#include "iState.h"
 
 namespace RB::States
 {

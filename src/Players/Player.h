@@ -3,10 +3,9 @@
 #include "CharacterType.h"
 #include "iPlayer.h"
 
-#include "iPlayerCollider.h"
+#include "PlayerCollider.h"
 
 #include "../PlayerID.h"
-#include "../PlayerCollider.h"
 #include "../StateMachineBase.h"
 
 #include "../iState.h"

@@ -2,14 +2,16 @@
 
 #include <cmath>
 
-#include "Players/iPlayer.h"
+#include "iPlayer.h"
 
-#include "Collisions/AABB.h"
-#include "Collisions/PlayerBox.h"
+#include "iPlayerCollider.h"
+#include "iPlayerController.h"
 
-#include "Players/iPlayerCollider.h"
-#include "Players/iPlayerController.h"
-#include "Cam/iCamController.h"
+#include "../Collisions/AABB.h"
+#include "../Collisions/PlayerBox.h"
+
+
+#include "../Cam/iCamController.h"
 
 namespace RB::Players
 {

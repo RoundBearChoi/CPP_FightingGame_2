@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerState.h"
-#include "DoNotFixDirectionDuringState.h"
+#include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
 #include "TransitionToJumpUp.h"
 #include "WhileMovingBack.h"
 

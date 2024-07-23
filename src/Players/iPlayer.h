@@ -5,7 +5,7 @@
 
 #include "iPlayerCollider.h"
 
-#include "../iStateMachine.h"
+#include "../States/iStateMachine.h"
 
 namespace RB::Players
 {

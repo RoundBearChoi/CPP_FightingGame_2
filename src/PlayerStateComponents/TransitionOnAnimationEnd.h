@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Render/AnimationSpecs.h"
-#include "StateComponentBase.h"
-#include "Players/PlayerState.h"
+#include "../StateComponentBase.h"
+#include "../Render/AnimationSpecs.h"
+#include "../Players/PlayerState.h"
 
-#include "iState.h"
-#include "Players/iPlayerController.h"
-#include "Render/iPlayerAnimationController.h"
+#include "../iState.h"
+#include "../Players/iPlayerController.h"
+#include "../Render/iPlayerAnimationController.h"
 
 namespace RB::PlayerStateComponents
 {

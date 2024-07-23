@@ -1,10 +1,10 @@
 #pragma once
 
+#include "InputObj.h"
+
 #include "iInputController.h"
-#include "iInputObj.h"
 
 #include "../GameFrame.h"
-#include "../InputObj.h"
 #include "../KeyBinding.h"
 #include "../SpecialMoveType.h"
 

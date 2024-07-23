@@ -12,5 +12,7 @@
     "explorer.confirmDragAndDrop": false,
     "C_Cpp.intelliSenseEngine": "disabled", // using clangd
     "editor.cursorStyle": "block",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "workbench.editor.enablePreview": true
 }

@@ -4,7 +4,7 @@
 #include "PlayerStateComponents/FixWincingStatusDuringState.h"
 #include "PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "PlayerStateComponents/MoveHorizontalOnFixedUpdateCount.h"
-#include "TransitionOnFixedUpdateCount.h"
+#include "PlayerStateComponents/TransitionOnFixedUpdateCount.h"
 
 #include "P0_Idle.h"
 

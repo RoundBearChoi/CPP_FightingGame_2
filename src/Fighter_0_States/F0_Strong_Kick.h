@@ -9,10 +9,10 @@
 
 namespace RB::Fighter_0_States
 {
-	class P0_Strong_Kick : public RB::Players::PlayerState
+	class F0_Strong_Kick : public RB::Players::PlayerState
 	{
 	public:
-		P0_Strong_Kick() = default;
+		F0_Strong_Kick() = default;
 
 	public:
 		void OnEnter() override;

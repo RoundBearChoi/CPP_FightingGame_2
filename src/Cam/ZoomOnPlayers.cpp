@@ -58,7 +58,7 @@ namespace RB::Cam
 
 		float t = playerDistSq / maxSq;
 
-		float result = RB::EaseEquations::Ease::EaseOutSine(t);
+		float result = RB::Ease::EaseOutSine(t);
 
 		float zoom = _maxZoomIn * result;
 

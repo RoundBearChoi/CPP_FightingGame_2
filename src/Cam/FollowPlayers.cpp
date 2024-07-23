@@ -56,7 +56,7 @@ namespace RB::Cam
 			percentage = 1.0f;
 		}
 
-		float ease = RB::EaseEquations::Ease::EaseOutCubic( 1.0f - percentage);
+		float ease = RB::Ease::EaseOutCubic( 1.0f - percentage);
 
 		if (ease <= 0.125f)
 		{

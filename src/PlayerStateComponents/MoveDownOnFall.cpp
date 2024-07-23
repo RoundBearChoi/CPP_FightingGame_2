@@ -41,7 +41,7 @@ namespace RB::PlayerStateComponents
 			t = 1.0f;
 		}
 
-		float amount = 1.0f - RB::EaseEquations::Ease::EaseOutSine(t);
+		float amount = 1.0f - RB::Ease::EaseOutSine(t);
 		float result = amount * _multiplier;
 
 		float y = player->GetPosition().y;

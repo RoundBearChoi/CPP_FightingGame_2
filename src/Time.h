@@ -1,6 +1,6 @@
 #pragma once
 
-namespace RB::Frames
+namespace RB
 {
 	class Time
 	{

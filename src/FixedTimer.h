@@ -2,7 +2,7 @@
 
 #include "Time.h"
 
-namespace RB::Frames
+namespace RB
 {
 	class FixedTimer
 	{

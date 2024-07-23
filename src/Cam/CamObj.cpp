@@ -97,12 +97,12 @@ namespace RB::Cam
 
 		if (zoomIn.bHeld)
 		{
-			_zoom += RB::Frames::Time::GetDeltaTime() * _zoomSpeed;
+			_zoom += RB::Time::GetDeltaTime() * _zoomSpeed;
 		}
 
 		if (zoomOut.bHeld)
 		{
-			_zoom -= RB::Frames::Time::GetDeltaTime() * _zoomSpeed;
+			_zoom -= RB::Time::GetDeltaTime() * _zoomSpeed;
 		}
 
 		if (_zoom < 0.0001f)

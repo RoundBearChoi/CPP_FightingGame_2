@@ -21,8 +21,8 @@ namespace RB
 	{
 	private:
 		RB::Updaters::iUpdater* _updater = nullptr;
-		RB::Frames::FixedTimer _timer;
-		RB::Frames::RenderTimer _renderTimer;
+		RB::FixedTimer _timer;
+		RB::RenderTimer _renderTimer;
 
 	public:
 		bool OnUserCreate() override
@@ -35,7 +35,7 @@ namespace RB
 
 			_updater->Init();
 
-			RB::Frames::Time::ResetFixedDeltaTime();
+			RB::Time::ResetFixedDeltaTime();
 
 			RB::Render::CreateLayers();
 
@@ -63,15 +63,15 @@ namespace RB
 			{
 				_updater->OnFixedUpdate();
 
-				RB::Frames::Time::ResetFixedDeltaTime();
+				RB::Time::ResetFixedDeltaTime();
 
 				RB::AddGameFrame();
 			}
 
 			RB::Render::ClearLayers();
 
-			RB::Frames::Time::SetDeltaTime(fElapsedTime);
-			RB::Frames::Time::AddFixedDeltaTime();
+			RB::Time::SetDeltaTime(fElapsedTime);
+			RB::Time::AddFixedDeltaTime();
 
 			_updater->OnUpdate();
 			_renderTimer.OnUpdate();

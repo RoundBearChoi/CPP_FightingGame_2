@@ -245,22 +245,22 @@ namespace RB::HBox
 
 		if (wButton.bHeld)
 		{
-			box->MoveY(-moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveY(-moveAmount * RB::Time::GetDeltaTime());
 		}
 
 		if (sButton.bHeld)
 		{
-			box->MoveY(moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveY(moveAmount * RB::Time::GetDeltaTime());
 		}
 
 		if (aButton.bHeld)
 		{
-			box->MoveX(-moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveX(-moveAmount * RB::Time::GetDeltaTime());
 		}
 
 		if (dButton.bHeld)
 		{
-			box->MoveX(moveAmount * RB::Frames::Time::GetDeltaTime());
+			box->MoveX(moveAmount * RB::Time::GetDeltaTime());
 		}
 
 		olc::HWButton uButton = olc::Platform::ptrPGE->GetKey(olc::U);
@@ -273,22 +273,22 @@ namespace RB::HBox
 
 		if (uButton.bHeld)
 		{
-			box->IncreaseHeight(sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseHeight(sizeAmount * RB::Time::GetDeltaTime());
 		}
 
 		if (jButton.bHeld)
 		{
-			box->IncreaseHeight(-sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseHeight(-sizeAmount * RB::Time::GetDeltaTime());
 		}
 
 		if (hButton.bHeld)
 		{
-			box->IncreaseWidth(-sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseWidth(-sizeAmount * RB::Time::GetDeltaTime());
 		}
 
 		if (kButton.bHeld)
 		{
-			box->IncreaseWidth(sizeAmount * RB::Frames::Time::GetDeltaTime());
+			box->IncreaseWidth(sizeAmount * RB::Time::GetDeltaTime());
 		}
 	}
 

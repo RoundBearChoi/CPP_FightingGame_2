@@ -1,6 +1,6 @@
 #include "Time.h"
 
-namespace RB::Frames
+namespace RB
 {
 	float Time::_deltaTime;
 	float Time::_fixedDeltaTime;

@@ -1,10 +1,10 @@
 #include "RenderTimer.h"
 
-namespace RB::Frames
+namespace RB
 {
 	void RenderTimer::OnUpdate()
 	{
-		_accumulated += RB::Frames::Time::GetDeltaTime();
+		_accumulated += RB::Time::GetDeltaTime();
 
 		_counter++;
 

@@ -49,22 +49,22 @@ namespace RB::Collisions
 
 		if (uButton.bHeld)
 		{
-			currentBox->mHeight += sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mHeight += sizeAmount * RB::Time::GetDeltaTime();
 		}
 
 		if (jButton.bHeld)
 		{
-			currentBox->mHeight -= sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mHeight -= sizeAmount * RB::Time::GetDeltaTime();
 		}
 
 		if (hButton.bHeld)
 		{
-			currentBox->mWidth -= sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mWidth -= sizeAmount * RB::Time::GetDeltaTime();
 		}
 
 		if (kButton.bHeld)
 		{
-			currentBox->mWidth += sizeAmount * RB::Frames::Time::GetDeltaTime();
+			currentBox->mWidth += sizeAmount * RB::Time::GetDeltaTime();
 		}
 
 		if (currentBox->mHeight <= 0.0f)

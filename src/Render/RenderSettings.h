@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Vector2.h"
-#include "../PivotType.h"
+#include "../Sprites/PivotType.h"
 
 namespace RB::Render
 {

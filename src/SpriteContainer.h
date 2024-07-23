@@ -4,7 +4,7 @@
 #include "Vector2.h"
 #include "SpriteType.h"
 #include "Sprites/LoadedSprite.h"
-#include "PivotType.h"
+#include "Sprites/PivotType.h"
 #include "SpriteLoader.h"
 #include "Sprites/GetQuadOnPivot.h"
 

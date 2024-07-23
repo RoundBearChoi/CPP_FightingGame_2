@@ -6,7 +6,7 @@
 #include "Players/PlayerID.h"
 #include "PlayerInput.h"
 
-#include "P0_Seq_Hadouken.h"
+#include "Input/P0_Seq_Hadouken.h"
 #include "P0_Hadouken.h"
 
 #include "States/iState.h"

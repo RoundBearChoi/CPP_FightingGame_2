@@ -2,8 +2,8 @@
 
 #include <vector>
 
-#include "SpecialMoveSequenceBase.h"
-#include "PlayerInput.h"
+#include "../SpecialMoveSequenceBase.h"
+#include "../PlayerInput.h"
 
 namespace RB::Input::Sequences
 {

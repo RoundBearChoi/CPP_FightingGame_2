@@ -4,7 +4,7 @@
 #include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
 #include "PlayerStateComponents/TransitionToJumpForward.h"
 #include "PlayerStateComponents/TransitionToJumpUp.h"
-#include "WhileMovingForward.h"
+#include "PlayerStateComponents/WhileMovingForward.h"
 
 #include "iSpecsController.h"
 

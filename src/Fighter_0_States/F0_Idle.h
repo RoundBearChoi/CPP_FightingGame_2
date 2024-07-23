@@ -12,8 +12,8 @@
 #include "F0_Strong_Punch.h"
 #include "F0_Strong_Kick.h"
 #include "F0_JumpUp_0.h"
-#include "P0_WalkForward.h"
-#include "P0_WalkBack.h"
+#include "F0_WalkForward.h"
+#include "F0_WalkBack.h"
 #include "F0_JumpForwardUp_0.h"
 #include "F0_Crouch.h"
 

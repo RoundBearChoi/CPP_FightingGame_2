@@ -1,8 +1,8 @@
-#include "P0_WalkBack.h"
+#include "F0_WalkBack.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_WalkBack::OnEnter()
+	void F0_WalkBack::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::NONE;
 
@@ -10,22 +10,22 @@ namespace RB::Fighter_0_States
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::F0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::Fighter_0_States::F0_Idle(), new RB::Fighter_0_States::P0_WalkForward()));
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::Fighter_0_States::F0_Idle(), new RB::Fighter_0_States::F0_WalkForward()));
 
 		EnterStateComponents();
 	}
 
-	void P0_WalkBack::OnExit()
+	void F0_WalkBack::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_WalkBack::OnUpdate()
+	void F0_WalkBack::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_WalkBack::OnFixedUpdate()
+	void F0_WalkBack::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

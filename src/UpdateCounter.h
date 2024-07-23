@@ -6,7 +6,7 @@
 
 namespace RB
 {
-	class RenderTimer
+	class UpdateCounter
 	{
 	public:
 		void OnUpdate();

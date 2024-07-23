@@ -1,8 +1,8 @@
-#include "RenderTimer.h"
+#include "UpdateCounter.h"
 
 namespace RB
 {
-	void RenderTimer::OnUpdate()
+	void UpdateCounter::OnUpdate()
 	{
 		_accumulated += RB::Time::GetDeltaTime();
 

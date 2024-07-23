@@ -10,7 +10,7 @@
 #include "GameFrame.h"
 #include "Time.h"
 #include "FixedTimer.h"
-#include "RenderTimer.h"
+#include "UpdateCounter.h"
 #include "DisplaySize.h"
 
 #include "Render/RenderLayerType.h"
@@ -24,7 +24,7 @@ namespace RB
 	private:
 		RB::Updaters::iUpdater* _updater = nullptr;
 		RB::FixedTimer _timer;
-		RB::RenderTimer _renderTimer;
+		RB::UpdateCounter _updateCounter;
 
 	public:
 		bool OnUserCreate() override
@@ -76,7 +76,7 @@ namespace RB
 			RB::Time::AddFixedDeltaTime();
 
 			_updater->OnUpdate();
-			_renderTimer.OnUpdate();
+			_updateCounter.OnUpdate();
 
 			return true;
 		}

@@ -4,9 +4,9 @@
 
 #include "BackgroundObj.h"
 
-#include "../Render/RenderLayerType.h"
+#include "iBackgroundController.h"
 
-#include "../iBackgroundController.h"
+#include "../Render/RenderLayerType.h"
 
 namespace RB::Background
 {

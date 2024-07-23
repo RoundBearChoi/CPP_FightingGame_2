@@ -13,7 +13,7 @@
 #include "../Players/PlayerState.h"
 #include "../Render/Notification.h"
 
-#include "../GetCurrentSpriteType.h"
+#include "../Sprites/GetCurrentSpriteType.h"
 #include "../Sprites/GetCurrentAnimationFrame.h"
 
 #include "../Players/iPlayerController.h"

@@ -11,7 +11,7 @@
 #include "../Players/PlayerState.h"
 #include "../SpriteType.h"
 #include "../Players/CharacterType.h"
-#include "../GetCurrentSpriteType.h"
+#include "../Sprites/GetCurrentSpriteType.h"
 #include "../Sprites/GetCurrentAnimationFrame.h"
 
 #include "../Players/iPlayerController.h"

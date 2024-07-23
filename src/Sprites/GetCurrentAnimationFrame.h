@@ -1,8 +1,9 @@
 #pragma once
 
+#include "GetCurrentSpriteType.h"
+
 #include "../Players/PlayerID.h"
 #include "../SpriteType.h"
-#include "../GetCurrentSpriteType.h"
 
 #include "../Render/iPlayerAnimationController.h"
 #include "../Render/iAnimationObj.h"

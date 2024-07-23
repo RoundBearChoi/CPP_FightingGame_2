@@ -1,6 +1,7 @@
 #pragma once
+
 #include "ControllerT.h"
-#include "CharacterType.h"
+#include "Players/CharacterType.h"
 #include "MoveSpecs.h"
 
 namespace RB::Players::Specs

@@ -5,7 +5,7 @@
 #include "PlayerBox.h"
 #include "PlayerBoxSpecs.h"
 
-#include "../CharacterType.h"
+#include "../Players/CharacterType.h"
 
 namespace RB::Collisions
 {

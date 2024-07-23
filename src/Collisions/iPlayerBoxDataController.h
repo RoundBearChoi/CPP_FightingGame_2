@@ -3,7 +3,7 @@
 #include "LoadedPlayerBoxData.h"
 
 #include "../ControllerT.h"
-#include "../CharacterType.h"
+#include "../Players/CharacterType.h"
 #include "../SpriteType.h"
 
 namespace RB::Collisions

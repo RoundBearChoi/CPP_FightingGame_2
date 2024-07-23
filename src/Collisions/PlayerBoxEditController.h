@@ -10,7 +10,7 @@
 #include "../PlayerID.h"
 #include "../PlayerState.h"
 #include "../SpriteType.h"
-#include "../CharacterType.h"
+#include "../Players/CharacterType.h"
 #include "../GetCurrentSpriteType.h"
 #include "../GetCurrentAnimationFrame.h"
 

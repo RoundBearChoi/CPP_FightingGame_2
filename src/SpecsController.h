@@ -6,7 +6,7 @@
 
 #include "JParser.h"
 #include "MoveSpecs.h"
-#include "CharacterType.h"
+#include "Players/CharacterType.h"
 
 #include "iSpecsController.h"
 

@@ -4,7 +4,7 @@
 //#include <cmath>   // for float_t
 //#include <cstddef> // for size_t
 
-#include "CharacterType.h"
+#include "Players/CharacterType.h"
 
 namespace RB::Players::Specs
 {

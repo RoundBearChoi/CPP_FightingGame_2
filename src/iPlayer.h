@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CharacterType.h"
+#include "Players/CharacterType.h"
 #include "PlayerID.h"
 
 #include "iStateMachine.h"

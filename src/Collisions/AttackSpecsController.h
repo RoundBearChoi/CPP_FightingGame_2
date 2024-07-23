@@ -5,7 +5,7 @@
 #include "iAttackSpecsController.h"
 
 #include "../JParser.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 namespace RB::Collisions
 {

@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Collisions/AttackSpecs.h"
 #include "../Players/PlayerState.h"
 #include "../Collisions/CollisionResult.h"

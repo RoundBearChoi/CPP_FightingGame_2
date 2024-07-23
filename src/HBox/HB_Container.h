@@ -6,7 +6,7 @@
 #include "HBoxLoader.h"
 #include "Loaded_HB_Data.h"
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 namespace RB::HBox
 {

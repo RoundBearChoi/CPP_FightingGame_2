@@ -4,7 +4,7 @@
 
 #include "../Vector2.h"
 #include "../Sprites/SpriteContainer.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 #include "../Players/iPlayerController.h"
 #include "../iInputController.h"

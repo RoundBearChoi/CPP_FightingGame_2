@@ -1,6 +1,7 @@
 #pragma once
 
-#include "../SpriteType.h"
+#include "SpriteType.h"
+
 #include "../Players/PlayerID.h"
 #include "../Players/PlayerState.h"
 

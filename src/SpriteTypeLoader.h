@@ -3,7 +3,7 @@
 #include <string>
 
 #include "JParser.h"
-#include "SpriteType.h"
+#include "Sprites/SpriteType.h"
 
 namespace RB::Sprites
 {

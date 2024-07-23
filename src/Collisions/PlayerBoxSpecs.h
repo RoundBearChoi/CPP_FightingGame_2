@@ -5,7 +5,7 @@
 #include "PlayerBox.h"
 
 #include "../Selector.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Render/Notification.h"
 
 #include "../iSelector.h"

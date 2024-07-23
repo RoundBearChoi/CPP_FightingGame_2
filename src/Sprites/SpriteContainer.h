@@ -4,10 +4,10 @@
 #include "GetQuadOnPivot.h"
 #include "PivotType.h"
 #include "SpriteLoader.h"
+#include "SpriteType.h"
 
 #include "../enum.h"
 #include "../Vector2.h"
-#include "../SpriteType.h"
 
 #include "../Cam/iCamController.h"
 

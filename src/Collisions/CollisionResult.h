@@ -2,7 +2,7 @@
 
 #include "CollisionType.h"
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 #include "../Players/iPlayer.h"
 

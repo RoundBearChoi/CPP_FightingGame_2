@@ -8,7 +8,7 @@
 #include "iAttackRegisterController.h"
 #include "iGeneralHitStopController.h"
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Render/RenderScaleMultiplierObj.h"
 
 #include "../P0_Wince.h" //temp

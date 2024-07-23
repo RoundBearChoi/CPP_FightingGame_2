@@ -8,7 +8,7 @@
 
 #include "../JParser.h"
 #include "../Players/CharacterType.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 namespace RB::Collisions
 {

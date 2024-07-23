@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Players/PlayerState.h"
-#include "SpriteType.h"
+#include "Sprites/SpriteType.h"
 #include "Render/ManualAnimationUpdater.h"
 
 #include "Players/iPlayerController.h"

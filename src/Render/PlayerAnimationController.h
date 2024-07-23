@@ -10,7 +10,7 @@
 #include "iPlayerAnimationController.h"
 
 #include "../JParser.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Players/PlayerState.h"
 
 #include "../Players/iPlayerController.h"

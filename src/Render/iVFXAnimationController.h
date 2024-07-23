@@ -4,7 +4,7 @@
 
 #include "../Controllers/ControllerT.h"
 #include "../Vector2.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 namespace RB::Render
 {

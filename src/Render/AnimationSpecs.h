@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Vector2.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Sprites/LoadedSprite.h"
 
 namespace RB::Render

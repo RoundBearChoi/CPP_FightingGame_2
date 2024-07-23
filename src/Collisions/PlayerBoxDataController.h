@@ -4,7 +4,7 @@
 
 #include "iPlayerBoxDataController.h"
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Players/CharacterType.h"
 
 namespace RB::Collisions

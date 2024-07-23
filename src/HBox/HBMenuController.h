@@ -9,7 +9,7 @@
 #include "iHBoxEditController.h"
 #include "iTargetBoxDataController.h"
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Players/PlayerState.h"
 #include "../Render/Notification.h"
 

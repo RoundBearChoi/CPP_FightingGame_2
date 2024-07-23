@@ -2,7 +2,7 @@
 
 #include "iPlayerAnimationController.h"
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 namespace RB::Render
 {

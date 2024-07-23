@@ -5,7 +5,7 @@
 #include "AABB_Set.h"
 #include "HBoxType.h"
 
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 
 namespace RB::HBox
 {

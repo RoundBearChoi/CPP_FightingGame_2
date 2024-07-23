@@ -9,7 +9,7 @@
 #include "../Time.h"
 #include "../Players/PlayerID.h"
 #include "../Players/PlayerState.h"
-#include "../SpriteType.h"
+#include "../Sprites/SpriteType.h"
 #include "../Players/CharacterType.h"
 #include "../Sprites/GetCurrentSpriteType.h"
 #include "../Sprites/GetCurrentAnimationFrame.h"

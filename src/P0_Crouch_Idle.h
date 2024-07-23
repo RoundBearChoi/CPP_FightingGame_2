@@ -6,7 +6,7 @@
 
 #include "P0_StandUp.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	class P0_Crouch_Idle : public RB::Players::PlayerState
 	{

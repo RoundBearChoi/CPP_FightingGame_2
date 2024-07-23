@@ -1,6 +1,6 @@
 #include "P0_WalkForward.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	void P0_WalkForward::OnEnter()
 	{
@@ -9,9 +9,9 @@ namespace RB::PlayerStates::Aku
 		RB::Players::MoveSpecs m = RB::Players::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
-		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::PlayerStates::Aku::P0_JumpForwardUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::Aku::P0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward(m.mWalk_Forward_Speed, new RB::PlayerStates::Aku::P0_Idle(), new RB::PlayerStates::Aku::P0_WalkBack()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::Fighter_0_States::P0_JumpForwardUp_0()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::P0_JumpUp_0()));
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward(m.mWalk_Forward_Speed, new RB::Fighter_0_States::P0_Idle(), new RB::Fighter_0_States::P0_WalkBack()));
 
 		EnterStateComponents();
 	}

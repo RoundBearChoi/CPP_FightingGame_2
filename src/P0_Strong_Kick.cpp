@@ -1,6 +1,6 @@
 #include "P0_Strong_Kick.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	void P0_Strong_Kick::OnEnter()
 	{
@@ -8,7 +8,7 @@ namespace RB::PlayerStates::Aku
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::DetectHit());
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::PlayerStates::Aku::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::Fighter_0_States::P0_Idle()));
 
 		EnterStateComponents();
 	}

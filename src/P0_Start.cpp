@@ -1,12 +1,12 @@
 #include "P0_Start.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	void P0_Start::OnEnter()
 	{
 		// no sprite
 
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(0, new RB::PlayerStates::Aku::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(0, new RB::Fighter_0_States::P0_Idle()));
 
 		EnterStateComponents();
 	}

@@ -11,7 +11,7 @@
 #include "P0_Idle.h"
 #include "P0_WalkForward.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	class P0_WalkBack : public RB::Players::PlayerState
 	{

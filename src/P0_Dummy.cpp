@@ -1,6 +1,6 @@
 #include "P0_Dummy.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	P0_Dummy::P0_Dummy(Sprites::SpriteType startingSpriteType)
 	{

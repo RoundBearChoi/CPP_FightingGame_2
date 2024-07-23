@@ -17,7 +17,7 @@
 #include "P0_WalkBack.h"
 #include "P0_Crouch.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	class P0_Idle : public RB::Players::PlayerState
 	{

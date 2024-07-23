@@ -1,6 +1,6 @@
 #include "P0_WalkBack.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	void P0_WalkBack::OnEnter()
 	{
@@ -9,8 +9,8 @@ namespace RB::PlayerStates::Aku
 		RB::Players::MoveSpecs m = RB::Players::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
-		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::PlayerStates::Aku::P0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::PlayerStates::Aku::P0_Idle(), new RB::PlayerStates::Aku::P0_WalkForward()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::P0_JumpUp_0()));
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::Fighter_0_States::P0_Idle(), new RB::Fighter_0_States::P0_WalkForward()));
 
 		EnterStateComponents();
 	}

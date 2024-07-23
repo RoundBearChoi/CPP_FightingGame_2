@@ -8,7 +8,7 @@
 
 #include "P0_JumpUp_1.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	class P0_JumpUp_0 : public RB::Players::PlayerState
 	{

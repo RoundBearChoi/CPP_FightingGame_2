@@ -6,7 +6,7 @@
 
 #include "P0_Crouch_Idle.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	class P0_Crouch : public RB::Players::PlayerState
 	{

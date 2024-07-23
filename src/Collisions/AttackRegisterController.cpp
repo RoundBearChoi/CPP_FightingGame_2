@@ -26,11 +26,11 @@ namespace RB::Collisions
 
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 		{
-			reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Strong_Wince());
+			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::P0_Strong_Wince());
 		}
 		else if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::WEAK)
 		{
-			reg.target->GetStateMachine()->OverrideNextState(new RB::PlayerStates::Aku::P0_Wince());
+			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::P0_Wince());
 		}
 
 		if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)

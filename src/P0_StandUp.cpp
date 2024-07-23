@@ -1,6 +1,6 @@
 #include "P0_StandUp.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	void P0_StandUp::OnEnter()
 	{

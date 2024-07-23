@@ -1,6 +1,6 @@
 #include "P0_Strong_Wince.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	void P0_Strong_Wince::OnEnter()
 	{
@@ -38,7 +38,7 @@ namespace RB::PlayerStates::Aku
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(23, 0));
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(24, 0));
 
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(25, new RB::PlayerStates::Aku::P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(25, new RB::Fighter_0_States::P0_Idle()));
 
 		EnterStateComponents();
 	}

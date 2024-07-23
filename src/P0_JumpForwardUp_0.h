@@ -9,7 +9,7 @@
 
 #include "P0_JumpForwardUp_1.h"
 
-namespace RB::PlayerStates::Aku
+namespace RB::Fighter_0_States
 {
 	class P0_JumpForwardUp_0 : public RB::Players::PlayerState
 	{

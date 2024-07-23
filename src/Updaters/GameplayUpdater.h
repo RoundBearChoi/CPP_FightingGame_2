@@ -12,7 +12,7 @@
 #include "../Collisions/PlayerBoxDataController.h"
 #include "../SpecsController.h"
 #include "../Input/InputController.h"
-#include "../SpecialMovesController.h"
+#include "../Input/SpecialMovesController.h"
 #include "../Cam/CamController.h"
 #include "../HBox/TargetBoxDataController.h"
 #include "../HBox/AttackBoxDataController.h"

@@ -14,7 +14,7 @@
 #include "../Time.h"
 #include "../Vector2.h"
 #include "../Players/PlayerID.h"
-#include "../PlayerState.h"
+#include "../Players/PlayerState.h"
 #include "../Updaters/CurrentUpdater.h"
 
 #include "../Render/CircleRenderer.h"

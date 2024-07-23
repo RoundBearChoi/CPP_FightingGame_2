@@ -1,9 +1,10 @@
 #pragma once
 
+#include "PlayerState.h" //erase all in the end
+
 #include "iPlayer.h"
 #include "iPlayerController.h"
 
-#include "../PlayerState.h" //erase all in the end
 
 namespace RB::Players
 {

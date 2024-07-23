@@ -2,7 +2,7 @@
 
 #include "SpriteType.h"
 #include "Players/PlayerID.h"
-#include "PlayerState.h"
+#include "Players/PlayerState.h"
 
 namespace RB::Sprites
 {

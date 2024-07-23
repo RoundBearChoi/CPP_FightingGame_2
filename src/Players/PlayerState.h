@@ -3,14 +3,15 @@
 #include <vector>
 #include <iostream>
 
-#include "Players/iPlayer.h"
+#include "iPlayer.h"
 
-#include "StateBase.h"
-#include "SpriteType.h"
+#include "iPlayerController.h"
 
-#include "Players/iPlayerController.h"
-#include "Collisions/iPlayerBoxDataController.h"
-#include "Render/iPlayerAnimationController.h"
+#include "../StateBase.h"
+#include "../SpriteType.h"
+
+#include "../Collisions/iPlayerBoxDataController.h"
+#include "../Render/iPlayerAnimationController.h"
 
 namespace RB::PlayerStates
 {

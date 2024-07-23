@@ -8,7 +8,7 @@
 
 #include "../Time.h"
 #include "../Players/PlayerID.h"
-#include "../PlayerState.h"
+#include "../Players/PlayerState.h"
 #include "../SpriteType.h"
 #include "../Players/CharacterType.h"
 #include "../GetCurrentSpriteType.h"

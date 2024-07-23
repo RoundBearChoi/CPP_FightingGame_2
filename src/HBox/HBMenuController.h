@@ -10,7 +10,7 @@
 #include "iTargetBoxDataController.h"
 
 #include "../SpriteType.h"
-#include "../PlayerState.h"
+#include "../Players/PlayerState.h"
 #include "../Render/Notification.h"
 
 #include "../GetCurrentSpriteType.h"

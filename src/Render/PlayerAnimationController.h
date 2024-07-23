@@ -11,7 +11,7 @@
 
 #include "../JParser.h"
 #include "../SpriteType.h"
-#include "../PlayerState.h"
+#include "../Players/PlayerState.h"
 
 #include "../Players/iPlayerController.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DetectHit.h"
+#include "PlayerStateComponents/DetectHit.h"
 #include "PlayerState.h"
 #include "MarkInitiallyFacingRight.h"
 #include "TransitionOnAnimationEnd.h"

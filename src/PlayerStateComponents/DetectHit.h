@@ -2,21 +2,21 @@
 
 #include <string>
 
-#include "SpriteType.h"
-#include "Collisions/AttackSpecs.h"
-#include "PlayerState.h"
-#include "Collisions/CollisionResult.h"
-#include "StateComponentBase.h"
+#include "../SpriteType.h"
+#include "../Collisions/AttackSpecs.h"
+#include "../PlayerState.h"
+#include "../Collisions/CollisionResult.h"
+#include "../StateComponentBase.h"
 
-#include "Players/iPlayer.h"
-#include "Players/iPlayerController.h"
-#include "Render/iPlayerAnimationController.h"
-#include "HBox/iTargetBoxDataController.h"
-#include "HBox/iAttackBoxDataController.h"
-#include "Collisions/iAttackRegisterController.h"
-#include "Collisions/iAttackSpecsController.h"
+#include "../Players/iPlayer.h"
+#include "../Players/iPlayerController.h"
+#include "../Render/iPlayerAnimationController.h"
+#include "../HBox/iTargetBoxDataController.h"
+#include "../HBox/iAttackBoxDataController.h"
+#include "../Collisions/iAttackRegisterController.h"
+#include "../Collisions/iAttackSpecsController.h"
 
-#include "P0_Wince.h"
+#include "../P0_Wince.h"
 
 namespace RB::PlayerStateComponents
 {

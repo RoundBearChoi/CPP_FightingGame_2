@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerState.h"
-#include "DetectHit.h"
+#include "PlayerStateComponents/DetectHit.h"
 #include "MarkInitiallyFacingRight.h"
 #include "TransitionOnAnimationEnd.h"
 

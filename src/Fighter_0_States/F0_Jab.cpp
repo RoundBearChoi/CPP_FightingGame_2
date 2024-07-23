@@ -1,8 +1,8 @@
-#include "P0_Jab.h"
+#include "F0_Jab.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_Jab::OnEnter()
+	void F0_Jab::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_jab;
 
@@ -13,17 +13,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void P0_Jab::OnExit()
+	void F0_Jab::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_Jab::OnUpdate()
+	void F0_Jab::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_Jab::OnFixedUpdate()
+	void F0_Jab::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

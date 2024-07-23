@@ -9,10 +9,10 @@
 
 namespace RB::Fighter_0_States
 {
-	class P0_Jab : public RB::Players::PlayerState
+	class F0_Jab : public RB::Players::PlayerState
 	{
 	public:
-		P0_Jab() = default;
+		F0_Jab() = default;
 
 	public:
 		void OnEnter() override;

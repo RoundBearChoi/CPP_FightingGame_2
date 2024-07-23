@@ -11,7 +11,7 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::P0_JumpUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new P0_Strong_Kick(), RB::Input::PlayerInput::ATTACK_STRONG_KICK, true, false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new P0_Strong_Punch(), RB::Input::PlayerInput::ATTACK_STRONG_PUNCH, true, false));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new P0_Jab(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH, true, false));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Jab(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH, true, false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkForward(new RB::Fighter_0_States::P0_WalkForward()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkBack(new RB::Fighter_0_States::P0_WalkBack()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new RB::Fighter_0_States::F0_Crouch(), RB::Input::PlayerInput::MOVE_DOWN, false, true));

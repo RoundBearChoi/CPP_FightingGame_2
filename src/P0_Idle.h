@@ -5,7 +5,7 @@
 #include "PlayerStateComponents/TransitionToJumpForward.h"
 #include "PlayerStateComponents/TransitionToJumpUp.h"
 #include "PlayerStateComponents/TransitionOnInput.h"
-#include "TransitionToWalkForward.h"
+#include "PlayerStateComponents/TransitionToWalkForward.h"
 #include "PlayerStateComponents/TransitionToWalkBack.h"
 
 #include "P0_Jab.h"

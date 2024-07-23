@@ -6,10 +6,10 @@
 
 #include "CharacterType.h"
 
+#include "iSpecsController.h"
+
 #include "../JParser.h"
 #include "../MoveSpecs.h"
-
-#include "../iSpecsController.h"
 
 namespace RB::Players
 {

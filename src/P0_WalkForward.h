@@ -6,7 +6,7 @@
 #include "PlayerStateComponents/TransitionToJumpUp.h"
 #include "PlayerStateComponents/WhileMovingForward.h"
 
-#include "iSpecsController.h"
+#include "Players/iSpecsController.h"
 
 #include "P0_JumpForwardUp_0.h"
 #include "P0_JumpUp_0.h"

@@ -4,7 +4,7 @@
 #include "PlayerStateComponents/MoveUpOnJump.h"
 #include "PlayerStateComponents/MarkInitiallyFacingRight.h"
 
-#include "iSpecsController.h"
+#include "Players/iSpecsController.h"
 
 #include "P0_JumpUp_1.h"
 

@@ -5,11 +5,11 @@
 #include <iostream>
 
 #include "CharacterType.h"
+#include "MoveSpecs.h"
 
 #include "iSpecsController.h"
 
 #include "../JParser.h"
-#include "../MoveSpecs.h"
 
 namespace RB::Players
 {

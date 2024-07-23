@@ -1,10 +1,6 @@
 #pragma once
 
-//#include <cstdint> // for int32_t
-//#include <cmath>   // for float_t
-//#include <cstddef> // for size_t
-
-#include "Players/CharacterType.h"
+#include "CharacterType.h"
 
 namespace RB::Players
 {

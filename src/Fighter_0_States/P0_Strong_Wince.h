@@ -6,7 +6,7 @@
 #include "../PlayerStateComponents/MoveHorizontalOnFixedUpdateCount.h"
 #include "../PlayerStateComponents/TransitionOnFixedUpdateCount.h"
 
-#include "P0_Idle.h"
+#include "F0_Idle.h"
 
 namespace RB::Fighter_0_States
 {

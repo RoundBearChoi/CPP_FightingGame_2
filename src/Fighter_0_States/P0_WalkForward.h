@@ -10,7 +10,7 @@
 
 #include "P0_JumpForwardUp_0.h"
 #include "P0_JumpUp_0.h"
-#include "P0_Idle.h"
+#include "F0_Idle.h"
 #include "P0_WalkBack.h"
 
 namespace RB::Fighter_0_States

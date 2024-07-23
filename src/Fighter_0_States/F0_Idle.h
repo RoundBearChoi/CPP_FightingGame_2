@@ -19,10 +19,10 @@
 
 namespace RB::Fighter_0_States
 {
-	class P0_Idle : public RB::Players::PlayerState
+	class F0_Idle : public RB::Players::PlayerState
 	{
 	public:
-		P0_Idle() = default;
+		F0_Idle() = default;
 
 	public:
 		void OnEnter() override;

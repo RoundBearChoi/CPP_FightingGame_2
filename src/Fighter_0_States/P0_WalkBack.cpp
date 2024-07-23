@@ -10,7 +10,7 @@ namespace RB::Fighter_0_States
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::P0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::Fighter_0_States::P0_Idle(), new RB::Fighter_0_States::P0_WalkForward()));
+		AddStateComponent(new RB::PlayerStateComponents::WhileMovingBack(m.mWalk_Back_Speed, new RB::Fighter_0_States::F0_Idle(), new RB::Fighter_0_States::P0_WalkForward()));
 
 		EnterStateComponents();
 	}

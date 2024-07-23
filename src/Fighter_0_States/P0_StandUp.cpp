@@ -7,7 +7,7 @@ namespace RB::Fighter_0_States
 		_spriteType = RB::Sprites::SpriteType::fighter_0_standup;
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new P0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new F0_Idle()));
 
 		EnterStateComponents();
 	}

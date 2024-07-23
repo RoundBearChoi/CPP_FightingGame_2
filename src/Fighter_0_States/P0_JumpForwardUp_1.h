@@ -4,7 +4,7 @@
 #include "../PlayerStateComponents/MoveDownOnFall.h"
 #include "../PlayerStateComponents/MoveForwardOnJump_1.h"
 
-#include "P0_Idle.h"
+#include "F0_Idle.h"
 
 namespace RB::Fighter_0_States
 {

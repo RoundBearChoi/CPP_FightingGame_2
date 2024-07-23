@@ -1,8 +1,8 @@
-#include "P0_Idle.h"
+#include "F0_Idle.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_Idle::OnEnter()
+	void F0_Idle::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_idle;
 
@@ -19,17 +19,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void P0_Idle::OnExit()
+	void F0_Idle::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_Idle::OnUpdate()
+	void F0_Idle::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_Idle::OnFixedUpdate()
+	void F0_Idle::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

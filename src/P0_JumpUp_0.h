@@ -10,7 +10,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	class P0_JumpUp_0 : public RB::PlayerStates::PlayerState
+	class P0_JumpUp_0 : public RB::Players::PlayerState
 	{
 	public:
 		P0_JumpUp_0() = default;

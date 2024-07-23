@@ -13,7 +13,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	class P0_WalkBack : public RB::PlayerStates::PlayerState
+	class P0_WalkBack : public RB::Players::PlayerState
 	{
 	public:
 		P0_WalkBack() = default;

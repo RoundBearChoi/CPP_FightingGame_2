@@ -9,7 +9,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	class P0_Strong_Punch : public RB::PlayerStates::PlayerState
+	class P0_Strong_Punch : public RB::Players::PlayerState
 	{
 	public:
 		P0_Strong_Punch() = default;

@@ -1,6 +1,6 @@
 #include "PlayerState.h"
 
-namespace RB::PlayerStates
+namespace RB::Players
 {
 	std::vector<PlayerState*> PlayerState::allPlayerStates;
 
@@ -28,7 +28,7 @@ namespace RB::PlayerStates
 
 		while (it != allPlayerStates.end())
 		{
-			RB::PlayerStates::PlayerState* playerState = (*it);
+			RB::Players::PlayerState* playerState = (*it);
 
 			it = allPlayerStates.erase(it);
 
@@ -86,7 +86,7 @@ namespace RB::PlayerStates
 					// not in component
 					if (ContainsState_Recursive((*it)->GetStateID()) == false)
 					{
-						RB::PlayerStates::PlayerState* playerState = (*it);
+						RB::Players::PlayerState* playerState = (*it);
 
 						it = allPlayerStates.erase(it);
 

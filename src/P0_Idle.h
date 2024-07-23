@@ -19,7 +19,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	class P0_Idle : public RB::PlayerStates::PlayerState
+	class P0_Idle : public RB::Players::PlayerState
 	{
 	public:
 		P0_Idle() = default;

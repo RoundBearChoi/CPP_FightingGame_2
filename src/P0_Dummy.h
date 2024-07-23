@@ -8,7 +8,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	class P0_Dummy : public RB::PlayerStates::PlayerState
+	class P0_Dummy : public RB::Players::PlayerState
 	{
 	public:
 		P0_Dummy(Sprites::SpriteType startingSpriteType);

@@ -13,7 +13,7 @@
 #include "../Collisions/iPlayerBoxDataController.h"
 #include "../Render/iPlayerAnimationController.h"
 
-namespace RB::PlayerStates
+namespace RB::Players
 {
 	class PlayerState : public RB::States::StateBase
 	{

@@ -10,7 +10,7 @@ namespace RB::Players
 			(*i) = nullptr;
 		}
 
-		RB::PlayerStates::PlayerState::EraseAll();
+		RB::Players::PlayerState::EraseAll();
 	}
 
 	void PlayerController::Init()
@@ -30,7 +30,7 @@ namespace RB::Players
 	{
 		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			for (auto j = RB::PlayerStates::PlayerState::allPlayerStates.begin(); j != RB::PlayerStates::PlayerState::allPlayerStates.end(); j++)
+			for (auto j = RB::Players::PlayerState::allPlayerStates.begin(); j != RB::Players::PlayerState::allPlayerStates.end(); j++)
 			{
 				if ((*j)->GetStateMachineID() != 0)
 				{

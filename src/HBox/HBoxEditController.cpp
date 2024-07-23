@@ -34,7 +34,7 @@ namespace RB::HBox
 
 	RB::HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
+		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{
@@ -75,7 +75,7 @@ namespace RB::HBox
 
 	RB::HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
 	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(playerID);
+		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{
@@ -400,7 +400,7 @@ namespace RB::HBox
 		{
 			// get current sprite type
 			RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(0);
-			RB::PlayerStates::PlayerState* ownerState = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
+			RB::Players::PlayerState* ownerState = RB::Players::PlayerState::GetPlayerState(player->GetPlayerID());
 
 			currentSpriteType = ownerState->GetSpriteType();
 		}

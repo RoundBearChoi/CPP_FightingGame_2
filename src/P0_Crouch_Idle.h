@@ -8,7 +8,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	class P0_Crouch_Idle : public RB::PlayerStates::PlayerState
+	class P0_Crouch_Idle : public RB::Players::PlayerState
 	{
 	public:
 		P0_Crouch_Idle() = default;

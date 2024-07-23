@@ -21,7 +21,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player->GetPlayerID());
+		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(player->GetPlayerID());
 
 		if (state == nullptr)
 		{

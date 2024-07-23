@@ -9,7 +9,7 @@
 
 namespace RB::PlayerStates::Aku
 {
-	class P0_Jab : public RB::PlayerStates::PlayerState
+	class P0_Jab : public RB::Players::PlayerState
 	{
 	public:
 		P0_Jab() = default;

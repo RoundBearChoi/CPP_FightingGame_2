@@ -4,7 +4,7 @@ namespace RB::Sprites
 {
 	SpriteType GetCurrentSpriteType(RB::Players::PlayerID id)
 	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(id);
+		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(id);
 
 		if (state == nullptr)
 		{

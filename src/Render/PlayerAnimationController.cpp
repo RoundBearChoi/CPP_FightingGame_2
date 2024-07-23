@@ -76,7 +76,7 @@ namespace RB::Render
 				continue;
 			}
 
-			RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(arr[i]->GetPlayerID());
+			RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(arr[i]->GetPlayerID());
 
 			if (state == nullptr)
 			{
@@ -117,7 +117,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::_SetNewPlayerAnimationObjOnChange(RB::Players::iPlayer& player)
 	{
-		RB::PlayerStates::PlayerState* state = RB::PlayerStates::PlayerState::GetPlayerState(player.GetPlayerID());
+		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(player.GetPlayerID());
 
 		if (state == nullptr)
 		{

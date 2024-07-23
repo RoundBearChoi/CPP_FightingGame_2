@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Players/PlayerState.h"
-#include "MoveUpOnJump.h"
+#include "PlayerStateComponents/MoveUpOnJump.h"
 #include "PlayerStateComponents/MarkInitiallyFacingRight.h"
 
 #include "iSpecsController.h"

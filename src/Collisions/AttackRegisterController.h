@@ -12,7 +12,7 @@
 #include "../Render/RenderScaleMultiplierObj.h"
 
 #include "../P0_Wince.h" //temp
-#include "../P0_Strong_Wince.h" //temp
+#include "../Fighter_0_States/P0_Strong_Wince.h" //temp
 
 #include "../Render/iAnimationObj.h"
 #include "../Render/iVFXAnimationController.h"

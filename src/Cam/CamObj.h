@@ -1,11 +1,12 @@
 #pragma once
 
+#include "iCamObj.h"
+
 #include "../Vector2.h"
 #include "../DisplaySize.h"
 #include "../Time.h"
 #include "../PlayerID.h"
 
-#include "../iCamObj.h"
 #include "../iInputController.h"
 
 namespace RB::Cam

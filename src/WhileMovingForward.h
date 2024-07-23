@@ -2,7 +2,7 @@
 
 #include "Vector2.h"
 #include "StateComponentBase.h"
-#include "MoveForwardOnPress.h"
+#include "PlayerStateComponents/MoveForwardOnPress.h"
 #include "PlayerStateComponents/MoveBackOnPress.h"
 
 #include "iState.h"

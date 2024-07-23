@@ -1,7 +1,7 @@
 #pragma once
 
 #include "StateComponentBase.h"
-#include "MoveForwardOnPress.h"
+#include "PlayerStateComponents/MoveForwardOnPress.h"
 
 #include "iState.h"
 #include "iStateMachine.h"

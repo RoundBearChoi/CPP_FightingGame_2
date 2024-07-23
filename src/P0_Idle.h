@@ -6,7 +6,7 @@
 #include "PlayerStateComponents/TransitionToJumpUp.h"
 #include "PlayerStateComponents/TransitionOnInput.h"
 #include "TransitionToWalkForward.h"
-#include "TransitionToWalkBack.h"
+#include "PlayerStateComponents/TransitionToWalkBack.h"
 
 #include "P0_Jab.h"
 #include "P0_Strong_Punch.h"

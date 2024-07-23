@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Players/PlayerState.h"
-#include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
-#include "PlayerStateComponents/StandUpOnRelease.h"
+#include "../Players/PlayerState.h"
+#include "../PlayerStateComponents/DoNotFixDirectionDuringState.h"
+#include "../PlayerStateComponents/StandUpOnRelease.h"
 
-#include "P0_StandUp.h"
+#include "../P0_StandUp.h"
 
 namespace RB::Fighter_0_States
 {

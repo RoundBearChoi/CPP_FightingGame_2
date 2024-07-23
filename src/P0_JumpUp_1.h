@@ -2,7 +2,7 @@
 
 #include "PlayerState.h"
 #include "PlayerStateComponents/MarkInitiallyFacingRight.h"
-#include "MoveDownOnFall.h"
+#include "PlayerStateComponents/MoveDownOnFall.h"
 
 #include "P0_Idle.h"
 

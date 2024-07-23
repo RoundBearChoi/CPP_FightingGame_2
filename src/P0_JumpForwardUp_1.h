@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerState.h"
-#include "MoveDownOnFall.h"
+#include "PlayerStateComponents/MoveDownOnFall.h"
 #include "MoveForwardOnJump_1.h"
 
 #include "P0_Idle.h"

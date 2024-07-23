@@ -7,7 +7,7 @@
 
 #include "iPlayerController.h"
 
-#include "../StateBase.h"
+#include "../States/StateBase.h"
 #include "../Sprites/SpriteType.h"
 
 #include "../Collisions/iPlayerBoxDataController.h"

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include "StateComponentBase.h"
+#include "../StateComponentBase.h"
 
 namespace RB::States
 {

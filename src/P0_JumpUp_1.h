@@ -4,7 +4,7 @@
 #include "PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "PlayerStateComponents/MoveDownOnFall.h"
 
-#include "P0_Idle.h"
+#include "Fighter_0_States/P0_Idle.h"
 
 namespace RB::Fighter_0_States
 {

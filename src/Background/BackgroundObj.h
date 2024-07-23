@@ -2,7 +2,7 @@
 
 #include "../Vector2.h"
 #include "../SpriteType.h"
-#include "../SpriteContainer.h"
+#include "../Sprites/SpriteContainer.h"
 
 #include "../Cam/iCamController.h"
 

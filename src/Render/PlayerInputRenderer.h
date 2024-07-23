@@ -3,7 +3,7 @@
 #include "../olcPixelGameEngine.h"
 
 #include "../Vector2.h"
-#include "../SpriteContainer.h"
+#include "../Sprites/SpriteContainer.h"
 #include "../SpriteType.h"
 
 #include "../Players/iPlayerController.h"

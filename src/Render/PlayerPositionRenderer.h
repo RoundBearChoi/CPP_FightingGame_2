@@ -5,7 +5,7 @@
 #include "../Collisions/AABB.h"
 #include "../Vector2.h"
 #include "../Players/PlayerID.h"
-#include "../SpriteContainer.h"
+#include "../Sprites/SpriteContainer.h"
 
 #include "../Players/iPlayerController.h"
 

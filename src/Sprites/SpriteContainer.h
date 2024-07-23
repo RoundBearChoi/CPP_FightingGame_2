@@ -1,14 +1,15 @@
 #pragma once
 
-#include "enum.h"
-#include "Vector2.h"
-#include "SpriteType.h"
-#include "Sprites/LoadedSprite.h"
-#include "Sprites/PivotType.h"
-#include "SpriteLoader.h"
-#include "Sprites/GetQuadOnPivot.h"
+#include "LoadedSprite.h"
+#include "GetQuadOnPivot.h"
+#include "PivotType.h"
 
-#include "Cam/iCamController.h"
+#include "../enum.h"
+#include "../Vector2.h"
+#include "../SpriteType.h"
+#include "../SpriteLoader.h"
+
+#include "../Cam/iCamController.h"
 
 namespace RB::Sprites
 {

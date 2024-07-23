@@ -5,7 +5,7 @@
 #include "iPlayerAnimationController.h"
 
 #include "../Vector2.h"
-#include "../SpriteContainer.h"
+#include "../Sprites/SpriteContainer.h"
 #include "../Players/PlayerState.h"
 
 #include "../HBox/Loaded_HB_Data.h"

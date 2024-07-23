@@ -8,7 +8,7 @@
 #include "iAnimationObj.h"
 
 #include "../JParser.h"
-#include "../SpriteContainer.h"
+#include "../Sprites/SpriteContainer.h"
 
 namespace RB::Render
 {

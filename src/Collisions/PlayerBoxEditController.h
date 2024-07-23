@@ -12,7 +12,7 @@
 #include "../SpriteType.h"
 #include "../Players/CharacterType.h"
 #include "../GetCurrentSpriteType.h"
-#include "../GetCurrentAnimationFrame.h"
+#include "../Sprites/GetCurrentAnimationFrame.h"
 
 #include "../Players/iPlayerController.h"
 #include "../Render/iPlayerAnimationController.h"

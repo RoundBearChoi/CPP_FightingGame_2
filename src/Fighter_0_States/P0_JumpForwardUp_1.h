@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Players/PlayerState.h"
-#include "PlayerStateComponents/MoveDownOnFall.h"
-#include "PlayerStateComponents/MoveForwardOnJump_1.h"
+#include "../Players/PlayerState.h"
+#include "../PlayerStateComponents/MoveDownOnFall.h"
+#include "../PlayerStateComponents/MoveForwardOnJump_1.h"
 
-#include "Fighter_0_States/P0_Idle.h"
+#include "P0_Idle.h"
 
 namespace RB::Fighter_0_States
 {

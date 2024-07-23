@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Vector2.h"
-#include "SpriteType.h"
-#include "SpriteContainer.h"
+#include "../Vector2.h"
+#include "../SpriteType.h"
+#include "../SpriteContainer.h"
 
-#include "Cam/iCamController.h"
+#include "../Cam/iCamController.h"
 
 namespace RB::Background
 {

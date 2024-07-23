@@ -2,7 +2,8 @@
 
 #include <vector>
 
-#include "../BackgroundObj.h"
+#include "BackgroundObj.h"
+
 #include "../Render/RenderLayerType.h"
 
 #include "../iBackgroundController.h"

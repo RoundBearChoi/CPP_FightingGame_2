@@ -2,7 +2,7 @@
 
 #include "Players/PlayerState.h"
 #include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
-#include "TransitionToJumpForward.h"
+#include "PlayerStateComponents/TransitionToJumpForward.h"
 #include "TransitionToJumpUp.h"
 #include "WhileMovingForward.h"
 

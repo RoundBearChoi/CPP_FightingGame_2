@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Players/PlayerID.h"
-#include "SpecialMoveType.h"
+#include "../Players/PlayerID.h"
+#include "../SpecialMoveType.h"
 
 namespace RB::Input
 {

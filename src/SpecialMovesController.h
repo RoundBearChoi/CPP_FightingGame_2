@@ -10,7 +10,7 @@
 #include "P0_Hadouken.h"
 
 #include "States/iState.h"
-#include "iSpecialMoveSequence.h"
+#include "Input/iSpecialMoveSequence.h"
 #include "Input/iSpecialMovesController.h"
 
 namespace RB::Input

@@ -5,8 +5,8 @@
 #include "Players/PlayerID.h"
 #include "PlayerInput.h"
 
-#include "iSpecialMoveSequence.h"
 #include "Players/iPlayerController.h"
+#include "Input/iSpecialMoveSequence.h"
 #include "Input/iInputController.h"
 
 namespace RB::Input

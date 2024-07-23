@@ -11,7 +11,7 @@
 #include "../Render/PlayerAnimationController.h"
 #include "../Collisions/PlayerBoxDataController.h"
 #include "../SpecsController.h"
-#include "../InputController.h"
+#include "../Input/InputController.h"
 #include "../SpecialMovesController.h"
 #include "../Cam/CamController.h"
 #include "../HBox/TargetBoxDataController.h"

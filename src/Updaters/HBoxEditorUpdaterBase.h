@@ -8,7 +8,7 @@
 #include "../Players/Player.h"
 #include "../HBox/HBoxType.h"
 
-#include "../InputController.h"
+#include "../Input/InputController.h"
 #include "../Cam/CamController.h"
 #include "../Players/PlayerController.h"
 #include "../Render/PlayerDebugController.h"

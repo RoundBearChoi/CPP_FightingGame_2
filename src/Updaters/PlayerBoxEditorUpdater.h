@@ -10,7 +10,7 @@
 #include "../Collisions/PlayerBoxDataController.h"
 #include "../Cam/CamController.h"
 #include "../Render/PlayerDebugController.h"
-#include "../InputController.h"
+#include "../Input/InputController.h"
 #include "../Collisions/PlayerBoxEditController.h"
 
 #include "../P0_Dummy.h"

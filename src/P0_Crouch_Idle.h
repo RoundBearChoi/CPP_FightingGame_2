@@ -2,7 +2,7 @@
 
 #include "Players/PlayerState.h"
 #include "PlayerStateComponents/DoNotFixDirectionDuringState.h"
-#include "StandUpOnRelease.h"
+#include "PlayerStateComponents/StandUpOnRelease.h"
 
 #include "P0_StandUp.h"
 

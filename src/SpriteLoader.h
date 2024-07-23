@@ -4,7 +4,7 @@
 #include <filesystem>
 
 #include "SpriteType.h"
-#include "LoadedSprite.h"
+#include "Sprites/LoadedSprite.h"
 
 namespace RB::Sprites
 {

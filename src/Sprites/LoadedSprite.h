@@ -1,8 +1,8 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "SpriteType.h"
+#include "../SpriteType.h"
 
 namespace RB::Sprites
 {

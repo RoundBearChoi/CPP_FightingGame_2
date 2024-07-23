@@ -3,7 +3,7 @@
 #include "enum.h"
 #include "Vector2.h"
 #include "SpriteType.h"
-#include "LoadedSprite.h"
+#include "Sprites/LoadedSprite.h"
 #include "PivotType.h"
 #include "SpriteLoader.h"
 #include "Sprites/GetQuadOnPivot.h"

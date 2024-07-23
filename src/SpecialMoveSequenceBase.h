@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "PlayerID.h"
+#include "Players/PlayerID.h"
 #include "PlayerInput.h"
 
 #include "iSpecialMoveSequence.h"

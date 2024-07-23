@@ -7,7 +7,7 @@
 #include "iPlayerBoxEditController.h"
 
 #include "../Time.h"
-#include "../PlayerID.h"
+#include "../Players/PlayerID.h"
 #include "../PlayerState.h"
 #include "../SpriteType.h"
 #include "../Players/CharacterType.h"

@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "SpecialMoveType.h"
-#include "PlayerID.h"
+#include "Players/PlayerID.h"
 #include "PlayerInput.h"
 
 #include "P0_Seq_Hadouken.h"

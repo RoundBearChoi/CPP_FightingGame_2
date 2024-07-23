@@ -6,7 +6,7 @@ namespace RB::PlayerStates::Aku
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_jump_forward_0;
 
-		RB::Players::Specs::MoveSpecs moveSpecs = RB::Players::Specs::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
+		RB::Players::MoveSpecs moveSpecs = RB::Players::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpUp_Forward_totalFrames, moveSpecs.mJumpUp_Forward_speedMultiplier, new P0_JumpForwardUp_1));

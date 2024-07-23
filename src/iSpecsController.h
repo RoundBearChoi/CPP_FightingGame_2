@@ -4,7 +4,7 @@
 #include "Players/CharacterType.h"
 #include "MoveSpecs.h"
 
-namespace RB::Players::Specs
+namespace RB::Players
 {
 	class iSpecsController : public RB::Controllers::ControllerT<iSpecsController>
 	{

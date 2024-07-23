@@ -1,6 +1,6 @@
 #include "SpecsController.h"
 
-namespace RB::Players::Specs
+namespace RB::Players
 {
 	SpecsController::~SpecsController()
 	{

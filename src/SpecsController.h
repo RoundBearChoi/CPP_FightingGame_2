@@ -10,7 +10,7 @@
 
 #include "iSpecsController.h"
 
-namespace RB::Players::Specs
+namespace RB::Players
 {
 	class SpecsController : public iSpecsController
 	{

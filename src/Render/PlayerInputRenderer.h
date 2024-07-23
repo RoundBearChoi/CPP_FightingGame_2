@@ -7,7 +7,7 @@
 #include "../Sprites/SpriteType.h"
 
 #include "../Players/iPlayerController.h"
-#include "../iInputController.h"
+#include "../Input/iInputController.h"
 
 namespace RB::Render
 {

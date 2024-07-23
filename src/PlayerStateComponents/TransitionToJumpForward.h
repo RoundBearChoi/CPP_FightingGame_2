@@ -3,7 +3,7 @@
 #include "../States/StateComponentBase.h"
 
 #include "../Players/iPlayerController.h"
-#include "../iInputController.h"
+#include "../Input/iInputController.h"
 #include "../States/iState.h"
 
 namespace RB::PlayerStateComponents

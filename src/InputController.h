@@ -7,7 +7,7 @@
 
 #include "iSpecialMovesController.h"
 #include "Players/iPlayerController.h"
-#include "iInputController.h"
+#include "Input/iInputController.h"
 #include "iInputObj.h"
 
 namespace RB::Input

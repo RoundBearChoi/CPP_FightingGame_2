@@ -7,7 +7,7 @@
 #include "../Time.h"
 #include "../Players/PlayerID.h"
 
-#include "../iInputController.h"
+#include "../Input/iInputController.h"
 
 namespace RB::Cam
 {

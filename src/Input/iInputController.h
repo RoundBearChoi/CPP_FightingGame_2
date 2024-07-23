@@ -1,12 +1,12 @@
 #pragma once
 
-#include "olcPixelGameEngine.h"
+#include "../olcPixelGameEngine.h"
 
-#include "Controllers/ControllerT.h"
-#include "Players/PlayerID.h"
-#include "PlayerInput.h"
+#include "../Controllers/ControllerT.h"
+#include "../Players/PlayerID.h"
+#include "../PlayerInput.h"
 
-#include "iInputObj.h"
+#include "../iInputObj.h"
 
 namespace RB::Input
 {

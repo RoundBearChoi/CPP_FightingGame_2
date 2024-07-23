@@ -4,7 +4,7 @@
 #include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "../PlayerStateComponents/TransitionOnAnimationEnd.h"
 
-#include "P0_Crouch_Idle.h"
+#include "F0_Crouch_Idle.h"
 
 namespace RB::Fighter_0_States
 {

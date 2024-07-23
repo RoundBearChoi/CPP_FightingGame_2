@@ -8,10 +8,10 @@
 
 namespace RB::Fighter_0_States
 {
-	class P0_Crouch_Idle : public RB::Players::PlayerState
+	class F0_Crouch_Idle : public RB::Players::PlayerState
 	{
 	public:
-		P0_Crouch_Idle() = default;
+		F0_Crouch_Idle() = default;
 
 	public:
 		void OnEnter() override;

@@ -1,8 +1,8 @@
-#include "P0_Crouch_Idle.h"
+#include "F0_Crouch_Idle.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_Crouch_Idle::OnEnter()
+	void F0_Crouch_Idle::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_crouch_idle;
 
@@ -12,17 +12,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void P0_Crouch_Idle::OnExit()
+	void F0_Crouch_Idle::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_Crouch_Idle::OnUpdate()
+	void F0_Crouch_Idle::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_Crouch_Idle::OnFixedUpdate()
+	void F0_Crouch_Idle::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

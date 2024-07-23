@@ -1,6 +1,6 @@
 #pragma once
 #include "PlayerState.h"
-#include "FixWincingStatusDuringState.h"
+#include "PlayerStateComponents/FixWincingStatusDuringState.h"
 #include "MarkInitiallyFacingRight.h"
 #include "MoveHorizontalOnFixedUpdateCount.h"
 #include "TransitionOnFixedUpdateCount.h"

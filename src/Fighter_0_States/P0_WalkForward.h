@@ -2,21 +2,23 @@
 
 #include "../Players/PlayerState.h"
 #include "../PlayerStateComponents/DoNotFixDirectionDuringState.h"
+#include "../PlayerStateComponents/TransitionToJumpForward.h"
 #include "../PlayerStateComponents/TransitionToJumpUp.h"
-#include "../PlayerStateComponents/WhileMovingBack.h"
+#include "../PlayerStateComponents/WhileMovingForward.h"
 
 #include "../Players/iSpecsController.h"
 
+#include "P0_JumpForwardUp_0.h"
 #include "P0_JumpUp_0.h"
 #include "P0_Idle.h"
-#include "P0_WalkForward.h"
+#include "P0_WalkBack.h"
 
 namespace RB::Fighter_0_States
 {
-	class P0_WalkBack : public RB::Players::PlayerState
+	class P0_WalkForward : public RB::Players::PlayerState
 	{
 	public:
-		P0_WalkBack() = default;
+		P0_WalkForward() = default;
 
 	public:
 		void OnEnter() override;

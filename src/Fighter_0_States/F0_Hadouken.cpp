@@ -1,8 +1,8 @@
-#include "P0_Hadouken.h"
+#include "F0_Hadouken.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_Hadouken::OnEnter()
+	void F0_Hadouken::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_hadouken;
 
@@ -13,17 +13,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void P0_Hadouken::OnExit()
+	void F0_Hadouken::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_Hadouken::OnUpdate()
+	void F0_Hadouken::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_Hadouken::OnFixedUpdate()
+	void F0_Hadouken::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

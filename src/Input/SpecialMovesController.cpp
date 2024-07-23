@@ -47,7 +47,7 @@ namespace RB::Input
 	{
 		if (specialMoveType == RB::Input::SpecialMoveType::P0_HADOUKEN)
 		{
-			return new RB::Fighter_0_States::P0_Hadouken();
+			return new RB::Fighter_0_States::F0_Hadouken();
 		}
 
 		return nullptr;

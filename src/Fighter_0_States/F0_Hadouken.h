@@ -9,10 +9,10 @@
 
 namespace RB::Fighter_0_States
 {
-	class P0_Hadouken : public RB::Players::PlayerState
+	class F0_Hadouken : public RB::Players::PlayerState
 	{
 	public:
-		P0_Hadouken() = default;
+		F0_Hadouken() = default;
 
 	public:
 		void OnEnter() override;

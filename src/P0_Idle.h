@@ -15,7 +15,7 @@
 #include "P0_JumpUp_0.h"
 #include "P0_WalkForward.h"
 #include "P0_WalkBack.h"
-#include "P0_Crouch.h"
+#include "Fighter_0_States/P0_Crouch.h"
 
 namespace RB::Fighter_0_States
 {

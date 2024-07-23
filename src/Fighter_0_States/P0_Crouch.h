@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Players/PlayerState.h"
-#include "PlayerStateComponents/MarkInitiallyFacingRight.h"
-#include "PlayerStateComponents/TransitionOnAnimationEnd.h"
+#include "../Players/PlayerState.h"
+#include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
+#include "../PlayerStateComponents/TransitionOnAnimationEnd.h"
 
-#include "Fighter_0_States/P0_Crouch_Idle.h"
+#include "P0_Crouch_Idle.h"
 
 namespace RB::Fighter_0_States
 {

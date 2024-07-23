@@ -3,11 +3,11 @@
 #include "LoadedSprite.h"
 #include "GetQuadOnPivot.h"
 #include "PivotType.h"
+#include "SpriteLoader.h"
 
 #include "../enum.h"
 #include "../Vector2.h"
 #include "../SpriteType.h"
-#include "../SpriteLoader.h"
 
 #include "../Cam/iCamController.h"
 

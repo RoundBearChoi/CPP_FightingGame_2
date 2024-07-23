@@ -3,8 +3,9 @@
 #include <vector>
 #include <filesystem>
 
-#include "SpriteType.h"
-#include "Sprites/LoadedSprite.h"
+#include "LoadedSprite.h"
+
+#include "../SpriteType.h"
 
 namespace RB::Sprites
 {

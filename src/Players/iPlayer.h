@@ -2,10 +2,11 @@
 
 #include "CharacterType.h"
 
+#include "iPlayerCollider.h"
+
 #include "../PlayerID.h"
 
 #include "../iStateMachine.h"
-#include "../iPlayerCollider.h"
 
 namespace RB::Players
 {

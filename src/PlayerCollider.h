@@ -7,7 +7,7 @@
 #include "Collisions/AABB.h"
 #include "Collisions/PlayerBox.h"
 
-#include "iPlayerCollider.h"
+#include "Players/iPlayerCollider.h"
 #include "iPlayerController.h"
 #include "Cam/iCamController.h"
 

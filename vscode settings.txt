@@ -13,6 +13,6 @@
     "C_Cpp.intelliSenseEngine": "disabled", // using clangd
     "editor.cursorStyle": "block",
     "workbench.startupEditor": "none",
-    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "diffEditor.renderSideBySide": false,
     "workbench.editor.enablePreview": true
 }

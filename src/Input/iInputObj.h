@@ -1,6 +1,6 @@
 #pragma once
 
-#include "PlayerInput.h"
+#include "../PlayerInput.h"
 
 namespace RB::Input
 {

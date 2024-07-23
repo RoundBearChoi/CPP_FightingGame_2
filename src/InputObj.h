@@ -2,7 +2,7 @@
 
 #include "PlayerInput.h"
 
-#include "iInputObj.h"
+#include "Input/iInputObj.h"
 
 namespace RB::Input
 {

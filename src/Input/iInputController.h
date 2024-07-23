@@ -6,7 +6,7 @@
 #include "../Players/PlayerID.h"
 #include "../PlayerInput.h"
 
-#include "../iInputObj.h"
+#include "iInputObj.h"
 
 namespace RB::Input
 {

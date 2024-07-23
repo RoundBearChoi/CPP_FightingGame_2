@@ -3,12 +3,12 @@
 #include "InputObj.h"
 
 #include "iInputController.h"
+#include "iSpecialMovesController.h"
 
 #include "../GameFrame.h"
 #include "../KeyBinding.h"
 #include "../SpecialMoveType.h"
 
-#include "../iSpecialMovesController.h"
 #include "../Players/iPlayerController.h"
 
 namespace RB::Input

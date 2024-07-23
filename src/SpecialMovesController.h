@@ -11,7 +11,7 @@
 
 #include "States/iState.h"
 #include "iSpecialMoveSequence.h"
-#include "iSpecialMovesController.h"
+#include "Input/iSpecialMovesController.h"
 
 namespace RB::Input
 {

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Controllers/ControllerT.h"
-#include "SpecialMoveType.h"
-#include "Players/PlayerID.h"
+#include "../Controllers/ControllerT.h"
+#include "../SpecialMoveType.h"
+#include "../Players/PlayerID.h"
 
-#include "States/iState.h"
+#include "../States/iState.h"
 
 namespace RB::Input
 {

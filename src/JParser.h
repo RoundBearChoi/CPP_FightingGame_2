@@ -36,8 +36,7 @@ namespace RB::JSON
 
 			if (str.empty())
 			{
-				//std::cout << std::endl;
-				//std::cout << "failed to load json.. file doesn't exist: " << path << std::endl;
+				std::cerr << "Error loading JSON at " + path << std::endl;
 			}
 			else
 			{

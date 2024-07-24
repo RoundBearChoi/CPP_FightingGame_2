@@ -38,14 +38,15 @@ namespace RB::JSON
 			{
 				std::cerr << "Error loading JSON at " + path << std::endl;
 			}
-			else
-			{
-				//std::cout << loadedStr << std::endl;
-			}
 
 			str.erase(std::remove(str.begin(), str.end(), '\n'), str.cend());
 
 			json_value_s* root = json_parse(str.c_str(), str.size());
+
+			if (root == nullptr)
+			{
+				std::cerr << "Error loading JSON at " + path << std::endl;
+			}
 
 			_vecLoadedRoots.push_back(root);
 

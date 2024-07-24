@@ -36,7 +36,9 @@ namespace RB::JSON
 
 			if (str.empty())
 			{
-				std::cerr << "Error loading JSON at " + path << std::endl;
+				std::cerr << "Can't find JSON at " + path << std::endl;
+
+				return nullptr;
 			}
 
 			str.erase(std::remove(str.begin(), str.end(), '\n'), str.cend());
@@ -46,6 +48,8 @@ namespace RB::JSON
 			if (root == nullptr)
 			{
 				std::cerr << "Error loading JSON at " + path << std::endl;
+
+				return nullptr;
 			}
 
 			_vecLoadedRoots.push_back(root);

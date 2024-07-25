@@ -15,7 +15,13 @@ namespace RB::Render
 
     float RenderRotationObj::GetRotation()
     {
-        return 0.0f;
+        // temp - only linear for now
+        
+        float oneFrame = _totalRotation / _totalFrames;
+        
+        float result = oneFrame * _processedFrames + 1;
+        
+        return result;
     }
 
     void RenderRotationObj::SetLastRotation(float rotation)

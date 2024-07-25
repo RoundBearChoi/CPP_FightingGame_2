@@ -11,10 +11,11 @@ namespace RB::Render
 
 	void RenderScaleMultiplierObj::OnFixedUpdate()
 	{
-		if (_start == 0.0f && _end == 0.0f)
+		if (_processedFrames == 0)
 		{
+			std::cout << "setting start" << std::endl;
 			_start = _lastRenderScale;
-			_end = _lastRenderScale * _totalMultiplier;
+			//_end = _lastRenderScale * _totalMultiplier;
 		}
 	}
 
@@ -31,7 +32,7 @@ namespace RB::Render
 
 			float result = (perFrame * (float)(_processedFrames + 1)) + 1.0f;
 
-			//std::cout << "start * result: " << _start * result << std::endl;
+			std::cout << "start * result: " << _start * result << std::endl;
 
 			return _start * result;
 		}

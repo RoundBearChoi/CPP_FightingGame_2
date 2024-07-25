@@ -10,7 +10,12 @@ namespace RB::Render
 
     void RenderRotationObj::OnFixedUpdate()
     {
-
+		if (_processedFrames == 0)
+		{
+			//std::cout << "setting start" << std::endl;
+			_start = _lastRotation;
+			//_end = _lastRotation * _totalRotation;
+		}
     }
 
     float RenderRotationObj::GetRotation()

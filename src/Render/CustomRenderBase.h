@@ -11,11 +11,12 @@ namespace RB::Render
         virtual void OnFixedUpdate() = 0;
         virtual void AddProcessedFrame();
         virtual bool DoDelete();
+        virtual int GetProcessedFrameCount();
 
     protected:
         int _totalFrames = 0;
         int _processedFrames = 0;
         float _start = 0.0f;
-		//float _end = 0.0f;
+		float _end = 0.0f;
     };
 }

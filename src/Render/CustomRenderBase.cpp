@@ -20,4 +20,9 @@ namespace RB::Render
 			return false;
 		}
 	}
+
+	int CustomRenderBase::GetProcessedFrameCount()
+	{
+		return _processedFrames;
+	}
 }

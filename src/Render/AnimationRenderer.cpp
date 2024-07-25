@@ -55,8 +55,19 @@ namespace RB::Render
 		// rotate
 		if (renderSettings.mRotation != 0.0f)
 		{
+			float r = 0.0f;
+
+			if (!renderSettings.mFaceRight)
+			{
+				r = renderSettings.mRotation * -1.0f;
+			}
+			else
+			{
+				r = renderSettings.mRotation;
+			}
+
 			//std::cout << "rotating quad by " << renderSettings.mRotation << std::endl;
-			points = RB::Sprites::RotateQuad(points, renderSettings.mRotation);
+			points = RB::Sprites::RotateQuad(points, r);
 		}
 
 		// convert to vf2d

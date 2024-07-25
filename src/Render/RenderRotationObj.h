@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include "CustomRenderBase.h"
 
 namespace RB::Render

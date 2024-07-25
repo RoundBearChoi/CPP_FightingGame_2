@@ -17,10 +17,12 @@ namespace RB::Render
     {
         // temp - only linear for now
         
-        float oneFrame = _totalRotation / _totalFrames;
+        float oneFrame = _totalRotation / (float)_totalFrames;
         
-        float result = oneFrame * _processedFrames + 1;
+        float result = oneFrame * float(_processedFrames + 1);
         
+        //std::cout << "getting rotation.. " << result << std::endl;
+
         return result;
     }
 

@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+#include "RB_PI.h"
+
 namespace RB
 {
 	class Ease
@@ -9,7 +11,7 @@ namespace RB
 	public:
 		static float EaseOutSine(float percentage)
 		{
-			return 1.0f - (sin((percentage * 3.14159265358979323846f) / 2));
+			return 1.0f - (sin((percentage * RB_PI) / 2));
 		}
 
 		static float EaseOutCubic(float percentage)

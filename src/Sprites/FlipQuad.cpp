@@ -29,8 +29,10 @@ namespace RB::Sprites
 
 	Vector2 RotatePoint(Vector2 center, Vector2 point, float angle)
 	{
-		float s = sinf(angle);
-		float c = cosf(angle);
+		float radians = angle * (RB_PI / 180.0f);
+
+		float s = sinf(radians);
+		float c = cosf(radians);
 
 		// translate point back to origin:
 		Vector2 vec = point - center;

@@ -6,6 +6,7 @@
 #include "PivotType.h"
 
 #include "../Vector2.h"
+#include "../RB_PI.h"
 
 namespace RB::Sprites
 {

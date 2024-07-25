@@ -53,7 +53,10 @@ namespace RB::Render
 		}
 
 		// rotate
-		
+		if (renderSettings.mRotation != 0.0f)
+		{
+			points = RB::Sprites::RotateQuad(points, renderSettings.mRotation);
+		}
 
 		// convert to vf2d
 		std::array<olc::vf2d, 4> arrVF2D;

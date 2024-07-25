@@ -22,7 +22,7 @@ namespace RB::Collisions
 		RB::Render::iAnimationObj* hitVFX = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, reg.collisionPoint);
 		
 		hitVFX->AddRenderScaleMultiplierObj({ 4, RB::Render::RenderScaleMultiplierType::LINEAR, 1.65f });
-		hitVFX->AddRenderRotationObj({ 50, 2.0f });
+		hitVFX->AddRenderRotationObj({ 15, 1.5f });
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 

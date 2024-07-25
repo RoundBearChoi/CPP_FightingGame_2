@@ -16,8 +16,6 @@ namespace RB::Render
 			_start = _lastRenderScale;
 			_end = _lastRenderScale * _totalMultiplier;
 		}
-
-		//_processedFrames++;
 	}
 
 	void RenderScaleMultiplierObj::SetLastRenderScale(float lastRenderScale)

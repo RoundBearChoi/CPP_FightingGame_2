@@ -183,6 +183,7 @@ namespace RB::Render
 		renderSettings.mSourceSize = GetSourceSize();
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderScale = GetRenderScale() * GetRenderScaleMultiplier();
+		renderSettings.mRotation = GetRotation();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)
@@ -227,6 +228,22 @@ namespace RB::Render
 			_lastRenderScaleMultiplier = m;
 
 			return m;
+		}
+	}
+
+	float AnimationObj::GetRotation()
+	{
+		if (_vecRotationObjs.size() == 0)
+		{
+			return _lastRotation;
+		}
+		else
+		{
+			float r = _vecRotationObjs[0].GetRotation();
+			
+			_lastRotation = r;
+			
+			return r;
 		}
 	}
 

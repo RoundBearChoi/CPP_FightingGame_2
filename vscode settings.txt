@@ -2,7 +2,10 @@
     "editor.mouseWheelZoom": true,
     "editor.fontFamily": "Inconsolata SemiCondensed",
     "editor.fontLigatures": false,
-    "clangd.path": "c:\\Users\\rbmsi\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
+
+    //edit path accordingly
+    "clangd.path": "c:\\Users\\choimacpc\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
+
     "explorer.confirmDelete": false,
     "clangd.fallbackFlags": [
         "-std=c++17"
@@ -10,9 +13,12 @@
     "workbench.colorTheme": "Peacock (rainglow)",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "explorer.confirmDragAndDrop": false,
-    "C_Cpp.intelliSenseEngine": "disabled", // using clangd
+
+    // using clangd
+    "C_Cpp.intelliSenseEngine": "disabled", 
+
     "editor.cursorStyle": "block",
     "workbench.startupEditor": "none",
-    "diffEditor.renderSideBySide": false,
+    "diffEditor.renderSideBySide": true,
     "workbench.editor.enablePreview": true
 }

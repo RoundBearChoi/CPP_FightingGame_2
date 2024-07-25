@@ -4,6 +4,7 @@
 
 #include "AnimationRenderer.h"
 #include "RenderScaleMultiplierObj.h"
+#include "RenderRotationObj.h"
 
 #include "iAnimationObj.h"
 
@@ -39,6 +40,7 @@ namespace RB::Render
 		unsigned int GetFixedUpdateCount() override;
 		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) override;
 		float GetRenderScaleMultiplier() override;
+		float GetRotation() override;
 		float GetLastRenderScale() override;
 
 	private:
@@ -50,7 +52,9 @@ namespace RB::Render
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		RB::Vector2 _worldPos = { 0, 0 };
 		std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
+		std::vector<RenderRotationObj> _vecRotationObjs;
 		float _lastRenderScaleMultiplier = 1.0f;
+		float _lastRotation = 0.0f;
 		AnimationSpecs _emptySpecs;
 	};
 }

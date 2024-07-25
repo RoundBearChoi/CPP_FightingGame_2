@@ -27,9 +27,9 @@ namespace RB::Render
 	{
 		if (_multiplierType == RenderScaleMultiplierType::LINEAR)
 		{
-			float oneFrame = _totalMultiplier / float(_totalFrames);
+			float perFrame = _totalMultiplier / float(_totalFrames);
 
-			float result = (oneFrame * (float)(_processedFrames + 1)) + 1.0f;
+			float result = (perFrame * (float)(_processedFrames + 1)) + 1.0f;
 
 			//std::cout << "render scale multiplier: " << result << std::endl;
 

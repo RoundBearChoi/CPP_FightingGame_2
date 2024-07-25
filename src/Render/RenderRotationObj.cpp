@@ -17,13 +17,15 @@ namespace RB::Render
     {
         // temp - only linear for now
         
-        float oneFrame = _totalRotation / (float)_totalFrames;
+        float perFrame = _totalRotation / (float)_totalFrames;
         
-        float result = oneFrame * float(_processedFrames + 1);
+        float result = perFrame * float(_processedFrames + 1);
         
-        //std::cout << "getting rotation.. " << result << std::endl;
+        std::cout << "getting rotation.. " << result << std::endl;
+        //std::cout << "total rotation.. " << _lastRotation + result << std::endl;
 
         return result;
+        //return _lastRotation + result;
     }
 
     void RenderRotationObj::SetLastRotation(float rotation)

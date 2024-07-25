@@ -8,6 +8,11 @@ namespace RB::Render
         _totalRotation = totalRotation;
     }
 
+    void RenderRotationObj::OnFixedUpdate()
+    {
+
+    }
+
     float RenderRotationObj::GetRotation()
     {
         return 0.0f;

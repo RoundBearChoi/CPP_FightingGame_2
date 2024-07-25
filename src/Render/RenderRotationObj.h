@@ -10,6 +10,9 @@ namespace RB::Render
     {
         public:
         RenderRotationObj(int totalFrames, float totalRotation);
+        
+        void OnFixedUpdate();
+
         float GetRotation();
 
         private:

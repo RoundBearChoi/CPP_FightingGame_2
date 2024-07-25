@@ -207,7 +207,7 @@ namespace RB::Render
 		}
 		else
 		{
-			renderSettings.mFaceRight = true;
+			renderSettings.mFaceRight = _faceRight;
 		}
 
 		_animationRenderer->RenderAnimation(renderSettings);

@@ -44,7 +44,7 @@ namespace RB::Render
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
-		//int _ownerPlayerID = 0;
+		bool _faceRight = true;
 		AnimationRenderer* _animationRenderer = nullptr;
 		RB::Sprites::PivotType _pivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		unsigned int _currentIndex = 0;

@@ -20,11 +20,12 @@ namespace RB::Render
 		{
 			_start = start;
 
-			std::cout << "setting start scale: " << start  << std::endl;
+			std::cout << std::endl;
+			std::cout << "setting start render scale: " << start  << std::endl;
 
 			_end = start * _totalMultiplier;
 
-			std::cout << "setting end scale: " << _end << std::endl;
+			std::cout << "setting end render scale: " << _end << std::endl;
 		}
 	}
 
@@ -49,7 +50,7 @@ namespace RB::Render
 				//result = 1.0f - result;
 			}
 
-			std::cout << "processed frame " << _processedFrames << " multiplier: "  << _start + result << std::endl;
+			//std::cout << "processed frame " << _processedFrames << " multiplier: "  << _start + result << std::endl;
 
 			return _start + result;
 		}

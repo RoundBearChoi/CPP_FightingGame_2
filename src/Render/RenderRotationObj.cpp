@@ -12,7 +12,6 @@ namespace RB::Render
     {
 		if (_processedFrames == 0)
 		{
-            //std::cout << "setting start" << std::endl;
 			_start = _lastRotation;
 		}
     }

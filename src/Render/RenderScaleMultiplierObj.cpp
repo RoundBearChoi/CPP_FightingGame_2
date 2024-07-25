@@ -15,15 +15,16 @@ namespace RB::Render
 
 		if (_start == 0.0f && _end == 0.0f)
 		{
-			SetStartAndEnd();
+			_start = _lastRenderScale;
+			_end = _lastRenderScale * _totalMultiplier;
 		}
 
 		_processedFrames++;
 	}
 
-	void RenderScaleMultiplierObj::SetOwner(iAnimationObj* owner)
+	void RenderScaleMultiplierObj::SetLastRenderScale(float lastRenderScale)
 	{
-		_owner = owner;
+		_lastRenderScale = lastRenderScale;
 	}
 
 	bool RenderScaleMultiplierObj::DoDelete()
@@ -52,15 +53,5 @@ namespace RB::Render
 
 		// temp
 		return 1.0f;
-	}
-
-	void RenderScaleMultiplierObj::SetStartAndEnd()
-	{
-		float current = _owner->GetLastRenderScale();
-
-		_start = current;
-		_end = current * _totalMultiplier;
-
-
 	}
 }

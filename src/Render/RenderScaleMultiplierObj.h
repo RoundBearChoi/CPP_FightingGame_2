@@ -3,34 +3,29 @@
 #include <iostream>
 #include <string>
 
+#include "CustomRenderBase.h"
 #include "RenderScaleMultiplierType.h"
-
-#include "iAnimationObj.h"
+//#include "iAnimationObj.h"
 
 namespace RB::Render
 {
-	class iAnimationObj; // forward declare
+	//class iAnimationObj; // forward declare
 
-	class RenderScaleMultiplierObj
+	class RenderScaleMultiplierObj : public CustomRenderBase
 	{
-		public:
+	public:
 		RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier);
 
-		void OnFixedUpdate();
+		void OnFixedUpdate() override;
+		void SetLastRenderScale(float lastRenderScale);
 		
-		public:
-		void SetOwner(iAnimationObj* owner);
+	public:
 		bool DoDelete();
 		float GetRenderScaleMultiplier();
-		void SetStartAndEnd();
 		
-		private:
-		int _totalFrames = 0;
+	private:
 		RenderScaleMultiplierType _multiplierType = RenderScaleMultiplierType::NONE;
+		float _lastRenderScale = 1.0f;
 		float _totalMultiplier = 1.0f;
-		int _processedFrames = 0;
-		iAnimationObj* _owner = nullptr;
-		float _start = 0.0f;
-		float _end = 0.0f;
 	};
 }

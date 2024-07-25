@@ -31,6 +31,7 @@ namespace RB::Render
 		// update one at a time
 		if (_vecMultiplierObjs.size() >= 1)
 		{
+			_vecMultiplierObjs[0].SetLastRenderScale(_lastRenderScaleMultiplier);
 			_vecMultiplierObjs[0].OnFixedUpdate();
 
 			if (_vecMultiplierObjs[0].DoDelete())
@@ -210,8 +211,6 @@ namespace RB::Render
 
 	void AnimationObj::AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj)
 	{
-		obj.SetOwner(this);
-
 		_vecMultiplierObjs.push_back(obj);
 	}
 

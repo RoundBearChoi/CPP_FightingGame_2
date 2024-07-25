@@ -7,7 +7,7 @@
 
 namespace RB::Render
 {
-	class RenderScaleMultiplierObj; // forward declare
+	//class RenderScaleMultiplierObj; // forward declare
 
 	class iAnimationObj
 	{

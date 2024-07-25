@@ -52,6 +52,9 @@ namespace RB::Render
 			points = RB::Sprites::FlipQuad(renderSettings.mPivotType, points);
 		}
 
+		// rotate
+		
+
 		// convert to vf2d
 		std::array<olc::vf2d, 4> arrVF2D;
 
@@ -66,7 +69,5 @@ namespace RB::Render
 			arrVF2D,
 			olc::vf2d{ renderSettings.mSourcePos.x, renderSettings.mSourcePos.y },
 			olc::vf2d{ renderSettings.mSourceSize.x, renderSettings.mSourceSize.y });
-
-		//olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 	}
 }

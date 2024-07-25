@@ -24,8 +24,8 @@ namespace RB::Collisions
 			reg.collisionPoint,
 			reg.targetIsOnRightSide);
 		
-		hitVFX->AddRenderScaleMultiplierObj({ 13, RB::Render::RenderScaleMultiplierType::LINEAR, 1.5f });
-		hitVFX->AddRenderRotationObj({ 20, 25.0f });
+		hitVFX->AddRenderScaleMultiplierObj({ 13, RB::Render::RenderScaleMultiplierType::LINEAR, 1.6f });
+		hitVFX->AddRenderRotationObj({ 20, 30.0f });
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 

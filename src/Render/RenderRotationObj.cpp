@@ -21,7 +21,7 @@ namespace RB::Render
         
         float result = perFrame * float(_processedFrames + 1);
         
-        std::cout << "getting rotation.. " << result << std::endl;
+        //std::cout << "getting rotation.. " << result << std::endl;
         //std::cout << "total rotation.. " << _lastRotation + result << std::endl;
 
         return result;

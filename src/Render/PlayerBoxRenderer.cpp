@@ -38,7 +38,16 @@ namespace RB::Render
 				boxTint = olc::BLUE;
 			}
 
-			_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, playerBox.x, playerBox.y, playerPos, boxTint, RB::Sprites::PivotType::BOTTOM_CENTER, true);
+			boxTint.a = 40;
+
+			_spriteContainer->RenderSprite(
+				RB::Sprites::SpriteType::white_sq, 
+				playerBox.x, 
+				playerBox.y, 
+				playerPos, 
+				boxTint, 
+				RB::Sprites::PivotType::BOTTOM_CENTER, 
+				true);
 		}
 	}
 

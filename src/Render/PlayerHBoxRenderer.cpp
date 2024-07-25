@@ -82,21 +82,23 @@ namespace RB::Render
 			return;
 		}
 
-		olc::Pixel color = olc::RED;
+		olc::Pixel tint = olc::RED;
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			color = olc::MAGENTA;
+			tint = olc::MAGENTA;
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			color = olc::GREEN;
+			tint = olc::GREEN;
 		}
 
-		_Render(player, AABBs, color);
+		tint.a = 40;
+
+		_Render(player, AABBs, tint);
 	}
 
-	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* AABBs, olc::Pixel color)
+	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* AABBs, olc::Pixel tint)
 	{
 		const auto& vec = AABBs->GetSelector()->GetVector();
 
@@ -114,20 +116,34 @@ namespace RB::Render
 				continue;
 			}
 
+			RB::Vector2 pos;
+			RB::Sprites::PivotType pivotType;
+
 			if (player->IsFacingRight())
 			{
-				RB::Vector2 pos = aabb.GetBottomLeft() + player->GetPosition();
+				pos = aabb.GetBottomLeft() + player->GetPosition();
 
-				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_LEFT, true);
+				pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
+				//_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_LEFT, true);
 			}
 			else
 			{
 				RB::Vector2 bottomleft = aabb.GetBottomLeft();
 				bottomleft.x *= -1.0f;
-				RB::Vector2 pos = bottomleft + player->GetPosition();
+				pos = bottomleft + player->GetPosition();
 
-				_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq_tr80, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT, true);
+				pivotType = RB::Sprites::PivotType::BOTTOM_RIGHT;
+				//_spriteContainer->RenderSprite(RB::Sprites::SpriteType::white_sq, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, RB::Sprites::PivotType::BOTTOM_RIGHT, true);
 			}
+
+			_spriteContainer->RenderSprite(
+				RB::Sprites::SpriteType::white_sq, 
+				aabb.GetWidthHeight().x, 
+				aabb.GetWidthHeight().y, 
+				pos, 
+				tint, 
+				pivotType, 
+				true);
 		}
 	}
 }

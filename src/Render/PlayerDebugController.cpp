@@ -5,7 +5,8 @@ namespace RB::Render
 	void PlayerDebugController::Init()
 	{
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/x_white.png", RB::Sprites::SpriteType::x_white);
-		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteType::white_sq_tr80);
+		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq.png", RB::Sprites::SpriteType::white_sq);
+		//_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq_tr80.png", RB::Sprites::SpriteType::white_sq_tr80);
 
 		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_up.png", RB::Sprites::SpriteType::input_arrow_up);
 		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_down.png", RB::Sprites::SpriteType::input_arrow_down);

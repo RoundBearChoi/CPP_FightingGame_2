@@ -11,6 +11,7 @@ namespace RB::Sprites
 		NONE = 0,
 
 		x_white,
+		white_sq,
 		white_sq_tr80,
 
 		input_arrow_up,

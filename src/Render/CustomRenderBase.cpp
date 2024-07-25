@@ -2,7 +2,12 @@
 
 namespace RB::Render
 {
-    	bool CustomRenderBase::DoDelete()
+    void CustomRenderBase::AddProcessedFrame()
+    {
+        _processedFrames++;
+    }
+    
+    bool CustomRenderBase::DoDelete()
 	{
 		if (_processedFrames >= _totalFrames)
 		{

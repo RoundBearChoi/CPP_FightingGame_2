@@ -9,6 +9,7 @@ namespace RB::Render
 
     public:
         virtual void OnFixedUpdate() = 0;
+        virtual void AddProcessedFrame();
         virtual bool DoDelete();
 
     protected:

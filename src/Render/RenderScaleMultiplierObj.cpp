@@ -31,7 +31,7 @@ namespace RB::Render
 
 			float result = (perFrame * (float)(_processedFrames + 1)) + 1.0f;
 
-			std::cout << "start * result: " << _start * result << std::endl;
+			//std::cout << "start * result: " << _start * result << std::endl;
 
 			return _start * result;
 		}

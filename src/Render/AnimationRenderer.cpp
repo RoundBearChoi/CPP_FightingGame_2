@@ -55,6 +55,7 @@ namespace RB::Render
 		// rotate
 		if (renderSettings.mRotation != 0.0f)
 		{
+			std::cout << "rotating quad by " << renderSettings.mRotation << std::endl;
 			points = RB::Sprites::RotateQuad(points, renderSettings.mRotation);
 		}
 

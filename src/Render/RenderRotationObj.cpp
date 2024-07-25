@@ -12,7 +12,7 @@ namespace RB::Render
     {
 		if (_processedFrames == 0)
 		{
-            std::cout << "setting start" << std::endl;
+            //std::cout << "setting start" << std::endl;
 			_start = _lastRotation;
 		}
     }
@@ -25,7 +25,7 @@ namespace RB::Render
         
         float result = perFrame * float(_processedFrames + 1);
         
-        std::cout << "start + result.. " << _start + result << std::endl;
+        //std::cout << "start + result.. " << _start + result << std::endl;
 
         return _start + result;
     }

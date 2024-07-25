@@ -13,9 +13,8 @@ namespace RB::Render
 	{
 		if (_processedFrames == 0)
 		{
-			std::cout << "setting start" << std::endl;
+			//std::cout << "setting start" << std::endl;
 			_start = _lastRenderScale;
-			//_end = _lastRenderScale * _totalMultiplier;
 		}
 	}
 
@@ -32,7 +31,7 @@ namespace RB::Render
 
 			float result = (perFrame * (float)(_processedFrames + 1)) + 1.0f;
 
-			std::cout << "start * result: " << _start * result << std::endl;
+			//std::cout << "start * result: " << _start * result << std::endl;
 
 			return _start * result;
 		}

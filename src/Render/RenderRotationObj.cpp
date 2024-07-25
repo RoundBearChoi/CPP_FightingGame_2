@@ -12,9 +12,8 @@ namespace RB::Render
     {
 		if (_processedFrames == 0)
 		{
-			//std::cout << "setting start" << std::endl;
+            std::cout << "setting start" << std::endl;
 			_start = _lastRotation;
-			//_end = _lastRotation * _totalRotation;
 		}
     }
 
@@ -26,11 +25,9 @@ namespace RB::Render
         
         float result = perFrame * float(_processedFrames + 1);
         
-        //std::cout << "getting rotation.. " << result << std::endl;
-        //std::cout << "total rotation.. " << _lastRotation + result << std::endl;
+        std::cout << "start + result.. " << _start + result << std::endl;
 
-        return result;
-        //return _lastRotation + result;
+        return _start + result;
     }
 
     void RenderRotationObj::SetLastRotation(float rotation)

@@ -17,4 +17,9 @@ namespace RB::Render
     {
         return 0.0f;
     }
+
+    void RenderRotationObj::SetLastRotation(float rotation)
+    {
+        _lastRotation = rotation;
+    }
 }

@@ -3,8 +3,6 @@
 #include <vector>
 
 #include "AnimationRenderer.h"
-#include "RenderScaleMultiplierObj.h"
-#include "RenderRotationObj.h"
 
 #include "iAnimationObj.h"
 
@@ -39,6 +37,7 @@ namespace RB::Render
 		void SetWorldPos(const RB::Vector2& pos) override;
 		unsigned int GetFixedUpdateCount() override;
 		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) override;
+		void AddRenderRotationObj(RenderRotationObj obj) override;
 		float GetRenderScaleMultiplier() override;
 		float GetRotation() override;
 		float GetLastRenderScale() override;

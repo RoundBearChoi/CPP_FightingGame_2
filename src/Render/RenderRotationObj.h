@@ -1,26 +1,23 @@
 #pragma once
 
-#include "iAnimationObj.h"
+#include "CustomRenderBase.h"
 
 namespace RB::Render
 {
-    class iAnimationObj; // forward declare
-
-    class RenderRotationObj
+    class RenderRotationObj : public CustomRenderBase
     {
-        public:
+    public:
         RenderRotationObj(int totalFrames, float totalRotation);
-        
+
+    public:
         void OnFixedUpdate();
 
+    public:
         float GetRotation();
+        void SetLastRotation(float rotation);
 
-        private:
-        int _totalFrames = 0;
+    private:
         float _totalRotation = 0.0f;
-        int _processedFrames = 0;
-		iAnimationObj* _owner = nullptr;
-		float _start = 0.0f;
-		float _end = 0.0f;
+        float _lastRotation = 0.0f;
     };
 }

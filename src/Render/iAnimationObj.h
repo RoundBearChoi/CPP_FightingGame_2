@@ -2,6 +2,7 @@
 
 #include "AnimationSpecs.h"
 #include "RenderScaleMultiplierObj.h"
+#include "RenderRotationObj.h"
 
 #include "../Players/iPlayer.h"
 
@@ -32,6 +33,7 @@ namespace RB::Render
 		virtual void SetWorldPos(const RB::Vector2& pos) = 0;
 		virtual unsigned int GetFixedUpdateCount() = 0;
 		virtual void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) = 0;
+		virtual void AddRenderRotationObj(RenderRotationObj obj) = 0;
 		virtual float GetRenderScaleMultiplier() = 0;
 		virtual float GetRotation() = 0;
 		virtual float GetLastRenderScale() = 0;

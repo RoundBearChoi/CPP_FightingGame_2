@@ -40,6 +40,19 @@ namespace RB::Render
 				_vecMultiplierObjs.erase(_vecMultiplierObjs.begin());
 			}
 		}
+
+		// update one at a time
+		if (_vecRotationObjs.size() >= 1)
+		{
+			_vecRotationObjs[0].SetLastRotation(_lastRotation);
+			_vecRotationObjs[0].OnFixedUpdate();
+			_vecRotationObjs[0].AddProcessedFrame();
+
+			if (_vecRotationObjs[0].DoDelete())
+			{
+				_vecRotationObjs.erase(_vecRotationObjs.begin());
+			}
+		}
 	}
 
 	void AnimationObj::UpdateAnimationIndex()
@@ -213,6 +226,11 @@ namespace RB::Render
 	void AnimationObj::AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj)
 	{
 		_vecMultiplierObjs.push_back(obj);
+	}
+
+	void AnimationObj::AddRenderRotationObj(RenderRotationObj obj)
+	{
+		_vecRotationObjs.push_back(obj);
 	}
 
 	float AnimationObj::GetRenderScaleMultiplier()

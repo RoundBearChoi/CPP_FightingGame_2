@@ -19,7 +19,10 @@ namespace RB::Collisions
 
 	void AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
-		RB::Render::iAnimationObj* hitVFX = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(RB::Sprites::SpriteType::vfx_hiteffect_0, reg.collisionPoint);
+		RB::Render::iAnimationObj* hitVFX = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
+			RB::Sprites::SpriteType::vfx_hiteffect_0,
+			reg.collisionPoint,
+			reg.targetIsOnRightSide);
 		
 		hitVFX->AddRenderScaleMultiplierObj({ 13, RB::Render::RenderScaleMultiplierType::LINEAR, 1.5f });
 		hitVFX->AddRenderRotationObj({ 20, 25.0f });

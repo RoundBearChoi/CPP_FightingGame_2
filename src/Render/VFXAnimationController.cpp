@@ -23,12 +23,14 @@ namespace RB::Render
         _DeleteFinishedAnimations();
     }
 
-    iAnimationObj* VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, RB::Vector2 pos)
+    iAnimationObj* VFXAnimationController::InstantiateAnimation(RB::Sprites::SpriteType spriteType, RB::Vector2 pos, bool faceRight)
     {
         AnimationRenderer* aniRenderer = _animationContainer.GetAnimationRenderer(spriteType);
         
         //no owner player
         iAnimationObj* animationObj = new AnimationObj(nullptr, aniRenderer, RB::Sprites::PivotType::CENTER);
+        
+        animationObj->FaceRight(faceRight);
 
         animationObj->SetWorldPos(pos);
 

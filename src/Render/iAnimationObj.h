@@ -18,6 +18,7 @@ namespace RB::Render
 		virtual void OnFixedUpdate() = 0;
 
 	public:
+		virtual void FaceRight(bool faceRight) = 0;
 		virtual void UpdateAnimationIndex() = 0;
 		virtual void ManualIncreaseAnimationIndex() = 0;
 		virtual void ManualDecreaseAnimationIndex() = 0;

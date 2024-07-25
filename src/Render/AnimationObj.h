@@ -22,6 +22,8 @@ namespace RB::Render
 	public:
 		void OnFixedUpdate() override;
 
+	public:
+		void FaceRight(bool faceRight) override;
 		void UpdateAnimationIndex() override;
 		void ManualIncreaseAnimationIndex() override;
 		void ManualDecreaseAnimationIndex() override;

@@ -55,6 +55,11 @@ namespace RB::Render
 		}
 	}
 
+	void AnimationObj::FaceRight(bool faceRight)
+	{
+		_faceRight = faceRight;
+	}
+
 	void AnimationObj::UpdateAnimationIndex()
 	{
 		if (_ownerPlayer != nullptr)

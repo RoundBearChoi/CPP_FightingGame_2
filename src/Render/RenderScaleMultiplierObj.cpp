@@ -11,8 +11,6 @@ namespace RB::Render
 
 	void RenderScaleMultiplierObj::OnFixedUpdate()
 	{
-		//std::cout << "processing sizeChange.. " << std::to_string(_processedFrames) << std::endl;
-
 		if (_start == 0.0f && _end == 0.0f)
 		{
 			_start = _lastRenderScale;
@@ -25,19 +23,6 @@ namespace RB::Render
 	void RenderScaleMultiplierObj::SetLastRenderScale(float lastRenderScale)
 	{
 		_lastRenderScale = lastRenderScale;
-	}
-
-	bool RenderScaleMultiplierObj::DoDelete()
-	{
-		if (_processedFrames >= _totalFrames)
-		{
-			//std::cout << "deleting.." << std::endl;
-			return true;
-		}
-		else
-		{
-			return false;
-		}
 	}
 
 	float RenderScaleMultiplierObj::GetRenderScaleMultiplier()

@@ -20,7 +20,6 @@ namespace RB::Render
 		void SetLastRenderScale(float lastRenderScale);
 		
 	public:
-		bool DoDelete();
 		float GetRenderScaleMultiplier();
 		
 	private:

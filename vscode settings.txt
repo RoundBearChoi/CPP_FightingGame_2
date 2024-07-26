@@ -4,7 +4,7 @@
     "editor.fontLigatures": false,
 
     //edit path accordingly
-    "clangd.path": "c:\\Users\\choimacpc\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
+    "clangd.path": "c:\\Users\\rbmsi\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
 
     "explorer.confirmDelete": false,
     "clangd.fallbackFlags": [
@@ -20,5 +20,7 @@
     "editor.cursorStyle": "block",
     "workbench.startupEditor": "none",
     "diffEditor.renderSideBySide": true,
-    "workbench.editor.enablePreview": true
+    "workbench.editor.enablePreview": true,
+    "workbench.statusBar.visible": false,
+    "workbench.sideBar.location": "right"
 }

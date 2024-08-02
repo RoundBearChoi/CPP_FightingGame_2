@@ -46,7 +46,8 @@ namespace RB::Render
 		// update one at a time
 		if (_vecRotationObjs.size() >= 1)
 		{
-			_vecRotationObjs[0].SetLastRotation(_lastRotation);
+			_vecRotationObjs[0].SetStart(_lastRotation);
+
 			_vecRotationObjs[0].OnFixedUpdate();
 			_vecRotationObjs[0].AddProcessedFrame();
 
@@ -263,6 +264,10 @@ namespace RB::Render
 	float AnimationObj::GetRotation()
 	{
 		if (_vecRotationObjs.size() == 0)
+		{
+			return _lastRotation;
+		}
+		else if (_vecRotationObjs[0].GetProcessedFrameCount() == 0)
 		{
 			return _lastRotation;
 		}

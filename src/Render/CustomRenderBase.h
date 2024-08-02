@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 namespace RB::Render
 {
     class CustomRenderBase
@@ -9,6 +11,7 @@ namespace RB::Render
 
     public:
         virtual void OnFixedUpdate() = 0;
+        virtual void SetStart(float start) = 0;
         virtual void AddProcessedFrame();
         virtual bool DoDelete();
         virtual int GetProcessedFrameCount();

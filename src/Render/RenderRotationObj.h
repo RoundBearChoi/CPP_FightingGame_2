@@ -12,9 +12,10 @@ namespace RB::Render
         RenderRotationObj(int totalFrames, float totalRotation);
 
     public:
-        void OnFixedUpdate();
+        void OnFixedUpdate() override;
 
     public:
+        void SetStart(float start) override;
         float GetRotation();
         void SetLastRotation(float rotation);
 

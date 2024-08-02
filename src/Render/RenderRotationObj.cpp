@@ -16,6 +16,11 @@ namespace RB::Render
 		}
     }
 
+    void RenderRotationObj::SetStart(float start)
+    {
+        
+    }
+
     float RenderRotationObj::GetRotation()
     {
         // temp - only linear for now

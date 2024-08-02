@@ -19,12 +19,12 @@ namespace RB::Render
 		if (_processedFrames == 0)
 		{
 			_start = start;
-
+	
 			std::cout << std::endl;
 			std::cout << "setting start render scale: " << start  << std::endl;
-
+	
 			_end = start * _totalMultiplier;
-
+	
 			std::cout << "setting end render scale: " << _end << std::endl;
 		}
 	}

@@ -35,7 +35,6 @@ namespace RB::Render
 
 			_vecMultiplierObjs[0].OnFixedUpdate();
 			_vecMultiplierObjs[0].AddProcessedFrame();
-			//_vecMultiplierObjs[0].SetLastRenderScale(_lastRenderScaleMultiplier);
 
 			if (_vecMultiplierObjs[0].DoDelete())
 			{

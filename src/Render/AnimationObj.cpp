@@ -1,6 +1,6 @@
 #include "AnimationObj.h"
 #include "RenderScaleMultiplierObj.h"
-#include "RenderTransparent.h"
+#include "RenderTransparencyObj.h"
 
 namespace RB::Render
 {
@@ -224,7 +224,8 @@ namespace RB::Render
 		_customRotations.AddObj(obj);
 	}
 
-	void AnimationObj::AddRenderTransparency(RenderTransparent* obj)
+	/// Transparency max is 1.0f
+	void AnimationObj::AddRenderTransparency(RenderTransparencyObj* obj)
 	{
 		_customTransparency.AddObj(obj);
 	}

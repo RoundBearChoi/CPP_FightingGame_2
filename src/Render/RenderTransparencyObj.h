@@ -6,10 +6,10 @@
 
 namespace RB::Render
 {
-    class RenderTransparent : public CustomRender
+    class RenderTransparencyObj : public CustomRender
     {
     public:
-        RenderTransparent(int totalFrames, float totalRotation);
+        RenderTransparencyObj(int totalFrames, float totalRotation);
 
     public:
         void OnFixedUpdate() override;

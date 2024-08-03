@@ -4,10 +4,10 @@
 #include "CustomRender.h"
 #include "RenderScaleMultiplierObj.h"
 #include "RenderRotationObj.h"
-#include "RenderTransparent.h"
+#include "RenderTransparencyObj.h"
 
 #include "../Players/iPlayer.h"
-#include "RenderTransparent.h"
+#include "RenderTransparencyObj.h"
 
 namespace RB::Render
 {
@@ -38,7 +38,7 @@ namespace RB::Render
 		virtual unsigned int GetFixedUpdateCount() = 0;
 		virtual void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj) = 0;
 		virtual void AddRenderRotationObj(RenderRotationObj* obj) = 0;
-		virtual void AddRenderTransparency(RenderTransparent* obj) = 0;
+		virtual void AddRenderTransparency(RenderTransparencyObj* obj) = 0;
 		virtual float GetRenderScaleMultiplier() = 0;
 		virtual float GetRotation() = 0;
 		virtual int GetTransparency() = 0;

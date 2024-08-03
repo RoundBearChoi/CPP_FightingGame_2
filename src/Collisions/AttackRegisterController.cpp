@@ -38,11 +38,11 @@ namespace RB::Collisions
 			20,
 			8.0f));
 
-		hitVFX->AddRenderTransparency(new Render::RenderTransparent(
+		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
 			7,
 			1.0f));
 
-		hitVFX->AddRenderTransparency(new Render::RenderTransparent(
+		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
 			12,
 			0.0f));
 

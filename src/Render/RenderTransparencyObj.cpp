@@ -1,19 +1,19 @@
-#include "RenderTransparent.h"
+#include "RenderTransparencyObj.h"
 
 namespace RB::Render
 {
-    RenderTransparent::RenderTransparent(int totalFrames, float totalRotation)
+    RenderTransparencyObj::RenderTransparencyObj(int totalFrames, float totalRotation)
     {
         _totalFrames = totalFrames;
         _totalAmount = totalRotation;
     }
 
-    void RenderTransparent::OnFixedUpdate()
+    void RenderTransparencyObj::OnFixedUpdate()
     {
         
     }
 
-    void RenderTransparent::SetStart(float start)
+    void RenderTransparencyObj::SetStart(float start)
     {
       if (_processedFrames == 0)
       {
@@ -28,7 +28,7 @@ namespace RB::Render
       }
     }
 
-    float RenderTransparent::GetAmount()
+    float RenderTransparencyObj::GetAmount()
     {
       if (_processedFrames == 0)
       {

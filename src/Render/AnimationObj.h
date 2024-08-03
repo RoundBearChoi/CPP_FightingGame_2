@@ -8,7 +8,7 @@
 
 #include "RenderRotationObj.h"
 #include "RenderScaleMultiplierObj.h"
-#include "RenderTransparent.h"
+#include "RenderTransparencyObj.h"
 
 #include "iAnimationObj.h"
 
@@ -46,7 +46,7 @@ namespace RB::Render
 		unsigned int GetFixedUpdateCount() override;
 		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj) override;
 		void AddRenderRotationObj(RenderRotationObj* obj) override;
-		void AddRenderTransparency(RenderTransparent* obj) override;
+		void AddRenderTransparency(RenderTransparencyObj* obj) override;
 		float GetRenderScaleMultiplier() override;
 		float GetRotation() override;
 		int GetTransparency() override;
@@ -61,7 +61,7 @@ namespace RB::Render
 		RB::Vector2 _worldPos = { 0, 0 };
 		CustomRenderContainer<RenderScaleMultiplierObj> _customRenderScales;
 		CustomRenderContainer<RenderRotationObj> _customRotations;
-		CustomRenderContainer<RenderTransparent> _customTransparency;
+		CustomRenderContainer<RenderTransparencyObj> _customTransparency;
 		AnimationSpecs _emptySpecs;
 	};
 }

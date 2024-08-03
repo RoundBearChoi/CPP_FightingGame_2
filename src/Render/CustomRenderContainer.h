@@ -5,7 +5,7 @@
 namespace RB::Render
 {
     template <typename T>
-    class CustomRender
+    class CustomRenderContainer
     {
     protected:
         std::vector<T> _vec;

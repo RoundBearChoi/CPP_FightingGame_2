@@ -28,10 +28,10 @@ namespace RB::Render
 
 	void AnimationObj::OnFixedUpdate()
 	{
+		_customFixedUpdate.DoFixedUpdate();
+
 		_customRenderScales.OnFixedUpdate();
 		_customRotations.OnFixedUpdate();
-
-		_customFixedUpdate.DoFixedUpdate();
 
 		_animationRenderer->OnFixedUpdate();
 	}

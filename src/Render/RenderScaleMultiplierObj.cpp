@@ -6,7 +6,7 @@ namespace RB::Render
 	{
 		_totalFrames = totalFrames;
 		_multiplierType = multiplierType;
-		_totalMultiplier = totalMultiplier;
+		_totalAmount = totalMultiplier;
 	}
 
 	void RenderScaleMultiplierObj::OnFixedUpdate()
@@ -23,7 +23,7 @@ namespace RB::Render
 			std::cout << std::endl;
 			std::cout << "setting start render scale: " << start  << std::endl;
 	
-			_end = start * _totalMultiplier;
+			_end = start * _totalAmount;
 	
 			std::cout << "setting end render scale: " << _end << std::endl;
 		}
@@ -44,13 +44,6 @@ namespace RB::Render
 			float perFrame = dif / float(_totalFrames);
 
 			float result = perFrame * float(_processedFrames + 1);
-
-			if (_totalMultiplier < 1.0f)
-			{
-				//result = 1.0f - result;
-			}
-
-			//std::cout << "processed frame " << _processedFrames << " multiplier: "  << _start + result << std::endl;
 
 			return _start + result;
 		}

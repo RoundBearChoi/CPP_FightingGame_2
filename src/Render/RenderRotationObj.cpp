@@ -5,7 +5,7 @@ namespace RB::Render
     RenderRotationObj::RenderRotationObj(int totalFrames, float totalRotation)
     {
         _totalFrames = totalFrames;
-        _totalRotation = totalRotation;
+        _totalAmount = totalRotation;
     }
 
     void RenderRotationObj::OnFixedUpdate()
@@ -22,7 +22,7 @@ namespace RB::Render
 			std::cout << std::endl;
 			std::cout << "setting start rotation: " << start  << std::endl;
 	
-			_end = start + _totalRotation;
+			_end = start + _totalAmount;
 	
 			std::cout << "setting end rotation: " << _end << std::endl;
 		}
@@ -37,11 +37,9 @@ namespace RB::Render
             return 0.0f;   
         }
 
-        float perFrame = _totalRotation / (float)_totalFrames;
+        float perFrame = _totalAmount / (float)_totalFrames;
         
         float result = perFrame * float(_processedFrames + 1);
-        
-        //std::cout << "start + result.. " << _start + result << std::endl;
 
         return _start + result;
     }

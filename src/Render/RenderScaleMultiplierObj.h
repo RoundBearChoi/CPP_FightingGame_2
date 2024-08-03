@@ -24,7 +24,6 @@ namespace RB::Render
 		
 	private:
 		RenderScaleMultiplierType _multiplierType = RenderScaleMultiplierType::NONE;
-		//float _lastRenderScale = 1.0f;
-		float _totalMultiplier = 1.0f;
+		//float _totalMultiplier = 1.0f;
 	};
 }

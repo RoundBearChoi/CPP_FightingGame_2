@@ -17,6 +17,8 @@ namespace RB::Render
     {
         if (_processedFrames == 0)
 		{
+            std::cout << "start is " << start << std::endl;
+
 			_start = start;
 	
 			std::cout << std::endl;
@@ -28,7 +30,7 @@ namespace RB::Render
 		}
     }
 
-    float RenderRotationObj::GetRotation()
+    float RenderRotationObj::GetAmount()
     {
         // temp - only linear for now
         

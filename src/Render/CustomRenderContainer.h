@@ -39,11 +39,36 @@ namespace RB::Render
         }
 
     public:
-        /// Adds an object to the container.
+        /// Adds an object (CustomRenderBase) to the container.
         /// The object will be deleted by the class destructor.
-        void AddObj(CustomRenderBase* obj)
+        void AddObj(T* obj)
         {
             _vec.push_back(obj);
+        }
+
+        void SetLastAmount(float amount)
+        {
+            _lastAmount = amount;
+        }
+
+        float GetAmount()
+        {
+            if (_vec.size() == 0)
+            {
+                return _lastAmount;
+            }
+            else if (_vec[0]->GetProcessedFrameCount() == 0)
+            {
+                return _lastAmount;
+            }
+            else
+            {
+                float m = _vec[0]->GetAmount();
+
+                _lastAmount = m;
+
+                return m;
+            }
         }
 
     protected:

@@ -1,4 +1,5 @@
 #include "AnimationObj.h"
+#include "RenderScaleMultiplierObj.h"
 
 namespace RB::Render
 {
@@ -15,6 +16,9 @@ namespace RB::Render
 			_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
 			_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
 		}
+
+		// render scale is 1 by default, not 0
+		_customRenderScales.SetLastAmount(1.0f);
 	}
 
 	AnimationObj::~AnimationObj()
@@ -28,33 +32,35 @@ namespace RB::Render
 
 		_animationRenderer->OnFixedUpdate();
 
-		// update one at a time
-		if (_vecMultiplierObjs.size() >= 1)
-		{
-			_vecMultiplierObjs[0].SetStart(_lastRenderScaleMultiplier);
-
-			_vecMultiplierObjs[0].OnFixedUpdate();
-			_vecMultiplierObjs[0].AddProcessedFrame();
-
-			if (_vecMultiplierObjs[0].DoDelete())
-			{
-				_vecMultiplierObjs.erase(_vecMultiplierObjs.begin());
-			}
-		}
+		_customRenderScales.OnFixedUpdate();
 
 		// update one at a time
-		if (_vecRotationObjs.size() >= 1)
-		{
-			_vecRotationObjs[0].SetStart(_lastRotation);
+		//if (_vecMultiplierObjs.size() >= 1)
+		//{
+		//	_vecMultiplierObjs[0].SetStart(_lastRenderScaleMultiplier);
+//
+		//	_vecMultiplierObjs[0].OnFixedUpdate();
+		//	_vecMultiplierObjs[0].AddProcessedFrame();
+//
+		//	if (_vecMultiplierObjs[0].DoDelete())
+		//	{
+		//		_vecMultiplierObjs.erase(_vecMultiplierObjs.begin());
+		//	}
+		//}
 
-			_vecRotationObjs[0].OnFixedUpdate();
-			_vecRotationObjs[0].AddProcessedFrame();
-
-			if (_vecRotationObjs[0].DoDelete())
-			{
-				_vecRotationObjs.erase(_vecRotationObjs.begin());
-			}
-		}
+		// update one at a time
+		//if (_vecRotationObjs.size() >= 1)
+		//{
+		//	_vecRotationObjs[0].SetStart(_lastRotation);
+//
+		//	_vecRotationObjs[0].OnFixedUpdate();
+		//	_vecRotationObjs[0].AddProcessedFrame();
+//
+		//	if (_vecRotationObjs[0].DoDelete())
+		//	{
+		//		_vecRotationObjs.erase(_vecRotationObjs.begin());
+		//	}
+		//}
 	}
 
 	void AnimationObj::FaceRight(bool faceRight)
@@ -230,58 +236,41 @@ namespace RB::Render
 		return _customFixedUpdate.GetTotalFixedUpdateCount();
 	}
 
-	void AnimationObj::AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj)
+	void AnimationObj::AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj)
 	{
-		_vecMultiplierObjs.push_back(obj);
+		_customRenderScales.AddObj(obj);
+		//_vecMultiplierObjs.push_back(obj);
 	}
 
 	void AnimationObj::AddRenderRotationObj(RenderRotationObj obj)
 	{
-		_vecRotationObjs.push_back(obj);
+		//_vecRotationObjs.push_back(obj);
 	}
 
 	float AnimationObj::GetRenderScaleMultiplier()
 	{
-		if (_vecMultiplierObjs.size() == 0)
-		{
-			return _lastRenderScaleMultiplier; //1.0f;
-		}
-		else if (_vecMultiplierObjs[0].GetProcessedFrameCount() == 0)
-		{
-			return _lastRenderScaleMultiplier;
-		}
-		else
-		{
-			float m = _vecMultiplierObjs[0].GetRenderScaleMultiplier();
-
-			_lastRenderScaleMultiplier = m;
-
-			return m;
-		}
+		return _customRenderScales.GetAmount();
 	}
 
 	float AnimationObj::GetRotation()
 	{
-		if (_vecRotationObjs.size() == 0)
-		{
-			return _lastRotation;
-		}
-		else if (_vecRotationObjs[0].GetProcessedFrameCount() == 0)
-		{
-			return _lastRotation;
-		}
-		else
-		{
-			float r = _vecRotationObjs[0].GetRotation();
-			
-			_lastRotation = r;
-			
-			return r;
-		}
-	}
+		return 0.0f;
 
-	float AnimationObj::GetLastRenderScale()
-	{
-		return _lastRenderScaleMultiplier;
+		//if (_vecRotationObjs.size() == 0)
+		//{
+		//	return _lastRotation;
+		//}
+		//else if (_vecRotationObjs[0].GetProcessedFrameCount() == 0)
+		//{
+		//	return _lastRotation;
+		//}
+		//else
+		//{
+		//	float r = _vecRotationObjs[0].GetRotation();
+		//	
+		//	_lastRotation = r;
+		//	
+		//	return r;
+		//}
 	}
 }

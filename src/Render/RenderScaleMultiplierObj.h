@@ -17,12 +17,9 @@ namespace RB::Render
 
 		void OnFixedUpdate() override;
 		void SetStart(float start) override;
-		
-	public:
-		float GetRenderScaleMultiplier();
-		
+		float GetAmount() override;
+
 	private:
 		RenderScaleMultiplierType _multiplierType = RenderScaleMultiplierType::NONE;
-		//float _totalMultiplier = 1.0f;
 	};
 }

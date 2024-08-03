@@ -5,6 +5,7 @@
 #include "AnimationRenderer.h"
 #include "CustomRenderContainer.h"
 
+#include "RenderScaleMultiplierObj.h"
 #include "iAnimationObj.h"
 
 #include "../Vector2.h"
@@ -39,11 +40,11 @@ namespace RB::Render
 		void RenderAnimation() override;
 		void SetWorldPos(const RB::Vector2& pos) override;
 		unsigned int GetFixedUpdateCount() override;
-		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj obj) override;
+		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj) override;
 		void AddRenderRotationObj(RenderRotationObj obj) override;
 		float GetRenderScaleMultiplier() override;
 		float GetRotation() override;
-		float GetLastRenderScale() override;
+		//float GetLastRenderScale() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
@@ -53,10 +54,11 @@ namespace RB::Render
 		unsigned int _currentIndex = 0;
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		RB::Vector2 _worldPos = { 0, 0 };
-		std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
-		std::vector<RenderRotationObj> _vecRotationObjs;
-		float _lastRenderScaleMultiplier = 1.0f;
-		float _lastRotation = 0.0f;
+		CustomRenderContainer<RenderScaleMultiplierObj> _customRenderScales;
+		//std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
+		//std::vector<RenderRotationObj> _vecRotationObjs;
+		//float _lastRenderScaleMultiplier = 1.0f;
+		//float _lastRotation = 0.0f;
 		AnimationSpecs _emptySpecs;
 	};
 }

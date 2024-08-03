@@ -16,7 +16,7 @@ namespace RB::Render
 
     public:
         void SetStart(float start) override;
-        float GetRotation();
+        float GetAmount() override;
 
     //private:
     //    float _totalRotation = 0.0f;

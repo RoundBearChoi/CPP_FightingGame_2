@@ -33,34 +33,7 @@ namespace RB::Render
 		_animationRenderer->OnFixedUpdate();
 
 		_customRenderScales.OnFixedUpdate();
-
-		// update one at a time
-		//if (_vecMultiplierObjs.size() >= 1)
-		//{
-		//	_vecMultiplierObjs[0].SetStart(_lastRenderScaleMultiplier);
-//
-		//	_vecMultiplierObjs[0].OnFixedUpdate();
-		//	_vecMultiplierObjs[0].AddProcessedFrame();
-//
-		//	if (_vecMultiplierObjs[0].DoDelete())
-		//	{
-		//		_vecMultiplierObjs.erase(_vecMultiplierObjs.begin());
-		//	}
-		//}
-
-		// update one at a time
-		//if (_vecRotationObjs.size() >= 1)
-		//{
-		//	_vecRotationObjs[0].SetStart(_lastRotation);
-//
-		//	_vecRotationObjs[0].OnFixedUpdate();
-		//	_vecRotationObjs[0].AddProcessedFrame();
-//
-		//	if (_vecRotationObjs[0].DoDelete())
-		//	{
-		//		_vecRotationObjs.erase(_vecRotationObjs.begin());
-		//	}
-		//}
+		_customRotations.OnFixedUpdate();
 	}
 
 	void AnimationObj::FaceRight(bool faceRight)
@@ -239,12 +212,11 @@ namespace RB::Render
 	void AnimationObj::AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj)
 	{
 		_customRenderScales.AddObj(obj);
-		//_vecMultiplierObjs.push_back(obj);
 	}
 
-	void AnimationObj::AddRenderRotationObj(RenderRotationObj obj)
+	void AnimationObj::AddRenderRotationObj(RenderRotationObj* obj)
 	{
-		//_vecRotationObjs.push_back(obj);
+		_customRotations.AddObj(obj);
 	}
 
 	float AnimationObj::GetRenderScaleMultiplier()
@@ -254,7 +226,7 @@ namespace RB::Render
 
 	float AnimationObj::GetRotation()
 	{
-		return 0.0f;
+		return _customRotations.GetAmount();
 
 		//if (_vecRotationObjs.size() == 0)
 		//{

@@ -5,6 +5,7 @@
 #include "AnimationRenderer.h"
 #include "CustomRenderContainer.h"
 
+#include "RenderRotationObj.h"
 #include "RenderScaleMultiplierObj.h"
 #include "iAnimationObj.h"
 
@@ -41,7 +42,7 @@ namespace RB::Render
 		void SetWorldPos(const RB::Vector2& pos) override;
 		unsigned int GetFixedUpdateCount() override;
 		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj) override;
-		void AddRenderRotationObj(RenderRotationObj obj) override;
+		void AddRenderRotationObj(RenderRotationObj* obj) override;
 		float GetRenderScaleMultiplier() override;
 		float GetRotation() override;
 		//float GetLastRenderScale() override;
@@ -55,10 +56,7 @@ namespace RB::Render
 		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
 		RB::Vector2 _worldPos = { 0, 0 };
 		CustomRenderContainer<RenderScaleMultiplierObj> _customRenderScales;
-		//std::vector<RenderScaleMultiplierObj> _vecMultiplierObjs;
-		//std::vector<RenderRotationObj> _vecRotationObjs;
-		//float _lastRenderScaleMultiplier = 1.0f;
-		//float _lastRotation = 0.0f;
+		CustomRenderContainer<RenderRotationObj> _customRotations;
 		AnimationSpecs _emptySpecs;
 	};
 }

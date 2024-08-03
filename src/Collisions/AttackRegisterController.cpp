@@ -27,17 +27,16 @@ namespace RB::Collisions
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
 			8, 
 			RB::Render::RenderScaleMultiplierType::LINEAR, 
-			2.5f));
+			2.55f));
 
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
 			20, 
 			RB::Render::RenderScaleMultiplierType::LINEAR, 
 			0.8f));
 
-		//hitVFX->AddRenderScaleMultiplierObj({ 10, RB::Render::RenderScaleMultiplierType::LINEAR, 2.2f });
-		//hitVFX->AddRenderScaleMultiplierObj({ 30, RB::Render::RenderScaleMultiplierType::LINEAR, 0.95f });
-		//hitVFX->AddRenderRotationObj({ 15, 10.0f });
-		//hitVFX->AddRenderRotationObj({ 10, -19.0f });
+		hitVFX->AddRenderRotationObj(new Render::RenderRotationObj(
+			20,
+			8.0f));
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 

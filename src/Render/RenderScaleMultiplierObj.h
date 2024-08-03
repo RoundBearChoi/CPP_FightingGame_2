@@ -15,7 +15,10 @@ namespace RB::Render
 	public:
 		RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier);
 
+	public:
 		void OnFixedUpdate() override;
+
+	public:
 		void SetStart(float start) override;
 		float GetAmount() override;
 

@@ -7,11 +7,6 @@ namespace RB::Render
 		_totalFrames = totalFrames;
 		_multiplierType = multiplierType;
 		_totalAmount = totalMultiplier;
-
-		// renderscale should be 1 by default, not 0
-		//_lastAmount = 1.0f;
-
-		//std::cout << "setting _lastAmount " << _lastAmount << std::endl;
 	}
 
 	void RenderScaleMultiplierObj::OnFixedUpdate()

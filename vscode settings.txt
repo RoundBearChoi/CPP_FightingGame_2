@@ -24,5 +24,6 @@
     "workbench.statusBar.visible": false,
     "workbench.sideBar.location": "right",
     "editor.stickyScroll.scrollWithEditor": false,
-    "workbench.tree.enableStickyScroll": false
+    "workbench.tree.enableStickyScroll": false,
+    "editor.stickyScroll.enabled": false
 }

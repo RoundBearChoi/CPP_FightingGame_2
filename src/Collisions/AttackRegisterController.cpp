@@ -25,9 +25,15 @@ namespace RB::Collisions
 			reg.targetIsOnRightSide);
 		
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			10, 
+			8, 
 			RB::Render::RenderScaleMultiplierType::LINEAR, 
-			2.2f));
+			2.5f));
+
+		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
+			20, 
+			RB::Render::RenderScaleMultiplierType::LINEAR, 
+			0.8f));
+
 		//hitVFX->AddRenderScaleMultiplierObj({ 10, RB::Render::RenderScaleMultiplierType::LINEAR, 2.2f });
 		//hitVFX->AddRenderScaleMultiplierObj({ 30, RB::Render::RenderScaleMultiplierType::LINEAR, 0.95f });
 		//hitVFX->AddRenderRotationObj({ 15, 10.0f });

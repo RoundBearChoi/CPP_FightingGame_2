@@ -8,8 +8,6 @@
 
 namespace RB::Render
 {
-	//class iAnimationObj; // forward declare
-
 	class RenderScaleMultiplierObj : public CustomRender
 	{
 	public:

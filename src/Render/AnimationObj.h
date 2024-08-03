@@ -7,6 +7,8 @@
 
 #include "RenderRotationObj.h"
 #include "RenderScaleMultiplierObj.h"
+#include "RenderTransparent.h"
+
 #include "iAnimationObj.h"
 
 #include "../Vector2.h"

@@ -5,7 +5,6 @@
 
 #include "CustomRenderBase.h"
 #include "RenderScaleMultiplierType.h"
-//#include "iAnimationObj.h"
 
 namespace RB::Render
 {

@@ -3,14 +3,14 @@
 #include <iostream>
 #include <string>
 
-#include "CustomRenderBase.h"
+#include "CustomRender.h"
 #include "RenderScaleMultiplierType.h"
 
 namespace RB::Render
 {
 	//class iAnimationObj; // forward declare
 
-	class RenderScaleMultiplierObj : public CustomRenderBase
+	class RenderScaleMultiplierObj : public CustomRender
 	{
 	public:
 		RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier);

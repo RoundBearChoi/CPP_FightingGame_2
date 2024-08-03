@@ -2,11 +2,11 @@
 
 #include <vector>
 
-#include "CustomRenderBase.h"
+#include "CustomRender.h"
 
 namespace RB::Render
 {
-    template <typename T, typename = std::enable_if_t<std::is_base_of<CustomRenderBase, T>::value>>
+    template <typename T, typename = std::enable_if_t<std::is_base_of<CustomRender, T>::value>>
     class CustomRenderContainer
     {
     public:

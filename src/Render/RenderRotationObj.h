@@ -2,11 +2,11 @@
 
 #include <iostream>
 
-#include "CustomRenderBase.h"
+#include "CustomRender.h"
 
 namespace RB::Render
 {
-    class RenderRotationObj : public CustomRenderBase
+    class RenderRotationObj : public CustomRender
     {
     public:
         RenderRotationObj(int totalFrames, float totalRotation);

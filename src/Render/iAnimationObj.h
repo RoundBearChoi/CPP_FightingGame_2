@@ -1,7 +1,7 @@
 #pragma once
 
 #include "AnimationSpecs.h"
-#include "CustomRenderBase.h"
+#include "CustomRender.h"
 #include "RenderScaleMultiplierObj.h"
 #include "RenderRotationObj.h"
 

@@ -1,13 +1,13 @@
-#include "CustomRenderBase.h"
+#include "CustomRender.h"
 
 namespace RB::Render
 {
-    void CustomRenderBase::AddProcessedFrame()
+    void CustomRender::AddProcessedFrame()
     {
         _processedFrames++;
     }
     
-    bool CustomRenderBase::DoDelete()
+    bool CustomRender::DoDelete()
 	{
 		if (_processedFrames >= _totalFrames)
 		{
@@ -21,7 +21,7 @@ namespace RB::Render
 		}
 	}
 
-	int CustomRenderBase::GetProcessedFrameCount()
+	int CustomRender::GetProcessedFrameCount()
 	{
 		return _processedFrames;
 	}

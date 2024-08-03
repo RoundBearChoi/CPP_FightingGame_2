@@ -4,10 +4,10 @@
 
 namespace RB::Render
 {
-    class CustomRenderBase
+    class CustomRender
     {
     public:
-        virtual ~CustomRenderBase() {};
+        virtual ~CustomRender() {};
 
     public:
         virtual void OnFixedUpdate() = 0;
@@ -21,7 +21,6 @@ namespace RB::Render
         int _totalFrames = 0;
         int _processedFrames = 0;
         float _totalAmount = 0.0f;
-        //float _lastAmount = 0.0f;
         float _start = 0.0f;
 		float _end = 0.0f;
     };

@@ -17,16 +17,16 @@ namespace RB::Render
     {
         if (_processedFrames == 0)
 		{
-            std::cout << "start is " << start << std::endl;
+            //std::cout << "start is " << start << std::endl;
 
 			_start = start;
 	
 			std::cout << std::endl;
-			std::cout << "setting start rotation: " << start  << std::endl;
+			//std::cout << "setting start rotation: " << start  << std::endl;
 	
 			_end = start + _totalAmount;
 	
-			std::cout << "setting end rotation: " << _end << std::endl;
+			//std::cout << "setting end rotation: " << _end << std::endl;
 		}
     }
 

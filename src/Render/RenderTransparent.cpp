@@ -15,32 +15,32 @@ namespace RB::Render
 
     void RenderTransparent::SetStart(float start)
     {
-		if (_processedFrames == 0)
-		{
-			_start = start;
-	
-			std::cout << std::endl;
-			std::cout << "setting start transparency: " << start  << std::endl;
-	
-			_end = start * _totalAmount;
-	
-			std::cout << "setting end transparency: " << _end << std::endl;
-		}
+      if (_processedFrames == 0)
+      {
+        _start = start;
+    
+        std::cout << std::endl;
+        //std::cout << "setting start transparency: " << start  << std::endl;
+    
+        _end = start * _totalAmount;
+    
+        //std::cout << "setting end transparency: " << _end << std::endl;
+      }
     }
 
     float RenderTransparent::GetAmount()
     {
-		if (_processedFrames == 0)
-		{
-			return 1.0f;
-		}
+      if (_processedFrames == 0)
+      {
+        return 1.0f;
+      }
 
-        float dif = _end - _start;
+          float dif = _end - _start;
 
-        float perFrame = dif / float(_totalFrames);
+          float perFrame = dif / float(_totalFrames);
 
-        float result = perFrame * float(_processedFrames + 1);
+          float result = perFrame * float(_processedFrames + 1);
 
-        return _start + result;
-    }
+          return _start + result;
+      }
 }

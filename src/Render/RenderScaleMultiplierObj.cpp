@@ -21,11 +21,11 @@ namespace RB::Render
 			_start = start;
 	
 			std::cout << std::endl;
-			std::cout << "setting start render scale: " << start  << std::endl;
+			//std::cout << "setting start render scale: " << start  << std::endl;
 	
 			_end = start * _totalAmount;
 	
-			std::cout << "setting end render scale: " << _end << std::endl;
+			//std::cout << "setting end render scale: " << _end << std::endl;
 		}
 	}
 

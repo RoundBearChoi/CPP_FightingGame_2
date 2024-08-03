@@ -47,7 +47,6 @@ namespace RB::Render
 		void AddRenderRotationObj(RenderRotationObj* obj) override;
 		float GetRenderScaleMultiplier() override;
 		float GetRotation() override;
-		//float GetLastRenderScale() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;

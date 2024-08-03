@@ -185,6 +185,7 @@ namespace RB::Render
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderScale = GetRenderScale() * GetRenderScaleMultiplier();
 		renderSettings.mRotation = GetRotation();
+		//renderSettings.mTransparency = GetTransparency();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)

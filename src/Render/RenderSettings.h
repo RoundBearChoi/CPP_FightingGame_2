@@ -18,6 +18,7 @@ namespace RB::Render
 		RB::Vector2 mWorldPos = { 0.0f, 0.0f };
 		float mRenderScale = 1.0f;
 		float mRotation = 0.0f;
+		float mTransparency = 1.0f;
 		RB::Vector2 mRenderOffset = { 0.0f, 0.0f };
 		RB::Sprites::PivotType mPivotType = RB::Sprites::PivotType::NONE;
 		bool mFaceRight = true;

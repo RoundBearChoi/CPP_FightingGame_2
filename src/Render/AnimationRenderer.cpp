@@ -78,11 +78,14 @@ namespace RB::Render
 			arrVF2D[i] = { points[i].x, points[i].y };
 		}
 
+		olc::Pixel tint = olc::WHITE;
+
 		// render
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(
 			_animationSpecs.mLoadedSprite->GetDecal(),
 			arrVF2D,
 			olc::vf2d{ renderSettings.mSourcePos.x, renderSettings.mSourcePos.y },
-			olc::vf2d{ renderSettings.mSourceSize.x, renderSettings.mSourceSize.y });
+			olc::vf2d{ renderSettings.mSourceSize.x, renderSettings.mSourceSize.y },
+			tint);
 	}
 }

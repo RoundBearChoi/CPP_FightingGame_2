@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "AnimationRenderer.h"
+#include "CustomRenderContainer.h"
 
 #include "iAnimationObj.h"
 

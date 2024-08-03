@@ -20,6 +20,7 @@ namespace RB::Render
         int _totalFrames = 0;
         int _processedFrames = 0;
         float _totalAmount = 0.0f;
+        float _lastAmount = 0.0f;
         float _start = 0.0f;
 		float _end = 0.0f;
     };

@@ -38,6 +38,6 @@ namespace RB::Render
 		virtual void AddRenderRotationObj(RenderRotationObj* obj) = 0;
 		virtual float GetRenderScaleMultiplier() = 0;
 		virtual float GetRotation() = 0;
-		//virtual float GetLastRenderScale() = 0;
+		virtual int GetTransparency() = 0;
 	};
 }

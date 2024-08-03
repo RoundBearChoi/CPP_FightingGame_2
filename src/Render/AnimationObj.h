@@ -47,6 +47,7 @@ namespace RB::Render
 		void AddRenderRotationObj(RenderRotationObj* obj) override;
 		float GetRenderScaleMultiplier() override;
 		float GetRotation() override;
+		int GetTransparency() override;
 
 	private:
 		RB::Players::iPlayer* _ownerPlayer = nullptr;
@@ -58,6 +59,7 @@ namespace RB::Render
 		RB::Vector2 _worldPos = { 0, 0 };
 		CustomRenderContainer<RenderScaleMultiplierObj> _customRenderScales;
 		CustomRenderContainer<RenderRotationObj> _customRotations;
+		CustomRenderContainer<RenderTransparent> _customTransparency;
 		AnimationSpecs _emptySpecs;
 	};
 }

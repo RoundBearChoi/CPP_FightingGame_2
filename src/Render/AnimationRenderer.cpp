@@ -79,6 +79,7 @@ namespace RB::Render
 		}
 
 		olc::Pixel tint = olc::WHITE;
+		tint.a = renderSettings.mTransparency;
 
 		// render
 		olc::Renderer::ptrPGE->DrawPartialWarpedDecal(

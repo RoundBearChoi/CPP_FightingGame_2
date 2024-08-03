@@ -17,8 +17,10 @@ namespace RB::Render
 			_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
 		}
 
-		// render scale is 1 by default, not 0
+		// different default amounts
+		_customRotations.SetLastAmount(0.0f);
 		_customRenderScales.SetLastAmount(1.0f);
+		_customTransparency.SetLastAmount(1.0f);
 	}
 
 	AnimationObj::~AnimationObj()
@@ -32,6 +34,7 @@ namespace RB::Render
 
 		_customRenderScales.OnFixedUpdate();
 		_customRotations.OnFixedUpdate();
+		_customTransparency.OnFixedUpdate();
 
 		_animationRenderer->OnFixedUpdate();
 	}
@@ -185,7 +188,7 @@ namespace RB::Render
 		renderSettings.mSourcePos = GetSourcePos(renderSettings.mSourceSize);
 		renderSettings.mRenderScale = GetRenderScale() * GetRenderScaleMultiplier();
 		renderSettings.mRotation = GetRotation();
-		//renderSettings.mTransparency = GetTransparency();
+		renderSettings.mTransparency = GetTransparency();
 		renderSettings.mRenderOffset = GetRenderOffset();
 
 		if (_ownerPlayer != nullptr)
@@ -228,22 +231,14 @@ namespace RB::Render
 	float AnimationObj::GetRotation()
 	{
 		return _customRotations.GetAmount();
+	}
 
-		//if (_vecRotationObjs.size() == 0)
-		//{
-		//	return _lastRotation;
-		//}
-		//else if (_vecRotationObjs[0].GetProcessedFrameCount() == 0)
-		//{
-		//	return _lastRotation;
-		//}
-		//else
-		//{
-		//	float r = _vecRotationObjs[0].GetRotation();
-		//	
-		//	_lastRotation = r;
-		//	
-		//	return r;
-		//}
+	int AnimationObj::GetTransparency()
+	{
+		float percentage = _customTransparency.GetAmount();
+
+		float result = percentage * (float)255;
+
+		return result;
 	}
 }

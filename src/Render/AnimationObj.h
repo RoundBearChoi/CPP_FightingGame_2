@@ -45,6 +45,7 @@ namespace RB::Render
 		unsigned int GetFixedUpdateCount() override;
 		void AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj) override;
 		void AddRenderRotationObj(RenderRotationObj* obj) override;
+		void AddRenderTransparency(RenderTransparent* obj) override;
 		float GetRenderScaleMultiplier() override;
 		float GetRotation() override;
 		int GetTransparency() override;

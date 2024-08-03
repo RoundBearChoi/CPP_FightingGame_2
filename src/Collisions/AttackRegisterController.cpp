@@ -38,6 +38,10 @@ namespace RB::Collisions
 			20,
 			8.0f));
 
+		hitVFX->AddRenderTransparency(new Render::RenderTransparent(
+			50,
+			0.1f));
+
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)

@@ -1,5 +1,6 @@
 #include "AnimationObj.h"
 #include "RenderScaleMultiplierObj.h"
+#include "RenderTransparent.h"
 
 namespace RB::Render
 {
@@ -221,6 +222,11 @@ namespace RB::Render
 	void AnimationObj::AddRenderRotationObj(RenderRotationObj* obj)
 	{
 		_customRotations.AddObj(obj);
+	}
+
+	void AnimationObj::AddRenderTransparency(RenderTransparent* obj)
+	{
+		_customTransparency.AddObj(obj);
 	}
 
 	float AnimationObj::GetRenderScaleMultiplier()

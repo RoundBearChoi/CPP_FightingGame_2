@@ -243,8 +243,10 @@ namespace RB::Render
 	{
 		float percentage = _customTransparency.GetAmount();
 
-		float result = percentage * (float)255;
+		float result = percentage * 255.0f;
 
-		return result;
+		int rounded = static_cast<int>(std::round(result));
+
+		return rounded;
 	}
 }

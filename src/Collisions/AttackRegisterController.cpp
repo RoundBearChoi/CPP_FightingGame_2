@@ -39,8 +39,12 @@ namespace RB::Collisions
 			8.0f));
 
 		hitVFX->AddRenderTransparency(new Render::RenderTransparent(
-			50,
-			0.1f));
+			7,
+			1.0f));
+
+		hitVFX->AddRenderTransparency(new Render::RenderTransparent(
+			12,
+			0.0f));
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 

@@ -28,12 +28,12 @@ namespace RB::Render
 
 	void AnimationObj::OnFixedUpdate()
 	{
+		_customRenderScales.OnFixedUpdate();
+		_customRotations.OnFixedUpdate();
+
 		_customFixedUpdate.DoFixedUpdate();
 
 		_animationRenderer->OnFixedUpdate();
-
-		_customRenderScales.OnFixedUpdate();
-		_customRotations.OnFixedUpdate();
 	}
 
 	void AnimationObj::FaceRight(bool faceRight)

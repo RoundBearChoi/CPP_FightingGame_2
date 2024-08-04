@@ -6,9 +6,15 @@ namespace RB::Render
     {
         _animationContainer.Init();
 
-        _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
-        
+        _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
+        _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_head.png", RB::Sprites::SpriteType::vfx_hiteffect_head);
+        _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_body.png", RB::Sprites::SpriteType::vfx_hiteffect_body);
+        _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_leg.png", RB::Sprites::SpriteType::vfx_hiteffect_leg);
+
         _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_0.aniSpecs");
+        _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_head.aniSpecs");
+        _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_body.aniSpecs");
+        _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_leg.aniSpecs");
     }
 
     void VFXAnimationController::OnUpdate()

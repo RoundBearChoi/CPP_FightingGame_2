@@ -65,6 +65,9 @@ namespace RB::Sprites
 		background_8,
 
 		vfx_hiteffect_0,
+		vfx_hiteffect_head,
+		vfx_hiteffect_body,
+		vfx_hiteffect_leg,
 
 		COUNT
 	)

@@ -6,9 +6,9 @@ namespace RB::Collisions
 	{
 		NONE,
 
-		LEGS,
-		BODY,
 		HEAD,
+		BODY,
+		LEGS,
 
 		COUNT
 	};

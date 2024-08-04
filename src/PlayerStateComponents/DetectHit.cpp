@@ -138,6 +138,7 @@ namespace RB::PlayerStateComponents
 		reg.collisionPoint = collisionResult.mCollisionPoint;
 		reg.attackerSpriteType = collisionResult.mAttackerSpriteType;
 		reg.targetIsOnRightSide = collisionResult.mAttacker->OtherPlayerIsOnRightSide();
+		reg.collisionType = collisionResult.mCollisionType;
 
 		RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
 

@@ -2,6 +2,7 @@
 
 #include "../Sprites/SpriteType.h"
 #include "../Players/iPlayer.h"
+#include "../Collisions/CollisionType.h"
 
 namespace RB::Collisions
 {
@@ -15,5 +16,6 @@ namespace RB::Collisions
 
 		RB::Vector2 collisionPoint = { 0.0f, 0.0f };
 		bool targetIsOnRightSide = true;
+		CollisionType collisionType = CollisionType::NONE;
 	};
 }

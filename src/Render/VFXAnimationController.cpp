@@ -42,6 +42,12 @@ namespace RB::Render
 
         _animationContainer.AddNewAnimation(animationObj);
 
+        if (animationObj != nullptr)
+        {
+            std::cout << std::endl;
+            std::cout << "instantiating animation.. sprite type: " << spriteType._to_string() << std::endl;
+        }
+
         return animationObj;
     }
 

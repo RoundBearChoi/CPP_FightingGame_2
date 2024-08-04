@@ -64,10 +64,11 @@ namespace RB::Render
 
             unsigned int totalFixedUpdates = (*it)->GetFixedUpdateCount();
 
-            if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
+            if (totalSprites * skipFixedUpdates <= totalFixedUpdates)
             {
                 std::cout << std::endl;
                 std::cout << "deleting vfx.. " << (*it)->GetAnimationSpecs().mSpriteType._to_string() <<  std::endl;
+                std::cout << "fixed update count: " << totalFixedUpdates << std::endl;
 
                 it = _animationContainer.DeleteAnimationObj(it);
             }

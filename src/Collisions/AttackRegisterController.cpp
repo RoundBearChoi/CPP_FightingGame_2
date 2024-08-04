@@ -48,10 +48,10 @@ namespace RB::Collisions
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
-		RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
-			RB::Sprites::SpriteType::vfx_hiteffect_head,
-			reg.collisionPoint,
-			true);
+		//RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
+		//	RB::Sprites::SpriteType::vfx_hiteffect_head,
+		//	reg.collisionPoint,
+		//	true);
 
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 		{

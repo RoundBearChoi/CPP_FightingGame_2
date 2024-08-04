@@ -21,7 +21,7 @@ namespace RB::Render
 
 			_start = start;
 	
-			std::cout << std::endl;
+			//std::cout << std::endl;
 			//std::cout << "setting start rotation: " << start  << std::endl;
 	
 			_end = start + _totalAmount;

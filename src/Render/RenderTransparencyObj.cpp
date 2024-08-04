@@ -35,12 +35,12 @@ namespace RB::Render
         return 1.0f;
       }
 
-          float dif = _end - _start;
+      float dif = _end - _start;
 
-          float perFrame = dif / float(_totalFrames);
+      float perFrame = dif / float(_totalFrames);
 
-          float result = perFrame * float(_processedFrames + 1);
+      float result = perFrame * float(_processedFrames + 1);
 
-          return _start + result;
+      return _start + result;
       }
 }

@@ -24,34 +24,38 @@ namespace RB::Collisions
 			reg.collisionPoint,
 			reg.targetIsOnRightSide);
 		
-		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			8, 
-			RB::Render::RenderScaleMultiplierType::LINEAR, 
-			2.55f));
+		//hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
+		//	8, 
+		//	RB::Render::RenderScaleMultiplierType::LINEAR, 
+		//	2.55f));
 
-		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			20, 
-			RB::Render::RenderScaleMultiplierType::LINEAR, 
-			0.8f));
+		//hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
+		//	20, 
+		//	RB::Render::RenderScaleMultiplierType::LINEAR, 
+		//	0.8f));
 
-		hitVFX->AddRenderRotationObj(new Render::RenderRotationObj(
-			20,
-			8.0f));
+		//hitVFX->AddRenderRotationObj(new Render::RenderRotationObj(
+		//	20,
+		//	8.0f));
 
-		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
-			7,
-			1.0f));
+		//hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
+		//	7,
+		//	1.0f));
 
-		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
-			12,
-			0.0f));
+		//hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
+		//	12,
+		//	0.0f));
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
-		//RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
-		//	RB::Sprites::SpriteType::vfx_hiteffect_head,
-		//	reg.collisionPoint,
-		//	true);
+		RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
+			RB::Sprites::SpriteType::vfx_hiteffect_head,
+			reg.collisionPoint,
+			true);
+
+			hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
+				0,
+				0.5f));
 
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 		{

@@ -2,10 +2,10 @@
 
 namespace RB::Render
 {
-    RenderTransparencyObj::RenderTransparencyObj(int totalFrames, float totalRotation)
+    RenderTransparencyObj::RenderTransparencyObj(int totalFrames, float totalTransparency)
     {
         _totalFrames = totalFrames;
-        _totalAmount = totalRotation;
+        _totalAmount = totalTransparency;
     }
 
     void RenderTransparencyObj::OnFixedUpdate()

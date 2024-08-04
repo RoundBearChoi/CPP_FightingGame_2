@@ -1,0 +1,12 @@
+{
+    "vfx_hiteffect_body":
+        {
+        "sprite_enum" : "vfx_hiteffect_body",
+        "mX_TileCount" : 1,
+        "mY_TileCount" : 1,
+        "mTotalSprites" : 1,
+        "mSkipFixedUpdates" : 1,
+        "mRenderScale" : 1,
+        "mPlayOnce" : 1
+        }
+}

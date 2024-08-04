@@ -66,6 +66,9 @@ namespace RB::Render
 
             if ((totalSprites - 1) * skipFixedUpdates <= totalFixedUpdates)
             {
+                std::cout << std::endl;
+                std::cout << "deleting vfx.. " << (*it)->GetAnimationSpecs().mSpriteType._to_string() <<  std::endl;
+
                 it = _animationContainer.DeleteAnimationObj(it);
             }
             else

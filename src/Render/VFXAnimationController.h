@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include "AnimationObj.h"
 #include "AnimationContainer.h"
 

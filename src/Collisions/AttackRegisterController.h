@@ -30,5 +30,8 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 		void RegisterAttack(AttackRegister reg) override;
+
+	private:
+		void ShowHitVFX(const AttackRegister& attackRegister);
 	};
 }

@@ -21,17 +21,9 @@ namespace RB::Collisions
 	void AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
 		ShowHitVFX(reg);
+		ShowHitLocation(reg);
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
-
-		RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
-			RB::Sprites::SpriteType::vfx_hiteffect_head,
-			reg.collisionPoint,
-			true);
-
-			hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
-				25,
-				0.0f));
 
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 		{
@@ -75,6 +67,18 @@ namespace RB::Collisions
 
 		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
 			12,
+			0.0f));
+	}
+
+	void AttackRegisterController::ShowHitLocation(const AttackRegister& attackRegister)
+	{
+		RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
+			RB::Sprites::SpriteType::vfx_hiteffect_head,
+			attackRegister.collisionPoint,
+			true);
+			
+		hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
+			25,
 			0.0f));
 	}
 }

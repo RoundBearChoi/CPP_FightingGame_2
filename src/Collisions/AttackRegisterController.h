@@ -33,5 +33,6 @@ namespace RB::Collisions
 
 	private:
 		void ShowHitVFX(const AttackRegister& attackRegister);
+		void ShowHitLocation(const AttackRegister& attackRegister);
 	};
 }

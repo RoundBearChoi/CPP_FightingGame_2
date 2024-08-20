@@ -1,5 +1,6 @@
 #include "AttackRegisterController.h"
 #include "AttackRegister.h"
+#include "CollisionType.h"
 
 namespace RB::Collisions
 {
@@ -72,6 +73,19 @@ namespace RB::Collisions
 
 	void AttackRegisterController::ShowHitLocation(const AttackRegister& attackRegister)
 	{
+		if (attackRegister.collisionType == CollisionType::HEAD)
+		{
+			//std::cout << "collision on HEAD" << std::endl;
+		}
+		else if (attackRegister.collisionType == CollisionType::BODY)
+		{
+			//std::cout << "collision on BODY" << std::endl;
+		}
+		else if (attackRegister.collisionType == CollisionType::LEGS)
+		{
+			//std::cout << "collision on LEG" << std::endl;
+		}
+
 		RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
 			RB::Sprites::SpriteType::vfx_hiteffect_head,
 			attackRegister.collisionPoint,

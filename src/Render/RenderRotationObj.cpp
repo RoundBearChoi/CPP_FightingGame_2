@@ -29,20 +29,4 @@ namespace RB::Render
 			//std::cout << "setting end rotation: " << _end << std::endl;
 		}
     }
-
-    float RenderRotationObj::GetAmount()
-    {
-        // temp - only linear for now
-        
-        if (_processedFrames == 0)
-        {
-            return 0.0f;   
-        }
-
-        float perFrame = _totalAmount / (float)_totalFrames;
-        
-        float result = perFrame * float(_processedFrames + 1);
-
-        return _start + result;
-    }
 }

@@ -16,6 +16,5 @@ namespace RB::Render
 
     public:
         void SetStart(float start) override;
-        float GetAmount() override;
     };
 }

@@ -28,27 +28,4 @@ namespace RB::Render
 			//std::cout << "setting end render scale: " << _end << std::endl;
 		}
 	}
-
-	float RenderScaleMultiplierObj::GetAmount()
-	{
-		if (_processedFrames == 0)
-		{
-			return 1.0f;
-		}
-
-		// assuming linear for now
-		if (_multiplierType == RenderScaleMultiplierType::LINEAR)
-		{
-			float dif = _end - _start;
-
-			float perFrame = dif / float(_totalFrames);
-
-			float result = perFrame * float(_processedFrames + 1);
-
-			return _start + result;
-		}
-
-		// temp
-		return 1.0f;
-	}
 }

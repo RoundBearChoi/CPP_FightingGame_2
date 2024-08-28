@@ -103,7 +103,7 @@ namespace RB::Collisions
 		}
 			
 		hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
-			25,
-			0.0f));
+			1,
+			0.2f));
 	}
 }

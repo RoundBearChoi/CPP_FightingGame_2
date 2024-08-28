@@ -27,20 +27,4 @@ namespace RB::Render
         //std::cout << "setting end transparency: " << _end << std::endl;
       }
     }
-
-    float RenderTransparencyObj::GetAmount()
-    {
-      if (_processedFrames == 0)
-      {
-        return 1.0f;
-      }
-
-      float dif = _end - _start;
-
-      float perFrame = dif / float(_totalFrames);
-
-      float result = perFrame * float(_processedFrames + 1);
-
-      return _start + result;
-      }
 }

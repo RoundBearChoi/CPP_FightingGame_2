@@ -18,7 +18,6 @@ namespace RB::Render
 
 	public:
 		void SetStart(float start) override;
-		float GetAmount() override;
 
 	private:
 		RenderScaleMultiplierType _multiplierType = RenderScaleMultiplierType::NONE;

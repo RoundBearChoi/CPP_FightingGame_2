@@ -73,23 +73,34 @@ namespace RB::Collisions
 
 	void AttackRegisterController::ShowHitLocation(const AttackRegister& attackRegister)
 	{
+		RB::Render::iAnimationObj* hitVFX_word = nullptr;
+
 		if (attackRegister.collisionType == CollisionType::HEAD)
 		{
-			//std::cout << "collision on HEAD" << std::endl;
+			hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
+				RB::Sprites::SpriteType::vfx_hiteffect_head,
+				attackRegister.collisionPoint,
+				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::BODY)
 		{
-			//std::cout << "collision on BODY" << std::endl;
+			hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
+				RB::Sprites::SpriteType::vfx_hiteffect_body,
+				attackRegister.collisionPoint,
+				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::LEGS)
 		{
-			//std::cout << "collision on LEG" << std::endl;
+			hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
+				RB::Sprites::SpriteType::vfx_hiteffect_leg,
+				attackRegister.collisionPoint,
+				true);
 		}
 
-		RB::Render::iAnimationObj* hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
-			RB::Sprites::SpriteType::vfx_hiteffect_head,
-			attackRegister.collisionPoint,
-			true);
+		if (hitVFX_word == nullptr)
+		{
+			return;
+		}
 			
 		hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
 			25,

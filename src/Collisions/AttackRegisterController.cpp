@@ -1,6 +1,4 @@
 #include "AttackRegisterController.h"
-#include "AttackRegister.h"
-#include "CollisionType.h"
 
 namespace RB::Collisions
 {
@@ -74,6 +72,9 @@ namespace RB::Collisions
 	void AttackRegisterController::ShowHitLocation(const AttackRegister& attackRegister)
 	{
 		RB::Render::iAnimationObj* hitVFX_word = nullptr;
+
+		RB::Vector2 pos;
+
 
 		if (attackRegister.collisionType == CollisionType::HEAD)
 		{

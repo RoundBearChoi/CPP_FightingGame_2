@@ -3,6 +3,8 @@
 #include <vector>
 
 #include "AttackSpecs.h"
+#include "AttackRegister.h"
+#include "CollisionType.h"
 
 #include "iAttackSpecsController.h"
 #include "iAttackRegisterController.h"

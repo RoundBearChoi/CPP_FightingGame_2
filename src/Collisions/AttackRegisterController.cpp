@@ -73,28 +73,41 @@ namespace RB::Collisions
 	{
 		RB::Render::iAnimationObj* hitVFX_word = nullptr;
 
+		RandomGenerator randX;
+		RandomGenerator randY;
+		int x = randX.GetRand(20, 40);
+		int y = randY.GetRand(20, 40);
+
 		RB::Vector2 pos;
 
+		if (!attackRegister.targetIsOnRightSide)
+		{
+			pos = attackRegister.collisionPoint + Vector2{-x, -y};
+		}
+		else
+		{
+			pos = attackRegister.collisionPoint + Vector2{x, -y};
+		}
 
 		if (attackRegister.collisionType == CollisionType::HEAD)
 		{
 			hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
 				RB::Sprites::SpriteType::vfx_hiteffect_head,
-				attackRegister.collisionPoint,
+				pos,
 				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::BODY)
 		{
 			hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
 				RB::Sprites::SpriteType::vfx_hiteffect_body,
-				attackRegister.collisionPoint,
+				pos,
 				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::LEGS)
 		{
 			hitVFX_word = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
 				RB::Sprites::SpriteType::vfx_hiteffect_leg,
-				attackRegister.collisionPoint,
+				pos,
 				true);
 		}
 

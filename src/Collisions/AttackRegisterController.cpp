@@ -75,8 +75,8 @@ namespace RB::Collisions
 
 		RandomGenerator randX;
 		RandomGenerator randY;
-		int x = randX.GetRand(20, 40);
-		int y = randY.GetRand(20, 40);
+		int x = randX.GetRand(10, 30);
+		int y = randY.GetRand(10, 30);
 
 		RB::Vector2 pos;
 

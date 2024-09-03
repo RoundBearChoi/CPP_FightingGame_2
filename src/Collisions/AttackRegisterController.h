@@ -13,6 +13,7 @@
 #include "../RandomGenerator.h"
 #include "../Sprites/SpriteType.h"
 #include "../Render/RenderScaleMultiplierObj.h"
+#include "../Render/RenderRotationObj.h"
 
 #include "../P0_Wince.h" //temp
 #include "../Fighter_0_States/F0_Strong_Wince.h" //temp

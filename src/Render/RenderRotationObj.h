@@ -9,7 +9,7 @@ namespace RB::Render
     class RenderRotationObj : public CustomRender
     {
     public:
-        RenderRotationObj(int totalFrames, float totalRotation);
+        RenderRotationObj(int totalFrames, OperationType operationType, float totalRotation);
 
     public:
         void OnFixedUpdate() override;

@@ -2,9 +2,10 @@
 
 namespace RB::Render
 {
-    RenderRotationObj::RenderRotationObj(int totalFrames, float totalRotation)
+    RenderRotationObj::RenderRotationObj(int totalFrames, OperationType operationType, float totalRotation)
     {
         _totalFrames = totalFrames;
+        _operationType = operationType;
         _totalAmount = totalRotation;
     }
 

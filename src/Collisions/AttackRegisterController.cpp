@@ -47,17 +47,18 @@ namespace RB::Collisions
 			attackRegister.targetIsOnRightSide);
 		
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			5, 
+			4, 
 			RB::Render::OperationType::SINE, 
-			1.3f));
+			1.2f));
 
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			12, 
+			14, 
 			RB::Render::OperationType::SINE, 
-			0.8f));
+			0.85f));
 
 		hitVFX->AddRenderRotationObj(new Render::RenderRotationObj(
 			20,
+			Render::OperationType::SINE,
 			8.0f));
 
 		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
@@ -121,10 +122,11 @@ namespace RB::Collisions
 			0.2f));
 
 		RandomGenerator randomRot;
-		int rot = randomRot.GetRand(-35, 35);
+		int rot = randomRot.GetRand(-10, 10);
 
 		hitVFX_word->AddRenderRotationObj(new Render::RenderRotationObj(
-			1,
+			35,
+			RB::Render::OperationType::SINE,
 			float(rot)));
 	}
 }

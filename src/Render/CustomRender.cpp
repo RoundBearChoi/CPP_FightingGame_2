@@ -8,7 +8,15 @@ namespace RB::Render
 
 		float percentage = (float)_processedFrames / (float)(_totalFrames + 1); 
 
-		float result = dif * percentage;
+		// multiplier stays same when linear
+		float multiplier = percentage;
+
+		if (_operationType == RB::Render::OperationType::SINE)
+		{
+			multiplier = RB::Ease::EaseOutSine(percentage);
+		}
+
+		float result = dif * multiplier;
 
         return _start + result;
 	}

@@ -2,9 +2,10 @@
 
 namespace RB::Render
 {
-    RenderTransparencyObj::RenderTransparencyObj(int totalFrames, float totalTransparency)
+    RenderTransparencyObj::RenderTransparencyObj(int totalFrames, OperationType operationType, float totalTransparency)
     {
         _totalFrames = totalFrames;
+        _operationType = operationType;
         _totalAmount = totalTransparency;
     }
 

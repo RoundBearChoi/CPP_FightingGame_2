@@ -62,11 +62,8 @@ namespace RB::Collisions
 			8.0f));
 
 		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
-			7,
-			1.0f));
-
-		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
-			12,
+			40,
+			Render::OperationType::SINE,
 			0.0f));
 	}
 
@@ -119,6 +116,7 @@ namespace RB::Collisions
 			
 		hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
 			1,
+			Render::OperationType::SINE,
 			0.2f));
 
 		RandomGenerator randomRot;

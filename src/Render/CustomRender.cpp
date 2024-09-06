@@ -6,18 +6,9 @@ namespace RB::Render
 	{
 		float dif = _end - _start;
 
-        float perFrame = 0.0f;
+		float percentage = (float)_processedFrames / (float)(_totalFrames + 1); 
 
-        if (_totalFrames <= 0)
-        {
-            perFrame = dif;
-        }
-        else
-        {
-            perFrame = dif / float(_totalFrames + 1);
-        }
-
-        float result = perFrame * _processedFrames;
+		float result = dif * percentage;
 
         return _start + result;
 	}

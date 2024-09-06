@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "OperationType.h"
+
 namespace RB::Render
 {
     class CustomRender
@@ -23,5 +25,6 @@ namespace RB::Render
         float _totalAmount = 0.0f;
         float _start = 0.0f;
 		float _end = 0.0f;
+        OperationType _operationType = OperationType::NONE;
     };
 }

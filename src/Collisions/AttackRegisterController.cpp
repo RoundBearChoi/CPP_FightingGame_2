@@ -115,9 +115,9 @@ namespace RB::Collisions
 		}
 			
 		hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
-			1,
+			22,
 			Render::OperationType::SINE,
-			0.2f));
+			0.0f));
 
 		RandomGenerator randomRot;
 		int rot = randomRot.GetRand(-10, 10);

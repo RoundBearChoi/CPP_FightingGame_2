@@ -4,14 +4,14 @@
 #include <string>
 
 #include "CustomRender.h"
-#include "RenderScaleMultiplierType.h"
+#include "OperationType.h"
 
 namespace RB::Render
 {
 	class RenderScaleMultiplierObj : public CustomRender
 	{
 	public:
-		RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier);
+		RenderScaleMultiplierObj(int totalFrames, OperationType multiplierType, float totalMultiplier);
 
 	public:
 		void OnFixedUpdate() override;
@@ -20,6 +20,6 @@ namespace RB::Render
 		void SetStart(float start) override;
 
 	private:
-		RenderScaleMultiplierType _multiplierType = RenderScaleMultiplierType::NONE;
+		OperationType _multiplierType = OperationType::NONE;
 	};
 }

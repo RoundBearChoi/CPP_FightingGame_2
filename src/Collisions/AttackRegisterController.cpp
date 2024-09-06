@@ -48,12 +48,12 @@ namespace RB::Collisions
 		
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
 			8, 
-			RB::Render::RenderScaleMultiplierType::LINEAR, 
+			RB::Render::OperationType::LINEAR, 
 			1.5f));
 
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
 			20, 
-			RB::Render::RenderScaleMultiplierType::LINEAR, 
+			RB::Render::OperationType::LINEAR, 
 			0.8f));
 
 		hitVFX->AddRenderRotationObj(new Render::RenderRotationObj(

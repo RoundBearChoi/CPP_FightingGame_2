@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-	RenderScaleMultiplierObj::RenderScaleMultiplierObj(int totalFrames, RenderScaleMultiplierType multiplierType, float totalMultiplier)
+	RenderScaleMultiplierObj::RenderScaleMultiplierObj(int totalFrames, OperationType multiplierType, float totalMultiplier)
 	{
 		_totalFrames = totalFrames;
 		_multiplierType = multiplierType;

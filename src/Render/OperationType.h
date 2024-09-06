@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-	enum class RenderScaleMultiplierType
+	enum class OperationType
 	{
 		NONE,
 

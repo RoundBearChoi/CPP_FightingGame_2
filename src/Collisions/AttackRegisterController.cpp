@@ -49,12 +49,12 @@ namespace RB::Collisions
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
 			4, 
 			RB::Render::OperationType::SINE, 
-			1.2f));
+			1.4f));
 
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			14, 
+			15,
 			RB::Render::OperationType::SINE, 
-			0.85f));
+			0.7f));
 
 		hitVFX->AddRenderRotationObj(new Render::RenderRotationObj(
 			20,
@@ -62,7 +62,7 @@ namespace RB::Collisions
 			8.0f));
 
 		hitVFX->AddRenderTransparency(new Render::RenderTransparencyObj(
-			40,
+			45,
 			Render::OperationType::SINE,
 			0.0f));
 	}

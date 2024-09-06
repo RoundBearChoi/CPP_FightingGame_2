@@ -4,6 +4,8 @@
 
 #include "OperationType.h"
 
+#include "../Ease.h"
+
 namespace RB::Render
 {
     class CustomRender

@@ -7,6 +7,7 @@ namespace RB::Render
 		NONE,
 
 		LINEAR,
+		SINE,
 
 		COUNT,
 	};

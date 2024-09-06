@@ -13,7 +13,7 @@ namespace RB::Render
 
 		if (_operationType == RB::Render::OperationType::SINE)
 		{
-			multiplier = RB::Ease::EaseOutSine(percentage);
+			multiplier = RB::Ease::EaseInSine(percentage);
 		}
 
 		float result = dif * multiplier;

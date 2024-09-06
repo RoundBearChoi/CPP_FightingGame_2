@@ -19,6 +19,11 @@ namespace RB
 			return 1.0f - (sin((percentage * RB_PI) / 2));
 		}
 
+		static float EaseInSine(float percentage)
+		{
+			return (sin((percentage * RB_PI) / 2));
+		}
+
 		static float EaseOutCubic(float percentage)
 		{
 			return std::pow(1.0f - percentage, 3.0f);

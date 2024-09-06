@@ -47,13 +47,13 @@ namespace RB::Collisions
 			attackRegister.targetIsOnRightSide);
 		
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			8, 
-			RB::Render::OperationType::LINEAR, 
-			1.5f));
+			5, 
+			RB::Render::OperationType::SINE, 
+			1.3f));
 
 		hitVFX->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
-			20, 
-			RB::Render::OperationType::LINEAR, 
+			12, 
+			RB::Render::OperationType::SINE, 
 			0.8f));
 
 		hitVFX->AddRenderRotationObj(new Render::RenderRotationObj(

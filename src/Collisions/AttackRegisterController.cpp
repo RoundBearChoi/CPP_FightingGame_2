@@ -115,7 +115,7 @@ namespace RB::Collisions
 		}
 			
 		hitVFX_word->AddRenderTransparency(new Render::RenderTransparencyObj(
-			22,
+			30,
 			Render::OperationType::SINE,
 			0.0f));
 
@@ -126,5 +126,15 @@ namespace RB::Collisions
 			35,
 			RB::Render::OperationType::SINE,
 			float(rot)));
+
+		hitVFX_word->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
+			5,
+			RB::Render::OperationType::SINE,
+			1.4f));
+
+		hitVFX_word->AddRenderScaleMultiplierObj(new Render::RenderScaleMultiplierObj(
+			12,
+			RB::Render::OperationType::SINE,
+			0.6f));
 	}
 }

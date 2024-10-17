@@ -22,11 +22,17 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
+		if (player == nullptr)
+		{
+			return;
+		}
+
 		//get move amount (t is from 0 to 0.5, first half only)
 		unsigned int frame = _state->GetCumulatedFixedUpdates();
 
 		float t = (float)frame / ((float)_totalFrames * 2.0f);
 
+		//limit % to 0.5
 		if (t >= 0.5f)
 		{
 			t = 0.5f;

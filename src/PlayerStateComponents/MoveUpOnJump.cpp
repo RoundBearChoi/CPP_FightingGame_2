@@ -40,6 +40,7 @@ namespace RB::PlayerStateComponents
 			player->Move(RB::Vector2{ 0.0f, -result });
 		}
 
+		//temp transition should be separated
 		//next state
 		else
 		{

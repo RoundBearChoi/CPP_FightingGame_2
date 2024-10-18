@@ -3,7 +3,6 @@
 #include "../Ease.h"
 #include "../States/StateComponentBase.h"
 
-#include "../States/iState.h"
 #include "../Players/iPlayerController.h"
 
 namespace RB::PlayerStateComponents
@@ -11,7 +10,7 @@ namespace RB::PlayerStateComponents
 	class MoveUpOnJump : public RB::States::StateComponentBase
 	{
 	public:
-		MoveUpOnJump(unsigned int totalFrames, float multiplier, RB::States::iState* nextState);
+		MoveUpOnJump(unsigned int totalFrames, float multiplier);
 		~MoveUpOnJump() override;
 
 	public:

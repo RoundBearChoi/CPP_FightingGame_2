@@ -2,11 +2,10 @@
 
 namespace RB::PlayerStateComponents
 {
-	MoveUpOnJump::MoveUpOnJump(unsigned int totalFrames, float multiplier, RB::States::iState* nextState)
+	MoveUpOnJump::MoveUpOnJump(unsigned int totalFrames, float multiplier)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
-		_vecNextStates.push_back(nextState);
 	}
 
 	MoveUpOnJump::~MoveUpOnJump()
@@ -42,11 +41,11 @@ namespace RB::PlayerStateComponents
 
 		//temp transition should be separated
 		//next state
-		else
-		{
-			RB::States::iStateMachine* machine = player->GetStateMachine();
-
-			machine->QueueNextState(_vecNextStates[0]);
-		}
+		//else
+		//{
+		//	RB::States::iStateMachine* machine = player->GetStateMachine();
+//
+		//	machine->QueueNextState(_vecNextStates[0]);
+		//}
 	}
 }

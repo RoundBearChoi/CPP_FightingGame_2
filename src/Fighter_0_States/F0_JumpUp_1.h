@@ -3,6 +3,7 @@
 #include "../Players/PlayerState.h"
 #include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "../PlayerStateComponents/MoveDownOnFall.h"
+#include "../PlayerStateComponents/TransitionOnGround.h"
 
 #include "F0_Idle.h"
 

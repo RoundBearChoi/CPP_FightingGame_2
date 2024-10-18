@@ -33,19 +33,11 @@ namespace RB::PlayerStateComponents
 		float amount = RB::Ease::EaseOutSine(percentage);
 		float result = amount * _multiplier;
 
+		//to do: keep moving even if total frames is up
 		//apply vertical up
 		if (_state->GetCumulatedFixedUpdates() < _totalFrames)
 		{
 			player->Move(RB::Vector2{ 0.0f, -result });
 		}
-
-		//temp transition should be separated
-		//next state
-		//else
-		//{
-		//	RB::States::iStateMachine* machine = player->GetStateMachine();
-//
-		//	machine->QueueNextState(_vecNextStates[0]);
-		//}
 	}
 }

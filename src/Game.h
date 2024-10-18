@@ -54,9 +54,7 @@ namespace RB
 		~Game()
 		{
 			std::cout << std::endl;
-			std::cout << "destructing game class.. showing allocation count.." << std::endl;
-
-			showAllocCount = true;
+			std::cout << "destructing game class.." << std::endl;
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override

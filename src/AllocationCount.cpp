@@ -3,12 +3,14 @@
 #if ALLOC_COUNT
 
     size_t numObjects = 0;
-    bool showAllocCount = false;
-    bool onlyShowZeroCount = true;
+    bool showAllocCount = true;
+    bool onlyShowZeroCount = false;
 
     void* operator new(std::size_t size)
     {
         ++numObjects;
+        
+        //std::cout << "allocation count: " << numObjects << std::endl;;
 
         return std::malloc(size);
     }

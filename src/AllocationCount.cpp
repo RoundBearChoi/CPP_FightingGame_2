@@ -4,7 +4,7 @@
 
     size_t numObjects = 0;
     bool showAllocCount = true;
-    bool onlyShowZeroCount = false;
+    bool onlyShowZeroCount = true;
 
     void* operator new(std::size_t size)
     {

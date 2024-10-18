@@ -4,6 +4,7 @@
 #include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "../PlayerStateComponents/MoveUpOnJump.h"
 #include "../PlayerStateComponents/MoveForwardOnJump_0.h"
+#include "../PlayerStateComponents/TransitionOnFixedUpdateCount.h"
 
 #include "../Players/iSpecsController.h"
 

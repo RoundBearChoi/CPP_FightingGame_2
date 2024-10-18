@@ -1,8 +1,8 @@
-#include "F0_JumpForwardUp_1.h"
+#include "F0_JumpForward_1.h"
 
 namespace RB::Fighter_0_States
 {
-	void F0_JumpForwardUp_1::OnEnter()
+	void F0_JumpForward_1::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_jump_forward_1;
 
@@ -12,17 +12,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void F0_JumpForwardUp_1::OnExit()
+	void F0_JumpForward_1::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void F0_JumpForwardUp_1::OnUpdate()
+	void F0_JumpForward_1::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void F0_JumpForwardUp_1::OnFixedUpdate()
+	void F0_JumpForward_1::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

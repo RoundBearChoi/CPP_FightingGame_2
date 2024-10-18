@@ -30,14 +30,15 @@ namespace RB::PlayerStateComponents
 		//get vertical up
 		unsigned int frame = _state->GetCumulatedFixedUpdates();
 		float percentage = (float)frame / (float)_totalFrames;
+
+		if (percentage >= 1.0f)
+		{
+			percentage = 1.0f;
+		}
+
 		float amount = RB::Ease::EaseOutSine(percentage);
 		float result = amount * _multiplier;
-
-		//to do: keep moving even if total frames is up
-		//apply vertical up
-		if (_state->GetCumulatedFixedUpdates() < _totalFrames)
-		{
-			player->Move(RB::Vector2{ 0.0f, -result });
-		}
+		
+		player->Move(RB::Vector2{ 0.0f, -result });
 	}
 }

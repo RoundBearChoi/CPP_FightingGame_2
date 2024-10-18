@@ -5,11 +5,10 @@ namespace RB::PlayerStateComponents
 	/// <summary>
 	/// total frames to reach max fall speed
 	/// </summary>
-	MoveDownOnFall::MoveDownOnFall(unsigned int totalFrames, float multiplier, RB::States::iState* nextState)
+	MoveDownOnFall::MoveDownOnFall(unsigned int totalFrames, float multiplier)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
-		_vecNextStates.push_back(nextState);
 	}
 
 	MoveDownOnFall::~MoveDownOnFall()
@@ -46,14 +45,10 @@ namespace RB::PlayerStateComponents
 
 		float y = player->GetPosition().y;
 
-		//transition to idle 1 frame before hitting ground
+		//do not fall below ground level
 		if (y + result >= 0.0f)
 		{
 			player->SetPosition({ player->GetPosition().x, 0.0f });
-
-			RB::States::iStateMachine* machine = player->GetStateMachine();
-			
-			machine->QueueNextState(_vecNextStates[0]);
 		}
 
 		//keep falling

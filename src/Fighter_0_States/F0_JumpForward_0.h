@@ -5,10 +5,12 @@
 #include "../PlayerStateComponents/MoveUpOnJump.h"
 #include "../PlayerStateComponents/MoveForwardOnJump_0.h"
 #include "../PlayerStateComponents/TransitionOnFixedUpdateCount.h"
+#include "../PlayerStateComponents/TransitionOnGround.h"
 
 #include "../Players/iSpecsController.h"
 
 #include "../Fighter_0_States/F0_JumpForward_1.h"
+#include "../Fighter_0_States/F0_Idle.h"
 
 namespace RB::Fighter_0_States
 {

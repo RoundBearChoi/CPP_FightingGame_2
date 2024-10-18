@@ -7,7 +7,7 @@ namespace RB::Fighter_0_States
 		_spriteType = RB::Sprites::SpriteType::fighter_0_fall;
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
-		AddStateComponent(new RB::PlayerStateComponents::MoveDownOnFall(20, 20.0f, new F0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::MoveDownOnFall(20, 20.0f));
 
 		EnterStateComponents();
 	}

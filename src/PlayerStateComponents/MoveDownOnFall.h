@@ -12,7 +12,7 @@ namespace RB::PlayerStateComponents
 	class MoveDownOnFall : public RB::States::StateComponentBase
 	{
 	public:
-		MoveDownOnFall(unsigned int totalFrames, float multiplier, RB::States::iState* nextState);
+		MoveDownOnFall(unsigned int totalFrames, float multiplier);
 		~MoveDownOnFall() override;
 
 	public:

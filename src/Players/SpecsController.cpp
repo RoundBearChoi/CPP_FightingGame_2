@@ -9,7 +9,7 @@ namespace RB::Players
 
 	void SpecsController::Init()
 	{
-		_LoadMoveSpecs("../resource/MoveSpecs/Aku_moveSpecs.moveSpecs", RB::Players::CharacterType::AKU);
+		_LoadMoveSpecs("../resource/MoveSpecs/F0_moveSpecs.moveSpecs", RB::Players::CharacterType::AKU);
 	}
 
 	void SpecsController::OnUpdate()

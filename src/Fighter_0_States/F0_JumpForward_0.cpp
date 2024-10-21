@@ -12,7 +12,7 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpUp_Forward_totalFrames, moveSpecs.mJumpUp_Forward_speedMultiplier));
 		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump_0(20, 7.0f));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(moveSpecs.mJumpUp_Forward_totalFrames,	new F0_JumpForward_1()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(moveSpecs.mJumpUp_Forward_totalFrames, new F0_JumpForward_1()));
 
 		EnterStateComponents();
 	}

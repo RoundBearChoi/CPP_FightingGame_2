@@ -30,20 +30,20 @@ namespace RB::PlayerStateComponents
 		//get move amount (t is from 0 to 0.5, first half only)
 		unsigned int frame = _state->GetCumulatedFixedUpdates();
 
-		float t = (float)frame / ((float)_totalFrames * 2.0f);
+		float percentage = (float)frame / ((float)_totalFrames * 2.0f);
 
 		//limit % to 0.5
-		if (t >= 0.5f)
+		if (percentage >= 0.5f)
 		{
-			t = 0.5f;
+			percentage = 0.5f;
 		}
-		else if (t <= 0.0f)
+		else if (percentage <= 0.0f)
 		{
-			t = 0.0f;
+			percentage = 0.0f;
 		}
 
-		float percentage = RB::Ease::EaseOutCirc(t);
-		float result = percentage * _multiplier;
+		float amount = RB::Ease::EaseOutCirc(percentage);
+		float result = amount * _multiplier;
 
 		if (!player->IsFacingRight())
 		{

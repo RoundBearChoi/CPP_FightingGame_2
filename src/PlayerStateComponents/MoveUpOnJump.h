@@ -5,6 +5,8 @@
 
 #include "../Players/iPlayerController.h"
 
+#include "../Ease.h"
+
 namespace RB::PlayerStateComponents
 {
 	class MoveUpOnJump : public RB::States::StateComponentBase

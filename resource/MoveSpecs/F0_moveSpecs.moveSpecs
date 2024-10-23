@@ -4,11 +4,11 @@
         "mWalk_Forward_Speed" : 3.2,
         "mWalk_Back_Speed" : 2.2,
 
-        "mJumpUp_totalFrames" : 16,
+        "mJumpUp_totalFrames" : 15,
         "mJumpUp_speedMultiplier" : 25.5,
         
-        "mJumpForward_totalFrames" : 26,
-        "mJumpForward_horSpeedMultiplier" : 8.5,
-        "mJumpForward_verSpeedMultiplier" : 18.0
+        "mJumpForward_totalFrames" : 34,
+        "mJumpForward_horSpeedMultiplier" : 7.5,
+        "mJumpForward_verSpeedMultiplier" : 19.8
         }
 }

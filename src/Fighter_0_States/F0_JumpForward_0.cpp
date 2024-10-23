@@ -11,7 +11,7 @@ namespace RB::Fighter_0_States
 
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpForward_totalFrames / 2, moveSpecs.mJumpForward_verSpeedMultiplier));
-		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump(moveSpecs.mJumpForward_totalFrames / 2, moveSpecs.mJumpForward_horSpeedMultiplier));
+		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump(moveSpecs.mJumpForward_totalFrames / 2, moveSpecs.mJumpForward_horSpeedMultiplier, PlayerStateComponents::MoveForwardOnJumpType::FIRST_HALF));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(moveSpecs.mJumpForward_totalFrames / 2, new F0_JumpForward_1()));
 
 		EnterStateComponents();

@@ -1,11 +1,13 @@
 #include "MoveForwardOnJump.h"
+#include "MoveForwardOnJumpType.h"
 
 namespace RB::PlayerStateComponents
 {
-	MoveForwardOnJump::MoveForwardOnJump(unsigned int totalFrames, float multiplier)
+	MoveForwardOnJump::MoveForwardOnJump(unsigned int totalFrames, float multiplier, MoveForwardOnJumpType jumpType)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
+		_jumpType = jumpType;
 	}
 
 	void MoveForwardOnJump::OnEnter()
@@ -32,13 +34,24 @@ namespace RB::PlayerStateComponents
 
 		float percentage = (float)frame / (float)_totalFrames;
 
-		if (percentage >= 1.0f)
+		if (_jumpType == MoveForwardOnJumpType::FIRST_HALF)
 		{
-			percentage = 1.0f;
+			percentage *= 0.5f;
+
+			if (percentage >= 0.5f)
+			{
+				percentage = 0.5f;
+			}
 		}
-		else if (percentage <= 0.0f)
+		else if (_jumpType == MoveForwardOnJumpType::SECOND_HALF)
 		{
-			percentage = 0.0f;
+			percentage *= 0.5f;
+			percentage += 0.5f;
+
+			if (percentage >= 1.0f)
+			{
+				percentage = 1.0f;
+			}
 		}
 
 		float amount = RB::Ease::EaseOutCirc(percentage);

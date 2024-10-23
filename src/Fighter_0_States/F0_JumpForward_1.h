@@ -2,7 +2,7 @@
 
 #include "../Players/PlayerState.h"
 #include "../PlayerStateComponents/MoveDownOnFall.h"
-#include "../PlayerStateComponents/MoveForwardOnJump_0.h"
+#include "../PlayerStateComponents/MoveForwardOnJump.h"
 
 #include "F0_Idle.h"
 

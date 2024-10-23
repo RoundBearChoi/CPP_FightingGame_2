@@ -7,11 +7,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class MoveForwardOnJump_0 : public RB::States::StateComponentBase
+	class MoveForwardOnJump : public RB::States::StateComponentBase
 	{
 	public:
-		MoveForwardOnJump_0(unsigned int totalFrames, float multiplier);
-		~MoveForwardOnJump_0() override {};
+		MoveForwardOnJump(unsigned int totalFrames, float multiplier);
+		~MoveForwardOnJump() override {};
 
 	public:
 		void OnEnter() override;

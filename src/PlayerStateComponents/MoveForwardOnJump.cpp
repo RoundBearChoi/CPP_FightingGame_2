@@ -1,19 +1,19 @@
-#include "MoveForwardOnJump_0.h"
+#include "MoveForwardOnJump.h"
 
 namespace RB::PlayerStateComponents
 {
-	MoveForwardOnJump_0::MoveForwardOnJump_0(unsigned int totalFrames, float multiplier)
+	MoveForwardOnJump::MoveForwardOnJump(unsigned int totalFrames, float multiplier)
 	{
 		_totalFrames = totalFrames;
 		_multiplier = multiplier;
 	}
 
-	void MoveForwardOnJump_0::OnEnter()
+	void MoveForwardOnJump::OnEnter()
 	{
 
 	}
 
-	void MoveForwardOnJump_0::OnFixedUpdate()
+	void MoveForwardOnJump::OnFixedUpdate()
 	{
 		if (RB::Players::iPlayerController::Get() == nullptr)
 		{

@@ -51,8 +51,8 @@ namespace RB::Players
 		float walk_Back_Speed = RB::JSON::JParser::GetFloat_FromElement(*vecAll[1]);
 		int jumpUp_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
 		float jumpUp_speedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[3]);
-		int jumpUp_Forward_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
-		float jumpUp_Forward_speedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[5]);
+		int jumpForward_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
+		float jumpForward_horSpeedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[5]);
 
 		MoveSpecs specs;
 		specs.mCharacterType = characterType;
@@ -60,8 +60,8 @@ namespace RB::Players
 		specs.mWalk_Back_Speed = walk_Back_Speed;
 		specs.mJumpUp_totalFrames = jumpUp_totalFrames;
 		specs.mJumpUp_speedMultiplier = jumpUp_speedMultiplier;
-		specs.mJumpUp_Forward_totalFrames = jumpUp_Forward_totalFrames;
-		specs.mJumpUp_Forward_speedMultiplier = jumpUp_Forward_speedMultiplier;
+		specs.mJumpForward_totalFrames = jumpForward_totalFrames;
+		specs.mJumpForward_horSpeedMultiplier = jumpForward_horSpeedMultiplier;
 
 		_vecMoveSpecs.push_back(specs);
 

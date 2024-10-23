@@ -13,7 +13,7 @@ namespace RB::Players
 		float				mWalk_Back_Speed = 0;
 		unsigned int		mJumpUp_totalFrames = 0;
 		float				mJumpUp_speedMultiplier = 0.0f;
-		unsigned int		mJumpUp_Forward_totalFrames = 0;
-		float				mJumpUp_Forward_speedMultiplier = 0.0f;
+		unsigned int		mJumpForward_totalFrames = 0;
+		float				mJumpForward_horSpeedMultiplier = 0.0f;
 	};
 }

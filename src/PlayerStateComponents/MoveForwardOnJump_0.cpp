@@ -30,12 +30,11 @@ namespace RB::PlayerStateComponents
 		//get move amount (t is from 0 to 0.5, first half only)
 		unsigned int frame = _state->GetCumulatedFixedUpdates();
 
-		float percentage = (float)frame / ((float)_totalFrames * 2.0f);
+		float percentage = (float)frame / (float)_totalFrames;
 
-		//limit % to 0.5
-		if (percentage >= 0.5f)
+		if (percentage >= 1.0f)
 		{
-			percentage = 0.5f;
+			percentage = 1.0f;
 		}
 		else if (percentage <= 0.0f)
 		{

@@ -7,6 +7,7 @@
 
 #include "../Players/iSpecsController.h"
 
+#include "F0_JumpBack_0.h"
 #include "F0_JumpUp_0.h"
 #include "F0_Idle.h"
 #include "F0_WalkForward.h"

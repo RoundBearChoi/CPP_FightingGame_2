@@ -1,4 +1,5 @@
 #include "F0_JumpForward_0.h"
+
 #include "F0_JumpForward_1.h"
 
 namespace RB::Fighter_0_States

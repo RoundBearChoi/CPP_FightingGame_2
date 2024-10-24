@@ -9,6 +9,10 @@
         
         "mJumpForward_totalFrames" : 34,
         "mJumpForward_horSpeedMultiplier" : 7.5,
-        "mJumpForward_verSpeedMultiplier" : 20
+        "mJumpForward_verSpeedMultiplier" : 20,
+
+        "mJumpBack_totalFrames" : 34,
+        "mJumpBack_horSpeedMultiplier" : -7.5,
+        "mJumpBack_verSpeedMultiplier" : 20
         }
 }

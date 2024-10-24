@@ -18,5 +18,9 @@ namespace RB::Players
 		unsigned int		mJumpForward_totalFrames = 0;
 		float				mJumpForward_horSpeedMultiplier = 0.0f;
 		float				mJumpForward_verSpeedMultiplier = 0.0f;
+
+		unsigned int		mJumpBack_totalFrames = 0;
+		float				mJumpBack_horSpeedMultiplier = 0.0f;
+		float				mJumpBack_verSpeedMultiplier = 0.0f;
 	};
 }

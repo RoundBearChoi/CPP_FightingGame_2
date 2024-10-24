@@ -41,8 +41,11 @@ namespace RB::Sprites
 		fighter_0_jump_up,
 		fighter_0_fall,
 
-		fighter_0_jump_forward_0, //up
-		fighter_0_jump_forward_1, //down
+		fighter_0_jump_forward_0, 	//up
+		fighter_0_jump_forward_1, 	//down
+
+		fighter_0_jump_back_0,		//up
+		fighter_0_jump_back_1,		//down
 
 		fighter_0_jab,
 		fighter_0_strong_punch,

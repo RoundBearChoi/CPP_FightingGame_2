@@ -8,6 +8,7 @@ namespace RB::Fighter_0_States
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::Fighter_0_States::F0_JumpForward_0(), false));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::Fighter_0_States::F0_JumpBack_0(), true));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::F0_JumpUp_0()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Strong_Kick(), RB::Input::PlayerInput::ATTACK_STRONG_KICK, true, false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Strong_Punch(), RB::Input::PlayerInput::ATTACK_STRONG_PUNCH, true, false));

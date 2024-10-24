@@ -1,6 +1,6 @@
 #include "F0_JumpBack_0.h"
 
-//#include "F0_JumpForward_1.h"
+#include "F0_JumpBack_1.h"
 
 namespace RB::Fighter_0_States
 {
@@ -13,7 +13,7 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpBack_totalFrames / 2, moveSpecs.mJumpBack_verSpeedMultiplier));
 		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump(moveSpecs.mJumpBack_totalFrames / 2, moveSpecs.mJumpBack_horSpeedMultiplier, PlayerStateComponents::MoveForwardOnJumpType::FIRST_HALF));
-		//AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(moveSpecs.mJumpBack_totalFrames / 2, new F0_JumpForward_1()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(moveSpecs.mJumpBack_totalFrames / 2, new F0_JumpBack_1()));
 
 		EnterStateComponents();
 	}

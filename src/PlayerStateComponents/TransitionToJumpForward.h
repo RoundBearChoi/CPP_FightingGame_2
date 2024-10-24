@@ -11,11 +11,14 @@ namespace RB::PlayerStateComponents
 	class TransitionToJumpForward : public RB::States::StateComponentBase
 	{
 	public:
-		TransitionToJumpForward(RB::States::iState* nextState);
+		TransitionToJumpForward(RB::States::iState* nextState, bool reverse);
 		~TransitionToJumpForward() override {};
 
 	public:
 		void OnEnter() override;
 		void OnUpdate() override;
+
+	private:
+		bool _reverse = false;
 	};
 }

@@ -12,9 +12,10 @@
 #include "F0_Strong_Punch.h"
 #include "F0_Strong_Kick.h"
 #include "F0_JumpUp_0.h"
+#include "F0_JumpForward_0.h"
+#include "F0_JumpBack_0.h"
 #include "F0_WalkForward.h"
 #include "F0_WalkBack.h"
-#include "F0_JumpForward_0.h"
 #include "F0_Crouch.h"
 
 namespace RB::Fighter_0_States

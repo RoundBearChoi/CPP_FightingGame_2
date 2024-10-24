@@ -2,9 +2,12 @@
 
 namespace RB::PlayerStateComponents
 {
-	TransitionToJumpForward::TransitionToJumpForward(RB::States::iState* nextState)
+	TransitionToJumpForward::TransitionToJumpForward(RB::States::iState* nextState, bool reverse)
 	{
 		_vecNextStates.push_back(nextState);
+
+		_reverse = reverse;
+
 	}
 
 	void TransitionToJumpForward::OnEnter()
@@ -22,25 +25,32 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		bool jumpForward = false;
-		RB::Input::iInputObj* jumpForwardInputObj = nullptr;
+		bool jumpForwardOrBack = false;
+		RB::Input::iInputObj* inputObj = nullptr;
 
-		if (player->OtherPlayerIsOnRightSide())
+		if (!_reverse)
 		{
-			jumpForward = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-			jumpForwardInputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			if (player->OtherPlayerIsOnRightSide())
+			{
+				jumpForwardOrBack = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+				inputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			}
+			else
+			{
+				jumpForwardOrBack = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+				inputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			}
 		}
 		else
 		{
-			jumpForward = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-			jumpForwardInputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			return;
 		}
 
-		if (jumpForward)
+		if (jumpForwardOrBack)
 		{
-			if (jumpForwardInputObj != nullptr)
+			if (inputObj != nullptr)
 			{
-				jumpForwardInputObj->SetUsedAsMovement(true);
+				inputObj->SetUsedAsMovement(true);
 
 				RB::States::iStateMachine* machine = player->GetStateMachine();
 				machine->QueueNextState(_vecNextStates[0]);

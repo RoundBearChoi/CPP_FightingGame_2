@@ -52,7 +52,7 @@ namespace RB::Sprites
 		fighter_0_strong_kick,
 		
 		fighter_0_wince,
-		fighter_0_strong_wince,
+		fighter_0_strong_wince_mid,
 		
 		fighter_0_hadouken,
 

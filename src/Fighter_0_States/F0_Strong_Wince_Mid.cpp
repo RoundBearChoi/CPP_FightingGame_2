@@ -1,10 +1,10 @@
-#include "F0_Strong_Wince.h"
+#include "F0_Strong_Wince_Mid.h"
 
 namespace RB::Fighter_0_States
 {
-	void F0_Strong_Wince::OnEnter()
+	void F0_Strong_Wince_Mid::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::fighter_0_strong_wince;
+		_spriteType = RB::Sprites::SpriteType::fighter_0_strong_wince_mid;
 
 		AddStateComponent(new RB::PlayerStateComponents::FixWincingStatusDuringState(true));
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
@@ -43,17 +43,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void F0_Strong_Wince::OnExit()
+	void F0_Strong_Wince_Mid::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void F0_Strong_Wince::OnUpdate()
+	void F0_Strong_Wince_Mid::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void F0_Strong_Wince::OnFixedUpdate()
+	void F0_Strong_Wince_Mid::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

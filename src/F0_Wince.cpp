@@ -1,8 +1,8 @@
-#include "P0_Wince.h"
+#include "F0_Wince.h"
 
 namespace RB::Fighter_0_States
 {
-	void P0_Wince::OnEnter()
+	void F0_Wince::OnEnter()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_wince;
 
@@ -23,17 +23,17 @@ namespace RB::Fighter_0_States
 		EnterStateComponents();
 	}
 
-	void P0_Wince::OnExit()
+	void F0_Wince::OnExit()
 	{
 		ExitStateComponents();
 	}
 
-	void P0_Wince::OnUpdate()
+	void F0_Wince::OnUpdate()
 	{
 		UpdateStateComponents();
 	}
 
-	void P0_Wince::OnFixedUpdate()
+	void F0_Wince::OnFixedUpdate()
 	{
 		FixedUpdateStateComponents();
 	}

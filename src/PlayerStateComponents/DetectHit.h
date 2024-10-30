@@ -16,7 +16,7 @@
 #include "../Collisions/iAttackRegisterController.h"
 #include "../Collisions/iAttackSpecsController.h"
 
-#include "../P0_Wince.h"
+#include "../F0_Wince.h"
 
 namespace RB::PlayerStateComponents
 {

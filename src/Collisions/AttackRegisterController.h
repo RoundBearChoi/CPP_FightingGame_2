@@ -15,7 +15,7 @@
 #include "../Render/RenderScaleMultiplierObj.h"
 #include "../Render/RenderRotationObj.h"
 
-#include "../F0_Wince.h" //temp
+#include "../F0_Weak_Wince_Mid.h" //temp
 #include "../Fighter_0_States/F0_Strong_Wince_Mid.h" //temp
 
 #include "../Render/iAnimationObj.h"

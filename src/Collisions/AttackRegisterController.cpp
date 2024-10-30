@@ -30,7 +30,7 @@ namespace RB::Collisions
 		}
 		else if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::WEAK)
 		{
-			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Wince());
+			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Weak_Wince_Mid());
 		}
 
 		if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)

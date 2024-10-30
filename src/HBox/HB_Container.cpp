@@ -10,7 +10,7 @@ namespace RB::HBox
 		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_jab), RB::Sprites::SpriteType::fighter_0_jab, _boxType));
 		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_punch), RB::Sprites::SpriteType::fighter_0_strong_punch, _boxType));
 		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_kick), RB::Sprites::SpriteType::fighter_0_strong_kick, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_wince), RB::Sprites::SpriteType::fighter_0_wince, _boxType));
+		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_weak_wince_mid), RB::Sprites::SpriteType::fighter_0_weak_wince_mid, _boxType));
 		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_wince_mid), RB::Sprites::SpriteType::fighter_0_strong_wince_mid, _boxType));
 	}
 

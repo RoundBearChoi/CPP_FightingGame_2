@@ -1,7 +1,7 @@
 {
-    "fighter_0_crouch_attack_weak":
+    "fighter_0_crouch_punch_weak":
         {
-        "sprite_enum" : "fighter_0_crouch_attack_weak",
+        "sprite_enum" : "fighter_0_crouch_punch_weak",
         "mX_TileCount" : 4,
         "mY_TileCount" : 1,
         "mTotalSprites" : 4,

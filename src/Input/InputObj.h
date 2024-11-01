@@ -17,10 +17,10 @@ namespace RB::Input
 
 		PlayerInput GetPlayerInputType() override;
 		void SetReleasedStatus(bool released) override;
-		void SetUsedAsSpecial(bool used) override;
+		void SetUsedAsAttack(bool used) override;
 		void SetUsedAsMovement(bool used) override;
 		bool IsReleased() override;
-		bool IsUsedAsSpecial() override;
+		bool IsUsedAsAttack() override;
 		bool IsUsedAsMovement() override;
 		unsigned int GetFixedUpdateCount() override;
 		unsigned int GetGameFrameCount() override;
@@ -32,7 +32,7 @@ namespace RB::Input
 		unsigned int _fixedUpdateCount = 0;
 		PlayerInput _playerInput = PlayerInput::NONE;
 		bool _isReleased = false;
-		bool _usedAsSpecial = false;
+		bool _usedAsAttack = false;
 		bool _usedAsMovement = false;
 	};
 }

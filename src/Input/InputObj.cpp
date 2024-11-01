@@ -33,9 +33,9 @@ namespace RB::Input
 		_isReleased = released;
 	}
 
-	void InputObj::SetUsedAsSpecial(bool used)
+	void InputObj::SetUsedAsAttack(bool used)
 	{
-		_usedAsSpecial = used;
+		_usedAsAttack = used;
 	}
 
 	void InputObj::SetUsedAsMovement(bool used)
@@ -48,9 +48,9 @@ namespace RB::Input
 		return _isReleased;
 	}
 
-	bool InputObj::IsUsedAsSpecial()
+	bool InputObj::IsUsedAsAttack()
 	{
-		return _usedAsSpecial;
+		return _usedAsAttack;
 	}
 
 	bool InputObj::IsUsedAsMovement()

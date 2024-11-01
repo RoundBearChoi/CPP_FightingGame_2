@@ -40,7 +40,7 @@ namespace RB::Input
 				continue;
 			}
 
-			if (!(*i)->IsUsedAsSpecial())
+			if (!(*i)->IsUsedAsAttack())
 			{
 				if (sequence.size() > seqIndex)
 				{
@@ -58,7 +58,7 @@ namespace RB::Input
 		{
 			for (auto i = vecCorrectObjs.begin(); i != vecCorrectObjs.end(); ++i)
 			{
-				(*i)->SetUsedAsSpecial(true);
+				(*i)->SetUsedAsAttack(true);
 			}
 
 			return true;

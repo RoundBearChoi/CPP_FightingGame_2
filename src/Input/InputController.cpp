@@ -150,7 +150,7 @@ namespace RB::Input
 		{
 			if ((*i)->GetPlayerInputType() == playerInput)
 			{
-				if ((*i)->IsUsedAsSpecial() == false)
+				if ((*i)->IsUsedAsAttack() == false)
 				{
 					return (*i);
 				}

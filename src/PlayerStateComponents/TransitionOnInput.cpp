@@ -47,9 +47,9 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_useAsSpecial && !obj->IsUsedAsSpecial())
+		if (_useAsSpecial && !obj->IsUsedAsAttack())
 		{
-			obj->SetUsedAsSpecial(true);
+			obj->SetUsedAsAttack(true);
 
 			RB::States::iStateMachine* machine = player->GetStateMachine();
 			machine->QueueNextState(_vecNextStates[0]);

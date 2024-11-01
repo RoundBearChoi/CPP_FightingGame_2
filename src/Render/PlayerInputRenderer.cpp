@@ -60,7 +60,7 @@ namespace RB::Render
 				tint = olc::BLUE;
 			}
 
-			if ((*i)->IsUsedAsSpecial())
+			if ((*i)->IsUsedAsAttack())
 			{
 				tint = olc::YELLOW;
 			}

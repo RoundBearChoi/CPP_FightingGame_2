@@ -10,12 +10,12 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::Fighter_0_States::F0_JumpForward_0(), false));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::Fighter_0_States::F0_JumpBack_0(), true));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::F0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Strong_Kick(), RB::Input::PlayerInput::ATTACK_STRONG_KICK, true, false));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Strong_Punch(), RB::Input::PlayerInput::ATTACK_STRONG_PUNCH, true, false));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Jab(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH, true, false));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Strong_Kick(), RB::Input::PlayerInput::ATTACK_STRONG_KICK, RB::Input::InputType::ATTACK));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Strong_Punch(), RB::Input::PlayerInput::ATTACK_STRONG_PUNCH, RB::Input::InputType::ATTACK));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Jab(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH, RB::Input::InputType::ATTACK));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkForward(new RB::Fighter_0_States::F0_WalkForward()));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToWalkBack(new RB::Fighter_0_States::F0_WalkBack()));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new RB::Fighter_0_States::F0_Crouch(), RB::Input::PlayerInput::MOVE_DOWN, false, true));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new RB::Fighter_0_States::F0_Crouch(), RB::Input::PlayerInput::MOVE_DOWN, RB::Input::InputType::MOVEMENT));
 
 		EnterStateComponents();
 	}

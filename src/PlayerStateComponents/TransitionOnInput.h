@@ -1,18 +1,20 @@
 #pragma once
 
-#include "../Input/PlayerInput.h"
-#include "../States/StateComponentBase.h"
-
-#include "../States/iState.h"
-#include "../Players/iPlayerController.h"
 #include "../Input/iInputController.h"
+#include "../Input/PlayerInput.h"
+#include "../Input/InputType.h"
+
+#include "../States/StateComponentBase.h"
+#include "../States/iState.h"
+
+#include "../Players/iPlayerController.h"
 
 namespace RB::PlayerStateComponents
 {
 	class TransitionOnInput : public RB::States::StateComponentBase
 	{
 	public:
-		TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool useAsAttack, bool useAsMovement);
+		TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, RB::Input::InputType inputType);
 		~TransitionOnInput() override {};
 
 	public:
@@ -22,7 +24,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		RB::Input::PlayerInput _input = RB::Input::PlayerInput::NONE;
-		bool _useAsAttack = false;
-		bool _useAsMovement = false;
+		RB::Input::InputType _inputType = RB::Input::InputType::NONE;
 	};
 }

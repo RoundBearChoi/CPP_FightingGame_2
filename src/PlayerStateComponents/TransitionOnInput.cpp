@@ -2,12 +2,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool useAsAttack, bool useAsMovement)
+	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, RB::Input::InputType inputType)
 	{
 		_vecNextStates.push_back(nextState);
 		_input = input;
-		_useAsAttack = useAsAttack;
-		_useAsMovement = useAsMovement;
+		_inputType = inputType;
 	}
 
 	void TransitionOnInput::OnEnter()
@@ -33,11 +32,11 @@ namespace RB::PlayerStateComponents
 
 		RB::Input::iInputObj* obj = nullptr;
 		
-		if (_useAsAttack)
+		if (_inputType == RB::Input::InputType::ATTACK)
 		{
 			obj = RB::Input::iInputController::Get()->GetUnused_Special_FIFO(playerID, _input);
 		}
-		else if (_useAsMovement)
+		else if (_inputType == RB::Input::InputType::MOVEMENT)
 		{
 			obj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(playerID, _input);
 		}
@@ -47,7 +46,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_useAsAttack && !obj->IsUsedAsAttack())
+		if (_inputType == RB::Input::InputType::ATTACK && !obj->IsUsedAsAttack())
 		{
 			obj->SetUsedAsAttack(true);
 
@@ -55,7 +54,7 @@ namespace RB::PlayerStateComponents
 			machine->QueueNextState(_vecNextStates[0]);
 		}
 
-		else if (_useAsMovement && !obj->IsUsedAsMovement())
+		else if (_inputType == RB::Input::InputType::MOVEMENT && !obj->IsUsedAsMovement())
 		{
 			obj->SetUsedAsMovement(true);
 

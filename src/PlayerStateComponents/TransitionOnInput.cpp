@@ -2,11 +2,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool useAsSpecial, bool useAsMovement)
+	TransitionOnInput::TransitionOnInput(RB::States::iState* nextState, RB::Input::PlayerInput input, bool useAsAttack, bool useAsMovement)
 	{
 		_vecNextStates.push_back(nextState);
 		_input = input;
-		_useAsSpecial = useAsSpecial;
+		_useAsAttack = useAsAttack;
 		_useAsMovement = useAsMovement;
 	}
 
@@ -33,7 +33,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Input::iInputObj* obj = nullptr;
 		
-		if (_useAsSpecial)
+		if (_useAsAttack)
 		{
 			obj = RB::Input::iInputController::Get()->GetUnused_Special_FIFO(playerID, _input);
 		}
@@ -47,7 +47,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_useAsSpecial && !obj->IsUsedAsAttack())
+		if (_useAsAttack && !obj->IsUsedAsAttack())
 		{
 			obj->SetUsedAsAttack(true);
 

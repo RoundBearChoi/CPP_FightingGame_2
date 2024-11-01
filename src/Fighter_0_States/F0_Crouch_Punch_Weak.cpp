@@ -1,5 +1,7 @@
 #include "F0_Crouch_Punch_Weak.h"
 
+#include "F0_Crouch_Idle.h" //avoid circular include
+
 namespace RB::Fighter_0_States
 {
 	void F0_Crouch_Punch_Weak::OnEnter()
@@ -8,6 +10,7 @@ namespace RB::Fighter_0_States
 
         AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 		//AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::Fighter_0_States::F0_Crouch_Idle()));
 
 		EnterStateComponents();
 	}

@@ -1,10 +1,13 @@
 #pragma once
 
 #include "../Players/PlayerState.h"
+
 #include "../PlayerStateComponents/DoNotFixDirectionDuringState.h"
+#include "../PlayerStateComponents/TransitionOnInput.h"
 #include "../PlayerStateComponents/StandUpOnRelease.h"
 
 #include "F0_StandUp.h"
+#include "F0_Crouch_Punch_Weak.h"
 
 namespace RB::Fighter_0_States
 {

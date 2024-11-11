@@ -83,7 +83,7 @@ namespace RB::PlayerStateComponents
 
 		for (auto i = vec_Owner_AABB_Sets.begin(); i != vec_Owner_AABB_Sets.end(); ++i)
 		{
-			std::cout << "checking owner aabb" << std::endl;
+			//std::cout << "checking owner aabb" << std::endl;
 
 			//get owner AABB
 			RB::Collisions::AABB ownerBox = (*i);

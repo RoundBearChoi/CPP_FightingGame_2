@@ -1,5 +1,5 @@
 {
-    "fighter_0_jab":
+    "fighter_0_crouch_punch_weak":
         {
         "attack strength stype" : "WEAK",
         "damage" : 10,

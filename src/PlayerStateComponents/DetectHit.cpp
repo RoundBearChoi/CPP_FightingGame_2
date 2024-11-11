@@ -20,6 +20,8 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::_ProcessHit()
 	{
+		//std::cout << "proccesssing hit.." << std::endl;
+
 		RB::Collisions::CollisionResult collisionResult;
 
 		if (_HitDetected(collisionResult))
@@ -39,6 +41,8 @@ namespace RB::PlayerStateComponents
 
 	bool DetectHit::_HitDetected(RB::Collisions::CollisionResult& collisionResult)
 	{
+		//std::cout << "detecting hit.." << std::endl;
+
 		RB::Players::iPlayer* owner = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(owner);
 
@@ -47,6 +51,8 @@ namespace RB::PlayerStateComponents
 
 		if (ownerState == nullptr || enemyState == nullptr)
 		{
+			//std::cout << "state nullptr" << std::endl;
+
 			return false;
 		}
 
@@ -77,6 +83,8 @@ namespace RB::PlayerStateComponents
 
 		for (auto i = vec_Owner_AABB_Sets.begin(); i != vec_Owner_AABB_Sets.end(); ++i)
 		{
+			std::cout << "checking owner aabb" << std::endl;
+
 			//get owner AABB
 			RB::Collisions::AABB ownerBox = (*i);
 			RB::Collisions::AABB ownerBox_WorldPos = ownerBox.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
@@ -89,6 +97,8 @@ namespace RB::PlayerStateComponents
 
 			for (auto j = vec_Target_AABB_Sets.begin(); j != vec_Target_AABB_Sets.end(); ++j)
 			{
+				//std::cout << "checking target aabb" << std::endl;
+
 				//get target AABB
 				RB::Collisions::AABB targetBox = (*j);
 				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
@@ -98,6 +108,8 @@ namespace RB::PlayerStateComponents
 
 				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
+					//std::cout << "aabb collision" << std::endl;
+
 					collisionResult.mAttacker = owner;
 					collisionResult.mTarget = target;
 					collisionResult.mCollisionPoint = col;
@@ -120,6 +132,8 @@ namespace RB::PlayerStateComponents
 					{
 						collisionResult.mCollisionType = RB::Collisions::CollisionType::BODY;
 					}
+
+					//std::cout << "hit detected" << std::endl;
 
 					return true;
 				}

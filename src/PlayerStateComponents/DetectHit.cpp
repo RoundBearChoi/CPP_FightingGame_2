@@ -20,8 +20,6 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::_ProcessHit()
 	{
-		//std::cout << "proccesssing hit.." << std::endl;
-
 		RB::Collisions::CollisionResult collisionResult;
 
 		if (_HitDetected(collisionResult))

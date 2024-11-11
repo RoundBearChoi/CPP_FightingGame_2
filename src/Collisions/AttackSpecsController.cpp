@@ -43,11 +43,13 @@ namespace RB::Collisions
 		return false;
 	}
 
+	// temp - loading manually for now
 	void AttackSpecsController::_LoadAttackSpecs()
 	{
 		_Load(RB::Sprites::SpriteType::fighter_0_jab);
 		_Load(RB::Sprites::SpriteType::fighter_0_strong_punch);
 		_Load(RB::Sprites::SpriteType::fighter_0_strong_kick);
+		_Load(RB::Sprites::SpriteType::fighter_0_crouch_punch_weak);
 	}
 
 	void AttackSpecsController::_Load(RB::Sprites::SpriteType spriteType)
@@ -57,7 +59,13 @@ namespace RB::Collisions
 		std::string path = "../resource/AttackSpecs/" + fileName;
 
 		RB::JSON::JParser parser;
-		parser.LoadJSON(path);
+		
+		if (parser.LoadJSON(path) == nullptr)
+		{
+			//std::cout << "ERROR: failed to load JSON at path " << path << std::endl;
+
+			return;
+		}
 
 		auto jObj = parser.GetObj(0);
 		auto element = RB::JSON::JParser::GetElement(*jObj, 0);

@@ -79,6 +79,9 @@ namespace RB::HBox
 		std::string spr = spriteType._to_string();
 		std::string path = _dir + spr;
 		path += _extention;
+
+		//std::cout << "getting path.. " << path << std::endl;
+
 		return path;
 	}
 }

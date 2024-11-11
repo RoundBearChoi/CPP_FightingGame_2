@@ -1,4 +1,5 @@
 #include "HBoxLoader.h"
+#include "HBoxType.h"
 
 namespace RB::HBox
 {
@@ -98,6 +99,16 @@ namespace RB::HBox
 	Loaded_HB_Data HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType)
 	{
 		RB::JSON::JParser parser;
+
+		if (boxType == HBoxType::ATTACK_BOX)
+		{
+			//std::cout << "loading attack_box at.." << path  << std::endl;
+		}
+		else
+		{
+
+		}
+
 		parser.LoadJSON(path);
 
 		//if failed to load, return default data

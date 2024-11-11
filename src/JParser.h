@@ -36,7 +36,7 @@ namespace RB::JSON
 
 			if (str.empty())
 			{
-				std::cerr << "Can't find JSON at " + path << std::endl;
+				//std::cerr << "Can't find JSON at " + path << std::endl;
 
 				return nullptr;
 			}

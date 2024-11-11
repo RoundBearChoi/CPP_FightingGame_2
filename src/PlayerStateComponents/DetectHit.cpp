@@ -55,6 +55,10 @@ namespace RB::PlayerStateComponents
 
 			return false;
 		}
+		else
+		{
+			std::cout << "attacker state: " << ownerState->GetSpriteType()._to_string() << " | fixed update count: " << ownerState->GetCumulatedFixedUpdates() << std::endl;
+		}
 
 		RB::Sprites::SpriteType ownerSpriteType = ownerState->GetSpriteType();
 		RB::Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();

@@ -41,13 +41,13 @@ namespace RB::PlayerStateComponents
 	{
 		//std::cout << "detecting hit.." << std::endl;
 
-		RB::Players::iPlayer* owner = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(owner);
+		RB::Players::iPlayer* attacker = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(attacker);
 
-		RB::Players::PlayerState* ownerState = RB::Players::PlayerState::GetPlayerState(owner->GetPlayerID());
+		RB::Players::PlayerState* attackerState = RB::Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
 		RB::Players::PlayerState* enemyState = RB::Players::PlayerState::GetPlayerState(target->GetPlayerID());
 
-		if (ownerState == nullptr || enemyState == nullptr)
+		if (attackerState == nullptr || enemyState == nullptr)
 		{
 			//std::cout << "state nullptr" << std::endl;
 
@@ -55,44 +55,44 @@ namespace RB::PlayerStateComponents
 		}
 		else
 		{
-			std::cout << "attacker state: " << ownerState->GetSpriteType()._to_string() << " | fixed update count: " << ownerState->GetCumulatedFixedUpdates() << std::endl;
+			std::cout << "attacker state: " << attackerState->GetSpriteType()._to_string() << " | fixed update count: " << attackerState->GetCumulatedFixedUpdates() << std::endl;
 		}
 
-		RB::Sprites::SpriteType ownerSpriteType = ownerState->GetSpriteType();
+		RB::Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
 		RB::Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
 
-		RB::Render::iAnimationObj* ownerAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(owner->GetPlayerID(), ownerSpriteType);
+		RB::Render::iAnimationObj* attackerAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(attacker->GetPlayerID(), attackerSpriteType);
 		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
-		RB::HBox::Loaded_HB_Data* ownerData = RB::HBox::iAttackBoxDataController::Get()->GetData(ownerSpriteType);
+		RB::HBox::Loaded_HB_Data* attackerData = RB::HBox::iAttackBoxDataController::Get()->GetData(attackerSpriteType);
 		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iTargetBoxDataController::Get()->GetData(targetSpriteType);
 
-		if (ownerData == nullptr || targetData == nullptr)
+		if (attackerData == nullptr || targetData == nullptr)
 		{
 			return false;
 		}
 
-		if (ownerAniObj == nullptr || targetAniObj == nullptr)
+		if (attackerAniObj == nullptr || targetAniObj == nullptr)
 		{
 			return false;
 		}
 
-		RB::HBox::AABB_Set* ownerAABBs = ownerData->GetHBoxDataByFrame(ownerAniObj->GetCurrentIndex());
+		RB::HBox::AABB_Set* attackerAABBs = attackerData->GetHBoxDataByFrame(attackerAniObj->GetCurrentIndex());
 		RB::HBox::AABB_Set* targetAABBs = targetData->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 
-		const auto& vec_Owner_AABB_Sets = ownerAABBs->GetSelector()->GetVector();
+		const auto& vec_Attacker_AABB_Sets = attackerAABBs->GetSelector()->GetVector();
 		const auto& vec_Target_AABB_Sets = targetAABBs->GetSelector()->GetVector();
 
-		for (auto i = vec_Owner_AABB_Sets.begin(); i != vec_Owner_AABB_Sets.end(); ++i)
+		for (auto i = vec_Attacker_AABB_Sets.begin(); i != vec_Attacker_AABB_Sets.end(); ++i)
 		{
 			//std::cout << "checking owner aabb" << std::endl;
 
 			//get owner AABB
-			RB::Collisions::AABB ownerBox = (*i);
-			RB::Collisions::AABB ownerBox_WorldPos = ownerBox.GetWorldPos(owner->GetPosition(), owner->IsFacingRight());
+			RB::Collisions::AABB attackerBox = (*i);
+			RB::Collisions::AABB attackerBox_WorldPos = attackerBox.GetWorldPos(attacker->GetPosition(), attacker->IsFacingRight());
 
 			//skip if width or height is 0
-			if (ownerBox_WorldPos.GetWidthHeight().x <= 0.001f || ownerBox_WorldPos.GetWidthHeight().y <= 0.001f)
+			if (attackerBox_WorldPos.GetWidthHeight().x <= 0.001f || attackerBox_WorldPos.GetWidthHeight().y <= 0.001f)
 			{
 				continue;
 			}
@@ -103,19 +103,19 @@ namespace RB::PlayerStateComponents
 
 				//get target AABB
 				RB::Collisions::AABB targetBox = (*j);
-				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), owner->IsFacingRight());
+				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), attacker->IsFacingRight());
 
 				//compare
 				RB::Vector2 col;
 
-				if (ownerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
+				if (attackerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
 					//std::cout << "aabb collision" << std::endl;
 
-					collisionResult.mAttacker = owner;
+					collisionResult.mAttacker = attacker;
 					collisionResult.mTarget = target;
 					collisionResult.mCollisionPoint = col;
-					collisionResult.mAttackerSpriteType = ownerSpriteType;
+					collisionResult.mAttackerSpriteType = attackerSpriteType;
 
 					float* targetParts = target->GetPlayerCollider()->GetBodyParts();
 					

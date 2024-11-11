@@ -12,6 +12,7 @@ namespace RB::HBox
 		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_kick), RB::Sprites::SpriteType::fighter_0_strong_kick, _boxType));
 		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_weak_wince_mid), RB::Sprites::SpriteType::fighter_0_weak_wince_mid, _boxType));
 		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_wince_mid), RB::Sprites::SpriteType::fighter_0_strong_wince_mid, _boxType));
+		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_crouch_punch_weak), RB::Sprites::SpriteType::fighter_0_crouch_punch_weak, _boxType));
 	}
 
 	void HB_Container::OnFixedUpdate()

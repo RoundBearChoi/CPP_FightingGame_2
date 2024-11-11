@@ -9,6 +9,7 @@ namespace RB::Fighter_0_States
 		_spriteType = RB::Sprites::SpriteType::fighter_0_crouch_punch_weak;
 
         AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
+		AddStateComponent(new RB::PlayerStateComponents::DetectHit());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnAnimationEnd(new RB::Fighter_0_States::F0_Crouch_Idle()));
 
 		EnterStateComponents();

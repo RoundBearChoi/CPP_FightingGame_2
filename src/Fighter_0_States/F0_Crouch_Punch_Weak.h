@@ -3,6 +3,7 @@
 #include "../Players/PlayerState.h"
 
 #include "../PlayerStateComponents//MarkInitiallyFacingRight.h"
+#include "../PlayerStateComponents/DetectHit.h"
 #include "../PlayerStateComponents/TransitionOnAnimationEnd.h"
 
 namespace RB::Fighter_0_States

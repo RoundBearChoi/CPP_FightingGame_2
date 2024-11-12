@@ -4,7 +4,7 @@ namespace RB::Collisions
 {
 	void AttackSpecsController::Init()
 	{
-		_LoadAttackSpecs();
+		_LoadAllAttackSpecs();
 	}
 
 	void AttackSpecsController::OnUpdate()
@@ -44,12 +44,12 @@ namespace RB::Collisions
 	}
 
 	// temp - loading manually for now
-	void AttackSpecsController::_LoadAttackSpecs()
+	void AttackSpecsController::_LoadAllAttackSpecs()
 	{
-		_Load(RB::Sprites::SpriteType::fighter_0_jab);
-		_Load(RB::Sprites::SpriteType::fighter_0_strong_punch);
-		_Load(RB::Sprites::SpriteType::fighter_0_strong_kick);
-		_Load(RB::Sprites::SpriteType::fighter_0_crouch_punch_weak);
+		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		{
+			_Load(RB::Sprites::SpriteType::_from_index(i));
+		}
 	}
 
 	void AttackSpecsController::_Load(RB::Sprites::SpriteType spriteType)

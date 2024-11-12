@@ -23,7 +23,7 @@ namespace RB::Collisions
 		bool ContainsAttackSpecs(RB::Sprites::SpriteType spriteType) override;
 
 	private:
-		void _LoadAttackSpecs();
+		void _LoadAllAttackSpecs();
 		void _Load(RB::Sprites::SpriteType spriteType);
 
 	private:

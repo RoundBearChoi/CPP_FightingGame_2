@@ -43,7 +43,6 @@ namespace RB::Collisions
 		return false;
 	}
 
-	// temp - loading manually for now
 	void AttackSpecsController::_LoadAllAttackSpecs()
 	{
 		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)

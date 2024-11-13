@@ -4,7 +4,12 @@ namespace RB::PlayerStateComponents
 {
 	void DetectHit::OnEnter()
 	{
+		RB::Players::iPlayer* attacker = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::PlayerState* attackerState = RB::Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
+		RB::Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
 
+		std::cout << std::endl;
+		std::cout << " --- attacker detecting hit | player " << attacker->GetPlayerID_int() << " | starting sprite: " << attackerSpriteType._to_string() << " --- " << std::endl; 
 	}
 
 	void DetectHit::OnUpdate()
@@ -55,7 +60,7 @@ namespace RB::PlayerStateComponents
 		}
 		else
 		{
-			std::cout << "attacker state: " << attackerState->GetSpriteType()._to_string() << " | fixed update count: " << attackerState->GetCumulatedFixedUpdates() << std::endl;
+			std::cout << "fixed update count: " << attackerState->GetCumulatedFixedUpdates() << " | attacker state: " << attackerState->GetSpriteType()._to_string() << std::endl;
 		}
 
 		RB::Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
@@ -163,11 +168,12 @@ namespace RB::PlayerStateComponents
 
 		std::cout << std::endl;
 		std::string strAttackerSprite = collisionResult.mAttackerSpriteType._to_string();
-		std::cout << "attacker spriteType: " << strAttackerSprite << std::endl;
+		std::cout << " --- registering hit | attacker spriteType: " << strAttackerSprite << " --- " << std::endl;
 		std::cout << "attackerID: " << reg.attacker->GetPlayerID_int() << std::endl;
 		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 		std::cout << "hit count: " << _hits << std::endl;
 		std::cout << "collisionType: " << std::to_string((int)collisionResult.mCollisionType) << std::endl;
+		std::cout << std::endl;
 	}
 
 	void DetectHit::_AddFixedUpdatesSinceLastHit()

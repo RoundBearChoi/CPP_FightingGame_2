@@ -44,8 +44,8 @@ namespace RB::Render
 
         if (animationObj != nullptr)
         {
-            std::cout << std::endl;
-            std::cout << "instantiating animation.. sprite type: " << spriteType._to_string() << std::endl;
+            //std::cout << std::endl;
+            //std::cout << "instantiating animation.. sprite type: " << spriteType._to_string() << std::endl;
         }
 
         return animationObj;
@@ -66,9 +66,9 @@ namespace RB::Render
 
             if (totalSprites * skipFixedUpdates <= totalFixedUpdates)
             {
-                std::cout << std::endl;
-                std::cout << "deleting vfx.. " << (*it)->GetAnimationSpecs().mSpriteType._to_string() <<  std::endl;
-                std::cout << "fixed update count: " << totalFixedUpdates << std::endl;
+                //std::cout << std::endl;
+                //std::cout << "deleting vfx.. " << (*it)->GetAnimationSpecs().mSpriteType._to_string() <<  std::endl;
+                //std::cout << "fixed update count: " << totalFixedUpdates << std::endl;
 
                 it = _animationContainer.DeleteAnimationObj(it);
             }

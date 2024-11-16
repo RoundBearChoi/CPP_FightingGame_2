@@ -5,14 +5,20 @@ namespace RB::HBox
 	void HB_Container::Init()
 	{
 		//load every hbox datalist
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_idle), RB::Sprites::SpriteType::fighter_0_idle, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_walk), RB::Sprites::SpriteType::fighter_0_walk, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_jab), RB::Sprites::SpriteType::fighter_0_jab, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_punch), RB::Sprites::SpriteType::fighter_0_strong_punch, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_kick), RB::Sprites::SpriteType::fighter_0_strong_kick, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_weak_wince_mid), RB::Sprites::SpriteType::fighter_0_weak_wince_mid, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_wince_mid), RB::Sprites::SpriteType::fighter_0_strong_wince_mid, _boxType));
-		_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_crouch_punch_weak), RB::Sprites::SpriteType::fighter_0_crouch_punch_weak, _boxType));
+
+		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		{
+			_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::_from_index(i)), RB::Sprites::SpriteType::_from_index((i)), _boxType));
+		}
+
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_idle), RB::Sprites::SpriteType::fighter_0_idle, _boxType));
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_walk), RB::Sprites::SpriteType::fighter_0_walk, _boxType));
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_jab), RB::Sprites::SpriteType::fighter_0_jab, _boxType));
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_punch), RB::Sprites::SpriteType::fighter_0_strong_punch, _boxType));
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_kick), RB::Sprites::SpriteType::fighter_0_strong_kick, _boxType));
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_weak_wince_mid), RB::Sprites::SpriteType::fighter_0_weak_wince_mid, _boxType));
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_strong_wince_mid), RB::Sprites::SpriteType::fighter_0_strong_wince_mid, _boxType));
+		//_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::fighter_0_crouch_punch_weak), RB::Sprites::SpriteType::fighter_0_crouch_punch_weak, _boxType));
 	}
 
 	void HB_Container::OnFixedUpdate()

@@ -17,6 +17,7 @@
 
 #include "../Fighter_0_States/F0_Weak_Wince_Mid.h" //temp
 #include "../Fighter_0_States/F0_Strong_Wince_Mid.h" //temp
+#include "../Fighter_0_States/F0_Strong_Wince_High.h" //temp
 
 #include "../Render/iAnimationObj.h"
 #include "../Render/iVFXAnimationController.h"

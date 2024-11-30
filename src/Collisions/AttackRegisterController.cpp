@@ -1,4 +1,5 @@
 #include "AttackRegisterController.h"
+#include "CollisionType.h"
 
 namespace RB::Collisions
 {
@@ -19,14 +20,21 @@ namespace RB::Collisions
 
 	void AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
-		ShowHitVFX(reg);
-		ShowHitLocation(reg);
+		_ShowHitVFX(reg);
+		_ShowHitLocation(reg);
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 		{
-			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_Mid());
+			if (reg.collisionType == CollisionType::HEAD)
+			{
+				reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_High());
+			}
+			else if (reg.collisionType == CollisionType::BODY)
+			{
+				reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_Mid());
+			}
 		}
 		else if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::WEAK)
 		{
@@ -39,7 +47,7 @@ namespace RB::Collisions
 		}
 	}
 
-	void AttackRegisterController::ShowHitVFX(const AttackRegister& attackRegister)
+	void AttackRegisterController::_ShowHitVFX(const AttackRegister& attackRegister)
 	{
 		RB::Render::iAnimationObj* hitVFX = RB::Render::iVFXAnimationController::Get()->InstantiateAnimation(
 			RB::Sprites::SpriteType::vfx_hiteffect_0,
@@ -67,7 +75,7 @@ namespace RB::Collisions
 			0.0f));
 	}
 
-	void AttackRegisterController::ShowHitLocation(const AttackRegister& attackRegister)
+	void AttackRegisterController::_ShowHitLocation(const AttackRegister& attackRegister)
 	{
 		RB::Render::iAnimationObj* hitVFX_word = nullptr;
 

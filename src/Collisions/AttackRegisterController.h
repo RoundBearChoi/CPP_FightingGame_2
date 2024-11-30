@@ -37,7 +37,7 @@ namespace RB::Collisions
 		void RegisterAttack(AttackRegister reg) override;
 
 	private:
-		void ShowHitVFX(const AttackRegister& attackRegister);
-		void ShowHitLocation(const AttackRegister& attackRegister);
+		void _ShowHitVFX(const AttackRegister& attackRegister);
+		void _ShowHitLocation(const AttackRegister& attackRegister);
 	};
 }

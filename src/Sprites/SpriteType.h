@@ -54,6 +54,7 @@ namespace RB::Sprites
 		
 		fighter_0_weak_wince_mid,
 		fighter_0_strong_wince_mid,
+		fighter_0_strong_wince_high,
 		
 		fighter_0_hadouken,
 

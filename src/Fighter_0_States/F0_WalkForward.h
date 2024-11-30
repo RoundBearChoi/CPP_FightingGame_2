@@ -1,12 +1,12 @@
 #pragma once
 
 #include "../Players/PlayerState.h"
+#include "../Players/iSpecsController.h"
+
 #include "../PlayerStateComponents/DoNotFixDirectionDuringState.h"
 #include "../PlayerStateComponents/TransitionToJumpForward.h"
 #include "../PlayerStateComponents/TransitionToJumpUp.h"
 #include "../PlayerStateComponents/WhileMovingForward.h"
-
-#include "../Players/iSpecsController.h"
 
 #include "F0_JumpForward_0.h"
 #include "F0_JumpUp_0.h"

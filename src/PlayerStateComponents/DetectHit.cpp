@@ -152,7 +152,7 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::_RegisterHit(RB::Collisions::CollisionResult& collisionResult)
 	{
-		//register attack
+		//register new attack
 		RB::Collisions::AttackRegister reg;
 		reg.attacker = collisionResult.mAttacker;
 		reg.target = collisionResult.mTarget;

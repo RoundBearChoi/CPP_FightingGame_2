@@ -159,6 +159,7 @@ namespace RB::PlayerStateComponents
 		reg.collisionPoint = collisionResult.mCollisionPoint;
 		reg.attackerSpriteType = collisionResult.mAttackerSpriteType;
 		reg.targetIsOnRightSide = collisionResult.mAttacker->OtherPlayerIsOnRightSide();
+		reg.targetIsCrouching = collisionResult.mTarget->IsCrouching();
 		reg.collisionType = collisionResult.mCollisionType;
 
 		RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);

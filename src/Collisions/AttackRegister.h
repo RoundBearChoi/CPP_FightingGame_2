@@ -16,6 +16,7 @@ namespace RB::Collisions
 
 		RB::Vector2 collisionPoint = { 0.0f, 0.0f };
 		bool targetIsOnRightSide = true;
+		bool targetIsCrouching = false;
 		CollisionType collisionType = CollisionType::NONE;
 	};
 }

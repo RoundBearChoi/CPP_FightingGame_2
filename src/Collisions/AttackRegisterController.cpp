@@ -25,6 +25,17 @@ namespace RB::Collisions
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
+		if (reg.targetIsCrouching)
+		{
+			//std::cout << std::endl;
+			//std::cout << "target is crouching" << std::endl;
+		}
+		else
+		{
+			//std::cout << std::endl;
+			//std::cout << "target is NOT crouching" << std::endl;
+		}
+
 		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 		{
 			if (reg.collisionType == CollisionType::HEAD)

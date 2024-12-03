@@ -136,6 +136,11 @@ namespace RB::Players
 		_isCrouching = crouching;
 	}
 
+	bool Player::IsCrouching()
+	{
+		return _isCrouching;
+	}
+
 	RB::States::iStateMachine* Player::GetStateMachine()
 	{
 		return _stateMachine;

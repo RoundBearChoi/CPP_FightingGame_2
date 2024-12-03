@@ -32,6 +32,7 @@ namespace RB::Players
 		bool InitiallyFacingRight() override;
 		void InitiallyFacingRight(bool initiallyFacingRight) override;
 		void MarkCrouching(bool crouching) override;
+		bool IsCrouching() override;
 		RB::States::iStateMachine* GetStateMachine() override;
 		unsigned int GetStateMachineID() override;
 		void Move(RB::Vector2 moveAmount) override;

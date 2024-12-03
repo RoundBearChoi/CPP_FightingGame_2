@@ -36,6 +36,7 @@ namespace RB::Sprites
 		fighter_0_crouch,
 		fighter_0_crouch_idle,
 		fighter_0_crouch_punch_weak,
+		fighter_0_crouch_weak_wince,
 		fighter_0_standup,
 		fighter_0_walk,
 

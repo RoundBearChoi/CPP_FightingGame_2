@@ -10,6 +10,7 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Crouch_Punch_Weak(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH, RB::Input::InputType::ATTACK));
 		AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::Fighter_0_States::F0_StandUp()));
+		AddStateComponent(new RB::PlayerStateComponents::MarkCrouchingOnEnter(true));
 
 		EnterStateComponents();
 	}

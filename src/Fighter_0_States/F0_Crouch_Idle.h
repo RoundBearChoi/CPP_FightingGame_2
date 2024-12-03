@@ -5,6 +5,7 @@
 #include "../PlayerStateComponents/DoNotFixDirectionDuringState.h"
 #include "../PlayerStateComponents/TransitionOnInput.h"
 #include "../PlayerStateComponents/StandUpOnRelease.h"
+#include "../PlayerStateComponents/MarkCrouchingOnEnter.h"
 
 #include "F0_StandUp.h"
 #include "F0_Crouch_Punch_Weak.h"

@@ -31,6 +31,7 @@ namespace RB::Players
 		bool OtherPlayerIsOnRightSide() override;
 		bool InitiallyFacingRight() override;
 		void InitiallyFacingRight(bool initiallyFacingRight) override;
+		void MarkCrouching(bool crouching) override;
 		RB::States::iStateMachine* GetStateMachine() override;
 		unsigned int GetStateMachineID() override;
 		void Move(RB::Vector2 moveAmount) override;
@@ -53,6 +54,7 @@ namespace RB::Players
 		bool _manualAnimationUpdate = false;
 		bool _initiallyFacingRight = false;
 		bool _isWincing = false;
+		bool _isCrouching = false;
 		bool _dirIsFixedDuringState = false;
 		bool _isInSpecialMoveState = false;
 	};

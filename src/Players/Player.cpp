@@ -131,6 +131,11 @@ namespace RB::Players
 		_initiallyFacingRight = initiallyFacingRight;
 	}
 
+	void Player::MarkCrouching(bool crouching)
+	{
+		_isCrouching = crouching;
+	}
+
 	RB::States::iStateMachine* Player::GetStateMachine()
 	{
 		return _stateMachine;

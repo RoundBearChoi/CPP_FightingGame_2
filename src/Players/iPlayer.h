@@ -30,6 +30,7 @@ namespace RB::Players
 		virtual bool OtherPlayerIsOnRightSide() = 0;
 		virtual bool InitiallyFacingRight() = 0;
 		virtual void InitiallyFacingRight(bool facingRight) = 0;
+		virtual void MarkCrouching(bool crouching) = 0;
 		virtual unsigned int GetStateMachineID() = 0;
 		virtual RB::States::iStateMachine* GetStateMachine() = 0;
 		virtual void Move(RB::Vector2 moveAmount) = 0;

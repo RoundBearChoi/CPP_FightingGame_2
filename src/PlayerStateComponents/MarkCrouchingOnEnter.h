@@ -6,15 +6,15 @@
 
 namespace RB::PlayerStateComponents
 {
-	class MarkInitiallyFacingRight : public RB::States::StateComponentBase
+	class MarkCrouchingOnEnter : public RB::States::StateComponentBase
 	{
 	public:
-		MarkInitiallyFacingRight() = default;
-		~MarkInitiallyFacingRight() override = default;
+		MarkCrouchingOnEnter(bool crouching);
+		~MarkCrouchingOnEnter() override = default;
 
 		void OnEnter() override;
 
 	private:
-		bool _facingRight = true;
+		bool _crouching = true;
 	};
 }

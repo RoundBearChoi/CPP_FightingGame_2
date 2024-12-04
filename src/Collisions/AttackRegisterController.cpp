@@ -34,27 +34,27 @@ namespace RB::Collisions
 		{
 			//std::cout << std::endl;
 			//std::cout << "target is NOT crouching" << std::endl;
-		}
 
-		if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
-		{
-			if (reg.collisionType == CollisionType::HEAD)
+			if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::STRONG)
 			{
-				reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_High());
+				if (reg.collisionType == CollisionType::HEAD)
+				{
+					reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_High());
+				}
+				else if (reg.collisionType == CollisionType::BODY)
+				{
+					reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_Mid());
+				}
 			}
-			else if (reg.collisionType == CollisionType::BODY)
+			else if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::WEAK)
 			{
-				reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_Mid());
+				reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Weak_Wince_Mid());
 			}
-		}
-		else if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::WEAK)
-		{
-			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Weak_Wince_Mid());
-		}
 
-		if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
-		{
-			RB::Collisions::iGeneralHitStopController::Get()->AddSkipFrames(attackSpecs.mHitStop);
+			if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
+			{
+				RB::Collisions::iGeneralHitStopController::Get()->AddSkipFrames(attackSpecs.mHitStop);
+			}
 		}
 	}
 

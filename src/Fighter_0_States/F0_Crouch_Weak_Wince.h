@@ -7,6 +7,7 @@
 #include "../PlayerStateComponents/TransitionOnFixedUpdateCount.h"
 
 #include "F0_Idle.h"
+#include "F0_Crouch_Idle.h"
 
 namespace RB::Fighter_0_States
 {

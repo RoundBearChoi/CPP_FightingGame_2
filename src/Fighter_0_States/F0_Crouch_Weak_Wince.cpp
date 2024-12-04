@@ -1,4 +1,5 @@
 #include "F0_Crouch_Weak_Wince.h"
+#include "F0_Crouch_Idle.h"
 
 namespace RB::Fighter_0_States
 {
@@ -18,7 +19,7 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(7, -8)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(8, -5)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(9, 0));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(10, new RB::Fighter_0_States::F0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(10, new RB::Fighter_0_States::F0_Crouch_Idle()));
 
 		EnterStateComponents();
 	}

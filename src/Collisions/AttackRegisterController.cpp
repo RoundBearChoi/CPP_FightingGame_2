@@ -29,6 +29,8 @@ namespace RB::Collisions
 		{
 			//std::cout << std::endl;
 			//std::cout << "target is crouching" << std::endl;
+
+			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Crouch_Weak_Wince());
 		}
 		else
 		{

@@ -1,7 +1,6 @@
 {
     "version": "2.0.0",
     "tasks": [
-
         // configure cmake
         {
             "type": "shell",
@@ -26,13 +25,11 @@
                 "${workspaceFolder}/build"
             ],
             "dependsOn": ["CMake Configure"],
-            "group":
-            {
+            "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher":
-            {
+            "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": ["relative", "${workspaceFolder}"],
                 "pattern": {
@@ -52,8 +49,7 @@
             "type": "shell",
             "command": "cd ${workspaceFolder}/build && CPPFG2.exe",
             "dependsOn": ["CMake Build"],
-            "group":
-            {
+            "group": {
                 "kind": "test",
                 "isDefault": true
             }

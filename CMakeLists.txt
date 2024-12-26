@@ -10,8 +10,9 @@ project(CPPFG2)
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 
-# Disable optimizations for debugging
-set(CMAKE_CXX_FLAGS_DEBUG "-O0")
+# Disable optimizations and enable debug symbols for debugging
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
 
 # Collect source files
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")

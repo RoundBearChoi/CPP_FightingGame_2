@@ -1,15 +1,23 @@
 cmake_minimum_required(VERSION 3.12)
 
+# Set the C and C++ compilers
 set(CMAKE_C_COMPILER "C:\\msys64\\mingw64\\bin\\gcc.exe")
 set(CMAKE_CXX_COMPILER "C:\\msys64\\mingw64\\bin\\g++.exe")
 
+# Project name
 project(CPPFG2)
 
+# Set the C++ standard
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
+# Disable optimizations for debugging
+set(CMAKE_CXX_FLAGS_DEBUG "-O0")
+
+# Collect source files
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
 
+# Create the executable
 add_executable(CPPFG2 ${SOURCES})
 
+# Link libraries
 target_link_libraries(CPPFG2 user32 gdi32 opengl32 gdiplus Shlwapi dwmapi)

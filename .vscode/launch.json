@@ -20,7 +20,7 @@
                 }
             ],
             "preLaunchTask": "CMake Build",
-            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe", // installed using msys64
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
             "logging": {
                 "engineLogging": true
             },

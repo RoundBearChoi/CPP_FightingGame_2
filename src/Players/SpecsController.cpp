@@ -1,4 +1,5 @@
 #include "SpecsController.h"
+#include "MoveSpecs.h"
 
 namespace RB::Players
 {
@@ -9,7 +10,7 @@ namespace RB::Players
 
 	void SpecsController::Init()
 	{
-		_LoadMoveSpecs("../resource/MoveSpecs/F0_moveSpecs.moveSpecs", RB::Players::CharacterType::AKU);
+		MoveSpecs result =  _LoadMoveSpecs("../resource/MoveSpecs/F0_moveSpecs.moveSpecs", RB::Players::CharacterType::AKU);
 	}
 
 	void SpecsController::OnUpdate()
@@ -39,10 +40,18 @@ namespace RB::Players
 
 	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType)
 	{
+		MoveSpecs specs;
+
 		RB::JSON::JParser parser;
 		parser.LoadJSON(path);
 
 		auto jObj = parser.GetObj(0);
+
+		if (jObj == nullptr)
+		{
+			return specs; // return default (empty) specs
+		}
+
 		auto element = RB::JSON::JParser::GetElement(*jObj, 0);
 		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
 		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
@@ -60,7 +69,6 @@ namespace RB::Players
 		float jumpBack_horSpeedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[8]);
 		float jumpBack_verSpeedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[9]);
 
-		MoveSpecs specs;
 		specs.mCharacterType = characterType;
 		specs.mWalk_Forward_Speed = walk_Forward_Speed;
 		specs.mWalk_Back_Speed = walk_Back_Speed;

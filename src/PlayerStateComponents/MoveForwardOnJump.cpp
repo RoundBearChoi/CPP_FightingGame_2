@@ -1,5 +1,4 @@
 #include "MoveForwardOnJump.h"
-#include "MoveForwardOnJumpType.h"
 
 namespace RB::PlayerStateComponents
 {

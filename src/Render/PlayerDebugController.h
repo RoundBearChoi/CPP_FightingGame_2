@@ -13,6 +13,7 @@
 
 #include "../Vector2.h"
 #include "../GameSettings.h"
+
 #include "../Sprites/SpriteContainer.h"
 
 #include "../Cam/iCamController.h"

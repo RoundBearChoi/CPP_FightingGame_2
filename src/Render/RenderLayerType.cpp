@@ -24,6 +24,11 @@ namespace RB::Render
 		}
 	}
 
+	void ClearTargetLayer()
+	{
+		olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
+	}
+
 	void CreateLayers()
 	{
 		if (!RB::allowMultipleLayers)

@@ -12,7 +12,7 @@ namespace RB::Sprites
 
 		x_white,
 		white_sq,
-		white_sq_tr80,
+		player_hp_bar_white,
 
 		input_arrow_up,
 		input_arrow_down,

@@ -1,4 +1,5 @@
 #include "PlayerAnimationController.h"
+#include "RenderLayerType.h"
 
 namespace RB::Render
 {
@@ -36,6 +37,8 @@ namespace RB::Render
 		_ChangePlayerAnimations();
 
 		_animationContainer.OnUpdate();
+
+		ClearTargetLayer();
 	}
 
 	void PlayerAnimationController::OnFixedUpdate()

@@ -31,6 +31,8 @@ namespace RB::Background
 		{
 			(*i)->OnUpdate();
 		}
+
+		RB::Render::ClearTargetLayer();
 	}
 
 	void BackgroundController::OnFixedUpdate()

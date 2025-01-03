@@ -17,8 +17,8 @@ namespace RB::Render
 		COUNT,
 	};
 
-
 	void SetTargetLayer(RenderLayerType layerType);
+	void ClearTargetLayer();
 	void CreateLayers();
 	void ClearLayers();
 }

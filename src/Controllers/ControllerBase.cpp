@@ -9,9 +9,6 @@ namespace RB::Controllers
 		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
 		{
 			(*i)->OnUpdate();
-
-			// reset to default after drawing on custom layer
-			olc::Renderer::ptrPGE->SetDrawTarget(nullptr);
 		}
 	}
 

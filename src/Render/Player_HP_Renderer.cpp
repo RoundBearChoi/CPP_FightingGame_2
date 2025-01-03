@@ -27,24 +27,16 @@ namespace RB::Render
 		float center_x_margin = 20.0f;
 
         float center_x = (512.0f * 0.5f);
-
-        if (playerID == RB::Players::PlayerID::PLAYER_1)
-        {
-            center_x -= center_x_margin;
-        }
-        else if (playerID == RB::Players::PlayerID::PLAYER_2)
-        {
-            center_x += center_x_margin;
-        }
-
         RB::Sprites::PivotType pivotType = RB::Sprites::PivotType::NONE;
 
         if (playerID == RB::Players::PlayerID::PLAYER_1)
         {
+            center_x -= center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_RIGHT;
         }
         else if (playerID == RB::Players::PlayerID::PLAYER_2)
         {
+            center_x += center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
         }
 

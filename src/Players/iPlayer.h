@@ -44,5 +44,7 @@ namespace RB::Players
 		virtual void FixDirDuringState(bool fix) = 0;
 		virtual void SetIsInSpecialMoveStatus(bool specialMove) = 0;
 		virtual bool IsInSpecialMoveStatus() = 0;
+		virtual void AddHP(int amount) = 0;
+		virtual int GetHP() = 0;
 	};
 }

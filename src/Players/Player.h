@@ -45,6 +45,8 @@ namespace RB::Players
 		void FixDirDuringState(bool fix) override;
 		void SetIsInSpecialMoveStatus(bool specialMove) override;
 		bool IsInSpecialMoveStatus() override;
+		void AddHP(int amount) override;
+		int GetHP() override;
 
 	protected:
 		PlayerID _playerID = PlayerID::NONE;
@@ -58,5 +60,6 @@ namespace RB::Players
 		bool _isCrouching = false;
 		bool _dirIsFixedDuringState = false;
 		bool _isInSpecialMoveState = false;
+		int _hp = 100;
 	};
 }

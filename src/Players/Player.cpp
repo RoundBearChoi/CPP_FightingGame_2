@@ -200,4 +200,14 @@ namespace RB::Players
 	{
 		return _isInSpecialMoveState;
 	}
+
+	void Player::AddHP(int amount)
+	{
+		_hp += amount;
+	}
+
+	int Player::GetHP()
+	{
+		return _hp;
+	}
 }

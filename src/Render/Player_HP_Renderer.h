@@ -5,6 +5,8 @@
 #include "../Vector2.h"
 #include "../Sprites/SpriteContainer.h"
 
+#include "../Players/iPlayerController.h"
+
 namespace RB::Render
 {
 	class Player_HP_Renderer
@@ -19,7 +21,7 @@ namespace RB::Render
 		void OnFixedUpdate();
 
     private:
-        void _RenderHPBars();
+        void _RenderPlayerHPBar(RB::Players::PlayerID playerID);
 
 	private:
 		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;

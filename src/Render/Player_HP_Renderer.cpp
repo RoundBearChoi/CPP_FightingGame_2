@@ -9,7 +9,8 @@ namespace RB::Render
 
 	void Player_HP_Renderer::OnUpdate()
 	{
-        _RenderHPBars();
+        _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_1);
+        _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_2);
 	}
 
 	void Player_HP_Renderer::OnFixedUpdate()
@@ -17,33 +18,43 @@ namespace RB::Render
 
 	}
 
-    void Player_HP_Renderer::_RenderHPBars()
-	{
-		float bar_x = 215.0f;
-		float bar_y = 5.0f;
+    void Player_HP_Renderer::_RenderPlayerHPBar(RB::Players::PlayerID playerID)
+    {
+		float bar_x_size = 215.0f;
+		float bar_y_size = 5.0f;
 
 		float top_y_margin = 28.0f;
 		float center_x_margin = 20.0f;
 
-		float p0_center_x = (512.0f * 0.5f) - center_x_margin;
-		float p1_center_x = (512.0f * 0.5f) + center_x_margin;
+        float center_x = (512.0f * 0.5f);
 
-		_spriteContainer->RenderSprite(
-			RB::Sprites::SpriteType::player_hp_bar_white, 
-			bar_x,
-			bar_y,
-			RB::Vector2{ p0_center_x, top_y_margin },
-			olc::WHITE,
-			RB::Sprites::PivotType::BOTTOM_RIGHT, 
-			false);
+        if (playerID == RB::Players::PlayerID::PLAYER_1)
+        {
+            center_x -= center_x_margin;
+        }
+        else if (playerID == RB::Players::PlayerID::PLAYER_2)
+        {
+            center_x += center_x_margin;
+        }
 
-		_spriteContainer->RenderSprite(
+        RB::Sprites::PivotType pivotType = RB::Sprites::PivotType::NONE;
+
+        if (playerID == RB::Players::PlayerID::PLAYER_1)
+        {
+            pivotType = RB::Sprites::PivotType::BOTTOM_RIGHT;
+        }
+        else if (playerID == RB::Players::PlayerID::PLAYER_2)
+        {
+            pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
+        }
+
+        _spriteContainer->RenderSprite(
 			RB::Sprites::SpriteType::player_hp_bar_white, 
-			bar_x,
-			bar_y,
-			RB::Vector2{ p1_center_x, top_y_margin },
+			bar_x_size,
+			bar_y_size,
+			RB::Vector2{ center_x, top_y_margin },
 			olc::WHITE,
-			RB::Sprites::PivotType::BOTTOM_LEFT, 
+			pivotType, 
 			false);
-	}
+    }
 }

@@ -8,6 +8,7 @@
 #include "RenderSettings.h"
 
 #include "../Vector2.h"
+
 #include "../Sprites/FlipQuad.h"
 #include "../Sprites/GetQuadOnPivot.h"
 

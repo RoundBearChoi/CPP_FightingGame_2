@@ -44,6 +44,8 @@ namespace RB::Render
 
 		_RenderBodyParts(RB::Players::PlayerID::PLAYER_1);
 		_RenderBodyParts(RB::Players::PlayerID::PLAYER_2);
+
+		_RenderHPBars();
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
@@ -99,5 +101,10 @@ namespace RB::Render
 			olc::vi2d{ relUpperBody.GetIntX(), relUpperBody.GetIntY() } - olc::vi2d{ lineHalfLength, 0 },
 			olc::vi2d{ relUpperBody.GetIntX(), relUpperBody.GetIntY() } + olc::vi2d{ lineHalfLength, 0 },
 			olc::RED);
+	}
+
+	void PlayerDebugController::_RenderHPBars()
+	{
+
 	}
 }

@@ -35,6 +35,7 @@ namespace RB::Render
 
 	private:
 		void _RenderBodyParts(RB::Players::PlayerID id);
+		void _RenderHPBars();
 
 	private:
 		RB::Sprites::SpriteContainer _spriteContainer;

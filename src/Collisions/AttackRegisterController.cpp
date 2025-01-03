@@ -25,6 +25,8 @@ namespace RB::Collisions
 
 		const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
 
+		reg.target->AddHP(-attackSpecs.mDamage);
+
 		if (reg.targetIsCrouching)
 		{
 			//std::cout << std::endl;

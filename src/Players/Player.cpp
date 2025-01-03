@@ -203,7 +203,13 @@ namespace RB::Players
 
 	void Player::AddHP(int amount)
 	{
+		std::cout << std::endl;
+
+		std::cout << "player " << GetPlayerID_int()  << " | adding hp " << amount;
+
 		_hp += amount;
+
+		std::cout << " | result hp: " << _hp << std::endl;
 	}
 
 	int Player::GetHP()

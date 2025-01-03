@@ -106,8 +106,6 @@ namespace RB::Render
 
 	void PlayerDebugController::_RenderHPBars()
 	{
-
-
 		float bar_x = 215.0f;
 		float bar_y = 5.0f;
 

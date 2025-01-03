@@ -23,7 +23,7 @@ namespace RB::Render
 		float bar_x_size = 215.0f;
 		float bar_y_size = 5.0f;
 
-		float top_y_margin = 28.0f;
+		float top_y_margin = 16.0f;
 		float center_x_margin = 20.0f;
 
         float center_x = (512.0f * 0.5f);

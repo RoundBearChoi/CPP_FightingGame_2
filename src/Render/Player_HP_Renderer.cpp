@@ -27,6 +27,7 @@ namespace RB::Render
 		float center_x_margin = 20.0f;
 
         float center_x = (512.0f * 0.5f);
+        
         RB::Sprites::PivotType pivotType = RB::Sprites::PivotType::NONE;
 
         if (playerID == RB::Players::PlayerID::PLAYER_1)

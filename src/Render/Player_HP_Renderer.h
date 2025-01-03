@@ -5,25 +5,23 @@
 #include "../Vector2.h"
 #include "../Sprites/SpriteContainer.h"
 
-#include "../Players/iPlayerController.h"
-
 namespace RB::Render
 {
-	class PlayerBoxRenderer
+	class Player_HP_Renderer
 	{
 	public:
-		PlayerBoxRenderer() = default;
-		~PlayerBoxRenderer() = default;
+		Player_HP_Renderer() = default;
+		~Player_HP_Renderer() = default;
 
 	public:
 		void Init(RB::Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
-		void RenderPlayerBox(bool render);
+    private:
+        void _RenderHPBars();
 
 	private:
 		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
-		bool _renderPlayerBox = true;
 	};
 }

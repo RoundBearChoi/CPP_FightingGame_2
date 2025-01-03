@@ -29,6 +29,7 @@ namespace RB::Render
 		_playerHBoxRenderer.Init(&_spriteContainer);
 		_playerPositionRenderer.Init(&_spriteContainer, &_lineRenderer);
 		_playerInputRenderer.Init(&_spriteContainer);
+		_player_HP_Renderer.Init(&_spriteContainer);
 	}
 
 	void PlayerDebugController::OnUpdate()
@@ -42,11 +43,10 @@ namespace RB::Render
 		_playerHBoxRenderer.OnUpdate();
 		_playerPositionRenderer.OnUpdate();
 		_playerInputRenderer.OnUpdate();
+		_player_HP_Renderer.OnUpdate();
 
 		_RenderBodyParts(RB::Players::PlayerID::PLAYER_1);
 		_RenderBodyParts(RB::Players::PlayerID::PLAYER_2);
-
-		_RenderHPBars();
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
@@ -60,6 +60,7 @@ namespace RB::Render
 		_playerHBoxRenderer.OnFixedUpdate();
 		_playerPositionRenderer.OnFixedUpdate();
 		_playerInputRenderer.OnFixedUpdate();
+		_player_HP_Renderer.OnFixedUpdate();
 	}
 
 	void PlayerDebugController::RenderPlayerBox(bool render)
@@ -102,35 +103,5 @@ namespace RB::Render
 			olc::vi2d{ relUpperBody.GetIntX(), relUpperBody.GetIntY() } - olc::vi2d{ lineHalfLength, 0 },
 			olc::vi2d{ relUpperBody.GetIntX(), relUpperBody.GetIntY() } + olc::vi2d{ lineHalfLength, 0 },
 			olc::RED);
-	}
-
-	void PlayerDebugController::_RenderHPBars()
-	{
-		float bar_x = 215.0f;
-		float bar_y = 5.0f;
-
-		float top_y_margin = 28.0f;
-		float center_x_margin = 20.0f;
-
-		float p0_center_x = (512.0f * 0.5f) - center_x_margin;
-		float p1_center_x = (512.0f * 0.5f) + center_x_margin;
-
-		_spriteContainer.RenderSprite(
-			RB::Sprites::SpriteType::player_hp_bar_white, 
-			bar_x,
-			bar_y,
-			RB::Vector2{ p0_center_x, top_y_margin },
-			olc::WHITE,
-			RB::Sprites::PivotType::BOTTOM_RIGHT, 
-			false);
-
-		_spriteContainer.RenderSprite(
-			RB::Sprites::SpriteType::player_hp_bar_white, 
-			bar_x,
-			bar_y,
-			RB::Vector2{ p1_center_x, top_y_margin },
-			olc::WHITE,
-			RB::Sprites::PivotType::BOTTOM_LEFT, 
-			false);
 	}
 }

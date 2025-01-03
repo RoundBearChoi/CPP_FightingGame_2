@@ -7,6 +7,7 @@
 #include "PlayerHBoxRenderer.h"
 #include "PlayerInputRenderer.h"
 #include "PlayerPositionRenderer.h"
+#include "Player_HP_Renderer.h"
 #include "RenderLayerType.h"
 
 #include "iPlayerDebugController.h"
@@ -35,7 +36,6 @@ namespace RB::Render
 
 	private:
 		void _RenderBodyParts(RB::Players::PlayerID id);
-		void _RenderHPBars();
 
 	private:
 		RB::Sprites::SpriteContainer _spriteContainer;
@@ -46,5 +46,6 @@ namespace RB::Render
 		PlayerHBoxRenderer _playerHBoxRenderer;
 		PlayerPositionRenderer _playerPositionRenderer;
 		PlayerInputRenderer _playerInputRenderer;
+		Player_HP_Renderer _player_HP_Renderer;
 	};
 }

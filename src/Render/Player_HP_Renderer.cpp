@@ -48,9 +48,18 @@ namespace RB::Render
             pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
         }
 
+        RB::Players::iPlayer* player =  RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
+        int hp = player->GetHP();
+        float barPercentage = (float)hp / 100.0f;
+
+        if (barPercentage < 0.0f)
+        {
+            return;
+        }
+
         _spriteContainer->RenderSprite(
 			RB::Sprites::SpriteType::player_hp_bar_white, 
-			bar_x_size,
+			bar_x_size * barPercentage,
 			bar_y_size,
 			RB::Vector2{ center_x, top_y_margin },
 			olc::WHITE,

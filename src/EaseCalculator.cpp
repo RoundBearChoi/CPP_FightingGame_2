@@ -14,7 +14,7 @@ namespace RB
 
     void EaseCalculator::OnFixedUpdate()
     {
-        if (std::abs(_currentPercentage - _targetPercentage) <= 0.0001f)
+        if (_currentPercentage >= _targetPercentage)
         {
             return;
         }
@@ -30,8 +30,27 @@ namespace RB
         {
             eased  = Ease::EaseInSine(progress);
         }
+        else
+        {
+            return;
+        }
+
+        if (eased >= 1.0f)
+        {
+            eased = 1.0f;
+        }
+        else if (eased <= 0.0f)
+        {
+            eased = 0.0f;
+        }
 
         float insidePercentage = (_currentPercentage - _startingPercentage) / (_targetPercentage - _startingPercentage);
+
+        if (insidePercentage < 0.0f)
+        {
+            return;
+        }
+
         float result = insidePercentage * eased;
 
         _currentPercentage = _startingPercentage + result;

@@ -83,6 +83,9 @@ namespace RB
 		{
 			if (Construct(displayWidth, displayHeight, 1, 1, false, false, false))
 			{
+				std::cout << "--- current working directory: " << std::filesystem::current_path() << " ---" << std::endl;
+				std::cout << std::endl;
+
 				Start();
 			}
 		}

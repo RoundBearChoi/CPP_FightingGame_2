@@ -14,7 +14,7 @@
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "explorer.confirmDragAndDrop": false,
 
-    // using clangd
+    //using clangd
     "C_Cpp.intelliSenseEngine": "disabled", 
 
     "editor.cursorStyle": "block",

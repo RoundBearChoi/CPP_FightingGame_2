@@ -3,6 +3,8 @@
 #include "../olcPixelGameEngine.h"
 
 #include "../Vector2.h"
+#include "../EaseCalculator.h"
+
 #include "../Sprites/SpriteContainer.h"
 
 #include "../Players/iPlayerController.h"
@@ -22,6 +24,8 @@ namespace RB::Render
 
     private:
         void _RenderPlayerHPBar(RB::Players::PlayerID playerID);
+		EaseCalculator _p1_hp;
+		EaseCalculator _p2_hp;
 
 	private:
 		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;

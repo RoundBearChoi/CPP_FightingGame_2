@@ -10,7 +10,6 @@ namespace RB
     {
         NONE,
 
-        EaseOutLinear,
         EaseOutSine,
         EaseInSine,
         EaseOutCubic,
@@ -19,11 +18,6 @@ namespace RB
 	class Ease
 	{
 	public:
-		static float EaseOutLinear(float percentage)
-		{
-			return 1.0f - percentage;
-		}
-
 		static float EaseOutSine(float percentage)
 		{
 			return 1.0f - (sin((percentage * RB_PI) / 2));

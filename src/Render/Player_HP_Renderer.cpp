@@ -94,7 +94,7 @@ namespace RB::Render
             // update target
             else if (calculator->GetTargetPercentage() != hp)
             {
-                calculator->SetTarget(45 + calculator->GetCurrentFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
+                calculator->SetTarget(45 + calculator->GetRemainingFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
             }
         }
         else

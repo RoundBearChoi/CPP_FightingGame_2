@@ -18,6 +18,7 @@ namespace RB
         void ClearTarget();
         float GetCurrentPercentage();
         int GetCurrentFixedUpdateCount();
+        int GetRemainingFixedUpdateCount();
         EaseType GetEaseType();
         float GetTargetPercentage();
 

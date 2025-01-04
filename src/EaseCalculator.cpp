@@ -93,6 +93,18 @@ namespace RB
         return _currentFixedUpdateCount;
     }
 
+    int EaseCalculator::GetRemainingFixedUpdateCount()
+    {
+        int r =  _totalFixedUpdateCount - _currentFixedUpdateCount;
+
+        if (r < 0)
+        {
+            r = 0;
+        }
+
+        return r;
+    }
+
     EaseType EaseCalculator::GetEaseType()
     {
         return _easeType;

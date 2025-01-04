@@ -19,19 +19,6 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+oem_5",
-        "command": "workbench.action.closePanel"
-    },
-    {
-        "key": "ctrl+oem_5",
-        "command": "workbench.action.togglePanel"
-    },
-    {
-        "key": "shift+f12",
-        "command": "references-view.findReferences",
-        "when": "editorHasReferenceProvider"
-    },
-    {
         "key": "f12",
         "command": "editor.action.revealDefinition"
     }

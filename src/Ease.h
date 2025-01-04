@@ -6,6 +6,16 @@
 
 namespace RB
 {
+	enum class EaseType
+    {
+        NONE,
+
+        EaseOutLinear,
+        EaseOutSine,
+        EaseInSine,
+        EaseOutCubic,
+    };
+
 	class Ease
 	{
 	public:

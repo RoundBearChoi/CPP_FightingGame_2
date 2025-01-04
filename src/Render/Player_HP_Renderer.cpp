@@ -61,12 +61,12 @@ namespace RB::Render
             // set new target
             if (calculator->GetEaseType() == EaseType::NONE)
             {
-                calculator->SetTarget(5, EaseType::EaseInSine, currentBar, hp);
+                calculator->SetTarget(60, EaseType::EaseInSine, currentBar, hp);
             }
             // update target
             else if (calculator->GetTargetPercentage() != hp)
             {
-                calculator->SetTarget(5 + calculator->GetCurrentFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
+                calculator->SetTarget(60 + calculator->GetCurrentFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
             }
         }
         else

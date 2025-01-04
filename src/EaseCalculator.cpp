@@ -42,6 +42,7 @@ namespace RB
         {
             //std::cout << "easing" << std::endl;
         }
+        
         _currentPercentage = _startingPercentage + (eased * (_targetPercentage - _startingPercentage));
 
         _currentFixedUpdateCount++;

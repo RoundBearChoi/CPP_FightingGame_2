@@ -24,8 +24,8 @@ namespace RB::Render
 
     private:
         void _RenderPlayerHPBar(RB::Players::PlayerID playerID);
-		EaseCalculator _p1_hp;
-		EaseCalculator _p2_hp;
+		EaseCalculator _p1_calculator;
+		EaseCalculator _p2_calculator;
 
 	private:
 		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;

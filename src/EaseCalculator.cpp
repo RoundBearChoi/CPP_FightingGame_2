@@ -14,11 +14,6 @@ namespace RB
 
     void EaseCalculator::OnFixedUpdate()
     {
-        if (_currentPercentage >= _targetPercentage)
-        {
-            return;
-        }
-
         float progress = (float)_currentFixedUpdateCount / (float)_totalFixedUpdateCount;
         float eased = 0.0f;
 
@@ -44,16 +39,7 @@ namespace RB
             eased = 0.0f;
         }
 
-        float insidePercentage = (_currentPercentage - _startingPercentage) / (_targetPercentage - _startingPercentage);
-
-        if (insidePercentage < 0.0f)
-        {
-            return;
-        }
-
-        float result = insidePercentage * eased;
-
-        _currentPercentage = _startingPercentage + result;
+        _currentPercentage = _startingPercentage + (eased * (_targetPercentage - _startingPercentage));
 
         _currentFixedUpdateCount++;
     }

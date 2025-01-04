@@ -29,21 +29,26 @@ namespace RB::Render
         float center_x = (512.0f * 0.5f);
         
         RB::Sprites::PivotType pivotType = RB::Sprites::PivotType::NONE;
+        EaseCalculator* calculator = nullptr;
 
         if (playerID == RB::Players::PlayerID::PLAYER_1)
         {
             center_x -= center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_RIGHT;
+            calculator = &_p1_calculator;
         }
         else if (playerID == RB::Players::PlayerID::PLAYER_2)
         {
             center_x += center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
+            calculator = &_p2_calculator;
         }
 
         RB::Players::iPlayer* player =  RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
         int hp = player->GetHP();
         float barPercentage = (float)hp / 100.0f;
+
+        
 
         if (barPercentage < 0.0f)
         {

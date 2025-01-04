@@ -12,7 +12,6 @@ namespace RB
 
         EaseOutSine,
         EaseInSine,
-        EaseOutCubic,
     };
 
 	class Ease

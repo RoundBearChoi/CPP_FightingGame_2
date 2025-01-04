@@ -19,12 +19,31 @@ namespace RB
             return;
         }
 
-        
+        if (_easeType == EaseType::EaseOutSine)
+        {
+            //_currentPercentage = Ease::EaseOutSine((float)_currentFixedUpdateCount / (float)_totalFixedUpdateCount);
+        }
+        else if (_easeType == EaseType::EaseInSine)
+        {
+            //_currentFixedUpdateCount = Ease::EaseInSine((float)_currentFixedUpdateCount / (float)_totalFixedUpdateCount);
+        }
+
+        _currentFixedUpdateCount++;
     }
 
-    void EaseCalculator::SetTarget(int totalFixedUpdateCount, EaseType easeType)
+    void EaseCalculator::SetTarget(int totalFixedUpdateCount, EaseType easeType, float startingPercentage, float targetPercentage)
     {
+        _currentPercentage = 0.0f;
+        _currentFixedUpdateCount = 0;
+
+        _startingPercentage = startingPercentage;
+        _targetPercentage = targetPercentage;
         _totalFixedUpdateCount = totalFixedUpdateCount;
         _easeType = easeType;
+    }
+
+    float EaseCalculator::GetCurrentPercentage()
+    {
+        return _currentPercentage;
     }
 }

@@ -15,6 +15,9 @@ namespace RB::Render
 
 	void Player_HP_Renderer::OnFixedUpdate()
 	{
+        _UpdatePlayerHPBar(RB::Players::PlayerID::PLAYER_1);
+        _UpdatePlayerHPBar(RB::Players::PlayerID::PLAYER_2);
+
         _p1_calculator.OnFixedUpdate();
         _p2_calculator.OnFixedUpdate();
 	}
@@ -42,6 +45,41 @@ namespace RB::Render
         {
             center_x += center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
+            calculator = &_p2_calculator;
+        }
+
+        float barPercentage = calculator->GetCurrentPercentage();
+
+        if (barPercentage == 0.0f)
+        {
+            barPercentage = 1.0f;
+        }
+
+        if (barPercentage <= 0.001f)
+        {
+            return;
+        }
+
+        _spriteContainer->RenderSprite(
+			RB::Sprites::SpriteType::player_hp_bar_white, 
+			bar_x_size * barPercentage,
+			bar_y_size,
+			RB::Vector2{ center_x, top_y_margin },
+			olc::WHITE,
+			pivotType, 
+			false);
+    }
+
+    void Player_HP_Renderer::_UpdatePlayerHPBar(RB::Players::PlayerID playerID)
+    {
+        EaseCalculator* calculator = nullptr;
+
+        if (playerID == RB::Players::PlayerID::PLAYER_1)
+        {
+            calculator = &_p1_calculator;
+        }
+        else if (playerID == RB::Players::PlayerID::PLAYER_2)
+        {
             calculator = &_p2_calculator;
         }
 
@@ -73,26 +111,5 @@ namespace RB::Render
         {
             calculator->ClearTarget();
         }
-
-        float barPercentage = calculator->GetCurrentPercentage();
-
-        if (barPercentage == 0.0f)
-        {
-            barPercentage = 1.0f;
-        }
-
-        if (barPercentage <= 0.001f)
-        {
-            return;
-        }
-
-        _spriteContainer->RenderSprite(
-			RB::Sprites::SpriteType::player_hp_bar_white, 
-			bar_x_size * barPercentage,
-			bar_y_size,
-			RB::Vector2{ center_x, top_y_margin },
-			olc::WHITE,
-			pivotType, 
-			false);
     }
 }

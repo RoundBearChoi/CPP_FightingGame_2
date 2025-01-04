@@ -15,7 +15,8 @@ namespace RB::Render
 
 	void Player_HP_Renderer::OnFixedUpdate()
 	{
-
+        _p1_calculator.OnFixedUpdate();
+        _p2_calculator.OnFixedUpdate();
 	}
 
     void Player_HP_Renderer::_RenderPlayerHPBar(RB::Players::PlayerID playerID)
@@ -45,12 +46,42 @@ namespace RB::Render
         }
 
         RB::Players::iPlayer* player =  RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
-        int hp = player->GetHP();
-        float barPercentage = (float)hp / 100.0f;
 
-        
+        float hp = (float)(player->GetHP()) * 0.01f;
 
-        if (barPercentage < 0.0f)
+        float currentBar = calculator->GetCurrentPercentage();
+
+        if (currentBar == 0.0f)
+        {
+            currentBar = 1.0f;
+        }
+
+        if (std::abs(currentBar - hp) > 0.001f)
+        {
+            // set new target
+            if (calculator->GetEaseType() == EaseType::NONE)
+            {
+                calculator->SetTarget(60, EaseType::EaseInSine, currentBar, hp);
+            }
+            // update target
+            else if (calculator->GetTargetPercentage() != hp)
+            {
+                calculator->SetTarget(60 + calculator->GetCurrentFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
+            }
+        }
+        else
+        {
+            calculator->ClearTarget();
+        }
+
+        float barPercentage = calculator->GetCurrentPercentage();
+
+        if (barPercentage == 0.0f)
+        {
+            barPercentage = 1.0f;
+        }
+
+        if (barPercentage <= 0.001f)
         {
             return;
         }

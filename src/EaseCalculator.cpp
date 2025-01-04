@@ -38,7 +38,10 @@ namespace RB
         {
             eased = 0.0f;
         }
-
+        else
+        {
+            //std::cout << "easing" << std::endl;
+        }
         _currentPercentage = _startingPercentage + (eased * (_targetPercentage - _startingPercentage));
 
         _currentFixedUpdateCount++;
@@ -46,7 +49,6 @@ namespace RB
 
     void EaseCalculator::SetTarget(int totalFixedUpdateCount, EaseType easeType, float startingPercentage, float targetPercentage)
     {
-        //_currentPercentage = 0.0f;
         _currentFixedUpdateCount = 0;
 
         _startingPercentage = startingPercentage;
@@ -55,8 +57,32 @@ namespace RB
         _easeType = easeType;
     }
 
+    void EaseCalculator::ClearTarget()
+    {
+        _currentFixedUpdateCount = 0;
+        _startingPercentage = 0.0f;
+        _targetPercentage = 0.0f;
+        _totalFixedUpdateCount = 0.0f;
+        _easeType = EaseType::NONE;
+    }
+
     float EaseCalculator::GetCurrentPercentage()
     {
         return _currentPercentage;
+    }
+
+    int EaseCalculator::GetCurrentFixedUpdateCount()
+    {
+        return _currentFixedUpdateCount;
+    }
+
+    EaseType EaseCalculator::GetEaseType()
+    {
+        return _easeType;
+    }
+
+    float EaseCalculator::GetTargetPercentage()
+    {
+        return _targetPercentage;
     }
 }

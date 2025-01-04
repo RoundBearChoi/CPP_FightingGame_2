@@ -27,16 +27,15 @@ namespace RB::JSON
 	public:
 		const json_value_s* LoadJSON(std::string path)
 		{
+			std::cout << "loading json " << path;
+
 			std::ifstream ifs(path);
 
 			std::string str((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
 
-			//std::cout << std::endl;
-			//std::cout << "loading JSON at path: " << path << std::endl;
-
 			if (str.empty())
 			{
-				std::cout << "Can't find JSON at " + path << std::endl;
+				std::cout << " | FAILED! ======> can't find JSON" << std::endl;
 
 				return nullptr;
 			}
@@ -47,12 +46,14 @@ namespace RB::JSON
 
 			if (root == nullptr)
 			{
-				std::cerr << "Error loading JSON at " + path << std::endl;
+				std::cout << " | FAILED! ======> can't parse JSON" << std::endl;
 
 				return nullptr;
 			}
 
 			_vecLoadedRoots.push_back(root);
+
+			std::cout << " | done" << std::endl;
 
 			return root;
 		}

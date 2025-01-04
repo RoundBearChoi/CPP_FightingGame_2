@@ -15,16 +15,22 @@ namespace RB::Sprites
 
 	LoadedSprite* SpriteContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
+		std::cout << "loading sprite " << path;
+
 		LoadedSprite* loaded = _loader.LoadSprite(path, spriteType);
 
 		if (loaded != nullptr)
 		{
 			_vecLoadedSprites.push_back(loaded);
 
+			std::cout << " | done" << std::endl;
+
 			return loaded;
 		}
 		else
 		{
+			std::cout << " | FAILED!" << std::endl;
+
 			return nullptr;
 		}
 	}

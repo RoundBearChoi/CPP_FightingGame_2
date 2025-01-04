@@ -12,6 +12,10 @@ namespace RB
 
         EaseOutSine,
         EaseInSine,
+		EaseOutQuad,
+		EaseInQuad,
+		EaseOutCubic,
+		EaseInCubic,
     };
 
 	class Ease
@@ -27,9 +31,24 @@ namespace RB
 			return (sin((percentage * RB_PI) / 2));
 		}
 
+		static float EaseInQuad(float percentage)
+		{
+			return percentage * percentage;
+		}
+
+		static float EaseOutQuad(float percentage)
+		{
+			return 1.0f - (1.0f - percentage) * (1.0f - percentage);
+		}
+
 		static float EaseOutCubic(float percentage)
 		{
 			return std::pow(1.0f - percentage, 3.0f);
+		}
+
+		static float EaseInCubic(float percentage)
+		{
+			return std::pow(percentage, 3.0f);
 		}
 
 		static float EaseOutQuint(float percentage)
@@ -37,9 +56,9 @@ namespace RB
 			return std::pow(1.0f - percentage, 5.0f);
 		}
 
-		static float EaseOutQuad(float percentage)
+		static float EaseInQuint(float percentage)
 		{
-			return ((1.0f - percentage) * (1.0f - percentage));
+			return std::pow(percentage, 5.0f);
 		}
 
 		static float EaseOutCirc(float percentage)

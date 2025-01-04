@@ -25,6 +25,22 @@ namespace RB
         {
             eased  = Ease::EaseInSine(progress);
         }
+        else if (_easeType == EaseType::EaseOutQuad)
+        {
+            eased = Ease::EaseOutQuad(progress);
+        }
+        else if (_easeType == EaseType::EaseInQuad)
+        {
+            eased = Ease::EaseInQuad(progress);
+        }
+        else if (_easeType == EaseType::EaseOutCubic)
+        {
+            eased = Ease::EaseOutCubic(progress);
+        }
+        else if (_easeType == EaseType::EaseInCubic)
+        {
+            eased = Ease::EaseInCubic(progress);
+        }
         else
         {
             return;

@@ -50,11 +50,6 @@ namespace RB::Render
 
         float barPercentage = calculator->GetCurrentPercentage();
 
-        if (barPercentage == 0.0f)
-        {
-            barPercentage = 1.0f;
-        }
-
         if (barPercentage <= 0.001f)
         {
             return;
@@ -89,22 +84,17 @@ namespace RB::Render
 
         float currentBar = calculator->GetCurrentPercentage();
 
-        if (currentBar == 0.0f)
-        {
-            currentBar = 1.0f;
-        }
-
         if (std::abs(currentBar - hp) > 0.001f)
         {
             // set new target
             if (calculator->GetEaseType() == EaseType::NONE)
             {
-                calculator->SetTarget(60, EaseType::EaseInSine, currentBar, hp);
+                calculator->SetTarget(45, EaseType::EaseInQuad, currentBar, hp);
             }
             // update target
             else if (calculator->GetTargetPercentage() != hp)
             {
-                calculator->SetTarget(60 + calculator->GetCurrentFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
+                calculator->SetTarget(45 + calculator->GetCurrentFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
             }
         }
         else

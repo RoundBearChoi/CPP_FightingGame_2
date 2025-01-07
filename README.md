@@ -29,7 +29,7 @@ pacman -S mingw-w64-x86_64-gcc
 <br>
 
 - Clone repository and build
-<br> *pls refer to my CMakeLists.txt*
+<br> *pls refer to my [CMakeLists.txt](https://github.com/RoundBearChoi/CPP_FightingGame_2/blob/main/CMakeLists.txt)*
 
 ```
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2

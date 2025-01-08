@@ -1,7 +1,5 @@
 #include "AttackRegisterController.h"
 
-//#include "CollisionType.h"
-
 //temp
 #include "../Fighter_0_States/F0_Death_Standing_Weak.h"
 

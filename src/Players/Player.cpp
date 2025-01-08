@@ -216,4 +216,9 @@ namespace RB::Players
 	{
 		return _hp;
 	}
+
+	void Player::LockTransition(bool lock)
+	{
+		_lockTransition = lock;
+	}
 }

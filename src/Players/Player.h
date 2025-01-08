@@ -47,6 +47,7 @@ namespace RB::Players
 		bool IsInSpecialMoveStatus() override;
 		void AddHP(int amount) override;
 		int GetHP() override;
+		void LockTransition(bool lock) override;
 
 	protected:
 		PlayerID _playerID = PlayerID::NONE;
@@ -60,6 +61,7 @@ namespace RB::Players
 		bool _isCrouching = false;
 		bool _dirIsFixedDuringState = false;
 		bool _isInSpecialMoveState = false;
+		bool _lockTransition = false;
 		int _hp = 100;
 	};
 }

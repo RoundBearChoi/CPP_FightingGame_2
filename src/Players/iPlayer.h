@@ -46,6 +46,5 @@ namespace RB::Players
 		virtual bool IsInSpecialMoveStatus() = 0;
 		virtual void AddHP(int amount) = 0;
 		virtual int GetHP() = 0;
-		virtual void LockTransition(bool lock) = 0;
 	};
 }

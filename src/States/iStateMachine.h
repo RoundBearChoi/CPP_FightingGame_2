@@ -20,6 +20,7 @@ namespace RB::States
 		virtual unsigned int GetID() = 0;
 		virtual iState* GetCurrentState() = 0;
 		virtual bool IsTransitioning() = 0;
+		virtual void LockTransition(bool lock) = 0;
 		
 	protected:
 		virtual void _MakeTransition() = 0;

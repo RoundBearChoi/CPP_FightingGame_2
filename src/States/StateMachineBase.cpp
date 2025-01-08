@@ -88,6 +88,11 @@ namespace RB::States
 		return _currentState->IsTransitioning();
 	}
 
+	void StateMachineBase::LockTransition(bool lock)
+	{
+		_lockTransition = lock;
+	}
+
 	void StateMachineBase::_MakeTransition()
 	{
 		if (_currentState->IsTransitioning())

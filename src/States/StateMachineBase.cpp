@@ -72,6 +72,7 @@ namespace RB::States
 
 	bool StateMachineBase::OverrideNextState(RB::States::iState* state)
 	{
+		//cannot override when transition is locked
 		if (_lockTransition)
 		{
 			return false;

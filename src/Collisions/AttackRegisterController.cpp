@@ -64,7 +64,7 @@ namespace RB::Collisions
 		if (reg.target->GetHP() <= 0)
 		{
 			std::cout << std::endl;
-			std::cout << "--- player " << reg.target->GetPlayerID_int() << " is dead ---" << std::endl;
+			std::cout << "--- PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! ---" << std::endl;
 		}
 
 		return true;

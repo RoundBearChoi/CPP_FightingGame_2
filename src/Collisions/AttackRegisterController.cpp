@@ -64,7 +64,11 @@ namespace RB::Collisions
 		if (reg.target->GetHP() <= 0)
 		{
 			std::cout << std::endl;
-			std::cout << "--- PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! ---" << std::endl;
+			std::cout << "PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! locking transition.." << std::endl;
+
+			// temp - need a dynamic death animation getter
+			//reg.target->GetStateMachine()->OverrideNextState(RB::States::iState *state);
+			reg.target->GetStateMachine()->LockTransition(true);
 		}
 
 		return true;

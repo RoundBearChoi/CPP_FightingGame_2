@@ -20,8 +20,8 @@ namespace RB::States
 		virtual void OnFixedUpdate() override;
 
 	public:
-		virtual void QueueNextState(iState* state) override;
-		virtual void OverrideNextState(RB::States::iState* state) override;
+		virtual bool QueueNextState(iState* state) override;
+		virtual bool OverrideNextState(RB::States::iState* state) override;
 		virtual unsigned int GetID() override;
 		virtual iState* GetCurrentState() override;
 		virtual bool IsTransitioning() override;

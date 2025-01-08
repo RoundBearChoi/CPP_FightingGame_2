@@ -48,11 +48,16 @@ namespace RB::States
 		_MakeTransition();
 	}
 
-	void StateMachineBase::QueueNextState(iState* state)
+	bool StateMachineBase::QueueNextState(iState* state)
 	{
 		if (state == nullptr)
 		{
-			return;
+			return false;
+		}
+
+		if (_lockTransition)
+		{
+			return false;
 		}
 
 		if (!_currentState->IsTransitioning())
@@ -61,16 +66,26 @@ namespace RB::States
 
 			_nextState = state;
 		}
+
+		return true;
 	}
 
-	void StateMachineBase::OverrideNextState(RB::States::iState* state)
+	bool StateMachineBase::OverrideNextState(RB::States::iState* state)
 	{
+		if (_lockTransition)
+		{
+			return false;
+		}
+
 		//all past player states will be deleted by PlayerState::ErasePreviousStates()
 		_nextState = nullptr;
 
 		//reset status and queue
 		_currentState->SetIsTransitioning(false);
+
 		QueueNextState(state);
+
+		return true;
 	}
 
 	unsigned int StateMachineBase::GetID()

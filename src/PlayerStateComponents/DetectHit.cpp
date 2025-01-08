@@ -169,7 +169,7 @@ namespace RB::PlayerStateComponents
 
 		std::cout << std::endl;
 		std::string strAttackerSprite = collisionResult.mAttackerSpriteType._to_string();
-		std::cout << " --- registering hit | attacker spriteType: " << strAttackerSprite << " --- " << std::endl;
+		std::cout << " --- registered hit | attacker spriteType: " << strAttackerSprite << " --- " << std::endl;
 		std::cout << "attackerID: " << reg.attacker->GetPlayerID_int() << std::endl;
 		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
 		std::cout << "hit count: " << _hits << std::endl;

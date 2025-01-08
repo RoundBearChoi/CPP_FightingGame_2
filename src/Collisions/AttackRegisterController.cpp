@@ -18,7 +18,7 @@ namespace RB::Collisions
 
 	}
 
-	void AttackRegisterController::RegisterAttack(AttackRegister reg)
+	bool AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
 		_ShowHitVFX(reg);
 		_ShowHitLocation(reg);
@@ -60,6 +60,14 @@ namespace RB::Collisions
 				RB::Collisions::iGeneralHitStopController::Get()->AddSkipFrames(attackSpecs.mHitStop);
 			}
 		}
+
+		if (reg.target->GetHP() <= 0)
+		{
+			std::cout << std::endl;
+			std::cout << "--- player " << reg.target->GetPlayerID_int() << " is dead ---" << std::endl;
+		}
+
+		return true;
 	}
 
 	void AttackRegisterController::_ShowHitVFX(const AttackRegister& attackRegister)

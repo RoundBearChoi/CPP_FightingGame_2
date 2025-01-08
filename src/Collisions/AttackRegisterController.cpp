@@ -1,5 +1,9 @@
 #include "AttackRegisterController.h"
-#include "CollisionType.h"
+
+//#include "CollisionType.h"
+
+//temp
+#include "../Fighter_0_States/F0_Death_Standing_Weak.h"
 
 namespace RB::Collisions
 {
@@ -67,7 +71,7 @@ namespace RB::Collisions
 			std::cout << "PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! locking transition.." << std::endl;
 
 			// temp - need a dynamic death animation getter
-			//reg.target->GetStateMachine()->OverrideNextState(RB::States::iState *state);
+			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Death_Standing_Weak());
 			reg.target->GetStateMachine()->LockTransition(true);
 		}
 

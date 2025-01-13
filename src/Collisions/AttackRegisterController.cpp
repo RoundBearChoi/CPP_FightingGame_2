@@ -34,7 +34,8 @@ namespace RB::Collisions
 			//std::cout << std::endl;
 			//std::cout << "target is crouching" << std::endl;
 
-			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Crouch_Weak_Wince());
+			reg.target->GetStateMachine()->ClearQueuedStates();
+			reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Crouch_Weak_Wince());
 		}
 		else
 		{
@@ -45,16 +46,19 @@ namespace RB::Collisions
 			{
 				if (reg.collisionType == CollisionType::HEAD)
 				{
-					reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_High());
+					reg.target->GetStateMachine()->ClearQueuedStates();
+					reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Strong_Wince_High());
 				}
 				else if (reg.collisionType == CollisionType::BODY)
 				{
-					reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Strong_Wince_Mid());
+					reg.target->GetStateMachine()->ClearQueuedStates();
+					reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Strong_Wince_Mid());
 				}
 			}
 			else if (attackSpecs.mAttackStrengthType._value == RB::Collisions::AttackStrengthType::WEAK)
 			{
-				reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Weak_Wince_Mid());
+				reg.target->GetStateMachine()->ClearQueuedStates();
+				reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Weak_Wince_Mid());
 			}
 
 			if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
@@ -69,7 +73,8 @@ namespace RB::Collisions
 			std::cout << "PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! locking transition.." << std::endl;
 
 			// temp - need a dynamic death animation getter
-			reg.target->GetStateMachine()->OverrideNextState(new RB::Fighter_0_States::F0_Death_Standing_Weak());
+			reg.target->GetStateMachine()->ClearQueuedStates();
+			reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Death_Standing_Weak());
 			reg.target->GetStateMachine()->LockTransition(true);
 		}
 

@@ -512,7 +512,8 @@ namespace RB::Input
 
 			RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 
-			player->GetStateMachine()->OverrideNextState(newState);
+			player->GetStateMachine()->ClearQueuedStates();
+			player->GetStateMachine()->QueueNextState(newState);
 
 			//for now, clear all (only trigger the first one assuming it's impossible to queue 2 special moves in a single update)
 			vec.clear();

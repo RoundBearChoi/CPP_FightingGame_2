@@ -70,23 +70,13 @@ namespace RB::States
 		return true;
 	}
 
-	bool StateMachineBase::OverrideNextState(RB::States::iState* state)
+	void StateMachineBase::ClearQueuedStates()
 	{
-		//cannot override when transition is locked
-		if (_lockTransition)
-		{
-			return false;
-		}
-
 		//all past player states will be deleted by PlayerState::ErasePreviousStates()
 		_nextState = nullptr;
 
 		//reset status and queue
 		_currentState->SetIsTransitioning(false);
-
-		QueueNextState(state);
-
-		return true;
 	}
 
 	unsigned int StateMachineBase::GetID()

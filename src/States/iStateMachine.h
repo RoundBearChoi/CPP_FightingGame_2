@@ -16,7 +16,7 @@ namespace RB::States
 
 	public:
 		virtual bool QueueNextState(iState* state) = 0;
-		virtual bool OverrideNextState(RB::States::iState* state) = 0;
+		virtual void ClearQueuedStates() = 0;
 		virtual unsigned int GetID() = 0;
 		virtual iState* GetCurrentState() = 0;
 		virtual bool IsTransitioning() = 0;

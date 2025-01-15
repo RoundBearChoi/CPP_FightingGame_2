@@ -86,15 +86,17 @@ namespace RB::Render
 
         if (std::abs(currentBar - hp) > 0.001f)
         {
+            int speed = 40;
+
             // set new target
             if (calculator->GetEaseType() == EaseType::NONE)
             {
-                calculator->SetTarget(60, EaseType::EaseInQuad, currentBar, hp);
+                calculator->SetTarget(speed, EaseType::EaseInQuad, currentBar, hp);
             }
             // update target
             else if (calculator->GetTargetPercentage() != hp)
             {
-                calculator->SetTarget(60 + calculator->GetRemainingFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
+                calculator->SetTarget(speed + calculator->GetRemainingFixedUpdateCount(), calculator->GetEaseType(), currentBar, hp);
             }
         }
         else

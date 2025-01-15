@@ -1,4 +1,5 @@
 #include "F0_Weak_Wince_Mid.h"
+#include "F0_Kneel.h"
 
 namespace RB::Fighter_0_States
 {
@@ -19,6 +20,7 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(8, -5)); //back
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(9, 0));
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(10, new RB::Fighter_0_States::F0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnDeath(10, new RB::Fighter_0_States::F0_Kneel()));
 
 		EnterStateComponents();
 	}

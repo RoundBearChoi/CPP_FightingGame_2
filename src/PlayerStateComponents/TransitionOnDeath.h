@@ -7,11 +7,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class TransitionOnFixedUpdateCount : public RB::States::StateComponentBase
+	class TransitionOnDeath : public RB::States::StateComponentBase
 	{
 	public:
-		TransitionOnFixedUpdateCount(int fixedUpdateOnCount, RB::States::iState* nextState);
-		~TransitionOnFixedUpdateCount() override {};
+		TransitionOnDeath(int fixedUpdateOnCount, RB::States::iState* nextState);
+		~TransitionOnDeath() override {};
 
 	public:
 		void OnEnter() override;

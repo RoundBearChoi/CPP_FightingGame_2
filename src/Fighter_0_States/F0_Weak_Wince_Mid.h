@@ -5,6 +5,7 @@
 #include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "../PlayerStateComponents/MoveHorizontalOnFixedUpdateCount.h"
 #include "../PlayerStateComponents/TransitionOnFixedUpdateCount.h"
+#include "../PlayerStateComponents/TransitionOnDeath.h"
 
 #include "F0_Idle.h"
 

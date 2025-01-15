@@ -1,7 +1,7 @@
 #include "AttackRegisterController.h"
 
 //temp
-#include "../Fighter_0_States/F0_Death_Standing_Weak.h"
+#include "../Fighter_0_States/F0_Kneel.h"
 
 namespace RB::Collisions
 {
@@ -74,7 +74,7 @@ namespace RB::Collisions
 		//
 		//	// temp - need a dynamic death animation getter
 		//	reg.target->GetStateMachine()->ClearQueuedStates();
-		//	reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Death_Standing_Weak());
+		//	reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Kneel());
 		//	reg.target->GetStateMachine()->LockTransition(true);
 		//}
 

@@ -59,7 +59,7 @@ namespace RB::Sprites
 		
 		fighter_0_hadouken,
 
-		fighter_0_death_standing_weak,
+		fighter_0_kneel,
 
 		FIGHTER_0_SPRITES_END,
 

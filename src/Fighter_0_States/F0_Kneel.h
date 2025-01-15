@@ -4,10 +4,10 @@
 
 namespace RB::Fighter_0_States
 {
-    class F0_Death_Standing_Weak : public RB::Players::PlayerState
+    class F0_Kneel : public RB::Players::PlayerState
     {
     public:
-		F0_Death_Standing_Weak() = default;
+		F0_Kneel() = default;
 
     public:
         void OnEnter() override;

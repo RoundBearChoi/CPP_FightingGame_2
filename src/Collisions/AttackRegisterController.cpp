@@ -67,16 +67,16 @@ namespace RB::Collisions
 			}
 		}
 
-		if (reg.target->GetHP() <= 0)
-		{
-			std::cout << std::endl;
-			std::cout << "PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! locking transition.." << std::endl;
-
-			// temp - need a dynamic death animation getter
-			reg.target->GetStateMachine()->ClearQueuedStates();
-			reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Death_Standing_Weak());
-			reg.target->GetStateMachine()->LockTransition(true);
-		}
+		//if (reg.target->GetHP() <= 0)
+		//{
+		//	std::cout << std::endl;
+		//	std::cout << "PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! locking transition.." << std::endl;
+		//
+		//	// temp - need a dynamic death animation getter
+		//	reg.target->GetStateMachine()->ClearQueuedStates();
+		//	reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Death_Standing_Weak());
+		//	reg.target->GetStateMachine()->LockTransition(true);
+		//}
 
 		return true;
 	}

@@ -21,6 +21,10 @@ namespace RB::PlayerStateComponents
 	{
 		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		player->GetStateMachine()->QueueNextState(_vecNextStates[0]);
+		// only if player isn't dead
+		if (player->GetHP() > 0)
+		{
+			player->GetStateMachine()->QueueNextState(_vecNextStates[0]);
+		}
 	}
 }

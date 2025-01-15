@@ -49,6 +49,12 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* attacker = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(attacker);
 
+		// cannot be hit once dead
+		if (target->GetHP() <= 0)
+		{
+			return false;
+		}
+
 		RB::Players::PlayerState* attackerState = RB::Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
 		RB::Players::PlayerState* enemyState = RB::Players::PlayerState::GetPlayerState(target->GetPlayerID());
 

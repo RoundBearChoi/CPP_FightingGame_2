@@ -1,10 +1,10 @@
 {
-    "fighter_0_kneel":
+    "fighter_0_lie_down":
         {
-        "sprite_enum" : "fighter_0_kneel",
-        "mX_TileCount" : 4,
+        "sprite_enum" : "fighter_0_lie_down",
+        "mX_TileCount" : 3,
         "mY_TileCount" : 1,
-        "mTotalSprites" : 4,
+        "mTotalSprites" : 3,
         "mSkipFixedUpdates" : 60,
         "mRenderScale" : 0.82,
         "mPlayOnce" : 1

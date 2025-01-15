@@ -2,7 +2,7 @@
     "fighter_0_jab":
         {
         "attack strength stype" : "WEAK",
-        "damage" : 10,
+        "damage" : 100,
         "hitstop frames" : 3,
         "minimum fixed updates since last hit": 10,
         "max hits" : 2

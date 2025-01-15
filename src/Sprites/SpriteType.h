@@ -60,6 +60,7 @@ namespace RB::Sprites
 		fighter_0_hadouken,
 
 		fighter_0_kneel,
+		fighter_0_lie_down,
 
 		FIGHTER_0_SPRITES_END,
 

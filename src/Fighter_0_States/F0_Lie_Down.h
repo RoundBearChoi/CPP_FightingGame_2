@@ -2,14 +2,12 @@
 
 #include "../Players/PlayerState.h"
 
-#include "../PlayerStateComponents/TransitionOnAnimationEnd.h"
-
 namespace RB::Fighter_0_States
 {
-    class F0_Kneel : public RB::Players::PlayerState
+    class F0_Lie_Down : public RB::Players::PlayerState
     {
     public:
-		F0_Kneel() = default;
+		F0_Lie_Down() = default;
 
     public:
         void OnEnter() override;

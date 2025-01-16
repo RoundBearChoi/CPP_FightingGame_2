@@ -37,6 +37,8 @@ namespace RB::Updaters
 
 	void Playground::OnFixedUpdate()
 	{
+		_scheduler.OnFixedUpdate();
+
 		_customUpdate.DoFixedUpdate();
 	}
 

@@ -4,6 +4,7 @@
 #include <assert.h>
 
 #include "../olcPixelGameEngine.h"
+#include "../Scheduler.h"
 
 #include "GameplayUpdater.h"
 #include "PlayerBoxEditorUpdater.h"
@@ -47,5 +48,6 @@ namespace RB::Updaters
 		iUpdater* _updater = nullptr;
 		iUpdater* _nextUpdater = nullptr;
 		SkipFixedUpdates<Playground> _customUpdate;
+		Scheduler _scheduler;
 	};
 }

@@ -4,12 +4,11 @@
 
 namespace RB::Updaters
 {
-	template <class T>
-	class SkipFixedUpdates
+	class Skipper
 	{
 	public:
-		SkipFixedUpdates() = default;
-		~SkipFixedUpdates() = default;
+		Skipper() = default;
+		~Skipper() = default;
 
 	public:
 		void SetSkipFrames(unsigned int skipFrames)
@@ -46,11 +45,6 @@ namespace RB::Updaters
 					_func();
 				}
 
-				//if (_obj != nullptr)
-				//{
-				//	(_obj->*_function)();
-				//}
-				
 				return true;
 			}
 		}
@@ -64,8 +58,6 @@ namespace RB::Updaters
 		unsigned int _skipFrames = 0;
 		unsigned int _frameCount = 0;
 		unsigned int _totalFrameCount = 0;
-		//T* _obj = nullptr;
-		//void (T::* _function)() = nullptr;
 		std::function<void()> _func = nullptr;
 	};
 }

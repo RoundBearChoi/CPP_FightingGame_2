@@ -13,7 +13,7 @@
 
 #include "../Vector2.h"
 
-#include "../Updaters/SkipFixedUpdates.h"
+#include "../Updaters/Skipper.h"
 
 #include "../Players/iPlayer.h"
 
@@ -57,7 +57,7 @@ namespace RB::Render
 		AnimationRenderer* _animationRenderer = nullptr;
 		RB::Sprites::PivotType _pivotType = RB::Sprites::PivotType::BOTTOM_CENTER;
 		unsigned int _currentIndex = 0;
-		RB::Updaters::SkipFixedUpdates<AnimationObj> _customFixedUpdate;
+		RB::Updaters::Skipper _skippedFixedUpdates;
 		RB::Vector2 _worldPos = { 0, 0 };
 		CustomRenderContainer<RenderScaleMultiplierObj> _customRenderScales;
 		CustomRenderContainer<RenderRotationObj> _customRotations;

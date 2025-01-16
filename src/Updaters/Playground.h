@@ -11,7 +11,7 @@
 #include "PlayerBoxEditorUpdater.h"
 #include "AttackBoxEditorUpdater.h"
 #include "TargetBoxEditorUpdater.h"
-#include "SkipFixedUpdates.h"
+#include "Skipper.h"
 
 #include "iPlayground.h"
 #include "iUpdater.h"
@@ -50,7 +50,7 @@ namespace RB::Updaters
 		bool _updaterIsQueued = false;
 		iUpdater* _updater = nullptr;
 		iUpdater* _nextUpdater = nullptr;
-		SkipFixedUpdates<Playground> _customUpdate;
+		Skipper _customUpdate;
 		Scheduler _scheduler;
 	};
 }

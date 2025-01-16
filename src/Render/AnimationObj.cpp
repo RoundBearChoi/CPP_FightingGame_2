@@ -14,10 +14,10 @@ namespace RB::Render
 
 		if (_animationRenderer != nullptr)
 		{
-			_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
+			_skippedFixedUpdates.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
 
 			std::function<void()> func = std::bind(&AnimationObj::UpdateAnimationIndex, this);
-			_customFixedUpdate.SetFunction(func);
+			_skippedFixedUpdates.SetFunction(func);
 		}
 
 		// different default amounts
@@ -33,7 +33,7 @@ namespace RB::Render
 
 	void AnimationObj::OnFixedUpdate()
 	{
-		_customFixedUpdate.DoFixedUpdate();
+		_skippedFixedUpdates.DoFixedUpdate();
 
 		_customRenderScales.OnFixedUpdate();
 		_customRotations.OnFixedUpdate();
@@ -213,7 +213,7 @@ namespace RB::Render
 
 	unsigned int AnimationObj::GetFixedUpdateCount()
 	{
-		return _customFixedUpdate.GetTotalFixedUpdateCount();
+		return _skippedFixedUpdates.GetTotalFixedUpdateCount();
 	}
 
 	void AnimationObj::AddRenderScaleMultiplierObj(RenderScaleMultiplierObj* obj)

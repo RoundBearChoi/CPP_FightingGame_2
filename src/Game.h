@@ -37,7 +37,7 @@ namespace RB
 
 			_updater->Init();
 
-			RB::Time::ResetFixedDeltaTime();
+			//RB::Time::ResetFixedDeltaTime();
 
 			RB::Render::CreateLayers();
 
@@ -63,7 +63,7 @@ namespace RB
 			{
 				_updater->OnFixedUpdate();
 
-				RB::Time::ResetFixedDeltaTime();
+				//RB::Time::ResetFixedDeltaTime();
 
 				RB::AddGameFrame();
 			}
@@ -71,7 +71,7 @@ namespace RB
 			RB::Render::ClearLayers();
 
 			RB::Time::SetDeltaTime(fElapsedTime);
-			RB::Time::AddFixedDeltaTime();
+			//RB::Time::AddFixedDeltaTime();
 
 			_updater->OnUpdate();
 			_updateCounter.OnUpdate();

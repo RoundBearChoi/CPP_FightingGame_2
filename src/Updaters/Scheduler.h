@@ -16,6 +16,6 @@ namespace RB::Updaters
     private:
         int _currentFixedUpdateCount = 0;
         int _totalFixedUpdates = 0;
-        std::function<void()> _funcPtr = nullptr;
+        std::function<void()> _func = nullptr;
     };
 }

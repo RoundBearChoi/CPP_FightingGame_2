@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+
 namespace RB::Updaters
 {
 	template <class T>
@@ -20,10 +22,9 @@ namespace RB::Updaters
 			_skipFrames = 0;
 		}
 
-		void SetFunction(T* obj, void (T::*function)())
+		void SetFunction(std::function<void()> func)
 		{
-			_obj = obj;
-			_function = function;
+			_func = func;
 		}
 
 		bool DoFixedUpdate()
@@ -40,10 +41,15 @@ namespace RB::Updaters
 			{
 				_frameCount = 0;
 
-				if (_obj != nullptr)
+				if (_func != nullptr)
 				{
-					(_obj->*_function)();
+					_func();
 				}
+
+				//if (_obj != nullptr)
+				//{
+				//	(_obj->*_function)();
+				//}
 				
 				return true;
 			}
@@ -58,7 +64,8 @@ namespace RB::Updaters
 		unsigned int _skipFrames = 0;
 		unsigned int _frameCount = 0;
 		unsigned int _totalFrameCount = 0;
-		T* _obj = nullptr;
-		void (T::* _function)() = nullptr;
+		//T* _obj = nullptr;
+		//void (T::* _function)() = nullptr;
+		std::function<void()> _func = nullptr;
 	};
 }

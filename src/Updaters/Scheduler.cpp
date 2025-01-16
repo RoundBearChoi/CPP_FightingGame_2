@@ -4,16 +4,16 @@ namespace RB::Updaters
 {
     void Scheduler::OnFixedUpdate()
     {
-        if (_funcPtr != nullptr)
+        if (_func != nullptr)
         {
             _currentFixedUpdateCount++;
         }
 
         if (_currentFixedUpdateCount > _totalFixedUpdates)
         {
-            _funcPtr();
+            _func();
 
-            _funcPtr = nullptr;
+            _func = nullptr;
             _currentFixedUpdateCount = 0;
             _totalFixedUpdates = 0;
         }
@@ -21,7 +21,7 @@ namespace RB::Updaters
 
     void Scheduler::SetSchedule(std::function<void()> func, int totalFixedUpdates)
     {
-        this->_funcPtr = func;
+        this->_func = func;
         _totalFixedUpdates = totalFixedUpdates;
     }
 }

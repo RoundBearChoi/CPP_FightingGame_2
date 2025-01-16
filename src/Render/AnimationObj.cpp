@@ -15,7 +15,10 @@ namespace RB::Render
 		if (_animationRenderer != nullptr)
 		{
 			_customFixedUpdate.SetSkipFrames(_animationRenderer->GetAnimationSpecs().mSkipFixedUpdates);
-			_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
+			//_customFixedUpdate.SetFunction(this, &AnimationObj::UpdateAnimationIndex);
+
+			std::function<void()> func = std::bind(&AnimationObj::UpdateAnimationIndex, this);
+			_customFixedUpdate.SetFunction(func);
 		}
 
 		// different default amounts

@@ -12,5 +12,6 @@ namespace RB::Render
 		virtual void OnFixedUpdate() = 0;
 
 		virtual void RenderPlayerBox(bool render) = 0;
+		virtual void RenderPlayerHP(bool render) = 0;
 	};
 }

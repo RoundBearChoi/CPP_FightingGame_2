@@ -9,8 +9,11 @@ namespace RB::Render
 
 	void Player_HP_Renderer::OnUpdate()
 	{
-        _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_1);
-        _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_2);
+        if (_render)
+        {
+            _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_1);
+            _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_2);
+        }
 	}
 
 	void Player_HP_Renderer::OnFixedUpdate()
@@ -21,6 +24,11 @@ namespace RB::Render
         _p1_calculator.OnFixedUpdate();
         _p2_calculator.OnFixedUpdate();
 	}
+
+    void Player_HP_Renderer::RenderHP(bool render)
+    {
+        _render = render;
+    }
 
     void Player_HP_Renderer::_RenderPlayerHPBar(RB::Players::PlayerID playerID)
     {

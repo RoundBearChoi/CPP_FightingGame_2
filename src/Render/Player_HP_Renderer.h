@@ -21,6 +21,7 @@ namespace RB::Render
 		void Init(RB::Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
+		void RenderHP(bool render);
 
     private:
         void _RenderPlayerHPBar(RB::Players::PlayerID playerID);
@@ -30,5 +31,6 @@ namespace RB::Render
 
 	private:
 		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
+		bool _render = true;
 	};
 }

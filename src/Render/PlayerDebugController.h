@@ -33,6 +33,7 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 		void RenderPlayerBox(bool render) override;
+		void RenderPlayerHP(bool render) override;
 
 	private:
 		void _RenderBodyParts(RB::Players::PlayerID id);

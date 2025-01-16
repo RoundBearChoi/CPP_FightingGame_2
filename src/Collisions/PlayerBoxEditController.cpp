@@ -28,9 +28,11 @@ namespace RB::Collisions
 		_AddDeleteBoxOnPress(RB::Players::PlayerID::PLAYER_1);
 		_SaveOnPress();
 
+		// do NOT render gameplay stuff
 		if (RB::Render::iPlayerDebugController::Get() != nullptr)
 		{
 			RB::Render::iPlayerDebugController::Get()->RenderPlayerHP(false);
+			RB::Render::iPlayerDebugController::Get()->RenderInput(false);
 		}
 	}
 

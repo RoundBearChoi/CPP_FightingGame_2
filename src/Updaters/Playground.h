@@ -18,11 +18,11 @@
 
 namespace RB::Updaters
 {
-	class Updater : public iPlayground
+	class Playground : public iPlayground
 	{
 	public:
-		Updater();
-		~Updater() override;
+		Playground();
+		~Playground() override;
 
 	public:
 		void Init() override;
@@ -46,6 +46,6 @@ namespace RB::Updaters
 		bool _updaterIsQueued = false;
 		iUpdaterObj* _updaterObj = nullptr;
 		iUpdaterObj* _nextUpdaterObj = nullptr;
-		SkipFixedUpdates<Updater> _customUpdate;
+		SkipFixedUpdates<Playground> _customUpdate;
 	};
 }

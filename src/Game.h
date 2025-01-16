@@ -15,7 +15,7 @@
 
 #include "Render/RenderLayerType.h"
 #include "Updaters/CurrentPlayground.h"
-#include "Updaters/Updater.h"
+#include "Updaters/Playground.h"
 
 namespace RB
 {
@@ -31,7 +31,7 @@ namespace RB
 		{
 			sAppName = "C++FightingGame2";
 		
-			_playground = new RB::Updaters::Updater();
+			_playground = new RB::Updaters::Playground();
 
 			RB::Updaters::ptrCurrentPlayground = _playground;
 

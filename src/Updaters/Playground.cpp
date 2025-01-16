@@ -1,18 +1,18 @@
-#include "Updater.h"
+#include "Playground.h"
 
 namespace RB::Updaters
 {
-	Updater::Updater()
+	Playground::Playground()
 	{
-		_customUpdate.SetFunction(this, &Updater::_RunCustomUpdate);
+		_customUpdate.SetFunction(this, &Playground::_RunCustomUpdate);
 	}
 
-	Updater::~Updater()
+	Playground::~Playground()
 	{
 		delete _updaterObj;
 	}
 
-	void Updater::Init()
+	void Playground::Init()
 	{
 		bool firstQueueSuccessful = QueueUpdaterObj(new GameplayUpdater());
 
@@ -24,7 +24,7 @@ namespace RB::Updaters
 		}
 	}
 
-	void Updater::OnUpdate()
+	void Playground::OnUpdate()
 	{
 		if (!_updaterIsQueued)
 		{
@@ -35,27 +35,27 @@ namespace RB::Updaters
 		MakeUpdaterTransition();
 	}
 
-	void Updater::OnFixedUpdate()
+	void Playground::OnFixedUpdate()
 	{
 		_customUpdate.DoFixedUpdate();
 	}
 
-	void Updater::SetFixedUpdateSkips(int skips)
+	void Playground::SetFixedUpdateSkips(int skips)
 	{
 		_customUpdate.SetSkipFrames(skips);
 	}
 
-	bool Updater::QueueAttackBoxEditorUpdater()
+	bool Playground::QueueAttackBoxEditorUpdater()
 	{
 		return QueueUpdaterObj(new AttackBoxEditorUpdater());
 	}
 
-	bool Updater::QueueTargetBoxEditorUpdater()
+	bool Playground::QueueTargetBoxEditorUpdater()
 	{
 		return QueueUpdaterObj(new TargetBoxEditorUpdater());
 	}
 	
-	void Updater::SetUpdaterObj(iUpdaterObj* updaterObj)
+	void Playground::SetUpdaterObj(iUpdaterObj* updaterObj)
 	{
 		// delete previous updater obj
 		if (_updaterObj != nullptr)
@@ -77,7 +77,7 @@ namespace RB::Updaters
 		}
 	}
 
-	bool Updater::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
+	bool Playground::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
 	{
 		if (nextUpdaterObj == nullptr)
 		{
@@ -105,7 +105,7 @@ namespace RB::Updaters
 		return true;
 	}
 
-	void Updater::UpdateQueue()
+	void Playground::UpdateQueue()
 	{
 		olc::HWButton f11 = olc::Platform::ptrPGE->GetKey(olc::Key::F11);
 
@@ -146,7 +146,7 @@ namespace RB::Updaters
 		}
 	}
 
-	void Updater::MakeUpdaterTransition()
+	void Playground::MakeUpdaterTransition()
 	{
 		if (_updaterIsQueued)
 		{
@@ -156,7 +156,7 @@ namespace RB::Updaters
 		}
 	}
 
-	void Updater::_RunCustomUpdate()
+	void Playground::_RunCustomUpdate()
 	{
 		if (!_updaterIsQueued)
 		{

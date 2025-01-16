@@ -4,7 +4,7 @@ namespace RB::Updaters
 {
 	Updater::Updater()
 	{
-		// no skips by default - this can be used as a slow motion
+		// No skips by default. This will slow down everything. Can be used as slow motion
 		_customUpdate.SetSkipFrames(0);
 		_customUpdate.SetFunction(this, &Updater::_RunCustomUpdate);
 	}

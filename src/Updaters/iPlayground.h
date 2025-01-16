@@ -11,6 +11,7 @@ namespace RB::Updaters
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 		virtual void SetFixedUpdateSkips(int skips) = 0;
+		virtual void ClearFixedUpdateSkip(int fixedUpdates) = 0;
 		
 		virtual bool QueueAttackBoxEditorUpdater() = 0;
 		virtual bool QueueTargetBoxEditorUpdater() = 0;

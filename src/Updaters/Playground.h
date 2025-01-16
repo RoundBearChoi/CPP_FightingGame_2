@@ -30,6 +30,7 @@ namespace RB::Updaters
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 		void SetFixedUpdateSkips(int skips) override;
+		void ClearFixedUpdateSkip(int fixedUpdates) override;
 
 		bool QueueAttackBoxEditorUpdater() override;
 		bool QueueTargetBoxEditorUpdater() override;
@@ -42,6 +43,7 @@ namespace RB::Updaters
 
 	private:
 		void _RunCustomUpdate();
+		void _ClearSkips();
 
 	private:
 		bool _updaterIsQueued = false;

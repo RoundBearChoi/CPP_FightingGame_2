@@ -37,14 +37,23 @@ namespace RB::Updaters
 
 	void Playground::OnFixedUpdate()
 	{
-		_scheduler.OnFixedUpdate();
+		bool runFixedUpdate = _customUpdate.DoFixedUpdate();
 
-		_customUpdate.DoFixedUpdate();
+		if (runFixedUpdate)
+		{
+			_scheduler.OnFixedUpdate();
+		}
 	}
 
 	void Playground::SetFixedUpdateSkips(int skips)
 	{
 		_customUpdate.SetSkipFrames(skips);
+	}
+
+	void Playground::ClearFixedUpdateSkip(int fixedUpdates)
+	{
+		std::function<void()> func = std::bind(&Playground::_ClearSkips, this);
+		_scheduler.SetSchedule(func, fixedUpdates);
 	}
 
 	bool Playground::QueueAttackBoxEditorUpdater()
@@ -179,5 +188,10 @@ namespace RB::Updaters
 				_updater->OnFixedUpdate();
 			}
 		}
+	}
+
+	void Playground::_ClearSkips()
+	{
+		_customUpdate.ClearSkipFrames();
 	}
 }

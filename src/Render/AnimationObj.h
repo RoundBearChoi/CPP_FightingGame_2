@@ -5,7 +5,6 @@
 
 #include "AnimationRenderer.h"
 #include "CustomRenderContainer.h"
-
 #include "RenderRotationObj.h"
 #include "RenderScaleMultiplierObj.h"
 #include "RenderTransparencyObj.h"
@@ -13,6 +12,7 @@
 #include "iAnimationObj.h"
 
 #include "../Vector2.h"
+
 #include "../Updaters/SkipFixedUpdates.h"
 
 #include "../Players/iPlayer.h"

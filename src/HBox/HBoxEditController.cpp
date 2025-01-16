@@ -460,11 +460,11 @@ namespace RB::HBox
 			{
 				if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 				{
-					RB::Updaters::ptrCurrentUpdater->QueueAttackBoxEditorUpdater();
+					RB::Updaters::ptrCurrentPlayground->QueueAttackBoxEditorUpdater();
 				}
 				else if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 				{
-					RB::Updaters::ptrCurrentUpdater->QueueTargetBoxEditorUpdater();
+					RB::Updaters::ptrCurrentPlayground->QueueTargetBoxEditorUpdater();
 				}
 			}
 		}

@@ -2,10 +2,10 @@
 
 namespace RB::Updaters
 {
-	class iUpdater
+	class iPlayground
 	{
 	public:
-		virtual ~iUpdater() = default;
+		virtual ~iPlayground() = default;
 
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;

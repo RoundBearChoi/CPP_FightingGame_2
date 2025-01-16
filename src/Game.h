@@ -22,7 +22,7 @@ namespace RB
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		RB::Updaters::iUpdater* _updater = nullptr;
+		RB::Updaters::iPlayground* _playground = nullptr;
 		RB::FixedTimer _timer;
 		RB::UpdateCounter _updateCounter;
 
@@ -31,11 +31,11 @@ namespace RB
 		{
 			sAppName = "C++FightingGame2";
 		
-			_updater = new RB::Updaters::Updater();
+			_playground = new RB::Updaters::Updater();
 
-			RB::Updaters::ptrCurrentUpdater = _updater;
+			RB::Updaters::ptrCurrentPlayground = _playground;
 
-			_updater->Init();
+			_playground->Init();
 
 			//RB::Time::ResetFixedDeltaTime();
 
@@ -46,7 +46,7 @@ namespace RB
 
 		bool OnUserDestroy() override
 		{
-			delete _updater;
+			delete _playground;
 
 			return true;
 		}
@@ -61,7 +61,7 @@ namespace RB
 		{
 			if (_timer.DoFixedUpdate())
 			{
-				_updater->OnFixedUpdate();
+				_playground->OnFixedUpdate();
 
 				//RB::Time::ResetFixedDeltaTime();
 
@@ -73,7 +73,7 @@ namespace RB
 			RB::Time::SetDeltaTime(fElapsedTime);
 			//RB::Time::AddFixedDeltaTime();
 
-			_updater->OnUpdate();
+			_playground->OnUpdate();
 			_updateCounter.OnUpdate();
 
 			return true;

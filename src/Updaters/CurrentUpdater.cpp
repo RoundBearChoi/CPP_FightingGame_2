@@ -2,5 +2,5 @@
 
 namespace RB::Updaters
 {
-	iUpdater* ptrCurrentUpdater = nullptr;
+	iPlayground* ptrCurrentPlayground = nullptr;
 }

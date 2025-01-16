@@ -1,8 +1,8 @@
 #pragma once
 
-#include "iUpdater.h"
+#include "iPlayground.h"
 
 namespace RB::Updaters
 {
-	extern iUpdater* ptrCurrentUpdater;
+	extern iPlayground* ptrCurrentPlayground;
 }

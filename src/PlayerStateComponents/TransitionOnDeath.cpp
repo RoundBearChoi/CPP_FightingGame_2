@@ -25,7 +25,7 @@ namespace RB::PlayerStateComponents
 
 		if (player->GetHP() <= 0)
 		{
-			RB::Updaters::ptrCurrentUpdater->SetFixedUpdateSkips(6);
+			RB::Updaters::ptrCurrentPlayground->SetFixedUpdateSkips(6);
 			player->GetStateMachine()->QueueNextState(_vecNextStates[0]);
 		}
 	}

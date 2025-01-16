@@ -11,14 +11,14 @@
 #include "TargetBoxEditorUpdater.h"
 #include "SkipFixedUpdates.h"
 
-#include "iUpdater.h"
+#include "iPlayground.h"
 #include "iUpdaterObj.h"
 
 #include "../Collisions/iGeneralHitStopController.h"
 
 namespace RB::Updaters
 {
-	class Updater : public iUpdater
+	class Updater : public iPlayground
 	{
 	public:
 		Updater();

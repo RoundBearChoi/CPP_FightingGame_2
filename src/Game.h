@@ -14,7 +14,7 @@
 #include "DisplaySize.h"
 
 #include "Render/RenderLayerType.h"
-#include "Updaters/CurrentUpdater.h"
+#include "Updaters/CurrentPlayground.h"
 #include "Updaters/Updater.h"
 
 namespace RB

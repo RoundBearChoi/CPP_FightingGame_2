@@ -28,6 +28,7 @@ namespace RB::Updaters
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+		void SetFixedUpdateSkips(int skips) override;
 
 		bool QueueAttackBoxEditorUpdater() override;
 		bool QueueTargetBoxEditorUpdater() override;

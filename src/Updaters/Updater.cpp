@@ -42,6 +42,11 @@ namespace RB::Updaters
 		_customUpdate.DoFixedUpdate();
 	}
 
+	void Updater::SetFixedUpdateSkips(int skips)
+	{
+		_customUpdate.SetSkipFrames(skips);
+	}
+
 	bool Updater::QueueAttackBoxEditorUpdater()
 	{
 		return QueueUpdaterObj(new AttackBoxEditorUpdater());

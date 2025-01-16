@@ -8,6 +8,7 @@
 
 #include "F0_Idle.h"
 #include "F0_Crouch_Idle.h"
+#include "F0_Kneel.h"
 
 namespace RB::Fighter_0_States
 {

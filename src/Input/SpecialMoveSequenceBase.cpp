@@ -24,6 +24,11 @@ namespace RB::Input
 		std::vector<RB::Input::iInputObj*> vecCorrectObjs;
 		RB::Players::iPlayer* p = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 
+		if (p->GetHP() <= 0)
+		{
+			return false;
+		}
+
 		if (p->IsWincing())
 		{
 			return false;

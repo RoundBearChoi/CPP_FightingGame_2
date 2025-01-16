@@ -2,11 +2,11 @@
 
 namespace RB::Updaters
 {
-	class iUpdaterObj
+	class iUpdater
 	{
 	public:
-		iUpdaterObj() = default;
-		virtual ~iUpdaterObj() = default;
+		iUpdater() = default;
+		virtual ~iUpdater() = default;
 
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;

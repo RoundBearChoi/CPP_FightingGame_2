@@ -1,6 +1,6 @@
 #pragma once
 
-#include "iUpdaterObj.h"
+#include "iUpdater.h"
 
 #include "../Vector2.h"
 #include "../Players/Player.h"
@@ -17,7 +17,7 @@
 
 namespace RB::Updaters
 {
-	class PlayerBoxEditorUpdater : public iUpdaterObj
+	class PlayerBoxEditorUpdater : public iUpdater
 	{
 	public:
 		PlayerBoxEditorUpdater() = default;

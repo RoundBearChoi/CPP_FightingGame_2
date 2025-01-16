@@ -12,7 +12,7 @@
 #include "SkipFixedUpdates.h"
 
 #include "iPlayground.h"
-#include "iUpdaterObj.h"
+#include "iUpdater.h"
 
 #include "../Collisions/iGeneralHitStopController.h"
 
@@ -34,8 +34,8 @@ namespace RB::Updaters
 		bool QueueTargetBoxEditorUpdater() override;
 
 	public:
-		void SetUpdaterObj(iUpdaterObj* updaterObj);
-		bool QueueUpdaterObj(iUpdaterObj* updaterObj);
+		void SetUpdater(iUpdater* updater);
+		bool QueueUpdater(iUpdater* updater);
 		void UpdateQueue();
 		void MakeUpdaterTransition();
 
@@ -44,8 +44,8 @@ namespace RB::Updaters
 
 	private:
 		bool _updaterIsQueued = false;
-		iUpdaterObj* _updaterObj = nullptr;
-		iUpdaterObj* _nextUpdaterObj = nullptr;
+		iUpdater* _updater = nullptr;
+		iUpdater* _nextUpdater = nullptr;
 		SkipFixedUpdates<Playground> _customUpdate;
 	};
 }

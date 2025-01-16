@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "iUpdaterObj.h"
+#include "iUpdater.h"
 
 #include "../Vector2.h"
 #include "../Players/Player.h"
@@ -24,7 +24,7 @@
 
 namespace RB::Updaters
 {
-	class HBoxEditorUpdaterBase : public iUpdaterObj
+	class HBoxEditorUpdaterBase : public iUpdater
 	{
 	public:
 		HBoxEditorUpdaterBase() = default;

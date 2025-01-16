@@ -9,12 +9,12 @@ namespace RB::Updaters
 
 	Playground::~Playground()
 	{
-		delete _updaterObj;
+		delete _updater;
 	}
 
 	void Playground::Init()
 	{
-		bool firstQueueSuccessful = QueueUpdaterObj(new GameplayUpdater());
+		bool firstQueueSuccessful = QueueUpdater(new GameplayUpdater());
 
 		if (!firstQueueSuccessful)
 		{
@@ -28,7 +28,7 @@ namespace RB::Updaters
 	{
 		if (!_updaterIsQueued)
 		{
-			_updaterObj->OnUpdate();
+			_updater->OnUpdate();
 		}
 		
 		UpdateQueue();
@@ -47,39 +47,39 @@ namespace RB::Updaters
 
 	bool Playground::QueueAttackBoxEditorUpdater()
 	{
-		return QueueUpdaterObj(new AttackBoxEditorUpdater());
+		return QueueUpdater(new AttackBoxEditorUpdater());
 	}
 
 	bool Playground::QueueTargetBoxEditorUpdater()
 	{
-		return QueueUpdaterObj(new TargetBoxEditorUpdater());
+		return QueueUpdater(new TargetBoxEditorUpdater());
 	}
 	
-	void Playground::SetUpdaterObj(iUpdaterObj* updaterObj)
+	void Playground::SetUpdater(iUpdater* updater)
 	{
 		// delete previous updater obj
-		if (_updaterObj != nullptr)
+		if (_updater != nullptr)
 		{
-			delete _updaterObj;
+			delete _updater;
 
-			_updaterObj = nullptr;
+			_updater = nullptr;
 		}
 
 		// set new updater obj
-		_updaterObj = updaterObj;
+		_updater = updater;
 
-		if (_updaterObj != nullptr)
+		if (_updater != nullptr)
 		{
 			// reset slow motion
 			_customUpdate.SetSkipFrames(0);
 
-			_updaterObj->Init();
+			_updater->Init();
 		}
 	}
 
-	bool Playground::QueueUpdaterObj(iUpdaterObj* nextUpdaterObj)
+	bool Playground::QueueUpdater(iUpdater* nextUpdater)
 	{
-		if (nextUpdaterObj == nullptr)
+		if (nextUpdater == nullptr)
 		{
 			//nothing happens
 			_updaterIsQueued = false;
@@ -92,7 +92,7 @@ namespace RB::Updaters
 			//nothing happens (already queued)
 			_updaterIsQueued = false;
 
-			delete nextUpdaterObj;
+			delete nextUpdater;
 
 			return false;
 		}
@@ -100,7 +100,7 @@ namespace RB::Updaters
 		//finally queue if conditions are met
 		_updaterIsQueued = true;
 
-		_nextUpdaterObj = nextUpdaterObj;
+		_nextUpdater = nextUpdater;
 
 		return true;
 	}
@@ -115,7 +115,7 @@ namespace RB::Updaters
 
 		if (f11.bPressed)
 		{
-			if (QueueUpdaterObj(new GameplayUpdater()))
+			if (QueueUpdater(new GameplayUpdater()))
 			{
 				return;
 			}
@@ -123,7 +123,7 @@ namespace RB::Updaters
 		
 		if (f6.bPressed)
 		{
-			if (QueueUpdaterObj(new PlayerBoxEditorUpdater()))
+			if (QueueUpdater(new PlayerBoxEditorUpdater()))
 			{
 				return;
 			}
@@ -152,7 +152,7 @@ namespace RB::Updaters
 		{
 			_updaterIsQueued = false;
 
-			SetUpdaterObj(_nextUpdaterObj);
+			SetUpdater(_nextUpdater);
 		}
 	}
 
@@ -174,7 +174,7 @@ namespace RB::Updaters
 
 			if (!skip)
 			{
-				_updaterObj->OnFixedUpdate();
+				_updater->OnFixedUpdate();
 			}
 		}
 	}

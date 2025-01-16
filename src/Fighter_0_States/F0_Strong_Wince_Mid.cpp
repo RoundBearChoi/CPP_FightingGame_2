@@ -39,6 +39,7 @@ namespace RB::Fighter_0_States
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(24, 0));
 
 		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(25, new RB::Fighter_0_States::F0_Idle()));
+		AddStateComponent(new RB::PlayerStateComponents::TransitionOnDeath(25, new RB::Fighter_0_States::F0_Kneel()));
 
 		EnterStateComponents();
 	}

@@ -8,6 +8,7 @@
 #include "../PlayerStateComponents/TransitionOnFixedUpdateCount.h"
 
 #include "F0_Idle.h"
+#include "F0_Kneel.h"
 
 namespace RB::Fighter_0_States
 {

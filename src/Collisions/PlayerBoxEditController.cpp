@@ -13,26 +13,26 @@ namespace RB::Collisions
 	{
 		_ShowMenu();
 
-		PlayerBox* currentBox = _GetCurrentBox(RB::Players::PlayerID::PLAYER_1);
-
-		if (currentBox == nullptr)
-		{
-			RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(false);
-		}
-		else
-		{
-			RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(true);
-		}
-
-		_UpdateBoxSizeOnPress(currentBox);
 		_AddDeleteBoxOnPress(RB::Players::PlayerID::PLAYER_1);
 		_SaveOnPress();
 
-		// do NOT render gameplay stuff
 		if (RB::Render::iPlayerDebugController::Get() != nullptr)
 		{
 			RB::Render::iPlayerDebugController::Get()->RenderPlayerHP(false);
 			RB::Render::iPlayerDebugController::Get()->RenderInput(false);
+
+			PlayerBox* currentBox = _GetCurrentBox(RB::Players::PlayerID::PLAYER_1);
+
+			if (currentBox == nullptr)
+			{
+				RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(false);
+			}
+			else
+			{
+				RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(true);
+
+				_UpdateBoxSizeOnPress(currentBox);
+			}
 		}
 	}
 

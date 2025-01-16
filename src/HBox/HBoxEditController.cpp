@@ -1,5 +1,7 @@
 #include "HBoxEditController.h"
 
+#include "../Render/iPlayerDebugController.h"
+
 namespace RB::HBox
 {
 	HBoxEditController::HBoxEditController(RB::HBox::HBoxType boxType)
@@ -25,6 +27,12 @@ namespace RB::HBox
 		_CycleAnimations_OnPress();
 
 		_RenderCircleOnHBox(RB::Players::PlayerID::PLAYER_1);
+
+		if (RB::Render::iPlayerDebugController::Get() != nullptr)
+		{
+			RB::Render::iPlayerDebugController::Get()->RenderPlayerHP(false);
+			RB::Render::iPlayerDebugController::Get()->RenderInput(false);
+		}
 	}
 
 	void HBoxEditController::OnFixedUpdate()

@@ -80,6 +80,11 @@ namespace RB::Render
 
         RB::Players::iPlayer* player =  RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
 
+        if (player == nullptr)
+        {
+            return;
+        }
+
         float hp = (float)(player->GetHP()) * 0.01f;
 
         float currentBar = calculator->GetCurrentPercentage();

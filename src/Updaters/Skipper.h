@@ -11,48 +11,15 @@ namespace RB::Updaters
 		~Skipper() = default;
 
 	public:
-		void SetSkipFrames(unsigned int skipFrames)
-		{
-			_skipFrames = skipFrames;
-		}
+		void SetSkipFrames(unsigned int skipFrames);
 
-		void ClearSkipFrames()
-		{
-			_skipFrames = 0;
-		}
+		void ClearSkipFrames();
 
-		void SetFunction(std::function<void()> func)
-		{
-			_func = func;
-		}
+		void SetFunction(std::function<void()> func);
 
-		bool DoFixedUpdate()
-		{
-			_totalFrameCount++;
+		bool DoFixedUpdate();
 
-			if (_frameCount < _skipFrames)
-			{
-				_frameCount++;
-
-				return false;
-			}
-			else
-			{
-				_frameCount = 0;
-
-				if (_func != nullptr)
-				{
-					_func();
-				}
-
-				return true;
-			}
-		}
-
-		unsigned int GetTotalFixedUpdateCount()
-		{
-			return _totalFrameCount;
-		}
+		unsigned int GetTotalFixedUpdateCount();
 
 	private:
 		unsigned int _skipFrames = 0;

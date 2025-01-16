@@ -9,6 +9,7 @@
 #include "PlayerBoxEditorUpdater.h"
 #include "AttackBoxEditorUpdater.h"
 #include "TargetBoxEditorUpdater.h"
+#include "SkipFixedUpdates.h"
 
 #include "iUpdater.h"
 #include "iUpdaterObj.h"
@@ -38,8 +39,12 @@ namespace RB::Updaters
 		void MakeUpdaterTransition();
 
 	private:
+		void _RunCustomUpdate();
+
+	private:
 		bool _updaterIsQueued = false;
 		iUpdaterObj* _updaterObj = nullptr;
 		iUpdaterObj* _nextUpdaterObj = nullptr;
+		SkipFixedUpdates<Updater> _customUpdate;
 	};
 }

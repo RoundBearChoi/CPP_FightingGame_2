@@ -4,7 +4,9 @@ namespace RB::Updaters
 {
 	Updater::Updater()
 	{
-		
+		// no skips by default
+		_customUpdate.SetSkipFrames(0);
+		_customUpdate.SetFunction(this, &Updater::_RunCustomUpdate);
 	}
 
 	Updater::~Updater()
@@ -37,25 +39,7 @@ namespace RB::Updaters
 
 	void Updater::OnFixedUpdate()
 	{
-		if (!_updaterIsQueued)
-		{
-			bool skip = false;
-
-			if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
-			{
-				if (RB::Collisions::iGeneralHitStopController::Get()->SkipFrame())
-				{
-					//std::cout << "skipping fixed update.." << std::endl;
-
-					skip = true;
-				}
-			}
-
-			if (!skip)
-			{
-				_updaterObj->OnFixedUpdate();
-			}
-		}
+		_customUpdate.DoFixedUpdate();
 	}
 
 	bool Updater::QueueAttackBoxEditorUpdater()
@@ -163,6 +147,29 @@ namespace RB::Updaters
 			_updaterIsQueued = false;
 
 			SetUpdaterObj(_nextUpdaterObj);
+		}
+	}
+
+	void Updater::_RunCustomUpdate()
+	{
+		if (!_updaterIsQueued)
+		{
+			bool skip = false;
+
+			if (RB::Collisions::iGeneralHitStopController::Get() != nullptr)
+			{
+				if (RB::Collisions::iGeneralHitStopController::Get()->SkipFrame())
+				{
+					//std::cout << "skipping fixed update.." << std::endl;
+
+					skip = true;
+				}
+			}
+
+			if (!skip)
+			{
+				_updaterObj->OnFixedUpdate();
+			}
 		}
 	}
 }

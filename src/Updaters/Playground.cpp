@@ -4,7 +4,6 @@ namespace RB::Updaters
 {
 	Playground::Playground()
 	{
-		//_customUpdate.SetFunction(this, &Playground::_RunCustomUpdate);
 		std::function<void()> func = std::bind(&Playground::_RunCustomUpdate, this);
 		_customUpdate.SetFunction(func);
 	}

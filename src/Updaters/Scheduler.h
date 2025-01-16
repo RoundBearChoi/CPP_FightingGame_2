@@ -2,7 +2,7 @@
 
 #include <functional>
 
-namespace RB
+namespace RB::Updaters
 {
     class Scheduler
     {

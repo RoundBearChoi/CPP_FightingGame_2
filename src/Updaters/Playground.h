@@ -4,7 +4,8 @@
 #include <assert.h>
 
 #include "../olcPixelGameEngine.h"
-#include "../Scheduler.h"
+
+#include "../Updaters/Scheduler.h"
 
 #include "GameplayUpdater.h"
 #include "PlayerBoxEditorUpdater.h"

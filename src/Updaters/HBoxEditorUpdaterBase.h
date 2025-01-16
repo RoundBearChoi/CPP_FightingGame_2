@@ -7,6 +7,7 @@
 #include "../Vector2.h"
 #include "../Players/Player.h"
 #include "../HBox/HBoxType.h"
+#include "../Sprites/SpriteTypeLoader.h"
 
 #include "../Input/InputController.h"
 #include "../Cam/CamController.h"
@@ -18,7 +19,6 @@
 #include "../HBox/TargetBoxDataController.h"
 #include "../HBox/AttackBoxDataController.h"
 #include "../HBox/HBoxEditController.h"
-#include "../Sprites/SpriteTypeLoader.h"
 
 #include "../Fighter_0_States/F0_Dummy.h"
 

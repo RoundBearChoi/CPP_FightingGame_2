@@ -1,5 +1,7 @@
 #include "PlayerBoxEditController.h"
 
+#include "../Render/iPlayerDebugController.h"
+
 namespace RB::Collisions
 {
 	void PlayerBoxEditController::Init()
@@ -25,6 +27,11 @@ namespace RB::Collisions
 		_UpdateBoxSizeOnPress(currentBox);
 		_AddDeleteBoxOnPress(RB::Players::PlayerID::PLAYER_1);
 		_SaveOnPress();
+
+		if (RB::Render::iPlayerDebugController::Get() != nullptr)
+		{
+			RB::Render::iPlayerDebugController::Get()->RenderPlayerHP(false);
+		}
 	}
 
 	void PlayerBoxEditController::OnFixedUpdate()

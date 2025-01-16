@@ -12,13 +12,9 @@ namespace RB::Updaters
 
 	public:
 		void SetSkipFrames(unsigned int skipFrames);
-
 		void ClearSkipFrames();
-
 		void SetFunction(std::function<void()> func);
-
 		bool DoFixedUpdate();
-
 		unsigned int GetTotalFixedUpdateCount();
 
 	private:

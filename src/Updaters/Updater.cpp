@@ -4,8 +4,6 @@ namespace RB::Updaters
 {
 	Updater::Updater()
 	{
-		// No skips by default. This will slow down everything. Can be used as slow motion
-		_customUpdate.SetSkipFrames(0);
 		_customUpdate.SetFunction(this, &Updater::_RunCustomUpdate);
 	}
 
@@ -72,6 +70,9 @@ namespace RB::Updaters
 
 		if (_updaterObj != nullptr)
 		{
+			// reset slow motion
+			_customUpdate.SetSkipFrames(0);
+
 			_updaterObj->Init();
 		}
 	}

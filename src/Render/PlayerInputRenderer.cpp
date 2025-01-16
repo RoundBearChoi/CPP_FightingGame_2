@@ -9,13 +9,21 @@ namespace RB::Render
 
 	void PlayerInputRenderer::OnUpdate()
 	{
-		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 45);
-		_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 70);
+		if (_render)
+		{
+			_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 45);
+			_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 70);
+		}
 	}
 
 	void PlayerInputRenderer::OnFixedUpdate()
 	{
 
+	}
+
+	void PlayerInputRenderer::RenderInput(bool render)
+	{
+		_render = render;
 	}
 
 	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos)

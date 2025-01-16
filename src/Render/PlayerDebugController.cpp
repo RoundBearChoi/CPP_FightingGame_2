@@ -73,6 +73,11 @@ namespace RB::Render
 		_player_HP_Renderer.RenderHP(render);
 	}
 
+	void PlayerDebugController::RenderInput(bool render)
+	{
+		_playerInputRenderer.RenderInput(render);
+	}
+
 	void PlayerDebugController::_RenderBodyParts(RB::Players::PlayerID id)
 	{
 		if (RB::Players::iPlayerController::Get() == nullptr)

@@ -13,5 +13,6 @@ namespace RB::Render
 
 		virtual void RenderPlayerBox(bool render) = 0;
 		virtual void RenderPlayerHP(bool render) = 0;
+		virtual void RenderInput(bool render) = 0;
 	};
 }

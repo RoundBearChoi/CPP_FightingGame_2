@@ -34,6 +34,7 @@ namespace RB::Render
 
 		void RenderPlayerBox(bool render) override;
 		void RenderPlayerHP(bool render) override;
+		void RenderInput(bool render) override;
 
 	private:
 		void _RenderBodyParts(RB::Players::PlayerID id);

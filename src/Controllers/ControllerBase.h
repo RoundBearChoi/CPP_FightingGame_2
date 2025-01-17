@@ -5,10 +5,11 @@
 #include "../olcPixelGameEngine.h"
 
 #include "ControllerType.h"
+#include "iController.h"
 
 namespace RB::Controllers
 {
-	class ControllerBase
+	class ControllerBase : public iController
 	{
 	public:
 		static std::vector<ControllerBase*> vecControllers;

@@ -8,7 +8,7 @@ namespace RB::Updaters
     {
     public:
         Scheduler() = default;
-        ~Scheduler() = default;
+        ~Scheduler();
 
         void OnFixedUpdate();
         void SetSchedule(std::function<void()> func, int totalFixedUpdates);

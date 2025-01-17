@@ -4,8 +4,6 @@
 
 #include "../olcPixelGameEngine.h"
 
-#include "ControllerType.h"
-
 namespace RB::Controllers
 {
 	class ControllerBase
@@ -35,9 +33,5 @@ namespace RB::Controllers
 		virtual void Init() {};
 		virtual void OnUpdate() {};
 		virtual void OnFixedUpdate() {};
-		virtual ControllerType GetType() { return _controllerType; }
-
-	protected:
-		ControllerType _controllerType = ControllerType::NONE;
 	};
 }

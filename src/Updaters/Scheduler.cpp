@@ -2,6 +2,11 @@
 
 namespace RB::Updaters
 {
+    Scheduler::~Scheduler()
+    {
+        
+    }
+
     void Scheduler::OnFixedUpdate()
     {
         if (_func != nullptr)
@@ -21,7 +26,7 @@ namespace RB::Updaters
 
     void Scheduler::SetSchedule(std::function<void()> func, int totalFixedUpdates)
     {
-        this->_func = func;
+        _func = func;
         _totalFixedUpdates = totalFixedUpdates;
     }
 }

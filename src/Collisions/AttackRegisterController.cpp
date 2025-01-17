@@ -70,8 +70,8 @@ namespace RB::Collisions
 
 		if (reg.target->GetHP() <= 0)
 		{
-			Updaters::ptrCurrentPlayground->SetFixedUpdateSkips(6);
-			Updaters::ptrCurrentPlayground->ClearFixedUpdateSkip(10);
+			Updaters::ptrCurrentPlayground->SetFixedUpdateSkips(8);
+			Updaters::ptrCurrentPlayground->ClearFixedUpdateSkip(12);
 		}
 
 		return true;

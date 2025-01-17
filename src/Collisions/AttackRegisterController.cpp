@@ -1,7 +1,8 @@
 #include "AttackRegisterController.h"
 
 //temp
-#include "../Fighter_0_States/F0_Kneel.h"
+//#include "../Fighter_0_States/F0_Kneel.h"
+#include "../Updaters/CurrentPlayground.h"
 
 namespace RB::Collisions
 {
@@ -67,16 +68,11 @@ namespace RB::Collisions
 			}
 		}
 
-		//if (reg.target->GetHP() <= 0)
-		//{
-		//	std::cout << std::endl;
-		//	std::cout << "PLAYER " << reg.target->GetPlayerID_int() << " IS DEAD! locking transition.." << std::endl;
-		//
-		//	// temp - need a dynamic death animation getter
-		//	reg.target->GetStateMachine()->ClearQueuedStates();
-		//	reg.target->GetStateMachine()->QueueNextState(new RB::Fighter_0_States::F0_Kneel());
-		//	reg.target->GetStateMachine()->LockTransition(true);
-		//}
+		if (reg.target->GetHP() <= 0)
+		{
+			Updaters::ptrCurrentPlayground->SetFixedUpdateSkips(6);
+			Updaters::ptrCurrentPlayground->ClearFixedUpdateSkip(10);
+		}
 
 		return true;
 	}

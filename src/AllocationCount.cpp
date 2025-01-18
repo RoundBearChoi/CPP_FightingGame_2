@@ -1,36 +1,36 @@
 #include "AllocationCount.h"
 
-#if ALLOC_COUNT
+int numObjects = 0;
+bool showAllocCount = false;
+std::mutex allocMutex;
 
-    size_t numObjects = 0;
-    bool showAllocCount = true;
-    bool onlyShowZeroCount = false;
+#if ALLOC_COUNT
 
     void* operator new(std::size_t size)
     {
+        std::lock_guard<std::mutex> lock(allocMutex);
         ++numObjects;
-        
+
         //std::cout << "allocation count: " << numObjects << std::endl;;
+
+        if (numObjects == 94)
+        {
+            int n = 0;
+        }
 
         return std::malloc(size);
     }
 
     void operator delete(void* ptr) NOEXCEPT
     {
+        std::lock_guard<std::mutex> lock(allocMutex);
         --numObjects;
 
         std::free(ptr);
 
         if (showAllocCount)
         {
-            if (onlyShowZeroCount && numObjects != 0)
-            {
-                // do nothing
-            }
-            else
-            {
-                std::cout << "allocation count: " << numObjects << std::endl;;
-            }
+            std::cout << "allocation count: " << numObjects << std::endl;; 
         }
     }
 

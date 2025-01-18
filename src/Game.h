@@ -1,12 +1,12 @@
 #pragma once
 
+#include "AllocationCount.h"
 #define OLC_PGE_APPLICATION 0
 
 #include <iostream>
 
 #include "olcPixelGameEngine.h"
 
-#include "AllocationCount.h"
 #include "GameFrame.h"
 #include "Time.h"
 #include "FixedTimer.h"
@@ -27,10 +27,24 @@ namespace RB
 		RB::UpdateCounter _updateCounter;
 
 	public:
+		Game()
+		{
+			
+		}
+
+		~Game() override
+		{
+			//std::cout << std::endl;
+			//std::cout << "destructing game.." << numObjects << std::endl;
+			//showAllocCount = true;
+		}
+
 		bool OnUserCreate() override
 		{
 			sAppName = "C++FightingGame2";
 		
+			std::cout << "before creating playground.. " << numObjects << std::endl << std::endl;
+
 			_playground = new RB::Updaters::Playground();
 
 			RB::Updaters::ptrCurrentPlayground = _playground;
@@ -49,12 +63,6 @@ namespace RB
 			delete _playground;
 
 			return true;
-		}
-
-		~Game()
-		{
-			std::cout << std::endl;
-			std::cout << "destructing game class.." << std::endl;
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override
@@ -83,10 +91,12 @@ namespace RB
 		{
 			if (Construct(displayWidth, displayHeight, 1, 1, false, false, false))
 			{
-				std::cout << "--- current working directory: " << std::filesystem::current_path() << " ---" << std::endl;
+				std::cout << "current working directory: " << std::filesystem::current_path()  << std::endl;
 				std::cout << std::endl;
 
 				Start();
+
+				std::cout << std::endl << "after game loop.. " << numObjects << std::endl;
 			}
 		}
 	};

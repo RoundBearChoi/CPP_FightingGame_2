@@ -1,27 +1,25 @@
 #pragma once
 
 #include <iostream>
+#include <cstdlib>
+#include <mutex>
 
 #ifdef __clang__
     #include <new>
     #define NOEXCEPT noexcept
-#elif __GNUC__
-    #include <new>
-    #define NOEXCEPT _GLIBCXX_USE_NOEXCEPT
 #else
     #define NOEXCEPT
-
 #endif
+
+extern int numObjects;
+extern bool showAllocCount;
+extern std::mutex allocMutex;
 
 #define ALLOC_COUNT true
 
 #if ALLOC_COUNT
-
-    extern size_t numObjects;
-    extern bool showAllocCount;
-    extern bool onlyShowZeroCount;
-
     void* operator new(std::size_t size);
-    void operator delete(void* ptr) NOEXCEPT;
-
+    // operator delete function is declared with noexcept
+    // function should match this declaration
+    void operator delete(void* ptr) NOEXCEPT; 
 #endif

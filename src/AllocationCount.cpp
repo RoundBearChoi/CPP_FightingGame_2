@@ -1,6 +1,7 @@
 #include "AllocationCount.h"
 
 int numObjects = 0;
+int numObjBeforePlayground = 0;
 bool showAllocCount = false;
 std::mutex allocMutex;
 
@@ -10,13 +11,6 @@ std::mutex allocMutex;
     {
         std::lock_guard<std::mutex> lock(allocMutex);
         ++numObjects;
-
-        //std::cout << "allocation count: " << numObjects << std::endl;;
-
-        if (numObjects == 94)
-        {
-            int n = 0;
-        }
 
         return std::malloc(size);
     }

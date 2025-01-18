@@ -44,6 +44,7 @@ namespace RB
 			sAppName = "C++FightingGame2";
 		
 			std::cout << "before creating playground.. " << numObjects << std::endl << std::endl;
+			numObjBeforePlayground = numObjects;
 
 			_playground = new RB::Updaters::Playground();
 
@@ -96,7 +97,8 @@ namespace RB
 
 				Start();
 
-				std::cout << std::endl << "after game loop.. " << numObjects << std::endl;
+				std::cout << std::endl << "after gameloop.. " << numObjects << std::endl;
+				std::cout << std::endl << "difference = after playground - before playground = " << numObjects - numObjBeforePlayground << std::endl << std::endl;
 			}
 		}
 	};

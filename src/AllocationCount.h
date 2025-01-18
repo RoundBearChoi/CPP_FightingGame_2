@@ -12,6 +12,7 @@
 #endif
 
 extern int numObjects;
+extern int numObjBeforePlayground;
 extern bool showAllocCount;
 extern std::mutex allocMutex;
 

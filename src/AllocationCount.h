@@ -8,7 +8,7 @@
     #include <new>
     #define NOEXCEPT noexcept
 #else
-    #define NOEXCEPT
+    #define NOEXCEPT 
 #endif
 
 extern int numObjects;

@@ -29,7 +29,7 @@ namespace RB
 	public:
 		Game()
 		{
-
+			
 		}
 
 		~Game() override

@@ -29,21 +29,22 @@ namespace RB
 	public:
 		Game()
 		{
-			
+
 		}
 
 		~Game() override
 		{
-			//std::cout << std::endl;
-			//std::cout << "destructing game.." << numObjects << std::endl;
-			//showAllocCount = true;
+			delete _playground;
+
+			std::cout << std::endl;
+			std::cout << "alloc count after deleting playground: " << numObjBeforePlayground << std::endl;
 		}
 
 		bool OnUserCreate() override
 		{
 			sAppName = "C++FightingGame2";
 		
-			std::cout << "before creating playground.. " << numObjects << std::endl << std::endl;
+			std::cout << "alloc count before creating playground: " << numObjects << std::endl << std::endl;
 			numObjBeforePlayground = numObjects;
 
 			_playground = new RB::Updaters::Playground();
@@ -52,8 +53,6 @@ namespace RB
 
 			_playground->Init();
 
-			//RB::Time::ResetFixedDeltaTime();
-
 			RB::Render::CreateLayers();
 
 			return true;
@@ -61,8 +60,6 @@ namespace RB
 
 		bool OnUserDestroy() override
 		{
-			delete _playground;
-
 			return true;
 		}
 
@@ -72,15 +69,12 @@ namespace RB
 			{
 				_playground->OnFixedUpdate();
 
-				//RB::Time::ResetFixedDeltaTime();
-
 				RB::AddGameFrame();
 			}
 
 			RB::Render::ClearLayers();
 
 			RB::Time::SetDeltaTime(fElapsedTime);
-			//RB::Time::AddFixedDeltaTime();
 
 			_playground->OnUpdate();
 			_updateCounter.OnUpdate();
@@ -96,9 +90,6 @@ namespace RB
 				std::cout << std::endl;
 
 				Start();
-
-				std::cout << std::endl << "after gameloop.. " << numObjects << std::endl;
-				std::cout << std::endl << "difference = after playground - before playground = " << numObjects - numObjBeforePlayground << std::endl << std::endl;
 			}
 		}
 	};

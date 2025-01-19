@@ -6,8 +6,9 @@ int main()
 	RB::Game game;
 	game.Run();
 
-	std::cout << "ending program.. press enter to exit.." << std::endl;
-	std::cin.get();
+	//std::cout << std::endl;
+	//std::cout << "ending program.. press enter to exit.." << std::endl;
+	//std::cin.get();
 
 	return 0;
 }

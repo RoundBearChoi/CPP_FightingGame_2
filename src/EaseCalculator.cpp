@@ -79,7 +79,7 @@ namespace RB
         _currentFixedUpdateCount = 0;
         _startingPercentage = 0.0f;
         _targetPercentage = 0.0f;
-        _totalFixedUpdateCount = 0.0f;
+        _totalFixedUpdateCount = 0;
         _easeType = EaseType::NONE;
     }
 

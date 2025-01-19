@@ -29,7 +29,7 @@ namespace RB
 	public:
 		Game()
 		{
-			
+
 		}
 
 		~Game() override
@@ -38,6 +38,7 @@ namespace RB
 
 			std::cout << std::endl;
 			std::cout << "alloc count after deleting playground: " << numObjBeforePlayground << std::endl;
+			std::cout << std::endl;
 		}
 
 		bool OnUserCreate() override

@@ -2,11 +2,13 @@
 
 #include <vector>
 
+#include "iUpdater.h"
+
 #include "../Controllers/iController.h"
 
 namespace RB::Updaters
 {
-    class UpdaterBase
+    class UpdaterBase : public iUpdater
     {
     public:
         UpdaterBase() = default;

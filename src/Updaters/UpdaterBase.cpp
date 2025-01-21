@@ -29,6 +29,19 @@ namespace RB::Updaters
         return true;
     }
 
+    Controllers::iController* UpdaterBase::GetController(Controllers::ControllerType controllerType)
+    {
+        for (int i = 0; i < _vecControllers.size(); i++)
+        {
+            if (controllerType == _vecControllers[i]->GetControllerType())
+            {
+                return _vecControllers[i];
+            }
+        }
+
+        return nullptr;
+    }
+
     void UpdaterBase::_FixedUpdateControllers()
     {
         for (int i = 0; i < _vecControllers.size(); i++)

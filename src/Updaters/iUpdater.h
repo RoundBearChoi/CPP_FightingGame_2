@@ -1,5 +1,8 @@
 #pragma once
 
+#include "../Controllers/iController.h"
+#include "../Controllers/ControllerType.h"
+
 namespace RB::Updaters
 {
 	class iUpdater
@@ -11,5 +14,8 @@ namespace RB::Updaters
 		virtual void Init() = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
+
+		virtual bool AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) = 0;
+		virtual Controllers::iController* GetController(Controllers::ControllerType controllerType) = 0;
 	};
 }

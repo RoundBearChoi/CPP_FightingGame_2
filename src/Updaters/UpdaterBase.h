@@ -4,8 +4,6 @@
 
 #include "iUpdater.h"
 
-#include "../Controllers/iController.h"
-
 namespace RB::Updaters
 {
     class UpdaterBase : public iUpdater
@@ -15,16 +13,13 @@ namespace RB::Updaters
         virtual ~UpdaterBase();
 
     public:
-        virtual void Init() = 0;
-        virtual void OnFixedUpdate() = 0;
-        virtual void OnUpdate() = 0;
+        virtual void Init() override {}
+        virtual void OnFixedUpdate() override {}
+        virtual void OnUpdate() override {}
 
     public:
-        virtual bool AddController(Controllers::iController* controller, Controllers::ControllerType controllerType);
-
-    public:
-    template<typename T>
-    T* GetController(Controllers::ControllerType controllerType);
+        virtual bool AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) override;
+        virtual Controllers::iController* GetController(Controllers::ControllerType controllerType) override;
 
     protected:
         virtual void _FixedUpdateControllers();

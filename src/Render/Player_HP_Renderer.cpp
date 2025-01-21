@@ -104,7 +104,7 @@ namespace RB::Render
             // set new target
             if (calculator->GetEaseType() == EaseType::NONE)
             {
-                calculator->SetTarget(speed, EaseType::EaseInQuad, currentBar, hp);
+                calculator->SetTarget(speed, EaseType::EaseInSine, currentBar, hp);
             }
             // update target
             else if (calculator->GetTargetPercentage() != hp)

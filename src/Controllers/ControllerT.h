@@ -18,7 +18,7 @@ namespace RB::Controllers
             _instance = static_cast<T*>(this);
         }
 
-        ~ControllerT() override
+        virtual ~ControllerT() override
         {
             _instance = nullptr;
         }

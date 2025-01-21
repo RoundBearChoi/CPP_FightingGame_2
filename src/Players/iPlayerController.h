@@ -10,9 +10,11 @@ namespace RB::Players
 	class iPlayerController : public RB::Controllers::ControllerT<iPlayerController>
 	{
 	public:
-		virtual void Init() = 0;
-		virtual void OnUpdate() = 0;
-		virtual void OnFixedUpdate() = 0;
+		virtual ~iPlayerController() override {}
+
+		virtual void Init() override {}
+		virtual void OnUpdate() override {}
+		virtual void OnFixedUpdate() override {}
 
 	public:
 		virtual iPlayer* AddPlayer(iPlayer* player) = 0;

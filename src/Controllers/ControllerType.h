@@ -6,6 +6,6 @@ namespace RB::Controllers
     {
         NONE,
 
-
+        PLAYER_CONTROLLER,
     };
 }

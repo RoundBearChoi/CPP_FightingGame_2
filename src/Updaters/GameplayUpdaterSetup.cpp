@@ -6,6 +6,6 @@ namespace RB::Updaters
 {
     GameplayUpdaterSetup::GameplayUpdaterSetup(UpdaterBase* updater)
     {
-        //updater->AddController(new Players::PlayerController());
+        updater->AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
     }
 }

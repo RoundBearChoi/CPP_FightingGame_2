@@ -35,4 +35,9 @@ namespace RB::Controllers
 	{
 		return _controllerType;
 	}
+
+	void ControllerBase::SetControllerType(ControllerType controllerType)
+	{
+		_controllerType = controllerType;
+	}
 }

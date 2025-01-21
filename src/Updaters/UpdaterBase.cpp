@@ -13,7 +13,7 @@ namespace RB::Updaters
         _vecControllers.clear();
     }
 
-    bool UpdaterBase::AddController(Controllers::iController* controller)
+    bool UpdaterBase::AddController(Controllers::iController* controller, Controllers::ControllerType controllerType)
     {
         for (int i = 0; i < _vecControllers.size(); i++)
         {
@@ -23,6 +23,8 @@ namespace RB::Updaters
                 return false;
             }
         }
+
+        controller->SetControllerType(controllerType);
 
         _vecControllers.push_back(controller);
 

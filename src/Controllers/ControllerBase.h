@@ -35,7 +35,8 @@ namespace RB::Controllers
 		virtual void Init() override {};
 		virtual void OnUpdate() override {};
 		virtual void OnFixedUpdate() override {};
-		ControllerType GetControllerType() override;
+		virtual ControllerType GetControllerType() override;
+		virtual void SetControllerType(ControllerType controllerType) override;
 
 	protected:
 		ControllerType _controllerType = ControllerType::NONE;

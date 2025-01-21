@@ -20,7 +20,7 @@ namespace RB::Updaters
         virtual void OnUpdate() = 0;
 
     public:
-        virtual bool AddController(Controllers::iController* controller);
+        virtual bool AddController(Controllers::iController* controller, Controllers::ControllerType controllerType);
 
     public:
     template<typename T>

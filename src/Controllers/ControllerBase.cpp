@@ -30,4 +30,9 @@ namespace RB::Controllers
 
 		vecControllers.clear();
 	}
+
+	ControllerType ControllerBase::GetControllerType()
+	{
+		return _controllerType;
+	}
 }

@@ -2,11 +2,13 @@
 
 #include <vector>
 
+#include "iController.h"
+
 #include "../olcPixelGameEngine.h"
 
 namespace RB::Controllers
 {
-	class ControllerBase
+	class ControllerBase : public iController
 	{
 	public:
 		static std::vector<ControllerBase*> vecControllers;
@@ -27,11 +29,15 @@ namespace RB::Controllers
 
 	public:
 		ControllerBase() = default;
-		virtual ~ControllerBase() {};
+		virtual ~ControllerBase() override {};
 
 	public:
-		virtual void Init() {};
-		virtual void OnUpdate() {};
-		virtual void OnFixedUpdate() {};
+		virtual void Init() override {};
+		virtual void OnUpdate() override {};
+		virtual void OnFixedUpdate() override {};
+		ControllerType GetControllerType() override;
+
+	protected:
+		ControllerType _controllerType = ControllerType::NONE;
 	};
 }

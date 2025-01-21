@@ -10,7 +10,7 @@ namespace RB::Updaters
 
 	void GameplayUpdater::Init()
 	{
-		GameplayUpdaterSetup setup;
+		GameplayUpdaterSetup setup(this);
 
 		//render background first
 		RB::Controllers::ControllerBase::AddController<RB::Background::BackgroundController>(new RB::Background::BackgroundController());

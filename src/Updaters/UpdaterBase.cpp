@@ -29,13 +29,14 @@ namespace RB::Updaters
         return true;
     }
 
-    Controllers::iController* UpdaterBase::GetController(Controllers::ControllerType controllerType)
+    template<typename T>
+    T* UpdaterBase::GetController(Controllers::ControllerType controllerType)
     {
         for (int i = 0; i < _vecControllers.size(); i++)
         {
             if (controllerType == _vecControllers[i]->GetControllerType())
             {
-                return _vecControllers[i];
+                return static_cast<T>(_vecControllers[i]);
             }
         }
 

@@ -21,7 +21,10 @@ namespace RB::Updaters
 
     public:
         virtual bool AddController(Controllers::iController* controller);
-        virtual Controllers::iController* GetController(Controllers::ControllerType controllerType);
+
+    public:
+    template<typename T>
+    T* GetController(Controllers::ControllerType controllerType);
 
     protected:
         virtual void _FixedUpdateControllers();

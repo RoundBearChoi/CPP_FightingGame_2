@@ -49,10 +49,14 @@ namespace RB::Updaters
 	void GameplayUpdater::OnUpdate()
 	{
 		RB::Controllers::ControllerBase::UpdateAll();
+
+		_UpdateControllers();
 	}
 
 	void GameplayUpdater::OnFixedUpdate()
 	{
 		RB::Controllers::ControllerBase::FixedUpdateAll();
+
+		_FixedUpdateControllers();
 	}
 }

@@ -28,4 +28,20 @@ namespace RB::Updaters
 
         return true;
     }
+
+    void UpdaterBase::_FixedUpdateControllers()
+    {
+        for (int i = 0; i < _vecControllers.size(); i++)
+        {
+            _vecControllers[i]->OnFixedUpdate();
+        }
+    }
+
+    void UpdaterBase::_UpdateControllers()
+    {
+        for (int i = 0; i < _vecControllers.size(); i++)
+        {
+            _vecControllers[i]->OnUpdate();
+        }
+    }
 }

@@ -1,4 +1,5 @@
 #include "GameplayUpdater.h"
+#include "GameplayUpdaterSetup.h"
 
 namespace RB::Updaters
 {
@@ -9,6 +10,8 @@ namespace RB::Updaters
 
 	void GameplayUpdater::Init()
 	{
+		GameplayUpdaterSetup setup;
+
 		//render background first
 		RB::Controllers::ControllerBase::AddController<RB::Background::BackgroundController>(new RB::Background::BackgroundController());
 

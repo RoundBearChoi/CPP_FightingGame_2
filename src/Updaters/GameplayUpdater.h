@@ -1,6 +1,7 @@
 #pragma once
 
 #include "UpdaterBase.h"
+#include "GameplayUpdaterSetup.h"
 
 #include "../Vector2.h"
 #include "../Players/Player.h"

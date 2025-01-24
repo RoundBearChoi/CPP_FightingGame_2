@@ -1,10 +1,12 @@
 #pragma once
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Background
 {
-	class iBackgroundController : public RB::Controllers::ControllerT<iBackgroundController>
+	#define GET_BACKGROUND_CONTROLLER static_cast<RB::Background::iBackgroundController*>(RB::Controllers::GetController(Controllers::ControllerType::BACKGROUND_CONTROLLER))
+
+	class iBackgroundController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

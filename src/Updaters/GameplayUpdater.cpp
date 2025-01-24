@@ -12,10 +12,14 @@ namespace RB::Updaters
 	{
 		GameplayUpdaterSetup setup(this);
 
-		//render background first
-		RB::Controllers::ControllerBase::AddController<RB::Background::BackgroundController>(new RB::Background::BackgroundController());
+		RB::Background::iBackgroundController* backgroundController = GET_BACKGROUND_CONTROLLER;
 
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER; //RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
+		backgroundController->Init();
+
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		playerController->Init();
+
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 		RB::Players::iPlayer* p1 = playerController->AddPlayer(new RB::Players::Player());
 
@@ -51,15 +55,15 @@ namespace RB::Updaters
 
 	void GameplayUpdater::OnUpdate()
 	{
-		RB::Controllers::ControllerBase::UpdateAll();
-
 		_UpdateControllers();
+
+		RB::Controllers::ControllerBase::UpdateAll();
 	}
 
 	void GameplayUpdater::OnFixedUpdate()
 	{
-		RB::Controllers::ControllerBase::FixedUpdateAll();
-
 		_FixedUpdateControllers();
+
+		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }

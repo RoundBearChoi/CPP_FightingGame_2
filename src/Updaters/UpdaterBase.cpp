@@ -17,7 +17,7 @@ namespace RB::Updaters
     {
         for (int i = 0; i < _vecControllers.size(); i++)
         {
-            if (_vecControllers[i]->GetControllerType() != Controllers::ControllerType::NONE)
+            if (_vecControllers[i]->GetControllerType() == controllerType)
             {
                 // controller already exists
                 return false;

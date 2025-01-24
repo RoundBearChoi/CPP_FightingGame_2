@@ -7,5 +7,6 @@ namespace RB::Controllers
         NONE,
 
         PLAYER_CONTROLLER,
+        BACKGROUND_CONTROLLER,
     };
 }

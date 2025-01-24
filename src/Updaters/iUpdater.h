@@ -15,7 +15,7 @@ namespace RB::Updaters
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual bool AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) = 0;
+		virtual Controllers::iController* AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) = 0;
 		virtual Controllers::iController* GetController(Controllers::ControllerType controllerType) = 0;
 	};
 }

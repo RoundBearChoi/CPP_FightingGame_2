@@ -13,14 +13,14 @@ namespace RB::Updaters
         _vecControllers.clear();
     }
 
-    bool UpdaterBase::AddController(Controllers::iController* controller, Controllers::ControllerType controllerType)
+    Controllers::iController* UpdaterBase::AddController(Controllers::iController* controller, Controllers::ControllerType controllerType)
     {
         for (int i = 0; i < _vecControllers.size(); i++)
         {
             if (_vecControllers[i]->GetControllerType() == controllerType)
             {
                 // controller already exists
-                return false;
+                return nullptr;
             }
         }
 
@@ -28,7 +28,7 @@ namespace RB::Updaters
 
         _vecControllers.push_back(controller);
 
-        return true;
+        return controller;
     }
 
     Controllers::iController* UpdaterBase::GetController(Controllers::ControllerType controllerType)

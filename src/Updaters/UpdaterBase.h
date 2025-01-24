@@ -18,7 +18,7 @@ namespace RB::Updaters
         virtual void OnUpdate() override {}
 
     public:
-        virtual bool AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) override;
+        virtual Controllers::iController* AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) override;
         virtual Controllers::iController* GetController(Controllers::ControllerType controllerType) override;
 
     protected:

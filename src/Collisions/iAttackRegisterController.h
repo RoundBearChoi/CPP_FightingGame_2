@@ -6,7 +6,7 @@
 
 namespace RB::Collisions
 {
-	#define GET_ATTACK_REGISTER_CONTROLLER static_cast<RB::Collisions::iAttackRegisterController*>(RB::Controllers::GetController(Controllers::ControllerType::ATTACK_REGISTER_CONTROLLER))
+	#define GET_ATTACK_REGISTER_CONTROLLER static_cast<Collisions::iAttackRegisterController*>(Controllers::GetController(Controllers::ControllerType::ATTACK_REGISTER_CONTROLLER))
 	
 	class iAttackRegisterController : public Controllers::ControllerBase
 	{

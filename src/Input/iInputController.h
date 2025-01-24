@@ -11,15 +11,11 @@
 
 namespace RB::Input
 {
-	#define GET_INPUT_CONTROLLER static_cast<RB::Input::iInputController*>(RB::Controllers::GetController(Controllers::ControllerType::INPUT_CONTROLLER))
+	#define GET_INPUT_CONTROLLER static_cast<Input::iInputController*>(Controllers::GetController(Controllers::ControllerType::INPUT_CONTROLLER))
 
 	class iInputController : public RB::Controllers::ControllerBase
 	{
 	public:
-		virtual void Init() = 0;
-		virtual void OnUpdate() = 0;
-		virtual void OnFixedUpdate() = 0;
-
 		virtual olc::HWButton GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual iInputObj* GetInputOBJ_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;

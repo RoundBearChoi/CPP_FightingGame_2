@@ -13,10 +13,6 @@ namespace RB::Collisions
 	class iPlayerBoxDataController : public Controllers::ControllerBase
 	{
 	public:
-		virtual void Init() = 0;
-		virtual void OnUpdate() = 0;
-		virtual void OnFixedUpdate() = 0;
-
 		virtual LoadedPlayerBoxData* GetLoadedData(Players::CharacterType characterType) = 0;
 		virtual void AddSpecs(PlayerBox box, Sprites::SpriteType spriteType, Players::CharacterType characterType) = 0;
 	};

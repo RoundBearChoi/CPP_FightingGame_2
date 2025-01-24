@@ -12,11 +12,11 @@ namespace RB::Updaters
 	{
 		GameplayUpdaterSetup setup(this);
 
-		RB::Background::iBackgroundController* backgroundController = GET_BACKGROUND_CONTROLLER;
+		auto backgroundController = GET_BACKGROUND_CONTROLLER;
 
 		backgroundController->Init();
 
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		auto playerController = GET_PLAYER_CONTROLLER;
 
 		playerController->Init();
 
@@ -33,23 +33,23 @@ namespace RB::Updaters
 		p1->SetCharacterType(RB::Players::CharacterType::AKU);
 		p1->SetManualAnimationUpdate(false);
 
-		Render::iPlayerDebugController* playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
+		auto playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
 
 		playerDebugController->Init();
 
-		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
 		playerAnimationController->Init();
 
-		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
+		auto playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
 		playerBoxDataController->Init();
 
-		Players::iSpecsController* specsController = GET_SPECS_CONTROLLER;
+		auto specsController = GET_SPECS_CONTROLLER;
 
 		specsController->Init();
 
-		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
+		auto inputController = GET_INPUT_CONTROLLER;
 
 		inputController->Init();
 

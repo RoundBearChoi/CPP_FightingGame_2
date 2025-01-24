@@ -20,5 +20,6 @@ namespace RB::Controllers
         GENERAL_HITSTOP_CONTROLLER,
         CAM_CONTROLLER,
         ATTACK_SPECS_CONTROLLER,
+        VFX_ANIMATION_CONTROLLER,
     };
 }

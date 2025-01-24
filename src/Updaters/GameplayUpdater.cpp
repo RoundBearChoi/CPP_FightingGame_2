@@ -23,6 +23,7 @@ namespace RB::Updaters
 		AddController(new Collisions::AttackRegisterController(), Controllers::ControllerType::ATTACK_REGISTER_CONTROLLER);
 		AddController(new Collisions::GeneralHitStopController(), Controllers::ControllerType::GENERAL_HITSTOP_CONTROLLER);
 		AddController(new Collisions::AttackSpecsController(), Controllers::ControllerType::ATTACK_SPECS_CONTROLLER);
+		AddController(new Render::VFXAnimationController(), Controllers::ControllerType::VFX_ANIMATION_CONTROLLER);
 
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
@@ -41,9 +42,6 @@ namespace RB::Updaters
 		p1->SetPosition(RB::Vector2{ 150.0f, 0.0f });
 		p1->SetCharacterType(RB::Players::CharacterType::AKU);
 		p1->SetManualAnimationUpdate(false);
-
-		//Controllers::ControllerBase::AddController<RB::Collisions::AttackSpecsController>(new RB::Collisions::AttackSpecsController());
-		Controllers::ControllerBase::AddController<RB::Render::VFXAnimationController>(new RB::Render::VFXAnimationController());
 
 		camController->AllowManualControl(false);
 

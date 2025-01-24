@@ -84,7 +84,9 @@ namespace RB::Collisions
 
 	void AttackRegisterController::_ShowHitVFX(const AttackRegister& attackRegister)
 	{
-		Render::iAnimationObj* hitVFX = Render::iVFXAnimationController::Get()->InstantiateAnimation(
+		auto vfxAnimationController = GET_VFX_ANIMATION_CONTROLLER;
+
+		Render::iAnimationObj* hitVFX = vfxAnimationController->InstantiateAnimation(
 			Sprites::SpriteType::vfx_hiteffect_0,
 			attackRegister.collisionPoint,
 			attackRegister.targetIsOnRightSide);
@@ -112,6 +114,8 @@ namespace RB::Collisions
 
 	void AttackRegisterController::_ShowHitLocation(const AttackRegister& attackRegister)
 	{
+		auto vfxAnimationController = GET_VFX_ANIMATION_CONTROLLER;
+
 		Render::iAnimationObj* hitVFX_word = nullptr;
 
 		RandomGenerator randX;
@@ -132,21 +136,21 @@ namespace RB::Collisions
 
 		if (attackRegister.collisionType == CollisionType::HEAD)
 		{
-			hitVFX_word = Render::iVFXAnimationController::Get()->InstantiateAnimation(
+			hitVFX_word = vfxAnimationController->InstantiateAnimation(
 				Sprites::SpriteType::vfx_hiteffect_head,
 				pos,
 				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::BODY)
 		{
-			hitVFX_word = Render::iVFXAnimationController::Get()->InstantiateAnimation(
+			hitVFX_word = vfxAnimationController->InstantiateAnimation(
 				Sprites::SpriteType::vfx_hiteffect_body,
 				pos,
 				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::LEGS)
 		{
-			hitVFX_word = Render::iVFXAnimationController::Get()->InstantiateAnimation(
+			hitVFX_word = vfxAnimationController->InstantiateAnimation(
 				Sprites::SpriteType::vfx_hiteffect_leg,
 				pos,
 				true);

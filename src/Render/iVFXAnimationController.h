@@ -2,13 +2,15 @@
 
 #include "iAnimationObj.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 #include "../Vector2.h"
 #include "../Sprites/SpriteType.h"
 
 namespace RB::Render
 {
-	class iVFXAnimationController : public RB::Controllers::ControllerT<iVFXAnimationController>
+	#define GET_VFX_ANIMATION_CONTROLLER static_cast<Render::iVFXAnimationController*>(Controllers::GetController(Controllers::ControllerType::VFX_ANIMATION_CONTROLLER))
+
+	class iVFXAnimationController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

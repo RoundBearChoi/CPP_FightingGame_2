@@ -38,6 +38,8 @@ namespace RB::Controllers
 		virtual void Init() override = 0;
 		virtual void OnUpdate() override = 0;
 		virtual void OnFixedUpdate() override = 0;
+
+	public:
 		virtual ControllerType GetControllerType() override;
 		virtual void SetControllerType(ControllerType controllerType) override;
 

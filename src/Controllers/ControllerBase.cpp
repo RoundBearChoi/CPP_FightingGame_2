@@ -1,8 +1,26 @@
 #include "ControllerBase.h"
 
+#include "../Updaters/CurrentPlayground.h"
+#include "../Updaters/iUpdater.h"
+#include "iController.h"
+
 namespace RB::Controllers
 {
 	std::vector<ControllerBase*> ControllerBase::vecControllers;
+
+	iController* GetController(ControllerType controllerType)
+	{
+		if (RB::Updaters::ptrCurrentPlayground != nullptr)
+		{
+			Updaters::iUpdater* updater = Updaters::ptrCurrentPlayground->GetUpdater();
+
+			iController* controller =  updater->GetController(controllerType);
+
+			return controller;
+		}
+
+		return nullptr;
+	}
 
 	void ControllerBase::UpdateAll()
 	{

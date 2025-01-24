@@ -66,6 +66,11 @@ namespace RB::Updaters
 	{
 		return QueueUpdater(new TargetBoxEditorUpdater());
 	}
+
+	iUpdater* Playground::GetUpdater()
+	{
+		return _updater;
+	}
 	
 	void Playground::SetUpdater(iUpdater* updater)
 	{

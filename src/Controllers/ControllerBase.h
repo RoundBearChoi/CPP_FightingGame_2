@@ -2,12 +2,15 @@
 
 #include <vector>
 
+#include "ControllerType.h"
 #include "iController.h"
 
 #include "../olcPixelGameEngine.h"
 
 namespace RB::Controllers
 {
+	iController* GetController(ControllerType controllerType);
+
 	class ControllerBase : public iController
 	{
 	public:

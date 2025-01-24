@@ -32,9 +32,9 @@ namespace RB::Updaters
 		void OnFixedUpdate() override;
 		void SetFixedUpdateSkips(int skips) override;
 		void ClearFixedUpdateSkip(int fixedUpdates) override;
-
 		bool QueueAttackBoxEditorUpdater() override;
 		bool QueueTargetBoxEditorUpdater() override;
+		iUpdater* GetUpdater() override;
 
 	public:
 		void SetUpdater(iUpdater* updater);

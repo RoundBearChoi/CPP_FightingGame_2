@@ -18,5 +18,6 @@ namespace RB::Controllers
         ATTACK_BOX_DATA_CONTROLLER,
         ATTACK_REGISTER_CONTROLLER,
         GENERAL_HITSTOP_CONTROLLER,
+        CAM_CONTROLLER,
     };
 }

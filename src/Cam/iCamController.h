@@ -2,11 +2,13 @@
 
 #include "iCamObj.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Cam
 {
-	class iCamController : public Controllers::ControllerT<iCamController>
+	#define GET_CAM_CONTROLLER static_cast<Cam::iCamController*>(Controllers::GetController(Controllers::ControllerType::CAM_CONTROLLER))
+
+	class iCamController : public Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

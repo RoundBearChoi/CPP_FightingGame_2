@@ -4,7 +4,9 @@ namespace RB::Render
 {
 	void LineRenderer::RenderLine(const RB::Vector2& p1, const RB::Vector2& p2, olc::Pixel tint)
 	{
-		if (RB::Cam::iCamController::Get() == nullptr)
+		auto camController = GET_CAM_CONTROLLER;
+
+		if (camController == nullptr)
 		{
 			return;
 		}
@@ -12,8 +14,8 @@ namespace RB::Render
 		RB::Vector2 screenPos1;
 		RB::Vector2 screenPos2;
 
-		screenPos1 = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(p1);
-		screenPos2 = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(p2);
+		screenPos1 = camController->GetCamObj()->GetRelativePosition(p1);
+		screenPos2 = camController->GetCamObj()->GetRelativePosition(p2);
 
 		olc::Renderer::ptrPGE->DrawLine(
 			olc::vi2d{ screenPos1.GetIntX(), screenPos1.GetIntY() },

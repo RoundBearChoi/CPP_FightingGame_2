@@ -46,7 +46,9 @@ namespace RB::Cam
 
 	void ZoomOnPlayers::_AutoZoom(float playerDistSq)
 	{
-		if (Cam::iCamController::Get() == nullptr)
+		auto camController = GET_CAM_CONTROLLER;
+
+		if (camController == nullptr)
 		{
 			return;
 		}
@@ -69,6 +71,6 @@ namespace RB::Cam
 			zoom = _maxZoomOut;
 		}
 
-		Cam::iCamController::Get()->SetZoom(zoom);
+		camController->SetZoom(zoom);
 	}
 }

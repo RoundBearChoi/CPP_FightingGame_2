@@ -82,7 +82,8 @@ namespace RB::Render
 
 	void PlayerDebugController::_RenderBodyParts(RB::Players::PlayerID id)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		auto playerController = GET_PLAYER_CONTROLLER;
+		auto camController = GET_CAM_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
@@ -100,10 +101,10 @@ namespace RB::Render
 
 		float* parts = col->GetBodyParts();
 
-		RB::Vector2 relLowerBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[0]});
+		RB::Vector2 relLowerBody = camController->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[0]});
 		//RB::Vector2 intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };
 
-		RB::Vector2 relUpperBody = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[1]});
+		RB::Vector2 relUpperBody = camController->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[1]});
 		//RB::Vector2 intUpperBody = { int(round(relUpperBody.x)), int(round(relUpperBody.y)) };
 
 		int lineHalfLength = 30;

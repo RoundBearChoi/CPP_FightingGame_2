@@ -19,23 +19,25 @@ namespace RB::Render
 
 	void AnimationRenderer::RenderAnimation(const RenderSettings& renderSettings)
 	{
+		auto camController = GET_CAM_CONTROLLER;
+
 		if (_animationSpecs.mSpriteType._value == RB::Sprites::SpriteType::NONE)
 		{
 			return;
 		}
 
-		if (RB::Cam::iCamController::Get() == nullptr)
+		if (camController == nullptr)
 		{
 			return;
 		}
 
 		// get screen space x, y, width, height
-		RB::Vector2 rel = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
+		RB::Vector2 rel = camController->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
 		float x = (float)rel.x;
 		float y = (float)rel.y;
 
-		float zoom = RB::Cam::iCamController::Get()->GetCamObj()->GetZoom();
+		float zoom = camController->GetCamObj()->GetZoom();
 
 		x += renderSettings.mRenderOffset.x * zoom;
 		y += renderSettings.mRenderOffset.y * zoom;

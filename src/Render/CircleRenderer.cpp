@@ -14,7 +14,9 @@ namespace RB::Render
 
 	void CircleRenderer::Render(int radius)
 	{
-		RB::Vector2 relPos = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(_pos) + RB::Vector2{ 1.0f, -1.0f };
+		auto camController = GET_CAM_CONTROLLER;
+
+		RB::Vector2 relPos = camController->GetCamObj()->GetRelativePosition(_pos) + RB::Vector2{ 1.0f, -1.0f };
 
 		olc::Renderer::ptrPGE->DrawCircle(
 			olc::vi2d{ relPos.GetIntX(), relPos.GetIntY() },

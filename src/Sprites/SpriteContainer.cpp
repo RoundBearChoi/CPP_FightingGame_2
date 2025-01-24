@@ -37,7 +37,9 @@ namespace RB::Sprites
 
 	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool isWorldSpace)
 	{
-		if (RB::Cam::iCamController::Get() == nullptr && isWorldSpace)
+		auto camController = GET_CAM_CONTROLLER;
+
+		if (camController == nullptr && isWorldSpace)
 		{
 			return;
 		}
@@ -50,7 +52,7 @@ namespace RB::Sprites
 		{
 			for (auto i = points.begin(); i != points.end(); i++)
 			{
-				*i = RB::Cam::iCamController::Get()->GetCamObj()->GetRelativePosition(*i);
+				*i = camController->GetCamObj()->GetRelativePosition(*i);
 			}
 		}
 

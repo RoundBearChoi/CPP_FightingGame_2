@@ -156,6 +156,9 @@ namespace RB::HBox
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
+		auto camController = GET_CAM_CONTROLLER;
+		auto playerController = GET_PLAYER_CONTROLLER;
+		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
@@ -172,13 +175,10 @@ namespace RB::HBox
 			}
 		}
 
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
-
 		if (playerController == nullptr ||
 			playerAnimationController == nullptr ||
-			RB::HBox::iHBMenuController::Get() == nullptr ||
-			RB::Cam::iCamController::Get() == nullptr)
+			HBox::iHBMenuController::Get() == nullptr ||
+			camController == nullptr)
 		{
 			return false;
 		}

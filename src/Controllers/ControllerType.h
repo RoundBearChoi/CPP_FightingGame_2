@@ -21,5 +21,6 @@ namespace RB::Controllers
         CAM_CONTROLLER,
         ATTACK_SPECS_CONTROLLER,
         VFX_ANIMATION_CONTROLLER,
+        PLAYER_BOX_EDIT_CONTROLLER,
     };
 }

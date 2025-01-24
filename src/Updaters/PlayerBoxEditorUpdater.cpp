@@ -13,6 +13,7 @@ namespace RB::Updaters
 		AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
 		AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
+		AddController(new Collisions::PlayerBoxEditController(), Controllers::ControllerType::PLAYER_BOX_EDIT_CONTROLLER);
 
 		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
@@ -25,8 +26,6 @@ namespace RB::Updaters
 		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
-
-		Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxEditController>(new RB::Collisions::PlayerBoxEditController());
 
 		camController->SetZoom(1.0f);
 

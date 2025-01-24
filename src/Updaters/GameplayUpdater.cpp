@@ -1,10 +1,24 @@
 #include "GameplayUpdater.h"
-#include "GameplayUpdaterSetup.h"
 
-#include "../HBox/TargetBoxDataController.h"
-#include "../Collisions/AttackRegisterController.h"
-#include "../Cam/CamController.h"
+#include "../Background/BackgroundController.h"
+#include "../Players/SpecsController.h"
 #include "../Players/PlayerController.h"
+#include "../Render/PlayerDebugController.h"
+#include "../Render/PlayerAnimationController.h"
+#include "../Render/VFXAnimationController.h"
+#include "../Collisions/PlayerBoxDataController.h"
+#include "../Collisions/AttackRegisterController.h"
+#include "../Collisions/GeneralHitStopController.h"
+#include "../Collisions/AttackSpecsController.h"
+#include "../Input/InputController.h"
+#include "../Input/SpecialMovesController.h"
+#include "../HBox/TargetBoxDataController.h"
+#include "../HBox/AttackBoxDataController.h"
+#include "../Cam/CamController.h"
+
+#include "../Players/Player.h"
+
+#include "../Fighter_0_States/F0_Idle.h"
 
 namespace RB::Updaters
 {
@@ -15,8 +29,12 @@ namespace RB::Updaters
 
 	void GameplayUpdater::Init()
 	{
-		GameplayUpdaterSetup setup(this);
-
+        AddController(new Background::BackgroundController(), Controllers::ControllerType::BACKGROUND_CONTROLLER);
+        AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
+        AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
+        AddController(new Collisions::PlayerBoxDataController, Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
+        AddController(new Players::SpecsController(), Controllers::ControllerType::SPECS_CONTROLLER);
+        AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Input::SpecialMovesController(), Controllers::ControllerType::SPECIAL_MOVES_CONTROLLER);
 		AddController(new HBox::TargetBoxDataController("../resource/TargetBoxSpecs/"), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
 		AddController(new HBox::AttackBoxDataController("../resource/AttackBoxSpecs/"), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
@@ -25,13 +43,13 @@ namespace RB::Updaters
 		AddController(new Collisions::AttackSpecsController(), Controllers::ControllerType::ATTACK_SPECS_CONTROLLER);
 		AddController(new Render::VFXAnimationController(), Controllers::ControllerType::VFX_ANIMATION_CONTROLLER);
 
-		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
+		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
 		playerController->Init();
 
-		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
-		RB::Players::iPlayer* p1 = playerController->AddPlayer(new RB::Players::Player());
+		RB::Players::iPlayer* p0 = playerController->AddPlayer(new Players::Player());
+		RB::Players::iPlayer* p1 = playerController->AddPlayer(new Players::Player());
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Idle());
 		p0->SetPosition(RB::Vector2{ -150.0f, 0.0f });

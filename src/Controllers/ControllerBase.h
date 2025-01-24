@@ -35,9 +35,9 @@ namespace RB::Controllers
 		virtual ~ControllerBase() override {};
 
 	public:
-		virtual void Init() override {};
-		virtual void OnUpdate() override {};
-		virtual void OnFixedUpdate() override {};
+		virtual void Init() override = 0;
+		virtual void OnUpdate() override = 0;
+		virtual void OnFixedUpdate() override = 0;
 		virtual ControllerType GetControllerType() override;
 		virtual void SetControllerType(ControllerType controllerType) override;
 

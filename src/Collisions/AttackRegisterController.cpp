@@ -3,6 +3,7 @@
 //temp
 //#include "../Fighter_0_States/F0_Kneel.h"
 #include "../Updaters/CurrentPlayground.h"
+#include "iGeneralHitStopController.h"
 
 namespace RB::Collisions
 {
@@ -23,6 +24,8 @@ namespace RB::Collisions
 
 	bool AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
+		auto generalHitstopController = GET_GENERAL_HITSTOP_CONTROLLER;
+
 		_ShowHitVFX(reg);
 		_ShowHitLocation(reg);
 
@@ -62,9 +65,9 @@ namespace RB::Collisions
 				reg.target->GetStateMachine()->QueueNextState(new Fighter_0_States::F0_Weak_Wince_Mid());
 			}
 
-			if (Collisions::iGeneralHitStopController::Get() != nullptr)
+			if (generalHitstopController != nullptr)
 			{
-				Collisions::iGeneralHitStopController::Get()->AddSkipFrames(attackSpecs.mHitStop);
+				generalHitstopController->AddSkipFrames(attackSpecs.mHitStop);
 			}
 		}
 

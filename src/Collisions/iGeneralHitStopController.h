@@ -1,10 +1,12 @@
 #pragma once
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Collisions
 {
-	class iGeneralHitStopController : public Controllers::ControllerT<iGeneralHitStopController>
+	#define GET_GENERAL_HITSTOP_CONTROLLER static_cast<Collisions::iGeneralHitStopController*>(Controllers::GetController(Controllers::ControllerType::GENERAL_HITSTOP_CONTROLLER))
+
+	class iGeneralHitStopController : public Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

@@ -29,6 +29,8 @@ namespace RB::Updaters
 		AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
 		AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
+		AddController(new HBox::HBoxEditController(_boxType), Controllers::ControllerType::HBOX_EDIT_CONTROLLER);
+
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
@@ -43,7 +45,7 @@ namespace RB::Updaters
 		HBox::HBMenuController* menuController = RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
 		menuController->SetPageTitle(_pageTitle);
 		
-		Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(_boxType));
+		//Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(_boxType));
 
 		camController->SetZoom(1.0f);
 

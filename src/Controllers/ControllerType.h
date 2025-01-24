@@ -22,5 +22,6 @@ namespace RB::Controllers
         ATTACK_SPECS_CONTROLLER,
         VFX_ANIMATION_CONTROLLER,
         PLAYER_BOX_EDIT_CONTROLLER,
+        HBOX_EDIT_CONTROLLER,
     };
 }

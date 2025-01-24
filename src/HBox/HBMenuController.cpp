@@ -1,5 +1,6 @@
 #include "HBMenuController.h"
 #include "iAttackBoxDataController.h"
+#include "iHBoxEditController.h"
 #include "iTargetBoxDataController.h"
 
 namespace RB::HBox
@@ -97,8 +98,9 @@ namespace RB::HBox
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
+		auto hboxEditController = GET_HBOX_EDIT_CONTROLLER;
 
-		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::Get()->GetHBoxType();
+		RB::HBox::HBoxType boxType = hboxEditController->GetHBoxType();
 
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 
@@ -124,13 +126,14 @@ namespace RB::HBox
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
+		auto hboxEditController = GET_HBOX_EDIT_CONTROLLER;
 
 		if (_notification.GetFrameCount() == 0)
 		{
 			return;
 		}
 
-		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::Get()->GetHBoxType();
+		RB::HBox::HBoxType boxType = hboxEditController->GetHBoxType();
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{

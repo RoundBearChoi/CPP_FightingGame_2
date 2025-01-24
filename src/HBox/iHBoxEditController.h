@@ -4,12 +4,14 @@
 #include "HBoxType.h"
 #include "Loaded_HB_Data.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 #include "../Players/PlayerID.h"
 
 namespace RB::HBox
 {
-	class iHBoxEditController : public RB::Controllers::ControllerT<iHBoxEditController>
+	#define GET_HBOX_EDIT_CONTROLLER static_cast<HBox::iHBoxEditController*>(Controllers::GetController(Controllers::ControllerType::HBOX_EDIT_CONTROLLER))
+
+	class iHBoxEditController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

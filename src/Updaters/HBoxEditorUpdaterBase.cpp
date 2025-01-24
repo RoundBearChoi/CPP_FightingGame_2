@@ -9,9 +9,23 @@ namespace RB::Updaters
 
 	void HBoxEditorUpdaterBase::Init()
 	{
-		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
+		AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
+		AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
+		AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
+		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
+		AddController(new HBox::HBoxEditController(_boxType), Controllers::ControllerType::HBOX_EDIT_CONTROLLER);
 
-		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+		{
+			AddController(new HBox::TargetBoxDataController(_specsPath), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
+		}
+		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+		{
+			AddController(new HBox::AttackBoxDataController(_specsPath), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
+		}
+
+		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
+		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
 		playerController->Init();
 
@@ -23,24 +37,6 @@ namespace RB::Updaters
 		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
-
-
-		AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
-		AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
-		AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
-		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
-		AddController(new HBox::HBoxEditController(_boxType), Controllers::ControllerType::HBOX_EDIT_CONTROLLER);
-
-		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
-
-		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
-		{
-			AddController(new HBox::TargetBoxDataController(_specsPath), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
-		}
-		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
-		{
-			AddController(new HBox::AttackBoxDataController(_specsPath), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
-		}
 
 		HBox::HBMenuController* menuController = RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
 		menuController->SetPageTitle(_pageTitle);

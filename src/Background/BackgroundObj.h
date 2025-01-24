@@ -11,7 +11,7 @@ namespace RB::Background
 	class BackgroundObj
 	{
 	public:
-		BackgroundObj(std::string path, RB::Sprites::SpriteType spriteType, float percentage);
+		BackgroundObj(std::string path, Sprites::SpriteType spriteType, float percentage);
 		~BackgroundObj() = default;
 
 		void Init();
@@ -20,11 +20,11 @@ namespace RB::Background
 
 	private:
 		float _percentage = 0.0f;
-		RB::Sprites::SpriteType _spriteType = RB::Sprites::SpriteType::NONE;
+		Sprites::SpriteType _spriteType = Sprites::SpriteType::NONE;
 		float _imageWidth = 0.0f;
 		float _imageHeight = 0.0f;
 		float _renderScale = 1.0f;
-		RB::Vector2 _position = { 0.0f, 0.0f };
-		RB::Sprites::SpriteContainer _spriteContainer;
+		Vector2 _position = { 0.0f, 0.0f };
+		Sprites::SpriteContainer _spriteContainer;
 	};
 }

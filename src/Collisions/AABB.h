@@ -20,12 +20,12 @@ namespace RB::Collisions
 		void MoveY(float y);
 		void IncreaseWidth(float amount);
 		void IncreaseHeight(float amount);
-		RB::Vector2 GetCenter();
-		RB::Vector2 GetBottomLeft();
-		RB::Vector2 GetWidthHeight();
-		bool IsCollidingAgainst(const AABB& other, RB::Vector2& collisionCenter);
-		RB::Vector2 GetCollisionCenter(const AABB& other);
-		AABB GetWorldPos(const RB::Vector2& playerPos, const bool& otherPlayerIsOnRightSide);
+		Vector2 GetCenter();
+		Vector2 GetBottomLeft();
+		Vector2 GetWidthHeight();
+		bool IsCollidingAgainst(const AABB& other, Vector2& collisionCenter);
+		Vector2 GetCollisionCenter(const AABB& other);
+		AABB GetWorldPos(const Vector2& playerPos, const bool& otherPlayerIsOnRightSide);
 		void ForceAABB(AABB& aabb);
 
 	private:

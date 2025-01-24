@@ -52,19 +52,19 @@ namespace RB::Collisions
 		}
 	}
 
-	RB::Vector2 AABB::GetCenter()
+	Vector2 AABB::GetCenter()
 	{
-		return RB::Vector2{ _bottomLeftX + (_width * 0.5f), _bottomLeftY - (_height * 0.5f) };
+		return Vector2{ _bottomLeftX + (_width * 0.5f), _bottomLeftY - (_height * 0.5f) };
 	}
 
-	RB::Vector2 AABB::GetBottomLeft()
+	Vector2 AABB::GetBottomLeft()
 	{
-		return RB::Vector2{ _bottomLeftX, _bottomLeftY };
+		return Vector2{ _bottomLeftX, _bottomLeftY };
 	}
 
-	RB::Vector2 AABB::GetWidthHeight()
+	Vector2 AABB::GetWidthHeight()
 	{
-		return RB::Vector2{ _width, _height };
+		return Vector2{ _width, _height };
 	}
 
 	/// <summary>
@@ -72,7 +72,7 @@ namespace RB::Collisions
 	/// </summary>
 	/// <param name="other"></param>
 	/// <returns></returns>
-	bool AABB::IsCollidingAgainst(const AABB& other, RB::Vector2& collisionCenter)
+	bool AABB::IsCollidingAgainst(const AABB& other, Vector2& collisionCenter)
 	{
 		if (_width <= 0.001f || _height <= 0.001f)
 		{
@@ -104,7 +104,7 @@ namespace RB::Collisions
 	/// </summary>
 	/// <param name="other"></param>
 	/// <returns></returns>
-	RB::Vector2 AABB::GetCollisionCenter(const AABB& other)
+	Vector2 AABB::GetCollisionCenter(const AABB& other)
 	{
 		float minxX = std::max(_bottomLeftX, other._bottomLeftX);
 		float minY = std::min(_bottomLeftY, other._bottomLeftY);
@@ -115,7 +115,7 @@ namespace RB::Collisions
 		return { (minxX + maxX) * 0.5f, (minY + maxY) * 0.5f };
 	}
 
-	AABB AABB::GetWorldPos(const RB::Vector2& playerPos, const bool& otherPlayerIsOnRightSide)
+	AABB AABB::GetWorldPos(const Vector2& playerPos, const bool& otherPlayerIsOnRightSide)
 	{
 		AABB worldAABB{ 0.0f, 0.0f, _width, _height };
 

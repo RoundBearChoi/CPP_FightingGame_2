@@ -22,9 +22,9 @@ namespace RB
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		RB::Updaters::iPlayground* _playground = nullptr;
-		RB::FixedTimer _timer;
-		RB::UpdateCounter _updateCounter;
+		Updaters::iPlayground* _playground = nullptr;
+		FixedTimer _timer;
+		UpdateCounter _updateCounter;
 
 	public:
 		Game()
@@ -48,13 +48,13 @@ namespace RB
 			std::cout << "alloc count before creating playground: " << numObjects << std::endl << std::endl;
 			numObjBeforePlayground = numObjects;
 
-			_playground = new RB::Updaters::Playground();
+			_playground = new Updaters::Playground();
 
-			RB::Updaters::ptrCurrentPlayground = _playground;
+			Updaters::ptrCurrentPlayground = _playground;
 
 			_playground->Init();
 
-			RB::Render::CreateLayers();
+			Render::CreateLayers();
 
 			return true;
 		}
@@ -70,12 +70,12 @@ namespace RB
 			{
 				_playground->OnFixedUpdate();
 
-				RB::AddGameFrame();
+				AddGameFrame();
 			}
 
-			RB::Render::ClearLayers();
+			Render::ClearLayers();
 
-			RB::Time::SetDeltaTime(fElapsedTime);
+			Time::SetDeltaTime(fElapsedTime);
 
 			_playground->OnUpdate();
 			_updateCounter.OnUpdate();

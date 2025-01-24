@@ -17,7 +17,7 @@ namespace RB::Collisions
 
 	}
 
-	const RB::Collisions::AttackSpecs& AttackSpecsController::GetAttackSpecs(RB::Sprites::SpriteType spriteType)
+	const Collisions::AttackSpecs& AttackSpecsController::GetAttackSpecs(Sprites::SpriteType spriteType)
 	{
 		for (int i = 0; i < _vecAttackSpecs.size(); i++)
 		{
@@ -30,7 +30,7 @@ namespace RB::Collisions
 		return _defaultAttackSpecs;
 	}
 
-	bool AttackSpecsController::ContainsAttackSpecs(RB::Sprites::SpriteType spriteType)
+	bool AttackSpecsController::ContainsAttackSpecs(Sprites::SpriteType spriteType)
 	{
 		for (int i = 0; i < _vecAttackSpecs.size(); i++)
 		{
@@ -45,19 +45,19 @@ namespace RB::Collisions
 
 	void AttackSpecsController::_LoadAllAttackSpecs()
 	{
-		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{
-			_Load(RB::Sprites::SpriteType::_from_index(i));
+			_Load(Sprites::SpriteType::_from_index(i));
 		}
 	}
 
-	void AttackSpecsController::_Load(RB::Sprites::SpriteType spriteType)
+	void AttackSpecsController::_Load(Sprites::SpriteType spriteType)
 	{
 		std::string fileName = spriteType._to_string();
 		fileName += ".attackSpecs";
 		std::string path = "../resource/AttackSpecs/" + fileName;
 
-		RB::JSON::JParser parser;
+		JSON::JParser parser;
 		
 		if (parser.LoadJSON(path) == nullptr)
 		{
@@ -67,17 +67,17 @@ namespace RB::Collisions
 		}
 
 		auto jObj = parser.GetObj(0);
-		auto element = RB::JSON::JParser::GetElement(*jObj, 0);
-		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
-		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
+		auto element = JSON::JParser::GetElement(*jObj, 0);
+		auto subElement = JSON::JParser::GetElement(*element, 0);
+		auto vecAll = JSON::JParser::GetAllElements(*subElement);
 
-		std::string strStrengthType = RB::JSON::JParser::GetString_FromElement(*vecAll[0]);
-		int damageValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[1]);
-		int hitStopValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
-		int minFixedUpdatesValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[3]);
-		int maxHitsValue = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
+		std::string strStrengthType = JSON::JParser::GetString_FromElement(*vecAll[0]);
+		int damageValue = JSON::JParser::GetInt_FromElement(*vecAll[1]);
+		int hitStopValue = JSON::JParser::GetInt_FromElement(*vecAll[2]);
+		int minFixedUpdatesValue = JSON::JParser::GetInt_FromElement(*vecAll[3]);
+		int maxHitsValue = JSON::JParser::GetInt_FromElement(*vecAll[4]);
 
-		RB::Collisions::AttackStrengthType attackStrengthType = RB::Collisions::AttackStrengthType::_from_string(strStrengthType.c_str());
+		Collisions::AttackStrengthType attackStrengthType = Collisions::AttackStrengthType::_from_string(strStrengthType.c_str());
 
 		AttackSpecs attackSpecs;
 		attackSpecs.mSpriteType = spriteType;

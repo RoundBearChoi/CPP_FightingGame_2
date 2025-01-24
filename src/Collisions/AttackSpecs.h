@@ -12,8 +12,8 @@ namespace RB::Collisions
 			AttackSpecs() = default;
 			~AttackSpecs() = default;
 
-			RB::Sprites::SpriteType mSpriteType = RB::Sprites::SpriteType::NONE;
-			RB::Collisions::AttackStrengthType mAttackStrengthType = RB::Collisions::AttackStrengthType::NONE;
+			Sprites::SpriteType mSpriteType = Sprites::SpriteType::NONE;
+			Collisions::AttackStrengthType mAttackStrengthType = Collisions::AttackStrengthType::NONE;
 			int mDamage = 0;
 			int mHitStop = 0;
 			int mMinimumFixedUpdatesSinceHit = 0;

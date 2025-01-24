@@ -2,12 +2,12 @@
 
 namespace RB::Cam
 {
-	RB::Vector2 CamObj::GetPosition()
+	Vector2 CamObj::GetPosition()
 	{
 		return _camPosition;
 	}
 
-	void CamObj::SetPosition(RB::Vector2 pos)
+	void CamObj::SetPosition(Vector2 pos)
 	{
 		_camPosition = pos;
 	}
@@ -22,9 +22,9 @@ namespace RB::Cam
 		_camPosition.y = y;
 	}
 
-	RB::Vector2 CamObj::GetRelativePosition(RB::Vector2 pos)
+	Vector2 CamObj::GetRelativePosition(Vector2 pos)
 	{
-		RB::Vector2 rel = (pos * _zoom) - _camPosition;
+		Vector2 rel = (pos * _zoom) - _camPosition;
 
 		rel.x += _displayHalfWidth;
 		rel.y += _displayHalfHeight;
@@ -44,8 +44,8 @@ namespace RB::Cam
 
 	void CamObj::Init()
 	{
-		_displayHalfWidth = (float)RB::displayWidth * 0.5f;
-		_displayHalfHeight = (float)RB::displayHeight * 0.5f;
+		_displayHalfWidth = (float)displayWidth * 0.5f;
+		_displayHalfHeight = (float)displayHeight * 0.5f;
 	}
 
 	void CamObj::ManualUpdate()
@@ -62,14 +62,14 @@ namespace RB::Cam
 		_moveLeft = false;
 		_moveRight = false;
 
-		olc::HWButton moveUp = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
-		olc::HWButton moveDown = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
+		olc::HWButton moveUp = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_UP);
+		olc::HWButton moveDown = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_DOWN);
 
-		olc::HWButton moveLeft = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
-		olc::HWButton moveRight = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
+		olc::HWButton moveLeft = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_LEFT);
+		olc::HWButton moveRight = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_RIGHT);
 
-		olc::HWButton zoomIn = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_IN);
-		olc::HWButton zoomOut = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_OUT);
+		olc::HWButton zoomIn = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::CAM_ZOOM_IN);
+		olc::HWButton zoomOut = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::CAM_ZOOM_OUT);
 
 		if (moveUp.bHeld && moveDown.bHeld)
 		{
@@ -99,12 +99,12 @@ namespace RB::Cam
 
 		if (zoomIn.bHeld)
 		{
-			_zoom += RB::Time::GetDeltaTime() * _zoomSpeed;
+			_zoom += Time::GetDeltaTime() * _zoomSpeed;
 		}
 
 		if (zoomOut.bHeld)
 		{
-			_zoom -= RB::Time::GetDeltaTime() * _zoomSpeed;
+			_zoom -= Time::GetDeltaTime() * _zoomSpeed;
 		}
 
 		if (_zoom < 0.0001f)

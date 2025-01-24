@@ -15,15 +15,15 @@ namespace RB::Cam
 
 	void FollowPlayers::OnFixedUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* p0 = playerController->GetPlayerOnIndex(0);
-		RB::Players::iPlayer* p1 = playerController->GetPlayerOnIndex(1);
+		Players::iPlayer* p0 = playerController->GetPlayerOnIndex(0);
+		Players::iPlayer* p1 = playerController->GetPlayerOnIndex(1);
 
 		if (p0 == nullptr || p1 == nullptr)
 		{
@@ -58,7 +58,7 @@ namespace RB::Cam
 			percentage = 1.0f;
 		}
 
-		float ease = RB::Ease::EaseOutCubic( 1.0f - percentage);
+		float ease = Ease::EaseOutCubic( 1.0f - percentage);
 
 		if (ease <= 0.125f)
 		{
@@ -72,9 +72,9 @@ namespace RB::Cam
 
 		//std::cout << ease << std::endl;
 
-		float lerped = RB::Lerp(curr, result, ease * 0.03f); //std::lerp(curr, result, ease * 0.03f);
+		float lerped = Lerp(curr, result, ease * 0.03f); //std::lerp(curr, result, ease * 0.03f);
 
 		//y should be dynamic.. but for now
-		_camObj->SetPosition(RB::Vector2{ lerped, -115.0f });
+		_camObj->SetPosition(Vector2{ lerped, -115.0f });
 	}
 }

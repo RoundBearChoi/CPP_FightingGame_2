@@ -9,12 +9,12 @@ namespace RB::Collisions
 	class AttackRegister
 	{
 	public:
-		RB::Players::iPlayer* attacker = nullptr;
-		RB::Players::iPlayer* target = nullptr;
+		Players::iPlayer* attacker = nullptr;
+		Players::iPlayer* target = nullptr;
 
-		RB::Sprites::SpriteType attackerSpriteType = RB::Sprites::SpriteType::NONE;
+		Sprites::SpriteType attackerSpriteType = Sprites::SpriteType::NONE;
 
-		RB::Vector2 collisionPoint = { 0.0f, 0.0f };
+		Vector2 collisionPoint = { 0.0f, 0.0f };
 		bool targetIsOnRightSide = true;
 		bool targetIsCrouching = false;
 		CollisionType collisionType = CollisionType::NONE;

@@ -4,9 +4,9 @@
 
 namespace RB::Background
 {
-	#define GET_BACKGROUND_CONTROLLER static_cast<RB::Background::iBackgroundController*>(RB::Controllers::GetController(Controllers::ControllerType::BACKGROUND_CONTROLLER))
+	#define GET_BACKGROUND_CONTROLLER static_cast<Background::iBackgroundController*>(Controllers::GetController(Controllers::ControllerType::BACKGROUND_CONTROLLER))
 
-	class iBackgroundController : public RB::Controllers::ControllerBase
+	class iBackgroundController : public Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

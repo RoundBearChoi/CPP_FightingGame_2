@@ -22,19 +22,19 @@ namespace RB::Cam
 
 	float ZoomOnPlayers::_GetMagSqBetweenPlayers()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
 			return 0.0f;
 		}
 
-		RB::Players::iPlayer* p1 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		Players::iPlayer* p1 = playerController->GetPlayerOnID(Players::PlayerID::PLAYER_1);
+		Players::iPlayer* p2 = playerController->GetPlayerOnID(Players::PlayerID::PLAYER_2);
 
-		RB::Vector2 p1_pos = p1->GetPosition();
-		RB::Vector2 p2_pos = p2->GetPosition();
-		RB::Vector2 dist = p2_pos - p1_pos;
+		Vector2 p1_pos = p1->GetPosition();
+		Vector2 p2_pos = p2->GetPosition();
+		Vector2 dist = p2_pos - p1_pos;
 
 		float mag2 = dist.MagnitudeSquared(); //dist.mag2(); //mag2 is mag * mag
 
@@ -46,7 +46,7 @@ namespace RB::Cam
 
 	void ZoomOnPlayers::_AutoZoom(float playerDistSq)
 	{
-		if (RB::Cam::iCamController::Get() == nullptr)
+		if (Cam::iCamController::Get() == nullptr)
 		{
 			return;
 		}
@@ -60,7 +60,7 @@ namespace RB::Cam
 
 		float t = playerDistSq / maxSq;
 
-		float result = RB::Ease::EaseOutSine(t);
+		float result = Ease::EaseOutSine(t);
 
 		float zoom = _maxZoomIn * result;
 
@@ -69,6 +69,6 @@ namespace RB::Cam
 			zoom = _maxZoomOut;
 		}
 
-		RB::Cam::iCamController::Get()->SetZoom(zoom);
+		Cam::iCamController::Get()->SetZoom(zoom);
 	}
 }

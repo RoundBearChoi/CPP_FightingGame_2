@@ -6,7 +6,7 @@
 
 namespace RB::Cam
 {
-	class iCamController : public RB::Controllers::ControllerT<iCamController>
+	class iCamController : public Controllers::ControllerT<iCamController>
 	{
 	public:
 		virtual void Init() = 0;

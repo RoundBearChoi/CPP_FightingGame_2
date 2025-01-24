@@ -2,7 +2,7 @@
 
 namespace RB::Background
 {
-	BackgroundObj::BackgroundObj(std::string path, RB::Sprites::SpriteType spriteType, float percentage)
+	BackgroundObj::BackgroundObj(std::string path, Sprites::SpriteType spriteType, float percentage)
 	{
 		_imageWidth = 288;
 		_imageHeight = 184;
@@ -22,12 +22,12 @@ namespace RB::Background
 
 	void BackgroundObj::OnUpdate()
 	{
-		if (RB::Cam::iCamController::Get() == nullptr)
+		if (Cam::iCamController::Get() == nullptr)
 		{
 			return;
 		}
 
-		float offsetX = _position.x + (RB::Cam::iCamController::Get()->GetCamObj()->GetPosition().x * _percentage);
+		float offsetX = _position.x + (Cam::iCamController::Get()->GetCamObj()->GetPosition().x * _percentage);
 
 		//background horizontal tile
 		for (int i = 0; i < 4; i++)
@@ -36,9 +36,9 @@ namespace RB::Background
 				_spriteType,
 				_imageWidth * _renderScale,
 				_imageHeight * _renderScale,
-				RB::Vector2{ offsetX + (_imageWidth * _renderScale * i), _position.y },
+				Vector2{ offsetX + (_imageWidth * _renderScale * i), _position.y },
 				olc::WHITE,
-				RB::Sprites::PivotType::BOTTOM_LEFT,
+				Sprites::PivotType::BOTTOM_LEFT,
 				true);
 		}
 	}

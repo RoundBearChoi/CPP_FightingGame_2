@@ -44,6 +44,7 @@ namespace RB::Controllers
 	public:
 		virtual ControllerType GetControllerType() override;
 		virtual void SetControllerType(ControllerType controllerType) override;
+		virtual bool IsInitialized() override;
 
 	protected:
 		ControllerType _controllerType = ControllerType::NONE;

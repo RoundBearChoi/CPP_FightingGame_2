@@ -15,6 +15,7 @@ namespace RB::Controllers
         virtual void OnUpdate() = 0;
         virtual ControllerType GetControllerType() = 0;
         virtual void SetControllerType(ControllerType controllerType) = 0;
+        virtual bool IsInitialized() = 0;
     };
 
     // Definition of the pure virtual destructor

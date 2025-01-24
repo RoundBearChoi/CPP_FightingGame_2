@@ -4,7 +4,7 @@
 
 namespace RB::Fighter_0_States
 {
-    class F0_Lie_Down : public RB::Players::PlayerState
+    class F0_Lie_Down : public Players::PlayerState
     {
     public:
 		F0_Lie_Down() = default;

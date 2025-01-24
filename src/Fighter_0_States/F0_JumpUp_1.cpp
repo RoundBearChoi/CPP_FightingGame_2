@@ -5,11 +5,11 @@ namespace RB::Fighter_0_States
 {
 	void F0_JumpUp_1::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::fighter_0_fall;
+		_spriteType = Sprites::SpriteType::fighter_0_fall;
 
-		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
-		AddStateComponent(new RB::PlayerStateComponents::MoveDownOnFall(20, 20.0f));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnGround(new RB::Fighter_0_States::F0_Idle()));
+		AddStateComponent(new PlayerStateComponents::MarkInitiallyFacingRight());
+		AddStateComponent(new PlayerStateComponents::MoveDownOnFall(20, 20.0f));
+		AddStateComponent(new PlayerStateComponents::TransitionOnGround(new Fighter_0_States::F0_Idle()));
 
 		EnterStateComponents();
 	}

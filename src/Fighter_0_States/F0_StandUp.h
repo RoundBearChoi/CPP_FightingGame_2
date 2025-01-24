@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Players/PlayerState.h"
+
 #include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "../PlayerStateComponents/TransitionOnAnimationEnd.h"
 
@@ -8,7 +9,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_StandUp : public RB::Players::PlayerState
+	class F0_StandUp : public Players::PlayerState
 	{
 	public:
 		F0_StandUp() = default;

@@ -9,7 +9,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_Strong_Kick : public RB::Players::PlayerState
+	class F0_Strong_Kick : public Players::PlayerState
 	{
 	public:
 		F0_Strong_Kick() = default;

@@ -8,7 +8,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_Crouch_Punch_Weak : public RB::Players::PlayerState
+	class F0_Crouch_Punch_Weak : public Players::PlayerState
 	{
 	public:
 		F0_Crouch_Punch_Weak() = default;

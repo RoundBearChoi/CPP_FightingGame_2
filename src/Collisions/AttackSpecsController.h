@@ -19,15 +19,15 @@ namespace RB::Collisions
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		const RB::Collisions::AttackSpecs& GetAttackSpecs(RB::Sprites::SpriteType spriteType) override;
-		bool ContainsAttackSpecs(RB::Sprites::SpriteType spriteType) override;
+		const Collisions::AttackSpecs& GetAttackSpecs(Sprites::SpriteType spriteType) override;
+		bool ContainsAttackSpecs(Sprites::SpriteType spriteType) override;
 
 	private:
 		void _LoadAllAttackSpecs();
-		void _Load(RB::Sprites::SpriteType spriteType);
+		void _Load(Sprites::SpriteType spriteType);
 
 	private:
-		std::vector<RB::Collisions::AttackSpecs> _vecAttackSpecs;
-		RB::Collisions::AttackSpecs _defaultAttackSpecs;
+		std::vector<Collisions::AttackSpecs> _vecAttackSpecs;
+		Collisions::AttackSpecs _defaultAttackSpecs;
 	};
 }

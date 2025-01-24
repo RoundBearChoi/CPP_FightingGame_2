@@ -6,7 +6,7 @@
 
 namespace RB::Collisions
 {
-	class iAttackRegisterController : public RB::Controllers::ControllerT<iAttackRegisterController>
+	class iAttackRegisterController : public Controllers::ControllerT<iAttackRegisterController>
 	{
 	public:
 		virtual void Init() = 0;

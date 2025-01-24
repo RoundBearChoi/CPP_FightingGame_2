@@ -18,18 +18,18 @@ namespace RB::Collisions
 		}
 	}
 
-	std::string PlayerBoxSpecsLoader::GetPath(RB::Sprites::SpriteType spriteType)
+	std::string PlayerBoxSpecsLoader::GetPath(Sprites::SpriteType spriteType)
 	{
 		std::string spriteName = spriteType._to_string();
 
 		return "../resource/PlayerBoxSpecs/Aku/" + spriteName + ".playerBoxSpecs";
 	}
 
-	void PlayerBoxSpecsLoader::LoadSpecs(RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)
+	void PlayerBoxSpecsLoader::LoadSpecs(Sprites::SpriteType spriteType, Players::CharacterType characterType)
 	{
 		std::string path = GetPath(spriteType);
 
-		RB::JSON::JParser parser;
+		JSON::JParser parser;
 
 		parser.LoadJSON(path);
 
@@ -74,7 +74,7 @@ namespace RB::Collisions
 		//normal file
 		while (element != nullptr)
 		{
-			unsigned int frame = RB::JSON::JParser::ParseFrame(element->name->string);
+			unsigned int frame = JSON::JParser::ParseFrame(element->name->string);
 			
 			json_array_s* arr = json_value_as_array(element->value);
 
@@ -98,10 +98,10 @@ namespace RB::Collisions
 			json_object_element_s* e2 = e1->next;
 			json_object_element_s* e3 = e2->next;
 
-			float offsetX = RB::JSON::JParser::GetFloat_FromElement(*e0);
-			float offsetY = RB::JSON::JParser::GetFloat_FromElement(*e1);
-			float width = RB::JSON::JParser::GetFloat_FromElement(*e2);
-			float height = RB::JSON::JParser::GetFloat_FromElement(*e3);
+			float offsetX = JSON::JParser::GetFloat_FromElement(*e0);
+			float offsetY = JSON::JParser::GetFloat_FromElement(*e1);
+			float width = JSON::JParser::GetFloat_FromElement(*e2);
+			float height = JSON::JParser::GetFloat_FromElement(*e3);
 
 			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 
@@ -112,7 +112,7 @@ namespace RB::Collisions
 			}
 			else
 			{
-				RB::Collisions::PlayerBoxSpecs* existingSpecs = loadedData->GetSpecs(spriteType);
+				Collisions::PlayerBoxSpecs* existingSpecs = loadedData->GetSpecs(spriteType);
 
 				if (existingSpecs != nullptr)
 				{
@@ -137,7 +137,7 @@ namespace RB::Collisions
 		}
 	}
 
-	LoadedPlayerBoxData* PlayerBoxSpecsLoader::GetLoadedSpecs(RB::Players::CharacterType characterType)
+	LoadedPlayerBoxData* PlayerBoxSpecsLoader::GetLoadedSpecs(Players::CharacterType characterType)
 	{
 		for (auto i = _vecLoadedSpecs.begin(); i != _vecLoadedSpecs.end(); i++)
 		{
@@ -150,7 +150,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	void PlayerBoxSpecsLoader::AddSpecs(PlayerBox box, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType)
+	void PlayerBoxSpecsLoader::AddSpecs(PlayerBox box, Sprites::SpriteType spriteType, Players::CharacterType characterType)
 	{
 		LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
 

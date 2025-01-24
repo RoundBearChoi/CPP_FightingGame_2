@@ -2,12 +2,12 @@
 
 namespace RB::Collisions
 {
-	LoadedPlayerBoxData::LoadedPlayerBoxData(RB::Players::CharacterType characterType)
+	LoadedPlayerBoxData::LoadedPlayerBoxData(Players::CharacterType characterType)
 	{
 		_characterType = characterType;
 	}
 
-	LoadedPlayerBoxData::LoadedPlayerBoxData(RB::Players::CharacterType characterType, PlayerBoxSpecs specs)
+	LoadedPlayerBoxData::LoadedPlayerBoxData(Players::CharacterType characterType, PlayerBoxSpecs specs)
 	{
 		_characterType = characterType;
 		Add(specs);
@@ -36,12 +36,12 @@ namespace RB::Collisions
 		RefreshIterators();
 	}
 
-	RB::Players::CharacterType LoadedPlayerBoxData::GetCharacterType()
+	Players::CharacterType LoadedPlayerBoxData::GetCharacterType()
 	{
 		return _characterType;
 	}
 
-	PlayerBoxSpecs* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteType spriteType)
+	PlayerBoxSpecs* LoadedPlayerBoxData::GetSpecs(Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
@@ -54,7 +54,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	PlayerBox* LoadedPlayerBoxData::GetSpecs(RB::Sprites::SpriteType spriteType, unsigned int frame)
+	PlayerBox* LoadedPlayerBoxData::GetSpecs(Sprites::SpriteType spriteType, unsigned int frame)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{
@@ -75,7 +75,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	void LoadedPlayerBoxData::EraseSpecs(RB::Sprites::SpriteType spriteType, unsigned int frame)
+	void LoadedPlayerBoxData::EraseSpecs(Sprites::SpriteType spriteType, unsigned int frame)
 	{
 		for (auto i = _vecSpecs.begin(); i != _vecSpecs.end(); i++)
 		{

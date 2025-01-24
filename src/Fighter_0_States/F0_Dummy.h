@@ -8,7 +8,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_Dummy : public RB::Players::PlayerState
+	class F0_Dummy : public Players::PlayerState
 	{
 	public:
 		F0_Dummy(Sprites::SpriteType startingSpriteType);
@@ -20,6 +20,6 @@ namespace RB::Fighter_0_States
 		void OnFixedUpdate() override;
 
 	private:
-		RB::Render::ManualAnimationUpdater _manualAnimationUpdater;
+		Render::ManualAnimationUpdater _manualAnimationUpdater;
 	};
 }

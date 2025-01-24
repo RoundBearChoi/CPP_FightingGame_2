@@ -19,7 +19,7 @@ namespace RB::Fighter_0_States
 
 	void F0_Dummy::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{

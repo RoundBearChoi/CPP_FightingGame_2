@@ -14,7 +14,7 @@ namespace RB::Collisions
 	{
 		_ShowMenu();
 
-		_AddDeleteBoxOnPress(RB::Players::PlayerID::PLAYER_1);
+		_AddDeleteBoxOnPress(Players::PlayerID::PLAYER_1);
 		_SaveOnPress();
 
 		Render::iPlayerDebugController* playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
@@ -24,7 +24,7 @@ namespace RB::Collisions
 			playerDebugController->RenderPlayerHP(false);
 			playerDebugController->RenderInput(false);
 
-			PlayerBox* currentBox = _GetCurrentBox(RB::Players::PlayerID::PLAYER_1);
+			PlayerBox* currentBox = _GetCurrentBox(Players::PlayerID::PLAYER_1);
 
 			if (currentBox == nullptr)
 			{
@@ -44,7 +44,7 @@ namespace RB::Collisions
 
 	}
 
-	void PlayerBoxEditController::_UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* currentBox)
+	void PlayerBoxEditController::_UpdateBoxSizeOnPress(Collisions::PlayerBox* currentBox)
 	{
 		if (currentBox == nullptr)
 		{
@@ -61,22 +61,22 @@ namespace RB::Collisions
 
 		if (uButton.bHeld)
 		{
-			currentBox->mHeight += sizeAmount * RB::Time::GetDeltaTime();
+			currentBox->mHeight += sizeAmount * Time::GetDeltaTime();
 		}
 
 		if (jButton.bHeld)
 		{
-			currentBox->mHeight -= sizeAmount * RB::Time::GetDeltaTime();
+			currentBox->mHeight -= sizeAmount * Time::GetDeltaTime();
 		}
 
 		if (hButton.bHeld)
 		{
-			currentBox->mWidth -= sizeAmount * RB::Time::GetDeltaTime();
+			currentBox->mWidth -= sizeAmount * Time::GetDeltaTime();
 		}
 
 		if (kButton.bHeld)
 		{
-			currentBox->mWidth += sizeAmount * RB::Time::GetDeltaTime();
+			currentBox->mWidth += sizeAmount * Time::GetDeltaTime();
 		}
 
 		if (currentBox->mHeight <= 0.0f)
@@ -90,36 +90,36 @@ namespace RB::Collisions
 		}
 	}
 
-	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Players::PlayerID id)
+	void PlayerBoxEditController::_AddDeleteBoxOnPress(Players::PlayerID id)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
-		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
 			return;
 		}
 
-		PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
+		PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(Players::PlayerID::PLAYER_1);
 
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
 
-		RB::Sprites::SpriteType currSpriteType = RB::Sprites::GetCurrentSpriteType(id);
+		Sprites::SpriteType currSpriteType = Sprites::GetCurrentSpriteType(id);
 
 		if (insButton.bPressed)
 		{
 			if (currentSpecs == nullptr)
 			{
-				playerBoxDataController->AddSpecs(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, playerController->GetPlayerOnID(id)->GetCharacterType());
+				playerBoxDataController->AddSpecs(PlayerBox(Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, playerController->GetPlayerOnID(id)->GetCharacterType());
 			}
 			else
 			{
-				PlayerBox* existingBox = currentSpecs->GetBox_ptr(RB::Sprites::GetCurrentAnimationFrame(id));
+				PlayerBox* existingBox = currentSpecs->GetBox_ptr(Sprites::GetCurrentAnimationFrame(id));
 
 				if (existingBox == nullptr)
 				{
-					currentSpecs->AddBox(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f));
+					currentSpecs->AddBox(PlayerBox(Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f));
 				}
 				else
 				{
@@ -136,8 +136,8 @@ namespace RB::Collisions
 			}
 			else
 			{
-				RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(_GetCharacterType(id));
-				loaded->EraseSpecs(RB::Sprites::GetCurrentSpriteType(id), RB::Sprites::GetCurrentAnimationFrame(id));
+				Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(_GetCharacterType(id));
+				loaded->EraseSpecs(Sprites::GetCurrentSpriteType(id), Sprites::GetCurrentAnimationFrame(id));
 				loaded->RefreshIterators();
 			}
 		}
@@ -149,7 +149,7 @@ namespace RB::Collisions
 
 		if (enter.bPressed)
 		{
-			PlayerBoxSpecs* specs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
+			PlayerBoxSpecs* specs = _GetCurrentSpecs(Players::PlayerID::PLAYER_1);
 
 			if (specs == nullptr)
 			{
@@ -170,70 +170,69 @@ namespace RB::Collisions
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
-		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
+		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
-		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
 	}
 
-	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)
+	PlayerBox* PlayerBoxEditController::_GetCurrentBox(Players::PlayerID id)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
-		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
+		Players::iPlayer* player = playerController->GetPlayerOnID(id);
 	
-		RB::Players::CharacterType characterType = player->GetCharacterType();
+		Players::CharacterType characterType = player->GetCharacterType();
 	
 		if (playerBoxDataController == nullptr)
 		{
 			return nullptr;
 		}
 	
-		RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
+		Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
 	
 		if (loaded == nullptr)
 		{
 			return nullptr;
 		}
 	
-		RB::Collisions::PlayerBox* box = loaded->GetSpecs(RB::Sprites::GetCurrentSpriteType(id), RB::Sprites::GetCurrentAnimationFrame(id));
+		Collisions::PlayerBox* box = loaded->GetSpecs(Sprites::GetCurrentSpriteType(id), Sprites::GetCurrentAnimationFrame(id));
 	
 		return box;
 	}
 
-	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(RB::Players::PlayerID id)
+	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(Players::PlayerID id)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
-		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
-
-		RB::Players::CharacterType characterType = player->GetCharacterType();
+		Players::iPlayer* player = playerController->GetPlayerOnID(id);
+		Players::CharacterType characterType = player->GetCharacterType();
 
 		if (playerBoxDataController == nullptr)
 		{
 			return nullptr;
 		}
 
-		RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
+		Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
 
 		if (loaded == nullptr)
 		{
 			return nullptr;
 		}
 
-		RB::Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(RB::Sprites::GetCurrentSpriteType(id));
+		Collisions::PlayerBoxSpecs* specs = loaded->GetSpecs(Sprites::GetCurrentSpriteType(id));
 
 		return specs;
 	}
 
-	RB::Players::CharacterType PlayerBoxEditController::_GetCharacterType(RB::Players::PlayerID id)
+	Players::CharacterType PlayerBoxEditController::_GetCharacterType(Players::PlayerID id)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
+		Players::iPlayer* player = playerController->GetPlayerOnID(id);
 
-		RB::Players::CharacterType characterType = player->GetCharacterType();
+		Players::CharacterType characterType = player->GetCharacterType();
 
 		return characterType;
 	}

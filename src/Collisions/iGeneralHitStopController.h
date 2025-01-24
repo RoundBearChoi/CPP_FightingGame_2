@@ -4,7 +4,7 @@
 
 namespace RB::Collisions
 {
-	class iGeneralHitStopController : public RB::Controllers::ControllerT<iGeneralHitStopController>
+	class iGeneralHitStopController : public Controllers::ControllerT<iGeneralHitStopController>
 	{
 	public:
 		virtual void Init() = 0;

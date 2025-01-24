@@ -11,10 +11,10 @@ namespace RB::Collisions
 	class CollisionResult
 	{
 	public:
-		RB::Players::iPlayer* mAttacker = nullptr;
-		RB::Players::iPlayer* mTarget = nullptr;
-		RB::Vector2 mCollisionPoint = { 0, 0 };
-		RB::Sprites::SpriteType mAttackerSpriteType = RB::Sprites::SpriteType::NONE;
+		Players::iPlayer* mAttacker = nullptr;
+		Players::iPlayer* mTarget = nullptr;
+		Vector2 mCollisionPoint = { 0, 0 };
+		Sprites::SpriteType mAttackerSpriteType = Sprites::SpriteType::NONE;
 		CollisionType mCollisionType = CollisionType::NONE;
 	};
 }

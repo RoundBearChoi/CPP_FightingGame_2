@@ -22,10 +22,10 @@ namespace RB::Collisions
 		void OnUpdate();
 		void OnFixedUpdate();
 
-		std::string GetPath(RB::Sprites::SpriteType spriteType);
-		void LoadSpecs(RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType);
-		LoadedPlayerBoxData* GetLoadedSpecs(RB::Players::CharacterType characterType);
-		void AddSpecs(PlayerBox box, RB::Sprites::SpriteType spriteType, RB::Players::CharacterType characterType);
+		std::string GetPath(Sprites::SpriteType spriteType);
+		void LoadSpecs(Sprites::SpriteType spriteType, Players::CharacterType characterType);
+		LoadedPlayerBoxData* GetLoadedSpecs(Players::CharacterType characterType);
+		void AddSpecs(PlayerBox box, Sprites::SpriteType spriteType, Players::CharacterType characterType);
 
 	private:
 		std::vector<LoadedPlayerBoxData> _vecLoadedSpecs;

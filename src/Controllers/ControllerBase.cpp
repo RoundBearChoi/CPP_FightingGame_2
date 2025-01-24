@@ -10,7 +10,7 @@ namespace RB::Controllers
 
 	iController* GetController(ControllerType controllerType)
 	{
-		if (RB::Updaters::ptrCurrentPlayground != nullptr)
+		if (Updaters::ptrCurrentPlayground != nullptr)
 		{
 			Updaters::iUpdater* updater = Updaters::ptrCurrentPlayground->GetUpdater();
 

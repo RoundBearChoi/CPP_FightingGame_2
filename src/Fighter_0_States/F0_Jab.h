@@ -9,7 +9,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_Jab : public RB::Players::PlayerState
+	class F0_Jab : public Players::PlayerState
 	{
 	public:
 		F0_Jab() = default;

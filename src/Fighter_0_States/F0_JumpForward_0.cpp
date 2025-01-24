@@ -6,16 +6,16 @@ namespace RB::Fighter_0_States
 {
 	void F0_JumpForward_0::OnEnter()
 	{
-		RB::Players::iSpecsController* specsController = GET_SPECS_CONTROLLER;
+		Players::iSpecsController* specsController = GET_SPECS_CONTROLLER;
 
-		_spriteType = RB::Sprites::SpriteType::fighter_0_jump_forward_0;
+		_spriteType = Sprites::SpriteType::fighter_0_jump_forward_0;
 
-		RB::Players::MoveSpecs moveSpecs = specsController->GetMoveSpecs(RB::Players::CharacterType::AKU);
+		Players::MoveSpecs moveSpecs = specsController->GetMoveSpecs(Players::CharacterType::AKU);
 
-		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
-		AddStateComponent(new RB::PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpForward_totalFrames / 2, moveSpecs.mJumpForward_verSpeedMultiplier));
-		AddStateComponent(new RB::PlayerStateComponents::MoveForwardOnJump(moveSpecs.mJumpForward_totalFrames / 2, moveSpecs.mJumpForward_horSpeedMultiplier, PlayerStateComponents::MoveForwardOnJumpType::FIRST_HALF));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnFixedUpdateCount(moveSpecs.mJumpForward_totalFrames / 2, new F0_JumpForward_1()));
+		AddStateComponent(new PlayerStateComponents::MarkInitiallyFacingRight());
+		AddStateComponent(new PlayerStateComponents::MoveUpOnJump(moveSpecs.mJumpForward_totalFrames / 2, moveSpecs.mJumpForward_verSpeedMultiplier));
+		AddStateComponent(new PlayerStateComponents::MoveForwardOnJump(moveSpecs.mJumpForward_totalFrames / 2, moveSpecs.mJumpForward_horSpeedMultiplier, PlayerStateComponents::MoveForwardOnJumpType::FIRST_HALF));
+		AddStateComponent(new PlayerStateComponents::TransitionOnFixedUpdateCount(moveSpecs.mJumpForward_totalFrames / 2, new F0_JumpForward_1()));
 
 		EnterStateComponents();
 	}

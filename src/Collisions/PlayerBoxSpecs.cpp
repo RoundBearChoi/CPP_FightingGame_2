@@ -2,13 +2,13 @@
 
 namespace RB::Collisions
 {
-	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, RB::Sprites::SpriteType spriteType)
+	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, Sprites::SpriteType spriteType)
 	{
 		_path = path;
 		_spriteType = spriteType;
 	}
 
-	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, RB::Sprites::SpriteType spriteType, PlayerBox box)
+	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, Sprites::SpriteType spriteType, PlayerBox box)
 	{
 		_path = path;
 		_spriteType = spriteType;
@@ -33,12 +33,12 @@ namespace RB::Collisions
 		GetSelector()->PushBack(box);
 	}
 
-	RB::Sprites::SpriteType PlayerBoxSpecs::GetSpriteType()
+	Sprites::SpriteType PlayerBoxSpecs::GetSpriteType()
 	{
 		return _spriteType;
 	}
 
-	RB::iSelector<PlayerBox>* PlayerBoxSpecs::GetSelector()
+	iSelector<PlayerBox>* PlayerBoxSpecs::GetSelector()
 	{
 		return &_selector;
 	}
@@ -60,7 +60,7 @@ namespace RB::Collisions
 		return false;
 	}
 
-	const RB::Collisions::PlayerBox& PlayerBoxSpecs::GetBox(unsigned int frame)
+	const Collisions::PlayerBox& PlayerBoxSpecs::GetBox(unsigned int frame)
 	{
 		const auto& vec = _selector.GetVector();
 
@@ -75,7 +75,7 @@ namespace RB::Collisions
 		return _emptyBox;
 	}
 
-	RB::Collisions::PlayerBox* PlayerBoxSpecs::GetBox_ptr(unsigned int frame)
+	Collisions::PlayerBox* PlayerBoxSpecs::GetBox_ptr(unsigned int frame)
 	{
 		auto* vec = _selector.GetVector_ptr();
 

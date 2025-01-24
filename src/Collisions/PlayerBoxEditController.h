@@ -20,7 +20,7 @@
 
 namespace RB::Collisions
 {
-	class PlayerBoxEditController : public RB::Collisions::iPlayerBoxEditController
+	class PlayerBoxEditController : public Collisions::iPlayerBoxEditController
 	{
 	public:
 		PlayerBoxEditController() = default;
@@ -32,14 +32,14 @@ namespace RB::Collisions
 		void OnFixedUpdate() override;
 
 	private:
-		void _UpdateBoxSizeOnPress(RB::Collisions::PlayerBox* currentBox);
-		void _AddDeleteBoxOnPress(RB::Players::PlayerID id);
+		void _UpdateBoxSizeOnPress(Collisions::PlayerBox* currentBox);
+		void _AddDeleteBoxOnPress(Players::PlayerID id);
 		void _SaveOnPress();
 		void _ShowMenu();
 
 	private:
-		PlayerBox* _GetCurrentBox(RB::Players::PlayerID id);
-		PlayerBoxSpecs* _GetCurrentSpecs(RB::Players::PlayerID id);
-		RB::Players::CharacterType _GetCharacterType(RB::Players::PlayerID id);
+		PlayerBox* _GetCurrentBox(Players::PlayerID id);
+		PlayerBoxSpecs* _GetCurrentSpecs(Players::PlayerID id);
+		Players::CharacterType _GetCharacterType(Players::PlayerID id);
 	};
 }

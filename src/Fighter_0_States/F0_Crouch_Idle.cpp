@@ -5,13 +5,13 @@ namespace RB::Fighter_0_States
 {
 	void F0_Crouch_Idle::OnEnter()
 	{
-		_spriteType = RB::Sprites::SpriteType::fighter_0_crouch_idle;
+		_spriteType = Sprites::SpriteType::fighter_0_crouch_idle;
 
-		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
-		AddStateComponent(new RB::PlayerStateComponents::TransitionOnInput(new F0_Crouch_Punch_Weak(), RB::Input::PlayerInput::ATTACK_WEAK_PUNCH, RB::Input::InputType::ATTACK));
-		AddStateComponent(new RB::PlayerStateComponents::StandUpOnRelease(new RB::Fighter_0_States::F0_StandUp()));
-		AddStateComponent(new RB::PlayerStateComponents::MarkCrouchingOnEnter(true));
-		AddStateComponent(new RB::PlayerStateComponents::MarkCrouchingOnExit(false));
+		AddStateComponent(new PlayerStateComponents::DoNotFixDirectionDuringState());
+		AddStateComponent(new PlayerStateComponents::TransitionOnInput(new F0_Crouch_Punch_Weak(), Input::PlayerInput::ATTACK_WEAK_PUNCH, Input::InputType::ATTACK));
+		AddStateComponent(new PlayerStateComponents::StandUpOnRelease(new Fighter_0_States::F0_StandUp()));
+		AddStateComponent(new PlayerStateComponents::MarkCrouchingOnEnter(true));
+		AddStateComponent(new PlayerStateComponents::MarkCrouchingOnExit(false));
 
 		EnterStateComponents();
 	}

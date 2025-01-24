@@ -9,7 +9,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_Hadouken : public RB::Players::PlayerState
+	class F0_Hadouken : public Players::PlayerState
 	{
 	public:
 		F0_Hadouken() = default;

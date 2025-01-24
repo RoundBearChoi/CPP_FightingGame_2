@@ -44,6 +44,14 @@ namespace RB::Updaters
         return nullptr;
     }
 
+    void UpdaterBase::InitAllControllers()
+    {
+        for (int i = 0; i < _vecControllers.size(); i++)
+        {
+            _vecControllers[i]->Init();
+        }
+    }
+
     void UpdaterBase::_FixedUpdateControllers()
     {
         for (int i = 0; i < _vecControllers.size(); i++)

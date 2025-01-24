@@ -18,7 +18,6 @@ pacman -S mingw-w64-x86_64-ninja
 pacman -S mingw-w64-x86_64-gcc
 pacman -S mingw-w64-x86_64-clang
 pacman -S mingw-w64-x86_64-libc++
-pacman -S mingw-w64-x86_64-libc++abi
 ```
 
 <br>

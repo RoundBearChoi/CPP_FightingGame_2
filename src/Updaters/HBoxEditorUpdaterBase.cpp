@@ -1,6 +1,5 @@
 #include "HBoxEditorUpdaterBase.h"
 
-#include "../Players/Player.h"
 #include "../Sprites/SpriteTypeLoader.h"
 
 #include "../Input/InputController.h"
@@ -44,7 +43,7 @@ namespace RB::Updaters
 		auto hbMenuController = static_cast<HBox::iHBMenuController*>(AddController(new HBox::HBMenuController(), Controllers::ControllerType::HB_MENU_CONTROLLER));
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
-		Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
+		Players::iPlayer* p0 = playerController->AddPlayer();
 		Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Dummy(spriteType));

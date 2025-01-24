@@ -45,11 +45,9 @@ namespace RB::Players
 		}
 	}
 
-	iPlayer* PlayerController::AddPlayer(iPlayer* player)
+	iPlayer* PlayerController::AddPlayer()
 	{
-		_vecPlayers.reserve(2);
-
-		iPlayer* p = player;
+		iPlayer* p = new Player();
 
 		_vecPlayers.push_back(p);
 

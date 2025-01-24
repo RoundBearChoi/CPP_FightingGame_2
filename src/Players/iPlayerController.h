@@ -15,7 +15,7 @@ namespace RB::Players
 		virtual ~iPlayerController() override {}
 
 	public:
-		virtual iPlayer* AddPlayer(iPlayer* player) = 0;
+		virtual iPlayer* AddPlayer() = 0;
 		virtual iPlayer* GetPlayerOnIndex(unsigned int index) = 0;
 		virtual iPlayer* GetPlayerOnID(PlayerID id) = 0;
 		virtual iPlayer* GetPlayerOnStateMachineID(unsigned int id) = 0;

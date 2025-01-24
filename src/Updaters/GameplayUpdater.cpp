@@ -16,8 +16,6 @@
 #include "../HBox/AttackBoxDataController.h"
 #include "../Cam/CamController.h"
 
-#include "../Players/Player.h"
-
 #include "../Fighter_0_States/F0_Idle.h"
 
 namespace RB::Updaters
@@ -46,8 +44,8 @@ namespace RB::Updaters
 		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
-		RB::Players::iPlayer* p0 = playerController->AddPlayer(new Players::Player());
-		RB::Players::iPlayer* p1 = playerController->AddPlayer(new Players::Player());
+		RB::Players::iPlayer* p0 = playerController->AddPlayer();
+		RB::Players::iPlayer* p1 = playerController->AddPlayer();
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Idle());
 		p0->SetPosition(RB::Vector2{ -150.0f, 0.0f });

@@ -1,10 +1,9 @@
 #pragma once
 
 #include "PlayerState.h" //erase all in the end
+#include "Player.h"
 
-#include "iPlayer.h"
 #include "iPlayerController.h"
-
 
 namespace RB::Players
 {
@@ -20,7 +19,7 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		iPlayer* AddPlayer(iPlayer* player) override;
+		iPlayer* AddPlayer() override;
 
 	public:
 		iPlayer* GetPlayerOnIndex(unsigned int index) override;

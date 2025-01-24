@@ -25,7 +25,6 @@ namespace RB::States
 		virtual unsigned int GetID() override;
 		virtual iState* GetCurrentState() override;
 		virtual bool IsTransitioning() override;
-		virtual void LockTransition(bool) override;
 
 	protected:
 		virtual void _MakeTransition() override;
@@ -33,6 +32,5 @@ namespace RB::States
 		unsigned int _stateMachineID = 0;
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;
-		bool _lockTransition = false;
 	};
 }

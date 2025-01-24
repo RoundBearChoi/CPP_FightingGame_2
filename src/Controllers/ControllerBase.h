@@ -11,6 +11,8 @@ namespace RB::Controllers
 {
 	iController* GetController(ControllerType controllerType);
 
+	#define INIT_CONTROLLER if (!_initialized){ _initialized = true; } else { return; }
+
 	class ControllerBase : public iController
 	{
 	public:
@@ -45,5 +47,6 @@ namespace RB::Controllers
 
 	protected:
 		ControllerType _controllerType = ControllerType::NONE;
+		bool _initialized = false;
 	};
 }

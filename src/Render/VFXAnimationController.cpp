@@ -4,6 +4,8 @@ namespace RB::Render
 {
     void VFXAnimationController::Init()
     {
+        INIT_CONTROLLER
+        
         _animationContainer.Init();
 
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);

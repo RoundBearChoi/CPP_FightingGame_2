@@ -10,6 +10,8 @@ namespace RB::Players
 
 	void SpecsController::Init()
 	{
+		INIT_CONTROLLER
+		
 		MoveSpecs result =  _LoadMoveSpecs("../resource/MoveSpecs/F0_moveSpecs.moveSpecs", RB::Players::CharacterType::AKU);
 	}
 

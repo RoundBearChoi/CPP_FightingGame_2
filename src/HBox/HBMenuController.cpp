@@ -6,7 +6,7 @@ namespace RB::HBox
 {
 	void HBMenuController::Init()
 	{
-
+		INIT_CONTROLLER
 	}
 
 	void HBMenuController::OnUpdate()

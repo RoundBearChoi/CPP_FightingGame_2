@@ -5,6 +5,8 @@ namespace RB::Render
 {
 	void PlayerDebugController::Init()
 	{
+		INIT_CONTROLLER
+		
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/x_white.png", RB::Sprites::SpriteType::x_white);
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq.png", RB::Sprites::SpriteType::white_sq);
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/player_hp_bar_white.png", RB::Sprites::SpriteType::player_hp_bar_white);

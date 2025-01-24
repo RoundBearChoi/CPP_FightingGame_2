@@ -4,6 +4,8 @@ namespace RB::Cam
 {
 	void CamController::Init()
 	{
+		INIT_CONTROLLER
+		
 		_camObj.Init();
 
 		_followPlayers.Init(&_camObj);

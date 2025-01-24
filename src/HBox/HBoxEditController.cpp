@@ -11,6 +11,8 @@ namespace RB::HBox
 
 	void HBoxEditController::Init()
 	{
+		INIT_CONTROLLER
+		
 		_circleRenderer.Init();
 	}
 

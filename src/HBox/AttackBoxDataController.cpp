@@ -9,6 +9,8 @@ namespace RB::HBox
 
 	void AttackBoxDataController::Init()
 	{
+		INIT_CONTROLLER
+		
 		_hbContainer.Init();
 	}
 

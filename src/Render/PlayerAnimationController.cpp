@@ -10,6 +10,8 @@ namespace RB::Render
 
 	void PlayerAnimationController::Init()
 	{
+		INIT_CONTROLLER
+		
 		_animationContainer.Init();
 
 		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)

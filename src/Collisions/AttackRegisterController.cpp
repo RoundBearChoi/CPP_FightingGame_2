@@ -8,7 +8,7 @@ namespace RB::Collisions
 {
 	void AttackRegisterController::Init()
 	{
-
+		INIT_CONTROLLER
 	}
 
 	void AttackRegisterController::OnUpdate()

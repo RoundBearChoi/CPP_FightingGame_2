@@ -4,6 +4,8 @@ namespace RB::Collisions
 {
 	void AttackSpecsController::Init()
 	{
+		INIT_CONTROLLER
+		
 		_LoadAllAttackSpecs();
 	}
 

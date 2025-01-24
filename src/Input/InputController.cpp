@@ -11,6 +11,8 @@ namespace RB::Input
 
 	void InputController::Init()
 	{
+		INIT_CONTROLLER
+
 		_totalInputTypes = static_cast<unsigned int>(PlayerInput::COUNT);
 
 		_vecKeyBindings.reserve((unsigned int)PlayerInput::COUNT);

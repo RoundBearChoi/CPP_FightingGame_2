@@ -33,6 +33,7 @@ namespace RB::Render
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 		
@@ -70,9 +71,9 @@ namespace RB::Render
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
+			if (attackBoxDataController != nullptr)
 			{
-				data = RB::HBox::iAttackBoxDataController::Get()->GetData(spriteType);
+				data = attackBoxDataController->GetData(spriteType);
 			}
 		}
 

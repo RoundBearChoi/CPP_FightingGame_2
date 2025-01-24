@@ -50,7 +50,12 @@ namespace RB::Updaters
 		}
 		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			RB::Controllers::ControllerBase::AddController<RB::HBox::AttackBoxDataController>(new RB::HBox::AttackBoxDataController(_specsPath));
+			//RB::Controllers::ControllerBase::AddController<RB::HBox::AttackBoxDataController>(new RB::HBox::AttackBoxDataController(_specsPath));
+			AddController(new HBox::AttackBoxDataController(_specsPath), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
+
+			auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
+
+			attackBoxDataController->Init();
 		}
 
 		HBox::HBMenuController* menuController = RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());

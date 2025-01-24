@@ -48,6 +48,7 @@ namespace RB::PlayerStateComponents
 	{
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
 		//std::cout << "detecting hit.." << std::endl;
 
@@ -82,7 +83,7 @@ namespace RB::PlayerStateComponents
 		RB::Render::iAnimationObj* attackerAniObj = playerAnimationController->GetCurrentAnimationObj(attacker->GetPlayerID(), attackerSpriteType);
 		RB::Render::iAnimationObj* targetAniObj = playerAnimationController->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
-		RB::HBox::Loaded_HB_Data* attackerData = RB::HBox::iAttackBoxDataController::Get()->GetData(attackerSpriteType);
+		RB::HBox::Loaded_HB_Data* attackerData = attackBoxDataController->GetData(attackerSpriteType);
 		RB::HBox::Loaded_HB_Data* targetData = targetBoxDataController->GetData(targetSpriteType);
 
 		if (attackerData == nullptr || targetData == nullptr)

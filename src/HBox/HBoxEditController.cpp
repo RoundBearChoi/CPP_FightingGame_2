@@ -45,6 +45,7 @@ namespace RB::HBox
 	RB::HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
 		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
 
@@ -78,9 +79,9 @@ namespace RB::HBox
 		}
 		else if (boxType == HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::Get() != nullptr)
+			if (attackBoxDataController != nullptr)
 			{
-				data = RB::HBox::iAttackBoxDataController::Get()->GetData(spriteType);
+				data = attackBoxDataController->GetData(spriteType);
 			}
 		}
 
@@ -90,6 +91,7 @@ namespace RB::HBox
 	RB::HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
 		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
 
@@ -120,7 +122,7 @@ namespace RB::HBox
 		}
 		else if (_boxType == HBoxType::ATTACK_BOX)
 		{
-			data = RB::HBox::iAttackBoxDataController::Get()->GetData(spriteType);
+			data = attackBoxDataController->GetData(spriteType);
 		}
 
 		// create new when data doesn't exist
@@ -132,7 +134,7 @@ namespace RB::HBox
 			}
 			else if (_boxType == HBoxType::ATTACK_BOX)
 			{
-				data = RB::HBox::iAttackBoxDataController::Get()->CreateData(spriteType);
+				data = attackBoxDataController->CreateData(spriteType);
 			}
 
 			return nullptr; // shouldn't reach here..
@@ -151,6 +153,7 @@ namespace RB::HBox
 	bool HBoxEditController::_ControllersExist()
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
@@ -161,7 +164,7 @@ namespace RB::HBox
 		}
 		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{
-			if (RB::HBox::iAttackBoxDataController::Get() == nullptr)
+			if (attackBoxDataController == nullptr)
 			{
 				return false;
 			}
@@ -320,6 +323,7 @@ namespace RB::HBox
 	void HBoxEditController::_SaveHBoxes_OnPress()
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
 		RB::HBox::Loaded_HB_Data* data = GetCurrentData(RB::Players::PlayerID::PLAYER_1, _boxType);
 
@@ -338,7 +342,7 @@ namespace RB::HBox
 			}
 			else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 			{
-				path = RB::HBox::iAttackBoxDataController::Get()->GetPath(data->GetSpriteType());
+				path = attackBoxDataController->GetPath(data->GetSpriteType());
 			}
 
 			std::ofstream file(path);

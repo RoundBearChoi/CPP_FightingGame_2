@@ -26,24 +26,9 @@ namespace RB::Updaters
 
 
 
-		//RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());
 		AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
-		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
-		playerAnimationController->Init();
-		
-		
-		
-		//RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>(new RB::Collisions::PlayerBoxDataController());
 		AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
-		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
-		playerBoxDataController->Init();
-
-
-
-		//RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 		AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
-		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
-		inputController->Init();
 
 		Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxEditController>(new RB::Collisions::PlayerBoxEditController());
 
@@ -51,6 +36,8 @@ namespace RB::Updaters
 
 		Cam::CamController* camController = RB::Controllers::ControllerBase::AddController<RB::Cam::CamController>(new RB::Cam::CamController());
 		camController->SetZoom(1.0f);
+
+		InitAllControllers();
 	}
 
 	void PlayerBoxEditorUpdater::OnUpdate()

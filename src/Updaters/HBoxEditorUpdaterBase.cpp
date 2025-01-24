@@ -56,16 +56,16 @@ namespace RB::Updaters
 		
 		camController->SetZoom(1.0f);
 
-		InitAllControllers();
+		_InitAllControllers();
 	}
 
 	void HBoxEditorUpdaterBase::OnUpdate()
 	{
-		_UpdateControllers();
+		_UpdateAllControllers();
 	}
 
 	void HBoxEditorUpdaterBase::OnFixedUpdate()
 	{
-		_FixedUpdateControllers();
+		_FixedUpdateAllControllers();
 	}
 }

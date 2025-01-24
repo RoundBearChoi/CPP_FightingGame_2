@@ -40,16 +40,16 @@ namespace RB::Updaters
 
 		camController->SetZoom(1.0f);
 
-		InitAllControllers();
+		_InitAllControllers();
 	}
 
 	void PlayerBoxEditorUpdater::OnUpdate()
 	{
-		_UpdateControllers();
+		_UpdateAllControllers();
 	}
 
 	void PlayerBoxEditorUpdater::OnFixedUpdate()
 	{
-		_FixedUpdateControllers();
+		_FixedUpdateAllControllers();
 	}
 }

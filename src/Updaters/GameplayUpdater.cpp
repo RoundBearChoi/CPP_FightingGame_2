@@ -61,16 +61,16 @@ namespace RB::Updaters
 
 		camController->AllowManualControl(false);
 
-		InitAllControllers();
+		_InitAllControllers();
 	}
 
 	void GameplayUpdater::OnUpdate()
 	{
-		_UpdateControllers();
+		_UpdateAllControllers();
 	}
 
 	void GameplayUpdater::OnFixedUpdate()
 	{
-		_FixedUpdateControllers();
+		_FixedUpdateAllControllers();
 	}
 }

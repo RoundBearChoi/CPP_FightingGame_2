@@ -44,7 +44,7 @@ namespace RB::Updaters
         return nullptr;
     }
 
-    void UpdaterBase::InitAllControllers()
+    void UpdaterBase::_InitAllControllers()
     {
         for (int i = 0; i < _vecControllers.size(); i++)
         {
@@ -52,7 +52,7 @@ namespace RB::Updaters
         }
     }
 
-    void UpdaterBase::_FixedUpdateControllers()
+    void UpdaterBase::_FixedUpdateAllControllers()
     {
         for (int i = 0; i < _vecControllers.size(); i++)
         {
@@ -60,7 +60,7 @@ namespace RB::Updaters
         }
     }
 
-    void UpdaterBase::_UpdateControllers()
+    void UpdaterBase::_UpdateAllControllers()
     {
         for (int i = 0; i < _vecControllers.size(); i++)
         {

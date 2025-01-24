@@ -20,11 +20,11 @@ namespace RB::Updaters
     public:
         virtual Controllers::iController* AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) override;
         virtual Controllers::iController* GetController(Controllers::ControllerType controllerType) override;
-        virtual void InitAllControllers() override;
 
     protected:
-        virtual void _FixedUpdateControllers();
-        virtual void _UpdateControllers();
+        virtual void _InitAllControllers();
+        virtual void _FixedUpdateAllControllers();
+        virtual void _UpdateAllControllers();
 
     protected:
         std::vector<Controllers::iController*> _vecControllers;

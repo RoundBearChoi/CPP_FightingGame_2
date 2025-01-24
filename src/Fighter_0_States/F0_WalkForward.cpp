@@ -4,9 +4,11 @@ namespace RB::Fighter_0_States
 {
 	void F0_WalkForward::OnEnter()
 	{
+		RB::Players::iSpecsController* specsController = GET_SPECS_CONTROLLER;
+
 		_spriteType = RB::Sprites::SpriteType::fighter_0_walk;
 
-		RB::Players::MoveSpecs m = RB::Players::iSpecsController::Get()->GetMoveSpecs(RB::Players::CharacterType::AKU);
+		RB::Players::MoveSpecs m = specsController->GetMoveSpecs(RB::Players::CharacterType::AKU);
 
 		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::Fighter_0_States::F0_JumpForward_0(), false));

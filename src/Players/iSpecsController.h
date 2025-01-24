@@ -3,11 +3,13 @@
 #include "CharacterType.h"
 #include "MoveSpecs.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Players
 {
-	class iSpecsController : public RB::Controllers::ControllerT<iSpecsController>
+	#define GET_SPECS_CONTROLLER static_cast<RB::Players::iSpecsController*>(RB::Controllers::GetController(Controllers::ControllerType::SPECS_CONTROLLER))
+
+	class iSpecsController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

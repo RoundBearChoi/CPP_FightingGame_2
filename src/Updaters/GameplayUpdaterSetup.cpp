@@ -5,6 +5,7 @@
 #include "../Render/PlayerDebugController.h"
 #include "../Render/PlayerAnimationController.h"
 #include "../Collisions/PlayerBoxDataController.h"
+#include "../Players/SpecsController.h"
 
 namespace RB::Updaters
 {
@@ -15,6 +16,7 @@ namespace RB::Updaters
         updater->AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
         updater->AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
         updater->AddController(new Collisions::PlayerBoxDataController, Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
+        updater->AddController(new Players::SpecsController(), Controllers::ControllerType::SPECS_CONTROLLER);
 
         int n = 0;
     }

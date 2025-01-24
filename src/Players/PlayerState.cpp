@@ -6,9 +6,11 @@ namespace RB::Players
 
 	PlayerState* PlayerState::GetPlayerState(RB::Players::PlayerID playerID)
 	{
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
 		for (auto i = allPlayerStates.begin(); i != allPlayerStates.end(); i++)
 		{
-			RB::Players::iPlayer* owner = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
+			RB::Players::iPlayer* owner = playerController->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
 
 			if (owner != nullptr)
 			{
@@ -103,9 +105,9 @@ namespace RB::Players
 
 	RB::Players::iPlayer* PlayerState::GetPlayer()
 	{
-		return RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_stateMachineID);
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		return nullptr;
+		return playerController->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
 	RB::Sprites::SpriteType PlayerState::GetSpriteType()

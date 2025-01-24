@@ -9,7 +9,9 @@ namespace RB::PlayerStateComponents
 
 	void MarkCrouchingOnEnter::OnEnter()
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		std::cout << std::endl;
 		//std::cout << "player " << player->GetPlayerID_int() << " crouching: " << _crouching << std::endl;

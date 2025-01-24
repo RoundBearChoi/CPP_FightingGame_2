@@ -22,13 +22,15 @@ namespace RB::Cam
 
 	float ZoomOnPlayers::_GetMagSqBetweenPlayers()
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr)
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr)
 		{
 			return 0.0f;
 		}
 
-		RB::Players::iPlayer* p1 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
-		RB::Players::iPlayer* p2 = RB::Players::iPlayerController::Get()->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
+		RB::Players::iPlayer* p1 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_1);
+		RB::Players::iPlayer* p2 = playerController->GetPlayerOnID(RB::Players::PlayerID::PLAYER_2);
 
 		RB::Vector2 p1_pos = p1->GetPosition();
 		RB::Vector2 p2_pos = p2->GetPosition();

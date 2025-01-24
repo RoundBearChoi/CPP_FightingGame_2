@@ -3,11 +3,13 @@
 #include "iPlayer.h"
 #include "PlayerID.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Players
 {
-	class iPlayerController : public RB::Controllers::ControllerT<iPlayerController>
+	#define GET_PLAYER_CONTROLLER static_cast<RB::Players::iPlayerController*>(RB::Controllers::GetController(Controllers::ControllerType::PLAYER_CONTROLLER))
+
+	class iPlayerController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual ~iPlayerController() override {}

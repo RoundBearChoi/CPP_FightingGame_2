@@ -10,7 +10,9 @@ namespace RB::Render
 
 	void PlayerPositionRenderer::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr)
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr)
 		{
 			return;
 		}
@@ -29,7 +31,9 @@ namespace RB::Render
 
 	void PlayerPositionRenderer::RenderPosition(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{
@@ -43,7 +47,9 @@ namespace RB::Render
 
 	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{

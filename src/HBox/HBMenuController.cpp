@@ -9,7 +9,9 @@ namespace RB::HBox
 
 	void HBMenuController::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr ||
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr ||
 			RB::Render::iPlayerAnimationController::Get() == nullptr)
 		{
 			return;

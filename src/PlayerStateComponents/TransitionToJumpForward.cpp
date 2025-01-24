@@ -17,13 +17,15 @@ namespace RB::PlayerStateComponents
 
 	void TransitionToJumpForward::OnUpdate()
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr ||
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr ||
 			RB::Input::iInputController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		bool doJump = false;
 		RB::Input::iInputObj* inputObj = nullptr;

@@ -15,7 +15,7 @@ namespace RB::Updaters
 		//render background first
 		RB::Controllers::ControllerBase::AddController<RB::Background::BackgroundController>(new RB::Background::BackgroundController());
 
-		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER; //RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 		RB::Players::iPlayer* p1 = playerController->AddPlayer(new RB::Players::Player());
 

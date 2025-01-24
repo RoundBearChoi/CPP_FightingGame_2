@@ -4,7 +4,9 @@ namespace RB::PlayerStateComponents
 {
 	void DetectHit::OnEnter()
 	{
-		RB::Players::iPlayer* attacker = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::PlayerState* attackerState = RB::Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
 		RB::Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
 
@@ -44,10 +46,12 @@ namespace RB::PlayerStateComponents
 
 	bool DetectHit::_HitDetected(RB::Collisions::CollisionResult& collisionResult)
 	{
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
 		//std::cout << "detecting hit.." << std::endl;
 
-		RB::Players::iPlayer* attacker = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::iPlayer* target = RB::Players::iPlayerController::Get()->GetOtherPlayer(attacker);
+		RB::Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* target = playerController->GetOtherPlayer(attacker);
 
 		// cannot be hit once dead
 		if (target->GetHP() <= 0)

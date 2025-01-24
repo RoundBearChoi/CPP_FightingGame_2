@@ -9,7 +9,9 @@ namespace RB::Updaters
 
 	void PlayerBoxEditorUpdater::Init()
 	{
-		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
+		AddController(new RB::Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
+
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER; //RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 
 		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Dummy(RB::Sprites::SpriteType::fighter_0_standup));
@@ -32,11 +34,15 @@ namespace RB::Updaters
 
 	void PlayerBoxEditorUpdater::OnUpdate()
 	{
+		_UpdateControllers();
+
 		RB::Controllers::ControllerBase::UpdateAll();
 	}
 
 	void PlayerBoxEditorUpdater::OnFixedUpdate()
 	{
+		_FixedUpdateControllers();
+
 		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }

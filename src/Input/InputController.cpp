@@ -288,12 +288,14 @@ namespace RB::Input
 	/// </summary>
 	void InputController::_OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input)
 	{
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
 		if (RB::Input::iSpecialMovesController::Get() == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 
 		if (player->IsInSpecialMoveStatus())
 		{
@@ -504,13 +506,15 @@ namespace RB::Input
 
 	void InputController::_TriggerSpecialMove(RB::Players::PlayerID playerID)
 	{
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
 		std::vector<SpecialMoveType>& vec = _GetSpecialMovesInQueue(playerID);
 
 		if (!vec.empty())
 		{
 			RB::States::iState* newState = RB::Input::iSpecialMovesController::Get()->GetNewState(vec[0]);
 
-			RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
+			RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 
 			player->GetStateMachine()->ClearQueuedStates();
 			player->GetStateMachine()->QueueNextState(newState);

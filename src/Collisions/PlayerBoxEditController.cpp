@@ -89,6 +89,13 @@ namespace RB::Collisions
 
 	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Players::PlayerID id)
 	{
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr)
+		{
+			return;
+		}
+
 		PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(RB::Players::PlayerID::PLAYER_1);
 
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
@@ -100,7 +107,7 @@ namespace RB::Collisions
 		{
 			if (currentSpecs == nullptr)
 			{
-				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, RB::Players::iPlayerController::Get()->GetPlayerOnID(id)->GetCharacterType());
+				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, playerController->GetPlayerOnID(id)->GetCharacterType());
 			}
 			else
 			{
@@ -166,7 +173,9 @@ namespace RB::Collisions
 
 	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
 	
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 	
@@ -189,7 +198,9 @@ namespace RB::Collisions
 
 	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(RB::Players::PlayerID id)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
@@ -212,7 +223,9 @@ namespace RB::Collisions
 
 	RB::Players::CharacterType PlayerBoxEditController::_GetCharacterType(RB::Players::PlayerID id)
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 

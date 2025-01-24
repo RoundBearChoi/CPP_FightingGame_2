@@ -9,7 +9,9 @@ namespace RB::PlayerStateComponents
 
 	void FixWincingStatusDuringState::OnEnter()
 	{
-		_player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		_player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		_player->SetWincingStatus(_fix);
 	}

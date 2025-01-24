@@ -74,13 +74,16 @@ namespace RB::Players
 
 	void PlayerCollider::_ResolveCollision()
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr)
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr)
 		{
 			return;
 		}
 
 		PlayerID myID = _player->GetPlayerID();
-		iPlayer* other = RB::Players::iPlayerController::Get()->GetOtherPlayer(_player);
+
+		iPlayer* other = playerController->GetOtherPlayer(_player);
 
 		if (other == nullptr)
 		{

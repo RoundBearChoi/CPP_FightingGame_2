@@ -86,7 +86,9 @@ namespace RB::Render
             calculator = &_p2_calculator;
         }
 
-        RB::Players::iPlayer* player =  RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
+        RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+        RB::Players::iPlayer* player =  playerController->GetPlayerOnID(playerID);
 
         if (player == nullptr)
         {

@@ -155,7 +155,9 @@ namespace RB::HBox
 			}
 		}
 
-		if (RB::Players::iPlayerController::Get() == nullptr ||
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr ||
 			RB::Render::iPlayerAnimationController::Get() == nullptr ||
 			RB::HBox::iHBMenuController::Get() == nullptr ||
 			RB::Cam::iCamController::Get() == nullptr)
@@ -187,7 +189,9 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(playerID);
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 
 		if (player == nullptr)
 		{
@@ -404,10 +408,12 @@ namespace RB::HBox
 		RB::Sprites::SpriteType currentSpriteType = RB::Sprites::SpriteType::NONE;
 		RB::Sprites::SpriteType nextSpriteType = RB::Sprites::SpriteType::NONE;
 
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
 		if (upCycle || downCycle)
 		{
 			// get current sprite type
-			RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnIndex(0);
+			RB::Players::iPlayer* player = playerController->GetPlayerOnIndex(0);
 			RB::Players::PlayerState* ownerState = RB::Players::PlayerState::GetPlayerState(player->GetPlayerID());
 
 			currentSpriteType = ownerState->GetSpriteType();

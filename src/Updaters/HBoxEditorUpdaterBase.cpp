@@ -9,7 +9,11 @@ namespace RB::Updaters
 
 	void HBoxEditorUpdaterBase::Init()
 	{
-		RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
+		AddController(new RB::Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
+
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		//RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 		RB::Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
 
@@ -43,11 +47,15 @@ namespace RB::Updaters
 
 	void HBoxEditorUpdaterBase::OnUpdate()
 	{
+		_UpdateControllers();
+
 		RB::Controllers::ControllerBase::UpdateAll();
 	}
 
 	void HBoxEditorUpdaterBase::OnFixedUpdate()
 	{
+		_FixedUpdateControllers();
+
 		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }

@@ -19,7 +19,9 @@ namespace RB::PlayerStateComponents
 
 	void TransitionOnFixedUpdateCount::OnFixedUpdate()
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		// only if player isn't dead
 		if (player->GetHP() > 0)

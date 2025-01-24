@@ -4,7 +4,9 @@ namespace RB::PlayerStateComponents
 {
 	void DoNotFixDirectionDuringState::OnEnter()
 	{
-		_player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		_player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		_player->FixDirDuringState(false);
 	}

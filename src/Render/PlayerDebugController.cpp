@@ -80,12 +80,14 @@ namespace RB::Render
 
 	void PlayerDebugController::_RenderBodyParts(RB::Players::PlayerID id)
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr)
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnID(id);
+		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
 
 		if (player == nullptr)
 		{

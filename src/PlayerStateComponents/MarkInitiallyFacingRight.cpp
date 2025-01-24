@@ -4,7 +4,9 @@ namespace RB::PlayerStateComponents
 {
 	void MarkInitiallyFacingRight::OnEnter()
 	{
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		player->InitiallyFacingRight(player->OtherPlayerIsOnRightSide());
 

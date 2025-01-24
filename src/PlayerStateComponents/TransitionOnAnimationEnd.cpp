@@ -14,12 +14,14 @@ namespace RB::PlayerStateComponents
 
 	void TransitionOnAnimationEnd::OnFixedUpdate()
 	{
-		if (RB::Players::iPlayerController::Get() == nullptr)
+		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+
+		if (playerController == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = RB::Players::iPlayerController::Get()->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(player->GetPlayerID());
 

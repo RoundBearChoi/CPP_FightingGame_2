@@ -166,6 +166,8 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::_RegisterHit(RB::Collisions::CollisionResult& collisionResult)
 	{
+		auto attackRegisterController = GET_ATTACK_REGISTER_CONTROLLER;
+
 		//register new attack
 		RB::Collisions::AttackRegister reg;
 		reg.attacker = collisionResult.mAttacker;
@@ -176,7 +178,7 @@ namespace RB::PlayerStateComponents
 		reg.targetIsCrouching = collisionResult.mTarget->IsCrouching();
 		reg.collisionType = collisionResult.mCollisionType;
 
-		RB::Collisions::iAttackRegisterController::Get()->RegisterAttack(reg);
+		attackRegisterController->RegisterAttack(reg);
 
 		_hits++;
 		_fixedUpdatesSinceLastHit = 0;

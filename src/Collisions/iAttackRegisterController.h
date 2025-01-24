@@ -2,11 +2,13 @@
 
 #include "AttackRegister.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Collisions
 {
-	class iAttackRegisterController : public Controllers::ControllerT<iAttackRegisterController>
+	#define GET_ATTACK_REGISTER_CONTROLLER static_cast<RB::Collisions::iAttackRegisterController*>(RB::Controllers::GetController(Controllers::ControllerType::ATTACK_REGISTER_CONTROLLER))
+	
+	class iAttackRegisterController : public Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

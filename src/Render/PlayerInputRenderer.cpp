@@ -28,14 +28,15 @@ namespace RB::Render
 
 	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
 			return;
 		}
 
-		if (RB::Input::iInputController::Get() == nullptr)
+		if (inputController == nullptr)
 		{
 			return;
 		}
@@ -47,7 +48,7 @@ namespace RB::Render
 			return;
 		}
 
-		const auto vec = RB::Input::iInputController::Get()->GetVecInputObjs(player->GetPlayerID());
+		const auto vec = inputController->GetVecInputObjs(player->GetPlayerID());
 
 		int count = 0;
 

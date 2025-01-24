@@ -18,9 +18,9 @@ namespace RB::PlayerStateComponents
 	void TransitionToJumpForward::OnUpdate()
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
 
-		if (playerController == nullptr ||
-			RB::Input::iInputController::Get() == nullptr)
+		if (playerController == nullptr || inputController == nullptr)
 		{
 			return;
 		}
@@ -34,26 +34,26 @@ namespace RB::PlayerStateComponents
 		{
 			if (player->OtherPlayerIsOnRightSide())
 			{
-				doJump = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-				inputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+				doJump = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 			}
 			else
 			{
-				doJump = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-				inputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+				doJump = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 			}
 		}
 		else
 		{
 			if (player->OtherPlayerIsOnRightSide())
 			{
-				doJump = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-				inputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+				doJump = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 			}
 			else
 			{
-				doJump = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-				inputObj = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+				doJump = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 			}
 		}
 

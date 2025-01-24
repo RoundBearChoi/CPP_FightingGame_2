@@ -10,13 +10,14 @@ namespace RB::Input
 	bool SpecialMoveSequenceBase::IsMatching(RB::Players::PlayerID playerID)
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
 			return false;
 		}
 
-		if (RB::Input::iInputController::Get() == nullptr)
+		if (inputController == nullptr)
 		{
 			return false;
 		}
@@ -38,7 +39,7 @@ namespace RB::Input
 
 		const std::vector<RB::Input::PlayerInput>& sequence = _GetSequence(p->IsFacingRight());
 
-		const auto& vec = RB::Input::iInputController::Get()->GetVecInputObjs(playerID);
+		const auto& vec = inputController->GetVecInputObjs(playerID);
 
 		for (auto i = vec.begin(); i != vec.end(); i++)
 		{

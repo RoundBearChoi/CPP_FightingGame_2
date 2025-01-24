@@ -4,14 +4,16 @@
 
 #include "PlayerInput.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 #include "../Players/PlayerID.h"
 
 #include "iInputObj.h"
 
 namespace RB::Input
 {
-	class iInputController : public RB::Controllers::ControllerT<iInputController>
+	#define GET_INPUT_CONTROLLER static_cast<RB::Input::iInputController*>(RB::Controllers::GetController(Controllers::ControllerType::INPUT_CONTROLLER))
+
+	class iInputController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

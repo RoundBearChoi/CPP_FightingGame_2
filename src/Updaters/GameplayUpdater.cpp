@@ -49,12 +49,16 @@ namespace RB::Updaters
 
 		specsController->Init();
 
+		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
+
+		inputController->Init();
+
 		//RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
 		//RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());
 		//RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>(new RB::Collisions::PlayerBoxDataController());
 		//RB::Controllers::ControllerBase::AddController<RB::Players::SpecsController>((new RB::Players::SpecsController()));
 
-		RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
+		//RB::Controllers::ControllerBase::AddController<RB::Input::InputController>(new RB::Input::InputController());
 		RB::Controllers::ControllerBase::AddController<RB::Input::SpecialMovesController>(new RB::Input::SpecialMovesController());
 
 		RB::Controllers::ControllerBase::AddController<RB::HBox::TargetBoxDataController>(new RB::HBox::TargetBoxDataController("../resource/TargetBoxSpecs/"));

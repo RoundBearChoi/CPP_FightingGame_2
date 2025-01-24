@@ -11,6 +11,7 @@ namespace RB::Controllers
         PLAYER_DEBUG_CONTROLLER,
         PLAYER_ANIMATION_CONTROLLER,
         PLAYER_BOX_DATA_CONTROLLER,
-        SPECS_CONTROLLER,
+        SPECS_CONTROLLER, //player specs controller
+        INPUT_CONTROLLER,
     };
 }

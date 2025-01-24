@@ -15,9 +15,9 @@ namespace RB::PlayerStateComponents
 	void TransitionToJumpUp::OnUpdate()
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
 
-		if (playerController == nullptr ||
-			RB::Input::iInputController::Get() == nullptr)
+		if (playerController == nullptr || inputController == nullptr)
 		{
 			return;
 		}
@@ -25,25 +25,22 @@ namespace RB::PlayerStateComponents
 		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(
 			_state->GetStateMachineID());
 
-		bool jumpUp = RB::Input::iInputController::Get()->IsHeld(
-			player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
+		bool jumpUp = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
+
 		bool jumpForwardUp = false;
 
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			jumpForwardUp = RB::Input::iInputController::Get()->IsHeld(
-				player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForwardUp = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
 		}
 		else
 		{
-			jumpForwardUp = RB::Input::iInputController::Get()->IsHeld(
-				player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForwardUp = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP_LEFT);
 		}
 		
 		if (jumpUp && !jumpForwardUp)
 		{
-			RB::Input::iInputObj* jumpPress = RB::Input::iInputController::Get()->GetUnused_Movement_FIFO(
-				player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
+			RB::Input::iInputObj* jumpPress = inputController->GetUnused_Movement_FIFO(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_UP);
 
 			if (jumpPress != nullptr)
 			{

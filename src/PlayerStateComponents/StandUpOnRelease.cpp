@@ -14,7 +14,9 @@ namespace RB::PlayerStateComponents
 
 	void StandUpOnRelease::OnFixedUpdate()
 	{
-		if (RB::Input::iInputController::Get() == nullptr)
+		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
+
+		if (inputController == nullptr)
 		{
 			return;
 		}
@@ -28,9 +30,9 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		bool down = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN);
-		bool downLeft = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_LEFT);
-		bool downRight = RB::Input::iInputController::Get()->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_RIGHT);
+		bool down = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN);
+		bool downLeft = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_LEFT);
+		bool downRight = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_RIGHT);
 
 		//do nothing if down is held (including diag)
 		if (down || downLeft || downRight)

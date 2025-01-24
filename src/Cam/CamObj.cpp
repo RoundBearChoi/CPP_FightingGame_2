@@ -50,7 +50,9 @@ namespace RB::Cam
 
 	void CamObj::ManualUpdate()
 	{
-		if (RB::Input::iInputController::Get() == nullptr)
+		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
+
+		if (inputController == nullptr)
 		{
 			return;
 		}
@@ -60,14 +62,14 @@ namespace RB::Cam
 		_moveLeft = false;
 		_moveRight = false;
 
-		olc::HWButton moveUp = RB::Input::iInputController::Get()->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
-		olc::HWButton moveDown = RB::Input::iInputController::Get()->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
+		olc::HWButton moveUp = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_UP);
+		olc::HWButton moveDown = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_DOWN);
 
-		olc::HWButton moveLeft = RB::Input::iInputController::Get()->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
-		olc::HWButton moveRight = RB::Input::iInputController::Get()->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
+		olc::HWButton moveLeft = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_LEFT);
+		olc::HWButton moveRight = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::MOVE_CAM_RIGHT);
 
-		olc::HWButton zoomIn = RB::Input::iInputController::Get()->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_IN);
-		olc::HWButton zoomOut = RB::Input::iInputController::Get()->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_OUT);
+		olc::HWButton zoomIn = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_IN);
+		olc::HWButton zoomOut = inputController->GetKeyBinding(RB::Players::PlayerID::NONE, RB::Input::PlayerInput::CAM_ZOOM_OUT);
 
 		if (moveUp.bHeld && moveDown.bHeld)
 		{

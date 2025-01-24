@@ -2,12 +2,14 @@
 
 #include "AttackSpecs.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 #include "../Sprites/SpriteType.h"
 
 namespace RB::Collisions
 {
-	class iAttackSpecsController : public Controllers::ControllerT<iAttackSpecsController>
+	#define GET_ATTACK_SPECS_CONTROLLER static_cast<Collisions::iAttackSpecsController*>(Controllers::GetController(Controllers::ControllerType::ATTACK_SPECS_CONTROLLER))
+
+	class iAttackSpecsController : public Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

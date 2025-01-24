@@ -27,12 +27,14 @@ namespace RB::PlayerStateComponents
 
 	void DetectHit::_ProcessHit()
 	{
+		auto attackSpecsController = GET_ATTACK_SPECS_CONTROLLER;
+
 		RB::Collisions::CollisionResult collisionResult;
 
 		if (_HitDetected(collisionResult))
 		{
 			//check max hit count
-			const RB::Collisions::AttackSpecs& attackSpecs = RB::Collisions::iAttackSpecsController::Get()->GetAttackSpecs(collisionResult.mAttackerSpriteType);
+			const RB::Collisions::AttackSpecs& attackSpecs = attackSpecsController->GetAttackSpecs(collisionResult.mAttackerSpriteType);
 
 			if (_hits == 0 || _fixedUpdatesSinceLastHit > attackSpecs.mMinimumFixedUpdatesSinceHit)
 			{

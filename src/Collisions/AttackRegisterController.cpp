@@ -3,6 +3,7 @@
 //temp
 //#include "../Fighter_0_States/F0_Kneel.h"
 #include "../Updaters/CurrentPlayground.h"
+#include "iAttackSpecsController.h"
 #include "iGeneralHitStopController.h"
 
 namespace RB::Collisions
@@ -25,11 +26,12 @@ namespace RB::Collisions
 	bool AttackRegisterController::RegisterAttack(AttackRegister reg)
 	{
 		auto generalHitstopController = GET_GENERAL_HITSTOP_CONTROLLER;
+		auto attackSpecsController = GET_ATTACK_SPECS_CONTROLLER;
 
 		_ShowHitVFX(reg);
 		_ShowHitLocation(reg);
 
-		const Collisions::AttackSpecs& attackSpecs = Collisions::iAttackSpecsController::Get()->GetAttackSpecs(reg.attackerSpriteType);
+		const Collisions::AttackSpecs& attackSpecs = attackSpecsController->GetAttackSpecs(reg.attackerSpriteType);
 
 		reg.target->AddHP(-attackSpecs.mDamage);
 

@@ -133,7 +133,9 @@ namespace RB::Players
 			return;
 		}
 
-		RB::Render::iAnimationObj* iAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+
+		RB::Render::iAnimationObj* iAniObj = playerAnimationController->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
 
 		if (iAniObj == nullptr)
 		{

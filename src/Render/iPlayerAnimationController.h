@@ -2,11 +2,13 @@
 
 #include "iAnimationObj.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Render
 {
-	class iPlayerAnimationController : public RB::Controllers::ControllerT<iPlayerAnimationController>
+	#define GET_PLAYER_ANIMATION_CONTROLLER static_cast<RB::Render::iPlayerAnimationController*>(RB::Controllers::GetController(Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER))
+
+	class iPlayerAnimationController : public Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

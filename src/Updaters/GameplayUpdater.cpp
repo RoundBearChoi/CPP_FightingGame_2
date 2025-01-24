@@ -37,8 +37,12 @@ namespace RB::Updaters
 
 		playerDebugController->Init();
 
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+
+		playerAnimationController->Init();
+
 		//RB::Controllers::ControllerBase::AddController<RB::Render::PlayerDebugController>(new RB::Render::PlayerDebugController());
-		RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());
+		//RB::Controllers::ControllerBase::AddController<RB::Render::PlayerAnimationController>(new RB::Render::PlayerAnimationController());
 		RB::Controllers::ControllerBase::AddController<RB::Collisions::PlayerBoxDataController>(new RB::Collisions::PlayerBoxDataController());
 		RB::Controllers::ControllerBase::AddController<RB::Players::SpecsController>((new RB::Players::SpecsController()));
 

@@ -9,9 +9,9 @@ namespace RB::Render
 	void PlayerHBoxRenderer::OnUpdate()
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		if (playerController == nullptr ||
-			RB::Render::iPlayerAnimationController::Get() == nullptr)
+		if (playerController == nullptr || playerAnimationController == nullptr)
 		{
 			return;
 		}
@@ -31,6 +31,7 @@ namespace RB::Render
 	void PlayerHBoxRenderer::RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType)
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 		
@@ -48,7 +49,7 @@ namespace RB::Render
 
 		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(playerID, spriteType);
+		iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
 		
 		if (aniObj == nullptr)
 		{

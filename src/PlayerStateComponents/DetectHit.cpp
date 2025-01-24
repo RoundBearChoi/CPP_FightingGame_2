@@ -76,8 +76,10 @@ namespace RB::PlayerStateComponents
 		RB::Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
 		RB::Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
 
-		RB::Render::iAnimationObj* attackerAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(attacker->GetPlayerID(), attackerSpriteType);
-		RB::Render::iAnimationObj* targetAniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+
+		RB::Render::iAnimationObj* attackerAniObj = playerAnimationController->GetCurrentAnimationObj(attacker->GetPlayerID(), attackerSpriteType);
+		RB::Render::iAnimationObj* targetAniObj = playerAnimationController->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
 		RB::HBox::Loaded_HB_Data* attackerData = RB::HBox::iAttackBoxDataController::Get()->GetData(attackerSpriteType);
 		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iTargetBoxDataController::Get()->GetData(targetSpriteType);

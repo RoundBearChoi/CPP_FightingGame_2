@@ -9,12 +9,14 @@ namespace RB::Render
 
 	void ManualAnimationUpdater::OnUpdate()
 	{
-		if (RB::Render::iPlayerAnimationController::Get() == nullptr)
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+
+		if (playerAnimationController == nullptr)
 		{
 			return;
 		}
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteType);
+		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteType);
 
 		if (aniObj == nullptr)
 		{

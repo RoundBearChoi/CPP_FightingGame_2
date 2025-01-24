@@ -53,7 +53,9 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(playerID, spriteType);
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+
+		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -94,7 +96,9 @@ namespace RB::HBox
 
 		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iAnimationObj* aniObj = RB::Render::iPlayerAnimationController::Get()->GetCurrentAnimationObj(playerID, spriteType);
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+
+		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -158,9 +162,10 @@ namespace RB::HBox
 		}
 
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
 		if (playerController == nullptr ||
-			RB::Render::iPlayerAnimationController::Get() == nullptr ||
+			playerAnimationController == nullptr ||
 			RB::HBox::iHBMenuController::Get() == nullptr ||
 			RB::Cam::iCamController::Get() == nullptr)
 		{

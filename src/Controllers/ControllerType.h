@@ -10,5 +10,6 @@ namespace RB::Controllers
         BACKGROUND_CONTROLLER,
         PLAYER_DEBUG_CONTROLLER,
         PLAYER_ANIMATION_CONTROLLER,
+        PLAYER_BOX_DATA_CONTROLLER,
     };
 }

@@ -1,6 +1,7 @@
 #include "PlayerBoxEditController.h"
 
 #include "../Render/iPlayerDebugController.h"
+#include "iPlayerBoxDataController.h"
 
 namespace RB::Collisions
 {
@@ -92,6 +93,7 @@ namespace RB::Collisions
 	void PlayerBoxEditController::_AddDeleteBoxOnPress(RB::Players::PlayerID id)
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
@@ -109,7 +111,7 @@ namespace RB::Collisions
 		{
 			if (currentSpecs == nullptr)
 			{
-				RB::Collisions::iPlayerBoxDataController::Get()->AddSpecs(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, playerController->GetPlayerOnID(id)->GetCharacterType());
+				playerBoxDataController->AddSpecs(PlayerBox(RB::Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, playerController->GetPlayerOnID(id)->GetCharacterType());
 			}
 			else
 			{
@@ -134,7 +136,7 @@ namespace RB::Collisions
 			}
 			else
 			{
-				RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(_GetCharacterType(id));
+				RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(_GetCharacterType(id));
 				loaded->EraseSpecs(RB::Sprites::GetCurrentSpriteType(id), RB::Sprites::GetCurrentAnimationFrame(id));
 				loaded->RefreshIterators();
 			}
@@ -176,17 +178,18 @@ namespace RB::Collisions
 	PlayerBox* PlayerBoxEditController::_GetCurrentBox(RB::Players::PlayerID id)
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
 	
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 	
-		if (RB::Collisions::iPlayerBoxDataController::Get() == nullptr)
+		if (playerBoxDataController == nullptr)
 		{
 			return nullptr;
 		}
 	
-		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(characterType);
+		RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
 	
 		if (loaded == nullptr)
 		{
@@ -201,17 +204,18 @@ namespace RB::Collisions
 	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(RB::Players::PlayerID id)
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnID(id);
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
-		if (RB::Collisions::iPlayerBoxDataController::Get() == nullptr)
+		if (playerBoxDataController == nullptr)
 		{
 			return nullptr;
 		}
 
-		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(characterType);
+		RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
 
 		if (loaded == nullptr)
 		{

@@ -117,16 +117,18 @@ namespace RB::Players
 
 	void PlayerState::AutoUpdatePlayerBox()
 	{
+		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
+
 		RB::Players::iPlayer* player = GetPlayer();
 
 		RB::Players::CharacterType characterType = player->GetCharacterType();
 
-		if (RB::Collisions::iPlayerBoxDataController::Get() == nullptr)
+		if (playerBoxDataController == nullptr)
 		{
 			return;
 		}
 
-		RB::Collisions::LoadedPlayerBoxData* loaded = RB::Collisions::iPlayerBoxDataController::Get()->GetLoadedData(characterType);
+		RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
 
 		if (loaded == nullptr)
 		{

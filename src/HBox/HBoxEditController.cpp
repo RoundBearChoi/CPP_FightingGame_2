@@ -1,6 +1,7 @@
 #include "HBoxEditController.h"
 
 #include "../Render/iPlayerDebugController.h"
+#include "iHBMenuController.h"
 
 namespace RB::HBox
 {
@@ -159,6 +160,7 @@ namespace RB::HBox
 		auto camController = GET_CAM_CONTROLLER;
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		auto hbMenuController = GET_HB_MENU_CONTROLLER;
 
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
@@ -177,7 +179,7 @@ namespace RB::HBox
 
 		if (playerController == nullptr ||
 			playerAnimationController == nullptr ||
-			HBox::iHBMenuController::Get() == nullptr ||
+			hbMenuController == nullptr ||
 			camController == nullptr)
 		{
 			return false;
@@ -326,6 +328,7 @@ namespace RB::HBox
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
+		auto hbMenuController = GET_HB_MENU_CONTROLLER;
 
 		RB::HBox::Loaded_HB_Data* data = GetCurrentData(RB::Players::PlayerID::PLAYER_1, _boxType);
 
@@ -404,7 +407,7 @@ namespace RB::HBox
 				file.close();
 			}
 
-			RB::HBox::iHBMenuController::Get()->ShowNotification();
+			hbMenuController->ShowNotification();
 		}
 	}
 

@@ -1,10 +1,12 @@
 #pragma once
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::HBox
 {
-	class iHBMenuController : public RB::Controllers::ControllerT<iHBMenuController>
+	#define GET_HB_MENU_CONTROLLER static_cast<HBox::iHBMenuController*>(Controllers::GetController(Controllers::ControllerType::HB_MENU_CONTROLLER))
+
+	class iHBMenuController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

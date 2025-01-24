@@ -46,8 +46,6 @@ namespace RB::Updaters
 		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
-		playerController->Init();
-
 		RB::Players::iPlayer* p0 = playerController->AddPlayer(new Players::Player());
 		RB::Players::iPlayer* p1 = playerController->AddPlayer(new Players::Player());
 

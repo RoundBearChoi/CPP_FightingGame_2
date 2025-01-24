@@ -1,5 +1,21 @@
 #include "HBoxEditorUpdaterBase.h"
 
+#include "../Players/Player.h"
+#include "../Sprites/SpriteTypeLoader.h"
+
+#include "../Input/InputController.h"
+#include "../Cam/CamController.h"
+#include "../Players/PlayerController.h"
+#include "../Render/PlayerDebugController.h"
+#include "../Render/PlayerAnimationController.h"
+#include "../Collisions/PlayerBoxDataController.h"
+#include "../HBox/HBMenuController.h"
+#include "../HBox/TargetBoxDataController.h"
+#include "../HBox/AttackBoxDataController.h"
+#include "../HBox/HBoxEditController.h"
+
+#include "../Fighter_0_States/F0_Dummy.h"
+
 namespace RB::Updaters
 {
 	HBoxEditorUpdaterBase::~HBoxEditorUpdaterBase()
@@ -25,11 +41,9 @@ namespace RB::Updaters
 		}
 
 		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
+		auto hbMenuController = static_cast<HBox::iHBMenuController*>(AddController(new HBox::HBMenuController(), Controllers::ControllerType::HB_MENU_CONTROLLER));
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
-		playerController->Init();
-
-		//RB::Players::PlayerController* playerController = RB::Controllers::ControllerBase::AddController<RB::Players::PlayerController>(new RB::Players::PlayerController());
 		Players::iPlayer* p0 = playerController->AddPlayer(new RB::Players::Player());
 		Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
 
@@ -38,11 +52,8 @@ namespace RB::Updaters
 		p0->SetCharacterType(RB::Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
 
-		HBox::HBMenuController* menuController = RB::Controllers::ControllerBase::AddController<RB::HBox::HBMenuController>(new RB::HBox::HBMenuController());
-		menuController->SetPageTitle(_pageTitle);
+		hbMenuController->SetPageTitle(_pageTitle);
 		
-		//Controllers::ControllerBase::AddController<RB::HBox::HBoxEditController>(new RB::HBox::HBoxEditController(_boxType));
-
 		camController->SetZoom(1.0f);
 
 		InitAllControllers();

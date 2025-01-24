@@ -23,5 +23,6 @@ namespace RB::Controllers
         VFX_ANIMATION_CONTROLLER,
         PLAYER_BOX_EDIT_CONTROLLER,
         HBOX_EDIT_CONTROLLER,
+        HB_MENU_CONTROLLER,
     };
 }

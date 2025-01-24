@@ -26,16 +26,16 @@ namespace RB::Render
 		~PlayerHBoxRenderer() = default;
 
 	public:
-		void Init(RB::Sprites::SpriteContainer* spriteContainer);
+		void Init(Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	public:
-		void RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType);
+		void RenderHBox(Players::PlayerID playerID, HBox::HBoxType boxType);
 
 	private:
-		void _Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* AABBs, olc::Pixel color);
+		void _Render(Players::iPlayer* player, HBox::AABB_Set* AABBs, olc::Pixel color);
 
-		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
+		Sprites::SpriteContainer* _spriteContainer = nullptr;
 	};
 }

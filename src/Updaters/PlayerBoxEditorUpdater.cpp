@@ -4,7 +4,7 @@ namespace RB::Updaters
 {
 	PlayerBoxEditorUpdater::~PlayerBoxEditorUpdater()
 	{
-		RB::Controllers::ControllerBase::DestroyAllControllers();
+		
 	}
 
 	void PlayerBoxEditorUpdater::Init()
@@ -33,14 +33,10 @@ namespace RB::Updaters
 	void PlayerBoxEditorUpdater::OnUpdate()
 	{
 		_UpdateControllers();
-
-		RB::Controllers::ControllerBase::UpdateAll();
 	}
 
 	void PlayerBoxEditorUpdater::OnFixedUpdate()
 	{
 		_FixedUpdateControllers();
-
-		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }

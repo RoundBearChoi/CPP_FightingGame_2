@@ -6,8 +6,6 @@
 
 namespace RB::Controllers
 {
-	std::vector<ControllerBase*> ControllerBase::vecControllers;
-
 	iController* GetController(ControllerType controllerType)
 	{
 		if (Updaters::ptrCurrentPlayground != nullptr)
@@ -20,33 +18,6 @@ namespace RB::Controllers
 		}
 
 		return nullptr;
-	}
-
-	void ControllerBase::UpdateAll()
-	{
-		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
-		{
-			(*i)->OnUpdate();
-		}
-	}
-
-	void ControllerBase::FixedUpdateAll()
-	{
-		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
-		{
-			(*i)->OnFixedUpdate();
-		}
-	}
-
-	void ControllerBase::DestroyAllControllers()
-	{
-		for (auto i = vecControllers.begin(); i != vecControllers.end(); i++)
-		{
-			delete (*i);
-			(*i) = nullptr;
-		}
-
-		vecControllers.clear();
 	}
 
 	ControllerType ControllerBase::GetControllerType()

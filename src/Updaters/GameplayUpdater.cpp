@@ -24,7 +24,7 @@ namespace RB::Updaters
 {
 	GameplayUpdater::~GameplayUpdater()
 	{
-		RB::Controllers::ControllerBase::DestroyAllControllers();
+		
 	}
 
 	void GameplayUpdater::Init()
@@ -67,14 +67,10 @@ namespace RB::Updaters
 	void GameplayUpdater::OnUpdate()
 	{
 		_UpdateControllers();
-
-		RB::Controllers::ControllerBase::UpdateAll();
 	}
 
 	void GameplayUpdater::OnFixedUpdate()
 	{
 		_FixedUpdateControllers();
-
-		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }

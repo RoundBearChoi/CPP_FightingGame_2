@@ -20,7 +20,7 @@ namespace RB::Updaters
 {
 	HBoxEditorUpdaterBase::~HBoxEditorUpdaterBase()
 	{
-		RB::Controllers::ControllerBase::DestroyAllControllers();
+		
 	}
 
 	void HBoxEditorUpdaterBase::Init()
@@ -62,14 +62,10 @@ namespace RB::Updaters
 	void HBoxEditorUpdaterBase::OnUpdate()
 	{
 		_UpdateControllers();
-
-		RB::Controllers::ControllerBase::UpdateAll();
 	}
 
 	void HBoxEditorUpdaterBase::OnFixedUpdate()
 	{
 		_FixedUpdateControllers();
-
-		RB::Controllers::ControllerBase::FixedUpdateAll();
 	}
 }

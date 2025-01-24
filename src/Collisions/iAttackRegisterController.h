@@ -11,10 +11,6 @@ namespace RB::Collisions
 	class iAttackRegisterController : public Controllers::ControllerBase
 	{
 	public:
-		virtual void Init() = 0;
-		virtual void OnUpdate() = 0;
-		virtual void OnFixedUpdate() = 0;
-
 		virtual bool RegisterAttack(AttackRegister reg) = 0;
 	};
 }

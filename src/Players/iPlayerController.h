@@ -7,21 +7,15 @@
 
 namespace RB::Players
 {
-	#define GET_PLAYER_CONTROLLER static_cast<RB::Players::iPlayerController*>(RB::Controllers::GetController(Controllers::ControllerType::PLAYER_CONTROLLER))
+	#define GET_PLAYER_CONTROLLER static_cast<Players::iPlayerController*>(Controllers::GetController(Controllers::ControllerType::PLAYER_CONTROLLER))
 
-	class iPlayerController : public RB::Controllers::ControllerBase
+	class iPlayerController : public Controllers::ControllerBase
 	{
 	public:
 		virtual ~iPlayerController() override {}
 
-		virtual void Init() override {}
-		virtual void OnUpdate() override {}
-		virtual void OnFixedUpdate() override {}
-
 	public:
 		virtual iPlayer* AddPlayer(iPlayer* player) = 0;
-
-	public:
 		virtual iPlayer* GetPlayerOnIndex(unsigned int index) = 0;
 		virtual iPlayer* GetPlayerOnID(PlayerID id) = 0;
 		virtual iPlayer* GetPlayerOnStateMachineID(unsigned int id) = 0;

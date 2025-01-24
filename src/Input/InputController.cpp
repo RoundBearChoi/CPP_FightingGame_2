@@ -1,4 +1,5 @@
 #include "InputController.h"
+#include "iSpecialMovesController.h"
 
 namespace RB::Input
 {
@@ -288,9 +289,11 @@ namespace RB::Input
 	/// </summary>
 	void InputController::_OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input)
 	{
+		auto specialMovesController = GET_SPECIAL_MOVES_CONTROLLER;
+
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		if (RB::Input::iSpecialMovesController::Get() == nullptr)
+		if (specialMovesController == nullptr)
 		{
 			return;
 		}
@@ -305,7 +308,7 @@ namespace RB::Input
 		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK ||
 			input == PlayerInput::ATTACK_STRONG_PUNCH || input == PlayerInput::ATTACK_STRONG_KICK)
 		{
-			RB::Input::SpecialMoveType specialMove = RB::Input::iSpecialMovesController::Get()->GetSpecialMove(playerID);
+			RB::Input::SpecialMoveType specialMove = specialMovesController->GetSpecialMove(playerID);
 
 			if (specialMove != SpecialMoveType::NONE)
 			{
@@ -506,13 +509,14 @@ namespace RB::Input
 
 	void InputController::_TriggerSpecialMove(RB::Players::PlayerID playerID)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		auto playerController = GET_PLAYER_CONTROLLER;
+		auto specialMovesController = GET_SPECIAL_MOVES_CONTROLLER;
 
 		std::vector<SpecialMoveType>& vec = _GetSpecialMovesInQueue(playerID);
 
 		if (!vec.empty())
 		{
-			RB::States::iState* newState = RB::Input::iSpecialMovesController::Get()->GetNewState(vec[0]);
+			RB::States::iState* newState = specialMovesController->GetNewState(vec[0]);
 
 			RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 

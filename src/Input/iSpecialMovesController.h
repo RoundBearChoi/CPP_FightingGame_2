@@ -2,14 +2,16 @@
 
 #include "SpecialMoveType.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 #include "../Players/PlayerID.h"
 
 #include "../States/iState.h"
 
 namespace RB::Input
 {
-	class iSpecialMovesController : public RB::Controllers::ControllerT<iSpecialMovesController>
+	#define GET_SPECIAL_MOVES_CONTROLLER static_cast<RB::Input::iSpecialMovesController*>(RB::Controllers::GetController(Controllers::ControllerType::SPECIAL_MOVES_CONTROLLER))
+
+	class iSpecialMovesController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

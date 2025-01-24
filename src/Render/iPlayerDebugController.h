@@ -1,10 +1,12 @@
 #pragma once
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::Render
 {
-	class iPlayerDebugController : public RB::Controllers::ControllerT<iPlayerDebugController>
+	#define GET_PLAYER_DEBUG_CONTROLLER static_cast<RB::Render::iPlayerDebugController*>(RB::Controllers::GetController(Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER))
+
+	class iPlayerDebugController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

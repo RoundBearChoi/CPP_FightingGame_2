@@ -16,20 +16,22 @@ namespace RB::Collisions
 		_AddDeleteBoxOnPress(RB::Players::PlayerID::PLAYER_1);
 		_SaveOnPress();
 
-		if (RB::Render::iPlayerDebugController::Get() != nullptr)
+		Render::iPlayerDebugController* playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
+
+		if (playerDebugController != nullptr)
 		{
-			RB::Render::iPlayerDebugController::Get()->RenderPlayerHP(false);
-			RB::Render::iPlayerDebugController::Get()->RenderInput(false);
+			playerDebugController->RenderPlayerHP(false);
+			playerDebugController->RenderInput(false);
 
 			PlayerBox* currentBox = _GetCurrentBox(RB::Players::PlayerID::PLAYER_1);
 
 			if (currentBox == nullptr)
 			{
-				RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(false);
+				playerDebugController->RenderPlayerBox(false);
 			}
 			else
 			{
-				RB::Render::iPlayerDebugController::Get()->RenderPlayerBox(true);
+				playerDebugController->RenderPlayerBox(true);
 
 				_UpdateBoxSizeOnPress(currentBox);
 			}

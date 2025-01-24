@@ -28,10 +28,12 @@ namespace RB::HBox
 
 		_RenderCircleOnHBox(RB::Players::PlayerID::PLAYER_1);
 
-		if (RB::Render::iPlayerDebugController::Get() != nullptr)
+		Render::iPlayerDebugController* playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
+
+		if (playerDebugController != nullptr)
 		{
-			RB::Render::iPlayerDebugController::Get()->RenderPlayerHP(false);
-			RB::Render::iPlayerDebugController::Get()->RenderInput(false);
+			playerDebugController->RenderPlayerHP(false);
+			playerDebugController->RenderInput(false);
 		}
 	}
 

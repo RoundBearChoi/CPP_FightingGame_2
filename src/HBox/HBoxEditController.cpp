@@ -44,6 +44,8 @@ namespace RB::HBox
 
 	RB::HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType)
 	{
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+
 		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
@@ -69,9 +71,9 @@ namespace RB::HBox
 
 		if (boxType == HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
+			if (targetBoxDataController != nullptr)
 			{
-				data = RB::HBox::iTargetBoxDataController::Get()->GetData(spriteType);
+				data = targetBoxDataController->GetData(spriteType);
 			}
 		}
 		else if (boxType == HBoxType::ATTACK_BOX)
@@ -87,6 +89,8 @@ namespace RB::HBox
 
 	RB::HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
 	{
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+
 		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
@@ -112,7 +116,7 @@ namespace RB::HBox
 		// return existing data
 		if (_boxType == HBoxType::TARGET_BOX)
 		{
-			data = RB::HBox::iTargetBoxDataController::Get()->GetData(spriteType);
+			data = targetBoxDataController->GetData(spriteType);
 		}
 		else if (_boxType == HBoxType::ATTACK_BOX)
 		{
@@ -124,7 +128,7 @@ namespace RB::HBox
 		{
 			if (_boxType == HBoxType::TARGET_BOX)
 			{
-				data = RB::HBox::iTargetBoxDataController::Get()->CreateData(spriteType);
+				data = targetBoxDataController->CreateData(spriteType);
 			}
 			else if (_boxType == HBoxType::ATTACK_BOX)
 			{
@@ -146,9 +150,11 @@ namespace RB::HBox
 
 	bool HBoxEditController::_ControllersExist()
 	{
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::Get() == nullptr)
+			if (targetBoxDataController == nullptr)
 			{
 				return false;
 			}
@@ -313,6 +319,8 @@ namespace RB::HBox
 
 	void HBoxEditController::_SaveHBoxes_OnPress()
 	{
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+
 		RB::HBox::Loaded_HB_Data* data = GetCurrentData(RB::Players::PlayerID::PLAYER_1, _boxType);
 
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
@@ -326,7 +334,7 @@ namespace RB::HBox
 
 			if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 			{
-				path = RB::HBox::iTargetBoxDataController::Get()->GetPath(data->GetSpriteType());
+				path = targetBoxDataController->GetPath(data->GetSpriteType());
 			}
 			else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 			{

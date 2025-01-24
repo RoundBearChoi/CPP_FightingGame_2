@@ -46,7 +46,8 @@ namespace RB::PlayerStateComponents
 
 	bool DetectHit::_HitDetected(RB::Collisions::CollisionResult& collisionResult)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		auto playerController = GET_PLAYER_CONTROLLER;
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 
 		//std::cout << "detecting hit.." << std::endl;
 
@@ -82,7 +83,7 @@ namespace RB::PlayerStateComponents
 		RB::Render::iAnimationObj* targetAniObj = playerAnimationController->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
 		RB::HBox::Loaded_HB_Data* attackerData = RB::HBox::iAttackBoxDataController::Get()->GetData(attackerSpriteType);
-		RB::HBox::Loaded_HB_Data* targetData = RB::HBox::iTargetBoxDataController::Get()->GetData(targetSpriteType);
+		RB::HBox::Loaded_HB_Data* targetData = targetBoxDataController->GetData(targetSpriteType);
 
 		if (attackerData == nullptr || targetData == nullptr)
 		{

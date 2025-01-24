@@ -1,7 +1,7 @@
 {
 "AttackBoxEditorSettings":
         {
-            "sprite enum" : "fighter_0_hadouken",
+            "sprite enum" : "fighter_0_crouch_punch_weak",
             "other shit" : "shit"
         }
 }

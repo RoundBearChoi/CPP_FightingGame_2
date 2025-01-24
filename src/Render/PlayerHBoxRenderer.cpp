@@ -30,8 +30,9 @@ namespace RB::Render
 
 	void PlayerHBoxRenderer::RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		auto playerController = GET_PLAYER_CONTROLLER;
+		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
 		
@@ -62,9 +63,9 @@ namespace RB::Render
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
+			if (targetBoxDataController != nullptr)
 			{
-				data = RB::HBox::iTargetBoxDataController::Get()->GetData(spriteType);
+				data = targetBoxDataController->GetData(spriteType);
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)

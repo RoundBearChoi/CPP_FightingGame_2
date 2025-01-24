@@ -2,11 +2,13 @@
 
 #include "Loaded_HB_Data.h"
 
-#include "../Controllers/ControllerT.h"
+#include "../Controllers/ControllerBase.h"
 
 namespace RB::HBox
 {
-	class iTargetBoxDataController : public RB::Controllers::ControllerT<iTargetBoxDataController>
+	#define GET_TARGET_BOX_DATA_CONTROLLER static_cast<RB::HBox::iTargetBoxDataController*>(RB::Controllers::GetController(Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER))
+
+	class iTargetBoxDataController : public RB::Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

@@ -41,7 +41,12 @@ namespace RB::Updaters
 
 		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			RB::Controllers::ControllerBase::AddController<RB::HBox::TargetBoxDataController>(new RB::HBox::TargetBoxDataController(_specsPath));
+			//RB::Controllers::ControllerBase::AddController<RB::HBox::TargetBoxDataController>(new RB::HBox::TargetBoxDataController(_specsPath));
+			AddController(new HBox::TargetBoxDataController(_specsPath), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
+
+			auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+			
+			targetBoxDataController->Init();
 		}
 		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
 		{

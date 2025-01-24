@@ -14,5 +14,6 @@ namespace RB::Controllers
         SPECS_CONTROLLER, //player specs controller
         INPUT_CONTROLLER,
         SPECIAL_MOVES_CONTROLLER,
+        TARGET_BOX_DATA_CONTROLLER,
     };
 }

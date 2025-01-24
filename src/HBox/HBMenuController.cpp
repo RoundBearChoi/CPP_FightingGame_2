@@ -1,4 +1,5 @@
 #include "HBMenuController.h"
+#include "iTargetBoxDataController.h"
 
 namespace RB::HBox
 {
@@ -93,15 +94,17 @@ namespace RB::HBox
 
 	RB::HBox::Loaded_HB_Data* HBMenuController::_GetHBData()
 	{
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+
 		RB::HBox::HBoxType boxType = RB::HBox::iHBoxEditController::Get()->GetHBoxType();
 
 		RB::HBox::Loaded_HB_Data* data = nullptr;
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
+			if (targetBoxDataController != nullptr)
 			{
-				data = RB::HBox::iTargetBoxDataController::Get()->GetData(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+				data = targetBoxDataController->GetData(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
 			}
 		}
 		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
@@ -117,6 +120,8 @@ namespace RB::HBox
 
 	void HBMenuController::_ShowSavedNotification()
 	{
+		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
+
 		if (_notification.GetFrameCount() == 0)
 		{
 			return;
@@ -126,9 +131,9 @@ namespace RB::HBox
 
 		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
 		{
-			if (RB::HBox::iTargetBoxDataController::Get() != nullptr)
+			if (targetBoxDataController != nullptr)
 			{
-				const std::string& path = RB::HBox::iTargetBoxDataController::Get()->GetPath(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+				const std::string& path = targetBoxDataController->GetPath(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

@@ -5,7 +5,7 @@ namespace RB::Updaters
 	Playground::Playground()
 	{
 		std::function<void()> func = std::bind(&Playground::_RunCustomUpdate, this);
-		_customUpdate.SetFunction(func);
+		_skipper.SetFunction(func);
 	}
 
 	Playground::~Playground()
@@ -38,7 +38,7 @@ namespace RB::Updaters
 
 	void Playground::OnFixedUpdate()
 	{
-		bool runFixedUpdate = _customUpdate.DoFixedUpdate();
+		bool runFixedUpdate = _skipper.DoFixedUpdate();
 
 		if (runFixedUpdate)
 		{
@@ -48,7 +48,7 @@ namespace RB::Updaters
 
 	void Playground::SetFixedUpdateSkips(int skips)
 	{
-		_customUpdate.SetSkipFrames(skips);
+		_skipper.SetSkipFrames(skips);
 	}
 
 	void Playground::ClearFixedUpdateSkip(int fixedUpdates)
@@ -88,7 +88,7 @@ namespace RB::Updaters
 		if (_updater != nullptr)
 		{
 			// reset slow motion
-			_customUpdate.SetSkipFrames(0);
+			_skipper.SetSkipFrames(0);
 
 			_updater->Init();
 		}
@@ -200,6 +200,6 @@ namespace RB::Updaters
 
 	void Playground::_ClearSkips()
 	{
-		_customUpdate.ClearSkipFrames();
+		_skipper.ClearSkipFrames();
 	}
 }

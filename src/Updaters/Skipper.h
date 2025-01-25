@@ -1,23 +1,23 @@
 #pragma once
 
-#include <functional>
+#include "iSkipper.h"
 
 namespace RB::Updaters
 {
-	class Skipper
+	class Skipper : public iSkipper
 	{
 	public:
 		Skipper() = default;
 		~Skipper() = default;
 
 	public:
-		void SetSkipFrames(unsigned int skipFrames);
-		void ClearSkipFrames();
-		void SetFunction(std::function<void()> func);
-		bool DoFixedUpdate();
-		unsigned int GetTotalFixedUpdateCount();
+		void SetSkipFrames(unsigned int skipFrames) override;
+		void ClearSkipFrames() override;
+		void SetFunction(std::function<void()> func) override;
+		bool DoFixedUpdate() override;
+		unsigned int GetTotalFixedUpdateCount() override;
 
-	private:
+	protected:
 		unsigned int _skipFrames = 0;
 		unsigned int _frameCount = 0;
 		unsigned int _totalFrameCount = 0;

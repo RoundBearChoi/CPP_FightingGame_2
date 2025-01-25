@@ -50,7 +50,7 @@ namespace RB::Updaters
 		bool _updaterIsQueued = false;
 		iUpdater* _updater = nullptr;
 		iUpdater* _nextUpdater = nullptr;
-		Skipper _customUpdate;
+		Skipper _skipper;
 		Scheduler _scheduler;
 	};
 }

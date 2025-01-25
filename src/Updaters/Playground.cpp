@@ -183,7 +183,7 @@ namespace RB::Updaters
 
 			if (hitstopController != nullptr)
 			{
-				if (hitstopController->SkipFrame())
+				if (hitstopController->StopFrame())
 				{
 					//std::cout << "skipping fixed update.." << std::endl;
 

@@ -17,24 +17,24 @@ namespace RB::Collisions
 
 	}
 
-	bool HitStopController::SkipFrame()
+	bool HitStopController::StopFrame()
 	{
-		if (_skipFrames > 0)
+		if (_stopFrames > 0)
 		{
-			_skipFrames--;
+			_stopFrames--;
 
 			return true;
 		}
 
-		if (_skipFrames < 0)
+		if (_stopFrames < 0)
 		{
-			_skipFrames = 0;
+			_stopFrames = 0;
 		}
 
 		return false;
 	}
 
-	void HitStopController::AddSkipFrames(int frames)
+	void HitStopController::AddStopFrames(int frames)
 	{
 		if (frames <= 0)
 		{
@@ -42,7 +42,7 @@ namespace RB::Collisions
 		}
 		else
 		{
-			_skipFrames += frames;
+			_stopFrames += frames;
 		}
 	}
 }

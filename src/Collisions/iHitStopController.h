@@ -9,7 +9,7 @@ namespace RB::Collisions
 	class iHitStopController : public Controllers::ControllerBase
 	{
 	public:
-		virtual bool SkipFrame() = 0;
-		virtual void AddSkipFrames(int frames) = 0;
+		virtual bool StopFrame() = 0;
+		virtual void AddStopFrames(int frames) = 0;
 	};
 }

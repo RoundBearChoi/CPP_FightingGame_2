@@ -14,10 +14,10 @@ namespace RB::Collisions
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		bool SkipFrame() override;
-		void AddSkipFrames(int frames) override;
+		bool StopFrame() override;
+		void AddStopFrames(int frames) override;
 
 	private:
-		int _skipFrames = 0;
+		int _stopFrames = 0;
 	};
 }

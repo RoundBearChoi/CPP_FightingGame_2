@@ -69,7 +69,7 @@ namespace RB::Collisions
 
 			if (hitstopController != nullptr)
 			{
-				hitstopController->AddSkipFrames(attackSpecs.mHitStop);
+				hitstopController->AddStopFrames(attackSpecs.mHitStop);
 			}
 		}
 

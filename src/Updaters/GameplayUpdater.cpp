@@ -8,7 +8,7 @@
 #include "../Render/VFXAnimationController.h"
 #include "../Collisions/PlayerBoxDataController.h"
 #include "../Collisions/AttackRegisterController.h"
-#include "../Collisions/GeneralHitStopController.h"
+#include "../Collisions/HitStopController.h"
 #include "../Collisions/AttackSpecsController.h"
 #include "../Input/InputController.h"
 #include "../Input/SpecialMovesController.h"
@@ -37,7 +37,7 @@ namespace RB::Updaters
 		AddController(new HBox::TargetBoxDataController("../resource/TargetBoxSpecs/"), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
 		AddController(new HBox::AttackBoxDataController("../resource/AttackBoxSpecs/"), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
 		AddController(new Collisions::AttackRegisterController(), Controllers::ControllerType::ATTACK_REGISTER_CONTROLLER);
-		AddController(new Collisions::GeneralHitStopController(), Controllers::ControllerType::GENERAL_HITSTOP_CONTROLLER);
+		AddController(new Collisions::HitStopController(), Controllers::ControllerType::HITSTOP_CONTROLLER);
 		AddController(new Collisions::AttackSpecsController(), Controllers::ControllerType::ATTACK_SPECS_CONTROLLER);
 		AddController(new Render::VFXAnimationController(), Controllers::ControllerType::VFX_ANIMATION_CONTROLLER);
 

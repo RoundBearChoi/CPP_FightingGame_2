@@ -175,15 +175,15 @@ namespace RB::Updaters
 
 	void Playground::_RunCustomUpdate()
 	{
-		auto generalHitstopController = GET_GENERAL_HITSTOP_CONTROLLER;
+		auto hitstopController = GET_HITSTOP_CONTROLLER;
 
 		if (!_updaterIsQueued)
 		{
 			bool skip = false;
 
-			if (generalHitstopController != nullptr)
+			if (hitstopController != nullptr)
 			{
-				if (generalHitstopController->SkipFrame())
+				if (hitstopController->SkipFrame())
 				{
 					//std::cout << "skipping fixed update.." << std::endl;
 

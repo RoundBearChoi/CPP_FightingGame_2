@@ -16,7 +16,7 @@
 #include "iPlayground.h"
 #include "iUpdater.h"
 
-#include "../Collisions/iGeneralHitStopController.h"
+#include "../Collisions/iHitStopController.h"
 
 namespace RB::Updaters
 {

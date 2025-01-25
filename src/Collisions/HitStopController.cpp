@@ -1,23 +1,23 @@
-#include "GeneralHitStopController.h"
+#include "HitStopController.h"
 
 namespace RB::Collisions
 {
-	void GeneralHitStopController::Init()
+	void HitStopController::Init()
 	{
 		INIT_CONTROLLER
 	}
 
-	void GeneralHitStopController::OnUpdate()
+	void HitStopController::OnUpdate()
 	{
 
 	}
 
-	void GeneralHitStopController::OnFixedUpdate()
+	void HitStopController::OnFixedUpdate()
 	{
 
 	}
 
-	bool GeneralHitStopController::SkipFrame()
+	bool HitStopController::SkipFrame()
 	{
 		if (_skipFrames > 0)
 		{
@@ -34,7 +34,7 @@ namespace RB::Collisions
 		return false;
 	}
 
-	void GeneralHitStopController::AddSkipFrames(int frames)
+	void HitStopController::AddSkipFrames(int frames)
 	{
 		if (frames <= 0)
 		{

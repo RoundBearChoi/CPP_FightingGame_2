@@ -8,7 +8,7 @@
 
 #include "iAttackSpecsController.h"
 #include "iAttackRegisterController.h"
-#include "iGeneralHitStopController.h"
+#include "iHitStopController.h"
 
 #include "../RandomGenerator.h"
 #include "../Sprites/SpriteType.h"

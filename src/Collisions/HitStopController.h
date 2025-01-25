@@ -1,14 +1,14 @@
 #pragma once
 
-#include "iGeneralHitStopController.h"
+#include "iHitStopController.h"
 
 namespace RB::Collisions
 {
-	class GeneralHitStopController : public iGeneralHitStopController
+	class HitStopController : public iHitStopController
 	{
 	public:
-		GeneralHitStopController() = default;
-		~GeneralHitStopController() override {};
+		HitStopController() = default;
+		~HitStopController() override {};
 
 		void Init() override;
 		void OnUpdate() override;

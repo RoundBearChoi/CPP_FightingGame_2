@@ -1,13 +1,13 @@
-#include "FixWincingStatusDuringState.h"
+#include "SetWincingStatusOnEnter.h"
 
 namespace RB::PlayerStateComponents
 {
-	FixWincingStatusDuringState::FixWincingStatusDuringState(bool fix)
+	SetWincingStatusOnEnter::SetWincingStatusOnEnter(bool fix)
 	{
 		_fix = fix;
 	}
 
-	void FixWincingStatusDuringState::OnEnter()
+	void SetWincingStatusOnEnter::OnEnter()
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
@@ -16,7 +16,7 @@ namespace RB::PlayerStateComponents
 		_player->SetWincingStatus(_fix);
 	}
 
-	void FixWincingStatusDuringState::OnExit()
+	void SetWincingStatusOnEnter::OnExit()
 	{
 		_player->SetWincingStatus(!_fix);
 	}

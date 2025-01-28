@@ -7,11 +7,11 @@
 
 namespace RB::PlayerStateComponents
 {
-	class FixWincingStatusDuringState : public RB::States::StateComponentBase
+	class SetWincingStatusOnEnter : public RB::States::StateComponentBase
 	{
 	public:
-		FixWincingStatusDuringState(bool fix);
-		~FixWincingStatusDuringState() override {};
+		SetWincingStatusOnEnter(bool fix);
+		~SetWincingStatusOnEnter() override {};
 
 	public:
 		void OnEnter() override;

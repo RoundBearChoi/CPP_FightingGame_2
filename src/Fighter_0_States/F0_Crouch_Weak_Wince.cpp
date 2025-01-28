@@ -7,7 +7,7 @@ namespace RB::Fighter_0_States
 	{
 		_spriteType = Sprites::SpriteType::fighter_0_crouch_weak_wince;
 
-		AddStateComponent(new PlayerStateComponents::FixWincingStatusDuringState(true));
+		AddStateComponent(new PlayerStateComponents::SetWincingStatusOnEnter(true));
 		AddStateComponent(new PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, 0));
 		AddStateComponent(new PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(1, 3)); //forward

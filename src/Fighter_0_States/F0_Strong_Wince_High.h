@@ -2,7 +2,7 @@
 
 #include "../Players/PlayerState.h"
 
-#include "../PlayerStateComponents/FixWincingStatusDuringState.h"
+#include "../PlayerStateComponents/SetWincingStatusOnEnter.h"
 #include "../PlayerStateComponents/MarkInitiallyFacingRight.h"
 #include "../PlayerStateComponents/MoveHorizontalOnFixedUpdateCount.h"
 #include "../PlayerStateComponents/TransitionOnFixedUpdateCount.h"

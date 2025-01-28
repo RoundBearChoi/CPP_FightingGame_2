@@ -6,7 +6,7 @@ namespace RB::Fighter_0_States
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_strong_wince_mid;
 
-		AddStateComponent(new RB::PlayerStateComponents::FixWincingStatusDuringState(true));
+		AddStateComponent(new RB::PlayerStateComponents::SetWincingStatusOnEnter(true));
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 
 		AddStateComponent(new RB::PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, 0));

@@ -42,9 +42,7 @@ namespace RB::Input
 		return SpecialMoveType::NONE;
 	}
 
-	/// <summary>
-	/// make sure to delete state after use
-	/// </summary>
+	// make sure to delete state after use
 	RB::States::iState* SpecialMovesController::GetNewState(RB::Input::SpecialMoveType specialMoveType)
 	{
 		if (specialMoveType == RB::Input::SpecialMoveType::P0_HADOUKEN)

@@ -97,10 +97,7 @@ namespace RB::Render
 		return _spriteContainer.LoadSprite(path, spriteType);
 	}
 
-	/// <summary>
-	/// this function require sprites to be loaded first
-	/// an "animation" is just a sprite (spritesheet) with more data
-	/// </summary>
+	// this function require sprites to be loaded first. an "animation" is just a sprite (spritesheet) with more data
 	AnimationRenderer* AnimationContainer::LoadAnimation(std::string specsPath)
 	{
 		AnimationSpecs specs = LoadAnimationSpecsFromJSON(specsPath);
@@ -141,9 +138,7 @@ namespace RB::Render
 		}
 	}
 
-	/// <summary>
-	/// delete element, remove from vector, and return next iterator
-	/// </summary>
+	// delete element, remove from vector, and return next iterator
 	std::vector<iAnimationObj*>::const_iterator AnimationContainer::DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it)
 	{
 		iAnimationObj* obj = (*it);
@@ -182,9 +177,7 @@ namespace RB::Render
 		return nullptr;
 	}
 
-	/// <summary>
-	/// raw pointer, make sure to delete
-	/// </summary>
+	// raw pointer, make sure to delete
 	iAnimationObj* AnimationContainer::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType)
 	{
 		AnimationRenderer* renderer = GetAnimationRenderer(spriteType);

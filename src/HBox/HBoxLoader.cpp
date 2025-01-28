@@ -93,9 +93,7 @@ namespace RB::HBox
 		}
 	}
 
-	/// <summary>
-	/// only use during initialization (vector addresses)
-	/// </summary>
+	// only use during initialization (vector addresses)
 	Loaded_HB_Data HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType)
 	{
 		RB::JSON::JParser parser;

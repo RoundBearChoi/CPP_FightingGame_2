@@ -4,9 +4,7 @@ namespace RB::States
 {
 	unsigned int StateBase::stateCreationCount = 0;
 
-	/// <summary>
-	/// ever state has stateID
-	/// </summary>
+	// ever state has stateID
 	StateBase::StateBase()
 	{
 		stateCreationCount++;

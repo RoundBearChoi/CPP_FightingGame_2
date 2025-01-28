@@ -68,9 +68,7 @@ namespace RB::Players
 		}
 	}
 
-	/// <summary>
-	/// delete my previous states (states that are not part of the queues)
-	/// </summary>
+	// delete my previous states (states that are not part of the queues)
 	void PlayerState::ErasePreviousStates()
 	{
 		auto it = allPlayerStates.begin();

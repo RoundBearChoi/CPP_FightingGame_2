@@ -15,9 +15,7 @@
 
 namespace RB::Players
 {
-	/// <summary>
-	/// playerBox is the size of the playerCollider
-	/// </summary>
+	// playerBox is the size of the playerCollider
 	class PlayerCollider : public iPlayerCollider
 	{
 	public:

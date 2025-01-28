@@ -286,9 +286,7 @@ namespace RB::Input
 		_OnSpecialMove(playerID, input);
 	}
 
-	/// <summary>
-	/// Check every time a punch or kick is pressed
-	/// </summary>
+	// Check every time a punch or kick is pressed
 	void InputController::_OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input)
 	{
 		auto specialMovesController = GET_SPECIAL_MOVES_CONTROLLER;
@@ -440,9 +438,7 @@ namespace RB::Input
 		}
 	}
 
-	/// <summary>
-	/// erase all that matches
-	/// </summary>
+	// erase all that matches
 	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, unsigned int gameFrame)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);

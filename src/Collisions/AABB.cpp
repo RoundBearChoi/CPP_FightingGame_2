@@ -67,11 +67,7 @@ namespace RB::Collisions
 		return Vector2{ _width, _height };
 	}
 
-	/// <summary>
-	/// up is -y for olc
-	/// </summary>
-	/// <param name="other"></param>
-	/// <returns></returns>
+	// up is -y for olc
 	bool AABB::IsCollidingAgainst(const AABB& other, Vector2& collisionCenter)
 	{
 		if (_width <= 0.001f || _height <= 0.001f)
@@ -99,11 +95,7 @@ namespace RB::Collisions
 		return false;
 	}
 
-	/// <summary>
-	/// olc y is reversed
-	/// </summary>
-	/// <param name="other"></param>
-	/// <returns></returns>
+	// olc y is reversed
 	Vector2 AABB::GetCollisionCenter(const AABB& other)
 	{
 		float minxX = std::max(_bottomLeftX, other._bottomLeftX);

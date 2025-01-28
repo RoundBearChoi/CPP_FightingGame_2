@@ -2,9 +2,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	/// <summary>
-	/// total frames to reach max fall speed
-	/// </summary>
+	// total frames to reach max fall speed
 	MoveDownOnFall::MoveDownOnFall(unsigned int totalFrames, float multiplier)
 	{
 		_totalFrames = totalFrames;

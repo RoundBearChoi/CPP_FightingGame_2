@@ -10,9 +10,7 @@ namespace RB::PlayerStateComponents
 	class MoveHorizontalOnFixedUpdateCount : public RB::States::StateComponentBase
 	{
 	public:
-		/// <summary>
-		/// positive is move forward, negative is move back
-		/// </summary>
+		// positive is move forward, negative is move back
 		MoveHorizontalOnFixedUpdateCount(int fixedUpdateOnCount, float move);
 		~MoveHorizontalOnFixedUpdateCount() = default;
 

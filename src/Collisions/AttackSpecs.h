@@ -18,5 +18,8 @@ namespace RB::Collisions
 			int mHitStop = 0;
 			int mMinimumFixedUpdatesSinceHit = 0;
 			int mMaxHits = 0;
+			int mDamageFrames = 0;
+			int mBlockFrames = 0;
+			int mMissFrames = 0;
 	};
 }

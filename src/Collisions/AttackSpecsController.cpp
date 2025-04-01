@@ -78,6 +78,9 @@ namespace RB::Collisions
 		int hitStopValue = JSON::JParser::GetInt_FromElement(*vecAll[2]);
 		int minFixedUpdatesValue = JSON::JParser::GetInt_FromElement(*vecAll[3]);
 		int maxHitsValue = JSON::JParser::GetInt_FromElement(*vecAll[4]);
+		int damageFrames = JSON::JParser::GetInt_FromElement(*vecAll[5]);
+		int blockFrames = JSON::JParser::GetInt_FromElement(*vecAll[6]);
+		int missFrames = JSON::JParser::GetInt_FromElement(*vecAll[7]);
 
 		Collisions::AttackStrengthType attackStrengthType = Collisions::AttackStrengthType::_from_string(strStrengthType.c_str());
 
@@ -88,6 +91,9 @@ namespace RB::Collisions
 		attackSpecs.mHitStop = hitStopValue;
 		attackSpecs.mMinimumFixedUpdatesSinceHit = minFixedUpdatesValue;
 		attackSpecs.mMaxHits = maxHitsValue;
+		attackSpecs.mDamageFrames = damageFrames;
+		attackSpecs.mBlockFrames = blockFrames;
+		attackSpecs.mMissFrames = missFrames;
 
 		if (!ContainsAttackSpecs(spriteType))
 		{

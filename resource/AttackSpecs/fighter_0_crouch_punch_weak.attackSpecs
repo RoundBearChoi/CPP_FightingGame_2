@@ -5,6 +5,9 @@
         "damage" : 10,
         "hitstop frames" : 3,
         "minimum fixed updates since last hit": 10,
-        "max hits" : 2
+        "max hits" : 2,
+        "damage frames" : 10,
+        "block frames" : 11,
+        "miss frames" : 12
         }
 }

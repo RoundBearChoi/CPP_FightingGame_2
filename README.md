@@ -8,7 +8,7 @@ https://youtube.com/roundbeargames
 
 # Windows 10 Build
 - Install packages
-<br> *I'm using [MSYS2](https://www.msys2.org/)*
+<br> *I'm using [MSYS2](https://www.msys2.org/)*, MINGW64
 
 ```
 pacman -Syu
@@ -19,14 +19,6 @@ pacman -S mingw-w64-x86_64-clang
 pacman -S mingw-w64-x86_64-libc++
 ```
 
-<br>
-
-- Add path for the packages
-<br>
-
-![system_path](screenshots/system_path_new.png)
-
-<br>
 <br>
 
 - Clone repository and build

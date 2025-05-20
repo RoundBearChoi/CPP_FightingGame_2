@@ -43,6 +43,14 @@ elseif(UNIX)
     set(CMAKE_C_COMPILER "/usr/bin/clang")
     set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
+    # Ensure compilers exist
+    if(NOT EXISTS ${CMAKE_C_COMPILER})
+        message(FATAL_ERROR "Clang not found at /usr/bin/clang")
+    endif()
+    if(NOT EXISTS ${CMAKE_CXX_COMPILER})
+        message(FATAL_ERROR "Clang++ not found at /usr/bin/clang++")
+    endif()
+
     # Collect source files
     file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
 

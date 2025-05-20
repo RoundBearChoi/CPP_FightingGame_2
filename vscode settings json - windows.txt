@@ -3,8 +3,8 @@
     "editor.fontFamily": "Inconsolata SemiCondensed",
     "editor.fontLigatures": false,
 
-    //edit path accordingly
-    "clangd.path": "c:\\Users\\rbmsi\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
+    //must have clangd installed
+    "clangd.path": "C:\\msys64\\mingw64\\bin\\clangd.exe",
 
     "explorer.confirmDelete": false,
     "clangd.fallbackFlags": [

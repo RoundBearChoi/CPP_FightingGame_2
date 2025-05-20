@@ -58,7 +58,7 @@ elseif(UNIX)
     add_executable(CPPFG2 ${SOURCES})
 
     # Link necessary Linux libraries
-    target_link_libraries(CPPFG2 X11 GL pthread)
+    target_link_libraries(CPPFG2 -lX11 -lGL -lpthread -lpng -lstdc++fs)
 
     # Additional settings for libc++ (if needed)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -I/usr/include/c++/v1")

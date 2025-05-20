@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.12)
 
-# Set project name once
-project(CPPFG2)
-
 if(WIN32)
     # Set the C and C++ compilers (Clang)
     set(CMAKE_C_COMPILER "C:\\msys64\\mingw64\\bin\\clang.exe")
     set(CMAKE_CXX_COMPILER "C:\\msys64\\mingw64\\bin\\clang++.exe")
+
+    # Project name
+    project(CPPFG2)
 
     # Set the C++ standard
     set(CMAKE_CXX_STANDARD 17)
@@ -20,7 +20,7 @@ if(WIN32)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -L/C/msys64/mingw64/lib")
 
     # Collect source files
-    file(GLOB_RECURSIVE SOURCES "src/*.cpp" "src/*.h")
+    file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
 
     # Create the executable
     add_executable(CPPFG2 ${SOURCES})
@@ -29,16 +29,8 @@ if(WIN32)
     target_link_libraries(CPPFG2 user32 gdi32 opengl32 gdiplus Shlwapi dwmapi)
 
 elseif(UNIX)
-    # Set compilers before any project settings
-    set(CMAKE_C_COMPILER "/usr/bin/clang")
-    set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
-    # Ensure compilers exist
-    if(NOT EXISTS ${CMAKE_C_COMPILER})
-        message(FATAL_ERROR "Clang not found at /usr/bin/clang")
-    endif()
-    if(NOT EXISTS ${CMAKE_CXX_COMPILER})
-        message(FATAL_ERROR "Clang++ not found at /usr/bin/clang++")
-    endif()
+    # Set project name
+    project(CPPFG2)
 
     # Set the C++ standard
     set(CMAKE_CXX_STANDARD 17)
@@ -47,23 +39,32 @@ elseif(UNIX)
     set(CMAKE_BUILD_TYPE Debug)
     set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
 
+    # Compiler settings (assuming Clang)
+    set(CMAKE_C_COMPILER "/usr/bin/clang")
+    set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+
+    # Ensure compilers exist
+    if(NOT EXISTS ${CMAKE_C_COMPILER})
+        message(FATAL_ERROR "Clang not found at /usr/bin/clang")
+    endif()
+    if(NOT EXISTS ${CMAKE_CXX_COMPILER})
+        message(FATAL_ERROR "Clang++ not found at /usr/bin/clang++")
+    endif()
+
     # Collect source files
-    file(GLOB_RECURSIVE SOURCES "src/*.cpp")
-    # Set include directories
-    target_include_directories(CPPFG2 PRIVATE src)
+    file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
 
     # Create the executable
     add_executable(CPPFG2 ${SOURCES})
 
-    # Find and link libraries
-    find_package(X11 REQUIRED)
-    find_package(OpenGL REQUIRED)
-    find_package(PNG REQUIRED)
-    target_link_libraries(CPPFG2 PRIVATE X11::X11 OpenGL::GL pthread PNG::PNG)
+    # Link necessary Linux libraries
+    target_link_libraries(CPPFG2 -lX11 -lGL -lpthread -lpng -lstdc++fs)
 
-    # Settings for libc++
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+    # Additional settings for libc++ (if needed)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -I/usr/include/c++/v1")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -L/usr/lib")
 
 else()
-    message(FATAL_ERROR "I'm only doing Windows & Linux build for now")
+    message("I'm only doing Windows & Linux build for now")
+
 endif()

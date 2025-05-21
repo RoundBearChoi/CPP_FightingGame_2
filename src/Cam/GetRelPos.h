@@ -4,5 +4,5 @@
 
 namespace RB::Cam
 {
-    extern RB::Vector2 GetRelPos(RB::Vector2 pos);
+    extern RB::Vector2 GetRelPos(RB::Vector2 camPos, float zoom, RB::Vector2 worldPos);
 }

@@ -7,6 +7,15 @@ std::array<RB::Vector2, 4> RB::Sprites::GetQuadOnPivot(PivotType pivotType, floa
 	float halfWidth = width * 0.5f;
 	float halfHeight = height * 0.5f;
 
+	if (upIsNegativeY)
+	{
+
+	}
+	else
+	{
+		halfHeight *= -1.0f;
+	}
+
 	std::array<RB::Vector2, 4> points;
 
 	if (pivotType == RB::Sprites::PivotType::CENTER)

@@ -1,5 +1,7 @@
 #include "GetQuadOnPivot.h"
 
+bool upIsNegativeY = true; // Initial value
+
 std::array<RB::Vector2, 4> RB::Sprites::GetQuadOnPivot(PivotType pivotType, float width, float height, RB::Vector2 pos)
 {
 	float halfWidth = width * 0.5f;

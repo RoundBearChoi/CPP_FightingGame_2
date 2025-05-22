@@ -1,5 +1,7 @@
 #include "CircleRenderer.h"
 
+#include "../Cam/GetRelPos.h"
+
 namespace RB::Render
 {
 	void CircleRenderer::Init()
@@ -16,7 +18,7 @@ namespace RB::Render
 	{
 		auto camController = GET_CAM_CONTROLLER;
 
-		RB::Vector2 relPos = camController->GetCamObj()->GetRelativePosition(_pos) + RB::Vector2{ 1.0f, -1.0f };
+		RB::Vector2 relPos = RB::Cam::GetRelPos(camController->GetCamObj(), _pos) + RB::Vector2{ 1.0f, -1.0f };  //camController->GetCamObj()->GetRelativePosition(_pos) + RB::Vector2{ 1.0f, -1.0f };
 
 		olc::Renderer::ptrPGE->DrawCircle(
 			olc::vi2d{ relPos.GetIntX(), relPos.GetIntY() },

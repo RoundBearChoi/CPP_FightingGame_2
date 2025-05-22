@@ -22,15 +22,15 @@ namespace RB::Cam
 		_camPosition.y = y;
 	}
 
-	Vector2 CamObj::GetRelativePosition(Vector2 pos)
-	{
-		Vector2 rel = (pos * _zoom) - _camPosition;
-
-		rel.x += _displayHalfWidth;
-		rel.y += _displayHalfHeight;
-
-		return rel;
-	}
+	//Vector2 CamObj::GetRelativePosition(Vector2 pos)
+	//{
+	//	Vector2 rel = (pos * _zoom) - _camPosition;
+	//
+	//	rel.x += _displayHalfWidth;
+	//	rel.y += _displayHalfHeight;
+	//
+	//	return rel;
+	//}
 
 	float CamObj::GetZoom()
 	{

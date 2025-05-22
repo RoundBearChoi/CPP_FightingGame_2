@@ -1,5 +1,7 @@
 #include "AnimationRenderer.h"
 
+#include "../Cam/GetRelPos.h"
+
 namespace RB::Render
 {
 	AnimationRenderer::AnimationRenderer(AnimationSpecs specs)
@@ -32,7 +34,7 @@ namespace RB::Render
 		}
 
 		// get screen space x, y, width, height
-		RB::Vector2 rel = camController->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
+		RB::Vector2 rel = RB::Cam::GetRelPos(camController->GetCamObj(), renderSettings.mWorldPos);  //camController->GetCamObj()->GetRelativePosition(renderSettings.mWorldPos);
 
 		float x = (float)rel.x;
 		float y = (float)rel.y;

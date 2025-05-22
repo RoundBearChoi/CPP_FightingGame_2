@@ -21,7 +21,7 @@ namespace RB::Cam
 		void SetPosition(Vector2 pos) override;
 		void SetXPosition(float x) override;
 		void SetYPosition(float y) override;
-		Vector2 GetRelativePosition(Vector2 pos) override;
+		//Vector2 GetRelativePosition(Vector2 pos) override;
 		float GetZoom() override;
 		void SetZoom(float zoom) override;
 

@@ -1,5 +1,7 @@
 #include "SpriteContainer.h"
 
+#include "../Cam/GetRelPos.h"
+
 namespace RB::Sprites
 {
 	SpriteContainer::~SpriteContainer()
@@ -52,7 +54,7 @@ namespace RB::Sprites
 		{
 			for (auto i = points.begin(); i != points.end(); i++)
 			{
-				*i = camController->GetCamObj()->GetRelativePosition(*i);
+				*i = RB::Cam::GetRelPos(camController->GetCamObj(), *i); //->GetRelativePosition(*i);
 			}
 		}
 

@@ -1,5 +1,7 @@
 #include "PlayerDebugController.h"
+
 #include "PlayerInputRenderer.h"
+#include "../Cam/GetRelPos.h"
 
 namespace RB::Render
 {
@@ -101,11 +103,9 @@ namespace RB::Render
 
 		float* parts = col->GetBodyParts();
 
-		RB::Vector2 relLowerBody = camController->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[0]});
-		//RB::Vector2 intLowerBody = { int(round(relLowerBody.x)), int(round(relLowerBody.y)) };
+		RB::Vector2 relLowerBody = RB::Cam::GetRelPos(camController->GetCamObj(), parts[0]); //->GetRelativePosition({ player->GetPosition().x, parts[0]});
 
-		RB::Vector2 relUpperBody = camController->GetCamObj()->GetRelativePosition({ player->GetPosition().x, parts[1]});
-		//RB::Vector2 intUpperBody = { int(round(relUpperBody.x)), int(round(relUpperBody.y)) };
+		RB::Vector2 relUpperBody = RB::Cam::GetRelPos(camController->GetCamObj(), parts[1]); //->GetRelativePosition({ player->GetPosition().x, parts[1]});
 
 		int lineHalfLength = 30;
 

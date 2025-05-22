@@ -15,7 +15,7 @@ RB::Vector2 RB::Cam::GetRelPos(RB::Vector2 camPos, float zoom, RB::Vector2 world
     return rel;
 }
 
-RB::Vector2 GetRelPos(RB::Cam::iCamObj* cam, RB::Vector2 worldPos)
+RB::Vector2 RB::Cam::GetRelPos(RB::Cam::iCamObj* cam, RB::Vector2 worldPos)
 {
     RB::Vector2 rel = RB::Cam::GetRelPos(cam->GetPosition(), cam->GetZoom(), worldPos);
 

@@ -103,9 +103,9 @@ namespace RB::Render
 
 		float* parts = col->GetBodyParts();
 
-		RB::Vector2 relLowerBody = RB::Cam::GetRelPos(camController->GetCamObj(), parts[0]); //->GetRelativePosition({ player->GetPosition().x, parts[0]});
+		RB::Vector2 relLowerBody = RB::Cam::GetRelPos(camController->GetCamObj(), { player->GetPosition().x, parts[0]}); //->GetRelativePosition({ player->GetPosition().x, parts[0]});
 
-		RB::Vector2 relUpperBody = RB::Cam::GetRelPos(camController->GetCamObj(), parts[1]); //->GetRelativePosition({ player->GetPosition().x, parts[1]});
+		RB::Vector2 relUpperBody = RB::Cam::GetRelPos(camController->GetCamObj(), { player->GetPosition().x, parts[1]}); //->GetRelativePosition({ player->GetPosition().x, parts[1]});
 
 		int lineHalfLength = 30;
 

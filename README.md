@@ -13,7 +13,7 @@ CPPFG2 is a 2D fighting game built in C++. This repository contains source code 
 To build and run CPPFG2, ensure you have the following:
 - Windows 10
 - [MSYS2](https://www.msys2.org/) with MINGW64 environment
-- Git (for cloning the repository)
+- Git
 
 ## Installation
 
@@ -46,7 +46,7 @@ cd build
 cmake -G "Ninja" ..
 ```
 
-- Compile the project:
+- Compile project:
 
 ```bash
 ninja
@@ -56,11 +56,11 @@ ninja
 
 ## Project Configuration
 
-For detailed build configuration, refer to the [CMakeLists.txt](https://github.com/RoundBearChoi/CPP_FightingGame_2/blob/main/CMakeLists.txt) file in the repository.
+For detailed build configuration, refer to [CMakeLists.txt](https://github.com/RoundBearChoi/CPP_FightingGame_2/blob/main/CMakeLists.txt) file in the repository.
 
 ## License
 
-This project is licensed under the OLC-3 License. Below is the full license text:
+This project is licensed under OLC-3 License. Below is the full license text:
 
 **OLC-3 License**
 Copyright 2018 - 2024 OneLoneCoder.com

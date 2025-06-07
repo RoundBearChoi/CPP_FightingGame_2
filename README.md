@@ -79,4 +79,4 @@ Contributions are welcome! Please open an issue or submit a pull request on the 
 
 ## Contact
 
-For inquiries, reach out via the [YouTube channel](https://youtube.com/roundbeargames) or create an issue on the GitHub repository.
+For inquiries, reach out via the [YouTube channel](https://youtube.com/roundbeargames), join our [Discord community](https://discord.gg/hAFTgcA), or create an issue on the GitHub repository.

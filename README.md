@@ -38,7 +38,7 @@ git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
 cd CPP_FightingGame_2
 ```
 
-- Create a build directory and generate build files:
+- Create build directory and generate build files:
 
 ```bash
 mkdir build

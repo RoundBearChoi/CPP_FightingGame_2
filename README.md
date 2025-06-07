@@ -19,8 +19,8 @@ Ensure you have the following:
 
 ### 1. MSYS2 and Required Packages
 
-- Install [MSYS2](https://www.msys2.org/) and open MINGW64 shell.
-- Update package database and install required tools:
+Install [MSYS2](https://www.msys2.org/) and open MINGW64 shell.
+Update package database and install required tools:
 
 ```bash
 pacman -Syu
@@ -38,7 +38,7 @@ git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
 cd CPP_FightingGame_2
 ```
 
-- Create build directory and generate build files:
+Create build directory and generate build files:
 
 ```bash
 mkdir build
@@ -46,13 +46,13 @@ cd build
 cmake -G "Ninja" ..
 ```
 
-- Compile project:
+Compile project:
 
 ```bash
 ninja
 ```
 
-- Run .exe file
+Run .exe file
 
 ## Project Configuration
 

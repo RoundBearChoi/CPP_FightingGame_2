@@ -10,6 +10,7 @@ std::mutex allocMutex;
     void* operator new(std::size_t size)
     {
         std::lock_guard<std::mutex> lock(allocMutex);
+
         ++numObjects;
 
         return std::malloc(size);
@@ -18,6 +19,7 @@ std::mutex allocMutex;
     void operator delete(void* ptr) NOEXCEPT
     {
         std::lock_guard<std::mutex> lock(allocMutex);
+
         --numObjects;
 
         std::free(ptr);

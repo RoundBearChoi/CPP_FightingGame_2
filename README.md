@@ -13,7 +13,7 @@ CPPFG2 is a 2D fighting game built in C++. This repository contains source code 
 
 Ensure you have the following
 
-- [MSYS2](https://www.msys2.org/) with MINGW64 environment
+- [MSYS2](https://www.msys2.org/) with [MINGW64](https://www.mingw-w64.org/) environment
 - Git
 
 ### 2. MSYS2 and Required Packages

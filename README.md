@@ -1,11 +1,14 @@
 # CPP Fighting Game 2
 
-Developed by Roundbeargames, indie game developer based in South Korea.  
-Follow the development journey on [YouTube](https://youtube.com/roundbeargames).
+Developed by Roundbeargames, indie game developer based in South Korea
+
+Follow the development journey on [YouTube](https://youtube.com/roundbeargames)
 
 ## Overview
 
-CPPFG2 is a 2D fighting game built in C++. This repository contains source code and build instructions for compiling and running on Windows 10.
+CPPFG2 is a 2D fighting game built in C++
+
+This repository contains source code and build instructions for compiling and running on Windows 10
 
 ## Windows 10 Installation
 
@@ -18,7 +21,8 @@ Ensure you have the following
 
 ### 2. MSYS2 and Required Packages
 
-Install [MSYS2](https://www.msys2.org/) and open MINGW64 shell.  
+Install [MSYS2](https://www.msys2.org/) and open MINGW64 shell  
+
 Update package database and install required tools:
 
 ```bash
@@ -51,7 +55,7 @@ Compile project:
 ninja
 ```
 
-Run .exe file.
+Run CPPFG2.exe
 
 ## Project Configuration
 

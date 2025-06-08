@@ -14,7 +14,7 @@ This repository contains source code and build instructions for compiling and ru
 
 ### 1. Prerequisites
 
-Ensure you have the following
+Ensure you have the following:
 
 - [MSYS2](https://www.msys2.org/) with [MINGW64](https://www.mingw-w64.org/) environment
 - Git
@@ -56,6 +56,52 @@ ninja
 ```
 
 Run CPPFG2.exe
+
+## Linux (Ubuntu) Installation
+
+### 1. Prerequisites
+
+Ensure you have the following:
+
+- Git
+- Clang
+- CMake
+- Ninja
+- Development libraries: libX11, OpenGL (mesa), libpng, pthread, libc++
+
+```bash
+sudo apt update
+sudo apt install git clang cmake ninja-build libx11-dev libgl1-mesa-dev libpng-dev libpthread-stubs0-dev libc++-dev libc++abi-dev
+```
+
+### 2. Clone and Build Repository
+
+Clone the repository:
+
+```bash
+git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
+cd CPP_FightingGame_2
+```
+
+Create build directory and generate build files:
+
+```bash
+mkdir build
+cd build
+cmake -G "Ninja" ..
+```
+
+Compile project:
+
+```bash
+ninja
+```
+
+Run the executable:
+
+```bash
+./CPPFG2
+```
 
 ## Project Configuration
 

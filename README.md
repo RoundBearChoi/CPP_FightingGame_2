@@ -11,6 +11,7 @@ CPPFG2 is a 2D fighting game built in C++
 This repository contains source code and build instructions for compiling and running on Windows 10
 
 <br>
+<br>
 
 ## Windows 10 Installation
 
@@ -60,6 +61,7 @@ ninja
 Run CPPFG2.exe
 
 <br>
+<br>
 
 ## Linux (Ubuntu) Installation
 
@@ -105,6 +107,7 @@ Run the executable:
 ./CPPFG2
 ```
 
+<br>
 <br>
 
 ## Project Configuration

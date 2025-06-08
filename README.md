@@ -76,8 +76,6 @@ sudo apt install git clang cmake ninja-build libx11-dev libgl1-mesa-dev libpng-d
 
 ### 2. Clone and Build Repository
 
-Clone the repository:
-
 ```bash
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
 cd CPP_FightingGame_2

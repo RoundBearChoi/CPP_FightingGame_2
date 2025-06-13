@@ -2,7 +2,7 @@
 
 Developed by Roundbeargames, indie game developer based in South Korea
 
-Follow the development journey on [YouTube](https://youtube.com/roundbeargames)
+Follow the development journey on [YouTube](https://youtube.com/roundbeargames), [Discord](https://discord.gg/hAFTgcA)
 
 <br>
 

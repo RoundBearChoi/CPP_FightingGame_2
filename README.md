@@ -111,7 +111,6 @@ Run the executable:
 For detailed build configuration, refer to [CMakeLists.txt](https://github.com/RoundBearChoi/CPP_FightingGame_2/blob/main/CMakeLists.txt) file in the repository
 
 <br>
-<br>
 
 ## License
 

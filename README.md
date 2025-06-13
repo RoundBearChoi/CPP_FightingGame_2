@@ -10,7 +10,7 @@ Follow the development journey on [YouTube](https://youtube.com/roundbeargames)
 
 CPPFG2 is a 2D fighting game built in C++
 
-This repository contains source code and build instructions for compiling and running on Windows 10
+This repository contains source code and build instructions for compiling and running on Windows 10 and Linux (Ubuntu)
 
 <br>
 <br>

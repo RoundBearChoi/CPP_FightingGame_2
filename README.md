@@ -4,6 +4,8 @@ Developed by Roundbeargames, indie game developer based in South Korea
 
 Follow the development journey on [YouTube](https://youtube.com/roundbeargames)
 
+<br>
+
 ## Overview
 
 CPPFG2 is a 2D fighting game built in C++

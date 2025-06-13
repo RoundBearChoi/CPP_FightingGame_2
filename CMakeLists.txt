@@ -58,5 +58,5 @@ elseif(UNIX)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
 
 else()
-    message(FATAL_ERROR "I'm only doing Windows & Linux build for now")
+    message(FATAL_ERROR "I'm only doing Windows & Linux builds for now")
 endif()

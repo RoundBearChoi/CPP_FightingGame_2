@@ -104,7 +104,6 @@ Run the executable:
 ```
 
 <br>
-<br>
 
 ## Project Configuration
 

@@ -19,8 +19,6 @@ This repository contains source code and build instructions for compiling and ru
 
 ### 1. Prerequisites
 
-Ensure you have the following:
-
 - [MSYS2](https://www.msys2.org/) with [MINGW64](https://www.mingw-w64.org/) environment
 - Git
 
@@ -68,8 +66,6 @@ Run CPPFG2.exe
 ## Linux (Ubuntu) Installation
 
 ### 1. Prerequisites
-
-Ensure you have the following:
 
 - Git
 - Clang

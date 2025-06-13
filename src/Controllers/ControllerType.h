@@ -24,5 +24,6 @@ namespace RB::Controllers
         PLAYER_BOX_EDIT_CONTROLLER,
         HBOX_EDIT_CONTROLLER,
         HB_MENU_CONTROLLER,
+		LOG_CONTROLLER,
     };
 }

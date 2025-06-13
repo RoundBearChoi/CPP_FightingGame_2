@@ -97,7 +97,7 @@ Compile project:
 ninja
 ```
 
-Run the executable:
+Run:
 
 ```bash
 ./CPPFG2

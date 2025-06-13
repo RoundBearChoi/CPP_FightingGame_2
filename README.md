@@ -60,7 +60,6 @@ ninja
 Run CPPFG2.exe
 
 <br>
-<br>
 
 ## Linux (Ubuntu) Installation
 

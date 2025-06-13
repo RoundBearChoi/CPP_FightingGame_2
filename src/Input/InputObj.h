@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../InfInt.h"
+
 #include "PlayerInput.h"
 
 #include "iInputObj.h"
@@ -9,7 +11,7 @@ namespace RB::Input
 	class InputObj : public iInputObj
 	{
 	public:
-		InputObj(PlayerInput playerInput, unsigned int gameFrame);
+		InputObj(PlayerInput playerInput, InfInt gameFrame);
 		~InputObj() override;
 
 		void OnUpdate() override;
@@ -23,12 +25,12 @@ namespace RB::Input
 		bool IsUsedAsAttack() override;
 		bool IsUsedAsMovement() override;
 		unsigned int GetFixedUpdateCount() override;
-		unsigned int GetGameFrameCount() override;
+		InfInt GetGameFrameCount() override;
 		bool IsPressedOnSameFrameAs(iInputObj* iObj) override;
 		bool IsPressedEarlierThan(iInputObj* iObj) override;
 
 	private:
-		unsigned int _gameFrameCount = 0;
+		InfInt _gameFrameCount = 0;
 		unsigned int _fixedUpdateCount = 0;
 		PlayerInput _playerInput = PlayerInput::NONE;
 		bool _isReleased = false;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../InfInt.h"
+
 #include "PlayerInput.h"
 
 namespace RB::Input
@@ -21,7 +23,7 @@ namespace RB::Input
 		virtual bool IsUsedAsAttack() = 0;
 		virtual bool IsUsedAsMovement() = 0;
 		virtual unsigned int GetFixedUpdateCount() = 0;
-		virtual unsigned int GetGameFrameCount() = 0;
+		virtual InfInt GetGameFrameCount() = 0;
 		virtual bool IsPressedOnSameFrameAs(iInputObj* inputObj) = 0;
 		virtual bool IsPressedEarlierThan(iInputObj* inputObj) = 0;
 	};

@@ -2,16 +2,20 @@
 
 namespace RB
 {
+	InfInt gFrame = 0;
+
 	unsigned int gameFrameCount = 0;
 	unsigned int maxGameFrameCount = 0;
 
 	void AddGameFrame()
 	{
-		if (maxGameFrameCount == 0)
-		{
-			maxGameFrameCount = std::numeric_limits<unsigned int>::max();
-		}
+		gFrame++;
+		
+		//if (maxGameFrameCount == 0)
+		//{
+		//	maxGameFrameCount = std::numeric_limits<unsigned int>::max();
+		//}
 
-		gameFrameCount++;
+		//gameFrameCount++;
 	}
 }

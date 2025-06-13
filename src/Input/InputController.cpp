@@ -279,7 +279,7 @@ namespace RB::Input
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
-		iInputObj* newObj = new InputObj(input, RB::gameFrameCount);
+		iInputObj* newObj = new InputObj(input, RB::gFrame);
 
 		vec.push_back(newObj);
 
@@ -439,7 +439,7 @@ namespace RB::Input
 	}
 
 	// erase all that matches
-	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, unsigned int gameFrame)
+	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, InfInt gameFrame)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 

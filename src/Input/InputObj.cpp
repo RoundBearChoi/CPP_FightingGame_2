@@ -2,7 +2,7 @@
 
 namespace RB::Input
 {
-	InputObj::InputObj(PlayerInput playerInput, unsigned int gameFrame)
+	InputObj::InputObj(PlayerInput playerInput, InfInt gameFrame)
 	{
 		_playerInput = playerInput;
 		_gameFrameCount = gameFrame;
@@ -63,7 +63,7 @@ namespace RB::Input
 		return _fixedUpdateCount;
 	}
 
-	unsigned int InputObj::GetGameFrameCount()
+	InfInt InputObj::GetGameFrameCount()
 	{
 		return _gameFrameCount;
 	}

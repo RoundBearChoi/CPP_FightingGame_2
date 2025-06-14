@@ -15,6 +15,7 @@
 #include "../HBox/TargetBoxDataController.h"
 #include "../HBox/AttackBoxDataController.h"
 #include "../Cam/CamController.h"
+#include "../Logger/LogController.h"
 
 #include "../Fighter_0_States/F0_Idle.h"
 

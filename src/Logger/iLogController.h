@@ -8,6 +8,8 @@ namespace RB::Log
 
 	class iLogController : public Controllers::ControllerBase
 	{
+		public:
+		virtual ~iLogController() override {}
 
-	}
+	};
 }

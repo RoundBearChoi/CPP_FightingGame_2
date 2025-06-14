@@ -2,6 +2,12 @@
 
 namespace RB::Updaters
 {
+	UpdaterBase::UpdaterBase()
+	{
+		// instantiate common controllers
+
+	}
+
     UpdaterBase::~UpdaterBase()
     {
         for (int i = 0; i < _vecControllers.size(); i++)

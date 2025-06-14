@@ -15,6 +15,7 @@ namespace RB::Updaters
 
 	void Playground::Init()
 	{
+		// instantiate first updater
 		bool firstQueueSuccessful = QueueUpdater(new GameplayUpdater());
 
 		if (!firstQueueSuccessful)

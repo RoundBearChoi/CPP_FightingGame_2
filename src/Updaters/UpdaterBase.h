@@ -9,7 +9,7 @@ namespace RB::Updaters
     class UpdaterBase : public iUpdater
     {
     public:
-        UpdaterBase() = default;
+        UpdaterBase();
         virtual ~UpdaterBase();
 
     public:

@@ -478,6 +478,8 @@ namespace RB::HBox
 			{
 				path = "../resource/EditorSettings/TargetBoxSettings.editorSettings";
 			}
+			
+			// save current selection
 
 			std::ofstream file(path);
 

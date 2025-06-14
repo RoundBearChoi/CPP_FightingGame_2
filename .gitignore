@@ -368,3 +368,6 @@ visual_studio_project/CMakeCache.txt
 
 # VS 2022 build
 /vsbuild
+
+# swp files
+*.swp

@@ -4,7 +4,7 @@ namespace RB::Render
 {
     void VFXAnimationController::Init()
     {
-        INIT_CONTROLLER
+        //INIT_CONTROLLER
         
         _animationContainer.Init();
 

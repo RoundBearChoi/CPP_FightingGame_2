@@ -4,7 +4,7 @@ namespace RB::Collisions
 {
 	void PlayerBoxDataController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 		
 		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_idle, Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_crouch, Players::CharacterType::AKU);

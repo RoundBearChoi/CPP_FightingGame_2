@@ -11,7 +11,7 @@ namespace RB::Input
 
 	void InputController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 
 		_totalInputTypes = static_cast<unsigned int>(PlayerInput::COUNT);
 

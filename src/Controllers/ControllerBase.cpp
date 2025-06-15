@@ -30,8 +30,8 @@ namespace RB::Controllers
 		_controllerType = controllerType;
 	}
 
-	bool ControllerBase::IsInitialized()
-	{
-		return _initialized;
-	}
+	//bool ControllerBase::IsInitialized()
+	//{
+	//	return _initialized;
+	//}
 }

@@ -4,7 +4,7 @@ namespace RB::Collisions
 {
 	void HitStopController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 	}
 
 	void HitStopController::OnUpdate()

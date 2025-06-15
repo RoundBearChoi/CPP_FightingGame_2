@@ -11,7 +11,7 @@ namespace RB::Controllers
 {
 	iController* GetController(ControllerType controllerType);
 
-	#define INIT_CONTROLLER if (!_initialized){ _initialized = true; } else { return; }
+	//#define INIT_CONTROLLER if (!_initialized){ _initialized = true; } else { return; }
 
 	class ControllerBase : public iController
 	{
@@ -27,10 +27,10 @@ namespace RB::Controllers
 	public:
 		virtual ControllerType GetControllerType() override;
 		virtual void SetControllerType(ControllerType controllerType) override;
-		virtual bool IsInitialized() override;
+		//virtual bool IsInitialized() override;
 
 	protected:
 		ControllerType _controllerType = ControllerType::NONE;
-		bool _initialized = false;
+		//bool _initialized = false;
 	};
 }

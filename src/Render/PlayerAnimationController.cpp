@@ -10,7 +10,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 		
 		_animationContainer.Init();
 

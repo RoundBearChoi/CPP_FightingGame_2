@@ -13,7 +13,7 @@ namespace RB::Background
 
 	void BackgroundController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 		
 		_vecBackgroundObjs.push_back(new BackgroundObj("../resource/PNG files/StringStar/stringstar_01.png", Sprites::SpriteType::background_1, 0.90f));
 		_vecBackgroundObjs.push_back(new BackgroundObj("../resource/PNG files/StringStar/stringstar_02.png", Sprites::SpriteType::background_2, 0.80f));

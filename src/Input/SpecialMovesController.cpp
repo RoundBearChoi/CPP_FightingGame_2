@@ -10,7 +10,7 @@ namespace RB::Input
 
 	void SpecialMovesController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 		
 		_vecP1_Sequences.push_back(new RB::Input::Sequences::P0_Seq_Hadouken(RB::Input::SpecialMoveType::P0_HADOUKEN, { PlayerInput::MOVE_DOWN, PlayerInput::MOVE_DOWN_RIGHT, PlayerInput::MOVE_RIGHT, PlayerInput::ATTACK_WEAK_PUNCH }));
 

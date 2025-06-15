@@ -7,7 +7,7 @@ namespace RB::Collisions
 {
 	void PlayerBoxEditController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 	}
 
 	void PlayerBoxEditController::OnUpdate()

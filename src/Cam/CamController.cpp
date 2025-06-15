@@ -4,7 +4,7 @@ namespace RB::Cam
 {
 	void CamController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 		
 		_camObj.Init();
 

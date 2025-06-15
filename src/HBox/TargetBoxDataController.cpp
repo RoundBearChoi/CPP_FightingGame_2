@@ -9,7 +9,7 @@ namespace RB::HBox
 
 	void TargetBoxDataController::Init()
 	{
-		INIT_CONTROLLER
+		//INIT_CONTROLLER
 		
 		_hbContainer.Init();
 	}

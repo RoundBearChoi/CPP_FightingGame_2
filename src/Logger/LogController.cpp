@@ -9,7 +9,7 @@ namespace RB::Log
 	
 	void LogController::Init()
 	{
-
+		//std::cout << "ini test log controller" << std::endl;
 	}
 
 	void LogController::OnUpdate()

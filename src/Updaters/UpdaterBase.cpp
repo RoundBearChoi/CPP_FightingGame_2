@@ -4,7 +4,6 @@ namespace RB::Updaters
 {
 	UpdaterBase::UpdaterBase()
 	{
-		// instantiate common controllers
 
 	}
 

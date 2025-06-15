@@ -1,5 +1,7 @@
 #include "Playground.h"
 
+#include "../Logger/LogController.h"
+
 namespace RB::Updaters
 {
 	Playground::Playground()
@@ -90,6 +92,9 @@ namespace RB::Updaters
 		{
 			// reset slow motion
 			_skipper.SetSkipFrames(0);
+			
+			// add common controllers before init
+			_updater->AddController(new Log::LogController(), Controllers::ControllerType::LOG_CONTROLLER);
 
 			_updater->Init();
 		}

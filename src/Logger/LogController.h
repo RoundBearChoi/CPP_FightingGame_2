@@ -14,5 +14,8 @@ namespace RB::Log
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
+
+		public:
+		bool WriteToFile(const std::string& path, const std::stringstream& stream);
 	};
 }

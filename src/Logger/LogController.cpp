@@ -2,9 +2,15 @@
 
 namespace RB::Log
 {
+	LogController::LogController()
+	{
+		_pStringStream = new std::stringstream();
+	}
+
 	LogController::~LogController()
 	{
-
+		delete _pStringStream;
+		_pStringStream = nullptr;
 	}
 	
 	void LogController::Init()

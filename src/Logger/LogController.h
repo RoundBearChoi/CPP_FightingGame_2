@@ -1,5 +1,9 @@
 #pragma once
 
+#include <iostream>
+#include <sstream>
+#include <string>
+
 #include "iLogController.h"
 
 namespace RB::Log
@@ -7,7 +11,7 @@ namespace RB::Log
 	class LogController : public iLogController
 	{
 		public:
-		LogController() = default;
+		LogController();
 		~LogController() override;
 
 		public:
@@ -17,5 +21,8 @@ namespace RB::Log
 
 		public:
 		bool WriteToFile(const std::string& path, const std::stringstream& stream);
+
+		private:
+		std::stringstream* _pStringStream = nullptr;
 	};
 }

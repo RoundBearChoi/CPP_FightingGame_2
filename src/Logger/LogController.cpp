@@ -5,6 +5,10 @@ namespace RB::Log
 	LogController::LogController()
 	{
 		_pStringStream = new std::stringstream();
+
+		std::function<void()> func = std::bind(&LogController::_WriteToFile, this);
+		_skipper.SetFunction(func);
+		_skipper.SetSkipFrames(60);
 	}
 
 	LogController::~LogController()
@@ -25,7 +29,7 @@ namespace RB::Log
 
 	void LogController::OnFixedUpdate()
 	{
-
+		_skipper.DoFixedUpdate();
 	}
 	bool LogController::AddToStream(const std::string& str)
 	{
@@ -52,5 +56,10 @@ namespace RB::Log
     	outFile.close();
 
 		return true;
+	}
+
+	void LogController::_WriteToFile()
+	{
+		// std::cout << "writing to file.." << std::endl;
 	}
 }

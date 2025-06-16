@@ -5,6 +5,7 @@
 #include <string>
 
 #include "../GameFrame.h"
+#include "../Updaters/Skipper.h"
 
 #include "iLogController.h"
 
@@ -28,6 +29,10 @@ namespace RB::Log
 		bool WriteToFile(const std::string& path, const std::stringstream& stream);
 
 		private:
+		void _WriteToFile();
+
+		private:
 		std::stringstream* _pStringStream = nullptr;
+		Updaters::Skipper _skipper;
 	};
 }

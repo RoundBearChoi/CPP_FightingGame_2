@@ -34,5 +34,6 @@ namespace RB::Log
 		private:
 		std::stringstream* _pStringStream = nullptr;
 		Updaters::Skipper _skipper;
+		const std::string _file = "../GameLog.rblog";
 	};
 }

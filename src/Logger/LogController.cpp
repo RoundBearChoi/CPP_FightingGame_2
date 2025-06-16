@@ -19,7 +19,31 @@ namespace RB::Log
 	
 	void LogController::Init()
 	{
-		// clear file
+		// try to open file
+		std::ofstream outFile(_file, std::ios::app);
+		
+		if (!outFile)
+		{
+			// if file doesn't exist, create
+        	outFile.open(_file, std::ios::out);
+        
+			if (outFile.is_open())
+			{
+            	outFile.close();
+        	}
+    	}
+		else
+		{
+        	// if file exists, close and reopen in truncate mode to clear it
+        	outFile.close();
+
+        	outFile.open(_file, std::ios::out | std::ios::trunc);
+        
+			if (outFile.is_open())
+			{
+            	outFile.close();
+        	}
+    	}
 	}
 
 	void LogController::OnUpdate()

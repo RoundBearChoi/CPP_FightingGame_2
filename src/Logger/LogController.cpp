@@ -29,6 +29,13 @@ namespace RB::Log
 	}
 	bool LogController::AddToStream(const std::string& str)
 	{
+		// get game frame and then concatenate with str
+		// frame | player | type | actual string
+		// 3 | p1 | input | weak punch down
+		// 10 | p2 | attackCollider | pos 231 -1321 width 300 height 100
+
+		InfInt frame = RB::gFrame;
+
 		return true;
 	}
 

@@ -4,6 +4,8 @@
 #include <sstream>
 #include <string>
 
+#include "../GameFrame.h"
+
 #include "iLogController.h"
 
 namespace RB::Log

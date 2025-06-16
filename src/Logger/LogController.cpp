@@ -27,6 +27,10 @@ namespace RB::Log
 	{
 
 	}
+	bool LogController::AddToStream(const std::string& str)
+	{
+		return true;
+	}
 
 	bool LogController::WriteToFile(const std::string& path, const std::stringstream& stream)
 	{

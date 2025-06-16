@@ -19,7 +19,7 @@ namespace RB::Log
 	
 	void LogController::Init()
 	{
-		//std::cout << "ini test log controller" << std::endl;
+		// clear file
 	}
 
 	void LogController::OnUpdate()
@@ -37,8 +37,10 @@ namespace RB::Log
 		// frame | player | type | actual string
 		// 3 | p1 | input | weak punch down
 		// 10 | p2 | attackCollider | pos 231 -1321 width 300 height 100
+		
+		std::string strFrame = RB::gFrame.toString();
 
-		InfInt frame = RB::gFrame;
+		(*_pStringStream) << strFrame << " | " << std::endl;
 
 		return true;
 	}
@@ -60,6 +62,6 @@ namespace RB::Log
 
 	void LogController::_WriteToFile()
 	{
-		// std::cout << "writing to file.." << std::endl;
+
 	}
 }

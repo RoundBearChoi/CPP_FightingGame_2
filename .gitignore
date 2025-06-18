@@ -371,3 +371,6 @@ visual_studio_project/CMakeCache.txt
 
 # swp files
 *.swp
+
+# vim files
+*.vim

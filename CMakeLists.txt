@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.12)
 
 if(WIN32)
-    # Set the C and C++ compilers (Clang)
+    # C and C++ compilers (Clang)
     set(CMAKE_C_COMPILER "C:\\msys64\\mingw64\\bin\\clang.exe")
     set(CMAKE_CXX_COMPILER "C:\\msys64\\mingw64\\bin\\clang++.exe")
 
     # Project name
     project(CPPFG2)
 
-    # Set the C++ standard
+    # C++ standard
     set(CMAKE_CXX_STANDARD 17)
 
     # Disable optimizations and enable debug symbols for debugging
@@ -22,7 +22,7 @@ if(WIN32)
     # Collect source files
     file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
 
-    # Create the executable
+    # Create executable
     add_executable(CPPFG2 ${SOURCES})
 
     # Link libraries
@@ -33,10 +33,10 @@ elseif(UNIX)
     set(CMAKE_C_COMPILER "/usr/bin/clang")
     set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
-    # Set project name
+    # Project name
     project(CPPFG2)
 
-    # Set the C++ standard
+    # C++ standard
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -47,7 +47,7 @@ elseif(UNIX)
     # Collect source files
     file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
 
-    # Create the executable
+    # Create executable
     add_executable(CPPFG2 ${SOURCES})
 
     # Link necessary Linux libraries
@@ -60,3 +60,4 @@ elseif(UNIX)
 else()
     message(FATAL_ERROR "I'm only doing Windows & Linux builds for now")
 endif()
+

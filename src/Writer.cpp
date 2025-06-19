@@ -16,7 +16,7 @@ namespace RB
     	}
 
     	// Write string and newline
-    	outFile << str << std::endl;
+    	outFile << str; //<< std::endl;
 
     	if (outFile.fail())
 		{

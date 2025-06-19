@@ -4,8 +4,6 @@ namespace RB::Log
 {
 	LogController::LogController()
 	{
-		//std::cout << "log controller created" << std::endl;
-
 		_pStringStream = new std::stringstream();
 
 		std::function<void()> func = std::bind(&LogController::_write, this);
@@ -21,31 +19,7 @@ namespace RB::Log
 	
 	void LogController::Init()
 	{
-		// try to open file
-		std::ofstream outFile(_logFilePath, std::ios::app);
-		
-		if (!outFile)
-		{
-			// if file doesn't exist, create
-        	outFile.open(_logFilePath, std::ios::out);
-        
-			if (outFile.is_open())
-			{
-            	outFile.close();
-        	}
-    	}
-		else
-		{
-        	// if file exists, close and reopen in truncate mode to clear it
-        	outFile.close();
-
-        	outFile.open(_logFilePath, std::ios::out | std::ios::trunc);
-        
-			if (outFile.is_open())
-			{
-            	outFile.close();
-        	}
-    	}
+		_writer.WriteToLogFile(_logFilePath, "test", true);	
 	}
 
 	void LogController::OnUpdate()
@@ -55,8 +29,6 @@ namespace RB::Log
 
 	void LogController::OnFixedUpdate()
 	{
-		//std::cout << "logcontroller fixedupdate" << std::endl;
-
 		_skipper.DoFixedUpdate();
 	}
 	bool LogController::AddToStream(const std::string& str)

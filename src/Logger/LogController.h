@@ -26,10 +26,7 @@ namespace RB::Log
 		
 		public:
 		bool AddToStream(const std::string& str);
-
-		// should be separated to a global func
-		bool WriteToFile(const std::string& path, const std::stringstream& stream);
-
+		
 		private:
 		void _write();
 

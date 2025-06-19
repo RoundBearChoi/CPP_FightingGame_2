@@ -1,5 +1,10 @@
 #pragma once
 
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <string>
+
 namespace RB
 {
 	class Writer
@@ -9,7 +14,7 @@ namespace RB
 		~Writer() = default;
 
 	public:
-		bool WriteToLogFile();
+		bool WriteToLogFile(const std::string& path, const std::string& str, bool startClean);
 	};
 }
 

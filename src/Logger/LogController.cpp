@@ -73,25 +73,10 @@ namespace RB::Log
 		return true;
 	}
 
-	bool LogController::WriteToFile(const std::string& path, const std::stringstream& stream)
-	{
-    	std::ofstream outFile(path, std::ios::out | std::ios::binary);
-
-    	if (!outFile.is_open())
-		{
-        	return false;
-		}
-
-    	outFile << stream.str();
-    	outFile.close();
-
-		return true;
-	}
-
 	void LogController::_write()
 	{
 		std::cout << "trying to write to log file.." << std::endl;
 
-		_writer.WriteToLogFile();
+		//_writer.WriteToLogFile();
 	}
 }

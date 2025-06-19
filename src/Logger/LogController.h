@@ -25,7 +25,7 @@ namespace RB::Log
 		void OnFixedUpdate() override;
 		
 		public:
-		bool AddToStream(const std::string& str);
+		bool AddToStream(int playerIndex, const std::string& str);
 		
 		private:
 		void _write();

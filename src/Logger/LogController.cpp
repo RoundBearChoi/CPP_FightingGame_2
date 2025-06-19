@@ -4,6 +4,8 @@ namespace RB::Log
 {
 	LogController::LogController()
 	{
+		//std::cout << "log controller created" << std::endl;
+
 		_pStringStream = new std::stringstream();
 
 		std::function<void()> func = std::bind(&LogController::_WriteToFile, this);
@@ -53,6 +55,8 @@ namespace RB::Log
 
 	void LogController::OnFixedUpdate()
 	{
+		//std::cout << "logcontroller fixedupdate" << std::endl;
+
 		_skipper.DoFixedUpdate();
 	}
 	bool LogController::AddToStream(const std::string& str)
@@ -61,7 +65,7 @@ namespace RB::Log
 		// frame | player | type | actual string
 		// 3 | p1 | input | weak punch down
 		// 10 | p2 | attackCollider | pos 231 -1321 width 300 height 100
-		
+	
 		std::string strFrame = RB::gFrame.toString();
 
 		(*_pStringStream) << strFrame << " | " << std::endl;
@@ -86,6 +90,8 @@ namespace RB::Log
 
 	void LogController::_WriteToFile()
 	{
+		std::cout << "trying to write to log file.." << std::endl;
 
+		_writer.WriteToLogFile();
 	}
 }

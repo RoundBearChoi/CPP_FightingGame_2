@@ -4,6 +4,8 @@
 #include <sstream>
 #include <string>
 
+#include "../Writer.h"
+
 #include "../GameFrame.h"
 #include "../Updaters/Skipper.h"
 
@@ -32,6 +34,7 @@ namespace RB::Log
 		void _WriteToFile();
 
 		private:
+		RB::Writer _writer;
 		std::stringstream* _pStringStream = nullptr;
 		Updaters::Skipper _skipper;
 		const std::string _file = "../GameLog.rblog";

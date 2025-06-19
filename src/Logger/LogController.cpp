@@ -8,7 +8,7 @@ namespace RB::Log
 
 		_pStringStream = new std::stringstream();
 
-		std::function<void()> func = std::bind(&LogController::_WriteToFile, this);
+		std::function<void()> func = std::bind(&LogController::_write, this);
 		_skipper.SetFunction(func);
 		_skipper.SetSkipFrames(60);
 	}
@@ -22,12 +22,12 @@ namespace RB::Log
 	void LogController::Init()
 	{
 		// try to open file
-		std::ofstream outFile(_file, std::ios::app);
+		std::ofstream outFile(_logFilePath, std::ios::app);
 		
 		if (!outFile)
 		{
 			// if file doesn't exist, create
-        	outFile.open(_file, std::ios::out);
+        	outFile.open(_logFilePath, std::ios::out);
         
 			if (outFile.is_open())
 			{
@@ -39,7 +39,7 @@ namespace RB::Log
         	// if file exists, close and reopen in truncate mode to clear it
         	outFile.close();
 
-        	outFile.open(_file, std::ios::out | std::ios::trunc);
+        	outFile.open(_logFilePath, std::ios::out | std::ios::trunc);
         
 			if (outFile.is_open())
 			{
@@ -88,7 +88,7 @@ namespace RB::Log
 		return true;
 	}
 
-	void LogController::_WriteToFile()
+	void LogController::_write()
 	{
 		std::cout << "trying to write to log file.." << std::endl;
 

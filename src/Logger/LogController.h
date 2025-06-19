@@ -31,12 +31,12 @@ namespace RB::Log
 		bool WriteToFile(const std::string& path, const std::stringstream& stream);
 
 		private:
-		void _WriteToFile();
+		void _write();
 
 		private:
 		RB::Writer _writer;
 		std::stringstream* _pStringStream = nullptr;
 		Updaters::Skipper _skipper;
-		const std::string _file = "../GameLog.rblog";
+		const std::string _logFilePath = "../GameLog.rblog";
 	};
 }

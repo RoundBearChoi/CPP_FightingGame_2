@@ -283,6 +283,15 @@ namespace RB::Input
 
 		vec.push_back(newObj);
 
+		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		{
+			// player index is 0
+		}
+		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		{
+			// player index is 1
+		}
+
 		_OnSpecialMove(playerID, input);
 	}
 

@@ -45,9 +45,9 @@ namespace RB::Log
 		// 3 | p1 | input | weak punch down
 		// 10 | p2 | attackCollider | pos 231 -1321 width 300 height 100
 	
-		std::string strFrame = RB::gFrame.toString();
+		std::string frame = RB::gFrame.toString();
 
-		(*_pStringStream) << strFrame << " | " << std::endl;
+		(*_pStringStream) << frame << " | " << str;
 
 		return true;
 	}

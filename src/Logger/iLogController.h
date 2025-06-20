@@ -1,5 +1,7 @@
 #pragma once
 
+#include "LogType.h"
+
 #include "../Controllers/ControllerBase.h"
 
 namespace RB::Log
@@ -8,8 +10,8 @@ namespace RB::Log
 
 	class iLogController : public Controllers::ControllerBase
 	{
-		public:
+	public:
 		virtual ~iLogController() override {}
-
+		virtual bool AddToStream(int playerIndex, RB::Log::LOG_TYPE logType, const std::string& str) = 0; 
 	};
 }

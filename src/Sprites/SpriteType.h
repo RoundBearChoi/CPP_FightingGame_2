@@ -2,7 +2,7 @@
 
 #include "../enum.h"
 
-namespace RB::Sprites
+namespace RB::Sprites // not using capital letters to match file names
 {
 	BETTER_ENUM
 	(

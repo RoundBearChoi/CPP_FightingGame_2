@@ -34,11 +34,11 @@ namespace RB::PlayerStateComponents
 
 		RB::Input::iInputObj* obj = nullptr;
 		
-		if (_inputType == RB::Input::InputType::ATTACK)
+		if (_inputType._value == RB::Input::InputType::ATTACK)
 		{
 			obj = inputController->GetUnused_Special_FIFO(playerID, _input);
 		}
-		else if (_inputType == RB::Input::InputType::MOVEMENT)
+		else if (_inputType._value == RB::Input::InputType::MOVEMENT)
 		{
 			obj = inputController->GetUnused_Movement_FIFO(playerID, _input);
 		}
@@ -48,7 +48,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		if (_inputType == RB::Input::InputType::ATTACK && !obj->IsUsedAsAttack())
+		if (_inputType._value == RB::Input::InputType::ATTACK && !obj->IsUsedAsAttack())
 		{
 			obj->SetUsedAsAttack(true);
 
@@ -56,7 +56,7 @@ namespace RB::PlayerStateComponents
 			machine->QueueNextState(_vecNextStates[0]);
 		}
 
-		else if (_inputType == RB::Input::InputType::MOVEMENT && !obj->IsUsedAsMovement())
+		else if (_inputType._value == RB::Input::InputType::MOVEMENT && !obj->IsUsedAsMovement())
 		{
 			obj->SetUsedAsMovement(true);
 

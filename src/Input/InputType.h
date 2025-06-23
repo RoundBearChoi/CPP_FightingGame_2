@@ -1,12 +1,18 @@
 #pragma once
 
+#include "../enum.h"
+
 namespace RB::Input
 {
-	enum class InputType
-	{
+	BETTER_ENUM
+	(
+	 	InputType, int,
+
 		NONE,
 
 		MOVEMENT,
 		ATTACK,
-	};
+
+		COUNT
+	)
 }

@@ -68,11 +68,11 @@ namespace RB::Input
 
 	std::vector<iSpecialMoveSequence*>& SpecialMovesController::_GetSequence(RB::Players::PlayerID playerID)
 	{
-		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_Sequences;
 		}
-		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_Sequences;
 		}

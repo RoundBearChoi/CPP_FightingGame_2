@@ -73,11 +73,11 @@ namespace RB::Players
 
 	int Player::GetPlayerID_int()
 	{
-		if (_playerID == RB::Players::PlayerID::PLAYER_1)
+		if (_playerID._value == RB::Players::PlayerID::PLAYER_1)
 		{
 			return 1;
 		}
-		else if (_playerID == RB::Players::PlayerID::PLAYER_2)
+		else if (_playerID._value == RB::Players::PlayerID::PLAYER_2)
 		{
 			return 2;
 		}

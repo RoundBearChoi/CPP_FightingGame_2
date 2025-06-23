@@ -1,12 +1,18 @@
 #pragma once
 
+#include "../enum.h"
+
 namespace RB::Players
 {
-	enum class PlayerID
-	{
+	BETTER_ENUM
+	(
+	 	PlayerID, int,
+
 		NONE = 0,
 
 		PLAYER_1 = 1,
 		PLAYER_2 = 2,
-	};
+
+		COUNT
+	)
 }

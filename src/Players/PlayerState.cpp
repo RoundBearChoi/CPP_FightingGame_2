@@ -14,7 +14,7 @@ namespace RB::Players
 
 			if (owner != nullptr)
 			{
-				if (playerID == owner->GetPlayerID())
+				if (playerID._value == owner->GetPlayerID())
 				{
 					return (*i);
 				}

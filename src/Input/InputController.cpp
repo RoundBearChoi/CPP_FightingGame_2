@@ -187,11 +187,11 @@ namespace RB::Input
 	{
 		std::vector<RB::Input::iInputObj*>* vec = nullptr;
 
-		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
 		{
 			vec = &_vecP1_InputObjs;
 		}
-		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
 		{
 			vec = &_vecP2_InputObjs;
 		}
@@ -217,11 +217,11 @@ namespace RB::Input
 
 	const std::vector<iInputObj*>& InputController::GetVecInputObjs(RB::Players::PlayerID playerID)
 	{
-		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_InputObjs;
 		}
-		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_InputObjs;
 		}
@@ -481,11 +481,11 @@ namespace RB::Input
 
 	std::vector<iInputObj*>& InputController::_GetInputObjs(RB::Players::PlayerID playerID)
 	{
-		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_InputObjs;
 		}
-		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_InputObjs;
 		}
@@ -495,11 +495,11 @@ namespace RB::Input
 
 	std::vector<SpecialMoveType>& InputController::_GetSpecialMovesInQueue(RB::Players::PlayerID playerID)
 	{
-		if (playerID == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_SpecialMoves;
 		}
-		else if (playerID == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_SpecialMoves;
 		}

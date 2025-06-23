@@ -43,13 +43,13 @@ namespace RB::Render
         RB::Sprites::PivotType pivotType = RB::Sprites::PivotType::NONE;
         EaseCalculator* calculator = nullptr;
 
-        if (playerID == RB::Players::PlayerID::PLAYER_1)
+        if (playerID._value == RB::Players::PlayerID::PLAYER_1)
         {
             center_x -= center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_RIGHT;
             calculator = &_p1_calculator;
         }
-        else if (playerID == RB::Players::PlayerID::PLAYER_2)
+        else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
         {
             center_x += center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
@@ -77,11 +77,11 @@ namespace RB::Render
     {
         EaseCalculator* calculator = nullptr;
 
-        if (playerID == RB::Players::PlayerID::PLAYER_1)
+        if (playerID._value == RB::Players::PlayerID::PLAYER_1)
         {
             calculator = &_p1_calculator;
         }
-        else if (playerID == RB::Players::PlayerID::PLAYER_2)
+        else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
         {
             calculator = &_p2_calculator;
         }

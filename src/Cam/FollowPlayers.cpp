@@ -22,8 +22,8 @@ namespace RB::Cam
 			return;
 		}
 
-		Players::iPlayer* p0 = playerController->GetPlayerOnIndex(0);
-		Players::iPlayer* p1 = playerController->GetPlayerOnIndex(1);
+		Players::iPlayer* p0 = playerController->GetPlayerOnID(Players::PlayerID::PLAYER_1);
+		Players::iPlayer* p1 = playerController->GetPlayerOnID(Players::PlayerID::PLAYER_2);
 
 		if (p0 == nullptr || p1 == nullptr)
 		{

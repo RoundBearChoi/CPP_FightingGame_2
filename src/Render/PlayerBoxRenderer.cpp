@@ -21,9 +21,9 @@ namespace RB::Render
 			return;
 		}
 
-		for (int i = 0; i < 2; i++)
+		for (int i = 1; i <= 2; i++)
 		{
-			RB::Players::iPlayer* player = playerController->GetPlayerOnIndex(i);
+			RB::Players::iPlayer* player = playerController->GetPlayerOnID(Players::PlayerID::_from_integral(i));
 
 			if (player == nullptr)
 			{

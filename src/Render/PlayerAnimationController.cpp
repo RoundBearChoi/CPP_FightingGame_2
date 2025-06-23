@@ -74,9 +74,9 @@ namespace RB::Render
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
-		for (int i = 0; i < 2; i++)
+		for (int i = 1; i <= 2; i++)
 		{
-			arr[i] = playerController->GetPlayerOnIndex(i);
+			arr[i] = playerController->GetPlayerOnID(Players::PlayerID::_from_integral(i));
 
 			if (arr[i] == nullptr)
 			{
@@ -111,9 +111,9 @@ namespace RB::Render
 
 		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
 
-		for (int i = 0; i < 2; i++)
+		for (int i = 1; i <= 2; i++)
 		{
-			arr[i] = playerController->GetPlayerOnIndex(i);
+			arr[i] = playerController->GetPlayerOnID(Players::PlayerID::_from_integral(i));
 
 			if (arr[i] == nullptr)
 			{

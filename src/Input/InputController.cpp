@@ -1,5 +1,7 @@
 #include "InputController.h"
+
 #include "iSpecialMovesController.h"
+#include "../Logger/iLogController.h"
 
 namespace RB::Input
 {
@@ -283,15 +285,6 @@ namespace RB::Input
 
 		vec.push_back(newObj);
 
-		if (playerID == RB::Players::PlayerID::PLAYER_1)
-		{
-			// player index is 0
-		}
-		else if (playerID == RB::Players::PlayerID::PLAYER_2)
-		{
-			// player index is 1
-		}
-
 		_OnSpecialMove(playerID, input);
 	}
 
@@ -533,5 +526,17 @@ namespace RB::Input
 			//for now, clear all (only trigger the first one assuming it's impossible to queue 2 special moves in a single update)
 			vec.clear();
 		}
+	}
+
+	void _LogInput(RB::Players::PlayerID, iInputObj* inputObj)
+	{
+		//input type to better enum
+		//std::string inputStr = newObj->GetPlayerInputType();
+	
+		//playerid to better enum
+
+		auto logController = GET_LOG_CONTROLLER;
+
+		//logController->AddToStream(playerIndex, Log::LogType::INPUT, inputStr);
 	}
 }

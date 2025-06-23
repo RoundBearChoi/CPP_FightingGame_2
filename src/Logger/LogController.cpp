@@ -39,7 +39,7 @@ namespace RB::Log
 		_skipper.DoFixedUpdate();
 	}
 
-	bool LogController::AddToStream(int playerIndex, RB::Log::LOG_TYPE logType, const std::string& str)
+	bool LogController::AddToStream(Players::PlayerID playerID, Log::LOG_TYPE logType, const std::string& str)
 	{
 		// get game frame and then concatenate with str
 		// frame | player | type | actual string
@@ -48,7 +48,7 @@ namespace RB::Log
 	
 		std::string frame = RB::gFrame.toString();
 
-		(*_pStringStream) << frame << " | " << str;
+		(*_pStringStream) << frame << " | " << logType._to_string() << " | " << str;
 
 		return true;
 	}

@@ -96,21 +96,21 @@ namespace RB::Render
 
 	RB::Sprites::SpriteType PlayerInputRenderer::_GetSpriteType(const RB::Input::PlayerInput& playerInput)
 	{
-		if (playerInput == RB::Input::PlayerInput::MOVE_UP) { return RB::Sprites::SpriteType::input_arrow_up; }
-		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN) { return RB::Sprites::SpriteType::input_arrow_down; }
-		else if (playerInput == RB::Input::PlayerInput::MOVE_LEFT) { return RB::Sprites::SpriteType::input_arrow_left; }
-		else if (playerInput == RB::Input::PlayerInput::MOVE_RIGHT) { return RB::Sprites::SpriteType::input_arrow_right; }
+		if (playerInput._value == RB::Input::PlayerInput::MOVE_UP) { return RB::Sprites::SpriteType::input_arrow_up; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN) { return RB::Sprites::SpriteType::input_arrow_down; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_LEFT) { return RB::Sprites::SpriteType::input_arrow_left; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_RIGHT) { return RB::Sprites::SpriteType::input_arrow_right; }
 
-		else if (playerInput == RB::Input::PlayerInput::MOVE_UP_LEFT) { return RB::Sprites::SpriteType::input_arrow_up_left; }
-		else if (playerInput == RB::Input::PlayerInput::MOVE_UP_RIGHT) { return RB::Sprites::SpriteType::input_arrow_up_right; }
-		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN_LEFT) { return RB::Sprites::SpriteType::input_arrow_down_left; }
-		else if (playerInput == RB::Input::PlayerInput::MOVE_DOWN_RIGHT) { return RB::Sprites::SpriteType::input_arrow_down_right; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_UP_LEFT) { return RB::Sprites::SpriteType::input_arrow_up_left; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_UP_RIGHT) { return RB::Sprites::SpriteType::input_arrow_up_right; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN_LEFT) { return RB::Sprites::SpriteType::input_arrow_down_left; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN_RIGHT) { return RB::Sprites::SpriteType::input_arrow_down_right; }
 
-		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH) { return RB::Sprites::SpriteType::input_weak_punch; }
-		else if (playerInput == RB::Input::PlayerInput::ATTACK_STRONG_PUNCH) { return RB::Sprites::SpriteType::input_strong_punch; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH) { return RB::Sprites::SpriteType::input_weak_punch; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_STRONG_PUNCH) { return RB::Sprites::SpriteType::input_strong_punch; }
 
-		else if (playerInput == RB::Input::PlayerInput::ATTACK_WEAK_KICK) { return RB::Sprites::SpriteType::input_weak_kick; }
-		else if (playerInput == RB::Input::PlayerInput::ATTACK_STRONG_KICK) { return RB::Sprites::SpriteType::input_strong_kick; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_WEAK_KICK) { return RB::Sprites::SpriteType::input_weak_kick; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_STRONG_KICK) { return RB::Sprites::SpriteType::input_strong_kick; }
 
 		return RB::Sprites::SpriteType::NONE;
 	}

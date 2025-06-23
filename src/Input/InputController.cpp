@@ -243,9 +243,9 @@ namespace RB::Input
 
 	void InputController::_UpdateInputBuffer(RB::Players::PlayerID playerID)
 	{
-		for (unsigned int i = 0; i < _totalInputTypes; i++)
+		for (int i = 0; i < _totalInputTypes; i++)
 		{
-			PlayerInput input = (PlayerInput)i;
+			PlayerInput input = PlayerInput::_from_integral(i);
 
 			olc::HWButton button = GetKeyBinding(playerID, input);
 
@@ -307,8 +307,8 @@ namespace RB::Input
 			return;
 		}
 
-		if (input == PlayerInput::ATTACK_WEAK_PUNCH || input == PlayerInput::ATTACK_WEAK_KICK ||
-			input == PlayerInput::ATTACK_STRONG_PUNCH || input == PlayerInput::ATTACK_STRONG_KICK)
+		if (input._value == PlayerInput::ATTACK_WEAK_PUNCH || input._value == PlayerInput::ATTACK_WEAK_KICK ||
+			input._value == PlayerInput::ATTACK_STRONG_PUNCH || input._value == PlayerInput::ATTACK_STRONG_KICK)
 		{
 			RB::Input::SpecialMoveType specialMove = specialMovesController->GetSpecialMove(playerID);
 
@@ -530,10 +530,7 @@ namespace RB::Input
 
 	void _LogInput(RB::Players::PlayerID, iInputObj* inputObj)
 	{
-		//input type to better enum
-		//std::string inputStr = newObj->GetPlayerInputType();
-	
-		//playerid to better enum
+		// playerinput to better enum
 
 		auto logController = GET_LOG_CONTROLLER;
 

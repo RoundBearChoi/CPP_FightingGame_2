@@ -93,28 +93,30 @@ namespace RB::Input
 	void SpecialMoveSequenceBase::_SetSequenceForRightSide(const std::vector<RB::Input::PlayerInput>& vec)
 	{
 		for (auto i = vec.begin(); i != vec.end(); ++i)
-		{
-			if ((*i) == PlayerInput::MOVE_LEFT)
-			{
-				_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_RIGHT);
-			}
-			else if ((*i) == PlayerInput::MOVE_DOWN_LEFT)
-			{
-				_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_DOWN_RIGHT);
-			}
-			else if ((*i) == PlayerInput::MOVE_RIGHT)
-			{
-				_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_LEFT);
-			}
-			else if ((*i) == PlayerInput::MOVE_DOWN_RIGHT)
-			{
-				_vecSequenceFromRightSide.push_back(PlayerInput::MOVE_DOWN_LEFT);
-			}
-			else
-			{
-				_vecSequenceFromRightSide.push_back((*i));
-			}
-		}
+    	{
+        	int value = i->_to_integral();
+        	
+			if (value == RB::Input::PlayerInput::MOVE_LEFT)
+        	{
+            	_vecSequenceFromRightSide.push_back(RB::Input::PlayerInput::MOVE_RIGHT);
+        	}
+        	else if (value == RB::Input::PlayerInput::MOVE_DOWN_LEFT)
+        	{
+            	_vecSequenceFromRightSide.push_back(RB::Input::PlayerInput::MOVE_DOWN_RIGHT);
+        	}
+        	else if (value == RB::Input::PlayerInput::MOVE_RIGHT)
+        	{
+            	_vecSequenceFromRightSide.push_back(RB::Input::PlayerInput::MOVE_LEFT);
+        	}
+        	else if (value == RB::Input::PlayerInput::MOVE_DOWN_RIGHT)
+        	{
+            	_vecSequenceFromRightSide.push_back(RB::Input::PlayerInput::MOVE_DOWN_LEFT);
+        	}
+        	else
+        	{
+            	_vecSequenceFromRightSide.push_back(*i);
+        	}
+    	}
 	}
 
 	const std::vector<RB::Input::PlayerInput>& SpecialMoveSequenceBase::_GetSequence(bool playerIsFacingRight)

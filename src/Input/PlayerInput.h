@@ -1,10 +1,14 @@
 #pragma once
 
+#include "../enum.h"
+
 namespace RB::Input
 {
-	enum class PlayerInput
-	{
-		NONE,
+	BETTER_ENUM
+	(
+		PlayerInput, int,
+	
+		NONE = 0,
 
 		MOVE_LEFT,
 		MOVE_RIGHT,
@@ -30,6 +34,6 @@ namespace RB::Input
 		CAM_ZOOM_IN,
 		CAM_ZOOM_OUT,
 
-		COUNT,
-	};
+		COUNT
+	)
 }

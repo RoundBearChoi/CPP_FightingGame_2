@@ -24,6 +24,7 @@ namespace RB::Log
 ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌▐▛▚▖▐▌▐▌  █▐▌ ▐▌▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌ ▐▌▐▛▚▞▜▌▐▌   ▐▌   
 ▐▛▀▚▖▐▌ ▐▌▐▌ ▐▌▐▌ ▝▜▌▐▌  █▐▛▀▚▖▐▛▀▀▘▐▛▀▜▌▐▛▀▚▖▐▌▝▜▌▐▛▀▜▌▐▌  ▐▌▐▛▀▀▘ ▝▀▚▖
 ▐▌ ▐▌▝▚▄▞▘▝▚▄▞▘▐▌  ▐▌▐▙▄▄▀▐▙▄▞▘▐▙▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▌ ▐▌▐▌  ▐▌▐▙▄▄▖▗▄▄▞▘
+
 )";
 
 		_writer.WriteToLogFile(_logFilePath, ascii, true);	
@@ -48,15 +49,20 @@ namespace RB::Log
 	
 		std::string frame = RB::gFrame.toString();
 
-		(*_pStringStream) << frame << " | " << playerID._to_string() << " | "  << logType._to_string() << " | " << str;
+		(*_pStringStream) << frame << " | " << playerID._to_string() << " | "  << logType._to_string() << " | " << str << std::endl;
 
 		return true;
 	}
 
 	void LogController::_write()
 	{
-		std::cout << "trying to write to log file.." << std::endl;
+		if (_pStringStream && !_pStringStream->str().empty())
+    	{		
+			std::cout << "trying to write to log file.." << std::endl;
 
-		//_writer.WriteToLogFile();
+			_writer.WriteToLogFile(_logFilePath, _pStringStream->str(), false);
+
+			_pStringStream->str("");
+    	}
 	}
 }

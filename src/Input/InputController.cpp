@@ -285,6 +285,9 @@ namespace RB::Input
 
 		vec.push_back(newObj);
 
+		// log every new input buffer
+		_LogInput(playerID, newObj);
+
 		_OnSpecialMove(playerID, input);
 	}
 
@@ -528,12 +531,12 @@ namespace RB::Input
 		}
 	}
 
-	void _LogInput(RB::Players::PlayerID playerID, iInputObj* inputObj)
+	void InputController::_LogInput(Players::PlayerID playerID, iInputObj* inputObj)
 	{
-		auto logController = GET_LOG_CONTROLLER;
-
 		std::string inputStr = inputObj->GetPlayerInputType()._to_string();
-
+		
+		auto logController = GET_LOG_CONTROLLER;
+	
 		logController->AddToStream(playerID, Log::LOG_TYPE::INPUT, inputStr);
 	}
 }

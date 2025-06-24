@@ -17,6 +17,9 @@ namespace RB::Input
 
 		_totalInputTypes = static_cast<unsigned int>(PlayerInput::COUNT);
 
+		_vecP1_InputObjs.reserve(1000);
+		_vecP2_InputObjs.reserve(1000);
+
 		_vecKeyBindings.reserve((unsigned int)PlayerInput::COUNT);
 
 		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, olc::W });
@@ -253,18 +256,10 @@ namespace RB::Input
 			{
 				iInputObj* obj = GetInputObj_LIFO(playerID, input);
 
-				// check diag block first (if a diag is pressed/held it's impossible to press/hold straight dir that's included in that diag dir)
-				bool diagIsBlocking = _DiagIsBlocking(playerID, input);
-
 				// add new obj if first time pressed
 				if (obj == nullptr)
 				{
-					// only if diag isn't blocking
-					if (diagIsBlocking == false)
-					{
-						std::cout << "first time pressed: " << input._to_string() << std::endl;
-						_AddNewInputBuffer(playerID, input);
-					}
+					_AddNewInputBuffer(playerID, input);
 				}
 
 				//add 2nd obj on top of existing obj
@@ -287,7 +282,10 @@ namespace RB::Input
 
 	void InputController::_AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input)
 	{
-		std::cout << "adding new input buffer " << input._to_string() << std::endl;
+		//if (_DiagIsBlocking(playerID, input))
+		//{
+		//	return;
+		//}
 
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -381,12 +379,10 @@ namespace RB::Input
 
 				if (existing == nullptr)
 				{
-					std::cout << "no existing " << resultInput._to_string() << std::endl;
 					_AddNewInputBuffer(playerID, resultInput);
 				}
 				else if (existing->IsReleased())
 				{
-					std::cout << resultInput._to_string() << " is released" << std::endl;
 					_AddNewInputBuffer(playerID, resultInput);
 				}
 
@@ -459,8 +455,6 @@ namespace RB::Input
 	// erase all that matches
 	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, InfInt gameFrame)
 	{
-		std::cout << "destroying buffer: " << playerInput._to_string() << std::endl;
-
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
 		auto it = vec.begin();
@@ -553,28 +547,39 @@ namespace RB::Input
 		auto logController = GET_LOG_CONTROLLER;
 	
 		logController->AddToStream(playerID, Log::LOG_TYPE::INPUT, inputStr);
+
+		std::cout << "logging input: " << inputObj->GetPlayerInputType()._to_string() << std::endl;
 	}
 
-	bool InputController::_DiagIsBlocking(Players::PlayerID playerID, Input::PlayerInput playerInput)
+	/*bool InputController::_DiagIsBlocking(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-	
-		auto inputObj = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_RIGHT);
-		
-		// need to get EVERY inputobj from the buffer
-		// and check if any one of them is unreleased
-		if (inputObj != nullptr)
+		iInputObj* keyBuffer = nullptr;
+
+		if (playerInput._value == PlayerInput::MOVE_DOWN || playerInput._value == PlayerInput::MOVE_RIGHT)
 		{
-			if (inputObj->IsReleased() == false)
+			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_RIGHT);
+		}
+		else if (playerInput._value == PlayerInput::MOVE_DOWN || playerInput._value == PlayerInput::MOVE_LEFT)
+		{
+			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_LEFT);
+		}
+		else if (playerInput._value == PlayerInput::MOVE_UP || playerInput._value == PlayerInput::MOVE_LEFT)
+		{
+			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_UP_LEFT);
+		}
+		else if (playerInput._value == PlayerInput::MOVE_UP || playerInput._value == PlayerInput::MOVE_RIGHT)
+		{
+			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_UP_RIGHT);
+		}
+
+		if (keyBuffer != nullptr)
+		{
+			if (!keyBuffer->IsReleased())
 			{
 				return true;
 			}
 		}
-		
-		else if (playerInput._value == PlayerInput::MOVE_UP)
-		{
-
-		}
 
 		return false;
-	}
+	}*/
 }

@@ -374,3 +374,7 @@ visual_studio_project/CMakeCache.txt
 
 # vim files
 *.vim
+
+# game log files
+*.rblog
+

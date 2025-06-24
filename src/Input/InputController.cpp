@@ -256,7 +256,7 @@ namespace RB::Input
 				//add new obj if first time pressed
 				if (obj == nullptr)
 				{
-					// something wrong here.. infinite adding & destroying
+					// double hold is destroying inputobj before LIFO gets to it
 					std::cout << "first time pressed: " << input._to_string() << std::endl;
 					_AddNewInputBuffer(playerID, input);
 				}

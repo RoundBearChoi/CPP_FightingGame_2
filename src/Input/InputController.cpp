@@ -117,7 +117,7 @@ namespace RB::Input
 		return olc::HWButton();
 	}
 
-	iInputObj* InputController::GetInputOBJ_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	iInputObj* InputController::GetInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -253,19 +253,18 @@ namespace RB::Input
 			{
 				iInputObj* obj = GetInputObj_LIFO(playerID, input);
 
-				// maybe check diag dirs first
-				if (_DiagIsBlocking(input))
-				{
+				// check diag block first (if a diag is pressed/held it's impossible to press/hold straight dir that's included in that diag dir)
+				bool diagIsBlocking = _DiagIsBlocking(playerID, input);
 
-				}
-
-				//add new obj if first time pressed
+				// add new obj if first time pressed
 				if (obj == nullptr)
 				{
-					// double hold is destroying inputobj before LIFO gets to it
-					// if diag is held or pressed, it's impossible to hold or press straight dir that's included in diag
-					std::cout << "first time pressed: " << input._to_string() << std::endl;
-					_AddNewInputBuffer(playerID, input);
+					// only if diag isn't blocking
+					if (!diagIsBlocking)
+					{
+						std::cout << "first time pressed: " << input._to_string() << std::endl;
+						_AddNewInputBuffer(playerID, input);
+					}
 				}
 
 				//add 2nd obj on top of existing obj
@@ -556,21 +555,27 @@ namespace RB::Input
 		logController->AddToStream(playerID, Log::LOG_TYPE::INPUT, inputStr);
 	}
 
-	bool InputController::_DiagIsBlocking(Input::PlayerInput playerInput)
+	bool InputController::_DiagIsBlocking(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		if (playerInput._value == PlayerInput::MOVE_LEFT)
 		{
 
 		}
-		else if (playerInput._value == PlayerInput::MOVE_RIGHT)
+		else if (playerInput._value == PlayerInput::MOVE_DOWN || playerInput._value == PlayerInput::MOVE_RIGHT)
 		{
-
+			auto inputObj = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_RIGHT);
+			
+			// need to get EVERY inputobj from the buffer
+			// and check if any one of them is unreleased
+			if (inputObj != nullptr)
+			{
+				if (!inputObj->IsReleased())
+				{
+					return true;
+				}
+			}
 		}
 		else if (playerInput._value == PlayerInput::MOVE_UP)
-		{
-
-		}
-		else if (playerInput._value == PlayerInput::MOVE_DOWN)
 		{
 
 		}

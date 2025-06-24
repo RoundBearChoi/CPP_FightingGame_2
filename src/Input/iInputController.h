@@ -17,7 +17,7 @@ namespace RB::Input
 	{
 	public:
 		virtual olc::HWButton GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetInputOBJ_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual iInputObj* GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
 		virtual iInputObj* GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;

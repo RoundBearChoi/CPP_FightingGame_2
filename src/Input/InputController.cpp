@@ -260,7 +260,7 @@ namespace RB::Input
 				if (obj == nullptr)
 				{
 					// only if diag isn't blocking
-					if (!diagIsBlocking)
+					if (diagIsBlocking == false)
 					{
 						std::cout << "first time pressed: " << input._to_string() << std::endl;
 						_AddNewInputBuffer(playerID, input);
@@ -557,24 +557,19 @@ namespace RB::Input
 
 	bool InputController::_DiagIsBlocking(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		if (playerInput._value == PlayerInput::MOVE_LEFT)
+	
+		auto inputObj = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_RIGHT);
+		
+		// need to get EVERY inputobj from the buffer
+		// and check if any one of them is unreleased
+		if (inputObj != nullptr)
 		{
-
-		}
-		else if (playerInput._value == PlayerInput::MOVE_DOWN || playerInput._value == PlayerInput::MOVE_RIGHT)
-		{
-			auto inputObj = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_RIGHT);
-			
-			// need to get EVERY inputobj from the buffer
-			// and check if any one of them is unreleased
-			if (inputObj != nullptr)
+			if (inputObj->IsReleased() == false)
 			{
-				if (!inputObj->IsReleased())
-				{
-					return true;
-				}
+				return true;
 			}
 		}
+		
 		else if (playerInput._value == PlayerInput::MOVE_UP)
 		{
 

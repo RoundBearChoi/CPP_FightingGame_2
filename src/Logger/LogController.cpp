@@ -48,7 +48,7 @@ namespace RB::Log
 	
 		std::string frame = RB::gFrame.toString();
 
-		(*_pStringStream) << frame << " | " << logType._to_string() << " | " << str;
+		(*_pStringStream) << frame << " | " << playerID._to_string() << " | "  << logType._to_string() << " | " << str;
 
 		return true;
 	}

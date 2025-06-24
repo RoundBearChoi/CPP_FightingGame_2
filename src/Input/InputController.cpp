@@ -528,12 +528,12 @@ namespace RB::Input
 		}
 	}
 
-	void _LogInput(RB::Players::PlayerID, iInputObj* inputObj)
+	void _LogInput(RB::Players::PlayerID playerID, iInputObj* inputObj)
 	{
-		// playerinput to better enum
-
 		auto logController = GET_LOG_CONTROLLER;
 
-		//logController->AddToStream(playerIndex, Log::LogType::INPUT, inputStr);
+		std::string inputStr = inputObj->GetPlayerInputType()._to_string();
+
+		logController->AddToStream(playerID, Log::LOG_TYPE::INPUT, inputStr);
 	}
 }

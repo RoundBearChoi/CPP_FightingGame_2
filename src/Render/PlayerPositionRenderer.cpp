@@ -33,7 +33,7 @@ namespace RB::Render
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{
@@ -49,7 +49,7 @@ namespace RB::Render
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{

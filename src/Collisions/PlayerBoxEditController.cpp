@@ -111,7 +111,7 @@ namespace RB::Collisions
 		{
 			if (currentSpecs == nullptr)
 			{
-				playerBoxDataController->AddSpecs(PlayerBox(Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, playerController->GetPlayerOnID(id)->GetCharacterType());
+				playerBoxDataController->AddSpecs(PlayerBox(Sprites::GetCurrentAnimationFrame(id), 0.0f, 0.0f, 62.0f, 124.0f), currSpriteType, playerController->GetPlayer(id)->GetCharacterType());
 			}
 			else
 			{
@@ -180,7 +180,7 @@ namespace RB::Collisions
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
-		Players::iPlayer* player = playerController->GetPlayerOnID(id);
+		Players::iPlayer* player = playerController->GetPlayer(id);
 	
 		Players::CharacterType characterType = player->GetCharacterType();
 	
@@ -206,7 +206,7 @@ namespace RB::Collisions
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
-		Players::iPlayer* player = playerController->GetPlayerOnID(id);
+		Players::iPlayer* player = playerController->GetPlayer(id);
 		Players::CharacterType characterType = player->GetCharacterType();
 
 		if (playerBoxDataController == nullptr)
@@ -230,7 +230,7 @@ namespace RB::Collisions
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		Players::iPlayer* player = playerController->GetPlayerOnID(id);
+		Players::iPlayer* player = playerController->GetPlayer(id);
 
 		Players::CharacterType characterType = player->GetCharacterType();
 

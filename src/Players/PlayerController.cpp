@@ -54,7 +54,7 @@ namespace RB::Players
 		return p;
 	}
 
-	iPlayer* PlayerController::GetPlayerOnID(PlayerID id)
+	iPlayer* PlayerController::GetPlayer(PlayerID id)
 	{
 		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{

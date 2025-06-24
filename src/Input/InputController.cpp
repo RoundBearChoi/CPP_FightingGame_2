@@ -300,7 +300,7 @@ namespace RB::Input
 			return;
 		}
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player->IsInSpecialMoveStatus())
 		{
@@ -518,7 +518,7 @@ namespace RB::Input
 		{
 			RB::States::iState* newState = specialMovesController->GetNewState(vec[0]);
 
-			RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
+			RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 			player->GetStateMachine()->ClearQueuedStates();
 			player->GetStateMachine()->QueueNextState(newState);

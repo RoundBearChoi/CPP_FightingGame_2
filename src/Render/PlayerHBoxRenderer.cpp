@@ -35,7 +35,7 @@ namespace RB::Render
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
 		
 		if (player == nullptr)
 		{

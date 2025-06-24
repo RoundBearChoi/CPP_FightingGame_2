@@ -25,7 +25,7 @@ namespace RB::Input
 		unsigned int seqIndex = 0;
 		std::vector<bool> vecCorrect;
 		std::vector<RB::Input::iInputObj*> vecCorrectObjs;
-		RB::Players::iPlayer* p = playerController->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* p = playerController->GetPlayer(playerID);
 
 		if (p->GetHP() <= 0)
 		{

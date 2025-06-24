@@ -41,7 +41,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{

@@ -76,7 +76,7 @@ namespace RB::Render
 
 		for (int i = 1; i <= 2; i++)
 		{
-			arr[i] = playerController->GetPlayerOnID(Players::PlayerID::_from_integral(i));
+			arr[i] = playerController->GetPlayer(Players::PlayerID::_from_integral(i));
 
 			if (arr[i] == nullptr)
 			{
@@ -113,7 +113,7 @@ namespace RB::Render
 
 		for (int i = 1; i <= 2; i++)
 		{
-			arr[i] = playerController->GetPlayerOnID(Players::PlayerID::_from_integral(i));
+			arr[i] = playerController->GetPlayer(Players::PlayerID::_from_integral(i));
 
 			if (arr[i] == nullptr)
 			{

@@ -211,7 +211,7 @@ namespace RB::HBox
 
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnID(playerID);
+		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{
@@ -437,7 +437,7 @@ namespace RB::HBox
 		if (upCycle || downCycle)
 		{
 			// get current sprite type
-			RB::Players::iPlayer* player = playerController->GetPlayerOnID(Players::PlayerID::PLAYER_1);
+			RB::Players::iPlayer* player = playerController->GetPlayer(Players::PlayerID::PLAYER_1);
 			RB::Players::PlayerState* ownerState = RB::Players::PlayerState::GetPlayerState(Players::PlayerID::PLAYER_1);
 
 			currentSpriteType = ownerState->GetSpriteType();

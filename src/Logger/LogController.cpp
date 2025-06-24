@@ -58,8 +58,6 @@ namespace RB::Log
 	{
 		if (_pStringStream && !_pStringStream->str().empty())
     	{		
-			std::cout << "trying to write to log file.." << std::endl;
-
 			_writer.WriteToLogFile(_logFilePath, _pStringStream->str(), false);
 
 			_pStringStream->str("");

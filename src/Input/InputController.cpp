@@ -256,6 +256,8 @@ namespace RB::Input
 				//add new obj if first time pressed
 				if (obj == nullptr)
 				{
+					// something wrong here.. infinite adding & destroying
+					std::cout << "first time pressed: " << input._to_string() << std::endl;
 					_AddNewInputBuffer(playerID, input);
 				}
 
@@ -366,16 +368,19 @@ namespace RB::Input
 
 		if (obj0 != nullptr && obj1 != nullptr)
 		{
+			// if both keys are held
 			if (!obj0->IsReleased() && !obj1->IsReleased())
 			{
 				iInputObj* existing = GetInputObj_LIFO(playerID, resultInput);
 
 				if (existing == nullptr)
 				{
+					std::cout << "no existing " << resultInput._to_string() << std::endl;
 					_AddNewInputBuffer(playerID, resultInput);
 				}
 				else if (existing->IsReleased())
 				{
+					std::cout << resultInput._to_string() << " is released" << std::endl;
 					_AddNewInputBuffer(playerID, resultInput);
 				}
 

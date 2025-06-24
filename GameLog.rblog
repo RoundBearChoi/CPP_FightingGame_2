@@ -4,10 +4,3 @@
 ▐▛▀▚▖▐▌ ▐▌▐▌ ▐▌▐▌ ▝▜▌▐▌  █▐▛▀▚▖▐▛▀▀▘▐▛▀▜▌▐▛▀▚▖▐▌▝▜▌▐▛▀▜▌▐▌  ▐▌▐▛▀▀▘ ▝▀▚▖
 ▐▌ ▐▌▝▚▄▞▘▝▚▄▞▘▐▌  ▐▌▐▙▄▄▀▐▙▄▞▘▐▙▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▌ ▐▌▐▌  ▐▌▐▙▄▄▖▗▄▄▞▘
 
-388 | PLAYER_1 | INPUT | MOVE_RIGHT
-429 | PLAYER_1 | INPUT | ATTACK_WEAK_PUNCH
-465 | PLAYER_1 | INPUT | ATTACK_WEAK_PUNCH
-500 | PLAYER_1 | INPUT | ATTACK_STRONG_PUNCH
-523 | PLAYER_1 | INPUT | ATTACK_STRONG_KICK
-597 | PLAYER_1 | INPUT | MOVE_DOWN
-669 | PLAYER_1 | INPUT | MOVE_RIGHT

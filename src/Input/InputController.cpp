@@ -259,7 +259,7 @@ namespace RB::Input
 				// add new obj if first time pressed
 				if (obj == nullptr)
 				{
-					_AddNewInputBuffer(playerID, input);
+					_AddNewInputBuffer(playerID, input, button.bPressed);
 				}
 
 				//add 2nd obj on top of existing obj
@@ -267,7 +267,7 @@ namespace RB::Input
 				{
 					if (obj->IsReleased())
 					{
-						_AddNewInputBuffer(playerID, input);
+						_AddNewInputBuffer(playerID, input, button.bPressed);
 					}
 				}
 			}
@@ -280,21 +280,18 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input)
+	void InputController::_AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input, bool log)
 	{
-		//if (_DiagIsBlocking(playerID, input))
-		//{
-		//	return;
-		//}
-
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
 		iInputObj* newObj = new InputObj(input, RB::gFrame);
 
 		vec.push_back(newObj);
 
-		// log every new input buffer
-		_LogInput(playerID, newObj);
+		if (log)
+		{
+			_LogInput(playerID, newObj);
+		}
 
 		_OnSpecialMove(playerID, input);
 	}
@@ -379,11 +376,11 @@ namespace RB::Input
 
 				if (existing == nullptr)
 				{
-					_AddNewInputBuffer(playerID, resultInput);
+					_AddNewInputBuffer(playerID, resultInput, true);
 				}
 				else if (existing->IsReleased())
 				{
-					_AddNewInputBuffer(playerID, resultInput);
+					_AddNewInputBuffer(playerID, resultInput, true);
 				}
 
 				//destroy existing straight direction buffers
@@ -550,36 +547,4 @@ namespace RB::Input
 
 		std::cout << "logging input: " << inputObj->GetPlayerInputType()._to_string() << std::endl;
 	}
-
-	/*bool InputController::_DiagIsBlocking(Players::PlayerID playerID, Input::PlayerInput playerInput)
-	{
-		iInputObj* keyBuffer = nullptr;
-
-		if (playerInput._value == PlayerInput::MOVE_DOWN || playerInput._value == PlayerInput::MOVE_RIGHT)
-		{
-			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_RIGHT);
-		}
-		else if (playerInput._value == PlayerInput::MOVE_DOWN || playerInput._value == PlayerInput::MOVE_LEFT)
-		{
-			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_DOWN_LEFT);
-		}
-		else if (playerInput._value == PlayerInput::MOVE_UP || playerInput._value == PlayerInput::MOVE_LEFT)
-		{
-			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_UP_LEFT);
-		}
-		else if (playerInput._value == PlayerInput::MOVE_UP || playerInput._value == PlayerInput::MOVE_RIGHT)
-		{
-			keyBuffer = GetInputObj_LIFO(playerID, PlayerInput::MOVE_UP_RIGHT);
-		}
-
-		if (keyBuffer != nullptr)
-		{
-			if (!keyBuffer->IsReleased())
-			{
-				return true;
-			}
-		}
-
-		return false;
-	}*/
 }

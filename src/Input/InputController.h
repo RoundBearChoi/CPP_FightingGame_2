@@ -35,7 +35,7 @@ namespace RB::Input
 
 	private:
 		void _UpdateInputBuffer(RB::Players::PlayerID playerID);
-		void _AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input);
+		void _AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input, bool log);
 		void _OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input);
 		void _UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input);
 		void _AddDiagBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);

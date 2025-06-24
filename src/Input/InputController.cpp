@@ -279,6 +279,8 @@ namespace RB::Input
 
 	void InputController::_AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input)
 	{
+		std::cout << "adding new input buffer " << input._to_string() << std::endl;
+
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
 		iInputObj* newObj = new InputObj(input, RB::gFrame);
@@ -446,6 +448,8 @@ namespace RB::Input
 	// erase all that matches
 	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, InfInt gameFrame)
 	{
+		std::cout << "destroying buffer: " << playerInput._to_string() << std::endl;
+
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
 		auto it = vec.begin();

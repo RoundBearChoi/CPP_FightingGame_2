@@ -46,7 +46,7 @@ namespace RB::Log
 		// frame | player | type | actual string
 		// 3 | p1 | input | weak punch down
 		// 10 | p2 | attackCollider | pos 231 -1321 width 300 height 100
-	
+
 		std::string frame = RB::gFrame.toString();
 
 		(*_pStringStream) << frame << " | " << playerID._to_string() << " | "  << logType._to_string() << " | " << str << std::endl;

@@ -253,10 +253,17 @@ namespace RB::Input
 			{
 				iInputObj* obj = GetInputObj_LIFO(playerID, input);
 
+				// maybe check diag dirs first
+				if (_DiagIsBlocking(input))
+				{
+
+				}
+
 				//add new obj if first time pressed
 				if (obj == nullptr)
 				{
 					// double hold is destroying inputobj before LIFO gets to it
+					// if diag is held or pressed, it's impossible to hold or press straight dir that's included in diag
 					std::cout << "first time pressed: " << input._to_string() << std::endl;
 					_AddNewInputBuffer(playerID, input);
 				}
@@ -547,5 +554,27 @@ namespace RB::Input
 		auto logController = GET_LOG_CONTROLLER;
 	
 		logController->AddToStream(playerID, Log::LOG_TYPE::INPUT, inputStr);
+	}
+
+	bool InputController::_DiagIsBlocking(Input::PlayerInput playerInput)
+	{
+		if (playerInput._value == PlayerInput::MOVE_LEFT)
+		{
+
+		}
+		else if (playerInput._value == PlayerInput::MOVE_RIGHT)
+		{
+
+		}
+		else if (playerInput._value == PlayerInput::MOVE_UP)
+		{
+
+		}
+		else if (playerInput._value == PlayerInput::MOVE_DOWN)
+		{
+
+		}
+
+		return false;
 	}
 }

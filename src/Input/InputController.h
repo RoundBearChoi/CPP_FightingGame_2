@@ -47,6 +47,7 @@ namespace RB::Input
 		std::vector<SpecialMoveType>& _GetSpecialMovesInQueue(RB::Players::PlayerID playerID);
 		void _TriggerSpecialMove(RB::Players::PlayerID playerID);
 		void _LogInput(Players::PlayerID playerID, iInputObj* inputObj);
+		bool _DiagIsBlocking(Input::PlayerInput playerInput);
 
 		std::vector<KeyBinding> _vecKeyBindings;
 		std::vector<iInputObj*> _vecP1_InputObjs;

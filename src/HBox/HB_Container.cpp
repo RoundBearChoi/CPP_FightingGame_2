@@ -29,9 +29,6 @@ namespace RB::HBox
 
 	void HB_Container::SetDir(std::string dir, HBoxType boxType)
 	{
-		//std::cout << std::endl;
-		//std::cout << "presetting dir: " << dir << std::endl;
-
 		_dir = dir;
 		_boxType = boxType;
 	}
@@ -76,8 +73,6 @@ namespace RB::HBox
 		std::string spr = spriteType._to_string();
 		std::string path = _dir + spr;
 		path += _extention;
-
-		//std::cout << "getting path.. " << path << std::endl;
 
 		return path;
 	}

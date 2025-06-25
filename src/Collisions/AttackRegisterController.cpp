@@ -37,17 +37,11 @@ namespace RB::Collisions
 
 		if (reg.targetIsCrouching)
 		{
-			//std::cout << std::endl;
-			//std::cout << "target is crouching" << std::endl;
-
 			reg.target->GetStateMachine()->ClearQueuedStates();
 			reg.target->GetStateMachine()->QueueNextState(new Fighter_0_States::F0_Crouch_Weak_Wince());
 		}
 		else
 		{
-			//std::cout << std::endl;
-			//std::cout << "target is NOT crouching" << std::endl;
-
 			if (attackSpecs.mAttackStrengthType._value == Collisions::AttackStrengthType::STRONG)
 			{
 				if (reg.collisionType == CollisionType::HEAD)

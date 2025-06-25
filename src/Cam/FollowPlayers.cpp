@@ -70,8 +70,6 @@ namespace RB::Cam
 			ease = 1.0f;
 		}
 
-		//std::cout << ease << std::endl;
-
 		float lerped = Lerp(curr, result, ease * 0.03f); //std::lerp(curr, result, ease * 0.03f);
 
 		//y should be dynamic.. but for now

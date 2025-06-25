@@ -38,9 +38,6 @@ namespace RB::Cam
 
 		float mag2 = dist.MagnitudeSquared(); //dist.mag2(); //mag2 is mag * mag
 
-		//float mag = dist.mag();
-		//std::cout << "mag: " << mag << " | mag2: " << mag2 << std::endl;
-
 		return mag2;
 	}
 

@@ -544,7 +544,5 @@ namespace RB::Input
 		auto logController = GET_LOG_CONTROLLER;
 	
 		logController->AddToStream(playerID, Log::LOG_TYPE::INPUT, inputStr);
-
-		std::cout << "logging input: " << inputObj->GetPlayerInputType()._to_string() << std::endl;
 	}
 }

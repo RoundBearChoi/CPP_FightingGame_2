@@ -52,8 +52,6 @@ namespace RB::PlayerStateComponents
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
-		//std::cout << "detecting hit.." << std::endl;
-
 		RB::Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		RB::Players::iPlayer* target = playerController->GetOtherPlayer(attacker);
 
@@ -68,8 +66,6 @@ namespace RB::PlayerStateComponents
 
 		if (attackerState == nullptr || enemyState == nullptr)
 		{
-			//std::cout << "state nullptr" << std::endl;
-
 			return false;
 		}
 		else
@@ -106,8 +102,6 @@ namespace RB::PlayerStateComponents
 
 		for (auto i = vec_Attacker_AABB_Sets.begin(); i != vec_Attacker_AABB_Sets.end(); ++i)
 		{
-			//std::cout << "checking owner aabb" << std::endl;
-
 			//get owner AABB
 			RB::Collisions::AABB attackerBox = (*i);
 			RB::Collisions::AABB attackerBox_WorldPos = attackerBox.GetWorldPos(attacker->GetPosition(), attacker->IsFacingRight());
@@ -120,8 +114,6 @@ namespace RB::PlayerStateComponents
 
 			for (auto j = vec_Target_AABB_Sets.begin(); j != vec_Target_AABB_Sets.end(); ++j)
 			{
-				//std::cout << "checking target aabb" << std::endl;
-
 				//get target AABB
 				RB::Collisions::AABB targetBox = (*j);
 				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), attacker->IsFacingRight());
@@ -131,8 +123,6 @@ namespace RB::PlayerStateComponents
 
 				if (attackerBox_WorldPos.IsCollidingAgainst(targetBox_WorldPos, col))
 				{
-					//std::cout << "aabb collision" << std::endl;
-
 					collisionResult.mAttacker = attacker;
 					collisionResult.mTarget = target;
 					collisionResult.mCollisionPoint = col;
@@ -155,8 +145,6 @@ namespace RB::PlayerStateComponents
 					{
 						collisionResult.mCollisionType = RB::Collisions::CollisionType::BODY;
 					}
-
-					//std::cout << "hit detected" << std::endl;
 
 					return true;
 				}

@@ -63,8 +63,6 @@ namespace RB::Collisions
 		
 		if (parser.LoadJSON(path) == nullptr)
 		{
-			//std::cout << "ERROR: failed to load JSON at path " << path << std::endl;
-
 			return;
 		}
 

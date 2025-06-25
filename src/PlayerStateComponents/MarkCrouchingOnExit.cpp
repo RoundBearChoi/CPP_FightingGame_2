@@ -13,9 +13,6 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		std::cout << std::endl;
-		//std::cout << "player " << player->GetPlayerID_int() << " crouching: " << _crouching << std::endl;
-
 		player->MarkCrouching(_crouching);
 	}
 }

@@ -2,6 +2,8 @@
 
 #include "../Cam/GetRelPos.h"
 
+#include "../Logger/iLogController.h"
+
 namespace RB::Sprites
 {
 	SpriteContainer::~SpriteContainer()
@@ -17,7 +19,11 @@ namespace RB::Sprites
 
 	LoadedSprite* SpriteContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
 	{
-		std::cout << "loading sprite " << path;
+		auto logController = GET_LOG_CONTROLLER;
+
+		std::stringstream str;
+
+		str << "loading sprite at " << path;
 
 		LoadedSprite* loaded = _loader.LoadSprite(path, spriteType);
 
@@ -25,14 +31,16 @@ namespace RB::Sprites
 		{
 			_vecLoadedSprites.push_back(loaded);
 
-			std::cout << " | done" << std::endl;
+			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, str.str()); 
 
 			return loaded;
 		}
 		else
 		{
-			std::cout << " | FAILED!" << std::endl;
+			str << " .. FAILED!";
 
+			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, str.str()); 
+			
 			return nullptr;
 		}
 	}

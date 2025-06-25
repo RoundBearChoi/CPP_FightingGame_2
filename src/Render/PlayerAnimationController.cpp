@@ -1,18 +1,23 @@
 #include "PlayerAnimationController.h"
+
 #include "RenderLayerType.h"
+
+#include "../Logger/iLogController.h"
 
 namespace RB::Render
 {
 	PlayerAnimationController::~PlayerAnimationController()
 	{
-		//std::cout << "destructing PlayerAnimationController.." << std::endl;
+	
 	}
 
 	void PlayerAnimationController::Init()
 	{
-		//INIT_CONTROLLER
-		
 		_animationContainer.Init();
+
+		auto logController = GET_LOG_CONTROLLER;	
+
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading fighter 0 sprites");  
 
 		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{
@@ -60,7 +65,7 @@ namespace RB::Render
 
 	void PlayerAnimationController::_SetFirstPlayerAnimations()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
@@ -83,18 +88,18 @@ namespace RB::Render
 				continue;
 			}
 
-			RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(arr[i]->GetPlayerID());
+			Players::PlayerState* state = Players::PlayerState::GetPlayerState(arr[i]->GetPlayerID());
 
 			if (state == nullptr)
 			{
 				continue;
 			}
 
-			RB::Sprites::SpriteType spriteType = state->GetSpriteType();
+			Sprites::SpriteType spriteType = state->GetSpriteType();
 
 			AnimationRenderer* aniRenderer = _animationContainer.GetAnimationRenderer(spriteType);
 
-			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, RB::Sprites::PivotType::BOTTOM_CENTER);
+			iAnimationObj* animationObj = new AnimationObj(arr[i], aniRenderer, Sprites::PivotType::BOTTOM_CENTER);
 
 			_animationContainer.AddNewAnimation(animationObj);
 		}
@@ -102,14 +107,14 @@ namespace RB::Render
 
 	void PlayerAnimationController::_ChangePlayerAnimations()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
+		Players::iPlayer* arr[2] = { nullptr, nullptr };
 
 		for (int i = 1; i <= 2; i++)
 		{
@@ -124,30 +129,30 @@ namespace RB::Render
 		}
 	}
 
-	void PlayerAnimationController::_SetNewPlayerAnimationObjOnChange(RB::Players::iPlayer& player)
+	void PlayerAnimationController::_SetNewPlayerAnimationObjOnChange(Players::iPlayer& player)
 	{
-		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(player.GetPlayerID());
+		Players::PlayerState* state = Players::PlayerState::GetPlayerState(player.GetPlayerID());
 
 		if (state == nullptr)
 		{
 			return;
 		}
 
-		RB::Sprites::SpriteType playerSpriteType = state->GetSpriteType();
-		RB::Players::PlayerID playerID = player.GetPlayerID();
-		RB::Sprites::SpriteType animationSpriteType = _GetPlayerSpriteType(playerID);
+		Sprites::SpriteType playerSpriteType = state->GetSpriteType();
+		Players::PlayerID playerID = player.GetPlayerID();
+		Sprites::SpriteType animationSpriteType = _GetPlayerSpriteType(playerID);
 
 		if (playerSpriteType != animationSpriteType)
 		{
 			DeleteAnimationObj(playerID);
 
-			iAnimationObj* aniObj = _animationContainer.InstantiateNewAnimationObj(player, playerSpriteType, RB::Sprites::PivotType::BOTTOM_CENTER);
+			iAnimationObj* aniObj = _animationContainer.InstantiateNewAnimationObj(player, playerSpriteType, Sprites::PivotType::BOTTOM_CENTER);
 
 			_animationContainer.AddNewAnimation(aniObj);
 		}
 	}
 
-	RB::Sprites::SpriteType PlayerAnimationController::_GetPlayerSpriteType(RB::Players::PlayerID playerID)
+	Sprites::SpriteType PlayerAnimationController::_GetPlayerSpriteType(Players::PlayerID playerID)
 	{
 		return _animationContainer.GetSpriteType(playerID);
 	}

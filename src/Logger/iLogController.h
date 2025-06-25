@@ -15,6 +15,6 @@ namespace RB::Log
 	{
 	public:
 		virtual ~iLogController() override {}
-		virtual bool AddToStream(Players::PlayerID playerID, RB::Log::LOG_TYPE logType, const std::string& str) = 0; 
+		virtual bool AddToStream(Players::PlayerID playerID, Log::LOG_TYPE logType, const std::string& str) = 0; 
 	};
 }

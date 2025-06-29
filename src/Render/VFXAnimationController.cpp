@@ -1,19 +1,25 @@
 #include "VFXAnimationController.h"
 
+#include "../Logger/iLogController.h"
+
 namespace RB::Render
 {
     void VFXAnimationController::Init()
     {
-        //INIT_CONTROLLER
-        
         _animationContainer.Init();
+
+		auto logController = GET_LOG_CONTROLLER;
+
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading vfx sprites");
 
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_head.png", RB::Sprites::SpriteType::vfx_hiteffect_head);
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_body.png", RB::Sprites::SpriteType::vfx_hiteffect_body);
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_leg.png", RB::Sprites::SpriteType::vfx_hiteffect_leg);
 
-        _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_0.aniSpecs");
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading vfx aniSpecs");
+        
+		_animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_0.aniSpecs");
         _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_head.aniSpecs");
         _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_body.aniSpecs");
         _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_leg.aniSpecs");

@@ -21,9 +21,9 @@ namespace RB::Sprites
 	{
 		auto logController = GET_LOG_CONTROLLER;
 
-		std::stringstream str;
+		std::stringstream ss;
 
-		str << "path " << path;
+		ss << "path " << path;
 
 		LoadedSprite* loaded = _loader.LoadSprite(path, spriteType);
 
@@ -31,15 +31,15 @@ namespace RB::Sprites
 		{
 			_vecLoadedSprites.push_back(loaded);
 
-			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, str.str()); 
+			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, ss.str()); 
 
 			return loaded;
 		}
 		else
 		{
-			str << " .. FAILED!";
+			ss << " .. FAILED!";
 
-			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, str.str()); 
+			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, ss.str()); 
 			
 			return nullptr;
 		}

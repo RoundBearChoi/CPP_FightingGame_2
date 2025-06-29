@@ -27,6 +27,8 @@ namespace RB::Render
 			_animationContainer.LoadSprite(path, spriteType);
 		}
 
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 aniSpecs");  
+
 		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{
 			RB::Sprites::SpriteType spriteType = RB::Sprites::SpriteType::_from_index(i);

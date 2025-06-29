@@ -23,18 +23,7 @@ namespace RB::JSON
     {
 		auto logController = GET_LOG_CONTROLLER;
 		std::stringstream ss;
-
-		if (logController != nullptr)
-		{
-			ss << "path " << path;
-			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
-		}
-		else
-		{
-			std::cout << "log controller doesn't exist.. loading json at " << path << std::endl;
-		}
-
-        //std::cout << "loading json " << path;
+		ss << "path " << path;
 
         std::ifstream ifs(path);
 
@@ -42,8 +31,9 @@ namespace RB::JSON
 
         if (str.empty())
         {
-            //std::cout << " | FAILED! ======> can't find JSON" << std::endl;
-            return nullptr;
+			ss << " ===> FAILED! can't find json";
+			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
+			return nullptr;
         }
 
         str.erase(std::remove(str.begin(), str.end(), '\n'), str.cend());
@@ -52,13 +42,16 @@ namespace RB::JSON
 
         if (root == nullptr)
         {
-            //std::cout << " | FAILED! ======> can't parse JSON" << std::endl;
-            return nullptr;
+			ss << " ===> FAILED! can't parse json"; 
+			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
+			return nullptr;
         }
 
         _vecLoadedRoots.push_back(root);
 
-        return root;
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
+        
+		return root;
     }
 
     const json_object_s* JParser::GetObj(int index)

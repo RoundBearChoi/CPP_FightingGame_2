@@ -1,14 +1,19 @@
 #include "PlayerDebugController.h"
 
 #include "PlayerInputRenderer.h"
+
 #include "../Cam/GetRelPos.h"
+
+#include "../Logger/iLogController.h"
 
 namespace RB::Render
 {
 	void PlayerDebugController::Init()
 	{
-		//INIT_CONTROLLER
-		
+		auto logController = GET_LOG_CONTROLLER;
+
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading debug sprites");
+
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/x_white.png", RB::Sprites::SpriteType::x_white);
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq.png", RB::Sprites::SpriteType::white_sq);
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/player_hp_bar_white.png", RB::Sprites::SpriteType::player_hp_bar_white);

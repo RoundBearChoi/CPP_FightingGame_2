@@ -53,8 +53,6 @@ namespace RB::JSON
 
 			_vecLoadedRoots.push_back(root);
 
-			std::cout << " | done" << std::endl;
-
 			return root;
 		}
 

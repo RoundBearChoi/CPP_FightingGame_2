@@ -94,9 +94,9 @@ namespace RB::HBox
 	}
 
 	// only use during initialization (vector addresses)
-	Loaded_HB_Data HBoxLoader::Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType)
+	Loaded_HB_Data HBoxLoader::Load(const std::string path, const Sprites::SpriteType spriteType, HBoxType boxType)
 	{
-		RB::JSON::JParser parser;
+		JSON::JParser parser;
 
 		if (boxType == HBoxType::ATTACK_BOX)
 		{
@@ -129,7 +129,7 @@ namespace RB::HBox
 
 		for (int i = 0; i < obj->length; i++)
 		{
-			std::vector<RB::Collisions::AABB> vec = ParseData(*obj, i);
+			std::vector<Collisions::AABB> vec = ParseData(*obj, i);
 			std::string name = ParseName(*obj, i);
 
 			AABB_Set AABBs { name, vec};
@@ -139,7 +139,7 @@ namespace RB::HBox
 		return data;
 	}
 
-	std::vector<RB::Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)
+	std::vector<Collisions::AABB> HBoxLoader::ParseData(const json_object_s& wholeObj, const unsigned int frame)
 	{
 		json_object_element_s* objE = wholeObj.start;
 
@@ -151,12 +151,12 @@ namespace RB::HBox
 			{
 				struct json_array_s* arr = json_value_as_array(objE->value);
 
-				std::vector<RB::Collisions::AABB> vec;
+				std::vector<Collisions::AABB> vec;
 				vec.reserve(arr->length);
 
 				for (unsigned int i = 0; i < arr->length; i++)
 				{
-					RB::Collisions::AABB data = GetAABB(*arr, i);
+					Collisions::AABB data = GetAABB(*arr, i);
 					vec.push_back(data);
 				}
 
@@ -167,7 +167,7 @@ namespace RB::HBox
 			objE = objE->next;
 		}
 
-		return std::vector<RB::Collisions::AABB>{};
+		return std::vector<Collisions::AABB>{};
 	}
 
 	std::string HBoxLoader::ParseName(const json_object_s& wholeObj, const unsigned int frame)
@@ -194,7 +194,7 @@ namespace RB::HBox
 		return "";
 	}
 
-	RB::Collisions::AABB HBoxLoader::GetAABB(const json_array_s& jArray, unsigned int index)
+	Collisions::AABB HBoxLoader::GetAABB(const json_array_s& jArray, unsigned int index)
 	{
 		unsigned int count = 0;
 
@@ -206,17 +206,17 @@ namespace RB::HBox
 			{
 				json_object_s* obj = json_value_as_object(element->value);
 
-				auto posX_Element = RB::JSON::JParser::GetElement(*obj, 0); //RB::JSON::GetElementNFromObj(*obj, 0);
-				auto posY_Element = RB::JSON::JParser::GetElement(*obj, 1); //RB::JSON::GetElementNFromObj(*obj, 1);
-				auto width_Element = RB::JSON::JParser::GetElement(*obj, 2); //RB::JSON::GetElementNFromObj(*obj, 2);
-				auto height_Element = RB::JSON::JParser::GetElement(*obj, 3); //RB::JSON::GetElementNFromObj(*obj, 3);
+				auto posX_Element = JSON::JParser::GetElement(*obj, 0);
+				auto posY_Element = JSON::JParser::GetElement(*obj, 1);
+				auto width_Element = JSON::JParser::GetElement(*obj, 2);
+				auto height_Element = JSON::JParser::GetElement(*obj, 3); 
 
-				float x = RB::JSON::JParser::GetFloat_FromElement(*posX_Element);
-				float y = RB::JSON::JParser::GetFloat_FromElement(*posY_Element);
-				float width = RB::JSON::JParser::GetFloat_FromElement(*width_Element);
-				float height = RB::JSON::JParser::GetFloat_FromElement(*height_Element);
+				float x = JSON::JParser::GetFloat_FromElement(*posX_Element);
+				float y = JSON::JParser::GetFloat_FromElement(*posY_Element);
+				float width = JSON::JParser::GetFloat_FromElement(*width_Element);
+				float height = JSON::JParser::GetFloat_FromElement(*height_Element);
 
-				RB::Collisions::AABB aabb{ x, y, width, height };
+				Collisions::AABB aabb{ x, y, width, height };
 
 				return aabb;
 			}
@@ -226,6 +226,6 @@ namespace RB::HBox
 			count++;
 		}
 
-		return RB::Collisions::AABB();
+		return Collisions::AABB();
 	}
 }

@@ -5,6 +5,8 @@
 #include <sstream>
 #include <algorithm>
 
+#include "Logger/iLogController.h"
+
 namespace RB::JSON
 {
     JParser::~JParser()
@@ -19,7 +21,20 @@ namespace RB::JSON
 
     const json_value_s* JParser::LoadJSON(std::string path)
     {
-        std::cout << "loading json " << path;
+		auto logController = GET_LOG_CONTROLLER;
+		std::stringstream ss;
+
+		if (logController != nullptr)
+		{
+			ss << "path " << path;
+			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
+		}
+		else
+		{
+			std::cout << "log controller doesn't exist.. loading json at " << path << std::endl;
+		}
+
+        //std::cout << "loading json " << path;
 
         std::ifstream ifs(path);
 
@@ -27,7 +42,7 @@ namespace RB::JSON
 
         if (str.empty())
         {
-            std::cout << " | FAILED! ======> can't find JSON" << std::endl;
+            //std::cout << " | FAILED! ======> can't find JSON" << std::endl;
             return nullptr;
         }
 
@@ -37,7 +52,7 @@ namespace RB::JSON
 
         if (root == nullptr)
         {
-            std::cout << " | FAILED! ======> can't parse JSON" << std::endl;
+            //std::cout << " | FAILED! ======> can't parse JSON" << std::endl;
             return nullptr;
         }
 

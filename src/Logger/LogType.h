@@ -11,7 +11,9 @@ namespace RB::Log
 		NONE = 0,
 
 		INPUT,
+		
 		LOAD_SPRITE,
+		LOAD_JSON,
 
 		COUNT
 	)

@@ -23,7 +23,7 @@ namespace RB::Sprites
 
 		std::stringstream str;
 
-		str << "loading sprite at " << path;
+		str << "path " << path;
 
 		LoadedSprite* loaded = _loader.LoadSprite(path, spriteType);
 

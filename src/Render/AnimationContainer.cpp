@@ -55,7 +55,7 @@ namespace RB::Render
 
 	AnimationSpecs AnimationContainer::LoadAnimationSpecsFromJSON(std::string path)
 	{
-		RB::JSON::JParser parser;
+		JSON::JParser parser;
 
 		parser.LoadJSON(path);
 
@@ -66,17 +66,17 @@ namespace RB::Render
 			return AnimationSpecs{};
 		}
 
-		auto element = RB::JSON::JParser::GetElement(*obj, 0);
-		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
-		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
+		auto element = parser.GetElement(*obj, 0);
+		auto subElement = parser.GetElement(*element, 0);
+		auto vecAll = parser.GetAllElements(*subElement);
 
-		std::string strEnum = RB::JSON::JParser::GetString_FromElement(*vecAll[0]);
-		int xTileCount = RB::JSON::JParser::GetInt_FromElement(*vecAll[1]);
-		int yTileCount = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
-		int totalSprites = RB::JSON::JParser::GetInt_FromElement(*vecAll[3]);
-		int skipFixedUpdates = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
-		float renderScale = RB::JSON::JParser::GetFloat_FromElement(*vecAll[5]);
-		int playOnceInt = RB::JSON::JParser::GetInt_FromElement(*vecAll[6]);
+		std::string strEnum = parser.GetString_FromElement(*vecAll[0]);
+		int xTileCount = parser.GetInt_FromElement(*vecAll[1]);
+		int yTileCount = parser.GetInt_FromElement(*vecAll[2]);
+		int totalSprites = parser.GetInt_FromElement(*vecAll[3]);
+		int skipFixedUpdates = parser.GetInt_FromElement(*vecAll[4]);
+		float renderScale = parser.GetFloat_FromElement(*vecAll[5]);
+		int playOnceInt = parser.GetInt_FromElement(*vecAll[6]);
 		bool playOnce = playOnceInt == 0 ? false : true;
 
 		AnimationSpecs specs;

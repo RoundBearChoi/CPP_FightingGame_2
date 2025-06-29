@@ -74,7 +74,7 @@ namespace RB::Collisions
 		//normal file
 		while (element != nullptr)
 		{
-			unsigned int frame = JSON::JParser::ParseFrame(element->name->string);
+			unsigned int frame = parser.ParseFrame(element->name->string);
 			
 			json_array_s* arr = json_value_as_array(element->value);
 
@@ -98,10 +98,10 @@ namespace RB::Collisions
 			json_object_element_s* e2 = e1->next;
 			json_object_element_s* e3 = e2->next;
 
-			float offsetX = JSON::JParser::GetFloat_FromElement(*e0);
-			float offsetY = JSON::JParser::GetFloat_FromElement(*e1);
-			float width = JSON::JParser::GetFloat_FromElement(*e2);
-			float height = JSON::JParser::GetFloat_FromElement(*e3);
+			float offsetX = parser.GetFloat_FromElement(*e0);
+			float offsetY = parser.GetFloat_FromElement(*e1);
+			float width = parser.GetFloat_FromElement(*e2);
+			float height = parser.GetFloat_FromElement(*e3);
 
 			LoadedPlayerBoxData* loadedData = GetLoadedSpecs(characterType);
 

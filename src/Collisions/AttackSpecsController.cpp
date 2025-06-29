@@ -67,18 +67,18 @@ namespace RB::Collisions
 		}
 
 		auto jObj = parser.GetObj(0);
-		auto element = JSON::JParser::GetElement(*jObj, 0);
-		auto subElement = JSON::JParser::GetElement(*element, 0);
-		auto vecAll = JSON::JParser::GetAllElements(*subElement);
+		auto element = parser.GetElement(*jObj, 0);
+		auto subElement = parser.GetElement(*element, 0);
+		auto vecAll = parser.GetAllElements(*subElement);
 
-		std::string strStrengthType = JSON::JParser::GetString_FromElement(*vecAll[0]);
-		int damageValue = JSON::JParser::GetInt_FromElement(*vecAll[1]);
-		int hitStopValue = JSON::JParser::GetInt_FromElement(*vecAll[2]);
-		int minFixedUpdatesValue = JSON::JParser::GetInt_FromElement(*vecAll[3]);
-		int maxHitsValue = JSON::JParser::GetInt_FromElement(*vecAll[4]);
-		int damageFrames = JSON::JParser::GetInt_FromElement(*vecAll[5]);
-		int blockFrames = JSON::JParser::GetInt_FromElement(*vecAll[6]);
-		int missFrames = JSON::JParser::GetInt_FromElement(*vecAll[7]);
+		std::string strStrengthType = parser.GetString_FromElement(*vecAll[0]);
+		int damageValue = parser.GetInt_FromElement(*vecAll[1]);
+		int hitStopValue = parser.GetInt_FromElement(*vecAll[2]);
+		int minFixedUpdatesValue = parser.GetInt_FromElement(*vecAll[3]);
+		int maxHitsValue = parser.GetInt_FromElement(*vecAll[4]);
+		int damageFrames = parser.GetInt_FromElement(*vecAll[5]);
+		int blockFrames = parser.GetInt_FromElement(*vecAll[6]);
+		int missFrames = parser.GetInt_FromElement(*vecAll[7]);
 
 		Collisions::AttackStrengthType attackStrengthType = Collisions::AttackStrengthType::_from_string(strStrengthType.c_str());
 

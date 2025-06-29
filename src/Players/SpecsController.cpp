@@ -54,22 +54,22 @@ namespace RB::Players
 			return specs; // return default (empty) specs
 		}
 
-		auto element = RB::JSON::JParser::GetElement(*jObj, 0);
-		auto subElement = RB::JSON::JParser::GetElement(*element, 0);
-		auto vecAll = RB::JSON::JParser::GetAllElements(*subElement);
+		auto element = parser.GetElement(*jObj, 0);
+		auto subElement = parser.GetElement(*element, 0);
+		auto vecAll = parser.GetAllElements(*subElement);
 
-		float walk_Forward_Speed = RB::JSON::JParser::GetFloat_FromElement(*vecAll[0]);
-		float walk_Back_Speed = RB::JSON::JParser::GetFloat_FromElement(*vecAll[1]);
-		int jumpUp_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[2]);
-		float jumpUp_speedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[3]);
+		float walk_Forward_Speed = parser.GetFloat_FromElement(*vecAll[0]);
+		float walk_Back_Speed = parser.GetFloat_FromElement(*vecAll[1]);
+		int jumpUp_totalFrames = parser.GetInt_FromElement(*vecAll[2]);
+		float jumpUp_speedMultiplier = parser.GetFloat_FromElement(*vecAll[3]);
 
-		int jumpForward_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[4]);
-		float jumpForward_horSpeedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[5]);
-		float jumpForward_verSpeedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[6]);
+		int jumpForward_totalFrames = parser.GetInt_FromElement(*vecAll[4]);
+		float jumpForward_horSpeedMultiplier = parser.GetFloat_FromElement(*vecAll[5]);
+		float jumpForward_verSpeedMultiplier = parser.GetFloat_FromElement(*vecAll[6]);
 
-		int jumpBack_totalFrames = RB::JSON::JParser::GetInt_FromElement(*vecAll[7]);
-		float jumpBack_horSpeedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[8]);
-		float jumpBack_verSpeedMultiplier = RB::JSON::JParser::GetFloat_FromElement(*vecAll[9]);
+		int jumpBack_totalFrames = parser.GetInt_FromElement(*vecAll[7]);
+		float jumpBack_horSpeedMultiplier = parser.GetFloat_FromElement(*vecAll[8]);
+		float jumpBack_verSpeedMultiplier = parser.GetFloat_FromElement(*vecAll[9]);
 
 		specs.mCharacterType = characterType;
 		specs.mWalk_Forward_Speed = walk_Forward_Speed;

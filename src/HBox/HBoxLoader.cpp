@@ -206,15 +206,17 @@ namespace RB::HBox
 			{
 				json_object_s* obj = json_value_as_object(element->value);
 
-				auto posX_Element = JSON::JParser::GetElement(*obj, 0);
-				auto posY_Element = JSON::JParser::GetElement(*obj, 1);
-				auto width_Element = JSON::JParser::GetElement(*obj, 2);
-				auto height_Element = JSON::JParser::GetElement(*obj, 3); 
+				JSON::JParser parser;
 
-				float x = JSON::JParser::GetFloat_FromElement(*posX_Element);
-				float y = JSON::JParser::GetFloat_FromElement(*posY_Element);
-				float width = JSON::JParser::GetFloat_FromElement(*width_Element);
-				float height = JSON::JParser::GetFloat_FromElement(*height_Element);
+				auto posX_Element = parser.GetElement(*obj, 0);
+				auto posY_Element = parser.GetElement(*obj, 1);
+				auto width_Element = parser.GetElement(*obj, 2);
+				auto height_Element = parser.GetElement(*obj, 3); 
+
+				float x = parser.GetFloat_FromElement(*posX_Element);
+				float y = parser.GetFloat_FromElement(*posY_Element);
+				float width = parser.GetFloat_FromElement(*width_Element);
+				float height = parser.GetFloat_FromElement(*height_Element);
 
 				Collisions::AABB aabb{ x, y, width, height };
 

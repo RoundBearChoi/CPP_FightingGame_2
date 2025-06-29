@@ -1,9 +1,15 @@
 #include "HB_Container.h"
 
+#include "../Logger/iLogController.h"
+
 namespace RB::HBox
 {
 	void HB_Container::Init()
 	{
+		auto logController = GET_LOG_CONTROLLER;
+
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 hboxes");
+
 		//load every hbox datalist
 		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{

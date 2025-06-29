@@ -1,5 +1,7 @@
 #include "AttackSpecsController.h"
 
+#include "../Logger/iLogController.h"
+
 namespace RB::Collisions
 {
 	void AttackSpecsController::Init()
@@ -47,6 +49,10 @@ namespace RB::Collisions
 
 	void AttackSpecsController::_LoadAllAttackSpecs()
 	{
+		auto logController = GET_LOG_CONTROLLER;
+		
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading all attack specs"); 
+
 		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{
 			_Load(Sprites::SpriteType::_from_index(i));
@@ -60,7 +66,7 @@ namespace RB::Collisions
 		std::string path = "../resource/AttackSpecs/" + fileName;
 
 		JSON::JParser parser;
-		
+	
 		if (parser.LoadJSON(path) == nullptr)
 		{
 			return;

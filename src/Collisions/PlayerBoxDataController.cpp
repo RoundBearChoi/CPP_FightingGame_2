@@ -1,11 +1,15 @@
 #include "PlayerBoxDataController.h"
 
+#include "../Logger/iLogController.h"
+
 namespace RB::Collisions
 {
 	void PlayerBoxDataController::Init()
 	{
-		//INIT_CONTROLLER
-		
+		auto logController = GET_LOG_CONTROLLER;
+
+		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading player boxes"); 
+
 		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_idle, Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_crouch, Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_crouch_idle, Players::CharacterType::AKU);

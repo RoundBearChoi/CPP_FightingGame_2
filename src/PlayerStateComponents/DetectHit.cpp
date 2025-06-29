@@ -4,14 +4,11 @@ namespace RB::PlayerStateComponents
 {
 	void DetectHit::OnEnter()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::PlayerState* attackerState = RB::Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
-		RB::Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
-
-		std::cout << std::endl;
-		std::cout << " --- attacker detecting hit | player " << attacker->GetPlayerID_int() << " | starting sprite: " << attackerSpriteType._to_string() << " --- " << std::endl; 
+		Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		Players::PlayerState* attackerState = Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
+		Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
 	}
 
 	void DetectHit::OnUpdate()
@@ -29,12 +26,12 @@ namespace RB::PlayerStateComponents
 	{
 		auto attackSpecsController = GET_ATTACK_SPECS_CONTROLLER;
 
-		RB::Collisions::CollisionResult collisionResult;
+		Collisions::CollisionResult collisionResult;
 
 		if (_HitDetected(collisionResult))
 		{
 			//check max hit count
-			const RB::Collisions::AttackSpecs& attackSpecs = attackSpecsController->GetAttackSpecs(collisionResult.mAttackerSpriteType);
+			const Collisions::AttackSpecs& attackSpecs = attackSpecsController->GetAttackSpecs(collisionResult.mAttackerSpriteType);
 
 			if (_hits == 0 || _fixedUpdatesSinceLastHit > attackSpecs.mMinimumFixedUpdatesSinceHit)
 			{
@@ -46,14 +43,14 @@ namespace RB::PlayerStateComponents
 		}
 	}
 
-	bool DetectHit::_HitDetected(RB::Collisions::CollisionResult& collisionResult)
+	bool DetectHit::_HitDetected(Collisions::CollisionResult& collisionResult)
 	{
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
-		RB::Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::iPlayer* target = playerController->GetOtherPlayer(attacker);
+		Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		Players::iPlayer* target = playerController->GetOtherPlayer(attacker);
 
 		// cannot be hit once dead
 		if (target->GetHP() <= 0)
@@ -61,28 +58,24 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		RB::Players::PlayerState* attackerState = RB::Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
-		RB::Players::PlayerState* enemyState = RB::Players::PlayerState::GetPlayerState(target->GetPlayerID());
+		Players::PlayerState* attackerState = Players::PlayerState::GetPlayerState(attacker->GetPlayerID());
+		Players::PlayerState* enemyState = Players::PlayerState::GetPlayerState(target->GetPlayerID());
 
 		if (attackerState == nullptr || enemyState == nullptr)
 		{
 			return false;
 		}
-		else
-		{
-			std::cout << "fixed update count: " << attackerState->GetCumulatedFixedUpdates() << " | attacker state: " << attackerState->GetSpriteType()._to_string() << std::endl;
-		}
 
-		RB::Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
-		RB::Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
+		Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
+		Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
 
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		RB::Render::iAnimationObj* attackerAniObj = playerAnimationController->GetCurrentAnimationObj(attacker->GetPlayerID(), attackerSpriteType);
-		RB::Render::iAnimationObj* targetAniObj = playerAnimationController->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
+		Render::iAnimationObj* attackerAniObj = playerAnimationController->GetCurrentAnimationObj(attacker->GetPlayerID(), attackerSpriteType);
+		Render::iAnimationObj* targetAniObj = playerAnimationController->GetCurrentAnimationObj(target->GetPlayerID(), targetSpriteType);
 
-		RB::HBox::Loaded_HB_Data* attackerData = attackBoxDataController->GetData(attackerSpriteType);
-		RB::HBox::Loaded_HB_Data* targetData = targetBoxDataController->GetData(targetSpriteType);
+		HBox::Loaded_HB_Data* attackerData = attackBoxDataController->GetData(attackerSpriteType);
+		HBox::Loaded_HB_Data* targetData = targetBoxDataController->GetData(targetSpriteType);
 
 		if (attackerData == nullptr || targetData == nullptr)
 		{
@@ -94,8 +87,8 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		RB::HBox::AABB_Set* attackerAABBs = attackerData->GetHBoxDataByFrame(attackerAniObj->GetCurrentIndex());
-		RB::HBox::AABB_Set* targetAABBs = targetData->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
+		HBox::AABB_Set* attackerAABBs = attackerData->GetHBoxDataByFrame(attackerAniObj->GetCurrentIndex());
+		HBox::AABB_Set* targetAABBs = targetData->GetHBoxDataByFrame(targetAniObj->GetCurrentIndex());
 
 		const auto& vec_Attacker_AABB_Sets = attackerAABBs->GetSelector()->GetVector();
 		const auto& vec_Target_AABB_Sets = targetAABBs->GetSelector()->GetVector();
@@ -103,8 +96,8 @@ namespace RB::PlayerStateComponents
 		for (auto i = vec_Attacker_AABB_Sets.begin(); i != vec_Attacker_AABB_Sets.end(); ++i)
 		{
 			//get owner AABB
-			RB::Collisions::AABB attackerBox = (*i);
-			RB::Collisions::AABB attackerBox_WorldPos = attackerBox.GetWorldPos(attacker->GetPosition(), attacker->IsFacingRight());
+			Collisions::AABB attackerBox = (*i);
+			Collisions::AABB attackerBox_WorldPos = attackerBox.GetWorldPos(attacker->GetPosition(), attacker->IsFacingRight());
 
 			//skip if width or height is 0
 			if (attackerBox_WorldPos.GetWidthHeight().x <= 0.001f || attackerBox_WorldPos.GetWidthHeight().y <= 0.001f)
@@ -115,8 +108,8 @@ namespace RB::PlayerStateComponents
 			for (auto j = vec_Target_AABB_Sets.begin(); j != vec_Target_AABB_Sets.end(); ++j)
 			{
 				//get target AABB
-				RB::Collisions::AABB targetBox = (*j);
-				RB::Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), attacker->IsFacingRight());
+				Collisions::AABB targetBox = (*j);
+				Collisions::AABB targetBox_WorldPos = targetBox.GetWorldPos(target->GetPosition(), attacker->IsFacingRight());
 
 				//compare
 				RB::Vector2 col;
@@ -135,15 +128,15 @@ namespace RB::PlayerStateComponents
 
 					if (col.y > part0y)
 					{
-						collisionResult.mCollisionType = RB::Collisions::CollisionType::LEGS;
+						collisionResult.mCollisionType = Collisions::CollisionType::LEGS;
 					}
 					else if (col.y < part1y)
 					{
-						collisionResult.mCollisionType = RB::Collisions::CollisionType::HEAD;
+						collisionResult.mCollisionType = Collisions::CollisionType::HEAD;
 					}
 					else
 					{
-						collisionResult.mCollisionType = RB::Collisions::CollisionType::BODY;
+						collisionResult.mCollisionType = Collisions::CollisionType::BODY;
 					}
 
 					return true;
@@ -154,12 +147,12 @@ namespace RB::PlayerStateComponents
 		return false;
 	}
 
-	void DetectHit::_RegisterHit(RB::Collisions::CollisionResult& collisionResult)
+	void DetectHit::_RegisterHit(Collisions::CollisionResult& collisionResult)
 	{
 		auto attackRegisterController = GET_ATTACK_REGISTER_CONTROLLER;
 
 		//register new attack
-		RB::Collisions::AttackRegister reg;
+		Collisions::AttackRegister reg;
 		reg.attacker = collisionResult.mAttacker;
 		reg.target = collisionResult.mTarget;
 		reg.collisionPoint = collisionResult.mCollisionPoint;
@@ -173,14 +166,14 @@ namespace RB::PlayerStateComponents
 		_hits++;
 		_fixedUpdatesSinceLastHit = 0;
 
-		std::cout << std::endl;
-		std::string strAttackerSprite = collisionResult.mAttackerSpriteType._to_string();
-		std::cout << " --- registered hit | attacker spriteType: " << strAttackerSprite << " --- " << std::endl;
-		std::cout << "attackerID: " << reg.attacker->GetPlayerID_int() << std::endl;
-		std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
-		std::cout << "hit count: " << _hits << std::endl;
-		std::cout << "collisionType: " << std::to_string((int)collisionResult.mCollisionType) << std::endl;
-		std::cout << std::endl;
+		//std::cout << std::endl;
+		//std::string strAttackerSprite = collisionResult.mAttackerSpriteType._to_string();
+		//std::cout << " --- registered hit | attacker spriteType: " << strAttackerSprite << " --- " << std::endl;
+		//std::cout << "attackerID: " << reg.attacker->GetPlayerID_int() << std::endl;
+		//std::cout << "attacker fixedupdate count: " << _state->GetCumulatedFixedUpdates() << std::endl;
+		//std::cout << "hit count: " << _hits << std::endl;
+		//std::cout << "collisionType: " << std::to_string((int)collisionResult.mCollisionType) << std::endl;
+		//std::cout << std::endl;
 	}
 
 	void DetectHit::_AddFixedUpdatesSinceLastHit()

@@ -29,6 +29,9 @@ namespace RB::States
 	protected:
 		virtual void _MakeTransition() override;
 
+	private:
+		void _InitState(iState* state);
+
 		unsigned int _stateMachineID = 0;
 		iState* _currentState = nullptr;
 		iState* _nextState = nullptr;

@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "StateComponentBase.h"
+#include "StateType.h"
 
 namespace RB::States
 {
@@ -25,6 +26,7 @@ namespace RB::States
 		virtual void AddCumulatedFixedUpdate() override;
 		virtual unsigned int GetCumulatedFixedUpdates() override;
 		virtual bool ContainsState_Recursive(unsigned int stateID) override;
+		virtual void LogStateEnter() override;
 
 	public:
 		virtual void AddStateComponent(StateComponentBase* stateComponent);
@@ -39,8 +41,8 @@ namespace RB::States
 		virtual void OnUpdate() override {}
 		virtual void OnFixedUpdate() override {}
 		virtual void ErasePreviousStates() override {}
-
 	protected:
+		STATE_TYPE _stateType = STATE_TYPE::NONE;
 		unsigned int _stateCreationID = 0;
 		unsigned int _stateMachineID = 0;
 		unsigned int _cumulatedFixedUpdates = 0;

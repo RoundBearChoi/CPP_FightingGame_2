@@ -78,6 +78,11 @@ namespace RB::States
 		return false;
 	}
 
+	void StateBase::LogStateEnter()
+	{
+		std::cout << "entering state" << std::endl;
+	}
+
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)
 	{
 		if (stateComponent == nullptr)

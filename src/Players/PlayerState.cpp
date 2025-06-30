@@ -4,13 +4,13 @@ namespace RB::Players
 {
 	std::vector<PlayerState*> PlayerState::allPlayerStates;
 
-	PlayerState* PlayerState::GetPlayerState(RB::Players::PlayerID playerID)
+	PlayerState* PlayerState::GetPlayerState(Players::PlayerID playerID)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		for (auto i = allPlayerStates.begin(); i != allPlayerStates.end(); i++)
 		{
-			RB::Players::iPlayer* owner = playerController->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
+			Players::iPlayer* owner = playerController->GetPlayerOnStateMachineID((*i)->GetStateMachineID());
 
 			if (owner != nullptr)
 			{
@@ -30,7 +30,7 @@ namespace RB::Players
 
 		while (it != allPlayerStates.end())
 		{
-			RB::Players::PlayerState* playerState = (*it);
+			Players::PlayerState* playerState = (*it);
 
 			it = allPlayerStates.erase(it);
 
@@ -43,6 +43,8 @@ namespace RB::Players
 
 	PlayerState::PlayerState()
 	{
+		_stateType = States::STATE_TYPE::PLAYER_STATE;
+
 		allPlayerStates.push_back(this);
 	}
 
@@ -86,7 +88,7 @@ namespace RB::Players
 					// not in component
 					if (ContainsState_Recursive((*it)->GetStateID()) == false)
 					{
-						RB::Players::PlayerState* playerState = (*it);
+						Players::PlayerState* playerState = (*it);
 
 						it = allPlayerStates.erase(it);
 
@@ -101,41 +103,41 @@ namespace RB::Players
 		}
 	}
 
-	RB::Players::iPlayer* PlayerState::GetPlayer()
+	Players::iPlayer* PlayerState::GetPlayer()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		return playerController->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
-	RB::Sprites::SpriteType PlayerState::GetSpriteType()
+	Sprites::SpriteType PlayerState::GetSpriteType()
 	{
 		return _spriteType;
 	}
 
 	void PlayerState::AutoUpdatePlayerBox()
 	{
-		RB::Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
+		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
 
-		RB::Players::iPlayer* player = GetPlayer();
+		Players::iPlayer* player = GetPlayer();
 
-		RB::Players::CharacterType characterType = player->GetCharacterType();
+		Players::CharacterType characterType = player->GetCharacterType();
 
 		if (playerBoxDataController == nullptr)
 		{
 			return;
 		}
 
-		RB::Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
+		Collisions::LoadedPlayerBoxData* loaded = playerBoxDataController->GetLoadedData(characterType);
 
 		if (loaded == nullptr)
 		{
 			return;
 		}
 
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		RB::Render::iAnimationObj* iAniObj = playerAnimationController->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
+		Render::iAnimationObj* iAniObj = playerAnimationController->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
 
 		if (iAniObj == nullptr)
 		{
@@ -144,7 +146,7 @@ namespace RB::Players
 
 		unsigned int animationIndex = iAniObj->GetCurrentIndex();
 
-		RB::Collisions::PlayerBox* box = loaded->GetSpecs(_spriteType, animationIndex);
+		Collisions::PlayerBox* box = loaded->GetSpecs(_spriteType, animationIndex);
 
 		if (box == nullptr)
 		{

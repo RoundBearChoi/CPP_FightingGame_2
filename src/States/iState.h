@@ -18,6 +18,7 @@ namespace RB::States
 		virtual void AddCumulatedFixedUpdate() = 0;
 		virtual unsigned int GetCumulatedFixedUpdates() = 0;
 		virtual bool ContainsState_Recursive(unsigned int stateID) = 0;
+		virtual void LogStateEnter() = 0;
 
 	public:
 		virtual void OnEnter() = 0;

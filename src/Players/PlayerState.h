@@ -25,7 +25,8 @@ namespace RB::Players
 	public:
 		PlayerState();
 		~PlayerState() override;
-
+		
+		void LogStateEnter() override;
 		void ErasePreviousStates() override;
 
 	public:

@@ -80,7 +80,7 @@ namespace RB::States
 
 	void StateBase::LogStateEnter()
 	{
-		std::cout << "entering state" << std::endl;
+		std::cout << "entering StateBase" << std::endl;
 	}
 
 	void StateBase::AddStateComponent(StateComponentBase* stateComponent)

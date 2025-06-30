@@ -70,6 +70,11 @@ namespace RB::Players
 		}
 	}
 
+	void PlayerState::LogStateEnter()
+	{
+		std::cout << "entering player state" << std::endl;
+	}
+
 	// delete my previous states (states that are not part of the queues)
 	void PlayerState::ErasePreviousStates()
 	{

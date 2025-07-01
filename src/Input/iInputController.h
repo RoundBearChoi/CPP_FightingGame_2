@@ -13,16 +13,16 @@ namespace RB::Input
 {
 	#define GET_INPUT_CONTROLLER static_cast<Input::iInputController*>(Controllers::GetController(Controllers::ControllerType::INPUT_CONTROLLER))
 
-	class iInputController : public RB::Controllers::ControllerBase
+	class iInputController : public Controllers::ControllerBase
 	{
 	public:
-		virtual olc::HWButton GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual const std::vector<iInputObj*>& GetVecInputObjs(RB::Players::PlayerID playerID) = 0;
-		virtual iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index) = 0;
+		virtual olc::HWButton GetKeyBinding(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetInputObj_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetInputObj_LIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetUnused_Special_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetUnused_Movement_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual bool IsHeld(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
+		virtual const std::vector<iInputObj*>& GetVecInputObjs(Players::PlayerID playerID) = 0;
+		virtual iInputObj* GetInputByIndex(Players::PlayerID playerID, unsigned int index) = 0;
 	};
 }

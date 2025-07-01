@@ -26,12 +26,12 @@ namespace RB::Input
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-		RB::Input::SpecialMoveType GetSpecialMove(RB::Players::PlayerID playerID) override;
-		RB::States::iState* GetNewState(RB::Input::SpecialMoveType specialMoveType) override;
+		Input::SpecialMoveType GetSpecialMove(Players::PlayerID playerID) override;
+		States::iState* GetNewState(Input::SpecialMoveType specialMoveType) override;
 
 	private:
-		void _ClearSequences(RB::Players::PlayerID playerID);
-		std::vector<iSpecialMoveSequence*>& _GetSequence(RB::Players::PlayerID playerID);
+		void _ClearSequences(Players::PlayerID playerID);
+		std::vector<iSpecialMoveSequence*>& _GetSequence(Players::PlayerID playerID);
 
 		std::vector<iSpecialMoveSequence*> _vecP1_Sequences;
 		std::vector<iSpecialMoveSequence*> _vecP2_Sequences;

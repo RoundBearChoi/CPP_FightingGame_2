@@ -4,17 +4,17 @@ namespace RB::Input
 {
 	SpecialMovesController::~SpecialMovesController()
 	{
-		_ClearSequences(RB::Players::PlayerID::PLAYER_1);
-		_ClearSequences(RB::Players::PlayerID::PLAYER_2);
+		_ClearSequences(Players::PlayerID::PLAYER_1);
+		_ClearSequences(Players::PlayerID::PLAYER_2);
 	}
 
 	void SpecialMovesController::Init()
 	{
 		//INIT_CONTROLLER
 		
-		_vecP1_Sequences.push_back(new RB::Input::Sequences::P0_Seq_Hadouken(RB::Input::SpecialMoveType::P0_HADOUKEN, { PlayerInput::MOVE_DOWN, PlayerInput::MOVE_DOWN_RIGHT, PlayerInput::MOVE_RIGHT, PlayerInput::ATTACK_WEAK_PUNCH }));
+		_vecP1_Sequences.push_back(new Input::Sequences::P0_Seq_Hadouken(Input::SpecialMoveType::P0_HADOUKEN, { PlayerInput::MOVE_DOWN, PlayerInput::MOVE_DOWN_RIGHT, PlayerInput::MOVE_RIGHT, PlayerInput::ATTACK_WEAK_PUNCH }));
 
-		_vecP2_Sequences.push_back(new RB::Input::Sequences::P0_Seq_Hadouken(RB::Input::SpecialMoveType::P0_HADOUKEN, { PlayerInput::MOVE_DOWN, PlayerInput::MOVE_DOWN_RIGHT, PlayerInput::MOVE_RIGHT, PlayerInput::ATTACK_WEAK_PUNCH }));
+		_vecP2_Sequences.push_back(new Input::Sequences::P0_Seq_Hadouken(Input::SpecialMoveType::P0_HADOUKEN, { PlayerInput::MOVE_DOWN, PlayerInput::MOVE_DOWN_RIGHT, PlayerInput::MOVE_RIGHT, PlayerInput::ATTACK_WEAK_PUNCH }));
 	}
 
 	void SpecialMovesController::OnUpdate()
@@ -27,7 +27,7 @@ namespace RB::Input
 
 	}
 
-	SpecialMoveType SpecialMovesController::GetSpecialMove(RB::Players::PlayerID playerID)
+	SpecialMoveType SpecialMovesController::GetSpecialMove(Players::PlayerID playerID)
 	{
 		const std::vector<iSpecialMoveSequence*>& vec = _GetSequence(playerID);
 
@@ -43,17 +43,17 @@ namespace RB::Input
 	}
 
 	// make sure to delete state after use
-	RB::States::iState* SpecialMovesController::GetNewState(RB::Input::SpecialMoveType specialMoveType)
+	States::iState* SpecialMovesController::GetNewState(Input::SpecialMoveType specialMoveType)
 	{
-		if (specialMoveType == RB::Input::SpecialMoveType::P0_HADOUKEN)
+		if (specialMoveType == Input::SpecialMoveType::P0_HADOUKEN)
 		{
-			return new RB::Fighter_0_States::F0_Hadouken();
+			return new Fighter_0_States::F0_Hadouken();
 		}
 
 		return nullptr;
 	}
 
-	void SpecialMovesController::_ClearSequences(RB::Players::PlayerID playerID)
+	void SpecialMovesController::_ClearSequences(Players::PlayerID playerID)
 	{
 		std::vector<iSpecialMoveSequence*>& vec = _GetSequence(playerID);
 
@@ -66,13 +66,13 @@ namespace RB::Input
 		vec.clear();
 	}
 
-	std::vector<iSpecialMoveSequence*>& SpecialMovesController::_GetSequence(RB::Players::PlayerID playerID)
+	std::vector<iSpecialMoveSequence*>& SpecialMovesController::_GetSequence(Players::PlayerID playerID)
 	{
-		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_Sequences;
 		}
-		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_Sequences;
 		}

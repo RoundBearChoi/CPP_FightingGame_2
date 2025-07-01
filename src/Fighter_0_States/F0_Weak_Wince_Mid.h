@@ -11,7 +11,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_Weak_Wince_Mid : public RB::Players::PlayerState
+	class F0_Weak_Wince_Mid : public Players::PlayerState
 	{
 	public:
 		F0_Weak_Wince_Mid();

@@ -36,11 +36,11 @@ namespace RB::HBox
 
 	private:
 		const std::string& _GetFrameName();
-		RB::HBox::Loaded_HB_Data* _GetHBData();
+		HBox::Loaded_HB_Data* _GetHBData();
 		void _ShowSavedNotification();
 
 		std::string _none = "none";
 		std::string _pageTitle = "HBoxEditor";
-		RB::Render::Notification _notification;
+		Render::Notification _notification;
 	};
 }

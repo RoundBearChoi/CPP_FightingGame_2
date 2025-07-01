@@ -12,7 +12,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_Strong_Wince_High : public RB::Players::PlayerState
+	class F0_Strong_Wince_High : public Players::PlayerState
 	{
 	public:
 		F0_Strong_Wince_High();

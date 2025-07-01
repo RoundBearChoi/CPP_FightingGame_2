@@ -15,7 +15,7 @@
 
 namespace RB::Fighter_0_States
 {
-	class F0_WalkForward : public RB::Players::PlayerState
+	class F0_WalkForward : public Players::PlayerState
 	{
 	public:
 		F0_WalkForward();

@@ -10,7 +10,7 @@ namespace RB::HBox
 		_frame = parser.ParseFrame(frameName);
 	}
 
-	AABB_Set::AABB_Set(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB)
+	AABB_Set::AABB_Set(std::string frameName, std::vector<Collisions::AABB> vecAABB)
 	{
 		JSON::JParser parser;
 
@@ -38,7 +38,7 @@ namespace RB::HBox
 		_selector.OnUpdate();
 	}
 
-	RB::iSelector<RB::Collisions::AABB>* AABB_Set::GetSelector()
+	RB::iSelector<Collisions::AABB>* AABB_Set::GetSelector()
 	{
 		return &_selector;
 	}

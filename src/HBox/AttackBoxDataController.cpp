@@ -24,17 +24,17 @@ namespace RB::HBox
 		_hbContainer.OnFixedUpdate();
 	}
 
-	Loaded_HB_Data* AttackBoxDataController::GetData(RB::Sprites::SpriteType spriteType)
+	Loaded_HB_Data* AttackBoxDataController::GetData(Sprites::SpriteType spriteType)
 	{
 		return _hbContainer.GetData(spriteType);
 	}
 
-	Loaded_HB_Data* AttackBoxDataController::CreateData(RB::Sprites::SpriteType spriteType)
+	Loaded_HB_Data* AttackBoxDataController::CreateData(Sprites::SpriteType spriteType)
 	{
 		return _hbContainer.CreateData(spriteType);
 	}
 
-	std::string AttackBoxDataController::GetPath(RB::Sprites::SpriteType spriteType)
+	std::string AttackBoxDataController::GetPath(Sprites::SpriteType spriteType)
 	{
 		return _hbContainer.GetPath(spriteType);
 	}

@@ -12,8 +12,8 @@ namespace RB::HBox
 
 	void HBMenuController::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
 		if (playerController == nullptr ||
 			playerAnimationController == nullptr)
@@ -32,19 +32,19 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
-		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1);
+		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
-		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 140 }, "FrameName: " + _GetFrameName(), olc::YELLOW, { 0.6f, 0.6f });
 
-		RB::HBox::Loaded_HB_Data* data = _GetHBData();
+		HBox::Loaded_HB_Data* data = _GetHBData();
 
 		if (data == nullptr)
 		{
 			return;
 		}
 
-		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1));
+		HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1));
 
 		if (AABBs == nullptr)
 		{
@@ -73,49 +73,49 @@ namespace RB::HBox
 
 	const std::string& HBMenuController::_GetFrameName()
 	{
-		RB::HBox::Loaded_HB_Data* data = _GetHBData();
+		HBox::Loaded_HB_Data* data = _GetHBData();
 		
 		if (data == nullptr)
 		{
 			return _none;
 		}
 
-		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1));
+		HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1));
 
 		if (AABBs == nullptr)
 		{
 			// create empty set
 			data->AddSet(AABB_Set{ "frame_0" });
 
-			AABBs = data->GetHBoxDataByFrame(RB::Sprites::GetCurrentAnimationFrame(RB::Players::PlayerID::PLAYER_1));
+			AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1));
 			//return _none;
 		}
 
 		return AABBs->GetFrameName();
 	}
 
-	RB::HBox::Loaded_HB_Data* HBMenuController::_GetHBData()
+	HBox::Loaded_HB_Data* HBMenuController::_GetHBData()
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 		auto hboxEditController = GET_HBOX_EDIT_CONTROLLER;
 
-		RB::HBox::HBoxType boxType = hboxEditController->GetHBoxType();
+		HBox::HBoxType boxType = hboxEditController->GetHBoxType();
 
-		RB::HBox::Loaded_HB_Data* data = nullptr;
+		HBox::Loaded_HB_Data* data = nullptr;
 
-		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
+		if (boxType == HBox::HBoxType::TARGET_BOX)
 		{
 			if (targetBoxDataController != nullptr)
 			{
-				data = targetBoxDataController->GetData(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+				data = targetBoxDataController->GetData(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
 			}
 		}
-		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
+		else if (boxType == HBox::HBoxType::ATTACK_BOX)
 		{
 			if (attackBoxDataController != nullptr)
 			{
-				data = attackBoxDataController->GetData(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+				data = attackBoxDataController->GetData(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
 			}
 		}
 
@@ -133,21 +133,21 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::HBox::HBoxType boxType = hboxEditController->GetHBoxType();
+		HBox::HBoxType boxType = hboxEditController->GetHBoxType();
 
-		if (boxType == RB::HBox::HBoxType::TARGET_BOX)
+		if (boxType == HBox::HBoxType::TARGET_BOX)
 		{
 			if (targetBoxDataController != nullptr)
 			{
-				const std::string& path = targetBoxDataController->GetPath(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+				const std::string& path = targetBoxDataController->GetPath(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}
-		else if (boxType == RB::HBox::HBoxType::ATTACK_BOX)
+		else if (boxType == HBox::HBoxType::ATTACK_BOX)
 		{
 			if (attackBoxDataController != nullptr)
 			{
-				const std::string& path = attackBoxDataController->GetPath(RB::Sprites::GetCurrentSpriteType(RB::Players::PlayerID::PLAYER_1));
+				const std::string& path = attackBoxDataController->GetPath(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

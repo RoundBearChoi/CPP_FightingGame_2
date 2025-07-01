@@ -13,13 +13,13 @@ namespace RB::HBox
 	public:
 		AABB_Set() = default;
 		AABB_Set(std::string frameName);
-		AABB_Set(std::string frameName, std::vector<RB::Collisions::AABB> vecAABB);
+		AABB_Set(std::string frameName, std::vector<Collisions::AABB> vecAABB);
 		~AABB_Set();
 
 	public:
 		void OnFixedUpdate();
 		void OnUpdate();
-		RB::iSelector<RB::Collisions::AABB>* GetSelector();
+		RB::iSelector<Collisions::AABB>* GetSelector();
 
 	public:
 		unsigned int GetFrame();
@@ -30,6 +30,6 @@ namespace RB::HBox
 		std::string _frameName = "";
 		unsigned int _frame = 0;
 		bool _selectionInitialized = false;
-		RB::Selector<RB::Collisions::AABB> _selector;
+		RB::Selector<Collisions::AABB> _selector;
 	};
 }

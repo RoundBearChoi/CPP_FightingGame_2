@@ -15,7 +15,7 @@ namespace RB::Fighter_0_States
 	class F0_Crouch_Weak_Wince : public Players::PlayerState
 	{
 	public:
-		F0_Crouch_Weak_Wince() = default;
+		F0_Crouch_Weak_Wince();
 
 	public:
 		void OnEnter() override;

@@ -4,11 +4,14 @@
 
 namespace RB::Fighter_0_States
 {
+	F0_JumpForward_1::F0_JumpForward_1()
+	{
+		_spriteType = Sprites::SpriteType::fighter_0_jump_forward_1;
+	}
+
 	void F0_JumpForward_1::OnEnter()
 	{
 		Players::iSpecsController* specsController = GET_SPECS_CONTROLLER;
-
-		_spriteType = Sprites::SpriteType::fighter_0_jump_forward_1;
 
 		Players::MoveSpecs moveSpecs = specsController->GetMoveSpecs(Players::CharacterType::AKU);
 

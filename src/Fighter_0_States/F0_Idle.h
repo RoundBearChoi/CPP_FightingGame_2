@@ -24,7 +24,7 @@ namespace RB::Fighter_0_States
 	class F0_Idle : public Players::PlayerState
 	{
 	public:
-		F0_Idle() = default;
+		F0_Idle();
 
 	public:
 		void OnEnter() override;

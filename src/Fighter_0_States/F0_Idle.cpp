@@ -2,10 +2,13 @@
 
 namespace RB::Fighter_0_States
 {
-	void F0_Idle::OnEnter()
+	F0_Idle::F0_Idle()
 	{
 		_spriteType = Sprites::SpriteType::fighter_0_idle;
+	}
 
+	void F0_Idle::OnEnter()
+	{
 		AddStateComponent(new PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new PlayerStateComponents::TransitionToJumpForward(new Fighter_0_States::F0_JumpForward_0(), false));
 		AddStateComponent(new PlayerStateComponents::TransitionToJumpForward(new Fighter_0_States::F0_JumpBack_0(), true));

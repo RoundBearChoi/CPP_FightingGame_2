@@ -12,7 +12,7 @@ namespace RB::Fighter_0_States
 	class F0_StandUp : public Players::PlayerState
 	{
 	public:
-		F0_StandUp() = default;
+		F0_StandUp();
 
 	public:
 		void OnEnter() override;

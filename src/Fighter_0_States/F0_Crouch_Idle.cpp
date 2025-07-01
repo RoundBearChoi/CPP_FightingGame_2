@@ -3,10 +3,13 @@
 
 namespace RB::Fighter_0_States
 {
-	void F0_Crouch_Idle::OnEnter()
+	F0_Crouch_Idle::F0_Crouch_Idle()
 	{
 		_spriteType = Sprites::SpriteType::fighter_0_crouch_idle;
-
+	}
+	
+	void F0_Crouch_Idle::OnEnter()
+	{
 		AddStateComponent(new PlayerStateComponents::DoNotFixDirectionDuringState());
 		AddStateComponent(new PlayerStateComponents::TransitionOnInput(new F0_Crouch_Punch_Weak(), Input::PlayerInput::ATTACK_WEAK_PUNCH, Input::InputType::ATTACK));
 		AddStateComponent(new PlayerStateComponents::StandUpOnRelease(new Fighter_0_States::F0_StandUp()));

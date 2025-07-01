@@ -12,7 +12,7 @@ namespace RB::Fighter_0_States
 	class F0_Strong_Punch : public RB::Players::PlayerState
 	{
 	public:
-		F0_Strong_Punch() = default;
+		F0_Strong_Punch();
 
 	public:
 		void OnEnter() override;

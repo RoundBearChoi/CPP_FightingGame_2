@@ -17,7 +17,7 @@ namespace RB::Fighter_0_States
 	class F0_WalkBack : public RB::Players::PlayerState
 	{
 	public:
-		F0_WalkBack() = default;
+		F0_WalkBack();
 
 	public:
 		void OnEnter() override;

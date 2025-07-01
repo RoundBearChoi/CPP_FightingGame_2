@@ -2,18 +2,21 @@
 
 namespace RB::Fighter_0_States
 {
+	F0_WalkForward::F0_WalkForward()
+	{
+		_spriteType = Sprites::SpriteType::fighter_0_walk;
+	}
+
 	void F0_WalkForward::OnEnter()
 	{
-		RB::Players::iSpecsController* specsController = GET_SPECS_CONTROLLER;
+		Players::iSpecsController* specsController = GET_SPECS_CONTROLLER;
 
-		_spriteType = RB::Sprites::SpriteType::fighter_0_walk;
+		Players::MoveSpecs m = specsController->GetMoveSpecs(Players::CharacterType::AKU);
 
-		RB::Players::MoveSpecs m = specsController->GetMoveSpecs(RB::Players::CharacterType::AKU);
-
-		AddStateComponent(new RB::PlayerStateComponents::DoNotFixDirectionDuringState());
-		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpForward(new RB::Fighter_0_States::F0_JumpForward_0(), false));
-		AddStateComponent(new RB::PlayerStateComponents::TransitionToJumpUp(new RB::Fighter_0_States::F0_JumpUp_0()));
-		AddStateComponent(new RB::PlayerStateComponents::WhileMovingForward(m.mWalk_Forward_Speed, new RB::Fighter_0_States::F0_Idle(), new RB::Fighter_0_States::F0_WalkBack()));
+		AddStateComponent(new PlayerStateComponents::DoNotFixDirectionDuringState());
+		AddStateComponent(new PlayerStateComponents::TransitionToJumpForward(new Fighter_0_States::F0_JumpForward_0(), false));
+		AddStateComponent(new PlayerStateComponents::TransitionToJumpUp(new Fighter_0_States::F0_JumpUp_0()));
+		AddStateComponent(new PlayerStateComponents::WhileMovingForward(m.mWalk_Forward_Speed, new Fighter_0_States::F0_Idle(), new Fighter_0_States::F0_WalkBack()));
 
 		EnterStateComponents();
 	}

@@ -3,10 +3,13 @@
 
 namespace RB::Fighter_0_States
 {
-	void F0_Crouch_Weak_Wince::OnEnter()
+	F0_Crouch_Weak_Wince::F0_Crouch_Weak_Wince()
 	{
 		_spriteType = Sprites::SpriteType::fighter_0_crouch_weak_wince;
+	}
 
+	void F0_Crouch_Weak_Wince::OnEnter()
+	{
 		AddStateComponent(new PlayerStateComponents::SetWincingStatusOnEnter(true));
 		AddStateComponent(new PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new PlayerStateComponents::MoveHorizontalOnFixedUpdateCount(0, 0));

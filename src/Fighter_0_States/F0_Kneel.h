@@ -9,7 +9,7 @@ namespace RB::Fighter_0_States
     class F0_Kneel : public Players::PlayerState
     {
     public:
-		F0_Kneel() = default;
+		F0_Kneel(); 
 
     public:
         void OnEnter() override;

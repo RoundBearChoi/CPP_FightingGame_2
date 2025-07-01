@@ -7,7 +7,7 @@ namespace RB::Fighter_0_States
     class F0_Lie_Down : public Players::PlayerState
     {
     public:
-		F0_Lie_Down() = default;
+		F0_Lie_Down(); 
 
     public:
         void OnEnter() override;

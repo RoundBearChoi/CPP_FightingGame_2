@@ -2,10 +2,13 @@
 
 namespace RB::Fighter_0_States
 {
-	void F0_Strong_Wince_High::OnEnter()
+	F0_Strong_Wince_High::F0_Strong_Wince_High()
 	{
 		_spriteType = RB::Sprites::SpriteType::fighter_0_strong_wince_high;
+	}
 
+	void F0_Strong_Wince_High::OnEnter()
+	{
 		AddStateComponent(new RB::PlayerStateComponents::SetWincingStatusOnEnter(true));
 		AddStateComponent(new RB::PlayerStateComponents::MarkInitiallyFacingRight());
 

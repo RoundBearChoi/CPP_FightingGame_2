@@ -2,10 +2,13 @@
 
 namespace RB::Fighter_0_States
 {
-	void F0_StandUp::OnEnter()
+	F0_StandUp::F0_StandUp()
 	{
 		_spriteType = Sprites::SpriteType::fighter_0_standup;
+	}
 
+	void F0_StandUp::OnEnter()
+	{
 		AddStateComponent(new PlayerStateComponents::MarkInitiallyFacingRight());
 		AddStateComponent(new PlayerStateComponents::TransitionOnAnimationEnd(new F0_Idle()));
 

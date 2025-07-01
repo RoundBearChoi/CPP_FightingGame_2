@@ -14,7 +14,7 @@ namespace RB::Fighter_0_States
 	class F0_Strong_Wince_Mid : public RB::Players::PlayerState
 	{
 	public:
-		F0_Strong_Wince_Mid() = default;
+		F0_Strong_Wince_Mid();
 
 	public:
 		void OnEnter() override;

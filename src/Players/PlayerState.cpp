@@ -1,5 +1,7 @@
 #include "PlayerState.h"
 
+#include "../Logger/iLogController.h"
+
 namespace RB::Players
 {
 	std::vector<PlayerState*> PlayerState::allPlayerStates;
@@ -72,7 +74,14 @@ namespace RB::Players
 
 	void PlayerState::LogStateEnter()
 	{
-		std::cout << "entering player state" << std::endl;
+		auto logController = GET_LOG_CONTROLLER;
+
+		Players::PlayerID pid = GetPlayer()->GetPlayerID();
+
+		std::stringstream ss;
+		ss << "OnEnter: " << _spriteType._to_string();
+
+		logController->AddToStream(pid, Log::LOG_TYPE::PLAYER_STATE, ss.str()); 
 	}
 
 	// delete my previous states (states that are not part of the queues)

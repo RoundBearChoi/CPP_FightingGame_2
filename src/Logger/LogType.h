@@ -15,6 +15,8 @@ namespace RB::Log
 		LOAD_SPRITE,
 		LOAD_JSON,
 
+		PLAYER_STATE,
+
 		COUNT
 	)
 }

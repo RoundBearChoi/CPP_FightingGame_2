@@ -6,7 +6,7 @@ namespace RB::HBox
 {
 	#define GET_HB_MENU_CONTROLLER static_cast<HBox::iHBMenuController*>(Controllers::GetController(Controllers::ControllerType::HB_MENU_CONTROLLER))
 
-	class iHBMenuController : public RB::Controllers::ControllerBase
+	class iHBMenuController : public Controllers::ControllerBase
 	{
 	public:
 		virtual void Init() = 0;

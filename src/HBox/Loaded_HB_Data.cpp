@@ -2,7 +2,7 @@
 
 namespace RB::HBox
 {
-	Loaded_HB_Data::Loaded_HB_Data(RB::Sprites::SpriteType spriteType, HBoxType boxType)
+	Loaded_HB_Data::Loaded_HB_Data(Sprites::SpriteType spriteType, HBoxType boxType)
 	{
 		_spriteType = spriteType;
 		_boxType = boxType;
@@ -66,7 +66,7 @@ namespace RB::HBox
 		return &(*(_vec_AABB_Sets.end() - 1));
 	}
 
-	RB::Sprites::SpriteType Loaded_HB_Data::GetSpriteType()
+	Sprites::SpriteType Loaded_HB_Data::GetSpriteType()
 	{
 		return _spriteType;
 	}

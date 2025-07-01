@@ -21,12 +21,12 @@ namespace RB::HBox
 		void SaveSample();
 
 	public:
-		Loaded_HB_Data Load(const std::string path, const RB::Sprites::SpriteType spriteType, HBoxType boxType);
-		std::vector<RB::Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
+		Loaded_HB_Data Load(const std::string path, const Sprites::SpriteType spriteType, HBoxType boxType);
+		std::vector<Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
 		std::string ParseName(const json_object_s& wholeObj, const unsigned int frame);
 
 	public:
-		RB::Collisions::AABB GetAABB(const json_array_s& array, unsigned int index);
+		Collisions::AABB GetAABB(const json_array_s& array, unsigned int index);
 		
 	private:
 		std::string _samplePath;

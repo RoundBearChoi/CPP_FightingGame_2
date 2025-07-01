@@ -24,28 +24,28 @@ namespace RB::Input
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		olc::HWButton GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		iInputObj* GetInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		iInputObj* GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		iInputObj* GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		iInputObj* GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		bool IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput) override;
-		const std::vector<iInputObj*>& GetVecInputObjs(RB::Players::PlayerID playerID) override;
-		iInputObj* GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index) override;
+		olc::HWButton GetKeyBinding(Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		iInputObj* GetInputObj_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		iInputObj* GetInputObj_LIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		iInputObj* GetUnused_Special_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		iInputObj* GetUnused_Movement_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		bool IsHeld(Players::PlayerID playerID, Input::PlayerInput playerInput) override;
+		const std::vector<iInputObj*>& GetVecInputObjs(Players::PlayerID playerID) override;
+		iInputObj* GetInputByIndex(Players::PlayerID playerID, unsigned int index) override;
 
 	private:
-		void _UpdateInputBuffer(RB::Players::PlayerID playerID);
-		void _AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input, bool log);
-		void _OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input);
-		void _UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input);
-		void _AddDiagBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);
-		void _UpdateDiagBufferRelease(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput);
-		void _DestroyOldBuffers(RB::Players::PlayerID playerID);
-		void _DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, InfInt gameFrame);
-		void _ClearAllBuffers(RB::Players::PlayerID playerID);
-		std::vector<iInputObj*>& _GetInputObjs(RB::Players::PlayerID playerID);
-		std::vector<SpecialMoveType>& _GetSpecialMovesInQueue(RB::Players::PlayerID playerID);
-		void _TriggerSpecialMove(RB::Players::PlayerID playerID);
+		void _UpdateInputBuffer(Players::PlayerID playerID);
+		void _AddNewInputBuffer(Players::PlayerID playerID, PlayerInput input, bool log);
+		void _OnSpecialMove(Players::PlayerID playerID, PlayerInput input);
+		void _UpdateReleaseStatus(Players::PlayerID playerID, PlayerInput input);
+		void _AddDiagBuffer(Players::PlayerID playerID, Input::PlayerInput input0, Input::PlayerInput input1, Input::PlayerInput resultInput);
+		void _UpdateDiagBufferRelease(Players::PlayerID playerID, Input::PlayerInput input0, Input::PlayerInput input1, Input::PlayerInput resultInput);
+		void _DestroyOldBuffers(Players::PlayerID playerID);
+		void _DestroyBuffer(Players::PlayerID playerID, Input::PlayerInput playerInput, InfInt gameFrame);
+		void _ClearAllBuffers(Players::PlayerID playerID);
+		std::vector<iInputObj*>& _GetInputObjs(Players::PlayerID playerID);
+		std::vector<SpecialMoveType>& _GetSpecialMovesInQueue(Players::PlayerID playerID);
+		void _TriggerSpecialMove(Players::PlayerID playerID);
 		void _LogInput(Players::PlayerID playerID, iInputObj* inputObj);
 		bool _DiagIsBlocking(Players::PlayerID playerID, Input::PlayerInput playerInput);
 

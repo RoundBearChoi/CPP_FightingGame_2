@@ -7,8 +7,8 @@ namespace RB::Input
 {
 	InputController::~InputController()
 	{
-		_ClearAllBuffers(RB::Players::PlayerID::PLAYER_1);
-		_ClearAllBuffers(RB::Players::PlayerID::PLAYER_2);
+		_ClearAllBuffers(Players::PlayerID::PLAYER_1);
+		_ClearAllBuffers(Players::PlayerID::PLAYER_2);
 	}
 
 	void InputController::Init()
@@ -22,72 +22,72 @@ namespace RB::Input
 
 		_vecKeyBindings.reserve((unsigned int)PlayerInput::COUNT);
 
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, olc::W });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, olc::S });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_LEFT, olc::A });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_RIGHT, olc::D });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, olc::W });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, olc::S });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::MOVE_LEFT, olc::A });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::MOVE_RIGHT, olc::D });
 
 		// cam control is turned off during gameplay, so it's ok to use arrow keys
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, olc::UP });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, olc::DOWN });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_LEFT, olc::LEFT });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_RIGHT, olc::RIGHT });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, olc::UP });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, olc::DOWN });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::MOVE_LEFT, olc::LEFT });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::MOVE_RIGHT, olc::RIGHT });
 
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_WEAK_PUNCH, olc::T });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_STRONG_PUNCH, olc::Y });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_WEAK_PUNCH, olc::T });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_STRONG_PUNCH, olc::Y });
 
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_WEAK_KICK, olc::G });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_STRONG_KICK, olc::H });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_WEAK_KICK, olc::G });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_1, PlayerInput::ATTACK_STRONG_KICK, olc::H });
 
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_WEAK_PUNCH, olc::HOME });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_STRONG_PUNCH, olc::PGUP });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_WEAK_PUNCH, olc::HOME });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_STRONG_PUNCH, olc::PGUP });
 
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_WEAK_KICK, olc::END });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_STRONG_KICK, olc::PGDN });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_WEAK_KICK, olc::END });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::PLAYER_2, PlayerInput::ATTACK_STRONG_KICK, olc::PGDN });
 
 		// only allowed during editing
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::NONE, PlayerInput::MOVE_CAM_LEFT, olc::LEFT });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::NONE, PlayerInput::MOVE_CAM_RIGHT, olc::RIGHT });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::NONE, PlayerInput::MOVE_CAM_UP, olc::UP });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::NONE, PlayerInput::MOVE_CAM_DOWN, olc::DOWN });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::NONE, PlayerInput::MOVE_CAM_LEFT, olc::LEFT });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::NONE, PlayerInput::MOVE_CAM_RIGHT, olc::RIGHT });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::NONE, PlayerInput::MOVE_CAM_UP, olc::UP });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::NONE, PlayerInput::MOVE_CAM_DOWN, olc::DOWN });
 
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::NONE, PlayerInput::CAM_ZOOM_OUT, olc::COMMA });
-		_vecKeyBindings.push_back(KeyBinding{ RB::Players::PlayerID::NONE, PlayerInput::CAM_ZOOM_IN, olc::PERIOD });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::NONE, PlayerInput::CAM_ZOOM_OUT, olc::COMMA });
+		_vecKeyBindings.push_back(KeyBinding{ Players::PlayerID::NONE, PlayerInput::CAM_ZOOM_IN, olc::PERIOD });
 	}
 
 	void InputController::OnUpdate()
 	{
-		_UpdateInputBuffer(RB::Players::PlayerID::PLAYER_1);
-		_UpdateInputBuffer(RB::Players::PlayerID::PLAYER_2);
+		_UpdateInputBuffer(Players::PlayerID::PLAYER_1);
+		_UpdateInputBuffer(Players::PlayerID::PLAYER_2);
 
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
 
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
-		_AddDiagBuffer(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
+		_AddDiagBuffer(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
 
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_1, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
 
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
-		_UpdateDiagBufferRelease(RB::Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_UP_LEFT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_UP, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_UP_RIGHT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_LEFT, PlayerInput::MOVE_DOWN_LEFT);
+		_UpdateDiagBufferRelease(Players::PlayerID::PLAYER_2, PlayerInput::MOVE_DOWN, PlayerInput::MOVE_RIGHT, PlayerInput::MOVE_DOWN_RIGHT);
 
-		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_1);
-		_DestroyOldBuffers(RB::Players::PlayerID::PLAYER_2);
+		_DestroyOldBuffers(Players::PlayerID::PLAYER_1);
+		_DestroyOldBuffers(Players::PlayerID::PLAYER_2);
 	}
 
 	void InputController::OnFixedUpdate()
 	{
-		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_1);
-		_TriggerSpecialMove(RB::Players::PlayerID::PLAYER_2);
+		_TriggerSpecialMove(Players::PlayerID::PLAYER_1);
+		_TriggerSpecialMove(Players::PlayerID::PLAYER_2);
 
 		for (auto i = _vecP1_InputObjs.begin(); i != _vecP1_InputObjs.end(); ++i)
 		{
@@ -100,7 +100,7 @@ namespace RB::Input
 		}
 	}
 
-	olc::HWButton InputController::GetKeyBinding(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	olc::HWButton InputController::GetKeyBinding(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		for (auto i = _vecKeyBindings.begin(); i != _vecKeyBindings.end(); ++i)
 		{
@@ -120,7 +120,7 @@ namespace RB::Input
 		return olc::HWButton();
 	}
 
-	iInputObj* InputController::GetInputObj_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	iInputObj* InputController::GetInputObj_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -135,7 +135,7 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	iInputObj* InputController::GetInputObj_LIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	iInputObj* InputController::GetInputObj_LIFO(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -150,7 +150,7 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	iInputObj* InputController::GetUnused_Special_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	iInputObj* InputController::GetUnused_Special_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -168,7 +168,7 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	iInputObj* InputController::GetUnused_Movement_FIFO(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	iInputObj* InputController::GetUnused_Movement_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -186,15 +186,15 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	bool InputController::IsHeld(RB::Players::PlayerID playerID, Input::PlayerInput playerInput)
+	bool InputController::IsHeld(Players::PlayerID playerID, Input::PlayerInput playerInput)
 	{
-		std::vector<RB::Input::iInputObj*>* vec = nullptr;
+		std::vector<Input::iInputObj*>* vec = nullptr;
 
-		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == Players::PlayerID::PLAYER_1)
 		{
 			vec = &_vecP1_InputObjs;
 		}
-		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == Players::PlayerID::PLAYER_2)
 		{
 			vec = &_vecP2_InputObjs;
 		}
@@ -218,13 +218,13 @@ namespace RB::Input
 		return false;
 	}
 
-	const std::vector<iInputObj*>& InputController::GetVecInputObjs(RB::Players::PlayerID playerID)
+	const std::vector<iInputObj*>& InputController::GetVecInputObjs(Players::PlayerID playerID)
 	{
-		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_InputObjs;
 		}
-		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_InputObjs;
 		}
@@ -232,7 +232,7 @@ namespace RB::Input
 		return _vecNone_InputObjs;
 	}
 
-	iInputObj* InputController::GetInputByIndex(RB::Players::PlayerID playerID, unsigned int index)
+	iInputObj* InputController::GetInputByIndex(Players::PlayerID playerID, unsigned int index)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -244,7 +244,7 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	void InputController::_UpdateInputBuffer(RB::Players::PlayerID playerID)
+	void InputController::_UpdateInputBuffer(Players::PlayerID playerID)
 	{
 		for (int i = 0; i < _totalInputTypes; i++)
 		{
@@ -280,7 +280,7 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_AddNewInputBuffer(RB::Players::PlayerID playerID, PlayerInput input, bool log)
+	void InputController::_AddNewInputBuffer(Players::PlayerID playerID, PlayerInput input, bool log)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -297,18 +297,18 @@ namespace RB::Input
 	}
 
 	// Check every time a punch or kick is pressed
-	void InputController::_OnSpecialMove(RB::Players::PlayerID playerID, PlayerInput input)
+	void InputController::_OnSpecialMove(Players::PlayerID playerID, PlayerInput input)
 	{
 		auto specialMovesController = GET_SPECIAL_MOVES_CONTROLLER;
 
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (specialMovesController == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
+		Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player->IsInSpecialMoveStatus())
 		{
@@ -318,7 +318,7 @@ namespace RB::Input
 		if (input._value == PlayerInput::ATTACK_WEAK_PUNCH || input._value == PlayerInput::ATTACK_WEAK_KICK ||
 			input._value == PlayerInput::ATTACK_STRONG_PUNCH || input._value == PlayerInput::ATTACK_STRONG_KICK)
 		{
-			RB::Input::SpecialMoveType specialMove = specialMovesController->GetSpecialMove(playerID);
+			Input::SpecialMoveType specialMove = specialMovesController->GetSpecialMove(playerID);
 
 			if (specialMove != SpecialMoveType::NONE)
 			{
@@ -329,7 +329,7 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_UpdateReleaseStatus(RB::Players::PlayerID playerID, PlayerInput input)
+	void InputController::_UpdateReleaseStatus(Players::PlayerID playerID, PlayerInput input)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -342,7 +342,7 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_AddDiagBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput)
+	void InputController::_AddDiagBuffer(Players::PlayerID playerID, Input::PlayerInput input0, Input::PlayerInput input1, Input::PlayerInput resultInput)
 	{
 		const std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -404,7 +404,7 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_UpdateDiagBufferRelease(RB::Players::PlayerID playerID, RB::Input::PlayerInput input0, RB::Input::PlayerInput input1, RB::Input::PlayerInput resultInput)
+	void InputController::_UpdateDiagBufferRelease(Players::PlayerID playerID, Input::PlayerInput input0, Input::PlayerInput input1, Input::PlayerInput resultInput)
 	{
 		olc::HWButton button0 = GetKeyBinding(playerID, input0);
 		olc::HWButton button1 = GetKeyBinding(playerID, input1);
@@ -423,7 +423,7 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_DestroyOldBuffers(RB::Players::PlayerID playerID)
+	void InputController::_DestroyOldBuffers(Players::PlayerID playerID)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -450,7 +450,7 @@ namespace RB::Input
 	}
 
 	// erase all that matches
-	void InputController::_DestroyBuffer(RB::Players::PlayerID playerID, RB::Input::PlayerInput playerInput, InfInt gameFrame)
+	void InputController::_DestroyBuffer(Players::PlayerID playerID, Input::PlayerInput playerInput, InfInt gameFrame)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -475,7 +475,7 @@ namespace RB::Input
 		}
 	}
 
-	void InputController::_ClearAllBuffers(RB::Players::PlayerID playerID)
+	void InputController::_ClearAllBuffers(Players::PlayerID playerID)
 	{
 		std::vector<iInputObj*>& vec = _GetInputObjs(playerID);
 
@@ -488,13 +488,13 @@ namespace RB::Input
 		vec.clear();
 	}
 
-	std::vector<iInputObj*>& InputController::_GetInputObjs(RB::Players::PlayerID playerID)
+	std::vector<iInputObj*>& InputController::_GetInputObjs(Players::PlayerID playerID)
 	{
-		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_InputObjs;
 		}
-		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_InputObjs;
 		}
@@ -502,13 +502,13 @@ namespace RB::Input
 		return _vecNone_InputObjs;
 	}
 
-	std::vector<SpecialMoveType>& InputController::_GetSpecialMovesInQueue(RB::Players::PlayerID playerID)
+	std::vector<SpecialMoveType>& InputController::_GetSpecialMovesInQueue(Players::PlayerID playerID)
 	{
-		if (playerID._value == RB::Players::PlayerID::PLAYER_1)
+		if (playerID._value == Players::PlayerID::PLAYER_1)
 		{
 			return _vecP1_SpecialMoves;
 		}
-		else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
+		else if (playerID._value == Players::PlayerID::PLAYER_2)
 		{
 			return _vecP2_SpecialMoves;
 		}
@@ -516,7 +516,7 @@ namespace RB::Input
 		return _vecNone_SpecialMoves;
 	}
 
-	void InputController::_TriggerSpecialMove(RB::Players::PlayerID playerID)
+	void InputController::_TriggerSpecialMove(Players::PlayerID playerID)
 	{
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto specialMovesController = GET_SPECIAL_MOVES_CONTROLLER;
@@ -525,9 +525,9 @@ namespace RB::Input
 
 		if (!vec.empty())
 		{
-			RB::States::iState* newState = specialMovesController->GetNewState(vec[0]);
+			States::iState* newState = specialMovesController->GetNewState(vec[0]);
 
-			RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
+			Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 			player->GetStateMachine()->ClearQueuedStates();
 			player->GetStateMachine()->QueueNextState(newState);

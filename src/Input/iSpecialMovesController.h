@@ -14,7 +14,7 @@ namespace RB::Input
 	class iSpecialMovesController : public Controllers::ControllerBase
 	{
 	public:
-		virtual RB::Input::SpecialMoveType GetSpecialMove(RB::Players::PlayerID playerID) = 0;
-		virtual RB::States::iState* GetNewState(RB::Input::SpecialMoveType specialMoveType) = 0;
+		virtual Input::SpecialMoveType GetSpecialMove(Players::PlayerID playerID) = 0;
+		virtual States::iState* GetNewState(Input::SpecialMoveType specialMoveType) = 0;
 	};
 }

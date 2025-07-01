@@ -12,7 +12,7 @@ namespace RB::Input
 		virtual ~iSpecialMoveSequence() = default;
 
 	public:
-		virtual bool IsMatching(RB::Players::PlayerID playerID) = 0;
-		virtual RB::Input::SpecialMoveType GetSpecialMoveType() = 0;
+		virtual bool IsMatching(Players::PlayerID playerID) = 0;
+		virtual Input::SpecialMoveType GetSpecialMoveType() = 0;
 	};
 }

@@ -20,7 +20,7 @@
 
 namespace RB::PlayerStateComponents
 {
-	class DetectHit : public RB::States::StateComponentBase
+	class DetectHit : public States::StateComponentBase
 	{
 	public:
 		DetectHit() = default;
@@ -33,8 +33,8 @@ namespace RB::PlayerStateComponents
 
 	private:
 		void _ProcessHit();
-		bool _HitDetected(RB::Collisions::CollisionResult& collisionResult);
-		void _RegisterHit(RB::Collisions::CollisionResult& collisionResult);
+		bool _HitDetected(Collisions::CollisionResult& collisionResult);
+		void _RegisterHit(Collisions::CollisionResult& collisionResult);
 		void _AddFixedUpdatesSinceLastHit();
 
 		int _hits = 0;

@@ -24,30 +24,30 @@
 
 namespace RB::HBox
 {
-	class HBoxEditController : public RB::HBox::iHBoxEditController
+	class HBoxEditController : public HBox::iHBoxEditController
 	{
 	public:
-		HBoxEditController(RB::HBox::HBoxType boxType);
+		HBoxEditController(HBox::HBoxType boxType);
 		~HBoxEditController() override {};
 
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		RB::HBox::Loaded_HB_Data* GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType) override;
-		RB::HBox::AABB_Set* GetCurrentHBoxData(RB::Players::PlayerID playerID) override;
-		RB::HBox::HBoxType GetHBoxType() override;
+		HBox::Loaded_HB_Data* GetCurrentData(Players::PlayerID playerID, HBoxType boxType) override;
+		HBox::AABB_Set* GetCurrentHBoxData(Players::PlayerID playerID) override;
+		HBox::HBoxType GetHBoxType() override;
 
 	private:
 		bool _ControllersExist();
-		void _RenderCircleOnHBox(RB::Players::PlayerID playerID);
+		void _RenderCircleOnHBox(Players::PlayerID playerID);
 		void _Add_Delete_AABB_OnPress();
-		void _EditAABB_OnPress(RB::Players::PlayerID playerID);
+		void _EditAABB_OnPress(Players::PlayerID playerID);
 		void _SaveHBoxes_OnPress();
 		void _CycleAnimations_OnPress();
 
 	private:
-		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
-		RB::Render::CircleRenderer _circleRenderer;
+		HBox::HBoxType _boxType = HBox::HBoxType::NONE;
+		Render::CircleRenderer _circleRenderer;
 	};
 }

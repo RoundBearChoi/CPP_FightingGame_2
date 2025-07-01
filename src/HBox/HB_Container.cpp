@@ -11,9 +11,9 @@ namespace RB::HBox
 		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 hboxes");
 
 		//load every hbox datalist
-		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{
-			_vecData.push_back(_loader.Load(CreatePath(RB::Sprites::SpriteType::_from_index(i)), RB::Sprites::SpriteType::_from_index((i)), _boxType));
+			_vecData.push_back(_loader.Load(CreatePath(Sprites::SpriteType::_from_index(i)), Sprites::SpriteType::_from_index((i)), _boxType));
 		}
 	}
 
@@ -39,7 +39,7 @@ namespace RB::HBox
 		_boxType = boxType;
 	}
 
-	Loaded_HB_Data* HB_Container::GetData(RB::Sprites::SpriteType spriteType)
+	Loaded_HB_Data* HB_Container::GetData(Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecData.begin(); i != _vecData.end(); i++)
 		{
@@ -52,7 +52,7 @@ namespace RB::HBox
 		return nullptr;
 	}
 
-	Loaded_HB_Data* HB_Container::CreateData(RB::Sprites::SpriteType spriteType)
+	Loaded_HB_Data* HB_Container::CreateData(Sprites::SpriteType spriteType)
 	{
 		Loaded_HB_Data* existing = GetData(spriteType);
 
@@ -68,13 +68,13 @@ namespace RB::HBox
 		return existing;
 	}
 
-	std::string HB_Container::CreatePath(RB::Sprites::SpriteType spriteType)
+	std::string HB_Container::CreatePath(Sprites::SpriteType spriteType)
 	{
 		std::string str = spriteType._to_string();
 		return _dir + str + _extention;
 	}
 
-	std::string HB_Container::GetPath(RB::Sprites::SpriteType spriteType)
+	std::string HB_Container::GetPath(Sprites::SpriteType spriteType)
 	{
 		std::string spr = spriteType._to_string();
 		std::string path = _dir + spr;

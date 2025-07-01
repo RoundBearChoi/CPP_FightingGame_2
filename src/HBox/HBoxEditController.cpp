@@ -5,7 +5,7 @@
 
 namespace RB::HBox
 {
-	HBoxEditController::HBoxEditController(RB::HBox::HBoxType boxType)
+	HBoxEditController::HBoxEditController(HBox::HBoxType boxType)
 	{
 		_boxType = boxType;
 	}
@@ -25,11 +25,11 @@ namespace RB::HBox
 		}
 
 		_Add_Delete_AABB_OnPress();
-		_EditAABB_OnPress(RB::Players::PlayerID::PLAYER_1);
+		_EditAABB_OnPress(Players::PlayerID::PLAYER_1);
 		_SaveHBoxes_OnPress();
 		_CycleAnimations_OnPress();
 
-		_RenderCircleOnHBox(RB::Players::PlayerID::PLAYER_1);
+		_RenderCircleOnHBox(Players::PlayerID::PLAYER_1);
 
 		Render::iPlayerDebugController* playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
 
@@ -45,23 +45,23 @@ namespace RB::HBox
 
 	}
 
-	RB::HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(RB::Players::PlayerID playerID, HBoxType boxType)
+	HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(Players::PlayerID playerID, HBoxType boxType)
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
-		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
+		Players::PlayerState* state = Players::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{
 			return nullptr;
 		}
 
-		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
+		Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
+		Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -71,7 +71,7 @@ namespace RB::HBox
 		int currentIndex = aniObj->GetCurrentIndex();
 
 		//can get either targetbox or attackbox
-		RB::HBox::Loaded_HB_Data* data = nullptr;
+		HBox::Loaded_HB_Data* data = nullptr;
 
 		if (boxType == HBoxType::TARGET_BOX)
 		{
@@ -91,23 +91,23 @@ namespace RB::HBox
 		return data;
 	}
 
-	RB::HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(RB::Players::PlayerID playerID)
+	HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(Players::PlayerID playerID)
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
-		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
+		Players::PlayerState* state = Players::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{
 			return nullptr;
 		}
 
-		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
+		Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
+		Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
 
 		if (aniObj == nullptr)
 		{
@@ -116,7 +116,7 @@ namespace RB::HBox
 
 		int currentIndex = aniObj->GetCurrentIndex();
 
-		RB::HBox::Loaded_HB_Data* data = nullptr;
+		HBox::Loaded_HB_Data* data = nullptr;
 		
 		// return existing data
 		if (_boxType == HBoxType::TARGET_BOX)
@@ -143,12 +143,12 @@ namespace RB::HBox
 			return nullptr; // shouldn't reach here..
 		}
 
-		RB::HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(currentIndex);
+		HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(currentIndex);
 
 		return AABBs;
 	}
 
-	RB::HBox::HBoxType HBoxEditController::GetHBoxType()
+	HBox::HBoxType HBoxEditController::GetHBoxType()
 	{
 		return _boxType;
 	}
@@ -162,14 +162,14 @@ namespace RB::HBox
 		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 		auto hbMenuController = GET_HB_MENU_CONTROLLER;
 
-		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+		if (_boxType == HBox::HBoxType::TARGET_BOX)
 		{
 			if (targetBoxDataController == nullptr)
 			{
 				return false;
 			}
 		}
-		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+		else if (_boxType == HBox::HBoxType::ATTACK_BOX)
 		{
 			if (attackBoxDataController == nullptr)
 			{
@@ -188,9 +188,9 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_RenderCircleOnHBox(RB::Players::PlayerID playerID)
+	void HBoxEditController::_RenderCircleOnHBox(Players::PlayerID playerID)
 	{
-		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
+		HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
 
 		if (AABBs == nullptr)
 		{
@@ -202,16 +202,16 @@ namespace RB::HBox
 			return;
 		}
 
-		RB::Collisions::AABB* box = AABBs->GetSelector()->GetSelected();
+		Collisions::AABB* box = AABBs->GetSelector()->GetSelected();
 
 		if (box == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
+		Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{
@@ -226,7 +226,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_Add_Delete_AABB_OnPress()
 	{
-		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(RB::Players::PlayerID::PLAYER_1);
+		HBox::AABB_Set* AABBs = GetCurrentHBoxData(Players::PlayerID::PLAYER_1);
 		
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
@@ -235,7 +235,7 @@ namespace RB::HBox
 		{
 			if (AABBs != nullptr)
 			{
-				AABBs->GetSelector()->PushBack(RB::Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
+				AABBs->GetSelector()->PushBack(Collisions::AABB{ 0.0f, 0.0f, 30.0f, 30.0f });
 
 				AABBs->GetSelector()->SelectDown();
 			}
@@ -251,16 +251,16 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxEditController::_EditAABB_OnPress(RB::Players::PlayerID playerID)
+	void HBoxEditController::_EditAABB_OnPress(Players::PlayerID playerID)
 	{
-		RB::HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
+		HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
 
 		if (AABBs == nullptr)
 		{
 			return;
 		}
 
-		RB::Collisions::AABB* box = AABBs->GetSelector()->GetSelected();
+		Collisions::AABB* box = AABBs->GetSelector()->GetSelected();
 
 		if (box == nullptr)
 		{
@@ -277,22 +277,22 @@ namespace RB::HBox
 
 		if (wButton.bHeld)
 		{
-			box->MoveY(-moveAmount * RB::Time::GetDeltaTime());
+			box->MoveY(-moveAmount * Time::GetDeltaTime());
 		}
 
 		if (sButton.bHeld)
 		{
-			box->MoveY(moveAmount * RB::Time::GetDeltaTime());
+			box->MoveY(moveAmount * Time::GetDeltaTime());
 		}
 
 		if (aButton.bHeld)
 		{
-			box->MoveX(-moveAmount * RB::Time::GetDeltaTime());
+			box->MoveX(-moveAmount * Time::GetDeltaTime());
 		}
 
 		if (dButton.bHeld)
 		{
-			box->MoveX(moveAmount * RB::Time::GetDeltaTime());
+			box->MoveX(moveAmount * Time::GetDeltaTime());
 		}
 
 		olc::HWButton uButton = olc::Platform::ptrPGE->GetKey(olc::U);
@@ -305,22 +305,22 @@ namespace RB::HBox
 
 		if (uButton.bHeld)
 		{
-			box->IncreaseHeight(sizeAmount * RB::Time::GetDeltaTime());
+			box->IncreaseHeight(sizeAmount * Time::GetDeltaTime());
 		}
 
 		if (jButton.bHeld)
 		{
-			box->IncreaseHeight(-sizeAmount * RB::Time::GetDeltaTime());
+			box->IncreaseHeight(-sizeAmount * Time::GetDeltaTime());
 		}
 
 		if (hButton.bHeld)
 		{
-			box->IncreaseWidth(-sizeAmount * RB::Time::GetDeltaTime());
+			box->IncreaseWidth(-sizeAmount * Time::GetDeltaTime());
 		}
 
 		if (kButton.bHeld)
 		{
-			box->IncreaseWidth(sizeAmount * RB::Time::GetDeltaTime());
+			box->IncreaseWidth(sizeAmount * Time::GetDeltaTime());
 		}
 	}
 
@@ -330,7 +330,7 @@ namespace RB::HBox
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 		auto hbMenuController = GET_HB_MENU_CONTROLLER;
 
-		RB::HBox::Loaded_HB_Data* data = GetCurrentData(RB::Players::PlayerID::PLAYER_1, _boxType);
+		HBox::Loaded_HB_Data* data = GetCurrentData(Players::PlayerID::PLAYER_1, _boxType);
 
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 
@@ -341,11 +341,11 @@ namespace RB::HBox
 
 			std::string path;
 
-			if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+			if (_boxType == HBox::HBoxType::TARGET_BOX)
 			{
 				path = targetBoxDataController->GetPath(data->GetSpriteType());
 			}
-			else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+			else if (_boxType == HBox::HBoxType::ATTACK_BOX)
 			{
 				path = attackBoxDataController->GetPath(data->GetSpriteType());
 			}
@@ -371,7 +371,7 @@ namespace RB::HBox
 
 					for (auto i = vecAABB.begin(); i != vecAABB.end(); ++i)
 					{
-						RB::Collisions::AABB aabb = *i;
+						Collisions::AABB aabb = *i;
 
 						file << "        {" << std::endl;
 						file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
@@ -429,16 +429,16 @@ namespace RB::HBox
 			downCycle = true;
 		}
 
-		RB::Sprites::SpriteType currentSpriteType = RB::Sprites::SpriteType::NONE;
-		RB::Sprites::SpriteType nextSpriteType = RB::Sprites::SpriteType::NONE;
+		Sprites::SpriteType currentSpriteType = Sprites::SpriteType::NONE;
+		Sprites::SpriteType nextSpriteType = Sprites::SpriteType::NONE;
 
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (upCycle || downCycle)
 		{
 			// get current sprite type
-			RB::Players::iPlayer* player = playerController->GetPlayer(Players::PlayerID::PLAYER_1);
-			RB::Players::PlayerState* ownerState = RB::Players::PlayerState::GetPlayerState(Players::PlayerID::PLAYER_1);
+			Players::iPlayer* player = playerController->GetPlayer(Players::PlayerID::PLAYER_1);
+			Players::PlayerState* ownerState = Players::PlayerState::GetPlayerState(Players::PlayerID::PLAYER_1);
 
 			currentSpriteType = ownerState->GetSpriteType();
 		}
@@ -453,13 +453,13 @@ namespace RB::HBox
 			nextSpriteType._value = currentSpriteType - 1;
 		}
 
-		if (nextSpriteType._value >= RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END)
+		if (nextSpriteType._value >= Sprites::SpriteType::FIGHTER_0_SPRITES_END)
 		{
-			nextSpriteType._value = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1;
+			nextSpriteType._value = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1;
 		}
-		else if (nextSpriteType._value <= RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START)
+		else if (nextSpriteType._value <= Sprites::SpriteType::FIGHTER_0_SPRITES_START)
 		{
-			nextSpriteType._value = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END - 1;
+			nextSpriteType._value = Sprites::SpriteType::FIGHTER_0_SPRITES_END - 1;
 		}
 
 		if (upCycle || downCycle)
@@ -470,11 +470,11 @@ namespace RB::HBox
 
 			std::string path = "";
 
-			if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+			if (_boxType == HBox::HBoxType::ATTACK_BOX)
 			{
 				path = "../resource/EditorSettings/AttackBoxSettings.editorSettings";
 			}
-			else if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+			else if (_boxType == HBox::HBoxType::TARGET_BOX)
 			{
 				path = "../resource/EditorSettings/TargetBoxSettings.editorSettings";
 			}
@@ -498,13 +498,13 @@ namespace RB::HBox
 			// reload updater
 			if (upCycle || downCycle)
 			{
-				if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+				if (_boxType == HBox::HBoxType::ATTACK_BOX)
 				{
-					RB::Updaters::ptrCurrentPlayground->QueueAttackBoxEditorUpdater();
+					Updaters::ptrCurrentPlayground->QueueAttackBoxEditorUpdater();
 				}
-				else if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+				else if (_boxType == HBox::HBoxType::TARGET_BOX)
 				{
-					RB::Updaters::ptrCurrentPlayground->QueueTargetBoxEditorUpdater();
+					Updaters::ptrCurrentPlayground->QueueTargetBoxEditorUpdater();
 				}
 			}
 		}

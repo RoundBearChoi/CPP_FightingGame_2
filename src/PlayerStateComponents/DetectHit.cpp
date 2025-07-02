@@ -1,5 +1,7 @@
 #include "DetectHit.h"
 
+#include "../Logger/iLogController.h"
+
 namespace RB::PlayerStateComponents
 {
 	void DetectHit::OnEnter()
@@ -31,6 +33,13 @@ namespace RB::PlayerStateComponents
 
 		if (_HitDetected(collisionResult))
 		{
+			auto logController = GET_LOG_CONTROLLER;
+			
+			std::stringstream ss;
+			ss << "hit detected against " << collisionResult.mTarget->GetPlayerID()._to_string();
+
+			logController->AddToStream(collisionResult.mAttacker->GetPlayerID(), Log::LOG_TYPE::COLLISION, ss.str()); 
+
 			//check max hit count
 			const Collisions::AttackSpecs& attackSpecs = attackSpecsController->GetAttackSpecs(collisionResult.mAttackerSpriteType);
 

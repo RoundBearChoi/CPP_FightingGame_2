@@ -17,6 +17,8 @@ namespace RB::Log
 
 		PLAYER_STATE,
 
+		COLLISION,
+
 		COUNT
 	)
 }

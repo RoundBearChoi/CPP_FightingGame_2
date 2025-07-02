@@ -1,10 +1,11 @@
 #include "AttackRegisterController.h"
 
-//temp
-//#include "../Fighter_0_States/F0_Kneel.h"
 #include "../Updaters/CurrentPlayground.h"
+
 #include "iAttackSpecsController.h"
 #include "iHitStopController.h"
+
+#include "../Logger/iLogController.h"
 
 namespace RB::Collisions
 {
@@ -27,11 +28,16 @@ namespace RB::Collisions
 	{
 		auto hitstopController = GET_HITSTOP_CONTROLLER;
 		auto attackSpecsController = GET_ATTACK_SPECS_CONTROLLER;
+		auto logController = GET_LOG_CONTROLLER;
 
 		_ShowHitVFX(reg);
 		_ShowHitLocation(reg);
 
 		const Collisions::AttackSpecs& attackSpecs = attackSpecsController->GetAttackSpecs(reg.attackerSpriteType);
+
+		std::stringstream ss;
+		ss << "registering attack against " << reg.target->GetPlayerID()._to_string();
+		logController->AddToStream(reg.attacker->GetPlayerID(), Log::LOG_TYPE::COLLISION, ss.str()); 
 
 		reg.target->AddHP(-attackSpecs.mDamage);
 

@@ -4,6 +4,7 @@ namespace RB::PlayerStateComponents
 {
 	void DetectHit::OnEnter()
 	{
+		// sample code
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());

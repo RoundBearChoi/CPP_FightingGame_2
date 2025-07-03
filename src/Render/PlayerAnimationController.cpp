@@ -159,7 +159,7 @@ namespace RB::Render
 		return _animationContainer.GetSpriteType(playerID);
 	}
 
-	void PlayerAnimationController::_SaveAnimationSpecs(std::string path, AnimationSpecs specs)
+	/*void PlayerAnimationController::_SaveAnimationSpecs(std::string path, AnimationSpecs specs)
 	{
 		std::ofstream file(path);
 
@@ -189,5 +189,5 @@ namespace RB::Render
 			file.flush();
 			file.close();
 		}
-	}
+	}*/
 }

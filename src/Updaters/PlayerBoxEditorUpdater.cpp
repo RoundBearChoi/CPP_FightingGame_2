@@ -6,7 +6,6 @@
 #include "../Collisions/PlayerBoxDataController.h"
 #include "../Collisions/PlayerBoxEditController.h"
 #include "../Cam/CamController.h"
-#include "../Input/InputController.h"
 
 namespace RB::Updaters
 {
@@ -24,7 +23,6 @@ namespace RB::Updaters
 	{
 		AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
 		AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
-		AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
 		AddController(new Collisions::PlayerBoxEditController(), Controllers::ControllerType::PLAYER_BOX_EDIT_CONTROLLER);
 		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);

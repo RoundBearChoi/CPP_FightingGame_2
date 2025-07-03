@@ -10,7 +10,6 @@
 #include "../Collisions/AttackRegisterController.h"
 #include "../Collisions/HitStopController.h"
 #include "../Collisions/AttackSpecsController.h"
-#include "../Input/InputController.h"
 #include "../Input/SpecialMovesController.h"
 #include "../HBox/TargetBoxDataController.h"
 #include "../HBox/AttackBoxDataController.h"
@@ -36,7 +35,6 @@ namespace RB::Updaters
         AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
         AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
         AddController(new Players::SpecsController(), Controllers::ControllerType::SPECS_CONTROLLER);
-        AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Input::SpecialMovesController(), Controllers::ControllerType::SPECIAL_MOVES_CONTROLLER);
 		AddController(new HBox::TargetBoxDataController(), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
 		AddController(new HBox::AttackBoxDataController(), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);

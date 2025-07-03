@@ -1,6 +1,7 @@
 #include "Playground.h"
 
 #include "../Logger/LogController.h"
+#include "../Input/InputController.h"
 
 namespace RB::Updaters
 {
@@ -95,6 +96,7 @@ namespace RB::Updaters
 			
 			// add common controllers before init
 			_updater->AddController(new Log::LogController(), Controllers::ControllerType::LOG_CONTROLLER);
+			_updater->AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 
 			_updater->Init();
 		}

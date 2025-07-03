@@ -18,7 +18,6 @@ namespace RB::HBox
 
 	public:
 		void InitSample(std::string path);
-		//void SaveSample();
 
 	public:
 		Loaded_HB_Data Load(const std::string path, const Sprites::SpriteType spriteType, HBoxType boxType);
@@ -27,8 +26,5 @@ namespace RB::HBox
 
 	public:
 		Collisions::AABB GetAABB(const json_array_s& array, unsigned int index);
-		
-	private:
-		std::string _samplePath;
 	};
 }

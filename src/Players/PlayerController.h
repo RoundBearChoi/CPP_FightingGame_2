@@ -27,6 +27,6 @@ namespace RB::Players
 		iPlayer* GetOtherPlayer(iPlayer* currentPlayer) override;
 
 	private:
-		std::vector<RB::Players::iPlayer*> _vecPlayers;
+		std::vector<Players::iPlayer*> _vecPlayers;
 	};
 }

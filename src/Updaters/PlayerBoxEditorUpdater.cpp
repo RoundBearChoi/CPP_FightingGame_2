@@ -31,7 +31,7 @@ namespace RB::Updaters
 		Players::iPlayer* p0 = playerController->AddPlayer();
 
 		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(Sprites::SpriteType::fighter_0_idle));
-		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
+		p0->SetPosition(Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
 

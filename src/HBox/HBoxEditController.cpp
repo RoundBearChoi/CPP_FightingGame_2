@@ -351,64 +351,57 @@ namespace RB::HBox
 			}
 
 			std::stringstream ss;
-			//std::ofstream file(path);
 
-			//if (file.is_open())
-			//{
-				//start of whole obj
-				ss << "{" << std::endl;
+			//start of whole obj
+			ss << "{" << std::endl;
 
-				const auto& vec_AABB_Sets = data->Get_AABB_Sets();
+			const auto& vec_AABB_Sets = data->Get_AABB_Sets();
 
-				for (auto i = vec_AABB_Sets.begin(); i != vec_AABB_Sets.end(); ++i)
+			for (auto i = vec_AABB_Sets.begin(); i != vec_AABB_Sets.end(); ++i)
+			{
+				AABB_Set* AABBs = (AABB_Set*)&*i;
+				const std::string& frameName = AABBs->GetFrameName();
+
+				ss << "    \"" << frameName << "\":" << std::endl;
+				ss << "    [" << std::endl;
+
+				const auto& vecAABB = AABBs->GetSelector()->GetVector();
+
+				for (auto i = vecAABB.begin(); i != vecAABB.end(); ++i)
 				{
-					AABB_Set* AABBs = (AABB_Set*)&*i;
-					const std::string& frameName = AABBs->GetFrameName();
+					Collisions::AABB aabb = *i;
 
-					ss << "    \"" << frameName << "\":" << std::endl;
-					ss << "    [" << std::endl;
+					ss << "        {" << std::endl;
+					ss << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
+					ss << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
+					ss << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
+					ss << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
 
-					const auto& vecAABB = AABBs->GetSelector()->GetVector();
-
-					for (auto i = vecAABB.begin(); i != vecAABB.end(); ++i)
+					if (i != AABBs->GetSelector()->GetVector().end() - 1)
 					{
-						Collisions::AABB aabb = *i;
-
-						ss << "        {" << std::endl;
-						ss << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
-						ss << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
-						ss << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
-						ss << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
-
-						if (i != AABBs->GetSelector()->GetVector().end() - 1)
-						{
-							ss << "        }," << std::endl;
-						}
-						else
-						{
-							ss << "        }" << std::endl;
-						}
-					}
-
-					//no comma for last frame
-					if (i != vec_AABB_Sets.end() - 1)
-					{
-						ss << "    ]," << std::endl << std::endl;
+						ss << "        }," << std::endl;
 					}
 					else
 					{
-						ss << "    ]" << std::endl;
+						ss << "        }" << std::endl;
 					}
 				}
 
-				//end of whole obj
-				ss << "}";
+				//no comma for last frame
+				if (i != vec_AABB_Sets.end() - 1)
+				{
+					ss << "    ]," << std::endl << std::endl;
+				}
+				else
+				{
+					ss << "    ]" << std::endl;
+				}
+			}
 
-				_writer.WriteToLogFile(path, ss.str(), true); 
+			//end of whole obj
+			ss << "}";
 
-				//file.flush();
-				//file.close();
-			//}
+			_writer.WriteToLogFile(path, ss.str(), true); 
 
 			hbMenuController->ShowNotification();
 		}

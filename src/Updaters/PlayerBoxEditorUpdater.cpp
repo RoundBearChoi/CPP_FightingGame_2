@@ -8,8 +8,6 @@
 #include "../Cam/CamController.h"
 #include "../Input/InputController.h"
 
-#include "../Fighter_0_States/F0_Dummy.h"
-
 namespace RB::Updaters
 {
 	PlayerBoxEditorUpdater::PlayerBoxEditorUpdater()

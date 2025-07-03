@@ -17,8 +17,6 @@
 #include "../Cam/CamController.h"
 #include "../Logger/LogController.h"
 
-//#include "../Fighter_0_States/F0_Idle.h"
-
 namespace RB::Updaters
 {
 	GameplayUpdater::GameplayUpdater()
@@ -46,23 +44,9 @@ namespace RB::Updaters
 		AddController(new Collisions::HitStopController(), Controllers::ControllerType::HITSTOP_CONTROLLER);
 		AddController(new Collisions::AttackSpecsController(), Controllers::ControllerType::ATTACK_SPECS_CONTROLLER);
 		AddController(new Render::VFXAnimationController(), Controllers::ControllerType::VFX_ANIMATION_CONTROLLER);
-
 		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
-		//auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
+		
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
-
-		/*Players::iPlayer* p0 = playerController->AddPlayer();
-		Players::iPlayer* p1 = playerController->AddPlayer();
-
-		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Idle());
-		p0->SetPosition(RB::Vector2{ -150.0f, 0.0f });
-		p0->SetCharacterType(RB::Players::CharacterType::AKU);
-		p0->SetManualAnimationUpdate(false);
-
-		p1->Init(RB::Players::PlayerID::PLAYER_2, new RB::Fighter_0_States::F0_Idle());
-		p1->SetPosition(RB::Vector2{ 150.0f, 0.0f });
-		p1->SetCharacterType(RB::Players::CharacterType::AKU);
-		p1->SetManualAnimationUpdate(false);*/
 
 		camController->AllowManualControl(false);
 

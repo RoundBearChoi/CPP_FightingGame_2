@@ -2,14 +2,20 @@
 
 namespace RB::Cam
 {
+	CamController::CamController(float startZoom, bool allowManualControl)
+	{
+		_startZoom = startZoom;
+		_allowManualControl = allowManualControl;
+	}
+
 	void CamController::Init()
 	{
-		//INIT_CONTROLLER
-		
 		_camObj.Init();
 
 		_followPlayers.Init(&_camObj);
 		_zoomOnPlayers.Init();
+
+		_camObj.SetZoom(_startZoom);
 	}
 
 	void CamController::OnUpdate()

@@ -43,10 +43,7 @@ namespace RB::Updaters
 		AddController(new Collisions::AttackSpecsController(), Controllers::ControllerType::ATTACK_SPECS_CONTROLLER);
 		AddController(new Render::VFXAnimationController(), Controllers::ControllerType::VFX_ANIMATION_CONTROLLER);
 		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
-		
-		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
-
-		camController->AllowManualControl(false);
+		AddController(new Cam::CamController(1.0f, false), Controllers::ControllerType::CAM_CONTROLLER);
 
 		_InitAllControllers();
 	}

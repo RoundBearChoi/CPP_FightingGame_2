@@ -29,6 +29,7 @@ namespace RB::Updaters
 		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
 		AddController(new HBox::HBoxEditController(_boxType), Controllers::ControllerType::HBOX_EDIT_CONTROLLER);
 		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
+		AddController(new Cam::CamController(1.0f, true), Controllers::ControllerType::CAM_CONTROLLER);
 
 		if (_boxType == HBox::HBoxType::TARGET_BOX)
 		{
@@ -40,12 +41,9 @@ namespace RB::Updaters
 		}
 
 		auto hbMenuController = static_cast<HBox::iHBMenuController*>(AddController(new HBox::HBMenuController(), Controllers::ControllerType::HB_MENU_CONTROLLER));
-		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
 		hbMenuController->SetPageTitle(_pageTitle);
 		
-		camController->SetZoom(1.0f);
-
 		_InitAllControllers();
 	}
 

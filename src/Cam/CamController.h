@@ -11,7 +11,7 @@ namespace RB::Cam
 	class CamController : public iCamController
 	{
 	public:
-		CamController() = default;
+		CamController(float startZoom, bool allowManualControl);
 		~CamController() override {};
 
 	public:
@@ -28,5 +28,6 @@ namespace RB::Cam
 		FollowPlayers _followPlayers;
 		ZoomOnPlayers _zoomOnPlayers;
 		bool _allowManualControl = true;
+		float _startZoom = 1.0f;
 	};
 }

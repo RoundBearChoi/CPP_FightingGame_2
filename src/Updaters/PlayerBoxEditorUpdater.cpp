@@ -26,10 +26,7 @@ namespace RB::Updaters
 		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
 		AddController(new Collisions::PlayerBoxEditController(), Controllers::ControllerType::PLAYER_BOX_EDIT_CONTROLLER);
 		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
-
-		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
-		
-		camController->SetZoom(1.0f);
+		AddController(new Cam::CamController(1.0f, true), Controllers::ControllerType::CAM_CONTROLLER);
 
 		_InitAllControllers();
 	}

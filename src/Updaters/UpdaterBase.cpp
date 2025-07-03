@@ -49,6 +49,11 @@ namespace RB::Updaters
         return nullptr;
     }
 
+	UPDATER_TYPE UpdaterBase::GetUpdaterType()
+	{
+		return _updaterType;
+	}
+
     void UpdaterBase::_InitAllControllers()
     {
         for (int i = 0; i < _vecControllers.size(); i++)

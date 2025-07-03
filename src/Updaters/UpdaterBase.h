@@ -20,6 +20,7 @@ namespace RB::Updaters
     public:
         virtual Controllers::iController* AddController(Controllers::iController* controller, Controllers::ControllerType controllerType) override;
         virtual Controllers::iController* GetController(Controllers::ControllerType controllerType) override;
+		virtual UPDATER_TYPE GetUpdaterType() override;
 
     protected:
         virtual void _InitAllControllers();
@@ -28,5 +29,6 @@ namespace RB::Updaters
 
     protected:
         std::vector<Controllers::iController*> _vecControllers;
+		UPDATER_TYPE _updaterType = UPDATER_TYPE::NONE;
     };
 }

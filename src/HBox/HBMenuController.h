@@ -24,7 +24,7 @@ namespace RB::HBox
 	class HBMenuController : public iHBMenuController
 	{
 	public:
-		HBMenuController() = default;
+		HBMenuController(std::string pageTitle);
 		~HBMenuController() override {};
 
 		void Init() override;

@@ -30,8 +30,9 @@ namespace RB::Updaters
 		AddController(new HBox::HBoxEditController(_boxType), Controllers::ControllerType::HBOX_EDIT_CONTROLLER);
 		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
 		AddController(new Cam::CamController(1.0f, true), Controllers::ControllerType::CAM_CONTROLLER);
-
-		if (_boxType == HBox::HBoxType::TARGET_BOX)
+		AddController(new HBox::HBMenuController(_pageTitle), Controllers::ControllerType::HB_MENU_CONTROLLER);
+		
+			if (_boxType == HBox::HBoxType::TARGET_BOX)
 		{
 			AddController(new HBox::TargetBoxDataController(), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
 		}
@@ -40,10 +41,6 @@ namespace RB::Updaters
 			AddController(new HBox::AttackBoxDataController(), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
 		}
 
-		auto hbMenuController = static_cast<HBox::iHBMenuController*>(AddController(new HBox::HBMenuController(), Controllers::ControllerType::HB_MENU_CONTROLLER));
-
-		hbMenuController->SetPageTitle(_pageTitle);
-		
 		_InitAllControllers();
 	}
 

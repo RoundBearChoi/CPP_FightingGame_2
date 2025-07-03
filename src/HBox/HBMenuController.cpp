@@ -5,9 +5,14 @@
 
 namespace RB::HBox
 {
+	HBMenuController::HBMenuController(std::string pageTitle)
+	{
+		_pageTitle = pageTitle;
+	}
+
 	void HBMenuController::Init()
 	{
-		//INIT_CONTROLLER
+
 	}
 
 	void HBMenuController::OnUpdate()

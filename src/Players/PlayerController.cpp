@@ -2,6 +2,8 @@
 
 #include "../Updaters/CurrentPlayground.h"
 
+#include "../Fighter_0_States/F0_Idle.h"
+
 namespace RB::Players
 {
 	PlayerController::~PlayerController()
@@ -17,7 +19,14 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-		std::cout << "init PlayerController.. " << Updaters::ptrCurrentPlayground->GetUpdater()->GetUpdaterType()._to_string() << std::endl; 
+		std::cout << "init PlayerController.. " << Updaters::ptrCurrentPlayground->GetUpdater()->GetUpdaterType()._to_string() << std::endl;
+
+		auto updaterType = Updaters::ptrCurrentPlayground->GetUpdater()->GetUpdaterType();
+
+		if (updaterType._value == Updaters::UPDATER_TYPE::GAMEPLAY_UPDATER)
+		{
+			_InitOnGameplayUpdater();
+		}
 	}
 
 	void PlayerController::OnUpdate()
@@ -93,5 +102,21 @@ namespace RB::Players
 		}
 
 		return nullptr;
+	}
+
+	void PlayerController::_InitOnGameplayUpdater()
+	{
+		Players::iPlayer* p0 = AddPlayer();
+		Players::iPlayer* p1 = AddPlayer();
+
+		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Idle());
+		p0->SetPosition(RB::Vector2{ -150.0f, 0.0f });
+		p0->SetCharacterType(RB::Players::CharacterType::AKU);
+		p0->SetManualAnimationUpdate(false);
+
+		p1->Init(RB::Players::PlayerID::PLAYER_2, new RB::Fighter_0_States::F0_Idle());
+		p1->SetPosition(RB::Vector2{ 150.0f, 0.0f });
+		p1->SetCharacterType(RB::Players::CharacterType::AKU);
+		p1->SetManualAnimationUpdate(false);
 	}
 }

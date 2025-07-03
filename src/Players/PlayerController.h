@@ -20,11 +20,12 @@ namespace RB::Players
 
 	public:
 		iPlayer* AddPlayer() override;
-
-	public:
 		iPlayer* GetPlayer(PlayerID id) override;
 		iPlayer* GetPlayerOnStateMachineID(unsigned int id) override;
 		iPlayer* GetOtherPlayer(iPlayer* currentPlayer) override;
+
+	private:
+		void _InitOnGameplayUpdater();
 
 	private:
 		std::vector<Players::iPlayer*> _vecPlayers;

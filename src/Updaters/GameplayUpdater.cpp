@@ -34,7 +34,7 @@ namespace RB::Updaters
         AddController(new Background::BackgroundController(), Controllers::ControllerType::BACKGROUND_CONTROLLER);
         AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
         AddController(new Render::PlayerAnimationController(), Controllers::ControllerType::PLAYER_ANIMATION_CONTROLLER);
-        AddController(new Collisions::PlayerBoxDataController, Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
+        AddController(new Collisions::PlayerBoxDataController(), Controllers::ControllerType::PLAYER_BOX_DATA_CONTROLLER);
         AddController(new Players::SpecsController(), Controllers::ControllerType::SPECS_CONTROLLER);
         AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Input::SpecialMovesController(), Controllers::ControllerType::SPECIAL_MOVES_CONTROLLER);

@@ -32,7 +32,7 @@ namespace RB::Updaters
 		AddController(new Cam::CamController(1.0f, true), Controllers::ControllerType::CAM_CONTROLLER);
 		AddController(new HBox::HBMenuController(_pageTitle), Controllers::ControllerType::HB_MENU_CONTROLLER);
 		
-			if (_boxType == HBox::HBoxType::TARGET_BOX)
+		if (_boxType == HBox::HBoxType::TARGET_BOX)
 		{
 			AddController(new HBox::TargetBoxDataController(), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
 		}

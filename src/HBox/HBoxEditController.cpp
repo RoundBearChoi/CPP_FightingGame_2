@@ -350,12 +350,13 @@ namespace RB::HBox
 				path = attackBoxDataController->GetPath(data->GetSpriteType());
 			}
 
-			std::ofstream file(path);
+			std::stringstream ss;
+			//std::ofstream file(path);
 
-			if (file.is_open())
-			{
+			//if (file.is_open())
+			//{
 				//start of whole obj
-				file << "{" << std::endl;
+				ss << "{" << std::endl;
 
 				const auto& vec_AABB_Sets = data->Get_AABB_Sets();
 
@@ -364,8 +365,8 @@ namespace RB::HBox
 					AABB_Set* AABBs = (AABB_Set*)&*i;
 					const std::string& frameName = AABBs->GetFrameName();
 
-					file << "    \"" << frameName << "\":" << std::endl;
-					file << "    [" << std::endl;
+					ss << "    \"" << frameName << "\":" << std::endl;
+					ss << "    [" << std::endl;
 
 					const auto& vecAABB = AABBs->GetSelector()->GetVector();
 
@@ -373,39 +374,41 @@ namespace RB::HBox
 					{
 						Collisions::AABB aabb = *i;
 
-						file << "        {" << std::endl;
-						file << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
-						file << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
-						file << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
-						file << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
+						ss << "        {" << std::endl;
+						ss << "        \"posX\" : " << aabb.GetBottomLeft().x << "," << std::endl;
+						ss << "        \"posY\" : " << aabb.GetBottomLeft().y << "," << std::endl;
+						ss << "        \"width\" : " << aabb.GetWidthHeight().x << "," << std::endl;
+						ss << "        \"height\" : " << aabb.GetWidthHeight().y << std::endl;
 
 						if (i != AABBs->GetSelector()->GetVector().end() - 1)
 						{
-							file << "        }," << std::endl;
+							ss << "        }," << std::endl;
 						}
 						else
 						{
-							file << "        }" << std::endl;
+							ss << "        }" << std::endl;
 						}
 					}
 
 					//no comma for last frame
 					if (i != vec_AABB_Sets.end() - 1)
 					{
-						file << "    ]," << std::endl << std::endl;
+						ss << "    ]," << std::endl << std::endl;
 					}
 					else
 					{
-						file << "    ]" << std::endl;
+						ss << "    ]" << std::endl;
 					}
 				}
 
 				//end of whole obj
-				file << "}";
+				ss << "}";
 
-				file.flush();
-				file.close();
-			}
+				_writer.WriteToLogFile(path, ss.str(), true); 
+
+				//file.flush();
+				//file.close();
+			//}
 
 			hbMenuController->ShowNotification();
 		}
@@ -481,23 +484,17 @@ namespace RB::HBox
 			
 			// save current selection
 
-			//std::ofstream file(path);
-
 			std::stringstream ss;
 
-			//if (file.is_open()) {
-				ss << "{" << std::endl;
-				ss << "\"AttackBoxEditorSettings\":" << std::endl;
-				ss << "        {" << std::endl;
-				ss << "            \"sprite enum\" : \"" << nextSpriteType << "\"," << std::endl;
-				ss << "            \"other shit\" : \"shit\"" << std::endl;
-				ss << "        }" << std::endl;
-				ss << "}" << std::endl;
+			ss << "{" << std::endl;
+			ss << "\"AttackBoxEditorSettings\":" << std::endl;
+			ss << "        {" << std::endl;
+			ss << "            \"sprite enum\" : \"" << nextSpriteType << "\"," << std::endl;
+			ss << "            \"other shit\" : \"shit\"" << std::endl;
+			ss << "        }" << std::endl;
+			ss << "}" << std::endl;
 
-				_writer.WriteToLogFile(path, ss.str(), true);
-
-				//file.close();
-			//}
+			_writer.WriteToLogFile(path, ss.str(), true);
 
 			// reload updater
 			if (upCycle || downCycle)

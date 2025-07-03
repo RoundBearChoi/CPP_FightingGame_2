@@ -11,6 +11,8 @@
 #include "iHBoxEditController.h"
 #include "iTargetBoxDataController.h"
 
+#include "../Writer.h"
+
 #include "../Time.h"
 #include "../Vector2.h"
 #include "../Players/PlayerID.h"
@@ -49,5 +51,6 @@ namespace RB::HBox
 	private:
 		HBox::HBoxType _boxType = HBox::HBoxType::NONE;
 		Render::CircleRenderer _circleRenderer;
+		RB::Writer _writer;
 	};
 }

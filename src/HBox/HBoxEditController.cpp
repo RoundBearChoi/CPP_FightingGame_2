@@ -481,19 +481,23 @@ namespace RB::HBox
 			
 			// save current selection
 
-			std::ofstream file(path);
+			//std::ofstream file(path);
 
-			if (file.is_open()) {
-				file << "{" << std::endl;
-				file << "\"AttackBoxEditorSettings\":" << std::endl;
-				file << "        {" << std::endl;
-				file << "            \"sprite enum\" : \"" << nextSpriteType << "\"," << std::endl;
-				file << "            \"other shit\" : \"shit\"" << std::endl;
-				file << "        }" << std::endl;
-				file << "}" << std::endl;
+			std::stringstream ss;
 
-				file.close();
-			}
+			//if (file.is_open()) {
+				ss << "{" << std::endl;
+				ss << "\"AttackBoxEditorSettings\":" << std::endl;
+				ss << "        {" << std::endl;
+				ss << "            \"sprite enum\" : \"" << nextSpriteType << "\"," << std::endl;
+				ss << "            \"other shit\" : \"shit\"" << std::endl;
+				ss << "        }" << std::endl;
+				ss << "}" << std::endl;
+
+				_writer.WriteToLogFile(path, ss.str(), true);
+
+				//file.close();
+			//}
 
 			// reload updater
 			if (upCycle || downCycle)

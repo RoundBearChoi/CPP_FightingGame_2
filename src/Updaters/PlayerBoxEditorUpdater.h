@@ -7,7 +7,7 @@ namespace RB::Updaters
 	class PlayerBoxEditorUpdater : public UpdaterBase
 	{
 	public:
-		PlayerBoxEditorUpdater() = default;
+		PlayerBoxEditorUpdater();
 		~PlayerBoxEditorUpdater() override;
 
 		void Init() override;

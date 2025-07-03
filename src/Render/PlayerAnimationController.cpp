@@ -158,36 +158,4 @@ namespace RB::Render
 	{
 		return _animationContainer.GetSpriteType(playerID);
 	}
-
-	/*void PlayerAnimationController::_SaveAnimationSpecs(std::string path, AnimationSpecs specs)
-	{
-		std::ofstream file(path);
-
-		std::string name = "player0 animation specs";
-
-		if (file.is_open())
-		{
-			//start
-			file << "{" << std::endl;
-
-			//start of parent element
-			file << "    \"" << name << "\":" << std::endl;
-
-			file << "        {" << std::endl;
-			file << "        \"mX_TileCount\" : " << specs.mX_TileCount << "," << std::endl; //element inside element
-			file << "        \"mY_TileCount\" : " << specs.mY_TileCount << "," << std::endl;
-			file << "        \"mTotalSprites\" : " << specs.mTotalSprites << "," << std::endl;
-			file << "        \"mSkipFixedUpdates\" : " << specs.mSkipFixedUpdates << "," << std::endl;
-			file << "        \"mPlayOnce\" : " << (specs.mPlayOnce ? 1 : 0) << std::endl;
-			
-			//end of parent element
-			file << "        }" << std::endl;
-
-			//end
-			file << "}";
-
-			file.flush();
-			file.close();
-		}
-	}*/
 }

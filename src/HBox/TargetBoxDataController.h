@@ -14,7 +14,7 @@ namespace RB::HBox
 	class TargetBoxDataController : public iTargetBoxDataController
 	{
 	public:
-		TargetBoxDataController(std::string dir);
+		TargetBoxDataController();
 		~TargetBoxDataController() override {};
 
 		void Init() override;

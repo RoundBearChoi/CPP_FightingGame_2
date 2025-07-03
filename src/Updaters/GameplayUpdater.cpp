@@ -38,8 +38,8 @@ namespace RB::Updaters
         AddController(new Players::SpecsController(), Controllers::ControllerType::SPECS_CONTROLLER);
         AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Input::SpecialMovesController(), Controllers::ControllerType::SPECIAL_MOVES_CONTROLLER);
-		AddController(new HBox::TargetBoxDataController("../resource/TargetBoxSpecs/"), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
-		AddController(new HBox::AttackBoxDataController("../resource/AttackBoxSpecs/"), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
+		AddController(new HBox::TargetBoxDataController(), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
+		AddController(new HBox::AttackBoxDataController(), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
 		AddController(new Collisions::AttackRegisterController(), Controllers::ControllerType::ATTACK_REGISTER_CONTROLLER);
 		AddController(new Collisions::HitStopController(), Controllers::ControllerType::HITSTOP_CONTROLLER);
 		AddController(new Collisions::AttackSpecsController(), Controllers::ControllerType::ATTACK_SPECS_CONTROLLER);

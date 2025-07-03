@@ -14,7 +14,7 @@ namespace RB::HBox
 	class AttackBoxDataController : public iAttackBoxDataController
 	{
 	public:
-		AttackBoxDataController(std::string dir);
+		AttackBoxDataController();
 		~AttackBoxDataController() override {};
 
 		void Init() override;

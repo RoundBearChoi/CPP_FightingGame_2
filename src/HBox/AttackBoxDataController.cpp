@@ -2,9 +2,10 @@
 
 namespace RB::HBox
 {
-	AttackBoxDataController::AttackBoxDataController(std::string dir)
+	AttackBoxDataController::AttackBoxDataController()
 	{
-		_hbContainer.SetDir(dir, HBoxType::ATTACK_BOX);
+		std::string specsPath = "../resource/AttackBoxSpecs/";
+		_hbContainer.SetDir(specsPath, HBoxType::ATTACK_BOX);
 	}
 
 	void AttackBoxDataController::Init()

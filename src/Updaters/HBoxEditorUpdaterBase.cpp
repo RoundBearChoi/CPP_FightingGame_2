@@ -34,11 +34,11 @@ namespace RB::Updaters
 
 		if (_boxType == HBox::HBoxType::TARGET_BOX)
 		{
-			AddController(new HBox::TargetBoxDataController(_specsPath), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
+			AddController(new HBox::TargetBoxDataController(), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
 		}
 		else if (_boxType == HBox::HBoxType::ATTACK_BOX)
 		{
-			AddController(new HBox::AttackBoxDataController(_specsPath), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
+			AddController(new HBox::AttackBoxDataController(), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
 		}
 
 		auto hbMenuController = static_cast<HBox::iHBMenuController*>(AddController(new HBox::HBMenuController(), Controllers::ControllerType::HB_MENU_CONTROLLER));

@@ -7,10 +7,10 @@ namespace RB::HBox
 	{
 		_samplePath = path;
 
-		SaveSample();
+		//SaveSample();
 	}
 
-	void HBoxLoader::SaveSample()
+	/*void HBoxLoader::SaveSample()
 	{
 		std::ofstream file(_samplePath);
 
@@ -91,7 +91,7 @@ namespace RB::HBox
 			file.flush();
 			file.close();
 		}
-	}
+	}*/
 
 	// only use during initialization (vector addresses)
 	Loaded_HB_Data HBoxLoader::Load(const std::string path, const Sprites::SpriteType spriteType, HBoxType boxType)

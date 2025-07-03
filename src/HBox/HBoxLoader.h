@@ -18,7 +18,7 @@ namespace RB::HBox
 
 	public:
 		void InitSample(std::string path);
-		void SaveSample();
+		//void SaveSample();
 
 	public:
 		Loaded_HB_Data Load(const std::string path, const Sprites::SpriteType spriteType, HBoxType boxType);

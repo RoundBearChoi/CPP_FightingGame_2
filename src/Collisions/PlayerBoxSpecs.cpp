@@ -101,41 +101,37 @@ namespace RB::Collisions
 			return;
 		}
 
-		std::ofstream file(_path);
+		auto* vec = _selector.GetVector_ptr();
 
-		if (file.is_open())
+		std::stringstream ss;
+		
+		ss << "{" << std::endl;
+
+		for (auto i = vec->begin(); i != vec->end(); i++)
 		{
-			auto* vec = _selector.GetVector_ptr();
+			ss << "    \"frame_" << i->mFrame << "\":" << std::endl;
+			ss << "    [" << std::endl;
+			ss << "        {" << std::endl;
+			ss << "        \"offsetX\" : " << i->mOffsetX << "," << std::endl;
+			ss << "        \"offsetY\" : " << i->mOffsetY << "," << std::endl;
+			ss << "        \"width\" : " << i->mWidth << "," << std::endl;
+			ss << "        \"height\" : " << i->mHeight << std::endl;
+			ss << "        }" << std::endl;
 
-			file << "{" << std::endl;
-
-			for (auto i = vec->begin(); i != vec->end(); i++)
+			if (i != vec->end() - 1)
 			{
-				file << "    \"frame_" << i->mFrame << "\":" << std::endl;
-				file << "    [" << std::endl;
-				file << "        {" << std::endl;
-				file << "        \"offsetX\" : " << i->mOffsetX << "," << std::endl;
-				file << "        \"offsetY\" : " << i->mOffsetY << "," << std::endl;
-				file << "        \"width\" : " << i->mWidth << "," << std::endl;
-				file << "        \"height\" : " << i->mHeight << std::endl;
-				file << "        }" << std::endl;
-
-				if (i != vec->end() - 1)
-				{
-					file << "    ]," << std::endl << std::endl;
-				}
-				else
-				{
-					file << "    ]" << std::endl;
-				}
+				ss << "    ]," << std::endl << std::endl;
 			}
-
-			file << "}";
-
-			file.flush();
-			file.close();
-
-			_notification.AddFrameCount(120);
+			else
+			{
+				ss << "    ]" << std::endl;
+			}
 		}
+
+		ss << "}";
+
+		_writer.WriteToLogFile(_path, ss.str(), true);
+
+		_notification.AddFrameCount(120);
 	}
 }

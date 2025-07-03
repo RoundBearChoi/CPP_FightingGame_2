@@ -1,6 +1,9 @@
 #pragma once
 
+#include <iostream>
 #include <string>
+#include <sstream>
+#include <fstream>
 
 #include "PlayerBox.h"
 
@@ -9,6 +12,7 @@
 #include "../Render/Notification.h"
 
 #include "../iSelector.h"
+#include "../Writer.h"
 
 namespace RB::Collisions
 {
@@ -38,5 +42,6 @@ namespace RB::Collisions
 		Sprites::SpriteType _spriteType = Sprites::SpriteType::NONE;
 		const Collisions::PlayerBox _emptyBox{ 0, 0.0f, 0.0f, 0.0f, 0.0f };
 		Render::Notification _notification;
+		RB::Writer _writer;
 	};
 }

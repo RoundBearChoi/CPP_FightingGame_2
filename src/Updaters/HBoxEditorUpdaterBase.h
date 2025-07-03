@@ -19,7 +19,6 @@ namespace RB::Updaters
 		void OnFixedUpdate() override;
 
 	protected:
-		std::string _settingsPath = "";
 		std::string _specsPath = "";
 		RB::HBox::HBoxType _boxType = RB::HBox::HBoxType::NONE;
 		std::string _pageTitle = "HBoxEditor";

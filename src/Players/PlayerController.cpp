@@ -1,5 +1,7 @@
 #include "PlayerController.h"
 
+#include "../Updaters/CurrentPlayground.h"
+
 namespace RB::Players
 {
 	PlayerController::~PlayerController()
@@ -15,7 +17,7 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-		//INIT_CONTROLLER
+		std::cout << "init PlayerController.. " << Updaters::ptrCurrentPlayground->GetUpdater()->GetUpdaterType()._to_string() << std::endl; 
 	}
 
 	void PlayerController::OnUpdate()

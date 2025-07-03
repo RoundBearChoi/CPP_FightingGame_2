@@ -7,7 +7,7 @@ namespace RB::Updaters
 	class GameplayUpdater : public UpdaterBase
 	{
 	public:
-		GameplayUpdater() = default;
+		GameplayUpdater();
 		~GameplayUpdater() override;
 
 		void Init() override;

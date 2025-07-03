@@ -21,9 +21,14 @@
 
 namespace RB::Updaters
 {
+	GameplayUpdater::GameplayUpdater()
+	{
+		_updaterType = UPDATER_TYPE::GAMEPLAY_UPDATER;
+	}
+
 	GameplayUpdater::~GameplayUpdater()
 	{
-		
+
 	}
 
 	void GameplayUpdater::Init()

@@ -26,6 +26,7 @@ namespace RB::Players
 
 	private:
 		void _InitOnGameplayUpdater();
+		void _InitOnHBoxEditorUpdater();
 
 	private:
 		std::vector<Players::iPlayer*> _vecPlayers;

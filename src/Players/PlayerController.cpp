@@ -119,4 +119,10 @@ namespace RB::Players
 		p1->SetCharacterType(RB::Players::CharacterType::AKU);
 		p1->SetManualAnimationUpdate(false);
 	}
+
+	void PlayerController::_InitOnHBoxEditorUpdater()
+	{
+		auto p0 = AddPlayer();
+
+	}
 }

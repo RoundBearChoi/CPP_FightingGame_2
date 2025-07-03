@@ -11,7 +11,7 @@ namespace RB::Updaters
 	class HBoxEditorUpdaterBase : public UpdaterBase
 	{
 	public:
-		HBoxEditorUpdaterBase() = default;
+		HBoxEditorUpdaterBase();
 		~HBoxEditorUpdaterBase() override;
 
 		void Init() override;

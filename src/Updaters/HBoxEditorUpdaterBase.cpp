@@ -17,6 +17,11 @@
 
 namespace RB::Updaters
 {
+	HBoxEditorUpdaterBase::HBoxEditorUpdaterBase()
+	{
+
+	}
+
 	HBoxEditorUpdaterBase::~HBoxEditorUpdaterBase()
 	{
 		
@@ -30,11 +35,11 @@ namespace RB::Updaters
 		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
 		AddController(new HBox::HBoxEditController(_boxType), Controllers::ControllerType::HBOX_EDIT_CONTROLLER);
 
-		if (_boxType == RB::HBox::HBoxType::TARGET_BOX)
+		if (_boxType == HBox::HBoxType::TARGET_BOX)
 		{
 			AddController(new HBox::TargetBoxDataController(_specsPath), Controllers::ControllerType::TARGET_BOX_DATA_CONTROLLER);
 		}
-		else if (_boxType == RB::HBox::HBoxType::ATTACK_BOX)
+		else if (_boxType == HBox::HBoxType::ATTACK_BOX)
 		{
 			AddController(new HBox::AttackBoxDataController(_specsPath), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
 		}
@@ -44,11 +49,11 @@ namespace RB::Updaters
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
 
 		Players::iPlayer* p0 = playerController->AddPlayer();
-		Sprites::SpriteType spriteType = RB::Sprites::LoadSpriteType(_settingsPath);
+		Sprites::SpriteType spriteType = Sprites::LoadSpriteType(_settingsPath);
 
-		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Dummy(spriteType));
+		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
 		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
-		p0->SetCharacterType(RB::Players::CharacterType::AKU);
+		p0->SetCharacterType(Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
 
 		hbMenuController->SetPageTitle(_pageTitle);

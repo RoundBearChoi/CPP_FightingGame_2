@@ -12,6 +12,9 @@ namespace RB::Updaters
 		
 		GAMEPLAY_UPDATER,
 
+		ATTACK_BOX_EDITOR_UPDATER,
+		TARGET_BOX_EDITOR_UPDATER,
+
 		COUNT
 	)
 }

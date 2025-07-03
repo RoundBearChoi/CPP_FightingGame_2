@@ -2,7 +2,10 @@
 
 #include "../Updaters/CurrentPlayground.h"
 
+#include "../Sprites/SpriteTypeLoader.h"
+
 #include "../Fighter_0_States/F0_Idle.h"
+#include "../Fighter_0_States/F0_Dummy.h"
 
 namespace RB::Players
 {
@@ -19,13 +22,19 @@ namespace RB::Players
 
 	void PlayerController::Init()
 	{
-		std::cout << "init PlayerController.. " << Updaters::ptrCurrentPlayground->GetUpdater()->GetUpdaterType()._to_string() << std::endl;
-
 		auto updaterType = Updaters::ptrCurrentPlayground->GetUpdater()->GetUpdaterType();
 
 		if (updaterType._value == Updaters::UPDATER_TYPE::GAMEPLAY_UPDATER)
 		{
 			_InitOnGameplayUpdater();
+		}
+		else if (updaterType._value == Updaters::UPDATER_TYPE::ATTACK_BOX_EDITOR_UPDATER)
+		{
+			_InitOnAttackBoxEditorUpdater();
+		}
+		else if (updaterType._value == Updaters::UPDATER_TYPE::TARGET_BOX_EDITOR_UPDATER)
+		{
+			_InitOnTargetBoxEditorUpdater();
 		}
 	}
 
@@ -109,20 +118,37 @@ namespace RB::Players
 		Players::iPlayer* p0 = AddPlayer();
 		Players::iPlayer* p1 = AddPlayer();
 
-		p0->Init(RB::Players::PlayerID::PLAYER_1, new RB::Fighter_0_States::F0_Idle());
+		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Idle());
 		p0->SetPosition(RB::Vector2{ -150.0f, 0.0f });
-		p0->SetCharacterType(RB::Players::CharacterType::AKU);
+		p0->SetCharacterType(Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(false);
 
-		p1->Init(RB::Players::PlayerID::PLAYER_2, new RB::Fighter_0_States::F0_Idle());
+		p1->Init(Players::PlayerID::PLAYER_2, new Fighter_0_States::F0_Idle());
 		p1->SetPosition(RB::Vector2{ 150.0f, 0.0f });
-		p1->SetCharacterType(RB::Players::CharacterType::AKU);
+		p1->SetCharacterType(Players::CharacterType::AKU);
 		p1->SetManualAnimationUpdate(false);
 	}
-
-	void PlayerController::_InitOnHBoxEditorUpdater()
+	
+	void PlayerController::_InitOnAttackBoxEditorUpdater()
 	{
 		auto p0 = AddPlayer();
+		auto spriteType = Sprites::LoadSpriteType(_attackBoxEditorSpritePath);
 
+		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
+		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
+		p0->SetCharacterType(Players::CharacterType::AKU);
+		p0->SetManualAnimationUpdate(true);
+	}
+
+	void PlayerController::_InitOnTargetBoxEditorUpdater()
+	{
+
+		auto p0 = AddPlayer();
+		auto spriteType = Sprites::LoadSpriteType(_targetBoxEditorSpritePath);
+
+		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
+		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
+		p0->SetCharacterType(Players::CharacterType::AKU);
+		p0->SetManualAnimationUpdate(true);
 	}
 }

@@ -26,9 +26,11 @@ namespace RB::Players
 
 	private:
 		void _InitOnGameplayUpdater();
-		void _InitOnHBoxEditorUpdater();
-
+		void _InitOnAttackBoxEditorUpdater();
+		void _InitOnTargetBoxEditorUpdater();
 	private:
 		std::vector<Players::iPlayer*> _vecPlayers;
+		std::string _attackBoxEditorSpritePath = "../resource/EditorSettings/AttackBoxSettings.editorSettings";
+		std::string _targetBoxEditorSpritePath = "../resource/EditorSettings/TargetBoxSettings.editorSettings";
 	};
 }

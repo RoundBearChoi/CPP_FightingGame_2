@@ -1,7 +1,5 @@
 #include "HBoxEditorUpdaterBase.h"
 
-#include "../Sprites/SpriteTypeLoader.h"
-
 #include "../Input/InputController.h"
 #include "../Cam/CamController.h"
 #include "../Players/PlayerController.h"
@@ -12,8 +10,6 @@
 #include "../HBox/TargetBoxDataController.h"
 #include "../HBox/AttackBoxDataController.h"
 #include "../HBox/HBoxEditController.h"
-
-#include "../Fighter_0_States/F0_Dummy.h"
 
 namespace RB::Updaters
 {
@@ -34,6 +30,7 @@ namespace RB::Updaters
 		AddController(new Input::InputController(), Controllers::ControllerType::INPUT_CONTROLLER);
 		AddController(new Render::PlayerDebugController(), Controllers::ControllerType::PLAYER_DEBUG_CONTROLLER);
 		AddController(new HBox::HBoxEditController(_boxType), Controllers::ControllerType::HBOX_EDIT_CONTROLLER);
+		AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER);
 
 		if (_boxType == HBox::HBoxType::TARGET_BOX)
 		{
@@ -44,17 +41,8 @@ namespace RB::Updaters
 			AddController(new HBox::AttackBoxDataController(_specsPath), Controllers::ControllerType::ATTACK_BOX_DATA_CONTROLLER);
 		}
 
-		auto playerController = static_cast<Players::iPlayerController*>(AddController(new Players::PlayerController(), Controllers::ControllerType::PLAYER_CONTROLLER));
 		auto hbMenuController = static_cast<HBox::iHBMenuController*>(AddController(new HBox::HBMenuController(), Controllers::ControllerType::HB_MENU_CONTROLLER));
 		auto camController = static_cast<Cam::iCamController*>(AddController(new Cam::CamController(), Controllers::ControllerType::CAM_CONTROLLER));
-
-		Players::iPlayer* p0 = playerController->AddPlayer();
-		Sprites::SpriteType spriteType = Sprites::LoadSpriteType(_settingsPath);
-
-		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
-		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
-		p0->SetCharacterType(Players::CharacterType::AKU);
-		p0->SetManualAnimationUpdate(true);
 
 		hbMenuController->SetPageTitle(_pageTitle);
 		

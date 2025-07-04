@@ -13,11 +13,11 @@ namespace RB::Render
 		~ManualAnimationUpdater() = default;
 
 	public:
-		void OnEnter(RB::Sprites::SpriteType spriteType);
+		void OnEnter(Sprites::SpriteType spriteType);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 	private:
-		RB::Sprites::SpriteType _spriteType = RB::Sprites::SpriteType::NONE;
+		Sprites::SpriteType _spriteType = Sprites::SpriteType::NONE;
 	};
 }

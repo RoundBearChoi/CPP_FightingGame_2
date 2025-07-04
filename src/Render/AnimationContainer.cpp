@@ -87,12 +87,12 @@ namespace RB::Render
 		specs.mSkipFixedUpdates = skipFixedUpdates;
 		specs.mRenderScale = renderScale;
 		specs.mPlayOnce = playOnce;
-		specs.mSpriteType = RB::Sprites::SpriteType::_from_string(strEnum.c_str());
+		specs.mSpriteType = Sprites::SpriteType::_from_string(strEnum.c_str());
 
 		return specs;
 	}
 
-	RB::Sprites::LoadedSprite* AnimationContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
+	Sprites::LoadedSprite* AnimationContainer::LoadSprite(std::string path, Sprites::SpriteType spriteType)
 	{
 		return _spriteContainer.LoadSprite(path, spriteType);
 	}
@@ -151,7 +151,7 @@ namespace RB::Render
 		return next;
 	}
 
-	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, RB::Sprites::SpriteType spriteType)
+	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -178,7 +178,7 @@ namespace RB::Render
 	}
 
 	// raw pointer, make sure to delete
-	iAnimationObj* AnimationContainer::InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType)
+	iAnimationObj* AnimationContainer::InstantiateNewAnimationObj(RB::Players::iPlayer& player, Sprites::SpriteType spriteType, Sprites::PivotType pivotType)
 	{
 		AnimationRenderer* renderer = GetAnimationRenderer(spriteType);
 
@@ -187,7 +187,7 @@ namespace RB::Render
 		return animationObj;
 	}
 
-	RB::Sprites::SpriteType AnimationContainer::GetSpriteType(RB::Players::PLAYER_TYPE playerID)
+	Sprites::SpriteType AnimationContainer::GetSpriteType(RB::Players::PLAYER_TYPE playerID)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -195,14 +195,14 @@ namespace RB::Render
 			{
 				if ((*i)->GetPlayer()->GetPLAYER_TYPE() == playerID)
 				{
-					RB::Sprites::SpriteType spriteType = (*i)->GetAnimationSpecs().mSpriteType;
+					Sprites::SpriteType spriteType = (*i)->GetAnimationSpecs().mSpriteType;
 
 					return spriteType;
 				}
 			}
 		}
 
-		return RB::Sprites::SpriteType::NONE;
+		return Sprites::SpriteType::NONE;
 	}
 
 	void AnimationContainer::AddNewAnimation(iAnimationObj* animationObj)
@@ -215,7 +215,7 @@ namespace RB::Render
 		return _vecCurrentAnimations;
 	}
 
-	AnimationRenderer* AnimationContainer::GetAnimationRenderer(RB::Sprites::SpriteType spriteType)
+	AnimationRenderer* AnimationContainer::GetAnimationRenderer(Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecAnimationRenderers.begin(); i != _vecAnimationRenderers.end(); i++)
 		{

@@ -16,14 +16,14 @@ namespace RB::Render
 		~PlayerBoxRenderer() = default;
 
 	public:
-		void Init(RB::Sprites::SpriteContainer* spriteContainer);
+		void Init(Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 
 		void RenderPlayerBox(bool render);
 
 	private:
-		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
+		Sprites::SpriteContainer* _spriteContainer = nullptr;
 		bool _renderPlayerBox = true;
 	};
 }

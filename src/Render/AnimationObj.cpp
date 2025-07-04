@@ -4,7 +4,7 @@
 
 namespace RB::Render
 {
-	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, RB::Sprites::PivotType pivotType)
+	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, Sprites::PivotType pivotType)
 	{
 		//std::cout << "constructing AnimationObj: " << animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << owner->GetPLAYER_TYPE_int() << std::endl;
 
@@ -177,7 +177,7 @@ namespace RB::Render
 			return;
 		}
 
-		if (_animationRenderer->GetAnimationSpecs().mSpriteType._value == RB::Sprites::SpriteType::NONE)
+		if (_animationRenderer->GetAnimationSpecs().mSpriteType._value == Sprites::SpriteType::NONE)
 		{
 			return;
 		}

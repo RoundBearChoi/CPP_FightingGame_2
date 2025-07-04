@@ -19,9 +19,9 @@ namespace RB::Render
 
 		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading fighter 0 sprites");  
 
-		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{
-			RB::Sprites::SpriteType spriteType = RB::Sprites::SpriteType::_from_index(i);
+			Sprites::SpriteType spriteType = Sprites::SpriteType::_from_index(i);
 			std::string str = spriteType._to_string();
 			std::string path = "../resource/PNG files/Aku/" + str + ".png";
 			_animationContainer.LoadSprite(path, spriteType);
@@ -29,9 +29,9 @@ namespace RB::Render
 
 		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 aniSpecs");  
 
-		for (int i = RB::Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < RB::Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{
-			RB::Sprites::SpriteType spriteType = RB::Sprites::SpriteType::_from_index(i);
+			Sprites::SpriteType spriteType = Sprites::SpriteType::_from_index(i);
 			std::string str = spriteType._to_string();
 			std::string path = "../resource/AnimationSpecs/" + str + ".aniSpecs";
 			_animationContainer.LoadAnimation(path);
@@ -60,7 +60,7 @@ namespace RB::Render
 		_animationContainer.DeleteAnimationObjs(playerID);
 	}
 
-	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, RB::Sprites::SpriteType spriteType)
+	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType)
 	{
 		return _animationContainer.GetCurrentAnimationObj(playerID, spriteType);
 	}

@@ -30,7 +30,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
+		Sprites::SpriteType spriteType = state->GetSpriteType();
 
 		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 

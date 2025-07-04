@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-    void Player_HP_Renderer::Init(RB::Sprites::SpriteContainer* spriteContainer)
+    void Player_HP_Renderer::Init(Sprites::SpriteContainer* spriteContainer)
 	{
 		_spriteContainer = spriteContainer;
 	}
@@ -40,19 +40,19 @@ namespace RB::Render
 
         float center_x = (512.0f * 0.5f);
         
-        RB::Sprites::PivotType pivotType = RB::Sprites::PivotType::NONE;
+        Sprites::PivotType pivotType = Sprites::PivotType::NONE;
         EaseCalculator* calculator = nullptr;
 
         if (playerID._value == RB::Players::PLAYER_TYPE::PLAYER_1)
         {
             center_x -= center_x_margin;
-            pivotType = RB::Sprites::PivotType::BOTTOM_RIGHT;
+            pivotType = Sprites::PivotType::BOTTOM_RIGHT;
             calculator = &_p1_calculator;
         }
         else if (playerID._value == RB::Players::PLAYER_TYPE::PLAYER_2)
         {
             center_x += center_x_margin;
-            pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
+            pivotType = Sprites::PivotType::BOTTOM_LEFT;
             calculator = &_p2_calculator;
         }
 
@@ -64,7 +64,7 @@ namespace RB::Render
         }
 
         _spriteContainer->RenderSprite(
-			RB::Sprites::SpriteType::player_hp_bar_white, 
+			Sprites::SpriteType::player_hp_bar_white, 
 			bar_x_size * barPercentage,
 			bar_y_size,
 			RB::Vector2{ center_x, top_y_margin },

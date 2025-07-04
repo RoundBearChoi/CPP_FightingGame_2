@@ -11,8 +11,8 @@ namespace RB::HBox
 	class iAttackBoxDataController : public Controllers::ControllerBase
 	{
 	public:
-		virtual Loaded_HB_Data* GetData(RB::Sprites::SpriteType spriteType) = 0;
-		virtual Loaded_HB_Data* CreateData(RB::Sprites::SpriteType spriteType) = 0;
-		virtual std::string GetPath(RB::Sprites::SpriteType spriteType) = 0;
+		virtual Loaded_HB_Data* GetData(Sprites::SpriteType spriteType) = 0;
+		virtual Loaded_HB_Data* CreateData(Sprites::SpriteType spriteType) = 0;
+		virtual std::string GetPath(Sprites::SpriteType spriteType) = 0;
 	};
 }

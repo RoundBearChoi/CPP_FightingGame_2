@@ -23,7 +23,7 @@ namespace RB::Render
 	{
 		auto camController = GET_CAM_CONTROLLER;
 
-		if (_animationSpecs.mSpriteType._value == RB::Sprites::SpriteType::NONE)
+		if (_animationSpecs.mSpriteType._value == Sprites::SpriteType::NONE)
 		{
 			return;
 		}
@@ -48,12 +48,12 @@ namespace RB::Render
 		float height = renderSettings.mSourceSize.y * renderSettings.mRenderScale * zoom;
 
 		// get quads
-		std::array<RB::Vector2, 4> points = RB::Sprites::GetQuadOnPivot(renderSettings.mPivotType, width, height, { x, y });
+		std::array<RB::Vector2, 4> points = Sprites::GetQuadOnPivot(renderSettings.mPivotType, width, height, { x, y });
 
 		// flip if necessary
 		if (!renderSettings.mFaceRight)
 		{
-			points = RB::Sprites::FlipQuad(renderSettings.mPivotType, points);
+			points = Sprites::FlipQuad(renderSettings.mPivotType, points);
 		}
 
 		// rotate
@@ -71,7 +71,7 @@ namespace RB::Render
 			}
 
 			//std::cout << "rotating quad by " << renderSettings.mRotation << std::endl;
-			points = RB::Sprites::RotateQuad(points, r);
+			points = Sprites::RotateQuad(points, r);
 		}
 
 		// convert to vf2d

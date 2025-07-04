@@ -2,11 +2,11 @@
 
 namespace RB::Sprites
 {
-	std::array<RB::Vector2, 4> FlipQuad(RB::Sprites::PivotType pivotType, std::array<RB::Vector2, 4> arr)
+	std::array<RB::Vector2, 4> FlipQuad(Sprites::PivotType pivotType, std::array<RB::Vector2, 4> arr)
 	{
 		std::array<RB::Vector2, 4> flipped;
 
-		if (pivotType == RB::Sprites::PivotType::BOTTOM_CENTER || pivotType == RB::Sprites::PivotType::CENTER)
+		if (pivotType == Sprites::PivotType::BOTTOM_CENTER || pivotType == Sprites::PivotType::CENTER)
 		{
 			flipped[0] = arr[3];
 			flipped[1] = arr[2];
@@ -17,9 +17,9 @@ namespace RB::Sprites
 		return flipped;
 	}
 
-	Vector2 GetCenter(std::array<RB::Vector2, 4> arr)
+	RB::Vector2 GetCenter(std::array<RB::Vector2, 4> arr)
 	{
-		Vector2 center;
+		RB::Vector2 center;
 
 		center.x = (arr[0].x + arr[1].x + arr[2].x + arr[3].x) / 4.0f;
 		center.y = (arr[0].y + arr[1].y + arr[2].y + arr[3].y) / 4.0f;
@@ -27,7 +27,7 @@ namespace RB::Sprites
 		return center;
 	}
 
-	Vector2 RotatePoint(Vector2 center, Vector2 point, float angle)
+	RB::Vector2 RotatePoint(RB::Vector2 center, RB::Vector2 point, float angle)
 	{
 		float radians = angle * (RB_PI / 180.0f);
 
@@ -35,27 +35,27 @@ namespace RB::Sprites
 		float c = cosf(radians);
 
 		// translate point back to origin:
-		Vector2 vec = point - center;
+		RB::Vector2 vec = point - center;
 
 		// rotate point
 		float x = vec.x * c - vec.y * s;
 		float y = vec.x * s + vec.y * c;
 
 		// translate point back:
-		Vector2 result;
+		RB::Vector2 result;
 		result.x = x + center.x;
 		result.y = y + center.y;
 
 		return result;
 	}
 
-	std::array<Vector2, 4> RotateQuad(std::array<Vector2, 4>arr, float angle)
+	std::array<RB::Vector2, 4> RotateQuad(std::array<RB::Vector2, 4>arr, float angle)
 	{
 		// temp - assuming center pivot for now
 		
-		Vector2 center = GetCenter(arr);
+		RB::Vector2 center = GetCenter(arr);
 
-		std::array<Vector2, 4> quad;
+		std::array<RB::Vector2, 4> quad;
 
 		quad[0] = RotatePoint(center, arr[0], angle);
 		quad[1] = RotatePoint(center, arr[1], angle);

@@ -18,7 +18,7 @@ namespace RB::Render
 		~Player_HP_Renderer() = default;
 
 	public:
-		void Init(RB::Sprites::SpriteContainer* spriteContainer);
+		void Init(Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 		void RenderHP(bool render);
@@ -30,7 +30,7 @@ namespace RB::Render
 		EaseCalculator _p2_calculator;
 
 	private:
-		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
+		Sprites::SpriteContainer* _spriteContainer = nullptr;
 		bool _render = true;
 	};
 }

@@ -24,21 +24,21 @@ namespace RB::Render
 
 	public:
 		AnimationSpecs LoadAnimationSpecsFromJSON(std::string path);
-		RB::Sprites::LoadedSprite* LoadSprite(std::string path, RB::Sprites::SpriteType spriteType);
+		Sprites::LoadedSprite* LoadSprite(std::string path, Sprites::SpriteType spriteType);
 		AnimationRenderer* LoadAnimation(std::string specsPath);
 		void DeleteAnimationObjs(RB::Players::PLAYER_TYPE playerID);
 		std::vector<iAnimationObj*>::const_iterator DeleteAnimationObj(std::vector<iAnimationObj*>::const_iterator& it);
-		iAnimationObj* GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, RB::Sprites::SpriteType spriteType);
+		iAnimationObj* GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType);
 		iAnimationObj* GetCurrentAnimationObj(unsigned int index);
-		iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, RB::Sprites::SpriteType spriteType, RB::Sprites::PivotType pivotType);
-		RB::Sprites::SpriteType GetSpriteType(RB::Players::PLAYER_TYPE playerID);
+		iAnimationObj* InstantiateNewAnimationObj(RB::Players::iPlayer& player, Sprites::SpriteType spriteType, Sprites::PivotType pivotType);
+		Sprites::SpriteType GetSpriteType(RB::Players::PLAYER_TYPE playerID);
 		void AddNewAnimation(iAnimationObj* animationObj);
 		const std::vector<iAnimationObj*>& GetVecCurrentAnimations();
-		AnimationRenderer* GetAnimationRenderer(RB::Sprites::SpriteType spriteType);
+		AnimationRenderer* GetAnimationRenderer(Sprites::SpriteType spriteType);
 
 	protected:
 		std::vector<iAnimationObj*> _vecCurrentAnimations; // current running animations
-		RB::Sprites::SpriteContainer _spriteContainer;
+		Sprites::SpriteContainer _spriteContainer;
 		std::vector<AnimationRenderer*> _vecAnimationRenderers; // all loaded animations
 	};
 }

@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-	void PlayerInputRenderer::Init(RB::Sprites::SpriteContainer* spriteContainer)
+	void PlayerInputRenderer::Init(Sprites::SpriteContainer* spriteContainer)
 	{
 		_spriteContainer = spriteContainer;
 	}
@@ -82,7 +82,7 @@ namespace RB::Render
 		}
 	}
 
-	void PlayerInputRenderer::_RenderIcon(RB::Sprites::SpriteType spriteType, RB::Vector2 pos, olc::Pixel tint)
+	void PlayerInputRenderer::_RenderIcon(Sprites::SpriteType spriteType, RB::Vector2 pos, olc::Pixel tint)
 	{
 		_spriteContainer->RenderSprite(
 			spriteType, 
@@ -90,28 +90,28 @@ namespace RB::Render
 			17 , 
 			pos, 
 			tint, 
-			RB::Sprites::PivotType::BOTTOM_LEFT, 
+			Sprites::PivotType::BOTTOM_LEFT, 
 			false);
 	}
 
-	RB::Sprites::SpriteType PlayerInputRenderer::_GetSpriteType(const RB::Input::PlayerInput& playerInput)
+	Sprites::SpriteType PlayerInputRenderer::_GetSpriteType(const RB::Input::PlayerInput& playerInput)
 	{
-		if (playerInput._value == RB::Input::PlayerInput::MOVE_UP) { return RB::Sprites::SpriteType::input_arrow_up; }
-		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN) { return RB::Sprites::SpriteType::input_arrow_down; }
-		else if (playerInput._value == RB::Input::PlayerInput::MOVE_LEFT) { return RB::Sprites::SpriteType::input_arrow_left; }
-		else if (playerInput._value == RB::Input::PlayerInput::MOVE_RIGHT) { return RB::Sprites::SpriteType::input_arrow_right; }
+		if (playerInput._value == RB::Input::PlayerInput::MOVE_UP) { return Sprites::SpriteType::input_arrow_up; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN) { return Sprites::SpriteType::input_arrow_down; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_LEFT) { return Sprites::SpriteType::input_arrow_left; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_RIGHT) { return Sprites::SpriteType::input_arrow_right; }
 
-		else if (playerInput._value == RB::Input::PlayerInput::MOVE_UP_LEFT) { return RB::Sprites::SpriteType::input_arrow_up_left; }
-		else if (playerInput._value == RB::Input::PlayerInput::MOVE_UP_RIGHT) { return RB::Sprites::SpriteType::input_arrow_up_right; }
-		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN_LEFT) { return RB::Sprites::SpriteType::input_arrow_down_left; }
-		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN_RIGHT) { return RB::Sprites::SpriteType::input_arrow_down_right; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_UP_LEFT) { return Sprites::SpriteType::input_arrow_up_left; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_UP_RIGHT) { return Sprites::SpriteType::input_arrow_up_right; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN_LEFT) { return Sprites::SpriteType::input_arrow_down_left; }
+		else if (playerInput._value == RB::Input::PlayerInput::MOVE_DOWN_RIGHT) { return Sprites::SpriteType::input_arrow_down_right; }
 
-		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH) { return RB::Sprites::SpriteType::input_weak_punch; }
-		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_STRONG_PUNCH) { return RB::Sprites::SpriteType::input_strong_punch; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_WEAK_PUNCH) { return Sprites::SpriteType::input_weak_punch; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_STRONG_PUNCH) { return Sprites::SpriteType::input_strong_punch; }
 
-		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_WEAK_KICK) { return RB::Sprites::SpriteType::input_weak_kick; }
-		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_STRONG_KICK) { return RB::Sprites::SpriteType::input_strong_kick; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_WEAK_KICK) { return Sprites::SpriteType::input_weak_kick; }
+		else if (playerInput._value == RB::Input::PlayerInput::ATTACK_STRONG_KICK) { return Sprites::SpriteType::input_strong_kick; }
 
-		return RB::Sprites::SpriteType::NONE;
+		return Sprites::SpriteType::NONE;
 	}
 }

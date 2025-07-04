@@ -17,7 +17,7 @@ namespace RB::Sprites
 		_vecLoadedSprites.clear();
 	}
 
-	LoadedSprite* SpriteContainer::LoadSprite(std::string path, RB::Sprites::SpriteType spriteType)
+	LoadedSprite* SpriteContainer::LoadSprite(std::string path, Sprites::SpriteType spriteType)
 	{
 		auto logController = GET_LOG_CONTROLLER;
 
@@ -45,7 +45,7 @@ namespace RB::Sprites
 		}
 	}
 
-	void SpriteContainer::RenderSprite(RB::Sprites::SpriteType spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, RB::Sprites::PivotType pivotType, bool isWorldSpace)
+	void SpriteContainer::RenderSprite(Sprites::SpriteType spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, Sprites::PivotType pivotType, bool isWorldSpace)
 	{
 		auto camController = GET_CAM_CONTROLLER;
 
@@ -54,9 +54,9 @@ namespace RB::Sprites
 			return;
 		}
 
-		RB::Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType);
+		Sprites::LoadedSprite* loadedSprite = GetLoadedSprite(spriteType);
 
-		std::array<RB::Vector2, 4> points = RB::Sprites::GetQuadOnPivot(pivotType, width, height, pos);
+		std::array<RB::Vector2, 4> points = Sprites::GetQuadOnPivot(pivotType, width, height, pos);
 
 		if (isWorldSpace)
 		{
@@ -86,7 +86,7 @@ namespace RB::Sprites
 			tint);
 	}
 
-	RB::Sprites::LoadedSprite* SpriteContainer::GetLoadedSprite(RB::Sprites::SpriteType spriteType)
+	Sprites::LoadedSprite* SpriteContainer::GetLoadedSprite(Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
 		{

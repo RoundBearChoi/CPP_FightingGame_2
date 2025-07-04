@@ -17,7 +17,7 @@ namespace RB::Render
 		PlayerInputRenderer() = default;
 		~PlayerInputRenderer() = default;
 
-		void Init(RB::Sprites::SpriteContainer* spriteContainer);
+		void Init(Sprites::SpriteContainer* spriteContainer);
 		void OnUpdate();
 		void OnFixedUpdate();
 		void RenderInput(bool render);
@@ -25,9 +25,9 @@ namespace RB::Render
 	private:
 		bool _render = true;
 		void _RenderPlayerInputIcons(RB::Players::PLAYER_TYPE playerID, int yPos);
-		void _RenderIcon(RB::Sprites::SpriteType spriteType, RB::Vector2 pos, olc::Pixel tint);
-		RB::Sprites::SpriteType _GetSpriteType(const RB::Input::PlayerInput& playerInput);
+		void _RenderIcon(Sprites::SpriteType spriteType, RB::Vector2 pos, olc::Pixel tint);
+		Sprites::SpriteType _GetSpriteType(const RB::Input::PlayerInput& playerInput);
 
-		RB::Sprites::SpriteContainer* _spriteContainer = nullptr;
+		Sprites::SpriteContainer* _spriteContainer = nullptr;
 	};
 }

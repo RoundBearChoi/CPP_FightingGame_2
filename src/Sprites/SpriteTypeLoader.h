@@ -8,5 +8,5 @@
 
 namespace RB::Sprites
 {
-	RB::Sprites::SpriteType LoadSpriteType(const std::string& path);
+	Sprites::SpriteType LoadSpriteType(const std::string& path);
 }

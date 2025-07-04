@@ -8,10 +8,10 @@ namespace RB::Sprites
 
 		if (state == nullptr)
 		{
-			return RB::Sprites::SpriteType::NONE;
+			return Sprites::SpriteType::NONE;
 		}
 
-		RB::Sprites::SpriteType spriteType = state->GetSpriteType();
+		Sprites::SpriteType spriteType = state->GetSpriteType();
 
 		return spriteType;
 	}

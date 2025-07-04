@@ -40,7 +40,7 @@ namespace RB::Render
 		void _RenderBodyParts(RB::Players::PLAYER_TYPE id);
 
 	private:
-		RB::Sprites::SpriteContainer _spriteContainer;
+		Sprites::SpriteContainer _spriteContainer;
 		RB::Render::LineRenderer _lineRenderer;
 
 	private:

@@ -4,7 +4,7 @@ namespace RB::Sprites
 {
 	int GetCurrentAnimationFrame(RB::Players::PLAYER_TYPE id)
 	{
-		RB::Sprites::SpriteType spriteType = RB::Sprites::GetCurrentSpriteType(RB::Players::PLAYER_TYPE::PLAYER_1);
+		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(RB::Players::PLAYER_TYPE::PLAYER_1);
 
 		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 

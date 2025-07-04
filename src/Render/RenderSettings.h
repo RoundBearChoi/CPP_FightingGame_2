@@ -20,7 +20,7 @@ namespace RB::Render
 		float mRotation = 0.0f;
 		int mTransparency = 255;
 		RB::Vector2 mRenderOffset = { 0.0f, 0.0f };
-		RB::Sprites::PivotType mPivotType = RB::Sprites::PivotType::NONE;
+		Sprites::PivotType mPivotType = Sprites::PivotType::NONE;
 		bool mFaceRight = true;
 	};
 }

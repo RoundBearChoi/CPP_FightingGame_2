@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-    void PlayerBoxRenderer::Init(RB::Sprites::SpriteContainer* spriteContainer)
+    void PlayerBoxRenderer::Init(Sprites::SpriteContainer* spriteContainer)
 	{
 		_spriteContainer = spriteContainer;
 	}
@@ -43,12 +43,12 @@ namespace RB::Render
 			boxTint.a = 40;
 
 			_spriteContainer->RenderSprite(
-				RB::Sprites::SpriteType::white_sq, 
+				Sprites::SpriteType::white_sq, 
 				playerBox.x, 
 				playerBox.y, 
 				playerPos, 
 				boxTint, 
-				RB::Sprites::PivotType::BOTTOM_CENTER, 
+				Sprites::PivotType::BOTTOM_CENTER, 
 				true);
 		}
 	}

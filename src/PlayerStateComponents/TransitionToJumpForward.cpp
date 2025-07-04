@@ -28,32 +28,32 @@ namespace RB::PlayerStateComponents
 		Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		bool doJump = false;
-		RB::Input::iInputObj* inputObj = nullptr;
+		Input::iInputObj* inputObj = nullptr;
 
 		if (!_reverse)
 		{
 			if (player->OtherPlayerIsOnRightSide())
 			{
-				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_RIGHT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_RIGHT);
 			}
 			else
 			{
-				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_LEFT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_LEFT);
 			}
 		}
 		else
 		{
 			if (player->OtherPlayerIsOnRightSide())
 			{
-				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_LEFT);
-				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_LEFT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_LEFT);
 			}
 			else
 			{
-				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
-				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+				doJump = inputController->IsHeld(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_RIGHT);
+				inputObj = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_RIGHT);
 			}
 		}
 

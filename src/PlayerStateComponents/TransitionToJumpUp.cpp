@@ -25,22 +25,22 @@ namespace RB::PlayerStateComponents
 		Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(
 			_state->GetStateMachineID());
 
-		bool jumpUp = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP);
+		bool jumpUp = inputController->IsHeld(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP);
 
 		bool jumpForwardUp = false;
 
 		if (player->OtherPlayerIsOnRightSide())
 		{
-			jumpForwardUp = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_RIGHT);
+			jumpForwardUp = inputController->IsHeld(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_RIGHT);
 		}
 		else
 		{
-			jumpForwardUp = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP_LEFT);
+			jumpForwardUp = inputController->IsHeld(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP_LEFT);
 		}
 		
 		if (jumpUp && !jumpForwardUp)
 		{
-			RB::Input::iInputObj* jumpPress = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP);
+			Input::iInputObj* jumpPress = inputController->GetUnused_Movement_FIFO(player->GetPLAYER_TYPE(), Input::PlayerInput::MOVE_UP);
 
 			if (jumpPress != nullptr)
 			{

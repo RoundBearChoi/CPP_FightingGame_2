@@ -12,7 +12,7 @@ namespace RB::Collisions
 		Players::iPlayer* attacker = nullptr;
 		Players::iPlayer* target = nullptr;
 
-		Sprites::SpriteType attackerSpriteType = Sprites::SpriteType::NONE;
+		Sprites::SPRITE_TYPE attackerSpriteType = Sprites::SPRITE_TYPE::NONE;
 
 		Vector2 collisionPoint = { 0.0f, 0.0f };
 		bool targetIsOnRightSide = true;

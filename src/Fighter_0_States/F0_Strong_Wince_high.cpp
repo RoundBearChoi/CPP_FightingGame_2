@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Strong_Wince_High::F0_Strong_Wince_High()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_strong_wince_high;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_strong_wince_high;
 	}
 
 	void F0_Strong_Wince_High::OnEnter()

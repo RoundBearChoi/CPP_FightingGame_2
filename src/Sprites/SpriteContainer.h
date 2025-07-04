@@ -20,9 +20,9 @@ namespace RB::Sprites
 		~SpriteContainer();
 
 	public:
-		LoadedSprite* LoadSprite(std::string path, Sprites::SpriteType spriteType);
-		void RenderSprite(Sprites::SpriteType spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, Sprites::PivotType pivotType, bool isWorldSpace);
-		Sprites::LoadedSprite* GetLoadedSprite(Sprites::SpriteType spriteType);
+		LoadedSprite* LoadSprite(std::string path, Sprites::SPRITE_TYPE spriteType);
+		void RenderSprite(Sprites::SPRITE_TYPE spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, Sprites::PivotType pivotType, bool isWorldSpace);
+		Sprites::LoadedSprite* GetLoadedSprite(Sprites::SPRITE_TYPE spriteType);
 
 	private:
 		Sprites::SpriteLoader _loader;

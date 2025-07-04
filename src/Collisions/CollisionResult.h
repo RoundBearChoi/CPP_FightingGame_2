@@ -14,7 +14,7 @@ namespace RB::Collisions
 		Players::iPlayer* mAttacker = nullptr;
 		Players::iPlayer* mTarget = nullptr;
 		Vector2 mCollisionPoint = { 0, 0 };
-		Sprites::SpriteType mAttackerSpriteType = Sprites::SpriteType::NONE;
+		Sprites::SPRITE_TYPE mAttackerSpriteType = Sprites::SPRITE_TYPE::NONE;
 		CollisionType mCollisionType = CollisionType::NONE;
 	};
 }

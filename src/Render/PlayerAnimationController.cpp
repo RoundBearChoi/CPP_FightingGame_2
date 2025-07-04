@@ -19,9 +19,9 @@ namespace RB::Render
 
 		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading fighter 0 sprites");  
 
-		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		for (int i = Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_START + 1; i < Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_END; i++)
 		{
-			Sprites::SpriteType spriteType = Sprites::SpriteType::_from_index(i);
+			Sprites::SPRITE_TYPE spriteType = Sprites::SPRITE_TYPE::_from_index(i);
 			std::string str = spriteType._to_string();
 			std::string path = "../resource/PNG files/Aku/" + str + ".png";
 			_animationContainer.LoadSprite(path, spriteType);
@@ -29,9 +29,9 @@ namespace RB::Render
 
 		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 aniSpecs");  
 
-		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		for (int i = Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_START + 1; i < Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_END; i++)
 		{
-			Sprites::SpriteType spriteType = Sprites::SpriteType::_from_index(i);
+			Sprites::SPRITE_TYPE spriteType = Sprites::SPRITE_TYPE::_from_index(i);
 			std::string str = spriteType._to_string();
 			std::string path = "../resource/AnimationSpecs/" + str + ".aniSpecs";
 			_animationContainer.LoadAnimation(path);
@@ -60,7 +60,7 @@ namespace RB::Render
 		_animationContainer.DeleteAnimationObjs(playerID);
 	}
 
-	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType)
+	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SPRITE_TYPE spriteType)
 	{
 		return _animationContainer.GetCurrentAnimationObj(playerID, spriteType);
 	}
@@ -97,7 +97,7 @@ namespace RB::Render
 				continue;
 			}
 
-			Sprites::SpriteType spriteType = state->GetSpriteType();
+			Sprites::SPRITE_TYPE spriteType = state->GetSpriteType();
 
 			AnimationRenderer* aniRenderer = _animationContainer.GetAnimationRenderer(spriteType);
 
@@ -140,9 +140,9 @@ namespace RB::Render
 			return;
 		}
 
-		Sprites::SpriteType playerSpriteType = state->GetSpriteType();
+		Sprites::SPRITE_TYPE playerSpriteType = state->GetSpriteType();
 		Players::PLAYER_TYPE playerID = player.GetPLAYER_TYPE();
-		Sprites::SpriteType animationSpriteType = _GetPlayerSpriteType(playerID);
+		Sprites::SPRITE_TYPE animationSpriteType = _GetPlayerSpriteType(playerID);
 
 		if (playerSpriteType != animationSpriteType)
 		{
@@ -154,7 +154,7 @@ namespace RB::Render
 		}
 	}
 
-	Sprites::SpriteType PlayerAnimationController::_GetPlayerSpriteType(Players::PLAYER_TYPE playerID)
+	Sprites::SPRITE_TYPE PlayerAnimationController::_GetPlayerSpriteType(Players::PLAYER_TYPE playerID)
 	{
 		return _animationContainer.GetSpriteType(playerID);
 	}

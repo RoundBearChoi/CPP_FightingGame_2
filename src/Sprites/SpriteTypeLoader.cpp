@@ -2,7 +2,7 @@
 
 namespace RB::Sprites
 {
-	Sprites::SpriteType LoadSpriteType(const std::string& path)
+	Sprites::SPRITE_TYPE LoadSpriteType(const std::string& path)
 	{
 		JSON::JParser parser;
 		parser.LoadJSON(path);
@@ -13,7 +13,7 @@ namespace RB::Sprites
 
 		std::string spriteEnumStr = parser.GetString_FromElement(*subElement);
 
-		Sprites::SpriteType loadedSpriteType = Sprites::SpriteType::_from_string(spriteEnumStr.c_str());
+		Sprites::SPRITE_TYPE loadedSpriteType = Sprites::SPRITE_TYPE::_from_string(spriteEnumStr.c_str());
 
 		return loadedSpriteType;
 	}

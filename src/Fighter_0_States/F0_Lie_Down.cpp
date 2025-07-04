@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Lie_Down::F0_Lie_Down()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_lie_down;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_lie_down;
 	}
 
     void F0_Lie_Down::OnEnter()

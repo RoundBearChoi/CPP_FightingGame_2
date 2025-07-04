@@ -177,7 +177,7 @@ namespace RB::Render
 			return;
 		}
 
-		if (_animationRenderer->GetAnimationSpecs().mSpriteType._value == Sprites::SpriteType::NONE)
+		if (_animationRenderer->GetAnimationSpecs().mSpriteType._value == Sprites::SPRITE_TYPE::NONE)
 		{
 			return;
 		}

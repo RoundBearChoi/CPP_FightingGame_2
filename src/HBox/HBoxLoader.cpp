@@ -8,7 +8,7 @@ namespace RB::HBox
 	}
 
 	// only use during initialization (vector addresses)
-	Loaded_HB_Data HBoxLoader::Load(const std::string path, const Sprites::SpriteType spriteType, HBoxType boxType)
+	Loaded_HB_Data HBoxLoader::Load(const std::string path, const Sprites::SPRITE_TYPE spriteType, HBoxType boxType)
 	{
 		JSON::JParser parser;
 

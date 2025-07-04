@@ -14,25 +14,25 @@ namespace RB::Render
 
 		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading debug sprites");
 
-		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/x_white.png", Sprites::SpriteType::x_white);
-		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq.png", Sprites::SpriteType::white_sq);
-		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/player_hp_bar_white.png", Sprites::SpriteType::player_hp_bar_white);
+		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/x_white.png", Sprites::SPRITE_TYPE::x_white);
+		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq.png", Sprites::SPRITE_TYPE::white_sq);
+		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/player_hp_bar_white.png", Sprites::SPRITE_TYPE::player_hp_bar_white);
 
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_up.png", Sprites::SpriteType::input_arrow_up);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_down.png", Sprites::SpriteType::input_arrow_down);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_left.png", Sprites::SpriteType::input_arrow_left);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_right.png", Sprites::SpriteType::input_arrow_right);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_up.png", Sprites::SPRITE_TYPE::input_arrow_up);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_down.png", Sprites::SPRITE_TYPE::input_arrow_down);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_left.png", Sprites::SPRITE_TYPE::input_arrow_left);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_right.png", Sprites::SPRITE_TYPE::input_arrow_right);
 
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_up_left.png", Sprites::SpriteType::input_arrow_up_left);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_up_right.png", Sprites::SpriteType::input_arrow_up_right);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_down_left.png", Sprites::SpriteType::input_arrow_down_left);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_down_right.png", Sprites::SpriteType::input_arrow_down_right);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_up_left.png", Sprites::SPRITE_TYPE::input_arrow_up_left);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_up_right.png", Sprites::SPRITE_TYPE::input_arrow_up_right);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_down_left.png", Sprites::SPRITE_TYPE::input_arrow_down_left);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/arrow_down_right.png", Sprites::SPRITE_TYPE::input_arrow_down_right);
 
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/weak_punch.png", Sprites::SpriteType::input_weak_punch);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/strong_punch.png", Sprites::SpriteType::input_strong_punch);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/weak_punch.png", Sprites::SPRITE_TYPE::input_weak_punch);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/strong_punch.png", Sprites::SPRITE_TYPE::input_strong_punch);
 
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/weak_kick.png", Sprites::SpriteType::input_weak_kick);
-		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/strong_kick.png", Sprites::SpriteType::input_strong_kick);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/weak_kick.png", Sprites::SPRITE_TYPE::input_weak_kick);
+		_spriteContainer.LoadSprite("../resource/PNG files/InputIcons/strong_kick.png", Sprites::SPRITE_TYPE::input_strong_kick);
 
 		_playerBoxRenderer.Init(&_spriteContainer);
 		_playerHBoxRenderer.Init(&_spriteContainer);

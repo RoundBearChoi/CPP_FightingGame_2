@@ -17,7 +17,7 @@ namespace RB::Sprites
 		_vecLoadedSprites.clear();
 	}
 
-	LoadedSprite* SpriteContainer::LoadSprite(std::string path, Sprites::SpriteType spriteType)
+	LoadedSprite* SpriteContainer::LoadSprite(std::string path, Sprites::SPRITE_TYPE spriteType)
 	{
 		auto logController = GET_LOG_CONTROLLER;
 
@@ -45,7 +45,7 @@ namespace RB::Sprites
 		}
 	}
 
-	void SpriteContainer::RenderSprite(Sprites::SpriteType spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, Sprites::PivotType pivotType, bool isWorldSpace)
+	void SpriteContainer::RenderSprite(Sprites::SPRITE_TYPE spriteType, float width, float height, RB::Vector2 pos, olc::Pixel tint, Sprites::PivotType pivotType, bool isWorldSpace)
 	{
 		auto camController = GET_CAM_CONTROLLER;
 
@@ -86,7 +86,7 @@ namespace RB::Sprites
 			tint);
 	}
 
-	Sprites::LoadedSprite* SpriteContainer::GetLoadedSprite(Sprites::SpriteType spriteType)
+	Sprites::LoadedSprite* SpriteContainer::GetLoadedSprite(Sprites::SPRITE_TYPE spriteType)
 	{
 		for (auto i = _vecLoadedSprites.begin(); i != _vecLoadedSprites.end(); i++)
 		{

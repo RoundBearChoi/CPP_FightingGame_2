@@ -2,7 +2,7 @@
 
 namespace RB::Render
 {
-	void ManualAnimationUpdater::OnEnter(Sprites::SpriteType spriteType)
+	void ManualAnimationUpdater::OnEnter(Sprites::SPRITE_TYPE spriteType)
 	{
 		_spriteType = spriteType;
 	}

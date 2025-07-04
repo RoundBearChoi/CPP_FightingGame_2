@@ -124,7 +124,7 @@ namespace RB::Players
 		return playerController->GetPlayerOnStateMachineID(_stateMachineID);
 	}
 
-	Sprites::SpriteType PlayerState::GetSpriteType()
+	Sprites::SPRITE_TYPE PlayerState::GetSpriteType()
 	{
 		return _spriteType;
 	}

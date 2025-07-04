@@ -11,7 +11,7 @@ namespace RB::Fighter_0_States
 	class F0_Dummy : public Players::PlayerState
 	{
 	public:
-		F0_Dummy(Sprites::SpriteType startingSpriteType);
+		F0_Dummy(Sprites::SPRITE_TYPE startingSpriteType);
 
 	public:
 		void OnEnter() override;

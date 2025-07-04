@@ -12,6 +12,6 @@ namespace RB::Render
 	{
 	public:
 		virtual void DeleteAnimationObj(Players::PLAYER_TYPE playerID) = 0;
-		virtual iAnimationObj* GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType) = 0;
+		virtual iAnimationObj* GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SPRITE_TYPE spriteType) = 0;
 	};
 }

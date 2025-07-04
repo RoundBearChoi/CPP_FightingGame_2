@@ -12,7 +12,7 @@ namespace RB::Collisions
 			AttackSpecs() = default;
 			~AttackSpecs() = default;
 
-			Sprites::SpriteType mSpriteType = Sprites::SpriteType::NONE;
+			Sprites::SPRITE_TYPE mSpriteType = Sprites::SPRITE_TYPE::NONE;
 			Collisions::AttackStrengthType mAttackStrengthType = Collisions::AttackStrengthType::NONE;
 			int mDamage = 0;
 			int mHitStop = 0;

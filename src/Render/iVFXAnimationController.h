@@ -17,6 +17,6 @@ namespace RB::Render
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual iAnimationObj* InstantiateAnimation(Sprites::SpriteType spriteType, RB::Vector2 pos, bool faceRight) = 0;
+		virtual iAnimationObj* InstantiateAnimation(Sprites::SPRITE_TYPE spriteType, RB::Vector2 pos, bool faceRight) = 0;
 	};
 }

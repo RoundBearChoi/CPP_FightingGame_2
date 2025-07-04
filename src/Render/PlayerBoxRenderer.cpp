@@ -43,7 +43,7 @@ namespace RB::Render
 			boxTint.a = 40;
 
 			_spriteContainer->RenderSprite(
-				Sprites::SpriteType::white_sq, 
+				Sprites::SPRITE_TYPE::white_sq, 
 				playerBox.x, 
 				playerBox.y, 
 				playerPos, 

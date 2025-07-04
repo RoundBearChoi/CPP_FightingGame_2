@@ -2,13 +2,13 @@
 
 namespace RB::Collisions
 {
-	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, Sprites::SpriteType spriteType)
+	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, Sprites::SPRITE_TYPE spriteType)
 	{
 		_path = path;
 		_spriteType = spriteType;
 	}
 
-	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, Sprites::SpriteType spriteType, PlayerBox box)
+	PlayerBoxSpecs::PlayerBoxSpecs(std::string path, Sprites::SPRITE_TYPE spriteType, PlayerBox box)
 	{
 		_path = path;
 		_spriteType = spriteType;
@@ -33,7 +33,7 @@ namespace RB::Collisions
 		GetSelector()->PushBack(box);
 	}
 
-	Sprites::SpriteType PlayerBoxSpecs::GetSpriteType()
+	Sprites::SPRITE_TYPE PlayerBoxSpecs::GetSpriteType()
 	{
 		return _spriteType;
 	}

@@ -29,13 +29,13 @@ namespace RB::Render
 		void OnFixedUpdate() override;
 
 		void DeleteAnimationObj(Players::PLAYER_TYPE playerID) override;
-		iAnimationObj* GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType) override;
+		iAnimationObj* GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SPRITE_TYPE spriteType) override;
 
 	private:
 		void _SetFirstPlayerAnimations();
 		void _ChangePlayerAnimations();
 		void _SetNewPlayerAnimationObjOnChange(Players::iPlayer& player);
-		Sprites::SpriteType _GetPlayerSpriteType(Players::PLAYER_TYPE playerID);
+		Sprites::SPRITE_TYPE _GetPlayerSpriteType(Players::PLAYER_TYPE playerID);
 
 	private:
 		AnimationContainer _animationContainer;

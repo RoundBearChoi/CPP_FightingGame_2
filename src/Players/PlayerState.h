@@ -31,10 +31,10 @@ namespace RB::Players
 
 	public:
 		Players::iPlayer* GetPlayer();
-		Sprites::SpriteType GetSpriteType();
+		Sprites::SPRITE_TYPE GetSpriteType();
 		void AutoUpdatePlayerBox();
 
 	protected:
-		Sprites::SpriteType _spriteType = Sprites::SpriteType::NONE;
+		Sprites::SPRITE_TYPE _spriteType = Sprites::SPRITE_TYPE::NONE;
 	};
 }

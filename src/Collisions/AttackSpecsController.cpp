@@ -21,7 +21,7 @@ namespace RB::Collisions
 
 	}
 
-	const Collisions::AttackSpecs& AttackSpecsController::GetAttackSpecs(Sprites::SpriteType spriteType)
+	const Collisions::AttackSpecs& AttackSpecsController::GetAttackSpecs(Sprites::SPRITE_TYPE spriteType)
 	{
 		for (int i = 0; i < _vecAttackSpecs.size(); i++)
 		{
@@ -34,7 +34,7 @@ namespace RB::Collisions
 		return _defaultAttackSpecs;
 	}
 
-	bool AttackSpecsController::ContainsAttackSpecs(Sprites::SpriteType spriteType)
+	bool AttackSpecsController::ContainsAttackSpecs(Sprites::SPRITE_TYPE spriteType)
 	{
 		for (int i = 0; i < _vecAttackSpecs.size(); i++)
 		{
@@ -53,13 +53,13 @@ namespace RB::Collisions
 		
 		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 attack specs"); 
 
-		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
+		for (int i = Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_START + 1; i < Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_END; i++)
 		{
-			_Load(Sprites::SpriteType::_from_index(i));
+			_Load(Sprites::SPRITE_TYPE::_from_index(i));
 		}
 	}
 
-	void AttackSpecsController::_Load(Sprites::SpriteType spriteType)
+	void AttackSpecsController::_Load(Sprites::SPRITE_TYPE spriteType)
 	{
 		std::string fileName = spriteType._to_string();
 		fileName += ".attackSpecs";

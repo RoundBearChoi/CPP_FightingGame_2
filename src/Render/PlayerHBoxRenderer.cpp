@@ -49,7 +49,7 @@ namespace RB::Render
 			return;
 		}
 
-		Sprites::SpriteType spriteType = state->GetSpriteType();
+		Sprites::SPRITE_TYPE spriteType = state->GetSpriteType();
 
 		iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(playerID, spriteType);
 		
@@ -131,7 +131,7 @@ namespace RB::Render
 				pos = aabb.GetBottomLeft() + player->GetPosition();
 
 				pivotType = Sprites::PivotType::BOTTOM_LEFT;
-				//_spriteContainer->RenderSprite(Sprites::SpriteType::white_sq, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, Sprites::PivotType::BOTTOM_LEFT, true);
+				//_spriteContainer->RenderSprite(Sprites::SPRITE_TYPE::white_sq, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, Sprites::PivotType::BOTTOM_LEFT, true);
 			}
 			else
 			{
@@ -140,11 +140,11 @@ namespace RB::Render
 				pos = bottomleft + player->GetPosition();
 
 				pivotType = Sprites::PivotType::BOTTOM_RIGHT;
-				//_spriteContainer->RenderSprite(Sprites::SpriteType::white_sq, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, Sprites::PivotType::BOTTOM_RIGHT, true);
+				//_spriteContainer->RenderSprite(Sprites::SPRITE_TYPE::white_sq, aabb.GetWidthHeight().x, aabb.GetWidthHeight().y, pos, color, Sprites::PivotType::BOTTOM_RIGHT, true);
 			}
 
 			_spriteContainer->RenderSprite(
-				Sprites::SpriteType::white_sq, 
+				Sprites::SPRITE_TYPE::white_sq, 
 				aabb.GetWidthHeight().x, 
 				aabb.GetWidthHeight().y, 
 				pos, 

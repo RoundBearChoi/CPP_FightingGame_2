@@ -15,6 +15,6 @@ namespace RB::Sprites
 		~SpriteLoader();
 
 	public:
-		LoadedSprite* LoadSprite(std::string path, SpriteType spriteType);
+		LoadedSprite* LoadSprite(std::string path, Sprites::SPRITE_TYPE spriteType);
 	};
 }

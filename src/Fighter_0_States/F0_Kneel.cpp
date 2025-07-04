@@ -6,7 +6,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Kneel::F0_Kneel()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_kneel;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_kneel;
 	}
 
     void F0_Kneel::OnEnter()

@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_StandUp::F0_StandUp()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_standup;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_standup;
 	}
 
 	void F0_StandUp::OnEnter()

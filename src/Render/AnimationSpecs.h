@@ -21,6 +21,6 @@ namespace RB::Render
 		float mRenderScale = 0.0f;
 		Sprites::LoadedSprite* mLoadedSprite = nullptr;
 		bool mPlayOnce = false;
-		Sprites::SpriteType mSpriteType = Sprites::SpriteType::NONE;
+		Sprites::SPRITE_TYPE mSpriteType = Sprites::SPRITE_TYPE::NONE;
 	};
 }

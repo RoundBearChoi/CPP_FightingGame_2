@@ -6,7 +6,7 @@ namespace RB::Fighter_0_States
 {
 	F0_JumpForward_1::F0_JumpForward_1()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_jump_forward_1;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_jump_forward_1;
 	}
 
 	void F0_JumpForward_1::OnEnter()

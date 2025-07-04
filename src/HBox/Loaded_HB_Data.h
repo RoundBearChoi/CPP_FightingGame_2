@@ -12,7 +12,7 @@ namespace RB::HBox
 	class Loaded_HB_Data
 	{
 	public:
-		Loaded_HB_Data(Sprites::SpriteType spriteType, HBoxType boxType);
+		Loaded_HB_Data(Sprites::SPRITE_TYPE spriteType, HBoxType boxType);
 		~Loaded_HB_Data() = default;
 
 	public:
@@ -21,10 +21,10 @@ namespace RB::HBox
 		void AddSet(AABB_Set data);
 		const std::vector<AABB_Set>& Get_AABB_Sets();
 		AABB_Set* GetHBoxDataByFrame(unsigned int frame);
-		Sprites::SpriteType GetSpriteType();
+		Sprites::SPRITE_TYPE GetSpriteType();
 
 	private:
-		Sprites::SpriteType _spriteType = Sprites::SpriteType::NONE;
+		Sprites::SPRITE_TYPE _spriteType = Sprites::SPRITE_TYPE::NONE;
 		std::vector<AABB_Set> _vec_AABB_Sets;
 		HBoxType _boxType = HBoxType::NONE;
 	};

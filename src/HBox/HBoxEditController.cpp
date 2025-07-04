@@ -57,7 +57,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		Sprites::SpriteType spriteType = state->GetSpriteType();
+		Sprites::SPRITE_TYPE spriteType = state->GetSpriteType();
 
 		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
@@ -103,7 +103,7 @@ namespace RB::HBox
 			return nullptr;
 		}
 
-		Sprites::SpriteType spriteType = state->GetSpriteType();
+		Sprites::SPRITE_TYPE spriteType = state->GetSpriteType();
 
 		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
@@ -425,8 +425,8 @@ namespace RB::HBox
 			downCycle = true;
 		}
 
-		Sprites::SpriteType currentSpriteType = Sprites::SpriteType::NONE;
-		Sprites::SpriteType nextSpriteType = Sprites::SpriteType::NONE;
+		Sprites::SPRITE_TYPE currentSpriteType = Sprites::SPRITE_TYPE::NONE;
+		Sprites::SPRITE_TYPE nextSpriteType = Sprites::SPRITE_TYPE::NONE;
 
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
@@ -449,13 +449,13 @@ namespace RB::HBox
 			nextSpriteType._value = currentSpriteType - 1;
 		}
 
-		if (nextSpriteType._value >= Sprites::SpriteType::FIGHTER_0_SPRITES_END)
+		if (nextSpriteType._value >= Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_END)
 		{
-			nextSpriteType._value = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1;
+			nextSpriteType._value = Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_START + 1;
 		}
-		else if (nextSpriteType._value <= Sprites::SpriteType::FIGHTER_0_SPRITES_START)
+		else if (nextSpriteType._value <= Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_START)
 		{
-			nextSpriteType._value = Sprites::SpriteType::FIGHTER_0_SPRITES_END - 1;
+			nextSpriteType._value = Sprites::SPRITE_TYPE::FIGHTER_0_SPRITES_END - 1;
 		}
 
 		if (upCycle || downCycle)

@@ -10,11 +10,11 @@ namespace RB::Collisions
 
 		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, "loading player boxes"); 
 
-		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_idle, Players::CharacterType::AKU);
-		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_crouch, Players::CharacterType::AKU);
-		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_crouch_idle, Players::CharacterType::AKU);
-		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_standup, Players::CharacterType::AKU);
-		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_jab, Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs(Sprites::SPRITE_TYPE::fighter_0_idle, Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs(Sprites::SPRITE_TYPE::fighter_0_crouch, Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs(Sprites::SPRITE_TYPE::fighter_0_crouch_idle, Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs(Sprites::SPRITE_TYPE::fighter_0_standup, Players::CharacterType::AKU);
+		_playerBoxSpecsLoader.LoadSpecs(Sprites::SPRITE_TYPE::fighter_0_jab, Players::CharacterType::AKU);
 	}
 
 	void PlayerBoxDataController::OnUpdate()
@@ -32,7 +32,7 @@ namespace RB::Collisions
 		return _playerBoxSpecsLoader.GetLoadedSpecs(characterType);
 	}
 
-	void PlayerBoxDataController::AddSpecs(PlayerBox box, Sprites::SpriteType spriteType, Players::CharacterType characterType)
+	void PlayerBoxDataController::AddSpecs(PlayerBox box, Sprites::SPRITE_TYPE spriteType, Players::CharacterType characterType)
 	{
 		_playerBoxSpecsLoader.AddSpecs(box, spriteType, characterType);
 	}

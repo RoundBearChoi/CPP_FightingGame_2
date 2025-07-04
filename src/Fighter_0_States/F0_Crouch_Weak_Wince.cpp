@@ -5,7 +5,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Crouch_Weak_Wince::F0_Crouch_Weak_Wince()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_crouch_weak_wince;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_crouch_weak_wince;
 	}
 
 	void F0_Crouch_Weak_Wince::OnEnter()

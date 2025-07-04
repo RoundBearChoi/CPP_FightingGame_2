@@ -14,6 +14,6 @@ namespace RB::Collisions
 	{
 	public:
 		virtual LoadedPlayerBoxData* GetLoadedData(Players::CharacterType characterType) = 0;
-		virtual void AddSpecs(PlayerBox box, Sprites::SpriteType spriteType, Players::CharacterType characterType) = 0;
+		virtual void AddSpecs(PlayerBox box, Sprites::SPRITE_TYPE spriteType, Players::CharacterType characterType) = 0;
 	};
 }

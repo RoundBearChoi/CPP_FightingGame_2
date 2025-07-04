@@ -2,7 +2,7 @@
 
 namespace RB::Sprites
 {
-	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite, olc::Decal* decal, SpriteType spriteType)
+	LoadedSprite::LoadedSprite(std::string path, olc::Sprite* sprite, olc::Decal* decal, Sprites::SPRITE_TYPE spriteType)
 	{
 		_path = path;
 		_sprite = sprite;
@@ -31,7 +31,7 @@ namespace RB::Sprites
 		return _decal;
 	}
 
-	SpriteType LoadedSprite::GetSpriteType()
+	Sprites::SPRITE_TYPE LoadedSprite::GetSpriteType()
 	{
 		return _spriteType;
 	}

@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Strong_Wince_Mid::F0_Strong_Wince_Mid()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_strong_wince_mid;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_strong_wince_mid;
 	}
 
 	void F0_Strong_Wince_Mid::OnEnter()

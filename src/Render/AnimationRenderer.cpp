@@ -23,7 +23,7 @@ namespace RB::Render
 	{
 		auto camController = GET_CAM_CONTROLLER;
 
-		if (_animationSpecs.mSpriteType._value == Sprites::SpriteType::NONE)
+		if (_animationSpecs.mSpriteType._value == Sprites::SPRITE_TYPE::NONE)
 		{
 			return;
 		}

@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_WalkForward::F0_WalkForward()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_walk;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_walk;
 	}
 
 	void F0_WalkForward::OnEnter()

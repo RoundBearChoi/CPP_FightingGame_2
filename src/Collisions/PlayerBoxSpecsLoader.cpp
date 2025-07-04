@@ -18,14 +18,14 @@ namespace RB::Collisions
 		}
 	}
 
-	std::string PlayerBoxSpecsLoader::GetPath(Sprites::SpriteType spriteType)
+	std::string PlayerBoxSpecsLoader::GetPath(Sprites::SPRITE_TYPE spriteType)
 	{
 		std::string spriteName = spriteType._to_string();
 
 		return "../resource/PlayerBoxSpecs/Aku/" + spriteName + ".playerBoxSpecs";
 	}
 
-	void PlayerBoxSpecsLoader::LoadSpecs(Sprites::SpriteType spriteType, Players::CharacterType characterType)
+	void PlayerBoxSpecsLoader::LoadSpecs(Sprites::SPRITE_TYPE spriteType, Players::CharacterType characterType)
 	{
 		std::string path = GetPath(spriteType);
 
@@ -150,7 +150,7 @@ namespace RB::Collisions
 		return nullptr;
 	}
 
-	void PlayerBoxSpecsLoader::AddSpecs(PlayerBox box, Sprites::SpriteType spriteType, Players::CharacterType characterType)
+	void PlayerBoxSpecsLoader::AddSpecs(PlayerBox box, Sprites::SPRITE_TYPE spriteType, Players::CharacterType characterType)
 	{
 		LoadedPlayerBoxData* loaded = GetLoadedSpecs(characterType);
 

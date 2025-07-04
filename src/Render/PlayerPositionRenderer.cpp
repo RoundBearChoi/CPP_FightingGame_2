@@ -42,7 +42,7 @@ namespace RB::Render
 
 		RB::Vector2 playerPos = player->GetPosition();
 
-		_spriteContainer->RenderSprite(Sprites::SpriteType::x_white, 13, 13, playerPos, olc::RED, Sprites::PivotType::CENTER, true);
+		_spriteContainer->RenderSprite(Sprites::SPRITE_TYPE::x_white, 13, 13, playerPos, olc::RED, Sprites::PivotType::CENTER, true);
 	}
 
 	void PlayerPositionRenderer::RenderBottomLeft(Players::PLAYER_TYPE playerID)

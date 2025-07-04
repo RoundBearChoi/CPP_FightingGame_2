@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Strong_Punch::F0_Strong_Punch()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_strong_punch;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_strong_punch;
 	}
 
 	void F0_Strong_Punch::OnEnter()

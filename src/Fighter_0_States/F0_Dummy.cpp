@@ -2,7 +2,7 @@
 
 namespace RB::Fighter_0_States
 {
-	F0_Dummy::F0_Dummy(Sprites::SpriteType startingSpriteType)
+	F0_Dummy::F0_Dummy(Sprites::SPRITE_TYPE startingSpriteType)
 	{
 		_spriteType = startingSpriteType;
 	}

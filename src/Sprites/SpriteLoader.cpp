@@ -7,7 +7,7 @@ namespace RB::Sprites
 
 	}
 
-	LoadedSprite* SpriteLoader::LoadSprite(std::string path, SpriteType spriteType)
+	LoadedSprite* SpriteLoader::LoadSprite(std::string path, Sprites::SPRITE_TYPE spriteType)
 	{
 		std::replace(path.begin(), path.end(), '\\', '/'); //convert directory separators
  

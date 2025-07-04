@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Crouch::F0_Crouch()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_crouch;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_crouch;
 	}
 	
 	void F0_Crouch::OnEnter()

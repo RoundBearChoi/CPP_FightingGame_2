@@ -5,7 +5,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Crouch_Idle::F0_Crouch_Idle()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_crouch_idle;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_crouch_idle;
 	}
 	
 	void F0_Crouch_Idle::OnEnter()

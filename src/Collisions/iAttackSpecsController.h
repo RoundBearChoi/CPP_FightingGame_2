@@ -16,7 +16,7 @@ namespace RB::Collisions
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		const virtual Collisions::AttackSpecs& GetAttackSpecs(Sprites::SpriteType spriteType) = 0;
-		virtual bool ContainsAttackSpecs(Sprites::SpriteType spriteType) = 0;
+		const virtual Collisions::AttackSpecs& GetAttackSpecs(Sprites::SPRITE_TYPE spriteType) = 0;
+		virtual bool ContainsAttackSpecs(Sprites::SPRITE_TYPE spriteType) = 0;
 	};
 }

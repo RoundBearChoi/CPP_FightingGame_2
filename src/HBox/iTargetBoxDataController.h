@@ -11,8 +11,8 @@ namespace RB::HBox
 	class iTargetBoxDataController : public Controllers::ControllerBase
 	{
 	public:
-		virtual Loaded_HB_Data* GetData(Sprites::SpriteType spriteType) = 0;
-		virtual Loaded_HB_Data* CreateData(Sprites::SpriteType spriteType) = 0;
-		virtual std::string GetPath(Sprites::SpriteType spriteType) = 0;
+		virtual Loaded_HB_Data* GetData(Sprites::SPRITE_TYPE spriteType) = 0;
+		virtual Loaded_HB_Data* CreateData(Sprites::SPRITE_TYPE spriteType) = 0;
+		virtual std::string GetPath(Sprites::SPRITE_TYPE spriteType) = 0;
 	};
 }

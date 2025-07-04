@@ -105,7 +105,7 @@ namespace RB::Collisions
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
 
-		Sprites::SpriteType currSpriteType = Sprites::GetCurrentSpriteType(id);
+		Sprites::SPRITE_TYPE currSpriteType = Sprites::GetCurrentSpriteType(id);
 
 		if (insButton.bPressed)
 		{
@@ -170,7 +170,7 @@ namespace RB::Collisions
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
-		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1);
+		Sprites::SPRITE_TYPE spriteType = Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(Sprites::GetCurrentAnimationFrame(Players::PLAYER_TYPE::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
 	}

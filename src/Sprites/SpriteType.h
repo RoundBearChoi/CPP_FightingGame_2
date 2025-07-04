@@ -6,7 +6,7 @@ namespace RB::Sprites // not using capital letters to match file names
 {
 	BETTER_ENUM
 	(
-		SpriteType, int,
+		SPRITE_TYPE, int,
 
 		NONE = 0,
 

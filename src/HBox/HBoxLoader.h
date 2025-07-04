@@ -20,7 +20,7 @@ namespace RB::HBox
 		void InitSample(std::string path);
 
 	public:
-		Loaded_HB_Data Load(const std::string path, const Sprites::SpriteType spriteType, HBoxType boxType);
+		Loaded_HB_Data Load(const std::string path, const Sprites::SPRITE_TYPE spriteType, HBoxType boxType);
 		std::vector<Collisions::AABB> ParseData(const json_object_s& wholeObj, const unsigned int frame);
 		std::string ParseName(const json_object_s& wholeObj, const unsigned int frame);
 

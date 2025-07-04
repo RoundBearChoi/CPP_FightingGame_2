@@ -11,7 +11,7 @@ namespace RB::PlayerStateComponents
 
 		Players::iPlayer* attacker = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		Players::PlayerState* attackerState = Players::PlayerState::GetPlayerState(attacker->GetPLAYER_TYPE());
-		Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
+		Sprites::SPRITE_TYPE attackerSpriteType = attackerState->GetSpriteType();
 	}
 
 	void DetectHit::OnUpdate()
@@ -76,8 +76,8 @@ namespace RB::PlayerStateComponents
 			return false;
 		}
 
-		Sprites::SpriteType attackerSpriteType = attackerState->GetSpriteType();
-		Sprites::SpriteType targetSpriteType = enemyState->GetSpriteType();
+		Sprites::SPRITE_TYPE attackerSpriteType = attackerState->GetSpriteType();
+		Sprites::SPRITE_TYPE targetSpriteType = enemyState->GetSpriteType();
 
 		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 

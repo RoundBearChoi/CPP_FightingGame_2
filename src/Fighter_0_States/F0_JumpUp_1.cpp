@@ -5,7 +5,7 @@ namespace RB::Fighter_0_States
 {
 	F0_JumpUp_1::F0_JumpUp_1()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_fall;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_fall;
 	}
 
 	void F0_JumpUp_1::OnEnter()

@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Strong_Kick::F0_Strong_Kick()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_strong_kick;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_strong_kick;
 	}
 	void F0_Strong_Kick::OnEnter()
 	{

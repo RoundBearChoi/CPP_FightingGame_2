@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Jab::F0_Jab()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_jab;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_jab;
 	}
 
 	void F0_Jab::OnEnter()

@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_WalkBack::F0_WalkBack()
 	{
-		_spriteType = Sprites::SpriteType::NONE;
+		_spriteType = Sprites::SPRITE_TYPE::NONE;
 	}
 
 	void F0_WalkBack::OnEnter()

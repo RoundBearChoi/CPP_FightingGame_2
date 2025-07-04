@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Hadouken::F0_Hadouken()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_hadouken;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_hadouken;
 	}
 
 	void F0_Hadouken::OnEnter()

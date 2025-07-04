@@ -2,7 +2,7 @@
 
 namespace RB::Background
 {
-	BackgroundObj::BackgroundObj(std::string path, Sprites::SpriteType spriteType, float percentage)
+	BackgroundObj::BackgroundObj(std::string path, Sprites::SPRITE_TYPE spriteType, float percentage)
 	{
 		_imageWidth = 288;
 		_imageHeight = 184;

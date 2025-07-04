@@ -18,10 +18,10 @@ namespace RB::HBox
 		void OnUpdate();
 
 		void SetDir(std::string dir, HBoxType boxType);
-		Loaded_HB_Data* GetData(Sprites::SpriteType spriteType);
-		Loaded_HB_Data* CreateData(Sprites::SpriteType spriteType);
-		std::string CreatePath(Sprites::SpriteType spriteType);
-		std::string GetPath(Sprites::SpriteType spriteType);
+		Loaded_HB_Data* GetData(Sprites::SPRITE_TYPE spriteType);
+		Loaded_HB_Data* CreateData(Sprites::SPRITE_TYPE spriteType);
+		std::string CreatePath(Sprites::SPRITE_TYPE spriteType);
+		std::string GetPath(Sprites::SPRITE_TYPE spriteType);
 
 	private:
 		HBoxLoader _loader;

@@ -4,7 +4,7 @@ namespace RB::Fighter_0_States
 {
 	F0_Idle::F0_Idle()
 	{
-		_spriteType = Sprites::SpriteType::fighter_0_idle;
+		_spriteType = Sprites::SPRITE_TYPE::fighter_0_idle;
 	}
 
 	void F0_Idle::OnEnter()

@@ -87,7 +87,7 @@ namespace RB::Collisions
 		auto vfxAnimationController = GET_VFX_ANIMATION_CONTROLLER;
 
 		Render::iAnimationObj* hitVFX = vfxAnimationController->InstantiateAnimation(
-			Sprites::SpriteType::vfx_hiteffect_0,
+			Sprites::SPRITE_TYPE::vfx_hiteffect_0,
 			attackRegister.collisionPoint,
 			attackRegister.targetIsOnRightSide);
 		
@@ -137,21 +137,21 @@ namespace RB::Collisions
 		if (attackRegister.collisionType == CollisionType::HEAD)
 		{
 			hitVFX_word = vfxAnimationController->InstantiateAnimation(
-				Sprites::SpriteType::vfx_hiteffect_head,
+				Sprites::SPRITE_TYPE::vfx_hiteffect_head,
 				pos,
 				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::BODY)
 		{
 			hitVFX_word = vfxAnimationController->InstantiateAnimation(
-				Sprites::SpriteType::vfx_hiteffect_body,
+				Sprites::SPRITE_TYPE::vfx_hiteffect_body,
 				pos,
 				true);
 		}
 		else if (attackRegister.collisionType == CollisionType::LEGS)
 		{
 			hitVFX_word = vfxAnimationController->InstantiateAnimation(
-				Sprites::SpriteType::vfx_hiteffect_leg,
+				Sprites::SPRITE_TYPE::vfx_hiteffect_leg,
 				pos,
 				true);
 		}

@@ -4,7 +4,7 @@
 
 namespace RB::Cam
 {
-	RB::Vector2 Cam::GetRelPos(RB::Vector2 camPos, float zoom, RB::Vector2 worldPos)
+	RB::Vector2 GetRelPos(RB::Vector2 camPos, float zoom, RB::Vector2 worldPos)
 	{
 		Vector2 rel = (worldPos * zoom) - camPos;
 
@@ -17,7 +17,7 @@ namespace RB::Cam
 		return rel;
 	}
 
-	RB::Vector2 Cam::GetRelPos(Cam::iCamObj* cam, RB::Vector2 worldPos)
+	RB::Vector2 GetRelPos(Cam::iCamObj* cam, RB::Vector2 worldPos)
 	{
 		RB::Vector2 rel = Cam::GetRelPos(cam->GetPosition(), cam->GetZoom(), worldPos);
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "iPlayer.h"
-#include "PlayerID.h"
+#include "PlayerType.h"
 
 #include "../Controllers/ControllerBase.h"
 
@@ -16,7 +16,7 @@ namespace RB::Players
 
 	public:
 		virtual iPlayer* AddPlayer() = 0;
-		virtual iPlayer* GetPlayer(PlayerID id) = 0;
+		virtual iPlayer* GetPlayer(PLAYER_TYPE id) = 0;
 		virtual iPlayer* GetPlayerOnStateMachineID(unsigned int id) = 0;
 		virtual iPlayer* GetOtherPlayer(iPlayer* currentPlayer) = 0;
 	};

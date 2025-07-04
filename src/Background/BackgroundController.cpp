@@ -17,7 +17,7 @@ namespace RB::Background
 	{
 		auto logController = GET_LOG_CONTROLLER;
 
-		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading background sprites");
+		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading background sprites");
 
 		_vecBackgroundObjs.push_back(new BackgroundObj("../resource/PNG files/StringStar/stringstar_01.png", Sprites::SpriteType::background_1, 0.90f));
 		_vecBackgroundObjs.push_back(new BackgroundObj("../resource/PNG files/StringStar/stringstar_02.png", Sprites::SpriteType::background_2, 0.80f));

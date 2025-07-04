@@ -32,7 +32,7 @@ namespace RB::JSON
         if (str.empty())
         {
 			ss << " ===> FAILED! can't find json";
-			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
+			logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
 			return nullptr;
         }
 
@@ -43,13 +43,13 @@ namespace RB::JSON
         if (root == nullptr)
         {
 			ss << " ===> FAILED! can't parse json"; 
-			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
+			logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
 			return nullptr;
         }
 
         _vecLoadedRoots.push_back(root);
 
-		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
+		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, ss.str()); 
         
 		return root;
     }

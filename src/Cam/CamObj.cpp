@@ -62,14 +62,14 @@ namespace RB::Cam
 		_moveLeft = false;
 		_moveRight = false;
 
-		olc::HWButton moveUp = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_UP);
-		olc::HWButton moveDown = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_DOWN);
+		olc::HWButton moveUp = inputController->GetKeyBinding(Players::PLAYER_TYPE::NONE, Input::PlayerInput::MOVE_CAM_UP);
+		olc::HWButton moveDown = inputController->GetKeyBinding(Players::PLAYER_TYPE::NONE, Input::PlayerInput::MOVE_CAM_DOWN);
 
-		olc::HWButton moveLeft = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_LEFT);
-		olc::HWButton moveRight = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::MOVE_CAM_RIGHT);
+		olc::HWButton moveLeft = inputController->GetKeyBinding(Players::PLAYER_TYPE::NONE, Input::PlayerInput::MOVE_CAM_LEFT);
+		olc::HWButton moveRight = inputController->GetKeyBinding(Players::PLAYER_TYPE::NONE, Input::PlayerInput::MOVE_CAM_RIGHT);
 
-		olc::HWButton zoomIn = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::CAM_ZOOM_IN);
-		olc::HWButton zoomOut = inputController->GetKeyBinding(Players::PlayerID::NONE, Input::PlayerInput::CAM_ZOOM_OUT);
+		olc::HWButton zoomIn = inputController->GetKeyBinding(Players::PLAYER_TYPE::NONE, Input::PlayerInput::CAM_ZOOM_IN);
+		olc::HWButton zoomOut = inputController->GetKeyBinding(Players::PLAYER_TYPE::NONE, Input::PlayerInput::CAM_ZOOM_OUT);
 
 		if (moveUp.bHeld && moveDown.bHeld)
 		{

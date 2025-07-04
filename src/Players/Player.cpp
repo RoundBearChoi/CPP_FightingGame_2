@@ -11,7 +11,7 @@ namespace RB::Players
 		_stateMachine = nullptr;
 	}
 
-	void Player::Init(PlayerID id, RB::States::iState* firstPlayerState)
+	void Player::Init(PLAYER_TYPE id, RB::States::iState* firstPlayerState)
 	{
 		if (firstPlayerState == nullptr)
 		{
@@ -51,7 +51,7 @@ namespace RB::Players
 		_playerCollider.OnFixedUpdate();
 	}
 
-	PlayerID Player::GetPlayerID()
+	PLAYER_TYPE Player::GetPLAYER_TYPE()
 	{
 		return _playerID;
 	}
@@ -71,13 +71,13 @@ namespace RB::Players
 		return &_playerCollider;
 	}
 
-	int Player::GetPlayerID_int()
+	int Player::GetPLAYER_TYPE_int()
 	{
-		if (_playerID._value == RB::Players::PlayerID::PLAYER_1)
+		if (_playerID._value == RB::Players::PLAYER_TYPE::PLAYER_1)
 		{
 			return 1;
 		}
-		else if (_playerID._value == RB::Players::PlayerID::PLAYER_2)
+		else if (_playerID._value == RB::Players::PLAYER_TYPE::PLAYER_2)
 		{
 			return 2;
 		}
@@ -205,7 +205,7 @@ namespace RB::Players
 	void Player::AddHP(int amount)
 	{
 		//std::cout << std::endl;
-		//std::cout << "player " << GetPlayerID_int()  << " | adding hp " << amount;
+		//std::cout << "player " << GetPLAYER_TYPE_int()  << " | adding hp " << amount;
 
 		_hp += amount;
 

@@ -2,7 +2,7 @@
 
 #include "SpecialMoveType.h"
 
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 
 namespace RB::Input
 {
@@ -12,7 +12,7 @@ namespace RB::Input
 		virtual ~iSpecialMoveSequence() = default;
 
 	public:
-		virtual bool IsMatching(Players::PlayerID playerID) = 0;
+		virtual bool IsMatching(Players::PLAYER_TYPE playerID) = 0;
 		virtual Input::SpecialMoveType GetSpecialMoveType() = 0;
 	};
 }

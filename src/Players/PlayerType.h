@@ -6,7 +6,7 @@ namespace RB::Players
 {
 	BETTER_ENUM
 	(
-	 	PlayerID, int,
+	 	PLAYER_TYPE, int,
 
 		NONE = 0,
 

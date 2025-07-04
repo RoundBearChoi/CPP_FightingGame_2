@@ -11,15 +11,15 @@ namespace RB::Render
 	{
         if (_render)
         {
-            _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_1);
-            _RenderPlayerHPBar(RB::Players::PlayerID::PLAYER_2);
+            _RenderPlayerHPBar(RB::Players::PLAYER_TYPE::PLAYER_1);
+            _RenderPlayerHPBar(RB::Players::PLAYER_TYPE::PLAYER_2);
         }
 	}
 
 	void Player_HP_Renderer::OnFixedUpdate()
 	{
-        _UpdatePlayerHPBar(RB::Players::PlayerID::PLAYER_1);
-        _UpdatePlayerHPBar(RB::Players::PlayerID::PLAYER_2);
+        _UpdatePlayerHPBar(RB::Players::PLAYER_TYPE::PLAYER_1);
+        _UpdatePlayerHPBar(RB::Players::PLAYER_TYPE::PLAYER_2);
 
         _p1_calculator.OnFixedUpdate();
         _p2_calculator.OnFixedUpdate();
@@ -30,7 +30,7 @@ namespace RB::Render
         _render = render;
     }
 
-    void Player_HP_Renderer::_RenderPlayerHPBar(RB::Players::PlayerID playerID)
+    void Player_HP_Renderer::_RenderPlayerHPBar(RB::Players::PLAYER_TYPE playerID)
     {
 		float bar_x_size = 215.0f;
 		float bar_y_size = 5.0f;
@@ -43,13 +43,13 @@ namespace RB::Render
         RB::Sprites::PivotType pivotType = RB::Sprites::PivotType::NONE;
         EaseCalculator* calculator = nullptr;
 
-        if (playerID._value == RB::Players::PlayerID::PLAYER_1)
+        if (playerID._value == RB::Players::PLAYER_TYPE::PLAYER_1)
         {
             center_x -= center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_RIGHT;
             calculator = &_p1_calculator;
         }
-        else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
+        else if (playerID._value == RB::Players::PLAYER_TYPE::PLAYER_2)
         {
             center_x += center_x_margin;
             pivotType = RB::Sprites::PivotType::BOTTOM_LEFT;
@@ -73,15 +73,15 @@ namespace RB::Render
 			false);
     }
 
-    void Player_HP_Renderer::_UpdatePlayerHPBar(RB::Players::PlayerID playerID)
+    void Player_HP_Renderer::_UpdatePlayerHPBar(RB::Players::PLAYER_TYPE playerID)
     {
         EaseCalculator* calculator = nullptr;
 
-        if (playerID._value == RB::Players::PlayerID::PLAYER_1)
+        if (playerID._value == RB::Players::PLAYER_TYPE::PLAYER_1)
         {
             calculator = &_p1_calculator;
         }
-        else if (playerID._value == RB::Players::PlayerID::PLAYER_2)
+        else if (playerID._value == RB::Players::PLAYER_TYPE::PLAYER_2)
         {
             calculator = &_p2_calculator;
         }

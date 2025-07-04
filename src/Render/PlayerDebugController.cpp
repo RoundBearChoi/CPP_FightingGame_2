@@ -12,7 +12,7 @@ namespace RB::Render
 	{
 		auto logController = GET_LOG_CONTROLLER;
 
-		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading debug sprites");
+		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading debug sprites");
 
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/x_white.png", RB::Sprites::SpriteType::x_white);
 		_spriteContainer.LoadSprite("../resource/PNG files/DebugElements/white_sq.png", RB::Sprites::SpriteType::white_sq);
@@ -54,8 +54,8 @@ namespace RB::Render
 		_playerInputRenderer.OnUpdate();
 		_player_HP_Renderer.OnUpdate();
 
-		_RenderBodyParts(RB::Players::PlayerID::PLAYER_1);
-		_RenderBodyParts(RB::Players::PlayerID::PLAYER_2);
+		_RenderBodyParts(RB::Players::PLAYER_TYPE::PLAYER_1);
+		_RenderBodyParts(RB::Players::PLAYER_TYPE::PLAYER_2);
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
@@ -87,7 +87,7 @@ namespace RB::Render
 		_playerInputRenderer.RenderInput(render);
 	}
 
-	void PlayerDebugController::_RenderBodyParts(RB::Players::PlayerID id)
+	void PlayerDebugController::_RenderBodyParts(RB::Players::PLAYER_TYPE id)
 	{
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto camController = GET_CAM_CONTROLLER;

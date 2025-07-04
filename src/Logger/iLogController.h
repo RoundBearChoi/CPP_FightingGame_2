@@ -4,7 +4,7 @@
 
 #include "LogType.h"
 
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 #include "../Controllers/ControllerBase.h"
 
 namespace RB::Log
@@ -15,6 +15,6 @@ namespace RB::Log
 	{
 	public:
 		virtual ~iLogController() override {}
-		virtual bool AddToStream(Players::PlayerID playerID, Log::LOG_TYPE logType, const std::string& str) = 0; 
+		virtual bool AddToStream(Players::PLAYER_TYPE playerID, Log::LOG_TYPE logType, const std::string& str) = 0; 
 	};
 }

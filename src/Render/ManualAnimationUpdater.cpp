@@ -16,7 +16,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(RB::Players::PlayerID::PLAYER_1, _spriteType);
+		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(RB::Players::PLAYER_TYPE::PLAYER_1, _spriteType);
 
 		if (aniObj == nullptr)
 		{

@@ -14,7 +14,7 @@ namespace RB::Collisions
 	{
 		_ShowMenu();
 
-		_AddDeleteBoxOnPress(Players::PlayerID::PLAYER_1);
+		_AddDeleteBoxOnPress(Players::PLAYER_TYPE::PLAYER_1);
 		_SaveOnPress();
 
 		Render::iPlayerDebugController* playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
@@ -24,7 +24,7 @@ namespace RB::Collisions
 			playerDebugController->RenderPlayerHP(false);
 			playerDebugController->RenderInput(false);
 
-			PlayerBox* currentBox = _GetCurrentBox(Players::PlayerID::PLAYER_1);
+			PlayerBox* currentBox = _GetCurrentBox(Players::PLAYER_TYPE::PLAYER_1);
 
 			if (currentBox == nullptr)
 			{
@@ -90,7 +90,7 @@ namespace RB::Collisions
 		}
 	}
 
-	void PlayerBoxEditController::_AddDeleteBoxOnPress(Players::PlayerID id)
+	void PlayerBoxEditController::_AddDeleteBoxOnPress(Players::PLAYER_TYPE id)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
@@ -100,7 +100,7 @@ namespace RB::Collisions
 			return;
 		}
 
-		PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(Players::PlayerID::PLAYER_1);
+		PlayerBoxSpecs* currentSpecs = _GetCurrentSpecs(Players::PLAYER_TYPE::PLAYER_1);
 
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
@@ -149,7 +149,7 @@ namespace RB::Collisions
 
 		if (enter.bPressed)
 		{
-			PlayerBoxSpecs* specs = _GetCurrentSpecs(Players::PlayerID::PLAYER_1);
+			PlayerBoxSpecs* specs = _GetCurrentSpecs(Players::PLAYER_TYPE::PLAYER_1);
 
 			if (specs == nullptr)
 			{
@@ -170,12 +170,12 @@ namespace RB::Collisions
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
-		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1);
+		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
-		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(Sprites::GetCurrentAnimationFrame(Players::PLAYER_TYPE::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
 	}
 
-	PlayerBox* PlayerBoxEditController::_GetCurrentBox(Players::PlayerID id)
+	PlayerBox* PlayerBoxEditController::_GetCurrentBox(Players::PLAYER_TYPE id)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
@@ -201,7 +201,7 @@ namespace RB::Collisions
 		return box;
 	}
 
-	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(Players::PlayerID id)
+	PlayerBoxSpecs* PlayerBoxEditController::_GetCurrentSpecs(Players::PLAYER_TYPE id)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Collisions::iPlayerBoxDataController* playerBoxDataController = GET_PLAYER_BOX_DATA_CONTROLLER;
@@ -226,7 +226,7 @@ namespace RB::Collisions
 		return specs;
 	}
 
-	Players::CharacterType PlayerBoxEditController::_GetCharacterType(Players::PlayerID id)
+	Players::CharacterType PlayerBoxEditController::_GetCharacterType(Players::PLAYER_TYPE id)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 

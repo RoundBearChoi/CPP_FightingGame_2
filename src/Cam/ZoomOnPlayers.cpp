@@ -29,8 +29,8 @@ namespace RB::Cam
 			return 0.0f;
 		}
 
-		Players::iPlayer* p1 = playerController->GetPlayer(Players::PlayerID::PLAYER_1);
-		Players::iPlayer* p2 = playerController->GetPlayer(Players::PlayerID::PLAYER_2);
+		Players::iPlayer* p1 = playerController->GetPlayer(Players::PLAYER_TYPE::PLAYER_1);
+		Players::iPlayer* p2 = playerController->GetPlayer(Players::PLAYER_TYPE::PLAYER_2);
 
 		Vector2 p1_pos = p1->GetPosition();
 		Vector2 p2_pos = p2->GetPosition();

@@ -36,8 +36,8 @@ namespace RB::Collisions
 		const Collisions::AttackSpecs& attackSpecs = attackSpecsController->GetAttackSpecs(reg.attackerSpriteType);
 
 		std::stringstream ss;
-		ss << "registering attack against " << reg.target->GetPlayerID()._to_string();
-		logController->AddToStream(reg.attacker->GetPlayerID(), Log::LOG_TYPE::COLLISION, ss.str()); 
+		ss << "registering attack against " << reg.target->GetPLAYER_TYPE()._to_string();
+		logController->AddToStream(reg.attacker->GetPLAYER_TYPE(), Log::LOG_TYPE::COLLISION, ss.str()); 
 
 		reg.target->AddHP(-attackSpecs.mDamage);
 

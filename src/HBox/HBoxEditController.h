@@ -15,7 +15,7 @@
 
 #include "../Time.h"
 #include "../Vector2.h"
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 #include "../Players/PlayerState.h"
 #include "../Updaters/CurrentPlayground.h"
 #include "../Render/CircleRenderer.h"
@@ -36,15 +36,15 @@ namespace RB::HBox
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
-		HBox::Loaded_HB_Data* GetCurrentData(Players::PlayerID playerID, HBoxType boxType) override;
-		HBox::AABB_Set* GetCurrentHBoxData(Players::PlayerID playerID) override;
+		HBox::Loaded_HB_Data* GetCurrentData(Players::PLAYER_TYPE playerID, HBoxType boxType) override;
+		HBox::AABB_Set* GetCurrentHBoxData(Players::PLAYER_TYPE playerID) override;
 		HBox::HBoxType GetHBoxType() override;
 
 	private:
 		bool _ControllersExist();
-		void _RenderCircleOnHBox(Players::PlayerID playerID);
+		void _RenderCircleOnHBox(Players::PLAYER_TYPE playerID);
 		void _Add_Delete_AABB_OnPress();
-		void _EditAABB_OnPress(Players::PlayerID playerID);
+		void _EditAABB_OnPress(Players::PLAYER_TYPE playerID);
 		void _SaveHBoxes_OnPress();
 		void _CycleAnimations_OnPress();
 

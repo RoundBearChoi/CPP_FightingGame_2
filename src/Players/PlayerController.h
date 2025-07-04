@@ -20,7 +20,7 @@ namespace RB::Players
 
 	public:
 		iPlayer* AddPlayer() override;
-		iPlayer* GetPlayer(PlayerID id) override;
+		iPlayer* GetPlayer(PLAYER_TYPE id) override;
 		iPlayer* GetPlayerOnStateMachineID(unsigned int id) override;
 		iPlayer* GetOtherPlayer(iPlayer* currentPlayer) override;
 

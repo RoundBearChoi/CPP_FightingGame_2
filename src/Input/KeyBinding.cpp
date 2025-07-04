@@ -2,14 +2,14 @@
 
 namespace RB::Input
 {
-	KeyBinding::KeyBinding(Players::PlayerID playerID, PlayerInput playerInput, olc::Key key)
+	KeyBinding::KeyBinding(Players::PLAYER_TYPE playerID, PlayerInput playerInput, olc::Key key)
 	{
 		_playerID = playerID;
 		_playerInput = playerInput;
 		_key = key;
 	}
 
-	Players::PlayerID KeyBinding::GetPlayerID()
+	Players::PLAYER_TYPE KeyBinding::GetPLAYER_TYPE()
 	{
 		return _playerID;
 	}

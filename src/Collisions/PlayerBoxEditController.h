@@ -7,7 +7,7 @@
 #include "iPlayerBoxEditController.h"
 
 #include "../Time.h"
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 #include "../Players/PlayerState.h"
 #include "../Sprites/SpriteType.h"
 #include "../Players/CharacterType.h"
@@ -33,13 +33,13 @@ namespace RB::Collisions
 
 	private:
 		void _UpdateBoxSizeOnPress(Collisions::PlayerBox* currentBox);
-		void _AddDeleteBoxOnPress(Players::PlayerID id);
+		void _AddDeleteBoxOnPress(Players::PLAYER_TYPE id);
 		void _SaveOnPress();
 		void _ShowMenu();
 
 	private:
-		PlayerBox* _GetCurrentBox(Players::PlayerID id);
-		PlayerBoxSpecs* _GetCurrentSpecs(Players::PlayerID id);
-		Players::CharacterType _GetCharacterType(Players::PlayerID id);
+		PlayerBox* _GetCurrentBox(Players::PLAYER_TYPE id);
+		PlayerBoxSpecs* _GetCurrentSpecs(Players::PLAYER_TYPE id);
+		Players::CharacterType _GetCharacterType(Players::PLAYER_TYPE id);
 	};
 }

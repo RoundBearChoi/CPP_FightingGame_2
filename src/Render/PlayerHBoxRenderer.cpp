@@ -16,11 +16,11 @@ namespace RB::Render
 			return;
 		}
 
-		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::TARGET_BOX);
-		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::TARGET_BOX);
+		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_1, RB::HBox::HBoxType::TARGET_BOX);
+		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_2, RB::HBox::HBoxType::TARGET_BOX);
 
-		RenderHBox(RB::Players::PlayerID::PLAYER_1, RB::HBox::HBoxType::ATTACK_BOX);
-		RenderHBox(RB::Players::PlayerID::PLAYER_2, RB::HBox::HBoxType::ATTACK_BOX);
+		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_1, RB::HBox::HBoxType::ATTACK_BOX);
+		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_2, RB::HBox::HBoxType::ATTACK_BOX);
 	}
 
 	void PlayerHBoxRenderer::OnFixedUpdate()
@@ -28,7 +28,7 @@ namespace RB::Render
 
 	}
 
-	void PlayerHBoxRenderer::RenderHBox(RB::Players::PlayerID playerID, RB::HBox::HBoxType boxType)
+	void PlayerHBoxRenderer::RenderHBox(RB::Players::PLAYER_TYPE playerID, RB::HBox::HBoxType boxType)
 	{
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;

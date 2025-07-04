@@ -31,7 +31,7 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	public:
-		void RenderHBox(Players::PlayerID playerID, HBox::HBoxType boxType);
+		void RenderHBox(Players::PLAYER_TYPE playerID, HBox::HBoxType boxType);
 
 	private:
 		void _Render(Players::iPlayer* player, HBox::AABB_Set* AABBs, olc::Pixel color);

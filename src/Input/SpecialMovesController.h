@@ -9,7 +9,7 @@
 #include "iSpecialMoveSequence.h"
 #include "iSpecialMovesController.h"
 
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 #include "../Fighter_0_States/F0_Hadouken.h"
 
 #include "../States/iState.h"
@@ -26,12 +26,12 @@ namespace RB::Input
 		void Init() override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
-		Input::SpecialMoveType GetSpecialMove(Players::PlayerID playerID) override;
+		Input::SpecialMoveType GetSpecialMove(Players::PLAYER_TYPE playerID) override;
 		States::iState* GetNewState(Input::SpecialMoveType specialMoveType) override;
 
 	private:
-		void _ClearSequences(Players::PlayerID playerID);
-		std::vector<iSpecialMoveSequence*>& _GetSequence(Players::PlayerID playerID);
+		void _ClearSequences(Players::PLAYER_TYPE playerID);
+		std::vector<iSpecialMoveSequence*>& _GetSequence(Players::PLAYER_TYPE playerID);
 
 		std::vector<iSpecialMoveSequence*> _vecP1_Sequences;
 		std::vector<iSpecialMoveSequence*> _vecP2_Sequences;

@@ -6,7 +6,7 @@ namespace RB::Players
 {
 	std::vector<PlayerState*> PlayerState::allPlayerStates;
 
-	PlayerState* PlayerState::GetPlayerState(Players::PlayerID playerID)
+	PlayerState* PlayerState::GetPlayerState(Players::PLAYER_TYPE playerID)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
@@ -16,7 +16,7 @@ namespace RB::Players
 
 			if (owner != nullptr)
 			{
-				if (playerID._value == owner->GetPlayerID())
+				if (playerID._value == owner->GetPLAYER_TYPE())
 				{
 					return (*i);
 				}
@@ -76,7 +76,7 @@ namespace RB::Players
 	{
 		auto logController = GET_LOG_CONTROLLER;
 
-		Players::PlayerID pid = GetPlayer()->GetPlayerID();
+		Players::PLAYER_TYPE pid = GetPlayer()->GetPLAYER_TYPE();
 
 		std::stringstream ss;
 		ss << "OnEnter: " << _spriteType._to_string();
@@ -151,7 +151,7 @@ namespace RB::Players
 
 		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		Render::iAnimationObj* iAniObj = playerAnimationController->GetCurrentAnimationObj(GetPlayer()->GetPlayerID(), _spriteType);
+		Render::iAnimationObj* iAniObj = playerAnimationController->GetCurrentAnimationObj(GetPlayer()->GetPLAYER_TYPE(), _spriteType);
 
 		if (iAniObj == nullptr)
 		{

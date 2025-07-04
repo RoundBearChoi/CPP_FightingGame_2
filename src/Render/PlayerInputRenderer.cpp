@@ -11,8 +11,8 @@ namespace RB::Render
 	{
 		if (_render)
 		{
-			_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_1, 45);
-			_RenderPlayerInputIcons(RB::Players::PlayerID::PLAYER_2, 70);
+			_RenderPlayerInputIcons(RB::Players::PLAYER_TYPE::PLAYER_1, 45);
+			_RenderPlayerInputIcons(RB::Players::PLAYER_TYPE::PLAYER_2, 70);
 		}
 	}
 
@@ -26,7 +26,7 @@ namespace RB::Render
 		_render = render;
 	}
 
-	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos)
+	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PLAYER_TYPE playerID, int yPos)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
@@ -48,7 +48,7 @@ namespace RB::Render
 			return;
 		}
 
-		const auto vec = inputController->GetVecInputObjs(player->GetPlayerID());
+		const auto vec = inputController->GetVecInputObjs(player->GetPLAYER_TYPE());
 
 		int count = 0;
 

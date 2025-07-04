@@ -5,7 +5,7 @@
 #include "Loaded_HB_Data.h"
 
 #include "../Controllers/ControllerBase.h"
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 
 namespace RB::HBox
 {
@@ -18,8 +18,8 @@ namespace RB::HBox
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
-		virtual HBox::Loaded_HB_Data* GetCurrentData(Players::PlayerID playerID, HBoxType boxType) = 0;
-		virtual HBox::AABB_Set* GetCurrentHBoxData(Players::PlayerID playerID) = 0;
+		virtual HBox::Loaded_HB_Data* GetCurrentData(Players::PLAYER_TYPE playerID, HBoxType boxType) = 0;
+		virtual HBox::AABB_Set* GetCurrentHBoxData(Players::PLAYER_TYPE playerID) = 0;
 		virtual HBox::HBoxType GetHBoxType() = 0;
 	};
 }

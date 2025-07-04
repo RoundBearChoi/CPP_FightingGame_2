@@ -19,7 +19,7 @@ namespace RB::Players
 	{
 	public:
 		static std::vector<PlayerState*> allPlayerStates;
-		static PlayerState* GetPlayerState(Players::PlayerID playerID);
+		static PlayerState* GetPlayerState(Players::PLAYER_TYPE playerID);
 		static void EraseAll();
 
 	public:

@@ -8,7 +8,7 @@
 
 #include "../GameFrame.h"
 #include "../Updaters/Skipper.h"
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 
 #include "iLogController.h"
 
@@ -26,7 +26,7 @@ namespace RB::Log
 		void OnFixedUpdate() override;
 		
 		public:
-		bool AddToStream(Players::PlayerID playerID, Log::LOG_TYPE logType, const std::string& str) override;
+		bool AddToStream(Players::PLAYER_TYPE playerID, Log::LOG_TYPE logType, const std::string& str) override;
 		
 		private:
 		void _write();

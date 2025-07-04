@@ -7,7 +7,7 @@
 #include "iSpecialMoveSequence.h"
 #include "iInputController.h"
 
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 
 #include "../Players/iPlayerController.h"
 
@@ -20,7 +20,7 @@ namespace RB::Input
 		virtual ~SpecialMoveSequenceBase() override;
 
 	public:
-		virtual bool IsMatching(Players::PlayerID playerID) override;
+		virtual bool IsMatching(Players::PLAYER_TYPE playerID) override;
 		virtual Input::SpecialMoveType GetSpecialMoveType() override;
 
 	protected:

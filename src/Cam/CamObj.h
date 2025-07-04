@@ -5,7 +5,7 @@
 #include "../Vector2.h"
 #include "../DisplaySize.h"
 #include "../Time.h"
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 
 #include "../Input/iInputController.h"
 

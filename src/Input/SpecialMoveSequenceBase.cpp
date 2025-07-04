@@ -7,7 +7,7 @@ namespace RB::Input
 
 	}
 
-	bool SpecialMoveSequenceBase::IsMatching(Players::PlayerID playerID)
+	bool SpecialMoveSequenceBase::IsMatching(Players::PLAYER_TYPE playerID)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Input::iInputController* inputController = GET_INPUT_CONTROLLER;

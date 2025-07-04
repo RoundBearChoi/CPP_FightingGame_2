@@ -51,7 +51,7 @@ namespace RB::Collisions
 	{
 		auto logController = GET_LOG_CONTROLLER;
 		
-		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 attack specs"); 
+		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, "loading fighter 0 attack specs"); 
 
 		for (int i = Sprites::SpriteType::FIGHTER_0_SPRITES_START + 1; i < Sprites::SpriteType::FIGHTER_0_SPRITES_END; i++)
 		{

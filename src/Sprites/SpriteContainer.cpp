@@ -31,7 +31,7 @@ namespace RB::Sprites
 		{
 			_vecLoadedSprites.push_back(loaded);
 
-			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, ss.str()); 
+			logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, ss.str()); 
 
 			return loaded;
 		}
@@ -39,7 +39,7 @@ namespace RB::Sprites
 		{
 			ss << " .. FAILED!";
 
-			logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, ss.str()); 
+			logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, ss.str()); 
 			
 			return nullptr;
 		}

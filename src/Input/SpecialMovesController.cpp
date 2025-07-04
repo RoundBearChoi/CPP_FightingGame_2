@@ -4,8 +4,8 @@ namespace RB::Input
 {
 	SpecialMovesController::~SpecialMovesController()
 	{
-		_ClearSequences(Players::PlayerID::PLAYER_1);
-		_ClearSequences(Players::PlayerID::PLAYER_2);
+		_ClearSequences(Players::PLAYER_TYPE::PLAYER_1);
+		_ClearSequences(Players::PLAYER_TYPE::PLAYER_2);
 	}
 
 	void SpecialMovesController::Init()
@@ -27,7 +27,7 @@ namespace RB::Input
 
 	}
 
-	SpecialMoveType SpecialMovesController::GetSpecialMove(Players::PlayerID playerID)
+	SpecialMoveType SpecialMovesController::GetSpecialMove(Players::PLAYER_TYPE playerID)
 	{
 		const std::vector<iSpecialMoveSequence*>& vec = _GetSequence(playerID);
 
@@ -53,7 +53,7 @@ namespace RB::Input
 		return nullptr;
 	}
 
-	void SpecialMovesController::_ClearSequences(Players::PlayerID playerID)
+	void SpecialMovesController::_ClearSequences(Players::PLAYER_TYPE playerID)
 	{
 		std::vector<iSpecialMoveSequence*>& vec = _GetSequence(playerID);
 
@@ -66,13 +66,13 @@ namespace RB::Input
 		vec.clear();
 	}
 
-	std::vector<iSpecialMoveSequence*>& SpecialMovesController::_GetSequence(Players::PlayerID playerID)
+	std::vector<iSpecialMoveSequence*>& SpecialMovesController::_GetSequence(Players::PLAYER_TYPE playerID)
 	{
-		if (playerID._value == Players::PlayerID::PLAYER_1)
+		if (playerID._value == Players::PLAYER_TYPE::PLAYER_1)
 		{
 			return _vecP1_Sequences;
 		}
-		else if (playerID._value == Players::PlayerID::PLAYER_2)
+		else if (playerID._value == Players::PLAYER_TYPE::PLAYER_2)
 		{
 			return _vecP2_Sequences;
 		}

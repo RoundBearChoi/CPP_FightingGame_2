@@ -37,9 +37,9 @@ namespace RB::HBox
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 90 }, "UHJK : enlarge/shrink box", olc::WHITE, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 100 }, "ENTER : save data (saves the entire set)", olc::WHITE, { 0.6f,0.6f });
 
-		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1);
+		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1);
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 120 }, "animation name: " + std::string(spriteType._to_string()), olc::YELLOW, { 0.6f, 0.6f });
-		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
+		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 130 }, "animation frame: " + std::to_string(Sprites::GetCurrentAnimationFrame(Players::PLAYER_TYPE::PLAYER_1)), olc::YELLOW, { 0.6f,0.6f });
 		olc::Renderer::ptrPGE->DrawStringDecal(olc::vi2d{ 10, 140 }, "FrameName: " + _GetFrameName(), olc::YELLOW, { 0.6f, 0.6f });
 
 		HBox::Loaded_HB_Data* data = _GetHBData();
@@ -49,7 +49,7 @@ namespace RB::HBox
 			return;
 		}
 
-		HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1));
+		HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PLAYER_TYPE::PLAYER_1));
 
 		if (AABBs == nullptr)
 		{
@@ -85,14 +85,14 @@ namespace RB::HBox
 			return _none;
 		}
 
-		HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1));
+		HBox::AABB_Set* AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PLAYER_TYPE::PLAYER_1));
 
 		if (AABBs == nullptr)
 		{
 			// create empty set
 			data->AddSet(AABB_Set{ "frame_0" });
 
-			AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PlayerID::PLAYER_1));
+			AABBs = data->GetHBoxDataByFrame(Sprites::GetCurrentAnimationFrame(Players::PLAYER_TYPE::PLAYER_1));
 			//return _none;
 		}
 
@@ -113,14 +113,14 @@ namespace RB::HBox
 		{
 			if (targetBoxDataController != nullptr)
 			{
-				data = targetBoxDataController->GetData(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
+				data = targetBoxDataController->GetData(Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1));
 			}
 		}
 		else if (boxType == HBox::HBoxType::ATTACK_BOX)
 		{
 			if (attackBoxDataController != nullptr)
 			{
-				data = attackBoxDataController->GetData(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
+				data = attackBoxDataController->GetData(Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1));
 			}
 		}
 
@@ -144,7 +144,7 @@ namespace RB::HBox
 		{
 			if (targetBoxDataController != nullptr)
 			{
-				const std::string& path = targetBoxDataController->GetPath(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
+				const std::string& path = targetBoxDataController->GetPath(Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1));
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}
@@ -152,7 +152,7 @@ namespace RB::HBox
 		{
 			if (attackBoxDataController != nullptr)
 			{
-				const std::string& path = attackBoxDataController->GetPath(Sprites::GetCurrentSpriteType(Players::PlayerID::PLAYER_1));
+				const std::string& path = attackBoxDataController->GetPath(Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1));
 				_notification.OnUpdate("File saved: " + path);
 			}
 		}

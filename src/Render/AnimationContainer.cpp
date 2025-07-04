@@ -118,13 +118,13 @@ namespace RB::Render
 		}
 	}
 
-	void AnimationContainer::DeleteAnimationObjs(RB::Players::PlayerID playerID)
+	void AnimationContainer::DeleteAnimationObjs(RB::Players::PLAYER_TYPE playerID)
 	{
 		auto it = _vecCurrentAnimations.begin();
 
 		while (it != _vecCurrentAnimations.end())
 		{
-			if ((*it)->GetPlayer()->GetPlayerID() == playerID)
+			if ((*it)->GetPlayer()->GetPLAYER_TYPE() == playerID)
 			{
 				delete (*it);
 				(*it) = nullptr;
@@ -151,11 +151,11 @@ namespace RB::Render
 		return next;
 	}
 
-	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(RB::Players::PlayerID playerID, RB::Sprites::SpriteType spriteType)
+	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, RB::Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			if ((*i)->GetPlayer()->GetPlayerID() == playerID)
+			if ((*i)->GetPlayer()->GetPLAYER_TYPE() == playerID)
 			{
 				if ((*i)->GetAnimationSpecs().mSpriteType == spriteType)
 				{
@@ -187,13 +187,13 @@ namespace RB::Render
 		return animationObj;
 	}
 
-	RB::Sprites::SpriteType AnimationContainer::GetSpriteType(RB::Players::PlayerID playerID)
+	RB::Sprites::SpriteType AnimationContainer::GetSpriteType(RB::Players::PLAYER_TYPE playerID)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
 			if ((*i) != nullptr)
 			{
-				if ((*i)->GetPlayer()->GetPlayerID() == playerID)
+				if ((*i)->GetPlayer()->GetPLAYER_TYPE() == playerID)
 				{
 					RB::Sprites::SpriteType spriteType = (*i)->GetAnimationSpecs().mSpriteType;
 

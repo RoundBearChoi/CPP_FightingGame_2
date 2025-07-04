@@ -23,7 +23,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
-		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(player->GetPlayerID());
+		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(player->GetPLAYER_TYPE());
 
 		if (state == nullptr)
 		{
@@ -34,7 +34,7 @@ namespace RB::PlayerStateComponents
 
 		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(player->GetPlayerID(), spriteType);
+		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(player->GetPLAYER_TYPE(), spriteType);
 
 		if (aniObj == nullptr)
 		{

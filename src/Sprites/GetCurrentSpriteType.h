@@ -2,10 +2,10 @@
 
 #include "SpriteType.h"
 
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 #include "../Players/PlayerState.h"
 
 namespace RB::Sprites
 {
-	extern SpriteType GetCurrentSpriteType(RB::Players::PlayerID id);
+	extern SpriteType GetCurrentSpriteType(RB::Players::PLAYER_TYPE id);
 }

@@ -24,7 +24,7 @@ namespace RB::Render
 
 	private:
 		bool _render = true;
-		void _RenderPlayerInputIcons(RB::Players::PlayerID playerID, int yPos);
+		void _RenderPlayerInputIcons(RB::Players::PLAYER_TYPE playerID, int yPos);
 		void _RenderIcon(RB::Sprites::SpriteType spriteType, RB::Vector2 pos, olc::Pixel tint);
 		RB::Sprites::SpriteType _GetSpriteType(const RB::Input::PlayerInput& playerInput);
 

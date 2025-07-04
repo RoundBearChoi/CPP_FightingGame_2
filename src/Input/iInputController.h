@@ -5,7 +5,7 @@
 #include "PlayerInput.h"
 
 #include "../Controllers/ControllerBase.h"
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 
 #include "iInputObj.h"
 
@@ -16,13 +16,13 @@ namespace RB::Input
 	class iInputController : public Controllers::ControllerBase
 	{
 	public:
-		virtual olc::HWButton GetKeyBinding(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetInputObj_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetInputObj_LIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetUnused_Special_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual iInputObj* GetUnused_Movement_FIFO(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual bool IsHeld(Players::PlayerID playerID, Input::PlayerInput playerInput) = 0;
-		virtual const std::vector<iInputObj*>& GetVecInputObjs(Players::PlayerID playerID) = 0;
-		virtual iInputObj* GetInputByIndex(Players::PlayerID playerID, unsigned int index) = 0;
+		virtual olc::HWButton GetKeyBinding(Players::PLAYER_TYPE playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetInputObj_FIFO(Players::PLAYER_TYPE playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetInputObj_LIFO(Players::PLAYER_TYPE playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetUnused_Special_FIFO(Players::PLAYER_TYPE playerID, Input::PlayerInput playerInput) = 0;
+		virtual iInputObj* GetUnused_Movement_FIFO(Players::PLAYER_TYPE playerID, Input::PlayerInput playerInput) = 0;
+		virtual bool IsHeld(Players::PLAYER_TYPE playerID, Input::PlayerInput playerInput) = 0;
+		virtual const std::vector<iInputObj*>& GetVecInputObjs(Players::PLAYER_TYPE playerID) = 0;
+		virtual iInputObj* GetInputByIndex(Players::PLAYER_TYPE playerID, unsigned int index) = 0;
 	};
 }

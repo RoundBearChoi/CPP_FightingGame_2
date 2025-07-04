@@ -8,7 +8,7 @@ namespace RB::Collisions
 	{
 		auto logController = GET_LOG_CONTROLLER;
 
-		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading player boxes"); 
+		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, "loading player boxes"); 
 
 		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_idle, Players::CharacterType::AKU);
 		_playerBoxSpecsLoader.LoadSpecs(Sprites::SpriteType::fighter_0_crouch, Players::CharacterType::AKU);

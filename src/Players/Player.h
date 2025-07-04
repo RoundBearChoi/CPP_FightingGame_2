@@ -1,6 +1,6 @@
 #pragma once
 
-#include "PlayerID.h"
+#include "PlayerType.h"
 #include "CharacterType.h"
 #include "PlayerCollider.h"
 
@@ -17,16 +17,16 @@ namespace RB::Players
 		~Player() override;
 
 	public:
-		void Init(PlayerID id, RB::States::iState* firstPlayerState) override;
+		void Init(PLAYER_TYPE id, RB::States::iState* firstPlayerState) override;
 		void OnUpdate() override;
 		void OnFixedUpdate() override;
 
 	public:
-		PlayerID GetPlayerID() override;
+		PLAYER_TYPE GetPLAYER_TYPE() override;
 		void SetCharacterType(CharacterType type) override;
 		CharacterType GetCharacterType() override;
 		iPlayerCollider* GetPlayerCollider() override;
-		int GetPlayerID_int() override;
+		int GetPLAYER_TYPE_int() override;
 		bool IsFacingRight() override;
 		bool OtherPlayerIsOnRightSide() override;
 		bool InitiallyFacingRight() override;
@@ -49,7 +49,7 @@ namespace RB::Players
 		int GetHP() override;
 
 	protected:
-		PlayerID _playerID = PlayerID::NONE;
+		PLAYER_TYPE _playerID = PLAYER_TYPE::NONE;
 		CharacterType _characterType = CharacterType::NONE;
 		RB::States::iStateMachine* _stateMachine = nullptr;
 		PlayerCollider _playerCollider;

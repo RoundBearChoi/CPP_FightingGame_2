@@ -2,7 +2,7 @@
 
 namespace RB::Sprites
 {
-	SpriteType GetCurrentSpriteType(RB::Players::PlayerID id)
+	SpriteType GetCurrentSpriteType(RB::Players::PLAYER_TYPE id)
 	{
 		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(id);
 

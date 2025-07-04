@@ -11,7 +11,7 @@ namespace RB::Render
 	class iPlayerAnimationController : public Controllers::ControllerBase
 	{
 	public:
-		virtual void DeleteAnimationObj(Players::PlayerID playerID) = 0;
-		virtual iAnimationObj* GetCurrentAnimationObj(Players::PlayerID playerID, Sprites::SpriteType spriteType) = 0;
+		virtual void DeleteAnimationObj(Players::PLAYER_TYPE playerID) = 0;
+		virtual iAnimationObj* GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType) = 0;
 	};
 }

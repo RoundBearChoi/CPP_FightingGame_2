@@ -10,14 +10,14 @@ namespace RB::Render
 
 		auto logController = GET_LOG_CONTROLLER;
 
-		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading vfx sprites");
+		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_SPRITE, "loading vfx sprites");
 
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_0.png", RB::Sprites::SpriteType::vfx_hiteffect_0);
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_head.png", RB::Sprites::SpriteType::vfx_hiteffect_head);
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_body.png", RB::Sprites::SpriteType::vfx_hiteffect_body);
         _animationContainer.LoadSprite("../resource/PNG files/ImpactEffects/vfx_hiteffect_leg.png", RB::Sprites::SpriteType::vfx_hiteffect_leg);
 
-		logController->AddToStream(Players::PlayerID::NONE, Log::LOG_TYPE::LOAD_JSON, "loading vfx aniSpecs");
+		logController->AddToStream(Players::PLAYER_TYPE::NONE, Log::LOG_TYPE::LOAD_JSON, "loading vfx aniSpecs");
         
 		_animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_0.aniSpecs");
         _animationContainer.LoadAnimation("../resource/AnimationSpecs/vfx_hiteffect_head.aniSpecs");

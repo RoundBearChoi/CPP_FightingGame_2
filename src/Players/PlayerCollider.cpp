@@ -81,7 +81,7 @@ namespace RB::Players
 			return;
 		}
 
-		PlayerID myID = _player->GetPlayerID();
+		PLAYER_TYPE myID = _player->GetPLAYER_TYPE();
 
 		iPlayer* other = playerController->GetOtherPlayer(_player);
 

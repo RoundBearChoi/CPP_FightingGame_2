@@ -17,11 +17,11 @@ namespace RB::Render
 			return;
 		}
 
-		RenderPosition(RB::Players::PlayerID::PLAYER_1);
-		RenderPosition(RB::Players::PlayerID::PLAYER_2);
+		RenderPosition(RB::Players::PLAYER_TYPE::PLAYER_1);
+		RenderPosition(RB::Players::PLAYER_TYPE::PLAYER_2);
 		
-		RenderBottomLeft(RB::Players::PlayerID::PLAYER_1);
-		RenderBottomLeft(RB::Players::PlayerID::PLAYER_2);
+		RenderBottomLeft(RB::Players::PLAYER_TYPE::PLAYER_1);
+		RenderBottomLeft(RB::Players::PLAYER_TYPE::PLAYER_2);
 	}
 
 	void PlayerPositionRenderer::OnFixedUpdate()
@@ -29,7 +29,7 @@ namespace RB::Render
 
 	}
 
-	void PlayerPositionRenderer::RenderPosition(RB::Players::PlayerID playerID)
+	void PlayerPositionRenderer::RenderPosition(RB::Players::PLAYER_TYPE playerID)
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
@@ -45,7 +45,7 @@ namespace RB::Render
 		_spriteContainer->RenderSprite(RB::Sprites::SpriteType::x_white, 13, 13, playerPos, olc::RED, RB::Sprites::PivotType::CENTER, true);
 	}
 
-	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PlayerID playerID)
+	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PLAYER_TYPE playerID)
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 

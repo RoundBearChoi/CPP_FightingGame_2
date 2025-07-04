@@ -25,11 +25,11 @@ namespace RB::HBox
 		}
 
 		_Add_Delete_AABB_OnPress();
-		_EditAABB_OnPress(Players::PlayerID::PLAYER_1);
+		_EditAABB_OnPress(Players::PLAYER_TYPE::PLAYER_1);
 		_SaveHBoxes_OnPress();
 		_CycleAnimations_OnPress();
 
-		_RenderCircleOnHBox(Players::PlayerID::PLAYER_1);
+		_RenderCircleOnHBox(Players::PLAYER_TYPE::PLAYER_1);
 
 		Render::iPlayerDebugController* playerDebugController = GET_PLAYER_DEBUG_CONTROLLER;
 
@@ -45,7 +45,7 @@ namespace RB::HBox
 
 	}
 
-	HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(Players::PlayerID playerID, HBoxType boxType)
+	HBox::Loaded_HB_Data* HBoxEditController::GetCurrentData(Players::PLAYER_TYPE playerID, HBoxType boxType)
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
@@ -91,7 +91,7 @@ namespace RB::HBox
 		return data;
 	}
 
-	HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(Players::PlayerID playerID)
+	HBox::AABB_Set* HBoxEditController::GetCurrentHBoxData(Players::PLAYER_TYPE playerID)
 	{
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
@@ -188,7 +188,7 @@ namespace RB::HBox
 		return true;
 	}
 
-	void HBoxEditController::_RenderCircleOnHBox(Players::PlayerID playerID)
+	void HBoxEditController::_RenderCircleOnHBox(Players::PLAYER_TYPE playerID)
 	{
 		HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
 
@@ -226,7 +226,7 @@ namespace RB::HBox
 
 	void HBoxEditController::_Add_Delete_AABB_OnPress()
 	{
-		HBox::AABB_Set* AABBs = GetCurrentHBoxData(Players::PlayerID::PLAYER_1);
+		HBox::AABB_Set* AABBs = GetCurrentHBoxData(Players::PLAYER_TYPE::PLAYER_1);
 		
 		olc::HWButton insButton = olc::Platform::ptrPGE->GetKey(olc::INS);
 		olc::HWButton delButton = olc::Platform::ptrPGE->GetKey(olc::DEL);
@@ -251,7 +251,7 @@ namespace RB::HBox
 		}
 	}
 
-	void HBoxEditController::_EditAABB_OnPress(Players::PlayerID playerID)
+	void HBoxEditController::_EditAABB_OnPress(Players::PLAYER_TYPE playerID)
 	{
 		HBox::AABB_Set* AABBs = GetCurrentHBoxData(playerID);
 
@@ -330,7 +330,7 @@ namespace RB::HBox
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 		auto hbMenuController = GET_HB_MENU_CONTROLLER;
 
-		HBox::Loaded_HB_Data* data = GetCurrentData(Players::PlayerID::PLAYER_1, _boxType);
+		HBox::Loaded_HB_Data* data = GetCurrentData(Players::PLAYER_TYPE::PLAYER_1, _boxType);
 
 		olc::HWButton enterButton = olc::Platform::ptrPGE->GetKey(olc::ENTER);
 
@@ -433,8 +433,8 @@ namespace RB::HBox
 		if (upCycle || downCycle)
 		{
 			// get current sprite type
-			Players::iPlayer* player = playerController->GetPlayer(Players::PlayerID::PLAYER_1);
-			Players::PlayerState* ownerState = Players::PlayerState::GetPlayerState(Players::PlayerID::PLAYER_1);
+			Players::iPlayer* player = playerController->GetPlayer(Players::PLAYER_TYPE::PLAYER_1);
+			Players::PlayerState* ownerState = Players::PlayerState::GetPlayerState(Players::PLAYER_TYPE::PLAYER_1);
 
 			currentSpriteType = ownerState->GetSpriteType();
 		}

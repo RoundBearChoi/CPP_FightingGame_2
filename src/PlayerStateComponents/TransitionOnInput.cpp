@@ -30,7 +30,7 @@ namespace RB::PlayerStateComponents
 		}
 
 		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::PlayerID playerID = player->GetPlayerID();
+		RB::Players::PLAYER_TYPE playerID = player->GetPLAYER_TYPE();
 
 		RB::Input::iInputObj* obj = nullptr;
 		

@@ -3,7 +3,7 @@
 #include "SpecialMoveType.h"
 
 #include "../Controllers/ControllerBase.h"
-#include "../Players/PlayerID.h"
+#include "../Players/PlayerType.h"
 
 #include "../States/iState.h"
 
@@ -14,7 +14,7 @@ namespace RB::Input
 	class iSpecialMovesController : public Controllers::ControllerBase
 	{
 	public:
-		virtual Input::SpecialMoveType GetSpecialMove(Players::PlayerID playerID) = 0;
+		virtual Input::SpecialMoveType GetSpecialMove(Players::PLAYER_TYPE playerID) = 0;
 		virtual States::iState* GetNewState(Input::SpecialMoveType specialMoveType) = 0;
 	};
 }

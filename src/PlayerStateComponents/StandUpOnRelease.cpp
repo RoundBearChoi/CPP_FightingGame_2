@@ -30,9 +30,9 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		bool down = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN);
-		bool downLeft = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_LEFT);
-		bool downRight = inputController->IsHeld(player->GetPlayerID(), RB::Input::PlayerInput::MOVE_DOWN_RIGHT);
+		bool down = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_DOWN);
+		bool downLeft = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_DOWN_LEFT);
+		bool downRight = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_DOWN_RIGHT);
 
 		//do nothing if down is held (including diag)
 		if (down || downLeft || downRight)

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CharacterType.h"
-#include "PlayerID.h"
+#include "PlayerType.h"
 
 #include "iPlayerCollider.h"
 
@@ -16,16 +16,16 @@ namespace RB::Players
 		virtual ~iPlayer() = default;
 
 	public:
-		virtual void Init(PlayerID id, RB::States::iState* firstPlayerState) = 0;
+		virtual void Init(PLAYER_TYPE id, RB::States::iState* firstPlayerState) = 0;
 		virtual void OnUpdate() = 0;
 		virtual void OnFixedUpdate() = 0;
 
 	public:
-		virtual PlayerID GetPlayerID() = 0;
+		virtual PLAYER_TYPE GetPLAYER_TYPE() = 0;
 		virtual void SetCharacterType(CharacterType type) = 0;
 		virtual CharacterType GetCharacterType() = 0;
 		virtual iPlayerCollider* GetPlayerCollider() = 0;
-		virtual int GetPlayerID_int() = 0;
+		virtual int GetPLAYER_TYPE_int() = 0;
 		virtual bool IsFacingRight() = 0;
 		virtual bool OtherPlayerIsOnRightSide() = 0;
 		virtual bool InitiallyFacingRight() = 0;

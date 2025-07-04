@@ -24,8 +24,8 @@ namespace RB::Render
 		void RenderHP(bool render);
 
     private:
-        void _RenderPlayerHPBar(RB::Players::PlayerID playerID);
-		void _UpdatePlayerHPBar(RB::Players::PlayerID playerID);
+        void _RenderPlayerHPBar(RB::Players::PLAYER_TYPE playerID);
+		void _UpdatePlayerHPBar(RB::Players::PLAYER_TYPE playerID);
 		EaseCalculator _p1_calculator;
 		EaseCalculator _p2_calculator;
 

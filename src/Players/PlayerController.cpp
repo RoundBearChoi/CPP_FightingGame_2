@@ -78,11 +78,11 @@ namespace RB::Players
 		return p;
 	}
 
-	iPlayer* PlayerController::GetPlayer(PlayerID id)
+	iPlayer* PlayerController::GetPlayer(PLAYER_TYPE id)
 	{
 		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			if ((*i)->GetPlayerID() == id)
+			if ((*i)->GetPLAYER_TYPE() == id)
 			{
 				return (*i);
 			}
@@ -108,7 +108,7 @@ namespace RB::Players
 	{
 		for (auto i = _vecPlayers.begin(); i != _vecPlayers.end(); i++)
 		{
-			if ((*i)->GetPlayerID() != currentPlayer->GetPlayerID())
+			if ((*i)->GetPLAYER_TYPE() != currentPlayer->GetPLAYER_TYPE())
 			{
 				return (*i);
 			}
@@ -122,12 +122,12 @@ namespace RB::Players
 		Players::iPlayer* p0 = AddPlayer();
 		Players::iPlayer* p1 = AddPlayer();
 
-		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Idle());
+		p0->Init(Players::PLAYER_TYPE::PLAYER_1, new Fighter_0_States::F0_Idle());
 		p0->SetPosition(RB::Vector2{ -150.0f, 0.0f });
 		p0->SetCharacterType(Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(false);
 
-		p1->Init(Players::PlayerID::PLAYER_2, new Fighter_0_States::F0_Idle());
+		p1->Init(Players::PLAYER_TYPE::PLAYER_2, new Fighter_0_States::F0_Idle());
 		p1->SetPosition(RB::Vector2{ 150.0f, 0.0f });
 		p1->SetCharacterType(Players::CharacterType::AKU);
 		p1->SetManualAnimationUpdate(false);
@@ -138,7 +138,7 @@ namespace RB::Players
 		auto p0 = AddPlayer();
 		auto spriteType = Sprites::LoadSpriteType(_attackBoxEditorSpritePath);
 
-		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
+		p0->Init(Players::PLAYER_TYPE::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
 		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
@@ -150,7 +150,7 @@ namespace RB::Players
 		auto p0 = AddPlayer();
 		auto spriteType = Sprites::LoadSpriteType(_targetBoxEditorSpritePath);
 
-		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
+		p0->Init(Players::PLAYER_TYPE::PLAYER_1, new Fighter_0_States::F0_Dummy(spriteType));
 		p0->SetPosition(RB::Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);
@@ -160,7 +160,7 @@ namespace RB::Players
 	{
 		auto p0 = AddPlayer();
 
-		p0->Init(Players::PlayerID::PLAYER_1, new Fighter_0_States::F0_Dummy(Sprites::SpriteType::fighter_0_idle));
+		p0->Init(Players::PLAYER_TYPE::PLAYER_1, new Fighter_0_States::F0_Dummy(Sprites::SpriteType::fighter_0_idle));
 		p0->SetPosition(Vector2{ 50.0f, 100.0f });
 		p0->SetCharacterType(Players::CharacterType::AKU);
 		p0->SetManualAnimationUpdate(true);

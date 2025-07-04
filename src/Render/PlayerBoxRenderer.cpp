@@ -23,7 +23,7 @@ namespace RB::Render
 
 		for (int i = 1; i <= 2; i++)
 		{
-			RB::Players::iPlayer* player = playerController->GetPlayer(Players::PlayerID::_from_integral(i));
+			RB::Players::iPlayer* player = playerController->GetPlayer(Players::PLAYER_TYPE::_from_integral(i));
 
 			if (player == nullptr)
 			{

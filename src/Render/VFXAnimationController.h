@@ -11,7 +11,7 @@
 
 namespace RB::Render
 {
-	class VFXAnimationController : public RB::Render::iVFXAnimationController
+	class VFXAnimationController : public Render::iVFXAnimationController
 	{
 	public:
 		VFXAnimationController() = default;

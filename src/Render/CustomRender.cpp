@@ -11,7 +11,7 @@ namespace RB::Render
 		// multiplier stays same when linear
 		float multiplier = percentage;
 
-		if (_operationType == RB::Render::OperationType::SINE)
+		if (_operationType == Render::OperationType::SINE)
 		{
 			multiplier = RB::Ease::EaseInSine(percentage);
 		}

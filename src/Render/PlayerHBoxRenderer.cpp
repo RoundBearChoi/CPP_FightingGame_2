@@ -9,7 +9,7 @@ namespace RB::Render
 	void PlayerHBoxRenderer::OnUpdate()
 	{
 		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
 		if (playerController == nullptr || playerAnimationController == nullptr)
 		{

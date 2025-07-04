@@ -32,16 +32,16 @@ namespace RB::PlayerStateComponents
 
 		Sprites::SpriteType spriteType = state->GetSpriteType();
 
-		RB::Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
+		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
-		RB::Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(player->GetPLAYER_TYPE(), spriteType);
+		Render::iAnimationObj* aniObj = playerAnimationController->GetCurrentAnimationObj(player->GetPLAYER_TYPE(), spriteType);
 
 		if (aniObj == nullptr)
 		{
 			return;
 		}
 
-		const RB::Render::AnimationSpecs& specs = aniObj->GetAnimationSpecs();
+		const Render::AnimationSpecs& specs = aniObj->GetAnimationSpecs();
 
 		unsigned int updates = state->GetCumulatedFixedUpdates();
 

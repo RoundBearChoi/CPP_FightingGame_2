@@ -36,7 +36,7 @@ namespace RB::Render
 			return;
 		}
 
-		while (olc::Renderer::ptrPGE->GetLayers().size() < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT))
+		while (olc::Renderer::ptrPGE->GetLayers().size() < static_cast<uint8_t>(Render::RenderLayerType::COUNT))
 		{
 			olc::Renderer::ptrPGE->CreateLayer();
 
@@ -52,7 +52,7 @@ namespace RB::Render
 		size_t count = olc::Renderer::ptrPGE->GetLayers().size();
 
 		// clear all layers with blank pixels (except top layer)
-		for (int i = static_cast<uint8_t>(RB::Render::RenderLayerType::DEFAULT_FOREGROUND); i < static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT); i++)
+		for (int i = static_cast<uint8_t>(Render::RenderLayerType::DEFAULT_FOREGROUND); i < static_cast<uint8_t>(Render::RenderLayerType::COUNT); i++)
 		{
 			if (i >= count)
 			{
@@ -61,7 +61,7 @@ namespace RB::Render
 
 			if (olc::Renderer::ptrPGE->GetLayers()[i].bShow)
 			{
-				if (i == static_cast<uint8_t>(RB::Render::RenderLayerType::COUNT) - 1)
+				if (i == static_cast<uint8_t>(Render::RenderLayerType::COUNT) - 1)
 				{
 					olc::Renderer::ptrPGE->SetDrawTarget(i);
 					olc::Renderer::ptrPGE->Clear({ 20, 20, 20 });

@@ -41,7 +41,7 @@ namespace RB::Render
 
 	private:
 		Sprites::SpriteContainer _spriteContainer;
-		RB::Render::LineRenderer _lineRenderer;
+		Render::LineRenderer _lineRenderer;
 
 	private:
 		PlayerBoxRenderer _playerBoxRenderer;

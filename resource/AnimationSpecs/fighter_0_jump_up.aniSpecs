@@ -1,7 +1,7 @@
 {
     "fighter_0_jump_up":
         {
-        "sprite_enum" : "fighter_0_jump_up",
+        "SPRITE_TYPE" : "fighter_0_jump_up",
         "mX_TileCount" : 3,
         "mY_TileCount" : 1,
         "mTotalSprites" : 3,

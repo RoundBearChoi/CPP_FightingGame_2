@@ -1,7 +1,7 @@
 {
     "vfx_hiteffect_0":
         {
-        "sprite_enum" : "vfx_hiteffect_0",
+        "SPRITE_TYPE" : "vfx_hiteffect_0",
         "mX_TileCount" : 5,
         "mY_TileCount" : 1,
         "mTotalSprites" : 5,

@@ -1,7 +1,7 @@
 {
     "fighter_0_crouch":
         {
-        "sprite_enum" : "fighter_0_crouch",
+        "SPRITE_TYPE" : "fighter_0_crouch",
         "mX_TileCount" : 2,
         "mY_TileCount" : 1,
         "mTotalSprites" : 2,

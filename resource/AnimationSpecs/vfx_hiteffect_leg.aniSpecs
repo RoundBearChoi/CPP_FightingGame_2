@@ -1,7 +1,7 @@
 {
     "vfx_hiteffect_leg":
         {
-        "sprite_enum" : "vfx_hiteffect_leg",
+        "SPRITE_TYPE" : "vfx_hiteffect_leg",
         "mX_TileCount" : 1,
         "mY_TileCount" : 1,
         "mTotalSprites" : 1,

@@ -1,7 +1,7 @@
 {
     "fighter_0_walk":
         {
-        "sprite_enum" : "fighter_0_walk",
+        "SPRITE_TYPE" : "fighter_0_walk",
         "mX_TileCount" : 10,
         "mY_TileCount" : 1,
         "mTotalSprites" : 10,

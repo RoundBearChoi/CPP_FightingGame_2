@@ -1,7 +1,7 @@
 {
     "fighter_0_crouch_weak_wince":
         {
-        "sprite_enum" : "fighter_0_crouch_weak_wince",
+        "SPRITE_TYPE" : "fighter_0_crouch_weak_wince",
         "mX_TileCount" : 2,
         "mY_TileCount" : 1,
         "mTotalSprites" : 2,

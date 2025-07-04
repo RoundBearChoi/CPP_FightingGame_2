@@ -1,7 +1,7 @@
 {
     "fighter_0_strong_punch":
         {
-        "sprite_enum" : "fighter_0_strong_punch",
+        "SPRITE_TYPE" : "fighter_0_strong_punch",
         "mX_TileCount" : 11,
         "mY_TileCount" : 1,
         "mTotalSprites" : 11,

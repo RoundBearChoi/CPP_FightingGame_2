@@ -1,7 +1,7 @@
 {
     "fighter_0_strong_kick":
         {
-        "sprite_enum" : "fighter_0_strong_kick",
+        "SPRITE_TYPE" : "fighter_0_strong_kick",
         "mX_TileCount" : 10,
         "mY_TileCount" : 1,
         "mTotalSprites" : 10,

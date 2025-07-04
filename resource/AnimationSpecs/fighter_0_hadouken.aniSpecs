@@ -1,7 +1,7 @@
 {
     "fighter_0_hadouken":
         {
-        "sprite_enum" : "fighter_0_hadouken",
+        "SPRITE_TYPE" : "fighter_0_hadouken",
         "mX_TileCount" : 13,
         "mY_TileCount" : 1,
         "mTotalSprites" : 13,

@@ -1,7 +1,7 @@
 {
     "fighter_0_standup":
         {
-        "sprite_enum" : "fighter_0_standup",
+        "SPRITE_TYPE" : "fighter_0_standup",
         "mX_TileCount" : 2,
         "mY_TileCount" : 1,
         "mTotalSprites" : 2,

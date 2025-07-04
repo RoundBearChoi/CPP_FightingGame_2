@@ -1,7 +1,7 @@
 {
     "fighter_0_idle":
         {
-        "sprite_enum" : "fighter_0_idle",
+        "SPRITE_TYPE" : "fighter_0_idle",
         "mX_TileCount" : 9,
         "mY_TileCount" : 1,
         "mTotalSprites" : 9,

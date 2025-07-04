@@ -1,7 +1,7 @@
 {
     "fighter_0_weak_wince_mid":
         {
-        "sprite_enum" : "fighter_0_weak_wince_mid",
+        "SPRITE_TYPE" : "fighter_0_weak_wince_mid",
         "mX_TileCount" : 1,
         "mY_TileCount" : 1,
         "mTotalSprites" : 1,

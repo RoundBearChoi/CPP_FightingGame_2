@@ -1,7 +1,7 @@
 {
     "fighter_0_strong_wince_high":
         {
-        "sprite_enum" : "fighter_0_strong_wince_high",
+        "SPRITE_TYPE" : "fighter_0_strong_wince_high",
         "mX_TileCount" : 4,
         "mY_TileCount" : 1,
         "mTotalSprites" : 4,

@@ -9,7 +9,7 @@ namespace RB::PlayerStateComponents
 
 	void FixSpecialMoveStatusDuringState::OnEnter()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		_player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 

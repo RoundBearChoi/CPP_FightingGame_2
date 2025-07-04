@@ -8,7 +8,7 @@ namespace RB::Render
 	}
 	void PlayerHBoxRenderer::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
 		if (playerController == nullptr || playerAnimationController == nullptr)
@@ -16,11 +16,11 @@ namespace RB::Render
 			return;
 		}
 
-		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_1, RB::HBox::HBoxType::TARGET_BOX);
-		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_2, RB::HBox::HBoxType::TARGET_BOX);
+		RenderHBox(Players::PLAYER_TYPE::PLAYER_1, RB::HBox::HBoxType::TARGET_BOX);
+		RenderHBox(Players::PLAYER_TYPE::PLAYER_2, RB::HBox::HBoxType::TARGET_BOX);
 
-		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_1, RB::HBox::HBoxType::ATTACK_BOX);
-		RenderHBox(RB::Players::PLAYER_TYPE::PLAYER_2, RB::HBox::HBoxType::ATTACK_BOX);
+		RenderHBox(Players::PLAYER_TYPE::PLAYER_1, RB::HBox::HBoxType::ATTACK_BOX);
+		RenderHBox(Players::PLAYER_TYPE::PLAYER_2, RB::HBox::HBoxType::ATTACK_BOX);
 	}
 
 	void PlayerHBoxRenderer::OnFixedUpdate()
@@ -28,21 +28,21 @@ namespace RB::Render
 
 	}
 
-	void PlayerHBoxRenderer::RenderHBox(RB::Players::PLAYER_TYPE playerID, RB::HBox::HBoxType boxType)
+	void PlayerHBoxRenderer::RenderHBox(Players::PLAYER_TYPE playerID, RB::HBox::HBoxType boxType)
 	{
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 		auto targetBoxDataController = GET_TARGET_BOX_DATA_CONTROLLER;
 		auto attackBoxDataController = GET_ATTACK_BOX_DATA_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
+		Players::iPlayer* player = playerController->GetPlayer(playerID);
 		
 		if (player == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::PlayerState* state = RB::Players::PlayerState::GetPlayerState(playerID);
+		Players::PlayerState* state = Players::PlayerState::GetPlayerState(playerID);
 
 		if (state == nullptr)
 		{
@@ -105,7 +105,7 @@ namespace RB::Render
 		_Render(player, AABBs, tint);
 	}
 
-	void PlayerHBoxRenderer::_Render(RB::Players::iPlayer* player, RB::HBox::AABB_Set* AABBs, olc::Pixel tint)
+	void PlayerHBoxRenderer::_Render(Players::iPlayer* player, RB::HBox::AABB_Set* AABBs, olc::Pixel tint)
 	{
 		const auto& vec = AABBs->GetSelector()->GetVector();
 

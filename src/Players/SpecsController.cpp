@@ -12,7 +12,7 @@ namespace RB::Players
 	{
 		//INIT_CONTROLLER
 		
-		MoveSpecs result =  _LoadMoveSpecs("../resource/MoveSpecs/F0_moveSpecs.moveSpecs", RB::Players::CharacterType::AKU);
+		MoveSpecs result =  _LoadMoveSpecs("../resource/MoveSpecs/F0_moveSpecs.moveSpecs", Players::CharacterType::AKU);
 	}
 
 	void SpecsController::OnUpdate()
@@ -25,7 +25,7 @@ namespace RB::Players
 
 	}
 
-	MoveSpecs SpecsController::GetMoveSpecs(RB::Players::CharacterType characterType)
+	MoveSpecs SpecsController::GetMoveSpecs(Players::CharacterType characterType)
 	{
 		for (auto i = _vecMoveSpecs.begin(); i != _vecMoveSpecs.end(); i++)
 		{
@@ -40,7 +40,7 @@ namespace RB::Players
 		return MoveSpecs{ characterType };
 	}
 
-	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType)
+	MoveSpecs SpecsController::_LoadMoveSpecs(std::string path, Players::CharacterType characterType)
 	{
 		MoveSpecs specs;
 

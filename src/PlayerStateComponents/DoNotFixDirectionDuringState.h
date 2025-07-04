@@ -17,6 +17,6 @@ namespace RB::PlayerStateComponents
 		void OnExit() override;
 
 	private:
-		RB::Players::iPlayer* _player = nullptr;
+		Players::iPlayer* _player = nullptr;
 	};
 }

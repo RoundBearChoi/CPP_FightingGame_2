@@ -40,7 +40,7 @@ namespace RB::Render
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
-			RB::Players::iPlayer* p = (*i)->GetPlayer();
+			Players::iPlayer* p = (*i)->GetPlayer();
 
 			if (p != nullptr)
 			{
@@ -118,7 +118,7 @@ namespace RB::Render
 		}
 	}
 
-	void AnimationContainer::DeleteAnimationObjs(RB::Players::PLAYER_TYPE playerID)
+	void AnimationContainer::DeleteAnimationObjs(Players::PLAYER_TYPE playerID)
 	{
 		auto it = _vecCurrentAnimations.begin();
 
@@ -151,7 +151,7 @@ namespace RB::Render
 		return next;
 	}
 
-	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType)
+	iAnimationObj* AnimationContainer::GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{
@@ -178,7 +178,7 @@ namespace RB::Render
 	}
 
 	// raw pointer, make sure to delete
-	iAnimationObj* AnimationContainer::InstantiateNewAnimationObj(RB::Players::iPlayer& player, Sprites::SpriteType spriteType, Sprites::PivotType pivotType)
+	iAnimationObj* AnimationContainer::InstantiateNewAnimationObj(Players::iPlayer& player, Sprites::SpriteType spriteType, Sprites::PivotType pivotType)
 	{
 		AnimationRenderer* renderer = GetAnimationRenderer(spriteType);
 
@@ -187,7 +187,7 @@ namespace RB::Render
 		return animationObj;
 	}
 
-	Sprites::SpriteType AnimationContainer::GetSpriteType(RB::Players::PLAYER_TYPE playerID)
+	Sprites::SpriteType AnimationContainer::GetSpriteType(Players::PLAYER_TYPE playerID)
 	{
 		for (auto i = _vecCurrentAnimations.begin(); i != _vecCurrentAnimations.end(); i++)
 		{

@@ -22,7 +22,7 @@ namespace RB::Render
 	class AnimationObj : public iAnimationObj
 	{
 	public:
-		AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, Sprites::PivotType pivotType);
+		AnimationObj(Players::iPlayer* owner, AnimationRenderer* animationRenderer, Sprites::PivotType pivotType);
 		~AnimationObj() override;
 
 	public:
@@ -38,7 +38,7 @@ namespace RB::Render
 		RB::Vector2 GetSourcePos(RB::Vector2 sourceSize) override;
 		float GetRenderScale() override;
 		RB::Vector2 GetRenderOffset() override;
-		RB::Players::iPlayer* GetPlayer() override;
+		Players::iPlayer* GetPlayer() override;
 		const AnimationSpecs& GetAnimationSpecs() const override;
 		unsigned int GetCurrentIndex() override;
 		void RenderAnimation() override;
@@ -52,7 +52,7 @@ namespace RB::Render
 		int GetTransparency() override;
 
 	private:
-		RB::Players::iPlayer* _ownerPlayer = nullptr;
+		Players::iPlayer* _ownerPlayer = nullptr;
 		bool _faceRight = true;
 		AnimationRenderer* _animationRenderer = nullptr;
 		Sprites::PivotType _pivotType = Sprites::PivotType::BOTTOM_CENTER;

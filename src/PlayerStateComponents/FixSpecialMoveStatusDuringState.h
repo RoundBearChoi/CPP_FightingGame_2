@@ -20,6 +20,6 @@ namespace RB::PlayerStateComponents
 
 	private:
 		bool _fix = false;
-		RB::Players::iPlayer* _player = nullptr;
+		Players::iPlayer* _player = nullptr;
 	};
 }

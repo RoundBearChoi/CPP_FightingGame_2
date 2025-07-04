@@ -14,7 +14,7 @@ namespace RB::PlayerStateComponents
 
 	void TransitionToJumpUp::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
 
 		if (playerController == nullptr || inputController == nullptr)
@@ -22,7 +22,7 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(
+		Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(
 			_state->GetStateMachineID());
 
 		bool jumpUp = inputController->IsHeld(player->GetPLAYER_TYPE(), RB::Input::PlayerInput::MOVE_UP);

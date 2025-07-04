@@ -21,7 +21,7 @@ namespace RB::PlayerStateComponents
 
 	void TransitionOnInput::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
 
 		if (playerController == nullptr || inputController == nullptr)
@@ -29,8 +29,8 @@ namespace RB::PlayerStateComponents
 			return;
 		}
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
-		RB::Players::PLAYER_TYPE playerID = player->GetPLAYER_TYPE();
+		Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		Players::PLAYER_TYPE playerID = player->GetPLAYER_TYPE();
 
 		RB::Input::iInputObj* obj = nullptr;
 		

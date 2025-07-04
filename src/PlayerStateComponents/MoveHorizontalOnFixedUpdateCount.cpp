@@ -10,9 +10,9 @@ namespace RB::PlayerStateComponents
 
 	void MoveHorizontalOnFixedUpdateCount::OnEnter()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 		_otherPlayerIsOnRightSide = player->OtherPlayerIsOnRightSide();
 	}
 
@@ -23,9 +23,9 @@ namespace RB::PlayerStateComponents
 
 	void MoveHorizontalOnFixedUpdateCount::OnFixedUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
+		Players::iPlayer* player = playerController->GetPlayerOnStateMachineID(_state->GetStateMachineID());
 
 		float move = _moveAmount;
 

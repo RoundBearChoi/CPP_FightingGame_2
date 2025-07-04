@@ -10,18 +10,18 @@ namespace RB::Render
 
 	void PlayerPositionRenderer::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
 			return;
 		}
 
-		RenderPosition(RB::Players::PLAYER_TYPE::PLAYER_1);
-		RenderPosition(RB::Players::PLAYER_TYPE::PLAYER_2);
+		RenderPosition(Players::PLAYER_TYPE::PLAYER_1);
+		RenderPosition(Players::PLAYER_TYPE::PLAYER_2);
 		
-		RenderBottomLeft(RB::Players::PLAYER_TYPE::PLAYER_1);
-		RenderBottomLeft(RB::Players::PLAYER_TYPE::PLAYER_2);
+		RenderBottomLeft(Players::PLAYER_TYPE::PLAYER_1);
+		RenderBottomLeft(Players::PLAYER_TYPE::PLAYER_2);
 	}
 
 	void PlayerPositionRenderer::OnFixedUpdate()
@@ -29,11 +29,11 @@ namespace RB::Render
 
 	}
 
-	void PlayerPositionRenderer::RenderPosition(RB::Players::PLAYER_TYPE playerID)
+	void PlayerPositionRenderer::RenderPosition(Players::PLAYER_TYPE playerID)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
+		Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{
@@ -45,11 +45,11 @@ namespace RB::Render
 		_spriteContainer->RenderSprite(Sprites::SpriteType::x_white, 13, 13, playerPos, olc::RED, Sprites::PivotType::CENTER, true);
 	}
 
-	void PlayerPositionRenderer::RenderBottomLeft(RB::Players::PLAYER_TYPE playerID)
+	void PlayerPositionRenderer::RenderBottomLeft(Players::PLAYER_TYPE playerID)
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
-		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
+		Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{

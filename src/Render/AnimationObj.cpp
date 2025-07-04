@@ -4,7 +4,7 @@
 
 namespace RB::Render
 {
-	AnimationObj::AnimationObj(RB::Players::iPlayer* owner, AnimationRenderer* animationRenderer, Sprites::PivotType pivotType)
+	AnimationObj::AnimationObj(Players::iPlayer* owner, AnimationRenderer* animationRenderer, Sprites::PivotType pivotType)
 	{
 		//std::cout << "constructing AnimationObj: " << animationRenderer->GetAnimationSpecs().mSpriteType._to_string() << ", player " << owner->GetPLAYER_TYPE_int() << std::endl;
 
@@ -148,7 +148,7 @@ namespace RB::Render
 		return _animationRenderer->GetAnimationSpecs().mRenderOffset;
 	}
 
-	RB::Players::iPlayer* AnimationObj::GetPlayer()
+	Players::iPlayer* AnimationObj::GetPlayer()
 	{
 		return _ownerPlayer;
 	}

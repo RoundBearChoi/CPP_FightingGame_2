@@ -7,5 +7,5 @@
 
 namespace RB::Sprites
 {
-	extern SpriteType GetCurrentSpriteType(RB::Players::PLAYER_TYPE id);
+	extern SpriteType GetCurrentSpriteType(Players::PLAYER_TYPE id);
 }

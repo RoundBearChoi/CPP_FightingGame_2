@@ -37,7 +37,7 @@ namespace RB::Render
 		void RenderInput(bool render) override;
 
 	private:
-		void _RenderBodyParts(RB::Players::PLAYER_TYPE id);
+		void _RenderBodyParts(Players::PLAYER_TYPE id);
 
 	private:
 		Sprites::SpriteContainer _spriteContainer;

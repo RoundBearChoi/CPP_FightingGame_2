@@ -74,7 +74,7 @@ namespace RB::Players
 
 	void PlayerCollider::_ResolveCollision()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{

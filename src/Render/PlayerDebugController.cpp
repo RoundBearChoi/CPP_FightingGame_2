@@ -54,8 +54,8 @@ namespace RB::Render
 		_playerInputRenderer.OnUpdate();
 		_player_HP_Renderer.OnUpdate();
 
-		_RenderBodyParts(RB::Players::PLAYER_TYPE::PLAYER_1);
-		_RenderBodyParts(RB::Players::PLAYER_TYPE::PLAYER_2);
+		_RenderBodyParts(Players::PLAYER_TYPE::PLAYER_1);
+		_RenderBodyParts(Players::PLAYER_TYPE::PLAYER_2);
 	}
 
 	void PlayerDebugController::OnFixedUpdate()
@@ -87,7 +87,7 @@ namespace RB::Render
 		_playerInputRenderer.RenderInput(render);
 	}
 
-	void PlayerDebugController::_RenderBodyParts(RB::Players::PLAYER_TYPE id)
+	void PlayerDebugController::_RenderBodyParts(Players::PLAYER_TYPE id)
 	{
 		auto playerController = GET_PLAYER_CONTROLLER;
 		auto camController = GET_CAM_CONTROLLER;
@@ -97,14 +97,14 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Players::iPlayer* player = playerController->GetPlayer(id);
+		Players::iPlayer* player = playerController->GetPlayer(id);
 
 		if (player == nullptr)
 		{
 			return;
 		}
 
-		RB::Players::iPlayerCollider* col = player->GetPlayerCollider();
+		Players::iPlayerCollider* col = player->GetPlayerCollider();
 
 		float* parts = col->GetBodyParts();
 

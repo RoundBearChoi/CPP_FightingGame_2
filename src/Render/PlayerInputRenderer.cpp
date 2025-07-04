@@ -11,8 +11,8 @@ namespace RB::Render
 	{
 		if (_render)
 		{
-			_RenderPlayerInputIcons(RB::Players::PLAYER_TYPE::PLAYER_1, 45);
-			_RenderPlayerInputIcons(RB::Players::PLAYER_TYPE::PLAYER_2, 70);
+			_RenderPlayerInputIcons(Players::PLAYER_TYPE::PLAYER_1, 45);
+			_RenderPlayerInputIcons(Players::PLAYER_TYPE::PLAYER_2, 70);
 		}
 	}
 
@@ -26,7 +26,7 @@ namespace RB::Render
 		_render = render;
 	}
 
-	void PlayerInputRenderer::_RenderPlayerInputIcons(RB::Players::PLAYER_TYPE playerID, int yPos)
+	void PlayerInputRenderer::_RenderPlayerInputIcons(Players::PLAYER_TYPE playerID, int yPos)
 	{
 		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 		Input::iInputController* inputController = GET_INPUT_CONTROLLER;
@@ -41,7 +41,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Players::iPlayer* player = playerController->GetPlayer(playerID);
+		Players::iPlayer* player = playerController->GetPlayer(playerID);
 
 		if (player == nullptr)
 		{

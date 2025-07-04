@@ -55,12 +55,12 @@ namespace RB::Render
 		_animationContainer.OnFixedUpdate();
 	}
 
-	void PlayerAnimationController::DeleteAnimationObj(RB::Players::PLAYER_TYPE playerID)
+	void PlayerAnimationController::DeleteAnimationObj(Players::PLAYER_TYPE playerID)
 	{
 		_animationContainer.DeleteAnimationObjs(playerID);
 	}
 
-	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(RB::Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType)
+	iAnimationObj* PlayerAnimationController::GetCurrentAnimationObj(Players::PLAYER_TYPE playerID, Sprites::SpriteType spriteType)
 	{
 		return _animationContainer.GetCurrentAnimationObj(playerID, spriteType);
 	}
@@ -79,7 +79,7 @@ namespace RB::Render
 			return;
 		}
 
-		RB::Players::iPlayer* arr[2] = { nullptr, nullptr };
+		Players::iPlayer* arr[2] = { nullptr, nullptr };
 
 		for (int i = 1; i <= 2; i++)
 		{

@@ -9,7 +9,7 @@ namespace RB::Render
 
 	void PlayerBoxRenderer::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
@@ -23,7 +23,7 @@ namespace RB::Render
 
 		for (int i = 1; i <= 2; i++)
 		{
-			RB::Players::iPlayer* player = playerController->GetPlayer(Players::PLAYER_TYPE::_from_integral(i));
+			Players::iPlayer* player = playerController->GetPlayer(Players::PLAYER_TYPE::_from_integral(i));
 
 			if (player == nullptr)
 			{

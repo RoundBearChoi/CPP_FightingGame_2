@@ -23,8 +23,8 @@ namespace RB::Render
 		void OnFixedUpdate();
 
 	public:
-		void RenderPosition(RB::Players::PLAYER_TYPE playerID);
-		void RenderBottomLeft(RB::Players::PLAYER_TYPE playerID);
+		void RenderPosition(Players::PLAYER_TYPE playerID);
+		void RenderBottomLeft(Players::PLAYER_TYPE playerID);
 
 	private:
 		Sprites::SpriteContainer* _spriteContainer = nullptr;

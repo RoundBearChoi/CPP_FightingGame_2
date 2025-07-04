@@ -7,7 +7,7 @@ namespace RB::Players
 	class MoveSpecs
 	{
 	public:
-		RB::Players::CharacterType mCharacterType = RB::Players::CharacterType::NONE;
+		Players::CharacterType mCharacterType = Players::CharacterType::NONE;
 
 		float				mWalk_Forward_Speed = 0;
 		float				mWalk_Back_Speed = 0;

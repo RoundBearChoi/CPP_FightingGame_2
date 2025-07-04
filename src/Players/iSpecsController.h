@@ -12,6 +12,6 @@ namespace RB::Players
 	class iSpecsController : public Controllers::ControllerBase
 	{
 	public:
-		virtual MoveSpecs GetMoveSpecs(RB::Players::CharacterType characterType) = 0;
+		virtual MoveSpecs GetMoveSpecs(Players::CharacterType characterType) = 0;
 	};
 }

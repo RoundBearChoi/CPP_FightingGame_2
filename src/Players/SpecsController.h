@@ -25,10 +25,10 @@ namespace RB::Players
 		void OnFixedUpdate() override;
 
 	public:
-		MoveSpecs GetMoveSpecs(RB::Players::CharacterType characterType) override;
+		MoveSpecs GetMoveSpecs(Players::CharacterType characterType) override;
 
 	private:
-		MoveSpecs _LoadMoveSpecs(std::string path, RB::Players::CharacterType characterType);
+		MoveSpecs _LoadMoveSpecs(std::string path, Players::CharacterType characterType);
 		std::vector<MoveSpecs> _vecMoveSpecs;
 	};
 }

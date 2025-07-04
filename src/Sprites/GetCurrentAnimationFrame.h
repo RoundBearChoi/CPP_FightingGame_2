@@ -10,5 +10,5 @@
 
 namespace RB::Sprites
 {
-	extern int GetCurrentAnimationFrame(RB::Players::PLAYER_TYPE id);
+	extern int GetCurrentAnimationFrame(Players::PLAYER_TYPE id);
 }

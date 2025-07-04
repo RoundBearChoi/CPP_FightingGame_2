@@ -2,9 +2,9 @@
 
 namespace RB::Sprites
 {
-	int GetCurrentAnimationFrame(RB::Players::PLAYER_TYPE id)
+	int GetCurrentAnimationFrame(Players::PLAYER_TYPE id)
 	{
-		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(RB::Players::PLAYER_TYPE::PLAYER_1);
+		Sprites::SpriteType spriteType = Sprites::GetCurrentSpriteType(Players::PLAYER_TYPE::PLAYER_1);
 
 		Render::iPlayerAnimationController* playerAnimationController = GET_PLAYER_ANIMATION_CONTROLLER;
 
@@ -13,7 +13,7 @@ namespace RB::Sprites
 			return 0;
 		}
 
-		Render::iAnimationObj* obj = playerAnimationController->GetCurrentAnimationObj(RB::Players::PLAYER_TYPE::PLAYER_1, spriteType);
+		Render::iAnimationObj* obj = playerAnimationController->GetCurrentAnimationObj(Players::PLAYER_TYPE::PLAYER_1, spriteType);
 
 		if (obj == nullptr)
 		{

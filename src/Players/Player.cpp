@@ -32,7 +32,7 @@ namespace RB::Players
 
 	void Player::OnUpdate()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{
@@ -73,11 +73,11 @@ namespace RB::Players
 
 	int Player::GetPLAYER_TYPE_int()
 	{
-		if (_playerID._value == RB::Players::PLAYER_TYPE::PLAYER_1)
+		if (_playerID._value == Players::PLAYER_TYPE::PLAYER_1)
 		{
 			return 1;
 		}
-		else if (_playerID._value == RB::Players::PLAYER_TYPE::PLAYER_2)
+		else if (_playerID._value == Players::PLAYER_TYPE::PLAYER_2)
 		{
 			return 2;
 		}
@@ -98,7 +98,7 @@ namespace RB::Players
 
 	bool Player::OtherPlayerIsOnRightSide()
 	{
-		RB::Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
+		Players::iPlayerController* playerController = GET_PLAYER_CONTROLLER;
 
 		if (playerController == nullptr)
 		{

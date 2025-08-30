@@ -54,7 +54,7 @@ namespace RB
 
 		void ShowFixedUpdateCount()
 		{
-			olc::Renderer::ptrPGE->DrawStringDecal({ 22, 3 }, "FixedUpdate Count: " + std::to_string(_fixedUpdateCountPerSec), olc::WHITE, { 0.65f, 0.65f });
+			olc::Renderer::ptrPGE->DrawStringDecal({ 22, 3 }, "Fixed Update Count: " + std::to_string(_fixedUpdateCountPerSec), olc::WHITE, { 0.65f, 0.65f });
 		}
 
 	private:

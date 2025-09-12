@@ -59,6 +59,10 @@ ninja
 
 Run CPPFG2.exe
 
+```bash
+./CPPFG2.exe
+```
+
 <br>
 
 ## Linux (Ubuntu) Installation

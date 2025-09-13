@@ -62,7 +62,7 @@ Run CPPFG2.exe:
 
 ## Linux (Ubuntu) Installation
 
-### 1. Prerequisites
+### 1. Required Packages
 
 - Git
 - Clang

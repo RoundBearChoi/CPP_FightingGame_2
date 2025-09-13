@@ -53,7 +53,7 @@ Compile project:
 ninja
 ```
 
-Run CPPFG2.exe:
+Run:
 
 ```bash
 ./CPPFG2.exe

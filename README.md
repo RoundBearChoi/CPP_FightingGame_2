@@ -34,6 +34,7 @@ pacman -S mingw-w64-x86_64-libc++
 ### 2. Clone and Build Repository
 
 ```bash
+pacman -S git
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
 cd CPP_FightingGame_2
 ```

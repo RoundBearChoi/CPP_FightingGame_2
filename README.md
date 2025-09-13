@@ -16,14 +16,9 @@ This repository contains source code and build instructions for compiling and ru
 
 ## Windows 10 Installation
 
-### 1. Prerequisites
+### 1. MSYS2 and Required Packages
 
-- [MSYS2](https://www.msys2.org/) with [MINGW64](https://www.mingw-w64.org/) environment
-- Git
-
-### 2. MSYS2 and Required Packages
-
-Install [MSYS2](https://www.msys2.org/) and open MINGW64 shell  
+Install [MSYS2](https://www.msys2.org/) and open [MINGW64](https://www.mingw-w64.org/) shell  
 
 Update package database and install required tools:
 
@@ -36,7 +31,7 @@ pacman -S mingw-w64-x86_64-clang
 pacman -S mingw-w64-x86_64-libc++
 ```
 
-### 3. Clone and Build Repository
+### 2. Clone and Build Repository
 
 ```bash
 git clone https://github.com/RoundBearChoi/CPP_FightingGame_2
